@@ -1,28 +1,39 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
+ * Start screen: bottom tab navigator with two tabs
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { StatusBar, useColorScheme } from 'react-native';
+import HomeScreen from './src/screens/Home/HomeScreen';
+import SettingsScreen from './src/screens/Settings/SettingsScreen';
+import SurfScreen from './src/screens/Surf/SurfScreen';
+import { enableScreens } from 'react-native-screens';
 
-function App() {
+enableScreens();
+
+type RootTabParamList = {
+  Home: undefined;
+  Settings: undefined;
+  Surf: undefined;
+};
+
+const Tab = createBottomTabNavigator<RootTabParamList>();
+
+function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-
   return (
-    <View style={styles.container}>
+    <NavigationContainer theme={isDarkMode ? DarkTheme : DefaultTheme}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Surf" component={SurfScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
