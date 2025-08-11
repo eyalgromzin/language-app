@@ -2,6 +2,7 @@ import React from 'react';
 import { ActivityIndicator, Alert, Button, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import RNFS from 'react-native-fs';
 
 function SurfScreen(): React.JSX.Element {
   const webViewRef = React.useRef<WebView>(null);
@@ -11,6 +12,7 @@ function SurfScreen(): React.JSX.Element {
     | {
         word: string;
         translation: string;
+        sentence?: string;
         images: string[];
         imagesLoading: boolean;
         translationLoading: boolean;
@@ -60,8 +62,8 @@ function SurfScreen(): React.JSX.Element {
 
   const baseInjection = `
     (function() {
-      if (window.__wordClickInstalled_v5) return;
-      window.__wordClickInstalled_v5 = true;
+      if (window.__wordClickInstalled_v6) return;
+      window.__wordClickInstalled_v6 = true;
       var lastTouch = { x: 0, y: 0 };
       var lastPostedWord = '';
       var lastPostedAt = 0;
@@ -104,16 +106,39 @@ function SurfScreen(): React.JSX.Element {
             sel.addRange(wordRange);
           }
         } catch (err) {}
-        return word;
-      }
-      function postWord(word, source) {
+        // Try to build a sentence around the word within the same text node
+        var sentence = '';
         try {
-          if (!word) return;
+          var punct = /[\.!?。！？]/;
+          var ss = s; while (ss > 0 && !punct.test(text[ss - 1])) ss--;
+          var ee = e; while (ee < text.length && !punct.test(text[ee])) ee++;
+          sentence = (text.slice(ss, Math.min(ee + 1, text.length)) || '').replace(/\s+/g, ' ').trim();
+        } catch (e2) { sentence = ''; }
+        if (!sentence) {
+          try {
+            // Fallback: use nearest block's innerText
+            var el = (node.parentElement || null);
+            while (el && el.innerText && el.innerText.trim().length < 1) el = el.parentElement;
+            var blockText = el && el.innerText ? el.innerText : text;
+            // Find a sentence containing the word (first occurrence)
+            var idx = blockText.toLowerCase().indexOf(word.toLowerCase());
+            if (idx >= 0) {
+              var start = idx; while (start > 0 && !punct.test(blockText[start - 1])) start--;
+              var end = idx + word.length; while (end < blockText.length && !punct.test(blockText[end])) end++;
+              sentence = (blockText.slice(start, Math.min(end + 1, blockText.length)) || '').replace(/\s+/g, ' ').trim();
+            }
+          } catch (e3) { sentence = ''; }
+        }
+        return { word: word, sentence: sentence };
+      }
+      function postWord(payload, source) {
+        try {
+          if (!payload || !payload.word) return;
           var now = Date.now();
-          if (word === lastPostedWord && (now - lastPostedAt) < 250) return;
-          lastPostedWord = word; lastPostedAt = now;
+          if (payload.word === lastPostedWord && (now - lastPostedAt) < 250) return;
+          lastPostedWord = payload.word; lastPostedAt = now;
           if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
-            window.ReactNativeWebView.postMessage(JSON.stringify({ type: source, word: word }));
+            window.ReactNativeWebView.postMessage(JSON.stringify({ type: source, word: payload.word, sentence: payload.sentence || '' }));
           }
         } catch (e) {}
       }
@@ -129,14 +154,14 @@ function SurfScreen(): React.JSX.Element {
           pressTimer = setTimeout(function() {
             if (!pressing) return;
             if (pressAnchor) {
-              var word = selectWordAtPoint(lastTouch.x, lastTouch.y);
-              if (!word) {
+              var res = selectWordAtPoint(lastTouch.x, lastTouch.y);
+              if (!res) {
                 var selTxt = window.getSelection ? (window.getSelection().toString().trim()) : '';
-                if (selTxt && selTxt.split(/\s+/).length === 1) word = selTxt;
+                if (selTxt && selTxt.split(/\s+/).length === 1) res = { word: selTxt, sentence: '' };
               }
-              if (word) {
+              if (res && res.word) {
                 suppressNextClick = true; // prevent navigation after long-press
-                postWord(word, 'longpress');
+                postWord(res, 'longpress');
               }
             }
           }, LONG_PRESS_MS);
@@ -160,15 +185,15 @@ function SurfScreen(): React.JSX.Element {
           }
           var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
           if (!a) {
-            var word = selectWordAtPoint(e.clientX || lastTouch.x, e.clientY || lastTouch.y);
-            if (!word) {
+            var res = selectWordAtPoint(e.clientX || lastTouch.x, e.clientY || lastTouch.y);
+            if (!res) {
               var selTxt = window.getSelection ? (window.getSelection().toString().trim()) : '';
-              if (selTxt && selTxt.split(/\\s+/).length === 1) word = selTxt;
+              if (selTxt && selTxt.split(/\\s+/).length === 1) res = { word: selTxt, sentence: '' };
             }
-            if (word) {
+            if (res && res.word) {
               e.preventDefault();
               e.stopPropagation();
-              postWord(word, 'wordClick');
+              postWord(res, 'wordClick');
               return;
             }
           }
@@ -250,16 +275,16 @@ function SurfScreen(): React.JSX.Element {
     try {
       const data = JSON.parse(event.nativeEvent.data);
       if ((data?.type === 'wordClick' || data?.type === 'longpress' || data?.type === 'selection') && typeof data.word === 'string' && data.word.length > 0) {
-        openPanel(data.word);
+        openPanel(data.word, typeof data.sentence === 'string' ? data.sentence : undefined);
       }
     } catch {
       // ignore malformed messages
     }
   };
 
-  const openPanel = (word: string) => {
+  const openPanel = (word: string, sentence?: string) => {
     // Start with empty translation and show a loader while fetching
-    setTranslationPanel({ word, translation: '', images: [], imagesLoading: true, translationLoading: true });
+    setTranslationPanel({ word, translation: '', sentence, images: [], imagesLoading: true, translationLoading: true });
     fetchTranslation(word)
       .then((t) => {
         setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translation: t || prev.translation, translationLoading: false } : prev));
@@ -274,6 +299,42 @@ function SurfScreen(): React.JSX.Element {
       .catch(() => {
         setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, images: [], imagesLoading: false } : prev));
       });
+  };
+
+  const saveCurrentWord = async () => {
+    if (!translationPanel) return;
+    const entry = {
+      word: translationPanel.word,
+      translation: translationPanel.translation,
+      sentence: translationPanel.sentence || '',
+      addedAt: new Date().toISOString(),
+    } as const;
+
+    const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
+    try {
+      let current: unknown = [];
+      try {
+        const content = await RNFS.readFile(filePath, 'utf8');
+        current = JSON.parse(content);
+      } catch {
+        current = [];
+      }
+      const arr = Array.isArray(current) ? current : [];
+      const exists = arr.some((it: any) => it && typeof it === 'object' && it.word === entry.word && it.sentence === entry.sentence);
+      if (!exists) arr.push(entry);
+      await RNFS.writeFile(filePath, JSON.stringify(arr, null, 2), 'utf8');
+      if (Platform.OS === 'android') {
+        ToastAndroid.show('Saved', ToastAndroid.SHORT);
+      } else {
+        Alert.alert('Saved', 'Word added to your list.');
+      }
+    } catch (e) {
+      if (Platform.OS === 'android') {
+        ToastAndroid.show('Failed to save', ToastAndroid.SHORT);
+      } else {
+        Alert.alert('Error', 'Failed to save the word.');
+      }
+    }
   };
 
   const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
@@ -476,9 +537,20 @@ function SurfScreen(): React.JSX.Element {
             <Text style={styles.bottomWord} numberOfLines={1}>
               {translationPanel.word}
             </Text>
-            <TouchableOpacity onPress={() => setTranslationPanel(null)}>
-              <Text style={styles.closeBtn}>✕</Text>
-            </TouchableOpacity>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <TouchableOpacity
+                onPress={saveCurrentWord}
+                style={styles.addBtnWrap}
+                hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+                accessibilityRole="button"
+                accessibilityLabel="Add word"
+              >
+                <Text style={styles.addBtnText}>+</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => setTranslationPanel(null)}>
+                <Text style={styles.closeBtn}>✕</Text>
+              </TouchableOpacity>
+            </View>
           </View>
           {translationPanel.translationLoading ? (
             <View style={styles.translationLoadingRow}>
@@ -487,6 +559,11 @@ function SurfScreen(): React.JSX.Element {
           ) : (
             <Text style={styles.translationText} numberOfLines={3}>
               {translationPanel.translation}
+            </Text>
+          )}
+          {!!translationPanel.sentence && (
+            <Text style={styles.sentenceText} numberOfLines={3}>
+              {translationPanel.sentence}
             </Text>
           )}
           {translationPanel.imagesLoading ? (
@@ -556,15 +633,42 @@ const styles = StyleSheet.create({
     flexShrink: 1,
     marginRight: 12,
   },
+  addBtnWrap: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#007AFF',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 8,
+    shadowColor: '#000',
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 4,
+  },
+  addBtnText: {
+    color: 'white',
+    fontSize: 22,
+    fontWeight: '700',
+    lineHeight: 22,
+    includeFontPadding: false,
+  },
   closeBtn: {
-    fontSize: 18,
-    opacity: 0.7,
+    fontSize: 20,
+    color: '#000',
+    opacity: 0.9,
     paddingHorizontal: 8,
     paddingVertical: 2,
   },
   translationText: {
     fontSize: 14,
     color: '#333',
+    marginBottom: 8,
+  },
+  sentenceText: {
+    fontSize: 13,
+    color: '#666',
     marginBottom: 8,
   },
   imageRow: {
