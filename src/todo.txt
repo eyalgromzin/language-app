@@ -1,0 +1,44 @@
+- screens / tabs : 
+    - login with facebook / google
+    - surf screen 
+        - on click on a word , show the translation + images from some website .
+        - add favorite button near the link bar 
+        - dont enable to add a link that already exists 
+        - add library button mear the link bar 
+    - practice - 
+        fill the missing letters
+        fill missing word / words in a sentense 
+        given n words and n translations - connect the words with the translations 
+        given the word - write the translation
+        given a translation - write the word  
+        memory game - with words and translations 
+    - library screen
+        - a table of links with the columns : 
+        text name
+        type: story / article / conversation / text
+        level
+    - words/sentenses , nouns and verbs  by categories
+        - on add word , will save the word and the sentense it was part of . 
+        - write on top - click + button on all the words you dont know to add them to your practice
+        - categories:
+            numbers,
+            i, them , he, she, it ... 
+            food,
+            travel,
+            clothing,
+            time,
+            emotions,
+            family,
+            home,
+        - will show each word with an image below .
+    - videos - with subtitles that each word in the subtitle possible to click on it .  
+    - step by step - like duolingo - annoying practices.
+        - will take simple sentenses and practice them with games, until all the words are
+    - save progress in db for each person by email - step by step progress.  
+    - settings:
+        - learning language
+        - native language
+
+    
+- monetizations: 
+    limit num of words possible to add to learning per day - for example 20.
