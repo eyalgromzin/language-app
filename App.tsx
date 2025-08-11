@@ -11,6 +11,7 @@ import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSh
 import HomeScreen from './src/screens/Home/HomeScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
 import SurfScreen from './src/screens/Surf/SurfScreen';
+import MyWordsScreen from './src/screens/MyWords/MyWordsScreen';
 import LoginScreen from './src/screens/Auth/LoginScreen';
 import { enableScreens } from 'react-native-screens';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -22,6 +23,7 @@ type RootTabParamList = {
   Home: undefined;
   Settings: undefined;
   Surf: undefined;
+  MyWords: undefined;
 };
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
@@ -59,8 +61,9 @@ function MainTabs(): React.JSX.Element {
         }}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
         <Tab.Screen name="Surf" component={SurfScreen} />
+        <Tab.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
 
       <Modal
@@ -78,6 +81,9 @@ function MainTabs(): React.JSX.Element {
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Surf'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Surf</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('MyWords'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>My Words</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Settings'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Settings</Text>
