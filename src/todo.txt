@@ -1,14 +1,4 @@
 - screens / tabs : 
-    - surf screen 
-        - create a nest server 
-        - create library controller
-        - create get texts endpoint 
-        - add favorite button near the link bar that will show a dialog with title , and a url already filled with the current url .  
-        - dont enable to add a link that already exists 
-        - add library button mear the link bar 
-        - on click on a word , show the translation + images from some website .
-    
-
     - practice - 
         fill the missing letters
         fill missing word / words in a sentense 
@@ -20,6 +10,19 @@
         add setting - how many times need to win in a word to move onward - to remove the word 
     - words screen - 
         will show all currently learning words and their level in all the practices 
+
+        
+    - surf screen 
+        - create a nest server 
+        - create library controller
+        - create get texts endpoint 
+        - add favorite button near the link bar that will show a dialog with title , and a url already filled with the current url .  
+        - dont enable to add a link that already exists 
+        - add library button mear the link bar 
+        - on click on a word , show the translation + images from some website .
+    
+
+
 
     - library screen
         - a table of links with the columns : 
