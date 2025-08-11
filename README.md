@@ -95,3 +95,23 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+## Social Login Setup
+
+Replace placeholders in native files with your real IDs:
+
+- Android (`android/app/src/main/res/values/strings.xml`):
+  - `facebook_app_id = YOUR_FB_APP_ID`
+  - `fb_login_protocol_scheme = fbYOUR_FB_APP_ID`
+  - `default_web_client_id = YOUR_GOOGLE_WEB_CLIENT_ID`
+- Android (`android/app/src/main/AndroidManifest.xml`):
+  - `com.facebook.sdk.ApplicationId` meta-data
+  - `com.facebook.sdk.ClientToken` meta-data
+- iOS (`ios/LanguageLearn/Info.plist`):
+  - Add URL scheme for Google: `com.googleusercontent.apps.YOUR_IOS_REVERSED_CLIENT_ID`
+  - Add URL scheme for Facebook: `fbYOUR_FB_APP_ID`
+  - Keys: `FacebookAppID`, `FacebookDisplayName`
+- iOS (`ios/LanguageLearn/AppDelegate.swift`):
+  - Facebook SDK initialization is added.
+
+For Google, configure `GoogleSignin.configure({ webClientId: ..., iosClientId: ... })` in your app if required.
