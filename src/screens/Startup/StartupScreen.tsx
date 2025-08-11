@@ -3,6 +3,7 @@ import { Alert, Button, StyleSheet, Text, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { LANGUAGE_OPTIONS } from '../../constants/languages';
 
 type RootStackParamList = {
   Startup: undefined;
@@ -12,32 +13,7 @@ type RootStackParamList = {
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Startup'>;
 
-const LANGUAGE_OPTIONS: string[] = [
-  'English',
-  'Spanish',
-  'French',
-  'German',
-  'Italian',
-  'Portuguese',
-  'Russian',
-  'Chinese (Mandarin)',
-  'Japanese',
-  'Korean',
-  'Arabic',
-  'Hindi',
-  'Turkish',
-  'Polish',
-  'Dutch',
-  'Greek',
-  'Swedish',
-  'Norwegian',
-  'Finnish',
-  'Czech',
-  'Ukrainian',
-  'Hebrew',
-  'Thai',
-  'Vietnamese',
-];
+// LANGUAGE_OPTIONS imported from shared constants
 
 function StartupScreen({ navigation }: Props): React.JSX.Element {
   const [learningLanguage, setLearningLanguage] = React.useState<string>('');

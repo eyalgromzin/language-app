@@ -1,0 +1,28 @@
+export const LANGUAGE_OPTIONS: string[] = [
+  'English',
+  'Spanish',
+  'French',
+  'German',
+  'Italian',
+  'Portuguese',
+  'Russian',
+  'Chinese (Mandarin)',
+  'Japanese',
+  'Korean',
+  'Arabic',
+  'Hindi',
+  'Turkish',
+  'Polish',
+  'Dutch',
+  'Greek',
+  'Swedish',
+  'Norwegian',
+  'Finnish',
+  'Czech',
+  'Ukrainian',
+  'Hebrew',
+  'Thai',
+  'Vietnamese',
+];
+
+
