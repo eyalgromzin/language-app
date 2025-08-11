@@ -13,6 +13,7 @@ function SurfScreen(): React.JSX.Element {
         translation: string;
         images: string[];
         imagesLoading: boolean;
+        translationLoading: boolean;
       }
     | null
   >(null);
@@ -257,13 +258,15 @@ function SurfScreen(): React.JSX.Element {
   };
 
   const openPanel = (word: string) => {
-    // Show translation immediately (fallback to the word), start fetching enhanced translation and images in parallel
-    setTranslationPanel({ word, translation: word, images: [], imagesLoading: true });
+    // Start with empty translation and show a loader while fetching
+    setTranslationPanel({ word, translation: '', images: [], imagesLoading: true, translationLoading: true });
     fetchTranslation(word)
       .then((t) => {
-        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translation: t || prev.translation } : prev));
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translation: t || prev.translation, translationLoading: false } : prev));
       })
-      .catch(() => {});
+      .catch(() => {
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translationLoading: false } : prev));
+      });
     fetchImageUrls(word)
       .then((imgs) => {
         setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, images: imgs, imagesLoading: false } : prev));
@@ -477,9 +480,15 @@ function SurfScreen(): React.JSX.Element {
               <Text style={styles.closeBtn}>✕</Text>
             </TouchableOpacity>
           </View>
-          <Text style={styles.translationText} numberOfLines={3}>
-            {translationPanel.translation}
-          </Text>
+          {translationPanel.translationLoading ? (
+            <View style={styles.translationLoadingRow}>
+              <ActivityIndicator size="small" color="#555" />
+            </View>
+          ) : (
+            <Text style={styles.translationText} numberOfLines={3}>
+              {translationPanel.translation}
+            </Text>
+          )}
           {translationPanel.imagesLoading ? (
             <View style={[styles.imageRow, styles.imageRowLoader]}>
               <ActivityIndicator size="small" color="#555" />
@@ -565,6 +574,12 @@ const styles = StyleSheet.create({
     height: 80,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  translationLoadingRow: {
+    height: 42,
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    marginBottom: 8,
   },
   imageItem: {
     width: 120,
