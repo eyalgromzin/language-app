@@ -6,7 +6,7 @@ function SurfScreen(): React.JSX.Element {
   const webViewRef = React.useRef<WebView>(null);
   const [addressText, setAddressText] = React.useState<string>('https://example.com');
   const [currentUrl, setCurrentUrl] = React.useState<string>('https://example.com');
-  const [panel, setPanel] = React.useState<
+  const [translationPanel, setTranslationPanel] = React.useState<
     | {
         word: string;
         translation: string;
@@ -233,18 +233,18 @@ function SurfScreen(): React.JSX.Element {
 
   const openPanel = (word: string) => {
     // Show translation immediately (fallback to the word), start fetching enhanced translation and images in parallel
-    setPanel({ word, translation: word, images: [], imagesLoading: true });
+    setTranslationPanel({ word, translation: word, images: [], imagesLoading: true });
     fetchTranslation(word)
       .then((t) => {
-        setPanel(prev => (prev && prev.word === word ? { ...prev, translation: t || prev.translation } : prev));
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translation: t || prev.translation } : prev));
       })
       .catch(() => {});
     fetchImageUrls(word)
       .then((imgs) => {
-        setPanel(prev => (prev && prev.word === word ? { ...prev, images: imgs, imagesLoading: false } : prev));
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, images: imgs, imagesLoading: false } : prev));
       })
       .catch(() => {
-        setPanel(prev => (prev && prev.word === word ? { ...prev, images: [], imagesLoading: false } : prev));
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, images: [], imagesLoading: false } : prev));
       });
   };
 
@@ -405,26 +405,26 @@ function SurfScreen(): React.JSX.Element {
           />
         </View>
       )}
-      {panel && (
+      {translationPanel && (
         <View style={styles.bottomPanel}>
           <View style={styles.bottomHeader}>
             <Text style={styles.bottomWord} numberOfLines={1}>
-              {panel.word}
+              {translationPanel.word}
             </Text>
-            <TouchableOpacity onPress={() => setPanel(null)}>
+            <TouchableOpacity onPress={() => setTranslationPanel(null)}>
               <Text style={styles.closeBtn}>✕</Text>
             </TouchableOpacity>
           </View>
           <Text style={styles.translationText} numberOfLines={3}>
-            {panel.translation}
+            {translationPanel.translation}
           </Text>
-          {panel.imagesLoading ? (
+          {translationPanel.imagesLoading ? (
             <View style={[styles.imageRow, styles.imageRowLoader]}>
               <ActivityIndicator size="small" color="#555" />
             </View>
           ) : (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.imageRow}>
-              {(panel.images || []).map((uri, idx) => (
+              {(translationPanel.images || []).map((uri, idx) => (
                 <Image key={idx} source={{ uri }} style={styles.imageItem} resizeMode="cover" />
               ))}
             </ScrollView>
