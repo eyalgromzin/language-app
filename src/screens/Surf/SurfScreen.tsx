@@ -19,12 +19,17 @@ function SurfScreen(): React.JSX.Element {
 
   const baseInjection = `
     (function() {
-      if (window.__wordClickInstalled_v4) return; 
-      window.__wordClickInstalled_v4 = true;
+      if (window.__wordClickInstalled_v5) return;
+      window.__wordClickInstalled_v5 = true;
       var lastTouch = { x: 0, y: 0 };
       var lastPostedWord = '';
       var lastPostedAt = 0;
-      var selTimer = null;
+      var LONG_PRESS_MS = 450;
+      var pressTimer = null;
+      var pressing = false;
+      var pressAnchor = null;
+      var suppressNextClick = false;
+
       function getRangeFromPoint(x, y) {
         if (document.caretRangeFromPoint) return document.caretRangeFromPoint(x, y);
         if (document.caretPositionFromPoint) {
@@ -71,48 +76,54 @@ function SurfScreen(): React.JSX.Element {
           }
         } catch (e) {}
       }
-      function send(word) {
-        postWord(word, 'wordClick');
-      }
-      function handleClick(e) {
+
+      function onTouchStart(e) {
         try {
-          var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
-          if (a) { e.preventDefault(); e.stopPropagation(); }
-          var x = e.clientX || lastTouch.x; var y = e.clientY || lastTouch.y;
-          var word = selectWordAtPoint(x, y);
-          if (!word) {
-            var selTxt = window.getSelection ? (window.getSelection().toString().trim()) : '';
-            if (selTxt && selTxt.split(/\s+/).length === 1) word = selTxt;
-          }
-          if (word) { e.preventDefault(); e.stopPropagation(); send(word); }
+          pressing = true;
+          var t = e.touches && e.touches[0];
+          if (t) { lastTouch.x = t.clientX; lastTouch.y = t.clientY; }
+          pressAnchor = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+          suppressNextClick = false;
+          if (pressTimer) clearTimeout(pressTimer);
+          pressTimer = setTimeout(function() {
+            if (!pressing) return;
+            if (pressAnchor) {
+              var word = selectWordAtPoint(lastTouch.x, lastTouch.y);
+              if (!word) {
+                var selTxt = window.getSelection ? (window.getSelection().toString().trim()) : '';
+                if (selTxt && selTxt.split(/\s+/).length === 1) word = selTxt;
+              }
+              if (word) {
+                suppressNextClick = true; // prevent navigation after long-press
+                postWord(word, 'longpress');
+              }
+            }
+          }, LONG_PRESS_MS);
         } catch (err) {}
       }
-      function handleTouchStart(e) {
-        try { if (e.touches && e.touches[0]) { lastTouch.x = e.touches[0].clientX; lastTouch.y = e.touches[0].clientY; } } catch (e) {}
-      }
-      function handleTouchEnd() {
+
+      function onTouchEnd() {
         try {
-          var selTxt = window.getSelection ? (window.getSelection().toString().trim()) : '';
-          if (selTxt && selTxt.split(/\s+/).length === 1) { postWord(selTxt, 'selection'); return; }
-          var word = selectWordAtPoint(lastTouch.x, lastTouch.y);
-          if (word) send(word);
-        } catch (e) {}
+          pressing = false;
+          if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
+        } catch (err) {}
       }
-      function checkSelection() {
+
+      function onClick(e) {
         try {
-          var selTxt = window.getSelection ? (window.getSelection().toString().trim()) : '';
-          if (selTxt && selTxt.split(/\s+/).length === 1) {
-            postWord(selTxt, 'selection');
+          if (suppressNextClick) {
+            e.preventDefault();
+            e.stopPropagation();
+            suppressNextClick = false;
+            return;
           }
-        } catch (e) {}
+          // Otherwise, allow default behavior so links open normally
+        } catch (err) {}
       }
-      document.addEventListener('touchstart', handleTouchStart, true);
-      document.addEventListener('touchend', handleTouchEnd, true);
-      document.addEventListener('mouseup', handleTouchEnd, true);
-      document.addEventListener('click', handleClick, true);
-      document.addEventListener('selectionchange', function() {
-        try { if (selTimer) clearTimeout(selTimer); selTimer = setTimeout(checkSelection, 120); } catch (e) {}
-      }, true);
+
+      document.addEventListener('touchstart', onTouchStart, true);
+      document.addEventListener('touchend', onTouchEnd, true);
+      document.addEventListener('click', onClick, true);
     })();
     true;
   `;
@@ -120,7 +131,7 @@ function SurfScreen(): React.JSX.Element {
   const onMessage = (event: WebViewMessageEvent) => {
     try {
       const data = JSON.parse(event.nativeEvent.data);
-      if (data?.type === 'wordClick' && typeof data.word === 'string' && data.word.length > 0) {
+      if ((data?.type === 'wordClick' || data?.type === 'longpress' || data?.type === 'selection') && typeof data.word === 'string' && data.word.length > 0) {
         if (Platform.OS === 'android') {
           ToastAndroid.show(data.word, ToastAndroid.SHORT);
         } else {
