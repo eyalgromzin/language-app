@@ -7,7 +7,7 @@ import React from 'react';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar, useColorScheme } from 'react-native';
+import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSheet } from 'react-native';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
 import SurfScreen from './src/screens/Surf/SurfScreen';
@@ -35,14 +35,110 @@ type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function MainTabs(): React.JSX.Element {
+  const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
+  const currentTabNavRef = React.useRef<any>(null);
+
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
-      <Tab.Screen name="Surf" component={SurfScreen} />
-    </Tab.Navigator>
+    <>
+      <Tab.Navigator
+        screenOptions={({ navigation }) => {
+          currentTabNavRef.current = navigation;
+          return {
+            headerShown: true,
+            headerLeft: () => (
+              <TouchableOpacity
+                onPress={() => setMenuOpen(true)}
+                accessibilityRole="button"
+                accessibilityLabel="Open menu"
+                style={{ paddingHorizontal: 16 }}
+              >
+                <Text style={{ fontSize: 24, lineHeight: 24 }}>☰</Text>
+              </TouchableOpacity>
+            ),
+          };
+        }}
+      >
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Surf" component={SurfScreen} />
+      </Tab.Navigator>
+
+      <Modal
+        transparent
+        visible={menuOpen}
+        animationType="fade"
+        onRequestClose={() => setMenuOpen(false)}
+      >
+        <View style={styles.menuOverlay}>
+          <TouchableOpacity style={styles.menuBackdrop} activeOpacity={1} onPress={() => setMenuOpen(false)} />
+          <View style={styles.menuPanel}>
+            <Text style={styles.menuTitle}>Menu</Text>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Home'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>Home</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Surf'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>Surf</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Settings'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>Settings</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.menuItem, styles.menuClose]} onPress={() => setMenuOpen(false)}>
+              <Text style={[styles.menuItemText, styles.menuCloseText]}>Close</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+    </>
   );
 }
+
+const styles = StyleSheet.create({
+  menuOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.25)',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+  },
+  menuBackdrop: {
+    ...StyleSheet.absoluteFillObject,
+  },
+  menuPanel: {
+    marginTop: 48,
+    marginLeft: 12,
+    width: 220,
+    backgroundColor: 'white',
+    borderRadius: 12,
+    paddingVertical: 8,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 8,
+  },
+  menuTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: '#ddd',
+  },
+  menuItem: {
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+  },
+  menuItemText: {
+    fontSize: 16,
+  },
+  menuClose: {
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: '#eee',
+  },
+  menuCloseText: {
+    color: '#007AFF',
+    fontWeight: '600',
+  },
+});
 
 function App(): React.JSX.Element | null {
   const isDarkMode = useColorScheme() === 'dark';
