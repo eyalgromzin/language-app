@@ -76,7 +76,6 @@ function MyWordsScreen(): React.JSX.Element {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>My Words</Text>
       {loading ? (
         <View style={styles.loaderWrap}><ActivityIndicator size="small" color="#555" /></View>
       ) : words.length === 0 ? (

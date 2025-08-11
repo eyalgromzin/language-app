@@ -43,7 +43,7 @@ function MainTabs(): React.JSX.Element {
   return (
     <>
       <Tab.Navigator
-        screenOptions={({ navigation }) => {
+        screenOptions={({ route, navigation }) => {
           currentTabNavRef.current = navigation;
           return {
             headerShown: true,
@@ -57,6 +57,20 @@ function MainTabs(): React.JSX.Element {
                 <Text style={{ fontSize: 24, lineHeight: 24 }}>☰</Text>
               </TouchableOpacity>
             ),
+            tabBarIcon: ({ color, size }) => {
+              const iconByRoute: Record<string, string> = {
+                Home: '🏠',
+                Surf: '🌐',
+                MyWords: '📝',
+                Settings: '⚙️',
+              };
+              const glyph = iconByRoute[route.name] || '•';
+              return <Text style={{ fontSize: size, color }} accessible accessibilityLabel={`${route.name} tab`}>
+                {glyph}
+              </Text>;
+            },
+            tabBarActiveTintColor: '#007AFF',
+            tabBarInactiveTintColor: '#999999',
           };
         }}
       >
