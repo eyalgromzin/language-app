@@ -1,6 +1,5 @@
 - screens / tabs : 
     - surf screen 
-        - add plus button in the translation panel that will save into a local json the word, its translation and the sentense it was taken from 
         - create a nest server 
         - create library controller
         - create get texts endpoint 
