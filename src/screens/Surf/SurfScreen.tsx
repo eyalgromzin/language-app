@@ -1,11 +1,12 @@
 import React from 'react';
 import { ActivityIndicator, Alert, Button, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function SurfScreen(): React.JSX.Element {
   const webViewRef = React.useRef<WebView>(null);
-  const [addressText, setAddressText] = React.useState<string>('https://example.com');
-  const [currentUrl, setCurrentUrl] = React.useState<string>('https://example.com');
+  const [addressText, setAddressText] = React.useState<string>('https://cnnespanol.cnn.com/');
+  const [currentUrl, setCurrentUrl] = React.useState<string>('https://cnnespanol.cnn.com/');
   const [translationPanel, setTranslationPanel] = React.useState<
     | {
         word: string;
@@ -15,6 +16,30 @@ function SurfScreen(): React.JSX.Element {
       }
     | null
   >(null);
+
+  // Languages selected by the user (Settings / Startup)
+  const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
+  const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
+        if (!mounted) return;
+        const map = Object.fromEntries(entries);
+        setLearningLanguage(map['language.learning'] ?? null);
+        setNativeLanguage(map['language.native'] ?? null);
+      } catch {
+        if (!mounted) return;
+        setLearningLanguage(null);
+        setNativeLanguage(null);
+      }
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   // Hidden WebView state to scrape lazy-loaded image results
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
@@ -248,13 +273,50 @@ function SurfScreen(): React.JSX.Element {
       });
   };
 
+  const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
+    English: 'en',
+    Spanish: 'es',
+    French: 'fr',
+    German: 'de',
+    Italian: 'it',
+    Portuguese: 'pt',
+    Russian: 'ru',
+    'Chinese (Mandarin)': 'zh-CN',
+    Japanese: 'ja',
+    Korean: 'ko',
+    Arabic: 'ar',
+    Hindi: 'hi',
+    Turkish: 'tr',
+    Polish: 'pl',
+    Dutch: 'nl',
+    Greek: 'el',
+    Swedish: 'sv',
+    Norwegian: 'no',
+    Finnish: 'fi',
+    Czech: 'cs',
+    Ukrainian: 'uk',
+    Hebrew: 'he',
+    Thai: 'th',
+    Vietnamese: 'vi',
+  };
+
+  const getLangCode = (nameOrNull: string | null | undefined): string | null => {
+    if (!nameOrNull) return null;
+    const code = LANGUAGE_NAME_TO_CODE[nameOrNull];
+    return typeof code === 'string' ? code : null;
+  };
+
   const fetchTranslation = async (word: string): Promise<string> => {
+    const fromCode = getLangCode(learningLanguage) || 'en';
+    const toCode = getLangCode(nativeLanguage) || 'en';
+    if (!word || fromCode === toCode) return word;
     try {
-      const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
+      const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(word)}&langpair=${encodeURIComponent(fromCode)}|${encodeURIComponent(toCode)}`;
+      const res = await fetch(url);
       if (res.ok) {
         const json = await res.json();
-        const meaning = Array.isArray(json) && json[0]?.meanings?.[0]?.definitions?.[0]?.definition;
-        if (typeof meaning === 'string' && meaning.length > 0) return meaning;
+        const txt = json?.responseData?.translatedText;
+        if (typeof txt === 'string' && txt.trim().length > 0) return txt.trim();
       }
     } catch {}
     return word;
