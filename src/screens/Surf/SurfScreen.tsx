@@ -20,6 +20,7 @@ function SurfScreen(): React.JSX.Element {
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
   const imageScrapeResolveRef = React.useRef<((urls: string[]) => void) | null>(null);
   const imageScrapeRejectRef = React.useRef<((err?: unknown) => void) | null>(null);
+  const hiddenWebViewRef = React.useRef<WebView>(null);
 
   const normalizeUrl = (input: string): string => {
     if (!input) return 'about:blank';
@@ -158,60 +159,62 @@ function SurfScreen(): React.JSX.Element {
 
   const imageScrapeInjection = `
     (function() {
-      var MAX_TIME = 9000;
+      var MAX_TIME = 12000;
       var INTERVAL_MS = 250;
-      var SELECTOR = 'img.ImagesContentImage-Image.ImagesContentImage-Image_clickable';
       var start = Date.now();
       var pollTimer = null;
       var scrollTimer = null;
 
-      function abs(u) {
-        try {
-          if (!u) return u;
-          if (u.indexOf('//') === 0) return location.protocol + u;
-          if (u.indexOf('/') === 0) return location.origin + u;
-          return u;
-        } catch (e) { return u; }
+      function normalizeUrl(u) {
+        if (!u) return null;
+        var url = ('' + u).trim();
+        if (!url) return null;
+        if (url.indexOf('//') === 0) return 'https:' + url;
+        return url;
       }
 
-      function extract(img) {
-        var srcset = img.getAttribute('srcset');
-        if (srcset) {
-          var first = srcset.split(',')[0].trim().split(/\s+/)[0];
-          if (first) return abs(first);
-        }
-        var ds = img.getAttribute('data-src');
-        if (ds) return abs(ds);
-        var s = img.getAttribute('src');
-        if (s) return abs(s);
-        return null;
-      }
-
-      function collect() {
-        var nodes = Array.prototype.slice.call(document.querySelectorAll(SELECTOR));
+      function collectUrls() {
         var urls = [];
-        for (var i = 0; i < nodes.length; i++) {
-          var u = extract(nodes[i]);
-          if (u && urls.indexOf(u) === -1) urls.push(u);
-          if (urls.length >= 6) break;
-        }
+        try {
+          var imgs = Array.prototype.slice.call(document.querySelectorAll('img'));
+          for (var i = 0; i < imgs.length; i++) {
+            var img = imgs[i];
+            try {
+              var candidate = img.currentSrc || img.src || img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || img.getAttribute('data-original') || '';
+              var n = normalizeUrl(candidate);
+              if (n && urls.indexOf(n) === -1) urls.push(n);
+            } catch (e) {}
+          }
+        } catch (e) {}
         return urls;
       }
 
-      function done(result) {
-        try { window.ReactNativeWebView && window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'imageScrapeResult', urls: result })); } catch(e) {}
+      function done() {
+        try {
+          var urls = collectUrls().slice(0, 12);
+          window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
+            JSON.stringify({ type: 'imageScrapeUrls', urls: urls })
+          );
+        } catch(e) {}
         if (pollTimer) clearInterval(pollTimer);
         if (scrollTimer) clearInterval(scrollTimer);
       }
 
       function step() {
-        var urls = collect();
-        if (urls.length >= 6) return done(urls);
-        if (Date.now() - start > MAX_TIME) return done(urls);
+        if (collectUrls().length >= 6) return done();
+        if (Date.now() - start > MAX_TIME) return done();
       }
 
+      var y = 0;
+      scrollTimer = setInterval(function(){
+        try {
+          y += 800;
+          window.scrollTo(0, y);
+          window.dispatchEvent(new Event('scroll'));
+        } catch(e) {}
+      }, 200);
+
       pollTimer = setInterval(step, INTERVAL_MS);
-      scrollTimer = setInterval(function(){ try { window.scrollBy(0, 800); } catch(e) {} }, 220);
       step();
     })();
     true;
@@ -257,10 +260,51 @@ function SurfScreen(): React.JSX.Element {
     return word;
   };
 
+  const parseYandexImageUrlsFromHtml = (html: string): string[] => {
+    try {
+      const results: string[] = [];
+      const imgTagRegex = /<img\b[^>]*class=(["'])([^"']*?)\1[^>]*>/gi;
+      let match: RegExpExecArray | null;
+      while ((match = imgTagRegex.exec(html)) !== null) {
+        const classAttr = match[2] || '';
+        if (
+          classAttr.indexOf('ImagesContentImage-Image') !== -1 &&
+          classAttr.indexOf('ImagesContentImage-Image_clickable') !== -1
+        ) {
+          const tag = match[0];
+          let url: string | null = null;
+          const srcsetMatch = /srcset=(["'])([^"']+?)\1/i.exec(tag);
+          if (srcsetMatch && srcsetMatch[2]) {
+            url = srcsetMatch[2].split(',')[0].trim().split(/\s+/)[0];
+          }
+          if (!url) {
+            const dataSrcMatch = /data-src=(["'])([^"']+?)\1/i.exec(tag);
+            if (dataSrcMatch && dataSrcMatch[2]) url = dataSrcMatch[2];
+          }
+          if (!url) {
+            const srcMatch = /src=(["'])([^"']+?)\1/i.exec(tag);
+            if (srcMatch && srcMatch[2]) url = srcMatch[2];
+          }
+          if (url) {
+            let normalized = url;
+            if (normalized.startsWith('//')) normalized = 'https:' + normalized;
+            else if (normalized.startsWith('/')) normalized = 'https://yandex.com' + normalized;
+            if (!results.includes(normalized)) {
+              results.push(normalized);
+              if (results.length >= 6) break;
+            }
+          }
+        }
+      }
+      return results.slice(0, 6);
+    } catch {
+      return [];
+    }
+  };
+
   const fetchImageUrls = async (word: string): Promise<string[]> => {
     const searchUrl = `https://yandex.com/images/search?text=${encodeURIComponent(word)}`;
 
-    // If a scrape is already in progress, just fallback to avoid contention
     if (imageScrape) {
       return [];
     }
@@ -278,20 +322,22 @@ function SurfScreen(): React.JSX.Element {
   const onScrapeMessage = (event: WebViewMessageEvent) => {
     try {
       const data = JSON.parse(event.nativeEvent.data);
-      if (data && data.type === 'imageScrapeResult') {
-        const normalizeUrl = (u: string): string => {
-          if (!u) return u;
-          if (u.startsWith('//')) return 'https:' + u;
-          if (u.startsWith('/')) return 'https://yandex.com' + u;
-          return u;
-        };
-        const urls = Array.isArray(data.urls) ? data.urls.map((u: string) => normalizeUrl(u)).filter(Boolean) : [];
-        const uniq: string[] = [];
-        for (const u of urls) {
-          if (u && !uniq.includes(u)) uniq.push(u);
-          if (uniq.length >= 6) break;
-        }
-        imageScrapeResolveRef.current?.(uniq);
+      // Prefer direct URL collection from the page (handles lazy-loaded/currentSrc)
+      if (data && data.type === 'imageScrapeUrls' && Array.isArray(data.urls)) {
+        const urls: string[] = (data.urls as unknown[])
+          .map((u) => (typeof u === 'string' ? u : ''))
+          .filter((u) => !!u)
+          .slice(0, 6);
+        imageScrapeResolveRef.current?.(urls);
+        imageScrapeResolveRef.current = null;
+        imageScrapeRejectRef.current = null;
+        setImageScrape(null);
+        return;
+      }
+      // Fallback: parse HTML if that's what we received
+      if (data && data.type === 'imageScrapeHtml' && typeof data.html === 'string') {
+        const urls = parseYandexImageUrlsFromHtml(data.html);
+        imageScrapeResolveRef.current?.(urls);
         imageScrapeResolveRef.current = null;
         imageScrapeRejectRef.current = null;
         setImageScrape(null);
@@ -335,17 +381,21 @@ function SurfScreen(): React.JSX.Element {
         domStorageEnabled
         originWhitelist={["*"]}
       />
-      {/* {imageScrape && (
-        <View style={{ width: 0, height: 0, overflow: 'hidden' }}>
+      {imageScrape && (
+        <View style={{ position: 'absolute', left: -10000, top: 0, width: 360, height: 1200, opacity: 0 }}>
           <WebView
+            ref={hiddenWebViewRef}
             source={{ uri: imageScrape.url }}
-            style={{ width: 0, height: 0 }}
+            style={{ width: '100%', height: '100%' }}
             injectedJavaScript={imageScrapeInjection}
             injectedJavaScriptBeforeContentLoaded={imageScrapeInjection}
             onMessage={onScrapeMessage}
             javaScriptEnabled
             domStorageEnabled
             originWhitelist={["*"]}
+            onLoad={() => {
+              try { hiddenWebViewRef.current?.injectJavaScript(imageScrapeInjection); } catch (e) {}
+            }}
             onError={() => {
               imageScrapeRejectRef.current?.();
               imageScrapeResolveRef.current = null;
@@ -354,7 +404,7 @@ function SurfScreen(): React.JSX.Element {
             }}
           />
         </View>
-      )} */}
+      )}
       {panel && (
         <View style={styles.bottomPanel}>
           <View style={styles.bottomHeader}>
