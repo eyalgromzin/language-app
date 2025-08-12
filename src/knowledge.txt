@@ -1,0 +1,2 @@
+- copy words.json to src : 
+cd 'C:\my projects\language-learn'; adb shell run-as com.languagelearn cat files/words.json > src\userData\words.json
