@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, NativeSyntheticEvent, TextInputKeyPressEventData } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import RNFS from 'react-native-fs';
 
 type WordEntry = {
@@ -35,7 +36,7 @@ function ensureCounters(entry: WordEntry): WordEntry {
   };
 }
 
-function pickMissingIndices(letters: string[]): number[] {
+function pickMissingIndices(letters: string[], desiredCount: number): number[] {
   const candidateIndices: number[] = [];
   for (let i = 0; i < letters.length; i += 1) {
     const ch = letters[i];
@@ -44,7 +45,7 @@ function pickMissingIndices(letters: string[]): number[] {
     }
   }
   if (candidateIndices.length === 0) return [];
-  const desired = Math.max(1, Math.min(3, Math.ceil(candidateIndices.length / 3)));
+  const desired = Math.max(1, Math.min(candidateIndices.length, Math.floor(desiredCount)));
   const result: number[] = [];
   const pool = [...candidateIndices];
   while (result.length < desired && pool.length > 0) {
@@ -80,13 +81,17 @@ function MissingLettersScreen(): React.JSX.Element {
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
   const [rowWidth, setRowWidth] = React.useState<number | null>(null);
   const inputRefs = React.useRef<Record<number, TextInput | null>>({});
+  const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
-  const prepare = React.useCallback((arr: WordEntry[]): PreparedItem[] => {
+  const prepare = React.useCallback((arr: WordEntry[], removeAfter: number): PreparedItem[] => {
     return arr.map(ensureCounters).map((entry) => {
       const letters = splitLetters(entry.word);
-      const missingIndices = pickMissingIndices(letters);
+      const correctSoFar = entry.numberOfCorrectAnswers?.missingLetters ?? 0;
+      const base = 4 - removeAfter;
+      const desiredMissing = base + correctSoFar;
+      const missingIndices = pickMissingIndices(letters, desiredMissing);
       return { entry, letters, missingIndices };
     });
   }, []);
@@ -94,6 +99,15 @@ function MissingLettersScreen(): React.JSX.Element {
   const loadData = React.useCallback(async () => {
     setLoading(true);
     try {
+      // Load user setting for number of correct answers to remove a word
+      let threshold = 3;
+      try {
+        const raw = await AsyncStorage.getItem('words.removeAfterNCorrect');
+        const parsed = Number.parseInt(raw ?? '', 10);
+        const valid = parsed >= 1 && parsed <= 4 ? parsed : 3;
+        threshold = valid;
+        setRemoveAfterCorrect(valid);
+      } catch {}
       const exists = await RNFS.exists(filePath);
       if (!exists) {
         setItems([]);
@@ -102,7 +116,10 @@ function MissingLettersScreen(): React.JSX.Element {
       const content = await RNFS.readFile(filePath, 'utf8');
       const parsed: unknown = JSON.parse(content);
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]) : [];
-      const prepared = prepare(arr.filter((w) => w.word && w.translation));
+      const filtered = arr
+        .filter((w) => w.word && w.translation)
+        .filter((w) => (w.numberOfCorrectAnswers?.missingLetters ?? 0) < threshold);
+      const prepared = prepare(filtered, threshold);
       setItems(prepared);
       setCurrentIndex(0);
       setInputs({});
@@ -222,7 +239,7 @@ function MissingLettersScreen(): React.JSX.Element {
       writeBackIncrement(target);
       const timer = setTimeout(() => {
         moveToNext();
-      }, 5000);
+      }, 3000);
       return () => clearTimeout(timer);
     } else {
       // Ensure only one toast shows at a time

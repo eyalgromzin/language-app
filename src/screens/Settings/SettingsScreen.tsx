@@ -100,7 +100,7 @@ function SettingsScreen(): React.JSX.Element {
             selectedValue={removeAfterCorrect}
             onValueChange={onChangeRemoveAfter}
           >
-            {[1, 2, 3, 4].map((n) => (
+            {[1, 2, 3].map((n) => (
               <Picker.Item key={n} label={`${n}`} value={n} />
             ))}
           </Picker>
