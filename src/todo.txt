@@ -4,6 +4,7 @@
         given the word - write the translation
         given a translation - write the word  
         memory game - with words and translations 
+        - make surprise me change a game every time 
 
     - surf screen 
         - create a nest server 
