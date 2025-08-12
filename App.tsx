@@ -23,7 +23,6 @@ enableScreens();
 
 type RootTabParamList = {
   Home: undefined;
-  Settings: undefined;
   Surf: undefined;
   MyWords: undefined;
   Practice: undefined;
@@ -35,6 +34,7 @@ type RootStackParamList = {
   Startup: undefined;
   Login: undefined;
   Main: undefined;
+  Settings: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -72,7 +72,6 @@ function MainTabs(): React.JSX.Element {
                 Surf: 'globe-outline',
                 MyWords: 'book-outline',
                 Practice: 'trophy-outline',
-                Settings: 'settings-outline',
               };
               const iconName = iconNameByRoute[route.name] ?? 'ellipse-outline';
               return (
@@ -103,7 +102,6 @@ function MainTabs(): React.JSX.Element {
           }}
         />
         <Tab.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
 
       <Modal
@@ -128,7 +126,7 @@ function MainTabs(): React.JSX.Element {
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Practice'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Practice</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Settings'); setMenuOpen(false); }}>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Settings'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Settings</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.menuItem, styles.menuClose]} onPress={() => setMenuOpen(false)}>
@@ -225,11 +223,13 @@ function App(): React.JSX.Element | null {
           <Stack.Screen name="Startup" component={StartupScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
+          <Stack.Screen name="Settings" component={SettingsScreen} />
         </Stack.Navigator>
       ) : (
         <Stack.Navigator initialRouteName="Main">
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
+          <Stack.Screen name="Settings" component={SettingsScreen} />
         </Stack.Navigator>
       )}
     </NavigationContainer>
