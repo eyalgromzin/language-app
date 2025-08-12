@@ -1,19 +1,10 @@
 - screens / tabs : 
     - practice - 
-        fill the missing letters - make letters be present already at the bottom and just need to select them by the right order
-        fill missing word / words in a sentense - will have more than 1 word, 
-            - has to be the word he added + other words 
-            - same as missing letters, show at the bottom a lot of words and he will need to pick them in the right order to fill
         given n words and n translations - connect the words with the translations 
         given the word - write the translation
         given a translation - write the word  
         memory game - with words and translations 
-    - settings screen - 
-        add setting - how many times need to win in a word to move onward - to remove the word 
-    - words screen - 
-        will show all currently learning words and their level in all the practices 
 
-        
     - surf screen 
         - create a nest server 
         - create library controller
@@ -22,9 +13,6 @@
         - dont enable to add a link that already exists 
         - add library button mear the link bar 
         - on click on a word , show the translation + images from some website .
-    
-
-
 
     - library screen
         - a table of links with the columns : 
@@ -50,10 +38,11 @@
     - step by step - like duolingo - annoying practices.
         - will take simple sentenses and practice them with games, until all the words are
     - save progress in db for each person by email - step by step progress.  
-    - settings:
-        - learning language
-        - native language
 
     
 - monetizations: 
     limit num of words possible to add to learning per day - for example 20.
+
+- payed version - 
+    will save all words of a person .
+

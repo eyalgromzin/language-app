@@ -28,6 +28,10 @@ function PracticeScreen(): React.JSX.Element {
       navigation.navigate('MissingWords');
       return;
     }
+    if (opt.key === 'matchGame') {
+      navigation.navigate('WordsMatch');
+      return;
+    }
     Alert.alert('Coming soon', `${opt.label} is not implemented yet.`);
   };
 
