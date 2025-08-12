@@ -11,7 +11,7 @@ function HomeScreen(): React.JSX.Element {
       <View style={styles.buttonsContainer}>
         <TouchableOpacity
           style={[styles.bigButton, styles.surfButton]}
-          onPress={() => navigation.navigate('Surf')}
+          onPress={() => navigation.navigate('Main', { screen: 'Surf' })}
           accessibilityRole="button"
           accessibilityLabel="Go to Surf"
         >
@@ -21,7 +21,7 @@ function HomeScreen(): React.JSX.Element {
 
         <TouchableOpacity
           style={[styles.bigButton, styles.practiceButton]}
-          onPress={() => navigation.navigate('Practice')}
+          onPress={() => navigation.navigate('Main', { screen: 'Practice' })}
           accessibilityRole="button"
           accessibilityLabel="Go to Practice"
         >
@@ -31,7 +31,7 @@ function HomeScreen(): React.JSX.Element {
 
         <TouchableOpacity
           style={[styles.bigButton, styles.libraryButton]}
-          onPress={() => navigation.navigate('MyWords')}
+          onPress={() => navigation.navigate('Main', { screen: 'MyWords' })}
           accessibilityRole="button"
           accessibilityLabel="Go to Library"
         >
