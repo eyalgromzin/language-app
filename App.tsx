@@ -8,6 +8,7 @@ import { NavigationContainer, DefaultTheme, DarkTheme, getFocusedRouteNameFromRo
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSheet } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
 import SurfScreen from './src/screens/Surf/SurfScreen';
@@ -66,17 +67,21 @@ function MainTabs(): React.JSX.Element {
               </TouchableOpacity>
             ),
             tabBarIcon: ({ color, size }) => {
-              const iconByRoute: Record<string, string> = {
-                Home: '🏠',
-                Surf: '🌐',
-                MyWords: '📝',
-                Practice: '🎯',
-                Settings: '⚙️',
+              const iconNameByRoute: Record<string, string> = {
+                Home: 'home-outline',
+                Surf: 'globe-outline',
+                MyWords: 'book-outline',
+                Practice: 'trophy-outline',
+                Settings: 'settings-outline',
               };
-              const glyph = iconByRoute[route.name] || '•';
-              return <Text style={{ fontSize: size, color }} accessible accessibilityLabel={`${route.name} tab`}>
-                {glyph}
-              </Text>;
+              const iconName = iconNameByRoute[route.name] ?? 'ellipse-outline';
+              return (
+                <Ionicons
+                  name={iconName}
+                  size={size}
+                  color={color}
+                />
+              );
             },
             tabBarActiveTintColor: '#007AFF',
             tabBarInactiveTintColor: '#999999',
