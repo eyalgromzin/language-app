@@ -31,7 +31,7 @@ function HomeScreen(): React.JSX.Element {
 
         <TouchableOpacity
           style={[styles.bigButton, styles.libraryButton]}
-          onPress={() => navigation.navigate('Main', { screen: 'MyWords' })}
+          onPress={() => navigation.navigate('Main', { screen: 'Library' })}
           accessibilityRole="button"
           accessibilityLabel="Go to Library"
         >

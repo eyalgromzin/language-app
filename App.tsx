@@ -13,6 +13,7 @@ import HomeScreen from './src/screens/Home/HomeScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
 import SurfScreen from './src/screens/Surf/SurfScreen';
 import MyWordsScreen from './src/screens/MyWords/MyWordsScreen';
+import LibraryScreen from './src/screens/Library/LibraryScreen';
 import PracticeNavigator from './src/screens/practice/PracticeNavigator';
 import LoginScreen from './src/screens/Auth/LoginScreen';
 import { enableScreens } from 'react-native-screens';
@@ -25,6 +26,7 @@ type RootTabParamList = {
   Surf: undefined;
   MyWords: undefined;
   Practice: undefined;
+  Library: undefined;
 };
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
@@ -71,6 +73,7 @@ function MainTabs(): React.JSX.Element {
                 Surf: 'globe-outline',
                 MyWords: 'book-outline',
                 Practice: 'trophy-outline',
+                Library: 'albums-outline',
               };
               const iconName = iconNameByRoute[route.name] ?? 'ellipse-outline';
               return (
@@ -100,6 +103,7 @@ function MainTabs(): React.JSX.Element {
           }}
         />
         <Tab.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
+        <Tab.Screen name="Library" component={LibraryScreen} options={{ title: 'Library' }} />
       </Tab.Navigator>
 
       <Modal
@@ -123,6 +127,9 @@ function MainTabs(): React.JSX.Element {
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Practice'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Practice</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Library'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>Library</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Settings'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Settings</Text>
