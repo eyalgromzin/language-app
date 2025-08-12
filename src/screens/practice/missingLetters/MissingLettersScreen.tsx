@@ -1,7 +1,8 @@
 import React from 'react';
-import { ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, NativeSyntheticEvent, TextInputKeyPressEventData } from 'react-native';
+import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, NativeSyntheticEvent, TextInputKeyPressEventData } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import RNFS from 'react-native-fs';
+import { useFocusEffect } from '@react-navigation/native';
 
 type WordEntry = {
   word: string;
@@ -71,6 +72,16 @@ function normalizeForCompare(input: string): string {
     .replace(/[úÚ]/g, 'u');
 }
 
+function pickRandomIndex(length: number, previous?: number): number {
+  if (length <= 0) return 0;
+  if (length === 1) return 0;
+  let nextIndex = Math.floor(Math.random() * length);
+  if (typeof previous === 'number' && nextIndex === previous) {
+    nextIndex = (nextIndex + 1) % length;
+  }
+  return nextIndex;
+}
+
 function MissingLettersScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [items, setItems] = React.useState<PreparedItem[]>([]);
@@ -121,7 +132,7 @@ function MissingLettersScreen(): React.JSX.Element {
         .filter((w) => (w.numberOfCorrectAnswers?.missingLetters ?? 0) < threshold);
       const prepared = prepare(filtered, threshold);
       setItems(prepared);
-      setCurrentIndex(0);
+      setCurrentIndex(pickRandomIndex(prepared.length));
       setInputs({});
       setWrongHighlightIndex(null);
     } catch {
@@ -135,6 +146,15 @@ function MissingLettersScreen(): React.JSX.Element {
     loadData();
   }, [loadData]);
 
+  // When the screen gains focus, reload words from storage
+  useFocusEffect(
+    React.useCallback(() => {
+      setShowCorrectToast(false);
+      setShowWrongToast(false);
+      loadData();
+    }, [loadData])
+  );
+
   const current = items[currentIndex];
 
   const resetForNext = React.useCallback(() => {
@@ -145,13 +165,8 @@ function MissingLettersScreen(): React.JSX.Element {
   const moveToNext = React.useCallback(() => {
     setShowCorrectToast(false);
     setShowWrongToast(false);
-    setWrongHighlightIndex(null);
-    setInputs({});
-    setCurrentIndex((prev) => {
-      if (items.length === 0) return 0;
-      return (prev + 1) % items.length;
-    });
-  }, [items.length]);
+    loadData();
+  }, [loadData]);
 
   const attemptWord = React.useCallback(() => {
     if (!current) return '';
@@ -230,6 +245,8 @@ function MissingLettersScreen(): React.JSX.Element {
     // When all missing indices are filled, check
     const allFilled = current.missingIndices.every((idx) => (inputs[idx] ?? '') !== '');
     if (!allFilled) return;
+    // Hide keyboard once all letters are entered
+    Keyboard.dismiss();
     const attempt = attemptWord();
     const target = current.entry.word;
     if (normalizeForCompare(attempt) === normalizeForCompare(target)) {
@@ -441,9 +458,10 @@ const styles = StyleSheet.create({
   },
   toast: {
     position: 'absolute',
+    top: 0,
+    bottom: 0,
     left: 0,
     right: 0,
-    bottom: 24,
     alignItems: 'center',
     justifyContent: 'center',
   },

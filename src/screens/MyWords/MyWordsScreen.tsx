@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
 
@@ -21,6 +21,7 @@ function MyWordsScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [refreshing, setRefreshing] = React.useState<boolean>(false);
   const [words, setWords] = React.useState<WordEntry[]>([]);
+  const [expanded, setExpanded] = React.useState<Record<string, boolean>>({});
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -76,20 +77,58 @@ function MyWordsScreen(): React.JSX.Element {
     setRefreshing(false);
   }, [loadWords]);
 
-  const renderItem = ({ item }: { item: WordEntry }) => {
+  const getItemId = (item: WordEntry, index: number) => `${item.word}|${item.sentence || ''}|${item.addedAt || index}`;
+
+  const renderItem = ({ item, index }: { item: WordEntry; index: number }) => {
+    const id = getItemId(item, index);
+    const isExpanded = !!expanded[id];
+    const toggleExpanded = () => setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
     return (
       <View style={styles.itemRow}>
         <View style={styles.itemHeader}>
           <Text style={styles.itemWord} numberOfLines={1}>{item.word}</Text>
-          {item.addedAt ? (
-            <Text style={styles.itemDate} numberOfLines={1}>{new Date(item.addedAt).toLocaleString()}</Text>
-          ) : null}
         </View>
         {item.translation ? (
           <Text style={styles.itemTranslation} numberOfLines={3}>{item.translation}</Text>
         ) : null}
         {item.sentence ? (
           <Text style={styles.itemSentence} numberOfLines={3}>{item.sentence}</Text>
+        ) : null}
+
+        <View style={styles.progressTopDivider} />
+        <TouchableOpacity
+          onPress={toggleExpanded}
+          style={styles.progressHeader}
+          accessibilityRole="button"
+          accessibilityLabel={isExpanded ? 'Hide progress' : 'Show progress'}
+        >
+          <Text style={styles.progressHeaderText}>Progress</Text>
+          <Text style={styles.progressCaret}>{isExpanded ? '▾' : '▸'}</Text>
+        </TouchableOpacity>
+
+        {isExpanded ? (
+          <View style={styles.progressPanel}>
+            <View style={styles.progressRow}>
+              <Text style={styles.progressLabel}>Missing letters</Text>
+              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.missingLetters ?? 0}</Text>
+            </View>
+            <View style={styles.progressRow}>
+              <Text style={styles.progressLabel}>Missing words</Text>
+              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.missingWords ?? 0}</Text>
+            </View>
+            <View style={styles.progressRow}>
+              <Text style={styles.progressLabel}>Words & translations</Text>
+              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.wordsAndTranslations ?? 0}</Text>
+            </View>
+            <View style={styles.progressRow}>
+              <Text style={styles.progressLabel}>Write translation</Text>
+              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.writeTranslation ?? 0}</Text>
+            </View>
+            <View style={styles.progressRow}>
+              <Text style={styles.progressLabel}>Write word</Text>
+              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.writeWord ?? 0}</Text>
+            </View>
+          </View>
         ) : null}
       </View>
     );
@@ -106,7 +145,7 @@ function MyWordsScreen(): React.JSX.Element {
       ) : (
         <FlatList
           data={words}
-          keyExtractor={(item, index) => `${item.word}|${item.sentence || ''}|${item.addedAt || index}`}
+          keyExtractor={(item, index) => getItemId(item, index)}
           renderItem={renderItem}
           contentContainerStyle={styles.listContent}
           refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
@@ -177,6 +216,49 @@ const styles = StyleSheet.create({
   itemSentence: {
     fontSize: 13,
     color: '#666',
+  },
+  progressHeader: {
+    marginTop: 8,
+    paddingVertical: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  progressHeaderText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#222',
+  },
+  progressCaret: {
+    fontSize: 16,
+    color: '#666',
+    marginLeft: 8,
+  },
+  progressPanel: {
+    marginTop: 4,
+    borderWidth: 1,
+    borderColor: '#eee',
+    backgroundColor: '#fafafa',
+    borderRadius: 8,
+    padding: 10,
+    gap: 6,
+  },
+  progressRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  progressTopDivider: {
+    marginTop: 8,
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: '#c4c2c2',
+  },
+  progressLabel: {
+    color: '#555',
+  },
+  progressValue: {
+    fontWeight: '700',
+    color: '#111',
   },
 });
 
