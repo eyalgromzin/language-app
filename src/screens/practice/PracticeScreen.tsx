@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 type PracticeOption = {
   key: string;
@@ -17,7 +18,12 @@ const PRACTICE_OPTIONS: PracticeOption[] = [
 ];
 
 function PracticeScreen(): React.JSX.Element {
+  const navigation = useNavigation<any>();
   const onOptionPress = (opt: PracticeOption) => {
+    if (opt.key === 'missingLetters') {
+      navigation.navigate('MissingLetters');
+      return;
+    }
     Alert.alert('Coming soon', `${opt.label} is not implemented yet.`);
   };
 

@@ -12,7 +12,7 @@ import HomeScreen from './src/screens/Home/HomeScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
 import SurfScreen from './src/screens/Surf/SurfScreen';
 import MyWordsScreen from './src/screens/MyWords/MyWordsScreen';
-import PracticeScreen from './src/screens/practice/PracticeScreen';
+import PracticeNavigator from './src/screens/practice/PracticeNavigator';
 import LoginScreen from './src/screens/Auth/LoginScreen';
 import { enableScreens } from 'react-native-screens';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -79,7 +79,7 @@ function MainTabs(): React.JSX.Element {
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Surf" component={SurfScreen} />
-        <Tab.Screen name="Practice" component={PracticeScreen} />
+        <Tab.Screen name="Practice" component={PracticeNavigator} />
         <Tab.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
