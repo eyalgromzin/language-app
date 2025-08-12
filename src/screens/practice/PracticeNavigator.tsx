@@ -3,10 +3,12 @@ import { Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PracticeHomeScreen from './PracticeScreen';
 import MissingLettersScreen from './missingLetters/MissingLettersScreen.tsx';
+import MissingWordsScreen from './missingWords/MissingWordsScreen.tsx';
 
 export type PracticeStackParamList = {
   PracticeHome: undefined;
   MissingLetters: undefined;
+  MissingWords: undefined;
 };
 
 const Stack = createNativeStackNavigator<PracticeStackParamList>();
@@ -31,6 +33,21 @@ function PracticeNavigator(): React.JSX.Element {
         component={MissingLettersScreen}
         options={{
           title: 'Missing letters',
+          headerShown: true,
+          headerLargeTitle: false,
+          headerBackTitle: '',
+          headerTitle: (props) => (
+            <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
+              {props?.children}
+            </Text>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="MissingWords"
+        component={MissingWordsScreen}
+        options={{
+          title: 'Missing words',
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',

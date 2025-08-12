@@ -24,6 +24,10 @@ function PracticeScreen(): React.JSX.Element {
       navigation.navigate('MissingLetters');
       return;
     }
+    if (opt.key === 'missingWords') {
+      navigation.navigate('MissingWords');
+      return;
+    }
     Alert.alert('Coming soon', `${opt.label} is not implemented yet.`);
   };
 
