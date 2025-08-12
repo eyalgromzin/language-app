@@ -8,6 +8,13 @@ type WordEntry = {
   translation: string;
   sentence?: string;
   addedAt?: string;
+  numberOfCorrectAnswers?: {
+    missingLetters: number;
+    missingWords: number;
+    wordsAndTranslations: number;
+    writeTranslation: number;
+    writeWord: number;
+  };
 };
 
 function MyWordsScreen(): React.JSX.Element {
@@ -27,13 +34,27 @@ function MyWordsScreen(): React.JSX.Element {
       }
       const content = await RNFS.readFile(filePath, 'utf8');
       const parsed: unknown = JSON.parse(content);
-      const arr = Array.isArray(parsed) ? (parsed as WordEntry[]) : [];
+      const ensureNoa = (it: WordEntry): WordEntry => ({
+        ...it,
+        numberOfCorrectAnswers: it.numberOfCorrectAnswers || {
+          missingLetters: 0,
+          missingWords: 0,
+          wordsAndTranslations: 0,
+          writeTranslation: 0,
+          writeWord: 0,
+        },
+      });
+      const arr = (Array.isArray(parsed) ? (parsed as WordEntry[]) : []).map(ensureNoa);
       const sorted = [...arr].sort((a, b) => {
         const ta = a.addedAt ? Date.parse(a.addedAt) : 0;
         const tb = b.addedAt ? Date.parse(b.addedAt) : 0;
         return tb - ta;
       });
       setWords(sorted);
+      // Persist back the normalized structure so future reads are consistent
+      try {
+        await RNFS.writeFile(filePath, JSON.stringify(sorted, null, 2), 'utf8');
+      } catch {}
     } catch {
       setWords([]);
     } finally {
