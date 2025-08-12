@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, NativeSyntheticEvent, TextInputKeyPressEventData } from 'react-native';
 import RNFS from 'react-native-fs';
 
 type WordEntry = {
@@ -78,6 +78,7 @@ function MissingLettersScreen(): React.JSX.Element {
   const [wrongHighlightIndex, setWrongHighlightIndex] = React.useState<number | null>(null);
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
+  const [rowWidth, setRowWidth] = React.useState<number | null>(null);
   const inputRefs = React.useRef<Record<number, TextInput | null>>({});
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
@@ -187,6 +188,24 @@ function MissingLettersScreen(): React.JSX.Element {
     });
   };
 
+  const onKeyPressLetter = (index: number, e: NativeSyntheticEvent<TextInputKeyPressEventData>) => {
+    if (e.nativeEvent.key !== 'Backspace') return;
+    if (!current) return;
+    setInputs((prev) => {
+      const lastFilled = [...current.missingIndices]
+        .reverse()
+        .find((i) => (prev[i] ?? '') !== '');
+      if (typeof lastFilled !== 'number') {
+        return prev;
+      }
+      const next = { ...prev, [lastFilled]: '' };
+      setTimeout(() => {
+        inputRefs.current[lastFilled]?.focus();
+      }, 0);
+      return next;
+    });
+  };
+
   React.useEffect(() => {
     if (!current) return;
     // If we are in a corrected state after a wrong answer, skip success checks
@@ -259,27 +278,38 @@ function MissingLettersScreen(): React.JSX.Element {
   }
 
   const renderLetterCell = (ch: string, idx: number) => {
+    const lettersCount = current.letters.length;
+    const defaultCellWidth = 40;
+    const gap = 8; // matches styles.wordRow gap
+    const available = rowWidth ?? 0;
+    const maxWidthPerCell = lettersCount > 0 && available > 0
+      ? Math.floor((available - gap * Math.max(0, lettersCount - 1)) / lettersCount)
+      : defaultCellWidth;
+    const cellWidth = Math.max(12, Math.min(defaultCellWidth, maxWidthPerCell));
+    const dynamicFontSize = Math.min(18, Math.max(12, Math.floor(cellWidth * 0.6)));
+
     const isMissing = current.missingIndices.includes(idx);
     const isWrongSpot = wrongHighlightIndex === idx;
     if (!isMissing) {
       return (
-        <View key={idx} style={[styles.cell, styles.cellFixed, isWrongSpot && styles.cellWrong]}>
-          <Text style={styles.cellText}>{ch}</Text>
+        <View key={idx} style={[styles.cell, { width: cellWidth }, styles.cellFixed, isWrongSpot && styles.cellWrong]}>
+          <Text style={[styles.cellText, { fontSize: dynamicFontSize }]}>{ch}</Text>
         </View>
       );
     }
     const value = inputs[idx] ?? '';
     const showAsCorrected = wrongHighlightIndex !== null;
     return (
-      <View key={idx} style={[styles.cell, showAsCorrected && styles.cellFixed, isWrongSpot && styles.cellWrong]}>
+      <View key={idx} style={[styles.cell, { width: cellWidth }, showAsCorrected && styles.cellFixed, isWrongSpot && styles.cellWrong]}>
         {showAsCorrected ? (
-          <Text style={styles.cellText}>{current.letters[idx]}</Text>
+          <Text style={[styles.cellText, { fontSize: dynamicFontSize }]}>{current.letters[idx]}</Text>
         ) : (
           <TextInput
-            style={styles.input}
+            style={[styles.input, { fontSize: dynamicFontSize }]}
             ref={(r) => { inputRefs.current[idx] = r; }}
             value={value}
             onChangeText={(t) => onChangeInput(idx, t)}
+            onKeyPress={(e) => onKeyPressLetter(idx, e)}
             autoCapitalize="none"
             autoCorrect={false}
             maxLength={1}
@@ -297,7 +327,10 @@ function MissingLettersScreen(): React.JSX.Element {
           <Text style={styles.sentence} numberOfLines={3}>{current.entry.sentence}</Text>
         ) : null}
 
-        <View style={styles.wordRow}>
+        <View
+          style={styles.wordRow}
+          onLayout={(e) => setRowWidth(e.nativeEvent.layout.width)}
+        >
           {current.letters.map((ch, idx) => renderLetterCell(ch, idx))}
         </View>
 
@@ -346,7 +379,7 @@ const styles = StyleSheet.create({
   },
   wordRow: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexWrap: 'nowrap',
     gap: 8,
     paddingVertical: 12,
   },
