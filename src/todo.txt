@@ -13,6 +13,7 @@
         - dont enable to add a link that already exists 
         - add library button mear the link bar 
         - on click on a word , show the translation + images from some website .
+        - enable the user to set startup url 
 
     - library screen
         - a table of links with the columns : 

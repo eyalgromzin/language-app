@@ -61,6 +61,8 @@ function WordsMatchScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
   const [pairCount, setPairCount] = React.useState<number>(3);
+  const [threshold, setThreshold] = React.useState<number>(3);
+  const [showEligible, setShowEligible] = React.useState<boolean>(false);
   const [leftItems, setLeftItems] = React.useState<MatchItem[]>([]);
   const [rightItems, setRightItems] = React.useState<MatchItem[]>([]);
   const [matchedKeys, setMatchedKeys] = React.useState<Set<string>>(new Set());
@@ -82,14 +84,16 @@ function WordsMatchScreen(): React.JSX.Element {
       const parsed: unknown = JSON.parse(content);
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]).map(ensureCounters) : [];
       // Filter: keep entries that have word and translation
-      let threshold = 3;
+      let thr = 3;
       try {
         const raw = await AsyncStorage.getItem('words.removeAfterNCorrect');
         const parsedNum = Number.parseInt(raw ?? '', 10);
-        threshold = parsedNum >= 1 && parsedNum <= 4 ? parsedNum : 3;
+        thr = parsedNum >= 1 && parsedNum <= 4 ? parsedNum : 3;
       } catch {}
-      const filtered = arr.filter((w) => w.word && w.translation)
-        .filter((w) => (w.numberOfCorrectAnswers?.wordsAndTranslations ?? 0) < threshold);
+      setThreshold(thr);
+      const filtered = arr
+        .filter((w) => w.word && w.translation)
+        .filter((w) => (w.numberOfCorrectAnswers?.wordsAndTranslations ?? 0) < thr);
       setAllEntries(filtered);
     } catch {
       setAllEntries([]);
@@ -100,7 +104,7 @@ function WordsMatchScreen(): React.JSX.Element {
 
   const prepareRound = React.useCallback(() => {
     const available = allEntries;
-    const desired = Math.max(1, Math.min(6, Math.max(3, pairCount)));
+    const desired = Math.max(1, Math.min(9, Math.max(3, pairCount)));
     const chosen = sampleN(available, Math.min(desired, Math.max(1, available.length)));
     const left: MatchItem[] = chosen.map((e) => ({ key: e.word, label: e.word }));
     const right: MatchItem[] = chosen.map((e) => ({ key: e.word, label: e.translation }));
@@ -203,7 +207,7 @@ function WordsMatchScreen(): React.JSX.Element {
   }, [wrongFlash]);
 
   const renderCountSelector = () => {
-    const options = [3, 4, 5, 6];
+    const options = [3, 4, 5, 6, 7, 8, 9];
     return (
       <View style={styles.countRow}>
         {options.map((n) => (
@@ -224,7 +228,7 @@ function WordsMatchScreen(): React.JSX.Element {
         key={`${side}-${item.key}-${item.label}`}
         style={[styles.itemButton, isMatched && styles.itemButtonCorrect, isWrong && styles.itemButtonWrong, isSelected && styles.itemButtonSelected]}
         onPress={() => (side === 'left' ? onPickLeft(item) : onPickRight(item))}
-        disabled={isMatched}
+        disabled={isMatched || !!wrongFlash}
         accessibilityRole="button"
         accessibilityLabel={item.label}
       >
@@ -254,10 +258,38 @@ function WordsMatchScreen(): React.JSX.Element {
       <Text style={styles.title}>match the words to their translations</Text>
       {renderCountSelector()}
 
+      <View style={styles.eligibleHeaderRow}>
+        {/* <TouchableOpacity
+          style={[styles.countButton, showEligible && styles.countButtonActive]}
+          onPress={() => setShowEligible((prev) => !prev)}
+          accessibilityRole="button"
+          accessibilityLabel={showEligible ? 'Hide eligible words' : 'Show eligible words'}
+        >
+          <Text style={[styles.countButtonText, showEligible && styles.countButtonTextActive]}>
+            {showEligible ? 'Hide' : 'Show'} eligible words ({allEntries.length})
+          </Text>
+        </TouchableOpacity> */}
+        {/* <Text style={styles.eligibleMetaText}>below {threshold} correct answers</Text> */}
+      </View>
+
+      {showEligible ? (
+        <View style={styles.eligibleList}>
+          {allEntries.map((e) => (
+            <View key={`elig-${e.word}`} style={styles.eligibleItem}>
+              <Text style={styles.eligibleWord} numberOfLines={1}>{e.word}</Text>
+              <Text style={styles.eligibleCount}>
+                {(e.numberOfCorrectAnswers?.wordsAndTranslations ?? 0)} / {threshold}
+              </Text>
+            </View>
+          ))}
+        </View>
+      ) : null}
+
       <View style={styles.board}>
         <View style={styles.column}>
           {leftItems.map((it) => renderItemButton(it, 'left'))}
         </View>
+        <View style={styles.verticalDivider} />
         <View style={styles.column}>
           {rightItems.map((it) => renderItemButton(it, 'right'))}
         </View>
@@ -308,9 +340,44 @@ const styles = StyleSheet.create({
   countButtonTextActive: {
     color: '#fff',
   },
+  eligibleHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  eligibleMetaText: {
+    color: '#666',
+  },
   board: {
     flexDirection: 'row',
     gap: 12,
+  },
+  verticalDivider: {
+    width: 2,
+    backgroundColor: '#d9d9d9',
+    alignSelf: 'stretch',
+  },
+  eligibleList: {
+    borderWidth: 1,
+    borderColor: '#eee',
+    backgroundColor: '#fafafa',
+    borderRadius: 8,
+    padding: 8,
+    gap: 6,
+  },
+  eligibleItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  eligibleWord: {
+    fontWeight: '600',
+    color: '#222',
+    flexShrink: 1,
+    marginRight: 8,
+  },
+  eligibleCount: {
+    color: '#444',
   },
   column: {
     flex: 1,
