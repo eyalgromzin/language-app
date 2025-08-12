@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme, DarkTheme, getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSheet } from 'react-native';
@@ -49,6 +49,12 @@ function MainTabs(): React.JSX.Element {
           currentTabNavRef.current = navigation;
           return {
             headerShown: true,
+            // Force single-line header titles
+            headerTitle: ({ children }: any) => (
+              <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
+                {children}
+              </Text>
+            ),
             headerLeft: () => (
               <TouchableOpacity
                 onPress={() => setMenuOpen(true)}
@@ -79,7 +85,18 @@ function MainTabs(): React.JSX.Element {
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Surf" component={SurfScreen} />
-        <Tab.Screen name="Practice" component={PracticeNavigator} />
+        <Tab.Screen
+          name="Practice"
+          component={PracticeNavigator}
+          options={({ route }) => {
+            const routeName = getFocusedRouteNameFromRoute(route) ?? 'PracticeHome';
+            const isNestedDetail = routeName !== 'PracticeHome';
+            return {
+              // Hide parent header for nested detail screens to avoid double headers
+              headerShown: !isNestedDetail,
+            };
+          }}
+        />
         <Tab.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
