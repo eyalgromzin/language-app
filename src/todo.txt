@@ -1,7 +1,8 @@
 - screens / tabs : 
     - practice - 
         fill the missing letters
-        fill missing word / words in a sentense 
+        fill missing word / words in a sentense - will have more than 1 word, 
+            - has to be the word he added + other words 
         given n words and n translations - connect the words with the translations 
         given the word - write the translation
         given a translation - write the word  

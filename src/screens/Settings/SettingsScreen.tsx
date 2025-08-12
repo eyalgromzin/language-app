@@ -7,20 +7,30 @@ import { LANGUAGE_OPTIONS } from '../../constants/languages';
 function SettingsScreen(): React.JSX.Element {
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
+  const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
 
   React.useEffect(() => {
     let mounted = true;
     (async () => {
       try {
-        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
+        const entries = await AsyncStorage.multiGet([
+          'language.learning',
+          'language.native',
+          'words.removeAfterNCorrect',
+        ]);
         if (!mounted) return;
         const map = Object.fromEntries(entries);
         setLearningLanguage(map['language.learning'] ?? null);
         setNativeLanguage(map['language.native'] ?? null);
+        const raw = map['words.removeAfterNCorrect'];
+        const parsed = Number.parseInt(typeof raw === 'string' ? raw : '', 10);
+        const valid = parsed >= 1 && parsed <= 4 ? parsed : 3;
+        setRemoveAfterCorrect(valid);
       } catch {
         if (!mounted) return;
         setLearningLanguage(null);
         setNativeLanguage(null);
+        setRemoveAfterCorrect(3);
       }
     })();
     return () => {
@@ -39,6 +49,13 @@ function SettingsScreen(): React.JSX.Element {
     setNativeLanguage(value);
     try {
       await AsyncStorage.setItem('language.native', value);
+    } catch {}
+  };
+
+  const onChangeRemoveAfter = async (value: number) => {
+    setRemoveAfterCorrect(value);
+    try {
+      await AsyncStorage.setItem('words.removeAfterNCorrect', String(value));
     } catch {}
   };
 
@@ -71,6 +88,20 @@ function SettingsScreen(): React.JSX.Element {
             <Picker.Item label="Select your native language..." value="" />
             {LANGUAGE_OPTIONS.map((lang) => (
               <Picker.Item key={lang} label={lang} value={lang} />
+            ))}
+          </Picker>
+        </View>
+      </View>
+
+      <View style={styles.pickerBlock}>
+        <Text style={styles.infoLabel}>Num of correct answers to remove word</Text>
+        <View style={styles.pickerWrapper}>
+          <Picker
+            selectedValue={removeAfterCorrect}
+            onValueChange={onChangeRemoveAfter}
+          >
+            {[1, 2, 3, 4].map((n) => (
+              <Picker.Item key={n} label={`${n}`} value={n} />
             ))}
           </Picker>
         </View>
