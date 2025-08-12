@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator<PracticeStackParamList>();
 
 function PracticeNavigator(): React.JSX.Element {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
         name="PracticeHome"
         component={PracticeHomeScreen}
@@ -21,7 +21,7 @@ function PracticeNavigator(): React.JSX.Element {
       <Stack.Screen
         name="MissingLetters"
         component={MissingLettersScreen}
-        options={{ title: 'Missing letters' }}
+        options={{ title: 'Missing letters', headerShown: true }}
       />
     </Stack.Navigator>
   );
