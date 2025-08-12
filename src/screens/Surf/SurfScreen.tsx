@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ActivityIndicator, Alert, Button, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import RNFS from 'react-native-fs';
 
 function SurfScreen(): React.JSX.Element {
+  const navigation = useNavigation<any>();
   const webViewRef = React.useRef<WebView>(null);
   const [addressText, setAddressText] = React.useState<string>('https://cnnespanol.cnn.com/');
   const [currentUrl, setCurrentUrl] = React.useState<string>('https://cnnespanol.cnn.com/');
@@ -517,6 +520,15 @@ function SurfScreen(): React.JSX.Element {
           returnKeyType="go"
         />
         <Button title="OK" onPress={submit} />
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Library')}
+          style={styles.libraryBtn}
+          accessibilityRole="button"
+          accessibilityLabel="Open Library"
+          hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+        >
+          <Ionicons name="albums-outline" size={22} color="#007AFF" />
+        </TouchableOpacity>
       </View>
       <WebView
         ref={webViewRef}
@@ -616,6 +628,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 8,
     gap: 8,
+  },
+  libraryBtn: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: '#007AFF',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   urlInput: {
     flex: 1,
