@@ -362,7 +362,12 @@ function MissingWordsScreen(): React.JSX.Element {
   return (
     <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding', android: undefined })} style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-        <Text style={styles.instructionTitle}>complete the sentense from the words below: </Text>
+        <View style={styles.topRow}>
+          <Text style={styles.instructionTitle}>complete the sentense from the words below: </Text>
+          <TouchableOpacity style={styles.skipButton} onPress={() => moveToNext()} accessibilityRole="button" accessibilityLabel="Skip">
+            <Text style={styles.skipButtonText}>Skip</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.sentenceWrap}>
           {current.tokens.map((tok, idx) => (
             <React.Fragment key={idx}>
@@ -419,6 +424,11 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 16,
   },
+  topRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   instructionTitle: {
     fontSize: 18,
     color: '#666',
@@ -462,6 +472,18 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     gap: 8,
     paddingTop: 8,
+  },
+  skipButton: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#fff',
+  },
+  skipButtonText: {
+    fontWeight: '700',
+    color: '#007AFF',
   },
   choiceButton: {
     borderWidth: 1,

@@ -378,7 +378,12 @@ function WriteWordScreen(): React.JSX.Element {
   return (
     <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding', android: undefined })} style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-        <Text style={styles.title}>write the word</Text>
+        <View style={styles.topRow}>
+          <Text style={styles.title}>write the word</Text>
+          <TouchableOpacity style={styles.skipButton} onPress={() => moveToNext()} accessibilityRole="button" accessibilityLabel="Skip">
+            <Text style={styles.skipButtonText}>Skip</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.wordCard}>
           <Text style={styles.wordText}>{current.entry.translation}</Text>
         </View>
@@ -426,11 +431,28 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 16,
   },
+  topRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   title: {
     fontSize: 18,
     color: '#666',
     fontWeight: '600',
     textTransform: 'lowercase',
+  },
+  skipButton: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#fff',
+  },
+  skipButtonText: {
+    fontWeight: '700',
+    color: '#007AFF',
   },
   wordCard: {
     borderWidth: 1,

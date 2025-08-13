@@ -391,7 +391,12 @@ function MissingLettersScreen(): React.JSX.Element {
   return (
     <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding', android: undefined })} style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-        <Text style={styles.translation}>{current.entry.translation}</Text>
+        <View style={styles.topRow}>
+          <Text style={styles.translation}>{current.entry.translation}</Text>
+          <TouchableOpacity style={styles.skipButton} onPress={() => moveToNext()} accessibilityRole="button" accessibilityLabel="Skip">
+            <Text style={styles.skipButtonText}>Skip</Text>
+          </TouchableOpacity>
+        </View>
         {current.entry.sentence ? (
           <Text style={styles.sentence} numberOfLines={3}>
             {splitSentenceByWord(current.entry.sentence, current.entry.word).map((p, i) =>
@@ -447,9 +452,26 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 16,
   },
+  topRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   translation: {
     fontSize: 20,
     fontWeight: '700',
+  },
+  skipButton: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#fff',
+  },
+  skipButtonText: {
+    fontWeight: '700',
+    color: '#007AFF',
   },
   sentence: {
     color: '#666',
