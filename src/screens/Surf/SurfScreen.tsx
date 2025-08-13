@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { ActivityIndicator, Alert, Button, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import RNFS from 'react-native-fs';
@@ -11,6 +11,8 @@ function SurfScreen(): React.JSX.Element {
   const webViewRef = React.useRef<WebView>(null);
   const [addressText, setAddressText] = React.useState<string>('https://cnnespanol.cnn.com/');
   const [currentUrl, setCurrentUrl] = React.useState<string>('https://cnnespanol.cnn.com/');
+  const [canGoBack, setCanGoBack] = React.useState<boolean>(false);
+  const [canGoForward, setCanGoForward] = React.useState<boolean>(false);
   const [translationPanel, setTranslationPanel] = React.useState<
     | {
         word: string;
@@ -63,10 +65,18 @@ function SurfScreen(): React.JSX.Element {
     setCurrentUrl(normalizeUrl(addressText.trim()));
   };
 
+  const goBack = () => {
+    try { webViewRef.current?.goBack(); } catch (e) {}
+  };
+
+  const goForward = () => {
+    try { webViewRef.current?.goForward(); } catch (e) {}
+  };
+
   const baseInjection = `
     (function() {
-      if (window.__wordClickInstalled_v6) return;
-      window.__wordClickInstalled_v6 = true;
+      if (window.__wordClickInstalled_v7) return;
+      window.__wordClickInstalled_v7 = true;
       var lastTouch = { x: 0, y: 0 };
       var lastPostedWord = '';
       var lastPostedAt = 0;
@@ -200,6 +210,12 @@ function SurfScreen(): React.JSX.Element {
               return;
             }
           }
+          // Notify RN that a link was clicked so it can hint long-press UX
+          if (a && window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+            try {
+              window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'linkClick', href: a.href || '' }));
+            } catch (err) {}
+          }
           // Otherwise, allow default behavior so links open normally
         } catch (err) {}
       }
@@ -279,6 +295,11 @@ function SurfScreen(): React.JSX.Element {
       const data = JSON.parse(event.nativeEvent.data);
       if ((data?.type === 'wordClick' || data?.type === 'longpress' || data?.type === 'selection') && typeof data.word === 'string' && data.word.length > 0) {
         openPanel(data.word, typeof data.sentence === 'string' ? data.sentence : undefined);
+      }
+      if (data?.type === 'linkClick') {
+        if (Platform.OS === 'android') {
+          try { ToastAndroid.show('long press to select word', ToastAndroid.SHORT); } catch (e) {}
+        }
       }
     } catch {
       // ignore malformed messages
@@ -523,7 +544,26 @@ function SurfScreen(): React.JSX.Element {
           keyboardType="url"
           returnKeyType="go"
         />
-        <Button title="OK" onPress={submit} />
+        <TouchableOpacity
+          onPress={goBack}
+          disabled={!canGoBack}
+          style={[styles.libraryBtn, !canGoBack && { opacity: 0.4 }]}
+          accessibilityRole="button"
+          accessibilityLabel="Go back"
+          hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+        >
+          <Ionicons name="chevron-back" size={22} color={canGoBack ? '#007AFF' : '#999'} />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={goForward}
+          disabled={!canGoForward}
+          style={[styles.libraryBtn, !canGoForward && { opacity: 0.4 }]}
+          accessibilityRole="button"
+          accessibilityLabel="Go forward"
+          hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+        >
+          <Ionicons name="chevron-forward" size={22} color={canGoForward ? '#007AFF' : '#999'} />
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.navigate('Library')}
           style={styles.libraryBtn}
@@ -540,6 +580,13 @@ function SurfScreen(): React.JSX.Element {
         style={styles.webView}
         injectedJavaScriptBeforeContentLoaded={baseInjection}
         injectedJavaScript={baseInjection}
+        onNavigationStateChange={(navState) => {
+          try {
+            setCanGoBack(!!navState.canGoBack);
+            setCanGoForward(!!navState.canGoForward);
+            if (typeof navState.url === 'string') setAddressText(navState.url);
+          } catch (e) {}
+        }}
         onLoad={() => {
           // Reinforce injection after load for pages that replace document contents
           try { webViewRef.current?.injectJavaScript(baseInjection); } catch (e) { }

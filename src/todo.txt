@@ -5,6 +5,7 @@
     - add in settings - total correct answers till word removal - combine all methods that check if should remove a word into 1 commoon 
         method. 
     - surf screen 
+        - on link click - show toast "long press to select word"
         - create a nest server 
         - create library controller
         - create get texts endpoint 
