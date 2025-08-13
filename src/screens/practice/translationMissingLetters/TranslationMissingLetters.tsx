@@ -141,6 +141,7 @@ function translationMissingLetters(): React.JSX.Element {
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
   const [rowWidth, setRowWidth] = React.useState<number | null>(null);
   const inputRefs = React.useRef<Record<number, TextInput | null>>({});
+  const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -159,10 +160,15 @@ function translationMissingLetters(): React.JSX.Element {
     setLoading(true);
     try {
       let threshold = 3;
+      let totalThreshold = 6;
       try {
         const raw = await AsyncStorage.getItem('words.removeAfterNCorrect');
         const parsed = Number.parseInt(raw ?? '', 10);
         threshold = parsed >= 1 && parsed <= 4 ? parsed : 3;
+        const rawTotal = await AsyncStorage.getItem('words.removeAfterTotalCorrect');
+        const parsedTotal = Number.parseInt(rawTotal ?? '', 10);
+        totalThreshold = parsedTotal >= 1 && parsedTotal <= 50 ? parsedTotal : 6;
+        setRemoveAfterTotalCorrect(totalThreshold);
       } catch {}
       const exists = await RNFS.exists(filePath);
       if (!exists) {
@@ -174,7 +180,19 @@ function translationMissingLetters(): React.JSX.Element {
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]) : [];
       const filtered = arr
         .filter((w) => w.word && w.translation)
-        .filter((w) => (w.numberOfCorrectAnswers?.writeTranslation ?? 0) < threshold);
+        .filter((w) => (w.numberOfCorrectAnswers?.writeTranslation ?? 0) < threshold)
+        .filter((w) => {
+          const noa = w.numberOfCorrectAnswers || ({} as any);
+          const total =
+            (noa.missingLetters || 0) +
+            (noa.missingWords || 0) +
+            (noa.chooseTranslation || 0) +
+            (noa.chooseWord || 0) +
+            (noa.memoryGame || 0) +
+            (noa.writeTranslation || 0) +
+            (noa.writeWord || 0);
+          return total < totalThreshold;
+        });
       const prepared = prepare(filtered, threshold);
       setItems(prepared);
       setCurrentIndex(pickRandomIndex(prepared.length));
@@ -235,13 +253,27 @@ function translationMissingLetters(): React.JSX.Element {
           ...it.numberOfCorrectAnswers!,
           writeTranslation: (it.numberOfCorrectAnswers?.writeTranslation || 0) + 1,
         };
-        copy[idx] = it;
+        const noa = it.numberOfCorrectAnswers!;
+        const total =
+          (noa.missingLetters || 0) +
+          (noa.missingWords || 0) +
+          (noa.chooseTranslation || 0) +
+          (noa.chooseWord || 0) +
+          (noa.memoryGame || 0) +
+          (noa.writeTranslation || 0) +
+          (noa.writeWord || 0);
+        const totalThreshold = removeAfterTotalCorrect || 6;
+        if (total >= totalThreshold) {
+          copy.splice(idx, 1);
+        } else {
+          copy[idx] = it;
+        }
         try {
           await RNFS.writeFile(filePath, JSON.stringify(copy, null, 2), 'utf8');
         } catch {}
       }
     } catch {}
-  }, [filePath]);
+  }, [filePath, removeAfterTotalCorrect]);
 
   const onChangeInput = (index: number, value: string) => {
     const char = Array.from(value).slice(-1)[0] || '';

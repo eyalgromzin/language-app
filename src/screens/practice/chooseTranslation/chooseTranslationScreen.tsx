@@ -91,6 +91,7 @@ function chooseTranslationScreen(): React.JSX.Element {
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [revealCorrect, setRevealCorrect] = React.useState<boolean>(false);
   const [allTranslationsPool, setAllTranslationsPool] = React.useState<string[]>([]);
+  const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
 
   const lastWordKeyRef = React.useRef<string | null>(null);
 
@@ -100,10 +101,15 @@ function chooseTranslationScreen(): React.JSX.Element {
     setLoading(true);
     try {
       let threshold = 3;
+      let totalThreshold = 6;
       try {
         const raw = await AsyncStorage.getItem('words.removeAfterNCorrect');
         const parsed = Number.parseInt(raw ?? '', 10);
         threshold = parsed >= 1 && parsed <= 4 ? parsed : 3;
+        const rawTotal = await AsyncStorage.getItem('words.removeAfterTotalCorrect');
+        const parsedTotal = Number.parseInt(rawTotal ?? '', 10);
+        totalThreshold = parsedTotal >= 1 && parsedTotal <= 50 ? parsedTotal : 6;
+        setRemoveAfterTotalCorrect(totalThreshold);
       } catch {}
 
       const exists = await RNFS.exists(filePath);
@@ -124,7 +130,19 @@ function chooseTranslationScreen(): React.JSX.Element {
       setAllTranslationsPool(allTranslations);
       const filtered = arr
         .filter((w) => w.word && w.translation)
-        .filter((w) => (w.numberOfCorrectAnswers?.chooseTranslation ?? 0) < threshold);
+        .filter((w) => (w.numberOfCorrectAnswers?.chooseTranslation ?? 0) < threshold)
+        .filter((w) => {
+          const noa = w.numberOfCorrectAnswers || ({} as any);
+          const total =
+            (noa.missingLetters || 0) +
+            (noa.missingWords || 0) +
+            (noa.chooseTranslation || 0) +
+            (noa.chooseWord || 0) +
+            (noa.memoryGame || 0) +
+            (noa.writeTranslation || 0) +
+            (noa.writeWord || 0);
+          return total < totalThreshold;
+        });
       setAllEntries(filtered);
     } catch {
       setAllEntries([]);
@@ -208,13 +226,27 @@ function chooseTranslationScreen(): React.JSX.Element {
           ...it.numberOfCorrectAnswers!,
           chooseTranslation: (it.numberOfCorrectAnswers?.chooseTranslation || 0) + 1,
         };
-        copy[idx] = it;
+        const noa = it.numberOfCorrectAnswers!;
+        const total =
+          (noa.missingLetters || 0) +
+          (noa.missingWords || 0) +
+          (noa.chooseTranslation || 0) +
+          (noa.chooseWord || 0) +
+          (noa.memoryGame || 0) +
+          (noa.writeTranslation || 0) +
+          (noa.writeWord || 0);
+        const totalThreshold = removeAfterTotalCorrect || 6;
+        if (total >= totalThreshold) {
+          copy.splice(idx, 1);
+        } else {
+          copy[idx] = it;
+        }
         try {
           await RNFS.writeFile(filePath, JSON.stringify(copy, null, 2), 'utf8');
         } catch {}
       }
     } catch {}
-  }, [filePath]);
+  }, [filePath, removeAfterTotalCorrect]);
 
   const onPick = (opt: OptionItem) => {
     if (!current) return;

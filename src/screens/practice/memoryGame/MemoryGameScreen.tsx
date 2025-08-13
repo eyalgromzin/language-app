@@ -89,6 +89,7 @@ function MemoryGameScreen(): React.JSX.Element {
   const [revealedIds, setRevealedIds] = React.useState<string[]>([]); // max length 2
   const [isEvaluating, setIsEvaluating] = React.useState<boolean>(false);
   const [threshold, setThreshold] = React.useState<number>(3);
+  const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -96,10 +97,15 @@ function MemoryGameScreen(): React.JSX.Element {
     setLoading(true);
     try {
       let thr = 3;
+      let totalThr = 6;
       try {
         const raw = await AsyncStorage.getItem('words.removeAfterNCorrect');
         const parsed = Number.parseInt(raw ?? '', 10);
         thr = parsed >= 1 && parsed <= 4 ? parsed : 3;
+        const rawTotal = await AsyncStorage.getItem('words.removeAfterTotalCorrect');
+        const parsedTotal = Number.parseInt(rawTotal ?? '', 10);
+        totalThr = parsedTotal >= 1 && parsedTotal <= 50 ? parsedTotal : 6;
+        setRemoveAfterTotalCorrect(totalThr);
       } catch {}
       setThreshold(thr);
 
@@ -113,7 +119,19 @@ function MemoryGameScreen(): React.JSX.Element {
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]).map(ensureCounters) : [];
       const filtered = arr
         .filter((w) => w.word && w.translation)
-        .filter((w) => (w.numberOfCorrectAnswers?.memoryGame ?? 0) < thr);
+        .filter((w) => (w.numberOfCorrectAnswers?.memoryGame ?? 0) < thr)
+        .filter((w) => {
+          const noa = w.numberOfCorrectAnswers || ({} as any);
+          const total =
+            (noa.missingLetters || 0) +
+            (noa.missingWords || 0) +
+            (noa.chooseTranslation || 0) +
+            (noa.chooseWord || 0) +
+            (noa.memoryGame || 0) +
+            (noa.writeTranslation || 0) +
+            (noa.writeWord || 0);
+          return total < totalThr;
+        });
       setAllEntries(filtered);
     } catch {
       setAllEntries([]);
@@ -170,13 +188,27 @@ function MemoryGameScreen(): React.JSX.Element {
           ...it.numberOfCorrectAnswers!,
           memoryGame: (it.numberOfCorrectAnswers?.memoryGame || 0) + 1,
         };
-        copy[idx] = it;
+        const noa = it.numberOfCorrectAnswers!;
+        const total =
+          (noa.missingLetters || 0) +
+          (noa.missingWords || 0) +
+          (noa.chooseTranslation || 0) +
+          (noa.chooseWord || 0) +
+          (noa.memoryGame || 0) +
+          (noa.writeTranslation || 0) +
+          (noa.writeWord || 0);
+        const totalThreshold = removeAfterTotalCorrect || 6;
+        if (total >= totalThreshold) {
+          copy.splice(idx, 1);
+        } else {
+          copy[idx] = it;
+        }
         try {
           await RNFS.writeFile(filePath, JSON.stringify(copy, null, 2), 'utf8');
         } catch {}
       }
     } catch {}
-  }, [filePath]);
+  }, [filePath, removeAfterTotalCorrect]);
 
   const onPickCard = (card: Card) => {
     if (isEvaluating) return;

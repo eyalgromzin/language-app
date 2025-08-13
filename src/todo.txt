@@ -1,8 +1,8 @@
 - screens / tabs:
-    - enable setting home page 
     - library - add filter by livel and text type 
      - words by categories
         - will show each word with an image below .
+        
     - on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 
     - add in settings - total correct answers till word removal - combine all methods that check if should remove a word into 1 commoon 
         method. 

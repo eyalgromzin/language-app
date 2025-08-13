@@ -83,6 +83,7 @@ function WordsMatchScreen(): React.JSX.Element {
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
   const [pairCount, setPairCount] = React.useState<number>(3);
   const [threshold, setThreshold] = React.useState<number>(3);
+  const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [showEligible, setShowEligible] = React.useState<boolean>(false);
   const [leftItems, setLeftItems] = React.useState<MatchItem[]>([]);
   const [rightItems, setRightItems] = React.useState<MatchItem[]>([]);
@@ -109,15 +110,32 @@ function WordsMatchScreen(): React.JSX.Element {
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]).map(ensureCounters) : [];
       // Filter: keep entries that have word and translation
       let thr = 3;
+      let totalThr = 6;
       try {
         const raw = await AsyncStorage.getItem('words.removeAfterNCorrect');
         const parsedNum = Number.parseInt(raw ?? '', 10);
         thr = parsedNum >= 1 && parsedNum <= 4 ? parsedNum : 3;
+        const rawTotal = await AsyncStorage.getItem('words.removeAfterTotalCorrect');
+        const parsedTotal = Number.parseInt(rawTotal ?? '', 10);
+        totalThr = parsedTotal >= 1 && parsedTotal <= 50 ? parsedTotal : 6;
+        setRemoveAfterTotalCorrect(totalThr);
       } catch {}
       setThreshold(thr);
       const filtered = arr
         .filter((w) => w.word && w.translation)
-        .filter((w) => (w.numberOfCorrectAnswers?.chooseTranslation ?? 0) < thr);
+        .filter((w) => (w.numberOfCorrectAnswers?.chooseTranslation ?? 0) < thr)
+        .filter((w) => {
+          const noa = w.numberOfCorrectAnswers || ({} as any);
+          const total =
+            (noa.missingLetters || 0) +
+            (noa.missingWords || 0) +
+            (noa.chooseTranslation || 0) +
+            (noa.chooseWord || 0) +
+            (noa.memoryGame || 0) +
+            (noa.writeTranslation || 0) +
+            (noa.writeWord || 0);
+          return total < totalThr;
+        });
       setAllEntries(filtered);
     } catch {
       setAllEntries([]);
@@ -193,13 +211,27 @@ function WordsMatchScreen(): React.JSX.Element {
           ...it.numberOfCorrectAnswers!,
           chooseTranslation: (it.numberOfCorrectAnswers?.chooseTranslation || 0) + 1,
         };
-        copy[idx] = it;
+        const noa = it.numberOfCorrectAnswers!;
+        const total =
+          (noa.missingLetters || 0) +
+          (noa.missingWords || 0) +
+          (noa.chooseTranslation || 0) +
+          (noa.chooseWord || 0) +
+          (noa.memoryGame || 0) +
+          (noa.writeTranslation || 0) +
+          (noa.writeWord || 0);
+        const totalThreshold = removeAfterTotalCorrect || 6;
+        if (total >= totalThreshold) {
+          copy.splice(idx, 1);
+        } else {
+          copy[idx] = it;
+        }
         try {
           await RNFS.writeFile(filePath, JSON.stringify(copy, null, 2), 'utf8');
         } catch {}
       }
     } catch {}
-  }, [filePath]);
+  }, [filePath, removeAfterTotalCorrect]);
 
   const onPickLeft = (item: MatchItem) => {
     if (matchedKeys.has(item.key)) return;
