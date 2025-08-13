@@ -69,6 +69,7 @@ function TranslateScreen(): React.JSX.Element {
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [revealCorrect, setRevealCorrect] = React.useState<boolean>(false);
+  const [allTranslationsPool, setAllTranslationsPool] = React.useState<string[]>([]);
 
   const lastWordKeyRef = React.useRef<string | null>(null);
 
@@ -92,6 +93,14 @@ function TranslateScreen(): React.JSX.Element {
       const content = await RNFS.readFile(filePath, 'utf8');
       const parsed: unknown = JSON.parse(content);
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]).map(ensureCounters) : [];
+      const allTranslations = Array.from(
+        new Set(
+          arr
+            .map((w) => w.translation)
+            .filter((t): t is string => !!t)
+        )
+      );
+      setAllTranslationsPool(allTranslations);
       const filtered = arr
         .filter((w) => w.word && w.translation)
         .filter((w) => (w.numberOfCorrectAnswers?.wordsAndTranslations ?? 0) < threshold);
@@ -123,27 +132,12 @@ function TranslateScreen(): React.JSX.Element {
     lastWordKeyRef.current = entries[idx].word;
 
     const correct = entries[idx];
-    const distractorPool = entries
-      .filter((e, i) => i !== idx)
-      .map((e) => e.translation)
-      .filter((t) => t && t !== correct.translation);
-    const uniqueDistractors = Array.from(new Set(distractorPool));
-    const needed = Math.max(0, 7);
-    const picked = sampleN(uniqueDistractors, Math.min(needed, uniqueDistractors.length));
+    const basePool = allTranslationsPool.filter((t) => t && t !== correct.translation);
+    const picked = sampleN(basePool, Math.min(7, basePool.length));
     const combined: OptionItem[] = [
       { key: `c-${correct.word}`, label: correct.translation, isCorrect: true },
       ...picked.map((t, i) => ({ key: `d-${i}-${t}`, label: t, isCorrect: false })),
     ];
-    // If we have fewer than 8, fill from any available translations (allow duplicates as last resort)
-    const anyPool = entries.map((e) => e.translation).filter((t) => t);
-    while (combined.length < 8 && anyPool.length > 0) {
-      const t = anyPool[Math.floor(Math.random() * anyPool.length)];
-      if (!combined.some((o) => o.label === t)) {
-        combined.push({ key: `f-${combined.length}-${t}`, label: t, isCorrect: false });
-      } else {
-        combined.push({ key: `f-${combined.length}-dup`, label: t, isCorrect: false });
-      }
-    }
     setOptions(shuffleArray(combined));
     setSelectedKey(null);
     setWrongKey(null);
@@ -151,7 +145,7 @@ function TranslateScreen(): React.JSX.Element {
     setShowWrongToast(false);
     setShowCorrectToast(false);
     setRevealCorrect(false);
-  }, [pickNextIndex]);
+  }, [pickNextIndex, allTranslationsPool]);
 
   React.useEffect(() => {
     loadBase();
