@@ -1,16 +1,5 @@
 - screens / tabs : 
-
      - words by categories
-        - categories:
-            numbers,
-            i, them , he, she, it ... 
-            food,
-            travel,
-            clothing,
-            time,
-            emotions,
-            family,
-            home,
         - will show each word with an image below .
     - on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 
     - add in settings - total correct answers till word removal - combine all methods that check if should remove a word into 1 commoon 
@@ -20,29 +9,25 @@
         - create library controller
         - create get texts endpoint 
         - add favorite button near the link bar that will show a dialog with title , and a url already filled with the current url .  
-        - dont enable to add a link that already exists 
-        - add library button mear the link bar 
-        - on click on a word , show the translation + images from some website .
+        - favourites : 
+            - when a user adds a page to favourites its personal . 
+            - in addition it will check in the library if this link already exists .  if not , it will add it . 
         - enable the user to set startup url 
-
     - library screen 
         - a table of links with the columns : 
             text name
             type: story / article / conversation / any
             level
         - enable a user once a week to update a 1 of the fields of the library item.  
-    - login with facebook / google
-   
     - videos - with subtitles that each word in the subtitle possible to click on it .  
+    - login with facebook / google
+    - enable to load epub files - and read a book with it  
     - step by step - like duolingo - annoying practices.
         - will take simple sentenses and practice them with games, until all the words are
-    - save progress in db for each person by email - step by step progress.  
 
-    
-- monetizations - after 1000 downloads: 
-    limit num of words possible to add to learning per day - for example 20.
-
-- payed version - 
+- payed version - when ill have 1000 users 
+    - limit num of words possible to add to learning per day - for example 20 - payed will be limitless.
+    - save progress in db for each person by email - step by step progress ??? 
     will save all words of a person on the cloud 
     will enable translating unlimited words . 
     will remove ads 
