@@ -54,7 +54,15 @@ function PracticeScreen(): React.JSX.Element {
 
   const onSurprise = () => {
     const idx = Math.floor(Math.random() * PRACTICE_OPTIONS.length);
-    onOptionPress(PRACTICE_OPTIONS[idx]);
+    const opt = PRACTICE_OPTIONS[idx];
+    if (opt.key === 'missingLetters') return navigation.navigate('MissingLetters', { surprise: true });
+    if (opt.key === 'missingWords') return navigation.navigate('MissingWords', { surprise: true });
+    if (opt.key === 'matchGame') return navigation.navigate('WordsMatch', { surprise: true });
+    if (opt.key === 'memoryGame') return navigation.navigate('MemoryGame', { surprise: true });
+    if (opt.key === 'translate') return navigation.navigate('Translate', { surprise: true });
+    if (opt.key === 'chooseWord') return navigation.navigate('ChooseWord', { surprise: true });
+    if (opt.key === 'chooseTranslation') return navigation.navigate('ChooseTranslation', { surprise: true });
+    onOptionPress(opt);
   };
 
   return (

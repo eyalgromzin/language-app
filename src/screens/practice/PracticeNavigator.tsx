@@ -11,16 +11,18 @@ import ChooseWordScreen from './chooseWord/ChooseWordScreen.tsx';
 import WriteWordScreen from './writeWord/WriteWordScreen.tsx';
 import MemoryGameScreen from './memoryGame/MemoryGameScreen.tsx';
 
+type SurpriseParam = { surprise?: boolean } | undefined;
+
 export type PracticeStackParamList = {
   PracticeHome: undefined;
-  MissingLetters: undefined;
-  MissingWords: undefined;
-  WordsMatch: undefined;
-  Translate: undefined;
-  ChooseWord: undefined;
-  ChooseTranslation: undefined;
-  WriteWord: undefined;
-  MemoryGame: undefined;
+  MissingLetters: SurpriseParam;
+  MissingWords: SurpriseParam;
+  WordsMatch: SurpriseParam;
+  Translate: SurpriseParam;
+  ChooseWord: SurpriseParam;
+  ChooseTranslation: SurpriseParam;
+  WriteWord: SurpriseParam;
+  MemoryGame: SurpriseParam;
 };
 
 const Stack = createNativeStackNavigator<PracticeStackParamList>();
@@ -41,7 +43,7 @@ function navigateToRandomGame(
 ): void {
   const choices = RANDOM_GAME_ROUTES.filter((name) => name !== currentRouteName);
   const target = choices[Math.floor(Math.random() * choices.length)];
-  navigation.navigate(target as never);
+  navigation.navigate(target as never, { surprise: true } as never);
 }
 
 function PracticeNavigator(): React.JSX.Element {

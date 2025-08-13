@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
@@ -64,6 +65,23 @@ function sampleN<T>(arr: T[], n: number): T[] {
 }
 
 function MemoryGameScreen(): React.JSX.Element {
+  const navigation = useNavigation<any>();
+  const route = useRoute<any>();
+  const RANDOM_GAME_ROUTES: string[] = [
+    'MissingLetters',
+    'MissingWords',
+    'WordsMatch',
+    'Translate',
+    'ChooseWord',
+    'ChooseTranslation',
+    'MemoryGame',
+  ];
+  const navigateToRandomNext = React.useCallback(() => {
+    const currentName = (route as any)?.name as string | undefined;
+    const choices = RANDOM_GAME_ROUTES.filter((n) => n !== currentName);
+    const target = choices[Math.floor(Math.random() * choices.length)] as string;
+    navigation.navigate(target as never, { surprise: true } as never);
+  }, [navigation, route]);
   const [loading, setLoading] = React.useState<boolean>(true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
   const [cards, setCards] = React.useState<Card[]>([]);
@@ -241,8 +259,20 @@ function MemoryGameScreen(): React.JSX.Element {
   }
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>find all matching pairs</Text>
+      <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.topRow}>
+        <Text style={styles.title}>find all matching pairs</Text>
+        {route?.params?.surprise ? (
+          <TouchableOpacity
+            style={styles.skipButton}
+            onPress={navigateToRandomNext}
+            accessibilityRole="button"
+            accessibilityLabel="Skip"
+          >
+            <Text style={styles.skipButtonText}>Skip</Text>
+          </TouchableOpacity>
+        ) : null}
+      </View>
       <View style={styles.grid}>
         {cards.map((c) => renderCard(c))}
       </View>
@@ -269,11 +299,28 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 16,
   },
+  topRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   title: {
     fontSize: 18,
     color: '#666',
     fontWeight: '600',
     textTransform: 'lowercase',
+  },
+  skipButton: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#fff',
+  },
+  skipButtonText: {
+    fontWeight: '700',
+    color: '#007AFF',
   },
   grid: {
     flexDirection: 'row',
