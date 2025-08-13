@@ -71,6 +71,8 @@ function WordsMatchScreen(): React.JSX.Element {
   const [selectedRightKey, setSelectedRightKey] = React.useState<string | null>(null);
   const [wrongFlash, setWrongFlash] = React.useState<{ leftKey: string; rightKey: string } | null>(null);
 
+  const hasLoadedPairCountRef = React.useRef<boolean>(false);
+
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
   const loadBase = React.useCallback(async () => {
@@ -133,6 +135,26 @@ function WordsMatchScreen(): React.JSX.Element {
       prepareRound();
     }
   }, [loading, prepareRound, pairCount, allEntries.length]);
+
+  // Persist selected pair count so it's remembered next time
+  React.useEffect(() => {
+    if (!hasLoadedPairCountRef.current) return;
+    AsyncStorage.setItem('wordsMatch.pairCount', String(pairCount)).catch(() => {});
+  }, [pairCount]);
+
+  // Load saved pair count on mount so it's applied even if there are no words yet
+  React.useEffect(() => {
+    (async () => {
+      try {
+        const rawPC = await AsyncStorage.getItem('wordsMatch.pairCount');
+        const parsedPC = Number.parseInt(rawPC ?? '', 10);
+        if (parsedPC >= 3 && parsedPC <= 9) {
+          setPairCount(parsedPC);
+        }
+      } catch {}
+      hasLoadedPairCountRef.current = true;
+    })();
+  }, []);
 
   const writeBackIncrement = React.useCallback(async (wordKey: string) => {
     try {
