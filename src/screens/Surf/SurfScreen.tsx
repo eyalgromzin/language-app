@@ -316,6 +316,7 @@ function SurfScreen(): React.JSX.Element {
         missingWords: 0,
         chooseTranslation: 0,
         chooseWord: 0,
+        memoryGame: 0,
         writeTranslation: 0,
         writeWord: 0,
       },
@@ -341,6 +342,7 @@ function SurfScreen(): React.JSX.Element {
           missingWords: Math.max(0, Number(noa.missingWords) || 0),
           chooseTranslation: Math.max(0, Number(noa.chooseTranslation) || 0),
           chooseWord: Math.max(0, Number(noa.chooseWord) || 0),
+          memoryGame: Math.max(0, Number(noa.memoryGame) || 0),
           writeTranslation: Math.max(0, Number(noa.writeTranslation) || 0),
           writeWord: Math.max(0, Number(noa.writeWord) || 0),
         };

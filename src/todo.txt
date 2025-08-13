@@ -1,11 +1,8 @@
 - screens / tabs : 
     - practice - 
-        given n words and n translations - connect the words with the translations 
-        given the word - choose translation out of n translations
-        given a translation - choose the word out of n words 
-        memory game - with words and translations 
+        - memory game - with words and translations 
         - make surprise me change a game every time
-
+    - make choose word increase +1 choose word field 
     - on startup page (where you choose languages) - choose games that you like 
 
     - surf screen 
