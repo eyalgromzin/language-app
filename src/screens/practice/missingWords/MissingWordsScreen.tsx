@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import RNFS from 'react-native-fs';
-import { useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 
 type WordEntry = {
   word: string;
@@ -102,6 +102,23 @@ function pickMissingWordIndices(tokens: string[], desiredCount: number): number[
 }
 
 function MissingWordsScreen(): React.JSX.Element {
+  const navigation = useNavigation<any>();
+  const route = useRoute<any>();
+  const RANDOM_GAME_ROUTES: string[] = [
+    'MissingLetters',
+    'MissingWords',
+    'WordsMatch',
+    'Translate',
+    'ChooseWord',
+    'ChooseTranslation',
+    'MemoryGame',
+  ];
+  const navigateToRandomNext = React.useCallback(() => {
+    const currentName = (route as any)?.name as string | undefined;
+    const choices = RANDOM_GAME_ROUTES.filter((n) => n !== currentName);
+    const target = choices[Math.floor(Math.random() * choices.length)] as string;
+    navigation.navigate(target as never, { surprise: true } as never);
+  }, [navigation, route]);
   const [loading, setLoading] = React.useState<boolean>(true);
   const [items, setItems] = React.useState<PreparedItem[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
@@ -364,9 +381,11 @@ function MissingWordsScreen(): React.JSX.Element {
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         <View style={styles.topRow}>
           <Text style={styles.instructionTitle}>complete the sentense from the words below: </Text>
-          <TouchableOpacity style={styles.skipButton} onPress={() => moveToNext()} accessibilityRole="button" accessibilityLabel="Skip">
-            <Text style={styles.skipButtonText}>Skip</Text>
-          </TouchableOpacity>
+          {route?.params?.surprise ? (
+            <TouchableOpacity style={styles.skipButton} onPress={navigateToRandomNext} accessibilityRole="button" accessibilityLabel="Skip">
+              <Text style={styles.skipButtonText}>Skip</Text>
+            </TouchableOpacity>
+          ) : null}
         </View>
         <View style={styles.sentenceWrap}>
           {current.tokens.map((tok, idx) => (
