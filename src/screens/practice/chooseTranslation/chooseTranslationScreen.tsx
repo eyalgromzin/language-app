@@ -62,7 +62,7 @@ function sampleN<T>(arr: T[], n: number): T[] {
   return result;
 }
 
-function TranslateScreen(): React.JSX.Element {
+function chooseTranslationScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
@@ -388,6 +388,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TranslateScreen;
+export default chooseTranslationScreen;
+
 
 
