@@ -2,11 +2,11 @@ import React from 'react';
 import { Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PracticeHomeScreen from './PracticeScreen';
-import MissingLettersScreen from './missingLetters/MissingLettersScreen.tsx';
+import WordMissingLettersScreen from './wordMissingLetters/WordMissingLettersScreen.tsx';
 import MissingWordsScreen from './missingWords/MissingWordsScreen.tsx';
 import WordsMatchScreen from './wordsMatch/WordsMatchScreen.tsx';
 import chooseTranslationScreen from './chooseTranslation/chooseTranslationScreen.tsx';
-import WriteTranslationScreen from './writeTranslation/WriteTranslationScreen.tsx';
+import translationMissingLetters from './translationMissingLetters/TranslationMissingLetters.tsx';
 import ChooseWordScreen from './chooseWord/ChooseWordScreen.tsx';
 import WriteWordScreen from './writeWord/WriteWordScreen.tsx';
 
@@ -40,7 +40,7 @@ function PracticeNavigator(): React.JSX.Element {
       />
       <Stack.Screen
         name="MissingLetters"
-        component={MissingLettersScreen}
+        component={WordMissingLettersScreen}
         options={{
           title: 'Missing letters',
           headerShown: true,
@@ -85,7 +85,7 @@ function PracticeNavigator(): React.JSX.Element {
       />
       <Stack.Screen
         name="Translate"
-        component={WriteTranslationScreen}
+        component={translationMissingLetters}
         options={{
           title: 'Translate',
           headerShown: true,

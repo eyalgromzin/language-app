@@ -114,7 +114,7 @@ function pickMissingIndices(letters: string[], desiredCount: number): number[] {
   return result.sort((a, b) => a - b);
 }
 
-function WriteTranslationScreen(): React.JSX.Element {
+function translationMissingLetters(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [items, setItems] = React.useState<PreparedItem[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
@@ -543,6 +543,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WriteTranslationScreen;
+export default translationMissingLetters;
 
 

@@ -9,12 +9,12 @@ type PracticeOption = {
 };
 
 const PRACTICE_OPTIONS: PracticeOption[] = [
-  { key: 'missingLetters', label: 'Missing letters word', emoji: '🔤' },
+  { key: 'missingLetters', label: 'Word Missing letters', emoji: '🔤' },
   { key: 'missingWords', label: 'Missing words', emoji: '🔡' },
   { key: 'matchGame', label: 'Match game', emoji: '🧩' },
   { key: 'chooseWord', label: 'Choose word', emoji: '📝' },
   { key: 'chooseTranslation', label: 'Choose translation', emoji: '🔎' },
-  { key: 'translate', label: 'Missing Letters Translation', emoji: 'ðŸŒ' },
+  { key: 'translate', label: 'Translation Missing Letters', emoji: 'ðŸŒ' },
   { key: 'memoryGame', label: 'Memory game', emoji: '🧠' },
 ];
 
