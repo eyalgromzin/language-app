@@ -33,6 +33,10 @@ function PracticeScreen(): React.JSX.Element {
       navigation.navigate('WordsMatch');
       return;
     }
+    if (opt.key === 'memoryGame') {
+      navigation.navigate('MemoryGame');
+      return;
+    }
   if (opt.key === 'translate') {
       navigation.navigate('Translate');
       return;

@@ -1,7 +1,5 @@
 - screens / tabs : 
     - practice - 
-        - write translation 
-        - write word 
         - memory game - with words and translations 
         - make surprise me change a game every time
     - on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 

@@ -9,6 +9,7 @@ import chooseTranslationScreen from './chooseTranslation/chooseTranslationScreen
 import translationMissingLetters from './translationMissingLetters/TranslationMissingLetters.tsx';
 import ChooseWordScreen from './chooseWord/ChooseWordScreen.tsx';
 import WriteWordScreen from './writeWord/WriteWordScreen.tsx';
+import MemoryGameScreen from './memoryGame/MemoryGameScreen.tsx';
 
 export type PracticeStackParamList = {
   PracticeHome: undefined;
@@ -19,6 +20,7 @@ export type PracticeStackParamList = {
   ChooseWord: undefined;
   ChooseTranslation: undefined;
   WriteWord: undefined;
+  MemoryGame: undefined;
 };
 
 const Stack = createNativeStackNavigator<PracticeStackParamList>();
@@ -133,6 +135,21 @@ function PracticeNavigator(): React.JSX.Element {
         component={chooseTranslationScreen}
         options={{
           title: 'Choose translation',
+          headerShown: true,
+          headerLargeTitle: false,
+          headerBackTitle: '',
+          headerTitle: (props) => (
+            <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
+              {props?.children}
+            </Text>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="MemoryGame"
+        component={MemoryGameScreen}
+        options={{
+          title: 'Memory game',
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
