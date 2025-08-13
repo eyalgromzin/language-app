@@ -19,6 +19,7 @@ import LoginScreen from './src/screens/Auth/LoginScreen';
 import { enableScreens } from 'react-native-screens';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import StartupScreen from './src/screens/Startup/StartupScreen';
+import WordsByCategoriesScreen from './src/screens/wordsByCategories/WordsByCategoriesScreen';
 
 enableScreens();
 
@@ -26,6 +27,7 @@ type RootTabParamList = {
   Surf: undefined;
   MyWords: undefined;
   Practice: undefined;
+  Categories: undefined;
   Library: undefined;
 };
 
@@ -73,6 +75,7 @@ function MainTabs(): React.JSX.Element {
                 Surf: 'globe-outline',
                 MyWords: 'book-outline',
                 Practice: 'trophy-outline',
+                Categories: 'grid-outline',
                 Library: 'albums-outline',
               };
               const iconName = iconNameByRoute[route.name] ?? 'ellipse-outline';
@@ -103,6 +106,7 @@ function MainTabs(): React.JSX.Element {
           }}
         />
         <Tab.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
+        <Tab.Screen name="Categories" component={WordsByCategoriesScreen} options={{ title: 'Categories' }} />
         <Tab.Screen name="Library" component={LibraryScreen} options={{ title: 'Library' }} />
       </Tab.Navigator>
 
@@ -127,6 +131,9 @@ function MainTabs(): React.JSX.Element {
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Practice'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Practice</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Categories'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>Categories</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Library'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Library</Text>

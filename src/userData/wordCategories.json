@@ -1,0 +1,169 @@
+{
+  "languages": ["English", "Spanish"],
+  "categories": [
+    {
+      "id": "greetings",
+      "emoji": "👋",
+      "name": {
+        "English": "Greetings",
+        "Spanish": "Saludos"
+      },
+      "description": {
+        "English": "Common ways to greet and start conversations",
+        "Spanish": "Formas comunes de saludar y comenzar conversaciones"
+      },
+      "items": [
+        {
+          "id": "hello",
+          "type": "word",
+          "text": {
+            "English": "hello",
+            "Spanish": "hola"
+          },
+          "example": {
+            "English": "Hello! How are you?",
+            "Spanish": "¡Hola! ¿Cómo estás?"
+          }
+        },
+        {
+          "id": "good_morning",
+          "type": "word",
+          "text": {
+            "English": "good morning",
+            "Spanish": "buenos días"
+          },
+          "example": {
+            "English": "Good morning, everyone!",
+            "Spanish": "¡Buenos días a todos!"
+          }
+        },
+        {
+          "id": "how_are_you",
+          "type": "sentence",
+          "text": {
+            "English": "How are you?",
+            "Spanish": "¿Cómo estás?"
+          }
+        },
+        {
+          "id": "nice_to_meet_you",
+          "type": "sentence",
+          "text": {
+            "English": "Nice to meet you.",
+            "Spanish": "Mucho gusto."
+          }
+        }
+      ]
+    },
+    {
+      "id": "food_and_drink",
+      "emoji": "🍽️",
+      "name": {
+        "English": "Food & Drink",
+        "Spanish": "Comida y bebida"
+      },
+      "description": {
+        "English": "Everyday food and beverages",
+        "Spanish": "Comidas y bebidas cotidianas"
+      },
+      "items": [
+        {
+          "id": "apple",
+          "type": "word",
+          "text": {
+            "English": "apple",
+            "Spanish": "manzana"
+          },
+          "example": {
+            "English": "I eat an apple every day.",
+            "Spanish": "Como una manzana todos los días."
+          }
+        },
+        {
+          "id": "water",
+          "type": "word",
+          "text": {
+            "English": "water",
+            "Spanish": "agua"
+          },
+          "example": {
+            "English": "Can I have some water, please?",
+            "Spanish": "¿Puedo tomar un poco de agua, por favor?"
+          }
+        },
+        {
+          "id": "i_would_like_a_coffee",
+          "type": "sentence",
+          "text": {
+            "English": "I would like a coffee, please.",
+            "Spanish": "Quisiera un café, por favor."
+          }
+        },
+        {
+          "id": "the_food_is_delicious",
+          "type": "sentence",
+          "text": {
+            "English": "The food is delicious.",
+            "Spanish": "La comida está deliciosa."
+          }
+        }
+      ]
+    },
+    {
+      "id": "travel",
+      "emoji": "✈️",
+      "name": {
+        "English": "Travel",
+        "Spanish": "Viajes"
+      },
+      "description": {
+        "English": "Useful phrases for getting around",
+        "Spanish": "Frases útiles para moverse"
+      },
+      "items": [
+        {
+          "id": "ticket",
+          "type": "word",
+          "text": {
+            "English": "ticket",
+            "Spanish": "boleto"
+          },
+          "example": {
+            "English": "Where can I buy a train ticket?",
+            "Spanish": "¿Dónde puedo comprar un boleto de tren?"
+          }
+        },
+        {
+          "id": "where_is_the_station",
+          "type": "sentence",
+          "text": {
+            "English": "Where is the station?",
+            "Spanish": "¿Dónde está la estación?"
+          }
+        },
+        {
+          "id": "i_have_a_reservation",
+          "type": "sentence",
+          "text": {
+            "English": "I have a reservation.",
+            "Spanish": "Tengo una reserva."
+          }
+        },
+        {
+          "id": "hotel",
+          "type": "word",
+          "text": {
+            "English": "hotel",
+            "Spanish": "hotel"
+          },
+          "example": {
+            "English": "The hotel is near the beach.",
+            "Spanish": "El hotel está cerca de la playa."
+          }
+        }
+      ]
+    }
+  ]
+}
+
+

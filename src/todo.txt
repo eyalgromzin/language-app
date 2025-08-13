@@ -1,25 +1,6 @@
 - screens / tabs : 
-    - practice - 
-        - make surprise me change a game every time
-    - on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 
 
-    - surf screen 
-        - create a nest server 
-        - create library controller
-        - create get texts endpoint 
-        - add favorite button near the link bar that will show a dialog with title , and a url already filled with the current url .  
-        - dont enable to add a link that already exists 
-        - add library button mear the link bar 
-        - on click on a word , show the translation + images from some website .
-        - enable the user to set startup url 
-
-    - library screen
-        - a table of links with the columns : 
-        text name
-        type: story / article / conversation / text
-        level
-    - login with facebook / google
-    - words/sentenses , nouns and verbs  by categories
+     - words by categories
         - on add word , will save the word and the sentense it was part of . 
         - write on top - click + button on all the words you dont know to add them to your practice
         - categories:
@@ -33,6 +14,27 @@
             family,
             home,
         - will show each word with an image below .
+    - on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 
+    - add in settings - total correct answers till word removal - combine all methods that check if should remove a word into 1 commoon 
+        method. 
+    - surf screen 
+        - create a nest server 
+        - create library controller
+        - create get texts endpoint 
+        - add favorite button near the link bar that will show a dialog with title , and a url already filled with the current url .  
+        - dont enable to add a link that already exists 
+        - add library button mear the link bar 
+        - on click on a word , show the translation + images from some website .
+        - enable the user to set startup url 
+
+    - library screen 
+        - a table of links with the columns : 
+            text name
+            type: story / article / conversation / any
+            level
+        - enable a user once a week to update a 1 of the fields of the library item.  
+    - login with facebook / google
+   
     - videos - with subtitles that each word in the subtitle possible to click on it .  
     - step by step - like duolingo - annoying practices.
         - will take simple sentenses and practice them with games, until all the words are
