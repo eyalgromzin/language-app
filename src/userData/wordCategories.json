@@ -162,6 +162,101 @@
           }
         }
       ]
+    },
+    {
+      "id": "numbers",
+      "emoji": "🔢",
+      "name": { "English": "Numbers", "Spanish": "Números" },
+      "description": { "English": "Basic counting numbers", "Spanish": "Números básicos" },
+      "items": [
+        { "id": "zero", "type": "word", "text": { "English": "zero", "Spanish": "cero" } },
+        { "id": "one", "type": "word", "text": { "English": "one", "Spanish": "uno" } },
+        { "id": "two", "type": "word", "text": { "English": "two", "Spanish": "dos" } },
+        { "id": "three", "type": "word", "text": { "English": "three", "Spanish": "tres" } },
+        { "id": "ten", "type": "word", "text": { "English": "ten", "Spanish": "diez" } },
+        { "id": "hundred", "type": "word", "text": { "English": "hundred", "Spanish": "cien" } }
+      ]
+    },
+    {
+      "id": "pronouns",
+      "emoji": "🧍",
+      "name": { "English": "Pronouns", "Spanish": "Pronombres" },
+      "description": { "English": "Personal pronouns", "Spanish": "Pronombres personales" },
+      "items": [
+        { "id": "i", "type": "word", "text": { "English": "I", "Spanish": "yo" } },
+        { "id": "you", "type": "word", "text": { "English": "you", "Spanish": "tú" } },
+        { "id": "he", "type": "word", "text": { "English": "he", "Spanish": "él" } },
+        { "id": "she", "type": "word", "text": { "English": "she", "Spanish": "ella" } },
+        { "id": "it", "type": "word", "text": { "English": "it", "Spanish": "ello" } },
+        { "id": "we", "type": "word", "text": { "English": "we", "Spanish": "nosotros" } },
+        { "id": "they", "type": "word", "text": { "English": "they", "Spanish": "ellos" } },
+        { "id": "them", "type": "word", "text": { "English": "them", "Spanish": "ellos" } }
+      ]
+    },
+    {
+      "id": "clothing",
+      "emoji": "👕",
+      "name": { "English": "Clothing", "Spanish": "Ropa" },
+      "description": { "English": "Everyday clothes", "Spanish": "Ropa cotidiana" },
+      "items": [
+        { "id": "shirt", "type": "word", "text": { "English": "shirt", "Spanish": "camisa" } },
+        { "id": "pants", "type": "word", "text": { "English": "pants", "Spanish": "pantalones" } },
+        { "id": "shoes", "type": "word", "text": { "English": "shoes", "Spanish": "zapatos" } },
+        { "id": "dress", "type": "word", "text": { "English": "dress", "Spanish": "vestido" } },
+        { "id": "jacket", "type": "word", "text": { "English": "jacket", "Spanish": "chaqueta" } }
+      ]
+    },
+    {
+      "id": "time",
+      "emoji": "⏰",
+      "name": { "English": "Time", "Spanish": "Tiempo" },
+      "description": { "English": "Days and time words", "Spanish": "Palabras de tiempo" },
+      "items": [
+        { "id": "today", "type": "word", "text": { "English": "today", "Spanish": "hoy" } },
+        { "id": "yesterday", "type": "word", "text": { "English": "yesterday", "Spanish": "ayer" } },
+        { "id": "tomorrow", "type": "word", "text": { "English": "tomorrow", "Spanish": "mañana" } },
+        { "id": "week", "type": "word", "text": { "English": "week", "Spanish": "semana" } },
+        { "id": "hour", "type": "word", "text": { "English": "hour", "Spanish": "hora" } }
+      ]
+    },
+    {
+      "id": "emotions",
+      "emoji": "😊",
+      "name": { "English": "Emotions", "Spanish": "Emociones" },
+      "description": { "English": "Common feelings", "Spanish": "Sentimientos comunes" },
+      "items": [
+        { "id": "happy", "type": "word", "text": { "English": "happy", "Spanish": "feliz" } },
+        { "id": "sad", "type": "word", "text": { "English": "sad", "Spanish": "triste" } },
+        { "id": "angry", "type": "word", "text": { "English": "angry", "Spanish": "enojado" } },
+        { "id": "tired", "type": "word", "text": { "English": "tired", "Spanish": "cansado" } },
+        { "id": "scared", "type": "word", "text": { "English": "scared", "Spanish": "asustado" } }
+      ]
+    },
+    {
+      "id": "family",
+      "emoji": "👪",
+      "name": { "English": "Family", "Spanish": "Familia" },
+      "description": { "English": "Family members", "Spanish": "Miembros de la familia" },
+      "items": [
+        { "id": "mother", "type": "word", "text": { "English": "mother", "Spanish": "madre" } },
+        { "id": "father", "type": "word", "text": { "English": "father", "Spanish": "padre" } },
+        { "id": "brother", "type": "word", "text": { "English": "brother", "Spanish": "hermano" } },
+        { "id": "sister", "type": "word", "text": { "English": "sister", "Spanish": "hermana" } },
+        { "id": "family_word", "type": "word", "text": { "English": "family", "Spanish": "familia" } }
+      ]
+    },
+    {
+      "id": "home",
+      "emoji": "🏠",
+      "name": { "English": "Home", "Spanish": "Hogar" },
+      "description": { "English": "Household words", "Spanish": "Palabras del hogar" },
+      "items": [
+        { "id": "house", "type": "word", "text": { "English": "house", "Spanish": "casa" } },
+        { "id": "room", "type": "word", "text": { "English": "room", "Spanish": "habitación" } },
+        { "id": "kitchen", "type": "word", "text": { "English": "kitchen", "Spanish": "cocina" } },
+        { "id": "bathroom", "type": "word", "text": { "English": "bathroom", "Spanish": "baño" } },
+        { "id": "bed", "type": "word", "text": { "English": "bed", "Spanish": "cama" } }
+      ]
     }
   ]
 }

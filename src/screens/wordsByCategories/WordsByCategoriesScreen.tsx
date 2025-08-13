@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import RNFS from 'react-native-fs';
 
 type LocalizedText = Record<string, string>;
@@ -31,6 +32,12 @@ const TARGET_LANGUAGE = 'Spanish';
 
 function WordsByCategoriesScreen(): React.JSX.Element {
   const [selectedCategory, setSelectedCategory] = React.useState<WordCategory | null>(null);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      setSelectedCategory(null);
+    }, [])
+  );
 
   const onOpenCategory = (category: WordCategory) => {
     setSelectedCategory(category);
