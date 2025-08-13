@@ -61,6 +61,7 @@ function sampleN<T>(arr: T[], n: number): T[] {
 function ChooseWordScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
+  const [allWordsPool, setAllWordsPool] = React.useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
   const [options, setOptions] = React.useState<OptionItem[]>([]);
   const [selectedKey, setSelectedKey] = React.useState<string | null>(null);
@@ -96,6 +97,8 @@ function ChooseWordScreen(): React.JSX.Element {
         .filter((w) => w.word && w.translation)
         .filter((w) => (w.numberOfCorrectAnswers?.wordsAndTranslations ?? 0) < threshold);
       setAllEntries(filtered);
+      const poolUnique = Array.from(new Set(arr.map((e) => e.word).filter((w): w is string => !!w)));
+      setAllWordsPool(poolUnique);
     } catch {
       setAllEntries([]);
     } finally {
@@ -118,6 +121,11 @@ function ChooseWordScreen(): React.JSX.Element {
       setOptions([]);
       return;
     }
+    if (allWordsPool.length < 8) {
+      // Not enough unique words overall to show 8 distinct options
+      setOptions([]);
+      return;
+    }
     const idx = pickNextIndex(entries);
     setCurrentIndex(idx);
     lastWordKeyRef.current = entries[idx].word;
@@ -128,29 +136,30 @@ function ChooseWordScreen(): React.JSX.Element {
       .map((e) => e.word)
       .filter((t) => t && t !== correct.word);
     const uniqueDistractors = Array.from(new Set(distractorPool));
-    const needed = Math.max(0, 7);
+    const needed = 7;
     const picked = sampleN(uniqueDistractors, Math.min(needed, uniqueDistractors.length));
     const combined: OptionItem[] = [
       { key: `c-${correct.translation}`, label: correct.word, isCorrect: true },
       ...picked.map((t, i) => ({ key: `d-${i}-${t}`, label: t, isCorrect: false })),
     ];
-    const anyPool = entries.map((e) => e.word).filter((t) => t);
-    while (combined.length < 8 && anyPool.length > 0) {
-      const t = anyPool[Math.floor(Math.random() * anyPool.length)];
-      if (!combined.some((o) => o.label === t)) {
-        combined.push({ key: `f-${combined.length}-${t}`, label: t, isCorrect: false });
-      } else {
-        combined.push({ key: `f-${combined.length}-dup`, label: t, isCorrect: false });
-      }
-    }
-    setOptions(shuffleArray(combined));
+    // Ensure 8 unique words by filling from the global pool of unique words
+    const already = new Set(combined.map((o) => o.label));
+    const remainingUnique = allWordsPool.filter((w) => w !== correct.word && !already.has(w));
+    const toFill = Math.max(0, 8 - combined.length);
+    const fillers = sampleN(remainingUnique, Math.min(toFill, remainingUnique.length));
+    fillers.forEach((w, i) => {
+      combined.push({ key: `f-${i}-${w}`, label: w, isCorrect: false });
+    });
+    // As a final guard, trim in case of any overshoot and shuffle
+    const exactlyEight = combined.slice(0, 8);
+    setOptions(shuffleArray(exactlyEight));
     setSelectedKey(null);
     setWrongKey(null);
     setWrongAttempts(0);
     setShowWrongToast(false);
     setShowCorrectToast(false);
     setRevealCorrect(false);
-  }, [pickNextIndex]);
+  }, [pickNextIndex, allWordsPool]);
 
   React.useEffect(() => {
     loadBase();
@@ -234,7 +243,11 @@ function ChooseWordScreen(): React.JSX.Element {
   if (!current || options.length === 0) {
     return (
       <View style={styles.centered}>
-        <Text style={styles.emptyText}>No words to practice yet.</Text>
+        <Text style={styles.emptyText}>
+          {allWordsPool.length < 8
+            ? 'Add more words to reach at least 8 unique words.'
+            : 'No words to practice yet.'}
+        </Text>
       </View>
     );
   }
