@@ -1,4 +1,6 @@
-- screens / tabs : 
+- screens / tabs:
+    - when writing something in the url bar and pressing enter , it will search it in google .
+    - library - add filter by livel and text type 
      - words by categories
         - will show each word with an image below .
     - on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 

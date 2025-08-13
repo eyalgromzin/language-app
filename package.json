@@ -11,7 +11,8 @@
     "test": "jest",
     "build": "npm run apk:release",
     "apk:debug": "cd android && .\\gradlew.bat assembleDebug",
-    "apk:release": "cd android && .\\gradlew.bat assembleRelease"
+    "apk:release": "cd android && .\\gradlew.bat assembleRelease",
+    "apk": "node scripts/generateApk.js"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.2.0",
