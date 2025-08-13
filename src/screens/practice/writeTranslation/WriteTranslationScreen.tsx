@@ -23,7 +23,7 @@ type WordEntry = {
 type PreparedItem = {
   entry: WordEntry;
   letters: string[];
-  missingIndices: number[];
+  inputIndices: number[];
 };
 
 function ensureCounters(entry: WordEntry): WordEntry {
@@ -41,32 +41,14 @@ function ensureCounters(entry: WordEntry): WordEntry {
   };
 }
 
-function pickMissingIndices(letters: string[], desiredCount: number): number[] {
-  const candidateIndices: number[] = [];
-  for (let i = 0; i < letters.length; i += 1) {
-    const ch = letters[i];
-    if (/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch)) {
-      candidateIndices.push(i);
-    }
-  }
-  if (candidateIndices.length === 0) return [];
-  const desired = Math.max(1, Math.min(candidateIndices.length, Math.floor(desiredCount)));
-  const result: number[] = [];
-  const pool = [...candidateIndices];
-  while (result.length < desired && pool.length > 0) {
-    const idx = Math.floor(Math.random() * pool.length);
-    result.push(pool[idx]);
-    pool.splice(idx, 1);
-  }
-  return result.sort((a, b) => a - b);
+function splitLetters(text: string): string[] {
+  return Array.from(text);
 }
 
-function splitLetters(word: string): string[] {
-  // Split into simple code units for now
-  return Array.from(word);
+function isAlphabetic(ch: string): boolean {
+  return /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch);
 }
 
-// Compare user input to the target word allowing plain vowels for accented vowels (á, é, í, ó, ú)
 function normalizeForCompare(input: string): string {
   return input
     .replace(/[áÁ]/g, 'a')
@@ -74,10 +56,6 @@ function normalizeForCompare(input: string): string {
     .replace(/[íÍ]/g, 'i')
     .replace(/[óÓ]/g, 'o')
     .replace(/[úÚ]/g, 'u');
-}
-
-function isAlphabeticChar(ch: string): boolean {
-  return /[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(ch);
 }
 
 function splitSentenceByWord(sentence: string, targetWord: string): { text: string; highlight: boolean }[] {
@@ -94,9 +72,8 @@ function splitSentenceByWord(sentence: string, targetWord: string): { text: stri
     }
     const beforeChar = idx > 0 ? sentence[idx - 1] : '';
     const afterChar = idx + targetWord.length < sentence.length ? sentence[idx + targetWord.length] : '';
-    const touchesLetters = isAlphabeticChar(beforeChar) || isAlphabeticChar(afterChar);
+    const touchesLetters = isAlphabetic(beforeChar) || isAlphabetic(afterChar);
     if (touchesLetters) {
-      // Not a standalone match; skip this position
       cursor = idx + 1;
       continue;
     }
@@ -117,7 +94,7 @@ function pickRandomIndex(length: number, previous?: number): number {
   return nextIndex;
 }
 
-function MissingLettersScreen(): React.JSX.Element {
+function WriteTranslationScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [items, setItems] = React.useState<PreparedItem[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
@@ -127,32 +104,28 @@ function MissingLettersScreen(): React.JSX.Element {
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
   const [rowWidth, setRowWidth] = React.useState<number | null>(null);
   const inputRefs = React.useRef<Record<number, TextInput | null>>({});
-  const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
-  const prepare = React.useCallback((arr: WordEntry[], removeAfter: number): PreparedItem[] => {
+  const prepare = React.useCallback((arr: WordEntry[]): PreparedItem[] => {
     return arr.map(ensureCounters).map((entry) => {
-      const letters = splitLetters(entry.word);
-      const correctSoFar = entry.numberOfCorrectAnswers?.missingLetters ?? 0;
-      const base = 4 - removeAfter;
-      const desiredMissing = base + correctSoFar;
-      const missingIndices = pickMissingIndices(letters, desiredMissing);
-      return { entry, letters, missingIndices };
+      const letters = splitLetters(entry.translation);
+      const inputIndices: number[] = [];
+      for (let i = 0; i < letters.length; i += 1) {
+        if (isAlphabetic(letters[i])) inputIndices.push(i);
+      }
+      return { entry, letters, inputIndices };
     });
   }, []);
 
   const loadData = React.useCallback(async () => {
     setLoading(true);
     try {
-      // Load user setting for number of correct answers to remove a word
       let threshold = 3;
       try {
         const raw = await AsyncStorage.getItem('words.removeAfterNCorrect');
         const parsed = Number.parseInt(raw ?? '', 10);
-        const valid = parsed >= 1 && parsed <= 4 ? parsed : 3;
-        threshold = valid;
-        setRemoveAfterCorrect(valid);
+        threshold = parsed >= 1 && parsed <= 4 ? parsed : 3;
       } catch {}
       const exists = await RNFS.exists(filePath);
       if (!exists) {
@@ -164,8 +137,8 @@ function MissingLettersScreen(): React.JSX.Element {
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]) : [];
       const filtered = arr
         .filter((w) => w.word && w.translation)
-        .filter((w) => (w.numberOfCorrectAnswers?.missingLetters ?? 0) < threshold);
-      const prepared = prepare(filtered, threshold);
+        .filter((w) => (w.numberOfCorrectAnswers?.writeTranslation ?? 0) < threshold);
+      const prepared = prepare(filtered);
       setItems(prepared);
       setCurrentIndex(pickRandomIndex(prepared.length));
       setInputs({});
@@ -181,7 +154,6 @@ function MissingLettersScreen(): React.JSX.Element {
     loadData();
   }, [loadData]);
 
-  // When the screen gains focus, reload words from storage
   useFocusEffect(
     React.useCallback(() => {
       setShowCorrectToast(false);
@@ -192,21 +164,16 @@ function MissingLettersScreen(): React.JSX.Element {
 
   const current = items[currentIndex];
 
-  const resetForNext = React.useCallback(() => {
-    setInputs({});
-    setWrongHighlightIndex(null);
-  }, []);
-
   const moveToNext = React.useCallback(() => {
     setShowCorrectToast(false);
     setShowWrongToast(false);
     loadData();
   }, [loadData]);
 
-  const attemptWord = React.useCallback(() => {
+  const attemptTranslation = React.useCallback(() => {
     if (!current) return '';
     const built = current.letters.map((ch, idx) => {
-      if (current.missingIndices.includes(idx)) {
+      if (current.inputIndices.includes(idx)) {
         const v = inputs[idx] ?? '';
         return v;
       }
@@ -229,7 +196,7 @@ function MissingLettersScreen(): React.JSX.Element {
         const it = { ...copy[idx] };
         it.numberOfCorrectAnswers = {
           ...it.numberOfCorrectAnswers!,
-          missingLetters: (it.numberOfCorrectAnswers?.missingLetters || 0) + 1,
+          writeTranslation: (it.numberOfCorrectAnswers?.writeTranslation || 0) + 1,
         };
         copy[idx] = it;
         try {
@@ -244,7 +211,7 @@ function MissingLettersScreen(): React.JSX.Element {
     setInputs((prev) => {
       const nextInputs = { ...prev, [index]: char };
       if (char !== '' && current) {
-        const nextBlank = current.missingIndices.find((i) => i > index && (nextInputs[i] ?? '') === '');
+        const nextBlank = current.inputIndices.find((i) => i > index && (nextInputs[i] ?? '') === '');
         if (typeof nextBlank === 'number') {
           setTimeout(() => {
             inputRefs.current[nextBlank]?.focus();
@@ -259,7 +226,7 @@ function MissingLettersScreen(): React.JSX.Element {
     if (e.nativeEvent.key !== 'Backspace') return;
     if (!current) return;
     setInputs((prev) => {
-      const lastFilled = [...current.missingIndices]
+      const lastFilled = [...current.inputIndices]
         .reverse()
         .find((i) => (prev[i] ?? '') !== '');
       if (typeof lastFilled !== 'number') {
@@ -275,30 +242,24 @@ function MissingLettersScreen(): React.JSX.Element {
 
   React.useEffect(() => {
     if (!current) return;
-    // If we are in a corrected state after a wrong answer, skip success checks
     if (wrongHighlightIndex !== null) return;
-    // When all missing indices are filled, check
-    const allFilled = current.missingIndices.every((idx) => (inputs[idx] ?? '') !== '');
+    const allFilled = current.inputIndices.every((idx) => (inputs[idx] ?? '') !== '');
     if (!allFilled) return;
-    // Hide keyboard once all letters are entered
     Keyboard.dismiss();
-    const attempt = attemptWord();
-    const target = current.entry.word;
+    const attempt = attemptTranslation();
+    const target = current.entry.translation;
     if (normalizeForCompare(attempt) === normalizeForCompare(target)) {
-      // Ensure only one toast shows at a time
       setShowWrongToast(false);
       setShowCorrectToast(true);
-      writeBackIncrement(target);
+      writeBackIncrement(current.entry.word);
       const timer = setTimeout(() => {
         moveToNext();
       }, 3000);
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer as unknown as number);
     } else {
-      // Ensure only one toast shows at a time
       setShowCorrectToast(false);
       setShowWrongToast(true);
       const wrongTimer = setTimeout(() => setShowWrongToast(false), 2000);
-      // Find first mismatch
       let mismatchAt: number | null = null;
       const letters = current.letters;
       for (let i = 0; i < letters.length; i += 1) {
@@ -309,30 +270,28 @@ function MissingLettersScreen(): React.JSX.Element {
           break;
         }
       }
-      // Fill correct values into inputs for missing indices
       const corrected: Record<number, string> = {};
-      current.missingIndices.forEach((idx) => {
+      current.inputIndices.forEach((idx) => {
         corrected[idx] = current.letters[idx];
       });
       setInputs(corrected);
       setWrongHighlightIndex(mismatchAt);
-      return () => clearTimeout(wrongTimer);
+      return () => clearTimeout(wrongTimer as unknown as number);
     }
-  }, [attemptWord, current, inputs, moveToNext, writeBackIncrement, wrongHighlightIndex]);
+  }, [attemptTranslation, current, inputs, moveToNext, writeBackIncrement, wrongHighlightIndex]);
 
-  // Focus the first blank input when a new word is shown (and not in corrected state)
   React.useEffect(() => {
     if (!current || wrongHighlightIndex !== null) return;
-    const firstBlank = current.missingIndices.find((i) => (inputs[i] ?? '') === '');
+    const firstBlank = current.inputIndices.find((i) => (inputs[i] ?? '') === '');
     if (typeof firstBlank === 'number') {
       const t = setTimeout(() => inputRefs.current[firstBlank]?.focus(), 50);
-      return () => clearTimeout(t);
+      return () => clearTimeout(t as unknown as number);
     }
   }, [currentIndex, current, wrongHighlightIndex]);
 
   if (loading) {
     return (
-      <View style={styles.centered}> 
+      <View style={styles.centered}>
         <ActivityIndicator />
       </View>
     );
@@ -349,7 +308,7 @@ function MissingLettersScreen(): React.JSX.Element {
   const renderLetterCell = (ch: string, idx: number) => {
     const lettersCount = current.letters.length;
     const defaultCellWidth = 40;
-    const gap = 8; // matches styles.wordRow gap
+    const gap = 8;
     const available = rowWidth ?? 0;
     const maxWidthPerCell = lettersCount > 0 && available > 0
       ? Math.floor((available - gap * Math.max(0, lettersCount - 1)) / lettersCount)
@@ -357,9 +316,9 @@ function MissingLettersScreen(): React.JSX.Element {
     const cellWidth = Math.max(12, Math.min(defaultCellWidth, maxWidthPerCell));
     const dynamicFontSize = Math.min(18, Math.max(12, Math.floor(cellWidth * 0.6)));
 
-    const isMissing = current.missingIndices.includes(idx);
+    const isInput = current.inputIndices.includes(idx);
     const isWrongSpot = wrongHighlightIndex === idx;
-    if (!isMissing) {
+    if (!isInput) {
       return (
         <View key={idx} style={[styles.cell, { width: cellWidth }, styles.cellFixed, isWrongSpot && styles.cellWrong]}>
           <Text style={[styles.cellText, { fontSize: dynamicFontSize }]}>{ch}</Text>
@@ -391,7 +350,16 @@ function MissingLettersScreen(): React.JSX.Element {
   return (
     <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding', android: undefined })} style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-        <Text style={styles.translation}>{current.entry.translation}</Text>
+        <View style={styles.topRow}>
+          <Text style={styles.title}>translate the word</Text>
+          <TouchableOpacity style={styles.skipButton} onPress={() => moveToNext()} accessibilityRole="button" accessibilityLabel="Skip">
+            <Text style={styles.skipButtonText}>Skip</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.wordCard}>
+          <Text style={styles.wordText}>{current.entry.word}</Text>
+        </View>
+
         {current.entry.sentence ? (
           <Text style={styles.sentence} numberOfLines={3}>
             {splitSentenceByWord(current.entry.sentence, current.entry.word).map((p, i) =>
@@ -412,7 +380,7 @@ function MissingLettersScreen(): React.JSX.Element {
         </View>
 
         {wrongHighlightIndex !== null ? (
-          <TouchableOpacity style={styles.nextButton} onPress={() => { resetForNext(); moveToNext(); }}>
+          <TouchableOpacity style={styles.nextButton} onPress={() => { setInputs({}); setWrongHighlightIndex(null); moveToNext(); }}>
             <Text style={styles.nextButtonText}>Next</Text>
           </TouchableOpacity>
         ) : null}
@@ -447,8 +415,40 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 16,
   },
-  translation: {
-    fontSize: 20,
+  topRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  title: {
+    fontSize: 18,
+    color: '#666',
+    fontWeight: '600',
+    textTransform: 'lowercase',
+  },
+  skipButton: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#fff',
+  },
+  skipButtonText: {
+    fontWeight: '700',
+    color: '#007AFF',
+  },
+  wordCard: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    paddingVertical: 18,
+    paddingHorizontal: 12,
+    alignItems: 'center',
+  },
+  wordText: {
+    fontSize: 22,
     fontWeight: '700',
   },
   sentence: {
@@ -505,8 +505,8 @@ const styles = StyleSheet.create({
   },
   toast: {
     position: 'absolute',
-    top: 0,
-    bottom: 0,
+    // top: 0,
+    bottom: 200,
     left: 0,
     right: 0,
     alignItems: 'center',
@@ -523,6 +523,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MissingLettersScreen;
+export default WriteTranslationScreen;
 
 

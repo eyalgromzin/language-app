@@ -4,8 +4,7 @@
         - write word 
         - memory game - with words and translations 
         - make surprise me change a game every time
-    - make choose word increase +1 choose word field 
-    - on startup page (where you choose languages) - choose games that you like 
+    - on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 
 
     - surf screen 
         - create a nest server 
@@ -47,5 +46,7 @@
     limit num of words possible to add to learning per day - for example 20.
 
 - payed version - 
-    will save all words of a person .
+    will save all words of a person on the cloud 
+    will enable translating unlimited words . 
+    will remove ads 
 

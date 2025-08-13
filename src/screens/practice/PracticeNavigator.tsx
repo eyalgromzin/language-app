@@ -6,6 +6,7 @@ import MissingLettersScreen from './missingLetters/MissingLettersScreen.tsx';
 import MissingWordsScreen from './missingWords/MissingWordsScreen.tsx';
 import WordsMatchScreen from './wordsMatch/WordsMatchScreen.tsx';
 import chooseTranslationScreen from './chooseTranslation/chooseTranslationScreen.tsx';
+import WriteTranslationScreen from './writeTranslation/WriteTranslationScreen.tsx';
 import ChooseWordScreen from './chooseWord/ChooseWordScreen.tsx';
 
 export type PracticeStackParamList = {
@@ -81,7 +82,7 @@ function PracticeNavigator(): React.JSX.Element {
       />
       <Stack.Screen
         name="Translate"
-        component={chooseTranslationScreen}
+        component={WriteTranslationScreen}
         options={{
           title: 'Translate',
           headerShown: true,
