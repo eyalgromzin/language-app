@@ -380,12 +380,10 @@ function MissingWordsScreen(): React.JSX.Element {
     <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding', android: undefined })} style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         <View style={styles.topRow}>
-          <Text style={styles.instructionTitle}>complete the sentense from the words below: </Text>
-          {route?.params?.surprise ? (
-            <TouchableOpacity style={styles.skipButton} onPress={navigateToRandomNext} accessibilityRole="button" accessibilityLabel="Skip">
-              <Text style={styles.skipButtonText}>Skip</Text>
-            </TouchableOpacity>
-          ) : null}
+          <Text style={styles.instructionTitle}>Click the words below to complete the sentense: </Text>
+          <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
+            <Text style={styles.skipButtonText}>Skip</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.sentenceWrap}>
           {current.tokens.map((tok, idx) => (
@@ -452,6 +450,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#666',
     fontWeight: '600',
+    maxWidth: '80%',
   },
   translation: {
     fontSize: 20,

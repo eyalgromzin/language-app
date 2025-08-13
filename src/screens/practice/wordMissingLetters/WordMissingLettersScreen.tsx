@@ -410,11 +410,9 @@ function MissingLettersScreen(): React.JSX.Element {
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         <View style={styles.topRow}>
           <Text style={styles.translation}>{current.entry.translation}</Text>
-          {route?.params?.surprise ? (
-            <TouchableOpacity style={styles.skipButton} onPress={navigateToRandomNext} accessibilityRole="button" accessibilityLabel="Skip">
-              <Text style={styles.skipButtonText}>Skip</Text>
-            </TouchableOpacity>
-          ) : null}
+          <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
+            <Text style={styles.skipButtonText}>Skip</Text>
+          </TouchableOpacity>
         </View>
         {current.entry.sentence ? (
           <Text style={styles.sentence} numberOfLines={3}>
