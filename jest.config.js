@@ -7,5 +7,6 @@ module.exports = {
     '^react-native-webview$': '<rootDir>/__mocks__/react-native-webview.js',
     '^@react-native-async-storage/async-storage$': '@react-native-async-storage/async-storage/jest/async-storage-mock',
     '^react-native-fs$': '<rootDir>/__mocks__/react-native-fs.js',
+    '^react-native-vector-icons/.+$': '<rootDir>/__mocks__/react-native-vector-icons.js',
   },
 };
