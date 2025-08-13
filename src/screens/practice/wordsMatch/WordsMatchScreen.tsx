@@ -13,6 +13,7 @@ type WordEntry = {
     missingLetters: number;
     missingWords: number;
     chooseTranslation: number;
+    chooseWord: number;
     writeTranslation: number;
     writeWord: number;
   };
@@ -30,6 +31,7 @@ function ensureCounters(entry: WordEntry): WordEntry {
       missingLetters: 0,
       missingWords: 0,
       chooseTranslation: 0,
+      chooseWord: 0,
       writeTranslation: 0,
       writeWord: 0,
     },

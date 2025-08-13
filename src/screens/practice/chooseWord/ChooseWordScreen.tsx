@@ -13,6 +13,7 @@ type WordEntry = {
     missingLetters: number;
     missingWords: number;
     chooseTranslation: number;
+    chooseWord: number;
     writeTranslation: number;
     writeWord: number;
   };
@@ -31,6 +32,7 @@ function ensureCounters(entry: WordEntry): WordEntry {
       missingLetters: 0,
       missingWords: 0,
       chooseTranslation: 0,
+      chooseWord: 0,
       writeTranslation: 0,
       writeWord: 0,
     },
@@ -95,7 +97,7 @@ function ChooseWordScreen(): React.JSX.Element {
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]).map(ensureCounters) : [];
       const filtered = arr
         .filter((w) => w.word && w.translation)
-        .filter((w) => (w.numberOfCorrectAnswers?.chooseTranslation ?? 0) < threshold);
+        .filter((w) => (w.numberOfCorrectAnswers?.chooseWord ?? 0) < threshold);
       setAllEntries(filtered);
       const poolUnique = Array.from(new Set(arr.map((e) => e.word).filter((w): w is string => !!w)));
       setAllWordsPool(poolUnique);
@@ -193,7 +195,7 @@ function ChooseWordScreen(): React.JSX.Element {
         const it = { ...copy[idx] };
         it.numberOfCorrectAnswers = {
           ...it.numberOfCorrectAnswers!,
-          chooseTranslation: (it.numberOfCorrectAnswers?.chooseTranslation || 0) + 1,
+          chooseWord: (it.numberOfCorrectAnswers?.chooseWord || 0) + 1,
         };
         copy[idx] = it;
         try {
