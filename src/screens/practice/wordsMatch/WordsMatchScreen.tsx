@@ -12,7 +12,7 @@ type WordEntry = {
   numberOfCorrectAnswers?: {
     missingLetters: number;
     missingWords: number;
-    wordsAndTranslations: number;
+    chooseTranslation: number;
     writeTranslation: number;
     writeWord: number;
   };
@@ -29,7 +29,7 @@ function ensureCounters(entry: WordEntry): WordEntry {
     numberOfCorrectAnswers: entry.numberOfCorrectAnswers || {
       missingLetters: 0,
       missingWords: 0,
-      wordsAndTranslations: 0,
+      chooseTranslation: 0,
       writeTranslation: 0,
       writeWord: 0,
     },
@@ -96,7 +96,7 @@ function WordsMatchScreen(): React.JSX.Element {
       setThreshold(thr);
       const filtered = arr
         .filter((w) => w.word && w.translation)
-        .filter((w) => (w.numberOfCorrectAnswers?.wordsAndTranslations ?? 0) < thr);
+        .filter((w) => (w.numberOfCorrectAnswers?.chooseTranslation ?? 0) < thr);
       setAllEntries(filtered);
     } catch {
       setAllEntries([]);
@@ -170,7 +170,7 @@ function WordsMatchScreen(): React.JSX.Element {
         const it = { ...copy[idx] };
         it.numberOfCorrectAnswers = {
           ...it.numberOfCorrectAnswers!,
-          wordsAndTranslations: (it.numberOfCorrectAnswers?.wordsAndTranslations || 0) + 1,
+          chooseTranslation: (it.numberOfCorrectAnswers?.chooseTranslation || 0) + 1,
         };
         copy[idx] = it;
         try {
@@ -305,7 +305,7 @@ function WordsMatchScreen(): React.JSX.Element {
             <View key={`elig-${e.word}`} style={styles.eligibleItem}>
               <Text style={styles.eligibleWord} numberOfLines={1}>{e.word}</Text>
               <Text style={styles.eligibleCount}>
-                {(e.numberOfCorrectAnswers?.wordsAndTranslations ?? 0)} / {threshold}
+                {(e.numberOfCorrectAnswers?.chooseTranslation ?? 0)} / {threshold}
               </Text>
             </View>
           ))}

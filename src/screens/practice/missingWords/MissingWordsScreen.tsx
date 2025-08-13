@@ -22,7 +22,7 @@ type WordEntry = {
   numberOfCorrectAnswers?: {
     missingLetters: number;
     missingWords: number;
-    wordsAndTranslations: number;
+    chooseTranslation: number;
     writeTranslation: number;
     writeWord: number;
   };
@@ -40,7 +40,7 @@ function ensureCounters(entry: WordEntry): WordEntry {
     numberOfCorrectAnswers: entry.numberOfCorrectAnswers || {
       missingLetters: 0,
       missingWords: 0,
-      wordsAndTranslations: 0,
+      chooseTranslation: 0,
       writeTranslation: 0,
       writeWord: 0,
     },

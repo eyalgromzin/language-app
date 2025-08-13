@@ -11,7 +11,7 @@ type WordEntry = {
   numberOfCorrectAnswers?: {
     missingLetters: number;
     missingWords: number;
-    wordsAndTranslations: number;
+    chooseTranslation: number;
     writeTranslation: number;
     writeWord: number;
   };
@@ -40,7 +40,7 @@ function MyWordsScreen(): React.JSX.Element {
         numberOfCorrectAnswers: it.numberOfCorrectAnswers || {
           missingLetters: 0,
           missingWords: 0,
-          wordsAndTranslations: 0,
+          chooseTranslation: 0,
           writeTranslation: 0,
           writeWord: 0,
         },
@@ -118,7 +118,7 @@ function MyWordsScreen(): React.JSX.Element {
             </View>
             <View style={styles.progressRow}>
               <Text style={styles.progressLabel}>Words & translations</Text>
-              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.wordsAndTranslations ?? 0}</Text>
+              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.chooseTranslation ?? 0}</Text>
             </View>
             <View style={styles.progressRow}>
               <Text style={styles.progressLabel}>Write translation</Text>

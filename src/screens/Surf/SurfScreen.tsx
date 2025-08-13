@@ -314,7 +314,7 @@ function SurfScreen(): React.JSX.Element {
       numberOfCorrectAnswers: {
         missingLetters: 0,
         missingWords: 0,
-        wordsAndTranslations: 0,
+        chooseTranslation: 0,
         writeTranslation: 0,
         writeWord: 0,
       },
@@ -338,7 +338,7 @@ function SurfScreen(): React.JSX.Element {
         const safeNoa = {
           missingLetters: Math.max(0, Number(noa.missingLetters) || 0),
           missingWords: Math.max(0, Number(noa.missingWords) || 0),
-          wordsAndTranslations: Math.max(0, Number(noa.wordsAndTranslations) || 0),
+          chooseTranslation: Math.max(0, Number(noa.chooseTranslation) || 0),
           writeTranslation: Math.max(0, Number(noa.writeTranslation) || 0),
           writeWord: Math.max(0, Number(noa.writeWord) || 0),
         };

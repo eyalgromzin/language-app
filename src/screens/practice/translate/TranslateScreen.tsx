@@ -12,7 +12,7 @@ type WordEntry = {
   numberOfCorrectAnswers?: {
     missingLetters: number;
     missingWords: number;
-    wordsAndTranslations: number;
+    chooseTranslation: number;
     writeTranslation: number;
     writeWord: number;
   };
@@ -30,7 +30,7 @@ function ensureCounters(entry: WordEntry): WordEntry {
     numberOfCorrectAnswers: entry.numberOfCorrectAnswers || {
       missingLetters: 0,
       missingWords: 0,
-      wordsAndTranslations: 0,
+      chooseTranslation: 0,
       writeTranslation: 0,
       writeWord: 0,
     },
@@ -103,7 +103,7 @@ function TranslateScreen(): React.JSX.Element {
       setAllTranslationsPool(allTranslations);
       const filtered = arr
         .filter((w) => w.word && w.translation)
-        .filter((w) => (w.numberOfCorrectAnswers?.wordsAndTranslations ?? 0) < threshold);
+        .filter((w) => (w.numberOfCorrectAnswers?.chooseTranslation ?? 0) < threshold);
       setAllEntries(filtered);
     } catch {
       setAllEntries([]);
@@ -179,7 +179,7 @@ function TranslateScreen(): React.JSX.Element {
         const it = { ...copy[idx] };
         it.numberOfCorrectAnswers = {
           ...it.numberOfCorrectAnswers!,
-          wordsAndTranslations: (it.numberOfCorrectAnswers?.wordsAndTranslations || 0) + 1,
+          chooseTranslation: (it.numberOfCorrectAnswers?.chooseTranslation || 0) + 1,
         };
         copy[idx] = it;
         try {
