@@ -67,6 +67,7 @@ function TranslateScreen(): React.JSX.Element {
   const [wrongKey, setWrongKey] = React.useState<string | null>(null);
   const [wrongAttempts, setWrongAttempts] = React.useState<number>(0);
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
+  const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [revealCorrect, setRevealCorrect] = React.useState<boolean>(false);
 
   const lastWordKeyRef = React.useRef<string | null>(null);
@@ -148,6 +149,7 @@ function TranslateScreen(): React.JSX.Element {
     setWrongKey(null);
     setWrongAttempts(0);
     setShowWrongToast(false);
+    setShowCorrectToast(false);
     setRevealCorrect(false);
   }, [pickNextIndex]);
 
@@ -198,6 +200,8 @@ function TranslateScreen(): React.JSX.Element {
     if (selectedKey || revealCorrect) return; // already answered or revealed
     if (opt.isCorrect) {
       setSelectedKey(opt.key);
+      setShowWrongToast(false);
+      setShowCorrectToast(true);
       writeBackIncrement(current.word);
       const t = setTimeout(() => {
         prepareRound(allEntries);
@@ -210,7 +214,7 @@ function TranslateScreen(): React.JSX.Element {
       setWrongKey(opt.key);
       setRevealCorrect(true);
       setShowWrongToast(true);
-      const hide = setTimeout(() => setShowWrongToast(false), 2000);
+      const hide = setTimeout(() => setShowWrongToast(false), 3000);
       return () => clearTimeout(hide as unknown as number);
     }
     setWrongKey(opt.key);
@@ -285,6 +289,12 @@ function TranslateScreen(): React.JSX.Element {
         <View style={styles.toast} pointerEvents="none">
           <Text style={styles.toastEmoji}>❌</Text>
           <Text style={styles.toastText}>try again</Text>
+        </View>
+      ) : null}
+      {showCorrectToast ? (
+        <View style={styles.toast} pointerEvents="none">
+          <Text style={styles.toastEmoji}>✅</Text>
+          <Text style={styles.toastText}>Correct!</Text>
         </View>
       ) : null}
     </View>
