@@ -66,6 +66,7 @@ function WordsMatchScreen(): React.JSX.Element {
   const [leftItems, setLeftItems] = React.useState<MatchItem[]>([]);
   const [rightItems, setRightItems] = React.useState<MatchItem[]>([]);
   const [matchedKeys, setMatchedKeys] = React.useState<Set<string>>(new Set());
+  const [removedKeys, setRemovedKeys] = React.useState<Set<string>>(new Set());
   const [selectedLeftKey, setSelectedLeftKey] = React.useState<string | null>(null);
   const [selectedRightKey, setSelectedRightKey] = React.useState<string | null>(null);
   const [wrongFlash, setWrongFlash] = React.useState<{ leftKey: string; rightKey: string } | null>(null);
@@ -111,6 +112,7 @@ function WordsMatchScreen(): React.JSX.Element {
     setLeftItems(shuffleArray(left));
     setRightItems(shuffleArray(right));
     setMatchedKeys(new Set());
+    setRemovedKeys(new Set());
     setSelectedLeftKey(null);
     setSelectedRightKey(null);
     setWrongFlash(null);
@@ -178,16 +180,19 @@ function WordsMatchScreen(): React.JSX.Element {
       setSelectedLeftKey(null);
       setSelectedRightKey(null);
       writeBackIncrement(matchedKey);
-      // If all matched, start a new round after a short delay
+      // After 2 seconds, remove the matched pair from the board
       setTimeout(() => {
-        const totalKeys = new Set([...leftItems.map((i) => i.key)]);
-        const matchedNow = new Set(matchedKeys);
-        matchedNow.add(matchedKey);
-        if (matchedNow.size >= totalKeys.size && totalKeys.size > 0) {
-          // refresh list from storage too
-          loadBase().then(() => prepareRound());
-        }
-      }, 300);
+        setRemovedKeys((prev) => {
+          const next = new Set(prev);
+          next.add(matchedKey);
+          const totalKeys = new Set([...leftItems.map((i) => i.key)]);
+          if (next.size >= totalKeys.size && totalKeys.size > 0) {
+            // refresh list from storage and start a new round
+            loadBase().then(() => prepareRound());
+          }
+          return next;
+        });
+      }, 1400);
     } else {
       // Wrong match -> trigger red flash (handled by separate timer effect)
       const pair = { leftKey: selectedLeftKey, rightKey: selectedRightKey };
@@ -287,11 +292,15 @@ function WordsMatchScreen(): React.JSX.Element {
 
       <View style={styles.board}>
         <View style={styles.column}>
-          {leftItems.map((it) => renderItemButton(it, 'left'))}
+          {leftItems
+            .filter((it) => !removedKeys.has(it.key))
+            .map((it) => renderItemButton(it, 'left'))}
         </View>
         <View style={styles.verticalDivider} />
         <View style={styles.column}>
-          {rightItems.map((it) => renderItemButton(it, 'right'))}
+          {rightItems
+            .filter((it) => !removedKeys.has(it.key))
+            .map((it) => renderItemButton(it, 'right'))}
         </View>
       </View>
     </ScrollView>

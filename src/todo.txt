@@ -1,8 +1,9 @@
 - screens / tabs : 
+    - on startup page - choose games that you like 
     - practice - 
         given n words and n translations - connect the words with the translations 
-        given the word - write the translation
-        given a translation - write the word  
+        given the word - choose translation out of n translations
+        given a translation - choose the word out of n words 
         memory game - with words and translations 
         - make surprise me change a game every time 
 
