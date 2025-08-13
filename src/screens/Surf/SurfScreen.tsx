@@ -54,11 +54,24 @@ function SurfScreen(): React.JSX.Element {
   const imageScrapeResolveRef = React.useRef<((urls: string[]) => void) | null>(null);
   const imageScrapeRejectRef = React.useRef<((err?: unknown) => void) | null>(null);
   const hiddenWebViewRef = React.useRef<WebView>(null);
+  const addressInputRef = React.useRef<TextInput>(null);
 
   const normalizeUrl = (input: string): string => {
     if (!input) return 'about:blank';
-    const hasScheme = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(input);
-    return hasScheme ? input : `https://${input}`;
+    const trimmed = input.trim();
+    const hasScheme = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(trimmed);
+    const hasSpaces = /\s/.test(trimmed);
+    const startsWithWww = /^www\./i.test(trimmed);
+    const looksLikeDomain = /^[^\s]+\.[^\s]{2,}$/.test(trimmed);
+    const looksLikeIp = /^\d{1,3}(\.\d{1,3}){3}(?::\d+)?(\/|$)/.test(trimmed);
+
+    // If it doesn't look like a URL, perform a Google search
+    if (hasSpaces || (!hasScheme && !startsWithWww && !looksLikeDomain && !looksLikeIp)) {
+      return `https://www.google.com/search?q=${encodeURIComponent(trimmed)}`;
+    }
+
+    // Otherwise, treat it as a URL and ensure it has a scheme
+    return hasScheme ? trimmed : `https://${trimmed}`;
   };
 
   const submit = () => {
@@ -534,6 +547,7 @@ function SurfScreen(): React.JSX.Element {
     <View style={{ flex: 1 }}>
       <View style={styles.urlBarContainer}>
         <TextInput
+          ref={addressInputRef}
           style={styles.urlInput}
           value={addressText}
           onChangeText={setAddressText}
@@ -543,6 +557,18 @@ function SurfScreen(): React.JSX.Element {
           autoCorrect={false}
           keyboardType="url"
           returnKeyType="go"
+          selectTextOnFocus
+          onFocus={() => {
+            try {
+              addressInputRef.current?.setNativeProps({ selection: { start: 0, end: addressText.length } });
+            } catch (e) {}
+          }}
+          onPressIn={() => {
+            try {
+              addressInputRef.current?.focus();
+              addressInputRef.current?.setNativeProps({ selection: { start: 0, end: addressText.length } });
+            } catch (e) {}
+          }}
         />
         <TouchableOpacity
           onPress={goBack}

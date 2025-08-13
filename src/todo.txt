@@ -1,4 +1,5 @@
 - screens / tabs:
+    - enable setting home page 
     - when writing something in the url bar and pressing enter , it will search it in google .
     - library - add filter by livel and text type 
      - words by categories
