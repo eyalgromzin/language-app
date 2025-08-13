@@ -1,5 +1,7 @@
 - screens / tabs : 
     - practice - 
+        - write translation 
+        - write word 
         - memory game - with words and translations 
         - make surprise me change a game every time
     - make choose word increase +1 choose word field 

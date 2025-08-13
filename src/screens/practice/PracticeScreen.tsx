@@ -12,7 +12,7 @@ const PRACTICE_OPTIONS: PracticeOption[] = [
   { key: 'missingLetters', label: 'Missing letters', emoji: '🔤' },
   { key: 'missingWords', label: 'Missing words', emoji: '🔡' },
   { key: 'matchGame', label: 'Match game', emoji: '🧩' },
-  { key: 'translate', label: 'Translate', emoji: '🌐' },
+  { key: 'translate', label: 'Choose Translation', emoji: '🌐' },
   { key: 'chooseWord', label: 'Choose word', emoji: '📝' },
   { key: 'wordFromTranslation', label: 'Word from translation', emoji: '✍️' },
   { key: 'memoryGame', label: 'Memory game', emoji: '🧠' },
