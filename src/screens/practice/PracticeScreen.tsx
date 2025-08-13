@@ -16,6 +16,7 @@ const PRACTICE_OPTIONS: PracticeOption[] = [
   { key: 'chooseTranslation', label: 'Choose translation', emoji: '🔎' },
   { key: 'translate', label: 'Translation Missing Letters', emoji: 'ðŸŒ' },
   { key: 'memoryGame', label: 'Memory game', emoji: '🧠' },
+  { key: 'hearing', label: 'Hearing practice', emoji: '🔊' },
 ];
 
 function PracticeScreen(): React.JSX.Element {
@@ -35,6 +36,10 @@ function PracticeScreen(): React.JSX.Element {
     }
     if (opt.key === 'memoryGame') {
       navigation.navigate('MemoryGame');
+      return;
+    }
+    if (opt.key === 'hearing') {
+      navigation.navigate('HearingPractice');
       return;
     }
   if (opt.key === 'translate') {
@@ -59,6 +64,7 @@ function PracticeScreen(): React.JSX.Element {
     if (opt.key === 'missingWords') return navigation.navigate('MissingWords', { surprise: true });
     if (opt.key === 'matchGame') return navigation.navigate('WordsMatch', { surprise: true });
     if (opt.key === 'memoryGame') return navigation.navigate('MemoryGame', { surprise: true });
+    if (opt.key === 'hearing') return navigation.navigate('HearingPractice', { surprise: true });
     if (opt.key === 'translate') return navigation.navigate('Translate', { surprise: true });
     if (opt.key === 'chooseWord') return navigation.navigate('ChooseWord', { surprise: true });
     if (opt.key === 'chooseTranslation') return navigation.navigate('ChooseTranslation', { surprise: true });

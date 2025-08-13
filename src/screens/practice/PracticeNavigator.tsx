@@ -10,6 +10,7 @@ import translationMissingLetters from './translationMissingLetters/TranslationMi
 import ChooseWordScreen from './chooseWord/ChooseWordScreen.tsx';
 import WriteWordScreen from './writeWord/WriteWordScreen.tsx';
 import MemoryGameScreen from './memoryGame/MemoryGameScreen.tsx';
+import HearingPracticeScreen from './hearing/HearingPracticeScreen.tsx';
 
 type SurpriseParam = { surprise?: boolean } | undefined;
 
@@ -23,6 +24,7 @@ export type PracticeStackParamList = {
   ChooseTranslation: SurpriseParam;
   WriteWord: SurpriseParam;
   MemoryGame: SurpriseParam;
+  HearingPractice: SurpriseParam;
 };
 
 const Stack = createNativeStackNavigator<PracticeStackParamList>();
@@ -35,6 +37,7 @@ const RANDOM_GAME_ROUTES: Array<keyof PracticeStackParamList> = [
   'ChooseWord',
   'ChooseTranslation',
   'MemoryGame',
+  'HearingPractice',
 ];
 
 function navigateToRandomGame(
@@ -186,6 +189,21 @@ function PracticeNavigator(): React.JSX.Element {
         component={MemoryGameScreen}
         options={{
           title: 'Memory game',
+          headerShown: true,
+          headerLargeTitle: false,
+          headerBackTitle: '',
+          headerTitle: (props) => (
+            <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
+              {props?.children}
+            </Text>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="HearingPractice"
+        component={HearingPracticeScreen}
+        options={{
+          title: 'Hearing practice',
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
