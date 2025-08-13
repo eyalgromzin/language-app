@@ -303,6 +303,58 @@ function SurfScreen(): React.JSX.Element {
     true;
   `;
 
+  const HOMEPAGE_KEY = 'surf.homepage';
+
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const saved = await AsyncStorage.getItem(HOMEPAGE_KEY);
+        if (!mounted) return;
+        if (typeof saved === 'string' && saved.trim().length > 0) {
+          setAddressText(saved);
+          setCurrentUrl(saved);
+        }
+      } catch {}
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const promptSetHomepage = () => {
+    const urlToSave = normalizeUrl(addressText.trim() || currentUrl);
+    const confirmAndSave = async () => {
+      try {
+        await AsyncStorage.setItem(HOMEPAGE_KEY, urlToSave);
+        if (Platform.OS === 'android') {
+          ToastAndroid.show('Homepage set', ToastAndroid.SHORT);
+        } else {
+          Alert.alert('Homepage set');
+        }
+      } catch {
+        if (Platform.OS === 'android') {
+          ToastAndroid.show('Failed to set homepage', ToastAndroid.SHORT);
+        } else {
+          Alert.alert('Error', 'Failed to set homepage');
+        }
+      }
+    };
+    try {
+      Alert.alert(
+        'Set Homepage',
+        'do you want to set this website as homepage?',
+        [
+          { text: 'No', style: 'cancel' },
+          { text: 'Yes', onPress: confirmAndSave },
+        ],
+        { cancelable: true }
+      );
+    } catch {
+      confirmAndSave();
+    }
+  };
+
   const onMessage = (event: WebViewMessageEvent) => {
     try {
       const data = JSON.parse(event.nativeEvent.data);
@@ -580,7 +632,7 @@ function SurfScreen(): React.JSX.Element {
         >
           <Ionicons name="chevron-back" size={22} color={canGoBack ? '#007AFF' : '#999'} />
         </TouchableOpacity>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={goForward}
           disabled={!canGoForward}
           style={[styles.libraryBtn, !canGoForward && { opacity: 0.4 }]}
@@ -589,7 +641,7 @@ function SurfScreen(): React.JSX.Element {
           hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
         >
           <Ionicons name="chevron-forward" size={22} color={canGoForward ? '#007AFF' : '#999'} />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TouchableOpacity
           onPress={() => navigation.navigate('Library')}
           style={styles.libraryBtn}
@@ -598,6 +650,15 @@ function SurfScreen(): React.JSX.Element {
           hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
         >
           <Ionicons name="albums-outline" size={22} color="#007AFF" />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={promptSetHomepage}
+          style={styles.libraryBtn}
+          accessibilityRole="button"
+          accessibilityLabel="Set as homepage"
+          hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+        >
+          <Ionicons name="home-outline" size={22} color="#007AFF" />
         </TouchableOpacity>
       </View>
       <WebView
