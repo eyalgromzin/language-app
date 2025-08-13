@@ -6,6 +6,7 @@ import MissingLettersScreen from './missingLetters/MissingLettersScreen.tsx';
 import MissingWordsScreen from './missingWords/MissingWordsScreen.tsx';
 import WordsMatchScreen from './wordsMatch/WordsMatchScreen.tsx';
 import TranslateScreen from './translate/TranslateScreen.tsx';
+import ChooseWordScreen from './chooseWord/ChooseWordScreen.tsx';
 
 export type PracticeStackParamList = {
   PracticeHome: undefined;
@@ -13,6 +14,7 @@ export type PracticeStackParamList = {
   MissingWords: undefined;
   WordsMatch: undefined;
   Translate: undefined;
+  ChooseWord: undefined;
 };
 
 const Stack = createNativeStackNavigator<PracticeStackParamList>();
@@ -82,6 +84,21 @@ function PracticeNavigator(): React.JSX.Element {
         component={TranslateScreen}
         options={{
           title: 'Translate',
+          headerShown: true,
+          headerLargeTitle: false,
+          headerBackTitle: '',
+          headerTitle: (props) => (
+            <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
+              {props?.children}
+            </Text>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="ChooseWord"
+        component={ChooseWordScreen}
+        options={{
+          title: 'Choose word',
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',

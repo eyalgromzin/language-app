@@ -13,6 +13,7 @@ const PRACTICE_OPTIONS: PracticeOption[] = [
   { key: 'missingWords', label: 'Missing words', emoji: '🔡' },
   { key: 'matchGame', label: 'Match game', emoji: '🧩' },
   { key: 'translate', label: 'Translate', emoji: '🌐' },
+  { key: 'chooseWord', label: 'Choose word', emoji: '📝' },
   { key: 'wordFromTranslation', label: 'Word from translation', emoji: '✍️' },
   { key: 'memoryGame', label: 'Memory game', emoji: '🧠' },
 ];
@@ -34,6 +35,10 @@ function PracticeScreen(): React.JSX.Element {
     }
     if (opt.key === 'translate') {
       navigation.navigate('Translate');
+      return;
+    }
+    if (opt.key === 'chooseWord') {
+      navigation.navigate('ChooseWord');
       return;
     }
     Alert.alert('Coming soon', `${opt.label} is not implemented yet.`);
