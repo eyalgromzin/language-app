@@ -13,8 +13,9 @@ const PRACTICE_OPTIONS: PracticeOption[] = [
   { key: 'missingWords', label: 'Missing words', emoji: '🔡' },
   { key: 'matchGame', label: 'Match game', emoji: '🧩' },
   { key: 'chooseWord', label: 'Choose word', emoji: '📝' },
-  { key: 'wordFromTranslation', label: 'Word from translation', emoji: '✍️' },
-  { key: 'translate', label: 'Translate', emoji: '🌐' },
+  { key: 'chooseTranslation', label: 'Choose translation', emoji: '🔎' },
+  { key: 'wordFromTranslation', label: 'Write the word', emoji: '✍️' },
+  { key: 'translate', label: 'Write Translation', emoji: '🌐' },
   { key: 'memoryGame', label: 'Memory game', emoji: '🧠' },
 ];
 
@@ -33,12 +34,20 @@ function PracticeScreen(): React.JSX.Element {
       navigation.navigate('WordsMatch');
       return;
     }
-    if (opt.key === 'translate') {
+  if (opt.key === 'translate') {
       navigation.navigate('Translate');
       return;
     }
+  if (opt.key === 'wordFromTranslation') {
+    navigation.navigate('WriteWord');
+    return;
+  }
     if (opt.key === 'chooseWord') {
       navigation.navigate('ChooseWord');
+      return;
+    }
+    if (opt.key === 'chooseTranslation') {
+      navigation.navigate('ChooseTranslation');
       return;
     }
     Alert.alert('Coming soon', `${opt.label} is not implemented yet.`);

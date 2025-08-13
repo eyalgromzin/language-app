@@ -8,6 +8,7 @@ import WordsMatchScreen from './wordsMatch/WordsMatchScreen.tsx';
 import chooseTranslationScreen from './chooseTranslation/chooseTranslationScreen.tsx';
 import WriteTranslationScreen from './writeTranslation/WriteTranslationScreen.tsx';
 import ChooseWordScreen from './chooseWord/ChooseWordScreen.tsx';
+import WriteWordScreen from './writeWord/WriteWordScreen.tsx';
 
 export type PracticeStackParamList = {
   PracticeHome: undefined;
@@ -16,6 +17,8 @@ export type PracticeStackParamList = {
   WordsMatch: undefined;
   Translate: undefined;
   ChooseWord: undefined;
+  ChooseTranslation: undefined;
+  WriteWord: undefined;
 };
 
 const Stack = createNativeStackNavigator<PracticeStackParamList>();
@@ -96,10 +99,40 @@ function PracticeNavigator(): React.JSX.Element {
         }}
       />
       <Stack.Screen
+        name="WriteWord"
+        component={WriteWordScreen}
+        options={{
+          title: 'Write the word',
+          headerShown: true,
+          headerLargeTitle: false,
+          headerBackTitle: '',
+          headerTitle: (props) => (
+            <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
+              {props?.children}
+            </Text>
+          ),
+        }}
+      />
+      <Stack.Screen
         name="ChooseWord"
         component={ChooseWordScreen}
         options={{
           title: 'Choose word',
+          headerShown: true,
+          headerLargeTitle: false,
+          headerBackTitle: '',
+          headerTitle: (props) => (
+            <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
+              {props?.children}
+            </Text>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="ChooseTranslation"
+        component={chooseTranslationScreen}
+        options={{
+          title: 'Choose translation',
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
