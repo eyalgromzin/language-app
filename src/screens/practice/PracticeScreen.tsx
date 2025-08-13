@@ -15,7 +15,6 @@ const PRACTICE_OPTIONS: PracticeOption[] = [
   { key: 'chooseWord', label: 'Choose word', emoji: '📝' },
   { key: 'chooseTranslation', label: 'Choose translation', emoji: '🔎' },
   { key: 'wordFromTranslation', label: 'Write the word', emoji: '✍️' },
-  { key: 'translate', label: 'Write Translation', emoji: '🌐' },
   { key: 'memoryGame', label: 'Memory game', emoji: '🧠' },
 ];
 
