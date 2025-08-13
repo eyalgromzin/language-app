@@ -9,12 +9,12 @@ type PracticeOption = {
 };
 
 const PRACTICE_OPTIONS: PracticeOption[] = [
-  { key: 'missingLetters', label: 'Missing letters', emoji: '🔤' },
+  { key: 'missingLetters', label: 'Missing letters word', emoji: '🔤' },
   { key: 'missingWords', label: 'Missing words', emoji: '🔡' },
   { key: 'matchGame', label: 'Match game', emoji: '🧩' },
   { key: 'chooseWord', label: 'Choose word', emoji: '📝' },
   { key: 'chooseTranslation', label: 'Choose translation', emoji: '🔎' },
-  { key: 'wordFromTranslation', label: 'Write the word', emoji: '✍️' },
+  { key: 'translate', label: 'Missing Letters Translation', emoji: 'ðŸŒ' },
   { key: 'memoryGame', label: 'Memory game', emoji: '🧠' },
 ];
 
@@ -37,10 +37,6 @@ function PracticeScreen(): React.JSX.Element {
       navigation.navigate('Translate');
       return;
     }
-  if (opt.key === 'wordFromTranslation') {
-    navigation.navigate('WriteWord');
-    return;
-  }
     if (opt.key === 'chooseWord') {
       navigation.navigate('ChooseWord');
       return;

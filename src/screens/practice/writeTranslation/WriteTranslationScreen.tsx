@@ -94,6 +94,26 @@ function pickRandomIndex(length: number, previous?: number): number {
   return nextIndex;
 }
 
+function pickMissingIndices(letters: string[], desiredCount: number): number[] {
+  const candidateIndices: number[] = [];
+  for (let i = 0; i < letters.length; i += 1) {
+    const ch = letters[i];
+    if (isAlphabetic(ch)) {
+      candidateIndices.push(i);
+    }
+  }
+  if (candidateIndices.length === 0) return [];
+  const desired = Math.max(1, Math.min(candidateIndices.length, Math.floor(desiredCount)));
+  const result: number[] = [];
+  const pool = [...candidateIndices];
+  while (result.length < desired && pool.length > 0) {
+    const idx = Math.floor(Math.random() * pool.length);
+    result.push(pool[idx]);
+    pool.splice(idx, 1);
+  }
+  return result.sort((a, b) => a - b);
+}
+
 function WriteTranslationScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [items, setItems] = React.useState<PreparedItem[]>([]);
@@ -107,13 +127,13 @@ function WriteTranslationScreen(): React.JSX.Element {
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
-  const prepare = React.useCallback((arr: WordEntry[]): PreparedItem[] => {
+  const prepare = React.useCallback((arr: WordEntry[], removeAfter: number): PreparedItem[] => {
     return arr.map(ensureCounters).map((entry) => {
       const letters = splitLetters(entry.translation);
-      const inputIndices: number[] = [];
-      for (let i = 0; i < letters.length; i += 1) {
-        if (isAlphabetic(letters[i])) inputIndices.push(i);
-      }
+      const correctSoFar = entry.numberOfCorrectAnswers?.writeTranslation ?? 0;
+      const base = 4 - removeAfter;
+      const desiredMissing = base + correctSoFar;
+      const inputIndices = pickMissingIndices(letters, desiredMissing);
       return { entry, letters, inputIndices };
     });
   }, []);
@@ -138,7 +158,7 @@ function WriteTranslationScreen(): React.JSX.Element {
       const filtered = arr
         .filter((w) => w.word && w.translation)
         .filter((w) => (w.numberOfCorrectAnswers?.writeTranslation ?? 0) < threshold);
-      const prepared = prepare(filtered);
+      const prepared = prepare(filtered, threshold);
       setItems(prepared);
       setCurrentIndex(pickRandomIndex(prepared.length));
       setInputs({});
