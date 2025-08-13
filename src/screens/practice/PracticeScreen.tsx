@@ -32,6 +32,10 @@ function PracticeScreen(): React.JSX.Element {
       navigation.navigate('WordsMatch');
       return;
     }
+    if (opt.key === 'translate') {
+      navigation.navigate('Translate');
+      return;
+    }
     Alert.alert('Coming soon', `${opt.label} is not implemented yet.`);
   };
 

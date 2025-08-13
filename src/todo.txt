@@ -1,11 +1,12 @@
 - screens / tabs : 
-    - on startup page - choose games that you like 
     - practice - 
         given n words and n translations - connect the words with the translations 
         given the word - choose translation out of n translations
         given a translation - choose the word out of n words 
         memory game - with words and translations 
-        - make surprise me change a game every time 
+        - make surprise me change a game every time
+
+    - on startup page (where you choose languages) - choose games that you like 
 
     - surf screen 
         - create a nest server 
@@ -43,7 +44,7 @@
     - save progress in db for each person by email - step by step progress.  
 
     
-- monetizations: 
+- monetizations - after 1000 downloads: 
     limit num of words possible to add to learning per day - for example 20.
 
 - payed version - 
