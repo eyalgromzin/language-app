@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
   surpriseButton: {
     backgroundColor: '#007AFF',
-    paddingVertical: 16,
+    paddingVertical: 26,
     borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',

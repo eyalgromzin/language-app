@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, Pressable } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PracticeHomeScreen from './PracticeScreen';
 import WordMissingLettersScreen from './wordMissingLetters/WordMissingLettersScreen.tsx';
@@ -25,15 +25,49 @@ export type PracticeStackParamList = {
 
 const Stack = createNativeStackNavigator<PracticeStackParamList>();
 
+const RANDOM_GAME_ROUTES: Array<keyof PracticeStackParamList> = [
+  'MissingLetters',
+  'MissingWords',
+  'WordsMatch',
+  'Translate',
+  'ChooseWord',
+  'ChooseTranslation',
+  'MemoryGame',
+];
+
+function navigateToRandomGame(
+  navigation: any,
+  currentRouteName?: keyof PracticeStackParamList
+): void {
+  const choices = RANDOM_GAME_ROUTES.filter((name) => name !== currentRouteName);
+  const target = choices[Math.floor(Math.random() * choices.length)];
+  navigation.navigate(target as never);
+}
+
 function PracticeNavigator(): React.JSX.Element {
   return (
     <Stack.Navigator
-      screenOptions={{
+      screenOptions={({ route, navigation }) => ({
         headerShown: false,
         headerLargeTitle: false,
         // headerBackTitleVisible is not supported in native-stack; use headerBackTitle instead
         headerBackTitle: '',
-      }}
+        headerRight: () =>
+          route.name !== 'PracticeHome' ? (
+            <Pressable
+              onPress={() =>
+                navigateToRandomGame(
+                  navigation,
+                  route.name as keyof PracticeStackParamList
+                )
+              }
+              accessibilityRole="button"
+              accessibilityLabel="Surprise me"
+            >
+              <Text style={{ fontSize: 18 }}>🎲</Text>
+            </Pressable>
+          ) : undefined,
+      })}
     >
       <Stack.Screen
         name="PracticeHome"
