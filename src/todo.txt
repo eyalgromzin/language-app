@@ -5,7 +5,6 @@
     - add in settings - total correct answers till word removal - combine all methods that check if should remove a word into 1 commoon 
         method. 
     - surf screen 
-        - on link click - show toast "long press to select word"
         - create a nest server 
         - create library controller
         - create get texts endpoint 
@@ -14,12 +13,14 @@
             - when a user adds a page to favourites its personal . 
             - in addition it will check in the library if this link already exists .  if not , it will add it . 
         - enable the user to set startup url 
+        - save locally domains history . for auto complete in surfing 
     - library screen 
         - a table of links with the columns : 
             text name
             type: story / article / conversation / any
             level
         - enable a user once a week to update a 1 of the fields of the library item.  
+    - startup screen - num of answers for word removal - make if round buttons 1,2,3
     - videos - with subtitles that each word in the subtitle possible to click on it .  
     - login with facebook / google
     - enable to load epub files - and read a book with it  
