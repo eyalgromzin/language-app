@@ -1,10 +1,11 @@
 import React from 'react';
-import { ActivityIndicator, Alert, Platform, StyleSheet, Text, ToastAndroid, TouchableOpacity, View, useWindowDimensions } from 'react-native';
+import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View, useWindowDimensions } from 'react-native';
 import { Reader, ReaderProvider } from '@epubjs-react-native/core';
 import { useFileSystem } from '@epubjs-react-native/file-system';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
+import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 
 type StoredBook = {
   id: string;
@@ -30,6 +31,26 @@ function BookReaderScreen(): React.JSX.Element {
   const [bookTitle, setBookTitle] = React.useState<string>('');
   const [src, setSrc] = React.useState<string | null>(null);
   const [initialCfi, setInitialCfi] = React.useState<string | undefined>(undefined);
+
+  const [translationPanel, setTranslationPanel] = React.useState<
+    | {
+        word: string;
+        translation: string;
+        sentence?: string;
+        images: string[];
+        imagesLoading: boolean;
+        translationLoading: boolean;
+      }
+    | null
+  >(null);
+
+  const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
+  const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
+
+  const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
+  const imageScrapeResolveRef = React.useRef<((urls: string[]) => void) | null>(null);
+  const imageScrapeRejectRef = React.useRef<((err?: unknown) => void) | null>(null);
+  const hiddenWebViewRef = React.useRef<WebView>(null);
 
   const bookId: string | undefined = (route?.params as RouteParams | undefined)?.id;
 
@@ -77,6 +98,26 @@ function BookReaderScreen(): React.JSX.Element {
       cancelled = true;
     };
   }, [bookId]);
+
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
+        if (!mounted) return;
+        const map = Object.fromEntries(entries);
+        setLearningLanguage(map['language.learning'] ?? null);
+        setNativeLanguage(map['language.native'] ?? null);
+      } catch {
+        if (!mounted) return;
+        setLearningLanguage(null);
+        setNativeLanguage(null);
+      }
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   const persistCfi = React.useCallback(async (cfi: string | null) => {
     try {
@@ -141,6 +182,15 @@ function BookReaderScreen(): React.JSX.Element {
         } catch (e) {}
       }
 
+      function computeSentenceFromText(text, startIndex, endIndex) {
+        try {
+          var punct = /[\.!?。！？]/;
+          var s = startIndex; while (s > 0 && !punct.test(text[s - 1])) s--;
+          var e = endIndex; while (e < text.length && !punct.test(text[e])) e++;
+          return (text.slice(s, Math.min(e + 1, text.length)) || '').replace(/\s+/g, ' ').trim();
+        } catch (e) { return ''; }
+      }
+
       function highlightWordAtPoint(doc, x, y) {
         try {
           const range = (doc.caretRangeFromPoint && doc.caretRangeFromPoint(x, y))
@@ -195,7 +245,17 @@ function BookReaderScreen(): React.JSX.Element {
             span.appendChild(frag);
             highlightRange.insertNode(span);
           }
-          return word;
+          var sentence = computeSentenceFromText(text, start, end);
+          if (!sentence) {
+            try {
+              var el = (span.parentElement || null);
+              while (el && el.innerText && el.innerText.trim().length < 1) el = el.parentElement;
+              var blockText = el && el.innerText ? el.innerText : text;
+              var idx = blockText.toLowerCase().indexOf(word.toLowerCase());
+              if (idx >= 0) sentence = computeSentenceFromText(blockText, idx, idx + word.length);
+            } catch (e2) { sentence = ''; }
+          }
+          return { word: word, sentence: sentence };
         } catch (e) { return null; }
       }
 
@@ -237,7 +297,8 @@ function BookReaderScreen(): React.JSX.Element {
         while (end < text.length && isWordChar(text[end])) end++;
         const word = text.slice(start, end).trim();
         if (!word) return null;
-        return word;
+        var sentence = computeSentenceFromText(text, start, end);
+        return { word: word, sentence: sentence };
       }
 
       function attachToDocument(doc) {
@@ -246,12 +307,12 @@ function BookReaderScreen(): React.JSX.Element {
         ensureHighlightStyle(doc);
         const handler = (ev) => {
           try {
-            const word = highlightWordAtPoint(doc, ev.clientX, ev.clientY) || extractWordAtPoint(doc, ev.clientX, ev.clientY);
-            if (word) {
+            const res = highlightWordAtPoint(doc, ev.clientX, ev.clientY) || extractWordAtPoint(doc, ev.clientX, ev.clientY);
+            if (res && res.word) {
               if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
-                window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word }));
+                window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word: res.word, sentence: res.sentence || '' }));
               } else if (window.parent && window.parent !== window && window.parent.postMessage) {
-                window.parent.postMessage({ __WORD_TAP__: true, word }, '*');
+                window.parent.postMessage({ __WORD_TAP__: true, word: res.word, sentence: res.sentence || '' }, '*');
               }
             }
           } catch (e) {}
@@ -261,12 +322,12 @@ function BookReaderScreen(): React.JSX.Element {
           try {
             const t = e.changedTouches && e.changedTouches[0];
             if (!t) return;
-            const word = highlightWordAtPoint(doc, t.clientX, t.clientY) || extractWordAtPoint(doc, t.clientX, t.clientY);
-            if (word) {
+            const res = highlightWordAtPoint(doc, t.clientX, t.clientY) || extractWordAtPoint(doc, t.clientX, t.clientY);
+            if (res && res.word) {
               if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
-                window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word }));
+                window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word: res.word, sentence: res.sentence || '' }));
               } else if (window.parent && window.parent !== window && window.parent.postMessage) {
-                window.parent.postMessage({ __WORD_TAP__: true, word }, '*');
+                window.parent.postMessage({ __WORD_TAP__: true, word: res.word, sentence: res.sentence || '' }, '*');
               }
             }
           } catch (e) {}
@@ -316,15 +377,292 @@ function BookReaderScreen(): React.JSX.Element {
         data = typeof raw === 'string' ? JSON.parse(raw) : raw;
       }
       if (data && data.type === 'wordTap' && data.word) {
-        const msg: string = String(data.word);
-        if (Platform.OS === 'android') {
-          ToastAndroid.show(msg, ToastAndroid.SHORT);
-        } else {
-          Alert.alert('Word', msg);
-        }
+        const w: string = String(data.word);
+        const s: string | undefined = typeof data.sentence === 'string' ? data.sentence : undefined;
+        openPanel(w, s);
       }
     } catch {}
   }, []);
+
+  const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
+    English: 'en',
+    Spanish: 'es',
+    French: 'fr',
+    German: 'de',
+    Italian: 'it',
+    Portuguese: 'pt',
+    Russian: 'ru',
+    'Chinese (Mandarin)': 'zh-CN',
+    Japanese: 'ja',
+    Korean: 'ko',
+    Arabic: 'ar',
+    Hindi: 'hi',
+    Turkish: 'tr',
+    Polish: 'pl',
+    Dutch: 'nl',
+    Greek: 'el',
+    Swedish: 'sv',
+    Norwegian: 'no',
+    Finnish: 'fi',
+    Czech: 'cs',
+    Ukrainian: 'uk',
+    Hebrew: 'he',
+    Thai: 'th',
+    Vietnamese: 'vi',
+  };
+
+  const getLangCode = (nameOrNull: string | null | undefined): string | null => {
+    if (!nameOrNull) return null;
+    const code = LANGUAGE_NAME_TO_CODE[nameOrNull];
+    return typeof code === 'string' ? code : null;
+  };
+
+  const fetchTranslation = async (word: string): Promise<string> => {
+    const fromCode = getLangCode(learningLanguage) || 'en';
+    const toCode = getLangCode(nativeLanguage) || 'en';
+    if (!word || fromCode === toCode) return word;
+    try {
+      const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(word)}&langpair=${encodeURIComponent(fromCode)}|${encodeURIComponent(toCode)}`;
+      const res = await fetch(url);
+      if (res.ok) {
+        const json = await res.json();
+        const txt = json?.responseData?.translatedText;
+        if (typeof txt === 'string' && txt.trim().length > 0) return txt.trim();
+      }
+    } catch {}
+    return word;
+  };
+
+  const imageScrapeInjection = `
+    (function() {
+      var MAX_TIME = 12000;
+      var INTERVAL_MS = 250;
+      var start = Date.now();
+      var pollTimer = null;
+      var scrollTimer = null;
+
+      function normalizeUrl(u) {
+        if (!u) return null;
+        var url = ('' + u).trim();
+        if (!url) return null;
+        if (url.indexOf('//') === 0) return 'https:' + url;
+        return url;
+      }
+
+      function collectUrls() {
+        var urls = [];
+        try {
+          var imgs = Array.prototype.slice.call(document.querySelectorAll('img'));
+          for (var i = 0; i < imgs.length; i++) {
+            var img = imgs[i];
+            try {
+              var candidate = img.currentSrc || img.src || img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || img.getAttribute('data-original') || '';
+              var n = normalizeUrl(candidate);
+              if (n && urls.indexOf(n) === -1) urls.push(n);
+            } catch (e) {}
+          }
+        } catch (e) {}
+        return urls;
+      }
+
+      function done() {
+        try {
+          var urls = collectUrls().slice(0, 12);
+          window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
+            JSON.stringify({ type: 'imageScrapeUrls', urls: urls })
+          );
+        } catch(e) {}
+        if (pollTimer) clearInterval(pollTimer);
+        if (scrollTimer) clearInterval(scrollTimer);
+      }
+
+      function step() {
+        if (collectUrls().length >= 6) return done();
+        if (Date.now() - start > MAX_TIME) return done();
+      }
+
+      var y = 0;
+      scrollTimer = setInterval(function(){
+        try {
+          y += 800;
+          window.scrollTo(0, y);
+          window.dispatchEvent(new Event('scroll'));
+        } catch(e) {}
+      }, 200);
+
+      pollTimer = setInterval(step, INTERVAL_MS);
+      step();
+    })();
+    true;
+  `;
+
+  const parseYandexImageUrlsFromHtml = (html: string): string[] => {
+    try {
+      const results: string[] = [];
+      const imgTagRegex = /<img\b[^>]*class=(["'])([^"']*?)\1[^>]*>/gi;
+      let match: RegExpExecArray | null;
+      while ((match = imgTagRegex.exec(html)) !== null) {
+        const classAttr = match[2] || '';
+        if (
+          classAttr.indexOf('ImagesContentImage-Image') !== -1 &&
+          classAttr.indexOf('ImagesContentImage-Image_clickable') !== -1
+        ) {
+          const tag = match[0];
+          let url: string | null = null;
+          const srcsetMatch = /srcset=(["'])([^"']+?)\1/i.exec(tag);
+          if (srcsetMatch && srcsetMatch[2]) {
+            url = srcsetMatch[2].split(',')[0].trim().split(/\s+/)[0];
+          }
+          if (!url) {
+            const dataSrcMatch = /data-src=(["'])([^"']+?)\1/i.exec(tag);
+            if (dataSrcMatch && dataSrcMatch[2]) url = dataSrcMatch[2];
+          }
+          if (!url) {
+            const srcMatch = /src=(["'])([^"']+?)\1/i.exec(tag);
+            if (srcMatch && srcMatch[2]) url = srcMatch[2];
+          }
+          if (url) {
+            let normalized = url;
+            if (normalized.startsWith('//')) normalized = 'https:' + normalized;
+            else if (normalized.startsWith('/')) normalized = 'https://yandex.com' + normalized;
+            if (!results.includes(normalized)) {
+              results.push(normalized);
+              if (results.length >= 6) break;
+            }
+          }
+        }
+      }
+      return results.slice(0, 6);
+    } catch {
+      return [];
+    }
+  };
+
+  const fetchImageUrls = async (word: string): Promise<string[]> => {
+    const searchUrl = `https://yandex.com/images/search?text=${encodeURIComponent(word)}`;
+    if (imageScrape) {
+      return [];
+    }
+    const result: string[] = await new Promise<string[]>((resolve, reject) => {
+      imageScrapeResolveRef.current = resolve;
+      imageScrapeRejectRef.current = reject;
+      setImageScrape({ url: searchUrl, word });
+    }).catch(() => [] as string[]);
+    if (Array.isArray(result) && result.length > 0) return result.slice(0, 6);
+    return [];
+  };
+
+  const onScrapeMessage = (event: WebViewMessageEvent) => {
+    try {
+      const data = JSON.parse(event.nativeEvent.data);
+      if (data && data.type === 'imageScrapeUrls' && Array.isArray(data.urls)) {
+        const urls: string[] = (data.urls as unknown[])
+          .map((u) => (typeof u === 'string' ? u : ''))
+          .filter((u) => !!u)
+          .slice(0, 6);
+        imageScrapeResolveRef.current?.(urls);
+        imageScrapeResolveRef.current = null;
+        imageScrapeRejectRef.current = null;
+        setImageScrape(null);
+        return;
+      }
+      if (data && data.type === 'imageScrapeHtml' && typeof data.html === 'string') {
+        const urls = parseYandexImageUrlsFromHtml(data.html);
+        imageScrapeResolveRef.current?.(urls);
+        imageScrapeResolveRef.current = null;
+        imageScrapeRejectRef.current = null;
+        setImageScrape(null);
+      }
+    } catch {
+      imageScrapeResolveRef.current?.([]);
+      imageScrapeResolveRef.current = null;
+      imageScrapeRejectRef.current = null;
+      setImageScrape(null);
+    }
+  };
+
+  const openPanel = (word: string, sentence?: string) => {
+    setTranslationPanel({ word, translation: '', sentence, images: [], imagesLoading: true, translationLoading: true });
+    fetchTranslation(word)
+      .then((t) => {
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translation: t || prev.translation, translationLoading: false } : prev));
+      })
+      .catch(() => {
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translationLoading: false } : prev));
+      });
+    fetchImageUrls(word)
+      .then((imgs) => {
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, images: imgs, imagesLoading: false } : prev));
+      })
+      .catch(() => {
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, images: [], imagesLoading: false } : prev));
+      });
+  };
+
+  const saveCurrentWord = async () => {
+    if (!translationPanel) return;
+    const entry = {
+      word: translationPanel.word,
+      translation: translationPanel.translation,
+      sentence: translationPanel.sentence || '',
+      addedAt: new Date().toISOString(),
+      numberOfCorrectAnswers: {
+        missingLetters: 0,
+        missingWords: 0,
+        chooseTranslation: 0,
+        chooseWord: 0,
+        memoryGame: 0,
+        writeTranslation: 0,
+        writeWord: 0,
+      },
+    } as const;
+
+    const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
+    try {
+      let current: unknown = [];
+      try {
+        const content = await RNFS.readFile(filePath, 'utf8');
+        current = JSON.parse(content);
+      } catch {
+        current = [];
+      }
+      const arr = Array.isArray(current) ? current : [];
+
+      const normalize = (it: any) => {
+        const base = it && typeof it === 'object' ? it : {};
+        const noa = (base as any).numberOfCorrectAnswers || {};
+        const safeNoa = {
+          missingLetters: Math.max(0, Number(noa.missingLetters) || 0),
+          missingWords: Math.max(0, Number(noa.missingWords) || 0),
+          chooseTranslation: Math.max(0, Number(noa.chooseTranslation) || 0),
+          chooseWord: Math.max(0, Number(noa.chooseWord) || 0),
+          memoryGame: Math.max(0, Number(noa.memoryGame) || 0),
+          writeTranslation: Math.max(0, Number(noa.writeTranslation) || 0),
+          writeWord: Math.max(0, Number(noa.writeWord) || 0),
+        };
+        return { ...base, numberOfCorrectAnswers: safeNoa };
+      };
+      const normalized = arr.map(normalize);
+
+      const exists = normalized.some(
+        (it: any) => it && typeof it === 'object' && it.word === entry.word && it.sentence === entry.sentence
+      );
+      if (!exists) normalized.push(entry);
+
+      await RNFS.writeFile(filePath, JSON.stringify(normalized, null, 2), 'utf8');
+      if (Platform.OS === 'android') {
+        ToastAndroid.show('Saved', ToastAndroid.SHORT);
+      } else {
+        Alert.alert('Saved', 'Word added to your list.');
+      }
+    } catch (e) {
+      if (Platform.OS === 'android') {
+        ToastAndroid.show('Failed to save', ToastAndroid.SHORT);
+      } else {
+        Alert.alert('Error', 'Failed to save the word.');
+      }
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -364,6 +702,78 @@ function BookReaderScreen(): React.JSX.Element {
             />
           </ReaderProvider>
         )}
+        {imageScrape && (
+          <View style={{ position: 'absolute', left: -10000, top: 0, width: 360, height: 1200, opacity: 0 }}>
+            <WebView
+              ref={hiddenWebViewRef}
+              source={{ uri: imageScrape.url }}
+              style={{ width: '100%', height: '100%' }}
+              injectedJavaScript={imageScrapeInjection}
+              injectedJavaScriptBeforeContentLoaded={imageScrapeInjection}
+              onMessage={onScrapeMessage}
+              javaScriptEnabled
+              domStorageEnabled
+              originWhitelist={["*"]}
+              onLoad={() => {
+                try { hiddenWebViewRef.current?.injectJavaScript(imageScrapeInjection); } catch (e) {}
+              }}
+              onError={() => {
+                imageScrapeRejectRef.current?.();
+                imageScrapeResolveRef.current = null;
+                imageScrapeRejectRef.current = null;
+                setImageScrape(null);
+              }}
+            />
+          </View>
+        )}
+        {translationPanel && (
+          <View style={styles.bottomPanel}>
+            <View style={styles.bottomHeader}>
+              <Text style={styles.bottomWord} numberOfLines={1}>
+                {translationPanel.word}
+              </Text>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <TouchableOpacity
+                  onPress={saveCurrentWord}
+                  style={styles.addBtnWrap}
+                  hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+                  accessibilityRole="button"
+                  accessibilityLabel="Add word"
+                >
+                  <Text style={styles.addBtnText}>+</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setTranslationPanel(null)}>
+                  <Text style={styles.closeBtn}>✕</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+            {translationPanel.translationLoading ? (
+              <View style={styles.translationLoadingRow}>
+                <ActivityIndicator size="small" color="#555" />
+              </View>
+            ) : (
+              <Text style={styles.translationText} numberOfLines={3}>
+                {translationPanel.translation}
+              </Text>
+            )}
+            {!!translationPanel.sentence && (
+              <Text style={styles.sentenceText} numberOfLines={3}>
+                {translationPanel.sentence}
+              </Text>
+            )}
+            {translationPanel.imagesLoading ? (
+              <View style={[styles.imageRow, styles.imageRowLoader]}>
+                <ActivityIndicator size="small" color="#555" />
+              </View>
+            ) : (
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.imageRow}>
+                {(translationPanel.images || []).map((uri, idx) => (
+                  <Image key={idx} source={{ uri }} style={styles.imageItem} resizeMode="cover" />
+                ))}
+              </ScrollView>
+            )}
+          </View>
+        )}
       </View>
     </View>
   );
@@ -388,6 +798,95 @@ const styles = StyleSheet.create({
   title: { flex: 1, textAlign: 'center', fontWeight: '700' },
   readerContainer: { flex: 1 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  bottomPanel: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'white',
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+    paddingHorizontal: 12,
+    paddingTop: 10,
+    paddingBottom: 12,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: -2 },
+    elevation: 12,
+    zIndex: 999,
+  },
+  bottomHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 6,
+  },
+  bottomWord: {
+    fontSize: 16,
+    fontWeight: '600',
+    flexShrink: 1,
+    marginRight: 12,
+  },
+  addBtnWrap: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#007AFF',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 8,
+    shadowColor: '#000',
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 4,
+  },
+  addBtnText: {
+    color: 'white',
+    fontSize: 22,
+    fontWeight: '700',
+    lineHeight: 22,
+    includeFontPadding: false,
+  },
+  closeBtn: {
+    fontSize: 20,
+    color: '#000',
+    opacity: 0.9,
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+  },
+  translationText: {
+    fontSize: 14,
+    color: '#333',
+    marginBottom: 8,
+  },
+  sentenceText: {
+    fontSize: 13,
+    color: '#666',
+    marginBottom: 8,
+  },
+  imageRow: {
+    flexGrow: 0,
+  },
+  imageRowLoader: {
+    height: 80,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  translationLoadingRow: {
+    height: 42,
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    marginBottom: 8,
+  },
+  imageItem: {
+    width: 120,
+    height: 80,
+    borderRadius: 8,
+    marginRight: 8,
+    backgroundColor: '#eee',
+  },
 });
 
 
