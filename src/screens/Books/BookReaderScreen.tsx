@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View, useWindowDimensions } from 'react-native';
+import { ActivityIndicator, Alert, Platform, StyleSheet, Text, ToastAndroid, TouchableOpacity, View, useWindowDimensions } from 'react-native';
 import { Reader, ReaderProvider } from '@epubjs-react-native/core';
 import { useFileSystem } from '@epubjs-react-native/file-system';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -98,6 +98,150 @@ function BookReaderScreen(): React.JSX.Element {
     void persistCfi(cfi);
   }, [persistCfi]);
 
+  const injectedJavascript = React.useMemo(() => {
+    // This script runs inside the WebView. It attaches click handlers to the
+    // EPUB iframes and posts back the tapped word.
+    return `(() => {
+      // Forward messages from iframes to React Native if needed
+      try {
+        window.addEventListener('message', function(evt) {
+          try {
+            const data = evt && evt.data;
+            if (data && data.__WORD_TAP__ && data.word) {
+              if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+                window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word: data.word }));
+              }
+            }
+          } catch (e) {}
+        }, false);
+      } catch (e) {}
+
+      function extractWordAtPoint(doc, x, y) {
+        const range = (doc.caretRangeFromPoint && doc.caretRangeFromPoint(x, y))
+          || (doc.caretPositionFromPoint && (function(){
+                const pos = doc.caretPositionFromPoint(x, y);
+                if (!pos) return null;
+                const r = doc.createRange();
+                r.setStart(pos.offsetNode, Math.min(pos.offset, pos.offsetNode?.length || 0));
+                r.setEnd(pos.offsetNode, Math.min(pos.offset, pos.offsetNode?.length || 0));
+                return r;
+             })());
+        if (!range) return null;
+        let node = range.startContainer;
+        if (!node) return null;
+        if (node.nodeType !== 3 /* TEXT_NODE */) {
+          // If clicked on an element, try to find text node within
+          node = (function findTextNode(n){
+            if (!n) return null;
+            if (n.nodeType === 3) return n;
+            for (let i = 0; i < n.childNodes.length; i++) {
+              const res = findTextNode(n.childNodes[i]);
+              if (res) return res;
+            }
+            return null;
+          })(node);
+          if (!node) return null;
+        }
+        const text = node.textContent || '';
+        let index = range.startOffset;
+        if (index < 0) index = 0;
+        if (index > text.length) index = text.length;
+        // Simpler regex for broader WebView compatibility
+        const isWordChar = (ch) => /[A-Za-z0-9_'’\-]/.test(ch);
+        let start = index;
+        while (start > 0 && isWordChar(text[start - 1])) start--;
+        let end = index;
+        while (end < text.length && isWordChar(text[end])) end++;
+        const word = text.slice(start, end).trim();
+        if (!word) return null;
+        return word;
+      }
+
+      function attachToDocument(doc) {
+        if (!doc || !doc.body || doc.__wordTapAttached) return;
+        doc.__wordTapAttached = true;
+        const handler = (ev) => {
+          try {
+            const word = extractWordAtPoint(doc, ev.clientX, ev.clientY);
+            if (word) {
+              if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+                window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word }));
+              } else if (window.parent && window.parent !== window && window.parent.postMessage) {
+                window.parent.postMessage({ __WORD_TAP__: true, word }, '*');
+              }
+            }
+          } catch (e) {}
+        };
+        doc.body.addEventListener('click', handler, true);
+        doc.body.addEventListener('touchend', function(e){
+          try {
+            const t = e.changedTouches && e.changedTouches[0];
+            if (!t) return;
+            const word = extractWordAtPoint(doc, t.clientX, t.clientY);
+            if (word) {
+              if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+                window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word }));
+              } else if (window.parent && window.parent !== window && window.parent.postMessage) {
+                window.parent.postMessage({ __WORD_TAP__: true, word }, '*');
+              }
+            }
+          } catch (e) {}
+        }, true);
+      }
+
+      function scanAndAttach() {
+        try {
+          // Try epub.js rendition if available
+          if (window.rendition && typeof window.rendition.getContents === 'function') {
+            const contents = window.rendition.getContents();
+            if (Array.isArray(contents)) {
+              contents.forEach((c) => {
+                try { attachToDocument(c.document); } catch (e) {}
+              });
+            }
+          }
+          // Fallback: inspect iframes
+          const iframes = Array.from(document.querySelectorAll('iframe'));
+          iframes.forEach((f) => {
+            try { attachToDocument(f.contentDocument); } catch (e) {}
+          });
+        } catch (e) {}
+      }
+
+      // Hook on common rendition events
+      try {
+        if (window.rendition && typeof window.rendition.on === 'function') {
+          window.rendition.on('rendered', scanAndAttach);
+          window.rendition.on('relocated', scanAndAttach);
+        }
+      } catch (e) {}
+
+      // Periodic scan as safety net
+      setInterval(scanAndAttach, 1000);
+      // Initial attempt
+      scanAndAttach();
+    })();`;
+  }, []);
+
+  const handleWebViewMessage = React.useCallback((payload: any) => {
+    try {
+      // The Reader component already parses WebView messages and passes the object here.
+      let data: any = payload;
+      if (!data || typeof data !== 'object') {
+        const raw = payload?.nativeEvent?.data;
+        data = typeof raw === 'string' ? JSON.parse(raw) : raw;
+      }
+      if (data && data.type === 'wordTap' && data.word) {
+        const msg: string = String(data.word);
+        if (Platform.OS === 'android') {
+          ToastAndroid.show(msg, ToastAndroid.SHORT);
+        } else {
+          Alert.alert('Word', msg);
+        }
+      }
+    } catch {}
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -130,6 +274,9 @@ function BookReaderScreen(): React.JSX.Element {
               onLocationChange={handleLocationChange}
               onDisplayError={(reason: string) => setError(reason || 'Failed to display book')}
               onReady={() => setError(null)}
+              allowScriptedContent
+              injectedJavascript={injectedJavascript}
+              onWebViewMessage={handleWebViewMessage}
             />
           </ReaderProvider>
         )}
