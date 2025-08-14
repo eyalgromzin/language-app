@@ -2,7 +2,7 @@ import React from 'react';
 import { ActivityIndicator, FlatList, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
-import DocumentPicker from 'react-native-document-picker';
+import { pick } from '@react-native-documents/picker';
 import RNFS from 'react-native-fs';
 
 type StoredBook = {
@@ -50,8 +50,9 @@ function BooksScreen(): React.JSX.Element {
         android: ['application/epub+zip'],
         default: ['application/epub+zip'],
       }) as string[];
-      const res = await DocumentPicker.pickSingle({ type: pickerTypes, copyTo: 'documentDirectory' });
-      const uri: string = (res.fileCopyUri || res.uri || '').toString();
+      const [res] = await pick({ type: pickerTypes });
+      if (!res) return;
+      const uri: string = (res.uri || '').toString();
       if (!uri) return;
       await importEpubFromUri(uri, res.name || 'book.epub');
     } catch (e: any) {
@@ -63,12 +64,19 @@ function BooksScreen(): React.JSX.Element {
     try {
       const fileName = filenameFallback && /\.epub$/i.test(filenameFallback) ? filenameFallback : (filenameFallback + '.epub');
       let filePath = '';
+      const destDir = `${RNFS.DocumentDirectoryPath}/books`;
+      try { if (!(await RNFS.exists(destDir))) await RNFS.mkdir(destDir); } catch {}
       if (/^file:/.test(uri)) {
-        filePath = uri.replace(/^file:\/\//, '');
+        const srcPath = uri.replace(/^file:\/\//, '');
+        const destPath = `${destDir}/${Date.now()}_${fileName}`;
+        try {
+          await RNFS.copyFile(srcPath, destPath);
+          filePath = destPath;
+        } catch {
+          // fallback to original path if copy fails
+          filePath = srcPath;
+        }
       } else if (/^content:/.test(uri)) {
-        // copy content URI into app documents
-        const destDir = `${RNFS.DocumentDirectoryPath}/books`;
-        try { if (!(await RNFS.exists(destDir))) await RNFS.mkdir(destDir); } catch {}
         const destPath = `${destDir}/${Date.now()}_${fileName}`;
         try {
           await RNFS.copyFile(uri, destPath);

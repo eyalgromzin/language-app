@@ -1549,6 +1549,11 @@
     prompts "^2.4.2"
     semver "^7.5.2"
 
+"@react-native-documents/picker@^10.1.5":
+  version "10.1.5"
+  resolved "https://registry.npmjs.org/@react-native-documents/picker/-/picker-10.1.5.tgz"
+  integrity sha512-ajn55rNyxUqbQbz5gmm9gYFI1ifHBmMLH4jVWViA7IFqk1EiEM+pJcpoHizWr5hetR6tzQsaoI4vzCNv/WyA7w==
+
 "@react-native-google-signin/google-signin@^15.0.0":
   version "15.0.0"
   resolved "https://registry.npmjs.org/@react-native-google-signin/google-signin/-/google-signin-15.0.0.tgz"
@@ -5646,13 +5651,6 @@ react-is@^19.1.0:
   version "19.1.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-19.1.1.tgz"
   integrity sha512-tr41fA15Vn8p4X9ntI+yCyeGSf1TlYaY5vlTZfQmeLBrFo3psOPX6HhTDnFNL9uj3EhP0KAQ80cugCl4b4BERA==
-
-react-native-document-picker@^9.1.1:
-  version "9.1.1"
-  resolved "https://registry.npmjs.org/react-native-document-picker/-/react-native-document-picker-9.1.1.tgz"
-  integrity sha512-BW+7DbsILuFThlBm7NUFVUmKKf6Awkcf9R0q8wiCU2DlGGtAKQTt2iHpO5+Dn/7WMPB+rqNv3X1HsmJQ0t5R3g==
-  dependencies:
-    invariant "^2.2.4"
 
 react-native-fbsdk-next@^13.4.1:
   version "13.4.1"

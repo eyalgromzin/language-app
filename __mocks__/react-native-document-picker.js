@@ -4,8 +4,9 @@ module.exports = {
     images: 'image/*',
     plainText: 'text/plain',
   },
-  async pickSingle() {
-    throw new Error('DocumentPicker mocked: no file selected');
+  async pick() {
+    // return empty selection by default
+    return [];
   },
 };
 
