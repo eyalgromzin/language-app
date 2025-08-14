@@ -57,9 +57,14 @@ let LibraryService = class LibraryService {
     }
     getUrlsByLanguage(language) {
         const data = this.loadLibrary();
+        const typeIdToName = new Map(data.itemTypes.map((t) => [t.id, t.name]));
         return data.library
             .filter((item) => item.language.toLowerCase() === language.toLowerCase())
-            .map((item) => item.url);
+            .map((item) => ({
+            url: item.url,
+            type: typeIdToName.get(item.typeId) ?? String(item.typeId),
+            level: item.level,
+        }));
     }
     getUrlsWithCriteria(language, level, type) {
         const data = this.loadLibrary();

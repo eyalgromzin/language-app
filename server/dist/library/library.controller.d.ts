@@ -5,7 +5,11 @@ export declare class LibraryController {
     getUrls(body: {
         language: string;
     }): {
-        urls: string[];
+        urls: {
+            url: string;
+            type: string;
+            level: string;
+        }[];
     };
     getUrlsWithCriterias(body: {
         language: string;

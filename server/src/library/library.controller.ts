@@ -7,7 +7,9 @@ export class LibraryController {
 
   // POST /library/getUrls
   @Post('getUrls')
-  getUrls(@Body() body: { language: string }): { urls: string[] } {
+  getUrls(
+    @Body() body: { language: string },
+  ): { urls: { url: string; type: string; level: string }[] } {
     const urls = this.libraryService.getUrlsByLanguage(body.language);
     return { urls };
   }

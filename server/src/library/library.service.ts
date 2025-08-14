@@ -33,11 +33,17 @@ export class LibraryService {
     fs.writeFileSync(LIBRARY_JSON_PATH, JSON.stringify(data, null, 2), 'utf8');
   }
 
-  getUrlsByLanguage(language: string): string[] {
+  getUrlsByLanguage(language: string): { url: string; type: string; level: string }[] {
     const data = this.loadLibrary();
+    const typeIdToName = new Map<number, string>(data.itemTypes.map((t) => [t.id, t.name]));
+
     return data.library
       .filter((item) => item.language.toLowerCase() === language.toLowerCase())
-      .map((item) => item.url);
+      .map((item) => ({
+        url: item.url,
+        type: typeIdToName.get(item.typeId) ?? String(item.typeId),
+        level: item.level,
+      }));
   }
 
   getUrlsWithCriteria(language: string, level: string, type: string | number): string[] {

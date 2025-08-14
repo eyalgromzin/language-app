@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList, TouchableOpacity, Linking, ActivityIndicator, Platform } from 'react-native';
 
 function LibraryScreen(): React.JSX.Element {
-  const [urls, setUrls] = React.useState<string[]>([]);
+  const [urls, setUrls] = React.useState<{ url: string; type: string; level: string }[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string | null>(null);
 
@@ -21,7 +21,7 @@ function LibraryScreen(): React.JSX.Element {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ language: 'en' }),
         });
-        const json: { urls?: string[] } = await response.json();
+        const json: { urls?: { url: string; type: string; level: string }[] } = await response.json();
         if (!isCancelled) {
           setUrls(Array.isArray(json?.urls) ? json.urls : []);
         }
@@ -41,14 +41,15 @@ function LibraryScreen(): React.JSX.Element {
     };
   }, [apiBaseUrl]);
 
-  const renderItem = ({ item }: { item: string }) => {
+  const renderItem = ({ item }: { item: { url: string; type: string; level: string } }) => {
     return (
       <TouchableOpacity
         accessibilityRole="link"
-        onPress={() => Linking.openURL(item)}
+        onPress={() => Linking.openURL(item.url)}
         style={styles.item}
       >
-        <Text style={styles.itemName} numberOfLines={2}>{item}</Text>
+        <Text style={styles.itemName} numberOfLines={2}>{item.url}</Text>
+        <Text>{`${item.type} • ${item.level}`}</Text>
       </TouchableOpacity>
     );
   };
@@ -73,7 +74,7 @@ function LibraryScreen(): React.JSX.Element {
     <View style={styles.container}>
       <FlatList
         data={urls}
-        keyExtractor={(item) => item}
+        keyExtractor={(item) => item.url}
         renderItem={renderItem}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
         contentContainerStyle={styles.listContent}
