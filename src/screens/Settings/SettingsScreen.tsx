@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
 import { LANGUAGE_OPTIONS } from '../../constants/languages';
@@ -108,30 +108,44 @@ function SettingsScreen(): React.JSX.Element {
       </View>
 
       <View style={styles.pickerBlock}>
-        <Text style={styles.infoLabel}>Num of correct answers to remove word</Text>
-        <View style={styles.pickerWrapper}>
-          <Picker
-            selectedValue={removeAfterCorrect}
-            onValueChange={onChangeRemoveAfter}
-          >
-            {[1, 2, 3].map((n) => (
-              <Picker.Item key={n} label={`${n}`} value={n} />
-            ))}
-          </Picker>
+        <Text style={styles.infoLabel}>Num of correct answers to finish practice type</Text>
+        <View style={styles.optionCirclesContainer}>
+          {[1, 2, 3].map((n) => {
+            const selected = removeAfterCorrect === n;
+            return (
+              <Pressable
+                key={`num-${n}`}
+                onPress={() => onChangeRemoveAfter(n)}
+                style={[styles.optionCircle, selected && styles.optionCircleSelected]}
+                accessibilityRole="button"
+                accessibilityState={{ selected }}
+                accessibilityLabel={`Set number of correct answers to ${n}`}
+              >
+                <Text style={[styles.optionCircleText, selected && styles.optionCircleTextSelected]}>{n}</Text>
+              </Pressable>
+            );
+          })}
         </View>
       </View>
 
       <View style={styles.pickerBlock}>
         <Text style={styles.infoLabel}>Total correct answers till word removal</Text>
-        <View style={styles.pickerWrapper}>
-          <Picker
-            selectedValue={removeAfterTotalCorrect}
-            onValueChange={onChangeRemoveAfterTotal}
-          >
-            {[3,4,5,6,7,8,9,10,12,15].map((n) => (
-              <Picker.Item key={`tot-${n}`} label={`${n}`} value={n} />
-            ))}
-          </Picker>
+        <View style={[styles.optionCirclesContainer, { flexWrap: 'wrap' }]}>
+          {[6, 10, 14, 18].map((n) => {
+            const selected = removeAfterTotalCorrect === n;
+            return (
+              <Pressable
+                key={`tot-${n}`}
+                onPress={() => onChangeRemoveAfterTotal(n)}
+                style={[styles.optionCircle, selected && styles.optionCircleSelected]}
+                accessibilityRole="button"
+                accessibilityState={{ selected }}
+                accessibilityLabel={`Set total correct answers to ${n}`}
+              >
+                <Text style={[styles.optionCircleText, selected && styles.optionCircleTextSelected]}>{n}</Text>
+              </Pressable>
+            );
+          })}
         </View>
       </View>
     </View>
@@ -161,6 +175,34 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     overflow: 'hidden',
     marginTop: 8,
+  },
+  optionCirclesContainer: {
+    flexDirection: 'row',
+    marginTop: 8,
+  },
+  optionCircle: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 12,
+  },
+  optionCircleSelected: {
+    borderColor: '#007AFF',
+    backgroundColor: '#E6F0FF',
+  },
+  optionCircleText: {
+    fontSize: 16,
+    color: '#333',
+    fontWeight: '500',
+  },
+  optionCircleTextSelected: {
+    color: '#007AFF',
+    fontWeight: '700',
   },
 });
 
