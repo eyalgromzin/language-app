@@ -116,6 +116,89 @@ function BookReaderScreen(): React.JSX.Element {
         }, false);
       } catch (e) {}
 
+      function ensureHighlightStyle(doc) {
+        try {
+          if (!doc || !doc.head) return;
+          if (doc.getElementById('ll-highlight-style')) return;
+          const style = doc.createElement('style');
+          style.id = 'll-highlight-style';
+          style.type = 'text/css';
+          style.appendChild(doc.createTextNode('.ll-selected-word { background: rgba(255, 235, 59, 0.9); border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }'));
+          doc.head.appendChild(style);
+        } catch (e) {}
+      }
+
+      function clearHighlights(doc) {
+        try {
+          const nodes = Array.from(doc.querySelectorAll('.ll-selected-word'));
+          nodes.forEach((node) => {
+            try {
+              const parent = node.parentNode;
+              while (node.firstChild) parent.insertBefore(node.firstChild, node);
+              parent.removeChild(node);
+            } catch (e) {}
+          });
+        } catch (e) {}
+      }
+
+      function highlightWordAtPoint(doc, x, y) {
+        try {
+          const range = (doc.caretRangeFromPoint && doc.caretRangeFromPoint(x, y))
+            || (doc.caretPositionFromPoint && (function(){
+                  const pos = doc.caretPositionFromPoint(x, y);
+                  if (!pos) return null;
+                  const r = doc.createRange();
+                  r.setStart(pos.offsetNode, Math.min(pos.offset, pos.offsetNode?.length || 0));
+                  r.setEnd(pos.offsetNode, Math.min(pos.offset, pos.offsetNode?.length || 0));
+                  return r;
+               })());
+          if (!range) return null;
+          let node = range.startContainer;
+          if (!node) return null;
+          if (node.nodeType !== 3) {
+            // Find a text node beneath
+            (function findTextNode(n){
+              if (!n) return null;
+              if (n.nodeType === 3) { node = n; return n; }
+              for (let i = 0; i < n.childNodes.length; i++) {
+                const res = findTextNode(n.childNodes[i]);
+                if (res) return res;
+              }
+              return null;
+            })(node);
+            if (!node || node.nodeType !== 3) return null;
+          }
+          const text = node.textContent || '';
+          let index = range.startOffset;
+          if (index < 0) index = 0;
+          if (index > text.length) index = text.length;
+          const isWordChar = (ch) => /[A-Za-z0-9_'’\-]/.test(ch);
+          let start = index;
+          while (start > 0 && isWordChar(text[start - 1])) start--;
+          let end = index;
+          while (end < text.length && isWordChar(text[end])) end++;
+          const word = (text.slice(start, end) || '').trim();
+          if (!word) return null;
+          // Perform highlight
+          ensureHighlightStyle(doc);
+          clearHighlights(doc);
+          const highlightRange = doc.createRange();
+          highlightRange.setStart(node, start);
+          highlightRange.setEnd(node, end);
+          const span = doc.createElement('span');
+          span.className = 'll-selected-word';
+          try {
+            highlightRange.surroundContents(span);
+          } catch (e) {
+            // Fallback: insert nodes manually
+            const frag = highlightRange.extractContents();
+            span.appendChild(frag);
+            highlightRange.insertNode(span);
+          }
+          return word;
+        } catch (e) { return null; }
+      }
+
       function extractWordAtPoint(doc, x, y) {
         const range = (doc.caretRangeFromPoint && doc.caretRangeFromPoint(x, y))
           || (doc.caretPositionFromPoint && (function(){
@@ -160,9 +243,10 @@ function BookReaderScreen(): React.JSX.Element {
       function attachToDocument(doc) {
         if (!doc || !doc.body || doc.__wordTapAttached) return;
         doc.__wordTapAttached = true;
+        ensureHighlightStyle(doc);
         const handler = (ev) => {
           try {
-            const word = extractWordAtPoint(doc, ev.clientX, ev.clientY);
+            const word = highlightWordAtPoint(doc, ev.clientX, ev.clientY) || extractWordAtPoint(doc, ev.clientX, ev.clientY);
             if (word) {
               if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
                 window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word }));
@@ -177,7 +261,7 @@ function BookReaderScreen(): React.JSX.Element {
           try {
             const t = e.changedTouches && e.changedTouches[0];
             if (!t) return;
-            const word = extractWordAtPoint(doc, t.clientX, t.clientY);
+            const word = highlightWordAtPoint(doc, t.clientX, t.clientY) || extractWordAtPoint(doc, t.clientX, t.clientY);
             if (word) {
               if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
                 window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word }));
