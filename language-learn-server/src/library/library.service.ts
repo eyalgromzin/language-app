@@ -34,6 +34,7 @@ export class LibraryService {
   }
 
   getUrlsByLanguage(language: string): { url: string; type: string; level: string }[] {
+    console.log('getUrlsByLanguage', language);
     const data = this.loadLibrary();
     const typeIdToName = new Map<number, string>(data.itemTypes.map((t) => [t.id, t.name]));
 
@@ -47,6 +48,7 @@ export class LibraryService {
   }
 
   getUrlsWithCriteria(language: string, level: string, type: string | number): string[] {
+    console.log('getUrlsWithCriteria', language, level, type);      
     const data = this.loadLibrary();
 
     const typeId = this.resolveTypeId(data, type);
@@ -61,6 +63,7 @@ export class LibraryService {
   }
 
   addUrl(url: string, language: string, level: string, type: string | number, name?: string): LibraryItem {
+    console.log('addUrl', url, language, level, type, name);
     if (!url || !language || !level || (type === undefined || type === null)) {
       throw new BadRequestException('Missing required fields: url, language, level, type');
     }

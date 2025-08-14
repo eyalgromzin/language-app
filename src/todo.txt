@@ -4,8 +4,7 @@
         - will show each word with an image below.
     - on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 
     - surf screen 
-        - connect get texts endpoint
-        - add drop downs to library screen 
+        - add drop downs to library screen for filtering 
         - create and connect getTextsByCriteria endpoint  
         - add favorite button near the link bar that will show a dialog with title , and a url already filled with the current url .  
         - favourites : 

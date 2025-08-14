@@ -176,12 +176,32 @@ async function buildFetchResponseLog(
   };
   if (config.logResponseHeaders) log.headers = headersToObject((cloned as any).headers);
   if (config.logResponseBody) {
-    const contentType = (cloned.headers && (cloned.headers as any).get) ? (cloned.headers as any).get('content-type') : undefined;
-    if (contentType && contentType.includes('application/json')) {
+    const rawContentType = (cloned.headers && (cloned.headers as any).get)
+      ? (cloned.headers as any).get('content-type')
+      : undefined;
+    const contentType = rawContentType ? String(rawContentType).toLowerCase() : '';
+
+    const isBinaryLike =
+      contentType.includes('image/') ||
+      contentType.includes('audio/') ||
+      contentType.includes('video/') ||
+      contentType.includes('application/octet-stream') ||
+      contentType.includes('application/zip') ||
+      contentType.includes('multipart/form-data');
+    const isJsonLike = contentType.includes('application/json') || contentType.includes('+json') || contentType.includes('json');
+
+    if (!isBinaryLike) {
       const text = await cloned.text();
       log.body = text.length > config.bodyCharLimit ? text.slice(0, config.bodyCharLimit) + '…[truncated]' : text;
+      if (isJsonLike) {
+        try {
+          log.bodyJson = JSON.parse(text);
+        } catch {
+          // keep text-only body on parse errors
+        }
+      }
     } else {
-      log.body = '[Non-JSON body omitted]';
+      log.body = `[${contentType || 'binary'} body omitted]`;
     }
   }
   return log;
@@ -230,6 +250,13 @@ function interceptXhr(config: LoggerConfig, getNextId: () => number): void {
           if (config.logResponseBody) {
             const responseText: string = (this.responseText ?? '') as any;
             resLog.body = responseText.length > config.bodyCharLimit ? responseText.slice(0, config.bodyCharLimit) + '…[truncated]' : responseText;
+            try {
+              const contentTypeHeader = typeof this.getResponseHeader === 'function' ? this.getResponseHeader('content-type') : undefined;
+              const ct = contentTypeHeader ? String(contentTypeHeader).toLowerCase() : '';
+              if (ct.includes('application/json') || ct.includes('+json') || ct.includes('json')) {
+                resLog.bodyJson = JSON.parse(responseText);
+              }
+            } catch {}
           }
           // eslint-disable-next-line no-console
           console.log('[HTTP]', resLog);
