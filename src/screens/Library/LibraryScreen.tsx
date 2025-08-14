@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, Linking, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity, Linking, ActivityIndicator, Platform, NativeModules } from 'react-native';
 
 function LibraryScreen(): React.JSX.Element {
   const [urls, setUrls] = React.useState<{ url: string; type: string; level: string }[]>([]);
@@ -7,7 +7,17 @@ function LibraryScreen(): React.JSX.Element {
   const [error, setError] = React.useState<string | null>(null);
 
   const apiBaseUrl = React.useMemo(() => {
-    return 'http://127.0.0.1:3000';
+    // In dev, derive host from Metro bundler URL so device can reach the PC
+    const scriptURL: string | undefined = (NativeModules as any)?.SourceCode?.scriptURL;
+    if (scriptURL) {
+      try {
+        const { hostname } = new URL(scriptURL);
+        return `http://${hostname}:3000`;
+      } catch {}
+    }
+    // Fallbacks for emulators/simulators
+    if (Platform.OS === 'android') return 'http://10.0.2.2:3000';
+    return 'http://localhost:3000';
   }, []);
 
   React.useEffect(() => {
