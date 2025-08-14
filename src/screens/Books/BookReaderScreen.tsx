@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, Dimensions, Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Dimensions, Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View, Platform } from 'react-native';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import RNFS from 'react-native-fs';
@@ -25,6 +25,7 @@ function BookReaderScreen(): React.JSX.Element {
 
   const [book, setBook] = React.useState<StoredBook | null>(null);
   const [loading, setLoading] = React.useState<boolean>(true);
+  const [epubUrl, setEpubUrl] = React.useState<string | null>(null);
   const [panel, setPanel] = React.useState<null | { word: string; sentence?: string; translation: string; loading: boolean }>(null);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
@@ -64,6 +65,25 @@ function BookReaderScreen(): React.JSX.Element {
     return () => { mounted = false; };
   }, [id]);
 
+  // Load EPUB file as a data URL to avoid file:// permission/CORS issues in WebView
+  React.useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        if (!book) { setEpubUrl(null); return; }
+        const exists = await RNFS.exists(book.filePath);
+        if (!exists) { setEpubUrl(null); return; }
+        const base64 = await RNFS.readFile(book.filePath, 'base64' as any);
+        if (cancelled) return;
+        setEpubUrl(`data:application/epub+zip;base64,${base64}`);
+      } catch {
+        if (cancelled) return;
+        setEpubUrl(null);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [book?.filePath]);
+
   const baseInjection = React.useMemo(() => {
     // Minimal EPUB.js loader that paginates, handles next/prev, and emits word clicks
     const width = Dimensions.get('window').width;
@@ -71,9 +91,10 @@ function BookReaderScreen(): React.JSX.Element {
     return `
       (function(){
         if (window.__readerInstalled_v1) return; window.__readerInstalled_v1 = true;
-        var params = new URLSearchParams(window.location.search);
-        var fileUrl = decodeURIComponent(params.get('file'));
-        var startCfi = params.get('cfi');
+        var params = new URLSearchParams(window.location.search || '');
+        var fileUrl = (window.__EPUB_FILE_URL || decodeURIComponent(params.get('file')) || '');
+        var fileBase64 = (window.__EPUB_FILE_BASE64 || '');
+        var startCfi = (window.__EPUB_START_CFI || params.get('cfi') || '');
         var container = document.getElementById('viewer');
         container.style.width = '${Math.floor(width)}px';
         container.style.height = '${Math.floor(height - 140)}px';
@@ -85,7 +106,21 @@ function BookReaderScreen(): React.JSX.Element {
         script.src = 'https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.js';
         script.onload = function(){
           try {
-            window.__book = ePub(fileUrl);
+            function base64ToArrayBuffer(base64){
+              var binary_string = atob(base64);
+              var len = binary_string.length;
+              var bytes = new Uint8Array(len);
+              for (var i = 0; i < len; i++) { bytes[i] = binary_string.charCodeAt(i); }
+              return bytes.buffer;
+            }
+            if (fileBase64) {
+              var buf = base64ToArrayBuffer(fileBase64);
+              window.__book = ePub(buf);
+            } else if (fileUrl) {
+              window.__book = ePub(fileUrl);
+            } else {
+              throw new Error('No EPUB source provided');
+            }
             window.__rendition = window.__book.renderTo('viewer', { flow: 'paginated', width: ${Math.floor(width)}, height: ${Math.floor(height - 140)} });
             window.__rendition.themes.default({ 'body': { 'padding': '16px', 'line-height': '1.6' } });
             window.__rendition.display(startCfi || undefined);
@@ -177,7 +212,7 @@ function BookReaderScreen(): React.JSX.Element {
     return word;
   };
 
-  if (loading || !book) {
+  if (loading || !book || !epubUrl) {
     return (
       <View style={[styles.container, styles.center]}>
         <ActivityIndicator />
@@ -185,9 +220,7 @@ function BookReaderScreen(): React.JSX.Element {
     );
   }
 
-  const fileParam = encodeURIComponent('file://' + book.filePath);
-  const cfiParam = book.lastPositionCfi ? `&cfi=${encodeURIComponent(book.lastPositionCfi)}` : '';
-  const html = `<!DOCTYPE html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/></head><body style="margin:0;padding:0;background:#fff;color:#000;"><div id="viewer"></div><script>${baseInjection}</script></body></html>`;
+  const html = `<!DOCTYPE html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/></head><body style="margin:0;padding:0;background:#fff;color:#000;"><div id="viewer"></div><script>window.__EPUB_FILE_URL=''; window.__EPUB_FILE_BASE64=${JSON.stringify((epubUrl || '').replace(/^data:application\/epub\+zip;base64,/, ''))}; window.__EPUB_START_CFI=${JSON.stringify(book.lastPositionCfi || '')};</script><script>${baseInjection}</script></body></html>`;
 
   return (
     <View style={styles.container}>
@@ -201,11 +234,20 @@ function BookReaderScreen(): React.JSX.Element {
       <WebView
         ref={webViewRef}
         originWhitelist={["*"]}
-        source={{ html, baseUrl: `https://localhost/reader?file=${fileParam}${cfiParam}` }}
+        source={{ html, baseUrl: `file://${RNFS.DocumentDirectoryPath}/` }}
         onMessage={onMessage}
         javaScriptEnabled
         domStorageEnabled
         style={styles.webView}
+        {...(Platform.OS === 'android' ? {
+          allowFileAccess: true,
+          allowFileAccessFromFileURLs: true,
+          allowUniversalAccessFromFileURLs: true,
+          mixedContentMode: 'always' as const,
+        } : {})}
+        {...(Platform.OS === 'ios' ? {
+          allowingReadAccessToURL: `file://${RNFS.DocumentDirectoryPath}`,
+        } : {})}
       />
 
       <Modal transparent visible={!!panel} animationType="fade" onRequestClose={() => setPanel(null)}>

@@ -1,8 +1,8 @@
 declare module 'react-native-fs' {
   interface RNFSModule {
     DocumentDirectoryPath: string;
-    readFile(path: string, encoding: 'utf8'): Promise<string>;
-    writeFile(path: string, contents: string, encoding: 'utf8'): Promise<void>;
+    readFile(path: string, encoding: 'utf8' | 'base64'): Promise<string>;
+    writeFile(path: string, contents: string, encoding: 'utf8' | 'base64'): Promise<void>;
     exists(path: string): Promise<boolean>;
     mkdir(path: string): Promise<void>;
     copyFile(from: string, to: string): Promise<void>;
