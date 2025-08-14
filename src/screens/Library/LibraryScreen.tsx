@@ -1,52 +1,79 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, Linking } from 'react-native';
-
-type LibraryItem = {
-  url: string;
-  name: string;
-  language: string;
-  typeId: number;
-  level: string;
-};
-
-type LibraryData = {
-  itemTypes: { id: number; name: string }[];
-  levels: { id: number; name: string }[];
-  languages: { id: number; name: string; symbol: string }[];
-  library: LibraryItem[];
-};
+import { StyleSheet, Text, View, FlatList, TouchableOpacity, Linking, ActivityIndicator, Platform } from 'react-native';
 
 function LibraryScreen(): React.JSX.Element {
-  const data = (require('./library.json') as LibraryData);
+  const [urls, setUrls] = React.useState<string[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(true);
+  const [error, setError] = React.useState<string | null>(null);
 
-  const typeNameById = React.useMemo(() => {
-    const map: Record<number, string> = {};
-    data.itemTypes.forEach(t => { map[t.id] = t.name; });
-    return map;
-  }, [data.itemTypes]);
+  const apiBaseUrl = React.useMemo(() => {
+    return Platform.OS === 'android' ? 'http://10.0.2.2:3000' : 'http://localhost:3000';
+  }, []);
 
-  const renderItem = ({ item }: { item: LibraryItem }) => {
-    const typeName = typeNameById[item.typeId] ?? String(item.typeId);
+  React.useEffect(() => {
+    let isCancelled = false;
+    const load = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await fetch(`${apiBaseUrl}/library/getUrls`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ language: 'en' }),
+        });
+        const json: { urls?: string[] } = await response.json();
+        if (!isCancelled) {
+          setUrls(Array.isArray(json?.urls) ? json.urls : []);
+        }
+      } catch (e) {
+        if (!isCancelled) {
+          setError('Failed to load URLs');
+        }
+      } finally {
+        if (!isCancelled) {
+          setLoading(false);
+        }
+      }
+    };
+    load();
+    return () => {
+      isCancelled = true;
+    };
+  }, [apiBaseUrl]);
+
+  const renderItem = ({ item }: { item: string }) => {
     return (
       <TouchableOpacity
         accessibilityRole="link"
-        onPress={() => Linking.openURL(item.url)}
+        onPress={() => Linking.openURL(item)}
         style={styles.item}
       >
-        <Text style={styles.itemName} numberOfLines={2}>{item.name}</Text>
-        <View style={styles.metaRow}>
-          <View style={styles.pill}><Text style={styles.pillText}>{typeName}</Text></View>
-          <View style={[styles.pill, styles.levelPill]}><Text style={styles.pillText}>{item.level}</Text></View>
-        </View>
+        <Text style={styles.itemName} numberOfLines={2}>{item}</Text>
       </TouchableOpacity>
     );
   };
 
+  if (loading) {
+    return (
+      <View style={[styles.container, styles.center]}>
+        <ActivityIndicator />
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={[styles.container, styles.listContent]}>
+        <Text>{error}</Text>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <FlatList
-        data={data.library}
-        keyExtractor={(item) => item.url}
+        data={urls}
+        keyExtractor={(item) => item}
         renderItem={renderItem}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
         contentContainerStyle={styles.listContent}
@@ -58,6 +85,10 @@ function LibraryScreen(): React.JSX.Element {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   listContent: {
     padding: 16,
@@ -76,23 +107,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 8,
-  },
-  metaRow: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-  pill: {
-    backgroundColor: '#F0F0F0',
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    borderRadius: 999,
-  },
-  levelPill: {
-    backgroundColor: '#E8F0FF',
-  },
-  pillText: {
-    fontSize: 12,
-    color: '#333',
   },
   separator: {
     height: 12,
