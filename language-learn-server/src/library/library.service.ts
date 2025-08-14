@@ -33,7 +33,7 @@ export class LibraryService {
     fs.writeFileSync(LIBRARY_JSON_PATH, JSON.stringify(data, null, 2), 'utf8');
   }
 
-  getUrlsByLanguage(language: string): { url: string; type: string; level: string }[] {
+  getUrlsByLanguage(language: string): { url: string; name: string; type: string; level: string }[] {
     console.log('getUrlsByLanguage', language);
     const data = this.loadLibrary();
     const typeIdToName = new Map<number, string>(data.itemTypes.map((t) => [t.id, t.name]));
@@ -42,16 +42,22 @@ export class LibraryService {
       .filter((item) => item.language.toLowerCase() === language.toLowerCase())
       .map((item) => ({
         url: item.url,
+        name: item.name ?? item.url,
         type: typeIdToName.get(item.typeId) ?? String(item.typeId),
         level: item.level,
       }));
   }
 
-  getUrlsWithCriteria(language: string, level: string, type: string | number): string[] {
+  getUrlsWithCriteria(
+    language: string,
+    level: string,
+    type: string | number,
+  ): { url: string; name: string; type: string; level: string }[] {
     console.log('getUrlsWithCriteria', language, level, type);      
     const data = this.loadLibrary();
 
     const typeId = this.resolveTypeId(data, type);
+    const typeIdToName = new Map<number, string>(data.itemTypes.map((t) => [t.id, t.name]));
 
     return data.library
       .filter((item) =>
@@ -59,7 +65,12 @@ export class LibraryService {
         item.level.toLowerCase() === level.toLowerCase() &&
         item.typeId === typeId,
       )
-      .map((item) => item.url);
+      .map((item) => ({
+        url: item.url,
+        name: item.name ?? item.url,
+        type: typeIdToName.get(item.typeId) ?? String(item.typeId),
+        level: item.level,
+      }));
   }
 
   addUrl(url: string, language: string, level: string, type: string | number, name?: string): LibraryItem {

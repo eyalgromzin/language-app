@@ -9,7 +9,7 @@ export class LibraryController {
   @Post('getUrls')
   getUrls(
     @Body() body: { language: string },
-  ): { urls: { url: string; type: string; level: string }[] } {
+  ): { urls: { url: string; name: string; type: string; level: string }[] } {
     const urls = this.libraryService.getUrlsByLanguage(body.language);
     return { urls };
   }
@@ -19,7 +19,7 @@ export class LibraryController {
   getUrlsWithCriterias(
     @Body()
     body: { language: string; level: string; type: string | number },
-  ): { urls: string[] } {
+  ): { urls: { url: string; name: string; type: string; level: string }[] } {
     const urls = this.libraryService.getUrlsWithCriteria(body.language, body.level, body.type);
     return { urls };
   }

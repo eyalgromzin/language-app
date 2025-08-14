@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList, TouchableOpacity, Linking, ActivityIndicator, Platform, NativeModules } from 'react-native';
 
 function LibraryScreen(): React.JSX.Element {
-  const [urls, setUrls] = React.useState<{ url: string; type: string; level: string }[]>([]);
-  const [allUrls, setAllUrls] = React.useState<{ url: string; type: string; level: string }[]>([]);
+  const [urls, setUrls] = React.useState<{ url: string; name: string; type: string; level: string }[]>([]);
+  const [allUrls, setAllUrls] = React.useState<{ url: string; name: string; type: string; level: string }[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string | null>(null);
   const [selectedType, setSelectedType] = React.useState<string>('All');
@@ -35,7 +35,7 @@ function LibraryScreen(): React.JSX.Element {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ language: 'en' }),
         });
-        const json: { urls?: { url: string; type: string; level: string }[] } = await response.json();
+        const json: { urls?: { url: string; name: string; type: string; level: string }[] } = await response.json();
         if (!isCancelled) {
           const initial = Array.isArray(json?.urls) ? json.urls : [];
           setAllUrls(initial);
@@ -90,11 +90,8 @@ function LibraryScreen(): React.JSX.Element {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ language: 'en', level: selectedLevel, type: selectedType }),
         });
-        const json: { urls?: string[] } = await response.json();
-        if (!isCancelled) {
-          const next = (json.urls ?? []).map((url) => ({ url, type: selectedType, level: selectedLevel }));
-          setUrls(next);
-        }
+        const json: { urls?: { url: string; name: string; type: string; level: string }[] } = await response.json();
+        if (!isCancelled) setUrls(json.urls ?? []);
       } catch (e) {
         if (!isCancelled) setError('Failed to load URLs');
       } finally {
@@ -107,14 +104,14 @@ function LibraryScreen(): React.JSX.Element {
     };
   }, [selectedType, selectedLevel, apiBaseUrl, allUrls]);
 
-  const renderItem = ({ item }: { item: { url: string; type: string; level: string } }) => {
+  const renderItem = ({ item }: { item: { url: string; name: string; type: string; level: string } }) => {
     return (
       <TouchableOpacity
         accessibilityRole="link"
         onPress={() => Linking.openURL(item.url)}
         style={styles.item}
       >
-        <Text style={styles.itemName} numberOfLines={2}>{item.url}</Text>
+        <Text style={styles.itemName} numberOfLines={2}>{item.name}</Text>
         <Text>{`${item.type} • ${item.level}`}</Text>
       </TouchableOpacity>
     );
