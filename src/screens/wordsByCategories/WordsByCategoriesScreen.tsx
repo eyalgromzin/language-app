@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, Image } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import RNFS from 'react-native-fs';
 
@@ -33,6 +34,68 @@ const TARGET_LANGUAGE = 'Spanish';
 function WordsByCategoriesScreen(): React.JSX.Element {
   const [selectedCategory, setSelectedCategory] = React.useState<WordCategory | null>(null);
   const navigation = useNavigation<any>();
+  const [failedEmojiIds, setFailedEmojiIds] = React.useState<Record<string, boolean>>({});
+
+  const getEmojiForWord = React.useCallback((word: string) => {
+    const w = (word || '').trim().toLowerCase();
+    switch (w) {
+      case 'hello': return '👋';
+      case 'good morning': return '🌞';
+      case 'apple': return '🍎';
+      case 'water': return '💧';
+      case 'ticket': return '🎫';
+      case 'hotel': return '🏨';
+      case 'zero': return '0️⃣';
+      case 'one': return '1️⃣';
+      case 'two': return '2️⃣';
+      case 'three': return '3️⃣';
+      case 'ten': return '🔟';
+      case 'hundred': return '💯';
+      case 'i': return '👤';
+      case 'you': return '🫵';
+      case 'he': return '👨';
+      case 'she': return '👩';
+      case 'it': return '❓';
+      case 'we': return '👥';
+      case 'they': return '👥';
+      case 'them': return '👥';
+      case 'shirt': return '👕';
+      case 'pants': return '👖';
+      case 'shoes': return '👟';
+      case 'dress': return '👗';
+      case 'jacket': return '🧥';
+      case 'today': return '📅';
+      case 'yesterday': return '🕰️';
+      case 'tomorrow': return '🌅';
+      case 'week': return '🗓️';
+      case 'hour': return '⏰';
+      case 'happy': return '😀';
+      case 'sad': return '😢';
+      case 'angry': return '😠';
+      case 'tired': return '😴';
+      case 'scared': return '😱';
+      case 'mother': return '👩';
+      case 'father': return '👨';
+      case 'brother': return '👦';
+      case 'sister': return '👧';
+      case 'family': return '👪';
+      case 'house': return '🏠';
+      case 'room': return '🚪';
+      case 'kitchen': return '🍳';
+      case 'bathroom': return '🚽';
+      case 'bed': return '🛏️';
+      default: return '🔤';
+    }
+  }, []);
+
+  const emojiToTwemojiUrl = React.useCallback((emoji: string) => {
+    const codePoints = Array.from(emoji)
+      .map((c) => c.codePointAt(0))
+      .filter((cp): cp is number => typeof cp === 'number')
+      .map((cp) => cp.toString(16))
+      .join('-');
+    return `https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/${codePoints}.png`;
+  }, []);
 
   useFocusEffect(
     React.useCallback(() => {
@@ -146,10 +209,33 @@ function WordsByCategoriesScreen(): React.JSX.Element {
             const target = item.text[TARGET_LANGUAGE] || '';
             const exampleSource = item.example?.[SOURCE_LANGUAGE];
             const exampleTarget = item.example?.[TARGET_LANGUAGE];
+            const emoji = item.type === 'word' ? getEmojiForWord(source) : undefined;
+            const emojiUrl = emoji ? emojiToTwemojiUrl(emoji) : undefined;
             return (
               <View key={item.id} style={styles.itemCard}>
                 <View style={styles.itemHeaderRow}>
-                  <Text style={styles.itemType}>{item.type === 'word' ? 'Word' : 'Sentence'}</Text>
+                  {item.type === 'sentence' ? (
+                    <Text numberOfLines={1} style={[styles.itemText, styles.itemTextFlex]}>
+                      {source} -
+                    </Text>
+                  ) : (
+                    <View style={[styles.itemTextFlex, styles.itemWordRow]}>
+                      {emojiUrl && !failedEmojiIds[item.id] ? (
+                        <Image
+                          source={{ uri: emojiUrl }}
+                          style={styles.itemWordEmojiImage}
+                          onError={() => setFailedEmojiIds((prev) => ({ ...prev, [item.id]: true }))}
+                        />
+                      ) : (
+                        <Text style={styles.itemWordEmojiText}>{emoji}</Text>
+                      )}
+                      <Text numberOfLines={1} style={styles.itemText}>
+                        {source}
+                        <Text style={styles.itemSeparator}> — </Text>
+                        <Text style={styles.itemTarget}>{target}</Text>
+                      </Text>
+                    </View>
+                  )}
                   <TouchableOpacity
                     onPress={() => saveItemToMyWords(item)}
                     style={styles.addBtnWrap}
@@ -160,16 +246,16 @@ function WordsByCategoriesScreen(): React.JSX.Element {
                     <Text style={styles.addBtnText}>+</Text>
                   </TouchableOpacity>
                 </View>
-                <Text style={styles.itemText}>
-                  {source}
-                  <Text style={styles.itemSeparator}> — </Text>
-                  <Text style={styles.itemTarget}>{target}</Text>
-                </Text>
+                {item.type === 'sentence' ? (
+                  <Text style={styles.itemTranslationLine}>{target}</Text>
+                ) : null}
                 {(exampleSource || exampleTarget) ? (
                   <Text style={styles.itemExample}>
-                    {(exampleSource || '')}
-                    {exampleSource && exampleTarget ? ' — ' : ''}
-                    {(exampleTarget || '')}
+                    {exampleSource ? exampleSource : null}
+                    {exampleSource && exampleTarget ? '\n' : null}
+                    {exampleTarget ? (
+                      <Text style={styles.itemExampleTranslation}>{exampleTarget}</Text>
+                    ) : null}
                   </Text>
                 ) : null}
               </View>
@@ -309,6 +395,37 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
+  itemTextFlex: {
+    flex: 1,
+    paddingRight: 8,
+  },
+  itemWordRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  itemWordEmojiImage: {
+    width: 22,
+    height: 22,
+    marginRight: 8,
+  },
+  itemWordEmojiText: {
+    marginRight: 8,
+    fontSize: 18,
+  },
+  itemWordAvatar: {
+    width: 22,
+    height: 22,
+    borderRadius: 4,
+    marginRight: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  itemWordAvatarText: {
+    color: 'white',
+    fontSize: 12,
+    fontWeight: '700',
+    includeFontPadding: false,
+  },
   itemSeparator: {
     color: '#999',
   },
@@ -316,9 +433,18 @@ const styles = StyleSheet.create({
     color: '#007AFF',
     fontWeight: '700',
   },
+  itemTranslationLine: {
+    marginTop: 4,
+    color: '#007AFF',
+    fontWeight: '700',
+  },
   itemExample: {
     marginTop: 6,
     color: '#555',
+  },
+  itemExampleTranslation: {
+    color: '#007AFF',
+    fontWeight: '600',
   },
 });
 

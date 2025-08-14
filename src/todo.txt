@@ -1,6 +1,6 @@
 - screens / tabs:
     - words by categories
-        - will show each word with an image below.
+        - will show each word with an image above.
     ? on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 
     - surf screen 
         - on library screen select text - open surf screen in this url . 
@@ -10,8 +10,14 @@
             - all favourites - it will check in the library if this link already exists .  if not , add url to library  
         - save locally domains history . for auto complete in surfing 
     - enable to load epub files - and read a book with it  
+        - previously loaded books - with covers shown - like in readEra app 
+        - load book button 
+        - 
     - library screen 
+        - split it into 3 sections : websites , books , videos  
+            - books tab will show links to books that the user can download from 
         ? enable a user once a week to update a 1 of the fields of the library item.  
+    - on link click, enable to open it with the app and go straight to url in the surf tab  
     - startup screen - num of answers for word removal - make if round buttons 1,2,3
     - videos - with subtitles that each word in the subtitle possible to click on it .  
     - login with facebook / google
