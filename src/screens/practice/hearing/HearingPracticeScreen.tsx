@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import RNFS from 'react-native-fs';
+import * as RNFS from 'react-native-fs';
 import TTS from 'react-native-tts';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 

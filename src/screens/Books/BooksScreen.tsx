@@ -1,9 +1,9 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, FlatList, Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { pick } from '@react-native-documents/picker';
-import RNFS from 'react-native-fs';
+import * as RNFS from 'react-native-fs'; // @dr.pogodin/react-native-fs
 
 type StoredBook = {
   id: string;            // stable id (hash of file path)
@@ -45,16 +45,37 @@ function BooksScreen(): React.JSX.Element {
 
   const openPicker = async () => {
     try {
+      if (!(RNFS as any)?.DocumentDirectoryPath) {
+        Alert.alert(
+          'File system unavailable',
+          'Native file system module is not loaded. Please fully rebuild the app (clean Android build) after installing dependencies.'
+        );
+        return;
+      }
       const pickerTypes = Platform.select<string[]>({
         ios: ['org.idpf.epub-container', 'public.epub', 'application/epub+zip'],
-        android: ['application/epub+zip'],
-        default: ['application/epub+zip'],
+        android: ['*/*'],
+        default: ['*/*'],
       }) as string[];
-      const [res] = await pick({ type: pickerTypes });
+      const [res] = await pick({ type: pickerTypes, copyTo: 'cachesDirectory' } as any);
       if (!res) return;
-      const uri: string = (res.uri || '').toString();
-      if (!uri) return;
-      await importEpubFromUri(uri, res.name || 'book.epub');
+      if (res.name && !/\.epub$/i.test(res.name)) {
+        Alert.alert('Unsupported file', 'Please choose an .epub file.');
+        return;
+      }
+      const pickedUri: string = ((res as any).fileCopyUri || res.uri || '').toString();
+      if (!pickedUri) return;
+      let usableUri = pickedUri;
+      if (Platform.OS === 'android' && /^content:/.test(pickedUri)) {
+        try {
+          const stat: any = await (RNFS as any).stat(pickedUri);
+          const resolvedPath: string = (stat?.originalFilepath || stat?.path || '').toString();
+          if (resolvedPath) {
+            usableUri = resolvedPath.startsWith('file://') ? resolvedPath : `file://${resolvedPath}`;
+          }
+        } catch {}
+      }
+      await importEpubFromUri(usableUri, res.name || 'book.epub');
     } catch (e: any) {
       // ignore cancel
     }
@@ -84,8 +105,15 @@ function BooksScreen(): React.JSX.Element {
           await RNFS.copyFile(srcPath, destPath);
           filePath = destPath;
         } catch {
-          // fallback to original path if copy fails
-          filePath = srcPath;
+          // Fallback: read as base64 then write into app storage
+          try {
+            const data = await RNFS.readFile(srcPath, 'base64' as any);
+            await RNFS.writeFile(destPath, data, 'base64' as any);
+            filePath = destPath;
+          } catch {
+            Alert.alert('Import failed', 'Could not copy the selected file.');
+            return;
+          }
         }
       } else if (/^content:/.test(uri)) {
         const destPath = `${destDir}/${Date.now()}_${fileName}`;
@@ -93,9 +121,18 @@ function BooksScreen(): React.JSX.Element {
           await RNFS.copyFile(uri, destPath);
           filePath = destPath;
         } catch {
-          return;
+          // Some Android devices do not support copyFile from content://
+          try {
+            const data = await RNFS.readFile(uri, 'base64' as any);
+            await RNFS.writeFile(destPath, data, 'base64' as any);
+            filePath = destPath;
+          } catch {
+            Alert.alert('Import failed', 'Could not access the selected file (content URI).');
+            return;
+          }
         }
       } else {
+        Alert.alert('Unsupported source', 'Unsupported URI scheme for selected file.');
         return;
       }
       const titleGuess = fileName.replace(/\.epub$/i, '').replace(/[_\-]+/g, ' ');
@@ -111,7 +148,10 @@ function BooksScreen(): React.JSX.Element {
       const next = [newBook, ...books.filter((b) => b.filePath !== filePath)];
       await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next, null, 2));
       setBooks(next);
-    } catch {}
+      Alert.alert('Book added', `Loaded: ${newBook.title}`);
+    } catch (e: any) {
+      Alert.alert('Error', e?.message || 'Unknown error while importing EPUB');
+    }
   };
 
   const openBook = (book: StoredBook) => {

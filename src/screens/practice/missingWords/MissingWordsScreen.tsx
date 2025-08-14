@@ -11,7 +11,7 @@ import {
   View,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import RNFS from 'react-native-fs';
+import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 
 type WordEntry = {

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, Image } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import RNFS from 'react-native-fs';
+import * as RNFS from 'react-native-fs';
 
 type LocalizedText = Record<string, string>;
 

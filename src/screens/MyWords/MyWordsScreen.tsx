@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import RNFS from 'react-native-fs';
+import * as RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
 
 type WordEntry = {
