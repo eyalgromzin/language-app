@@ -1,5 +1,13 @@
 - screens / tabs:
+    - books screen 
+        - show previously loaded books by usage desc order 
+        - enable click on a book to read it 
+        - it will open on the last page it was open .
+        - enable click on a word to open add word dialog. 
+        - enable load books from file system .
+        - enable to set color scheme . to not hurt eyes. 
     ? on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 
+    - add share button in key places where the user will want to share the app
     - surf screen 
         - save locally domains history . for auto complete in surfing 
         - add favourites button to surf screen - 
@@ -12,7 +20,9 @@
         - 
     - library screen 
         - split it into 3 sections : websites , books , videos  
-            - books tab will show links to books that the user can download from 
+            - books tab will show links to books that the user can download from
+        - book section wont have a level but only book type: 
+            childrens , short stories , novel , technical, self help/new age. none fiction. 
         ? enable a user once a week to update a 1 of the fields of the library item.  
     - on link click, enable to open it with the app and go straight to url in the surf tab  
     - startup screen - num of answers for word removal - make if round buttons 1,2,3

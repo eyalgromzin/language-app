@@ -2,5 +2,7 @@
   "extends": "@react-native/typescript-config",
   "compilerOptions": {
     "typeRoots": ["./src/types", "./node_modules/@types"]
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "android", "ios", "language-learn-server"]
 }

@@ -15,6 +15,7 @@ import SurfScreen from './src/screens/Surf/SurfScreen';
 import MyWordsScreen from './src/screens/MyWords/MyWordsScreen';
 import LibraryScreen from './src/screens/Library/LibraryScreen';
 import PracticeNavigator from './src/screens/practice/PracticeNavigator';
+import BooksNavigator from './src/screens/Books/BooksNavigator';
 import LoginScreen from './src/screens/Auth/LoginScreen';
 import { enableScreens } from 'react-native-screens';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -29,6 +30,7 @@ type RootTabParamList = {
   Practice: undefined;
   Categories: undefined;
   Library: undefined;
+  Books: undefined;
 };
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
@@ -77,6 +79,7 @@ function MainTabs(): React.JSX.Element {
                 Practice: 'trophy-outline',
                 Categories: 'grid-outline',
                 Library: 'albums-outline',
+                Books: 'book-outline',
               };
               const iconName = iconNameByRoute[route.name] ?? 'ellipse-outline';
               return (
@@ -108,6 +111,7 @@ function MainTabs(): React.JSX.Element {
         <Tab.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
         <Tab.Screen name="Categories" component={WordsByCategoriesScreen} options={{ title: 'Categories' }} />
         <Tab.Screen name="Library" component={LibraryScreen} options={{ title: 'Library' }} />
+        <Tab.Screen name="Books" component={BooksNavigator} options={{ title: 'Books' }} />
       </Tab.Navigator>
 
       <Modal
@@ -137,6 +141,9 @@ function MainTabs(): React.JSX.Element {
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Library'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Library</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.navigate('Books'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>Books</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Settings'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Settings</Text>
