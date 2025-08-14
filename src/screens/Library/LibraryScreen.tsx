@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, Linking, ActivityIndicator, Platform } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity, Linking, ActivityIndicator } from 'react-native';
 
 function LibraryScreen(): React.JSX.Element {
   const [urls, setUrls] = React.useState<{ url: string; type: string; level: string }[]>([]);
@@ -7,7 +7,7 @@ function LibraryScreen(): React.JSX.Element {
   const [error, setError] = React.useState<string | null>(null);
 
   const apiBaseUrl = React.useMemo(() => {
-    return Platform.OS === 'android' ? 'http://10.0.2.2:3000' : 'http://localhost:3000';
+    return 'http://127.0.0.1:3000';
   }, []);
 
   React.useEffect(() => {
