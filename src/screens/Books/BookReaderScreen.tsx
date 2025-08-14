@@ -25,7 +25,8 @@ function BookReaderScreen(): React.JSX.Element {
 
   const [book, setBook] = React.useState<StoredBook | null>(null);
   const [loading, setLoading] = React.useState<boolean>(true);
-  const [epubUrl, setEpubUrl] = React.useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = React.useState<string | null>(null);
+  const [epubBase64, setEpubBase64] = React.useState<string | null>(null);
   const [panel, setPanel] = React.useState<null | { word: string; sentence?: string; translation: string; loading: boolean }>(null);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
@@ -65,20 +66,20 @@ function BookReaderScreen(): React.JSX.Element {
     return () => { mounted = false; };
   }, [id]);
 
-  // Load EPUB file as a data URL to avoid file:// permission/CORS issues in WebView
+  React.useEffect(() => { setErrorMessage(null); setEpubBase64(null); }, [book?.filePath]);
+
+  // Load EPUB file into memory as base64; the WebView will convert it to a Blob/URL inside
   React.useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
-        if (!book) { setEpubUrl(null); return; }
+        if (!book?.filePath) { if (!cancelled) setEpubBase64(null); return; }
         const exists = await RNFS.exists(book.filePath);
-        if (!exists) { setEpubUrl(null); return; }
+        if (!exists) { if (!cancelled) setEpubBase64(null); return; }
         const base64 = await RNFS.readFile(book.filePath, 'base64' as any);
-        if (cancelled) return;
-        setEpubUrl(`data:application/epub+zip;base64,${base64}`);
-      } catch {
-        if (cancelled) return;
-        setEpubUrl(null);
+        if (!cancelled) setEpubBase64(base64);
+      } catch (e) {
+        if (!cancelled) setEpubBase64(null);
       }
     })();
     return () => { cancelled = true; };
@@ -104,6 +105,7 @@ function BookReaderScreen(): React.JSX.Element {
 
         var script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.js';
+        script.onerror = function(){ try { post({ type: 'error', message: 'Failed to load EPUB.js script' }); } catch(e){} };
         script.onload = function(){
           try {
             function base64ToArrayBuffer(base64){
@@ -115,7 +117,9 @@ function BookReaderScreen(): React.JSX.Element {
             }
             if (fileBase64) {
               var buf = base64ToArrayBuffer(fileBase64);
-              window.__book = ePub(buf);
+              var blob = new Blob([buf], { type: 'application/epub+zip' });
+              var blobUrl = URL.createObjectURL(blob);
+              window.__book = ePub(blobUrl);
             } else if (fileUrl) {
               window.__book = ePub(fileUrl);
             } else {
@@ -212,7 +216,7 @@ function BookReaderScreen(): React.JSX.Element {
     return word;
   };
 
-  if (loading || !book || !epubUrl) {
+  if (loading || !book || epubBase64 === null) {
     return (
       <View style={[styles.container, styles.center]}>
         <ActivityIndicator />
@@ -220,7 +224,7 @@ function BookReaderScreen(): React.JSX.Element {
     );
   }
 
-  const html = `<!DOCTYPE html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/></head><body style="margin:0;padding:0;background:#fff;color:#000;"><div id="viewer"></div><script>window.__EPUB_FILE_URL=''; window.__EPUB_FILE_BASE64=${JSON.stringify((epubUrl || '').replace(/^data:application\/epub\+zip;base64,/, ''))}; window.__EPUB_START_CFI=${JSON.stringify(book.lastPositionCfi || '')};</script><script>${baseInjection}</script></body></html>`;
+  const html = `<!DOCTYPE html><html><head><meta charset=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/></head><body style=\"margin:0;padding:0;background:#fff;color:#000;\"><div id=\"viewer\"></div><script>window.__EPUB_FILE_URL=''; window.__EPUB_FILE_BASE64=${JSON.stringify(epubBase64 || '')}; window.__EPUB_START_CFI=${JSON.stringify(book.lastPositionCfi || '')}; window.onerror=function(m,s,l,c,e){ try{ window.ReactNativeWebView.postMessage(JSON.stringify({type:'error', message: String(m||e&&e.message||'Unknown error')})); }catch(_){} return false; };</script><script>${baseInjection}</script></body></html>`;
 
   return (
     <View style={styles.container}>
@@ -235,7 +239,18 @@ function BookReaderScreen(): React.JSX.Element {
         ref={webViewRef}
         originWhitelist={["*"]}
         source={{ html, baseUrl: `file://${RNFS.DocumentDirectoryPath}/` }}
-        onMessage={onMessage}
+        onMessage={(e) => {
+          try {
+            const data = JSON.parse(e.nativeEvent.data);
+            if (data?.type === 'error') {
+              setErrorMessage(String(data.message || 'Reader error'));
+              return;
+            }
+          } catch {}
+          onMessage(e);
+        }}
+        onError={(e) => setErrorMessage(e.nativeEvent?.description || 'Failed to load reader')}
+        onHttpError={(e) => setErrorMessage(`HTTP ${e.nativeEvent?.statusCode}: ${e.nativeEvent?.description}`)}
         javaScriptEnabled
         domStorageEnabled
         style={styles.webView}
@@ -249,6 +264,12 @@ function BookReaderScreen(): React.JSX.Element {
           allowingReadAccessToURL: `file://${RNFS.DocumentDirectoryPath}`,
         } : {})}
       />
+
+      {!!errorMessage && (
+        <View style={{ position: 'absolute', left: 12, right: 12, bottom: 20, backgroundColor: 'rgba(255,0,0,0.85)', padding: 10, borderRadius: 8 }}>
+          <Text style={{ color: 'white', fontWeight: '700' }} numberOfLines={3}>{errorMessage}</Text>
+        </View>
+      )}
 
       <Modal transparent visible={!!panel} animationType="fade" onRequestClose={() => setPanel(null)}>
         <View style={styles.modalOverlay}>

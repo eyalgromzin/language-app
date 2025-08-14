@@ -60,6 +60,17 @@ function BooksScreen(): React.JSX.Element {
     }
   };
 
+  const clearAllBooks = async () => {
+    try {
+      setLoading(true);
+      await AsyncStorage.removeItem(STORAGE_KEY);
+      setBooks([]);
+    } catch {}
+    finally {
+      setLoading(false);
+    }
+  };
+
   const importEpubFromUri = async (uri: string, filenameFallback: string) => {
     try {
       const fileName = filenameFallback && /\.epub$/i.test(filenameFallback) ? filenameFallback : (filenameFallback + '.epub');
@@ -127,9 +138,16 @@ function BooksScreen(): React.JSX.Element {
     <View style={styles.container}>
       <View style={styles.headerRow}>
         <Text style={styles.header}>My Books</Text>
-        <TouchableOpacity style={styles.addBtn} onPress={openPicker}>
-          <Text style={styles.addBtnText}>+ Load EPUB</Text>
-        </TouchableOpacity>
+        <View style={styles.actionsRow}>
+          {books.length > 0 && (
+            <TouchableOpacity style={styles.clearBtn} onPress={clearAllBooks}>
+              <Text style={styles.clearBtnText}>Clear books</Text>
+            </TouchableOpacity>
+          )}
+          <TouchableOpacity style={styles.addBtn} onPress={openPicker}>
+            <Text style={styles.addBtnText}>+ Load EPUB</Text>
+          </TouchableOpacity>
+        </View>
       </View>
       {loading ? (
         <View style={styles.center}><ActivityIndicator /></View>
@@ -166,8 +184,11 @@ const styles = StyleSheet.create({
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   headerRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 16 },
   header: { fontSize: 22, fontWeight: '700' },
+    actionsRow: { flexDirection: 'row', gap: 8 },
   addBtn: { paddingVertical: 8, paddingHorizontal: 12, backgroundColor: '#007AFF', borderRadius: 8 },
   addBtnText: { color: 'white', fontWeight: '700' },
+    clearBtn: { paddingVertical: 8, paddingHorizontal: 12, backgroundColor: '#f3f4f6', borderRadius: 8 },
+    clearBtnText: { color: '#111827', fontWeight: '700' },
   grid: { paddingHorizontal: 12, paddingBottom: 16, gap: 12 },
   bookTile: { flex: 1/3, maxWidth: '32%', alignItems: 'center' },
   cover: { width: 100, height: 140, borderRadius: 8, backgroundColor: '#eee' },
