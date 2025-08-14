@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
@@ -9,8 +9,11 @@ import RNFS from 'react-native-fs';
 function SurfScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
   const webViewRef = React.useRef<WebView>(null);
-  const [addressText, setAddressText] = React.useState<string>('https://cnnespanol.cnn.com/');
-  const [currentUrl, setCurrentUrl] = React.useState<string>('https://cnnespanol.cnn.com/');
+  const route = useRoute<any>();
+  const initialUrlFromParams: string | undefined = typeof route?.params?.url === 'string' ? route.params.url : undefined;
+  const defaultHomepage = 'https://cnnespanol.cnn.com/';
+  const [addressText, setAddressText] = React.useState<string>(initialUrlFromParams || defaultHomepage);
+  const [currentUrl, setCurrentUrl] = React.useState<string>(initialUrlFromParams || defaultHomepage);
   const [canGoBack, setCanGoBack] = React.useState<boolean>(false);
   const [canGoForward, setCanGoForward] = React.useState<boolean>(false);
   const [translationPanel, setTranslationPanel] = React.useState<
@@ -311,7 +314,7 @@ function SurfScreen(): React.JSX.Element {
       try {
         const saved = await AsyncStorage.getItem(HOMEPAGE_KEY);
         if (!mounted) return;
-        if (typeof saved === 'string' && saved.trim().length > 0) {
+        if (!initialUrlFromParams && typeof saved === 'string' && saved.trim().length > 0) {
           setAddressText(saved);
           setCurrentUrl(saved);
         }
@@ -320,7 +323,16 @@ function SurfScreen(): React.JSX.Element {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [initialUrlFromParams]);
+
+  React.useEffect(() => {
+    if (initialUrlFromParams) {
+      const normalized = normalizeUrl(initialUrlFromParams);
+      setAddressText(normalized);
+      setCurrentUrl(normalized);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialUrlFromParams]);
 
   const promptSetHomepage = () => {
     const urlToSave = normalizeUrl(addressText.trim() || currentUrl);

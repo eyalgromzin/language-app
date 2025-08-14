@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, Linking, ActivityIndicator, Platform, NativeModules } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity, ActivityIndicator, Platform, NativeModules } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 function LibraryScreen(): React.JSX.Element {
+  const navigation = useNavigation<any>();
   const [urls, setUrls] = React.useState<{ url: string; name: string; type: string; level: string }[]>([]);
   const [allUrls, setAllUrls] = React.useState<{ url: string; name: string; type: string; level: string }[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
@@ -108,7 +110,7 @@ function LibraryScreen(): React.JSX.Element {
     return (
       <TouchableOpacity
         accessibilityRole="link"
-        onPress={() => Linking.openURL(item.url)}
+        onPress={() => navigation.navigate('Surf', { url: item.url })}
         style={styles.item}
       >
         <Text style={styles.itemName} numberOfLines={2}>{item.name}</Text>

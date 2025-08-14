@@ -1,14 +1,11 @@
 - screens / tabs:
-    - words by categories
-        - will show each word with an image above.
     ? on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 
     - surf screen 
-        - on library screen select text - open surf screen in this url . 
+        - save locally domains history . for auto complete in surfing 
         - add favourites button to surf screen - 
             - will show a dialog with title , and a url already filled with the current url .  
             - personal favourites that will be saved to local file . 
             - all favourites - it will check in the library if this link already exists .  if not , add url to library  
-        - save locally domains history . for auto complete in surfing 
     - enable to load epub files - and read a book with it  
         - previously loaded books - with covers shown - like in readEra app 
         - load book button 
