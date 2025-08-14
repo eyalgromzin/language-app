@@ -2,6 +2,8 @@ import React from 'react';
 import { ActivityIndicator, FlatList, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
+import DocumentPicker from 'react-native-document-picker';
+import RNFS from 'react-native-fs';
 
 type StoredBook = {
   id: string;            // stable id (hash of file path)
@@ -42,24 +44,41 @@ function BooksScreen(): React.JSX.Element {
   }, [loadBooks]);
 
   const openPicker = async () => {
-    // Dynamic import to avoid adding native dep now; we'll fall back to simple copy from a known folder if needed
     try {
-      const { default: DocumentPicker } = await import('react-native-document-picker');
-      const res = await DocumentPicker.pickSingle({ type: [DocumentPicker.types.allFiles], copyTo: 'documentDirectory' });
+      const pickerTypes = Platform.select<string[]>({
+        ios: ['org.idpf.epub-container', 'public.epub', 'application/epub+zip'],
+        android: ['application/epub+zip'],
+        default: ['application/epub+zip'],
+      }) as string[];
+      const res = await DocumentPicker.pickSingle({ type: pickerTypes, copyTo: 'documentDirectory' });
       const uri: string = (res.fileCopyUri || res.uri || '').toString();
       if (!uri) return;
-      await importEpubFromLocalUri(uri, res.name || 'book.epub');
+      await importEpubFromUri(uri, res.name || 'book.epub');
     } catch (e: any) {
-      // If cancelled or lib not available, ignore
+      // ignore cancel
     }
   };
 
-  const importEpubFromLocalUri = async (uri: string, filenameFallback: string) => {
+  const importEpubFromUri = async (uri: string, filenameFallback: string) => {
     try {
-      const isFile = /^file:/.test(uri);
-      if (!isFile) return; // only support files from device for now
-      const filePath = uri.replace(/^file:\/\//, '');
       const fileName = filenameFallback && /\.epub$/i.test(filenameFallback) ? filenameFallback : (filenameFallback + '.epub');
+      let filePath = '';
+      if (/^file:/.test(uri)) {
+        filePath = uri.replace(/^file:\/\//, '');
+      } else if (/^content:/.test(uri)) {
+        // copy content URI into app documents
+        const destDir = `${RNFS.DocumentDirectoryPath}/books`;
+        try { if (!(await RNFS.exists(destDir))) await RNFS.mkdir(destDir); } catch {}
+        const destPath = `${destDir}/${Date.now()}_${fileName}`;
+        try {
+          await RNFS.copyFile(uri, destPath);
+          filePath = destPath;
+        } catch {
+          return;
+        }
+      } else {
+        return;
+      }
       const titleGuess = fileName.replace(/\.epub$/i, '').replace(/[_\-]+/g, ' ');
       const id = String(Math.abs(hashString(filePath)));
       const newBook: StoredBook = {
@@ -73,9 +92,7 @@ function BooksScreen(): React.JSX.Element {
       const next = [newBook, ...books.filter((b) => b.filePath !== filePath)];
       await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next, null, 2));
       setBooks(next);
-    } catch (e) {
-      // ignore
-    }
+    } catch {}
   };
 
   const openBook = (book: StoredBook) => {
