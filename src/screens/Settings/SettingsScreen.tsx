@@ -22,8 +22,12 @@ function SettingsScreen(): React.JSX.Element {
         ]);
         if (!mounted) return;
         const map = Object.fromEntries(entries);
-        setLearningLanguage(map['language.learning'] ?? null);
-        setNativeLanguage(map['language.native'] ?? null);
+        const learningRaw = map['language.learning'];
+        const nativeRaw = map['language.native'];
+        const learningVal = typeof learningRaw === 'string' && learningRaw.trim().length > 0 ? learningRaw : null;
+        const nativeVal = typeof nativeRaw === 'string' && nativeRaw.trim().length > 0 ? nativeRaw : null;
+        setLearningLanguage(learningVal);
+        setNativeLanguage(nativeVal);
         const raw = map['words.removeAfterNCorrect'];
         const parsed = Number.parseInt(typeof raw === 'string' ? raw : '', 10);
         const valid = parsed >= 1 && parsed <= 4 ? parsed : 3;
@@ -46,16 +50,20 @@ function SettingsScreen(): React.JSX.Element {
   }, []);
 
   const onChangeLearning = async (value: string) => {
-    setLearningLanguage(value);
+    const v = typeof value === 'string' && value.trim().length > 0 ? value : null;
+    setLearningLanguage(v);
     try {
-      await AsyncStorage.setItem('language.learning', value);
+      if (v) await AsyncStorage.setItem('language.learning', v);
+      else await AsyncStorage.removeItem('language.learning');
     } catch {}
   };
 
   const onChangeNative = async (value: string) => {
-    setNativeLanguage(value);
+    const v = typeof value === 'string' && value.trim().length > 0 ? value : null;
+    setNativeLanguage(v);
     try {
-      await AsyncStorage.setItem('language.native', value);
+      if (v) await AsyncStorage.setItem('language.native', v);
+      else await AsyncStorage.removeItem('language.native');
     } catch {}
   };
 

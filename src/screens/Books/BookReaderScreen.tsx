@@ -141,26 +141,6 @@ function BookReaderScreen(): React.JSX.Element {
     })();
   }, [readerTheme]);
 
-  React.useEffect(() => {
-    let mounted = true;
-    (async () => {
-      try {
-        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
-        if (!mounted) return;
-        const map = Object.fromEntries(entries);
-        setLearningLanguage(map['language.learning'] ?? null);
-        setNativeLanguage(map['language.native'] ?? null);
-      } catch {
-        if (!mounted) return;
-        setLearningLanguage(null);
-        setNativeLanguage(null);
-      }
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, []);
-
   const persistCfi = React.useCallback(async (cfi: string | null) => {
     try {
       if (!bookId) return;
@@ -443,7 +423,13 @@ function BookReaderScreen(): React.JSX.Element {
     } catch {}
   }, []);
 
-  const fetchTranslation = async (word: string): Promise<string> => fetchTranslationCommon(word, learningLanguage, nativeLanguage);
+  const fetchTranslation = async (word: string): Promise<string> => {
+    const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);        
+    const map = Object.fromEntries(entries);
+    const learningRaw = map['language.learning'];
+    const nativeRaw = map['language.native'];
+    return await fetchTranslationCommon(word, learningRaw, nativeRaw);
+  }
 
   const imageScrapeInjection = `
     (function() {
