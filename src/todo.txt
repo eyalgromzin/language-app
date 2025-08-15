@@ -1,11 +1,5 @@
 - screens / tabs:
-    - books screen 
-        - order previously loaded books by  
-        - enable click on a book to read it 
-        - it will open on the last page it was open .
-        - enable click on a word to open add word dialog. 
-        - enable load books from file system .
-        - enable to set color scheme . to not hurt eyes. 
+    - enable to set color scheme to book. to not hurt eyes. 
     ? on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 
     - add share button in key places where the user will want to share the app
     - surf screen 

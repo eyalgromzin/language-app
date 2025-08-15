@@ -642,7 +642,7 @@ function BookReaderScreen(): React.JSX.Element {
             <Reader
               src={src}
               width={width}
-              height={height - 56}
+              height={height - 56 - 300}
               fileSystem={useFileSystem}
               initialLocation={initialCfi}
               onLocationChange={handleLocationChange}
