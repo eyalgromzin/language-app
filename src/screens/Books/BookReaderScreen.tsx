@@ -47,22 +47,11 @@ function BookReaderScreen(): React.JSX.Element {
 
   const bookId: string | undefined = (route?.params as RouteParams | undefined)?.id;
 
-  type ReaderTheme = 'white' | 'dark' | 'beige';
+  type ReaderTheme = 'white' | 'beige';
   const [readerTheme, setReaderTheme] = React.useState<ReaderTheme>('white');
   const [showThemeMenu, setShowThemeMenu] = React.useState<boolean>(false);
 
   const themeColors = React.useMemo(() => {
-    if (readerTheme === 'dark') {
-      return {
-        bg: '#111827',
-        text: '#e5e7eb',
-        headerBg: '#111827',
-        headerText: '#e5e7eb',
-        border: '#374151',
-        menuBg: '#1f2937',
-        menuText: '#e5e7eb',
-      } as const;
-    }
     if (readerTheme === 'beige') {
       return {
         bg: '#f5f1e8',
@@ -94,8 +83,8 @@ function BookReaderScreen(): React.JSX.Element {
         // Load persisted reader theme
         try {
           const savedTheme = await AsyncStorage.getItem('reader.theme');
-          if (!cancelled && (savedTheme === 'white' || savedTheme === 'dark' || savedTheme === 'beige')) {
-            setReaderTheme(savedTheme);
+          if (!cancelled && (savedTheme === 'white' || savedTheme === 'beige')) {
+            setReaderTheme(savedTheme as ReaderTheme);
           }
         } catch {}
         if (!bookId) {
@@ -702,16 +691,14 @@ function BookReaderScreen(): React.JSX.Element {
       </View>
       {showThemeMenu && (
         <View style={[styles.themeMenu, { backgroundColor: themeColors.menuBg, borderColor: themeColors.border }]}>
-          {(['white','dark','beige'] as ReaderTheme[]).map((opt) => (
+          {(['white','beige'] as ReaderTheme[]).map((opt) => (
             <TouchableOpacity
               key={opt}
               onPress={() => { setReaderTheme(opt); setShowThemeMenu(false); }}
               style={[styles.themeMenuItem, readerTheme === opt ? styles.themeMenuItemActive : null]}
             >
-              <View style={[styles.themeSwatch, opt === 'white' ? { backgroundColor: '#ffffff', borderColor: '#e5e7eb' } : opt === 'dark' ? { backgroundColor: '#111827', borderColor: '#374151' } : { backgroundColor: '#f5f1e8', borderColor: '#e5dfcf' }]} />
-              <Text style={[styles.themeMenuItemText, { color: themeColors.menuText }]}>
-                {opt === 'white' ? 'White' : opt === 'dark' ? 'Dark' : 'Beige'}
-              </Text>
+              <View style={[styles.themeSwatch, opt === 'white' ? { backgroundColor: '#ffffff', borderColor: '#e5e7eb' } : { backgroundColor: '#f5f1e8', borderColor: '#e5dfcf' }]} />
+              <Text style={[styles.themeMenuItemText, { color: themeColors.menuText }]}>{opt === 'white' ? 'White' : 'Beige'}</Text>
             </TouchableOpacity>
           ))}
         </View>
