@@ -47,12 +47,57 @@ function BookReaderScreen(): React.JSX.Element {
 
   const bookId: string | undefined = (route?.params as RouteParams | undefined)?.id;
 
+  type ReaderTheme = 'white' | 'dark' | 'beige';
+  const [readerTheme, setReaderTheme] = React.useState<ReaderTheme>('white');
+  const [showThemeMenu, setShowThemeMenu] = React.useState<boolean>(false);
+
+  const themeColors = React.useMemo(() => {
+    if (readerTheme === 'dark') {
+      return {
+        bg: '#111827',
+        text: '#e5e7eb',
+        headerBg: '#111827',
+        headerText: '#e5e7eb',
+        border: '#374151',
+        menuBg: '#1f2937',
+        menuText: '#e5e7eb',
+      } as const;
+    }
+    if (readerTheme === 'beige') {
+      return {
+        bg: '#f5f1e8',
+        text: '#262626',
+        headerBg: '#f5f1e8',
+        headerText: '#262626',
+        border: '#e5dfcf',
+        menuBg: '#f3eadc',
+        menuText: '#262626',
+      } as const;
+    }
+    return {
+      bg: '#ffffff',
+      text: '#111827',
+      headerBg: '#ffffff',
+      headerText: '#111827',
+      border: '#e5e7eb',
+      menuBg: '#ffffff',
+      menuText: '#111827',
+    } as const;
+  }, [readerTheme]);
+
   React.useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
         setLoading(true);
         setError(null);
+        // Load persisted reader theme
+        try {
+          const savedTheme = await AsyncStorage.getItem('reader.theme');
+          if (!cancelled && (savedTheme === 'white' || savedTheme === 'dark' || savedTheme === 'beige')) {
+            setReaderTheme(savedTheme);
+          }
+        } catch {}
         if (!bookId) {
           setError('Missing book id');
           return;
@@ -99,6 +144,15 @@ function BookReaderScreen(): React.JSX.Element {
   }, [bookId]);
 
   React.useEffect(() => {
+    // Persist theme selection
+    (async () => {
+      try {
+        await AsyncStorage.setItem('reader.theme', readerTheme);
+      } catch {}
+    })();
+  }, [readerTheme]);
+
+  React.useEffect(() => {
     let mounted = true;
     (async () => {
       try {
@@ -139,6 +193,8 @@ function BookReaderScreen(): React.JSX.Element {
   }, [persistCfi]);
 
   const injectedJavascript = React.useMemo(() => {
+    const bg = themeColors.bg;
+    const text = themeColors.text;
     // This script runs inside the WebView. It attaches click handlers to the
     // EPUB iframes and posts back the tapped word.
     return `(() => {
@@ -165,6 +221,20 @@ function BookReaderScreen(): React.JSX.Element {
           style.type = 'text/css';
           style.appendChild(doc.createTextNode('.ll-selected-word { background: rgba(255, 235, 59, 0.9); border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }'));
           doc.head.appendChild(style);
+        } catch (e) {}
+      }
+
+      function ensureThemeStyle(doc) {
+        try {
+          if (!doc || !doc.head) return;
+          let style = doc.getElementById('ll-theme-style');
+          if (!style) {
+            style = doc.createElement('style');
+            style.id = 'll-theme-style';
+            style.type = 'text/css';
+            doc.head.appendChild(style);
+          }
+          style.textContent = 'html, body { background: ${bg} !important; color: ${text} !important; } body * { color: inherit; }';
         } catch (e) {}
       }
 
@@ -304,6 +374,7 @@ function BookReaderScreen(): React.JSX.Element {
         if (!doc || !doc.body || doc.__wordTapAttached) return;
         doc.__wordTapAttached = true;
         ensureHighlightStyle(doc);
+        ensureThemeStyle(doc);
         const handler = (ev) => {
           try {
             const res = highlightWordAtPoint(doc, ev.clientX, ev.clientY) || extractWordAtPoint(doc, ev.clientX, ev.clientY);
@@ -340,14 +411,14 @@ function BookReaderScreen(): React.JSX.Element {
             const contents = window.rendition.getContents();
             if (Array.isArray(contents)) {
               contents.forEach((c) => {
-                try { attachToDocument(c.document); } catch (e) {}
+                try { attachToDocument(c.document); ensureThemeStyle(c.document); } catch (e) {}
               });
             }
           }
           // Fallback: inspect iframes
           const iframes = Array.from(document.querySelectorAll('iframe'));
           iframes.forEach((f) => {
-            try { attachToDocument(f.contentDocument); } catch (e) {}
+            try { attachToDocument(f.contentDocument); ensureThemeStyle(f.contentDocument); } catch (e) {}
           });
         } catch (e) {}
       }
@@ -365,7 +436,7 @@ function BookReaderScreen(): React.JSX.Element {
       // Initial attempt
       scanAndAttach();
     })();`;
-  }, []);
+  }, [themeColors.bg, themeColors.text]);
 
   const handleWebViewMessage = React.useCallback((payload: any) => {
     try {
@@ -617,14 +688,34 @@ function BookReaderScreen(): React.JSX.Element {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
+    <View style={[styles.container, { backgroundColor: themeColors.bg }]}>
+      <View style={[styles.header, { backgroundColor: themeColors.headerBg, borderBottomColor: themeColors.border }]}>
         <TouchableOpacity onPress={goBack} style={styles.backBtn}>
-          <Text style={styles.backText}>Back</Text>
+          <Text style={[styles.backText]}>Back</Text>
         </TouchableOpacity>
-        <Text style={styles.title} numberOfLines={1}>{bookTitle || 'Reader'}</Text>
-        <View style={{ width: 56 }} />
+        <Text style={[styles.title, { color: themeColors.headerText }]} numberOfLines={1}>{bookTitle || 'Reader'}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <TouchableOpacity onPress={() => setShowThemeMenu((v) => !v)} style={styles.themeBtn}>
+            <Text style={[styles.themeBtnText, { color: themeColors.headerText }]}>Aa</Text>
+          </TouchableOpacity>
+        </View>
       </View>
+      {showThemeMenu && (
+        <View style={[styles.themeMenu, { backgroundColor: themeColors.menuBg, borderColor: themeColors.border }]}>
+          {(['white','dark','beige'] as ReaderTheme[]).map((opt) => (
+            <TouchableOpacity
+              key={opt}
+              onPress={() => { setReaderTheme(opt); setShowThemeMenu(false); }}
+              style={[styles.themeMenuItem, readerTheme === opt ? styles.themeMenuItemActive : null]}
+            >
+              <View style={[styles.themeSwatch, opt === 'white' ? { backgroundColor: '#ffffff', borderColor: '#e5e7eb' } : opt === 'dark' ? { backgroundColor: '#111827', borderColor: '#374151' } : { backgroundColor: '#f5f1e8', borderColor: '#e5dfcf' }]} />
+              <Text style={[styles.themeMenuItemText, { color: themeColors.menuText }]}>
+                {opt === 'white' ? 'White' : opt === 'dark' ? 'Dark' : 'Beige'}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      )}
 
       <View style={styles.readerContainer}>
         {loading && (
@@ -640,6 +731,7 @@ function BookReaderScreen(): React.JSX.Element {
         {!!src && !loading && !error && (
           <ReaderProvider>
             <Reader
+              key={`reader-${readerTheme}`}
               src={src}
               width={width}
               height={height - 56 - 300}
@@ -705,6 +797,27 @@ const styles = StyleSheet.create({
   backBtn: { paddingVertical: 8, paddingHorizontal: 8 },
   backText: { color: '#007AFF', fontWeight: '700' },
   title: { flex: 1, textAlign: 'center', fontWeight: '700' },
+  themeBtn: { paddingHorizontal: 10, paddingVertical: 6, borderRadius: 6 },
+  themeBtnText: { fontWeight: '700', fontSize: 16 },
+  themeMenu: {
+    position: 'absolute',
+    right: 12,
+    top: 56 + 8,
+    borderRadius: 10,
+    borderWidth: StyleSheet.hairlineWidth,
+    paddingVertical: 6,
+    width: 180,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 10,
+    zIndex: 1000,
+  },
+  themeMenuItem: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10, paddingHorizontal: 12 },
+  themeMenuItemActive: {},
+  themeMenuItemText: { marginLeft: 10, fontSize: 14 },
+  themeSwatch: { width: 20, height: 20, borderRadius: 4, borderWidth: StyleSheet.hairlineWidth },
   readerContainer: { flex: 1 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   bottomPanel: {
