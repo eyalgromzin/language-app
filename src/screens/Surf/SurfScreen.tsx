@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
+import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
@@ -16,17 +17,7 @@ function SurfScreen(): React.JSX.Element {
   const [currentUrl, setCurrentUrl] = React.useState<string>(initialUrlFromParams || defaultHomepage);
   const [canGoBack, setCanGoBack] = React.useState<boolean>(false);
   const [canGoForward, setCanGoForward] = React.useState<boolean>(false);
-  const [translationPanel, setTranslationPanel] = React.useState<
-    | {
-        word: string;
-        translation: string;
-        sentence?: string;
-        images: string[];
-        imagesLoading: boolean;
-        translationLoading: boolean;
-      }
-    | null
-  >(null);
+  const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
 
   // Languages selected by the user (Settings / Startup)
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
@@ -719,54 +710,11 @@ function SurfScreen(): React.JSX.Element {
           />
         </View>
       )}
-      {translationPanel && (
-        <View style={styles.bottomPanel}>
-          <View style={styles.bottomHeader}>
-            <Text style={styles.bottomWord} numberOfLines={1}>
-              {translationPanel.word}
-            </Text>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <TouchableOpacity
-                onPress={saveCurrentWord}
-                style={styles.addBtnWrap}
-                hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
-                accessibilityRole="button"
-                accessibilityLabel="Add word"
-              >
-                <Text style={styles.addBtnText}>+</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => setTranslationPanel(null)}>
-                <Text style={styles.closeBtn}>✕</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-          {translationPanel.translationLoading ? (
-            <View style={styles.translationLoadingRow}>
-              <ActivityIndicator size="small" color="#555" />
-            </View>
-          ) : (
-            <Text style={styles.translationText} numberOfLines={3}>
-              {translationPanel.translation}
-            </Text>
-          )}
-          {!!translationPanel.sentence && (
-            <Text style={styles.sentenceText} numberOfLines={3}>
-              {translationPanel.sentence}
-            </Text>
-          )}
-          {translationPanel.imagesLoading ? (
-            <View style={[styles.imageRow, styles.imageRowLoader]}>
-              <ActivityIndicator size="small" color="#555" />
-            </View>
-          ) : (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.imageRow}>
-              {(translationPanel.images || []).map((uri, idx) => (
-                <Image key={idx} source={{ uri }} style={styles.imageItem} resizeMode="cover" />
-              ))}
-            </ScrollView>
-          )}
-        </View>
-      )}
+      <TranslationPanel
+        panel={translationPanel}
+        onSave={saveCurrentWord}
+        onClose={() => setTranslationPanel(null)}
+      />
     </View>
   );
 }

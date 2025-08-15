@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View, useWindowDimensions } from 'react-native';
+import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
 import { Reader, ReaderProvider } from '@epubjs-react-native/core';
 import { useFileSystem } from '@epubjs-react-native/file-system';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -32,17 +33,7 @@ function BookReaderScreen(): React.JSX.Element {
   const [src, setSrc] = React.useState<string | null>(null);
   const [initialCfi, setInitialCfi] = React.useState<string | undefined>(undefined);
 
-  const [translationPanel, setTranslationPanel] = React.useState<
-    | {
-        word: string;
-        translation: string;
-        sentence?: string;
-        images: string[];
-        imagesLoading: boolean;
-        translationLoading: boolean;
-      }
-    | null
-  >(null);
+  const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
 
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
@@ -726,54 +717,11 @@ function BookReaderScreen(): React.JSX.Element {
             />
           </View>
         )}
-        {translationPanel && (
-          <View style={styles.bottomPanel}>
-            <View style={styles.bottomHeader}>
-              <Text style={styles.bottomWord} numberOfLines={1}>
-                {translationPanel.word}
-              </Text>
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <TouchableOpacity
-                  onPress={saveCurrentWord}
-                  style={styles.addBtnWrap}
-                  hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
-                  accessibilityRole="button"
-                  accessibilityLabel="Add word"
-                >
-                  <Text style={styles.addBtnText}>+</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => setTranslationPanel(null)}>
-                  <Text style={styles.closeBtn}>✕</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-            {translationPanel.translationLoading ? (
-              <View style={styles.translationLoadingRow}>
-                <ActivityIndicator size="small" color="#555" />
-              </View>
-            ) : (
-              <Text style={styles.translationText} numberOfLines={3}>
-                {translationPanel.translation}
-              </Text>
-            )}
-            {!!translationPanel.sentence && (
-              <Text style={styles.sentenceText} numberOfLines={3}>
-                {translationPanel.sentence}
-              </Text>
-            )}
-            {translationPanel.imagesLoading ? (
-              <View style={[styles.imageRow, styles.imageRowLoader]}>
-                <ActivityIndicator size="small" color="#555" />
-              </View>
-            ) : (
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.imageRow}>
-                {(translationPanel.images || []).map((uri, idx) => (
-                  <Image key={idx} source={{ uri }} style={styles.imageItem} resizeMode="cover" />
-                ))}
-              </ScrollView>
-            )}
-          </View>
-        )}
+        <TranslationPanel
+          panel={translationPanel}
+          onSave={saveCurrentWord}
+          onClose={() => setTranslationPanel(null)}
+        />
       </View>
     </View>
   );
