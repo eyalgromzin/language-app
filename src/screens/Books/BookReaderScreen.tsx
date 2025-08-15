@@ -1,6 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View, useWindowDimensions } from 'react-native';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
+import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
 import { Reader, ReaderProvider } from '@epubjs-react-native/core';
 import { useFileSystem } from '@epubjs-react-native/file-system';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -375,54 +376,7 @@ function BookReaderScreen(): React.JSX.Element {
     } catch {}
   }, []);
 
-  const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
-    English: 'en',
-    Spanish: 'es',
-    French: 'fr',
-    German: 'de',
-    Italian: 'it',
-    Portuguese: 'pt',
-    Russian: 'ru',
-    'Chinese (Mandarin)': 'zh-CN',
-    Japanese: 'ja',
-    Korean: 'ko',
-    Arabic: 'ar',
-    Hindi: 'hi',
-    Turkish: 'tr',
-    Polish: 'pl',
-    Dutch: 'nl',
-    Greek: 'el',
-    Swedish: 'sv',
-    Norwegian: 'no',
-    Finnish: 'fi',
-    Czech: 'cs',
-    Ukrainian: 'uk',
-    Hebrew: 'he',
-    Thai: 'th',
-    Vietnamese: 'vi',
-  };
-
-  const getLangCode = (nameOrNull: string | null | undefined): string | null => {
-    if (!nameOrNull) return null;
-    const code = LANGUAGE_NAME_TO_CODE[nameOrNull];
-    return typeof code === 'string' ? code : null;
-  };
-
-  const fetchTranslation = async (word: string): Promise<string> => {
-    const fromCode = getLangCode(learningLanguage) || 'en';
-    const toCode = getLangCode(nativeLanguage) || 'en';
-    if (!word || fromCode === toCode) return word;
-    try {
-      const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(word)}&langpair=${encodeURIComponent(fromCode)}|${encodeURIComponent(toCode)}`;
-      const res = await fetch(url);
-      if (res.ok) {
-        const json = await res.json();
-        const txt = json?.responseData?.translatedText;
-        if (typeof txt === 'string' && txt.trim().length > 0) return txt.trim();
-      }
-    } catch {}
-    return word;
-  };
+  const fetchTranslation = async (word: string): Promise<string> => fetchTranslationCommon(word, learningLanguage, nativeLanguage);
 
   const imageScrapeInjection = `
     (function() {
