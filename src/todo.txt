@@ -1,7 +1,7 @@
 - screens / tabs:
-    - enable to set color scheme to book. to not hurt eyes. 
     ? on startup page (where you choose languages) - choose games that you like - the surprise me button will choose from them 
     - add share button in key places where the user will want to share the app
+        - ask shir 
     - surf screen 
         - save locally domains history . for auto complete in surfing 
         - add favourites button to surf screen - 
