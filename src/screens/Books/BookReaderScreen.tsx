@@ -529,8 +529,8 @@ function BookReaderScreen(): React.JSX.Element {
   const openPanel = (word: string, sentence?: string) => {
     setTranslationPanel({ word, translation: '', sentence, images: [], imagesLoading: true, translationLoading: true });
     fetchTranslation(word)
-      .then((t) => {
-        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translation: t || prev.translation, translationLoading: false } : prev));
+      .then((translation) => {
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translation: translation || prev.translation, translationLoading: false } : prev));
       })
       .catch(() => {
         setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translationLoading: false } : prev));
