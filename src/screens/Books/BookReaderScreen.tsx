@@ -17,6 +17,7 @@ type StoredBook = {
   filePath: string;
   addedAt: string;
   lastPositionCfi?: string;
+  lastOpenedAt?: string;
 };
 
 const STORAGE_KEY = 'books.library';
@@ -64,6 +65,12 @@ function BookReaderScreen(): React.JSX.Element {
           setError('Book not found');
           return;
         }
+        // Update last opened timestamp for recents ordering
+        try {
+          const nowIso = new Date().toISOString();
+          const updated = books.map((b) => (b.id === bookId ? { ...b, lastOpenedAt: nowIso } : b));
+          await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(updated, null, 2));
+        } catch {}
         const localPath = /^file:\/\//.test(book.filePath) ? book.filePath : `file://${book.filePath}`;
         // Verify file exists to provide better error messages
         try {

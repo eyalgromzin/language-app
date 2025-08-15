@@ -1,7 +1,6 @@
 - screens / tabs:
     - books screen 
-        - show cover image 
-        - show previously loaded books by usage desc order 
+        - order previously loaded books by  
         - enable click on a book to read it 
         - it will open on the last page it was open .
         - enable click on a word to open add word dialog. 

@@ -14,6 +14,7 @@ type StoredBook = {
   filePath: string;      // RNFS DocumentDirectoryPath path to the .epub copy
   addedAt: string;
   lastPositionCfi?: string; // for resuming
+  lastOpenedAt?: string; // for ordering by recent open
 };
 
 const STORAGE_KEY = 'books.library';
@@ -67,7 +68,9 @@ function BooksScreen(): React.JSX.Element {
       const json = await AsyncStorage.getItem(STORAGE_KEY);
       const parsed = json ? JSON.parse(json) : [];
       const arr: StoredBook[] = Array.isArray(parsed) ? parsed : [];
-      const sorted = [...arr].sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt));
+      const sorted = [...arr].sort(
+        (a, b) => Date.parse(b.lastOpenedAt || b.addedAt) - Date.parse(a.lastOpenedAt || a.addedAt)
+      );
       setBooks(sorted);
     } catch {
       setBooks([]);
@@ -184,6 +187,7 @@ function BooksScreen(): React.JSX.Element {
         coverUri: coverUri,
         filePath,
         addedAt: new Date().toISOString(),
+        lastOpenedAt: undefined,
       };
       const next = [newBook, ...books.filter((b) => b.filePath !== filePath)];
       await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next, null, 2));
@@ -194,8 +198,23 @@ function BooksScreen(): React.JSX.Element {
     }
   };
 
-  const openBook = (book: StoredBook) => {
-    navigation.navigate('BookReader', { id: book.id });
+  const openBook = async (book: StoredBook) => {
+    try {
+      const nowIso = new Date().toISOString();
+      const json = await AsyncStorage.getItem(STORAGE_KEY);
+      const parsed = json ? JSON.parse(json) : [];
+      const list: StoredBook[] = Array.isArray(parsed) ? parsed : [];
+      const updated = list.map((b) => (b.id === book.id ? { ...b, lastOpenedAt: nowIso } : b));
+      await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(updated, null, 2));
+      const locallySorted = [...updated].sort(
+        (a, b) => Date.parse(b.lastOpenedAt || b.addedAt) - Date.parse(a.lastOpenedAt || a.addedAt)
+      );
+      setBooks(locallySorted);
+    } catch {
+      // ignore update errors; still navigate
+    } finally {
+      navigation.navigate('BookReader', { id: book.id });
+    }
   };
 
   const renderItem = ({ item }: { item: StoredBook }) => {
