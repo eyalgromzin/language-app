@@ -19,11 +19,11 @@
             childrens , short stories , novel , technical, self help/new age. none fiction. 
         ? enable a user once a week to update a 1 of the fields of the library item.  
     - on link click, enable to open it with the app and go straight to url in the surf tab  
-    - startup screen - num of answers for word removal - make if round buttons 1,2,3
     - videos - with subtitles that each word in the subtitle possible to click on it .  
     - login with facebook / google
     - step by step - like duolingo - annoying practices.
         - will take simple sentenses and practice them with games, until all the words are
+
 - add animations - to make everythin a little more playful :
     add animations on these events : 
         - on add word , highlight "my words" with some animation 
