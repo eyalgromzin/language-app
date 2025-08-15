@@ -1,5 +1,6 @@
 - screens / tabs:
     - books screen 
+        - show cover image 
         - show previously loaded books by usage desc order 
         - enable click on a book to read it 
         - it will open on the last page it was open .
@@ -35,6 +36,9 @@
         - on add word , highlight "my words" with some animation 
         - on practice finish word - make some big animation on the screen. 
         - on practice finish word specific practice 
+- add sounds on:
+    - correct answer 
+    - incorrect answer
 
 - payed version - when ill have 1000 users 
     - limit num of words possible to add to learning per day - for example 20 - payed will be limitless.

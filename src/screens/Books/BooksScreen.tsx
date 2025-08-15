@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { pick } from '@react-native-documents/picker';
 import * as RNFS from 'react-native-fs'; // @dr.pogodin/react-native-fs
+import JSZip from 'jszip';
 
 type StoredBook = {
   id: string;            // stable id (hash of file path)
@@ -16,6 +17,44 @@ type StoredBook = {
 };
 
 const STORAGE_KEY = 'books.library';
+
+async function extractCoverImageFromEpub(epubFilePath: string, bookId: string): Promise<string | undefined> {
+  try {
+    const base64Data = await RNFS.readFile(epubFilePath, 'base64' as any);
+    const zip = await JSZip.loadAsync(base64Data, { base64: true });
+
+    const pngCandidates: string[] = [];
+    const jpgCandidates: string[] = [];
+    zip.forEach((relativePath, file) => {
+      if (file.dir) return;
+      const lower = relativePath.toLowerCase();
+      if (/(^|\/)(cover|image0001|title|titlepage|cover-image)[^\/]*\.png$/.test(lower)) {
+        pngCandidates.unshift(relativePath);
+      } else if (/\.png$/.test(lower)) {
+        pngCandidates.push(relativePath);
+      } else if (/(^|\/)(cover|image0001|title|titlepage|cover-image)[^\/]*\.(jpg|jpeg)$/.test(lower)) {
+        jpgCandidates.unshift(relativePath);
+      } else if (/\.(jpg|jpeg)$/.test(lower)) {
+        jpgCandidates.push(relativePath);
+      }
+    });
+
+    const chosen = (pngCandidates[0] || jpgCandidates[0]);
+    if (!chosen) return undefined;
+    const extMatch = /\.([a-z0-9]+)$/i.exec(chosen);
+    const ext = (extMatch ? extMatch[1].toLowerCase() : 'png').replace('jpeg', 'jpg');
+    const file = zip.file(chosen);
+    if (!file) return undefined;
+    const imageBase64 = await file.async('base64');
+    const outDir = `${RNFS.DocumentDirectoryPath}/books`;
+    try { if (!(await RNFS.exists(outDir))) await RNFS.mkdir(outDir); } catch {}
+    const outPath = `${outDir}/${bookId}_cover.${ext}`;
+    await RNFS.writeFile(outPath, imageBase64, 'base64' as any);
+    return outPath.startsWith('file://') ? outPath : `file://${outPath}`;
+  } catch {
+    return undefined;
+  }
+}
 
 function BooksScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
@@ -137,11 +176,12 @@ function BooksScreen(): React.JSX.Element {
       }
       const titleGuess = fileName.replace(/\.epub$/i, '').replace(/[_\-]+/g, ' ');
       const id = String(Math.abs(hashString(filePath)));
+      const coverUri = await extractCoverImageFromEpub(filePath, id);
       const newBook: StoredBook = {
         id,
         title: titleGuess || 'Untitled',
         author: undefined,
-        coverUri: undefined,
+        coverUri: coverUri,
         filePath,
         addedAt: new Date().toISOString(),
       };
