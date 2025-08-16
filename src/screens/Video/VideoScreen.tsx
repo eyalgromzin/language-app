@@ -37,6 +37,8 @@ function VideoScreen(): React.JSX.Element {
   const [playerReady, setPlayerReady] = React.useState<boolean>(false);
   const [currentTime, setCurrentTime] = React.useState<number>(0);
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+  const scrollViewRef = React.useRef<any>(null);
+  const lineOffsetsRef = React.useRef<Record<number, number>>({});
 
   React.useEffect(() => {
     let mounted = true;
@@ -158,6 +160,15 @@ function VideoScreen(): React.JSX.Element {
     setActiveIndex(lastIdx);
   }, [currentTime, transcript]);
 
+  React.useEffect(() => {
+    if (activeIndex == null) return;
+    const y = lineOffsetsRef.current[activeIndex];
+    if (typeof y !== 'number') return;
+    try {
+      scrollViewRef.current?.scrollTo?.({ y: Math.max(y - 80, 0), animated: true });
+    } catch {}
+  }, [activeIndex]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.label}>YouTube URL</Text>
@@ -233,10 +244,14 @@ function VideoScreen(): React.JSX.Element {
           ) : transcriptError ? (
             <Text style={[styles.helper, { color: '#cc3333' }]}>{transcriptError}</Text>
           ) : transcript.length > 0 ? (
-            <ScrollView style={styles.transcriptBox}>
+            <ScrollView style={styles.transcriptBox} ref={scrollViewRef}>
               {transcript.map((seg, index) => (
                 <Text
                   key={`${seg.offset}-${index}`}
+                  onLayout={(e) => {
+                    const y = e.nativeEvent.layout.y;
+                    lineOffsetsRef.current[index] = y;
+                  }}
                   style={[
                     styles.transcriptLine,
                     activeIndex === index ? styles.transcriptLineActive : null,
