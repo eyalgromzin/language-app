@@ -641,7 +641,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 10,
     fontSize: 16,
-    marginBottom: 16,
+    marginBottom: 0,
   },
   inputRow: {
     flexDirection: 'row',
