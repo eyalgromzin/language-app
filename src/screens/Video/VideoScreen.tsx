@@ -39,6 +39,7 @@ function VideoScreen(): React.JSX.Element {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const scrollViewRef = React.useRef<any>(null);
   const lineOffsetsRef = React.useRef<Record<number, number>>({});
+  const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     let mounted = true;
@@ -189,44 +190,81 @@ function VideoScreen(): React.JSX.Element {
           style={styles.goButton}
           onPress={() => {
             const id = extractYouTubeVideoId(inputUrl);
-            setUrl(inputUrl);
-            if (!id) {
-              setTranscript([]);
-              setTranscriptError('Please enter a valid YouTube URL or video ID.');
+
+            // No video loaded yet: require a valid id, then start playback
+            if (!videoId) {
+              if (!id) {
+                setTranscript([]);
+                setTranscriptError('Please enter a valid YouTube URL or video ID.');
+                setIsPlaying(false);
+                return;
+              }
+              setUrl(inputUrl);
+              if (transcript.length === 0) {
+                (async () => {
+                  setLoadingTranscript(true);
+                  setTranscriptError(null);
+                  try {
+                    const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
+                    const segments = await getVideoTranscript(id, langCode);
+                    setTranscript(segments);
+                  } catch (err) {
+                    setTranscript([]);
+                    setTranscriptError('Unable to fetch transcript for this video.');
+                  } finally {
+                    setLoadingTranscript(false);
+                  }
+                })();
+              }
+              setIsPlaying(true);
               return;
             }
-            (async () => {
-              setLoadingTranscript(true);
+
+            // If a different video id is entered, switch video and play
+            if (id && id !== videoId) {
+              setUrl(inputUrl);
+              setTranscript([]);
               setTranscriptError(null);
-              try {
-                const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
-                const segments = await getVideoTranscript(id, langCode);
-                setTranscript(segments);
-              } catch (err) {
-                setTranscript([]);
-                setTranscriptError('Unable to fetch transcript for this video.');
-              } finally {
-                setLoadingTranscript(false);
-              }
-            })();
+              (async () => {
+                setLoadingTranscript(true);
+                try {
+                  const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
+                  const segments = await getVideoTranscript(id, langCode);
+                  setTranscript(segments);
+                } catch (err) {
+                  setTranscript([]);
+                  setTranscriptError('Unable to fetch transcript for this video.');
+                } finally {
+                  setLoadingTranscript(false);
+                }
+              })();
+              setIsPlaying(true);
+              return;
+            }
+
+            // Do not toggle play/pause from the button anymore; it only opens
           }}
           accessibilityRole="button"
-          accessibilityLabel="Load video"
+          accessibilityLabel="Open video"
         >
-          <Text style={styles.goButtonText}>Go</Text>
+          <Text style={styles.goButtonText}>Open</Text>
         </TouchableOpacity>
       </View>
       {videoId ? (
         <View style={styles.playerWrapper}>
           <YoutubePlayer
             height={220}
-            play={false}
+            play={isPlaying}
             videoId={videoId}
             webViewProps={{
               allowsFullscreenVideo: true,
             }}
             ref={playerRef}
             onReady={() => setPlayerReady(true)}
+            onChangeState={(state) => {
+              if (state === 'playing') setIsPlaying(true);
+              if (state === 'paused' || state === 'ended') setIsPlaying(false);
+            }}
           />
         </View>
       ) : (
