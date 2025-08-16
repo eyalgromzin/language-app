@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { YoutubeTranscript } from 'youtube-transcript';
+import { getVideoTranscript } from '../../services/youtubei';
 
 function extractYouTubeVideoId(input: string): string | null {
   if (!input) return null;
@@ -120,8 +120,27 @@ function VideoScreen(): React.JSX.Element {
         <TouchableOpacity
           style={styles.goButton}
           onPress={() => {
+            const id = extractYouTubeVideoId(inputUrl);
             setUrl(inputUrl);
-            
+            if (!id) {
+              setTranscript([]);
+              setTranscriptError('Please enter a valid YouTube URL or video ID.');
+              return;
+            }
+            (async () => {
+              setLoadingTranscript(true);
+              setTranscriptError(null);
+              try {
+                const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
+                const segments = await getVideoTranscript(id, langCode);
+                setTranscript(segments);
+              } catch (err) {
+                setTranscript([]);
+                setTranscriptError('Unable to fetch transcript for this video.');
+              } finally {
+                setLoadingTranscript(false);
+              }
+            })();
           }}
           accessibilityRole="button"
           accessibilityLabel="Load video"
