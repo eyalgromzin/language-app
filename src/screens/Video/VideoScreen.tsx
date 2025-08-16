@@ -33,6 +33,10 @@ function VideoScreen(): React.JSX.Element {
   const [transcript, setTranscript] = React.useState<Array<{ text: string; duration: number; offset: number }>>([]);
   const [loadingTranscript, setLoadingTranscript] = React.useState<boolean>(false);
   const [transcriptError, setTranscriptError] = React.useState<string | null>(null);
+  const playerRef = React.useRef<any>(null);
+  const [playerReady, setPlayerReady] = React.useState<boolean>(false);
+  const [currentTime, setCurrentTime] = React.useState<number>(0);
+  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
 
   React.useEffect(() => {
     let mounted = true;
@@ -119,6 +123,41 @@ function VideoScreen(): React.JSX.Element {
     return data as TranscriptSegment[]; 
   };
 
+  React.useEffect(() => {
+    if (!playerReady || !playerRef.current) return;
+    let cancelled = false;
+    const interval = setInterval(async () => {
+      try {
+        const t = await playerRef.current?.getCurrentTime?.();
+        if (!cancelled && typeof t === 'number' && !Number.isNaN(t)) {
+          setCurrentTime(t);
+        }
+      } catch {}
+    }, 500);
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+    };
+  }, [playerReady]);
+
+  React.useEffect(() => {
+    if (!transcript || transcript.length === 0) {
+      setActiveIndex(null);
+      return;
+    }
+    const idx = transcript.findIndex((seg) => currentTime >= seg.offset && currentTime < seg.offset + seg.duration);
+    if (idx !== -1) {
+      setActiveIndex(idx);
+      return;
+    }
+    let lastIdx: number | null = null;
+    for (let i = 0; i < transcript.length; i++) {
+      if (currentTime >= transcript[i].offset) lastIdx = i;
+      else break;
+    }
+    setActiveIndex(lastIdx);
+  }, [currentTime, transcript]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.label}>YouTube URL</Text>
@@ -175,6 +214,8 @@ function VideoScreen(): React.JSX.Element {
             webViewProps={{
               allowsFullscreenVideo: true,
             }}
+            ref={playerRef}
+            onReady={() => setPlayerReady(true)}
           />
         </View>
       ) : (
@@ -194,7 +235,13 @@ function VideoScreen(): React.JSX.Element {
           ) : transcript.length > 0 ? (
             <ScrollView style={styles.transcriptBox}>
               {transcript.map((seg, index) => (
-                <Text key={`${seg.offset}-${index}`} style={styles.transcriptLine}>
+                <Text
+                  key={`${seg.offset}-${index}`}
+                  style={[
+                    styles.transcriptLine,
+                    activeIndex === index ? styles.transcriptLineActive : null,
+                  ]}
+                >
                   {seg.text}
                 </Text>
               ))}
@@ -272,6 +319,13 @@ const styles = StyleSheet.create({
     color: '#222',
     lineHeight: 22,
     marginBottom: 6,
+  },
+  transcriptLineActive: {
+    color: '#007AFF',
+    fontWeight: '700',
+    backgroundColor: 'rgba(0,122,255,0.08)',
+    borderRadius: 4,
+    paddingHorizontal: 4,
   },
 });
 
