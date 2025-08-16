@@ -2,7 +2,6 @@ import React from 'react';
 import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getVideoTranscript } from '../../services/youtubei';
 
 function extractYouTubeVideoId(input: string): string | null {
   if (!input) return null;
@@ -100,6 +99,25 @@ function VideoScreen(): React.JSX.Element {
       cancelled = true;
     };
   }, [videoId, learningLanguage, mapLanguageNameToYoutubeCode]);
+
+  type TranscriptSegment = { text: string; duration: number; offset: number };
+  
+  const getVideoTranscript = async (video: string, lang: string): Promise<TranscriptSegment[]> => {
+    const response = await fetch('http://localhost:3000/transcript', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ video, lang }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Transcript request failed: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data as TranscriptSegment[]; 
+  };
 
   return (
     <View style={styles.container}>
