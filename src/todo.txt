@@ -19,8 +19,10 @@
             childrens , short stories , novel , technical, self help/new age. none fiction. 
         ? enable a user once a week to update a 1 of the fields of the library item.  
     - on link click, enable to open it with the app and go straight to url in the surf tab  
-    - videos - with subtitles that each word in the subtitle possible to click on it .  
-        - youtube-transcript - not returning transcript 
+    - videos 
+        - when entering a url that is not youtube , show an alert popup
+        - when first time opening videos, show most popular videos . 
+        - when entering to url text input field a text that is not url , it should search youtube and show results for easy clicking and viewing 
     - login with facebook / google
     - step by step - like duolingo - annoying practices.
         - will take simple sentenses and practice them with games, until all the words are
