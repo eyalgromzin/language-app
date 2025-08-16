@@ -18,6 +18,7 @@ export type TranscriptSegment = {
   text: string;
   duration: number; // seconds
   offset: number; // seconds since start
+  lang?: string;
 };
 
 /**
@@ -115,6 +116,7 @@ async function forceXmlTranscript(
     text: m[3],
     duration: parseFloat(m[2]),
     offset: parseFloat(m[1]),
+    lang: lang ?? tracks[0]?.languageCode,
   }));
 }
 
@@ -128,9 +130,7 @@ export async function getVideoTranscript(
   try {
     const client = await getClient(languageCode);
     const info: any = await client.getInfo(id as any);
-    const ytTranscript: any = languageCode
-      ? await (info as any).getTranscript({ language: languageCode })
-      : await (info as any).getTranscript();
+    const ytTranscript: any = await (info as any).getTranscript();
     const normalized = normalizeYoutubeiTranscript(ytTranscript);
     if (normalized.length > 0) return normalized;
   } catch {
