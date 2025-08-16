@@ -242,7 +242,14 @@ function VideoScreen(): React.JSX.Element {
               return;
             }
 
-            // Do not toggle play/pause from the button anymore; it only opens
+            // If currently playing OR not at the beginning, stop and reset to beginning
+            if (isPlaying || (typeof currentTime === 'number' && currentTime > 0.1)) {
+              try {
+                playerRef.current?.seekTo?.(0);
+              } catch {}
+              setIsPlaying(false);
+              return;
+            }
           }}
           accessibilityRole="button"
           accessibilityLabel="Open video"
