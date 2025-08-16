@@ -2,6 +2,10 @@ import React from 'react';
 import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
+import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
+import * as RNFS from 'react-native-fs';
+import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 
 function extractYouTubeVideoId(input: string): string | null {
   if (!input) return null;
@@ -30,6 +34,7 @@ function VideoScreen(): React.JSX.Element {
   const [url, setUrl] = React.useState<string>('');
   const videoId = React.useMemo(() => extractYouTubeVideoId(url) ?? '', [url]);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
+  const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
   const [transcript, setTranscript] = React.useState<Array<{ text: string; duration: number; offset: number }>>([]);
   const [loadingTranscript, setLoadingTranscript] = React.useState<boolean>(false);
   const [transcriptError, setTranscriptError] = React.useState<string | null>(null);
@@ -40,17 +45,28 @@ function VideoScreen(): React.JSX.Element {
   const scrollViewRef = React.useRef<any>(null);
   const lineOffsetsRef = React.useRef<Record<number, number>>({});
   const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
+  const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
+  const [selectedWordKey, setSelectedWordKey] = React.useState<string | null>(null);
+
+  // Hidden WebView state to scrape lazy-loaded image results (same approach as Surf/Books)
+  const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
+  const imageScrapeResolveRef = React.useRef<((urls: string[]) => void) | null>(null);
+  const imageScrapeRejectRef = React.useRef<((err?: unknown) => void) | null>(null);
+  const hiddenWebViewRef = React.useRef<WebView>(null);
 
   React.useEffect(() => {
     let mounted = true;
     (async () => {
       try {
-        const lang = await AsyncStorage.getItem('language.learning');
+        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
         if (!mounted) return;
-        setLearningLanguage(lang);
+        const map = Object.fromEntries(entries);
+        setLearningLanguage(map['language.learning'] ?? null);
+        setNativeLanguage(map['language.native'] ?? null);
       } catch {
         if (!mounted) return;
         setLearningLanguage(null);
+        setNativeLanguage(null);
       }
     })();
     return () => {
@@ -125,6 +141,243 @@ function VideoScreen(): React.JSX.Element {
     const data = await response.json();
     return data as TranscriptSegment[]; 
   };
+
+  const fetchTranslation = async (word: string): Promise<string> => fetchTranslationCommon(word, learningLanguage, nativeLanguage);
+
+  const imageScrapeInjection = `
+    (function() {
+      var MAX_TIME = 12000;
+      var INTERVAL_MS = 250;
+      var start = Date.now();
+      var pollTimer = null;
+      var scrollTimer = null;
+
+      function normalizeUrl(u) {
+        if (!u) return null;
+        var url = ('' + u).trim();
+        if (!url) return null;
+        if (url.indexOf('//') === 0) return 'https:' + url;
+        return url;
+      }
+
+      function collectUrls() {
+        var urls = [];
+        try {
+          var imgs = Array.prototype.slice.call(document.querySelectorAll('img'));
+          for (var i = 0; i < imgs.length; i++) {
+            var img = imgs[i];
+            try {
+              var candidate = img.currentSrc || img.src || img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || img.getAttribute('data-original') || '';
+              var n = normalizeUrl(candidate);
+              if (n && urls.indexOf(n) === -1) urls.push(n);
+            } catch (e) {}
+          }
+        } catch (e) {}
+        return urls;
+      }
+
+      function done() {
+        try {
+          var urls = collectUrls().slice(0, 12);
+          window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
+            JSON.stringify({ type: 'imageScrapeUrls', urls: urls })
+          );
+        } catch(e) {}
+        if (pollTimer) clearInterval(pollTimer);
+        if (scrollTimer) clearInterval(scrollTimer);
+      }
+
+      function step() {
+        if (collectUrls().length >= 6) return done();
+        if (Date.now() - start > MAX_TIME) return done();
+      }
+
+      var y = 0;
+      scrollTimer = setInterval(function(){
+        try {
+          y += 800;
+          window.scrollTo(0, y);
+          window.dispatchEvent(new Event('scroll'));
+        } catch(e) {}
+      }, 200);
+
+      pollTimer = setInterval(step, INTERVAL_MS);
+      step();
+    })();
+    true;
+  `;
+
+  const parseYandexImageUrlsFromHtml = (html: string): string[] => {
+    try {
+      const results: string[] = [];
+      const imgTagRegex = /<img\b[^>]*class=(["'])([^"']*?)\1[^>]*>/gi;
+      let match: RegExpExecArray | null;
+      while ((match = imgTagRegex.exec(html)) !== null) {
+        const classAttr = match[2] || '';
+        if (
+          classAttr.indexOf('ImagesContentImage-Image') !== -1 &&
+          classAttr.indexOf('ImagesContentImage-Image_clickable') !== -1
+        ) {
+          const tag = match[0];
+          let url: string | null = null;
+          const srcsetMatch = /srcset=(["'])([^"']+?)\1/i.exec(tag);
+          if (srcsetMatch && srcsetMatch[2]) {
+            url = srcsetMatch[2].split(',')[0].trim().split(/\s+/)[0];
+          }
+          if (!url) {
+            const dataSrcMatch = /data-src=(["'])([^"']+?)\1/i.exec(tag);
+            if (dataSrcMatch && dataSrcMatch[2]) url = dataSrcMatch[2];
+          }
+          if (!url) {
+            const srcMatch = /src=(["'])([^"']+?)\1/i.exec(tag);
+            if (srcMatch && srcMatch[2]) url = srcMatch[2];
+          }
+          if (url) {
+            let normalized = url;
+            if (normalized.startsWith('//')) normalized = 'https:' + normalized;
+            else if (normalized.startsWith('/')) normalized = 'https://yandex.com' + normalized;
+            if (!results.includes(normalized)) {
+              results.push(normalized);
+              if (results.length >= 6) break;
+            }
+          }
+        }
+      }
+      return results.slice(0, 6);
+    } catch {
+      return [];
+    }
+  };
+
+  const fetchImageUrls = async (word: string): Promise<string[]> => {
+    const searchUrl = `https://yandex.com/images/search?text=${encodeURIComponent(word)}`;
+    if (imageScrape) {
+      return [];
+    }
+    const result: string[] = await new Promise<string[]>((resolve, reject) => {
+      imageScrapeResolveRef.current = resolve;
+      imageScrapeRejectRef.current = reject;
+      setImageScrape({ url: searchUrl, word });
+    }).catch(() => [] as string[]);
+    if (Array.isArray(result) && result.length > 0) return result.slice(0, 6);
+    return [];
+  };
+
+  const onScrapeMessage = (event: WebViewMessageEvent) => {
+    try {
+      const data = JSON.parse(event.nativeEvent.data);
+      if (data && data.type === 'imageScrapeUrls' && Array.isArray(data.urls)) {
+        const urls: string[] = (data.urls as unknown[])
+          .map((u) => (typeof u === 'string' ? u : ''))
+          .filter((u) => !!u)
+          .slice(0, 6);
+        imageScrapeResolveRef.current?.(urls);
+        imageScrapeResolveRef.current = null;
+        imageScrapeRejectRef.current = null;
+        setImageScrape(null);
+        return;
+      }
+      if (data && data.type === 'imageScrapeHtml' && typeof data.html === 'string') {
+        const urls = parseYandexImageUrlsFromHtml(data.html);
+        imageScrapeResolveRef.current?.(urls);
+        imageScrapeResolveRef.current = null;
+        imageScrapeRejectRef.current = null;
+        setImageScrape(null);
+      }
+    } catch {
+      imageScrapeResolveRef.current?.([]);
+      imageScrapeResolveRef.current = null;
+      imageScrapeRejectRef.current = null;
+      setImageScrape(null);
+    }
+  };
+
+  const openPanel = (word: string, sentence?: string) => {
+    setTranslationPanel({ word, translation: '', sentence, images: [], imagesLoading: true, translationLoading: true });
+    fetchTranslation(word)
+      .then((t) => {
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translation: t || prev.translation, translationLoading: false } : prev));
+      })
+      .catch(() => {
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translationLoading: false } : prev));
+      });
+    fetchImageUrls(word)
+      .then((imgs) => {
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, images: imgs, imagesLoading: false } : prev));
+      })
+      .catch(() => {
+        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, images: [], imagesLoading: false } : prev));
+      });
+  };
+
+  const saveCurrentWord = async () => {
+    if (!translationPanel) return;
+    const entry = {
+      word: translationPanel.word,
+      translation: translationPanel.translation,
+      sentence: translationPanel.sentence || '',
+      addedAt: new Date().toISOString(),
+      numberOfCorrectAnswers: {
+        missingLetters: 0,
+        missingWords: 0,
+        chooseTranslation: 0,
+        chooseWord: 0,
+        memoryGame: 0,
+        writeTranslation: 0,
+        writeWord: 0,
+      },
+    } as const;
+
+    const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
+    try {
+      let current: unknown = [];
+      try {
+        const content = await RNFS.readFile(filePath, 'utf8');
+        current = JSON.parse(content);
+      } catch {
+        current = [];
+      }
+      const arr = Array.isArray(current) ? current : [];
+
+      const normalize = (it: any) => {
+        const base = it && typeof it === 'object' ? it : {};
+        const noa = (base as any).numberOfCorrectAnswers || {};
+        const safeNoa = {
+          missingLetters: Math.max(0, Number(noa.missingLetters) || 0),
+          missingWords: Math.max(0, Number(noa.missingWords) || 0),
+          chooseTranslation: Math.max(0, Number(noa.chooseTranslation) || 0),
+          chooseWord: Math.max(0, Number(noa.chooseWord) || 0),
+          memoryGame: Math.max(0, Number(noa.memoryGame) || 0),
+          writeTranslation: Math.max(0, Number(noa.writeTranslation) || 0),
+          writeWord: Math.max(0, Number(noa.writeWord) || 0),
+        };
+        return { ...base, numberOfCorrectAnswers: safeNoa };
+      };
+      const normalized = arr.map(normalize);
+
+      const exists = normalized.some(
+        (it: any) => it && typeof it === 'object' && it.word === entry.word && it.sentence === entry.sentence
+      );
+      if (!exists) normalized.push(entry);
+
+      await RNFS.writeFile(filePath, JSON.stringify(normalized, null, 2), 'utf8');
+    } catch (e) {
+      // ignore errors silently
+    }
+  };
+
+  const tokenizeTranscriptLine = React.useCallback((text: string): Array<{ value: string; isWord: boolean }> => {
+    const re = /[\p{L}\p{N}'’\-]+|\s+|[^\s\p{L}\p{N}]/gu;
+    const out: Array<{ value: string; isWord: boolean }> = [];
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(text)) !== null) {
+      const tok = m[0];
+      const isWord = /[\p{L}\p{N}'’\-]+/u.test(tok);
+      out.push({ value: tok, isWord });
+    }
+    if (out.length === 0) out.push({ value: text, isWord: true });
+    return out;
+  }, []);
 
   React.useEffect(() => {
     if (!playerReady || !playerRef.current) return;
@@ -290,27 +543,83 @@ function VideoScreen(): React.JSX.Element {
             <Text style={[styles.helper, { color: '#cc3333' }]}>{transcriptError}</Text>
           ) : transcript.length > 0 ? (
             <ScrollView style={styles.transcriptBox} ref={scrollViewRef}>
-              {transcript.map((seg, index) => (
-                <Text
-                  key={`${seg.offset}-${index}`}
-                  onLayout={(e) => {
-                    const y = e.nativeEvent.layout.y;
-                    lineOffsetsRef.current[index] = y;
-                  }}
-                  style={[
-                    styles.transcriptLine,
-                    activeIndex === index ? styles.transcriptLineActive : null,
-                  ]}
-                >
-                  {seg.text}
-                </Text>
-              ))}
+              {transcript.map((seg, index) => {
+                const tokens = tokenizeTranscriptLine(seg.text);
+                return (
+                  <Text
+                    key={`${seg.offset}-${index}`}
+                    onLayout={(e) => {
+                      const y = e.nativeEvent.layout.y;
+                      lineOffsetsRef.current[index] = y;
+                    }}
+                    style={[
+                      styles.transcriptLine,
+                      activeIndex === index ? styles.transcriptLineActive : null,
+                    ]}
+                  >
+                    {tokens.map((tok, tIdx) => {
+                      const key = `${index}:${tIdx}`;
+                      if (!tok.isWord) {
+                        return (
+                          <Text key={key}>
+                            {tok.value}
+                          </Text>
+                        );
+                      }
+                      const isSelected = selectedWordKey === key;
+                      return (
+                        <Text
+                          key={key}
+                          onPress={() => {
+                            setSelectedWordKey(key);
+                            openPanel(tok.value);
+                          }}
+                          style={isSelected ? styles.transcriptWordSelected : undefined}
+                        >
+                          {tok.value}
+                        </Text>
+                      );
+                    })}
+                  </Text>
+                );
+              })}
             </ScrollView>
           ) : (
             <Text style={styles.helper}>No transcript lines to display.</Text>
           )}
         </View>
       ) : null}
+
+      {imageScrape && (
+        <View style={{ position: 'absolute', left: -10000, top: 0, width: 360, height: 1200, opacity: 0 }}>
+          <WebView
+            ref={hiddenWebViewRef}
+            source={{ uri: imageScrape.url }}
+            style={{ width: '100%', height: '100%' }}
+            injectedJavaScript={imageScrapeInjection}
+            injectedJavaScriptBeforeContentLoaded={imageScrapeInjection}
+            onMessage={onScrapeMessage}
+            javaScriptEnabled
+            domStorageEnabled
+            originWhitelist={["*"]}
+            onLoad={() => {
+              try { hiddenWebViewRef.current?.injectJavaScript(imageScrapeInjection); } catch (e) {}
+            }}
+            onError={() => {
+              imageScrapeRejectRef.current?.();
+              imageScrapeResolveRef.current = null;
+              imageScrapeRejectRef.current = null;
+              setImageScrape(null);
+            }}
+          />
+        </View>
+      )}
+
+      <TranslationPanel
+        panel={translationPanel}
+        onSave={saveCurrentWord}
+        onClose={() => setTranslationPanel(null)}
+      />
     </View>
   );
 }
@@ -386,6 +695,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,122,255,0.08)',
     borderRadius: 4,
     paddingHorizontal: 4,
+  },
+  transcriptWordSelected: {
+    backgroundColor: 'rgba(255,235,59,0.9)',
+    borderRadius: 2,
   },
 });
 
