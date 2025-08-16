@@ -13,6 +13,7 @@ module.exports = {
     '^@react-native-documents/picker$': '<rootDir>/__mocks__/react-native-document-picker.js',
     '^@epubjs-react-native/core$': '<rootDir>/__mocks__/empty.js',
     '^@epubjs-react-native/file-system$': '<rootDir>/__mocks__/empty.js',
+    '^youtube-transcript$': '<rootDir>/__mocks__/empty.js',
   },
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/language-learn-server/'],
 };
