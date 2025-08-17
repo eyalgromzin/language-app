@@ -46,6 +46,7 @@ function VideoScreen(): React.JSX.Element {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const scrollViewRef = React.useRef<any>(null);
   const lineOffsetsRef = React.useRef<Record<number, number>>({});
+  const urlInputRef = React.useRef<TextInput>(null);
   const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
   const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
   const [selectedWordKey, setSelectedWordKey] = React.useState<string | null>(null);
@@ -530,6 +531,7 @@ function VideoScreen(): React.JSX.Element {
         <Text style={styles.label}>YouTube URL</Text>
         <View style={styles.inputRow}>
           <TextInput
+            ref={urlInputRef}
             value={inputUrl}
             onChangeText={setInputUrl}
             placeholder="Paste a YouTube URL (or video ID)"
@@ -540,6 +542,18 @@ function VideoScreen(): React.JSX.Element {
             accessibilityLabel="YouTube URL input"
             onSubmitEditing={() => setUrl(inputUrl)}
             returnKeyType="go"
+            selectTextOnFocus
+            onFocus={() => {
+              try {
+                urlInputRef.current?.setNativeProps({ selection: { start: 0, end: inputUrl.length } });
+              } catch {}
+            }}
+            onPressIn={() => {
+              try {
+                urlInputRef.current?.focus();
+                urlInputRef.current?.setNativeProps({ selection: { start: 0, end: inputUrl.length } });
+              } catch {}
+            }}
           />
           <TouchableOpacity
             style={styles.goButton}
