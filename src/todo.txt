@@ -1,6 +1,5 @@
 tomorrow : 
     enable search youtube for any video 
-    on video screen show list on startup - most popular from youtube 
     move my words to hamburger 
 
     - implment local cache using file system . 
@@ -45,7 +44,7 @@ tomorrow :
         - when entering a url that is not youtube , show an alert popup
         - when first time opening videos, show latest videos
         - when entering to url text input field a text that is not url , it should search youtube and show results for easy clicking and viewing 
-        
+        - when opening a youtube video , instead of newest videos , show relatedvideos 
     - login with facebook / google
 
     - step by step - like duolingo - annoying practices.

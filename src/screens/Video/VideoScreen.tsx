@@ -558,7 +558,7 @@ function VideoScreen(): React.JSX.Element {
         ) : startupVideosError ? (
           <Text style={[styles.helper, { color: '#cc3333' }]}>{startupVideosError}</Text>
         ) : startupVideos.length > 0 ? (
-          <ScrollView style={styles.videosList}>
+          <View style={styles.videosList}>
             {startupVideos.map((v, idx) => (
               <View key={`${v.url}-${idx}`} style={styles.videoItem}>
                 <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
@@ -568,7 +568,7 @@ function VideoScreen(): React.JSX.Element {
                 </View>
               </View>
             ))}
-          </ScrollView>
+          </View>
         ) : (
           <Text style={styles.helper}>No videos yet.</Text>
         )}
@@ -580,7 +580,7 @@ function VideoScreen(): React.JSX.Element {
     return (
       <>
       {videoId ? (
-        <View style={{ marginTop: 16, flex: 1 }}>
+        <View style={{ marginTop: 16, marginBottom: 16 }}>
           <Text style={styles.sectionTitle}>Transcript</Text>
           {loadingTranscript ? (
             <View style={styles.centered}>
@@ -590,7 +590,7 @@ function VideoScreen(): React.JSX.Element {
           ) : transcriptError ? (
             <Text style={[styles.helper, { color: '#cc3333' }]}>{transcriptError}</Text>
           ) : transcript.length > 0 ? (
-            <ScrollView style={styles.transcriptBox} ref={scrollViewRef}>
+            <ScrollView style={styles.transcriptBox} ref={scrollViewRef} nestedScrollEnabled>
               {transcript.map((seg, index) => {
                 const tokens = tokenizeTranscriptLine(seg.text);
                 return (
@@ -671,7 +671,12 @@ function VideoScreen(): React.JSX.Element {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={{ flex: 1 }}
+      contentContainerStyle={styles.container}
+      keyboardShouldPersistTaps="handled"
+      keyboardDismissMode={Platform.OS === 'ios' ? 'interactive' : 'on-drag'}
+    >
       <SearchBar />
       {videoId ? (
         <View style={styles.playerWrapper}>
@@ -707,13 +712,12 @@ function VideoScreen(): React.JSX.Element {
       />
 
 
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 16,
   },
   label: {
