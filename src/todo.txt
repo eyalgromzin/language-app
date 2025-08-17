@@ -1,43 +1,26 @@
 tomorrow :
-    
-
-
-    - implment local cache using file system for: 
-        - videos homepage - 
-        - for 100 latest 100 latest words and translations ,
-            - in client  
-
-
-
-
-
-
-
 - make baby steps screen as startup screen - but then open app on the last screen the user closed the app on 
+- add share button in key places where the user will want to share the app
+- surf screen 
+    - surf: save locally domains history . for auto complete in surfing 
+    - add favourites button to surf screen - 
+        - will show a dialog with title , and a url already filled with the current url .  
+        - personal favourites that will be saved to local file . 
+        - all favourites - it will check in the library if this link already exists .  if not , add url to library  
+- videos screen - show similar videos below transcript 
+
+
+
+
 - screens / tabs:
-    ? on startup page (where you choose languages) - choose games that you like ? - the surprise me button will choose from them 
-    - add share button in key places where the user will want to share the app
-        - ask shir 
-    - surf screen 
-        - save locally domains history . for auto complete in surfing 
-        - add favourites button to surf screen - 
-            - will show a dialog with title , and a url already filled with the current url .  
-            - personal favourites that will be saved to local file . 
-            - all favourites - it will check in the library if this link already exists .  if not , add url to library  
-    - enable to load epub files - and read a book with it  
-        - previously loaded books - with covers shown - like in readEra app 
-        - load book button 
-        - 
     - library screen 
         - split it into 3 sections : websites , books , videos  
             - books tab will show links to books that the user can download from
             - videos will show thumbnails also from youtube 
         - book section wont have a level but only book type: 
-            childrens , short stories , novel , technical, self help/new age. none fiction. 
-        ? enable a user once a week to update a 1 of the fields of the library item.  
+            childrens , short stories , novel , technical, self help/new age. none fiction. other
     - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
     - videos 
-        - when entering a url that is not youtube , show an alert popup
         - when first time opening videos, show latest videos
         - when entering to url text input field a text that is not url , it should search youtube and show results for easy clicking and viewing 
         - when opening a youtube video , instead of newest videos , show relatedvideos 
@@ -46,6 +29,7 @@ tomorrow :
     - step by step - like duolingo - annoying practices.
         - will take simple sentenses and practice them with games, until all the words are
         - will have a json with sentenses and words to practice . and from it will create a path 
+
 
 - add animations - to make everythin a little more playful :
     add animations on these events : 
@@ -59,6 +43,11 @@ tomorrow :
 
     - add a last video button - to open the last youtube video played and its location to be able to continue 
  
+? enable a user once a week to update a 1 of the fields of a library book item.  
+
+? on startup page (where you choose languages) - choose games that you like ? - the surprise me button will choose from them 
+
+
 - on 100 downloads : create a table for translation .for all my languages - to not take translation from 3rd party. 
        with indexes on all languages columns.
 
