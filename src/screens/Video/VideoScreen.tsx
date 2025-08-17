@@ -50,6 +50,7 @@ function VideoScreen(): React.JSX.Element {
   const [startupVideos, setStartupVideos] = React.useState<Array<{ url: string; thumbnail: string; title: string; description: string }>>([]);
   const [startupVideosLoading, setStartupVideosLoading] = React.useState<boolean>(false);
   const [startupVideosError, setStartupVideosError] = React.useState<string | null>(null);
+  const [currentVideoTitle, setCurrentVideoTitle] = React.useState<string>('');
 
   // Hidden WebView state to scrape lazy-loaded image results (same approach as Surf/Books)
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
@@ -177,6 +178,45 @@ function VideoScreen(): React.JSX.Element {
   };
 
   const fetchTranslation = async (word: string): Promise<string> => fetchTranslationCommon(word, learningLanguage, nativeLanguage);
+
+  const fetchYouTubeTitleById = async (id: string): Promise<string> => {
+    try {
+      const res = await fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${id}`)}&format=json`);
+      if (!res.ok) return '';
+      const data = await res.json();
+      const t = typeof (data as any)?.title === 'string' ? (data as any).title : '';
+      return t;
+    } catch {
+      return '';
+    }
+  };
+
+  const openStartupVideo = async (urlString: string, title?: string) => {
+    const id = extractYouTubeVideoId(urlString);
+    if (!id) {
+      setTranscript([]);
+      setTranscriptError('Unable to open this video. Invalid URL or ID.');
+      setIsPlaying(false);
+      return;
+    }
+    setCurrentVideoTitle(title || '');
+    setInputUrl(urlString);
+    setUrl(urlString);
+    setTranscript([]);
+    setTranscriptError(null);
+    setLoadingTranscript(true);
+    try {
+      const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
+      const segments = await getVideoTranscript(id, langCode);
+      setTranscript(segments);
+    } catch (err) {
+      setTranscript([]);
+      setTranscriptError('Unable to fetch transcript for this video.');
+    } finally {
+      setLoadingTranscript(false);
+    }
+    setIsPlaying(true);
+  };
 
   const imageScrapeInjection = `
     (function() {
@@ -488,6 +528,11 @@ function VideoScreen(): React.JSX.Element {
                   return;
                 }
                 setUrl(inputUrl);
+                setCurrentVideoTitle('');
+                (async () => {
+                  const t = await fetchYouTubeTitleById(id);
+                  if (t) setCurrentVideoTitle(t);
+                })();
                 if (transcript.length === 0) {
                   (async () => {
                     setLoadingTranscript(true);
@@ -511,6 +556,11 @@ function VideoScreen(): React.JSX.Element {
               // If a different video id is entered, switch video and play
               if (id && id !== videoId) {
                 setUrl(inputUrl);
+                setCurrentVideoTitle('');
+                (async () => {
+                  const t = await fetchYouTubeTitleById(id);
+                  if (t) setCurrentVideoTitle(t);
+                })();
                 setTranscript([]);
                 setTranscriptError(null);
                 (async () => {
@@ -560,13 +610,13 @@ function VideoScreen(): React.JSX.Element {
         ) : startupVideos.length > 0 ? (
           <View style={styles.videosList}>
             {startupVideos.map((v, idx) => (
-              <View key={`${v.url}-${idx}`} style={styles.videoItem}>
+              <TouchableOpacity key={`${v.url}-${idx}`} style={styles.videoItem} onPress={() => openStartupVideo(v.url, v.title)} activeOpacity={0.7}>
                 <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
                 <View style={styles.videoInfo}>
                   <Text style={styles.videoTitle} numberOfLines={2}>{v.title}</Text>
                   <Text style={styles.videoDescription} numberOfLines={3}>{v.description}</Text>
                 </View>
-              </View>
+              </TouchableOpacity>
             ))}
           </View>
         ) : (
@@ -679,6 +729,8 @@ function VideoScreen(): React.JSX.Element {
     >
       <SearchBar />
       {videoId ? (
+        <>
+        {currentVideoTitle ? <Text style={styles.nowPlayingTitle} numberOfLines={2}>{currentVideoTitle}</Text> : null}
         <View style={styles.playerWrapper}>
           <YoutubePlayer
             height={220}
@@ -695,6 +747,7 @@ function VideoScreen(): React.JSX.Element {
             }}
           />
         </View>
+        </>
       ) : (
         <Text style={styles.helper}>Enter a valid YouTube link or 11-character ID to load the video.</Text>
       )}
@@ -818,6 +871,12 @@ const styles = StyleSheet.create({
   transcriptWordSelected: {
     backgroundColor: 'rgba(255,235,59,0.9)',
     borderRadius: 2,
+  },
+  nowPlayingTitle: {
+    fontSize: 16,
+    fontWeight: '700',
+    marginBottom: 8,
+    color: '#111',
   },
 });
 
