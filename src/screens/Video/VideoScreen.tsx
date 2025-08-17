@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity, Image } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
@@ -47,6 +47,9 @@ function VideoScreen(): React.JSX.Element {
   const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
   const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
   const [selectedWordKey, setSelectedWordKey] = React.useState<string | null>(null);
+  const [startupVideos, setStartupVideos] = React.useState<Array<{ url: string; thumbnail: string; title: string; description: string }>>([]);
+  const [startupVideosLoading, setStartupVideosLoading] = React.useState<boolean>(false);
+  const [startupVideosError, setStartupVideosError] = React.useState<string | null>(null);
 
   // Hidden WebView state to scrape lazy-loaded image results (same approach as Surf/Books)
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
@@ -104,6 +107,37 @@ function VideoScreen(): React.JSX.Element {
     if (!name) return 'en';
     return mapping[name] || 'en';
   }, []);
+
+  React.useEffect(() => {
+    let cancelled = false;
+    const fetchStartupVideos = async (langSymbol: string) => {
+      setStartupVideosLoading(true);
+      setStartupVideosError(null);
+      try {
+        const response = await fetch('http://localhost:3000/getVideoStartupPage', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ symbol: langSymbol }),
+        });
+        if (!response.ok) throw new Error(String(response.status));
+        const data = await response.json();
+        const results = Array.isArray(data?.results) ? data.results : [];
+        if (!cancelled) setStartupVideos(results);
+      } catch (e) {
+        if (!cancelled) {
+          setStartupVideos([]);
+          setStartupVideosError('Failed to load startup videos.');
+        }
+      } finally {
+        if (!cancelled) setStartupVideosLoading(false);
+      }
+    };
+    const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
+    fetchStartupVideos(symbol);
+    return () => { cancelled = true; };
+  }, [learningLanguage, mapLanguageNameToYoutubeCode]);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -423,40 +457,64 @@ function VideoScreen(): React.JSX.Element {
     } catch {}
   }, [activeIndex]);
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.label}>YouTube URL</Text>
-      <View style={styles.inputRow}>
-        <TextInput
-          value={inputUrl}
-          onChangeText={setInputUrl}
-          placeholder="Paste a YouTube URL (or video ID)"
-          autoCapitalize="none"
-          autoCorrect={false}
-          keyboardType={Platform.OS === 'ios' ? 'url' : 'default'}
-          style={[styles.input, { flex: 1 }]}
-          accessibilityLabel="YouTube URL input"
-          onSubmitEditing={() => setUrl(inputUrl)}
-          returnKeyType="go"
-        />
-        <TouchableOpacity
-          style={styles.goButton}
-          onPress={() => {
-            const id = extractYouTubeVideoId(inputUrl);
+  const SearchBar = () => {
+    return (
+      <View id="searchBar">
+        <Text style={styles.label}>YouTube URL</Text>
+        <View style={styles.inputRow}>
+          <TextInput
+            value={inputUrl}
+            onChangeText={setInputUrl}
+            placeholder="Paste a YouTube URL (or video ID)"
+            autoCapitalize="none"
+            autoCorrect={false}
+            keyboardType={Platform.OS === 'ios' ? 'url' : 'default'}
+            style={[styles.input, { flex: 1 }]}
+            accessibilityLabel="YouTube URL input"
+            onSubmitEditing={() => setUrl(inputUrl)}
+            returnKeyType="go"
+          />
+          <TouchableOpacity
+            style={styles.goButton}
+            onPress={() => {
+              const id = extractYouTubeVideoId(inputUrl);
 
-            // No video loaded yet: require a valid id, then start playback
-            if (!videoId) {
-              if (!id) {
-                setTranscript([]);
-                setTranscriptError('Please enter a valid YouTube URL or video ID.');
-                setIsPlaying(false);
+              // No video loaded yet: require a valid id, then start playback
+              if (!videoId) {
+                if (!id) {
+                  setTranscript([]);
+                  setTranscriptError('Please enter a valid YouTube URL or video ID.');
+                  setIsPlaying(false);
+                  return;
+                }
+                setUrl(inputUrl);
+                if (transcript.length === 0) {
+                  (async () => {
+                    setLoadingTranscript(true);
+                    setTranscriptError(null);
+                    try {
+                      const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
+                      const segments = await getVideoTranscript(id, langCode);
+                      setTranscript(segments);
+                    } catch (err) {
+                      setTranscript([]);
+                      setTranscriptError('Unable to fetch transcript for this video.');
+                    } finally {
+                      setLoadingTranscript(false);
+                    }
+                  })();
+                }
+                setIsPlaying(true);
                 return;
               }
-              setUrl(inputUrl);
-              if (transcript.length === 0) {
+
+              // If a different video id is entered, switch video and play
+              if (id && id !== videoId) {
+                setUrl(inputUrl);
+                setTranscript([]);
+                setTranscriptError(null);
                 (async () => {
                   setLoadingTranscript(true);
-                  setTranscriptError(null);
                   try {
                     const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
                     const segments = await getVideoTranscript(id, langCode);
@@ -468,69 +526,59 @@ function VideoScreen(): React.JSX.Element {
                     setLoadingTranscript(false);
                   }
                 })();
+                setIsPlaying(true);
+                return;
               }
-              setIsPlaying(true);
-              return;
-            }
 
-            // If a different video id is entered, switch video and play
-            if (id && id !== videoId) {
-              setUrl(inputUrl);
-              setTranscript([]);
-              setTranscriptError(null);
-              (async () => {
-                setLoadingTranscript(true);
+              // If currently playing OR not at the beginning, stop and reset to beginning
+              if (isPlaying || (typeof currentTime === 'number' && currentTime > 0.1)) {
                 try {
-                  const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
-                  const segments = await getVideoTranscript(id, langCode);
-                  setTranscript(segments);
-                } catch (err) {
-                  setTranscript([]);
-                  setTranscriptError('Unable to fetch transcript for this video.');
-                } finally {
-                  setLoadingTranscript(false);
-                }
-              })();
-              setIsPlaying(true);
-              return;
-            }
-
-            // If currently playing OR not at the beginning, stop and reset to beginning
-            if (isPlaying || (typeof currentTime === 'number' && currentTime > 0.1)) {
-              try {
-                playerRef.current?.seekTo?.(0);
-              } catch {}
-              setIsPlaying(false);
-              return;
-            }
-          }}
-          accessibilityRole="button"
-          accessibilityLabel="Open video"
-        >
-          <Text style={styles.goButtonText}>Open</Text>
-        </TouchableOpacity>
-      </View>
-      {videoId ? (
-        <View style={styles.playerWrapper}>
-          <YoutubePlayer
-            height={220}
-            play={isPlaying}
-            videoId={videoId}
-            webViewProps={{
-              allowsFullscreenVideo: true,
+                  playerRef.current?.seekTo?.(0);
+                } catch {}
+                setIsPlaying(false);
+                return;
+              }
             }}
-            ref={playerRef}
-            onReady={() => setPlayerReady(true)}
-            onChangeState={(state) => {
-              if (state === 'playing') setIsPlaying(true);
-              if (state === 'paused' || state === 'ended') setIsPlaying(false);
-            }}
-          />
+            accessibilityRole="button"
+            accessibilityLabel="Open video"
+          >
+            <Text style={styles.goButtonText}>Open</Text>
+          </TouchableOpacity>
         </View>
-      ) : (
-        <Text style={styles.helper}>Enter a valid YouTube link or 11-character ID to load the video.</Text>
-      )}
+      </View>
+    );
+  };
 
+  const NewestVideos = () => {
+    return (
+      <>
+        <Text style={styles.sectionTitle}>newest videos</Text>
+        {startupVideosLoading ? (
+          <View style={styles.centered}><ActivityIndicator /></View>
+        ) : startupVideosError ? (
+          <Text style={[styles.helper, { color: '#cc3333' }]}>{startupVideosError}</Text>
+        ) : startupVideos.length > 0 ? (
+          <ScrollView style={styles.videosList}>
+            {startupVideos.map((v, idx) => (
+              <View key={`${v.url}-${idx}`} style={styles.videoItem}>
+                <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
+                <View style={styles.videoInfo}>
+                  <Text style={styles.videoTitle} numberOfLines={2}>{v.title}</Text>
+                  <Text style={styles.videoDescription} numberOfLines={3}>{v.description}</Text>
+                </View>
+              </View>
+            ))}
+          </ScrollView>
+        ) : (
+          <Text style={styles.helper}>No videos yet.</Text>
+        )}
+      </>
+    );
+  };
+
+  const Transcript = () => {
+    return (
+      <>
       {videoId ? (
         <View style={{ marginTop: 16, flex: 1 }}>
           <Text style={styles.sectionTitle}>Transcript</Text>
@@ -589,8 +637,13 @@ function VideoScreen(): React.JSX.Element {
           )}
         </View>
       ) : null}
+      </>
+    );
+  };
 
-      {imageScrape && (
+  const ImageScrape = () => {
+    return (
+      <>{imageScrape && (
         <View style={{ position: 'absolute', left: -10000, top: 0, width: 360, height: 1200, opacity: 0 }}>
           <WebView
             ref={hiddenWebViewRef}
@@ -613,13 +666,47 @@ function VideoScreen(): React.JSX.Element {
             }}
           />
         </View>
+      )}</>
+    );
+  };
+
+  return (
+    <View style={styles.container}>
+      <SearchBar />
+      {videoId ? (
+        <View style={styles.playerWrapper}>
+          <YoutubePlayer
+            height={220}
+            play={isPlaying}
+            videoId={videoId}
+            webViewProps={{
+              allowsFullscreenVideo: true,
+            }}
+            ref={playerRef}
+            onReady={() => setPlayerReady(true)}
+            onChangeState={(state) => {
+              if (state === 'playing') setIsPlaying(true);
+              if (state === 'paused' || state === 'ended') setIsPlaying(false);
+            }}
+          />
+        </View>
+      ) : (
+        <Text style={styles.helper}>Enter a valid YouTube link or 11-character ID to load the video.</Text>
       )}
+
+      <Transcript />
+
+      <ImageScrape />
+
+      <NewestVideos />
 
       <TranslationPanel
         panel={translationPanel}
         onSave={saveCurrentWord}
         onClose={() => setTranslationPanel(null)}
       />
+
+
     </View>
   );
 }
@@ -672,6 +759,34 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 8,
+  },
+  videosList: {
+    marginBottom: 12,
+  },
+  videoItem: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginBottom: 10,
+  },
+  videoThumb: {
+    width: 120,
+    height: 68,
+    borderRadius: 6,
+    backgroundColor: '#eee',
+    marginRight: 10,
+  },
+  videoInfo: {
+    flex: 1,
+  },
+  videoTitle: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#111',
+    marginBottom: 4,
+  },
+  videoDescription: {
+    fontSize: 13,
+    color: '#555',
   },
   centered: {
     alignItems: 'center',
