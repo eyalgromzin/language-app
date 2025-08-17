@@ -17,7 +17,7 @@ tomorrow :
 
 
 
-
+- make baby steps screen as startup screen - but then open app on the last screen the user closed the app on 
 - screens / tabs:
     ? on startup page (where you choose languages) - choose games that you like ? - the surprise me button will choose from them 
     - add share button in key places where the user will want to share the app

@@ -75,7 +75,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
           accessibilityRole="button"
           accessibilityLabel="Open video"
         >
-          <Text style={styles.goButtonText}>Open</Text>
+          <Text style={styles.goButtonText}>Go</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -106,6 +106,9 @@ function VideoScreen(): React.JSX.Element {
   const [startupVideosLoading, setStartupVideosLoading] = React.useState<boolean>(false);
   const [startupVideosError, setStartupVideosError] = React.useState<string | null>(null);
   const [currentVideoTitle, setCurrentVideoTitle] = React.useState<string>('');
+  const [searchResults, setSearchResults] = React.useState<Array<{ url: string; thumbnail: string | null; title: string; description?: string }>>([]);
+  const [searchLoading, setSearchLoading] = React.useState<boolean>(false);
+  const [searchError, setSearchError] = React.useState<string | null>(null);
 
   // Hidden WebView state to scrape lazy-loaded image results (same approach as Surf/Books)
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
@@ -577,20 +580,46 @@ function VideoScreen(): React.JSX.Element {
     } catch {}
   }, [activeIndex]);
 
+  const runYouTubeSearch = React.useCallback((rawQuery: string) => {
+    const q = (rawQuery || '').trim();
+    if (!q) return;
+    setSearchLoading(true);
+    setSearchError(null);
+    (async () => {
+      try {
+        const response = await fetch('http://localhost:3000/youtube/search', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: q }),
+        });
+        if (!response.ok) throw new Error(String(response.status));
+        const data = await response.json();
+        const results = Array.isArray(data) ? data : Array.isArray((data || {}).results) ? (data.results as any[]) : [];
+        setSearchResults(results as Array<{ url: string; thumbnail: string | null; title: string; description?: string }>);
+      } catch (e) {
+        setSearchResults([]);
+        setSearchError('Failed to search YouTube.');
+      } finally {
+        setSearchLoading(false);
+      }
+    })();
+  }, []);
+
   const handleSubmit = React.useCallback(() => {
+    const id = extractYouTubeVideoId(inputUrl);
+    if (!id) return runYouTubeSearch(inputUrl);
+    // If a valid video id/URL was provided, behave like pressing Open
     setUrl(inputUrl);
-  }, [inputUrl]);
+  }, [inputUrl, runYouTubeSearch]);
 
   const handleOpenPress = React.useCallback(() => {
     const id = extractYouTubeVideoId(inputUrl);
+    if (!id) {
+      runYouTubeSearch(inputUrl);
+      return;
+    }
 
     if (!videoId) {
-      if (!id) {
-        setTranscript([]);
-        setTranscriptError('Please enter a valid YouTube URL or video ID.');
-        setIsPlaying(false);
-        return;
-      }
       setUrl(inputUrl);
       setCurrentVideoTitle('');
       (async () => {
@@ -676,6 +705,40 @@ function VideoScreen(): React.JSX.Element {
           </View>
         ) : (
           <Text style={styles.helper}>No videos yet.</Text>
+        )}
+      </>
+    );
+  };
+
+  const SearchResults = () => {
+    if (!searchLoading && !searchError && searchResults.length === 0) return null;
+    return (
+      <>
+        <Text style={styles.sectionTitle}>search results</Text>
+        {searchLoading ? (
+          <View style={styles.centered}><ActivityIndicator /></View>
+        ) : searchError ? (
+          <Text style={[styles.helper, { color: '#cc3333' }]}>{searchError}</Text>
+        ) : searchResults.length > 0 ? (
+          <View style={styles.videosList}>
+            {searchResults.map((v, idx) => (
+              <TouchableOpacity key={`${v.url}-${idx}`} style={styles.videoItem} onPress={() => openStartupVideo(v.url, v.title)} activeOpacity={0.7}>
+                {v.thumbnail ? (
+                  <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
+                ) : (
+                  <View style={[styles.videoThumb, { backgroundColor: '#ddd', alignItems: 'center', justifyContent: 'center' }]}>
+                    <Text style={{ color: '#666', fontSize: 12 }}>No image</Text>
+                  </View>
+                )}
+                <View style={styles.videoInfo}>
+                  <Text style={styles.videoTitle} numberOfLines={2}>{v.title}</Text>
+                  <Text style={styles.videoDescription} numberOfLines={3}>{v.description || ''}</Text>
+                </View>
+              </TouchableOpacity>
+            ))}
+          </View>
+        ) : (
+          <Text style={styles.helper}>No results.</Text>
         )}
       </>
     );
@@ -820,6 +883,8 @@ function VideoScreen(): React.JSX.Element {
       <Transcript />
 
       <ImageScrape />
+
+      <SearchResults />
 
       <NewestVideos />
 
