@@ -30,6 +30,58 @@ function extractYouTubeVideoId(input: string): string | null {
   return null;
 }
 
+type SearchBarProps = {
+  inputUrl: string;
+  onChangeText: (text: string) => void;
+  onSubmit: () => void;
+  onOpenPress: () => void;
+  urlInputRef: React.RefObject<TextInput>;
+};
+
+const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef }) => {
+  return (
+    <View id="searchBar">
+      <Text style={styles.label}>YouTube URL</Text>
+      <View style={styles.inputRow}>
+        <TextInput
+          ref={urlInputRef}
+          value={inputUrl}
+          onChangeText={onChangeText}
+          placeholder="Paste a YouTube URL (or video ID)"
+          autoCapitalize="none"
+          autoCorrect={false}
+          keyboardType={Platform.OS === 'ios' ? 'url' : 'default'}
+          style={[styles.input, { flex: 1 }]}
+          accessibilityLabel="YouTube URL input"
+          onSubmitEditing={onSubmit}
+          returnKeyType="go"
+          blurOnSubmit={false}
+          selectTextOnFocus
+          onFocus={() => {
+            try {
+              urlInputRef.current?.setNativeProps({ selection: { start: 0, end: inputUrl.length } });
+            } catch {}
+          }}
+          onPressIn={() => {
+            try {
+              urlInputRef.current?.focus();
+              urlInputRef.current?.setNativeProps({ selection: { start: 0, end: inputUrl.length } });
+            } catch {}
+          }}
+        />
+        <TouchableOpacity
+          style={styles.goButton}
+          onPress={onOpenPress}
+          accessibilityRole="button"
+          accessibilityLabel="Open video"
+        >
+          <Text style={styles.goButtonText}>Open</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
 function VideoScreen(): React.JSX.Element {
   const route = useRoute<any>();
   const [inputUrl, setInputUrl] = React.useState<string>('');
@@ -525,120 +577,82 @@ function VideoScreen(): React.JSX.Element {
     } catch {}
   }, [activeIndex]);
 
-  const SearchBar = () => {
-    return (
-      <View id="searchBar">
-        <Text style={styles.label}>YouTube URL</Text>
-        <View style={styles.inputRow}>
-          <TextInput
-            ref={urlInputRef}
-            value={inputUrl}
-            onChangeText={setInputUrl}
-            placeholder="Paste a YouTube URL (or video ID)"
-            autoCapitalize="none"
-            autoCorrect={false}
-            keyboardType={Platform.OS === 'ios' ? 'url' : 'default'}
-            style={[styles.input, { flex: 1 }]}
-            accessibilityLabel="YouTube URL input"
-            onSubmitEditing={() => setUrl(inputUrl)}
-            returnKeyType="go"
-            selectTextOnFocus
-            onFocus={() => {
-              try {
-                urlInputRef.current?.setNativeProps({ selection: { start: 0, end: inputUrl.length } });
-              } catch {}
-            }}
-            onPressIn={() => {
-              try {
-                urlInputRef.current?.focus();
-                urlInputRef.current?.setNativeProps({ selection: { start: 0, end: inputUrl.length } });
-              } catch {}
-            }}
-          />
-          <TouchableOpacity
-            style={styles.goButton}
-            onPress={() => {
-              const id = extractYouTubeVideoId(inputUrl);
+  const handleSubmit = React.useCallback(() => {
+    setUrl(inputUrl);
+  }, [inputUrl]);
 
-              // No video loaded yet: require a valid id, then start playback
-              if (!videoId) {
-                if (!id) {
-                  setTranscript([]);
-                  setTranscriptError('Please enter a valid YouTube URL or video ID.');
-                  setIsPlaying(false);
-                  return;
-                }
-                setUrl(inputUrl);
-                setCurrentVideoTitle('');
-                (async () => {
-                  const t = await fetchYouTubeTitleById(id);
-                  if (t) setCurrentVideoTitle(t);
-                })();
-                if (transcript.length === 0) {
-                  (async () => {
-                    setLoadingTranscript(true);
-                    setTranscriptError(null);
-                    try {
-                      const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
-                      const segments = await getVideoTranscript(id, langCode);
-                      setTranscript(segments);
-                    } catch (err) {
-                      setTranscript([]);
-                      setTranscriptError('Unable to fetch transcript for this video.');
-                    } finally {
-                      setLoadingTranscript(false);
-                    }
-                  })();
-                }
-                setIsPlaying(true);
-                return;
-              }
+  const handleOpenPress = React.useCallback(() => {
+    const id = extractYouTubeVideoId(inputUrl);
 
-              // If a different video id is entered, switch video and play
-              if (id && id !== videoId) {
-                setUrl(inputUrl);
-                setCurrentVideoTitle('');
-                (async () => {
-                  const t = await fetchYouTubeTitleById(id);
-                  if (t) setCurrentVideoTitle(t);
-                })();
-                setTranscript([]);
-                setTranscriptError(null);
-                (async () => {
-                  setLoadingTranscript(true);
-                  try {
-                    const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
-                    const segments = await getVideoTranscript(id, langCode);
-                    setTranscript(segments);
-                  } catch (err) {
-                    setTranscript([]);
-                    setTranscriptError('Unable to fetch transcript for this video.');
-                  } finally {
-                    setLoadingTranscript(false);
-                  }
-                })();
-                setIsPlaying(true);
-                return;
-              }
+    if (!videoId) {
+      if (!id) {
+        setTranscript([]);
+        setTranscriptError('Please enter a valid YouTube URL or video ID.');
+        setIsPlaying(false);
+        return;
+      }
+      setUrl(inputUrl);
+      setCurrentVideoTitle('');
+      (async () => {
+        const t = await fetchYouTubeTitleById(id);
+        if (t) setCurrentVideoTitle(t);
+      })();
+      if (transcript.length === 0) {
+        (async () => {
+          setLoadingTranscript(true);
+          setTranscriptError(null);
+          try {
+            const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
+            const segments = await getVideoTranscript(id, langCode);
+            setTranscript(segments);
+          } catch (err) {
+            setTranscript([]);
+            setTranscriptError('Unable to fetch transcript for this video.');
+          } finally {
+            setLoadingTranscript(false);
+          }
+        })();
+      }
+      setIsPlaying(true);
+      return;
+    }
 
-              // If currently playing OR not at the beginning, stop and reset to beginning
-              if (isPlaying || (typeof currentTime === 'number' && currentTime > 0.1)) {
-                try {
-                  playerRef.current?.seekTo?.(0);
-                } catch {}
-                setIsPlaying(false);
-                return;
-              }
-            }}
-            accessibilityRole="button"
-            accessibilityLabel="Open video"
-          >
-            <Text style={styles.goButtonText}>Open</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  };
+    if (id && id !== videoId) {
+      setUrl(inputUrl);
+      setCurrentVideoTitle('');
+      (async () => {
+        const t = await fetchYouTubeTitleById(id);
+        if (t) setCurrentVideoTitle(t);
+      })();
+      setTranscript([]);
+      setTranscriptError(null);
+      (async () => {
+        setLoadingTranscript(true);
+        try {
+          const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
+          const segments = await getVideoTranscript(id, langCode);
+          setTranscript(segments);
+        } catch (err) {
+          setTranscript([]);
+          setTranscriptError('Unable to fetch transcript for this video.');
+        } finally {
+          setLoadingTranscript(false);
+        }
+      })();
+      setIsPlaying(true);
+      return;
+    }
+
+    if (isPlaying || (typeof currentTime === 'number' && currentTime > 0.1)) {
+      try {
+        playerRef.current?.seekTo?.(0);
+      } catch {}
+      setIsPlaying(false);
+      return;
+    }
+  }, [inputUrl, videoId, transcript.length, isPlaying, currentTime, learningLanguage]);
+
+  
 
   const NewestVideos = () => {
     return (
@@ -765,10 +779,16 @@ function VideoScreen(): React.JSX.Element {
     <ScrollView
       style={{ flex: 1 }}
       contentContainerStyle={styles.container}
-      keyboardShouldPersistTaps="handled"
-      keyboardDismissMode={Platform.OS === 'ios' ? 'interactive' : 'on-drag'}
+      keyboardShouldPersistTaps="always"
+      keyboardDismissMode={Platform.OS === 'ios' ? 'interactive' : 'none'}
     >
-      <SearchBar />
+      <SearchBar
+        inputUrl={inputUrl}
+        onChangeText={setInputUrl}
+        onSubmit={handleSubmit}
+        onOpenPress={handleOpenPress}
+        urlInputRef={urlInputRef}
+      />
       {videoId ? (
         <>
         {currentVideoTitle ? <Text style={styles.nowPlayingTitle} numberOfLines={2}>{currentVideoTitle}</Text> : null}
