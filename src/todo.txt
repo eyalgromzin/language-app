@@ -1,17 +1,13 @@
 tomorrow :
-    move my words to hamburger
-
-
-
-    - implment local cache using file system . 
-        for 100 latest 100 latest words and translations , 
-        videos homepage ,
+    
 
     - move translation to server - so that if 1 day there will be problems with translation , ill need to fix it only in 1 place 
         - create a translate endpoint - that will receive a word and to what language to translate it symbol
         - it will require to create a translation table . with indexes on all languages 
-    save the last youtube video played and its location 
 
+    - implment local cache using file system for: 
+        - for 100 latest 100 latest words and translations , 
+        - videos homepage ,
 
 
 
@@ -62,6 +58,9 @@ tomorrow :
 - add sounds on:
     - correct answer 
     - incorrect answer
+
+    - add a last video button - to open the last youtube video played and its location to be able to continue 
+ 
 
 - payed version - when ill have 1000 users 
     - limit num of words possible to add to learning per day - for example 20 - payed will be limitless.

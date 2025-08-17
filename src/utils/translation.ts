@@ -40,6 +40,23 @@ export const fetchTranslation = async (
   const toCode = getLangCode(toLanguageName) || 'en';
   if (!word || fromCode === toCode) return word;
   try {
+    // First try local server endpoint
+    const serverRes = await fetch('http://localhost:3000/translate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        word,
+        fromLanguageSymbol: fromCode,
+        toLanguageSymbol: toCode,
+      }),
+    });
+    if (serverRes.ok) {
+      const text = await serverRes.text();
+      if (typeof text === 'string' && text.trim().length > 0) return text.trim();
+    }
+  } catch {}
+  // Fallback to direct external API if local server is unavailable
+  try {
     const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(word)}&langpair=${encodeURIComponent(fromCode)}|${encodeURIComponent(toCode)}`;
     const res = await fetch(url);
     if (res.ok) {
