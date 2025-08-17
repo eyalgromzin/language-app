@@ -35,7 +35,7 @@ type SearchBarProps = {
   onChangeText: (text: string) => void;
   onSubmit: () => void;
   onOpenPress: () => void;
-  urlInputRef: React.RefObject<TextInput>;
+  urlInputRef: React.RefObject<TextInput> | React.MutableRefObject<TextInput | null>;
 };
 
 const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef }) => {
@@ -725,7 +725,11 @@ function VideoScreen(): React.JSX.Element {
                           key={key}
                           onPress={() => {
                             setSelectedWordKey(key);
-                            openPanel(tok.value);
+                            try { playerRef.current?.pauseVideo?.(); } catch {}
+                            try { playerRef.current?.seekTo?.(seg.offset); } catch {}
+                            setIsPlaying(false);
+                            setCurrentTime(seg.offset);
+                            openPanel(tok.value, seg.text);
                           }}
                           style={isSelected ? styles.transcriptWordSelected : undefined}
                         >
@@ -914,7 +918,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     borderRadius: 8,
     padding: 12,
-    maxHeight: 280,
+    maxHeight: 230,
   },
   transcriptLine: {
     fontSize: 15,
