@@ -536,6 +536,17 @@ function VideoScreen(): React.JSX.Element {
     return out;
   }, []);
 
+  const formatTimestamp = React.useCallback((seconds: number): string => {
+    const total = Math.max(0, Math.floor(Number(seconds) || 0));
+    const hours = Math.floor(total / 3600);
+    const minutes = Math.floor((total % 3600) / 60);
+    const secs = total % 60;
+    if (hours > 0) {
+      return `${hours}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+    return `${minutes}:${String(secs).padStart(2, '0')}`;
+  }, []);
+
   React.useEffect(() => {
     if (!playerReady || !playerRef.current) return;
     let cancelled = false;
@@ -762,45 +773,49 @@ function VideoScreen(): React.JSX.Element {
               {transcript.map((seg, index) => {
                 const tokens = tokenizeTranscriptLine(seg.text);
                 return (
-                  <Text
+                  <View
                     key={`${seg.offset}-${index}`}
                     onLayout={(e) => {
                       const y = e.nativeEvent.layout.y;
                       lineOffsetsRef.current[index] = y;
                     }}
-                    style={[
-                      styles.transcriptLine,
-                      activeIndex === index ? styles.transcriptLineActive : null,
-                    ]}
                   >
-                    {tokens.map((tok, tIdx) => {
-                      const key = `${index}:${tIdx}`;
-                      if (!tok.isWord) {
+                    <Text style={styles.transcriptTime}>{formatTimestamp(seg.offset)}</Text>
+                    <Text
+                      style={[
+                        styles.transcriptLine,
+                        activeIndex === index ? styles.transcriptLineActive : null,
+                      ]}
+                    >
+                      {tokens.map((tok, tIdx) => {
+                        const key = `${index}:${tIdx}`;
+                        if (!tok.isWord) {
+                          return (
+                            <Text key={key}>
+                              {tok.value}
+                            </Text>
+                          );
+                        }
+                        const isSelected = selectedWordKey === key;
                         return (
-                          <Text key={key}>
+                          <Text
+                            key={key}
+                            onPress={() => {
+                              setSelectedWordKey(key);
+                              try { playerRef.current?.pauseVideo?.(); } catch {}
+                              try { playerRef.current?.seekTo?.(seg.offset); } catch {}
+                              setIsPlaying(false);
+                              setCurrentTime(seg.offset);
+                              openPanel(tok.value, seg.text);
+                            }}
+                            style={isSelected ? styles.transcriptWordSelected : undefined}
+                          >
                             {tok.value}
                           </Text>
                         );
-                      }
-                      const isSelected = selectedWordKey === key;
-                      return (
-                        <Text
-                          key={key}
-                          onPress={() => {
-                            setSelectedWordKey(key);
-                            try { playerRef.current?.pauseVideo?.(); } catch {}
-                            try { playerRef.current?.seekTo?.(seg.offset); } catch {}
-                            setIsPlaying(false);
-                            setCurrentTime(seg.offset);
-                            openPanel(tok.value, seg.text);
-                          }}
-                          style={isSelected ? styles.transcriptWordSelected : undefined}
-                        >
-                          {tok.value}
-                        </Text>
-                      );
-                    })}
-                  </Text>
+                      })}
+                    </Text>
+                  </View>
                 );
               })}
             </ScrollView>
@@ -1001,6 +1016,11 @@ const styles = StyleSheet.create({
   transcriptWordSelected: {
     backgroundColor: 'rgba(255,235,59,0.9)',
     borderRadius: 2,
+  },
+  transcriptTime: {
+    color: '#666',
+    fontSize: 12,
+    marginBottom: 2,
   },
   nowPlayingTitle: {
     fontSize: 16,

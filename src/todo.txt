@@ -1,6 +1,8 @@
-tomorrow : 
-    enable search youtube for any video 
-    move my words to hamburger 
+tomorrow :
+    save the last youtube video played and its location 
+    move my words to hamburger
+
+
 
     - implment local cache using file system . 
         for 100 latest 100 latest words and translations , 
