@@ -1,5 +1,4 @@
 tomorrow :
-    save the last youtube video played and its location 
     move my words to hamburger
 
 
@@ -11,6 +10,7 @@ tomorrow :
     - move translation to server - so that if 1 day there will be problems with translation , ill need to fix it only in 1 place 
         - create a translate endpoint - that will receive a word and to what language to translate it symbol
         - it will require to create a translation table . with indexes on all languages 
+    save the last youtube video played and its location 
 
 
 
