@@ -102,11 +102,11 @@ function VideoScreen(): React.JSX.Element {
   const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
   const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
   const [selectedWordKey, setSelectedWordKey] = React.useState<string | null>(null);
-  const [startupVideos, setStartupVideos] = React.useState<Array<{ url: string; thumbnail: string; title: string; description: string }>>([]);
+  const [startupVideos, setStartupVideos] = React.useState<Array<{ url: string; thumbnail: string; title: string; description: string; length?: string }>>([]);
   const [startupVideosLoading, setStartupVideosLoading] = React.useState<boolean>(false);
   const [startupVideosError, setStartupVideosError] = React.useState<string | null>(null);
   const [currentVideoTitle, setCurrentVideoTitle] = React.useState<string>('');
-  const [searchResults, setSearchResults] = React.useState<Array<{ url: string; thumbnail: string | null; title: string; description?: string }>>([]);
+  const [searchResults, setSearchResults] = React.useState<Array<{ url: string; thumbnail: string | null; title: string; description?: string; length?: string }>>([]);
   const [searchLoading, setSearchLoading] = React.useState<boolean>(false);
   const [searchError, setSearchError] = React.useState<string | null>(null);
 
@@ -167,6 +167,60 @@ function VideoScreen(): React.JSX.Element {
     return mapping[name] || 'en';
   }, []);
 
+  const fetchYouTubeLengthString = React.useCallback(async (id: string): Promise<string | null> => {
+    const fmt = (seconds: number): string => {
+      const total = Math.max(0, Math.floor(Number(seconds) || 0));
+      const hours = Math.floor(total / 3600);
+      const minutes = Math.floor((total % 3600) / 60);
+      const secs = total % 60;
+      if (hours > 0) {
+        return `${hours}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }
+      return `${minutes}:${String(secs).padStart(2, '0')}`;
+    };
+    try {
+      const res = await fetch(`https://www.youtube.com/watch?v=${id}&hl=en`);
+      if (!res.ok) return null;
+      const html = await res.text();
+      let m = html.match(/\"lengthSeconds\":\"(\d+)\"/);
+      if (m && m[1]) {
+        const secs = Math.max(0, parseInt(m[1], 10) || 0);
+        return fmt(secs);
+      }
+      m = html.match(/\"approxDurationMs\":\"(\d+)\"/);
+      if (m && m[1]) {
+        const ms = Math.max(0, parseInt(m[1], 10) || 0);
+        const secs = Math.floor(ms / 1000);
+        return fmt(secs);
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  }, []);
+
+  const enrichWithLengths = React.useCallback(async <T extends { url: string }>(items: T[], concurrency = 4): Promise<Array<T & { length?: string }>> => {
+    const out: Array<T & { length?: string }> = new Array(items.length);
+    let nextIndex = 0;
+    const worker = async () => {
+      while (true) {
+        const idx = nextIndex++;
+        if (idx >= items.length) return;
+        const item = items[idx];
+        const id = extractYouTubeVideoId(item.url);
+        if (!id) {
+          out[idx] = { ...item } as any;
+          continue;
+        }
+        const len = await fetchYouTubeLengthString(id);
+        out[idx] = { ...item, length: len || undefined } as any;
+      }
+    };
+    const workers = Array.from({ length: Math.max(1, Math.min(concurrency, items.length)) }, () => worker());
+    await Promise.all(workers);
+    return out;
+  }, [fetchYouTubeLengthString]);
+
   React.useEffect(() => {
     let cancelled = false;
     const fetchStartupVideos = async (langSymbol: string) => {
@@ -183,7 +237,9 @@ function VideoScreen(): React.JSX.Element {
         if (!response.ok) throw new Error(String(response.status));
         const data = await response.json();
         const results = Array.isArray(data?.results) ? data.results : [];
-        if (!cancelled) setStartupVideos(results);
+        const typed = (results as Array<{ url: string; thumbnail: string; title: string; description: string }>);
+        const enriched = await enrichWithLengths(typed);
+        if (!cancelled) setStartupVideos(enriched);
       } catch (e) {
         if (!cancelled) {
           setStartupVideos([]);
@@ -606,7 +662,10 @@ function VideoScreen(): React.JSX.Element {
         if (!response.ok) throw new Error(String(response.status));
         const data = await response.json();
         const results = Array.isArray(data) ? data : Array.isArray((data || {}).results) ? (data.results as any[]) : [];
-        setSearchResults(results as Array<{ url: string; thumbnail: string | null; title: string; description?: string }>);
+        const typed = (results as Array<{ url: string; thumbnail: string | null; title: string; description?: string }>)
+          .map((r) => ({ ...r }));
+        const enriched = await enrichWithLengths(typed);
+        setSearchResults(enriched as Array<{ url: string; thumbnail: string | null; title: string; description?: string; length?: string }>);
       } catch (e) {
         setSearchResults([]);
         setSearchError('Failed to search YouTube.');
@@ -706,7 +765,12 @@ function VideoScreen(): React.JSX.Element {
           <View style={styles.videosList}>
             {startupVideos.map((v, idx) => (
               <TouchableOpacity key={`${v.url}-${idx}`} style={styles.videoItem} onPress={() => openStartupVideo(v.url, v.title)} activeOpacity={0.7}>
-                <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
+                <View style={styles.thumbWrapper}>
+                  <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
+                  {v.length ? (
+                    <View style={styles.thumbBadge}><Text style={styles.thumbBadgeText}>{v.length}</Text></View>
+                  ) : null}
+                </View>
                 <View style={styles.videoInfo}>
                   <Text style={styles.videoTitle} numberOfLines={2}>{v.title}</Text>
                   <Text style={styles.videoDescription} numberOfLines={3}>{v.description}</Text>
@@ -734,13 +798,18 @@ function VideoScreen(): React.JSX.Element {
           <View style={styles.videosList}>
             {searchResults.map((v, idx) => (
               <TouchableOpacity key={`${v.url}-${idx}`} style={styles.videoItem} onPress={() => openStartupVideo(v.url, v.title)} activeOpacity={0.7}>
-                {v.thumbnail ? (
-                  <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
-                ) : (
-                  <View style={[styles.videoThumb, { backgroundColor: '#ddd', alignItems: 'center', justifyContent: 'center' }]}>
-                    <Text style={{ color: '#666', fontSize: 12 }}>No image</Text>
-                  </View>
-                )}
+                <View style={styles.thumbWrapper}>
+                  {v.thumbnail ? (
+                    <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
+                  ) : (
+                    <View style={[styles.videoThumb, { backgroundColor: '#ddd', alignItems: 'center', justifyContent: 'center' }]}>
+                      <Text style={{ color: '#666', fontSize: 12 }}>No image</Text>
+                    </View>
+                  )}
+                  {v.length ? (
+                    <View style={styles.thumbBadge}><Text style={styles.thumbBadgeText}>{v.length}</Text></View>
+                  ) : null}
+                </View>
                 <View style={styles.videoInfo}>
                   <Text style={styles.videoTitle} numberOfLines={2}>{v.title}</Text>
                   <Text style={styles.videoDescription} numberOfLines={3}>{v.description || ''}</Text>
@@ -970,12 +1039,31 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     marginBottom: 10,
   },
-  videoThumb: {
+  thumbWrapper: {
     width: 120,
     height: 68,
+    marginRight: 10,
+    position: 'relative',
+  },
+  videoThumb: {
+    width: '100%',
+    height: '100%',
     borderRadius: 6,
     backgroundColor: '#eee',
-    marginRight: 10,
+  },
+  thumbBadge: {
+    position: 'absolute',
+    right: 4,
+    bottom: 4,
+    backgroundColor: 'rgba(0,0,0,0.75)',
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 4,
+  },
+  thumbBadgeText: {
+    color: '#fff',
+    fontSize: 12,
+    fontWeight: '700',
   },
   videoInfo: {
     flex: 1,
