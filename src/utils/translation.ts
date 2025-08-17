@@ -1,3 +1,5 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 export const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
   English: 'en',
   Spanish: 'es',
@@ -30,6 +32,17 @@ const MAX_TRANSLATION_CACHE_SIZE = 500;
 const translationCache: Record<string, string> = {};
 const translationCacheOrder: string[] = [];
 
+// Persistence wiring (React Native AsyncStorage)
+const STORAGE_KEYS = {
+  map: '@translation_cache_map_v1',
+  order: '@translation_cache_order_v1',
+};
+
+let cacheLoaded = false;
+let cacheLoadPromise: Promise<void> | null = null;
+let persistScheduled = false;
+let persistTimer: ReturnType<typeof setTimeout> | null = null;
+
 const makeCacheKey = (word: string, fromCode: string, toCode: string): string =>
   `${fromCode}|${toCode}|${word}`;
 
@@ -46,6 +59,49 @@ const setCached = (key: string, value: string): void => {
     const oldestKey = translationCacheOrder.shift();
     if (oldestKey !== undefined) delete translationCache[oldestKey];
   }
+  schedulePersist();
+};
+
+const ensureCacheLoaded = async (): Promise<void> => {
+  if (cacheLoaded) return;
+  if (!cacheLoadPromise) cacheLoadPromise = loadCacheFromStorage();
+  await cacheLoadPromise;
+};
+
+const loadCacheFromStorage = async (): Promise<void> => {
+  try {
+    const [[, mapJson], [, orderJson]] = await AsyncStorage.multiGet([
+      STORAGE_KEYS.map,
+      STORAGE_KEYS.order,
+    ]);
+    if (mapJson) {
+      const parsedMap = JSON.parse(mapJson) as Record<string, string>;
+      for (const k of Object.keys(parsedMap)) {
+        translationCache[k] = parsedMap[k];
+      }
+    }
+    if (orderJson) {
+      const parsedOrder = JSON.parse(orderJson) as string[];
+      for (const k of parsedOrder) translationCacheOrder.push(k);
+    }
+  } catch {}
+  cacheLoaded = true;
+};
+
+const schedulePersist = (): void => {
+  if (persistScheduled) return;
+  persistScheduled = true;
+  persistTimer && clearTimeout(persistTimer);
+  persistTimer = setTimeout(async () => {
+    persistScheduled = false;
+    try {
+      const payload: [string, string][] = [
+        [STORAGE_KEYS.map, JSON.stringify(translationCache)],
+        [STORAGE_KEYS.order, JSON.stringify(translationCacheOrder)],
+      ];
+      await AsyncStorage.multiSet(payload);
+    } catch {}
+  }, 750);
 };
 
 export const getLangCode = (nameOrNull: string | null | undefined): string | null => {
@@ -62,6 +118,7 @@ export const fetchTranslation = async (
   const fromCode = getLangCode(fromLanguageName) || 'en';
   const toCode = getLangCode(toLanguageName) || 'en';
   if (!word || fromCode === toCode) return word;
+  await ensureCacheLoaded();
   const normalizedWord = word.trim();
   const cacheKey = makeCacheKey(normalizedWord, fromCode, toCode);
   const cached = getCached(cacheKey);
