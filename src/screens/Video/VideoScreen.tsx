@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRoute } from '@react-navigation/native';
 import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity, Image } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -30,6 +31,7 @@ function extractYouTubeVideoId(input: string): string | null {
 }
 
 function VideoScreen(): React.JSX.Element {
+  const route = useRoute<any>();
   const [inputUrl, setInputUrl] = React.useState<string>('');
   const [url, setUrl] = React.useState<string>('');
   const videoId = React.useMemo(() => extractYouTubeVideoId(url) ?? '', [url]);
@@ -217,6 +219,31 @@ function VideoScreen(): React.JSX.Element {
     }
     setIsPlaying(true);
   };
+
+  const resetVideoScreenState = React.useCallback(() => {
+    try { playerRef.current?.seekTo?.(0); } catch {}
+    try { playerRef.current?.pauseVideo?.(); } catch {}
+    setIsPlaying(false);
+    setPlayerReady(false);
+    setCurrentTime(0);
+    setActiveIndex(null);
+    lineOffsetsRef.current = {};
+    setInputUrl('');
+    setUrl('');
+    setTranscript([]);
+    setTranscriptError(null);
+    setSelectedWordKey(null);
+    setTranslationPanel(null);
+    setImageScrape(null);
+    setCurrentVideoTitle('');
+    try { scrollViewRef.current?.scrollTo?.({ y: 0, animated: false }); } catch {}
+  }, []);
+
+  React.useEffect(() => {
+    const ts = (route as any)?.params?.resetAt;
+    if (!ts) return;
+    resetVideoScreenState();
+  }, [(route as any)?.params?.resetAt, resetVideoScreenState]);
 
   const imageScrapeInjection = `
     (function() {

@@ -27,7 +27,7 @@ enableScreens();
 
 type RootTabParamList = {
   Surf: undefined;
-  Video: undefined;
+  Video: { resetAt?: number } | undefined;
   MyWords: undefined;
   Practice: undefined;
   Categories: undefined;
@@ -50,6 +50,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function MainTabs(): React.JSX.Element {
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
   const currentTabNavRef = React.useRef<any>(null);
+  const [videoKey, setVideoKey] = React.useState<number>(0);
 
   return (
     <>
@@ -99,7 +100,18 @@ function MainTabs(): React.JSX.Element {
         }}
       >
         <Tab.Screen name="Surf" component={SurfScreen} />
-        <Tab.Screen name="Video" component={VideoScreen} />
+        <Tab.Screen
+          key={`Video-${videoKey}`}
+          name="Video"
+          component={VideoScreen}
+          listeners={({ navigation, route }) => ({
+            tabPress: (e) => {
+              e.preventDefault();
+              setVideoKey((k) => k + 1);
+              navigation.navigate('Video', { resetAt: Date.now() });
+            },
+          })}
+        />
         <Tab.Screen
           name="Practice"
           component={PracticeNavigator}
