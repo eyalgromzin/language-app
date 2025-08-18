@@ -34,20 +34,32 @@ function BabyStepsPathScreen(): React.JSX.Element {
   const [error, setError] = React.useState<string | null>(null);
   const [containerWidth, setContainerWidth] = React.useState<number>(Dimensions.get('window').width);
   const [maxCompletedIndex, setMaxCompletedIndex] = React.useState<number>(0); // 0 means none finished
+  const [translatedTitleById, setTranslatedTitleById] = React.useState<Record<string, string>>({});
   const navigation = useNavigation<any>();
 
   React.useEffect(() => {
     let mounted = true;
     (async () => {
       try {
-        const learningName = await AsyncStorage.getItem('language.learning');
-        const code = getLangCode(learningName) || 'en';
-        const file = STEPS_BY_CODE[code] || STEPS_BY_CODE['en'];
+        const [learningName, nativeName] = await Promise.all([
+          AsyncStorage.getItem('language.learning'),
+          AsyncStorage.getItem('language.native'),
+        ]);
+        const learningCode = getLangCode(learningName) || 'en';
+        const nativeCode = getLangCode(nativeName) || 'en';
+        const file = STEPS_BY_CODE[learningCode] || STEPS_BY_CODE['en'];
         if (!mounted) return;
         setSteps(file.steps || []);
+        // Build translated titles map from native language file if available
+        try {
+          const nativeFile = STEPS_BY_CODE[nativeCode] || STEPS_BY_CODE['en'];
+          const map: Record<string, string> = {};
+          nativeFile.steps.forEach((st) => { map[st.id] = st.title; });
+          setTranslatedTitleById(map);
+        } catch {}
         // load progress (highest finished node index; 0 if none)
         try {
-          const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${code}`);
+          const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${learningCode}`);
           const parsed = Number.parseInt(stored ?? '0', 10);
           if (!Number.isNaN(parsed) && parsed >= 0) {
             setMaxCompletedIndex(parsed);
@@ -79,6 +91,13 @@ function BabyStepsPathScreen(): React.JSX.Element {
           if (active && !Number.isNaN(parsed) && parsed >= 0) {
             setMaxCompletedIndex(parsed);
           }
+          // Also refresh translated titles in case native language changed
+          const nativeName = await AsyncStorage.getItem('language.native');
+          const nativeCode = getLangCode(nativeName) || 'en';
+          const nativeFile = STEPS_BY_CODE[nativeCode] || STEPS_BY_CODE['en'];
+          const map: Record<string, string> = {};
+          nativeFile.steps.forEach((st) => { map[st.id] = st.title; });
+          setTranslatedTitleById(map);
         } catch {}
       })();
       return () => { active = false; };
@@ -254,7 +273,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
                     </Text>
                   ) : null}
                 </View>
-                <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: isEnabled ? 1.0 : 0.6 }]}>{s.title}</Text>
+                <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: isEnabled ? 1.0 : 0.6 }]}>{translatedTitleById[s.id] || s.title}</Text>
               </TouchableOpacity>
             );
           })}
