@@ -1,7 +1,6 @@
 tomorrow :
 
-- surf: when focus shifts back to website - on scroll / on click - hide translate panel 
-- add share button in key places where the user will want to share the app - currrently will only share the url in google play for the app 
+- surf: save locally domains history . for auto complete in surfing 
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------
@@ -10,7 +9,6 @@ tomorrow :
 
 
 - surf screen 
-    - surf: save locally domains history . for auto complete in surfing 
     - add favourites button to surf screen - 
         - will show a dialog with title , and a url already filled with the current url .  
         - personal favourites that will be saved to local file . 
@@ -58,6 +56,7 @@ tomorrow :
 
 ? on startup page (where you choose languages) - choose games that you like ? - the surprise me button will choose from them 
 
+- add share button in key places where the user will want to share the app - currrently will only share the url in google play for the app 
 
 - on 100 downloads : create a table for translation .for all my languages - to not take translation from 3rd party. 
        with indexes on all languages columns.

@@ -7,7 +7,7 @@ import React from 'react';
 import { NavigationContainer, DefaultTheme, DarkTheme, getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSheet } from 'react-native';
+import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSheet, Share } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
@@ -57,6 +57,19 @@ function MainTabs(): React.JSX.Element {
   const currentTabNavRef = React.useRef<any>(null);
   const [videoKey, setVideoKey] = React.useState<number>(0);
   const [initialTabRouteName, setInitialTabRouteName] = React.useState<keyof RootTabParamList | null>(null);
+
+  const handleShare = React.useCallback(async () => {
+    try {
+      await Share.share({
+        message:
+          'I am learning languages with LanguageLearn! Give it a try and see if it helps you too.',
+      });
+    } catch {
+      // no-op
+    } finally {
+      setMenuOpen(false);
+    }
+  }, []);
 
   React.useEffect(() => {
     let isMounted = true;
@@ -182,6 +195,9 @@ function MainTabs(): React.JSX.Element {
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Settings'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Settings</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={handleShare}>
+              <Text style={styles.menuItemText}>Share App</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('BabyStepsPath'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Baby Steps Path</Text>
