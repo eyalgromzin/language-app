@@ -22,6 +22,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import StartupScreen from './src/screens/Startup/StartupScreen';
 import WordsByCategoriesScreen from './src/screens/wordsByCategories/WordsByCategoriesScreen';
 import VideoScreen from './src/screens/Video/VideoScreen';
+import BabyStepsPathScreen from './src/screens/BabySteps/BabyStepsPathScreen';
 
 enableScreens();
 
@@ -29,6 +30,7 @@ type RootTabParamList = {
   Surf: undefined;
   Video: { resetAt?: number } | undefined;
   Practice: undefined;
+  BabySteps: undefined;
   Categories: undefined;
   Library: undefined;
   Books: undefined;
@@ -43,6 +45,7 @@ type RootStackParamList = {
   Settings: undefined;
   Home: undefined;
   MyWords: undefined;
+  BabyStepsPath: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -80,6 +83,7 @@ function MainTabs(): React.JSX.Element {
                 Surf: 'globe-outline',
                 Video: 'videocam-outline',
                 Practice: 'trophy-outline',
+                BabySteps: 'footsteps-outline',
                 Categories: 'grid-outline',
                 Library: 'albums-outline',
                 Books: 'book-outline',
@@ -123,6 +127,7 @@ function MainTabs(): React.JSX.Element {
             };
           }}
         />
+        <Tab.Screen name="BabySteps" component={BabyStepsPathScreen} options={{ title: 'Baby Steps' }} />
         <Tab.Screen name="Categories" component={WordsByCategoriesScreen} options={{ title: 'Categories' }} />
         <Tab.Screen name="Library" component={LibraryScreen} options={{ title: 'Library' }} />
         <Tab.Screen name="Books" component={BooksNavigator} options={{ title: 'Books' }} />
@@ -143,6 +148,9 @@ function MainTabs(): React.JSX.Element {
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Settings'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Settings</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('BabyStepsPath'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>Baby Steps Path</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.menuItem, styles.menuClose]} onPress={() => setMenuOpen(false)}>
               <Text style={[styles.menuItemText, styles.menuCloseText]}>Close</Text>
@@ -241,6 +249,7 @@ function App(): React.JSX.Element | null {
           <Stack.Screen name="Settings" component={SettingsScreen} />
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
+          <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path' }} />
         </Stack.Navigator>
       ) : (
         <Stack.Navigator initialRouteName="Main">
@@ -249,6 +258,7 @@ function App(): React.JSX.Element | null {
           <Stack.Screen name="Settings" component={SettingsScreen} />
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
+          <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path' }} />
         </Stack.Navigator>
       )}
     </NavigationContainer>
