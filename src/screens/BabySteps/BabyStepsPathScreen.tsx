@@ -132,6 +132,34 @@ function BabyStepsPathScreen(): React.JSX.Element {
     );
   }
 
+  const EMOJI_BY_PREFIX: Record<string, string> = {
+    '01': '👋', // greetings
+    '02': '💬', // introductions
+    '03': '🔤', // pronouns/verbs
+    '04': '🔢', // numbers/time
+    '05': '🧭', // directions
+    '06': '🍎', // food basics
+    '07': '🛍️', // shopping
+    '08': '🧳', // travel/hotel
+    '09': '⛑️', // emergencies/health
+    '10': '☀️', // daily routines
+    '11': '👪', // family/people
+    '12': '🌦️', // weather/small talk
+    '13': '💼', // work/study
+    '14': '📅', // plans/invitations
+    '15': '🙋', // requests/help
+    '16': '📱', // phone/internet
+    '17': '🍽️', // restaurant
+    '18': '🚌', // transportation
+    '19': '🏠', // housing/utilities
+    '20': '🔗', // connectors/advanced
+  };
+
+  const getEmojiForStep = (s: StepItem, idx: number): string => {
+    const prefix = (s.id || '').slice(0, 2);
+    return EMOJI_BY_PREFIX[prefix] || '⭐';
+  };
+
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#000' : '#fff' }]}>
       <ScrollView contentContainerStyle={{ height: contentHeight }}>
@@ -176,6 +204,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
             const pos = positions[idx];
             const isCompleted = idx + 1 <= maxCompletedIndex;
             const isEnabled = idx + 1 <= Math.min((steps?.length || 0), maxCompletedIndex + 3);
+            const emoji = getEmojiForStep(s, idx);
             return (
               <TouchableOpacity key={s.id}
                 style={[
@@ -203,11 +232,26 @@ function BabyStepsPathScreen(): React.JSX.Element {
                     opacity: isEnabled ? 1.0 : 0.45,
                   },
                 ]}>
+                  <Text style={styles.emojiText} accessibilityLabel={`${s.title} icon`}>{emoji}</Text>
+                  <View style={[
+                    styles.indexBadge,
+                    {
+                      backgroundColor: isDark ? '#001a3a' : '#fff',
+                      borderColor: isDark ? '#4DA3FF' : '#BBD6FF',
+                    },
+                  ]}
+                    accessible={false}
+                  >
+                    <Text style={[styles.indexBadgeText, { color: isDark ? '#EAF3FF' : '#0A57CC' }]}>{idx + 1}</Text>
+                  </View>
                   {isCompleted ? (
-                    <Text style={[styles.checkMark, { color: isDark ? '#C8E6C9' : '#1B5E20' }]} accessibilityLabel="Completed">✓</Text>
-                  ) : (
-                    <Text style={[styles.nodeIndex, { color: isDark ? '#EAF3FF' : '#0A57CC' }]}>{idx + 1}</Text>
-                  )}
+                    <Text
+                      style={[styles.completedV, { color: isDark ? '#C8E6C9' : '#2E7D32' }]}
+                      accessibilityLabel="Completed"
+                    >
+                      V
+                    </Text>
+                  ) : null}
                 </View>
                 <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: isEnabled ? 1.0 : 0.6 }]}>{s.title}</Text>
               </TouchableOpacity>
@@ -252,18 +296,38 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     shadowOffset: { width: 0, height: 3 },
     elevation: 3,
+    position: 'relative',
   },
-  nodeIndex: {
-    fontSize: 20,
-    fontWeight: '700',
+  emojiText: {
+    fontSize: 34,
+    lineHeight: 38,
   },
   nodeTitle: {
     fontSize: 12,
     fontWeight: '600',
     textAlign: 'center',
   },
-  checkMark: {
-    fontSize: 28,
+  indexBadge: {
+    position: 'absolute',
+    right: -6,
+    bottom: -6,
+    minWidth: 20,
+    height: 20,
+    borderRadius: 10,
+    borderWidth: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 4,
+  },
+  indexBadgeText: {
+    fontSize: 12,
+    fontWeight: '800',
+  },
+  completedV: {
+    position: 'absolute',
+    top: -8,
+    left: -16,
+    fontSize: 16,
     fontWeight: '900',
   },
 });
