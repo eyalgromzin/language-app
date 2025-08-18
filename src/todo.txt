@@ -1,7 +1,6 @@
 tomorrow :
 
-- video screen next to the go button add library button , history button .
-    on focus on text edit , hidr history and libary button 
+- video screen next to the go button add history button .
 
 - surf screen 
     - add favourites button to surf screen - 

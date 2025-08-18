@@ -47,7 +47,6 @@ type SearchBarProps = {
 const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, showAuxButtons }) => {
   return (
     <View id="searchBar">
-      <Text style={styles.label}>YouTube URL</Text>
       <View style={styles.inputRow}>
         <TextInput
           ref={urlInputRef}
@@ -141,7 +140,8 @@ function VideoScreen(): React.JSX.Element {
   const [searchLoading, setSearchLoading] = React.useState<boolean>(false);
   const [searchError, setSearchError] = React.useState<string | null>(null);
   const [isInputFocused, setIsInputFocused] = React.useState<boolean>(false);
-  const [savedHistory, setSavedHistory] = React.useState<string[]>([]);
+  type HistoryEntry = { url: string; title: string };
+  const [savedHistory, setSavedHistory] = React.useState<HistoryEntry[]>([]);
   const [showHistory, setShowHistory] = React.useState<boolean>(false);
 
   // Hidden WebView state to scrape lazy-loaded image results (same approach as Surf/Books)
@@ -364,7 +364,7 @@ function VideoScreen(): React.JSX.Element {
       setLoadingTranscript(false);
     }
     setIsPlaying(true);
-    try { await saveHistory(urlString); } catch {}
+    try { await saveHistory(urlString, title); } catch {}
   };
 
   const resetVideoScreenState = React.useCallback(() => {
@@ -748,7 +748,7 @@ function VideoScreen(): React.JSX.Element {
         })();
       }
       setIsPlaying(true);
-      (async () => { try { await saveHistory(inputUrl); } catch {} })();
+      (async () => { try { await saveHistory(inputUrl, currentVideoTitle); } catch {} })();
       return;
     }
 
@@ -775,7 +775,7 @@ function VideoScreen(): React.JSX.Element {
         }
       })();
       setIsPlaying(true);
-      (async () => { try { await saveHistory(inputUrl); } catch {} })();
+      (async () => { try { await saveHistory(inputUrl, currentVideoTitle); } catch {} })();
       return;
     }
 
@@ -799,7 +799,26 @@ function VideoScreen(): React.JSX.Element {
         const raw = await AsyncStorage.getItem(HISTORY_KEY);
         if (!mounted) return;
         const arr = JSON.parse(raw || '[]');
-        setSavedHistory(Array.isArray(arr) ? (arr as string[]).filter(Boolean) : []);
+        if (Array.isArray(arr)) {
+          // Migrate from [string] -> [{ url, title }]
+          const normalized: HistoryEntry[] = arr
+            .map((item: any) => {
+              if (typeof item === 'string') {
+                const u = (item || '').trim();
+                return u ? { url: u, title: '' } : null;
+              }
+              if (item && typeof item.url === 'string') {
+                const u = (item.url || '').trim();
+                const t = typeof item.title === 'string' ? item.title : '';
+                return u ? { url: u, title: t } : null;
+              }
+              return null;
+            })
+            .filter(Boolean) as HistoryEntry[];
+          setSavedHistory(normalized);
+        } else {
+          setSavedHistory([]);
+        }
       } catch {
         if (!mounted) return;
         setSavedHistory([]);
@@ -808,21 +827,24 @@ function VideoScreen(): React.JSX.Element {
     return () => { mounted = false; };
   }, []);
 
-  const saveHistory = async (entry: string) => {
-    const normalized = (entry || '').trim();
-    if (!normalized) return;
+  const saveHistory = async (entryUrl: string, entryTitle?: string) => {
+    const normalizedUrl = (entryUrl || '').trim();
+    if (!normalizedUrl) return;
+    const providedTitle = (entryTitle || currentVideoTitle || '').trim();
     setSavedHistory(prev => {
-      const next = [normalized, ...prev.filter(e => e !== normalized)];
+      const existing = prev.find(h => h.url === normalizedUrl);
+      const titleToUse = providedTitle || (existing?.title ?? '');
+      const newEntry: HistoryEntry = { url: normalizedUrl, title: titleToUse };
+      const next = [newEntry, ...prev.filter(h => h.url !== normalizedUrl)];
       const limited = next.slice(0, 50);
       AsyncStorage.setItem(HISTORY_KEY, JSON.stringify(limited)).catch(() => {});
       return limited;
     });
   };
 
-  const onSelectHistory = (value: string) => {
-    setInputUrl(value);
+  const onSelectHistory = (entry: HistoryEntry) => {
     setShowHistory(false);
-    // Let the user press Go, do not auto-open here
+    openStartupVideo(entry.url, entry.title);
   };
 
   const NewestVideos = () => {
@@ -1021,9 +1043,9 @@ function VideoScreen(): React.JSX.Element {
         <View style={styles.suggestionsContainer}>
           <ScrollView keyboardShouldPersistTaps="handled" style={{ maxHeight: 200 }}>
             {savedHistory.map((h) => (
-              <TouchableOpacity key={h} style={styles.suggestionItem} onPress={() => onSelectHistory(h)}>
+              <TouchableOpacity key={h.url} style={styles.suggestionItem} onPress={() => onSelectHistory(h)}>
                 <Ionicons name="time-outline" size={16} color="#4b5563" style={{ marginRight: 8 }} />
-                <Text style={styles.suggestionText} numberOfLines={1}>{h}</Text>
+                <Text style={styles.suggestionText} numberOfLines={1}>{h.title?.trim() ? h.title : h.url}</Text>
               </TouchableOpacity>
             ))}
           </ScrollView>
@@ -1043,7 +1065,13 @@ function VideoScreen(): React.JSX.Element {
             ref={playerRef}
             onReady={() => setPlayerReady(true)}
             onChangeState={(state) => {
-              if (state === 'playing') setIsPlaying(true);
+              if (state === 'playing') {
+                setIsPlaying(true);
+                // Ensure we record history whenever playback starts
+                (async () => {
+                  try { await saveHistory(url || inputUrl, currentVideoTitle); } catch {}
+                })();
+              }
               if (state === 'paused' || state === 'ended') setIsPlaying(false);
             }}
           />
