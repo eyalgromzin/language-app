@@ -83,8 +83,8 @@ function SurfScreen(): React.JSX.Element {
 
   const baseInjection = `
     (function() {
-      if (window.__wordClickInstalled_v7) return;
-      window.__wordClickInstalled_v7 = true;
+      if (window.__wordClickInstalled_v8) return;
+      window.__wordClickInstalled_v8 = true;
       var lastTouch = { x: 0, y: 0 };
       var lastPostedWord = '';
       var lastPostedAt = 0;
@@ -93,6 +93,14 @@ function SurfScreen(): React.JSX.Element {
       var pressing = false;
       var pressAnchor = null;
       var suppressNextClick = false;
+
+      function notifyPointerDown() {
+        try {
+          if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+            window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'pointerdown' }));
+          }
+        } catch (e) {}
+      }
 
       function getRangeFromPoint(x, y) {
         if (document.caretRangeFromPoint) return document.caretRangeFromPoint(x, y);
@@ -166,6 +174,7 @@ function SurfScreen(): React.JSX.Element {
 
       function onTouchStart(e) {
         try {
+          notifyPointerDown();
           pressing = true;
           var t = e.touches && e.touches[0];
           if (t) { lastTouch.x = t.clientX; lastTouch.y = t.clientY; }
@@ -194,6 +203,10 @@ function SurfScreen(): React.JSX.Element {
           pressing = false;
           if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
         } catch (err) {}
+      }
+
+      function onMouseDown(e) {
+        try { notifyPointerDown(); } catch (err) {}
       }
 
       function onClick(e) {
@@ -230,6 +243,7 @@ function SurfScreen(): React.JSX.Element {
 
       document.addEventListener('touchstart', onTouchStart, true);
       document.addEventListener('touchend', onTouchEnd, true);
+      document.addEventListener('mousedown', onMouseDown, true);
       document.addEventListener('click', onClick, true);
     })();
     true;
@@ -362,6 +376,10 @@ function SurfScreen(): React.JSX.Element {
   const onMessage = (event: WebViewMessageEvent) => {
     try {
       const data = JSON.parse(event.nativeEvent.data);
+      if (data?.type === 'pointerdown') {
+        if (translationPanel) setTranslationPanel(null);
+        return;
+      }
       if ((data?.type === 'wordClick' || data?.type === 'longpress' || data?.type === 'selection') && typeof data.word === 'string' && data.word.length > 0) {
         openPanel(data.word, typeof data.sentence === 'string' ? data.sentence : undefined);
       }
