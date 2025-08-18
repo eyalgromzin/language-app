@@ -9,6 +9,7 @@ type StepItem = {
   id: string;
   title: string;
   items: any[];
+  emoji?: string;
 };
 
 type StepsFile = {
@@ -152,29 +153,30 @@ function BabyStepsPathScreen(): React.JSX.Element {
   }
 
   const EMOJI_BY_PREFIX: Record<string, string> = {
-    '01': '👋', // greetings
-    '02': '💬', // introductions
-    '03': '🔤', // pronouns/verbs
-    '04': '🔢', // numbers/time
-    '05': '🧭', // directions
-    '06': '🍎', // food basics
-    '07': '🛍️', // shopping
-    '08': '🧳', // travel/hotel
-    '09': '⛑️', // emergencies/health
-    '10': '☀️', // daily routines
-    '11': '👪', // family/people
-    '12': '🌦️', // weather/small talk
-    '13': '💼', // work/study
-    '14': '📅', // plans/invitations
-    '15': '🙋', // requests/help
-    '16': '📱', // phone/internet
-    '17': '🍽️', // restaurant
-    '18': '🚌', // transportation
-    '19': '🏠', // housing/utilities
-    '20': '🔗', // connectors/advanced
+    '01': '👋',
+    '02': '💬',
+    '03': '🔤',
+    '04': '🔢',
+    '05': '🧭',
+    '06': '🍎',
+    '07': '🛍️',
+    '08': '🧳',
+    '09': '⛑️',
+    '10': '☀️',
+    '11': '👪',
+    '12': '🌦️',
+    '13': '💼',
+    '14': '📅',
+    '15': '🙋',
+    '16': '📱',
+    '17': '🍽️',
+    '18': '🚌',
+    '19': '🏠',
+    '20': '🔗',
   };
 
   const getEmojiForStep = (s: StepItem, idx: number): string => {
+    if (s.emoji && typeof s.emoji === 'string' && s.emoji.length > 0) return s.emoji;
     const prefix = (s.id || '').slice(0, 2);
     return EMOJI_BY_PREFIX[prefix] || '⭐';
   };

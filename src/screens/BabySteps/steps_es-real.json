@@ -5,6 +5,7 @@
     {
       "id": "01_essentials",
       "title": "saludos y cortesía",
+      "emoji": "👋",
       "items": [
         {
           "id": "01_essentials_hello",
@@ -77,6 +78,7 @@
     {
       "id": "02_introductions",
       "title": "Presentaciones e información básica",
+      "emoji": "💬",
       "items": [
         {
           "id": "02_introductions_my_name_is",
@@ -137,6 +139,7 @@
     {
       "id": "03_core_verbs_pronouns",
       "title": "Pronombres básicos y verbos auxiliares",
+      "emoji": "🔤",
       "items": [
         {
           "id": "03_core_verbs_pronouns_i",
@@ -203,6 +206,7 @@
     {
       "id": "04_numbers_time_basics",
       "title": "Números y nociones de tiempo",
+      "emoji": "🔢",
       "items": [
         {
           "id": "04_numbers_time_basics_zero",
@@ -293,6 +297,7 @@
     {
       "id": "05_getting_around",
       "title": "Indicaciones y cómo moverse",
+      "emoji": "🧭",
       "items": [
         {
           "id": "05_getting_around_left",
@@ -359,6 +364,7 @@
     {
       "id": "06_food_drink_basics",
       "title": "Comida y bebida: lo básico",
+      "emoji": "🍎",
       "items": [
         {
           "id": "06_food_drink_basics_water",
@@ -419,6 +425,7 @@
     {
       "id": "07_shopping_money",
       "title": "Compras y dinero",
+      "emoji": "🛍️",
       "items": [
         {
           "id": "07_shopping_money_price",
@@ -473,6 +480,7 @@
     {
       "id": "08_travel_hotel",
       "title": "Viajes y hotel",
+      "emoji": "🧳",
       "items": [
         {
           "id": "08_travel_hotel_ticket",
@@ -527,6 +535,7 @@
     {
       "id": "09_emergencies_health",
       "title": "Emergencias y salud",
+      "emoji": "⛑️",
       "items": [
         {
           "id": "09_emergencies_health_help",
@@ -581,6 +590,7 @@
     {
       "id": "10_daily_routines",
       "title": "Rutinas diarias y verbos comunes",
+      "emoji": "☀️",
       "items": [
         {
           "id": "10_daily_routines_to_go",
@@ -647,6 +657,7 @@
     {
       "id": "11_family_people",
       "title": "Familia y personas",
+      "emoji": "👪",
       "items": [
         {
           "id": "11_family_people_mother",
@@ -695,6 +706,7 @@
     {
       "id": "12_weather_smalltalk",
       "title": "Clima y conversación casual",
+      "emoji": "🌦️",
       "items": [
         {
           "id": "12_weather_smalltalk_hot",
@@ -743,6 +755,7 @@
     {
       "id": "13_work_study",
       "title": "Trabajo y estudios: lo básico",
+      "emoji": "💼",
       "items": [
         {
           "id": "13_work_study_office",
@@ -791,6 +804,7 @@
     {
       "id": "14_plans_invitations",
       "title": "Hacer planes e invitaciones",
+      "emoji": "📅",
       "items": [
         {
           "id": "14_plans_invitations_today",
@@ -839,6 +853,7 @@
     {
       "id": "15_requests_help",
       "title": "Peticiones y pedir ayuda",
+      "emoji": "🙋",
       "items": [
         {
           "id": "15_requests_help_could_you_help_me_please",
@@ -875,6 +890,7 @@
     {
       "id": "16_phone_internet",
       "title": "Teléfono e internet",
+      "emoji": "📱",
       "items": [
         {
           "id": "16_phone_internet_phone",
@@ -923,6 +939,7 @@
     {
       "id": "17_restaurant",
       "title": "En el restaurante",
+      "emoji": "🍽️",
       "items": [
         {
           "id": "17_restaurant_menu",
@@ -971,6 +988,7 @@
     {
       "id": "18_transportation_details",
       "title": "Transporte: detalles",
+      "emoji": "🚌",
       "items": [
         {
           "id": "18_transportation_details_bus",
@@ -1019,6 +1037,7 @@
     {
       "id": "19_housing_utilities",
       "title": "Vivienda y servicios",
+      "emoji": "🏠",
       "items": [
         {
           "id": "19_housing_utilities_apartment",
@@ -1073,6 +1092,7 @@
     {
       "id": "20_connectors_advanced",
       "title": "Conectores y frases avanzadas",
+      "emoji": "🔗",
       "items": [
         {
           "id": "20_connectors_advanced_because",
