@@ -23,6 +23,7 @@ import StartupScreen from './src/screens/Startup/StartupScreen';
 import WordsByCategoriesScreen from './src/screens/wordsByCategories/WordsByCategoriesScreen';
 import VideoScreen from './src/screens/Video/VideoScreen';
 import BabyStepsPathScreen from './src/screens/BabySteps/BabyStepsPathScreen';
+import BabyStepRunnerScreen from './src/screens/BabySteps/BabyStepRunnerScreen';
 
 enableScreens();
 
@@ -46,6 +47,7 @@ type RootStackParamList = {
   Home: undefined;
   MyWords: undefined;
   BabyStepsPath: undefined;
+  BabyStepRunner: { stepIndex: number } | undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -250,6 +252,7 @@ function App(): React.JSX.Element | null {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
           <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path' }} />
+          <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step' }} />
         </Stack.Navigator>
       ) : (
         <Stack.Navigator initialRouteName="Main">
@@ -259,6 +262,7 @@ function App(): React.JSX.Element | null {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
           <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path' }} />
+          <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step' }} />
         </Stack.Navigator>
       )}
     </NavigationContainer>

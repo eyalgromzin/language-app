@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimensions, TouchableOpacity } from 'react-native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { Svg, Path } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
@@ -32,6 +33,8 @@ function BabyStepsPathScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string | null>(null);
   const [containerWidth, setContainerWidth] = React.useState<number>(Dimensions.get('window').width);
+  const [maxCompletedIndex, setMaxCompletedIndex] = React.useState<number>(0); // 0 means none finished
+  const navigation = useNavigation<any>();
 
   React.useEffect(() => {
     let mounted = true;
@@ -42,6 +45,14 @@ function BabyStepsPathScreen(): React.JSX.Element {
         const file = STEPS_BY_CODE[code] || STEPS_BY_CODE['en'];
         if (!mounted) return;
         setSteps(file.steps || []);
+        // load progress (highest finished node index; 0 if none)
+        try {
+          const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${code}`);
+          const parsed = Number.parseInt(stored ?? '0', 10);
+          if (!Number.isNaN(parsed) && parsed >= 0) {
+            setMaxCompletedIndex(parsed);
+          }
+        } catch {}
       } catch (e) {
         if (!mounted) return;
         setError('Failed to load steps.');
@@ -54,6 +65,25 @@ function BabyStepsPathScreen(): React.JSX.Element {
       mounted = false;
     };
   }, []);
+
+  // Refresh maxCompletedIndex when screen gains focus
+  useFocusEffect(
+    React.useCallback(() => {
+      let active = true;
+      (async () => {
+        try {
+          const learningName = await AsyncStorage.getItem('language.learning');
+          const code = getLangCode(learningName) || 'en';
+          const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${code}`);
+          const parsed = Number.parseInt(stored ?? '0', 10);
+          if (active && !Number.isNaN(parsed) && parsed >= 0) {
+            setMaxCompletedIndex(parsed);
+          }
+        } catch {}
+      })();
+      return () => { active = false; };
+    }, [])
+  );
 
   const positions = React.useMemo(() => {
     if (!steps) return [] as { x: number; y: number }[];
@@ -144,8 +174,9 @@ function BabyStepsPathScreen(): React.JSX.Element {
           {/* Nodes */}
           {steps.map((s, idx) => {
             const pos = positions[idx];
+            const isEnabled = idx + 1 <= Math.min((steps?.length || 0), maxCompletedIndex + 3);
             return (
-              <View key={s.id}
+              <TouchableOpacity key={s.id}
                 style={[
                   styles.nodeContainer,
                   {
@@ -155,12 +186,26 @@ function BabyStepsPathScreen(): React.JSX.Element {
                 ]}
                 accessibilityRole="button"
                 accessibilityLabel={`Step ${idx + 1}: ${s.title}`}
+                onPress={() => {
+                  if (!isEnabled) return;
+                  const parent = navigation.getParent?.();
+                  if (parent) parent.navigate('BabyStepRunner', { stepIndex: idx });
+                  else navigation.navigate('BabyStepRunner' as never, { stepIndex: idx } as never);
+                }}
+                disabled={!isEnabled}
               >
-                <View style={[styles.nodeCircle, { backgroundColor: isDark ? '#1A73E8' : '#E6F0FF', borderColor: isDark ? '#4DA3FF' : '#BBD6FF' }]}>
+                <View style={[
+                  styles.nodeCircle,
+                  {
+                    backgroundColor: isDark ? '#1A73E8' : '#E6F0FF',
+                    borderColor: isDark ? '#4DA3FF' : '#BBD6FF',
+                    opacity: isEnabled ? 1.0 : 0.45,
+                  },
+                ]}>
                   <Text style={[styles.nodeIndex, { color: isDark ? '#EAF3FF' : '#0A57CC' }]}>{idx + 1}</Text>
                 </View>
-                <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222' }]}>{s.title}</Text>
-              </View>
+                <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: isEnabled ? 1.0 : 0.6 }]}>{s.title}</Text>
+              </TouchableOpacity>
             );
           })}
         </View>
