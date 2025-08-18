@@ -36,6 +36,16 @@ type PreparedItem = {
   missingIndices: number[];
 };
 
+type EmbeddedProps = {
+  embedded?: boolean;
+  sentence?: string;
+  translatedSentence?: string;
+  tokens?: string[];
+  missingIndices?: number[];
+  wordBank?: string[];
+  onFinished?: (isCorrect: boolean) => void;
+};
+
 function ensureCounters(entry: WordEntry): WordEntry {
   return {
     ...entry,
@@ -101,7 +111,7 @@ function pickMissingWordIndices(tokens: string[], desiredCount: number): number[
   return result.sort((a, b) => a - b);
 }
 
-function MissingWordsScreen(): React.JSX.Element {
+function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const RANDOM_GAME_ROUTES: string[] = [
@@ -119,7 +129,7 @@ function MissingWordsScreen(): React.JSX.Element {
     const target = choices[Math.floor(Math.random() * choices.length)] as string;
     navigation.navigate(target as never, { surprise: true } as never);
   }, [navigation, route]);
-  const [loading, setLoading] = React.useState<boolean>(true);
+  const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [items, setItems] = React.useState<PreparedItem[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
   const [inputs, setInputs] = React.useState<Record<number, string>>({});
@@ -147,6 +157,15 @@ function MissingWordsScreen(): React.JSX.Element {
   }, []);
 
   const loadData = React.useCallback(async () => {
+    if (props.embedded) {
+      // In embedded mode, all data is provided via props; no file access.
+      setLoading(false);
+      setInputs({});
+      setWrongHighlightIndex(null);
+      setShowCorrectToast(false);
+      setShowWrongToast(false);
+      return;
+    }
     setLoading(true);
     try {
       // Load removeAfter threshold
@@ -213,7 +232,7 @@ function MissingWordsScreen(): React.JSX.Element {
     } finally {
       setLoading(false);
     }
-  }, [filePath, prepare]);
+  }, [filePath, prepare, props.embedded]);
 
   React.useEffect(() => {
     loadData();
@@ -221,17 +240,26 @@ function MissingWordsScreen(): React.JSX.Element {
 
   useFocusEffect(
     React.useCallback(() => {
-      loadData();
-    }, [loadData])
+      if (!props.embedded) {
+        loadData();
+      }
+    }, [loadData, props.embedded])
   );
 
-  const current = items[currentIndex];
+  const current = props.embedded
+    ? ({
+        entry: { word: '', translation: '', sentence: props.sentence || '' },
+        tokens: (props.tokens && props.tokens.length > 0 ? props.tokens : splitSentenceIntoTokens(props.sentence || '')),
+        missingIndices: props.missingIndices || [],
+      } as unknown as PreparedItem)
+    : items[currentIndex];
 
   const moveToNext = React.useCallback(() => {
+    if (props.embedded) return;
     setShowCorrectToast(false);
     setShowWrongToast(false);
     loadData();
-  }, [loadData]);
+  }, [loadData, props.embedded]);
 
   const attemptSentence = React.useCallback(() => {
     if (!current) return [] as string[];
@@ -282,6 +310,18 @@ function MissingWordsScreen(): React.JSX.Element {
       setWordChoices([]);
       return;
     }
+    // Embedded mode: use provided word bank if available
+    if (props.embedded) {
+      const provided = props.wordBank && props.wordBank.length > 0 ? props.wordBank : current.missingIndices.map((i) => current.tokens[i]);
+      // Simple shuffle
+      const a = [...provided];
+      for (let i = a.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      setWordChoices(a);
+      return;
+    }
     const missingWords = current.missingIndices.map((i) => current.tokens[i]);
     const required = Array.from(new Set(missingWords));
     // Build a pool of candidate distractors from all available items' tokens
@@ -313,7 +353,7 @@ function MissingWordsScreen(): React.JSX.Element {
       combined.push(required[Math.floor(Math.random() * required.length)]);
     }
     setWordChoices(shuffle(combined));
-  }, [current, items]);
+  }, [current, items, props.embedded, props.wordBank]);
 
   React.useEffect(() => {
     if (!current) return;
@@ -338,6 +378,10 @@ function MissingWordsScreen(): React.JSX.Element {
     if (allGood) {
       setShowWrongToast(false);
       setShowCorrectToast(true);
+      if (props.embedded) {
+        const t = setTimeout(() => props.onFinished?.(true), 600);
+        return () => clearTimeout(t as unknown as number);
+      }
       writeBackIncrement(current.entry.word);
       const t = setTimeout(() => moveToNext(), 3000);
       return () => clearTimeout(t);
@@ -345,6 +389,10 @@ function MissingWordsScreen(): React.JSX.Element {
     // Incorrect: show correction and highlight first wrong
     setShowCorrectToast(false);
     setShowWrongToast(true);
+    if (props.embedded) {
+      const t = setTimeout(() => props.onFinished?.(false), 1200);
+      return () => clearTimeout(t as unknown as number);
+    }
     const corrected: Record<number, string> = {};
     current.missingIndices.forEach((i) => {
       corrected[i] = current.tokens[i];
@@ -353,13 +401,13 @@ function MissingWordsScreen(): React.JSX.Element {
     setWrongHighlightIndex(firstWrong);
     const wrongTimer = setTimeout(() => setShowWrongToast(false), 2000);
     return () => clearTimeout(wrongTimer);
-  }, [attemptSentence, current, inputs, moveToNext, writeBackIncrement, wrongHighlightIndex]);
+  }, [attemptSentence, current, inputs, moveToNext, writeBackIncrement, wrongHighlightIndex, props.embedded, props.onFinished]);
 
   const onChangeInput = (index: number, value: string) => {
     setInputs((prev) => ({ ...prev, [index]: value }));
   };
 
-  if (loading) {
+  if (!props.embedded && loading) {
     return (
       <View style={styles.centered}>
         <ActivityIndicator />
@@ -367,7 +415,7 @@ function MissingWordsScreen(): React.JSX.Element {
     );
   }
 
-  if (!current) {
+  if (!props.embedded && !current) {
     return (
       <View style={styles.centered}>
         <Text style={styles.emptyText}>No sentences to practice yet.</Text>
@@ -407,6 +455,31 @@ function MissingWordsScreen(): React.JSX.Element {
     if (typeof nextBlank !== 'number') return;
     setInputs((prev) => ({ ...prev, [nextBlank]: chosen }));
   };
+
+  // Embedded minimal UI (no header/skip)
+  if (props.embedded) {
+    if (!current) return <View /> as unknown as React.JSX.Element;
+    return (
+      <View>
+        <View style={styles.sentenceWrap}>
+          {current.tokens.map((tok, idx) => (
+            <React.Fragment key={idx}>
+              {renderToken(tok, idx)}
+              {idx < current.tokens.length - 1 ? <View style={{ width: 6 }} /> : null}
+            </React.Fragment>
+          ))}
+        </View>
+        <View style={styles.sectionDivider} />
+        <View style={styles.choicesWrap}>
+          {wordChoices.map((w, i) => (
+            <TouchableOpacity key={`${w}-${i}`} style={styles.choiceButton} onPress={() => fillNextBlankWith(w)}>
+              <Text style={styles.choiceText}>{w}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </View>
+    );
+  }
 
   return (
     <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding', android: undefined })} style={{ flex: 1 }}>

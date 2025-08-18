@@ -4,6 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
 import FormulateSentenseScreen from '../practice/formulateSentense/FormulateSentenseScreen';
+import MissingWordsScreen from '../practice/missingWords/MissingWordsScreen';
 
 type StepItem = {
   id: string;
@@ -406,35 +407,23 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           </View>
         </View>
       ) : current.kind === 'missingWords' ? (
-        <View>
-          <View style={styles.wordCard}>
-            <Text style={styles.translationText}>{current.translatedSentence}</Text>
-          </View>
-          <View style={styles.sentenceWrap}>
-            {current.tokens.map((tok: string, i: number) => {
-              const isMissing = current.missingIndices.includes(i);
-              const value = inputs[i] ?? '';
-              if (!isMissing) {
-                return (
-                  <View key={`f-${i}`} style={styles.tokenFixed}><Text style={styles.tokenText}>{tok}</Text></View>
-                );
-              }
-              const approx = Math.max(40, Math.min(200, Math.floor((tok.length || 1) * 10)));
-              return (
-                <View key={`m-${i}`} style={styles.tokenBlank}>
-                  <Text style={[styles.blankText, { width: approx, color: value ? '#000' : '#bbb' }]}>{value || '____'}</Text>
-                </View>
-              );
-            })}
-          </View>
-          <View style={styles.choicesWrap}>
-            {current.wordBank.map((w: string, i: number) => (
-              <TouchableOpacity key={`${w}-${i}`} style={styles.choiceButton} onPress={() => fillNextBlank(w)}>
-                <Text style={styles.choiceText}>{w}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        </View>
+        <MissingWordsScreen
+          embedded
+          sentence={current.sentence}
+          translatedSentence={current.translatedSentence}
+          tokens={current.tokens}
+          missingIndices={current.missingIndices}
+          wordBank={current.wordBank}
+          onFinished={(ok) => {
+            if (ok) {
+              setNumCorrect((c) => c + 1);
+            } else {
+              setNumWrong((c) => c + 1);
+              setTasks((prev) => [...prev, prev[currentIdx]]);
+            }
+            setCurrentIdx((i) => i + 1);
+          }}
+        />
       ) : current.kind === 'formulateSentense' ? (
         <FormulateSentenseScreen
           embedded
