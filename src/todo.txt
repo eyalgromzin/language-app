@@ -1,19 +1,13 @@
 tomorrow :
-- create a "create sentense" practice .
-    it will show a translation above. 
-    then an empty space where a sentense will be formulated . 
-    in the bottom a list of clickable words . 
-    the user will have to click on them in the right order to formulate a sentense.
-    on each click of a word it will be added (written) to the end of the sentense in the sentense section, till all words are clicked. 
-    when all words clicked, it will check if the sentense is correct  
 - make baby steps screen as startup screen - but then open app on the last screen the user closed the app on 
-- step by step - like duolingo - annoying practices.
-        - create path screen that the user will be visual and the user will be able to run it . like duolingo
-        - will have sentenses practice. full sentenses that youll need to create out of words below 
-            so create sentense practice 
-        - each step will have a list of words and practices that the user needs to finish to continue 
-        - will take simple sentenses and practice them with games, until all the words are
-        - will have a json with sentenses and words to practice . and from it will create a path 
+- step by step -
+    - on load - will show a path screen . with nodes taken from steps_{language}
+    - create path screen that the user will be visual and the user will be able to run it . like duolingo
+    - will have sentenses practice. full sentenses that youll need to create out of words below 
+        so create sentense practice 
+    - each step will have a list of words and practices that the user needs to finish to continue 
+    - will take simple sentenses and practice them with games, until all the words are
+    - will have a json with sentenses and words to practice . and from it will create a path 
 
 - when focus shifts back to website - on scroll / on click - hide translate panel 
 - add share button in key places where the user will want to share the app
