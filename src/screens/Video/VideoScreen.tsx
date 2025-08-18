@@ -1,6 +1,7 @@
 import React from 'react';
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity, Image } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
@@ -36,9 +37,14 @@ type SearchBarProps = {
   onSubmit: () => void;
   onOpenPress: () => void;
   urlInputRef: React.RefObject<TextInput> | React.MutableRefObject<TextInput | null>;
+  onFocus: () => void;
+  onBlur: () => void;
+  onOpenLibrary: () => void;
+  onToggleHistory: () => void;
+  showAuxButtons: boolean;
 };
 
-const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, showAuxButtons }) => {
   return (
     <View id="searchBar">
       <Text style={styles.label}>YouTube URL</Text>
@@ -59,9 +65,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
           selectTextOnFocus
           onFocus={() => {
             try {
+              onFocus();
               urlInputRef.current?.setNativeProps({ selection: { start: 0, end: inputUrl.length } });
             } catch {}
           }}
+          onBlur={onBlur}
           onPressIn={() => {
             try {
               urlInputRef.current?.focus();
@@ -77,12 +85,35 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
         >
           <Text style={styles.goButtonText}>Go</Text>
         </TouchableOpacity>
+        {showAuxButtons ? (
+          <>
+            <TouchableOpacity
+              onPress={onOpenLibrary}
+              style={styles.libraryBtn}
+              accessibilityRole="button"
+              accessibilityLabel="Open Library"
+              hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+            >
+              <Ionicons name="albums-outline" size={20} color="#007AFF" />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={onToggleHistory}
+              style={styles.libraryBtn}
+              accessibilityRole="button"
+              accessibilityLabel="Show history"
+              hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+            >
+              <Ionicons name="time-outline" size={20} color="#007AFF" />
+            </TouchableOpacity>
+          </>
+        ) : null}
       </View>
     </View>
   );
 };
 
 function VideoScreen(): React.JSX.Element {
+  const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const [inputUrl, setInputUrl] = React.useState<string>('');
   const [url, setUrl] = React.useState<string>('');
@@ -109,6 +140,9 @@ function VideoScreen(): React.JSX.Element {
   const [searchResults, setSearchResults] = React.useState<Array<{ url: string; thumbnail: string | null; title: string; description?: string; length?: string }>>([]);
   const [searchLoading, setSearchLoading] = React.useState<boolean>(false);
   const [searchError, setSearchError] = React.useState<string | null>(null);
+  const [isInputFocused, setIsInputFocused] = React.useState<boolean>(false);
+  const [savedHistory, setSavedHistory] = React.useState<string[]>([]);
+  const [showHistory, setShowHistory] = React.useState<boolean>(false);
 
   // Hidden WebView state to scrape lazy-loaded image results (same approach as Surf/Books)
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
@@ -330,6 +364,7 @@ function VideoScreen(): React.JSX.Element {
       setLoadingTranscript(false);
     }
     setIsPlaying(true);
+    try { await saveHistory(urlString); } catch {}
   };
 
   const resetVideoScreenState = React.useCallback(() => {
@@ -713,6 +748,7 @@ function VideoScreen(): React.JSX.Element {
         })();
       }
       setIsPlaying(true);
+      (async () => { try { await saveHistory(inputUrl); } catch {} })();
       return;
     }
 
@@ -739,6 +775,7 @@ function VideoScreen(): React.JSX.Element {
         }
       })();
       setIsPlaying(true);
+      (async () => { try { await saveHistory(inputUrl); } catch {} })();
       return;
     }
 
@@ -752,6 +789,41 @@ function VideoScreen(): React.JSX.Element {
   }, [inputUrl, videoId, transcript.length, isPlaying, currentTime, learningLanguage]);
 
   
+
+  // --- History management ---
+  const HISTORY_KEY = 'video.history';
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const raw = await AsyncStorage.getItem(HISTORY_KEY);
+        if (!mounted) return;
+        const arr = JSON.parse(raw || '[]');
+        setSavedHistory(Array.isArray(arr) ? (arr as string[]).filter(Boolean) : []);
+      } catch {
+        if (!mounted) return;
+        setSavedHistory([]);
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
+  const saveHistory = async (entry: string) => {
+    const normalized = (entry || '').trim();
+    if (!normalized) return;
+    setSavedHistory(prev => {
+      const next = [normalized, ...prev.filter(e => e !== normalized)];
+      const limited = next.slice(0, 50);
+      AsyncStorage.setItem(HISTORY_KEY, JSON.stringify(limited)).catch(() => {});
+      return limited;
+    });
+  };
+
+  const onSelectHistory = (value: string) => {
+    setInputUrl(value);
+    setShowHistory(false);
+    // Let the user press Go, do not auto-open here
+  };
 
   const NewestVideos = () => {
     return (
@@ -939,7 +1011,24 @@ function VideoScreen(): React.JSX.Element {
         onSubmit={handleSubmit}
         onOpenPress={handleOpenPress}
         urlInputRef={urlInputRef}
+        onFocus={() => { setIsInputFocused(true); setShowHistory(false); }}
+        onBlur={() => { setIsInputFocused(false); }}
+        onOpenLibrary={() => navigation.navigate('Library')}
+        onToggleHistory={() => setShowHistory(prev => !prev)}
+        showAuxButtons={true}
       />
+      {showHistory && !isInputFocused && savedHistory.length > 0 ? (
+        <View style={styles.suggestionsContainer}>
+          <ScrollView keyboardShouldPersistTaps="handled" style={{ maxHeight: 200 }}>
+            {savedHistory.map((h) => (
+              <TouchableOpacity key={h} style={styles.suggestionItem} onPress={() => onSelectHistory(h)}>
+                <Ionicons name="time-outline" size={16} color="#4b5563" style={{ marginRight: 8 }} />
+                <Text style={styles.suggestionText} numberOfLines={1}>{h}</Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
+      ) : null}
       {videoId ? (
         <>
         {currentVideoTitle ? <Text style={styles.nowPlayingTitle} numberOfLines={2}>{currentVideoTitle}</Text> : null}
@@ -1005,6 +1094,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 8,
+  },
+  libraryBtn: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: '#007AFF',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 6,
   },
   goButton: {
     marginLeft: 8,
@@ -1080,6 +1179,29 @@ const styles = StyleSheet.create({
   },
   centered: {
     alignItems: 'center',
+  },
+  suggestionsContainer: {
+    marginTop: -4,
+    marginBottom: 8,
+    backgroundColor: 'white',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#e5e7eb',
+    overflow: 'hidden',
+    zIndex: 1000,
+  },
+  suggestionItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f3f4f6',
+  },
+  suggestionText: {
+    fontSize: 14,
+    color: '#111827',
+    flexShrink: 1,
   },
   transcriptBox: {
     borderWidth: 1,
