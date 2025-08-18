@@ -17,7 +17,6 @@ function SurfScreen(): React.JSX.Element {
   const [addressText, setAddressText] = React.useState<string>(initialUrlFromParams || defaultHomepage);
   const [currentUrl, setCurrentUrl] = React.useState<string>(initialUrlFromParams || defaultHomepage);
   const [canGoBack, setCanGoBack] = React.useState<boolean>(false);
-  const [canGoForward, setCanGoForward] = React.useState<boolean>(false);
   const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
 
   // Languages selected by the user (Settings / Startup)
@@ -51,6 +50,68 @@ function SurfScreen(): React.JSX.Element {
   const hiddenWebViewRef = React.useRef<WebView>(null);
   const addressInputRef = React.useRef<TextInput>(null);
 
+  // --- URL autocomplete state ---
+  const DOMAINS_KEY = 'surf.domains';
+  const [savedDomains, setSavedDomains] = React.useState<string[]>([]);
+  const [isAddressFocused, setIsAddressFocused] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const raw = await AsyncStorage.getItem(DOMAINS_KEY);
+        if (!mounted) return;
+        const arr = JSON.parse(raw || '[]');
+        setSavedDomains(Array.isArray(arr) ? (arr as string[]).filter(Boolean) : []);
+      } catch {
+        if (!mounted) return;
+        setSavedDomains([]);
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
+  const getDomainFromUrlString = (input: string): string | null => {
+    try {
+      const str = (input || '').trim();
+      if (!str) return null;
+      const m = /^[a-zA-Z][a-zA-Z\d+\-.]*:\/\/([^/]+)/.exec(str);
+      const host = m ? m[1] : (/^www\./i.test(str) || /[^\s]+\.[^\s]{2,}/.test(str) ? str.split('/')[0] : null);
+      if (!host) return null;
+      const lower = host.toLowerCase();
+      const noWww = lower.startsWith('www.') ? lower.slice(4) : lower;
+      return noWww;
+    } catch { return null; }
+  };
+
+  const saveDomain = async (domain: string) => {
+    const normalized = (domain || '').toLowerCase().replace(/^www\./, '');
+    if (!normalized) return;
+    setSavedDomains(prev => {
+      const next = [normalized, ...prev.filter(d => d !== normalized)];
+      const limited = next.slice(0, 100);
+      AsyncStorage.setItem(DOMAINS_KEY, JSON.stringify(limited)).catch(() => {});
+      return limited;
+    });
+  };
+
+  const filteredDomains = React.useMemo(() => {
+    const raw = (addressText || '').trim();
+    if (raw.length === 0) return savedDomains.slice(0, 8);
+    const withoutScheme = raw.replace(/^[a-zA-Z][a-zA-Z\d+\-.]*:\/\//, '');
+    const fragment = withoutScheme.split('/')[0].toLowerCase().replace(/^www\./, '');
+    if (!fragment) return savedDomains.slice(0, 8);
+    return savedDomains.filter(d => d.startsWith(fragment)).slice(0, 8);
+  }, [addressText, savedDomains]);
+
+  const selectSuggestion = (domain: string) => {
+    const url = normalizeUrl(domain);
+    setAddressText(url);
+    setCurrentUrl(url);
+    saveDomain(domain);
+    setIsAddressFocused(false);
+  };
+
   const normalizeUrl = (input: string): string => {
     if (!input) return 'about:blank';
     const trimmed = input.trim();
@@ -70,7 +131,10 @@ function SurfScreen(): React.JSX.Element {
   };
 
   const submit = () => {
-    setCurrentUrl(normalizeUrl(addressText.trim()));
+    const normalized = normalizeUrl(addressText.trim());
+    setCurrentUrl(normalized);
+    const domain = getDomainFromUrlString(normalized);
+    if (domain) saveDomain(domain);
   };
 
   const goBack = () => {
@@ -378,6 +442,7 @@ function SurfScreen(): React.JSX.Element {
       const data = JSON.parse(event.nativeEvent.data);
       if (data?.type === 'pointerdown') {
         if (translationPanel) setTranslationPanel(null);
+        setIsAddressFocused(false);
         return;
       }
       if ((data?.type === 'wordClick' || data?.type === 'longpress' || data?.type === 'selection') && typeof data.word === 'string' && data.word.length > 0) {
@@ -586,6 +651,7 @@ function SurfScreen(): React.JSX.Element {
           returnKeyType="go"
           selectTextOnFocus
           onFocus={() => {
+            setIsAddressFocused(true);
             try {
               addressInputRef.current?.setNativeProps({ selection: { start: 0, end: addressText.length } });
             } catch (e) {}
@@ -636,6 +702,18 @@ function SurfScreen(): React.JSX.Element {
           <Ionicons name="home-outline" size={22} color="#007AFF" />
         </TouchableOpacity>
       </View>
+      {isAddressFocused && filteredDomains.length > 0 && (
+        <View style={styles.suggestionsContainer}>
+          <ScrollView keyboardShouldPersistTaps="handled" style={{ maxHeight: 200 }}>
+            {filteredDomains.map((d) => (
+              <TouchableOpacity key={d} style={styles.suggestionItem} onPress={() => selectSuggestion(d)}>
+                <Ionicons name="globe-outline" size={16} color="#4b5563" style={{ marginRight: 8 }} />
+                <Text style={styles.suggestionText}>{d}</Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
+      )}
       <WebView
         ref={webViewRef}
         source={{ uri: currentUrl }}
@@ -645,8 +723,11 @@ function SurfScreen(): React.JSX.Element {
         onNavigationStateChange={(navState) => {
           try {
             setCanGoBack(!!navState.canGoBack);
-            setCanGoForward(!!navState.canGoForward);
-            if (typeof navState.url === 'string') setAddressText(navState.url);
+            if (typeof navState.url === 'string') {
+              setAddressText(navState.url);
+              const d = getDomainFromUrlString(navState.url);
+              if (d) saveDomain(d);
+            }
           } catch (e) {}
         }}
         onLoad={() => {
@@ -795,6 +876,28 @@ const styles = StyleSheet.create({
     height: 80,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  suggestionsContainer: {
+    marginTop: -8,
+    marginHorizontal: 12,
+    backgroundColor: 'white',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#e5e7eb',
+    overflow: 'hidden',
+    zIndex: 1000,
+  },
+  suggestionItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f3f4f6',
+  },
+  suggestionText: {
+    fontSize: 14,
+    color: '#111827',
   },
   translationLoadingRow: {
     height: 42,
