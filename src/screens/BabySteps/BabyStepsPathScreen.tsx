@@ -247,9 +247,9 @@ function BabyStepsPathScreen(): React.JSX.Element {
                 <View style={[
                   styles.nodeCircle,
                   {
-                    backgroundColor: isCompleted ? (isDark ? '#12351c' : '#E6F7E9') : (isDark ? '#1A73E8' : '#E6F0FF'),
-                    borderColor: isCompleted ? '#2E7D32' : (isDark ? '#4DA3FF' : '#BBD6FF'),
-                    opacity: isEnabled ? 1.0 : 0.45,
+                    backgroundColor: isCompleted ? (isDark ? '#12351c' : '#E6F7E9') : (isDark ? '#2C2C2E' : '#F1F3F5'),
+                    borderColor: isCompleted ? '#2E7D32' : (isDark ? '#3A3A3C' : '#D0D5DB'),
+                    opacity: 1.0,
                   },
                 ]}>
                   <Text style={styles.emojiText} accessibilityLabel={`${s.title} icon`}>{emoji}</Text>
@@ -280,7 +280,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
                     </View>
                   ) : null}
                 </View>
-                <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: isEnabled ? 1.0 : 0.6 }]}>{translatedTitleById[s.id] || s.title}</Text>
+                <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: 1.0 }]}>{translatedTitleById[s.id] || s.title}</Text>
               </TouchableOpacity>
             );
           })}
