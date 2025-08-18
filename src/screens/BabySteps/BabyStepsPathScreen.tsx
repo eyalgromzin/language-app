@@ -265,12 +265,19 @@ function BabyStepsPathScreen(): React.JSX.Element {
                     <Text style={[styles.indexBadgeText, { color: isDark ? '#EAF3FF' : '#0A57CC' }]}>{idx + 1}</Text>
                   </View>
                   {isCompleted ? (
-                    <Text
-                      style={[styles.completedV, isLeft ? styles.completedVLeft : styles.completedVRight, { color: isDark ? '#C8E6C9' : '#2E7D32' }]}
-                      accessibilityLabel="Completed"
+                    <View
+                      style={[
+                        styles.completedBadge,
+                        isLeft ? styles.completedBadgeLeft : styles.completedBadgeRight,
+                        {
+                          backgroundColor: isDark ? '#001a3a' : '#fff',
+                          borderColor: isDark ? '#66BB6A' : '#2E7D32',
+                        },
+                      ]}
+                      accessible={false}
                     >
-                      V
-                    </Text>
+                      <Text style={[styles.completedBadgeText, { color: isDark ? '#C8E6C9' : '#2E7D32' }]}>V</Text>
+                    </View>
                   ) : null}
                 </View>
                 <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: isEnabled ? 1.0 : 0.6 }]}>{translatedTitleById[s.id] || s.title}</Text>
@@ -343,17 +350,26 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '800',
   },
-  completedV: {
+  completedBadge: {
     position: 'absolute',
-    top: -8,
-    fontSize: 16,
-    fontWeight: '900',
+    top: -6,
+    minWidth: 20,
+    height: 20,
+    borderRadius: 10,
+    borderWidth: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 4,
   },
-  completedVLeft: {
-    left: -16,
+  completedBadgeLeft: {
+    left: -6,
   },
-  completedVRight: {
-    right: -16,
+  completedBadgeRight: {
+    right: -6,
+  },
+  completedBadgeText: {
+    fontSize: 12,
+    fontWeight: '800',
   },
 });
 
