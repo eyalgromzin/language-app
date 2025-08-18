@@ -7,13 +7,17 @@ import FormulateSentenseScreen from '../practice/formulateSentense/FormulateSent
 import ChooseTranslationScreen from '../practice/chooseTranslation/chooseTranslationScreen';
 import MissingWordsScreen from '../practice/missingWords/MissingWordsScreen';
 import ChooseWordScreen from '../practice/chooseWord/ChooseWordScreen';
+import HearingPracticeScreen from '../practice/hearing/HearingPracticeScreen';
+import TranslationMissingLetters from '../practice/translationMissingLetters/TranslationMissingLetters';
+import WordMissingLettersScreen from '../practice/wordMissingLetters/WordMissingLettersScreen';
+import WriteWordScreen from '../practice/writeWord/WriteWordScreen';
 
 type StepItem = {
   id: string;
   title?: string;
   type?: 'word' | 'sentence';
   text: string;
-  practiceType?: 'chooseTranslation' | 'missingWords' | 'formulateSentense' | 'chooseWord';
+  practiceType?: 'chooseTranslation' | 'missingWords' | 'formulateSentense' | 'chooseWord' | 'hearing' | 'translationMissingLetters' | 'wordMissingLetters' | 'writeWord';
 };
 
 type StepsFile = {
@@ -44,6 +48,34 @@ type RunnerTask =
       translation: string; // translation shown
       correctWord: string; // correct word in current language
       options: string[]; // includes correct + distractors
+      itemId: string;
+    }
+  | {
+      kind: 'hearing';
+      sourceWord: string;
+      correctTranslation: string;
+      options: string[];
+      itemId: string;
+    }
+  | {
+      kind: 'translationMissingLetters';
+      word: string;
+      translation: string;
+      inputIndices: number[];
+      itemId: string;
+    }
+  | {
+      kind: 'wordMissingLetters';
+      word: string;
+      translation: string;
+      missingIndices: number[];
+      itemId: string;
+    }
+  | {
+      kind: 'writeWord';
+      word: string;
+      translation: string;
+      missingIndices: number[];
       itemId: string;
     }
   | {
@@ -197,6 +229,68 @@ function BabyStepRunnerScreen(): React.JSX.Element {
               translatedSentence: otherText,
               tokens,
               shuffledTokens,
+              itemId: it.id,
+            } as RunnerTask;
+          }
+          if (it.practiceType === 'hearing') {
+            // Hearing: pick translation options from other words' translations
+            const distractorPool: string[] = [];
+            step.items.forEach((o) => {
+              if (o.id !== it.id && (o.type === 'word' || o.practiceType === 'chooseTranslation' || o.practiceType === 'hearing')) {
+                const t = findOtherTextById(o.id);
+                if (t && t !== otherText) distractorPool.push(t);
+              }
+            });
+            const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(5, Math.max(0, distractorPool.length)));
+            const options = shuffleArray([otherText, ...picked]);
+            return {
+              kind: 'hearing',
+              sourceWord: it.text,
+              correctTranslation: otherText,
+              options,
+              itemId: it.id,
+            } as RunnerTask;
+          }
+          if (it.practiceType === 'translationMissingLetters') {
+            // Build indices to input over translation
+            const letters = (otherText || '').split('');
+            const candidateIdx: number[] = [];
+            letters.forEach((ch, i) => { if (/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch)) candidateIdx.push(i); });
+            const desired = Math.min(3, Math.max(1, Math.floor(letters.length / 4)));
+            const inputIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
+            return {
+              kind: 'translationMissingLetters',
+              word: it.text,
+              translation: otherText,
+              inputIndices,
+              itemId: it.id,
+            } as RunnerTask;
+          }
+          if (it.practiceType === 'wordMissingLetters') {
+            const letters = (it.text || '').split('');
+            const candidateIdx: number[] = [];
+            letters.forEach((ch, i) => { if (/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch)) candidateIdx.push(i); });
+            const desired = Math.min(3, Math.max(1, Math.floor(letters.length / 4)));
+            const missingIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
+            return {
+              kind: 'wordMissingLetters',
+              word: it.text,
+              translation: otherText,
+              missingIndices,
+              itemId: it.id,
+            } as RunnerTask;
+          }
+          if (it.practiceType === 'writeWord') {
+            const letters = (it.text || '').split('');
+            const candidateIdx: number[] = [];
+            letters.forEach((ch, i) => { if (/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch)) candidateIdx.push(i); });
+            const desired = Math.min(3, Math.max(1, Math.floor(letters.length / 4)));
+            const missingIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
+            return {
+              kind: 'writeWord',
+              word: it.text,
+              translation: otherText,
+              missingIndices,
               itemId: it.id,
             } as RunnerTask;
           }
@@ -435,6 +529,66 @@ function BabyStepRunnerScreen(): React.JSX.Element {
             if (ok) {
               setNumCorrect((c) => c + 1);
             } else {
+              setNumWrong((c) => c + 1);
+              setTasks((prev) => [...prev, prev[currentIdx]]);
+            }
+            setCurrentIdx((i) => i + 1);
+          }}
+        />
+      ) : current.kind === 'hearing' ? (
+        <HearingPracticeScreen
+          embedded
+          sourceWord={current.sourceWord}
+          correctTranslation={current.correctTranslation}
+          options={current.options}
+          onFinished={(ok) => {
+            if (ok) setNumCorrect((c) => c + 1);
+            else {
+              setNumWrong((c) => c + 1);
+              setTasks((prev) => [...prev, prev[currentIdx]]);
+            }
+            setCurrentIdx((i) => i + 1);
+          }}
+        />
+      ) : current.kind === 'translationMissingLetters' ? (
+        <TranslationMissingLetters
+          embedded
+          word={current.word}
+          translation={current.translation}
+          inputIndices={current.inputIndices}
+          onFinished={(ok) => {
+            if (ok) setNumCorrect((c) => c + 1);
+            else {
+              setNumWrong((c) => c + 1);
+              setTasks((prev) => [...prev, prev[currentIdx]]);
+            }
+            setCurrentIdx((i) => i + 1);
+          }}
+        />
+      ) : current.kind === 'wordMissingLetters' ? (
+        <WordMissingLettersScreen
+          embedded
+          word={current.word}
+          translation={current.translation}
+          missingIndices={current.missingIndices}
+          onFinished={(ok) => {
+            if (ok) setNumCorrect((c) => c + 1);
+            else {
+              setNumWrong((c) => c + 1);
+              setTasks((prev) => [...prev, prev[currentIdx]]);
+            }
+            setCurrentIdx((i) => i + 1);
+          }}
+        />
+      ) : current.kind === 'writeWord' ? (
+        <WriteWordScreen
+          embedded
+          word={current.word}
+          translation={current.translation}
+          missingIndices={current.missingIndices}
+          onFinished={(ok) => {
+            if (ok) setNumCorrect((c) => c + 1);
+            else {
               setNumWrong((c) => c + 1);
               setTasks((prev) => [...prev, prev[currentIdx]]);
             }

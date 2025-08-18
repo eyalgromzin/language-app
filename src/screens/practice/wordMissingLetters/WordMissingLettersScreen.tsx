@@ -26,6 +26,14 @@ type PreparedItem = {
   missingIndices: number[];
 };
 
+type EmbeddedProps = {
+  embedded?: boolean;
+  word?: string;
+  translation?: string;
+  missingIndices?: number[];
+  onFinished?: (isCorrect: boolean) => void;
+};
+
 function ensureCounters(entry: WordEntry): WordEntry {
   return {
     ...entry,
@@ -117,7 +125,7 @@ function pickRandomIndex(length: number, previous?: number): number {
   return nextIndex;
 }
 
-function MissingLettersScreen(): React.JSX.Element {
+function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const RANDOM_GAME_ROUTES: string[] = [
@@ -135,7 +143,7 @@ function MissingLettersScreen(): React.JSX.Element {
     const target = choices[Math.floor(Math.random() * choices.length)] as string;
     navigation.navigate(target as never, { surprise: true } as never);
   }, [navigation, route]);
-  const [loading, setLoading] = React.useState<boolean>(true);
+  const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [items, setItems] = React.useState<PreparedItem[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
   const [inputs, setInputs] = React.useState<Record<number, string>>({});
@@ -161,6 +169,14 @@ function MissingLettersScreen(): React.JSX.Element {
   }, []);
 
   const loadData = React.useCallback(async () => {
+    if (props.embedded) {
+      setLoading(false);
+      setInputs({});
+      setWrongHighlightIndex(null);
+      setShowCorrectToast(false);
+      setShowWrongToast(false);
+      return;
+    }
     setLoading(true);
     try {
       // Load user setting for number of correct answers to remove a word
@@ -211,7 +227,7 @@ function MissingLettersScreen(): React.JSX.Element {
     } finally {
       setLoading(false);
     }
-  }, [filePath, prepare]);
+  }, [filePath, prepare, props.embedded]);
 
   React.useEffect(() => {
     loadData();
@@ -220,13 +236,23 @@ function MissingLettersScreen(): React.JSX.Element {
   // When the screen gains focus, reload words from storage
   useFocusEffect(
     React.useCallback(() => {
-      setShowCorrectToast(false);
-      setShowWrongToast(false);
-      loadData();
-    }, [loadData])
+      if (!props.embedded) {
+        setShowCorrectToast(false);
+        setShowWrongToast(false);
+        loadData();
+      }
+    }, [loadData, props.embedded])
   );
 
-  const current = items[currentIndex];
+  const current = props.embedded
+    ? ({
+        entry: { word: props.word || '', translation: props.translation || '' },
+        letters: splitLetters(props.word || ''),
+        missingIndices: props.missingIndices && props.missingIndices.length > 0
+          ? props.missingIndices
+          : pickMissingIndices(splitLetters(props.word || ''), 2),
+      } as PreparedItem)
+    : items[currentIndex];
 
   const resetForNext = React.useCallback(() => {
     setInputs({});
@@ -234,10 +260,11 @@ function MissingLettersScreen(): React.JSX.Element {
   }, []);
 
   const moveToNext = React.useCallback(() => {
+    if (props.embedded) return;
     setShowCorrectToast(false);
     setShowWrongToast(false);
     loadData();
-  }, [loadData]);
+  }, [loadData, props.embedded]);
 
   const attemptWord = React.useCallback(() => {
     if (!current) return '';
@@ -339,6 +366,10 @@ function MissingLettersScreen(): React.JSX.Element {
       // Ensure only one toast shows at a time
       setShowWrongToast(false);
       setShowCorrectToast(true);
+      if (props.embedded) {
+        const t = setTimeout(() => props.onFinished?.(true), 600);
+        return () => clearTimeout(t as unknown as number);
+      }
       writeBackIncrement(target);
       const timer = setTimeout(() => {
         moveToNext();
@@ -348,6 +379,10 @@ function MissingLettersScreen(): React.JSX.Element {
       // Ensure only one toast shows at a time
       setShowCorrectToast(false);
       setShowWrongToast(true);
+      if (props.embedded) {
+        const t = setTimeout(() => props.onFinished?.(false), 1200);
+        return () => clearTimeout(t as unknown as number);
+      }
       const wrongTimer = setTimeout(() => setShowWrongToast(false), 2000);
       // Find first mismatch
       let mismatchAt: number | null = null;
@@ -369,7 +404,7 @@ function MissingLettersScreen(): React.JSX.Element {
       setWrongHighlightIndex(mismatchAt);
       return () => clearTimeout(wrongTimer);
     }
-  }, [attemptWord, current, inputs, moveToNext, writeBackIncrement, wrongHighlightIndex]);
+  }, [attemptWord, current, inputs, moveToNext, writeBackIncrement, wrongHighlightIndex, props.embedded, props.onFinished]);
 
   // Focus the first blank input when a new word is shown (and not in corrected state)
   React.useEffect(() => {
@@ -381,7 +416,7 @@ function MissingLettersScreen(): React.JSX.Element {
     }
   }, [currentIndex, current, wrongHighlightIndex]);
 
-  if (loading) {
+  if (!props.embedded && loading) {
     return (
       <View style={styles.centered}> 
         <ActivityIndicator />
@@ -442,12 +477,19 @@ function MissingLettersScreen(): React.JSX.Element {
   return (
     <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding', android: undefined })} style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-        <View style={styles.topRow}>
-          <Text style={styles.translation}>{current.entry.translation}</Text>
-          <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
-            <Text style={styles.skipButtonText}>Skip</Text>
-          </TouchableOpacity>
-        </View>
+        {!props.embedded ? (
+          <View style={styles.topRow}>
+            <Text style={styles.translation}>{current.entry.translation}</Text>
+            <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
+              <Text style={styles.skipButtonText}>Skip</Text>
+            </TouchableOpacity>
+          </View>
+        ) : null}
+        {props.embedded ? (
+          <View style={styles.topRow}>
+            <Text style={styles.translation}>{current.entry.translation}</Text>
+          </View>
+        ) : null}
         {current.entry.sentence ? (
           <Text style={styles.sentence} numberOfLines={3}>
             {splitSentenceByWord(current.entry.sentence, current.entry.word).map((p, i) =>
@@ -467,7 +509,7 @@ function MissingLettersScreen(): React.JSX.Element {
           {current.letters.map((ch, idx) => renderLetterCell(ch, idx))}
         </View>
 
-        {wrongHighlightIndex !== null ? (
+        {!props.embedded && wrongHighlightIndex !== null ? (
           <TouchableOpacity style={styles.nextButton} onPress={() => { resetForNext(); moveToNext(); }}>
             <Text style={styles.nextButtonText}>Next</Text>
           </TouchableOpacity>

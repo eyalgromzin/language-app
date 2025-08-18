@@ -28,6 +28,14 @@ type OptionItem = {
   isCorrect: boolean;
 };
 
+type EmbeddedProps = {
+  embedded?: boolean;
+  sourceWord?: string;
+  correctTranslation?: string;
+  options?: string[];
+  onFinished?: (isCorrect: boolean) => void;
+};
+
 const LANGUAGE_NAME_TO_TTS: Record<string, string> = {
   English: 'en-US',
   Spanish: 'es-ES',
@@ -98,7 +106,7 @@ function sampleN<T>(arr: T[], n: number): T[] {
   return result;
 }
 
-function HearingPracticeScreen(): React.JSX.Element {
+function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const RANDOM_GAME_ROUTES: string[] = [
@@ -117,7 +125,7 @@ function HearingPracticeScreen(): React.JSX.Element {
     const target = choices[Math.floor(Math.random() * choices.length)] as string;
     navigation.navigate(target as never, { surprise: true } as never);
   }, [navigation, route]);
-  const [loading, setLoading] = React.useState<boolean>(true);
+  const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
   const [options, setOptions] = React.useState<OptionItem[]>([]);
@@ -194,6 +202,10 @@ function HearingPracticeScreen(): React.JSX.Element {
   }, []);
 
   const loadBase = React.useCallback(async () => {
+    if (props.embedded) {
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     try {
       let threshold = 3;
@@ -246,7 +258,7 @@ function HearingPracticeScreen(): React.JSX.Element {
     } finally {
       setLoading(false);
     }
-  }, [filePath]);
+  }, [filePath, props.embedded]);
 
   const pickNextIndex = React.useCallback((items: WordEntry[]) => {
     if (items.length === 0) return 0;
@@ -294,27 +306,73 @@ function HearingPracticeScreen(): React.JSX.Element {
 
   useFocusEffect(
     React.useCallback(() => {
-      autoplay.current = true;
-      loadBase();
-      return () => {
-        try { TTS.stop(); } catch {}
-      };
-    }, [loadBase])
+      if (!props.embedded) {
+        autoplay.current = true;
+        loadBase();
+        return () => {
+          try { TTS.stop(); } catch {}
+        };
+      }
+      return () => {};
+    }, [loadBase, props.embedded])
   );
 
   React.useEffect(() => {
+    if (props.embedded) return;
     if (!loading) {
       prepareRound(allEntries);
     }
-  }, [loading, allEntries, prepareRound]);
+  }, [loading, allEntries, prepareRound, props.embedded]);
 
-  const current = allEntries[currentIndex];
+  const current = props.embedded
+    ? ({ word: props.sourceWord || '', translation: props.correctTranslation || '' } as WordEntry)
+    : allEntries[currentIndex];
+
+  // Build options in embedded mode from props and auto-speak
+  React.useEffect(() => {
+    if (!props.embedded) return;
+    const normalize = (s: string) => (s || '').trim().replace(/\s+/g, ' ').toLowerCase();
+    const baseOptions = Array.isArray(props.options) ? props.options : [];
+    const correctLabel = (props.correctTranslation || '').trim().replace(/\s+/g, ' ');
+    const correctNorm = normalize(correctLabel);
+    const uniqueMap = new Map<string, string>();
+    if (correctLabel.length > 0) uniqueMap.set(correctNorm, correctLabel);
+    for (const o of baseOptions) {
+      const norm = normalize(o);
+      if (!uniqueMap.has(norm)) uniqueMap.set(norm, (o || '').trim().replace(/\s+/g, ' '));
+    }
+    const combined = Array.from(uniqueMap.values());
+    const items: OptionItem[] = combined.map((label, i) => ({
+      key: `${normalize(label)}-${i}`,
+      label,
+      isCorrect: normalize(label) === correctNorm,
+    }));
+    // shuffle
+    const a = [...items];
+    for (let i = a.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    setOptions(a);
+    setSelectedKey(null);
+    setWrongKey(null);
+    setWrongAttempts(0);
+    setShowWrongToast(false);
+    setShowCorrectToast(false);
+    setRevealCorrect(false);
+    // autoplay
+    const toSpeak = props.sourceWord || '';
+    if (toSpeak) {
+      setTimeout(() => speakCurrent(toSpeak), 300);
+    }
+  }, [props.embedded, props.options, props.correctTranslation, props.sourceWord, speakCurrent]);
 
   const moveToNext = React.useCallback(() => {
+    if (props.embedded) return;
     setShowCorrectToast(false);
     setShowWrongToast(false);
     prepareRound(allEntries);
-  }, [prepareRound, allEntries]);
+  }, [prepareRound, allEntries, props.embedded]);
 
   const writeBackIncrement = React.useCallback(async (wordKey: string) => {
     try {
@@ -358,6 +416,19 @@ function HearingPracticeScreen(): React.JSX.Element {
   const onPick = (opt: OptionItem) => {
     if (!current) return;
     if (selectedKey || revealCorrect) return;
+    if (props.embedded) {
+      if (opt.isCorrect) {
+        setSelectedKey(opt.key);
+        setShowWrongToast(false);
+        setShowCorrectToast(true);
+        const t = setTimeout(() => props.onFinished?.(true), 600);
+        return () => clearTimeout(t as unknown as number);
+      }
+      setWrongKey(opt.key);
+      setShowWrongToast(true);
+      const t = setTimeout(() => props.onFinished?.(false), 1200);
+      return () => clearTimeout(t as unknown as number);
+    }
     if (opt.isCorrect) {
       setSelectedKey(opt.key);
       setShowWrongToast(false);
@@ -384,7 +455,7 @@ function HearingPracticeScreen(): React.JSX.Element {
     };
   };
 
-  if (loading) {
+  if (!props.embedded && loading) {
     return (
       <View style={styles.centered}>
         <ActivityIndicator />
@@ -405,12 +476,14 @@ function HearingPracticeScreen(): React.JSX.Element {
   return (
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.topRow}>
-          <Text style={styles.title}>hearing practice</Text>
-          <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
-            <Text style={styles.skipButtonText}>Skip</Text>
-          </TouchableOpacity>
-        </View>
+        {!props.embedded ? (
+          <View style={styles.topRow}>
+            <Text style={styles.title}>hearing practice</Text>
+            <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
+              <Text style={styles.skipButtonText}>Skip</Text>
+            </TouchableOpacity>
+          </View>
+        ) : null}
 
         <TouchableOpacity style={styles.speakerCard} onPress={() => speakCurrent(current.word)} accessibilityRole="button" accessibilityLabel="Play word">
           <Text style={styles.speakerEmoji}>🔊</Text>
@@ -443,7 +516,7 @@ function HearingPracticeScreen(): React.JSX.Element {
           })}
         </View>
 
-        {revealCorrect ? (
+        {!props.embedded && revealCorrect ? (
           <TouchableOpacity style={styles.nextButton} onPress={() => prepareRound(allEntries)}>
             <Text style={styles.nextButtonText}>Next</Text>
           </TouchableOpacity>
