@@ -1,753 +1,897 @@
 {
-  "language": "English",
-  "overview": "A progressive path from essential words to full sentences and advanced phrases, ordered by real-life usefulness.",
+  "language": "Spanish",
+  "overview": "Un camino progresivo desde palabras esenciales hasta oraciones completas y frases avanzadas, ordenado por su utilidad en la vida real.",
   "steps": [
     {
       "id": "01_essentials",
-      "title": "greetings & politeness",
+      "title": "saludos y cortesía",
       "items": [
         {
           "id": "01_essentials_hello",
           "type": "word",
-          "text": "hello",
+          "text": "hola",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "01_essentials_hi",
           "type": "word",
-          "text": "hi",
+          "text": "hola",
           "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_please",
+          "type": "word",
+          "text": "por favor",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_thank_you",
+          "type": "word",
+          "text": "gracias",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_thanks",
+          "type": "word",
+          "text": "gracias",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_yes",
+          "type": "word",
+          "text": "sí",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_no",
+          "type": "word",
+          "text": "no",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_excuse_me",
+          "type": "sentence",
+          "text": "Disculpe.",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "01_essentials_sorry",
+          "type": "sentence",
+          "text": "Lo siento.",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "01_essentials_good_morning",
+          "type": "sentence",
+          "text": "Buenos días.",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "01_essentials_good_evening",
+          "type": "sentence",
+          "text": "Buenas noches.",
+          "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "02_introductions",
-      "title": "Introductions & basic info",
+      "title": "Presentaciones e información básica",
       "items": [
         {
           "id": "02_introductions_my_name_is",
           "type": "sentence",
-          "text": "My name is …",
+          "text": "Me llamo …",
           "practiceType": "missingWords"
         },
         {
           "id": "02_introductions_what_is_your_name",
           "type": "sentence",
-          "text": "What is your name?",
+          "text": "¿Cómo te llamas?",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_nice_to_meet_you",
+          "type": "sentence",
+          "text": "Mucho gusto.",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_how_are_you",
+          "type": "sentence",
+          "text": "¿Cómo estás?",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_i_am_fine_thank_you",
+          "type": "sentence",
+          "text": "Estoy bien, gracias.",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_where_are_you_from",
+          "type": "sentence",
+          "text": "¿De dónde eres?",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_i_am_from",
+          "type": "sentence",
+          "text": "Soy de …",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_do_you_speak_english",
+          "type": "sentence",
+          "text": "¿Hablas inglés?",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_i_speak_a_little",
+          "type": "sentence",
+          "text": "Hablo un poco.",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "03_core_verbs_pronouns",
-      "title": "Core pronouns & helper verbs",
+      "title": "Pronombres básicos y verbos auxiliares",
       "items": [
         {
           "id": "03_core_verbs_pronouns_i",
           "type": "word",
-          "text": "I",
+          "text": "yo",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "03_core_verbs_pronouns_you",
           "type": "word",
-          "text": "you",
+          "text": "tú",
           "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_he",
+          "type": "word",
+          "text": "él",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_she",
+          "type": "word",
+          "text": "ella",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_we",
+          "type": "word",
+          "text": "nosotros",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_they",
+          "type": "word",
+          "text": "ellos",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_am",
+          "type": "sentence",
+          "text": "Soy …",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_have",
+          "type": "sentence",
+          "text": "Tengo …",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_want",
+          "type": "sentence",
+          "text": "Quiero …",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_need",
+          "type": "sentence",
+          "text": "Necesito …",
+          "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "04_numbers_time_basics",
-      "title": "Numbers & time basics",
+      "title": "Números y nociones de tiempo",
       "items": [
         {
           "id": "04_numbers_time_basics_zero",
           "type": "word",
-          "text": "zero",
+          "text": "cero",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_one",
           "type": "word",
-          "text": "one",
+          "text": "uno",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_two",
           "type": "word",
-          "text": "two",
+          "text": "dos",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_three",
           "type": "word",
-          "text": "three",
+          "text": "tres",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_four",
           "type": "word",
-          "text": "four",
+          "text": "cuatro",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_five",
           "type": "word",
-          "text": "five",
+          "text": "cinco",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_ten",
           "type": "word",
-          "text": "ten",
+          "text": "diez",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_twenty",
           "type": "word",
-          "text": "twenty",
+          "text": "veinte",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_hundred",
           "type": "word",
-          "text": "hundred",
+          "text": "cien",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_today",
           "type": "word",
-          "text": "today",
+          "text": "hoy",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_tomorrow",
           "type": "word",
-          "text": "tomorrow",
+          "text": "mañana",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_yesterday",
           "type": "word",
-          "text": "yesterday",
+          "text": "ayer",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "04_numbers_time_basics_what_time_is_it",
           "type": "sentence",
-          "text": "What time is it?",
+          "text": "¿Qué hora es?",
           "practiceType": "missingWords"
         },
         {
           "id": "04_numbers_time_basics_it_is_three_o_clock",
           "type": "sentence",
-          "text": "It is three o'clock.",
+          "text": "Son las tres en punto.",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "05_getting_around",
-      "title": "Directions & getting around",
+      "title": "Indicaciones y cómo moverse",
       "items": [
         {
           "id": "05_getting_around_left",
           "type": "word",
-          "text": "left",
+          "text": "izquierda",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "05_getting_around_right",
           "type": "word",
-          "text": "right",
+          "text": "derecha",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "05_getting_around_straight",
           "type": "word",
-          "text": "straight",
+          "text": "recto",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "05_getting_around_near",
           "type": "word",
-          "text": "near",
+          "text": "cerca",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "05_getting_around_far",
           "type": "word",
-          "text": "far",
+          "text": "lejos",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "05_getting_around_where_is_the_bathroom",
           "type": "sentence",
-          "text": "Where is the bathroom?",
+          "text": "¿Dónde está el baño?",
           "practiceType": "missingWords"
         },
         {
           "id": "05_getting_around_where_is_the_station",
           "type": "sentence",
-          "text": "Where is the station?",
+          "text": "¿Dónde está la estación?",
           "practiceType": "missingWords"
         },
         {
           "id": "05_getting_around_how_do_i_get_to",
           "type": "sentence",
-          "text": "How do I get to …?",
+          "text": "¿Cómo llego a …?",
           "practiceType": "missingWords"
         },
         {
           "id": "05_getting_around_is_it_close",
           "type": "sentence",
-          "text": "Is it close?",
+          "text": "¿Está cerca?",
           "practiceType": "missingWords"
         },
         {
           "id": "05_getting_around_i_am_lost",
           "type": "sentence",
-          "text": "I am lost.",
+          "text": "Estoy perdido.",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "06_food_drink_basics",
-      "title": "Food & drink basics",
+      "title": "Comida y bebida: lo básico",
       "items": [
         {
           "id": "06_food_drink_basics_water",
           "type": "word",
-          "text": "water",
+          "text": "agua",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "06_food_drink_basics_coffee",
           "type": "word",
-          "text": "coffee",
+          "text": "café",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "06_food_drink_basics_tea",
           "type": "word",
-          "text": "tea",
+          "text": "té",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "06_food_drink_basics_bread",
           "type": "word",
-          "text": "bread",
+          "text": "pan",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "06_food_drink_basics_apple",
           "type": "word",
-          "text": "apple",
+          "text": "manzana",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "06_food_drink_basics_i_would_like_water_please",
           "type": "sentence",
-          "text": "I would like water, please.",
+          "text": "Quisiera agua, por favor.",
           "practiceType": "missingWords"
         },
         {
           "id": "06_food_drink_basics_the_food_is_delicious",
           "type": "sentence",
-          "text": "The food is delicious.",
+          "text": "La comida está deliciosa.",
           "practiceType": "missingWords"
         },
         {
           "id": "06_food_drink_basics_i_am_allergic_to",
           "type": "sentence",
-          "text": "I am allergic to …",
+          "text": "Soy alérgico a …",
           "practiceType": "missingWords"
         },
         {
           "id": "06_food_drink_basics_no_sugar_please",
           "type": "sentence",
-          "text": "No sugar, please.",
+          "text": "Sin azúcar, por favor.",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "07_shopping_money",
-      "title": "Shopping & money",
+      "title": "Compras y dinero",
       "items": [
         {
           "id": "07_shopping_money_price",
           "type": "word",
-          "text": "price",
+          "text": "precio",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "07_shopping_money_cash",
           "type": "word",
-          "text": "cash",
+          "text": "efectivo",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "07_shopping_money_card",
           "type": "word",
-          "text": "card",
+          "text": "tarjeta",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "07_shopping_money_receipt",
           "type": "word",
-          "text": "receipt",
+          "text": "recibo",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "07_shopping_money_how_much_is_this",
           "type": "sentence",
-          "text": "How much is this?",
+          "text": "¿Cuánto cuesta esto?",
           "practiceType": "missingWords"
         },
         {
           "id": "07_shopping_money_do_you_take_cards",
           "type": "sentence",
-          "text": "Do you take cards?",
+          "text": "¿Aceptan tarjetas?",
           "practiceType": "missingWords"
         },
         {
           "id": "07_shopping_money_i_am_just_looking",
           "type": "sentence",
-          "text": "I am just looking.",
+          "text": "Solo estoy mirando.",
           "practiceType": "missingWords"
         },
         {
           "id": "07_shopping_money_can_i_try_it_on",
           "type": "sentence",
-          "text": "Can I try it on?",
+          "text": "¿Puedo probármelo?",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "08_travel_hotel",
-      "title": "Travel & hotel",
+      "title": "Viajes y hotel",
       "items": [
         {
           "id": "08_travel_hotel_ticket",
           "type": "word",
-          "text": "ticket",
+          "text": "billete",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "08_travel_hotel_reservation",
           "type": "word",
-          "text": "reservation",
+          "text": "reserva",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "08_travel_hotel_passport",
           "type": "word",
-          "text": "passport",
+          "text": "pasaporte",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "08_travel_hotel_luggage",
           "type": "word",
-          "text": "luggage",
+          "text": "equipaje",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "08_travel_hotel_i_have_a_reservation",
           "type": "sentence",
-          "text": "I have a reservation.",
+          "text": "Tengo una reserva.",
           "practiceType": "missingWords"
         },
         {
           "id": "08_travel_hotel_what_time_is_check_in",
           "type": "sentence",
-          "text": "What time is check-in?",
+          "text": "¿A qué hora es el registro?",
           "practiceType": "missingWords"
         },
         {
           "id": "08_travel_hotel_where_is_the_platform",
           "type": "sentence",
-          "text": "Where is the platform?",
+          "text": "¿Dónde está el andén?",
           "practiceType": "missingWords"
         },
         {
           "id": "08_travel_hotel_i_need_a_taxi",
           "type": "sentence",
-          "text": "I need a taxi.",
+          "text": "Necesito un taxi.",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "09_emergencies_health",
-      "title": "Emergencies & health",
+      "title": "Emergencias y salud",
       "items": [
         {
           "id": "09_emergencies_health_help",
           "type": "word",
-          "text": "help",
+          "text": "ayuda",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "09_emergencies_health_doctor",
           "type": "word",
-          "text": "doctor",
+          "text": "médico",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "09_emergencies_health_pharmacy",
           "type": "word",
-          "text": "pharmacy",
+          "text": "farmacia",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "09_emergencies_health_emergency",
           "type": "word",
-          "text": "emergency",
+          "text": "emergencia",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "09_emergencies_health_call_an_ambulance",
           "type": "sentence",
-          "text": "Call an ambulance!",
+          "text": "¡Llame a una ambulancia!",
           "practiceType": "missingWords"
         },
         {
           "id": "09_emergencies_health_i_need_a_doctor",
           "type": "sentence",
-          "text": "I need a doctor.",
+          "text": "Necesito un médico.",
           "practiceType": "missingWords"
         },
         {
           "id": "09_emergencies_health_i_feel_sick",
           "type": "sentence",
-          "text": "I feel sick.",
+          "text": "Me siento mal.",
           "practiceType": "missingWords"
         },
         {
           "id": "09_emergencies_health_i_lost_my_passport",
           "type": "sentence",
-          "text": "I lost my passport.",
+          "text": "Perdí mi pasaporte.",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "10_daily_routines",
-      "title": "Daily routines & common verbs",
+      "title": "Rutinas diarias y verbos comunes",
       "items": [
         {
           "id": "10_daily_routines_to_go",
           "type": "word",
-          "text": "to go",
+          "text": "ir",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "10_daily_routines_to_come",
           "type": "word",
-          "text": "to come",
+          "text": "venir",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "10_daily_routines_to_do",
           "type": "word",
-          "text": "to do",
+          "text": "hacer",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "10_daily_routines_to_make",
           "type": "word",
-          "text": "to make",
+          "text": "hacer",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "10_daily_routines_to_like",
           "type": "word",
-          "text": "to like",
+          "text": "gustar",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "10_daily_routines_to_work",
           "type": "word",
-          "text": "to work",
+          "text": "trabajar",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "10_daily_routines_to_study",
           "type": "word",
-          "text": "to study",
+          "text": "estudiar",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "10_daily_routines_i_go_to_work",
           "type": "sentence",
-          "text": "I go to work.",
+          "text": "Voy al trabajo.",
           "practiceType": "missingWords"
         },
         {
           "id": "10_daily_routines_i_like_this",
           "type": "sentence",
-          "text": "I like this.",
+          "text": "Me gusta esto.",
           "practiceType": "missingWords"
         },
         {
           "id": "10_daily_routines_i_do_not_understand",
           "type": "sentence",
-          "text": "I do not understand.",
+          "text": "No entiendo.",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "11_family_people",
-      "title": "Family & people",
+      "title": "Familia y personas",
       "items": [
         {
           "id": "11_family_people_mother",
           "type": "word",
-          "text": "mother",
+          "text": "madre",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "11_family_people_father",
           "type": "word",
-          "text": "father",
+          "text": "padre",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "11_family_people_brother",
           "type": "word",
-          "text": "brother",
+          "text": "hermano",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "11_family_people_sister",
           "type": "word",
-          "text": "sister",
+          "text": "hermana",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "11_family_people_friend",
           "type": "word",
-          "text": "friend",
+          "text": "amigo",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "11_family_people_this_is_my_friend",
           "type": "sentence",
-          "text": "This is my friend.",
+          "text": "Este es mi amigo.",
           "practiceType": "missingWords"
         },
         {
           "id": "11_family_people_i_am_with_my_family",
           "type": "sentence",
-          "text": "I am with my family.",
+          "text": "Estoy con mi familia.",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "12_weather_smalltalk",
-      "title": "Weather & small talk",
+      "title": "Clima y conversación casual",
       "items": [
         {
           "id": "12_weather_smalltalk_hot",
           "type": "word",
-          "text": "hot",
+          "text": "calor",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "12_weather_smalltalk_cold",
           "type": "word",
-          "text": "cold",
+          "text": "frío",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "12_weather_smalltalk_rain",
           "type": "word",
-          "text": "rain",
+          "text": "lluvia",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "12_weather_smalltalk_sunny",
           "type": "word",
-          "text": "sunny",
+          "text": "soleado",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "12_weather_smalltalk_it_is_very_hot_today",
           "type": "sentence",
-          "text": "It is very hot today.",
+          "text": "Hoy hace mucho calor.",
           "practiceType": "missingWords"
         },
         {
           "id": "12_weather_smalltalk_it_might_rain_tomorrow",
           "type": "sentence",
-          "text": "It might rain tomorrow.",
+          "text": "Mañana puede llover.",
           "practiceType": "missingWords"
         },
         {
           "id": "12_weather_smalltalk_have_a_nice_day",
           "type": "sentence",
-          "text": "Have a nice day!",
+          "text": "¡Que tengas un buen día!",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "13_work_study",
-      "title": "Work & study basics",
+      "title": "Trabajo y estudios: lo básico",
       "items": [
         {
           "id": "13_work_study_office",
           "type": "word",
-          "text": "office",
+          "text": "oficina",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "13_work_study_school",
           "type": "word",
-          "text": "school",
+          "text": "escuela",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "13_work_study_meeting",
           "type": "word",
-          "text": "meeting",
+          "text": "reunión",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "13_work_study_project",
           "type": "word",
-          "text": "project",
+          "text": "proyecto",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "13_work_study_i_have_a_meeting",
           "type": "sentence",
-          "text": "I have a meeting.",
+          "text": "Tengo una reunión.",
           "practiceType": "missingWords"
         },
         {
           "id": "13_work_study_i_work_from_home",
           "type": "sentence",
-          "text": "I work from home.",
+          "text": "Trabajo desde casa.",
           "practiceType": "missingWords"
         },
         {
           "id": "13_work_study_i_am_studying",
           "type": "sentence",
-          "text": "I am studying …",
+          "text": "Estoy estudiando …",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "14_plans_invitations",
-      "title": "Making plans & invitations",
+      "title": "Hacer planes e invitaciones",
       "items": [
         {
           "id": "14_plans_invitations_today",
           "type": "word",
-          "text": "today",
+          "text": "hoy",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "14_plans_invitations_tomorrow",
           "type": "word",
-          "text": "tomorrow",
+          "text": "mañana",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "14_plans_invitations_weekend",
           "type": "word",
-          "text": "weekend",
+          "text": "fin de semana",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "14_plans_invitations_what_are_you_doing_tomorrow",
           "type": "sentence",
-          "text": "What are you doing tomorrow?",
+          "text": "¿Qué haces mañana?",
           "practiceType": "missingWords"
         },
         {
           "id": "14_plans_invitations_would_you_like_to",
           "type": "sentence",
-          "text": "Would you like to …?",
+          "text": "¿Te gustaría …?",
           "practiceType": "missingWords"
         },
         {
           "id": "14_plans_invitations_let_us_meet_at",
           "type": "sentence",
-          "text": "Let us meet at …",
+          "text": "Quedemos en …",
           "practiceType": "missingWords"
         },
         {
           "id": "14_plans_invitations_see_you_soon",
           "type": "sentence",
-          "text": "See you soon!",
+          "text": "¡Nos vemos pronto!",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "15_requests_help",
-      "title": "Requests & asking for help",
+      "title": "Peticiones y pedir ayuda",
       "items": [
         {
           "id": "15_requests_help_could_you_help_me_please",
           "type": "sentence",
-          "text": "Could you help me, please?",
+          "text": "¿Podrías ayudarme, por favor?",
           "practiceType": "missingWords"
         },
         {
           "id": "15_requests_help_can_you_repeat_that_please",
           "type": "sentence",
-          "text": "Can you repeat that, please?",
+          "text": "¿Puedes repetir eso, por favor?",
           "practiceType": "missingWords"
         },
         {
           "id": "15_requests_help_please_speak_more_slowly",
           "type": "sentence",
-          "text": "Please speak more slowly.",
+          "text": "Por favor, habla más despacio.",
           "practiceType": "missingWords"
         },
         {
           "id": "15_requests_help_how_do_you_say_this_in_english",
           "type": "sentence",
-          "text": "How do you say this in English?",
+          "text": "¿Cómo se dice esto en inglés?",
           "practiceType": "missingWords"
         },
         {
           "id": "15_requests_help_what_does_this_mean",
           "type": "sentence",
-          "text": "What does this mean?",
+          "text": "¿Qué significa esto?",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "16_phone_internet",
-      "title": "Phone & internet",
+      "title": "Teléfono e internet",
       "items": [
         {
           "id": "16_phone_internet_phone",
           "type": "word",
-          "text": "phone",
+          "text": "teléfono",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "16_phone_internet_number",
           "type": "word",
-          "text": "number",
+          "text": "número",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "16_phone_internet_email",
           "type": "word",
-          "text": "email",
+          "text": "correo electrónico",
           "practiceType": "chooseTranslation"
         },
         {
@@ -759,85 +903,85 @@
         {
           "id": "16_phone_internet_what_is_your_phone_number",
           "type": "sentence",
-          "text": "What is your phone number?",
+          "text": "¿Cuál es tu número de teléfono?",
           "practiceType": "missingWords"
         },
         {
           "id": "16_phone_internet_what_is_the_wifi_password",
           "type": "sentence",
-          "text": "What is the wifi password?",
+          "text": "¿Cuál es la contraseña del wifi?",
           "practiceType": "missingWords"
         },
         {
           "id": "16_phone_internet_can_i_use_your_phone",
           "type": "sentence",
-          "text": "Can I use your phone?",
+          "text": "¿Puedo usar tu teléfono?",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "17_restaurant",
-      "title": "At the restaurant",
+      "title": "En el restaurante",
       "items": [
         {
           "id": "17_restaurant_menu",
           "type": "word",
-          "text": "menu",
+          "text": "menú",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "17_restaurant_table",
           "type": "word",
-          "text": "table",
+          "text": "mesa",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "17_restaurant_bill",
           "type": "word",
-          "text": "bill",
+          "text": "cuenta",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "17_restaurant_a_table_for_two_please",
           "type": "sentence",
-          "text": "A table for two, please.",
+          "text": "Una mesa para dos, por favor.",
           "practiceType": "missingWords"
         },
         {
           "id": "17_restaurant_could_we_have_the_menu",
           "type": "sentence",
-          "text": "Could we have the menu?",
+          "text": "¿Podemos ver el menú?",
           "practiceType": "missingWords"
         },
         {
           "id": "17_restaurant_the_bill_please",
           "type": "sentence",
-          "text": "The bill, please.",
+          "text": "La cuenta, por favor.",
           "practiceType": "missingWords"
         },
         {
           "id": "17_restaurant_do_you_have_vegetarian_options",
           "type": "sentence",
-          "text": "Do you have vegetarian options?",
+          "text": "¿Tienen opciones vegetarianas?",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "18_transportation_details",
-      "title": "Transportation details",
+      "title": "Transporte: detalles",
       "items": [
         {
           "id": "18_transportation_details_bus",
           "type": "word",
-          "text": "bus",
+          "text": "autobús",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "18_transportation_details_train",
           "type": "word",
-          "text": "train",
+          "text": "tren",
           "practiceType": "chooseTranslation"
         },
         {
@@ -849,136 +993,137 @@
         {
           "id": "18_transportation_details_schedule",
           "type": "word",
-          "text": "schedule",
+          "text": "horario",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "18_transportation_details_what_time_does_the_bus_leave",
           "type": "sentence",
-          "text": "What time does the bus leave?",
+          "text": "¿A qué hora sale el autobús?",
           "practiceType": "missingWords"
         },
         {
           "id": "18_transportation_details_where_can_i_buy_a_ticket",
           "type": "sentence",
-          "text": "Where can I buy a ticket?",
+          "text": "¿Dónde puedo comprar un billete?",
           "practiceType": "missingWords"
         },
         {
           "id": "18_transportation_details_is_there_a_discount",
           "type": "sentence",
-          "text": "Is there a discount?",
+          "text": "¿Hay descuento?",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "19_housing_utilities",
-      "title": "Housing & utilities",
+      "title": "Vivienda y servicios",
       "items": [
         {
           "id": "19_housing_utilities_apartment",
           "type": "word",
-          "text": "apartment",
+          "text": "apartamento",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "19_housing_utilities_room",
           "type": "word",
-          "text": "room",
+          "text": "habitación",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "19_housing_utilities_key",
           "type": "word",
-          "text": "key",
+          "text": "llave",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "19_housing_utilities_electricity",
           "type": "word",
-          "text": "electricity",
+          "text": "electricidad",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "19_housing_utilities_water",
           "type": "word",
-          "text": "water",
+          "text": "agua",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "19_housing_utilities_i_am_looking_for_an_apartment",
           "type": "sentence",
-          "text": "I am looking for an apartment.",
+          "text": "Estoy buscando un apartamento.",
           "practiceType": "missingWords"
         },
         {
           "id": "19_housing_utilities_the_key_does_not_work",
           "type": "sentence",
-          "text": "The key does not work.",
+          "text": "La llave no funciona.",
           "practiceType": "missingWords"
         },
         {
           "id": "19_housing_utilities_there_is_no_hot_water",
           "type": "sentence",
-          "text": "There is no hot water.",
+          "text": "No hay agua caliente.",
           "practiceType": "missingWords"
         }
       ]
     },
     {
       "id": "20_connectors_advanced",
-      "title": "Connectors & advanced phrases",
+      "title": "Conectores y frases avanzadas",
       "items": [
         {
           "id": "20_connectors_advanced_because",
           "type": "word",
-          "text": "because",
+          "text": "porque",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "20_connectors_advanced_although",
           "type": "word",
-          "text": "although",
+          "text": "aunque",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "20_connectors_advanced_however",
           "type": "word",
-          "text": "however",
+          "text": "sin embargo",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "20_connectors_advanced_therefore",
           "type": "word",
-          "text": "therefore",
+          "text": "por lo tanto",
           "practiceType": "chooseTranslation"
         },
         {
           "id": "20_connectors_advanced_could_you_please_recommend_a_good_place_to_eat",
           "type": "sentence",
-          "text": "Could you please recommend a good place to eat?",
+          "text": "¿Podrías recomendarme un buen lugar para comer, por favor?",
           "practiceType": "missingWords"
         },
         {
           "id": "20_connectors_advanced_i_have_been_waiting_for_a_long_time",
           "type": "sentence",
-          "text": "I have been waiting for a long time.",
+          "text": "He estado esperando mucho tiempo.",
           "practiceType": "missingWords"
         },
         {
           "id": "20_connectors_advanced_would_you_mind_helping_me_with_this_form",
           "type": "sentence",
-          "text": "Would you mind helping me with this form?",
+          "text": "¿Te importaría ayudarme con este formulario?",
           "practiceType": "missingWords"
         },
         {
           "id": "20_connectors_advanced_i_prefer_to_pay_by_card_because_it_is_faster",
           "type": "sentence",
-          "text": "I prefer to pay by card because it is faster.",
+          "text": "Prefiero pagar con tarjeta porque es más rápido.",
           "practiceType": "missingWords"
         }
       ]
     }
   ]
 }
+

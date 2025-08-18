@@ -17,60 +17,6 @@
           "type": "word",
           "text": "hola",
           "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "01_essentials_please",
-          "type": "word",
-          "text": "por favor",
-          "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "01_essentials_thank_you",
-          "type": "word",
-          "text": "gracias",
-          "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "01_essentials_thanks",
-          "type": "word",
-          "text": "gracias",
-          "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "01_essentials_yes",
-          "type": "word",
-          "text": "sí",
-          "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "01_essentials_no",
-          "type": "word",
-          "text": "no",
-          "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "01_essentials_excuse_me",
-          "type": "sentence",
-          "text": "Disculpe.",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "01_essentials_sorry",
-          "type": "sentence",
-          "text": "Lo siento.",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "01_essentials_good_morning",
-          "type": "sentence",
-          "text": "Buenos días.",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "01_essentials_good_evening",
-          "type": "sentence",
-          "text": "Buenas noches.",
-          "practiceType": "missingWords"
         }
       ]
     },
@@ -88,48 +34,6 @@
           "id": "02_introductions_what_is_your_name",
           "type": "sentence",
           "text": "¿Cómo te llamas?",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "02_introductions_nice_to_meet_you",
-          "type": "sentence",
-          "text": "Mucho gusto.",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "02_introductions_how_are_you",
-          "type": "sentence",
-          "text": "¿Cómo estás?",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "02_introductions_i_am_fine_thank_you",
-          "type": "sentence",
-          "text": "Estoy bien, gracias.",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "02_introductions_where_are_you_from",
-          "type": "sentence",
-          "text": "¿De dónde eres?",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "02_introductions_i_am_from",
-          "type": "sentence",
-          "text": "Soy de …",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "02_introductions_do_you_speak_english",
-          "type": "sentence",
-          "text": "¿Hablas inglés?",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "02_introductions_i_speak_a_little",
-          "type": "sentence",
-          "text": "Hablo un poco.",
           "practiceType": "missingWords"
         }
       ]
@@ -149,54 +53,6 @@
           "type": "word",
           "text": "tú",
           "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "03_core_verbs_pronouns_he",
-          "type": "word",
-          "text": "él",
-          "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "03_core_verbs_pronouns_she",
-          "type": "word",
-          "text": "ella",
-          "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "03_core_verbs_pronouns_we",
-          "type": "word",
-          "text": "nosotros",
-          "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "03_core_verbs_pronouns_they",
-          "type": "word",
-          "text": "ellos",
-          "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "03_core_verbs_pronouns_i_am",
-          "type": "sentence",
-          "text": "Soy …",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "03_core_verbs_pronouns_i_have",
-          "type": "sentence",
-          "text": "Tengo …",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "03_core_verbs_pronouns_i_want",
-          "type": "sentence",
-          "text": "Quiero …",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "03_core_verbs_pronouns_i_need",
-          "type": "sentence",
-          "text": "Necesito …",
-          "practiceType": "missingWords"
         }
       ]
     },

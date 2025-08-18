@@ -174,6 +174,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
           {/* Nodes */}
           {steps.map((s, idx) => {
             const pos = positions[idx];
+            const isCompleted = idx + 1 <= maxCompletedIndex;
             const isEnabled = idx + 1 <= Math.min((steps?.length || 0), maxCompletedIndex + 3);
             return (
               <TouchableOpacity key={s.id}
@@ -185,7 +186,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
                   },
                 ]}
                 accessibilityRole="button"
-                accessibilityLabel={`Step ${idx + 1}: ${s.title}`}
+                accessibilityLabel={`Step ${idx + 1}: ${s.title}${isCompleted ? ' (completed)' : ''}`}
                 onPress={() => {
                   if (!isEnabled) return;
                   const parent = navigation.getParent?.();
@@ -197,12 +198,16 @@ function BabyStepsPathScreen(): React.JSX.Element {
                 <View style={[
                   styles.nodeCircle,
                   {
-                    backgroundColor: isDark ? '#1A73E8' : '#E6F0FF',
-                    borderColor: isDark ? '#4DA3FF' : '#BBD6FF',
+                    backgroundColor: isCompleted ? (isDark ? '#12351c' : '#E6F7E9') : (isDark ? '#1A73E8' : '#E6F0FF'),
+                    borderColor: isCompleted ? '#2E7D32' : (isDark ? '#4DA3FF' : '#BBD6FF'),
                     opacity: isEnabled ? 1.0 : 0.45,
                   },
                 ]}>
-                  <Text style={[styles.nodeIndex, { color: isDark ? '#EAF3FF' : '#0A57CC' }]}>{idx + 1}</Text>
+                  {isCompleted ? (
+                    <Text style={[styles.checkMark, { color: isDark ? '#C8E6C9' : '#1B5E20' }]} accessibilityLabel="Completed">✓</Text>
+                  ) : (
+                    <Text style={[styles.nodeIndex, { color: isDark ? '#EAF3FF' : '#0A57CC' }]}>{idx + 1}</Text>
+                  )}
                 </View>
                 <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: isEnabled ? 1.0 : 0.6 }]}>{s.title}</Text>
               </TouchableOpacity>
@@ -256,6 +261,10 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '600',
     textAlign: 'center',
+  },
+  checkMark: {
+    fontSize: 28,
+    fontWeight: '900',
   },
 });
 

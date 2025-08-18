@@ -17,6 +17,60 @@
           "type": "word",
           "text": "hi",
           "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_please",
+          "type": "word",
+          "text": "please",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_thank_you",
+          "type": "word",
+          "text": "thank you",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_thanks",
+          "type": "word",
+          "text": "thanks",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_yes",
+          "type": "word",
+          "text": "yes",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_no",
+          "type": "word",
+          "text": "no",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_excuse_me",
+          "type": "sentence",
+          "text": "Excuse me.",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "01_essentials_sorry",
+          "type": "sentence",
+          "text": "Sorry.",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "01_essentials_good_morning",
+          "type": "sentence",
+          "text": "Good morning.",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "01_essentials_good_evening",
+          "type": "sentence",
+          "text": "Good evening.",
+          "practiceType": "missingWords"
         }
       ]
     },
@@ -34,6 +88,48 @@
           "id": "02_introductions_what_is_your_name",
           "type": "sentence",
           "text": "What is your name?",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_nice_to_meet_you",
+          "type": "sentence",
+          "text": "Nice to meet you.",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_how_are_you",
+          "type": "sentence",
+          "text": "How are you?",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_i_am_fine_thank_you",
+          "type": "sentence",
+          "text": "I am fine, thank you.",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_where_are_you_from",
+          "type": "sentence",
+          "text": "Where are you from?",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_i_am_from",
+          "type": "sentence",
+          "text": "I am from …",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_do_you_speak_english",
+          "type": "sentence",
+          "text": "Do you speak English?",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "02_introductions_i_speak_a_little",
+          "type": "sentence",
+          "text": "I speak a little.",
           "practiceType": "missingWords"
         }
       ]
@@ -53,6 +149,54 @@
           "type": "word",
           "text": "you",
           "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_he",
+          "type": "word",
+          "text": "he",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_she",
+          "type": "word",
+          "text": "she",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_we",
+          "type": "word",
+          "text": "we",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_they",
+          "type": "word",
+          "text": "they",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_am",
+          "type": "sentence",
+          "text": "I am …",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_have",
+          "type": "sentence",
+          "text": "I have …",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_want",
+          "type": "sentence",
+          "text": "I want …",
+          "practiceType": "missingWords"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_need",
+          "type": "sentence",
+          "text": "I need …",
+          "practiceType": "missingWords"
         }
       ]
     },

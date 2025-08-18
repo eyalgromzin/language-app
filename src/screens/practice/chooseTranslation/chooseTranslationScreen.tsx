@@ -120,13 +120,16 @@ function chooseTranslationScreen(): React.JSX.Element {
       const content = await RNFS.readFile(filePath, 'utf8');
       const parsed: unknown = JSON.parse(content);
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]).map(ensureCounters) : [];
-      const allTranslations = Array.from(
-        new Set(
-          arr
-            .map((w) => w.translation)
-            .filter((t): t is string => !!t)
-        )
-      );
+      const normalize = (s: string) => s.trim().replace(/\s+/g, ' ').toLowerCase();
+      const uniqueTranslationsMap = new Map<string, string>();
+      for (const t of arr.map((w) => w.translation).filter((t): t is string => !!t)) {
+        const normalized = normalize(t);
+        if (normalized.length === 0) continue;
+        if (!uniqueTranslationsMap.has(normalized)) {
+          uniqueTranslationsMap.set(normalized, t.trim().replace(/\s+/g, ' '));
+        }
+      }
+      const allTranslations = Array.from(uniqueTranslationsMap.values());
       setAllTranslationsPool(allTranslations);
       const filtered = arr
         .filter((w) => w.word && w.translation)
@@ -171,13 +174,26 @@ function chooseTranslationScreen(): React.JSX.Element {
     lastWordKeyRef.current = entries[idx].word;
 
     const correct = entries[idx];
-    const basePool = allTranslationsPool.filter((t) => t && t !== correct.translation);
+    const normalize = (s: string) => s.trim().replace(/\s+/g, ' ').toLowerCase();
+    const correctLabel = (correct.translation || '').trim().replace(/\s+/g, ' ');
+    const correctNorm = normalize(correctLabel);
+    const basePool = allTranslationsPool.filter((t) => t && normalize(t) !== correctNorm);
     const picked = sampleN(basePool, Math.min(7, basePool.length));
     const combined: OptionItem[] = [
-      { key: `c-${correct.word}`, label: correct.translation, isCorrect: true },
+      { key: `c-${correct.word}`,
+        label: correctLabel,
+        isCorrect: true },
       ...picked.map((t, i) => ({ key: `d-${i}-${t}`, label: t, isCorrect: false })),
     ];
-    setOptions(shuffleArray(combined));
+    // Final guard: ensure unique labels by normalized form
+    const seen = new Set<string>();
+    const uniqueCombined = combined.filter((o) => {
+      const k = normalize(o.label);
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
+    setOptions(shuffleArray(uniqueCombined));
     setSelectedKey(null);
     setWrongKey(null);
     setWrongAttempts(0);

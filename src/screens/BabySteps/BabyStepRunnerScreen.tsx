@@ -84,6 +84,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
   const [inputs, setInputs] = React.useState<Record<number, string>>({});
   const [wrongKey, setWrongKey] = React.useState<string | null>(null);
   const [selectedKey, setSelectedKey] = React.useState<string | null>(null);
+  const [numCorrect, setNumCorrect] = React.useState<number>(0);
+  const [numWrong, setNumWrong] = React.useState<number>(0);
+  const [currentHadMistake, setCurrentHadMistake] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     let mounted = true;
@@ -173,6 +176,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         setInputs({});
         setWrongKey(null);
         setSelectedKey(null);
+        setNumCorrect(0);
+        setNumWrong(0);
+        setCurrentHadMistake(false);
       } finally {
         if (!mounted) return;
         setLoading(false);
@@ -187,11 +193,17 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     if (current?.kind !== 'chooseTranslation') return;
     if (selectedKey) return;
     if (opt === current.correctTranslation) {
+      // If there was any mistake on this item before getting it right, requeue it to the end
+      setTasks((prev) => (currentHadMistake ? [...prev, prev[currentIdx]] : prev));
+      setCurrentHadMistake(false);
       setSelectedKey(opt);
-      setTimeout(() => setCurrentIdx((i) => Math.min(tasks.length - 1, i + 1)), 800);
+      setNumCorrect((c) => c + 1);
+      setTimeout(() => setCurrentIdx((i) => i + 1), 800);
       return;
     }
     setWrongKey(opt);
+    setNumWrong((c) => c + 1);
+    setCurrentHadMistake(true);
     setTimeout(() => setWrongKey(null), 1200);
   };
 
@@ -208,9 +220,16 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     const allFilled = current.missingIndices.every((i) => (inputs[i] ?? '').trim() !== '');
     if (!allFilled) return;
     const ok = current.missingIndices.every((i) => (inputs[i] ?? '') === current.tokens[i]);
+    if (ok) {
+      setNumCorrect((c) => c + 1);
+    } else {
+      // Requeue failed item to the end of the queue
+      setNumWrong((c) => c + 1);
+      setTasks((prev) => [...prev, prev[currentIdx]]);
+    }
     const t = setTimeout(() => {
       setInputs({});
-      setCurrentIdx((i) => Math.min(tasks.length - 1, i + 1));
+      setCurrentIdx((i) => i + 1);
     }, ok ? 600 : 1200);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -220,8 +239,19 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     setInputs({});
     setWrongKey(null);
     setSelectedKey(null);
-    setCurrentIdx((i) => Math.min(tasks.length - 1, i + 1));
+    setNumWrong((c) => c + 1);
+    // Requeue skipped item to the end and advance
+    setTasks((prev) => [...prev, prev[currentIdx]]);
+    setCurrentIdx((i) => i + 1);
   };
+
+  // When moving to a new item, clear transient UI state
+  React.useEffect(() => {
+    setSelectedKey(null);
+    setWrongKey(null);
+    setInputs({});
+    setCurrentHadMistake(false);
+  }, [currentIdx]);
 
   const onFinish = async () => {
     try {
@@ -245,10 +275,14 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     );
   }
 
-  if (!current) {
+  // When we've advanced past the end, the user has completed all queued tasks correctly
+  if (currentIdx >= tasks.length) {
     return (
       <View style={styles.centered}>
-        <Text>No tasks in this step.</Text>
+        <Text style={styles.title}>Step {stepIndex + 1} complete!</Text>
+        <TouchableOpacity style={[styles.finishButton, { marginTop: 16 }]} onPress={onFinish} accessibilityRole="button" accessibilityLabel="Finish step">
+          <Text style={styles.finishText}>Finish step</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -256,7 +290,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.topRow}>
-        <Text style={styles.title}>Step {stepIndex + 1} • {currentIdx + 1}/{tasks.length}</Text>
+        <Text style={styles.title}>Step {stepIndex + 1} • {currentIdx + 1}/{tasks.length} • {numCorrect} correct • {numWrong} wrong</Text>
         {currentIdx + 1 < tasks.length ? (
           <TouchableOpacity style={styles.skipButton} onPress={onSkip} accessibilityRole="button" accessibilityLabel="Skip">
             <Text style={styles.skipText}>Skip</Text>
@@ -320,7 +354,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         </View>
       )}
 
-      {currentIdx + 1 >= tasks.length ? (
+      {currentIdx + 1 >= tasks.length && !currentHadMistake ? (
         <TouchableOpacity style={styles.finishButton} onPress={onFinish} accessibilityRole="button" accessibilityLabel="Finish step">
           <Text style={styles.finishText}>Finish step</Text>
         </TouchableOpacity>
