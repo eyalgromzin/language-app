@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimensions } from 'react-native';
+import { Svg, Path } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
 
@@ -108,39 +109,37 @@ function BabyStepsPathScreen(): React.JSX.Element {
           style={styles.canvas}
           onLayout={(e) => setContainerWidth(e.nativeEvent.layout.width)}
         >
-          {/* Connectors */}
-          {positions.map((pos, idx) => {
-            if (idx === 0) return null;
-            const prev = positions[idx - 1];
-            const x1 = prev.x + NODE_DIAMETER / 2;
-            const y1 = prev.y + NODE_DIAMETER / 2;
-            const x2 = pos.x + NODE_DIAMETER / 2;
-            const y2 = pos.y + NODE_DIAMETER / 2;
-            const dx = x2 - x1;
-            const dy = y2 - y1;
-            const length = Math.sqrt(dx * dx + dy * dy);
-            const angleRad = Math.atan2(dy, dx);
-            const angleDeg = (angleRad * 180) / Math.PI;
-            const midX = (x1 + x2) / 2;
-            const midY = (y1 + y2) / 2;
-            return (
-              <View
-                key={`line-${idx}`}
-                style={[
-                  styles.connector,
-                  {
-                    width: length,
-                    transform: [
-                      { translateX: midX - length / 2 },
-                      { translateY: midY - 2 },
-                      { rotate: `${angleDeg}deg` },
-                    ],
-                    backgroundColor: isDark ? '#4DA3FF' : '#007AFF',
-                  },
-                ]}
-              />
-            );
-          })}
+          {/* Curved connectors using SVG */}
+          <Svg width={containerWidth} height={contentHeight} style={StyleSheet.absoluteFillObject}>
+            {positions.map((pos, idx) => {
+              if (idx === 0) return null;
+              const prev = positions[idx - 1];
+              const x1 = prev.x + NODE_DIAMETER / 2;
+              const y1 = prev.y + NODE_DIAMETER / 2;
+              const x2 = pos.x + NODE_DIAMETER / 2;
+              const y2 = pos.y + NODE_DIAMETER / 2;
+              const dx = x2 - x1;
+              // Use horizontal curvature proportional to horizontal distance, clamped for aesthetics
+              const curvature = Math.min(80, Math.max(24, Math.abs(dx) * 0.6));
+              const c1x = x1 + Math.sign(dx) * curvature;
+              const c1y = y1;
+              const c2x = x2 - Math.sign(dx) * curvature;
+              const c2y = y2;
+              const d = `M ${x1} ${y1} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${x2} ${y2}`;
+              return (
+                <Path
+                  key={`curve-${idx}`}
+                  d={d}
+                  stroke={isDark ? '#4DA3FF' : '#007AFF'}
+                  strokeWidth={4}
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  opacity={0.9}
+                />
+              );
+            })}
+          </Svg>
 
           {/* Nodes */}
           {steps.map((s, idx) => {
@@ -184,12 +183,6 @@ const styles = StyleSheet.create({
   },
   canvas: {
     flex: 1,
-  },
-  connector: {
-    position: 'absolute',
-    height: 4,
-    borderRadius: 2,
-    opacity: 0.9,
   },
   nodeContainer: {
     position: 'absolute',

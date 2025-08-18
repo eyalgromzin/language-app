@@ -4,6 +4,7 @@ module.exports = {
     'node_modules/(?!(react-native|@react-native|@react-navigation|react-native-webview)/)'
   ],
   moduleNameMapper: {
+    '^react-native-svg$': '<rootDir>/__mocks__/react-native-svg.js',
     '^react-native-webview$': '<rootDir>/__mocks__/react-native-webview.js',
     '^react-native-youtube-iframe$': '<rootDir>/__mocks__/empty.js',
     '^@react-native-async-storage/async-storage$': '@react-native-async-storage/async-storage/jest/async-storage-mock',
