@@ -91,7 +91,16 @@ function tokenizeSentence(sentence: string): string[] {
     .filter(Boolean);
 }
 
-function FormulateSentenseScreen(): React.JSX.Element {
+type EmbeddedProps = {
+  embedded?: boolean;
+  sentence?: string;
+  translatedSentence?: string;
+  tokens?: string[];
+  shuffledTokens?: string[];
+  onFinished?: (isCorrect: boolean) => void;
+};
+
+function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const RANDOM_GAME_ROUTES: string[] = [
@@ -112,10 +121,10 @@ function FormulateSentenseScreen(): React.JSX.Element {
     navigation.navigate(target as never, { surprise: true } as never);
   }, [navigation, route]);
 
-  const [loading, setLoading] = React.useState<boolean>(true);
+  const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [entries, setEntries] = React.useState<WordEntry[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
-  const [shuffledTokens, setShuffledTokens] = React.useState<string[]>([]);
+  const [shuffledTokens, setShuffledTokens] = React.useState<string[]>(props.embedded ? (props.shuffledTokens || tokenizeSentence(props.sentence || '')) : []);
   const [selectedIndices, setSelectedIndices] = React.useState<number[]>([]);
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
@@ -127,6 +136,11 @@ function FormulateSentenseScreen(): React.JSX.Element {
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
   const loadBase = React.useCallback(async () => {
+    if (props.embedded) {
+      // In embedded mode we do not load entries; data is passed via props
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     try {
       let totalThreshold = 6;
@@ -233,23 +247,32 @@ function FormulateSentenseScreen(): React.JSX.Element {
   }, [pickNextIndex]);
 
   React.useEffect(() => {
-    loadBase();
-  }, [loadBase]);
+    if (!props.embedded) {
+      loadBase();
+    }
+  }, [loadBase, props.embedded]);
 
   useFocusEffect(
     React.useCallback(() => {
-      loadBase();
-    }, [loadBase])
+      if (!props.embedded) {
+        loadBase();
+      }
+    }, [loadBase, props.embedded])
   );
 
   React.useEffect(() => {
+    if (props.embedded) return;
     if (!loading) {
       prepareRound(entries);
     }
-  }, [loading, entries, prepareRound]);
+  }, [loading, entries, prepareRound, props.embedded]);
 
-  const current = entries[currentIndex];
-  const expectedTokens = current?.sentence ? tokenizeSentence(current.sentence) : [];
+  const current = props.embedded
+    ? ({ translation: props.translatedSentence || '', sentence: props.sentence || '' } as Pick<WordEntry, 'translation' | 'sentence'>)
+    : entries[currentIndex];
+  const expectedTokens = props.embedded
+    ? (props.tokens || tokenizeSentence(props.sentence || ''))
+    : (current?.sentence ? tokenizeSentence(current.sentence) : []);
   const selectedTokens = selectedIndices.map((i) => shuffledTokens[i]);
 
   const moveToNext = React.useCallback(() => {
@@ -308,7 +331,13 @@ function FormulateSentenseScreen(): React.JSX.Element {
     if (isCorrect) {
       setShowWrongToast(false);
       setShowCorrectToast(true);
-      writeBackIncrement(current.word);
+      if (props.embedded && props.onFinished) {
+        const t = setTimeout(() => {
+          props.onFinished?.(true);
+        }, 600);
+        return () => clearTimeout(t as unknown as number);
+      }
+      writeBackIncrement(current as any as string);
       const t = setTimeout(() => {
         prepareRound(entries);
       }, 2000);
@@ -316,6 +345,12 @@ function FormulateSentenseScreen(): React.JSX.Element {
     }
     setShowCorrectToast(false);
     setShowWrongToast(true);
+    if (props.embedded && props.onFinished) {
+      const t = setTimeout(() => {
+        props.onFinished?.(false);
+      }, 1200);
+      return;
+    }
   };
 
   const onReset = () => {
@@ -324,7 +359,7 @@ function FormulateSentenseScreen(): React.JSX.Element {
     setShowCorrectToast(false);
   };
 
-  if (loading) {
+  if (!props.embedded && loading) {
     return (
       <View style={styles.centered}>
         <ActivityIndicator />
@@ -332,10 +367,50 @@ function FormulateSentenseScreen(): React.JSX.Element {
     );
   }
 
-  if (!current || expectedTokens.length === 0) {
+  if (!props.embedded && (!current || expectedTokens.length === 0)) {
     return (
       <View style={styles.centered}>
         <Text style={styles.emptyText}>No sentences to practice yet.</Text>
+      </View>
+    );
+  }
+
+  if (props.embedded) {
+    return (
+      <View>
+        <View style={styles.wordCard}>
+          <Text style={styles.wordText}>{current?.translation}</Text>
+        </View>
+        <View style={styles.assembledBox}>
+          {selectedIndices.length === 0 ? (
+            <Text style={styles.placeholder}>Tap words below in order</Text>
+          ) : (
+            <View style={styles.tokenRow}>
+              {selectedIndices.map((i) => (
+                <View key={`sel-${i}`} style={styles.tokenChipSelected}>
+                  <Text style={styles.tokenText}>{shuffledTokens[i]}</Text>
+                </View>
+              ))}
+            </View>
+          )}
+        </View>
+        <View style={styles.tokensWrap}>
+          {shuffledTokens.map((tok, i) => {
+            const used = selectedIndices.includes(i);
+            return (
+              <TouchableOpacity
+                key={`tok-${i}-${tok}`}
+                style={[styles.tokenChip, used && styles.tokenChipUsed]}
+                onPress={() => onPickIndex(i)}
+                disabled={used}
+                accessibilityRole="button"
+                accessibilityLabel={tok}
+              >
+                <Text style={styles.tokenText}>{tok}</Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
       </View>
     );
   }

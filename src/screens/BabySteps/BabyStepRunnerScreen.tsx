@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-nati
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
+import FormulateSentenseScreen from '../practice/formulateSentense/FormulateSentenseScreen';
 
 type StepItem = {
   id: string;
@@ -435,41 +436,22 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           </View>
         </View>
       ) : current.kind === 'formulateSentense' ? (
-        <View>
-          <View style={styles.wordCard}>
-            <Text style={styles.translationText}>{current.translatedSentence}</Text>
-          </View>
-          <View style={styles.assembledBox}>
-            {selectedIndices.length === 0 ? (
-              <Text style={styles.placeholder}>Tap words below in order</Text>
-            ) : (
-              <View style={styles.tokenRow}>
-                {selectedIndices.map((i) => (
-                  <View key={`sel-${i}`} style={styles.tokenChipSelected}>
-                    <Text style={styles.tokenText}>{current.shuffledTokens[i]}</Text>
-                  </View>
-                ))}
-              </View>
-            )}
-          </View>
-          <View style={styles.tokensWrap}>
-            {current.shuffledTokens.map((tok: string, i: number) => {
-              const used = selectedIndices.includes(i);
-              return (
-                <TouchableOpacity
-                  key={`tok-${i}-${tok}`}
-                  style={[styles.tokenChip, used && styles.tokenChipUsed]}
-                  onPress={() => onPickFormulateIndex(i)}
-                  disabled={used}
-                  accessibilityRole="button"
-                  accessibilityLabel={tok}
-                >
-                  <Text style={styles.tokenText}>{tok}</Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-        </View>
+        <FormulateSentenseScreen
+          embedded
+          sentence={current.sentence}
+          translatedSentence={current.translatedSentence}
+          tokens={current.tokens}
+          shuffledTokens={current.shuffledTokens}
+          onFinished={(ok) => {
+            if (ok) {
+              setNumCorrect((c) => c + 1);
+            } else {
+              setNumWrong((c) => c + 1);
+              setTasks((prev) => [...prev, prev[currentIdx]]);
+            }
+            setCurrentIdx((i) => i + 1);
+          }}
+        />
       ) : null}
 
       
