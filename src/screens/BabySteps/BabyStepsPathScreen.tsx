@@ -205,6 +205,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
             const isCompleted = idx + 1 <= maxCompletedIndex;
             const isEnabled = idx + 1 <= Math.min((steps?.length || 0), maxCompletedIndex + 3);
             const emoji = getEmojiForStep(s, idx);
+            const isLeft = idx % 2 === 0;
             return (
               <TouchableOpacity key={s.id}
                 style={[
@@ -246,7 +247,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
                   </View>
                   {isCompleted ? (
                     <Text
-                      style={[styles.completedV, { color: isDark ? '#C8E6C9' : '#2E7D32' }]}
+                      style={[styles.completedV, isLeft ? styles.completedVLeft : styles.completedVRight, { color: isDark ? '#C8E6C9' : '#2E7D32' }]}
                       accessibilityLabel="Completed"
                     >
                       V
@@ -326,9 +327,14 @@ const styles = StyleSheet.create({
   completedV: {
     position: 'absolute',
     top: -8,
-    left: -16,
     fontSize: 16,
     fontWeight: '900',
+  },
+  completedVLeft: {
+    left: -16,
+  },
+  completedVRight: {
+    right: -16,
   },
 });
 
