@@ -4,6 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
 import FormulateSentenseScreen from '../practice/formulateSentense/FormulateSentenseScreen';
+import ChooseTranslationScreen from '../practice/chooseTranslation/chooseTranslationScreen';
 import MissingWordsScreen from '../practice/missingWords/MissingWordsScreen';
 
 type StepItem = {
@@ -383,29 +384,21 @@ function BabyStepRunnerScreen(): React.JSX.Element {
       </View>
 
       {current.kind === 'chooseTranslation' ? (
-        <View>
-          <View style={styles.wordCard}>
-            <Text style={styles.wordText}>{current.sourceWord}</Text>
-          </View>
-          <View style={styles.optionsWrap}>
-            {current.options.map((opt) => {
-              const isCorrect = opt === current.correctTranslation;
-              const isSelected = selectedKey === opt;
-              const isWrong = wrongKey === opt;
-              return (
-                <TouchableOpacity
-                  key={opt}
-                  style={[styles.optionButton, isSelected && isCorrect && styles.optionCorrect, isWrong && styles.optionWrong]}
-                  onPress={() => onPickTranslation(opt)}
-                  accessibilityRole="button"
-                  accessibilityLabel={opt}
-                >
-                  <Text style={styles.optionText}>{opt}</Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-        </View>
+        <ChooseTranslationScreen
+          embedded
+          sourceWord={current.sourceWord}
+          correctTranslation={current.correctTranslation}
+          options={current.options}
+          onFinished={(ok: boolean) => {
+            if (ok) {
+              setNumCorrect((c) => c + 1);
+            } else {
+              setNumWrong((c) => c + 1);
+              setTasks((prev) => [...prev, prev[currentIdx]]);
+            }
+            setCurrentIdx((i) => i + 1);
+          }}
+        />
       ) : current.kind === 'missingWords' ? (
         <MissingWordsScreen
           embedded

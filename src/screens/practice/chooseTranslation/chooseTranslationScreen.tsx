@@ -26,6 +26,14 @@ type OptionItem = {
   isCorrect: boolean;
 };
 
+type EmbeddedProps = {
+  embedded?: boolean;
+  sourceWord?: string;
+  correctTranslation?: string;
+  options?: string[];
+  onFinished?: (isCorrect: boolean) => void;
+};
+
 function ensureCounters(entry: WordEntry): WordEntry {
   return {
     ...entry,
@@ -62,7 +70,7 @@ function sampleN<T>(arr: T[], n: number): T[] {
   return result;
 }
 
-function chooseTranslationScreen(): React.JSX.Element {
+function chooseTranslationScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const RANDOM_GAME_ROUTES: string[] = [
@@ -80,7 +88,7 @@ function chooseTranslationScreen(): React.JSX.Element {
     const target = choices[Math.floor(Math.random() * choices.length)] as string;
     navigation.navigate(target as never, { surprise: true } as never);
   }, [navigation, route]);
-  const [loading, setLoading] = React.useState<boolean>(true);
+  const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
   const [options, setOptions] = React.useState<OptionItem[]>([]);
@@ -98,6 +106,10 @@ function chooseTranslationScreen(): React.JSX.Element {
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
   const loadBase = React.useCallback(async () => {
+    if (props.embedded) {
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     try {
       let threshold = 3;
@@ -152,7 +164,7 @@ function chooseTranslationScreen(): React.JSX.Element {
     } finally {
       setLoading(false);
     }
-  }, [filePath]);
+  }, [filePath, props.embedded]);
 
   const pickNextIndex = React.useCallback((items: WordEntry[]) => {
     if (items.length === 0) return 0;
@@ -208,23 +220,66 @@ function chooseTranslationScreen(): React.JSX.Element {
 
   useFocusEffect(
     React.useCallback(() => {
-      loadBase();
-    }, [loadBase])
+      if (!props.embedded) {
+        loadBase();
+      }
+    }, [loadBase, props.embedded])
   );
 
   React.useEffect(() => {
+    if (props.embedded) return;
     if (!loading) {
       prepareRound(allEntries);
     }
-  }, [loading, allEntries, prepareRound]);
+  }, [loading, allEntries, prepareRound, props.embedded]);
 
-  const current = allEntries[currentIndex];
+  const current = props.embedded
+    ? ({ word: props.sourceWord || '', translation: props.correctTranslation || '' } as WordEntry)
+    : allEntries[currentIndex];
+
+  // Build options in embedded mode from props
+  React.useEffect(() => {
+    if (!props.embedded) return;
+    const normalize = (s: string) => (s || '').trim().replace(/\s+/g, ' ').toLowerCase();
+    const baseOptions = Array.isArray(props.options) ? props.options : [];
+    const correctLabel = (props.correctTranslation || '').trim().replace(/\s+/g, ' ');
+    const correctNorm = normalize(correctLabel);
+    const uniqueMap = new Map<string, string>();
+    // Ensure uniqueness by normalized form and include correct
+    if (correctLabel.length > 0) {
+      uniqueMap.set(correctNorm, correctLabel);
+    }
+    for (const o of baseOptions) {
+      const norm = normalize(o);
+      if (!uniqueMap.has(norm)) uniqueMap.set(norm, (o || '').trim().replace(/\s+/g, ' '));
+    }
+    const combined = Array.from(uniqueMap.values());
+    const items: OptionItem[] = combined.map((label, i) => ({
+      key: `${normalize(label)}-${i}`,
+      label,
+      isCorrect: normalize(label) === correctNorm,
+    }));
+    // Shuffle
+    const a = [...items];
+    for (let i = a.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    setOptions(a);
+    setSelectedKey(null);
+    setWrongKey(null);
+    setWrongAttempts(0);
+    setShowWrongToast(false);
+    setShowCorrectToast(false);
+    setRevealCorrect(false);
+  }, [props.embedded, props.options, props.correctTranslation, props.sourceWord]);
 
   const moveToNext = React.useCallback(() => {
+    if (props.embedded) return;
     setShowCorrectToast(false);
     setShowWrongToast(false);
     prepareRound(allEntries);
-  }, [prepareRound, allEntries]);
+  }, [prepareRound, allEntries, props.embedded]);
 
   const writeBackIncrement = React.useCallback(async (wordKey: string) => {
     try {
@@ -267,6 +322,19 @@ function chooseTranslationScreen(): React.JSX.Element {
   const onPick = (opt: OptionItem) => {
     if (!current) return;
     if (selectedKey || revealCorrect) return; // already answered or revealed
+    if (props.embedded) {
+      if (opt.isCorrect) {
+        setSelectedKey(opt.key);
+        setShowWrongToast(false);
+        setShowCorrectToast(true);
+        const t = setTimeout(() => props.onFinished?.(true), 600);
+        return () => clearTimeout(t as unknown as number);
+      }
+      setWrongKey(opt.key);
+      setShowWrongToast(true);
+      const t = setTimeout(() => props.onFinished?.(false), 1200);
+      return () => clearTimeout(t as unknown as number);
+    }
     if (opt.isCorrect) {
       setSelectedKey(opt.key);
       setShowWrongToast(false);
