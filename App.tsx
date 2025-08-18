@@ -56,10 +56,35 @@ function MainTabs(): React.JSX.Element {
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
   const currentTabNavRef = React.useRef<any>(null);
   const [videoKey, setVideoKey] = React.useState<number>(0);
+  const [initialTabRouteName, setInitialTabRouteName] = React.useState<keyof RootTabParamList | null>(null);
+
+  React.useEffect(() => {
+    let isMounted = true;
+    (async () => {
+      try {
+        const savedTab = await AsyncStorage.getItem('last.active.tab');
+        if (!isMounted) return;
+        const validTabs: Array<keyof RootTabParamList> = ['Surf', 'Video', 'Practice', 'BabySteps', 'Categories', 'Library', 'Books'];
+        if (savedTab && validTabs.includes(savedTab as keyof RootTabParamList)) {
+          setInitialTabRouteName(savedTab as keyof RootTabParamList);
+        } else {
+          setInitialTabRouteName('BabySteps');
+        }
+      } catch {
+        if (!isMounted) return;
+        setInitialTabRouteName('BabySteps');
+      }
+    })();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <>
+      {initialTabRouteName === null ? null : (
       <Tab.Navigator
+        initialRouteName={initialTabRouteName}
         screenOptions={({ route, navigation }) => {
           currentTabNavRef.current = navigation;
           return {
@@ -103,6 +128,11 @@ function MainTabs(): React.JSX.Element {
             tabBarInactiveTintColor: '#999999',
           };
         }}
+        screenListeners={({ route }) => ({
+          focus: () => {
+            AsyncStorage.setItem('last.active.tab', route.name).catch(() => {});
+          },
+        })}
       >
         <Tab.Screen name="Surf" component={SurfScreen} />
         <Tab.Screen
@@ -114,6 +144,7 @@ function MainTabs(): React.JSX.Element {
               e.preventDefault();
               setVideoKey((k) => k + 1);
               navigation.navigate('Video', { resetAt: Date.now() });
+              AsyncStorage.setItem('last.active.tab', route.name).catch(() => {});
             },
           })}
         />
@@ -134,6 +165,7 @@ function MainTabs(): React.JSX.Element {
         <Tab.Screen name="Library" component={LibraryScreen} options={{ title: 'Library' }} />
         <Tab.Screen name="Books" component={BooksNavigator} options={{ title: 'Books' }} />
       </Tab.Navigator>
+      )}
 
       <Modal
         transparent

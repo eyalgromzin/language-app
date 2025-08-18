@@ -7,18 +7,7 @@
       "title": "saludos y cortesía",
       "emoji": "👋",
       "items": [
-        {
-          "id": "01_essentials_hello",
-          "type": "word",
-          "text": "hola",
-          "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "01_essentials_hi",
-          "type": "word",
-          "text": "hola",
-          "practiceType": "chooseTranslation"
-        }
+      
       ]
     },
     {
@@ -27,16 +16,10 @@
       "emoji": "💬",
       "items": [
         {
-          "id": "02_introductions_my_name_is",
-          "type": "sentence",
-          "text": "Me llamo …",
-          "practiceType": "missingWords"
-        },
-        {
-          "id": "02_introductions_what_is_your_name",
-          "type": "sentence",
-          "text": "¿Cómo te llamas?",
-          "practiceType": "missingWords"
+            "id": "01_essentials_good_morning",
+            "type": "sentence",
+            "text": "Buenos días",
+            "practiceType": "formulateSentense"
         }
       ]
     },

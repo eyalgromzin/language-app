@@ -8,16 +8,10 @@
       "emoji": "👋",
       "items": [
         {
-          "id": "01_essentials_hello",
-          "type": "word",
-          "text": "hello",
-          "practiceType": "chooseTranslation"
-        },
-        {
-          "id": "01_essentials_hi",
-          "type": "word",
-          "text": "hi",
-          "practiceType": "chooseTranslation"
+          "id": "01_essentials_good_morning",
+          "type": "sentence",
+          "text": "Good morning",
+          "practiceType": "formulateSentense"
         }
       ]
     },

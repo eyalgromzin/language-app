@@ -1,8 +1,5 @@
 tomorrow :
-- make baby steps screen as startup screen - but then open app on the last screen the user closed the app on 
 - step by step -
-    - on load - will show a path screen . with nodes taken from steps_{language}
-    - create path screen that the user will be visual and the user will be able to run it . like duolingo
     - will have sentenses practice. full sentenses that youll need to create out of words below 
         so create sentense practice 
     - each step will have a list of words and practices that the user needs to finish to continue 
