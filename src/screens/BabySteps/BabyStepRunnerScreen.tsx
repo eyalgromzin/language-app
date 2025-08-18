@@ -9,7 +9,7 @@ type StepItem = {
   title?: string;
   type?: 'word' | 'sentence';
   text: string;
-  practiceType?: 'chooseTranslation' | 'missingWords';
+  practiceType?: 'chooseTranslation' | 'missingWords' | 'formulateSentense';
 };
 
 type StepsFile = {
@@ -23,8 +23,8 @@ type StepsFile = {
 };
 
 const STEPS_BY_CODE: Record<string, StepsFile> = {
-  en: require('./steps_en.json'),
-  es: require('./steps_es.json'),
+  en: require('./steps_en-test.json'),
+  es: require('./steps_es-test.json'),
 };
 
 type RunnerTask =
@@ -42,6 +42,14 @@ type RunnerTask =
       tokens: string[];
       missingIndices: number[];
       wordBank: string[]; // include correct missing words + extras from same step
+      itemId: string;
+    }
+  | {
+      kind: 'formulateSentense';
+      sentence: string; // in current language to assemble
+      translatedSentence: string; // helper translation from other language
+      tokens: string[]; // expected order
+      shuffledTokens: string[]; // options presented to user
       itemId: string;
     };
 
@@ -87,6 +95,8 @@ function BabyStepRunnerScreen(): React.JSX.Element {
   const [numCorrect, setNumCorrect] = React.useState<number>(0);
   const [numWrong, setNumWrong] = React.useState<number>(0);
   const [currentHadMistake, setCurrentHadMistake] = React.useState<boolean>(false);
+  const [resetSeed, setResetSeed] = React.useState<number>(0);
+  const [selectedIndices, setSelectedIndices] = React.useState<number[]>([]);
 
   React.useEffect(() => {
     let mounted = true;
@@ -148,6 +158,19 @@ function BabyStepRunnerScreen(): React.JSX.Element {
               itemId: it.id,
             } as RunnerTask;
           }
+          // Build formulate sentence task (assemble full sentence in current language)
+          if (it.practiceType === 'formulateSentense') {
+            const tokens = splitToTokens(it.text);
+            const shuffledTokens = shuffleArray(tokens);
+            return {
+              kind: 'formulateSentense',
+              sentence: it.text,
+              translatedSentence: otherText,
+              tokens,
+              shuffledTokens,
+              itemId: it.id,
+            } as RunnerTask;
+          }
           // missingWords for sentences
           const tokens = splitToTokens(it.text);
           // Choose 1-2 indices to blank, prefer alphabetic tokens
@@ -179,15 +202,21 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         setNumCorrect(0);
         setNumWrong(0);
         setCurrentHadMistake(false);
+        setSelectedIndices([]);
       } finally {
         if (!mounted) return;
         setLoading(false);
       }
     })();
     return () => { mounted = false; };
-  }, [route, stepIndex]);
+  }, [route, stepIndex, resetSeed]);
 
   const current = tasks[currentIdx];
+
+  // Reset formulate state when current changes
+  React.useEffect(() => {
+    setSelectedIndices([]);
+  }, [currentIdx]);
 
   const onPickTranslation = (opt: string) => {
     if (current?.kind !== 'chooseTranslation') return;
@@ -253,6 +282,37 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     setCurrentHadMistake(false);
   }, [currentIdx]);
 
+  const onPickFormulateIndex = (idx: number) => {
+    if (current?.kind !== 'formulateSentense') return;
+    if (selectedIndices.includes(idx)) return;
+    const next = [...selectedIndices, idx];
+    setSelectedIndices(next);
+  };
+
+  React.useEffect(() => {
+    if (!current || current.kind !== 'formulateSentense') return;
+    const done = selectedIndices.length === current.tokens.length;
+    if (!done) return;
+    const isCorrect = current.tokens.every((tok, i) => tok === current.shuffledTokens[selectedIndices[i]]);
+    if (isCorrect) {
+      setNumCorrect((c) => c + 1);
+      const t = setTimeout(() => {
+        setSelectedIndices([]);
+        setCurrentIdx((i) => i + 1);
+      }, 600);
+      return () => clearTimeout(t);
+    }
+    // Wrong: requeue to end and advance
+    setNumWrong((c) => c + 1);
+    const t = setTimeout(() => {
+      setSelectedIndices([]);
+      setTasks((prev) => [...prev, prev[currentIdx]]);
+      setCurrentIdx((i) => i + 1);
+    }, 1200);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedIndices, current]);
+
   const onFinish = async () => {
     try {
       const learningName = await AsyncStorage.getItem('language.learning');
@@ -265,6 +325,25 @@ function BabyStepRunnerScreen(): React.JSX.Element {
       await AsyncStorage.setItem(`babySteps.maxCompletedIndex.${currentCode}`, String(next));
     } catch {}
     navigation.goBack();
+  };
+
+  const onRestart = async () => {
+    // Mark as finished so the path stays completed even if restarting immediately
+    try {
+      const learningName = await AsyncStorage.getItem('language.learning');
+      const currentCode = getLangCode(learningName) || 'en';
+      const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${currentCode}`);
+      const prev = Number.parseInt(stored ?? '0', 10);
+      const finishedNodeNumber = stepIndex + 1;
+      const next = Number.isNaN(prev) ? finishedNodeNumber : Math.max(prev, finishedNodeNumber);
+      await AsyncStorage.setItem(`babySteps.maxCompletedIndex.${currentCode}`, String(next));
+    } catch {}
+    // Always rebuild tasks within the same screen instance
+    setResetSeed((s) => s + 1);
+    // Additionally try a full screen refresh; if it's a no-op, the local reset still works
+    try {
+      (navigation as any).replace('BabyStepRunner', { stepIndex });
+    } catch {}
   };
 
   if (loading) {
@@ -280,6 +359,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     return (
       <View style={styles.centered}>
         <Text style={styles.title}>Step {stepIndex + 1} complete!</Text>
+        <TouchableOpacity style={[styles.skipButton, { marginTop: 16 }]} onPress={onRestart} accessibilityRole="button" accessibilityLabel="Restart step">
+          <Text style={styles.skipText}>Restart</Text>
+        </TouchableOpacity>
         <TouchableOpacity style={[styles.finishButton, { marginTop: 16 }]} onPress={onFinish} accessibilityRole="button" accessibilityLabel="Finish step">
           <Text style={styles.finishText}>Finish step</Text>
         </TouchableOpacity>
@@ -322,13 +404,13 @@ function BabyStepRunnerScreen(): React.JSX.Element {
             })}
           </View>
         </View>
-      ) : (
+      ) : current.kind === 'missingWords' ? (
         <View>
           <View style={styles.wordCard}>
             <Text style={styles.translationText}>{current.translatedSentence}</Text>
           </View>
           <View style={styles.sentenceWrap}>
-            {current.tokens.map((tok, i) => {
+            {current.tokens.map((tok: string, i: number) => {
               const isMissing = current.missingIndices.includes(i);
               const value = inputs[i] ?? '';
               if (!isMissing) {
@@ -345,20 +427,52 @@ function BabyStepRunnerScreen(): React.JSX.Element {
             })}
           </View>
           <View style={styles.choicesWrap}>
-            {current.wordBank.map((w, i) => (
+            {current.wordBank.map((w: string, i: number) => (
               <TouchableOpacity key={`${w}-${i}`} style={styles.choiceButton} onPress={() => fillNextBlank(w)}>
                 <Text style={styles.choiceText}>{w}</Text>
               </TouchableOpacity>
             ))}
           </View>
         </View>
-      )}
-
-      {currentIdx + 1 >= tasks.length && !currentHadMistake ? (
-        <TouchableOpacity style={styles.finishButton} onPress={onFinish} accessibilityRole="button" accessibilityLabel="Finish step">
-          <Text style={styles.finishText}>Finish step</Text>
-        </TouchableOpacity>
+      ) : current.kind === 'formulateSentense' ? (
+        <View>
+          <View style={styles.wordCard}>
+            <Text style={styles.translationText}>{current.translatedSentence}</Text>
+          </View>
+          <View style={styles.assembledBox}>
+            {selectedIndices.length === 0 ? (
+              <Text style={styles.placeholder}>Tap words below in order</Text>
+            ) : (
+              <View style={styles.tokenRow}>
+                {selectedIndices.map((i) => (
+                  <View key={`sel-${i}`} style={styles.tokenChipSelected}>
+                    <Text style={styles.tokenText}>{current.shuffledTokens[i]}</Text>
+                  </View>
+                ))}
+              </View>
+            )}
+          </View>
+          <View style={styles.tokensWrap}>
+            {current.shuffledTokens.map((tok: string, i: number) => {
+              const used = selectedIndices.includes(i);
+              return (
+                <TouchableOpacity
+                  key={`tok-${i}-${tok}`}
+                  style={[styles.tokenChip, used && styles.tokenChipUsed]}
+                  onPress={() => onPickFormulateIndex(i)}
+                  disabled={used}
+                  accessibilityRole="button"
+                  accessibilityLabel={tok}
+                >
+                  <Text style={styles.tokenText}>{tok}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </View>
       ) : null}
+
+      
     </ScrollView>
   );
 }
@@ -386,6 +500,13 @@ const styles = StyleSheet.create({
   choicesWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, paddingTop: 8 },
   choiceButton: { borderWidth: 1, borderColor: '#ddd', backgroundColor: '#fff', borderRadius: 16, paddingHorizontal: 10, paddingVertical: 8 },
   choiceText: { fontSize: 14, fontWeight: '600' },
+  assembledBox: { minHeight: 72, borderWidth: 1, borderColor: '#ddd', backgroundColor: '#fff', borderRadius: 12, paddingVertical: 12, paddingHorizontal: 10, justifyContent: 'center' },
+  placeholder: { color: '#999', fontStyle: 'italic' },
+  tokenRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  tokensWrap: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', rowGap: 10 },
+  tokenChip: { paddingVertical: 10, paddingHorizontal: 12, borderRadius: 20, borderWidth: 1, borderColor: '#ddd', backgroundColor: '#fff', marginBottom: 8 },
+  tokenChipUsed: { backgroundColor: '#eee', borderColor: '#ddd' },
+  tokenChipSelected: { paddingVertical: 8, paddingHorizontal: 10, borderRadius: 16, backgroundColor: '#e6f7e9', borderWidth: 1, borderColor: '#2e7d32' },
   finishButton: { marginTop: 8, backgroundColor: '#007AFF', paddingVertical: 14, borderRadius: 12, alignItems: 'center' },
   finishText: { color: '#fff', fontWeight: '800' },
 });

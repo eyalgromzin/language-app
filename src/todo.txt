@@ -2,11 +2,9 @@ tomorrow :
 - step by step -
     - will have sentenses practice. full sentenses that youll need to create out of words below 
         so create sentense practice 
-    - each step will have a list of words and practices that the user needs to finish to continue 
-    - get jsons from server .
 
 - when focus shifts back to website - on scroll / on click - hide translate panel 
-- add share button in key places where the user will want to share the app
+- add share button in key places where the user will want to share the app - currrently will only share the url in google play for the app 
 - surf screen 
     - surf: save locally domains history . for auto complete in surfing 
     - add favourites button to surf screen - 
@@ -21,6 +19,8 @@ tomorrow :
 ==========================================================================================================================================
 
 - add pdf support for reading books.
+
+- get step by step jsons from server 
 
 - screens / tabs:
     - library screen 
@@ -39,7 +39,7 @@ tomorrow :
 - login with facebook / google
 
     
-
+- deep links 
 
 - add animations - to make everythin a little more playful :
     add animations on these events : 

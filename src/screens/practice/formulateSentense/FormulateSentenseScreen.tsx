@@ -3,6 +3,7 @@ import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
+import { getLangCode } from '../../../utils/translation';
 
 type WordEntry = {
   word: string;
@@ -19,6 +20,29 @@ type WordEntry = {
     writeWord: number;
     formulateSentence?: number;
   };
+};
+
+type StepItem = {
+  id: string;
+  title?: string;
+  type?: 'word' | 'sentence';
+  text: string;
+  practiceType?: 'chooseTranslation' | 'missingWords' | 'formulateSentense';
+};
+
+type StepsFile = {
+  language: string;
+  overview?: string;
+  steps: Array<{
+    id: string;
+    title: string;
+    items: StepItem[];
+  }>;
+};
+
+const STEPS_BY_CODE: Record<string, StepsFile> = {
+  en: require('../../BabySteps/steps_en-test.json'),
+  es: require('../../BabySteps/steps_es-test.json'),
 };
 
 function ensureCounters(entry: WordEntry): WordEntry {
@@ -44,6 +68,20 @@ function shuffleArray<T>(arr: T[]): T[] {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+function sampleN<T>(arr: T[], n: number): T[] {
+  if (n <= 0) return [];
+  if (arr.length <= n) return shuffleArray(arr);
+  const taken = new Set<number>();
+  const out: T[] = [];
+  while (out.length < n) {
+    const idx = Math.floor(Math.random() * arr.length);
+    if (taken.has(idx)) continue;
+    taken.add(idx);
+    out.push(arr[idx]);
+  }
+  return out;
 }
 
 function tokenizeSentence(sentence: string): string[] {
@@ -82,6 +120,7 @@ function FormulateSentenseScreen(): React.JSX.Element {
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
+  const [fallbackTokens, setFallbackTokens] = React.useState<string[]>([]);
 
   const lastWordKeyRef = React.useRef<string | null>(null);
 
@@ -97,6 +136,26 @@ function FormulateSentenseScreen(): React.JSX.Element {
         totalThreshold = parsedTotal >= 1 && parsedTotal <= 50 ? parsedTotal : 6;
         setRemoveAfterTotalCorrect(totalThreshold);
       } catch {}
+
+      // Prepare fallback tokens from BabySteps steps based on current learning language
+      try {
+        const learningName = await AsyncStorage.getItem('language.learning');
+        const code = getLangCode(learningName) || 'en';
+        const stepsFile = STEPS_BY_CODE[code] || STEPS_BY_CODE['en'];
+        const tokensSet = new Set<string>();
+        stepsFile.steps.forEach((step) => {
+          step.items.forEach((it) => {
+            if (it.type === 'sentence' || it.practiceType === 'missingWords' || it.practiceType === 'formulateSentense') {
+              tokenizeSentence(it.text).forEach((t) => t && tokensSet.add(t));
+            } else if (it.type === 'word' || it.practiceType === 'chooseTranslation') {
+              if (it.text) tokensSet.add(it.text);
+            }
+          });
+        });
+        setFallbackTokens(Array.from(tokensSet));
+      } catch {
+        setFallbackTokens([]);
+      }
 
       const exists = await RNFS.exists(filePath);
       if (!exists) {
@@ -149,7 +208,25 @@ function FormulateSentenseScreen(): React.JSX.Element {
     lastWordKeyRef.current = items[idx].word;
     const sentence = items[idx].sentence || '';
     const tokens = tokenizeSentence(sentence);
-    setShuffledTokens(shuffleArray(tokens));
+    // Build a global pool of candidate distractor tokens from all other sentences
+    const globalTokensSet = new Set<string>();
+    for (let i = 0; i < items.length; i += 1) {
+      if (i === idx) continue;
+      const s = items[i].sentence || '';
+      tokenizeSentence(s).forEach((t) => globalTokensSet.add(t));
+    }
+    // Exclude tokens that are part of the expected answer to avoid duplicates/confusion
+    let distractorPool = Array.from(globalTokensSet).filter((t) => !tokens.includes(t));
+    const extrasNeeded = tokens.length;
+    // If we don't have enough distractors from user sentences, top up from BabySteps tokens
+    if (distractorPool.length < extrasNeeded) {
+      const fallbackFiltered = fallbackTokens.filter((t) => !tokens.includes(t));
+      const combinedSet = new Set<string>([...distractorPool, ...fallbackFiltered]);
+      distractorPool = Array.from(combinedSet);
+    }
+    const extras = sampleN(distractorPool, extrasNeeded);
+    const choices = shuffleArray<string>([...tokens, ...extras]);
+    setShuffledTokens(choices);
     setSelectedIndices([]);
     setShowWrongToast(false);
     setShowCorrectToast(false);
@@ -403,7 +480,7 @@ const styles = StyleSheet.create({
   tokensWrap: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     rowGap: 10,
   },
   tokenChip: {

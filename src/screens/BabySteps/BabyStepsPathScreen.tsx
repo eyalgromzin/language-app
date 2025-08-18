@@ -19,8 +19,8 @@ type StepsFile = {
 };
 
 const STEPS_BY_CODE: Record<string, StepsFile> = {
-  en: require('./steps_en.json'),
-  es: require('./steps_es.json'),
+  en: require('./steps_en-test.json'),
+  es: require('./steps_es-test.json'),
 };
 
 const NODE_DIAMETER = 72;
