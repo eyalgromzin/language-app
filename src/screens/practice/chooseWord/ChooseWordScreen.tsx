@@ -26,6 +26,14 @@ type OptionItem = {
   isCorrect: boolean;
 };
 
+type EmbeddedProps = {
+  embedded?: boolean;
+  translation?: string;
+  correctWord?: string;
+  options?: string[];
+  onFinished?: (isCorrect: boolean) => void;
+};
+
 function ensureCounters(entry: WordEntry): WordEntry {
   return {
     ...entry,
@@ -62,7 +70,7 @@ function sampleN<T>(arr: T[], n: number): T[] {
   return result;
 }
 
-function ChooseWordScreen(): React.JSX.Element {
+function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const RANDOM_GAME_ROUTES: string[] = [
@@ -80,7 +88,7 @@ function ChooseWordScreen(): React.JSX.Element {
     const target = choices[Math.floor(Math.random() * choices.length)] as string;
     navigation.navigate(target as never, { surprise: true } as never);
   }, [navigation, route]);
-  const [loading, setLoading] = React.useState<boolean>(true);
+  const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
   const [allWordsPool, setAllWordsPool] = React.useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
@@ -98,6 +106,10 @@ function ChooseWordScreen(): React.JSX.Element {
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
   const loadBase = React.useCallback(async () => {
+    if (props.embedded) {
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     try {
       let threshold = 3;
@@ -143,7 +155,7 @@ function ChooseWordScreen(): React.JSX.Element {
     } finally {
       setLoading(false);
     }
-  }, [filePath]);
+  }, [filePath, props.embedded]);
 
   const pickNextIndex = React.useCallback((items: WordEntry[]) => {
     if (items.length === 0) return 0;
@@ -211,12 +223,43 @@ function ChooseWordScreen(): React.JSX.Element {
   );
 
   React.useEffect(() => {
+    if (props.embedded) return;
     if (!loading) {
       prepareRound(allEntries);
     }
-  }, [loading, allEntries, prepareRound]);
+  }, [loading, allEntries, prepareRound, props.embedded]);
 
-  const current = allEntries[currentIndex];
+  const current = props.embedded
+    ? ({ translation: props.translation || '' } as WordEntry)
+    : allEntries[currentIndex];
+
+  // Build options in embedded mode
+  React.useEffect(() => {
+    if (!props.embedded) return;
+    const normalize = (s: string) => (s || '').trim().replace(/\s+/g, ' ').toLowerCase();
+    const baseOptions = Array.isArray(props.options) ? props.options : [];
+    const correctLabel = (props.correctWord || '').trim().replace(/\s+/g, ' ');
+    const correctNorm = normalize(correctLabel);
+    const uniqueMap = new Map<string, string>();
+    if (correctLabel.length > 0) uniqueMap.set(correctNorm, correctLabel);
+    for (const o of baseOptions) {
+      const norm = normalize(o);
+      if (!uniqueMap.has(norm)) uniqueMap.set(norm, (o || '').trim().replace(/\s+/g, ' '));
+    }
+    const combined = Array.from(uniqueMap.values());
+    const items: OptionItem[] = combined.map((label, i) => ({
+      key: `${normalize(label)}-${i}`,
+      label,
+      isCorrect: normalize(label) === correctNorm,
+    }));
+    setOptions(shuffleArray(items));
+    setSelectedKey(null);
+    setWrongKey(null);
+    setWrongAttempts(0);
+    setShowWrongToast(false);
+    setShowCorrectToast(false);
+    setRevealCorrect(false);
+  }, [props.embedded, props.options, props.correctWord, props.translation]);
 
   const moveToNext = React.useCallback(() => {
     setShowCorrectToast(false);
@@ -265,6 +308,19 @@ function ChooseWordScreen(): React.JSX.Element {
   const onPick = (opt: OptionItem) => {
     if (!current) return;
     if (selectedKey || revealCorrect) return;
+    if (props.embedded) {
+      if (opt.isCorrect) {
+        setSelectedKey(opt.key);
+        setShowWrongToast(false);
+        setShowCorrectToast(true);
+        const t = setTimeout(() => props.onFinished?.(true), 600);
+        return () => clearTimeout(t as unknown as number);
+      }
+      setWrongKey(opt.key);
+      setShowWrongToast(true);
+      const t = setTimeout(() => props.onFinished?.(false), 1200);
+      return () => clearTimeout(t as unknown as number);
+    }
     if (opt.isCorrect) {
       setSelectedKey(opt.key);
       setShowWrongToast(false);
@@ -291,7 +347,7 @@ function ChooseWordScreen(): React.JSX.Element {
     };
   };
 
-  if (loading) {
+  if (!props.embedded && loading) {
     return (
       <View style={styles.centered}>
         <ActivityIndicator />
@@ -316,12 +372,14 @@ function ChooseWordScreen(): React.JSX.Element {
   return (
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.topRow}>
-          <Text style={styles.title}>pick the correct word</Text>
-          <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
-            <Text style={styles.skipButtonText}>Skip</Text>
-          </TouchableOpacity>
-        </View>
+        {!props.embedded ? (
+          <View style={styles.topRow}>
+            <Text style={styles.title}>pick the correct word</Text>
+            <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
+              <Text style={styles.skipButtonText}>Skip</Text>
+            </TouchableOpacity>
+          </View>
+        ) : null}
         <View style={styles.wordCard}>
           <Text style={styles.wordText}>{current.translation}</Text>
         </View>
@@ -352,7 +410,7 @@ function ChooseWordScreen(): React.JSX.Element {
           })}
         </View>
 
-        {revealCorrect ? (
+        {!props.embedded && revealCorrect ? (
           <TouchableOpacity style={styles.nextButton} onPress={() => prepareRound(allEntries)}>
             <Text style={styles.nextButtonText}>Next</Text>
           </TouchableOpacity>

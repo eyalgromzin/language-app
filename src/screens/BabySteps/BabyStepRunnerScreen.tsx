@@ -6,13 +6,14 @@ import { getLangCode } from '../../utils/translation';
 import FormulateSentenseScreen from '../practice/formulateSentense/FormulateSentenseScreen';
 import ChooseTranslationScreen from '../practice/chooseTranslation/chooseTranslationScreen';
 import MissingWordsScreen from '../practice/missingWords/MissingWordsScreen';
+import ChooseWordScreen from '../practice/chooseWord/ChooseWordScreen';
 
 type StepItem = {
   id: string;
   title?: string;
   type?: 'word' | 'sentence';
   text: string;
-  practiceType?: 'chooseTranslation' | 'missingWords' | 'formulateSentense';
+  practiceType?: 'chooseTranslation' | 'missingWords' | 'formulateSentense' | 'chooseWord';
 };
 
 type StepsFile = {
@@ -35,6 +36,13 @@ type RunnerTask =
       kind: 'chooseTranslation';
       sourceWord: string; // in current language
       correctTranslation: string; // from other language file matched by id
+      options: string[]; // includes correct + distractors
+      itemId: string;
+    }
+  | {
+      kind: 'chooseWord';
+      translation: string; // translation shown
+      correctWord: string; // correct word in current language
       options: string[]; // includes correct + distractors
       itemId: string;
     }
@@ -158,6 +166,24 @@ function BabyStepRunnerScreen(): React.JSX.Element {
               sourceWord: it.text,
               correctTranslation: otherText,
               options: allOptions,
+              itemId: it.id,
+            } as RunnerTask;
+          }
+          if (it.practiceType === 'chooseWord') {
+            // Show translation and ask to pick the correct word
+            const distractorPoolWords: string[] = [];
+            step.items.forEach((o) => {
+              if (o.id !== it.id && (o.type === 'word' || o.practiceType === 'chooseTranslation' || o.practiceType === 'chooseWord')) {
+                if (o.text && o.text !== it.text) distractorPoolWords.push(o.text);
+              }
+            });
+            const pickedWords = sampleN(Array.from(new Set(distractorPoolWords)), Math.min(7, Math.max(0, distractorPoolWords.length)));
+            const allWordOptions = shuffleArray([it.text, ...pickedWords]);
+            return {
+              kind: 'chooseWord',
+              translation: otherText,
+              correctWord: it.text,
+              options: allWordOptions,
               itemId: it.id,
             } as RunnerTask;
           }
@@ -390,6 +416,22 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           correctTranslation={current.correctTranslation}
           options={current.options}
           onFinished={(ok: boolean) => {
+            if (ok) {
+              setNumCorrect((c) => c + 1);
+            } else {
+              setNumWrong((c) => c + 1);
+              setTasks((prev) => [...prev, prev[currentIdx]]);
+            }
+            setCurrentIdx((i) => i + 1);
+          }}
+        />
+      ) : current.kind === 'chooseWord' ? (
+        <ChooseWordScreen
+          embedded
+          translation={current.translation}
+          correctWord={current.correctWord}
+          options={current.options}
+          onFinished={(ok) => {
             if (ok) {
               setNumCorrect((c) => c + 1);
             } else {

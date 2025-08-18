@@ -1,23 +1,22 @@
 tomorrow :
-- step by step -
-    - will have sentenses practice. full sentenses that youll need to create out of words below 
-        so create sentense practice 
 
-- when focus shifts back to website - on scroll / on click - hide translate panel 
+- surf: when focus shifts back to website - on scroll / on click - hide translate panel 
 - add share button in key places where the user will want to share the app - currrently will only share the url in google play for the app 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+==========================================================================================================================================
+
+
+
 - surf screen 
     - surf: save locally domains history . for auto complete in surfing 
     - add favourites button to surf screen - 
         - will show a dialog with title , and a url already filled with the current url .  
         - personal favourites that will be saved to local file . 
         - all favourites - it will check in the library if this link already exists .  if not , add url to library  
-- videos screen - show similar videos below transcript 
-
 - add microphone icon to practices that need it . like choose word / translation ...
-
-------------------------------------------------------------------------------------------------------------------------------------------
-==========================================================================================================================================
-
+- videos screen - show similar videos below transcript 
 - add pdf support for reading books.
 
 - get step by step jsons from server 
