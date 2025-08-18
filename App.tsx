@@ -24,6 +24,7 @@ import WordsByCategoriesScreen from './src/screens/wordsByCategories/WordsByCate
 import VideoScreen from './src/screens/Video/VideoScreen';
 import BabyStepsPathScreen from './src/screens/BabySteps/BabyStepsPathScreen';
 import BabyStepRunnerScreen from './src/screens/BabySteps/BabyStepRunnerScreen';
+import ContactUsScreen from './src/screens/ContactUs/ContactUsScreen';
 
 enableScreens();
 
@@ -48,6 +49,7 @@ type RootStackParamList = {
   MyWords: undefined;
   BabyStepsPath: undefined;
   BabyStepRunner: { stepIndex: number } | undefined;
+  ContactUs: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -202,6 +204,9 @@ function MainTabs(): React.JSX.Element {
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('BabyStepsPath'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Baby Steps Path</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('ContactUs'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>Contact Us</Text>
+            </TouchableOpacity>
             <TouchableOpacity style={[styles.menuItem, styles.menuClose]} onPress={() => setMenuOpen(false)}>
               <Text style={[styles.menuItemText, styles.menuCloseText]}>Close</Text>
             </TouchableOpacity>
@@ -301,6 +306,7 @@ function App(): React.JSX.Element | null {
           <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
           <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path' }} />
           <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step' }} />
+          <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us' }} />
         </Stack.Navigator>
       ) : (
         <Stack.Navigator initialRouteName="Main">
@@ -311,6 +317,7 @@ function App(): React.JSX.Element | null {
           <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
           <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path' }} />
           <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step' }} />
+          <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us' }} />
         </Stack.Navigator>
       )}
     </NavigationContainer>

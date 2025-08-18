@@ -1,13 +1,5 @@
 tomorrow :
 
-- surf: save locally domains history . for auto complete in surfing 
-
-
-------------------------------------------------------------------------------------------------------------------------------------------
-==========================================================================================================================================
-
-
-
 - surf screen 
     - add favourites button to surf screen - 
         - will show a dialog with title , and a url already filled with the current url .  
@@ -16,6 +8,16 @@ tomorrow :
 - add microphone icon to practices that need it . like choose word / translation ...
 - videos screen - show similar videos below transcript 
 - add pdf support for reading books.
+
+- add sounds on:
+    - correct answer 
+    - incorrect answer
+
+- next to the go button add library button , history button .
+    on focus on text edit , hidr history and libary button 
+
+
+==================================================================================================================
 
 - get step by step jsons from server 
 
@@ -44,12 +46,7 @@ tomorrow :
         - on practice finish word - make some big animation on the screen. 
         - on practice finish word specific practice 
 
-- add sounds on:
-    - correct answer 
-    - incorrect answer
 
-    - add a last video button - to open the last youtube video played and its location to be able to continue 
- 
 - check hebrew support - and rtl 
 
 ? enable a user once a week to update a 1 of the fields of a library book item.  
