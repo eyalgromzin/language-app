@@ -793,10 +793,13 @@ function SurfScreen(): React.JSX.Element {
     }
   };
 
-  const UrlBar = () => {
-    const urlForStar = normalizeUrl((currentUrl || addressText || '').trim());
-    const isFav = favourites.some((f) => f.url === urlForStar);
-    return (
+ 
+
+  const urlForStar = normalizeUrl((currentUrl || addressText || '').trim());
+  const isFav = favourites.some((f) => f.url === urlForStar);
+
+  return (
+    <View style={{ flex: 1 }}>
       <View style={styles.urlBarContainer}>
         <TextInput
           ref={addressInputRef}
@@ -871,12 +874,6 @@ function SurfScreen(): React.JSX.Element {
           <Ionicons name="ellipsis-vertical" size={22} color="#007AFF" />
         </TouchableOpacity>
       </View>
-    );
-  };
-
-  return (
-    <View style={{ flex: 1 }}>
-      <UrlBar />
       <Modal
         visible={showFavouritesList}
         transparent
