@@ -22,7 +22,7 @@ function SurfScreen(): React.JSX.Element {
   // Languages selected by the user (Settings / Startup)
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
-  type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string };
+  type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
   const [favourites, setFavourites] = React.useState<FavouriteItem[]>([]);
   const [showFavouritesList, setShowFavouritesList] = React.useState<boolean>(false);
   const [showAddFavouriteModal, setShowAddFavouriteModal] = React.useState<boolean>(false);
@@ -38,6 +38,8 @@ function SurfScreen(): React.JSX.Element {
   const [newFavTypeId, setNewFavTypeId] = React.useState<number | null>(null);
   const [showTypeOptions, setShowTypeOptions] = React.useState<boolean>(false);
   const [favTypeError, setFavTypeError] = React.useState<boolean>(false);
+  const [newFavLevelName, setNewFavLevelName] = React.useState<string | null>(null);
+  const [showLevelOptions, setShowLevelOptions] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     let mounted = true;
@@ -96,7 +98,7 @@ function SurfScreen(): React.JSX.Element {
         if (!mounted) return;
         const arr = JSON.parse(raw || '[]');
         if (Array.isArray(arr)) {
-          // Support legacy string[] format and new {url,name,typeId?,typeName?}[] format
+          // Support legacy string[] format and new {url,name,typeId?,typeName?,levelName?}[] format
           const mapped: FavouriteItem[] = arr
             .map((it: any) => {
               if (typeof it === 'string') {
@@ -109,7 +111,8 @@ function SurfScreen(): React.JSX.Element {
                 const nm = typeof it.name === 'string' && it.name.trim().length > 0 ? it.name : (getDomainFromUrlString(u) || u);
                 const tid = typeof it.typeId === 'number' ? it.typeId : undefined;
                 const tn = typeof it.typeName === 'string' ? it.typeName : (typeof tid === 'number' ? (FAVOURITE_TYPES.find(t => t.id === tid)?.name) : undefined);
-                return { url: u, name: nm, typeId: tid, typeName: tn } as FavouriteItem;
+                const ln = typeof it.levelName === 'string' ? validateLevel(it.levelName) : (typeof it.level === 'string' ? validateLevel(it.level) : undefined);
+                return { url: u, name: nm, typeId: tid, typeName: tn, levelName: ln } as FavouriteItem;
               }
               return null;
             })
@@ -137,6 +140,46 @@ function SurfScreen(): React.JSX.Element {
       const noWww = lower.startsWith('www.') ? lower.slice(4) : lower;
       return noWww;
     } catch { return null; }
+  };
+
+  // --- Validation helpers for posting to library ---
+  const ITEM_TYPES = ['article','story','conversation','lyrics','any','video','music'] as const;
+  const LEVELS = ['easy','easy-medium','medium','medium-hard','hard'] as const;
+  const MEDIA = ['web','youtube'] as const;
+
+  type ItemTypeName = typeof ITEM_TYPES[number];
+  type LevelName = typeof LEVELS[number];
+  type MediaName = typeof MEDIA[number];
+
+  const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
+    const v = (input || '').toLowerCase().trim();
+    if (v === 'es' || v === 'spanish') return 'es';
+    if (v === 'en' || v === 'english') return 'en';
+    // Map common UI labels from Settings/Startup
+    if (v === 'español') return 'es';
+    return 'en';
+  };
+
+  const validateType = (t?: string | null): ItemTypeName => {
+    const v = (t || '').toLowerCase().trim();
+    return (ITEM_TYPES as readonly string[]).includes(v) ? (v as ItemTypeName) : 'any';
+  };
+
+  const validateLevel = (l?: string | number | null): LevelName => {
+    if (typeof l === 'number') {
+      const byIndex = LEVELS[Math.max(0, Math.min(LEVELS.length - 1, l - 1))];
+      return byIndex || 'easy';
+    }
+    const v = (l || '').toLowerCase().trim();
+    return (LEVELS as readonly string[]).includes(v) ? (v as LevelName) : 'easy';
+  };
+
+  const inferMediaFromUrl = (u: string): MediaName => {
+    try {
+      const h = new URL(u).hostname.toLowerCase();
+      if (h.includes('youtube.com') || h.includes('youtu.be')) return 'youtube';
+    } catch {}
+    return 'web';
   };
 
   const saveDomain = async (domain: string) => {
@@ -514,12 +557,12 @@ function SurfScreen(): React.JSX.Element {
     try { await AsyncStorage.setItem(FAVOURITES_KEY, JSON.stringify(next)); } catch {}
   };
 
-  const addToFavourites = async (url: string, name: string, typeId: number, typeName: string) => {
+  const addToFavourites = async (url: string, name: string, typeId: number, typeName: string, levelName?: string | null) => {
     if (!url) return;
     const normalized = normalizeUrl(url);
     const safeName = (name || '').trim() || (getDomainFromUrlString(normalized) || normalized);
     const next: FavouriteItem[] = [
-      { url: normalized, name: safeName, typeId, typeName },
+      { url: normalized, name: safeName, typeId, typeName, levelName: levelName ? validateLevel(levelName) : undefined },
       ...favourites.filter((f) => f.url !== normalized),
     ].slice(0, 200);
     await saveFavourites(next);
@@ -532,15 +575,21 @@ function SurfScreen(): React.JSX.Element {
     await saveFavourites(next);
   };
 
-  const postAddUrlToLibrary = async (url: string) => {
+  const postAddUrlToLibrary = async (url: string, typeName?: string, displayName?: string, level?: string) => {
     try {
+      const normalizedUrl = normalizeUrl(url);
+      const lang = toLanguageSymbol(learningLanguage);
+      const safeType = validateType(typeName);
+      const safeLevel = validateLevel(level);
+      const safeName = (displayName || '').trim() || (getDomainFromUrlString(normalizedUrl) || normalizedUrl);
+      const media: MediaName = inferMediaFromUrl(normalizedUrl);
       const body = {
-        url,
-        language: learningLanguage || 'en',
-        level: 'All',
-        type: 'All',
-        name: url,
-        media: 'web',
+        url: normalizedUrl,
+        language: lang,
+        level: safeLevel,
+        type: safeType,
+        name: safeName,
+        media,
       } as const;
       await fetch(`${apiBaseUrl}/library/addUrl`, {
         method: 'POST',
@@ -580,6 +629,8 @@ function SurfScreen(): React.JSX.Element {
     setNewFavTypeId(null);
     setFavTypeError(false);
     setShowTypeOptions(false);
+    setNewFavLevelName('easy');
+    setShowLevelOptions(false);
     setShowAddFavouriteModal(true);
   };
 
@@ -948,6 +999,9 @@ function SurfScreen(): React.JSX.Element {
         <View style={styles.modalBackdrop}>
           <View style={styles.modalCard}>
             <Text style={styles.modalTitle}>Add to favourites</Text>
+            {learningLanguage && (
+              <Text style={[styles.inputLabel, { marginTop: 0 }]}>Learning language: {toLanguageSymbol(learningLanguage)}</Text>
+            )}
             <Text style={styles.inputLabel}>Type</Text>
             <TouchableOpacity
               onPress={() => setShowTypeOptions(prev => !prev)}
@@ -973,6 +1027,29 @@ function SurfScreen(): React.JSX.Element {
             )}
             {favTypeError && !newFavTypeId && (
               <Text style={styles.errorText}>Type is required</Text>
+            )}
+            <Text style={styles.inputLabel}>Level</Text>
+            <TouchableOpacity
+              onPress={() => setShowLevelOptions(prev => !prev)}
+              style={styles.modalInput}
+              activeOpacity={0.7}
+            >
+              <Text style={{ color: newFavLevelName ? '#111827' : '#9ca3af' }}>
+                {newFavLevelName || 'Select level'}
+              </Text>
+            </TouchableOpacity>
+            {showLevelOptions && (
+              <View style={[styles.modalInput, { paddingVertical: 0, marginTop: 8 }]}> 
+                {['easy','easy-medium','medium','medium-hard','hard'].map((lv) => (
+                  <TouchableOpacity
+                    key={lv}
+                    onPress={() => { setNewFavLevelName(lv); setShowLevelOptions(false); }}
+                    style={{ paddingVertical: 10 }}
+                  >
+                    <Text style={{ color: '#111827' }}>{lv}</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
             )}
             <Text style={styles.inputLabel}>Name</Text>
             <TextInput
@@ -1005,10 +1082,10 @@ function SurfScreen(): React.JSX.Element {
                   }
                   const selected = FAVOURITE_TYPES.find(t => t.id === newFavTypeId);
                   if (!selected) { setFavTypeError(true); return; }
-                  await addToFavourites(u, nm, selected.id, selected.name);
+                  await addToFavourites(u, nm, selected.id, selected.name, newFavLevelName);
                   setShowAddFavouriteModal(false);
                   if (Platform.OS === 'android') ToastAndroid.show('Added to favourites', ToastAndroid.SHORT); else Alert.alert('Added');
-                  postAddUrlToLibrary(u).catch(() => {});
+                  postAddUrlToLibrary(u, selected.name, nm, newFavLevelName || undefined).catch(() => {});
                 }}
                 style={[styles.modalCloseBtn, { backgroundColor: '#007AFF' }]}
               >
