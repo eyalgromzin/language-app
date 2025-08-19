@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View, NativeModules, Modal, ActionSheetIOS } from 'react-native';
+import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View, NativeModules, Modal, ActionSheetIOS, Keyboard } from 'react-native';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
 import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
@@ -153,6 +153,8 @@ function SurfScreen(): React.JSX.Element {
     setCurrentUrl(url);
     saveDomain(domain);
     setIsAddressFocused(false);
+    try { addressInputRef.current?.blur(); } catch (e) {}
+    try { Keyboard.dismiss(); } catch (e) {}
   };
 
   const normalizeUrl = (input: string): string => {
@@ -178,6 +180,10 @@ function SurfScreen(): React.JSX.Element {
     setCurrentUrl(normalized);
     const domain = getDomainFromUrlString(normalized);
     if (domain) saveDomain(domain);
+    // Close keyboard and hide suggestions when navigating
+    try { addressInputRef.current?.blur(); } catch (e) {}
+    setIsAddressFocused(false);
+    try { Keyboard.dismiss(); } catch (e) {}
   };
 
   const goBack = () => {
@@ -563,6 +569,7 @@ function SurfScreen(): React.JSX.Element {
   };
 
   const openOptionsMenu = () => {
+    Keyboard.dismiss();
     const actions = [
       { title: 'Set homepage', onPress: () => promptSetHomepage() },
       { title: 'Favourites list', onPress: () => setShowFavouritesList(true) },
