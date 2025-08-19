@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View, NativeModules } from 'react-native';
+import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View, NativeModules, Modal, ActionSheetIOS } from 'react-native';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
 import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
@@ -22,7 +22,12 @@ function SurfScreen(): React.JSX.Element {
   // Languages selected by the user (Settings / Startup)
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
-  const [favourites, setFavourites] = React.useState<string[]>([]);
+  type FavouriteItem = { url: string; name: string };
+  const [favourites, setFavourites] = React.useState<FavouriteItem[]>([]);
+  const [showFavouritesList, setShowFavouritesList] = React.useState<boolean>(false);
+  const [showAddFavouriteModal, setShowAddFavouriteModal] = React.useState<boolean>(false);
+  const [newFavName, setNewFavName] = React.useState<string>('');
+  const [newFavUrl, setNewFavUrl] = React.useState<string>('');
 
   React.useEffect(() => {
     let mounted = true;
@@ -80,7 +85,27 @@ function SurfScreen(): React.JSX.Element {
         const raw = await AsyncStorage.getItem(FAVOURITES_KEY);
         if (!mounted) return;
         const arr = JSON.parse(raw || '[]');
-        setFavourites(Array.isArray(arr) ? (arr as string[]).filter(Boolean) : []);
+        if (Array.isArray(arr)) {
+          // Support legacy string[] format and new {url,name}[] format
+          const mapped: FavouriteItem[] = arr
+            .map((it: any) => {
+              if (typeof it === 'string') {
+                const u = normalizeUrl(it);
+                const nm = getDomainFromUrlString(u) || u;
+                return { url: u, name: nm } as FavouriteItem;
+              }
+              if (it && typeof it === 'object' && typeof it.url === 'string') {
+                const u = normalizeUrl(it.url);
+                const nm = typeof it.name === 'string' && it.name.trim().length > 0 ? it.name : (getDomainFromUrlString(u) || u);
+                return { url: u, name: nm } as FavouriteItem;
+              }
+              return null;
+            })
+            .filter((x): x is FavouriteItem => !!x);
+          setFavourites(mapped);
+        } else {
+          setFavourites([]);
+        }
       } catch {
         if (!mounted) return;
         setFavourites([]);
@@ -466,22 +491,26 @@ function SurfScreen(): React.JSX.Element {
     }
   };
 
-  const saveFavourites = async (next: string[]) => {
+  const saveFavourites = async (next: FavouriteItem[]) => {
     setFavourites(next);
     try { await AsyncStorage.setItem(FAVOURITES_KEY, JSON.stringify(next)); } catch {}
   };
 
-  const addToFavourites = async (url: string) => {
+  const addToFavourites = async (url: string, name: string) => {
     if (!url) return;
     const normalized = normalizeUrl(url);
-    const next = [normalized, ...favourites.filter((u) => u !== normalized)].slice(0, 200);
+    const safeName = (name || '').trim() || (getDomainFromUrlString(normalized) || normalized);
+    const next: FavouriteItem[] = [
+      { url: normalized, name: safeName },
+      ...favourites.filter((f) => f.url !== normalized),
+    ].slice(0, 200);
     await saveFavourites(next);
   };
 
   const removeFromFavourites = async (url: string) => {
     if (!url) return;
     const normalized = normalizeUrl(url);
-    const next = favourites.filter((u) => u !== normalized);
+    const next = favourites.filter((f) => f.url !== normalized);
     await saveFavourites(next);
   };
 
@@ -506,30 +535,63 @@ function SurfScreen(): React.JSX.Element {
   const promptFavourite = (url: string, alreadyFav: boolean) => {
     const normalized = normalizeUrl(url);
     if (!normalized || normalized === 'about:blank') return;
-    const title = 'Favourites';
-    const message = alreadyFav ? 'already in favourites, remove it ?' : 'add to favourites';
-    const onYes = async () => {
-      if (alreadyFav) {
+    if (alreadyFav) {
+      const onYes = async () => {
         await removeFromFavourites(normalized);
         if (Platform.OS === 'android') ToastAndroid.show('Removed from favourites', ToastAndroid.SHORT); else Alert.alert('Removed');
-      } else {
-        await addToFavourites(normalized);
-        if (Platform.OS === 'android') ToastAndroid.show('Added to favourites', ToastAndroid.SHORT); else Alert.alert('Added');
-        postAddUrlToLibrary(normalized).catch(() => {});
+      };
+      try {
+        Alert.alert(
+          'Favourites',
+          'already in favourites, remove it ?',
+          [
+            { text: 'No', style: 'cancel' },
+            { text: 'Yes', onPress: onYes },
+          ],
+          { cancelable: true },
+        );
+      } catch {
+        onYes();
       }
-    };
+      return;
+    }
+    // Open add favourite modal for name + url
+    setNewFavUrl(normalized);
+    const defaultName = getDomainFromUrlString(normalized) || normalized;
+    setNewFavName(defaultName);
+    setShowAddFavouriteModal(true);
+  };
+
+  const openOptionsMenu = () => {
+    const actions = [
+      { title: 'Set homepage', onPress: () => promptSetHomepage() },
+      { title: 'Favourites list', onPress: () => setShowFavouritesList(true) },
+      { title: 'Cancel', onPress: () => {}, isCancel: true },
+    ];
+    if (Platform.OS === 'ios') {
+      ActionSheetIOS.showActionSheetWithOptions(
+        {
+          options: actions.map(a => a.title),
+          cancelButtonIndex: actions.findIndex(a => a.isCancel),
+          userInterfaceStyle: 'light',
+        },
+        (buttonIndex) => {
+          const action = actions[buttonIndex];
+          if (action && action.onPress) action.onPress();
+        }
+      );
+      return;
+    }
     try {
       Alert.alert(
-        title,
-        message,
-        [
-          { text: 'No', style: 'cancel' },
-          { text: 'Yes', onPress: onYes },
-        ],
+        'Options',
+        undefined,
+        actions.map(a => ({ text: a.title, onPress: a.onPress, style: a.isCancel ? 'cancel' as const : undefined })),
         { cancelable: true },
       );
     } catch {
-      onYes();
+      // Fallback: just open favourites if alert fails
+      setShowFavouritesList(true);
     }
   };
 
@@ -733,7 +795,7 @@ function SurfScreen(): React.JSX.Element {
 
   const UrlBar = () => {
     const urlForStar = normalizeUrl((currentUrl || addressText || '').trim());
-    const isFav = favourites.includes(urlForStar);
+    const isFav = favourites.some((f) => f.url === urlForStar);
     return (
       <View style={styles.urlBarContainer}>
         <TextInput
@@ -800,13 +862,13 @@ function SurfScreen(): React.JSX.Element {
           <Ionicons name="albums-outline" size={22} color="#007AFF" />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={promptSetHomepage}
+          onPress={openOptionsMenu}
           style={styles.libraryBtn}
           accessibilityRole="button"
-          accessibilityLabel="Set as homepage"
+          accessibilityLabel="More options"
           hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
         >
-          <Ionicons name="home-outline" size={22} color="#007AFF" />
+          <Ionicons name="ellipsis-vertical" size={22} color="#007AFF" />
         </TouchableOpacity>
       </View>
     );
@@ -815,6 +877,99 @@ function SurfScreen(): React.JSX.Element {
   return (
     <View style={{ flex: 1 }}>
       <UrlBar />
+      <Modal
+        visible={showFavouritesList}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setShowFavouritesList(false)}
+      >
+        <View style={styles.modalBackdrop}>
+          <View style={styles.modalCard}>
+            <Text style={styles.modalTitle}>Favourites</Text>
+            <ScrollView style={{ maxHeight: 320 }}>
+              {favourites.length === 0 && (
+                <Text style={styles.emptyText}>No favourites yet</Text>
+              )}
+              {favourites.map((f) => (
+                <TouchableOpacity
+                  key={f.url}
+                  style={styles.favItem}
+                  onPress={() => {
+                    setShowFavouritesList(false);
+                    setAddressText(f.url);
+                    setCurrentUrl(f.url);
+                  }}
+                >
+                  <Ionicons name="star" size={16} color="#f59e0b" style={{ marginRight: 8 }} />
+                  <Text numberOfLines={1} style={styles.favText}>{f.name}</Text>
+                  <TouchableOpacity
+                    onPress={() => removeFromFavourites(f.url)}
+                    style={styles.favRemoveBtn}
+                    hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+                  >
+                    <Ionicons name="close" size={18} color="#6b7280" />
+                  </TouchableOpacity>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+            <View style={{ alignItems: 'flex-end', marginTop: 10 }}>
+              <TouchableOpacity onPress={() => setShowFavouritesList(false)} style={styles.modalCloseBtn}>
+                <Text style={styles.modalCloseText}>Close</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+      <Modal
+        visible={showAddFavouriteModal}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setShowAddFavouriteModal(false)}
+      >
+        <View style={styles.modalBackdrop}>
+          <View style={styles.modalCard}>
+            <Text style={styles.modalTitle}>Add to favourites</Text>
+            <Text style={styles.inputLabel}>Name</Text>
+            <TextInput
+              style={styles.modalInput}
+              value={newFavName}
+              onChangeText={setNewFavName}
+              placeholder="Enter a name"
+            />
+            <Text style={styles.inputLabel}>URL</Text>
+            <TextInput
+              style={styles.modalInput}
+              value={newFavUrl}
+              onChangeText={setNewFavUrl}
+              autoCapitalize="none"
+              autoCorrect={false}
+              keyboardType="url"
+            />
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 12, gap: 8 }}>
+              <TouchableOpacity onPress={() => setShowAddFavouriteModal(false)} style={styles.modalCloseBtn}>
+                <Text style={styles.modalCloseText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={async () => {
+                  const u = normalizeUrl(newFavUrl || currentUrl || addressText);
+                  const nm = (newFavName || '').trim();
+                  if (!u || u === 'about:blank') {
+                    if (Platform.OS === 'android') ToastAndroid.show('Invalid URL', ToastAndroid.SHORT); else Alert.alert('Invalid URL');
+                    return;
+                  }
+                  await addToFavourites(u, nm);
+                  setShowAddFavouriteModal(false);
+                  if (Platform.OS === 'android') ToastAndroid.show('Added to favourites', ToastAndroid.SHORT); else Alert.alert('Added');
+                  postAddUrlToLibrary(u).catch(() => {});
+                }}
+                style={[styles.modalCloseBtn, { backgroundColor: '#007AFF' }]}
+              >
+                <Text style={[styles.modalCloseText, { color: 'white' }]}>Add</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
       {isAddressFocused && filteredDomains.length > 0 && (
         <View style={styles.suggestionsContainer}>
           <ScrollView keyboardShouldPersistTaps="handled" style={{ maxHeight: 200 }}>
@@ -1012,6 +1167,54 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#111827',
   },
+  modalBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    justifyContent: 'center',
+    padding: 16,
+  },
+  modalCard: {
+    backgroundColor: 'white',
+    borderRadius: 12,
+    padding: 14,
+  },
+  modalTitle: {
+    fontSize: 16,
+    fontWeight: '700',
+    marginBottom: 10,
+  },
+  emptyText: {
+    color: '#6b7280',
+    marginVertical: 8,
+  },
+  favItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f3f4f6',
+  },
+  favText: {
+    flex: 1,
+    color: '#111827',
+  },
+  favRemoveBtn: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalCloseBtn: {
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    backgroundColor: '#f3f4f6',
+    borderRadius: 8,
+  },
+  modalCloseText: {
+    fontSize: 13,
+    color: '#374151',
+  },
   translationLoadingRow: {
     height: 42,
     alignItems: 'flex-start',
@@ -1024,6 +1227,19 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginRight: 8,
     backgroundColor: '#eee',
+  },
+  inputLabel: {
+    fontSize: 12,
+    color: '#374151',
+    marginTop: 8,
+    marginBottom: 6,
+  },
+  modalInput: {
+    borderWidth: 1,
+    borderColor: '#e5e7eb',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
   },
 });
 
