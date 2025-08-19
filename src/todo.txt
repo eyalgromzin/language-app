@@ -15,31 +15,27 @@ tomorrow :
 
 ==================================================================================================================
 
+ - library screen 
+    - split it into 3 sections : websites , books , videos  
+        - books tab will show links to books that the user can download from
+        - videos will show thumbnails also from youtube 
+    - book section wont have a level but only book type: 
+        childrens , short stories , novel , technical, self help/new age. none fiction. other
 
-
+================================================================================================================
 
 - get step by step jsons from server 
 
-- video transcript always goes to top , and then scrolls back to the line . is shouldnt scroll to top first 
+- video transcript always goes to top , and then scrolls back to the line . it looks bad - is shouldnt scroll to top first 
 
-- screens / tabs:
-    - library screen 
-        - split it into 3 sections : websites , books , videos  
-            - books tab will show links to books that the user can download from
-            - videos will show thumbnails also from youtube 
-        - book section wont have a level but only book type: 
-            childrens , short stories , novel , technical, self help/new age. none fiction. other
-    - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
-    - videos 
-        - when entering to url text input field a text that is not url , it should search youtube and show results for easy clicking and viewing 
-        - when opening a youtube video , instead of newest videos , show related videos 
+- videos - when opening a youtube tab , instead of newest videos , show related videos - like in youtube 
 
 
+=============================================================================================================
 
 - login with facebook / google
 
-    
-- deep links 
+- deep link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
 
 - add animations - to make everythin a little more playful :
     add animations on these events : 
