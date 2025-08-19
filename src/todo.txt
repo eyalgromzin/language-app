@@ -1,6 +1,6 @@
 tomorrow :
 
-- video screen next to the go button add history button .
+library item types:  text, video , book
 
 - surf screen 
     - add favourites button to surf screen - 
@@ -21,6 +21,8 @@ tomorrow :
 ==================================================================================================================
 
 - get step by step jsons from server 
+
+- video transcript always goes to top , and then scrolls back to the line . is shouldnt scroll to top first 
 
 - screens / tabs:
     - library screen 

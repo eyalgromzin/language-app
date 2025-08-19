@@ -635,8 +635,8 @@ function SurfScreen(): React.JSX.Element {
     }
   };
 
-  return (
-    <View style={{ flex: 1 }}>
+  const UrlBar = () => {
+    return (
       <View style={styles.urlBarContainer}>
         <TextInput
           ref={addressInputRef}
@@ -702,6 +702,12 @@ function SurfScreen(): React.JSX.Element {
           <Ionicons name="home-outline" size={22} color="#007AFF" />
         </TouchableOpacity>
       </View>
+    );
+  };
+
+  return (
+    <View style={{ flex: 1 }}>
+      <UrlBar />
       {isAddressFocused && filteredDomains.length > 0 && (
         <View style={styles.suggestionsContainer}>
           <ScrollView keyboardShouldPersistTaps="handled" style={{ maxHeight: 200 }}>
