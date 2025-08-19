@@ -1,15 +1,17 @@
 tomorrow :
 
-- add microphone icon to practices that need it . like choose word / translation ...
+- add microphone icon to practices that need it . and read word on load in practices:  
+    - word missing letters - play translation ...
+    - translation missing letters - play word 
+    - choose word - play translation 
+    - choose translation - play word
+    - hearing practice     
 - videos screen - show similar videos below transcript 
 - add pdf support for reading books.
 
 - add sounds on:
     - correct answer 
     - incorrect answer
-
-
-
 
 ==================================================================================================================
 
