@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View, NativeModules } from 'react-native';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
 import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
@@ -22,6 +22,7 @@ function SurfScreen(): React.JSX.Element {
   // Languages selected by the user (Settings / Startup)
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
+  const [favourites, setFavourites] = React.useState<string[]>([]);
 
   React.useEffect(() => {
     let mounted = true;
@@ -52,6 +53,7 @@ function SurfScreen(): React.JSX.Element {
 
   // --- URL autocomplete state ---
   const DOMAINS_KEY = 'surf.domains';
+  const FAVOURITES_KEY = 'surf.favourites';
   const [savedDomains, setSavedDomains] = React.useState<string[]>([]);
   const [isAddressFocused, setIsAddressFocused] = React.useState<boolean>(false);
 
@@ -66,6 +68,22 @@ function SurfScreen(): React.JSX.Element {
       } catch {
         if (!mounted) return;
         setSavedDomains([]);
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const raw = await AsyncStorage.getItem(FAVOURITES_KEY);
+        if (!mounted) return;
+        const arr = JSON.parse(raw || '[]');
+        setFavourites(Array.isArray(arr) ? (arr as string[]).filter(Boolean) : []);
+      } catch {
+        if (!mounted) return;
+        setFavourites([]);
       }
     })();
     return () => { mounted = false; };
@@ -378,6 +396,17 @@ function SurfScreen(): React.JSX.Element {
 
   const HOMEPAGE_KEY = 'surf.homepage';
 
+  const apiBaseUrl = React.useMemo(() => {
+    const scriptURL: string | undefined = (NativeModules as any)?.SourceCode?.scriptURL;
+    if (scriptURL) {
+      try {
+        const { hostname } = new URL(scriptURL);
+        return `http://${hostname}:3000`;
+      } catch {}
+    }
+    return 'http://localhost:3000';
+  }, []);
+
   React.useEffect(() => {
     let mounted = true;
     (async () => {
@@ -434,6 +463,73 @@ function SurfScreen(): React.JSX.Element {
       );
     } catch {
       confirmAndSave();
+    }
+  };
+
+  const saveFavourites = async (next: string[]) => {
+    setFavourites(next);
+    try { await AsyncStorage.setItem(FAVOURITES_KEY, JSON.stringify(next)); } catch {}
+  };
+
+  const addToFavourites = async (url: string) => {
+    if (!url) return;
+    const normalized = normalizeUrl(url);
+    const next = [normalized, ...favourites.filter((u) => u !== normalized)].slice(0, 200);
+    await saveFavourites(next);
+  };
+
+  const removeFromFavourites = async (url: string) => {
+    if (!url) return;
+    const normalized = normalizeUrl(url);
+    const next = favourites.filter((u) => u !== normalized);
+    await saveFavourites(next);
+  };
+
+  const postAddUrlToLibrary = async (url: string) => {
+    try {
+      const body = {
+        url,
+        language: learningLanguage || 'en',
+        level: 'All',
+        type: 'All',
+        name: url,
+        media: 'web',
+      } as const;
+      await fetch(`${apiBaseUrl}/library/addUrl`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+    } catch {}
+  };
+
+  const promptFavourite = (url: string, alreadyFav: boolean) => {
+    const normalized = normalizeUrl(url);
+    if (!normalized || normalized === 'about:blank') return;
+    const title = 'Favourites';
+    const message = alreadyFav ? 'already in favourites, remove it ?' : 'add to favourites';
+    const onYes = async () => {
+      if (alreadyFav) {
+        await removeFromFavourites(normalized);
+        if (Platform.OS === 'android') ToastAndroid.show('Removed from favourites', ToastAndroid.SHORT); else Alert.alert('Removed');
+      } else {
+        await addToFavourites(normalized);
+        if (Platform.OS === 'android') ToastAndroid.show('Added to favourites', ToastAndroid.SHORT); else Alert.alert('Added');
+        postAddUrlToLibrary(normalized).catch(() => {});
+      }
+    };
+    try {
+      Alert.alert(
+        title,
+        message,
+        [
+          { text: 'No', style: 'cancel' },
+          { text: 'Yes', onPress: onYes },
+        ],
+        { cancelable: true },
+      );
+    } catch {
+      onYes();
     }
   };
 
@@ -636,6 +732,8 @@ function SurfScreen(): React.JSX.Element {
   };
 
   const UrlBar = () => {
+    const urlForStar = normalizeUrl((currentUrl || addressText || '').trim());
+    const isFav = favourites.includes(urlForStar);
     return (
       <View style={styles.urlBarContainer}>
         <TextInput
@@ -663,6 +761,15 @@ function SurfScreen(): React.JSX.Element {
             } catch (e) {}
           }}
         />
+        <TouchableOpacity
+          onPress={() => promptFavourite(urlForStar, isFav)}
+          style={styles.libraryBtn}
+          accessibilityRole="button"
+          accessibilityLabel={isFav ? 'Remove from favourites' : 'Add to favourites'}
+          hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+        >
+          <Ionicons name={isFav ? 'star' : 'star-outline'} size={22} color={isFav ? '#f59e0b' : '#007AFF'} />
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={goBack}
           disabled={!canGoBack}
