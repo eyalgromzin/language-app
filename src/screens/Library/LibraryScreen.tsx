@@ -106,6 +106,25 @@ function LibraryScreen(): React.JSX.Element {
     };
   }, [selectedType, selectedLevel, apiBaseUrl, allUrls]);
 
+  const getDomainFromUrlString = (input: string): string | null => {
+    try {
+      const str = (input || '').trim();
+      if (!str) return null;
+      const m = /^[a-zA-Z][a-zA-Z\d+\-.]*:\/\/([^/]+)/.exec(str);
+      const host = m ? m[1] : (/^www\./i.test(str) || /[^\s]+\.[^\s]{2,}/.test(str) ? str.split('/')[0] : null);
+      if (!host) return null;
+      const lower = host.toLowerCase();
+      const noWww = lower.startsWith('www.') ? lower.slice(4) : lower;
+      return noWww;
+    } catch { return null; }
+  };
+
+  const getDisplayName = (it: { url: string; name?: string | null }): string => {
+    const n = (it.name || '').trim();
+    if (n) return n;
+    return getDomainFromUrlString(it.url) || it.url;
+  };
+
   const renderItem = ({ item }: { item: { url: string; name: string; type: string; level: string } }) => {
     return (
       <TouchableOpacity
@@ -113,7 +132,7 @@ function LibraryScreen(): React.JSX.Element {
         onPress={() => navigation.navigate('Surf', { url: item.url })}
         style={styles.item}
       >
-        <Text style={styles.itemName} numberOfLines={2}>{item.name}</Text>
+        <Text style={styles.itemName} numberOfLines={2}>{getDisplayName(item)}</Text>
         <Text>{`${item.type} • ${item.level}`}</Text>
       </TouchableOpacity>
     );
