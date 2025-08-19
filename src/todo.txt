@@ -4,9 +4,7 @@ library item types:  text, video , book
 
 - surf screen 
     - add favourites button to surf screen - 
-        - will show a dialog with title , and a url already filled with the current url .  
-        - personal favourites that will be saved to local file . 
-        - all favourites - it will check in the library if this link already exists .  if not , add url to library  
+        - add favourite to all favourites - it will check in the library if this link already exists .  if not , add url to library  
 - add microphone icon to practices that need it . like choose word / translation ...
 - videos screen - show similar videos below transcript 
 - add pdf support for reading books.
