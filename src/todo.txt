@@ -1,10 +1,9 @@
 tomorrow :
 
-library item types:  text, video , book
+library item types:  web, video , book
 
 - surf screen 
-    - add favourites button to surf screen - 
-        - add favourite to all favourites - it will check in the library if this link already exists .  if not , add url to library  
+    - on add favourite - add it to library - it will check in the library if this link already exists .  if not , add url to library  
 - add microphone icon to practices that need it . like choose word / translation ...
 - videos screen - show similar videos below transcript 
 - add pdf support for reading books.
@@ -17,6 +16,9 @@ library item types:  text, video , book
 
 
 ==================================================================================================================
+
+
+
 
 - get step by step jsons from server 
 

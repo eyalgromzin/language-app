@@ -22,12 +22,22 @@ function SurfScreen(): React.JSX.Element {
   // Languages selected by the user (Settings / Startup)
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
-  type FavouriteItem = { url: string; name: string };
+  type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string };
   const [favourites, setFavourites] = React.useState<FavouriteItem[]>([]);
   const [showFavouritesList, setShowFavouritesList] = React.useState<boolean>(false);
   const [showAddFavouriteModal, setShowAddFavouriteModal] = React.useState<boolean>(false);
   const [newFavName, setNewFavName] = React.useState<string>('');
   const [newFavUrl, setNewFavUrl] = React.useState<string>('');
+  const FAVOURITE_TYPES = [
+    { id: 1, name: 'article' },
+    { id: 2, name: 'story' },
+    { id: 3, name: 'conversation' },
+    { id: 4, name: 'lyrics' },
+    { id: 5, name: 'any' },
+  ] as const;
+  const [newFavTypeId, setNewFavTypeId] = React.useState<number | null>(null);
+  const [showTypeOptions, setShowTypeOptions] = React.useState<boolean>(false);
+  const [favTypeError, setFavTypeError] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     let mounted = true;
@@ -86,7 +96,7 @@ function SurfScreen(): React.JSX.Element {
         if (!mounted) return;
         const arr = JSON.parse(raw || '[]');
         if (Array.isArray(arr)) {
-          // Support legacy string[] format and new {url,name}[] format
+          // Support legacy string[] format and new {url,name,typeId?,typeName?}[] format
           const mapped: FavouriteItem[] = arr
             .map((it: any) => {
               if (typeof it === 'string') {
@@ -97,7 +107,9 @@ function SurfScreen(): React.JSX.Element {
               if (it && typeof it === 'object' && typeof it.url === 'string') {
                 const u = normalizeUrl(it.url);
                 const nm = typeof it.name === 'string' && it.name.trim().length > 0 ? it.name : (getDomainFromUrlString(u) || u);
-                return { url: u, name: nm } as FavouriteItem;
+                const tid = typeof it.typeId === 'number' ? it.typeId : undefined;
+                const tn = typeof it.typeName === 'string' ? it.typeName : (typeof tid === 'number' ? (FAVOURITE_TYPES.find(t => t.id === tid)?.name) : undefined);
+                return { url: u, name: nm, typeId: tid, typeName: tn } as FavouriteItem;
               }
               return null;
             })
@@ -502,12 +514,12 @@ function SurfScreen(): React.JSX.Element {
     try { await AsyncStorage.setItem(FAVOURITES_KEY, JSON.stringify(next)); } catch {}
   };
 
-  const addToFavourites = async (url: string, name: string) => {
+  const addToFavourites = async (url: string, name: string, typeId: number, typeName: string) => {
     if (!url) return;
     const normalized = normalizeUrl(url);
     const safeName = (name || '').trim() || (getDomainFromUrlString(normalized) || normalized);
     const next: FavouriteItem[] = [
-      { url: normalized, name: safeName },
+      { url: normalized, name: safeName, typeId, typeName },
       ...favourites.filter((f) => f.url !== normalized),
     ].slice(0, 200);
     await saveFavourites(next);
@@ -565,6 +577,9 @@ function SurfScreen(): React.JSX.Element {
     setNewFavUrl(normalized);
     const defaultName = getDomainFromUrlString(normalized) || normalized;
     setNewFavName(defaultName);
+    setNewFavTypeId(null);
+    setFavTypeError(false);
+    setShowTypeOptions(false);
     setShowAddFavouriteModal(true);
   };
 
@@ -933,6 +948,32 @@ function SurfScreen(): React.JSX.Element {
         <View style={styles.modalBackdrop}>
           <View style={styles.modalCard}>
             <Text style={styles.modalTitle}>Add to favourites</Text>
+            <Text style={styles.inputLabel}>Type</Text>
+            <TouchableOpacity
+              onPress={() => setShowTypeOptions(prev => !prev)}
+              style={[styles.modalInput, favTypeError && !newFavTypeId ? { borderColor: '#ef4444' } : null]}
+              activeOpacity={0.7}
+            >
+              <Text style={{ color: newFavTypeId ? '#111827' : '#9ca3af' }}>
+                {newFavTypeId ? (FAVOURITE_TYPES.find(t => t.id === newFavTypeId)?.name || '') : 'Select type'}
+              </Text>
+            </TouchableOpacity>
+            {showTypeOptions && (
+              <View style={[styles.modalInput, { paddingVertical: 0, marginTop: 8 }]}> 
+                {FAVOURITE_TYPES.map((t, idx) => (
+                  <TouchableOpacity
+                    key={t.id}
+                    onPress={() => { setNewFavTypeId(t.id); setShowTypeOptions(false); setFavTypeError(false); }}
+                    style={{ paddingVertical: 10 }}
+                  >
+                    <Text style={{ color: '#111827' }}>{t.name}</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            )}
+            {favTypeError && !newFavTypeId && (
+              <Text style={styles.errorText}>Type is required</Text>
+            )}
             <Text style={styles.inputLabel}>Name</Text>
             <TextInput
               style={styles.modalInput}
@@ -949,6 +990,7 @@ function SurfScreen(): React.JSX.Element {
               autoCorrect={false}
               keyboardType="url"
             />
+           
             <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 12, gap: 8 }}>
               <TouchableOpacity onPress={() => setShowAddFavouriteModal(false)} style={styles.modalCloseBtn}>
                 <Text style={styles.modalCloseText}>Cancel</Text>
@@ -961,7 +1003,9 @@ function SurfScreen(): React.JSX.Element {
                     if (Platform.OS === 'android') ToastAndroid.show('Invalid URL', ToastAndroid.SHORT); else Alert.alert('Invalid URL');
                     return;
                   }
-                  await addToFavourites(u, nm);
+                  const selected = FAVOURITE_TYPES.find(t => t.id === newFavTypeId);
+                  if (!selected) { setFavTypeError(true); return; }
+                  await addToFavourites(u, nm, selected.id, selected.name);
                   setShowAddFavouriteModal(false);
                   if (Platform.OS === 'android') ToastAndroid.show('Added to favourites', ToastAndroid.SHORT); else Alert.alert('Added');
                   postAddUrlToLibrary(u).catch(() => {});
@@ -1244,6 +1288,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 10,
     paddingVertical: 8,
+  },
+  errorText: {
+    color: '#ef4444',
+    fontSize: 12,
+    marginTop: 6,
   },
 });
 
