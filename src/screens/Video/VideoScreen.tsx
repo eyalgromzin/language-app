@@ -930,7 +930,7 @@ function VideoScreen(): React.JSX.Element {
     if (!videoId) return null;
     return (
       <>
-        <Text style={styles.sectionTitle}>now playing</Text>
+        <Text style={styles.sectionTitle}>other users also playing</Text>
         {nowPlayingLoading ? (
           <View style={styles.centered}><ActivityIndicator /></View>
         ) : nowPlayingError ? (
@@ -1158,7 +1158,6 @@ function VideoScreen(): React.JSX.Element {
             }}
           />
         </View>
-        <NowPlaying />
         </>
       ) : (
         <Text style={styles.helper}>Enter a valid YouTube link or 11-character ID to load the video.</Text>
@@ -1166,11 +1165,13 @@ function VideoScreen(): React.JSX.Element {
 
       <Transcript />
 
+      <NowPlaying />
+
       <ImageScrape />
 
       <SearchResults />
 
-      <NewestVideos />
+      {!isPlaying && <NewestVideos />}
 
       <TranslationPanel
         panel={translationPanel}

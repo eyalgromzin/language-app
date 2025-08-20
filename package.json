@@ -13,7 +13,8 @@
     "apk:debug": "cd android && .\\gradlew.bat assembleDebug",
     "apk:release": "cd android && .\\gradlew.bat assembleRelease",
     "apk": "node scripts/generateApk.js",
-    "icons": "node scripts/generateAppIcons.js"
+    "icons": "node scripts/generateAppIcons.js",
+    "server": "cd language-learn-server && npm run start"
   },
   "dependencies": {
     "@dr.pogodin/react-native-fs": "^2.34.0",
