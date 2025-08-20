@@ -2,7 +2,10 @@ import React from 'react';
 import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, NativeSyntheticEvent, TextInputKeyPressEventData } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
+import TTS from 'react-native-tts';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
+import { LANGUAGE_NAME_TO_TTS } from '../common';
 
 type WordEntry = {
   word: string;
@@ -150,8 +153,39 @@ function translationMissingLetters(props: EmbeddedProps = {}): React.JSX.Element
   const [rowWidth, setRowWidth] = React.useState<number | null>(null);
   const inputRefs = React.useRef<Record<number, TextInput | null>>({});
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
+  const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
+
+  const getTtsLangCode = React.useCallback((nameOrNull: string | null | undefined): string | null => {
+    if (!nameOrNull) return null;
+    const code = LANGUAGE_NAME_TO_TTS[nameOrNull];
+    return typeof code === 'string' ? code : null;
+  }, []);
+
+  React.useEffect(() => {
+    try { TTS.setDefaultRate(0.5); } catch {}
+  }, []);
+
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const val = await AsyncStorage.getItem('language.learning');
+        if (!mounted) return;
+        setLearningLanguage(val ?? null);
+      } catch {
+        if (!mounted) return;
+        setLearningLanguage(null);
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
+  React.useEffect(() => {
+    const code = getTtsLangCode(learningLanguage) || 'en-US';
+    try { TTS.setDefaultLanguage(code); } catch {}
+  }, [learningLanguage, getTtsLangCode]);
 
   const prepare = React.useCallback((arr: WordEntry[], removeAfter: number): PreparedItem[] => {
     return arr.map(ensureCounters).map((entry) => {
@@ -244,6 +278,20 @@ function translationMissingLetters(props: EmbeddedProps = {}): React.JSX.Element
           : pickMissingIndices(splitLetters(props.translation || ''), 2),
       } as PreparedItem)
     : items[currentIndex];
+
+  const speakCurrent = React.useCallback((text?: string) => {
+    const toSpeak = (text || '').trim();
+    if (!toSpeak) return;
+    try { TTS.stop(); } catch {}
+    try { TTS.speak(toSpeak); } catch {}
+  }, []);
+
+  React.useEffect(() => {
+    const toSpeak = current?.entry.word || '';
+    if (!toSpeak) return;
+    const t = setTimeout(() => speakCurrent(toSpeak), 250);
+    return () => clearTimeout(t as unknown as number);
+  }, [current?.entry.word, speakCurrent]);
 
   const moveToNext = React.useCallback(() => {
     if (props.embedded) return;
@@ -463,7 +511,18 @@ function translationMissingLetters(props: EmbeddedProps = {}): React.JSX.Element
           </View>
         ) : null}
         <View style={styles.wordCard}>
-          <Text style={styles.wordText}>{current.entry.word}</Text>
+          <View style={styles.wordTitleRow}>
+            <Text style={styles.wordText} numberOfLines={1}>{current.entry.word}</Text>
+            <TouchableOpacity
+              style={styles.micInlineButton}
+              onPress={() => speakCurrent(current.entry.word)}
+              accessibilityRole="button"
+              accessibilityLabel="Speak word"
+              hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+            >
+              <Ionicons name="volume-high" size={18} color="#007AFF" />
+            </TouchableOpacity>
+          </View>
         </View>
 
         {current.entry.sentence ? (
@@ -556,6 +615,21 @@ const styles = StyleSheet.create({
   wordText: {
     fontSize: 22,
     fontWeight: '700',
+  },
+  wordTitleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  micInlineButton: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#fff',
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   sentence: {
     color: '#666',
