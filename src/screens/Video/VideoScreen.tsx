@@ -153,6 +153,8 @@ function VideoScreen(): React.JSX.Element {
   const imageScrapeRejectRef = React.useRef<((err?: unknown) => void) | null>(null);
   const hiddenWebViewRef = React.useRef<WebView>(null);
 
+  const lastUpsertedUrlRef = React.useRef<string | null>(null);
+
   React.useEffect(() => {
     let mounted = true;
     (async () => {
@@ -203,6 +205,30 @@ function VideoScreen(): React.JSX.Element {
     if (!name) return 'en';
     return mapping[name] || 'en';
   }, []);
+
+  const upsertNowPlayingForCurrent = React.useCallback(async () => {
+    try {
+      const postUrl = (url || inputUrl || '').trim();
+      if (!postUrl) return;
+      if (lastUpsertedUrlRef.current === postUrl) return;
+      lastUpsertedUrlRef.current = postUrl;
+
+      const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
+      const title = (currentVideoTitle && currentVideoTitle.trim()) ? currentVideoTitle : postUrl;
+      const thumb = videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : undefined;
+
+      await fetch('http://localhost:3000/now-playing/upsert', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          languageSymbol: symbol,
+          title,
+          url: postUrl,
+          ...(thumb ? { thumbnailUrl: thumb } : {}),
+        }),
+      });
+    } catch {}
+  }, [url, inputUrl, learningLanguage, currentVideoTitle, videoId, mapLanguageNameToYoutubeCode]);
 
   const fetchYouTubeLengthString = React.useCallback(async (id: string): Promise<string | null> => {
     const fmt = (seconds: number): string => {
@@ -1153,6 +1179,7 @@ function VideoScreen(): React.JSX.Element {
                 (async () => {
                   try { await saveHistory(url || inputUrl, currentVideoTitle); } catch {}
                 })();
+                (async () => { try { await upsertNowPlayingForCurrent(); } catch {} })();
               }
               if (state === 'paused' || state === 'ended') setIsPlaying(false);
             }}
