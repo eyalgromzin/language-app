@@ -1,0 +1,30 @@
+[
+  {
+    "word": "hello",
+    "from": "en",
+    "to": "es",
+    "translation": "hola",
+    "timestamp": 1755429956161
+  },
+  {
+    "word": "más",
+    "from": "es",
+    "to": "en",
+    "translation": "more",
+    "timestamp": 1755432141152
+  },
+  {
+    "word": "reacciones",
+    "from": "es",
+    "to": "en",
+    "translation": "reactions",
+    "timestamp": 1755432240528
+  },
+  {
+    "word": "Comencemos",
+    "from": "es",
+    "to": "en",
+    "translation": "Let's start",
+    "timestamp": 1755540490388
+  }
+]

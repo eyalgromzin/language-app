@@ -76,3 +76,4 @@ yarn-error.log
 
 # language-learn-server build output
 /language-learn-server/dist/
+/language-learn-server/node_modules/

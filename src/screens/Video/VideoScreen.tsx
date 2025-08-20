@@ -143,6 +143,9 @@ function VideoScreen(): React.JSX.Element {
   type HistoryEntry = { url: string; title: string };
   const [savedHistory, setSavedHistory] = React.useState<HistoryEntry[]>([]);
   const [showHistory, setShowHistory] = React.useState<boolean>(false);
+  const [nowPlayingVideos, setNowPlayingVideos] = React.useState<Array<{ url: string; thumbnail: string; title: string; description?: string; length?: string }>>([]);
+  const [nowPlayingLoading, setNowPlayingLoading] = React.useState<boolean>(false);
+  const [nowPlayingError, setNowPlayingError] = React.useState<string | null>(null);
 
   // Hidden WebView state to scrape lazy-loaded image results (same approach as Surf/Books)
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
@@ -305,6 +308,50 @@ function VideoScreen(): React.JSX.Element {
       cancelled = true;
     };
   }, [videoId, learningLanguage, mapLanguageNameToYoutubeCode]);
+
+  React.useEffect(() => {
+    let cancelled = false;
+    const fetchNowPlaying = async (langSymbol: string) => {
+      if (!videoId) {
+        if (!cancelled) {
+          setNowPlayingVideos([]);
+          setNowPlayingError(null);
+          setNowPlayingLoading(false);
+        }
+        return;
+      }
+      setNowPlayingLoading(true);
+      setNowPlayingError(null);
+      try {
+        const response = await fetch('http://localhost:3000/now-playing', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ languageSymbol: langSymbol }),
+        });
+        if (!response.ok) throw new Error(String(response.status));
+        const data = await response.json();
+        const results = Array.isArray(data?.results) ? data.results : Array.isArray(data) ? data : [];
+        const normalized = (results as any[]).map(r => ({
+          url: r.url,
+          thumbnail: (r.thumbnail ?? r.thumbnailUrl ?? '') as string,
+          title: r.title,
+          description: r.description,
+        }));
+        const enriched = await enrichWithLengths(normalized as Array<{ url: string; thumbnail: string; title: string; description?: string }>);
+        if (!cancelled) setNowPlayingVideos(enriched);
+      } catch (e) {
+        if (!cancelled) {
+          setNowPlayingVideos([]);
+          setNowPlayingError('Failed to load now-playing videos.');
+        }
+      } finally {
+        if (!cancelled) setNowPlayingLoading(false);
+      }
+    };
+    const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
+    fetchNowPlaying(symbol);
+    return () => { cancelled = true; };
+  }, [videoId, learningLanguage, mapLanguageNameToYoutubeCode, enrichWithLengths]);
 
   type TranscriptSegment = { text: string; duration: number; offset: number };
   
@@ -879,6 +926,41 @@ function VideoScreen(): React.JSX.Element {
     );
   };
 
+  const NowPlaying = () => {
+    if (!videoId) return null;
+    return (
+      <>
+        <Text style={styles.sectionTitle}>now playing</Text>
+        {nowPlayingLoading ? (
+          <View style={styles.centered}><ActivityIndicator /></View>
+        ) : nowPlayingError ? (
+          <Text style={[styles.helper, { color: '#cc3333' }]}>{nowPlayingError}</Text>
+        ) : nowPlayingVideos.length > 0 ? (
+          <View style={styles.videosList}>
+            {nowPlayingVideos.map((v, idx) => (
+              <TouchableOpacity key={`${v.url}-${idx}`} style={styles.videoItem} onPress={() => openStartupVideo(v.url, v.title)} activeOpacity={0.7}>
+                <View style={styles.thumbWrapper}>
+                  <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
+                  {v.length ? (
+                    <View style={styles.thumbBadge}><Text style={styles.thumbBadgeText}>{v.length}</Text></View>
+                  ) : null}
+                </View>
+                <View style={styles.videoInfo}>
+                  <Text style={styles.videoTitle} numberOfLines={2}>{v.title}</Text>
+                  {v.description ? (
+                    <Text style={styles.videoDescription} numberOfLines={3}>{v.description}</Text>
+                  ) : null}
+                </View>
+              </TouchableOpacity>
+            ))}
+          </View>
+        ) : (
+          <Text style={styles.helper}>No suggestions.</Text>
+        )}
+      </>
+    );
+  };
+
   const SearchResults = () => {
     if (!searchLoading && !searchError && searchResults.length === 0) return null;
     return (
@@ -1076,6 +1158,7 @@ function VideoScreen(): React.JSX.Element {
             }}
           />
         </View>
+        <NowPlaying />
         </>
       ) : (
         <Text style={styles.helper}>Enter a valid YouTube link or 11-character ID to load the video.</Text>

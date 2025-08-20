@@ -501,7 +501,7 @@ function BookReaderScreen(): React.JSX.Element {
       let match: RegExpExecArray | null;
       while ((match = imgTagRegex.exec(html)) !== null) {
         const classAttr = match[2] || '';
-        if (
+        if ( //
           classAttr.indexOf('ImagesContentImage-Image') !== -1 &&
           classAttr.indexOf('ImagesContentImage-Image_clickable') !== -1
         ) {
