@@ -26,3 +26,10 @@ export const LANGUAGE_NAME_TO_TTS: Record<string, string> = {
 };
 
 
+export function getTtsLangCode(nameOrNull: string | null | undefined): string | null {
+  if (!nameOrNull) return null;
+  const code = LANGUAGE_NAME_TO_TTS[nameOrNull];
+  return typeof code === 'string' ? code : null;
+}
+
+

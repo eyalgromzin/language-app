@@ -1,7 +1,6 @@
 tomorrow :
 
 - add microphone icon to practices that need it . and read word on load in practices:  
-    - translation missing letters - play word 
     - choose word - play translation 
     - choose translation - play word
     - hearing practice     

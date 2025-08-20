@@ -3,7 +3,7 @@ import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View, ScrollView
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import TTS from 'react-native-tts';
-import { LANGUAGE_NAME_TO_TTS } from '../common';
+import { getTtsLangCode } from '../common';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 
 type WordEntry = {
@@ -38,11 +38,7 @@ type EmbeddedProps = {
 };
 
 
-const getTtsLangCode = (nameOrNull: string | null | undefined): string | null => {
-  if (!nameOrNull) return null;
-  const code = LANGUAGE_NAME_TO_TTS[nameOrNull];
-  return typeof code === 'string' ? code : null;
-};
+
 
 function ensureCounters(entry: WordEntry): WordEntry {
   return {

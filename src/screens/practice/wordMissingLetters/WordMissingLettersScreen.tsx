@@ -5,7 +5,7 @@ import * as RNFS from 'react-native-fs';
 import TTS from 'react-native-tts';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
-import { LANGUAGE_NAME_TO_TTS } from '../common';
+import { getTtsLangCode } from '../common';
 
 type WordEntry = {
   word: string;
@@ -162,11 +162,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
-  const getTtsLangCode = React.useCallback((nameOrNull: string | null | undefined): string | null => {
-    if (!nameOrNull) return null;
-    const code = LANGUAGE_NAME_TO_TTS[nameOrNull];
-    return typeof code === 'string' ? code : null;
-  }, []);
+  
 
   React.useEffect(() => {
     try { TTS.setDefaultRate(0.5); } catch {}
@@ -194,7 +190,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   React.useEffect(() => {
     const code = getTtsLangCode(nativeLanguage) || 'en-US';
     try { TTS.setDefaultLanguage(code); } catch {}
-  }, [nativeLanguage, getTtsLangCode]);
+  }, [nativeLanguage]);
 
   const prepare = React.useCallback((arr: WordEntry[], removeAfter: number): PreparedItem[] => {
     return arr.map(ensureCounters).map((entry) => {
