@@ -80,3 +80,5 @@ yarn-error.log
  
 # language-learn-server runtime data
 /language-learn-server/data/nowPlaying.json
+/language-learn-server/data/last_words.json
+/language-learn-server/data/last_translations.json

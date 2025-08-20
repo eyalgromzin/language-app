@@ -11,9 +11,10 @@ type StoredBook = {
   title: string;
   author?: string;
   coverUri?: string;     // file:// path to extracted cover image if available
-  filePath: string;      // RNFS DocumentDirectoryPath path to the .epub copy
+  filePath: string;      // RNFS DocumentDirectoryPath path to the copied file
+  format?: 'epub' | 'pdf';
   addedAt: string;
-  lastPositionCfi?: string; // for resuming
+  lastPositionCfi?: string; // for resuming (EPUB only)
   lastOpenedAt?: string; // for ordering by recent open
 };
 
@@ -95,14 +96,23 @@ function BooksScreen(): React.JSX.Element {
         return;
       }
       const pickerTypes = Platform.select<string[]>({
-        ios: ['org.idpf.epub-container', 'public.epub', 'application/epub+zip'],
-        android: ['*/*'],
+        ios: [
+          'org.idpf.epub-container',
+          'public.epub',
+          'application/epub+zip',
+          'com.adobe.pdf',
+          'public.pdf',
+          'application/pdf',
+        ],
+        android: ['application/epub+zip', 'application/pdf', '*/*'],
         default: ['*/*'],
       }) as string[];
       const [res] = await pick({ type: pickerTypes, copyTo: 'cachesDirectory' } as any);
       if (!res) return;
-      if (res.name && !/\.epub$/i.test(res.name)) {
-        Alert.alert('Unsupported file', 'Please choose an .epub file.');
+      const isEpub = !!(res.name && /\.epub$/i.test(res.name));
+      const isPdf = !!(res.name && /\.pdf$/i.test(res.name));
+      if (!isEpub && !isPdf) {
+        Alert.alert('Unsupported file', 'Please choose an .epub or .pdf file.');
         return;
       }
       const pickedUri: string = ((res as any).fileCopyUri || res.uri || '').toString();
@@ -117,7 +127,7 @@ function BooksScreen(): React.JSX.Element {
           }
         } catch {}
       }
-      await importEpubFromUri(usableUri, res.name || 'book.epub');
+      await importBookFromUri(usableUri, res.name || (isPdf ? 'document.pdf' : 'book.epub'));
     } catch (e: any) {
       // ignore cancel
     }
@@ -134,9 +144,11 @@ function BooksScreen(): React.JSX.Element {
     }
   };
 
-  const importEpubFromUri = async (uri: string, filenameFallback: string) => {
+  const importBookFromUri = async (uri: string, filenameFallback: string) => {
     try {
-      const fileName = filenameFallback && /\.epub$/i.test(filenameFallback) ? filenameFallback : (filenameFallback + '.epub');
+      const isPdf = /\.pdf$/i.test(filenameFallback);
+      const isEpub = /\.epub$/i.test(filenameFallback);
+      const fileName = (isPdf || isEpub) ? filenameFallback : (filenameFallback + '.epub');
       let filePath = '';
       const destDir = `${RNFS.DocumentDirectoryPath}/books`;
       try { if (!(await RNFS.exists(destDir))) await RNFS.mkdir(destDir); } catch {}
@@ -177,24 +189,26 @@ function BooksScreen(): React.JSX.Element {
         Alert.alert('Unsupported source', 'Unsupported URI scheme for selected file.');
         return;
       }
-      const titleGuess = fileName.replace(/\.epub$/i, '').replace(/[_\-]+/g, ' ');
+      const titleGuess = fileName.replace(/\.(epub|pdf)$/i, '').replace(/[_\-]+/g, ' ');
       const id = String(Math.abs(hashString(filePath)));
-      const coverUri = await extractCoverImageFromEpub(filePath, id);
+      const coverUri = /\.epub$/i.test(fileName) ? (await extractCoverImageFromEpub(filePath, id)) : undefined;
       const newBook: StoredBook = {
         id,
         title: titleGuess || 'Untitled',
         author: undefined,
         coverUri: coverUri,
         filePath,
+        format: /\.pdf$/i.test(fileName) ? 'pdf' : 'epub',
         addedAt: new Date().toISOString(),
         lastOpenedAt: undefined,
       };
       const next = [newBook, ...books.filter((b) => b.filePath !== filePath)];
       await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next, null, 2));
       setBooks(next);
-      Alert.alert('Book added', `Loaded: ${newBook.title}`);
+      // Open the newly added book immediately
+      navigation.navigate('BookReader', { id: newBook.id });
     } catch (e: any) {
-      Alert.alert('Error', e?.message || 'Unknown error while importing EPUB');
+      Alert.alert('Error', e?.message || 'Unknown error while importing file');
     }
   };
 
@@ -244,7 +258,7 @@ function BooksScreen(): React.JSX.Element {
             </TouchableOpacity>
           )}
           <TouchableOpacity style={styles.addBtn} onPress={openPicker}>
-            <Text style={styles.addBtnText}>+ Load EPUB</Text>
+            <Text style={styles.addBtnText}>+ Load Book</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -252,7 +266,7 @@ function BooksScreen(): React.JSX.Element {
         <View style={styles.center}><ActivityIndicator /></View>
       ) : books.length === 0 ? (
         <View style={[styles.center, { paddingHorizontal: 24 }]}>
-          <Text style={{ color: '#555', textAlign: 'center' }}>No books yet. Tap "Load EPUB" to add a book.</Text>
+          <Text style={{ color: '#555', textAlign: 'center' }}>No books yet. Tap "Load Book" to add an EPUB or PDF.</Text>
         </View>
       ) : (
         <FlatList

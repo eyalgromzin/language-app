@@ -15,8 +15,10 @@ type StoredBook = {
   author?: string;
   coverUri?: string;
   filePath: string;
+  format?: 'epub' | 'pdf';
   addedAt: string;
   lastPositionCfi?: string;
+  lastPdfPage?: number;
   lastOpenedAt?: string;
 };
 
@@ -34,6 +36,9 @@ function BookReaderScreen(): React.JSX.Element {
   const [bookTitle, setBookTitle] = React.useState<string>('');
   const [src, setSrc] = React.useState<string | null>(null);
   const [initialCfi, setInitialCfi] = React.useState<string | undefined>(undefined);
+  const [bookFormat, setBookFormat] = React.useState<'epub' | 'pdf'>('epub');
+  const [pdfBase64, setPdfBase64] = React.useState<string | null>(null);
+  const [initialPdfPage, setInitialPdfPage] = React.useState<number>(1);
 
   const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
 
@@ -116,10 +121,25 @@ function BookReaderScreen(): React.JSX.Element {
             return;
           }
         } catch {}
+        const detectedFormat: 'epub' | 'pdf' = (book.format === 'pdf' || /\.pdf$/i.test(book.filePath)) ? 'pdf' : 'epub';
         if (!cancelled) {
           setBookTitle(book.title || '');
-          setSrc(localPath);
-          setInitialCfi(book.lastPositionCfi);
+          setBookFormat(detectedFormat);
+          if (detectedFormat === 'epub') {
+            setSrc(localPath);
+            setInitialCfi(book.lastPositionCfi);
+          } else {
+            // Load PDF as base64 for pdf.js in WebView
+            try {
+              const data = await RNFS.readFile(localPath.replace(/^file:\/\//, ''), 'base64' as any);
+              if (!cancelled) {
+                setPdfBase64(data);
+                setInitialPdfPage(Math.max(1, Number(book.lastPdfPage) || 1));
+              }
+            } catch {
+              if (!cancelled) setError('Failed to load PDF');
+            }
+          }
         }
       } catch {
         if (!cancelled) setError('Failed to load book');
@@ -160,6 +180,19 @@ function BookReaderScreen(): React.JSX.Element {
     const cfi: string | null = currentLocation?.start?.cfi ?? currentLocation?.end?.cfi ?? null;
     void persistCfi(cfi);
   }, [persistCfi]);
+
+  const persistPdfPage = React.useCallback(async (page: number) => {
+    try {
+      if (!bookId) return;
+      const json = await AsyncStorage.getItem(STORAGE_KEY);
+      const parsed = json ? JSON.parse(json) : [];
+      const books: StoredBook[] = Array.isArray(parsed) ? parsed : [];
+      const next = books.map((b) => (b.id === bookId ? { ...b, lastPdfPage: Math.max(1, Number(page) || 1) } : b));
+      await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next, null, 2));
+    } catch {
+      // ignore
+    }
+  }, [bookId]);
 
   const injectedJavascript = React.useMemo(() => {
     const bg = themeColors.bg;
@@ -419,9 +452,236 @@ function BookReaderScreen(): React.JSX.Element {
         const w: string = String(data.word);
         const s: string | undefined = typeof data.sentence === 'string' ? data.sentence : undefined;
         openPanel(w, s);
+        return;
+      }
+      if (data && data.type === 'pdfPage' && typeof data.page === 'number') {
+        void persistPdfPage(Number(data.page));
+        return;
       }
     } catch {}
   }, []);
+
+  const pdfHtml = React.useMemo(() => {
+    if (!pdfBase64) return null as string | null;
+    const bg = themeColors.bg;
+    const text = themeColors.text;
+    const initialPageSafe = Math.max(1, Number(initialPdfPage) || 1);
+    const base64Literal = JSON.stringify(pdfBase64);
+    return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <style>
+    html, body { margin: 0; padding: 0; background: ${bg}; color: ${text}; }
+    #viewer { width: 100vw; }
+    .page { position: relative; margin: 8px auto; background: ${bg}; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+    .textLayer { position: absolute; left: 0; top: 0; right: 0; bottom: 0; color: transparent; }
+    .ll-selected-word { background: rgba(255, 235, 59, 0.9); border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }
+    canvas { display: block; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';</script>
+  </head>
+<body>
+  <div id="viewer"></div>
+  <script>
+    const PDF_BASE64 = ${base64Literal};
+    const INITIAL_PAGE = ${initialPageSafe};
+    function base64ToUint8Array(base64) {
+      try {
+        const raw = atob(base64);
+        const arr = new Uint8Array(raw.length);
+        for (let i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
+        return arr;
+      } catch (e) { return new Uint8Array(); }
+    }
+
+    function ensureHighlightStyle(doc) {
+      try {
+        if (!doc || !doc.head) return;
+        if (doc.getElementById('ll-highlight-style')) return;
+        const style = doc.createElement('style');
+        style.id = 'll-highlight-style';
+        style.type = 'text/css';
+        style.appendChild(doc.createTextNode('.ll-selected-word { background: rgba(255, 235, 59, 0.9); border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }'));
+        doc.head.appendChild(style);
+      } catch (e) {}
+    }
+
+    function clearHighlights(doc) {
+      try {
+        const nodes = Array.from(doc.querySelectorAll('.ll-selected-word'));
+        nodes.forEach((node) => {
+          try {
+            const parent = node.parentNode;
+            while (node.firstChild) parent.insertBefore(node.firstChild, node);
+            parent.removeChild(node);
+          } catch (e) {}
+        });
+      } catch (e) {}
+    }
+
+    function computeSentenceFromText(text, startIndex, endIndex) {
+      try {
+        var punct = /[\\.!?。！？]/;
+        var s = startIndex; while (s > 0 && !punct.test(text[s - 1])) s--;
+        var e = endIndex; while (e < text.length && !punct.test(text[e])) e++;
+        return (text.slice(s, Math.min(e + 1, text.length)) || '').replace(/\\s+/g, ' ').trim();
+      } catch (e) { return ''; }
+    }
+
+    function highlightWordAtPoint(doc, x, y) {
+      try {
+        const range = (doc.caretRangeFromPoint && doc.caretRangeFromPoint(x, y))
+          || (doc.caretPositionFromPoint && (function(){
+                const pos = doc.caretPositionFromPoint(x, y);
+                if (!pos) return null;
+                const r = doc.createRange();
+                r.setStart(pos.offsetNode, Math.min(pos.offset, pos.offsetNode?.length || 0));
+                r.setEnd(pos.offsetNode, Math.min(pos.offset, pos.offsetNode?.length || 0));
+                return r;
+             })());
+        if (!range) return null;
+        let node = range.startContainer;
+        if (!node) return null;
+        if (node.nodeType !== 3) {
+          (function findTextNode(n){
+            if (!n) return null;
+            if (n.nodeType === 3) { node = n; return n; }
+            for (let i = 0; i < n.childNodes.length; i++) {
+              const res = findTextNode(n.childNodes[i]);
+              if (res) return res;
+            }
+            return null;
+          })(node);
+          if (!node || node.nodeType !== 3) return null;
+        }
+        const text = node.textContent || '';
+        let index = range.startOffset;
+        if (index < 0) index = 0;
+        if (index > text.length) index = text.length;
+        const isWordChar = (ch) => /[A-Za-z0-9_'’\-]/.test(ch);
+        let start = index;
+        while (start > 0 && isWordChar(text[start - 1])) start--;
+        let end = index;
+        while (end < text.length && isWordChar(text[end])) end++;
+        const word = (text.slice(start, end) || '').trim();
+        if (!word) return null;
+        clearHighlights(doc);
+        const highlightRange = doc.createRange();
+        highlightRange.setStart(node, start);
+        highlightRange.setEnd(node, end);
+        const span = doc.createElement('span');
+        span.className = 'll-selected-word';
+        try { highlightRange.surroundContents(span); } catch (e) {
+          const frag = highlightRange.extractContents();
+          span.appendChild(frag);
+          highlightRange.insertNode(span);
+        }
+        var sentence = computeSentenceFromText(text, start, end);
+        return { word: word, sentence: sentence };
+      } catch (e) { return null; }
+    }
+
+    function attachWordHandlers(doc) {
+      if (!doc || doc.__llWordHandlersAttached) return;
+      doc.__llWordHandlersAttached = true;
+      ensureHighlightStyle(doc);
+      const onTap = function(ev) {
+        try {
+          const res = highlightWordAtPoint(doc, ev.clientX, ev.clientY);
+          if (res && res.word) {
+            window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
+              JSON.stringify({ type: 'wordTap', word: res.word, sentence: res.sentence || '' })
+            );
+          }
+        } catch (e) {}
+      };
+      doc.body.addEventListener('click', onTap, true);
+      doc.body.addEventListener('touchend', function(e){
+        try {
+          const t = e.changedTouches && e.changedTouches[0];
+          if (!t) return;
+          const res = highlightWordAtPoint(doc, t.clientX, t.clientY);
+          if (res && res.word) {
+            window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
+              JSON.stringify({ type: 'wordTap', word: res.word, sentence: res.sentence || '' })
+            );
+          }
+        } catch (e) {}
+      }, true);
+    }
+
+    function observePages(container) {
+      try {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const pageNum = Number(entry.target.getAttribute('data-page-number')) || 1;
+              window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
+                JSON.stringify({ type: 'pdfPage', page: pageNum })
+              );
+            }
+          });
+        }, { root: null, threshold: 0.6 });
+        const pages = container.querySelectorAll('.page');
+        pages.forEach(p => observer.observe(p));
+      } catch (e) {}
+    }
+
+    (async function() {
+      try {
+        const container = document.getElementById('viewer');
+        attachWordHandlers(document);
+        const loadingTask = pdfjsLib.getDocument({ data: base64ToUint8Array(PDF_BASE64) });
+        const pdf = await loadingTask.promise;
+        const availWidth = Math.max(320, container.clientWidth || window.innerWidth || 360) - 16;
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+          const page = await pdf.getPage(pageNum);
+          const unscaledViewport = page.getViewport({ scale: 1.0 });
+          const scale = availWidth / unscaledViewport.width;
+          const viewport = page.getViewport({ scale });
+          const wrapper = document.createElement('div');
+          wrapper.className = 'page';
+          wrapper.style.width = viewport.width + 'px';
+          wrapper.style.height = viewport.height + 'px';
+          wrapper.setAttribute('data-page-number', String(pageNum));
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = Math.floor(viewport.width);
+          canvas.height = Math.floor(viewport.height);
+          canvas.style.width = viewport.width + 'px';
+          canvas.style.height = viewport.height + 'px';
+          const textLayerDiv = document.createElement('div');
+          textLayerDiv.className = 'textLayer';
+          wrapper.appendChild(canvas);
+          wrapper.appendChild(textLayerDiv);
+          container.appendChild(wrapper);
+          await page.render({ canvasContext: ctx, viewport }).promise;
+          const textContent = await page.getTextContent();
+          await pdfjsLib.renderTextLayer({
+            textContentSource: textContent,
+            container: textLayerDiv,
+            viewport: viewport,
+            textDivs: [],
+            enhanceTextSelection: true
+          }).promise;
+        }
+        // Scroll to initial page
+        try {
+          const target = document.querySelector('.page[data-page-number="' + INITIAL_PAGE + '"]');
+          if (target && target.scrollIntoView) target.scrollIntoView({ block: 'start', behavior: 'instant' });
+        } catch (e) {}
+        observePages(container);
+      } catch (e) {
+        // no-op
+      }
+    })();
+  </script>
+</body>
+</html>`;
+  }, [pdfBase64, initialPdfPage, themeColors.bg, themeColors.text]);
 
   const fetchTranslation = async (word: string): Promise<string> => {
     const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);        
@@ -701,23 +961,40 @@ function BookReaderScreen(): React.JSX.Element {
             <Text style={{ color: '#dc2626' }}>{error}</Text>
           </View>
         )}
-        {!!src && !loading && !error && (
-          <ReaderProvider>
-            <Reader
-              key={`reader-${readerTheme}`}
-              src={src}
-              width={width}
-              height={height - 56 - 300}
-              fileSystem={useFileSystem}
-              initialLocation={initialCfi}
-              onLocationChange={handleLocationChange}
-              onDisplayError={(reason: string) => setError(reason || 'Failed to display book')}
-              onReady={() => setError(null)}
-              allowScriptedContent
-              injectedJavascript={injectedJavascript}
-              onWebViewMessage={handleWebViewMessage}
-            />
-          </ReaderProvider>
+        {!!(!loading && !error) && (
+          bookFormat === 'epub' ? (
+            !!src && (
+              <ReaderProvider>
+                <Reader
+                  key={`reader-${readerTheme}`}
+                  src={src}
+                  width={width}
+                  height={height - 56 - 300}
+                  fileSystem={useFileSystem}
+                  initialLocation={initialCfi}
+                  onLocationChange={handleLocationChange}
+                  onDisplayError={(reason: string) => setError(reason || 'Failed to display book')}
+                  onReady={() => setError(null)}
+                  allowScriptedContent
+                  injectedJavascript={injectedJavascript}
+                  onWebViewMessage={handleWebViewMessage}
+                />
+              </ReaderProvider>
+            )
+          ) : (
+            !!pdfHtml && (
+              <WebView
+                source={{ html: pdfHtml }}
+                style={{ width: width, height: height - 56 - 300, backgroundColor: themeColors.bg }}
+                onMessage={handleWebViewMessage}
+                javaScriptEnabled
+                domStorageEnabled
+                originWhitelist={["*"]}
+                allowUniversalAccessFromFileURLs
+                allowFileAccess
+              />
+            )
+          )
         )}
         {imageScrape && (
           <View style={{ position: 'absolute', left: -10000, top: 0, width: 360, height: 1200, opacity: 0 }}>
