@@ -5,6 +5,7 @@ import * as RNFS from 'react-native-fs';
 import TTS from 'react-native-tts';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
+import { LANGUAGE_NAME_TO_TTS } from '../common';
 
 type WordEntry = {
   word: string;
@@ -161,33 +162,6 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
-  // Map app language names to TTS language codes
-  const LANGUAGE_NAME_TO_TTS: Record<string, string> = {
-    English: 'en-US',
-    Spanish: 'es-ES',
-    French: 'fr-FR',
-    German: 'de-DE',
-    Italian: 'it-IT',
-    Portuguese: 'pt-PT',
-    Russian: 'ru-RU',
-    'Chinese (Mandarin)': 'zh-CN',
-    Japanese: 'ja-JP',
-    Korean: 'ko-KR',
-    Arabic: 'ar-SA',
-    Hindi: 'hi-IN',
-    Turkish: 'tr-TR',
-    Polish: 'pl-PL',
-    Dutch: 'nl-NL',
-    Greek: 'el-GR',
-    Swedish: 'sv-SE',
-    Norwegian: 'nb-NO',
-    Finnish: 'fi-FI',
-    Czech: 'cs-CZ',
-    Ukrainian: 'uk-UA',
-    Hebrew: 'he-IL',
-    Thai: 'th-TH',
-    Vietnamese: 'vi-VN',
-  };
   const getTtsLangCode = React.useCallback((nameOrNull: string | null | undefined): string | null => {
     if (!nameOrNull) return null;
     const code = LANGUAGE_NAME_TO_TTS[nameOrNull];
