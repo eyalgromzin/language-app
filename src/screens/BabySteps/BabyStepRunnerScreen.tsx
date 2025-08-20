@@ -9,7 +9,7 @@ import MissingWordsScreen from '../practice/missingWords/MissingWordsScreen';
 import Choose1OutOfN from '../practice/choose1OutOfN/Choose1OutOfN';
 import HearingPracticeScreen from '../practice/hearing/HearingPracticeScreen';
 import TranslationMissingLetters from '../practice/translationMissingLetters/TranslationMissingLetters';
-import WordMissingLettersScreen from '../practice/wordMissingLetters/WordMissingLettersScreen';
+import WordMissingLettersScreen from '../practice/MissingLettersScreen/missingLettersScreen';
 import WriteWordScreen from '../practice/writeWord/WriteWordScreen';
 
 type StepItem = {

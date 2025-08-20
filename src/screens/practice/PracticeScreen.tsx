@@ -24,7 +24,7 @@ function PracticeScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
   const onOptionPress = (opt: PracticeOption) => {
     if (opt.key === 'missingLetters') {
-      navigation.navigate('MissingLetters');
+      navigation.navigate('MissingLetters', { mode: 'word' });
       return;
     }
     if (opt.key === 'missingWords') {
@@ -48,7 +48,7 @@ function PracticeScreen(): React.JSX.Element {
       return;
     }
   if (opt.key === 'translate') {
-      navigation.navigate('Translate');
+      navigation.navigate('Translate', { mode: 'translation' });
       return;
     }
     if (opt.key === 'chooseWord') {
@@ -65,13 +65,13 @@ function PracticeScreen(): React.JSX.Element {
   const onSurprise = () => {
     const idx = Math.floor(Math.random() * PRACTICE_OPTIONS.length);
     const opt = PRACTICE_OPTIONS[idx];
-    if (opt.key === 'missingLetters') return navigation.navigate('MissingLetters', { surprise: true });
+    if (opt.key === 'missingLetters') return navigation.navigate('MissingLetters', { surprise: true, mode: 'word' });
     if (opt.key === 'missingWords') return navigation.navigate('MissingWords', { surprise: true });
     if (opt.key === 'matchGame') return navigation.navigate('WordsMatch', { surprise: true });
     if (opt.key === 'memoryGame') return navigation.navigate('MemoryGame', { surprise: true });
     if (opt.key === 'hearing') return navigation.navigate('HearingPractice', { surprise: true });
     if (opt.key === 'formulateSentense') return navigation.navigate('FormulateSentense', { surprise: true });
-    if (opt.key === 'translate') return navigation.navigate('Translate', { surprise: true });
+    if (opt.key === 'translate') return navigation.navigate('Translate', { surprise: true, mode: 'translation' });
     if (opt.key === 'chooseWord') return navigation.navigate('ChooseWord', { surprise: true });
     if (opt.key === 'chooseTranslation') return navigation.navigate('ChooseTranslation', { surprise: true });
     onOptionPress(opt);

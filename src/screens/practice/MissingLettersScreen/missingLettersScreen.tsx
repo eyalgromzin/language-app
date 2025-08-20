@@ -29,8 +29,11 @@ type PreparedItem = {
   missingIndices: number[];
 };
 
+type Mode = 'word' | 'translation';
+
 type EmbeddedProps = {
   embedded?: boolean;
+  mode?: Mode;
   word?: string;
   translation?: string;
   missingIndices?: number[];
@@ -131,6 +134,7 @@ function pickRandomIndex(length: number, previous?: number): number {
 function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
+  const mode: Mode = (route?.params?.mode as Mode) || props.mode || 'word';
   const RANDOM_GAME_ROUTES: string[] = [
     'MissingLetters',
     'MissingWords',
@@ -139,12 +143,17 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
     'ChooseWord',
     'ChooseTranslation',
     'MemoryGame',
+    'HearingPractice',
+    'FormulateSentense',
   ];
   const navigateToRandomNext = React.useCallback(() => {
     const currentName = (route as any)?.name as string | undefined;
     const choices = RANDOM_GAME_ROUTES.filter((n) => n !== currentName);
     const target = choices[Math.floor(Math.random() * choices.length)] as string;
-    navigation.navigate(target as never, { surprise: true } as never);
+    const params: any = { surprise: true };
+    if (target === 'Translate') params.mode = 'translation';
+    if (target === 'MissingLetters') params.mode = 'word';
+    navigation.navigate(target as never, params as never);
   }, [navigation, route]);
   const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [items, setItems] = React.useState<PreparedItem[]>([]);
@@ -188,20 +197,23 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   }, []);
 
   React.useEffect(() => {
-    const code = getTtsLangCode(nativeLanguage) || 'en-US';
+    const desired = mode === 'translation' ? learningLanguage : nativeLanguage;
+    const code = getTtsLangCode(desired) || 'en-US';
     try { TTS.setDefaultLanguage(code); } catch {}
-  }, [nativeLanguage]);
+  }, [learningLanguage, nativeLanguage, mode]);
 
   const prepare = React.useCallback((arr: WordEntry[], removeAfter: number): PreparedItem[] => {
     return arr.map(ensureCounters).map((entry) => {
-      const letters = splitLetters(entry.word);
-      const correctSoFar = entry.numberOfCorrectAnswers?.missingLetters ?? 0;
+      const letters = splitLetters(mode === 'translation' ? entry.translation : entry.word);
+      const correctSoFar = mode === 'translation'
+        ? (entry.numberOfCorrectAnswers?.writeTranslation ?? 0)
+        : (entry.numberOfCorrectAnswers?.missingLetters ?? 0);
       const base = 4 - removeAfter;
       const desiredMissing = base + correctSoFar;
       const missingIndices = pickMissingIndices(letters, desiredMissing);
       return { entry, letters, missingIndices };
     });
-  }, []);
+  }, [mode]);
 
   const loadData = React.useCallback(async () => {
     if (props.embedded) {
@@ -239,7 +251,9 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]) : [];
       const filtered = arr
         .filter((w) => w.word && w.translation)
-        .filter((w) => (w.numberOfCorrectAnswers?.missingLetters ?? 0) < threshold)
+        .filter((w) => (mode === 'translation'
+          ? (w.numberOfCorrectAnswers?.writeTranslation ?? 0)
+          : (w.numberOfCorrectAnswers?.missingLetters ?? 0)) < threshold)
         .filter((w) => {
           const noa = w.numberOfCorrectAnswers || ({} as any);
           const total =
@@ -262,7 +276,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
     } finally {
       setLoading(false);
     }
-  }, [filePath, prepare, props.embedded]);
+  }, [filePath, prepare, props.embedded, mode]);
 
   React.useEffect(() => {
     loadData();
@@ -282,14 +296,15 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const current = props.embedded
     ? ({
         entry: { word: props.word || '', translation: props.translation || '' },
-        letters: splitLetters(props.word || ''),
+        letters: splitLetters((props.mode === 'translation' ? props.translation : props.word) || ''),
         missingIndices: props.missingIndices && props.missingIndices.length > 0
           ? props.missingIndices
-          : pickMissingIndices(splitLetters(props.word || ''), 2),
+          : pickMissingIndices(splitLetters((props.mode === 'translation' ? props.translation : props.word) || ''), 2),
       } as PreparedItem)
     : items[currentIndex];
 
-  const currentTranslation = (current?.entry.translation || '').trim();
+  const topText = (mode === 'translation' ? current?.entry.word : current?.entry.translation) || '';
+  const topTextTrimmed = topText.trim();
 
   const speakCurrent = React.useCallback((text?: string) => {
     const toSpeak = (text || '').trim();
@@ -298,12 +313,12 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
     try { TTS.speak(toSpeak); } catch {}
   }, []);
 
-  // Auto-speak the translation when it changes or screen loads
+  // Auto-speak the top text (word for translation mode, translation for word mode)
   React.useEffect(() => {
-    if (!currentTranslation) return;
-    const t = setTimeout(() => speakCurrent(currentTranslation), 250);
+    if (!topTextTrimmed) return;
+    const t = setTimeout(() => speakCurrent(topTextTrimmed), 250);
     return () => clearTimeout(t);
-  }, [currentTranslation, speakCurrent]);
+  }, [topTextTrimmed, speakCurrent]);
 
   const resetForNext = React.useCallback(() => {
     setInputs({});
@@ -343,8 +358,10 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
         const it = { ...copy[idx] };
         it.numberOfCorrectAnswers = {
           ...it.numberOfCorrectAnswers!,
-          missingLetters: (it.numberOfCorrectAnswers?.missingLetters || 0) + 1,
-        };
+          ...(mode === 'translation'
+            ? { writeTranslation: (it.numberOfCorrectAnswers?.writeTranslation || 0) + 1 }
+            : { missingLetters: (it.numberOfCorrectAnswers?.missingLetters || 0) + 1 }),
+        } as any;
         // If total correct across all practices reaches threshold, remove the word
         const noa = it.numberOfCorrectAnswers!;
         const total =
@@ -366,7 +383,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
         } catch {}
       }
     } catch {}
-  }, [filePath, removeAfterTotalCorrect]);
+  }, [filePath, removeAfterTotalCorrect, mode]);
 
   const onChangeInput = (index: number, value: string) => {
     const char = Array.from(value).slice(-1)[0] || '';
@@ -412,7 +429,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
     // Hide keyboard once all letters are entered
     Keyboard.dismiss();
     const attempt = attemptWord();
-    const target = current.entry.word;
+    const target = mode === 'translation' ? current.entry.translation : current.entry.word;
     if (normalizeForCompare(attempt) === normalizeForCompare(target)) {
       // Ensure only one toast shows at a time
       setShowWrongToast(false);
@@ -421,7 +438,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
         const t = setTimeout(() => props.onFinished?.(true), 600);
         return () => clearTimeout(t as unknown as number);
       }
-      writeBackIncrement(target);
+      writeBackIncrement(current.entry.word);
       const timer = setTimeout(() => {
         moveToNext();
       }, 3000);
@@ -455,7 +472,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setWrongHighlightIndex(mismatchAt);
       return () => clearTimeout(wrongTimer);
     }
-  }, [attemptWord, current, inputs, moveToNext, writeBackIncrement, wrongHighlightIndex, props.embedded, props.onFinished]);
+  }, [attemptWord, current, inputs, moveToNext, writeBackIncrement, wrongHighlightIndex, props.embedded, props.onFinished, mode]);
 
   // Focus the first blank input when a new word is shown (and not in corrected state)
   React.useEffect(() => {
@@ -531,12 +548,12 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
         {!props.embedded ? (
           <View style={styles.topRow}>
             <View style={styles.translationRow}>
-              <Text style={styles.translation} numberOfLines={1}>{current.entry.translation}</Text>
+              <Text style={styles.translation} numberOfLines={1}>{topTextTrimmed}</Text>
               <TouchableOpacity
                 style={styles.micInlineButton}
-                onPress={() => speakCurrent(currentTranslation)}
+                onPress={() => speakCurrent(topTextTrimmed)}
                 accessibilityRole="button"
-                accessibilityLabel="Speak translation"
+                accessibilityLabel={mode === 'translation' ? 'Speak word' : 'Speak translation'}
                 hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
               >
                 <Ionicons name="volume-high" size={18} color="#007AFF" />
@@ -550,12 +567,12 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
         {props.embedded ? (
           <View style={styles.topRow}>
             <View style={styles.translationRow}>
-              <Text style={styles.translation} numberOfLines={1}>{current.entry.translation}</Text>
+              <Text style={styles.translation} numberOfLines={1}>{topTextTrimmed}</Text>
               <TouchableOpacity
                 style={styles.micInlineButton}
-                onPress={() => speakCurrent(currentTranslation)}
+                onPress={() => speakCurrent(topTextTrimmed)}
                 accessibilityRole="button"
-                accessibilityLabel="Speak translation"
+                accessibilityLabel={mode === 'translation' ? 'Speak word' : 'Speak translation'}
                 hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
               >
                 <Ionicons name="volume-high" size={18} color="#007AFF" />

@@ -2,11 +2,10 @@ import React from 'react';
 import { Text, Pressable } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PracticeHomeScreen from './PracticeScreen';
-import WordMissingLettersScreen from './wordMissingLetters/WordMissingLettersScreen.tsx';
+import WordMissingLettersScreen from './MissingLettersScreen/missingLettersScreen.tsx';
 import MissingWordsScreen from './missingWords/MissingWordsScreen.tsx';
 import WordsMatchScreen from './wordsMatch/WordsMatchScreen.tsx';
 // Removed separate chooseTranslation screen; both routes use Choose1OutOfN
-import translationMissingLetters from './translationMissingLetters/TranslationMissingLetters.tsx';
 import Choose1OutOfN from './choose1OutOfN/Choose1OutOfN.tsx';
 import WriteWordScreen from './writeWord/WriteWordScreen.tsx';
 import MemoryGameScreen from './memoryGame/MemoryGameScreen.tsx';
@@ -14,13 +13,14 @@ import HearingPracticeScreen from './hearing/HearingPracticeScreen.tsx';
 import FormulateSentenseScreen from './formulateSentense/FormulateSentenseScreen.tsx';
 
 type SurpriseParam = { surprise?: boolean } | undefined;
+type ModeParam = { surprise?: boolean; mode?: 'word' | 'translation' } | undefined;
 
 export type PracticeStackParamList = {
   PracticeHome: undefined;
-  MissingLetters: SurpriseParam;
+  MissingLetters: ModeParam;
   MissingWords: SurpriseParam;
   WordsMatch: SurpriseParam;
-  Translate: SurpriseParam;
+  Translate: ModeParam;
   ChooseWord: SurpriseParam;
   ChooseTranslation: SurpriseParam;
   WriteWord: SurpriseParam;
@@ -49,7 +49,10 @@ function navigateToRandomGame(
 ): void {
   const choices = RANDOM_GAME_ROUTES.filter((name) => name !== currentRouteName);
   const target = choices[Math.floor(Math.random() * choices.length)];
-  navigation.navigate(target as never, { surprise: true } as never);
+  const params: any = { surprise: true };
+  if (target === 'Translate') params.mode = 'translation';
+  if (target === 'MissingLetters') params.mode = 'word';
+  navigation.navigate(target as never, params as never);
 }
 
 function PracticeNavigator(): React.JSX.Element {
@@ -96,6 +99,7 @@ function PracticeNavigator(): React.JSX.Element {
             </Text>
           ),
         }}
+        initialParams={{ mode: 'word' }}
       />
       <Stack.Screen
         name="MissingWords"
@@ -129,7 +133,7 @@ function PracticeNavigator(): React.JSX.Element {
       />
       <Stack.Screen
         name="Translate"
-        component={translationMissingLetters}
+        component={WordMissingLettersScreen}
         options={{
           title: 'Translate',
           headerShown: true,
@@ -141,6 +145,7 @@ function PracticeNavigator(): React.JSX.Element {
             </Text>
           ),
         }}
+        initialParams={{ mode: 'translation' }}
       />
       <Stack.Screen
         name="WriteWord"
