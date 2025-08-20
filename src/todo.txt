@@ -1,10 +1,5 @@
 tomorrow :
 
-- combine words / translation missing letters 
-
-- add microphone icon to practices that need it . and read word on load in practices:  
-    - missing letters - word / translation
-    - hearing practice     
 - videos screen - show similar videos below transcript 
 - add pdf support for reading books.
 - when adding sentense , add it from the last . or , till next . or , 
