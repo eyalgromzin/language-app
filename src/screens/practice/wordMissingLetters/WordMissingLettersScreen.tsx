@@ -2,6 +2,8 @@ import React from 'react';
 import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, NativeSyntheticEvent, TextInputKeyPressEventData } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
+import TTS from 'react-native-tts';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 
 type WordEntry = {
@@ -154,8 +156,71 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const inputRefs = React.useRef<Record<number, TextInput | null>>({});
   const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
+  const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
+  const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
+
+  // Map app language names to TTS language codes
+  const LANGUAGE_NAME_TO_TTS: Record<string, string> = {
+    English: 'en-US',
+    Spanish: 'es-ES',
+    French: 'fr-FR',
+    German: 'de-DE',
+    Italian: 'it-IT',
+    Portuguese: 'pt-PT',
+    Russian: 'ru-RU',
+    'Chinese (Mandarin)': 'zh-CN',
+    Japanese: 'ja-JP',
+    Korean: 'ko-KR',
+    Arabic: 'ar-SA',
+    Hindi: 'hi-IN',
+    Turkish: 'tr-TR',
+    Polish: 'pl-PL',
+    Dutch: 'nl-NL',
+    Greek: 'el-GR',
+    Swedish: 'sv-SE',
+    Norwegian: 'nb-NO',
+    Finnish: 'fi-FI',
+    Czech: 'cs-CZ',
+    Ukrainian: 'uk-UA',
+    Hebrew: 'he-IL',
+    Thai: 'th-TH',
+    Vietnamese: 'vi-VN',
+  };
+  const getTtsLangCode = React.useCallback((nameOrNull: string | null | undefined): string | null => {
+    if (!nameOrNull) return null;
+    const code = LANGUAGE_NAME_TO_TTS[nameOrNull];
+    return typeof code === 'string' ? code : null;
+  }, []);
+
+  React.useEffect(() => {
+    try { TTS.setDefaultRate(0.5); } catch {}
+  }, []);
+
+  // Load and apply TTS language (use native language for reading translations)
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
+        if (!mounted) return;
+        const map = Object.fromEntries(entries);
+        setLearningLanguage(map['language.learning'] ?? null);
+        setNativeLanguage(map['language.native'] ?? null);
+      } catch {
+        if (!mounted) return;
+        setLearningLanguage(null);
+        setNativeLanguage(null);
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
+  React.useEffect(() => {
+    const code = getTtsLangCode(nativeLanguage) || 'en-US';
+    try { TTS.setDefaultLanguage(code); } catch {}
+  }, [nativeLanguage, getTtsLangCode]);
 
   const prepare = React.useCallback((arr: WordEntry[], removeAfter: number): PreparedItem[] => {
     return arr.map(ensureCounters).map((entry) => {
@@ -253,6 +318,22 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
           : pickMissingIndices(splitLetters(props.word || ''), 2),
       } as PreparedItem)
     : items[currentIndex];
+
+  const currentTranslation = (current?.entry.translation || '').trim();
+
+  const speakCurrent = React.useCallback((text?: string) => {
+    const toSpeak = (text || '').trim();
+    if (!toSpeak) return;
+    try { TTS.stop(); } catch {}
+    try { TTS.speak(toSpeak); } catch {}
+  }, []);
+
+  // Auto-speak the translation when it changes or screen loads
+  React.useEffect(() => {
+    if (!currentTranslation) return;
+    const t = setTimeout(() => speakCurrent(currentTranslation), 250);
+    return () => clearTimeout(t);
+  }, [currentTranslation, speakCurrent]);
 
   const resetForNext = React.useCallback(() => {
     setInputs({});
@@ -479,7 +560,18 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         {!props.embedded ? (
           <View style={styles.topRow}>
-            <Text style={styles.translation}>{current.entry.translation}</Text>
+            <View style={styles.translationRow}>
+              <Text style={styles.translation} numberOfLines={1}>{current.entry.translation}</Text>
+              <TouchableOpacity
+                style={styles.micInlineButton}
+                onPress={() => speakCurrent(currentTranslation)}
+                accessibilityRole="button"
+                accessibilityLabel="Speak translation"
+                hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+              >
+                <Ionicons name="volume-high" size={18} color="#007AFF" />
+              </TouchableOpacity>
+            </View>
             <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
               <Text style={styles.skipButtonText}>Skip</Text>
             </TouchableOpacity>
@@ -487,7 +579,18 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
         ) : null}
         {props.embedded ? (
           <View style={styles.topRow}>
-            <Text style={styles.translation}>{current.entry.translation}</Text>
+            <View style={styles.translationRow}>
+              <Text style={styles.translation} numberOfLines={1}>{current.entry.translation}</Text>
+              <TouchableOpacity
+                style={styles.micInlineButton}
+                onPress={() => speakCurrent(currentTranslation)}
+                accessibilityRole="button"
+                accessibilityLabel="Speak translation"
+                hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+              >
+                <Ionicons name="volume-high" size={18} color="#007AFF" />
+              </TouchableOpacity>
+            </View>
           </View>
         ) : null}
         {current.entry.sentence ? (
@@ -550,9 +653,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  translationRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexShrink: 1,
+    gap: 8,
+  },
   translation: {
     fontSize: 20,
     fontWeight: '700',
+    maxWidth: '80%',
   },
   skipButton: {
     paddingHorizontal: 12,
@@ -574,6 +684,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff3cd',
   },
   wordRow: {
+    flex: 1,
     flexDirection: 'row',
     flexWrap: 'nowrap',
     gap: 8,
@@ -617,6 +728,16 @@ const styles = StyleSheet.create({
   nextButtonText: {
     color: '#fff',
     fontWeight: '700',
+  },
+  micInlineButton: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#fff',
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   toast: {
     position: 'absolute',
