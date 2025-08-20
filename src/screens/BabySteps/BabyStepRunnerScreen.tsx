@@ -6,7 +6,7 @@ import { getLangCode } from '../../utils/translation';
 import FormulateSentenseScreen from '../practice/formulateSentense/FormulateSentenseScreen';
 import ChooseTranslationScreen from '../practice/chooseTranslation/chooseTranslationScreen';
 import MissingWordsScreen from '../practice/missingWords/MissingWordsScreen';
-import Choose1OutOfN from '../practice/chooseWord/Choose1OutOfN';
+import Choose1OutOfN from '../practice/choose1OutOfN/Choose1OutOfN';
 import HearingPracticeScreen from '../practice/hearing/HearingPracticeScreen';
 import TranslationMissingLetters from '../practice/translationMissingLetters/TranslationMissingLetters';
 import WordMissingLettersScreen from '../practice/wordMissingLetters/WordMissingLettersScreen';
