@@ -1,6 +1,5 @@
 tomorrow :
 
-- show also now playing - people that also learn the same language 
 - add pdf support for reading books.
 - when adding sentense , add it from the last . or , till next . or , 
 

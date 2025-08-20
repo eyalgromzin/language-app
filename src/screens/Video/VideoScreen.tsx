@@ -146,6 +146,7 @@ function VideoScreen(): React.JSX.Element {
   const [nowPlayingVideos, setNowPlayingVideos] = React.useState<Array<{ url: string; thumbnail: string; title: string; description?: string; length?: string }>>([]);
   const [nowPlayingLoading, setNowPlayingLoading] = React.useState<boolean>(false);
   const [nowPlayingError, setNowPlayingError] = React.useState<string | null>(null);
+  const [hidePlayback, setHidePlayback] = React.useState<boolean>(false);
 
   // Hidden WebView state to scrape lazy-loaded image results (same approach as Surf/Books)
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
@@ -784,6 +785,7 @@ function VideoScreen(): React.JSX.Element {
   }, []);
 
   const handleSubmit = React.useCallback(() => {
+    setHidePlayback(true);
     const id = extractYouTubeVideoId(inputUrl);
     if (!id) return runYouTubeSearch(inputUrl);
     // If a valid video id/URL was provided, behave like pressing Open
@@ -791,6 +793,7 @@ function VideoScreen(): React.JSX.Element {
   }, [inputUrl, runYouTubeSearch]);
 
   const handleOpenPress = React.useCallback(() => {
+    setHidePlayback(true);
     const id = extractYouTubeVideoId(inputUrl);
     if (!id) {
       runYouTubeSearch(inputUrl);
@@ -1159,7 +1162,7 @@ function VideoScreen(): React.JSX.Element {
           </ScrollView>
         </View>
       ) : null}
-      {videoId ? (
+      {videoId && !hidePlayback ? (
         <>
         {currentVideoTitle ? <Text style={styles.nowPlayingTitle} numberOfLines={2}>{currentVideoTitle}</Text> : null}
         <View style={styles.playerWrapper}>
@@ -1175,6 +1178,7 @@ function VideoScreen(): React.JSX.Element {
             onChangeState={(state) => {
               if (state === 'playing') {
                 setIsPlaying(true);
+                setHidePlayback(false);
                 // Ensure we record history whenever playback starts
                 (async () => {
                   try { await saveHistory(url || inputUrl, currentVideoTitle); } catch {}
@@ -1190,7 +1194,7 @@ function VideoScreen(): React.JSX.Element {
         <Text style={styles.helper}>Enter a valid YouTube link or 11-character ID to load the video.</Text>
       )}
 
-      <Transcript />
+      {!hidePlayback && <Transcript />}
 
       <NowPlaying />
 
@@ -1198,7 +1202,7 @@ function VideoScreen(): React.JSX.Element {
 
       <SearchResults />
 
-      {!isPlaying && <NewestVideos />}
+      {!isPlaying && !hidePlayback && <NewestVideos />}
 
       <TranslationPanel
         panel={translationPanel}
