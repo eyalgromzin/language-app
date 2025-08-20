@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Tts from 'react-native-tts';
 
 export type TranslationPanelState = {
   word: string;
@@ -20,12 +21,44 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
   const { panel, onSave, onClose } = props;
   if (!panel) return null;
 
+  const speakWord = React.useCallback(() => {
+    if (!panel?.word) return;
+    try {
+      Tts.stop();
+      Tts.speak(panel.word);
+    } catch (err) {
+      // no-op
+    }
+  }, [panel?.word]);
+
+  React.useEffect(() => {
+    speakWord();
+    return () => {
+      try {
+        Tts.stop();
+      } catch {
+        // no-op
+      }
+    };
+  }, [speakWord]);
+
   return (
     <View style={styles.bottomPanel}>
       <View style={styles.bottomHeader}>
-        <Text style={styles.bottomWord} numberOfLines={1}>
-          {panel.word}
-        </Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1, marginRight: 12 }}>
+          <Text style={styles.bottomWord} numberOfLines={1}>
+            {panel.word}
+          </Text>
+          <TouchableOpacity
+            onPress={speakWord}
+            style={styles.speakerBtnWrap}
+            hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+            accessibilityRole="button"
+            accessibilityLabel="Speak word"
+          >
+            <Text style={styles.speakerIcon}>🔊</Text>
+          </TouchableOpacity>
+        </View>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <TouchableOpacity
             onPress={onSave}
@@ -100,6 +133,26 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     flexShrink: 1,
     marginRight: 12,
+  },
+  speakerBtnWrap: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: '#efefef',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    shadowOffset: { width: 0, height: 1 },
+    elevation: 2,
+  },
+  speakerIcon: {
+    fontSize: 16,
+    color: '#000',
+    opacity: 0.9,
+    includeFontPadding: false,
   },
   addBtnWrap: {
     width: 36,
