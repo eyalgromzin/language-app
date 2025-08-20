@@ -5,9 +5,9 @@ import PracticeHomeScreen from './PracticeScreen';
 import WordMissingLettersScreen from './wordMissingLetters/WordMissingLettersScreen.tsx';
 import MissingWordsScreen from './missingWords/MissingWordsScreen.tsx';
 import WordsMatchScreen from './wordsMatch/WordsMatchScreen.tsx';
-import chooseTranslationScreen from './chooseTranslation/chooseTranslationScreen.tsx';
+// Removed separate chooseTranslation screen; both routes use Choose1OutOfN
 import translationMissingLetters from './translationMissingLetters/TranslationMissingLetters.tsx';
-import ChooseWordScreen from './chooseWord/ChooseWordScreen.tsx';
+import Choose1OutOfN from './chooseWord/Choose1OutOfN.tsx';
 import WriteWordScreen from './writeWord/WriteWordScreen.tsx';
 import MemoryGameScreen from './memoryGame/MemoryGameScreen.tsx';
 import HearingPracticeScreen from './hearing/HearingPracticeScreen.tsx';
@@ -159,7 +159,7 @@ function PracticeNavigator(): React.JSX.Element {
       />
       <Stack.Screen
         name="ChooseWord"
-        component={ChooseWordScreen}
+        component={Choose1OutOfN}
         options={{
           title: 'Choose word',
           headerShown: true,
@@ -174,7 +174,7 @@ function PracticeNavigator(): React.JSX.Element {
       />
       <Stack.Screen
         name="ChooseTranslation"
-        component={chooseTranslationScreen}
+        component={Choose1OutOfN}
         options={{
           title: 'Choose translation',
           headerShown: true,

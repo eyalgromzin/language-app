@@ -1,7 +1,6 @@
 tomorrow :
 
 - add microphone icon to practices that need it . and read word on load in practices:  
-    - choose word - play translation 
     - choose translation - play word
     - hearing practice     
 - videos screen - show similar videos below transcript 
@@ -67,3 +66,6 @@ create lessons jsons for step by step language learn
     will save all words of a person on the cloud 
     will enable translating unlimited words
 
+- combine words / translation missing letters 
+
+- combine choose word / translation 

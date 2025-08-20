@@ -72,9 +72,10 @@ function sampleN<T>(arr: T[], n: number): T[] {
   return result;
 }
 
-function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
+function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
+  const isChooseTranslationMode = ((route as any)?.name as string) === 'ChooseTranslation';
   const RANDOM_GAME_ROUTES: string[] = [
     'MissingLetters',
     'MissingWords',
@@ -93,6 +94,7 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
   const [allWordsPool, setAllWordsPool] = React.useState<string[]>([]);
+  const [allTranslationsPool, setAllTranslationsPool] = React.useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
   const [options, setOptions] = React.useState<OptionItem[]>([]);
   const [selectedKey, setSelectedKey] = React.useState<string | null>(null);
@@ -179,7 +181,7 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]).map(ensureCounters) : [];
       const filtered = arr
         .filter((w) => w.word && w.translation)
-        .filter((w) => (w.numberOfCorrectAnswers?.chooseWord ?? 0) < threshold)
+        .filter((w) => ((isChooseTranslationMode ? w.numberOfCorrectAnswers?.chooseTranslation : w.numberOfCorrectAnswers?.chooseWord) ?? 0) < threshold)
         .filter((w) => {
           const noa = w.numberOfCorrectAnswers || ({} as any);
           const total =
@@ -193,14 +195,16 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
           return total < totalThreshold;
         });
       setAllEntries(filtered);
-      const poolUnique = Array.from(new Set(arr.map((e) => e.word).filter((w): w is string => !!w)));
-      setAllWordsPool(poolUnique);
+      const poolUniqueWords = Array.from(new Set(arr.map((e) => e.word).filter((w): w is string => !!w)));
+      const poolUniqueTranslations = Array.from(new Set(arr.map((e) => e.translation).filter((t): t is string => !!t)));
+      setAllWordsPool(poolUniqueWords);
+      setAllTranslationsPool(poolUniqueTranslations);
     } catch {
       setAllEntries([]);
     } finally {
       setLoading(false);
     }
-  }, [filePath, props.embedded]);
+  }, [filePath, props.embedded, isChooseTranslationMode]);
 
   const pickNextIndex = React.useCallback((items: WordEntry[]) => {
     if (items.length === 0) return 0;
@@ -217,7 +221,8 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setOptions([]);
       return;
     }
-    if (allWordsPool.length < 8) {
+    const globalPool = isChooseTranslationMode ? allTranslationsPool : allWordsPool;
+    if (globalPool.length < 8) {
       // Not enough unique words overall to show 8 distinct options
       setOptions([]);
       return;
@@ -229,18 +234,19 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
     const correct = entries[idx];
     const distractorPool = entries
       .filter((e, i) => i !== idx)
-      .map((e) => e.word)
-      .filter((t) => t && t !== correct.word);
+      .map((e) => (isChooseTranslationMode ? e.translation : e.word))
+      .filter((t) => t && t !== (isChooseTranslationMode ? correct.translation : correct.word));
     const uniqueDistractors = Array.from(new Set(distractorPool));
     const needed = 7;
     const picked = sampleN(uniqueDistractors, Math.min(needed, uniqueDistractors.length));
+    const correctLabel = isChooseTranslationMode ? correct.translation : correct.word;
     const combined: OptionItem[] = [
-      { key: `c-${correct.translation}`, label: correct.word, isCorrect: true },
+      { key: `c-${correctLabel}`, label: correctLabel, isCorrect: true },
       ...picked.map((t, i) => ({ key: `d-${i}-${t}`, label: t, isCorrect: false })),
     ];
     // Ensure 8 unique words by filling from the global pool of unique words
     const already = new Set(combined.map((o) => o.label));
-    const remainingUnique = allWordsPool.filter((w) => w !== correct.word && !already.has(w));
+    const remainingUnique = globalPool.filter((w) => w !== correctLabel && !already.has(w));
     const toFill = Math.max(0, 8 - combined.length);
     const fillers = sampleN(remainingUnique, Math.min(toFill, remainingUnique.length));
     fillers.forEach((w, i) => {
@@ -256,11 +262,11 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
     setShowCorrectToast(false);
     setRevealCorrect(false);
     // Auto play the translation on load
-    const toSpeak = entries[idx]?.translation;
+    const toSpeak = isChooseTranslationMode ? entries[idx]?.word : entries[idx]?.translation;
     if (toSpeak) {
       setTimeout(() => speakCurrent(toSpeak), 300);
     }
-  }, [pickNextIndex, allWordsPool, speakCurrent]);
+  }, [pickNextIndex, allWordsPool, allTranslationsPool, speakCurrent, isChooseTranslationMode]);
 
   React.useEffect(() => {
     loadBase();
@@ -336,7 +342,9 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
         const it = { ...copy[idx] };
         it.numberOfCorrectAnswers = {
           ...it.numberOfCorrectAnswers!,
-          chooseWord: (it.numberOfCorrectAnswers?.chooseWord || 0) + 1,
+          ...(isChooseTranslationMode
+            ? { chooseTranslation: (it.numberOfCorrectAnswers?.chooseTranslation || 0) + 1 }
+            : { chooseWord: (it.numberOfCorrectAnswers?.chooseWord || 0) + 1 }),
         };
         const noa = it.numberOfCorrectAnswers!;
         const total =
@@ -358,7 +366,7 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
         } catch {}
       }
     } catch {}
-  }, [filePath, removeAfterTotalCorrect]);
+  }, [filePath, removeAfterTotalCorrect, isChooseTranslationMode]);
 
   const onPick = (opt: OptionItem) => {
     if (!current) return;
@@ -429,7 +437,7 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
       <ScrollView contentContainerStyle={styles.container}>
         {!props.embedded ? (
           <View style={styles.topRow}>
-            <Text style={styles.title}>pick the correct word</Text>
+            <Text style={styles.title}>{isChooseTranslationMode ? 'pick the correct translation' : 'pick the correct word'}</Text>
             <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
               <Text style={styles.skipButtonText}>Skip</Text>
             </TouchableOpacity>
@@ -437,8 +445,8 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
         ) : null}
         <View style={styles.wordCard}>
           <View style={styles.wordRow}>
-            <Text style={styles.wordText}>{current.translation}</Text>
-            <TouchableOpacity onPress={() => speakCurrent(current.translation)} accessibilityRole="button" accessibilityLabel="Play translation">
+            <Text style={styles.wordText}>{isChooseTranslationMode ? current.word : current.translation}</Text>
+            <TouchableOpacity onPress={() => speakCurrent(isChooseTranslationMode ? current.word : current.translation)} accessibilityRole="button" accessibilityLabel="Play">
               <Text style={styles.speakerIcon}>🔊</Text>
             </TouchableOpacity>
           </View>
@@ -607,6 +615,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ChooseWordScreen;
+export default Choose1OutOfN;
 
 

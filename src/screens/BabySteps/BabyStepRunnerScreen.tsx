@@ -6,7 +6,7 @@ import { getLangCode } from '../../utils/translation';
 import FormulateSentenseScreen from '../practice/formulateSentense/FormulateSentenseScreen';
 import ChooseTranslationScreen from '../practice/chooseTranslation/chooseTranslationScreen';
 import MissingWordsScreen from '../practice/missingWords/MissingWordsScreen';
-import ChooseWordScreen from '../practice/chooseWord/ChooseWordScreen';
+import Choose1OutOfN from '../practice/chooseWord/Choose1OutOfN';
 import HearingPracticeScreen from '../practice/hearing/HearingPracticeScreen';
 import TranslationMissingLetters from '../practice/translationMissingLetters/TranslationMissingLetters';
 import WordMissingLettersScreen from '../practice/wordMissingLetters/WordMissingLettersScreen';
@@ -520,7 +520,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           }}
         />
       ) : current.kind === 'chooseWord' ? (
-        <ChooseWordScreen
+        <Choose1OutOfN
           embedded
           translation={current.translation}
           correctWord={current.correctWord}
