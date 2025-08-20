@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View, useWindowDimensions } from 'react-native';
+import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View, useWindowDimensions, Keyboard } from 'react-native';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
 import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
 import { Reader, ReaderProvider } from '@epubjs-react-native/core';
@@ -377,6 +377,20 @@ function BookReaderScreen(): React.JSX.Element {
         doc.__wordTapAttached = true;
         ensureHighlightStyle(doc);
         ensureThemeStyle(doc);
+        // Notify React Native on any interaction start to allow keyboard dismissal
+        try {
+          const sendTouchStart = function(){
+            try {
+              if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+                window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'readerTouchStart' }));
+              } else if (window.parent && window.parent !== window && window.parent.postMessage) {
+                window.parent.postMessage({ __READER_TOUCH_START__: true }, '*');
+              }
+            } catch (e) {}
+          };
+          doc.body.addEventListener('mousedown', sendTouchStart, true);
+          doc.body.addEventListener('touchstart', sendTouchStart, true);
+        } catch (e) {}
         const handler = (ev) => {
           try {
             const res = highlightWordAtPoint(doc, ev.clientX, ev.clientY) || extractWordAtPoint(doc, ev.clientX, ev.clientY);
@@ -447,6 +461,11 @@ function BookReaderScreen(): React.JSX.Element {
       if (!data || typeof data !== 'object') {
         const raw = payload?.nativeEvent?.data;
         data = typeof raw === 'string' ? JSON.parse(raw) : raw;
+      }
+      if (data && (data.type === 'readerTouchStart' || data.__READER_TOUCH_START__ === true)) {
+        Keyboard.dismiss();
+        setTranslationPanel(null);
+        return;
       }
       if (data && data.type === 'wordTap' && data.word) {
         const w: string = String(data.word);
@@ -588,6 +607,17 @@ function BookReaderScreen(): React.JSX.Element {
       if (!doc || doc.__llWordHandlersAttached) return;
       doc.__llWordHandlersAttached = true;
       ensureHighlightStyle(doc);
+      try {
+        const sendTouchStart = function(){
+          try {
+            window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
+              JSON.stringify({ type: 'readerTouchStart' })
+            );
+          } catch (e) {}
+        };
+        doc.body.addEventListener('mousedown', sendTouchStart, true);
+        doc.body.addEventListener('touchstart', sendTouchStart, true);
+      } catch (e) {}
       const onTap = function(ev) {
         try {
           const res = highlightWordAtPoint(doc, ev.clientX, ev.clientY);
