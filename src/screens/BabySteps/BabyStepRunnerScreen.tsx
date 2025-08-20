@@ -4,11 +4,9 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
 import FormulateSentenseScreen from '../practice/formulateSentense/FormulateSentenseScreen';
-import ChooseTranslationScreen from '../practice/chooseTranslation/chooseTranslationScreen';
 import MissingWordsScreen from '../practice/missingWords/MissingWordsScreen';
 import Choose1OutOfN from '../practice/choose1OutOfN/Choose1OutOfN';
 import HearingPracticeScreen from '../practice/hearing/HearingPracticeScreen';
-import TranslationMissingLetters from '../practice/translationMissingLetters/TranslationMissingLetters';
 import WordMissingLettersScreen from '../practice/MissingLettersScreen/missingLettersScreen';
 import WriteWordScreen from '../practice/writeWord/WriteWordScreen';
 
@@ -504,12 +502,12 @@ function BabyStepRunnerScreen(): React.JSX.Element {
       </View>
 
       {current.kind === 'chooseTranslation' ? (
-        <ChooseTranslationScreen
+        <Choose1OutOfN
           embedded
-          sourceWord={current.sourceWord}
-          correctTranslation={current.correctTranslation}
+          translation={current.sourceWord}
+          correctWord={current.correctTranslation}
           options={current.options}
-          onFinished={(ok: boolean) => {
+          onFinished={(ok) => {
             if (ok) {
               setNumCorrect((c) => c + 1);
             } else {
@@ -551,11 +549,12 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           }}
         />
       ) : current.kind === 'translationMissingLetters' ? (
-        <TranslationMissingLetters
+        <WordMissingLettersScreen
           embedded
+          mode="translation"
           word={current.word}
           translation={current.translation}
-          inputIndices={current.inputIndices}
+          missingIndices={current.inputIndices}
           onFinished={(ok) => {
             if (ok) setNumCorrect((c) => c + 1);
             else {
