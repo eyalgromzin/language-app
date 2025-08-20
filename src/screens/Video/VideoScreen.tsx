@@ -339,14 +339,6 @@ function VideoScreen(): React.JSX.Element {
   React.useEffect(() => {
     let cancelled = false;
     const fetchNowPlaying = async (langSymbol: string) => {
-      if (!videoId) {
-        if (!cancelled) {
-          setNowPlayingVideos([]);
-          setNowPlayingError(null);
-          setNowPlayingLoading(false);
-        }
-        return;
-      }
       setNowPlayingLoading(true);
       setNowPlayingError(null);
       try {
@@ -378,7 +370,7 @@ function VideoScreen(): React.JSX.Element {
     const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
     fetchNowPlaying(symbol);
     return () => { cancelled = true; };
-  }, [videoId, learningLanguage, mapLanguageNameToYoutubeCode, enrichWithLengths]);
+  }, [learningLanguage, mapLanguageNameToYoutubeCode, enrichWithLengths]);
 
   type TranscriptSegment = { text: string; duration: number; offset: number };
   
@@ -956,10 +948,9 @@ function VideoScreen(): React.JSX.Element {
   };
 
   const NowPlaying = () => {
-    if (!videoId) return null;
     return (
       <>
-        <Text style={styles.sectionTitle}>other users also playing</Text>
+        <Text style={styles.sectionTitle}>now playing</Text>
         {nowPlayingLoading ? (
           <View style={styles.centered}><ActivityIndicator /></View>
         ) : nowPlayingError ? (
@@ -1202,7 +1193,7 @@ function VideoScreen(): React.JSX.Element {
 
       <SearchResults />
 
-      {!isPlaying && !hidePlayback && <NewestVideos />}
+      {!isPlaying && !hidePlayback && !nowPlayingLoading && !nowPlayingError && nowPlayingVideos.length === 0 && <NewestVideos />}
 
       <TranslationPanel
         panel={translationPanel}

@@ -22,7 +22,7 @@ tomorrow :
 
 - video transcript always goes to top , and then scrolls back to the line . it looks bad - is shouldnt scroll to top first 
 
-- videos - when opening a youtube tab , instead of newest videos , show related videos - like in youtube 
+- videos - on startup - now playing 
 
 
 =============================================================================================================
