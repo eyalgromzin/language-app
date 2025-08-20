@@ -1,7 +1,5 @@
 tomorrow :
 
-- add pdf support for reading books.
-
 - when adding sentense , add it from the last . or , till next . or , 
 
 - add sounds on:

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
+import { ActivityIndicator, FlatList, Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, Modal } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { pick } from '@react-native-documents/picker';
@@ -62,6 +62,13 @@ function BooksScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
   const [loading, setLoading] = React.useState<boolean>(true);
   const [books, setBooks] = React.useState<StoredBook[]>([]);
+  const [infoModalVisible, setInfoModalVisible] = React.useState<boolean>(false);
+  const [infoModalText, setInfoModalText] = React.useState<string>('');
+
+  const showInfoModal = React.useCallback((text: string) => {
+    setInfoModalText(text);
+    setInfoModalVisible(true);
+  }, []);
 
   const loadBooks = React.useCallback(async () => {
     try {
@@ -100,19 +107,20 @@ function BooksScreen(): React.JSX.Element {
           'org.idpf.epub-container',
           'public.epub',
           'application/epub+zip',
-          'com.adobe.pdf',
-          'public.pdf',
-          'application/pdf',
         ],
-        android: ['application/epub+zip', 'application/pdf', '*/*'],
+        android: ['application/epub+zip', '*/*'],
         default: ['*/*'],
       }) as string[];
       const [res] = await pick({ type: pickerTypes, copyTo: 'cachesDirectory' } as any);
       if (!res) return;
       const isEpub = !!(res.name && /\.epub$/i.test(res.name));
       const isPdf = !!(res.name && /\.pdf$/i.test(res.name));
-      if (!isEpub && !isPdf) {
-        Alert.alert('Unsupported file', 'Please choose an .epub or .pdf file.');
+      if (isPdf) {
+        showInfoModal('pdf are not supported yet. plz convert pdf to epub using 1 of the free websites on google and load it');
+        return;
+      }
+      if (!isEpub) {
+        Alert.alert('Unsupported file', 'Please choose an .epub file.');
         return;
       }
       const pickedUri: string = ((res as any).fileCopyUri || res.uri || '').toString();
@@ -148,6 +156,10 @@ function BooksScreen(): React.JSX.Element {
     try {
       const isPdf = /\.pdf$/i.test(filenameFallback);
       const isEpub = /\.epub$/i.test(filenameFallback);
+      if (isPdf) {
+        showInfoModal('pdf are not supported yet. plz convert pdf to epub using 1 of the free websites on google and load it');
+        return;
+      }
       const fileName = (isPdf || isEpub) ? filenameFallback : (filenameFallback + '.epub');
       let filePath = '';
       const destDir = `${RNFS.DocumentDirectoryPath}/books`;
@@ -266,7 +278,7 @@ function BooksScreen(): React.JSX.Element {
         <View style={styles.center}><ActivityIndicator /></View>
       ) : books.length === 0 ? (
         <View style={[styles.center, { paddingHorizontal: 24 }]}>
-          <Text style={{ color: '#555', textAlign: 'center' }}>No books yet. Tap "Load Book" to add an EPUB or PDF.</Text>
+          <Text style={{ color: '#555', textAlign: 'center' }}>No books yet. Tap "Load Book" to add an EPUB.</Text>
         </View>
       ) : (
         <FlatList
@@ -278,6 +290,22 @@ function BooksScreen(): React.JSX.Element {
           columnWrapperStyle={{ gap: 12 }}
         />
       )}
+      <Modal
+        transparent
+        visible={infoModalVisible}
+        animationType="fade"
+        onRequestClose={() => setInfoModalVisible(false)}
+      >
+        <View style={styles.modalBackdrop}>
+          <View style={styles.modalCard}>
+            <Text style={styles.modalTitle}>Notice</Text>
+            <Text style={styles.modalText}>{infoModalText}</Text>
+            <TouchableOpacity style={styles.modalButton} onPress={() => setInfoModalVisible(false)}>
+              <Text style={styles.modalButtonText}>OK</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -309,6 +337,12 @@ const styles = StyleSheet.create({
   coverPlaceholderText: { fontSize: 18, fontWeight: '700', color: '#666' },
   bookTitle: { marginTop: 6, fontSize: 13, fontWeight: '600', textAlign: 'center' },
   bookAuthor: { fontSize: 12, color: '#666' },
+  modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', alignItems: 'center', justifyContent: 'center', padding: 24 },
+  modalCard: { width: '100%', maxWidth: 420, borderRadius: 12, backgroundColor: 'white', padding: 16 },
+  modalTitle: { fontSize: 18, fontWeight: '700', marginBottom: 8, color: '#111827' },
+  modalText: { fontSize: 14, color: '#374151', marginBottom: 16 },
+  modalButton: { alignSelf: 'flex-end', backgroundColor: '#007AFF', paddingVertical: 8, paddingHorizontal: 14, borderRadius: 8 },
+  modalButtonText: { color: 'white', fontWeight: '700' },
 });
 
 export default BooksScreen;
