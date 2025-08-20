@@ -236,7 +236,7 @@ function BookReaderScreen(): React.JSX.Element {
             style.type = 'text/css';
             doc.head.appendChild(style);
           }
-          style.textContent = 'html, body { background: ${bg} !important; color: ${text} !important; } body * { color: inherit; } html, body, body * { -webkit-user-select: text !important; user-select: text !important; }';
+          style.textContent = 'html, body { background: ${bg} !important; color: ${text} !important; } body * { color: inherit; }';
         } catch (e) {}
       }
 
@@ -316,16 +316,6 @@ function BookReaderScreen(): React.JSX.Element {
             span.appendChild(frag);
             highlightRange.insertNode(span);
           }
-          // Select the clicked word using Selection API
-          try {
-            const selection = (doc.getSelection && doc.getSelection()) || (window.getSelection && window.getSelection());
-            if (selection && typeof selection.removeAllRanges === 'function' && typeof selection.addRange === 'function') {
-              const selectRange = doc.createRange();
-              selectRange.selectNodeContents(span);
-              selection.removeAllRanges();
-              selection.addRange(selectRange);
-            }
-          } catch (e) {}
           var sentence = computeSentenceFromText(text, start, end);
           if (!sentence) {
             try {
@@ -382,42 +372,6 @@ function BookReaderScreen(): React.JSX.Element {
         return { word: word, sentence: sentence };
       }
 
-      function extractWordFromSelection(doc) {
-        try {
-          const sel = (doc.getSelection && doc.getSelection()) || (window.getSelection && window.getSelection());
-          if (!sel || sel.rangeCount < 1) return null;
-          const rng = sel.getRangeAt(0);
-          let node = rng.startContainer;
-          if (!node) return null;
-          if (node.nodeType !== 3) {
-            // Try to find a text node inside
-            (function findTextNode(n){
-              if (!n) return null;
-              if (n.nodeType === 3) { node = n; return n; }
-              for (let i = 0; i < n.childNodes.length; i++) {
-                const res = findTextNode(n.childNodes[i]);
-                if (res) return res;
-              }
-              return null;
-            })(node);
-            if (!node || node.nodeType !== 3) return null;
-          }
-          const text = node.textContent || '';
-          let index = rng.startOffset;
-          if (index < 0) index = 0;
-          if (index > text.length) index = text.length;
-          const isWordChar = (ch) => /[A-Za-z0-9_'’\-]/.test(ch);
-          let start = index;
-          while (start > 0 && isWordChar(text[start - 1])) start--;
-          let end = index;
-          while (end < text.length && isWordChar(text[end])) end++;
-          const word = (text.slice(start, end) || '').trim();
-          if (!word) return null;
-          var sentence = computeSentenceFromText(text, start, end);
-          return { word: word, sentence: sentence };
-        } catch (e) { return null; }
-      }
-
       function attachToDocument(doc) {
         if (!doc || !doc.body || doc.__wordTapAttached) return;
         doc.__wordTapAttached = true;
@@ -425,7 +379,7 @@ function BookReaderScreen(): React.JSX.Element {
         ensureThemeStyle(doc);
         const handler = (ev) => {
           try {
-            const res = highlightWordAtPoint(doc, ev.clientX, ev.clientY) || extractWordAtPoint(doc, ev.clientX, ev.clientY) || extractWordFromSelection(doc);
+            const res = highlightWordAtPoint(doc, ev.clientX, ev.clientY) || extractWordAtPoint(doc, ev.clientX, ev.clientY);
             if (res && res.word) {
               if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
                 window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word: res.word, sentence: res.sentence || '' }));
@@ -436,12 +390,11 @@ function BookReaderScreen(): React.JSX.Element {
           } catch (e) {}
         };
         doc.body.addEventListener('click', handler, true);
-        doc.body.addEventListener('mouseup', handler, true);
         doc.body.addEventListener('touchend', function(e){
           try {
             const t = e.changedTouches && e.changedTouches[0];
             if (!t) return;
-            const res = highlightWordAtPoint(doc, t.clientX, t.clientY) || extractWordAtPoint(doc, t.clientX, t.clientY) || extractWordFromSelection(doc);
+            const res = highlightWordAtPoint(doc, t.clientX, t.clientY) || extractWordAtPoint(doc, t.clientX, t.clientY);
             if (res && res.word) {
               if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
                 window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word: res.word, sentence: res.sentence || '' }));
@@ -451,19 +404,6 @@ function BookReaderScreen(): React.JSX.Element {
             }
           } catch (e) {}
         }, true);
-        // Selection fallback: when selection changes, try to extract current word
-        try {
-          doc.addEventListener('selectionchange', function(){
-            try {
-              const res = extractWordFromSelection(doc);
-              if (res && res.word) {
-                if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
-                  window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'wordTap', word: res.word, sentence: res.sentence || '' }));
-                }
-              }
-            } catch (e) {}
-          }, true);
-        } catch (e) {}
       }
 
       function scanAndAttach() {
@@ -502,29 +442,24 @@ function BookReaderScreen(): React.JSX.Element {
 
   const handleWebViewMessage = React.useCallback((payload: any) => {
     try {
-      let data: any = null;
-      // Case 1: Event object from WebView
-      if (payload && typeof payload === 'object' && payload.nativeEvent && typeof payload.nativeEvent.data !== 'undefined') {
-        const raw = payload.nativeEvent.data;
+      // The Reader component already parses WebView messages and passes the object here.
+      let data: any = payload;
+      if (!data || typeof data !== 'object') {
+        const raw = payload?.nativeEvent?.data;
         data = typeof raw === 'string' ? JSON.parse(raw) : raw;
       }
-      // Case 2: Reader already parsed object (EPUB path)
-      if (!data && payload && typeof payload === 'object' && typeof (payload as any).type === 'string') {
-        data = payload;
-      }
-      if (!data) return;
-      if (data.type === 'wordTap' && data.word) {
+      if (data && data.type === 'wordTap' && data.word) {
         const w: string = String(data.word);
         const s: string | undefined = typeof data.sentence === 'string' ? data.sentence : undefined;
         openPanel(w, s);
         return;
       }
-      if (data.type === 'pdfPage' && typeof data.page === 'number') {
+      if (data && data.type === 'pdfPage' && typeof data.page === 'number') {
         void persistPdfPage(Number(data.page));
         return;
       }
     } catch {}
-  }, [persistPdfPage]);
+  }, []);
 
   const pdfHtml = React.useMemo(() => {
     if (!pdfBase64) return null as string | null;
@@ -542,7 +477,6 @@ function BookReaderScreen(): React.JSX.Element {
     #viewer { width: 100vw; }
     .page { position: relative; margin: 8px auto; background: ${bg}; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
     .textLayer { position: absolute; left: 0; top: 0; right: 0; bottom: 0; color: transparent; }
-    .textLayer, .textLayer * { -webkit-user-select: text !important; user-select: text !important; pointer-events: auto !important; }
     .ll-selected-word { background: rgba(255, 235, 59, 0.9); border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }
     canvas { display: block; }
   </style>
@@ -645,16 +579,6 @@ function BookReaderScreen(): React.JSX.Element {
           span.appendChild(frag);
           highlightRange.insertNode(span);
         }
-        // Select the clicked word using Selection API
-        try {
-          const selection = (doc.getSelection && doc.getSelection()) || (window.getSelection && window.getSelection());
-          if (selection && typeof selection.removeAllRanges === 'function' && typeof selection.addRange === 'function') {
-            const selectRange = doc.createRange();
-            selectRange.selectNodeContents(span);
-            selection.removeAllRanges();
-            selection.addRange(selectRange);
-          }
-        } catch (e) {}
         var sentence = computeSentenceFromText(text, start, end);
         return { word: word, sentence: sentence };
       } catch (e) { return null; }
@@ -689,102 +613,6 @@ function BookReaderScreen(): React.JSX.Element {
       }, true);
     }
 
-    function highlightWordInTextDivAtPoint(doc, textDiv, x, y) {
-      try {
-        if (!textDiv) return null;
-        function firstTextNode(n){
-          if (!n) return null;
-          if (n.nodeType === 3 && (n.textContent || '').length > 0) return n;
-          for (let i = 0; i < n.childNodes.length; i++) {
-            const res = firstTextNode(n.childNodes[i]);
-            if (res) return res;
-          }
-          return null;
-        }
-        const node = firstTextNode(textDiv);
-        if (!node) return null;
-        const text = node.textContent || '';
-        if (!text) return null;
-        const wordRegex = /[A-Za-z0-9_'’\-]+/g;
-        let best = null;
-        let bestDist = Infinity;
-        let m;
-        while ((m = wordRegex.exec(text)) !== null) {
-          const start = m.index;
-          const end = start + m[0].length;
-          const r = doc.createRange();
-          r.setStart(node, start);
-          r.setEnd(node, end);
-          const rect = r.getBoundingClientRect();
-          if (rect && rect.width > 0 && rect.height > 0) {
-            const inside = (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom);
-            const cx = Math.max(rect.left, Math.min(x, rect.right));
-            const cy = Math.max(rect.top, Math.min(y, rect.bottom));
-            const dx = (rect.left + rect.width / 2) - cx;
-            const dy = (rect.top + rect.height / 2) - cy;
-            const dist = dx * dx + dy * dy;
-            if (inside) {
-              best = { start, end, word: m[0], rect };
-              break;
-            }
-            if (dist < bestDist) {
-              bestDist = dist;
-              best = { start, end, word: m[0], rect };
-            }
-          }
-        }
-        if (!best) return null;
-        // Clear previous highlights
-        try {
-          const nodes = Array.from(doc.querySelectorAll('.ll-selected-word'));
-          nodes.forEach((nodeEl) => {
-            try {
-              const parent = nodeEl.parentNode;
-              while (nodeEl.firstChild) parent.insertBefore(nodeEl.firstChild, nodeEl);
-              parent.removeChild(nodeEl);
-            } catch (e) {}
-          });
-        } catch (e) {}
-        // Highlight
-        const highlightRange = doc.createRange();
-        highlightRange.setStart(node, best.start);
-        highlightRange.setEnd(node, best.end);
-        const span = doc.createElement('span');
-        span.className = 'll-selected-word';
-        try { highlightRange.surroundContents(span); } catch (e) {
-          const frag = highlightRange.extractContents();
-          span.appendChild(frag);
-          highlightRange.insertNode(span);
-        }
-        try {
-          const selection = (doc.getSelection && doc.getSelection()) || (window.getSelection && window.getSelection());
-          if (selection && typeof selection.removeAllRanges === 'function' && typeof selection.addRange === 'function') {
-            const selectRange = doc.createRange();
-            selectRange.selectNodeContents(span);
-            selection.removeAllRanges();
-            selection.addRange(selectRange);
-          }
-        } catch (e) {}
-        const sentence = computeSentenceFromText(text, best.start, best.end);
-        return { word: best.word, sentence: sentence };
-      } catch (e) { return null; }
-    }
-
-    function findTextElementAtPoint(doc, x, y) {
-      try {
-        const elements = (doc.elementsFromPoint && doc.elementsFromPoint(x, y)) || [];
-        for (let i = 0; i < elements.length; i++) {
-          const el = elements[i];
-          if (!el || !el.classList) continue;
-          if (el.classList.contains('textLayer')) return el;
-          if (el.closest && el.closest('.textLayer')) {
-            return el;
-          }
-        }
-      } catch (e) {}
-      return null;
-    }
-
     function observePages(container) {
       try {
         const observer = new IntersectionObserver((entries) => {
@@ -802,91 +630,10 @@ function BookReaderScreen(): React.JSX.Element {
       } catch (e) {}
     }
 
-    function extractWordFromSelection(doc) {
-      try {
-        const sel = (doc.getSelection && doc.getSelection()) || (window.getSelection && window.getSelection());
-        if (!sel || sel.rangeCount < 1) return null;
-        const rng = sel.getRangeAt(0);
-        let node = rng.startContainer;
-        if (!node) return null;
-        if (node.nodeType !== 3) {
-          (function findTextNode(n){
-            if (!n) return null;
-            if (n.nodeType === 3) { node = n; return n; }
-            for (let i = 0; i < n.childNodes.length; i++) {
-              const res = findTextNode(n.childNodes[i]);
-              if (res) return res;
-            }
-            return null;
-          })(node);
-          if (!node || node.nodeType !== 3) return null;
-        }
-        const text = node.textContent || '';
-        let index = rng.startOffset;
-        if (index < 0) index = 0;
-        if (index > text.length) index = text.length;
-        const isWordChar = (ch) => /[A-Za-z0-9_'’\-]/.test(ch);
-        let start = index;
-        while (start > 0 && isWordChar(text[start - 1])) start--;
-        let end = index;
-        while (end < text.length && isWordChar(text[end])) end++;
-        const word = (text.slice(start, end) || '').trim();
-        if (!word) return null;
-        var sentence = computeSentenceFromText(text, start, end);
-        return { word: word, sentence: sentence };
-      } catch (e) { return null; }
-    }
-
     (async function() {
       try {
         const container = document.getElementById('viewer');
         attachWordHandlers(document);
-        try {
-          const handler = function(ev) {
-            try {
-              const doc = document;
-              const x = (ev && (ev.clientX || (ev.changedTouches && ev.changedTouches[0] && ev.changedTouches[0].clientX))) || 0;
-              const y = (ev && (ev.clientY || (ev.changedTouches && ev.changedTouches[0] && ev.changedTouches[0].clientY))) || 0;
-              let res = null;
-              try {
-                let target = ev.target || ev.srcElement;
-                if (target && target.nodeType === 3) target = target.parentElement;
-                let textEl = null;
-                if (target && target.closest) {
-                  textEl = target.closest('.textLayer span, .textLayer div');
-                }
-                if (!textEl) {
-                  const elFromPoint = findTextElementAtPoint(doc, x, y);
-                  textEl = elFromPoint;
-                }
-                if (textEl) {
-                  res = highlightWordInTextDivAtPoint(doc, textEl, x, y);
-                }
-              } catch (e2) {}
-              if (!res) {
-                res = highlightWordAtPoint(doc, x, y) || extractWordFromSelection(doc);
-              }
-              if (res && res.word) {
-                window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
-                  JSON.stringify({ type: 'wordTap', word: res.word, sentence: res.sentence || '' })
-                );
-              }
-            } catch (e) {}
-          };
-          container.addEventListener('click', handler, true);
-          container.addEventListener('mouseup', handler, true);
-          container.addEventListener('touchend', handler, true);
-          document.addEventListener('selectionchange', function(){
-            try {
-              const res = extractWordFromSelection(document);
-              if (res && res.word) {
-                window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
-                  JSON.stringify({ type: 'wordTap', word: res.word, sentence: res.sentence || '' })
-                );
-              }
-            } catch (e) {}
-          }, true);
-        } catch (e) {}
         const loadingTask = pdfjsLib.getDocument({ data: base64ToUint8Array(PDF_BASE64) });
         const pdf = await loadingTask.promise;
         const availWidth = Math.max(320, container.clientWidth || window.innerWidth || 360) - 16;
