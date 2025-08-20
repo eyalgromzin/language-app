@@ -2,6 +2,8 @@ import React from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
+import TTS from 'react-native-tts';
+import { getTtsLangCode } from '../common';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 
 type WordEntry = {
@@ -100,10 +102,53 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [revealCorrect, setRevealCorrect] = React.useState<boolean>(false);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
+  const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
 
   const lastWordKeyRef = React.useRef<string | null>(null);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
+
+  React.useEffect(() => {
+    try {
+      TTS.setDefaultRate(0.5);
+    } catch {}
+  }, []);
+
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const val = await AsyncStorage.getItem('language.learning');
+        if (!mounted) return;
+        setLearningLanguage(val ?? null);
+      } catch {
+        if (!mounted) return;
+        setLearningLanguage(null);
+      }
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  React.useEffect(() => {
+    const code = getTtsLangCode(learningLanguage) || 'en-US';
+    try { TTS.setDefaultLanguage(code); } catch {}
+  }, [learningLanguage]);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      return () => {
+        try { TTS.stop(); } catch {}
+      };
+    }, [])
+  );
+
+  const speakCurrent = React.useCallback((text?: string) => {
+    if (!text) return;
+    try { TTS.stop(); } catch {}
+    try { TTS.speak(text); } catch {}
+  }, []);
 
   const loadBase = React.useCallback(async () => {
     if (props.embedded) {
@@ -210,7 +255,12 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
     setShowWrongToast(false);
     setShowCorrectToast(false);
     setRevealCorrect(false);
-  }, [pickNextIndex, allWordsPool]);
+    // Auto play the translation on load
+    const toSpeak = entries[idx]?.translation;
+    if (toSpeak) {
+      setTimeout(() => speakCurrent(toSpeak), 300);
+    }
+  }, [pickNextIndex, allWordsPool, speakCurrent]);
 
   React.useEffect(() => {
     loadBase();
@@ -259,7 +309,12 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
     setShowWrongToast(false);
     setShowCorrectToast(false);
     setRevealCorrect(false);
-  }, [props.embedded, props.options, props.correctWord, props.translation]);
+    // Autoplay in embedded mode as well
+    const toSpeak = props.translation || '';
+    if (toSpeak) {
+      setTimeout(() => speakCurrent(toSpeak), 300);
+    }
+  }, [props.embedded, props.options, props.correctWord, props.translation, speakCurrent]);
 
   const moveToNext = React.useCallback(() => {
     setShowCorrectToast(false);
@@ -381,7 +436,12 @@ function ChooseWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
           </View>
         ) : null}
         <View style={styles.wordCard}>
-          <Text style={styles.wordText}>{current.translation}</Text>
+          <View style={styles.wordRow}>
+            <Text style={styles.wordText}>{current.translation}</Text>
+            <TouchableOpacity onPress={() => speakCurrent(current.translation)} accessibilityRole="button" accessibilityLabel="Play translation">
+              <Text style={styles.speakerIcon}>🔊</Text>
+            </TouchableOpacity>
+          </View>
         </View>
 
         <View style={styles.optionsWrap}>
@@ -481,6 +541,14 @@ const styles = StyleSheet.create({
   wordText: {
     fontSize: 22,
     fontWeight: '700',
+  },
+  wordRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  speakerIcon: {
+    marginLeft: 8,
+    fontSize: 22,
   },
   optionsWrap: {
     flexDirection: 'row',
