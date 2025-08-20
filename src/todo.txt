@@ -22,9 +22,6 @@ tomorrow :
 
 - video transcript always goes to top , and then scrolls back to the line . it looks bad - is shouldnt scroll to top first 
 
-- videos - on startup - now playing 
-
-
 =============================================================================================================
 
 - login with facebook / google

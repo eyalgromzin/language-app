@@ -950,7 +950,7 @@ function VideoScreen(): React.JSX.Element {
   const NowPlaying = () => {
     return (
       <>
-        <Text style={styles.sectionTitle}>now playing</Text>
+        <Text style={styles.sectionTitle}>now playing by other people</Text>
         {nowPlayingLoading ? (
           <View style={styles.centered}><ActivityIndicator /></View>
         ) : nowPlayingError ? (
