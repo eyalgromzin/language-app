@@ -1376,7 +1376,7 @@ function VideoScreen(): React.JSX.Element {
 
       {!hidePlayback && <Transcript />}
 
-      <NowPlaying />
+      {!searchLoading && !searchError && searchResults.length === 0 ? <NowPlaying /> : null}
 
       <ImageScrape />
 
