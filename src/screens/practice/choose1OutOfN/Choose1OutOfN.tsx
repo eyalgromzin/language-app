@@ -3,7 +3,7 @@ import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import TTS from 'react-native-tts';
-import { getTtsLangCode } from '../common';
+import { getTtsLangCode, playCorrectFeedback, playWrongFeedback } from '../common';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 
 type WordEntry = {
@@ -376,11 +376,13 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         setSelectedKey(opt.key);
         setShowWrongToast(false);
         setShowCorrectToast(true);
+        try { playCorrectFeedback(); } catch {}
         const t = setTimeout(() => props.onFinished?.(true), 600);
         return () => clearTimeout(t as unknown as number);
       }
       setWrongKey(opt.key);
       setShowWrongToast(true);
+      try { playWrongFeedback(); } catch {}
       const t = setTimeout(() => props.onFinished?.(false), 1200);
       return () => clearTimeout(t as unknown as number);
     }
@@ -388,6 +390,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       setSelectedKey(opt.key);
       setShowWrongToast(false);
       setShowCorrectToast(true);
+      try { playCorrectFeedback(); } catch {}
       writeBackIncrement(current.word);
       const t = setTimeout(() => {
         prepareRound(allEntries);
@@ -398,12 +401,14 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       setWrongKey(opt.key);
       setRevealCorrect(true);
       setShowWrongToast(true);
+      try { playWrongFeedback(); } catch {}
       const hide = setTimeout(() => setShowWrongToast(false), 3000);
       return () => clearTimeout(hide as unknown as number);
     }
     setWrongKey(opt.key);
     setWrongAttempts(1);
     setShowWrongToast(true);
+    try { playWrongFeedback(); } catch {}
     const hide = setTimeout(() => setShowWrongToast(false), 2000);
     return () => {
       clearTimeout(hide as unknown as number);

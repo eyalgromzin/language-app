@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import { getLangCode } from '../../../utils/translation';
+import { playCorrectFeedback, playWrongFeedback } from '../common';
 
 type WordEntry = {
   word: string;
@@ -331,6 +332,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
     if (isCorrect) {
       setShowWrongToast(false);
       setShowCorrectToast(true);
+      try { playCorrectFeedback(); } catch {}
       if (props.embedded && props.onFinished) {
         const t = setTimeout(() => {
           props.onFinished?.(true);
@@ -345,6 +347,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
     }
     setShowCorrectToast(false);
     setShowWrongToast(true);
+    try { playWrongFeedback(); } catch {}
     if (props.embedded && props.onFinished) {
       const t = setTimeout(() => {
         props.onFinished?.(false);

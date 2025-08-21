@@ -3,6 +3,7 @@ import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View, ScrollView
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
+import { playCorrectFeedback, playWrongFeedback } from '../common';
 
 type WordEntry = {
   word: string;
@@ -254,6 +255,7 @@ function WordsMatchScreen(): React.JSX.Element {
       const matchedKey = selectedLeftKey;
       setSelectedLeftKey(null);
       setSelectedRightKey(null);
+      try { playCorrectFeedback(); } catch {}
       writeBackIncrement(matchedKey);
       // After 2 seconds, remove the matched pair from the board
       setTimeout(() => {
@@ -272,6 +274,7 @@ function WordsMatchScreen(): React.JSX.Element {
       // Wrong match -> trigger red flash (handled by separate timer effect)
       const pair = { leftKey: selectedLeftKey, rightKey: selectedRightKey };
       setWrongFlash(pair);
+      try { playWrongFeedback(); } catch {}
     }
   }, [selectedLeftKey, selectedRightKey, wrongFlash, leftItems, matchedKeys, prepareRound, loadBase, writeBackIncrement]);
 

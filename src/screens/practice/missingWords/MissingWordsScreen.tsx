@@ -13,6 +13,7 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
+import { playCorrectFeedback, playWrongFeedback } from '../common';
 
 type WordEntry = {
   word: string;
@@ -378,6 +379,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
     if (allGood) {
       setShowWrongToast(false);
       setShowCorrectToast(true);
+      try { playCorrectFeedback(); } catch {}
       if (props.embedded) {
         const t = setTimeout(() => props.onFinished?.(true), 600);
         return () => clearTimeout(t as unknown as number);
@@ -389,6 +391,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
     // Incorrect: show correction and highlight first wrong
     setShowCorrectToast(false);
     setShowWrongToast(true);
+    try { playWrongFeedback(); } catch {}
     if (props.embedded) {
       const t = setTimeout(() => props.onFinished?.(false), 1200);
       return () => clearTimeout(t as unknown as number);

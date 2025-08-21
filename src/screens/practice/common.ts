@@ -1,3 +1,5 @@
+import TTS from 'react-native-tts';
+
 export const LANGUAGE_NAME_TO_TTS: Record<string, string> = {
   English: 'en-US',
   Spanish: 'es-ES',
@@ -32,4 +34,14 @@ export function getTtsLangCode(nameOrNull: string | null | undefined): string | 
   return typeof code === 'string' ? code : null;
 }
 
+
+export function playCorrectFeedback(): void {
+  try { TTS.stop(); } catch {}
+  try { TTS.speak('wuuhuuu!'); } catch {}
+}
+
+export function playWrongFeedback(): void {
+  try { TTS.stop(); } catch {}
+  try { TTS.speak('beee'); } catch {}
+}
 

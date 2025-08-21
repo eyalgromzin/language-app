@@ -4,6 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
+import { playCorrectFeedback, playWrongFeedback } from '../common';
 
 type WordEntry = {
   word: string;
@@ -235,6 +236,7 @@ function MemoryGameScreen(): React.JSX.Element {
           });
           setRevealedIds([]);
           setIsEvaluating(false);
+          try { playCorrectFeedback(); } catch {}
           writeBackIncrement(a.key);
         }, 800);
       } else {
@@ -242,6 +244,7 @@ function MemoryGameScreen(): React.JSX.Element {
         setTimeout(() => {
           setRevealedIds([]);
           setIsEvaluating(false);
+          try { playWrongFeedback(); } catch {}
         }, 1000);
       }
     }

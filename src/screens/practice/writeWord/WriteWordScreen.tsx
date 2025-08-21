@@ -3,6 +3,7 @@ import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, ScrollView
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
+import { playCorrectFeedback, playWrongFeedback } from '../common';
 
 type WordEntry = {
   word: string;
@@ -356,6 +357,7 @@ function WriteWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
     if (normalizeForCompare(attempt) === normalizeForCompare(target)) {
       setShowWrongToast(false);
       setShowCorrectToast(true);
+      try { playCorrectFeedback(); } catch {}
       if (props.embedded) {
         const t = setTimeout(() => props.onFinished?.(true), 600);
         return () => clearTimeout(t as unknown as number);
@@ -368,6 +370,7 @@ function WriteWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
     } else {
       setShowCorrectToast(false);
       setShowWrongToast(true);
+      try { playWrongFeedback(); } catch {}
       if (props.embedded) {
         const t = setTimeout(() => props.onFinished?.(false), 1200);
         return () => clearTimeout(t as unknown as number);

@@ -5,7 +5,7 @@ import * as RNFS from 'react-native-fs';
 import TTS from 'react-native-tts';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
-import { getTtsLangCode } from '../common';
+import { getTtsLangCode, playCorrectFeedback, playWrongFeedback } from '../common';
 
 type WordEntry = {
   word: string;
@@ -434,6 +434,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       // Ensure only one toast shows at a time
       setShowWrongToast(false);
       setShowCorrectToast(true);
+      try { playCorrectFeedback(); } catch {}
       if (props.embedded) {
         const t = setTimeout(() => props.onFinished?.(true), 600);
         return () => clearTimeout(t as unknown as number);
@@ -447,6 +448,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       // Ensure only one toast shows at a time
       setShowCorrectToast(false);
       setShowWrongToast(true);
+      try { playWrongFeedback(); } catch {}
       if (props.embedded) {
         const t = setTimeout(() => props.onFinished?.(false), 1200);
         return () => clearTimeout(t as unknown as number);

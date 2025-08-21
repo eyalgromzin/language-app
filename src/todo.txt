@@ -1,7 +1,5 @@
 tomorrow :
 
-- when adding sentense , add it from the last . or , till next . or , 
-
 - add sounds on:
     - correct answer 
     - incorrect answer
@@ -17,7 +15,9 @@ tomorrow :
 
 - get step by step jsons from server 
 
-- video transcript always goes to top , and then scrolls back to the line . it looks bad - is shouldnt scroll to top first 
+- video transcript always goes to top , and then scrolls back to the line . it looks bad - is shouldnt scroll to top first
+
+- book reader word is cut in panel , and not showing sentense 
 
 =============================================================================================================
 
