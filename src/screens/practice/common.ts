@@ -1,4 +1,5 @@
 import TTS from 'react-native-tts';
+import Sound from 'react-native-sound';
 
 export const LANGUAGE_NAME_TO_TTS: Record<string, string> = {
   English: 'en-US',
@@ -37,11 +38,31 @@ export function getTtsLangCode(nameOrNull: string | null | undefined): string | 
 
 export function playCorrectFeedback(): void {
   try { TTS.stop(); } catch {}
-  try { TTS.speak('wuuhuuu!'); } catch {}
+  try {
+    Sound.setCategory('Playback');
+    const sound = new Sound('win_sound.mp3', Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        return;
+      }
+      sound.play(() => {
+        sound.release();
+      });
+    });
+  } catch {}
 }
 
 export function playWrongFeedback(): void {
   try { TTS.stop(); } catch {}
-  try { TTS.speak('beee'); } catch {}
+  try {
+    Sound.setCategory('Playback');
+    const sound = new Sound('bad_sound.mp3', Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        return;
+      }
+      sound.play(() => {
+        sound.release();
+      });
+    });
+  } catch {}
 }
 
