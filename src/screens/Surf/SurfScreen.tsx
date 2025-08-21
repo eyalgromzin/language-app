@@ -676,8 +676,9 @@ function SurfScreen(): React.JSX.Element {
         setIsAddressFocused(false);
         return;
       }
+      const sentence = typeof data.sentence === 'string' ? extractClauseAroundWord(data.sentence, data.word) : undefined;
       if ((data?.type === 'wordClick' || data?.type === 'longpress' || data?.type === 'selection') && typeof data.word === 'string' && data.word.length > 0) {
-        openPanel(data.word, typeof data.sentence === 'string' ? data.sentence : undefined);
+        openPanel(data.word, sentence || undefined);
       }
       if (data?.type === 'linkClick') {
         if (Platform.OS === 'android') {
@@ -689,9 +690,67 @@ function SurfScreen(): React.JSX.Element {
     }
   };
 
+  const extractClauseAroundWord = (sentence: string, word: string) => {
+    const lowerSentence = sentence.toLowerCase();
+    const lowerWord = word.toLowerCase();
+    const index = lowerSentence.indexOf(lowerWord);
+  
+    if (index === -1) return null; // Word not found
+  
+    // Find the start of the sub-sentence (previous . or , or start of string)
+    let start = index;
+    while (start > 0 && !['.', ','].includes(sentence[start - 1])) {
+      start--;
+    }
+  
+    // Find the end of the sub-sentence (next . or , or end of string)
+    let end = index + lowerWord.length;
+    while (end < sentence.length && !['.', ','].includes(sentence[end])) {
+      end++;
+    }
+  
+    // Extract substring and trim spaces
+    return sentence.slice(start, end).trim();
+  }
+
+
+  // const extractClauseAroundWord = (fullSentence: string | undefined, targetWord: string): string | undefined => {
+  //   if (!fullSentence || !targetWord) return fullSentence;
+  //   const sentence = fullSentence;
+
+  //   // Find an occurrence of the target word. If not found, keep original sentence
+  //   const wordIndex = sentence.toLowerCase().indexOf(targetWord.toLowerCase());
+  //   if (wordIndex === -1) return sentence.trim();
+
+  //   const sentenceStart = sentence.slice(0, wordIndex);
+
+  //   const startDot = sentenceStart.lastIndexOf('.', wordIndex);
+  //   const startComma = sentenceStart.lastIndexOf(',', wordIndex);
+  //   const startIdx = Math.max(startDot, startComma); // -1 if none found
+
+  //   const searchFrom = wordIndex + targetWord.length;
+  //   const endDot = sentence.indexOf('.', searchFrom);
+  //   const endComma = sentence.indexOf(',', searchFrom);
+  //   let endIdx: number;
+  //   if (endDot === -1 && endComma === -1) {
+  //     endIdx = sentence.length;
+  //   } else if (endDot === -1) {
+  //     endIdx = endComma + 1; // include comma
+  //   } else if (endComma === -1) {
+  //     endIdx = endDot + 1; // include period
+  //   } else {
+  //     endIdx = Math.min(endDot, endComma) + 1; // include nearest punctuation
+  //   }
+
+  //   const sliceStart = startIdx === -1 ? 0 : startIdx;
+  //   const clause = sentence.slice(sliceStart, endIdx).trim();
+  //   return clause.length > 0 ? clause : sentence.trim();
+  // };
+
   const openPanel = (word: string, sentence?: string) => {
     // Start with empty translation and show a loader while fetching
-    setTranslationPanel({ word, translation: '', sentence, images: [], imagesLoading: true, translationLoading: true });
+    const clause = extractClauseAroundWord(sentence, word);
+    setTranslationPanel({ word, translation: '', sentence: clause, images: [], imagesLoading: true, translationLoading: true });
     fetchTranslation(word)
       .then((t) => {
         setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translation: t || prev.translation, translationLoading: false } : prev));
