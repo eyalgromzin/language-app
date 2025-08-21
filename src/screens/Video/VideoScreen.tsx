@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity, Image } from 'react-native';
+import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity, Image, Alert, ToastAndroid, Modal } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -41,10 +41,13 @@ type SearchBarProps = {
   onBlur: () => void;
   onOpenLibrary: () => void;
   onToggleHistory: () => void;
+  onToggleFavouritesList: () => void;
   showAuxButtons: boolean;
+  isFavourite: boolean;
+  onToggleFavourite: () => void;
 };
 
-const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, showAuxButtons }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, onToggleFavouritesList, showAuxButtons, isFavourite, onToggleFavourite }) => {
   return (
     <View id="searchBar">
       <View style={styles.inputRow}>
@@ -84,6 +87,15 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
         >
           <Text style={styles.goButtonText}>Go</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          onPress={onToggleFavourite}
+          style={styles.libraryBtn}
+          accessibilityRole="button"
+          accessibilityLabel={isFavourite ? 'Remove from favourites' : 'Add to favourites'}
+          hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+        >
+          <Ionicons name={isFavourite ? 'star' : 'star-outline'} size={20} color={isFavourite ? '#f59e0b' : '#007AFF'} />
+        </TouchableOpacity>
         {showAuxButtons ? (
           <>
             <TouchableOpacity
@@ -96,13 +108,29 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
               <Ionicons name="albums-outline" size={20} color="#007AFF" />
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={onToggleHistory}
+              onPress={() => {
+                try {
+                  Alert.alert(
+                    'Menu',
+                    undefined,
+                    [
+                      { text: 'history', onPress: onToggleHistory },
+                      { text: 'favourites list', onPress: onToggleFavouritesList },
+                      { text: 'Cancel', style: 'cancel' },
+                    ],
+                    { cancelable: true }
+                  );
+                } catch {
+                  // Fallback: toggle history
+                  onToggleHistory();
+                }
+              }}
               style={styles.libraryBtn}
               accessibilityRole="button"
-              accessibilityLabel="Show history"
+              accessibilityLabel="Open menu"
               hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
             >
-              <Ionicons name="time-outline" size={20} color="#007AFF" />
+              <Ionicons name="ellipsis-vertical" size={18} color="#007AFF" />
             </TouchableOpacity>
           </>
         ) : null}
@@ -143,10 +171,141 @@ function VideoScreen(): React.JSX.Element {
   type HistoryEntry = { url: string; title: string };
   const [savedHistory, setSavedHistory] = React.useState<HistoryEntry[]>([]);
   const [showHistory, setShowHistory] = React.useState<boolean>(false);
+  const [showFavouritesList, setShowFavouritesList] = React.useState<boolean>(false);
   const [nowPlayingVideos, setNowPlayingVideos] = React.useState<Array<{ url: string; thumbnail: string; title: string; description?: string; length?: string }>>([]);
   const [nowPlayingLoading, setNowPlayingLoading] = React.useState<boolean>(false);
   const [nowPlayingError, setNowPlayingError] = React.useState<string | null>(null);
   const [hidePlayback, setHidePlayback] = React.useState<boolean>(false);
+
+  type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
+  const FAVOURITES_KEY = 'video.favourites';
+  const [favourites, setFavourites] = React.useState<FavouriteItem[]>([]);
+  const [showAddFavouriteModal, setShowAddFavouriteModal] = React.useState<boolean>(false);
+  const [newFavName, setNewFavName] = React.useState<string>('');
+  const [newFavUrl, setNewFavUrl] = React.useState<string>('');
+  const [newFavLevelName, setNewFavLevelName] = React.useState<string | null>('easy');
+  const [showLevelOptions, setShowLevelOptions] = React.useState<boolean>(false);
+
+  const normalizeYouTubeUrl = React.useCallback((input: string): string => {
+    const id = extractYouTubeVideoId(input);
+    if (id) return `https://www.youtube.com/watch?v=${id}`;
+    return (input || '').trim();
+  }, []);
+
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const entries = await AsyncStorage.multiGet([FAVOURITES_KEY, 'surf.favourites']);
+        if (!mounted) return;
+        const map = Object.fromEntries(entries);
+        const rawVideo = map[FAVOURITES_KEY];
+        const rawSurf = map['surf.favourites'];
+        const parseList = (raw: string | null | undefined): FavouriteItem[] => {
+          try {
+            const arr = JSON.parse(raw || '[]');
+            if (!Array.isArray(arr)) return [];
+            const mapped: FavouriteItem[] = arr
+              .map((it: any) => {
+                if (typeof it === 'string') {
+                  const u = normalizeYouTubeUrl(it);
+                  const nm = u;
+                  return { url: u, name: nm, typeName: 'video' } as FavouriteItem;
+                }
+                if (it && typeof it === 'object' && typeof it.url === 'string') {
+                  const u = normalizeYouTubeUrl(it.url);
+                  const nm = typeof it.name === 'string' && it.name.trim().length > 0 ? it.name : u;
+                  const tid = typeof it.typeId === 'number' ? it.typeId : undefined;
+                  const tn = typeof it.typeName === 'string' ? it.typeName : undefined;
+                  const ln = typeof it.levelName === 'string' ? it.levelName : (typeof it.level === 'string' ? it.level : undefined);
+                  return { url: u, name: nm, typeId: tid, typeName: tn, levelName: ln } as FavouriteItem;
+                }
+                return null;
+              })
+              .filter((x): x is FavouriteItem => !!x);
+            return mapped;
+          } catch { return []; }
+        };
+
+        let videoFavs = parseList(rawVideo);
+        if (videoFavs.length === 0) {
+          const surfFavs = parseList(rawSurf);
+          const isYouTube = (u: string) => /youtube\.com|youtu\.be/.test(u);
+          const migrated = surfFavs
+            .filter(item => (item.typeName === 'video') || isYouTube(item.url))
+            .map(item => ({ ...item, typeName: 'video' as const }));
+          if (migrated.length > 0) {
+            videoFavs = migrated;
+            try { await AsyncStorage.setItem(FAVOURITES_KEY, JSON.stringify(videoFavs)); } catch {}
+          }
+        }
+        setFavourites(videoFavs);
+      } catch {
+        if (!mounted) return;
+        setFavourites([]);
+      }
+    })();
+    return () => { mounted = false; };
+  }, [normalizeYouTubeUrl]);
+
+  const saveFavourites = React.useCallback(async (next: FavouriteItem[]) => {
+    setFavourites(next);
+    try { await AsyncStorage.setItem(FAVOURITES_KEY, JSON.stringify(next)); } catch {}
+  }, []);
+
+  const addToFavourites = React.useCallback(async (favUrl: string, name?: string, levelName?: string | null) => {
+    if (!favUrl) return;
+    const normalized = normalizeYouTubeUrl(favUrl);
+    const safeName = (name || currentVideoTitle || '').trim() || normalized;
+    const next: FavouriteItem[] = [
+      { url: normalized, name: safeName, typeName: 'video', levelName: levelName || undefined },
+      ...favourites.filter((f) => f.url !== normalized),
+    ].slice(0, 200);
+    await saveFavourites(next);
+  }, [normalizeYouTubeUrl, currentVideoTitle, favourites, saveFavourites]);
+
+  const removeFromFavourites = React.useCallback(async (favUrl: string) => {
+    if (!favUrl) return;
+    const normalized = normalizeYouTubeUrl(favUrl);
+    const next = favourites.filter((f) => f.url !== normalized);
+    await saveFavourites(next);
+  }, [normalizeYouTubeUrl, favourites, saveFavourites]);
+
+  const currentCanonicalUrl = React.useMemo(() => normalizeYouTubeUrl((url || inputUrl || '').trim()), [url, inputUrl, normalizeYouTubeUrl]);
+  const isFavourite = favourites.some((f) => f.url === currentCanonicalUrl && !!currentCanonicalUrl);
+
+  const onToggleFavourite = React.useCallback(() => {
+    const targetUrl = currentCanonicalUrl;
+    if (!targetUrl) {
+      try { if (Platform.OS === 'android') ToastAndroid.show('Invalid URL', ToastAndroid.SHORT); else Alert.alert('Invalid URL'); } catch {}
+      return;
+    }
+    if (isFavourite) {
+      const onYes = async () => {
+        await removeFromFavourites(targetUrl);
+        try { if (Platform.OS === 'android') ToastAndroid.show('Removed from favourites', ToastAndroid.SHORT); else Alert.alert('Removed'); } catch {}
+      };
+      try {
+        Alert.alert(
+          'Favourites',
+          'already in favourites, remove it ?',
+          [
+            { text: 'No', style: 'cancel' },
+            { text: 'Yes', onPress: onYes },
+          ],
+          { cancelable: true },
+        );
+      } catch {
+        onYes();
+      }
+      return;
+    }
+    setNewFavUrl(targetUrl);
+    setNewFavName((currentVideoTitle || '').trim() || targetUrl);
+    setNewFavLevelName('easy');
+    setShowLevelOptions(false);
+    setShowAddFavouriteModal(true);
+  }, [currentCanonicalUrl, isFavourite, removeFromFavourites, addToFavourites, currentVideoTitle]);
 
   // Hidden WebView state to scrape lazy-loaded image results (same approach as Surf/Books)
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
@@ -925,6 +1084,11 @@ function VideoScreen(): React.JSX.Element {
     openStartupVideo(entry.url, entry.title);
   };
 
+  const onSelectFavourite = (fav: FavouriteItem) => {
+    setShowFavouritesList(false);
+    openStartupVideo(fav.url, fav.name);
+  };
+
   const NewestVideos = () => {
     return (
       <>
@@ -1145,11 +1309,14 @@ function VideoScreen(): React.JSX.Element {
         onSubmit={handleSubmit}
         onOpenPress={handleOpenPress}
         urlInputRef={urlInputRef}
-        onFocus={() => { setIsInputFocused(true); setShowHistory(false); }}
+        onFocus={() => { setIsInputFocused(true); setShowHistory(false); setShowFavouritesList(false); }}
         onBlur={() => { setIsInputFocused(false); }}
         onOpenLibrary={() => navigation.navigate('Library')}
-        onToggleHistory={() => setShowHistory(prev => !prev)}
+        onToggleHistory={() => { setShowHistory(prev => !prev); setShowFavouritesList(false); }}
+        onToggleFavouritesList={() => { setShowFavouritesList(prev => !prev); setShowHistory(false); }}
         showAuxButtons={true}
+        isFavourite={isFavourite}
+        onToggleFavourite={onToggleFavourite}
       />
       {showHistory && !isInputFocused && savedHistory.length > 0 ? (
         <View style={styles.suggestionsContainer}>
@@ -1158,6 +1325,18 @@ function VideoScreen(): React.JSX.Element {
               <TouchableOpacity key={h.url} style={styles.suggestionItem} onPress={() => onSelectHistory(h)}>
                 <Ionicons name="time-outline" size={16} color="#4b5563" style={{ marginRight: 8 }} />
                 <Text style={styles.suggestionText} numberOfLines={1}>{h.title?.trim() ? h.title : h.url}</Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
+      ) : null}
+      {showFavouritesList && !isInputFocused && favourites.length > 0 ? (
+        <View style={styles.suggestionsContainer}>
+          <ScrollView keyboardShouldPersistTaps="handled" style={{ maxHeight: 240 }}>
+            {favourites.map((f) => (
+              <TouchableOpacity key={f.url} style={styles.suggestionItem} onPress={() => onSelectFavourite(f)}>
+                <Ionicons name="star" size={16} color="#f59e0b" style={{ marginRight: 8 }} />
+                <Text style={styles.suggestionText} numberOfLines={1}>{(f.name || f.url)}</Text>
               </TouchableOpacity>
             ))}
           </ScrollView>
@@ -1210,6 +1389,79 @@ function VideoScreen(): React.JSX.Element {
         onSave={saveCurrentWord}
         onClose={() => setTranslationPanel(null)}
       />
+
+      <Modal
+        visible={showAddFavouriteModal}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setShowAddFavouriteModal(false)}
+      >
+        <View style={styles.modalBackdrop}>
+          <View style={styles.modalCard}>
+            <Text style={styles.modalTitle}>Add to favourites</Text>
+            <Text style={styles.inputLabel}>Level</Text>
+            <TouchableOpacity
+              onPress={() => setShowLevelOptions(prev => !prev)}
+              style={styles.modalInput}
+              activeOpacity={0.7}
+            >
+              <Text style={{ color: newFavLevelName ? '#111827' : '#9ca3af' }}>
+                {newFavLevelName || 'Select level'}
+              </Text>
+            </TouchableOpacity>
+            {showLevelOptions && (
+              <View style={[styles.modalInput, { paddingVertical: 0, marginTop: 8 }]}> 
+                {['easy','easy-medium','medium','medium-hard','hard'].map((lv) => (
+                  <TouchableOpacity
+                    key={lv}
+                    onPress={() => { setNewFavLevelName(lv); setShowLevelOptions(false); }}
+                    style={{ paddingVertical: 10 }}
+                  >
+                    <Text style={{ color: '#111827' }}>{lv}</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            )}
+            <Text style={styles.inputLabel}>Name</Text>
+            <TextInput
+              style={styles.modalInput}
+              value={newFavName}
+              onChangeText={setNewFavName}
+              placeholder="Enter a name"
+            />
+            <Text style={styles.inputLabel}>URL</Text>
+            <TextInput
+              style={styles.modalInput}
+              value={newFavUrl}
+              onChangeText={setNewFavUrl}
+              autoCapitalize="none"
+              autoCorrect={false}
+              keyboardType="url"
+            />
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 12, gap: 8 }}>
+              <TouchableOpacity onPress={() => setShowAddFavouriteModal(false)} style={styles.modalCloseBtn}>
+                <Text style={styles.modalCloseText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={async () => {
+                  const u = normalizeYouTubeUrl(newFavUrl || currentCanonicalUrl);
+                  const nm = (newFavName || '').trim();
+                  if (!u) {
+                    try { if (Platform.OS === 'android') ToastAndroid.show('Invalid URL', ToastAndroid.SHORT); else Alert.alert('Invalid URL'); } catch {}
+                    return;
+                  }
+                  await addToFavourites(u, nm, newFavLevelName);
+                  setShowAddFavouriteModal(false);
+                  try { if (Platform.OS === 'android') ToastAndroid.show('Added to favourites', ToastAndroid.SHORT); else Alert.alert('Added'); } catch {}
+                }}
+                style={[styles.modalCloseBtn, { backgroundColor: '#007AFF' }]}
+              >
+                <Text style={[styles.modalCloseText, { color: 'white' }]}>OK</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
 
 
     </ScrollView>
@@ -1381,6 +1633,45 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     marginBottom: 8,
     color: '#111',
+  },
+  modalBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    justifyContent: 'center',
+    padding: 16,
+  },
+  modalCard: {
+    backgroundColor: 'white',
+    borderRadius: 12,
+    padding: 14,
+  },
+  modalTitle: {
+    fontSize: 16,
+    fontWeight: '700',
+    marginBottom: 10,
+  },
+  inputLabel: {
+    fontSize: 12,
+    color: '#374151',
+    marginTop: 8,
+    marginBottom: 6,
+  },
+  modalInput: {
+    borderWidth: 1,
+    borderColor: '#e5e7eb',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+  },
+  modalCloseBtn: {
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    backgroundColor: '#f3f4f6',
+    borderRadius: 8,
+  },
+  modalCloseText: {
+    fontSize: 13,
+    color: '#374151',
   },
 });
 
