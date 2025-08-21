@@ -79,12 +79,28 @@
   ],
   "library": [
     {
-      "url": "https://www.youtube.com/watch?v=ybfyLfI5Ml0&list=PLQGxDRfENoxJ_cdraefXK67ozp8LxI_Ar",
+      "url": "cnn.com",
       "name": "English Article - Easy 1",
       "language": "en",
       "typeId": 1,
       "level": 2,
       "media": "web"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=UijM1gt0-hM&t=3s",
+      "name": "pollito titto",
+      "language": "es",
+      "typeId": 1,
+      "level": 2,
+      "media": "youtube"
+    },
+    {
+      "url": "https://www.gutenberg.org/ebooks/41915",
+      "name": "Spanish Dialogues, and Idiomatic Phrases Indispensible",
+      "language": "es",
+      "typeId": 1,
+      "level": 2,
+      "media": "book"
     }
   ]
 }

@@ -26,5 +26,19 @@
     "to": "en",
     "translation": "Let's start",
     "timestamp": 1755540490388
+  },
+  {
+    "word": "analyst",
+    "from": "es",
+    "to": "en",
+    "translation": "Analyst",
+    "timestamp": 1755772800093
+  },
+  {
+    "word": "analysis",
+    "from": "es",
+    "to": "en",
+    "translation": "analysis.",
+    "timestamp": 1755772800214
   }
 ]
