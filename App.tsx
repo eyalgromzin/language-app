@@ -30,7 +30,7 @@ enableScreens();
 
 type RootTabParamList = {
   Surf: undefined;
-  Video: { resetAt?: number } | undefined;
+  Video: { resetAt?: number; youtubeUrl?: string; youtubeTitle?: string } | undefined;
   Practice: undefined;
   BabySteps: undefined;
   Categories: undefined;

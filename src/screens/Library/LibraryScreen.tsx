@@ -183,7 +183,13 @@ function LibraryScreen(): React.JSX.Element {
     return (
       <TouchableOpacity
         accessibilityRole="link"
-        onPress={() => navigation.navigate('Surf', { url: item.url })}
+        onPress={() => {
+          if ((item.media || '').toLowerCase() === 'youtube') {
+            navigation.navigate('Video', { youtubeUrl: item.url, youtubeTitle: item.name });
+          } else {
+            navigation.navigate('Surf', { url: item.url });
+          }
+        }}
         style={styles.item}
       >
         <Text style={styles.itemName} numberOfLines={2}>{getDisplayName(item)}</Text>

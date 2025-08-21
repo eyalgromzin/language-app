@@ -458,6 +458,16 @@ function VideoScreen(): React.JSX.Element {
     resetVideoScreenState();
   }, [(route as any)?.params?.resetAt, resetVideoScreenState]);
 
+  // Handle deep navigation from Library with a YouTube URL
+  React.useEffect(() => {
+    const urlFromRoute = (route as any)?.params?.youtubeUrl;
+    if (!urlFromRoute) return;
+    const titleFromRoute = (route as any)?.params?.youtubeTitle;
+    openStartupVideo(String(urlFromRoute), typeof titleFromRoute === 'string' ? titleFromRoute : undefined);
+    setHidePlayback(false);
+    try { (navigation as any)?.setParams?.({ youtubeUrl: undefined, youtubeTitle: undefined }); } catch {}
+  }, [(route as any)?.params?.youtubeUrl]);
+
   const imageScrapeInjection = `
     (function() {
       var MAX_TIME = 12000;
