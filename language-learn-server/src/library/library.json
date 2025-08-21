@@ -93,6 +93,14 @@
       "typeId": 1,
       "level": 2,
       "media": "book"
+    },
+    {
+      "url": "https://www.test.com",
+      "name": "Stories spanish",
+      "language": "es",
+      "typeId": 2,
+      "level": "easy",
+      "media": "book"
     }
   ]
 }
