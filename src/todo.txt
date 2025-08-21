@@ -1,16 +1,10 @@
 tomorrow :
 
- - library screen 
-    - split it into 3 sections : websites , books , videos  
-        - books tab will show links to books that the user can download from
-        - videos will show thumbnails also from youtube 
-    - book section wont have a level but only book type: 
-        childrens , short stories , novel , technical, self help/new age. none fiction. other
+- library: book section wont have a level but only book type: childrens , short stories , novel , technical, self help/new age. none fiction. other
 
 - when a person opens a book , show popup once for evey book if he didnt add url of it to library 
     "would you like to add a url where to download this book to library ? so that everyone would enjoy it? "
 
-- add "add to library" button in a book 
 ================================================================================================================
 
 - get step by step jsons from server 

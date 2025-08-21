@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View, useWindowDimensions, Keyboard } from 'react-native';
+import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View, useWindowDimensions, Keyboard, Modal, TextInput, NativeModules } from 'react-native';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
 import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
 import { Reader, ReaderProvider } from '@epubjs-react-native/core';
@@ -79,6 +79,26 @@ function BookReaderScreen(): React.JSX.Element {
     } as const;
   }, [readerTheme]);
 
+  const apiBaseUrl = React.useMemo(() => {
+    const scriptURL: string | undefined = (NativeModules as any)?.SourceCode?.scriptURL;
+    if (scriptURL) {
+      try {
+        const { hostname } = new URL(scriptURL);
+        return `http://${hostname}:3000`;
+      } catch {}
+    }
+    return 'http://localhost:3000';
+  }, []);
+
+  // Add-to-library modal state
+  const [showAddBookModal, setShowAddBookModal] = React.useState<boolean>(false);
+  const [newBookName, setNewBookName] = React.useState<string>('');
+  const [newBookUrl, setNewBookUrl] = React.useState<string>('');
+  const [itemTypes, setItemTypes] = React.useState<string[]>([]);
+  const [selectedTypeName, setSelectedTypeName] = React.useState<string | null>(null);
+  const [showTypeOptions, setShowTypeOptions] = React.useState<boolean>(false);
+  const [typeError, setTypeError] = React.useState<boolean>(false);
+
   React.useEffect(() => {
     let cancelled = false;
     (async () => {
@@ -151,6 +171,131 @@ function BookReaderScreen(): React.JSX.Element {
       cancelled = true;
     };
   }, [bookId]);
+
+  // Resolve languages into state for consistency with other screens
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
+        if (!mounted) return;
+        const map = Object.fromEntries(entries);
+        setLearningLanguage(map['language.learning'] ?? null);
+        setNativeLanguage(map['language.native'] ?? null);
+      } catch {
+        if (!mounted) return;
+        setLearningLanguage(null);
+        setNativeLanguage(null);
+      }
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  // Fetch library metadata for item types
+  React.useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const response = await fetch(`${apiBaseUrl}/library/getMeta`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        });
+        const json: { itemTypes?: string[] } = await response.json();
+        if (!cancelled && Array.isArray(json.itemTypes)) setItemTypes(json.itemTypes);
+      } catch {}
+    })();
+    return () => { cancelled = true; };
+  }, [apiBaseUrl]);
+
+  // Prompt once per book to add a URL to library
+  React.useEffect(() => {
+    if (!bookId) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const raw = await AsyncStorage.getItem('books.addUrlPrompted');
+        const map = raw ? JSON.parse(raw) : {};
+        const prompted = map && typeof map === 'object' ? !!map[bookId] : false;
+        if (prompted || cancelled) return;
+        // Mark as prompted to ensure once-per-book behavior
+        const nextMap = { ...(map && typeof map === 'object' ? map : {}), [bookId]: true };
+        await AsyncStorage.setItem('books.addUrlPrompted', JSON.stringify(nextMap));
+        const onYes = () => {
+          setTypeError(false);
+          setSelectedTypeName(null);
+          setNewBookName(bookTitle || '');
+          setNewBookUrl('');
+          setShowTypeOptions(false);
+          setShowAddBookModal(true);
+        };
+        try {
+          Alert.alert(
+            'Add book to library',
+            'would you like to add a url where to download this book to library ? so that everyone would enjoy it? ',
+            [
+              { text: 'No', style: 'cancel' },
+              { text: 'Yes', onPress: onYes },
+            ],
+            { cancelable: true }
+          );
+        } catch {
+          onYes();
+        }
+      } catch {}
+    })();
+    return () => { cancelled = true; };
+  }, [bookId]);
+
+  const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
+    const v = (input || '').toLowerCase().trim();
+    if (v === 'es' || v === 'spanish' || v === 'español') return 'es';
+    return 'en';
+  };
+
+  const normalizeUrl = (input: string): string => {
+    if (!input) return '';
+    const trimmed = input.trim();
+    if (!trimmed) return '';
+    const hasScheme = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(trimmed);
+    const startsWithWww = /^www\./i.test(trimmed);
+    const looksLikeDomain = /^[^\s]+\.[^\s]{2,}$/.test(trimmed);
+    const looksLikeIp = /^\d{1,3}(\.\d{1,3}){3}(:\d+)?(\/|$)/.test(trimmed);
+    if (!hasScheme && (startsWithWww || looksLikeDomain || looksLikeIp)) {
+      return `https://${trimmed}`;
+    }
+    return hasScheme ? trimmed : '';
+  };
+
+  const validateType = (t?: string | null): string => {
+    const v = (t || '').toLowerCase().trim();
+    if (itemTypes.map((x) => x.toLowerCase()).includes(v)) return v;
+    return 'any';
+  };
+
+  const postAddBookUrlToLibrary = async (url: string, typeName?: string | null, displayName?: string | null) => {
+    try {
+      const normalizedUrl = normalizeUrl(url);
+      if (!normalizedUrl) return;
+      const lang = toLanguageSymbol(learningLanguage);
+      const safeType = validateType(typeName);
+      const safeName = (displayName || bookTitle || 'Book').trim() || 'Book';
+      const body = {
+        url: normalizedUrl,
+        language: lang,
+        level: 'easy',
+        type: safeType,
+        name: safeName,
+        media: 'book',
+      } as const;
+      await fetch(`${apiBaseUrl}/library/addUrl`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+    } catch {}
+  };
 
   React.useEffect(() => {
     // Persist theme selection
@@ -1055,6 +1200,87 @@ function BookReaderScreen(): React.JSX.Element {
           onSave={saveCurrentWord}
           onClose={() => setTranslationPanel(null)}
         />
+        {/* Add book to library modal */}
+        <Modal
+          visible={showAddBookModal}
+          transparent
+          animationType="fade"
+          onRequestClose={() => setShowAddBookModal(false)}
+        >
+          <View style={styles.modalBackdrop}>
+            <View style={styles.modalCard}>
+              <Text style={styles.modalTitle}>Add book to library</Text>
+              {learningLanguage && (
+                <Text style={[styles.inputLabel, { marginTop: 0 }]}>Learning language: {toLanguageSymbol(learningLanguage)}</Text>
+              )}
+              <Text style={styles.inputLabel}>Book type</Text>
+              <TouchableOpacity
+                onPress={() => setShowTypeOptions((prev) => !prev)}
+                style={[styles.modalInput, typeError && !selectedTypeName ? { borderColor: '#ef4444' } : null]}
+                activeOpacity={0.7}
+              >
+                <Text style={{ color: selectedTypeName ? '#111827' : '#9ca3af' }}>
+                  {selectedTypeName || 'Select type'}
+                </Text>
+              </TouchableOpacity>
+              {showTypeOptions && (
+                <View style={[styles.modalInput, { paddingVertical: 0, marginTop: 8 }]}> 
+                  {itemTypes.map((t) => (
+                    <TouchableOpacity
+                      key={t}
+                      onPress={() => { setSelectedTypeName(t); setShowTypeOptions(false); setTypeError(false); }}
+                      style={{ paddingVertical: 10 }}
+                    >
+                      <Text style={{ color: '#111827' }}>{t}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+              )}
+              {typeError && !selectedTypeName && (
+                <Text style={styles.errorText}>Type is required</Text>
+              )}
+              <Text style={styles.inputLabel}>Name</Text>
+              <TextInput
+                style={styles.modalInput}
+                value={newBookName}
+                onChangeText={setNewBookName}
+                placeholder="Enter a name"
+              />
+              <Text style={styles.inputLabel}>Download URL</Text>
+              <TextInput
+                style={styles.modalInput}
+                value={newBookUrl}
+                onChangeText={setNewBookUrl}
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="url"
+                placeholder="https://example.com/my-book.epub"
+              />
+              <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 12, gap: 8 }}>
+                <TouchableOpacity onPress={() => setShowAddBookModal(false)} style={styles.modalCloseBtn}>
+                  <Text style={styles.modalCloseText}>Cancel</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={async () => {
+                    const u = normalizeUrl(newBookUrl);
+                    if (!u) {
+                      if (Platform.OS === 'android') ToastAndroid.show('Invalid URL', ToastAndroid.SHORT); else Alert.alert('Invalid URL');
+                      return;
+                    }
+                    if (!selectedTypeName) { setTypeError(true); return; }
+                    const nm = (newBookName || bookTitle || 'Book').trim();
+                    await postAddBookUrlToLibrary(u, selectedTypeName, nm);
+                    setShowAddBookModal(false);
+                    if (Platform.OS === 'android') ToastAndroid.show('Added to library', ToastAndroid.SHORT); else Alert.alert('Added');
+                  }}
+                  style={[styles.modalCloseBtn, { backgroundColor: '#007AFF' }]}
+                >
+                  <Text style={[styles.modalCloseText, { color: 'white' }]}>Add</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
       </View>
     </View>
   );
@@ -1194,6 +1420,50 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginRight: 8,
     backgroundColor: '#eee',
+  },
+  modalBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    justifyContent: 'center',
+    padding: 16,
+  },
+  modalCard: {
+    backgroundColor: 'white',
+    borderRadius: 12,
+    padding: 14,
+  },
+  modalTitle: {
+    fontSize: 16,
+    fontWeight: '700',
+    marginBottom: 10,
+  },
+  modalCloseBtn: {
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    backgroundColor: '#f3f4f6',
+    borderRadius: 8,
+  },
+  modalCloseText: {
+    fontSize: 13,
+    color: '#374151',
+  },
+  inputLabel: {
+    fontSize: 12,
+    color: '#374151',
+    marginTop: 8,
+    marginBottom: 6,
+  },
+  modalInput: {
+    borderWidth: 1,
+    borderColor: '#e5e7eb',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+  },
+  errorText: {
+    color: '#ef4444',
+    fontSize: 12,
+    marginTop: 6,
   },
 });
 
