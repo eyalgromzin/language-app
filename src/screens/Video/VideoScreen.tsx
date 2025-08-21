@@ -575,6 +575,7 @@ function VideoScreen(): React.JSX.Element {
     setCurrentVideoTitle(title || '');
     setInputUrl(urlString);
     setUrl(urlString);
+    setHidePlayback(false);
     setTranscript([]);
     setTranscriptError(null);
     setLoadingTranscript(true);
@@ -946,22 +947,26 @@ function VideoScreen(): React.JSX.Element {
   }, []);
 
   const handleSubmit = React.useCallback(() => {
-    setHidePlayback(true);
     const id = extractYouTubeVideoId(inputUrl);
-    if (!id) return runYouTubeSearch(inputUrl);
-    // If a valid video id/URL was provided, behave like pressing Open
+    if (!id) {
+      setHidePlayback(true);
+      return runYouTubeSearch(inputUrl);
+    }
+    // If a valid video id/URL was provided, show playback
+    setHidePlayback(false);
     setUrl(inputUrl);
   }, [inputUrl, runYouTubeSearch]);
 
   const handleOpenPress = React.useCallback(() => {
-    setHidePlayback(true);
     const id = extractYouTubeVideoId(inputUrl);
     if (!id) {
+      setHidePlayback(true);
       runYouTubeSearch(inputUrl);
       return;
     }
 
     if (!videoId) {
+      setHidePlayback(false);
       setUrl(inputUrl);
       setCurrentVideoTitle('');
       (async () => {
@@ -990,6 +995,7 @@ function VideoScreen(): React.JSX.Element {
     }
 
     if (id && id !== videoId) {
+      setHidePlayback(false);
       setUrl(inputUrl);
       setCurrentVideoTitle('');
       (async () => {

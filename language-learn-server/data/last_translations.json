@@ -40,5 +40,19 @@
     "to": "en",
     "translation": "analysis.",
     "timestamp": 1755772800214
+  },
+  {
+    "word": "start",
+    "from": "es",
+    "to": "en",
+    "translation": "start",
+    "timestamp": 1755777761688
+  },
+  {
+    "word": "lesson",
+    "from": "es",
+    "to": "en",
+    "translation": "lesson",
+    "timestamp": 1755777793682
   }
 ]
