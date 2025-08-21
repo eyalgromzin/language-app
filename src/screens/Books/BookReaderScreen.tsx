@@ -23,6 +23,7 @@ type StoredBook = {
 };
 
 const STORAGE_KEY = 'books.library';
+const OPENED_BEFORE_KEY = 'books.openedBefore';
 
 type RouteParams = { id: string };
 
@@ -226,6 +227,14 @@ function BookReaderScreen(): React.JSX.Element {
     };
     (async () => {
       try {
+        // Guard: only prompt starting from the 2nd time the user opens this book
+        try {
+          const rawOpened = await AsyncStorage.getItem(OPENED_BEFORE_KEY);
+          const openedMap = rawOpened ? JSON.parse(rawOpened) : {};
+          const openedBefore = !!(openedMap && typeof openedMap === 'object' && openedMap[bookId]);
+          if (!openedBefore) return; // first open -> do not prompt
+        } catch {}
+
         // 1) Check last prompt timestamp
         const rawTs = await AsyncStorage.getItem(PROMPT_TS_KEY);
         const tsMap = rawTs ? JSON.parse(rawTs) : {};
@@ -304,6 +313,21 @@ function BookReaderScreen(): React.JSX.Element {
     })();
     return () => { cancelled = true; };
   }, [bookId, learningLanguage, apiBaseUrl, bookTitle]);
+
+  // Mark this book as "opened before" on unmount so future sessions can show the prompt
+  React.useEffect(() => {
+    if (!bookId) return;
+    return () => {
+      (async () => {
+        try {
+          const raw = await AsyncStorage.getItem(OPENED_BEFORE_KEY);
+          const map = raw ? JSON.parse(raw) : {};
+          const next = { ...(map && typeof map === 'object' ? map : {}), [bookId]: true };
+          await AsyncStorage.setItem(OPENED_BEFORE_KEY, JSON.stringify(next));
+        } catch {}
+      })();
+    };
+  }, [bookId]);
 
   const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
     const v = (input || '').toLowerCase().trim();

@@ -1,9 +1,5 @@
 tomorrow :
 
-- library: book section wont have a level but only book type: childrens , short stories , novel , technical, self help/new age. none fiction. other
-
-- when a person opens a book , show popup once for evey book if he didnt add url of it to library 
-    "would you like to add a url where to download this book to library ? so that everyone would enjoy it? "
 
 ================================================================================================================
 
@@ -12,6 +8,8 @@ tomorrow :
 - video transcript always goes to top , and then scrolls back to the line . it looks bad - is shouldnt scroll to top first
 
 - book reader word is cut in panel , and not showing sentense 
+
+- library: book section wont have a level but only book type: childrens , short stories , novel , technical, self help/new age. none fiction. other
 
 =============================================================================================================
 
