@@ -18,11 +18,6 @@ type StepsFile = {
   steps: StepItem[];
 };
 
-const STEPS_FALLBACK_BY_CODE: Record<string, StepsFile> = {
-  en: require('./steps_en-test.json'),
-  es: require('./steps_es-test.json'),
-};
-
 const NODE_DIAMETER = 72;
 const H_SPACING = 36;
 const V_SPACING = 42;
@@ -58,7 +53,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
         ]);
         const learningCode = getLangCode(learningName) || 'en';
         const nativeCode = getLangCode(nativeName) || 'en';
-        // Try server first
+        // Load steps for current learning language from server only
         try {
           const res = await fetch(`${apiBaseUrl}/baby-steps/get`, {
             method: 'POST',
@@ -71,17 +66,14 @@ function BabyStepsPathScreen(): React.JSX.Element {
             if (json && Array.isArray(json.steps) && json.steps.length) {
               setSteps(json.steps);
             } else {
-              const file = STEPS_FALLBACK_BY_CODE[learningCode] || STEPS_FALLBACK_BY_CODE['en'];
-              setSteps(file.steps || []);
+              setSteps([]);
             }
           } else {
-            const file = STEPS_FALLBACK_BY_CODE[learningCode] || STEPS_FALLBACK_BY_CODE['en'];
-            setSteps(file.steps || []);
+            setSteps([]);
           }
         } catch {
           if (!mounted) return;
-          const file = STEPS_FALLBACK_BY_CODE[learningCode] || STEPS_FALLBACK_BY_CODE['en'];
-          setSteps(file.steps || []);
+          setSteps([]);
         }
         // Build translated titles map from native language file if available
         try {
@@ -96,16 +88,10 @@ function BabyStepsPathScreen(): React.JSX.Element {
             (nativeJson.steps || []).forEach((st) => { map[st.id] = st.title; });
             setTranslatedTitleById(map);
           } else {
-            const nativeFile = STEPS_FALLBACK_BY_CODE[nativeCode] || STEPS_FALLBACK_BY_CODE['en'];
-            const map: Record<string, string> = {};
-            nativeFile.steps.forEach((st) => { map[st.id] = st.title; });
-            setTranslatedTitleById(map);
+            setTranslatedTitleById({});
           }
         } catch {
-          const nativeFile = STEPS_FALLBACK_BY_CODE[nativeCode] || STEPS_FALLBACK_BY_CODE['en'];
-          const map: Record<string, string> = {};
-          nativeFile.steps.forEach((st) => { map[st.id] = st.title; });
-          setTranslatedTitleById(map);
+          setTranslatedTitleById({});
         }
         // load progress (highest finished node index; 0 if none)
         try {
@@ -156,10 +142,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
               (nativeJson.steps || []).forEach((st) => { map[st.id] = st.title; });
               setTranslatedTitleById(map);
             } else {
-              const nativeFile = STEPS_FALLBACK_BY_CODE[nativeCode] || STEPS_FALLBACK_BY_CODE['en'];
-              const map: Record<string, string> = {};
-              nativeFile.steps.forEach((st) => { map[st.id] = st.title; });
-              setTranslatedTitleById(map);
+              setTranslatedTitleById({});
             }
           } catch {}
         } catch {}
@@ -207,7 +190,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
       </SafeAreaView>
     );
   }
-  if (!steps) {
+  if (!steps || steps.length === 0) {
     return (
       <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#000' : '#fff' }]}>
         <View style={styles.centerFill}><Text style={[styles.infoText, { color: isDark ? '#eee' : '#333' }]}>No steps found.</Text></View>

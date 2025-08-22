@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View, NativeModules } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
@@ -41,10 +41,16 @@ type StepsFile = {
   }>;
 };
 
-const STEPS_BY_CODE: Record<string, StepsFile> = {
-  en: require('../../BabySteps/steps_en-test.json'),
-  es: require('../../BabySteps/steps_es-test.json'),
-};
+const apiBaseUrl = (() => {
+  const scriptURL: string | undefined = (NativeModules as any)?.SourceCode?.scriptURL;
+  if (scriptURL) {
+    try {
+      const { hostname } = new URL(scriptURL);
+      return `http://${hostname}:3000`;
+    } catch {}
+  }
+  return 'http://localhost:3000';
+})();
 
 function ensureCounters(entry: WordEntry): WordEntry {
   return {
@@ -152,22 +158,31 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         setRemoveAfterTotalCorrect(totalThreshold);
       } catch {}
 
-      // Prepare fallback tokens from BabySteps steps based on current learning language
+      // Prepare fallback tokens from BabySteps steps fetched from server
       try {
         const learningName = await AsyncStorage.getItem('language.learning');
         const code = getLangCode(learningName) || 'en';
-        const stepsFile = STEPS_BY_CODE[code] || STEPS_BY_CODE['en'];
-        const tokensSet = new Set<string>();
-        stepsFile.steps.forEach((step) => {
-          step.items.forEach((it) => {
-            if (it.type === 'sentence' || it.practiceType === 'missingWords' || it.practiceType === 'formulateSentense') {
-              tokenizeSentence(it.text).forEach((t) => t && tokensSet.add(t));
-            } else if (it.type === 'word' || it.practiceType === 'chooseTranslation') {
-              if (it.text) tokensSet.add(it.text);
-            }
-          });
+        const res = await fetch(`${apiBaseUrl}/baby-steps/get`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ language: code }),
         });
-        setFallbackTokens(Array.from(tokensSet));
+        if (res.ok) {
+          const stepsFile: StepsFile = await res.json();
+          const tokensSet = new Set<string>();
+          (stepsFile.steps || []).forEach((step) => {
+            (step.items || []).forEach((it) => {
+              if (it.type === 'sentence' || it.practiceType === 'missingWords' || it.practiceType === 'formulateSentense') {
+                tokenizeSentence(it.text).forEach((t) => t && tokensSet.add(t));
+              } else if (it.type === 'word' || it.practiceType === 'chooseTranslation') {
+                if (it.text) tokensSet.add(it.text);
+              }
+            });
+          });
+          setFallbackTokens(Array.from(tokensSet));
+        } else {
+          setFallbackTokens([]);
+        }
       } catch {
         setFallbackTokens([]);
       }

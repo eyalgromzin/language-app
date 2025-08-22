@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, NativeModules } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
@@ -26,11 +26,6 @@ type StepsFile = {
     title: string;
     items: StepItem[];
   }>;
-};
-
-const STEPS_BY_CODE: Record<string, StepsFile> = {
-  en: require('./steps_en-test.json'),
-  es: require('./steps_es-test.json'),
 };
 
 type RunnerTask =
@@ -138,18 +133,51 @@ function BabyStepRunnerScreen(): React.JSX.Element {
   const [currentHadMistake, setCurrentHadMistake] = React.useState<boolean>(false);
   const [resetSeed, setResetSeed] = React.useState<number>(0);
   const [selectedIndices, setSelectedIndices] = React.useState<number[]>([]);
+  const apiBaseUrl = React.useMemo(() => {
+    const scriptURL: string | undefined = (NativeModules as any)?.SourceCode?.scriptURL;
+    if (scriptURL) {
+      try {
+        const { hostname } = new URL(scriptURL);
+        return `http://${hostname}:3000`;
+      } catch {}
+    }
+    return 'http://localhost:3000';
+  }, []);
 
   React.useEffect(() => {
     let mounted = true;
     (async () => {
       setLoading(true);
       try {
-        // Determine current learning language
-        const learningName = await AsyncStorage.getItem('language.learning');
+        // Determine current learning and native languages
+        const [learningName, nativeName] = await Promise.all([
+          AsyncStorage.getItem('language.learning'),
+          AsyncStorage.getItem('language.native'),
+        ]);
         const currentCode = getLangCode(learningName) || 'en';
-        const currentFile = STEPS_BY_CODE[currentCode] || STEPS_BY_CODE['en'];
-        const otherCodes = Object.keys(STEPS_BY_CODE).filter((c) => c !== currentCode);
-        const otherFiles = otherCodes.map((c) => STEPS_BY_CODE[c]);
+        const nativeCode = getLangCode(nativeName) || 'en';
+        const otherCode = nativeCode !== currentCode ? nativeCode : (currentCode === 'en' ? 'es' : 'en');
+
+        // Load steps from server only
+        const loadSteps = async (code: string): Promise<StepsFile> => {
+          try {
+            const res = await fetch(`${apiBaseUrl}/baby-steps/get`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ language: code }),
+            });
+            if (res.ok) {
+              const json = (await res.json()) as StepsFile;
+              if (json && Array.isArray(json.steps) && json.steps.length) return json;
+            }
+          } catch {}
+          return { language: code, steps: [], overview: undefined } as StepsFile;
+        };
+
+        const [currentFile, otherFile] = await Promise.all([
+          loadSteps(currentCode),
+          loadSteps(otherCode),
+        ]);
 
         const step = currentFile.steps[stepIndex];
         if (!step) {
@@ -157,13 +185,11 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           return;
         }
 
-        // Helper to find matching item text by id in other languages
+        // Helper to find matching item text by id in other language file
         const findOtherTextById = (itemId: string): string | null => {
-          for (const f of otherFiles) {
-            for (const s of f.steps) {
-              const match = s.items.find((it) => it.id === itemId);
-              if (match) return match.text;
-            }
+          for (const s of (otherFile?.steps || [])) {
+            const match = s.items.find((it) => it.id === itemId);
+            if (match) return match.text;
           }
           return null;
         };
