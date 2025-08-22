@@ -1,6 +1,4 @@
 
-- get step by step jsons from server 
-
 - library: book section wont have a level but only book type: childrens , short stories , novel , technical, self help/new age. none fiction. other
 
 - book reader- selected word is cut in panel , and translation panel not showing sentense 

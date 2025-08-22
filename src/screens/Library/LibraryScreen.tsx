@@ -98,7 +98,7 @@ function LibraryScreen(): React.JSX.Element {
       (u) =>
         (selectedMedia === 'all' || u.media === selectedMedia) &&
         (selectedType === 'All' || u.type === selectedType) &&
-        (selectedLevel === 'All' || u.level === selectedLevel),
+        (selectedMedia === 'book' || selectedLevel === 'All' || u.level === selectedLevel),
     );
   }, [urls, selectedType, selectedLevel, selectedMedia]);
 
@@ -159,6 +159,12 @@ function LibraryScreen(): React.JSX.Element {
       isCancelled = true;
     };
   }, [selectedMedia, apiBaseUrl, toLanguageSymbol, learningLanguage]);
+
+  // Close any open dropdowns when switching tabs
+  React.useEffect(() => {
+    setShowTypeDropdown(false);
+    setShowLevelDropdown(false);
+  }, [selectedMedia]);
 
   const getDomainFromUrlString = (input: string): string | null => {
     try {
@@ -256,18 +262,20 @@ function LibraryScreen(): React.JSX.Element {
                 {/* options rendered in modal overlay */}
               </View>
 
-              <View style={styles.dropdownContainer}>
-                <TouchableOpacity
-                  style={styles.dropdownButton}
-                  onPress={() => {
-                    setShowLevelDropdown((prev) => !prev);
-                    setShowTypeDropdown(false);
-                  }}
-                >
-                  <Text style={styles.dropdownButtonText}>Level: {selectedLevel}</Text>
-                </TouchableOpacity>
-                {/* options rendered in modal overlay */}
-              </View>
+              {selectedMedia !== 'book' && (
+                <View style={styles.dropdownContainer}>
+                  <TouchableOpacity
+                    style={styles.dropdownButton}
+                    onPress={() => {
+                      setShowLevelDropdown((prev) => !prev);
+                      setShowTypeDropdown(false);
+                    }}
+                  >
+                    <Text style={styles.dropdownButtonText}>Level: {selectedLevel}</Text>
+                  </TouchableOpacity>
+                  {/* options rendered in modal overlay */}
+                </View>
+              )}
             </View>
 
             {(selectedType !== 'All' || selectedLevel !== 'All') && (
@@ -315,31 +323,33 @@ function LibraryScreen(): React.JSX.Element {
       </Modal>
 
       {/* Level modal */}
-      <Modal
-        visible={showLevelDropdown}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setShowLevelDropdown(false)}
-      >
-        <Pressable style={styles.modalBackdrop} onPress={() => setShowLevelDropdown(false)} />
-        <View style={styles.modalCard}>
-          <Text style={styles.modalTitle}>Select Level</Text>
-          <ScrollView>
-            {levelOptions.map((opt) => (
-              <TouchableOpacity
-                key={opt}
-                style={[styles.dropdownOption, selectedLevel === opt && styles.dropdownOptionSelected]}
-                onPress={() => {
-                  setSelectedLevel(opt);
-                  setShowLevelDropdown(false);
-                }}
-              >
-                <Text style={styles.dropdownOptionText}>{opt}</Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-        </View>
-      </Modal>
+      {selectedMedia !== 'book' && (
+        <Modal
+          visible={showLevelDropdown}
+          transparent
+          animationType="fade"
+          onRequestClose={() => setShowLevelDropdown(false)}
+        >
+          <Pressable style={styles.modalBackdrop} onPress={() => setShowLevelDropdown(false)} />
+          <View style={styles.modalCard}>
+            <Text style={styles.modalTitle}>Select Level</Text>
+            <ScrollView>
+              {levelOptions.map((opt) => (
+                <TouchableOpacity
+                  key={opt}
+                  style={[styles.dropdownOption, selectedLevel === opt && styles.dropdownOptionSelected]}
+                  onPress={() => {
+                    setSelectedLevel(opt);
+                    setShowLevelDropdown(false);
+                  }}
+                >
+                  <Text style={styles.dropdownOptionText}>{opt}</Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
+        </Modal>
+      )}
     </View>
   );
 }

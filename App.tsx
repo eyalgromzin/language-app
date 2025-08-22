@@ -177,8 +177,8 @@ function MainTabs(): React.JSX.Element {
         />
         <Tab.Screen name="BabySteps" component={BabyStepsPathScreen} options={{ title: 'Baby Steps' }} />
         <Tab.Screen name="Categories" component={WordsByCategoriesScreen} options={{ title: 'Categories' }} />
-        <Tab.Screen name="Library" component={LibraryScreen} options={{ title: 'Library' }} />
         <Tab.Screen name="Books" component={BooksNavigator} options={{ title: 'Books' }} />
+        <Tab.Screen name="Library" component={LibraryScreen} options={{ title: 'Library' }} />
       </Tab.Navigator>
       )}
 
