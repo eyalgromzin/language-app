@@ -8,6 +8,7 @@ import TranslationPanel, { type TranslationPanelState } from '../../components/T
 import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
 import * as RNFS from 'react-native-fs';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
+import { parseYandexImageUrlsFromHtml } from '../practice/common';
 import {
   extractYouTubeVideoId,
   normalizeYouTubeUrl as normalizeYouTubeUrlUtil,
@@ -16,7 +17,6 @@ import {
   getVideoTranscript,
   fetchYouTubeTitleById,
   imageScrapeInjection,
-  parseYandexImageUrlsFromHtml,
   tokenizeTranscriptLine,
   formatTimestamp,
 } from './videoMethods';
@@ -628,10 +628,6 @@ function VideoScreen(): React.JSX.Element {
       // ignore errors silently
     }
   };
-
-  const tokenizeTranscriptLineCb = React.useCallback(tokenizeTranscriptLine, []);
-
-  const formatTimestampCb = React.useCallback(formatTimestamp, []);
 
   React.useEffect(() => {
     if (!playerReady || !playerRef.current) return;
