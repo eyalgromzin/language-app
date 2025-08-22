@@ -1,17 +1,11 @@
-tomorrow :
-
-
-================================================================================================================
 
 - get step by step jsons from server 
 
-- video transcript always goes to top , and then scrolls back to the line . it looks bad - is shouldnt scroll to top first
-
-- book reader word is cut in panel , and not showing sentense 
-
 - library: book section wont have a level but only book type: childrens , short stories , novel , technical, self help/new age. none fiction. other
 
-=============================================================================================================
+- book reader- selected word is cut in panel , and translation panel not showing sentense 
+
+- video transcript always goes to top , and then scrolls back to the line . it looks bad - is shouldnt scroll to top first
 
 - login with facebook / google
 
@@ -25,9 +19,8 @@ tomorrow :
 
 - check hebrew support - and rtl 
 
-=================================================================================================================
 
-create lessons jsons for step by step language learn 
+- create lessons jsons for step by step language learn - more lessons  
 
 ===========================================================================================================
 
