@@ -1,29 +1,17 @@
 import * as React from 'react';
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, Image } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
+import WordCategory from './WordCategory';
+import type { WordItem, WordCategoryType, LocalizedText } from '../../types/words';
 
-type LocalizedText = Record<string, string>;
+ 
 
-type WordItem = {
-  id: string;
-  type: 'word' | 'sentence';
-  text: LocalizedText;
-  example?: LocalizedText;
-};
-
-type WordCategory = {
-  id: string;
-  emoji?: string;
-  name: LocalizedText;
-  description?: LocalizedText;
-  items: WordItem[];
-};
+// moved WordCategory component to its own file
 
 type CategoriesData = {
   languages: string[];
-  categories: WordCategory[];
+  categories: WordCategoryType[];
 };
 
 const CATEGORIES_DATA: CategoriesData = require('../../userData/wordCategories.json');
@@ -32,7 +20,7 @@ const SOURCE_LANGUAGE = 'English';
 const TARGET_LANGUAGE = 'Spanish';
 
 function WordsByCategoriesScreen(): React.JSX.Element {
-  const [selectedCategory, setSelectedCategory] = React.useState<WordCategory | null>(null);
+  const [selectedCategory, setSelectedCategory] = React.useState<WordCategoryType | null>(null);
   const navigation = useNavigation<any>();
   const [failedEmojiIds, setFailedEmojiIds] = React.useState<Record<string, boolean>>({});
 
@@ -110,7 +98,7 @@ function WordsByCategoriesScreen(): React.JSX.Element {
     return unsubscribe;
   }, [navigation]);
 
-  const onOpenCategory = (category: WordCategory) => {
+  const onOpenCategory = (category: WordCategoryType) => {
     setSelectedCategory(category);
   };
 
@@ -184,85 +172,22 @@ function WordsByCategoriesScreen(): React.JSX.Element {
       }
     }
   };
+  
 
   if (selectedCategory) {
     return (
-      <View style={styles.container}>
-        <View style={styles.headerRow}>
-          <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel="Back">
-            <Text style={styles.backText}>‹ Back</Text>
-          </TouchableOpacity>
-          <Text numberOfLines={1} style={styles.headerTitle}>
-            {(selectedCategory.emoji ? `${selectedCategory.emoji} ` : '') + (selectedCategory.name[TARGET_LANGUAGE] || selectedCategory.name[SOURCE_LANGUAGE] || selectedCategory.id)}
-          </Text>
-          <View style={{ width: 56 }} />
-        </View>
-        {selectedCategory.description ? (
-          <Text style={styles.categoryDescription}>
-            {selectedCategory.description[TARGET_LANGUAGE] || selectedCategory.description[SOURCE_LANGUAGE]}
-          </Text>
-        ) : null}
-
-        <ScrollView contentContainerStyle={styles.list}>
-          {selectedCategory.items.map((item) => {
-            const source = item.text[SOURCE_LANGUAGE] || '';
-            const target = item.text[TARGET_LANGUAGE] || '';
-            const exampleSource = item.example?.[SOURCE_LANGUAGE];
-            const exampleTarget = item.example?.[TARGET_LANGUAGE];
-            const emoji = item.type === 'word' ? getEmojiForWord(source) : undefined;
-            const emojiUrl = emoji ? emojiToTwemojiUrl(emoji) : undefined;
-            return (
-              <View key={item.id} style={styles.itemCard}>
-                <View style={styles.itemHeaderRow}>
-                  {item.type === 'sentence' ? (
-                    <Text numberOfLines={1} style={[styles.itemText, styles.itemTextFlex]}>
-                      {source} -
-                    </Text>
-                  ) : (
-                    <View style={[styles.itemTextFlex, styles.itemWordRow]}>
-                      {emojiUrl && !failedEmojiIds[item.id] ? (
-                        <Image
-                          source={{ uri: emojiUrl }}
-                          style={styles.itemWordEmojiImage}
-                          onError={() => setFailedEmojiIds((prev) => ({ ...prev, [item.id]: true }))}
-                        />
-                      ) : (
-                        <Text style={styles.itemWordEmojiText}>{emoji}</Text>
-                      )}
-                      <Text numberOfLines={1} style={styles.itemText}>
-                        {source}
-                        <Text style={styles.itemSeparator}> — </Text>
-                        <Text style={styles.itemTarget}>{target}</Text>
-                      </Text>
-                    </View>
-                  )}
-                  <TouchableOpacity
-                    onPress={() => saveItemToMyWords(item)}
-                    style={styles.addBtnWrap}
-                    accessibilityRole="button"
-                    accessibilityLabel="Add to My Words"
-                    hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
-                  >
-                    <Text style={styles.addBtnText}>+</Text>
-                  </TouchableOpacity>
-                </View>
-                {item.type === 'sentence' ? (
-                  <Text style={styles.itemTranslationLine}>{target}</Text>
-                ) : null}
-                {(exampleSource || exampleTarget) ? (
-                  <Text style={styles.itemExample}>
-                    {exampleSource ? exampleSource : null}
-                    {exampleSource && exampleTarget ? '\n' : null}
-                    {exampleTarget ? (
-                      <Text style={styles.itemExampleTranslation}>{exampleTarget}</Text>
-                    ) : null}
-                  </Text>
-                ) : null}
-              </View>
-            );
-          })}
-        </ScrollView>
-      </View>
+      <WordCategory
+        selectedCategory={selectedCategory}
+        styles={styles as any}
+        SOURCE_LANGUAGE={SOURCE_LANGUAGE}
+        TARGET_LANGUAGE={TARGET_LANGUAGE}
+        failedEmojiIds={failedEmojiIds}
+        setFailedEmojiIds={setFailedEmojiIds}
+        onBackToCategories={onBackToCategories}
+        saveItemToMyWords={saveItemToMyWords}
+        getEmojiForWord={getEmojiForWord}
+        emojiToTwemojiUrl={emojiToTwemojiUrl}
+      />
     );
   }
 
