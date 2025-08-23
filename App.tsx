@@ -25,6 +25,7 @@ import VideoScreen from './src/screens/Video/VideoScreen';
 import BabyStepsPathScreen from './src/screens/BabySteps/BabyStepsPathScreen';
 import BabyStepRunnerScreen from './src/screens/BabySteps/BabyStepRunnerScreen';
 import ContactUsScreen from './src/screens/ContactUs/ContactUsScreen';
+import ProgressScreen from './src/screens/Progress/ProgressScreen';
 
 enableScreens();
 
@@ -50,6 +51,7 @@ type RootStackParamList = {
   BabyStepsPath: undefined;
   BabyStepRunner: { stepIndex: number } | undefined;
   ContactUs: undefined;
+  Progress: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -195,6 +197,9 @@ function MainTabs(): React.JSX.Element {
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('MyWords'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>My Words</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Progress'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>Progress</Text>
+            </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Settings'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Settings</Text>
             </TouchableOpacity>
@@ -307,6 +312,7 @@ function App(): React.JSX.Element | null {
           <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path' }} />
           <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step' }} />
           <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us' }} />
+          <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress' }} />
         </Stack.Navigator>
       ) : (
         <Stack.Navigator initialRouteName="Main">
@@ -318,6 +324,7 @@ function App(): React.JSX.Element | null {
           <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path' }} />
           <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step' }} />
           <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us' }} />
+          <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress' }} />
         </Stack.Navigator>
       )}
     </NavigationContainer>

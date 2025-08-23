@@ -1,10 +1,8 @@
-- if now playing json file is empty , client shows forever loader , fix it 
-
-- progress screen -
+✅ progress screen - COMPLETED
     - # of added words 
     - words learned 
     - sentenses learned 
-    - practices finishe
+    - practices finished
 
 - login with facebook / google
 
