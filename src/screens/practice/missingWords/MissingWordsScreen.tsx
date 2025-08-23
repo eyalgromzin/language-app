@@ -247,13 +247,17 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
     }, [loadData, props.embedded])
   );
 
-  const current = props.embedded
-    ? ({
-        entry: { word: '', translation: '', sentence: props.sentence || '' },
-        tokens: (props.tokens && props.tokens.length > 0 ? props.tokens : splitSentenceIntoTokens(props.sentence || '')),
-        missingIndices: props.missingIndices || [],
-      } as unknown as PreparedItem)
-    : items[currentIndex];
+  // Memoize current item in embedded mode to avoid new object identity on every render
+  const embeddedCurrent = React.useMemo(() => {
+    if (!props.embedded) return null as unknown as PreparedItem | null;
+    return {
+      entry: { word: '', translation: '', sentence: props.sentence || '' },
+      tokens: (props.tokens && props.tokens.length > 0 ? props.tokens : splitSentenceIntoTokens(props.sentence || '')),
+      missingIndices: props.missingIndices || [],
+    } as unknown as PreparedItem;
+  }, [props.embedded, props.sentence, props.tokens, props.missingIndices]);
+
+  const current = props.embedded ? (embeddedCurrent as PreparedItem) : items[currentIndex];
 
   const moveToNext = React.useCallback(() => {
     if (props.embedded) return;
