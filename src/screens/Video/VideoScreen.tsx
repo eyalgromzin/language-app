@@ -17,9 +17,8 @@ import {
   getVideoTranscript,
   fetchYouTubeTitleById,
   imageScrapeInjection,
-  tokenizeTranscriptLine,
-  formatTimestamp,
 } from './videoMethods';
+import Transcript from './Transcript';
 
 
 
@@ -573,6 +572,16 @@ function VideoScreen(): React.JSX.Element {
       });
   };
 
+  const handleTranscriptWordPress = React.useCallback((payload: { key: string; segmentOffset: number; word: string; sentence: string }) => {
+    const { key, segmentOffset, word, sentence } = payload;
+    setSelectedWordKey(key);
+    try { playerRef.current?.pauseVideo?.(); } catch {}
+    try { playerRef.current?.seekTo?.(segmentOffset); } catch {}
+    setIsPlaying(false);
+    setCurrentTime(segmentOffset);
+    openPanel(word, sentence);
+  }, [openPanel]);
+
   const saveCurrentWord = async () => {
     if (!translationPanel) return;
     const entry = {
@@ -955,78 +964,7 @@ function VideoScreen(): React.JSX.Element {
     );
   };
 
-  const Transcript = () => {
-    return (
-      <>
-      {videoId ? (
-        <View style={{ marginTop: 16, marginBottom: 16 }}>
-          <Text style={styles.sectionTitle}>Transcript</Text>
-          {loadingTranscript ? (
-            <View style={styles.centered}>
-              <ActivityIndicator />
-              <Text style={styles.helper}>Fetching transcript…</Text>
-            </View>
-          ) : transcriptError ? (
-            <Text style={[styles.helper, { color: '#cc3333' }]}>{transcriptError}</Text>
-          ) : transcript.length > 0 ? (
-            <ScrollView style={styles.transcriptBox} ref={scrollViewRef} nestedScrollEnabled>
-              {transcript.map((seg, index) => {
-                const tokens = tokenizeTranscriptLine(seg.text);
-                return (
-                  <View
-                    key={`${seg.offset}-${index}`}
-                    onLayout={(e) => {
-                      const y = e.nativeEvent.layout.y;
-                      lineOffsetsRef.current[index] = y;
-                    }}
-                  >
-                    <Text style={styles.transcriptTime}>{formatTimestamp(seg.offset)}</Text>
-                    <Text
-                      style={[
-                        styles.transcriptLine,
-                        activeIndex === index ? styles.transcriptLineActive : null,
-                      ]}
-                    >
-                      {tokens.map((tok, tIdx) => {
-                        const key = `${index}:${tIdx}`;
-                        if (!tok.isWord) {
-                          return (
-                            <Text key={key}>
-                              {tok.value}
-                            </Text>
-                          );
-                        }
-                        const isSelected = selectedWordKey === key;
-                        return (
-                          <Text
-                            key={key}
-                            onPress={() => {
-                              setSelectedWordKey(key);
-                              try { playerRef.current?.pauseVideo?.(); } catch {}
-                              try { playerRef.current?.seekTo?.(seg.offset); } catch {}
-                              setIsPlaying(false);
-                              setCurrentTime(seg.offset);
-                              openPanel(tok.value, seg.text);
-                            }}
-                            style={isSelected ? styles.transcriptWordSelected : undefined}
-                          >
-                            {tok.value}
-                          </Text>
-                        );
-                      })}
-                    </Text>
-                  </View>
-                );
-              })}
-            </ScrollView>
-          ) : (
-            <Text style={styles.helper}>No transcript lines to display.</Text>
-          )}
-        </View>
-      ) : null}
-      </>
-    );
-  };
+  
 
   const ImageScrape = () => {
     return (
@@ -1135,7 +1073,19 @@ function VideoScreen(): React.JSX.Element {
         <Text style={styles.helper}>Enter a valid YouTube link or 11-character ID to load the video.</Text>
       )}
 
-      {!hidePlayback && <Transcript />}
+      {!hidePlayback && (
+        <Transcript
+          videoId={videoId}
+          loading={loadingTranscript}
+          error={transcriptError}
+          transcript={transcript}
+          activeIndex={activeIndex}
+          selectedWordKey={selectedWordKey}
+          onWordPress={handleTranscriptWordPress}
+          scrollViewRef={scrollViewRef}
+          lineOffsetsRef={lineOffsetsRef}
+        />
+      )}
 
       {!searchLoading && !searchError && searchResults.length === 0 ? <NowPlaying /> : null}
 
