@@ -10,10 +10,11 @@ import { VideoCacheService } from './cache/video-cache.service';
 import { NowPlayingService } from './cache/now-playing.service';
 import { BabyStepsService } from './baby-steps';
 import { BabyStepsController } from './baby-steps';
+import { VideoController } from './video/video.controller';
 
 @Module({
   imports: [],
-  controllers: [AppController, LibraryController, BabyStepsController],
+  controllers: [AppController, LibraryController, BabyStepsController, VideoController],
   providers: [AppService, LibraryService, YouTubeService, TranslateService, WordCacheService, VideoCacheService, NowPlayingService, BabyStepsService],
 })
 export class AppModule {}

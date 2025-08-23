@@ -336,7 +336,7 @@ function VideoScreen(): React.JSX.Element {
       const title = (currentVideoTitle && currentVideoTitle.trim()) ? currentVideoTitle : postUrl;
       const thumb = videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : undefined;
 
-      await fetch('http://localhost:3000/now-playing/upsert', {
+      await fetch('http://localhost:3000/video/now-playing/upsert', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -408,7 +408,7 @@ function VideoScreen(): React.JSX.Element {
       setNowPlayingLoading(true);
       setNowPlayingError(null);
       try {
-        const response = await fetch('http://localhost:3000/now-playing', {
+        const response = await fetch('http://localhost:3000/video/now-playing', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ languageSymbol: langSymbol }),
