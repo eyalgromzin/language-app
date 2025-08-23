@@ -1,4 +1,13 @@
+- check hebrew support - and rtl 
+    - formulate sentense - the words are the opposite order 
+
 - video screen - now playing by other people take a very long time to load - should be immediate locally .  
+
+- progress screen -
+    - # of added words 
+    - words learned 
+    - sentenses learned 
+    - practices finishe
 
 - login with facebook / google
 
@@ -10,9 +19,13 @@
         - on practice finish word - make some big animation on the screen. 
         - on practice finish word specific practice 
 
-- check hebrew support - and rtl 
-
-- create lessons jsons for step by step language learn - more lessons  
+- create lessons jsons for step by step language learn - more lessons
+    - french 
+    - german 
+    - italian
+    - Russian
+    - portugues
+    - Dutch 
 
 ??? ask shir ???? on startup page (where you choose languages) - choose games that you like ? - the surprise me button will choose from them 
 

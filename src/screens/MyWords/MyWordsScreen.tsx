@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
 
@@ -81,6 +81,32 @@ function MyWordsScreen(): React.JSX.Element {
     setRefreshing(false);
   }, [loadWords]);
 
+  const confirmClearAll = React.useCallback(() => {
+    if (loading) return;
+    Alert.alert(
+      'Clear all words',
+      'This will remove all saved words. This action cannot be undone.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Clear',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              setLoading(true);
+              setExpanded({});
+              await RNFS.writeFile(filePath, JSON.stringify([], null, 2), 'utf8');
+              setWords([]);
+            } catch {}
+            finally {
+              setLoading(false);
+            }
+          },
+        },
+      ]
+    );
+  }, [filePath, loading]);
+
   const getItemId = (item: WordEntry, index: number) => `${item.word}|${item.sentence || ''}|${item.addedAt || index}`;
 
   const renderItem = ({ item, index }: { item: WordEntry; index: number }) => {
@@ -148,6 +174,19 @@ function MyWordsScreen(): React.JSX.Element {
 
   return (
     <View style={styles.container}>
+      <View style={styles.headerRow}>
+        <Text style={styles.title}>My words</Text>
+        {!loading && words.length > 0 ? (
+          <TouchableOpacity
+            onPress={confirmClearAll}
+            style={styles.clearBtn}
+            accessibilityRole="button"
+            accessibilityLabel="Clear all words"
+          >
+            <Text style={styles.clearBtnText}>Clear all</Text>
+          </TouchableOpacity>
+        ) : null}
+      </View>
       {loading ? (
         <View style={styles.loaderWrap}><ActivityIndicator size="small" color="#555" /></View>
       ) : words.length === 0 ? (
@@ -172,10 +211,28 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
   },
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 8,
+  },
   title: {
     fontSize: 24,
     fontWeight: '600',
     marginBottom: 12,
+  },
+  clearBtn: {
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 8,
+    backgroundColor: '#f3f4f6',
+    borderWidth: 1,
+    borderColor: '#e5e7eb',
+  },
+  clearBtnText: {
+    color: '#b91c1c',
+    fontWeight: '700',
   },
   loaderWrap: {
     flex: 1,
