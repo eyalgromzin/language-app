@@ -1,6 +1,4 @@
 
-- video transcript always goes to top , and then scrolls back to the line . it looks bad - is shouldnt scroll to top first
-
 - login with facebook / google
 
 - deep link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
@@ -12,7 +10,6 @@
         - on practice finish word specific practice 
 
 - check hebrew support - and rtl 
-
 
 - create lessons jsons for step by step language learn - more lessons  
 
