@@ -25,8 +25,8 @@ function BooksNavigator(): React.JSX.Element {
         ),
       }}
     >
-      <Stack.Screen name="BooksHome" component={BooksScreen} options={{ title: 'Books' }} />
-      <Stack.Screen name="BookReader" component={BookReaderScreen} options={{ title: 'Reader' }} />
+      <Stack.Screen name="BooksHome" component={BooksScreen} options={{ title: 'Books', headerShown: false }} />
+      <Stack.Screen name="BookReader" component={BookReaderScreen} options={{ title: 'Reader', headerShown: false }} />
     </Stack.Navigator>
   );
 }

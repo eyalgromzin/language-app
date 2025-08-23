@@ -262,11 +262,11 @@ function BooksScreen(): React.JSX.Element {
   return (
     <View style={styles.container}>
       <View style={styles.headerRow}>
-        <Text style={styles.header}>My Books</Text>
+        <Text style={styles.header}>Recent</Text>
         <View style={styles.actionsRow}>
           {books.length > 0 && (
             <TouchableOpacity style={styles.clearBtn} onPress={clearAllBooks}>
-              <Text style={styles.clearBtnText}>Clear books</Text>
+              <Text style={styles.clearBtnText}>Clear</Text>
             </TouchableOpacity>
           )}
           <TouchableOpacity style={styles.addBtn} onPress={openPicker}>

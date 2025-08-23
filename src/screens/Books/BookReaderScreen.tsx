@@ -1366,7 +1366,7 @@ const styles = StyleSheet.create({
   themeMenu: {
     position: 'absolute',
     right: 12,
-    top: 56 + 8,
+    top: 56,
     borderRadius: 10,
     borderWidth: StyleSheet.hairlineWidth,
     paddingVertical: 6,
