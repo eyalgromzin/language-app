@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, BackHandler } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
 import WordCategory from './WordCategory';
@@ -97,6 +97,29 @@ function WordsByCategoriesScreen(): React.JSX.Element {
     });
     return unsubscribe;
   }, [navigation]);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      if (!selectedCategory) return;
+
+      const onHardwareBack = () => {
+        setSelectedCategory(null);
+        return true;
+      };
+
+      const backSub = BackHandler.addEventListener('hardwareBackPress', onHardwareBack);
+      const navSub = navigation.addListener('beforeRemove', (e: any) => {
+        if (!selectedCategory) return;
+        e.preventDefault();
+        setSelectedCategory(null);
+      });
+
+      return () => {
+        backSub.remove();
+        navSub();
+      };
+    }, [selectedCategory, navigation])
+  );
 
   const onOpenCategory = (category: WordCategoryType) => {
     setSelectedCategory(category);
