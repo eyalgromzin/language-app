@@ -8,6 +8,7 @@ export type NowPlayingItem = {
   description?: string;
   thumbnailUrl?: string;
   url: string;
+  length?: string;
   updated_at: number;
 };
 
@@ -86,24 +87,15 @@ export class NowPlayingService {
   private async ensureInitialized(): Promise<void> {
     if (this.initialized) return;
     if (!this.initializePromise) {
-      this.initializePromise = this.loadFromDisk();
+      this.initializePromise = this.initializeFromDisk();
     }
     await this.initializePromise;
     this.initialized = true;
   }
 
-  private async loadFromDisk(): Promise<void> {
-    let parsed: PersistShape | null = null;
-    try {
-      const buf = await fs.readFile(this.filePath, 'utf8');
-      const data = JSON.parse(buf);
-      if (data && typeof data === 'object' && !Array.isArray(data)) {
-        parsed = data as PersistShape;
-      }
-    } catch {
-      parsed = null;
-    }
-
+  private async initializeFromDisk(): Promise<void> {
+    const parsed = await this.loadFromDisk();
+    
     this.stateByLanguage = new Map();
     if (parsed) {
       for (const [languageSymbol, items] of Object.entries(parsed)) {
@@ -119,6 +111,7 @@ export class NowPlayingService {
               title: raw.title,
               ...(raw.description ? { description: String(raw.description) } : {}),
               ...(raw.thumbnailUrl ? { thumbnailUrl: String(raw.thumbnailUrl) } : {}),
+              ...(raw.length ? { length: String(raw.length) } : {}),
               url: raw.url,
               updated_at: typeof raw.updated_at === 'number' ? raw.updated_at : Date.now(),
             };
@@ -130,6 +123,21 @@ export class NowPlayingService {
         this.stateByLanguage.set(languageSymbol, { list, byUrl });
       }
     }
+  }
+
+  private async loadFromDisk(): Promise<PersistShape | undefined> {
+    let parsed: PersistShape | null = null;
+    try {
+      const buf = await fs.readFile(this.filePath, 'utf8');
+      const data = JSON.parse(buf);
+      if (data && typeof data === 'object' && !Array.isArray(data)) {
+        parsed = data as PersistShape;
+      }
+    } catch {
+      return undefined;
+    }
+
+    return parsed || undefined;
   }
 
   private async persist(): Promise<void> {
@@ -163,6 +171,7 @@ export class NowPlayingService {
     description?: string;
     thumbnailUrl?: string;
     url: string;
+    length?: string;
   }): Promise<void> {
     const languageSymbol = (params.languageSymbol ?? '').trim();
     const title = (params.title ?? '').trim();
@@ -183,6 +192,9 @@ export class NowPlayingService {
       if (typeof thumbnailUrl === 'string' && thumbnailUrl.trim().length > 0) {
         existing.value.thumbnailUrl = thumbnailUrl;
       }
+      if (typeof params.length === 'string' && params.length.trim().length > 0) {
+        existing.value.length = params.length;
+      }
       // move to front in O(1)
       state.list.remove(existing);
       state.list.unshift(existing);
@@ -192,6 +204,7 @@ export class NowPlayingService {
         title,
         ...(description ? { description } : {}),
         ...(thumbnailUrl ? { thumbnailUrl } : {}),
+        ...(params.length ? { length: params.length } : {}),
         url,
         updated_at: now,
       });

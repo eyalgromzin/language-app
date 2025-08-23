@@ -1,7 +1,4 @@
-- check hebrew support - and rtl 
-    - formulate sentense - the words are the opposite order 
-
-- video screen - now playing by other people take a very long time to load - should be immediate locally .  
+- if now playing json file is empty , client shows forever loader , fix it 
 
 - progress screen -
     - # of added words 
@@ -40,3 +37,5 @@
     will save all words of a person on the cloud 
     will enable translating unlimited words
 
+- check hebrew support - and rtl 
+    - formulate sentense - the words are the opposite order 

@@ -109,6 +109,37 @@ export class YouTubeService {
     return results;
   }
 
+  async getLengthString(video?: string): Promise<string | undefined> {
+    try {
+      const videoId = this.retrieveVideoId(video ?? '');
+      if (!videoId) return undefined;
+      const USER_AGENT =
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36,gzip(gfe)';
+      const watchResponse = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
+        headers: {
+          'User-Agent': USER_AGENT,
+          'Accept-Language': 'en',
+        },
+      });
+      if (!watchResponse.ok) return undefined;
+      const body = await watchResponse.text();
+      let m = body.match(/"lengthSeconds":"(\d+)"/);
+      if (m && m[1]) {
+        const secs = Math.max(0, parseInt(m[1], 10) || 0);
+        return this.formatSecondsToHms(secs);
+      }
+      m = body.match(/"approxDurationMs":"(\d+)"/);
+      if (m && m[1]) {
+        const ms = Math.max(0, parseInt(m[1], 10) || 0);
+        const secs = Math.floor(ms / 1000);
+        return this.formatSecondsToHms(secs);
+      }
+      return undefined;
+    } catch {
+      return undefined;
+    }
+  }
+
   private normalizeYoutubeiTranscript(
     ytTranscript: any,
   ): { text: string; duration: number; offset: number; lang?: string }[] {

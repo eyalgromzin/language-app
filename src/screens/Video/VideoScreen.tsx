@@ -420,9 +420,10 @@ function VideoScreen(): React.JSX.Element {
           thumbnail: (r.thumbnail ?? r.thumbnailUrl ?? '') as string,
           title: r.title,
           description: r.description,
+          length: r.length,
         }));
-        const enriched = await enrichWithLengths(normalized as Array<{ url: string; thumbnail: string; title: string; description?: string }>);
-        if (!cancelled) setNowPlayingVideos(enriched);
+        // getting time for each video takes a long time - should save it in the server with video length already 
+        if (!cancelled) setNowPlayingVideos(normalized);
       } catch (e) {
         if (!cancelled) {
           setNowPlayingVideos([]);
