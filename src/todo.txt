@@ -1,3 +1,4 @@
+- video screen - now playing by other people take a very long time to load - should be immediate locally .  
 
 - login with facebook / google
 
@@ -13,13 +14,7 @@
 
 - create lessons jsons for step by step language learn - more lessons  
 
-===========================================================================================================
-
-? enable a user once a week to update a 1 of the fields of a library book item.  
-
-? on startup page (where you choose languages) - choose games that you like ? - the surprise me button will choose from them 
-
-- add share button in key places where the user will want to share the app - currrently will only share the url in google play for the app 
+??? ask shir ???? on startup page (where you choose languages) - choose games that you like ? - the surprise me button will choose from them 
 
 - on 100 downloads : create a table for translation .for all my languages - to not take translation from 3rd party. 
        with indexes on all languages columns.

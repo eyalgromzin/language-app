@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, BackHandler } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import WordCategory from './WordCategory';
 import type { WordItem, WordCategoryType, LocalizedText } from '../../types/words';
 
@@ -16,13 +17,41 @@ type CategoriesData = {
 
 const CATEGORIES_DATA: CategoriesData = require('../../userData/wordCategories.json');
 
-const SOURCE_LANGUAGE = 'English';
-const TARGET_LANGUAGE = 'Spanish';
-
 function WordsByCategoriesScreen(): React.JSX.Element {
   const [selectedCategory, setSelectedCategory] = React.useState<WordCategoryType | null>(null);
   const navigation = useNavigation<any>();
   const [failedEmojiIds, setFailedEmojiIds] = React.useState<Record<string, boolean>>({});
+  const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
+  const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      let mounted = true;
+      (async () => {
+        try {
+          const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
+          if (!mounted) return;
+          const map = Object.fromEntries(entries);
+          const learningRaw = map['language.learning'];
+          const nativeRaw = map['language.native'];
+          const learningVal = typeof learningRaw === 'string' && learningRaw.trim().length > 0 ? learningRaw : null;
+          const nativeVal = typeof nativeRaw === 'string' && nativeRaw.trim().length > 0 ? nativeRaw : null;
+          setLearningLanguage(learningVal);
+          setNativeLanguage(nativeVal);
+        } catch {
+          if (!mounted) return;
+          setLearningLanguage(null);
+          setNativeLanguage(null);
+        }
+      })();
+      return () => {
+        mounted = false;
+      };
+    }, [])
+  );
+
+  const SOURCE_LANGUAGE = learningLanguage || 'English';
+  const TARGET_LANGUAGE = nativeLanguage || 'Spanish';
 
   const getEmojiForWord = React.useCallback((word: string) => {
     const w = (word || '').trim().toLowerCase();
@@ -219,7 +248,7 @@ function WordsByCategoriesScreen(): React.JSX.Element {
       <Text style={styles.screenTitle}>Categories</Text>
       <View style={styles.grid}>
         {CATEGORIES_DATA.categories.map((cat) => {
-          const title = cat.name[TARGET_LANGUAGE] || cat.name[SOURCE_LANGUAGE] || cat.id;
+          const title = cat.name[SOURCE_LANGUAGE] || cat.name[TARGET_LANGUAGE] || cat.id;
           const subtitle = cat.name[SOURCE_LANGUAGE] && cat.name[TARGET_LANGUAGE] && cat.name[SOURCE_LANGUAGE] !== cat.name[TARGET_LANGUAGE]
             ? `${cat.name[SOURCE_LANGUAGE]} • ${cat.name[TARGET_LANGUAGE]}`
             : undefined;

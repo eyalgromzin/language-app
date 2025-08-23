@@ -61,13 +61,13 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
           <Text style={styles.backText}>‹ Back</Text>
         </TouchableOpacity>
         <Text numberOfLines={1} style={styles.headerTitle}>
-          {(selectedCategory.emoji ? `${selectedCategory.emoji} ` : '') + (selectedCategory.name[TARGET_LANGUAGE] || selectedCategory.name[SOURCE_LANGUAGE] || selectedCategory.id)}
+          {(selectedCategory.emoji ? `${selectedCategory.emoji} ` : '') + (selectedCategory.name[SOURCE_LANGUAGE] || selectedCategory.name[TARGET_LANGUAGE] || selectedCategory.id)}
         </Text>
         <View style={{ width: 56 }} />
       </View>
       {selectedCategory.description ? (
         <Text style={styles.categoryDescription}>
-          {selectedCategory.description[TARGET_LANGUAGE] || selectedCategory.description[SOURCE_LANGUAGE]}
+          {selectedCategory.description[SOURCE_LANGUAGE] || selectedCategory.description[TARGET_LANGUAGE]}
         </Text>
       ) : null}
 

@@ -1,16 +1,18 @@
 {
-  "languages": ["English", "Spanish"],
+  "languages": ["English", "Spanish", "Hebrew"],
   "categories": [
     {
       "id": "greetings",
       "emoji": "👋",
       "name": {
         "English": "Greetings",
-        "Spanish": "Saludos"
+        "Spanish": "Saludos",
+        "Hebrew": "ברכות"
       },
       "description": {
         "English": "Common ways to greet and start conversations",
-        "Spanish": "Formas comunes de saludar y comenzar conversaciones"
+        "Spanish": "Formas comunes de saludar y comenzar conversaciones",
+        "Hebrew": "דרכים נפוצות לברך ולהתחיל שיחות"
       },
       "items": [
         {
@@ -18,11 +20,13 @@
           "type": "word",
           "text": {
             "English": "hello",
-            "Spanish": "hola"
+            "Spanish": "hola",
+            "Hebrew": "שלום"
           },
           "example": {
             "English": "Hello! How are you?",
-            "Spanish": "¡Hola! ¿Cómo estás?"
+            "Spanish": "¡Hola! ¿Cómo estás?",
+            "Hebrew": "שלום! מה שלומך?"
           }
         },
         {
@@ -30,11 +34,13 @@
           "type": "word",
           "text": {
             "English": "good morning",
-            "Spanish": "buenos días"
+            "Spanish": "buenos días",
+            "Hebrew": "בוקר טוב"
           },
           "example": {
             "English": "Good morning, everyone!",
-            "Spanish": "¡Buenos días a todos!"
+            "Spanish": "¡Buenos días a todos!",
+            "Hebrew": "בוקר טוב לכולם!"
           }
         },
         {
@@ -42,7 +48,8 @@
           "type": "sentence",
           "text": {
             "English": "How are you?",
-            "Spanish": "¿Cómo estás?"
+            "Spanish": "¿Cómo estás?",
+            "Hebrew": "מה שלומך?"
           }
         },
         {
@@ -50,7 +57,8 @@
           "type": "sentence",
           "text": {
             "English": "Nice to meet you.",
-            "Spanish": "Mucho gusto."
+            "Spanish": "Mucho gusto.",
+            "Hebrew": "נעים להכיר."
           }
         }
       ]
@@ -60,11 +68,13 @@
       "emoji": "🍽️",
       "name": {
         "English": "Food & Drink",
-        "Spanish": "Comida y bebida"
+        "Spanish": "Comida y bebida",
+        "Hebrew": "אוכל ושתייה"
       },
       "description": {
         "English": "Everyday food and beverages",
-        "Spanish": "Comidas y bebidas cotidianas"
+        "Spanish": "Comidas y bebidas cotidianas",
+        "Hebrew": "מזון ומשקאות יומיומיים"
       },
       "items": [
         {
@@ -72,11 +82,13 @@
           "type": "word",
           "text": {
             "English": "apple",
-            "Spanish": "manzana"
+            "Spanish": "manzana",
+            "Hebrew": "תפוח"
           },
           "example": {
             "English": "I eat an apple every day.",
-            "Spanish": "Como una manzana todos los días."
+            "Spanish": "Como una manzana todos los días.",
+            "Hebrew": "אני אוכל תפוח כל יום."
           }
         },
         {
@@ -84,11 +96,13 @@
           "type": "word",
           "text": {
             "English": "water",
-            "Spanish": "agua"
+            "Spanish": "agua",
+            "Hebrew": "מים"
           },
           "example": {
             "English": "Can I have some water, please?",
-            "Spanish": "¿Puedo tomar un poco de agua, por favor?"
+            "Spanish": "¿Puedo tomar un poco de agua, por favor?",
+            "Hebrew": "אפשר לקבל קצת מים, בבקשה?"
           }
         },
         {
@@ -96,7 +110,8 @@
           "type": "sentence",
           "text": {
             "English": "I would like a coffee, please.",
-            "Spanish": "Quisiera un café, por favor."
+            "Spanish": "Quisiera un café, por favor.",
+            "Hebrew": "הייתי רוצה קפה, בבקשה."
           }
         },
         {
@@ -104,7 +119,8 @@
           "type": "sentence",
           "text": {
             "English": "The food is delicious.",
-            "Spanish": "La comida está deliciosa."
+            "Spanish": "La comida está deliciosa.",
+            "Hebrew": "האוכל טעים."
           }
         }
       ]
@@ -114,11 +130,13 @@
       "emoji": "✈️",
       "name": {
         "English": "Travel",
-        "Spanish": "Viajes"
+        "Spanish": "Viajes",
+        "Hebrew": "נסיעות"
       },
       "description": {
         "English": "Useful phrases for getting around",
-        "Spanish": "Frases útiles para moverse"
+        "Spanish": "Frases útiles para moverse",
+        "Hebrew": "ביטויים שימושיים להתמצאות"
       },
       "items": [
         {
@@ -126,11 +144,13 @@
           "type": "word",
           "text": {
             "English": "ticket",
-            "Spanish": "boleto"
+            "Spanish": "boleto",
+            "Hebrew": "כרטיס"
           },
           "example": {
             "English": "Where can I buy a train ticket?",
-            "Spanish": "¿Dónde puedo comprar un boleto de tren?"
+            "Spanish": "¿Dónde puedo comprar un boleto de tren?",
+            "Hebrew": "איפה אפשר לקנות כרטיס רכבת?"
           }
         },
         {
@@ -138,7 +158,8 @@
           "type": "sentence",
           "text": {
             "English": "Where is the station?",
-            "Spanish": "¿Dónde está la estación?"
+            "Spanish": "¿Dónde está la estación?",
+            "Hebrew": "איפה התחנה?"
           }
         },
         {
@@ -146,7 +167,8 @@
           "type": "sentence",
           "text": {
             "English": "I have a reservation.",
-            "Spanish": "Tengo una reserva."
+            "Spanish": "Tengo una reserva.",
+            "Hebrew": "יש לי הזמנה."
           }
         },
         {
@@ -154,11 +176,13 @@
           "type": "word",
           "text": {
             "English": "hotel",
-            "Spanish": "hotel"
+            "Spanish": "hotel",
+            "Hebrew": "מלון"
           },
           "example": {
             "English": "The hotel is near the beach.",
-            "Spanish": "El hotel está cerca de la playa."
+            "Spanish": "El hotel está cerca de la playa.",
+            "Hebrew": "המלון קרוב לחוף."
           }
         }
       ]
@@ -166,96 +190,96 @@
     {
       "id": "numbers",
       "emoji": "🔢",
-      "name": { "English": "Numbers", "Spanish": "Números" },
-      "description": { "English": "Basic counting numbers", "Spanish": "Números básicos" },
+      "name": { "English": "Numbers", "Spanish": "Números", "Hebrew": "מספרים" },
+      "description": { "English": "Basic counting numbers", "Spanish": "Números básicos", "Hebrew": "מספרים בסיסיים" },
       "items": [
-        { "id": "zero", "type": "word", "text": { "English": "zero", "Spanish": "cero" } },
-        { "id": "one", "type": "word", "text": { "English": "one", "Spanish": "uno" } },
-        { "id": "two", "type": "word", "text": { "English": "two", "Spanish": "dos" } },
-        { "id": "three", "type": "word", "text": { "English": "three", "Spanish": "tres" } },
-        { "id": "ten", "type": "word", "text": { "English": "ten", "Spanish": "diez" } },
-        { "id": "hundred", "type": "word", "text": { "English": "hundred", "Spanish": "cien" } }
+        { "id": "zero", "type": "word", "text": { "English": "zero", "Spanish": "cero", "Hebrew": "אפס" } },
+        { "id": "one", "type": "word", "text": { "English": "one", "Spanish": "uno", "Hebrew": "אחד" } },
+        { "id": "two", "type": "word", "text": { "English": "two", "Spanish": "dos", "Hebrew": "שתיים" } },
+        { "id": "three", "type": "word", "text": { "English": "three", "Spanish": "tres", "Hebrew": "שלוש" } },
+        { "id": "ten", "type": "word", "text": { "English": "ten", "Spanish": "diez", "Hebrew": "עשר" } },
+        { "id": "hundred", "type": "word", "text": { "English": "hundred", "Spanish": "cien", "Hebrew": "מאה" } }
       ]
     },
     {
       "id": "pronouns",
       "emoji": "🧍",
-      "name": { "English": "Pronouns", "Spanish": "Pronombres" },
-      "description": { "English": "Personal pronouns", "Spanish": "Pronombres personales" },
+      "name": { "English": "Pronouns", "Spanish": "Pronombres", "Hebrew": "כינויים" },
+      "description": { "English": "Personal pronouns", "Spanish": "Pronombres personales", "Hebrew": "כינויים אישיים" },
       "items": [
-        { "id": "i", "type": "word", "text": { "English": "I", "Spanish": "yo" } },
-        { "id": "you", "type": "word", "text": { "English": "you", "Spanish": "tú" } },
-        { "id": "he", "type": "word", "text": { "English": "he", "Spanish": "él" } },
-        { "id": "she", "type": "word", "text": { "English": "she", "Spanish": "ella" } },
-        { "id": "it", "type": "word", "text": { "English": "it", "Spanish": "ello" } },
-        { "id": "we", "type": "word", "text": { "English": "we", "Spanish": "nosotros" } },
-        { "id": "they", "type": "word", "text": { "English": "they", "Spanish": "ellos" } },
-        { "id": "them", "type": "word", "text": { "English": "them", "Spanish": "ellos" } }
+        { "id": "i", "type": "word", "text": { "English": "I", "Spanish": "yo", "Hebrew": "אני" } },
+        { "id": "you", "type": "word", "text": { "English": "you", "Spanish": "tú", "Hebrew": "אתה" } },
+        { "id": "he", "type": "word", "text": { "English": "he", "Spanish": "él", "Hebrew": "הוא" } },
+        { "id": "she", "type": "word", "text": { "English": "she", "Spanish": "ella", "Hebrew": "היא" } },
+        { "id": "it", "type": "word", "text": { "English": "it", "Spanish": "ello", "Hebrew": "זה" } },
+        { "id": "we", "type": "word", "text": { "English": "we", "Spanish": "nosotros", "Hebrew": "אנחנו" } },
+        { "id": "they", "type": "word", "text": { "English": "they", "Spanish": "ellos", "Hebrew": "הם" } },
+        { "id": "them", "type": "word", "text": { "English": "them", "Spanish": "ellos", "Hebrew": "אותם" } }
       ]
     },
     {
       "id": "clothing",
       "emoji": "👕",
-      "name": { "English": "Clothing", "Spanish": "Ropa" },
-      "description": { "English": "Everyday clothes", "Spanish": "Ropa cotidiana" },
+      "name": { "English": "Clothing", "Spanish": "Ropa", "Hebrew": "בגדים" },
+      "description": { "English": "Everyday clothes", "Spanish": "Ropa cotidiana", "Hebrew": "בגדים יומיומיים" },
       "items": [
-        { "id": "shirt", "type": "word", "text": { "English": "shirt", "Spanish": "camisa" } },
-        { "id": "pants", "type": "word", "text": { "English": "pants", "Spanish": "pantalones" } },
-        { "id": "shoes", "type": "word", "text": { "English": "shoes", "Spanish": "zapatos" } },
-        { "id": "dress", "type": "word", "text": { "English": "dress", "Spanish": "vestido" } },
-        { "id": "jacket", "type": "word", "text": { "English": "jacket", "Spanish": "chaqueta" } }
+        { "id": "shirt", "type": "word", "text": { "English": "shirt", "Spanish": "camisa", "Hebrew": "חולצה" } },
+        { "id": "pants", "type": "word", "text": { "English": "pants", "Spanish": "pantalones", "Hebrew": "מכנסיים" } },
+        { "id": "shoes", "type": "word", "text": { "English": "shoes", "Spanish": "zapatos", "Hebrew": "נעליים" } },
+        { "id": "dress", "type": "word", "text": { "English": "dress", "Spanish": "vestido", "Hebrew": "שמלה" } },
+        { "id": "jacket", "type": "word", "text": { "English": "jacket", "Spanish": "chaqueta", "Hebrew": "מעיל" } }
       ]
     },
     {
       "id": "time",
       "emoji": "⏰",
-      "name": { "English": "Time", "Spanish": "Tiempo" },
-      "description": { "English": "Days and time words", "Spanish": "Palabras de tiempo" },
+      "name": { "English": "Time", "Spanish": "Tiempo", "Hebrew": "זמן" },
+      "description": { "English": "Days and time words", "Spanish": "Palabras de tiempo", "Hebrew": "מילים של ימים וזמן" },
       "items": [
-        { "id": "today", "type": "word", "text": { "English": "today", "Spanish": "hoy" } },
-        { "id": "yesterday", "type": "word", "text": { "English": "yesterday", "Spanish": "ayer" } },
-        { "id": "tomorrow", "type": "word", "text": { "English": "tomorrow", "Spanish": "mañana" } },
-        { "id": "week", "type": "word", "text": { "English": "week", "Spanish": "semana" } },
-        { "id": "hour", "type": "word", "text": { "English": "hour", "Spanish": "hora" } }
+        { "id": "today", "type": "word", "text": { "English": "today", "Spanish": "hoy", "Hebrew": "היום" } },
+        { "id": "yesterday", "type": "word", "text": { "English": "yesterday", "Spanish": "ayer", "Hebrew": "אתמול" } },
+        { "id": "tomorrow", "type": "word", "text": { "English": "tomorrow", "Spanish": "mañana", "Hebrew": "מחר" } },
+        { "id": "week", "type": "word", "text": { "English": "week", "Spanish": "semana", "Hebrew": "שבוע" } },
+        { "id": "hour", "type": "word", "text": { "English": "hour", "Spanish": "hora", "Hebrew": "שעה" } }
       ]
     },
     {
       "id": "emotions",
       "emoji": "😊",
-      "name": { "English": "Emotions", "Spanish": "Emociones" },
-      "description": { "English": "Common feelings", "Spanish": "Sentimientos comunes" },
+      "name": { "English": "Emotions", "Spanish": "Emociones", "Hebrew": "רגשות" },
+      "description": { "English": "Common feelings", "Spanish": "Sentimientos comunes", "Hebrew": "רגשות נפוצים" },
       "items": [
-        { "id": "happy", "type": "word", "text": { "English": "happy", "Spanish": "feliz" } },
-        { "id": "sad", "type": "word", "text": { "English": "sad", "Spanish": "triste" } },
-        { "id": "angry", "type": "word", "text": { "English": "angry", "Spanish": "enojado" } },
-        { "id": "tired", "type": "word", "text": { "English": "tired", "Spanish": "cansado" } },
-        { "id": "scared", "type": "word", "text": { "English": "scared", "Spanish": "asustado" } }
+        { "id": "happy", "type": "word", "text": { "English": "happy", "Spanish": "feliz", "Hebrew": "שמח" } },
+        { "id": "sad", "type": "word", "text": { "English": "sad", "Spanish": "triste", "Hebrew": "עצוב" } },
+        { "id": "angry", "type": "word", "text": { "English": "angry", "Spanish": "enojado", "Hebrew": "כועס" } },
+        { "id": "tired", "type": "word", "text": { "English": "tired", "Spanish": "cansado", "Hebrew": "עייף" } },
+        { "id": "scared", "type": "word", "text": { "English": "scared", "Spanish": "asustado", "Hebrew": "מפוחד" } }
       ]
     },
     {
       "id": "family",
       "emoji": "👪",
-      "name": { "English": "Family", "Spanish": "Familia" },
-      "description": { "English": "Family members", "Spanish": "Miembros de la familia" },
+      "name": { "English": "Family", "Spanish": "Familia", "Hebrew": "משפחה" },
+      "description": { "English": "Family members", "Spanish": "Miembros de la familia", "Hebrew": "בני משפחה" },
       "items": [
-        { "id": "mother", "type": "word", "text": { "English": "mother", "Spanish": "madre" } },
-        { "id": "father", "type": "word", "text": { "English": "father", "Spanish": "padre" } },
-        { "id": "brother", "type": "word", "text": { "English": "brother", "Spanish": "hermano" } },
-        { "id": "sister", "type": "word", "text": { "English": "sister", "Spanish": "hermana" } },
-        { "id": "family_word", "type": "word", "text": { "English": "family", "Spanish": "familia" } }
+        { "id": "mother", "type": "word", "text": { "English": "mother", "Spanish": "madre", "Hebrew": "אמא" } },
+        { "id": "father", "type": "word", "text": { "English": "father", "Spanish": "padre", "Hebrew": "אבא" } },
+        { "id": "brother", "type": "word", "text": { "English": "brother", "Spanish": "hermano", "Hebrew": "אח" } },
+        { "id": "sister", "type": "word", "text": { "English": "sister", "Spanish": "hermana", "Hebrew": "אחות" } },
+        { "id": "family_word", "type": "word", "text": { "English": "family", "Spanish": "familia", "Hebrew": "משפחה" } }
       ]
     },
     {
       "id": "home",
       "emoji": "🏠",
-      "name": { "English": "Home", "Spanish": "Hogar" },
-      "description": { "English": "Household words", "Spanish": "Palabras del hogar" },
+      "name": { "English": "Home", "Spanish": "Hogar", "Hebrew": "בית" },
+      "description": { "English": "Household words", "Spanish": "Palabras del hogar", "Hebrew": "מילים של הבית" },
       "items": [
-        { "id": "house", "type": "word", "text": { "English": "house", "Spanish": "casa" } },
-        { "id": "room", "type": "word", "text": { "English": "room", "Spanish": "habitación" } },
-        { "id": "kitchen", "type": "word", "text": { "English": "kitchen", "Spanish": "cocina" } },
-        { "id": "bathroom", "type": "word", "text": { "English": "bathroom", "Spanish": "baño" } },
-        { "id": "bed", "type": "word", "text": { "English": "bed", "Spanish": "cama" } }
+        { "id": "house", "type": "word", "text": { "English": "house", "Spanish": "casa", "Hebrew": "בית" } },
+        { "id": "room", "type": "word", "text": { "English": "room", "Spanish": "habitación", "Hebrew": "חדר" } },
+        { "id": "kitchen", "type": "word", "text": { "English": "kitchen", "Spanish": "cocina", "Hebrew": "מטבח" } },
+        { "id": "bathroom", "type": "word", "text": { "English": "bathroom", "Spanish": "baño", "Hebrew": "שירותים" } },
+        { "id": "bed", "type": "word", "text": { "English": "bed", "Spanish": "cama", "Hebrew": "מיטה" } }
       ]
     }
   ]
