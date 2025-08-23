@@ -318,26 +318,60 @@ function BabyStepRunnerScreen(): React.JSX.Element {
               itemId: it.id,
             } as RunnerTask;
           }
-          // missingWords for sentences
-          const tokens = splitToTokens(it.text);
-          // Choose 1-2 indices to blank, prefer alphabetic tokens
-          const candidateIdx: number[] = [];
-          tokens.forEach((t, i) => { if (/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(t)) candidateIdx.push(i); });
-          const desired = Math.min(2, Math.max(1, Math.floor(tokens.length / 6)));
-          const missingIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
-          const required = Array.from(new Set(missingIndices.map((i) => tokens[i])));
-          const pool = extrasFromStep.filter((w) => !required.includes(w));
-          const picked = sampleN(pool, Math.max(0, 12 - required.length));
-          const wordBank = shuffleArray([...required, ...picked]).slice(0, Math.max(6, required.length));
-          return {
-            kind: 'missingWords',
-            sentence: it.text,
-            translatedSentence: otherText,
-            tokens,
-            missingIndices,
-            wordBank,
-            itemId: it.id,
-          } as RunnerTask;
+          // missingWords for sentences (only when explicitly requested)
+          if (it.practiceType === 'missingWords') {
+            const tokens = splitToTokens(it.text);
+            // Choose 1-2 indices to blank, prefer alphabetic tokens
+            const candidateIdx: number[] = [];
+            tokens.forEach((t, i) => { if (/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(t)) candidateIdx.push(i); });
+            const desired = Math.min(2, Math.max(1, Math.floor(tokens.length / 6)));
+            const missingIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
+            const required = Array.from(new Set(missingIndices.map((i) => tokens[i])));
+            const pool = extrasFromStep.filter((w) => !required.includes(w));
+            const picked = sampleN(pool, Math.max(0, 12 - required.length));
+            const wordBank = shuffleArray([...required, ...picked]).slice(0, Math.max(6, required.length));
+            return {
+              kind: 'missingWords',
+              sentence: it.text,
+              translatedSentence: otherText,
+              tokens,
+              missingIndices,
+              wordBank,
+              itemId: it.id,
+            } as RunnerTask;
+          }
+          // Fallback: if still sentence type, use formulate sentence
+          if (it.type === 'sentence' || it.practiceType === 'formulateSentense') {
+            const tokens = splitToTokens(it.text);
+            const shuffledTokens = shuffleArray(tokens);
+            return {
+              kind: 'formulateSentense',
+              sentence: it.text,
+              translatedSentence: otherText,
+              tokens,
+              shuffledTokens,
+              itemId: it.id,
+            } as RunnerTask;
+          }
+          // Final fallback: treat as chooseTranslation
+          {
+            const distractorPool: string[] = [];
+            step.items.forEach((o) => {
+              if (o.id !== it.id && (o.type === 'word' || o.practiceType === 'chooseTranslation')) {
+                const t = findOtherTextById(o.id);
+                if (t && t !== otherText) distractorPool.push(t);
+              }
+            });
+            const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(7, Math.max(0, distractorPool.length)));
+            const allOptions = shuffleArray([otherText, ...picked]);
+            return {
+              kind: 'chooseTranslation',
+              sourceWord: it.text,
+              correctTranslation: otherText,
+              options: allOptions,
+              itemId: it.id,
+            } as RunnerTask;
+          }
         });
 
         if (!mounted) return;

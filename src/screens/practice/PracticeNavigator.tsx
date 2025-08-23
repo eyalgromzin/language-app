@@ -226,7 +226,7 @@ function PracticeNavigator(): React.JSX.Element {
         name="FormulateSentense"
         component={FormulateSentenseScreen}
         options={{
-          title: 'Create sentence',
+          title: 'Formulate sentence',
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',

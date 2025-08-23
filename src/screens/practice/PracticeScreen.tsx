@@ -17,7 +17,7 @@ const PRACTICE_OPTIONS: PracticeOption[] = [
   { key: 'translate', label: 'Translation Missing Letters', emoji: 'ðŸŒ' },
   { key: 'memoryGame', label: 'Memory game', emoji: '🧠' },
   { key: 'hearing', label: 'Hearing practice', emoji: '🔊' },
-  { key: 'formulateSentense', label: 'Create sentence', emoji: '✍️' },
+  { key: 'formulateSentense', label: 'Formulate sentence', emoji: '✍️' },
 ];
 
 function PracticeScreen(): React.JSX.Element {
