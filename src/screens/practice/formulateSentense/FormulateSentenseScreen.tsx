@@ -11,6 +11,7 @@ type WordEntry = {
   translation: string;
   sentence?: string;
   addedAt?: string;
+  itemId?: string;
   numberOfCorrectAnswers?: {
     missingLetters: number;
     missingWords: number;
@@ -105,6 +106,7 @@ type EmbeddedProps = {
   tokens?: string[];
   shuffledTokens?: string[];
   onFinished?: (isCorrect: boolean) => void;
+  itemId?: string;
 };
 
 function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
@@ -137,10 +139,39 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [fallbackTokens, setFallbackTokens] = React.useState<string[]>([]);
+  const [translationsCache, setTranslationsCache] = React.useState<Record<string, string>>({});
 
   const lastWordKeyRef = React.useRef<string | null>(null);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
+
+  // Function to fetch translation by item ID from baby steps
+  const fetchTranslationById = React.useCallback(async (itemId: string): Promise<string | null> => {
+    try {
+      const [learningName, nativeName] = await Promise.all([
+        AsyncStorage.getItem('language.learning'),
+        AsyncStorage.getItem('language.native'),
+      ]);
+      const currentCode = getLangCode(learningName) || 'en';
+      const nativeCode = getLangCode(nativeName) || 'en';
+      const otherCode = nativeCode !== currentCode ? nativeCode : (currentCode === 'en' ? 'es' : 'en');
+
+      const res = await fetch(`${apiBaseUrl}/baby-steps/get`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ language: otherCode }),
+      });
+
+      if (res.ok) {
+        const stepsFile: StepsFile = await res.json();
+        for (const step of (stepsFile.steps || [])) {
+          const match = step.items.find((it) => it.id === itemId);
+          if (match) return match.text;
+        }
+      }
+    } catch {}
+    return null;
+  }, [apiBaseUrl]);
 
   const loadBase = React.useCallback(async () => {
     if (props.embedded) {
@@ -195,8 +226,22 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
       const content = await RNFS.readFile(filePath, 'utf8');
       const parsed: unknown = JSON.parse(content);
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]).map(ensureCounters) : [];
+      
+      // Fetch missing translations for entries with itemId
+      const newTranslations: Record<string, string> = {};
+      for (const entry of arr) {
+        if (entry.itemId && entry.sentence && !entry.translation) {
+          const translation = await fetchTranslationById(entry.itemId);
+          if (translation) {
+            newTranslations[entry.itemId] = translation;
+          }
+        }
+      }
+      setTranslationsCache(newTranslations);
+      
       const filtered = arr
-        .filter((w) => w.word && w.translation && w.sentence && tokenizeSentence(w.sentence).length >= 2)
+        .filter((w) => w.word && w.sentence && tokenizeSentence(w.sentence).length >= 2)
+        .filter((w) => w.translation || (w.itemId && newTranslations[w.itemId]))
         .filter((w) => {
           const noa = ensureCounters(w).numberOfCorrectAnswers!;
           const total =
@@ -285,7 +330,12 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
 
   const current = props.embedded
     ? ({ translation: props.translatedSentence || '', sentence: props.sentence || '' } as Pick<WordEntry, 'translation' | 'sentence'>)
-    : entries[currentIndex];
+    : entries[currentIndex] ? {
+        ...entries[currentIndex],
+        translation: entries[currentIndex].translation || 
+                    (entries[currentIndex].itemId && translationsCache[entries[currentIndex].itemId!]) || 
+                    entries[currentIndex].translation || ''
+      } : undefined;
   const expectedTokens = props.embedded
     ? (props.tokens || tokenizeSentence(props.sentence || ''))
     : (current?.sentence ? tokenizeSentence(current.sentence) : []);
@@ -371,6 +421,16 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
     }
   };
 
+  const onRemoveWord = (indexToRemove: number) => {
+    if (indexToRemove < 0 || indexToRemove >= selectedIndices.length) return;
+    
+    // Remove the word at the specified position
+    const newSelectedIndices = selectedIndices.filter((_, i) => i !== indexToRemove);
+    setSelectedIndices(newSelectedIndices);
+    setShowWrongToast(false);
+    setShowCorrectToast(false);
+  };
+
   const onReset = () => {
     setSelectedIndices([]);
     setShowWrongToast(false);
@@ -404,10 +464,16 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
             <Text style={styles.placeholder}>Tap words below in order</Text>
           ) : (
             <View style={styles.tokenRow}>
-              {selectedIndices.map((i) => (
-                <View key={`sel-${i}`} style={styles.tokenChipSelected}>
+              {selectedIndices.map((i, index) => (
+                <TouchableOpacity 
+                  key={`sel-${i}`} 
+                  style={styles.tokenChipSelected}
+                  onPress={() => onRemoveWord(index)}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Remove ${shuffledTokens[i]} from sentence`}
+                >
                   <Text style={styles.tokenText}>{shuffledTokens[i]}</Text>
-                </View>
+                </TouchableOpacity>
               ))}
             </View>
           )}
@@ -444,7 +510,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         </View>
 
         <View style={styles.wordCard}>
-          <Text style={styles.wordText}>{current.translation}</Text>
+          <Text style={styles.wordText}>{current?.translation || ''}</Text>
         </View>
 
         <View style={styles.assembledBox}>
@@ -452,10 +518,16 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
             <Text style={styles.placeholder}>Tap words below in order</Text>
           ) : (
             <View style={styles.tokenRow}>
-              {selectedIndices.map((i) => (
-                <View key={`sel-${i}`} style={styles.tokenChipSelected}>
+              {selectedIndices.map((i, index) => (
+                <TouchableOpacity 
+                  key={`sel-${i}`} 
+                  style={styles.tokenChipSelected}
+                  onPress={() => onRemoveWord(index)}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Remove ${shuffledTokens[i]} from sentence`}
+                >
                   <Text style={styles.tokenText}>{shuffledTokens[i]}</Text>
-                </View>
+                </TouchableOpacity>
               ))}
             </View>
           )}

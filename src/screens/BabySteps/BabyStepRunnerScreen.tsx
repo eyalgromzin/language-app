@@ -679,6 +679,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           translatedSentence={current.translatedSentence}
           tokens={current.tokens}
           shuffledTokens={current.shuffledTokens}
+          itemId={current.itemId}
           onFinished={(ok) => {
             if (ok) {
               setNumCorrect((c) => c + 1);
