@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, BackHandler } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, BackHandler, SafeAreaView } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -20,7 +20,6 @@ const CATEGORIES_DATA: CategoriesData = require('../../userData/wordCategories.j
 function WordsByCategoriesScreen(): React.JSX.Element {
   const [selectedCategory, setSelectedCategory] = React.useState<WordCategoryType | null>(null);
   const navigation = useNavigation<any>();
-  const [failedEmojiIds, setFailedEmojiIds] = React.useState<Record<string, boolean>>({});
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
 
@@ -53,66 +52,7 @@ function WordsByCategoriesScreen(): React.JSX.Element {
   const SOURCE_LANGUAGE = learningLanguage || 'English';
   const TARGET_LANGUAGE = nativeLanguage || 'Spanish';
 
-  const getEmojiForWord = React.useCallback((word: string) => {
-    const w = (word || '').trim().toLowerCase();
-    switch (w) {
-      case 'hello': return '👋';
-      case 'good morning': return '🌞';
-      case 'apple': return '🍎';
-      case 'water': return '💧';
-      case 'ticket': return '🎫';
-      case 'hotel': return '🏨';
-      case 'zero': return '0️⃣';
-      case 'one': return '1️⃣';
-      case 'two': return '2️⃣';
-      case 'three': return '3️⃣';
-      case 'ten': return '🔟';
-      case 'hundred': return '💯';
-      case 'i': return '👤';
-      case 'you': return '🫵';
-      case 'he': return '👨';
-      case 'she': return '👩';
-      case 'it': return '❓';
-      case 'we': return '👥';
-      case 'they': return '👥';
-      case 'them': return '👥';
-      case 'shirt': return '👕';
-      case 'pants': return '👖';
-      case 'shoes': return '👟';
-      case 'dress': return '👗';
-      case 'jacket': return '🧥';
-      case 'today': return '📅';
-      case 'yesterday': return '🕰️';
-      case 'tomorrow': return '🌅';
-      case 'week': return '🗓️';
-      case 'hour': return '⏰';
-      case 'happy': return '😀';
-      case 'sad': return '😢';
-      case 'angry': return '😠';
-      case 'tired': return '😴';
-      case 'scared': return '😱';
-      case 'mother': return '👩';
-      case 'father': return '👨';
-      case 'brother': return '👦';
-      case 'sister': return '👧';
-      case 'family': return '👪';
-      case 'house': return '🏠';
-      case 'room': return '🚪';
-      case 'kitchen': return '🍳';
-      case 'bathroom': return '🚽';
-      case 'bed': return '🛏️';
-      default: return '🔤';
-    }
-  }, []);
-
-  const emojiToTwemojiUrl = React.useCallback((emoji: string) => {
-    const codePoints = Array.from(emoji)
-      .map((c) => c.codePointAt(0))
-      .filter((cp): cp is number => typeof cp === 'number')
-      .map((cp) => cp.toString(16))
-      .join('-');
-    return `https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/${codePoints}.png`;
-  }, []);
+  
 
   useFocusEffect(
     React.useCallback(() => {
@@ -233,41 +173,40 @@ function WordsByCategoriesScreen(): React.JSX.Element {
         styles={styles as any}
         SOURCE_LANGUAGE={SOURCE_LANGUAGE}
         TARGET_LANGUAGE={TARGET_LANGUAGE}
-        failedEmojiIds={failedEmojiIds}
-        setFailedEmojiIds={setFailedEmojiIds}
         onBackToCategories={onBackToCategories}
         saveItemToMyWords={saveItemToMyWords}
-        getEmojiForWord={getEmojiForWord}
-        emojiToTwemojiUrl={emojiToTwemojiUrl}
       />
     );
   }
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.screenTitle}>Categories</Text>
-      <View style={styles.grid}>
-        {CATEGORIES_DATA.categories.map((cat) => {
-          const title = cat.name[SOURCE_LANGUAGE] || cat.name[TARGET_LANGUAGE] || cat.id;
-          const subtitle = cat.name[SOURCE_LANGUAGE] && cat.name[TARGET_LANGUAGE] && cat.name[SOURCE_LANGUAGE] !== cat.name[TARGET_LANGUAGE]
-            ? `${cat.name[SOURCE_LANGUAGE]} • ${cat.name[TARGET_LANGUAGE]}`
-            : undefined;
-          return (
-            <TouchableOpacity
-              key={cat.id}
-              style={styles.gridItem}
-              onPress={() => onOpenCategory(cat)}
-              accessibilityRole="button"
-              accessibilityLabel={title}
-            >
-              <Text style={styles.gridEmoji}>{cat.emoji || '•'}</Text>
-              <Text numberOfLines={1} style={styles.gridTitle}>{title}</Text>
-              {subtitle ? <Text numberOfLines={1} style={styles.gridSubtitle}>{subtitle}</Text> : null}
-            </TouchableOpacity>
-          );
-        })}
-      </View>
-    </ScrollView>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F8FA' }}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text style={styles.screenTitle}>Categories</Text>
+        <View style={styles.grid}>
+          {CATEGORIES_DATA.categories.map((cat) => {
+            const title = cat.name[SOURCE_LANGUAGE] || cat.name[TARGET_LANGUAGE] || cat.id;
+            const subtitle = cat.name[SOURCE_LANGUAGE] && cat.name[TARGET_LANGUAGE] && cat.name[SOURCE_LANGUAGE] !== cat.name[TARGET_LANGUAGE]
+              ? `${cat.name[SOURCE_LANGUAGE]} • ${cat.name[TARGET_LANGUAGE]}`
+              : undefined;
+            return (
+              <TouchableOpacity
+                key={cat.id}
+                style={styles.gridItem}
+                onPress={() => onOpenCategory(cat)}
+                accessibilityRole="button"
+                accessibilityLabel={title}
+                activeOpacity={0.85}
+              >
+                <Text style={styles.gridEmoji}>{cat.emoji || '•'}</Text>
+                <Text numberOfLines={1} style={styles.gridTitle}>{title}</Text>
+                {subtitle ? <Text numberOfLines={1} style={styles.gridSubtitle}>{subtitle}</Text> : null}
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -275,10 +214,13 @@ const styles = StyleSheet.create({
   container: {
     padding: 16,
     gap: 16,
+    backgroundColor: '#F7F8FA',
   },
   screenTitle: {
-    fontSize: 22,
-    fontWeight: '700',
+    fontSize: 28,
+    fontWeight: '800',
+    color: '#111827',
+    letterSpacing: 0.2,
   },
   grid: {
     flexDirection: 'row',
@@ -288,59 +230,78 @@ const styles = StyleSheet.create({
   },
   gridItem: {
     width: '48%',
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF',
     borderWidth: 1,
-    borderColor: '#e5e5e5',
-    borderRadius: 12,
+    borderColor: '#E5E7EB',
+    borderRadius: 14,
     paddingVertical: 18,
     paddingHorizontal: 12,
     alignItems: 'center',
     justifyContent: 'center',
+    // subtle shadow
+    shadowColor: '#000',
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
   },
   gridEmoji: {
-    fontSize: 28,
-    marginBottom: 6,
+    fontSize: 34,
+    marginBottom: 8,
   },
   gridTitle: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '700',
     textAlign: 'center',
+    color: '#111827',
+    letterSpacing: 0.2,
   },
   gridSubtitle: {
     marginTop: 2,
     fontSize: 12,
-    color: '#666',
+    color: '#6B7280',
   },
   headerRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom: 8,
   },
   backText: {
-    color: '#007AFF',
-    fontWeight: '600',
+    color: '#2563EB',
+    fontWeight: '700',
     fontSize: 16,
     width: 56,
+    letterSpacing: 0.2,
   },
   headerTitle: {
-    fontSize: 18,
-    fontWeight: '700',
+    fontSize: 20,
+    fontWeight: '800',
+    color: '#111827',
+    letterSpacing: 0.2,
   },
   categoryDescription: {
-    color: '#666',
+    color: '#6B7280',
+    marginTop: 4,
   },
   list: {
     gap: 12,
-    paddingTop: 4,
-    paddingBottom: 16,
+    paddingTop: 8,
+    paddingBottom: 24,
   },
   itemCard: {
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF',
     borderWidth: 1,
-    borderColor: '#e5e5e5',
-    borderRadius: 12,
+    borderColor: '#E5E7EB',
+    borderRadius: 14,
     paddingVertical: 14,
     paddingHorizontal: 12,
+    // subtle shadow
+    shadowColor: '#000',
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
   },
   itemHeaderRow: {
     marginBottom: 6,
@@ -350,16 +311,21 @@ const styles = StyleSheet.create({
   },
   itemType: {
     fontSize: 12,
-    color: '#888',
+    color: '#6B7280',
     fontWeight: '600',
   },
   addBtnWrap: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: '#007AFF',
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#2563EB',
     alignItems: 'center',
     justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOpacity: 0.08,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
   },
   addBtnText: {
     color: 'white',
@@ -370,7 +336,8 @@ const styles = StyleSheet.create({
   },
   itemText: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '700',
+    color: '#111827',
   },
   itemTextFlex: {
     flex: 1,
@@ -381,13 +348,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   itemWordEmojiImage: {
-    width: 22,
-    height: 22,
+    width: 24,
+    height: 24,
     marginRight: 8,
   },
   itemWordEmojiText: {
     marginRight: 8,
-    fontSize: 18,
+    fontSize: 20,
   },
   itemWordAvatar: {
     width: 22,
@@ -404,24 +371,25 @@ const styles = StyleSheet.create({
     includeFontPadding: false,
   },
   itemSeparator: {
-    color: '#999',
+    color: '#9CA3AF',
   },
   itemTarget: {
-    color: '#007AFF',
-    fontWeight: '700',
+    color: '#2563EB',
+    fontWeight: '800',
   },
   itemTranslationLine: {
     marginTop: 4,
-    color: '#007AFF',
+    color: '#2563EB',
     fontWeight: '700',
   },
   itemExample: {
     marginTop: 6,
-    color: '#555',
+    color: '#4B5563',
+    fontStyle: 'italic',
   },
   itemExampleTranslation: {
-    color: '#007AFF',
-    fontWeight: '600',
+    color: '#2563EB',
+    fontWeight: '700',
   },
 });
 
