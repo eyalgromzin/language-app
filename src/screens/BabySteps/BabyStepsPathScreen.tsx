@@ -251,6 +251,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
               const c2x = x2 - Math.sign(dx) * curvature;
               const c2y = y2;
               const d = `M ${x1} ${y1} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${x2} ${y2}`;
+              const destEnabled = (idx + 1) <= Math.min((steps?.length || 0), maxCompletedIndex + 3);
               return (
                 <Path
                   key={`curve-${idx}`}
@@ -260,7 +261,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  opacity={0.9}
+                  opacity={destEnabled ? 0.9 : 0.1}
                 />
               );
             })}
@@ -297,7 +298,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
                   {
                     backgroundColor: isCompleted ? (isDark ? '#12351c' : '#E6F7E9') : (isDark ? '#2C2C2E' : '#F1F3F5'),
                     borderColor: isCompleted ? '#2E7D32' : (isDark ? '#3A3A3C' : '#D0D5DB'),
-                    opacity: 1.0,
+                    opacity: isEnabled ? 1 : 1,
                   },
                 ]}>
                   <Text style={styles.emojiText} accessibilityLabel={`${s.title} icon`}>{emoji}</Text>
@@ -328,7 +329,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
                     </View>
                   ) : null}
                 </View>
-                <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: 1.0 }]}>{translatedTitleById[s.id] || s.title}</Text>
+                <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: isEnabled ? 1.0 : 0.5 }]}>{translatedTitleById[s.id] || s.title}</Text>
               </TouchableOpacity>
             );
           })}
