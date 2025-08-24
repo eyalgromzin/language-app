@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Animated, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Tts from 'react-native-tts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../utils/translation';
@@ -22,6 +22,32 @@ type Props = {
 function TranslationPanel(props: Props): React.JSX.Element | null {
   const { panel, onSave, onClose } = props;
   if (!panel) return null;
+
+  // Animation value for plus button rotation
+  const spinValue = React.useRef(new Animated.Value(0)).current;
+
+  const spinPlus = React.useCallback((onComplete?: () => void) => {
+    // Reset to 0 and animate to 360 degrees
+    spinValue.setValue(0);
+    Animated.timing(spinValue, {
+      toValue: 1,
+      duration: 500,
+      useNativeDriver: true,
+    }).start(onComplete);
+  }, [spinValue]);
+
+  const handlePlusPress = React.useCallback(() => {
+    spinPlus(() => {
+      onSave();
+      onClose();
+    });
+  }, [spinPlus, onSave, onClose]);
+
+  // Create rotation interpolate
+  const spin = spinValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '360deg'],
+  });
 
   const speakWord = React.useCallback(async () => {
     if (!panel?.word) return;
@@ -73,13 +99,15 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
         </View>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <TouchableOpacity
-            onPress={onSave}
+            onPress={handlePlusPress}
             style={styles.addBtnWrap}
             hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
             accessibilityRole="button"
             accessibilityLabel="Add word"
           >
-            <Text style={styles.addBtnText}>+</Text>
+            <Animated.View style={{ transform: [{ rotate: spin }] }}>
+              <Text style={styles.addBtnText}>+</Text>
+            </Animated.View>
           </TouchableOpacity>
           <TouchableOpacity onPress={onClose}>
             <Text style={styles.closeBtn}>✕</Text>

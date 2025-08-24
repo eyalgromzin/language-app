@@ -1,25 +1,17 @@
-- add animations - to make everythin a little more playful :
-    add animations on these events : 
-        - on add word , show some animation of + sign  
-        - on practice finish word - make some big animation on the screen. 
-        - on practice finish word specific practice 
-
-- create lessons jsons for step by step language learn - more lessons
-    - french 
-    - german 
-    - italian
-    - Russian
-    - portugues
-    - Dutch 
+- ✅ add animations - to make everything a little more playful :
+    ✅ add animations on these events : 
+        - ✅ on add word , show some animation of + sign  
+        - ✅ on practice finish word - make some big animation on the screen. 
+        - ✅ on practice finish word specific practice 
 
 - deep link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
 
 ??? ask shir ???? on startup page (where you choose languages) - choose games that you like ? - the surprise me button will choose from them 
 
+- register app - to enable open urls with it 
+
 - on 100 downloads : create a table for translation .for all my languages - to not take translation from 3rd party. 
        with indexes on all languages columns.
-
-- register app - to enable open urls with it 
 
 - payed version - when ill have 1000 users 
     - limit num of words possible to add to learning per day - for example 20 - payed will be limitless.
