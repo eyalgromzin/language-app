@@ -1,4 +1,4 @@
-
+- auto login 
 
 - add animations - to make everythin a little more playful :
     add animations on these events : 

@@ -294,10 +294,11 @@ function LoadingScreen(): React.JSX.Element {
 
 // Main navigation component that uses auth context
 function AppNavigator(): React.JSX.Element {
-  const { isLoading, isAuthenticated } = useAuth();
+  const { isLoading, isAuthenticated, isSetupCompleted, hasCheckedAuth } = useAuth();
   const isDarkMode = useColorScheme() === 'dark';
 
-  if (isLoading) {
+  // Show loading screen while checking authentication or during actual loading
+  if (isLoading || !hasCheckedAuth) {
     return <LoadingScreen />;
   }
 
@@ -306,23 +307,25 @@ function AppNavigator(): React.JSX.Element {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {isAuthenticated ? (
-          // Authenticated screens
-          <>
-            <Stack.Screen name="Main" component={MainTabs} />
-            <Stack.Screen name="Settings" component={SettingsScreen} options={{ headerShown: true }} />
-            <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
-            <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words', headerShown: true }} />
-            <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path', headerShown: true }} />
-            <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step', headerShown: true }} />
-            <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us', headerShown: true }} />
-            <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress', headerShown: true }} />
-          </>
-        ) : (
-          // Non-authenticated screens
-          <>
-            <Stack.Screen name="Login" component={LoginScreen} />
+          isSetupCompleted ? (
+            // Fully authenticated and setup complete - show main app
+            <>
+              <Stack.Screen name="Main" component={MainTabs} />
+              <Stack.Screen name="Settings" component={SettingsScreen} options={{ headerShown: true }} />
+              <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
+              <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words', headerShown: true }} />
+              <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path', headerShown: true }} />
+              <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step', headerShown: true }} />
+              <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us', headerShown: true }} />
+              <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress', headerShown: true }} />
+            </>
+          ) : (
+            // Authenticated but setup not complete - show startup screen
             <Stack.Screen name="Startup" component={StartupScreen} />
-          </>
+          )
+        ) : (
+          // Not authenticated - show login screen only after auth check is complete
+          <Stack.Screen name="Login" component={LoginScreen} />
         )}
       </Stack.Navigator>
     </NavigationContainer>

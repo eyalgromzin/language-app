@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { LANGUAGE_OPTIONS } from '../../constants/languages';
+import { useAuth } from '../../contexts/AuthContext';
 
 type RootStackParamList = {
   Startup: undefined;
@@ -16,6 +17,7 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Startup'>;
 // LANGUAGE_OPTIONS imported from shared constants
 
 function StartupScreen({ navigation }: Props): React.JSX.Element {
+  const { completeSetup } = useAuth();
   const [learningLanguage, setLearningLanguage] = React.useState<string>('');
   const [nativeLanguage, setNativeLanguage] = React.useState<string>('');
   const [saving, setSaving] = React.useState<boolean>(false);
@@ -30,13 +32,14 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
     try {
       setSaving(true);
       await AsyncStorage.multiSet([
-        ['setup.completed', 'true'],
         ['language.learning', learningLanguage],
         ['language.native', nativeLanguage],
         ['words.removeAfterNCorrect', String(removeAfterCorrect)],
         ['words.removeAfterTotalCorrect', String(removeAfterTotalCorrect)],
       ]);
-      navigation.reset({ index: 0, routes: [{ name: 'Main' }] });
+      
+      // Use AuthContext to complete setup - this will trigger navigation automatically
+      await completeSetup();
     } catch (e) {
       setSaving(false);
       Alert.alert('Error', 'Failed to save preferences. Please try again.');
