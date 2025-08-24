@@ -14,6 +14,7 @@
     "apk:release": "cd android && .\\gradlew.bat assembleRelease",
     "apk": "node scripts/generateApk.js",
     "icons": "node scripts/generateAppIcons.js",
+    "signingReport": "cd android && .\\gradlew.bat signingReport",
     "server": "cd language-learn-server && npm run start"
   },
   "dependencies": {

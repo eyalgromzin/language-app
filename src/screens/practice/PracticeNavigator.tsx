@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, Pressable } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import PracticeHomeScreen from './PracticeScreen';
+import PracticeHomeScreen from './PracticeScreen.tsx';
 import WordMissingLettersScreen from './MissingLettersScreen/missingLettersScreen.tsx';
 import MissingWordsScreen from './missingWords/MissingWordsScreen.tsx';
 import WordsMatchScreen from './wordsMatch/WordsMatchScreen.tsx';

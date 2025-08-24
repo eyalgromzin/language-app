@@ -1,16 +1,8 @@
-✅ progress screen - COMPLETED
-    - # of added words 
-    - words learned 
-    - sentenses learned 
-    - practices finished
 
-- login with facebook / google
-
-- deep link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
 
 - add animations - to make everythin a little more playful :
     add animations on these events : 
-        - on add word , highlight "my words" with some animation 
+        - on add word , show some animation of + sign  
         - on practice finish word - make some big animation on the screen. 
         - on practice finish word specific practice 
 
@@ -21,6 +13,8 @@
     - Russian
     - portugues
     - Dutch 
+
+- deep link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
 
 ??? ask shir ???? on startup page (where you choose languages) - choose games that you like ? - the surprise me button will choose from them 
 
@@ -37,3 +31,5 @@
 
 - check hebrew support - and rtl 
     - formulate sentense - the words are the opposite order 
+
+- login with facebook

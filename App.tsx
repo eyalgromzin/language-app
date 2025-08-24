@@ -272,61 +272,22 @@ const styles = StyleSheet.create({
 
 function App(): React.JSX.Element | null {
   const isDarkMode = useColorScheme() === 'dark';
-  const [initialized, setInitialized] = React.useState<boolean>(false);
-  const [needsSetup, setNeedsSetup] = React.useState<boolean>(false);
 
-  React.useEffect(() => {
-    let isMounted = true;
-    (async () => {
-      try {
-        const completed = await AsyncStorage.getItem('setup.completed');
-        if (!isMounted) return;
-        setNeedsSetup(completed !== 'true');
-      } catch {
-        if (!isMounted) return;
-        setNeedsSetup(true);
-      } finally {
-        if (!isMounted) return;
-        setInitialized(true);
-      }
-    })();
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
-  if (!initialized) {
-    return null;
-  }
   return (
     <NavigationContainer theme={isDarkMode ? DarkTheme : DefaultTheme}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      {needsSetup ? (
-        <Stack.Navigator initialRouteName="Startup">
-          <Stack.Screen name="Startup" component={StartupScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
-          <Stack.Screen name="Settings" component={SettingsScreen} />
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
-          <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path' }} />
-          <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step' }} />
-          <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us' }} />
-          <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress' }} />
-        </Stack.Navigator>
-      ) : (
-        <Stack.Navigator initialRouteName="Main">
-          <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
-          <Stack.Screen name="Settings" component={SettingsScreen} />
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
-          <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path' }} />
-          <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step' }} />
-          <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us' }} />
-          <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress' }} />
-        </Stack.Navigator>
-      )}
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Startup" component={StartupScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
+        <Stack.Screen name="Settings" component={SettingsScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words' }} />
+        <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path' }} />
+        <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step' }} />
+        <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us' }} />
+        <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress' }} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
