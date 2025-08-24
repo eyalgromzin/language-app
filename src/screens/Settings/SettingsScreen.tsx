@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
+import { useAuth } from '../../contexts/AuthContext';
 import { LANGUAGE_OPTIONS } from '../../constants/languages';
 
 function SettingsScreen(): React.JSX.Element {
+  const { logout } = useAuth();
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
   const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
@@ -79,6 +81,33 @@ function SettingsScreen(): React.JSX.Element {
     try {
       await AsyncStorage.setItem('words.removeAfterTotalCorrect', String(value));
     } catch {}
+  };
+
+  const onLogout = async () => {
+    Alert.alert(
+      'Logout',
+      'Are you sure you want to logout?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Logout',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              await logout();
+              console.log('[Logout] User signed out successfully');
+              // Navigation will be handled automatically by AuthContext
+            } catch (error) {
+              console.log('[Logout] Error during logout:', error);
+              Alert.alert('Logout Error', 'There was an error logging out. Please try again.');
+            }
+          },
+        },
+      ]
+    );
   };
 
   return (
@@ -156,6 +185,20 @@ function SettingsScreen(): React.JSX.Element {
           })}
         </View>
       </View>
+
+      <View style={styles.logoutSection}>
+        <Pressable
+          onPress={onLogout}
+          style={({ pressed }) => [
+            styles.logoutButton,
+            pressed && styles.logoutButtonPressed
+          ]}
+          accessibilityRole="button"
+          accessibilityLabel="Logout"
+        >
+          <Text style={styles.logoutButtonText}>Logout</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
@@ -211,6 +254,36 @@ const styles = StyleSheet.create({
   optionCircleTextSelected: {
     color: '#007AFF',
     fontWeight: '700',
+  },
+  logoutSection: {
+    marginTop: 32,
+    paddingTop: 24,
+    borderTopWidth: 1,
+    borderTopColor: '#eee',
+  },
+  logoutButton: {
+    backgroundColor: '#dc3545',
+    borderRadius: 12,
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 2,
+  },
+  logoutButtonPressed: {
+    opacity: 0.9,
+    transform: [{ scale: 0.98 }],
+  },
+  logoutButtonText: {
+    color: '#fff',
+    fontWeight: '600',
+    fontSize: 16,
   },
 });
 

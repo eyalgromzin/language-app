@@ -1,6 +1,7 @@
 import React from 'react';
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useAuth } from '../../contexts/AuthContext';
 
 type RootStackParamList = {
   Login: undefined;
@@ -10,6 +11,7 @@ type RootStackParamList = {
 type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
 function LoginScreen({ navigation }: LoginScreenProps): React.JSX.Element {
+  const { login } = useAuth();
 
   const onGoogleLogin = async () => {
     try {
@@ -25,7 +27,16 @@ function LoginScreen({ navigation }: LoginScreenProps): React.JSX.Element {
       const name = `${firstName} ${lastName}`;
       if (email) {
         console.log('[Google] email =', email);
-        navigation.replace('Main');
+        
+        // Use auth context to handle login
+        try {
+          await login(email, name, userId || '');
+          console.log('[Google] Login successful');
+          // Navigation will be handled automatically by AuthContext
+        } catch (loginError) {
+          console.log('[Google] Error during login:', loginError);
+          Alert.alert('Login Error', 'Failed to save login information. Please try again.');
+        }
       } else {
         Alert.alert('Google sign-in succeeded but no email returned');
       }
