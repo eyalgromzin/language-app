@@ -1,0 +1,1148 @@
+{
+  "language": "French",
+  "overview": "Un parcours progressif des mots essentiels aux phrases complètes et expressions avancées, ordonné par utilité dans la vie réelle.",
+  "steps": [
+    {
+      "id": "01_essentials",
+      "title": "salutations & politesse",
+      "emoji": "👋",
+      "items": [
+        {
+          "id": "01_essentials_hello",
+          "type": "word",
+          "text": "bonjour",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_hi",
+          "type": "word",
+          "text": "salut",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_please",
+          "type": "word",
+          "text": "s'il vous plaît",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_thank_you",
+          "type": "word",
+          "text": "merci",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_thanks",
+          "type": "word",
+          "text": "merci",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_yes",
+          "type": "word",
+          "text": "oui",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_no",
+          "type": "word",
+          "text": "non",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_essentials_excuse_me",
+          "type": "sentence",
+          "text": "Excusez-moi.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "01_essentials_sorry",
+          "type": "sentence",
+          "text": "Désolé.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "01_essentials_good_morning",
+          "type": "sentence",
+          "text": "Bonjour",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "01_essentials_good_evening",
+          "type": "sentence",
+          "text": "Bonsoir.",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "02_introductions",
+      "title": "Présentations & informations de base",
+      "emoji": "💬",
+      "items": [
+        {
+          "id": "02_introductions_my_name_is",
+          "type": "sentence",
+          "text": "Je m'appelle …",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "02_introductions_what_is_your_name",
+          "type": "sentence",
+          "text": "Comment vous appelez-vous ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "02_introductions_nice_to_meet_you",
+          "type": "sentence",
+          "text": "Enchanté de vous rencontrer.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "02_introductions_how_are_you",
+          "type": "sentence",
+          "text": "Comment allez-vous ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "02_introductions_i_am_fine_thank_you",
+          "type": "sentence",
+          "text": "Je vais bien, merci.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "02_introductions_where_are_you_from",
+          "type": "sentence",
+          "text": "D'où venez-vous ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "02_introductions_i_am_from",
+          "type": "sentence",
+          "text": "Je viens de …",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "02_introductions_do_you_speak_english",
+          "type": "sentence",
+          "text": "Parlez-vous anglais ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "02_introductions_i_speak_a_little",
+          "type": "sentence",
+          "text": "Je parle un peu.",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "03_core_verbs_pronouns",
+      "title": "Pronoms essentiels & verbes auxiliaires",
+      "emoji": "🔤",
+      "items": [
+        {
+          "id": "03_core_verbs_pronouns_i",
+          "type": "word",
+          "text": "je",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_you",
+          "type": "word",
+          "text": "vous",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_he",
+          "type": "word",
+          "text": "il",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_she",
+          "type": "word",
+          "text": "elle",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_we",
+          "type": "word",
+          "text": "nous",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_they",
+          "type": "word",
+          "text": "ils",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_am",
+          "type": "sentence",
+          "text": "Je suis …",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_have",
+          "type": "sentence",
+          "text": "J'ai …",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_want",
+          "type": "sentence",
+          "text": "Je veux …",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "03_core_verbs_pronouns_i_need",
+          "type": "sentence",
+          "text": "J'ai besoin de …",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "04_numbers_time_basics",
+      "title": "Nombres & bases du temps",
+      "emoji": "🔢",
+      "items": [
+        {
+          "id": "04_numbers_time_basics_zero",
+          "type": "word",
+          "text": "zéro",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_one",
+          "type": "word",
+          "text": "un",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_two",
+          "type": "word",
+          "text": "deux",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_three",
+          "type": "word",
+          "text": "trois",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_four",
+          "type": "word",
+          "text": "quatre",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_five",
+          "type": "word",
+          "text": "cinq",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_ten",
+          "type": "word",
+          "text": "dix",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_twenty",
+          "type": "word",
+          "text": "vingt",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_hundred",
+          "type": "word",
+          "text": "cent",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_today",
+          "type": "word",
+          "text": "aujourd'hui",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_tomorrow",
+          "type": "word",
+          "text": "demain",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_yesterday",
+          "type": "word",
+          "text": "hier",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numbers_time_basics_what_time_is_it",
+          "type": "sentence",
+          "text": "Quelle heure est-il ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "04_numbers_time_basics_it_is_three_o_clock",
+          "type": "sentence",
+          "text": "Il est trois heures.",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "05_getting_around",
+      "title": "Directions & se déplacer",
+      "emoji": "🧭",
+      "items": [
+        {
+          "id": "05_getting_around_left",
+          "type": "word",
+          "text": "gauche",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_getting_around_right",
+          "type": "word",
+          "text": "droite",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_getting_around_straight",
+          "type": "word",
+          "text": "tout droit",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_getting_around_near",
+          "type": "word",
+          "text": "près",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_getting_around_far",
+          "type": "word",
+          "text": "loin",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_getting_around_where_is_the_bathroom",
+          "type": "sentence",
+          "text": "Où sont les toilettes ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "05_getting_around_where_is_the_station",
+          "type": "sentence",
+          "text": "Où est la gare ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "05_getting_around_how_do_i_get_to",
+          "type": "sentence",
+          "text": "Comment puis-je aller à … ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "05_getting_around_is_it_close",
+          "type": "sentence",
+          "text": "Est-ce que c'est proche ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "05_getting_around_i_am_lost",
+          "type": "sentence",
+          "text": "Je suis perdu.",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "06_food_drink_basics",
+      "title": "Nourriture & boissons de base",
+      "emoji": "🍎",
+      "items": [
+        {
+          "id": "06_food_drink_basics_water",
+          "type": "word",
+          "text": "eau",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_food_drink_basics_coffee",
+          "type": "word",
+          "text": "café",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_food_drink_basics_tea",
+          "type": "word",
+          "text": "thé",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_food_drink_basics_bread",
+          "type": "word",
+          "text": "pain",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_food_drink_basics_apple",
+          "type": "word",
+          "text": "pomme",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_food_drink_basics_i_would_like_water_please",
+          "type": "sentence",
+          "text": "Je voudrais de l'eau, s'il vous plaît.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "06_food_drink_basics_the_food_is_delicious",
+          "type": "sentence",
+          "text": "La nourriture est délicieuse.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "06_food_drink_basics_i_am_allergic_to",
+          "type": "sentence",
+          "text": "Je suis allergique à …",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "06_food_drink_basics_no_sugar_please",
+          "type": "sentence",
+          "text": "Sans sucre, s'il vous plaît.",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "07_shopping_money",
+      "title": "Shopping & argent",
+      "emoji": "🛍️",
+      "items": [
+        {
+          "id": "07_shopping_money_price",
+          "type": "word",
+          "text": "prix",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_shopping_money_cash",
+          "type": "word",
+          "text": "espèces",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_shopping_money_card",
+          "type": "word",
+          "text": "carte",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_shopping_money_receipt",
+          "type": "word",
+          "text": "reçu",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_shopping_money_how_much_is_this",
+          "type": "sentence",
+          "text": "Combien ça coûte ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "07_shopping_money_do_you_take_cards",
+          "type": "sentence",
+          "text": "Acceptez-vous les cartes ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "07_shopping_money_i_am_just_looking",
+          "type": "sentence",
+          "text": "Je regarde juste.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "07_shopping_money_can_i_try_it_on",
+          "type": "sentence",
+          "text": "Puis-je l'essayer ?",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "08_travel_hotel",
+      "title": "Voyage & hôtel",
+      "emoji": "🧳",
+      "items": [
+        {
+          "id": "08_travel_hotel_ticket",
+          "type": "word",
+          "text": "billet",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_travel_hotel_reservation",
+          "type": "word",
+          "text": "réservation",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_travel_hotel_passport",
+          "type": "word",
+          "text": "passeport",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_travel_hotel_luggage",
+          "type": "word",
+          "text": "bagages",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_travel_hotel_i_have_a_reservation",
+          "type": "sentence",
+          "text": "J'ai une réservation.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "08_travel_hotel_what_time_is_check_in",
+          "type": "sentence",
+          "text": "À quelle heure est l'enregistrement ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "08_travel_hotel_where_is_the_platform",
+          "type": "sentence",
+          "text": "Où est le quai ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "08_travel_hotel_i_need_a_taxi",
+          "type": "sentence",
+          "text": "J'ai besoin d'un taxi.",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "09_emergencies_health",
+      "title": "Urgences & santé",
+      "emoji": "⛑️",
+      "items": [
+        {
+          "id": "09_emergencies_health_help",
+          "type": "word",
+          "text": "aide",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_emergencies_health_doctor",
+          "type": "word",
+          "text": "médecin",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_emergencies_health_pharmacy",
+          "type": "word",
+          "text": "pharmacie",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_emergencies_health_emergency",
+          "type": "word",
+          "text": "urgence",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_emergencies_health_call_an_ambulance",
+          "type": "sentence",
+          "text": "Appelez une ambulance !",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "09_emergencies_health_i_need_a_doctor",
+          "type": "sentence",
+          "text": "J'ai besoin d'un médecin.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "09_emergencies_health_i_feel_sick",
+          "type": "sentence",
+          "text": "Je me sens malade.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "09_emergencies_health_i_lost_my_passport",
+          "type": "sentence",
+          "text": "J'ai perdu mon passeport.",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "10_daily_routines",
+      "title": "Routines quotidiennes & verbes communs",
+      "emoji": "☀️",
+      "items": [
+        {
+          "id": "10_daily_routines_to_go",
+          "type": "word",
+          "text": "aller",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_daily_routines_to_come",
+          "type": "word",
+          "text": "venir",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_daily_routines_to_do",
+          "type": "word",
+          "text": "faire",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_daily_routines_to_make",
+          "type": "word",
+          "text": "faire",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_daily_routines_to_like",
+          "type": "word",
+          "text": "aimer",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_daily_routines_to_work",
+          "type": "word",
+          "text": "travailler",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_daily_routines_to_study",
+          "type": "word",
+          "text": "étudier",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_daily_routines_i_go_to_work",
+          "type": "sentence",
+          "text": "Je vais au travail.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "10_daily_routines_i_like_this",
+          "type": "sentence",
+          "text": "J'aime ça.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "10_daily_routines_i_do_not_understand",
+          "type": "sentence",
+          "text": "Je ne comprends pas.",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "11_family_people",
+      "title": "Famille & gens",
+      "emoji": "👪",
+      "items": [
+        {
+          "id": "11_family_people_mother",
+          "type": "word",
+          "text": "mère",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_family_people_father",
+          "type": "word",
+          "text": "père",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_family_people_brother",
+          "type": "word",
+          "text": "frère",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_family_people_sister",
+          "type": "word",
+          "text": "sœur",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_family_people_friend",
+          "type": "word",
+          "text": "ami",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_family_people_this_is_my_friend",
+          "type": "sentence",
+          "text": "C'est mon ami.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "11_family_people_i_am_with_my_family",
+          "type": "sentence",
+          "text": "Je suis avec ma famille.",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "12_weather_smalltalk",
+      "title": "Météo & conversation",
+      "emoji": "🌦️",
+      "items": [
+        {
+          "id": "12_weather_smalltalk_hot",
+          "type": "word",
+          "text": "chaud",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_weather_smalltalk_cold",
+          "type": "word",
+          "text": "froid",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_weather_smalltalk_rain",
+          "type": "word",
+          "text": "pluie",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_weather_smalltalk_sunny",
+          "type": "word",
+          "text": "ensoleillé",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_weather_smalltalk_it_is_very_hot_today",
+          "type": "sentence",
+          "text": "Il fait très chaud aujourd'hui.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "12_weather_smalltalk_it_might_rain_tomorrow",
+          "type": "sentence",
+          "text": "Il pourrait pleuvoir demain.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "12_weather_smalltalk_have_a_nice_day",
+          "type": "sentence",
+          "text": "Passez une bonne journée !",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "13_work_study",
+      "title": "Travail & études de base",
+      "emoji": "💼",
+      "items": [
+        {
+          "id": "13_work_study_office",
+          "type": "word",
+          "text": "bureau",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_work_study_school",
+          "type": "word",
+          "text": "école",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_work_study_meeting",
+          "type": "word",
+          "text": "réunion",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_work_study_project",
+          "type": "word",
+          "text": "projet",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_work_study_i_have_a_meeting",
+          "type": "sentence",
+          "text": "J'ai une réunion.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "13_work_study_i_work_from_home",
+          "type": "sentence",
+          "text": "Je travaille à domicile.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "13_work_study_i_am_studying",
+          "type": "sentence",
+          "text": "J'étudie …",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "14_plans_invitations",
+      "title": "Faire des plans & invitations",
+      "emoji": "📅",
+      "items": [
+        {
+          "id": "14_plans_invitations_today",
+          "type": "word",
+          "text": "aujourd'hui",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_plans_invitations_tomorrow",
+          "type": "word",
+          "text": "demain",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_plans_invitations_weekend",
+          "type": "word",
+          "text": "week-end",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_plans_invitations_what_are_you_doing_tomorrow",
+          "type": "sentence",
+          "text": "Que faites-vous demain ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "14_plans_invitations_would_you_like_to",
+          "type": "sentence",
+          "text": "Aimeriez-vous … ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "14_plans_invitations_let_us_meet_at",
+          "type": "sentence",
+          "text": "Rencontrons-nous à …",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "14_plans_invitations_see_you_soon",
+          "type": "sentence",
+          "text": "À bientôt !",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "15_requests_help",
+      "title": "Demandes & demander de l'aide",
+      "emoji": "🙋",
+      "items": [
+        {
+          "id": "15_requests_help_could_you_help_me_please",
+          "type": "sentence",
+          "text": "Pourriez-vous m'aider, s'il vous plaît ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "15_requests_help_can_you_repeat_that_please",
+          "type": "sentence",
+          "text": "Pouvez-vous répéter, s'il vous plaît ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "15_requests_help_please_speak_more_slowly",
+          "type": "sentence",
+          "text": "Parlez plus lentement, s'il vous plaît.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "15_requests_help_how_do_you_say_this_in_english",
+          "type": "sentence",
+          "text": "Comment dit-on cela en anglais ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "15_requests_help_what_does_this_mean",
+          "type": "sentence",
+          "text": "Qu'est-ce que cela signifie ?",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "16_phone_internet",
+      "title": "Téléphone & internet",
+      "emoji": "📱",
+      "items": [
+        {
+          "id": "16_phone_internet_phone",
+          "type": "word",
+          "text": "téléphone",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "16_phone_internet_number",
+          "type": "word",
+          "text": "numéro",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "16_phone_internet_email",
+          "type": "word",
+          "text": "e-mail",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "16_phone_internet_wifi",
+          "type": "word",
+          "text": "wifi",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "16_phone_internet_what_is_your_phone_number",
+          "type": "sentence",
+          "text": "Quel est votre numéro de téléphone ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "16_phone_internet_what_is_the_wifi_password",
+          "type": "sentence",
+          "text": "Quel est le mot de passe wifi ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "16_phone_internet_can_i_use_your_phone",
+          "type": "sentence",
+          "text": "Puis-je utiliser votre téléphone ?",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "17_restaurant",
+      "title": "Au restaurant",
+      "emoji": "🍽️",
+      "items": [
+        {
+          "id": "17_restaurant_menu",
+          "type": "word",
+          "text": "menu",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "17_restaurant_table",
+          "type": "word",
+          "text": "table",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "17_restaurant_bill",
+          "type": "word",
+          "text": "addition",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "17_restaurant_a_table_for_two_please",
+          "type": "sentence",
+          "text": "Une table pour deux, s'il vous plaît.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "17_restaurant_could_we_have_the_menu",
+          "type": "sentence",
+          "text": "Pourrions-nous avoir le menu ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "17_restaurant_the_bill_please",
+          "type": "sentence",
+          "text": "L'addition, s'il vous plaît.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "17_restaurant_do_you_have_vegetarian_options",
+          "type": "sentence",
+          "text": "Avez-vous des options végétariennes ?",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "18_transportation_details",
+      "title": "Détails du transport",
+      "emoji": "🚌",
+      "items": [
+        {
+          "id": "18_transportation_details_bus",
+          "type": "word",
+          "text": "bus",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "18_transportation_details_train",
+          "type": "word",
+          "text": "train",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "18_transportation_details_metro",
+          "type": "word",
+          "text": "métro",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "18_transportation_details_schedule",
+          "type": "word",
+          "text": "horaire",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "18_transportation_details_what_time_does_the_bus_leave",
+          "type": "sentence",
+          "text": "À quelle heure part le bus ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "18_transportation_details_where_can_i_buy_a_ticket",
+          "type": "sentence",
+          "text": "Où puis-je acheter un billet ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "18_transportation_details_is_there_a_discount",
+          "type": "sentence",
+          "text": "Y a-t-il une réduction ?",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "19_housing_utilities",
+      "title": "Logement & services publics",
+      "emoji": "🏠",
+      "items": [
+        {
+          "id": "19_housing_utilities_apartment",
+          "type": "word",
+          "text": "appartement",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "19_housing_utilities_room",
+          "type": "word",
+          "text": "chambre",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "19_housing_utilities_key",
+          "type": "word",
+          "text": "clé",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "19_housing_utilities_electricity",
+          "type": "word",
+          "text": "électricité",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "19_housing_utilities_water",
+          "type": "word",
+          "text": "eau",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "19_housing_utilities_i_am_looking_for_an_apartment",
+          "type": "sentence",
+          "text": "Je cherche un appartement.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "19_housing_utilities_the_key_does_not_work",
+          "type": "sentence",
+          "text": "La clé ne fonctionne pas.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "19_housing_utilities_there_is_no_hot_water",
+          "type": "sentence",
+          "text": "Il n'y a pas d'eau chaude.",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    },
+    {
+      "id": "20_connectors_advanced",
+      "title": "Connecteurs & phrases avancées",
+      "emoji": "🔗",
+      "items": [
+        {
+          "id": "20_connectors_advanced_because",
+          "type": "word",
+          "text": "parce que",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "20_connectors_advanced_although",
+          "type": "word",
+          "text": "bien que",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "20_connectors_advanced_however",
+          "type": "word",
+          "text": "cependant",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "20_connectors_advanced_therefore",
+          "type": "word",
+          "text": "donc",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "20_connectors_advanced_could_you_please_recommend_a_good_place_to_eat",
+          "type": "sentence",
+          "text": "Pourriez-vous me recommander un bon endroit pour manger ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "20_connectors_advanced_i_have_been_waiting_for_a_long_time",
+          "type": "sentence",
+          "text": "J'attends depuis longtemps.",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "20_connectors_advanced_would_you_mind_helping_me_with_this_form",
+          "type": "sentence",
+          "text": "Cela vous dérangerait-il de m'aider avec ce formulaire ?",
+          "practiceType": "formulateSentense"
+        },
+        {
+          "id": "20_connectors_advanced_i_prefer_to_pay_by_card_because_it_is_faster",
+          "type": "sentence",
+          "text": "Je préfère payer par carte parce que c'est plus rapide.",
+          "practiceType": "formulateSentense"
+        }
+      ]
+    }
+  ]
+}
