@@ -5,6 +5,7 @@ import * as RNFS from 'react-native-fs';
 import TTS from 'react-native-tts';
 import { getTtsLangCode, playCorrectFeedback, playWrongFeedback } from '../common';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
+import AnimatedToast from '../../../components/AnimatedToast';
 
 type WordEntry = {
   word: string;
@@ -490,18 +491,16 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         ) : null}
       </ScrollView>
 
-      {showWrongToast ? (
-        <View style={styles.toast} pointerEvents="none">
-          <Text style={styles.toastEmoji}>❌</Text>
-          <Text style={styles.toastText}>try again</Text>
-        </View>
-      ) : null}
-      {showCorrectToast ? (
-        <View style={styles.toast} pointerEvents="none">
-          <Text style={styles.toastEmoji}>✅</Text>
-          <Text style={styles.toastText}>Correct!</Text>
-        </View>
-      ) : null}
+      <AnimatedToast
+        visible={showWrongToast}
+        type="fail"
+        message="Try again!"
+      />
+      <AnimatedToast
+        visible={showCorrectToast}
+        type="success"
+        message="Correct!"
+      />
     </View>
   );
 }
@@ -601,23 +600,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '700',
   },
-  toast: {
-    position: 'absolute',
-    bottom: 100,
-    left: 0,
-    right: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  toastEmoji: {
-    fontSize: 48,
-    textAlign: 'center',
-  },
-  toastText: {
-    marginTop: 4,
-    fontSize: 16,
-    fontWeight: '700',
-  },
+
 });
 
 export default Choose1OutOfN;

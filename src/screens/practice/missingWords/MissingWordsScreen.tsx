@@ -14,6 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import { playCorrectFeedback, playWrongFeedback } from '../common';
+import AnimatedToast from '../../../components/AnimatedToast';
 
 type WordEntry = {
   word: string;
@@ -524,18 +525,16 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
         ) : null}
       </ScrollView>
 
-      {showCorrectToast ? (
-        <View style={styles.toast} pointerEvents="none">
-          <Text style={styles.toastEmoji}>✅</Text>
-          <Text style={styles.toastText}>Correct!</Text>
-        </View>
-      ) : null}
-      {showWrongToast ? (
-        <View style={styles.toast} pointerEvents="none">
-          <Text style={styles.toastEmoji}>❌</Text>
-          <Text style={styles.toastText}>Incorrect</Text>
-        </View>
-      ) : null}
+      <AnimatedToast
+        visible={showCorrectToast}
+        type="success"
+        message="Correct!"
+      />
+      <AnimatedToast
+        visible={showWrongToast}
+        type="fail"
+        message="Incorrect"
+      />
     </KeyboardAvoidingView>
   );
 }
@@ -645,23 +644,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '700',
   },
-  toast: {
-    position: 'absolute',
-    bottom: 100,
-    left: 0,
-    right: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  toastEmoji: {
-    fontSize: 48,
-    textAlign: 'center',
-  },
-  toastText: {
-    marginTop: 4,
-    fontSize: 16,
-    fontWeight: '700',
-  },
+
   sectionDivider: {
     height: 2,
     backgroundColor: '#c4c2c2',
