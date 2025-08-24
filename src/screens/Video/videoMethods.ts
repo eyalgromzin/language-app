@@ -1,4 +1,5 @@
 // Shared utilities for Video screen
+import { LANGUAGE_NAME_TO_CODE } from '../../utils/translation';
 
 export function extractYouTubeVideoId(input: string): string | null {
   if (!input) return null;
@@ -27,34 +28,8 @@ export function normalizeYouTubeUrl(input: string): string {
 }
 
 export function mapLanguageNameToYoutubeCode(name: string | null): string {
-  const mapping: Record<string, string> = {
-    English: 'en',
-    Spanish: 'es',
-    French: 'fr',
-    German: 'de',
-    Italian: 'it',
-    Portuguese: 'pt',
-    Russian: 'ru',
-    'Chinese (Mandarin)': 'zh',
-    Japanese: 'ja',
-    Korean: 'ko',
-    Arabic: 'ar',
-    Hindi: 'hi',
-    Turkish: 'tr',
-    Polish: 'pl',
-    Dutch: 'nl',
-    Greek: 'el',
-    Swedish: 'sv',
-    Norwegian: 'no',
-    Finnish: 'fi',
-    Czech: 'cs',
-    Ukrainian: 'uk',
-    Hebrew: 'he',
-    Thai: 'th',
-    Vietnamese: 'vi',
-  };
   if (!name) return 'en';
-  return mapping[name] || 'en';
+  return LANGUAGE_NAME_TO_CODE[name] || 'en';
 }
 
 export async function fetchYouTubeTitleById(id: string): Promise<string> {
