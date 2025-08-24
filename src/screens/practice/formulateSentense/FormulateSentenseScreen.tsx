@@ -6,6 +6,7 @@ import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/nativ
 import { getLangCode } from '../../../utils/translation';
 import { playCorrectFeedback, playWrongFeedback } from '../common';
 import AnimatedToast from '../../../components/AnimatedToast';
+import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 
 type WordEntry = {
   word: string;
@@ -138,6 +139,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [selectedIndices, setSelectedIndices] = React.useState<number[]>([]);
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
+  const [showFinishedWordAnimation, setShowFinishedWordAnimation] = React.useState<boolean>(false);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [fallbackTokens, setFallbackTokens] = React.useState<string[]>([]);
   const [translationsCache, setTranslationsCache] = React.useState<Record<string, string>>({});
@@ -377,6 +379,8 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         const totalThreshold = removeAfterTotalCorrect || 6;
         if (total >= totalThreshold) {
           copy.splice(idx, 1);
+          // Show finished word animation when word is removed
+          setShowFinishedWordAnimation(true);
         } else {
           copy[idx] = it;
         }
@@ -568,6 +572,10 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         visible={showCorrectToast}
         type="success"
         message="Correct!"
+      />
+      <FinishedWordAnimation
+        visible={showFinishedWordAnimation}
+        onHide={() => setShowFinishedWordAnimation(false)}
       />
     </View>
   );

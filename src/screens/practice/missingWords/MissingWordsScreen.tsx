@@ -15,6 +15,7 @@ import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import { playCorrectFeedback, playWrongFeedback } from '../common';
 import AnimatedToast from '../../../components/AnimatedToast';
+import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 
 type WordEntry = {
   word: string;
@@ -138,6 +139,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [wrongHighlightIndex, setWrongHighlightIndex] = React.useState<number | null>(null);
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
+  const [showFinishedWordAnimation, setShowFinishedWordAnimation] = React.useState<boolean>(false);
   const [wordChoices, setWordChoices] = React.useState<string[]>([]);
   const lastWordKeyRef = React.useRef<string | null>(null);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
@@ -300,6 +302,8 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
         const totalThreshold = removeAfterTotalCorrect || 6;
         if (total >= totalThreshold) {
           copy.splice(idx, 1);
+          // Show finished word animation when word is removed
+          setShowFinishedWordAnimation(true);
         } else {
           copy[idx] = it;
         }
@@ -534,6 +538,10 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
         visible={showWrongToast}
         type="fail"
         message="Incorrect"
+      />
+      <FinishedWordAnimation
+        visible={showFinishedWordAnimation}
+        onHide={() => setShowFinishedWordAnimation(false)}
       />
     </KeyboardAvoidingView>
   );

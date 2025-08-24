@@ -5,6 +5,7 @@ import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import { playCorrectFeedback, playWrongFeedback } from '../common';
 import AnimatedToast from '../../../components/AnimatedToast';
+import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 
 type WordEntry = {
   word: string;
@@ -149,6 +150,7 @@ function WriteWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [wrongHighlightIndex, setWrongHighlightIndex] = React.useState<number | null>(null);
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
+  const [showFinishedWordAnimation, setShowFinishedWordAnimation] = React.useState<boolean>(false);
   const [rowWidth, setRowWidth] = React.useState<number | null>(null);
   const inputRefs = React.useRef<Record<number, TextInput | null>>({});
   const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
@@ -303,6 +305,8 @@ function WriteWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
         const totalThreshold = removeAfterTotalCorrect || 6;
         if (total >= totalThreshold) {
           copy.splice(idx, 1);
+          // Show finished word animation when word is removed
+          setShowFinishedWordAnimation(true);
         } else {
           copy[idx] = it;
         }
@@ -504,6 +508,10 @@ function WriteWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
         visible={showWrongToast}
         type="fail"
         message="Incorrect"
+      />
+      <FinishedWordAnimation
+        visible={showFinishedWordAnimation}
+        onHide={() => setShowFinishedWordAnimation(false)}
       />
     </KeyboardAvoidingView>
   );

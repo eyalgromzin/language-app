@@ -168,7 +168,7 @@ function SettingsScreen(): React.JSX.Element {
       <View style={styles.pickerBlock}>
         <Text style={styles.infoLabel}>Total correct answers till word removal</Text>
         <View style={[styles.optionCirclesContainer, { flexWrap: 'wrap' }]}>
-          {[6, 10, 14, 18].map((n) => {
+          {[2, 6, 10, 14, 18].map((n) => {  //2 is for testing , remove it later 
             const selected = removeAfterTotalCorrect === n;
             return (
               <Pressable

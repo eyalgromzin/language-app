@@ -6,6 +6,7 @@ import TTS from 'react-native-tts';
 import { getTtsLangCode, playCorrectFeedback, playWrongFeedback } from '../common';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import AnimatedToast from '../../../components/AnimatedToast';
+import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 
 type WordEntry = {
   word: string;
@@ -103,6 +104,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   const [wrongAttempts, setWrongAttempts] = React.useState<number>(0);
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
+  const [showFinishedWordAnimation, setShowFinishedWordAnimation] = React.useState<boolean>(false);
   const [revealCorrect, setRevealCorrect] = React.useState<boolean>(false);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
@@ -359,6 +361,8 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         const totalThreshold = removeAfterTotalCorrect || 6;
         if (total >= totalThreshold) {
           copy.splice(idx, 1);
+          // Show finished word animation when word is removed
+          setShowFinishedWordAnimation(true);
         } else {
           copy[idx] = it;
         }
@@ -500,6 +504,10 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         visible={showCorrectToast}
         type="success"
         message="Correct!"
+      />
+      <FinishedWordAnimation
+        visible={showFinishedWordAnimation}
+        onHide={() => setShowFinishedWordAnimation(false)}
       />
     </View>
   );
