@@ -244,7 +244,6 @@ function MemoryGameScreen(): React.JSX.Element {
         setTimeout(() => {
           setRevealedIds([]);
           setIsEvaluating(false);
-          try { playWrongFeedback(); } catch {}
         }, 1000);
       }
     }

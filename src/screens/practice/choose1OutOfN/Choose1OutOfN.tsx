@@ -110,6 +110,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
 
   const lastWordKeyRef = React.useRef<string | null>(null);
+  const animationTriggeredRef = React.useRef<Set<string>>(new Set());
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -224,6 +225,11 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       setOptions([]);
       return;
     }
+    if (entries.length < 2) {
+      // Need at least 2 words to create options (1 correct + 1 distractor)
+      setOptions([]);
+      return;
+    }
     const globalPool = isChooseTranslationMode ? allTranslationsPool : allWordsPool;
     if (globalPool.length < 8) {
       // Not enough unique words overall to show 8 distinct options
@@ -284,7 +290,18 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   React.useEffect(() => {
     if (props.embedded) return;
     if (!loading) {
-      prepareRound(allEntries);
+      // Check if there are enough words to continue the game
+      if (allEntries.length === 0) {
+        // No words available, show empty state
+        setOptions([]);
+        setCurrentIndex(0);
+      } else if (allEntries.length < 2) {
+        // Not enough words for the game (need at least 2 for options)
+        setOptions([]);
+        setCurrentIndex(0);
+      } else {
+        prepareRound(allEntries);
+      }
     }
   }, [loading, allEntries, prepareRound, props.embedded]);
 
@@ -359,19 +376,26 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
           (noa.writeTranslation || 0) +
           (noa.writeWord || 0);
         const totalThreshold = removeAfterTotalCorrect || 6;
-        if (total >= totalThreshold) {
+        const wordWasRemoved = total >= totalThreshold;
+        if (wordWasRemoved) {
           copy.splice(idx, 1);
-          // Show finished word animation when word is removed
-          setShowFinishedWordAnimation(true);
+          // Show finished word animation when word is removed (only once per word)
+          if (!animationTriggeredRef.current.has(wordKey)) {
+            animationTriggeredRef.current.add(wordKey);
+            setShowFinishedWordAnimation(true);
+          }
         } else {
           copy[idx] = it;
         }
         try {
           await RNFS.writeFile(filePath, JSON.stringify(copy, null, 2), 'utf8');
         } catch {}
+        
+        // After updating the file, reload the base data to check if there are enough words
+        await loadBase();
       }
     } catch {}
-  }, [filePath, removeAfterTotalCorrect, isChooseTranslationMode]);
+  }, [filePath, removeAfterTotalCorrect, isChooseTranslationMode, loadBase]);
 
   const onPick = (opt: OptionItem) => {
     if (!current) return;
@@ -431,11 +455,35 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   if (!current || options.length === 0) {
     return (
       <View style={styles.centered}>
-        <Text style={styles.emptyText}>
-          {allWordsPool.length < 8
-            ? 'Add more words to reach at least 8 unique words.'
-            : 'No words to practice yet.'}
-        </Text>
+        <View style={styles.emptyStateContainer}>
+          <Text style={styles.emptyStateIcon}>📚</Text>
+          <Text style={styles.emptyStateTitle}>
+            {allWordsPool.length < 8
+              ? 'Need More Words'
+              : allEntries.length === 0
+              ? 'No Words Available'
+              : allEntries.length < 2
+              ? 'Not Enough Words'
+              : 'No Words Available'}
+          </Text>
+          <Text style={styles.emptyStateMessage}>
+            {allWordsPool.length < 8
+              ? 'Add more words to reach at least 8 unique words for this practice.'
+              : allEntries.length === 0
+              ? 'You haven\'t added any words to practice yet. Add some words to get started!'
+              : allEntries.length < 2
+              ? 'You need at least 2 words available for this practice type. Add more words or try a different practice.'
+              : 'No words are currently available for practice.'}
+          </Text>
+          <TouchableOpacity 
+            style={styles.backToPracticeButton} 
+            onPress={() => navigation.navigate('PracticeHome' as never)}
+            accessibilityRole="button"
+            accessibilityLabel="Back to Practice"
+          >
+            <Text style={styles.backToPracticeButtonText}>Back to Practice</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -507,7 +555,11 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       />
       <FinishedWordAnimation
         visible={showFinishedWordAnimation}
-        onHide={() => setShowFinishedWordAnimation(false)}
+        onHide={() => {
+          setShowFinishedWordAnimation(false);
+          // Clear the animation trigger set when animation is hidden
+          animationTriggeredRef.current.clear();
+        }}
       />
     </View>
   );
@@ -521,6 +573,46 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     color: '#666',
+  },
+  emptyStateContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 32,
+    maxWidth: 300,
+  },
+  emptyStateIcon: {
+    fontSize: 64,
+    marginBottom: 16,
+  },
+  emptyStateTitle: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#333',
+    textAlign: 'center',
+    marginBottom: 12,
+  },
+  emptyStateMessage: {
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+    lineHeight: 22,
+    marginBottom: 24,
+  },
+  backToPracticeButton: {
+    backgroundColor: '#007AFF',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 12,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  backToPracticeButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
   },
   container: {
     padding: 16,

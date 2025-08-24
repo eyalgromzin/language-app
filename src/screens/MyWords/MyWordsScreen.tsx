@@ -175,7 +175,14 @@ function MyWordsScreen(): React.JSX.Element {
   return (
     <View style={styles.container}>
       <View style={styles.headerRow}>
-        <Text style={styles.title}>My words</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>My words</Text>
+          {!loading && (
+            <Text style={styles.wordCount}>
+              {words.length} {words.length === 1 ? 'word' : 'words'}
+            </Text>
+          )}
+        </View>
         {!loading && words.length > 0 ? (
           <TouchableOpacity
             onPress={confirmClearAll}
@@ -217,10 +224,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 8,
   },
+  titleContainer: {
+    flex: 1,
+  },
   title: {
     fontSize: 24,
     fontWeight: '600',
-    marginBottom: 12,
+    marginBottom: 4,
+  },
+  wordCount: {
+    fontSize: 14,
+    color: '#666',
+    fontWeight: '500',
   },
   clearBtn: {
     paddingHorizontal: 12,
