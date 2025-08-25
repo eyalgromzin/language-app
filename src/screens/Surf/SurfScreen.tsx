@@ -613,6 +613,19 @@ function SurfScreen(): React.JSX.Element {
   const postAddUrlToLibrary = async (url: string, typeName?: string, displayName?: string, level?: string) => {
     try {
       const normalizedUrl = normalizeUrl(url);
+      
+      // Check for harmful words in the URL
+      const harmfulCheck = await harmfulWordsService.checkUrl(normalizedUrl);
+      if (harmfulCheck.isHarmful) {
+        console.log('[SurfScreen] URL contains harmful words:', harmfulCheck.matchedWords);
+        if (Platform.OS === 'android') {
+          ToastAndroid.show('URL contains inappropriate content', ToastAndroid.SHORT);
+        } else {
+          Alert.alert('Warning', 'This URL contains inappropriate content and cannot be added to the library.');
+        }
+        return;
+      }
+      
       const lang = toLanguageSymbol(learningLanguage);
       const safeType = validateType(typeName);
       const safeLevel = validateLevel(level);
