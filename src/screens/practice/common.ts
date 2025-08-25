@@ -51,7 +51,7 @@ export function playWrongFeedback(): void {
   try { TTS.stop(); } catch {}
   try {
     Sound.setCategory('Playback');
-    const sound = new Sound('bad_sound.mp3', Sound.MAIN_BUNDLE, (error) => {
+    const sound = new Sound('bad_sound2.wav', Sound.MAIN_BUNDLE, (error) => {
       if (error) {
         return;
       }
