@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import harmfulWordsService from '../services/harmfulWordsService';
 
 interface AuthState {
   isLoading: boolean;
@@ -43,6 +44,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       console.log('[Auth] Starting authentication check...');
       setAuthState(prev => ({ ...prev, isLoading: true }));
+      
+      // Initialize harmful words service on app startup
+      try {
+        console.log('[Auth] Initializing harmful words service...');
+        await harmfulWordsService.getHarmfulWords();
+        console.log('[Auth] Harmful words service initialized successfully');
+      } catch (error) {
+        console.log('[Auth] Failed to initialize harmful words service:', error);
+        // Don't fail the auth check if harmful words service fails
+      }
       
       // Check AsyncStorage for stored login state and setup completion
       const [isLoggedIn, userEmail, userName, userId, setupCompleted] = await AsyncStorage.multiGet([

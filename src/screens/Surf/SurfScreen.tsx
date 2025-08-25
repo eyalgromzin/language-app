@@ -8,6 +8,7 @@ import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { parseYandexImageUrlsFromHtml } from '../practice/common';
+import harmfulWordsService from '../../services/harmfulWordsService';
 
 function SurfScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
@@ -61,6 +62,21 @@ function SurfScreen(): React.JSX.Element {
       mounted = false;
     };
   }, []);
+
+  // Print first 3 harmful words to console on screen load
+  React.useEffect(() => {
+    (async () => {
+      try {
+        const harmfulWords = await harmfulWordsService.getHarmfulWords();
+        const firstThree = harmfulWords.slice(0, 3);
+        console.log('First 3 harmful words:', firstThree);
+      } catch (error) {
+        console.error('Failed to get harmful words:', error);
+      }
+    })();
+  }, []);
+
+  // Harmful words are now initialized at app startup in AuthContext
 
   // Hidden WebView state to scrape lazy-loaded image results
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
@@ -560,6 +576,24 @@ function SurfScreen(): React.JSX.Element {
 
   const addToFavourites = async (url: string, name: string, typeId: number, typeName: string, levelName?: string | null) => {
     if (!url) return;
+    
+    // Check for harmful words in the URL
+    try {
+      const checkResult = await harmfulWordsService.checkUrl(url);
+      if (checkResult.isHarmful) {
+        const message = `This URL contains inappropriate content and cannot be added to favorites. Matched words: ${checkResult.matchedWords.join(', ')}`;
+        if (Platform.OS === 'android') {
+          ToastAndroid.show(message, ToastAndroid.LONG);
+        } else {
+          Alert.alert('Content Blocked', message);
+        }
+        return;
+      }
+    } catch (error) {
+      console.error('Failed to check URL for harmful content:', error);
+      // Continue with adding to favorites if check fails
+    }
+    
     const normalized = normalizeUrl(url);
     const safeName = (name || '').trim() || (getDomainFromUrlString(normalized) || normalized);
     const next: FavouriteItem[] = [

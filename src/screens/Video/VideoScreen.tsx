@@ -19,6 +19,7 @@ import {
   imageScrapeInjection,
 } from './videoMethods';
 import Transcript from './Transcript';
+import harmfulWordsService from '../../services/harmfulWordsService';
 
 
 
@@ -242,6 +243,24 @@ function VideoScreen(): React.JSX.Element {
 
   const addToFavourites = React.useCallback(async (favUrl: string, name?: string, levelName?: string | null) => {
     if (!favUrl) return;
+    
+    // Check for harmful words in the URL
+    try {
+      const checkResult = await harmfulWordsService.checkUrl(favUrl);
+      if (checkResult.isHarmful) {
+        const message = `This URL contains inappropriate content and cannot be saved to favorites. Blocked words: ${checkResult.matchedWords.join(', ')}`;
+        if (Platform.OS === 'android') {
+          ToastAndroid.show(message, ToastAndroid.LONG);
+        } else {
+          Alert.alert('Content Blocked', message);
+        }
+        return;
+      }
+    } catch (error) {
+      console.error('Failed to check URL for harmful content:', error);
+      // Continue with adding to favorites if check fails
+    }
+    
     const normalized = normalizeYouTubeUrl(favUrl);
     const safeName = (name || currentVideoTitle || '').trim() || normalized;
     const next: FavouriteItem[] = [

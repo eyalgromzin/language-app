@@ -101,6 +101,14 @@
       "typeId": 2,
       "level": "easy",
       "media": "book"
+    },
+    {
+      "url": "https://cnnespanol.cnn.com/",
+      "name": "cnnespanol.cnn.com",
+      "language": "es",
+      "typeId": 4,
+      "level": "easy",
+      "media": "web"
     }
   ]
 }
