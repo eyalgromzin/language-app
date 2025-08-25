@@ -1,7 +1,5 @@
-- remove write word screen 
-
 - add animations on these events : 
-    - on practice finish word total - make some big animation on the screen. 
+    - on practice finish word total - make some big animation on the screen - hand
 
 - deep link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
 

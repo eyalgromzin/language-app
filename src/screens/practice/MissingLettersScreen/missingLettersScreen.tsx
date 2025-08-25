@@ -82,9 +82,10 @@ function splitLetters(word: string): string[] {
   return Array.from(word);
 }
 
-// Compare user input to the target word allowing plain vowels for accented vowels (á, é, í, ó, ú)
+// Compare user input to the target word allowing plain vowels for accented vowels (á, é, í, ó, ú) and ignoring case
 function normalizeForCompare(input: string): string {
   return input
+    .toLowerCase()
     .replace(/[áÁ]/g, 'a')
     .replace(/[éÉ]/g, 'e')
     .replace(/[íÍ]/g, 'i')
