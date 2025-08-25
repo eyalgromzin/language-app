@@ -465,11 +465,8 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         setIsShowingSuccessToast(false);
         // Hide finished word animation before loading next word
         setShowFinishedWordAnimation(false);
-        // Reload base data after toast is hidden
+        // Reload base data after toast is hidden - the useEffect will handle preparing the next round
         loadBase();
-        setTimeout(() => {
-          prepareRound(allEntries, false); // Now safe to prepare next round
-        }, 200); // Small delay to ensure toast is hidden before preparing next round
       }, 4000);
       return; // Add return to prevent wrong answer logic from executing
     }
