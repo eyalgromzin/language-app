@@ -16,6 +16,7 @@ import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/nativ
 import { playCorrectFeedback, playWrongFeedback } from '../common';
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
+import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 
 type WordEntry = {
   word: string;
@@ -434,11 +435,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
   }
 
   if (!props.embedded && !current) {
-    return (
-      <View style={styles.centered}>
-        <Text style={styles.emptyText}>No sentences to practice yet.</Text>
-      </View>
-    );
+    return <NotEnoughWordsMessage message="No sentences to practice yet. Add more words in one of the learning options" />;
   }
 
   const renderToken = (tok: string, idx: number) => {

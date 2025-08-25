@@ -7,6 +7,7 @@ import { getTtsLangCode, playCorrectFeedback, playWrongFeedback } from '../commo
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
+import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 
 type WordEntry = {
   word: string;
@@ -268,6 +269,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
     setShowWrongToast(false);
     setShowCorrectToast(false);
     setRevealCorrect(false);
+    setShowFinishedWordAnimation(false);
 
     // Auto play the word for hearing
     if (autoplay.current) {
@@ -335,6 +337,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
     setShowWrongToast(false);
     setShowCorrectToast(false);
     setRevealCorrect(false);
+    setShowFinishedWordAnimation(false);
     // autoplay
     const toSpeak = props.sourceWord || '';
     if (toSpeak) {
@@ -449,11 +452,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
   }
 
   if (!current || options.length === 0) {
-    return (
-      <View style={styles.centered}>
-        <Text style={styles.emptyText}>No words to practice yet.</Text>
-      </View>
-    );
+    return <NotEnoughWordsMessage />;
   }
 
   const correctKey = options.find((o) => o.isCorrect)?.key;

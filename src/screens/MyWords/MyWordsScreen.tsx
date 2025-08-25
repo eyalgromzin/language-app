@@ -107,6 +107,42 @@ function MyWordsScreen(): React.JSX.Element {
     );
   }, [filePath, loading]);
 
+  const deleteWord = React.useCallback(async (wordToDelete: WordEntry) => {
+    try {
+      const updatedWords = words.filter(word => 
+        word.word !== wordToDelete.word || 
+        word.sentence !== wordToDelete.sentence || 
+        word.addedAt !== wordToDelete.addedAt
+      );
+      await RNFS.writeFile(filePath, JSON.stringify(updatedWords, null, 2), 'utf8');
+      setWords(updatedWords);
+      // Clear expanded state for deleted word
+      const deletedId = getItemId(wordToDelete, words.findIndex(w => w === wordToDelete));
+      setExpanded(prev => {
+        const newExpanded = { ...prev };
+        delete newExpanded[deletedId];
+        return newExpanded;
+      });
+    } catch (error) {
+      console.error('Error deleting word:', error);
+    }
+  }, [words, filePath]);
+
+  const confirmDeleteWord = React.useCallback((word: WordEntry) => {
+    Alert.alert(
+      'Delete word',
+      `Are you sure you want to delete "${word.word}"?`,
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Delete',
+          style: 'destructive',
+          onPress: () => deleteWord(word),
+        },
+      ]
+    );
+  }, [deleteWord]);
+
   const getItemId = (item: WordEntry, index: number) => `${item.word}|${item.sentence || ''}|${item.addedAt || index}`;
 
   const renderItem = ({ item, index }: { item: WordEntry; index: number }) => {
@@ -117,6 +153,14 @@ function MyWordsScreen(): React.JSX.Element {
       <View style={styles.itemRow}>
         <View style={styles.itemHeader}>
           <Text style={styles.itemWord} numberOfLines={1}>{item.word}</Text>
+          <TouchableOpacity
+            onPress={() => confirmDeleteWord(item)}
+            style={styles.deleteButton}
+            accessibilityRole="button"
+            accessibilityLabel={`Delete ${item.word}`}
+          >
+            <Text style={styles.deleteButtonText}>✕</Text>
+          </TouchableOpacity>
         </View>
         {item.translation ? (
           <Text style={styles.itemTranslation} numberOfLines={3}>{item.translation}</Text>
@@ -343,6 +387,22 @@ const styles = StyleSheet.create({
   progressValue: {
     fontWeight: '700',
     color: '#111',
+  },
+  deleteButton: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
+    backgroundColor: '#fef2f2',
+    borderWidth: 1,
+    borderColor: '#fecaca',
+    minWidth: 28,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  deleteButtonText: {
+    fontSize: 14,
+    color: '#dc2626',
+    fontWeight: '600',
   },
 });
 

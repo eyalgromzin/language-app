@@ -7,6 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
+import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 import { getTtsLangCode, playCorrectFeedback, playWrongFeedback } from '../common';
 
 type WordEntry = {
@@ -537,11 +538,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   }
 
   if (!current) {
-    return (
-      <View style={styles.centered}>
-        <Text style={styles.emptyText}>No words to practice yet.</Text>
-      </View>
-    );
+    return <NotEnoughWordsMessage />;
   }
 
   const renderLetterCell = (ch: string, idx: number) => {

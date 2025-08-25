@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import { playCorrectFeedback, playWrongFeedback } from '../common';
+import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 
 type WordEntry = {
   word: string;
@@ -344,11 +345,7 @@ function WordsMatchScreen(): React.JSX.Element {
   }
 
   if (leftItems.length === 0 || rightItems.length === 0) {
-    return (
-      <View style={styles.centered}>
-        <Text style={styles.emptyText}>No words to practice yet.</Text>
-      </View>
-    );
+    return <NotEnoughWordsMessage />;
   }
 
   return (

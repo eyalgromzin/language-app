@@ -6,6 +6,7 @@ import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/nativ
 import { playCorrectFeedback, playWrongFeedback } from '../common';
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
+import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 
 type WordEntry = {
   word: string;
@@ -423,11 +424,7 @@ function WriteWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
   }
 
   if (!current) {
-    return (
-      <View style={styles.centered}>
-        <Text style={styles.emptyText}>No words to practice yet.</Text>
-      </View>
-    );
+    return <NotEnoughWordsMessage />;
   }
 
   const renderLetterCell = (ch: string, idx: number) => {

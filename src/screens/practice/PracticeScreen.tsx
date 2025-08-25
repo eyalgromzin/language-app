@@ -17,7 +17,6 @@ const PRACTICE_OPTIONS: PracticeOption[] = [
   { key: 'translate', label: 'Translation Missing Letters', emoji: 'ðŸŒ' },
   { key: 'memoryGame', label: 'Memory game', emoji: '🧠' },
   { key: 'hearing', label: 'Hearing practice', emoji: '🔊' },
-  { key: 'formulateSentense', label: 'Formulate sentence', emoji: '✍️' },
 ];
 
 function PracticeScreen(): React.JSX.Element {
@@ -43,10 +42,6 @@ function PracticeScreen(): React.JSX.Element {
       navigation.navigate('HearingPractice');
       return;
     }
-    if (opt.key === 'formulateSentense') {
-      navigation.navigate('FormulateSentense');
-      return;
-    }
   if (opt.key === 'translate') {
       navigation.navigate('Translate', { mode: 'translation' });
       return;
@@ -70,7 +65,6 @@ function PracticeScreen(): React.JSX.Element {
     if (opt.key === 'matchGame') return navigation.navigate('WordsMatch', { surprise: true });
     if (opt.key === 'memoryGame') return navigation.navigate('MemoryGame', { surprise: true });
     if (opt.key === 'hearing') return navigation.navigate('HearingPractice', { surprise: true });
-    if (opt.key === 'formulateSentense') return navigation.navigate('FormulateSentense', { surprise: true });
     if (opt.key === 'translate') return navigation.navigate('Translate', { surprise: true, mode: 'translation' });
     if (opt.key === 'chooseWord') return navigation.navigate('ChooseWord', { surprise: true });
     if (opt.key === 'chooseTranslation') return navigation.navigate('ChooseTranslation', { surprise: true });
@@ -78,7 +72,7 @@ function PracticeScreen(): React.JSX.Element {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <TouchableOpacity
         style={styles.surpriseButton}
         onPress={onSurprise}
@@ -102,12 +96,13 @@ function PracticeScreen(): React.JSX.Element {
           </TouchableOpacity>
         ))}
       </View>
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     padding: 16,
     gap: 16,
   },
@@ -129,9 +124,11 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   grid: {
+    flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+    alignContent: 'space-between',
     rowGap: 12,
   },
   gridItem: {
@@ -140,7 +137,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#e5e5e5',
     borderRadius: 12,
-    paddingVertical: 18,
+    paddingVertical: 32,
     paddingHorizontal: 12,
     alignItems: 'center',
     justifyContent: 'center',

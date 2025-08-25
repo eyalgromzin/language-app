@@ -7,6 +7,7 @@ import { getTtsLangCode, playCorrectFeedback, playWrongFeedback } from '../commo
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
+import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 
 type WordEntry = {
   word: string;
@@ -497,39 +498,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   }
 
   if (!current || options.length === 0) {
-    return (
-      <View style={styles.centered}>
-        <View style={styles.emptyStateContainer}>
-          <Text style={styles.emptyStateIcon}>📚</Text>
-          <Text style={styles.emptyStateTitle}>
-            {allWordsPool.length < 8
-              ? 'Need More Words'
-              : allEntries.length === 0
-              ? 'No Words Available'
-              : allEntries.length < 2
-              ? 'Not Enough Words'
-              : 'No Words Available'}
-          </Text>
-          <Text style={styles.emptyStateMessage}>
-            {allWordsPool.length < 8
-              ? 'Add more words to reach at least 8 unique words for this practice.'
-              : allEntries.length === 0
-              ? 'You haven\'t added any words to practice yet. Add some words to get started!'
-              : allEntries.length < 2
-              ? 'You need at least 2 words available for this practice type. Add more words or try a different practice.'
-              : 'No words are currently available for practice.'}
-          </Text>
-          <TouchableOpacity 
-            style={styles.backToPracticeButton} 
-            onPress={() => navigation.navigate('PracticeHome' as never)}
-            accessibilityRole="button"
-            accessibilityLabel="Back to Practice"
-          >
-            <Text style={styles.backToPracticeButtonText}>Back to Practice</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
+    return <NotEnoughWordsMessage />;
   }
 
   const correctKey = options.find((o) => o.isCorrect)?.key;
