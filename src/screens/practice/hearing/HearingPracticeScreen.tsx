@@ -228,6 +228,17 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
             (noa.hearing || 0);
           return total < totalThreshold;
         });
+      
+      // Additional check: ensure we have enough words for the hearing practice
+      // We need to check if we have enough words for the word with the highest hearing correct answers
+      const maxHearingCorrectAnswers = Math.max(...filtered.map(w => w.numberOfCorrectAnswers?.hearing || 0), 0);
+      const maxRequiredOptions = (2 + maxHearingCorrectAnswers) * 2;
+      const maxRequiredDistractors = maxRequiredOptions - 1;
+      
+      if (allTranslations.length < maxRequiredDistractors) {
+        setAllEntries([]);
+        return;
+      }
       setAllEntries(filtered);
     } catch {
       setAllEntries([]);
@@ -256,8 +267,19 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
     lastWordKeyRef.current = entries[idx].word;
 
     const correct = entries[idx];
+    const hearingCorrectAnswers = correct.numberOfCorrectAnswers?.hearing || 0;
+    const requiredOptions = (2 + hearingCorrectAnswers) * 2;
+    const requiredDistractors = requiredOptions - 1; // -1 for the correct answer
+    
     const basePool = allTranslationsPool.filter((t) => t && t !== correct.translation);
-    const picked = sampleN(basePool, Math.min(5, basePool.length)); // 5 distractors + 1 correct = 6
+    
+    // Check if we have enough words for the required number of options
+    if (basePool.length < requiredDistractors) {
+      setOptions([]);
+      return;
+    }
+    
+    const picked = sampleN(basePool, Math.min(requiredDistractors, basePool.length));
     const combined: OptionItem[] = [
       { key: `c-${correct.word}`, label: correct.translation, isCorrect: true },
       ...picked.map((t, i) => ({ key: `d-${i}-${t}`, label: t, isCorrect: false })),
@@ -286,17 +308,17 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
       if (!props.embedded) {
         autoplay.current = true;
         loadBase();
-        return () => {
-          try { TTS.stop(); } catch {}
-        };
       }
-      return () => {};
+      return () => {
+        if (!props.embedded) {
+          try { TTS.stop(); } catch {}
+        }
+      };
     }, [loadBase, props.embedded])
   );
 
   React.useEffect(() => {
-    if (props.embedded) return;
-    if (!loading) {
+    if (!props.embedded && !loading) {
       prepareRound(allEntries);
     }
   }, [loading, allEntries, prepareRound, props.embedded]);
@@ -307,41 +329,43 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
 
   // Build options in embedded mode from props and auto-speak
   React.useEffect(() => {
-    if (!props.embedded) return;
-    const normalize = (s: string) => (s || '').trim().replace(/\s+/g, ' ').toLowerCase();
-    const baseOptions = Array.isArray(props.options) ? props.options : [];
-    const correctLabel = (props.correctTranslation || '').trim().replace(/\s+/g, ' ');
-    const correctNorm = normalize(correctLabel);
-    const uniqueMap = new Map<string, string>();
-    if (correctLabel.length > 0) uniqueMap.set(correctNorm, correctLabel);
-    for (const o of baseOptions) {
-      const norm = normalize(o);
-      if (!uniqueMap.has(norm)) uniqueMap.set(norm, (o || '').trim().replace(/\s+/g, ' '));
-    }
-    const combined = Array.from(uniqueMap.values());
-    const items: OptionItem[] = combined.map((label, i) => ({
-      key: `${normalize(label)}-${i}`,
-      label,
-      isCorrect: normalize(label) === correctNorm,
-    }));
-    // shuffle
-    const a = [...items];
-    for (let i = a.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    setOptions(a);
-    setSelectedKey(null);
-    setWrongKey(null);
-    setWrongAttempts(0);
-    setShowWrongToast(false);
-    setShowCorrectToast(false);
-    setRevealCorrect(false);
-    setShowFinishedWordAnimation(false);
-    // autoplay
-    const toSpeak = props.sourceWord || '';
-    if (toSpeak) {
-      setTimeout(() => speakCurrent(toSpeak), 300);
+    if (props.embedded) {
+      const normalize = (s: string) => (s || '').trim().replace(/\s+/g, ' ').toLowerCase();
+      const baseOptions = Array.isArray(props.options) ? props.options : [];
+      const correctLabel = (props.correctTranslation || '').trim().replace(/\s+/g, ' ');
+      const correctNorm = normalize(correctLabel);
+      const uniqueMap = new Map<string, string>();
+      if (correctLabel.length > 0) uniqueMap.set(correctNorm, correctLabel);
+      for (const o of baseOptions) {
+        const norm = normalize(o);
+        if (!uniqueMap.has(norm)) uniqueMap.set(norm, (o || '').trim().replace(/\s+/g, ' '));
+      }
+      const combined = Array.from(uniqueMap.values());
+      
+      const items: OptionItem[] = combined.map((label, i) => ({
+        key: `${normalize(label)}-${i}`,
+        label,
+        isCorrect: normalize(label) === correctNorm,
+      }));
+      // shuffle
+      const a = [...items];
+      for (let i = a.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      setOptions(a);
+      setSelectedKey(null);
+      setWrongKey(null);
+      setWrongAttempts(0);
+      setShowWrongToast(false);
+      setShowCorrectToast(false);
+      setRevealCorrect(false);
+      setShowFinishedWordAnimation(false);
+      // autoplay
+      const toSpeak = props.sourceWord || '';
+      if (toSpeak) {
+        setTimeout(() => speakCurrent(toSpeak), 300);
+      }
     }
   }, [props.embedded, props.options, props.correctTranslation, props.sourceWord, speakCurrent]);
 
@@ -399,49 +423,63 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const onPick = (opt: OptionItem) => {
     if (!current) return;
     if (selectedKey || revealCorrect) return;
+    
     if (props.embedded) {
       if (opt.isCorrect) {
         setSelectedKey(opt.key);
         setShowWrongToast(false);
         setShowCorrectToast(true);
         try { playCorrectFeedback(); } catch {}
-        const t = setTimeout(() => props.onFinished?.(true), 600);
-        return () => clearTimeout(t as unknown as number);
+        setTimeout(() => props.onFinished?.(true), 600);
+        return;
       }
       setWrongKey(opt.key);
       setShowWrongToast(true);
       try { playWrongFeedback(); } catch {}
-      const t = setTimeout(() => props.onFinished?.(false), 1200);
-      return () => clearTimeout(t as unknown as number);
+      setTimeout(() => props.onFinished?.(false), 1200);
+      return;
     }
+    
     if (opt.isCorrect) {
       setSelectedKey(opt.key);
       setShowWrongToast(false);
       setShowCorrectToast(true);
       try { playCorrectFeedback(); } catch {}
       writeBackIncrement(current.word);
-      const t = setTimeout(() => {
+      setTimeout(() => {
         prepareRound(allEntries);
       }, 2000);
-      return () => clearTimeout(t as unknown as number);
+      return;
     }
+    
     if (wrongAttempts >= 1) {
       setWrongKey(opt.key);
       setRevealCorrect(true);
       setShowWrongToast(true);
       try { playWrongFeedback(); } catch {}
-      const hide = setTimeout(() => setShowWrongToast(false), 3000);
-      return () => clearTimeout(hide as unknown as number);
+      setTimeout(() => setShowWrongToast(false), 3000);
+      return;
     }
+    
     setWrongKey(opt.key);
     setWrongAttempts(1);
     setShowWrongToast(true);
     try { playWrongFeedback(); } catch {}
-    const hide = setTimeout(() => setShowWrongToast(false), 2000);
-    return () => {
-      clearTimeout(hide as unknown as number);
-    };
+    setTimeout(() => setShowWrongToast(false), 2000);
   };
+
+  // Check if we have enough words for the current round
+  const hasEnoughWords = React.useMemo(() => {
+    if (!current || props.embedded) return true;
+    
+    const hearingCorrectAnswers = current.numberOfCorrectAnswers?.hearing || 0;
+    const requiredOptions = (2 + hearingCorrectAnswers) * 2;
+    const requiredDistractors = requiredOptions - 1;
+    
+    return allTranslationsPool.length >= requiredDistractors;
+  }, [current, allTranslationsPool, props.embedded]);
+
+  const correctKey = options.find((o) => o.isCorrect)?.key;
 
   if (!props.embedded && loading) {
     return (
@@ -451,11 +489,9 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
     );
   }
 
-  if (!current || options.length === 0) {
+  if (!current || options.length === 0 || !hasEnoughWords) {
     return <NotEnoughWordsMessage />;
   }
-
-  const correctKey = options.find((o) => o.isCorrect)?.key;
 
   return (
     <View style={{ flex: 1 }}>
