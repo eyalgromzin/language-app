@@ -155,6 +155,7 @@ function WriteWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const inputRefs = React.useRef<Record<number, TextInput | null>>({});
   const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
+  const animationTriggeredRef = React.useRef<Set<string>>(new Set());
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -305,8 +306,11 @@ function WriteWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
         const totalThreshold = removeAfterTotalCorrect || 6;
         if (total >= totalThreshold) {
           copy.splice(idx, 1);
-          // Show finished word animation when word is removed
-          setShowFinishedWordAnimation(true);
+          // Show finished word animation when word is removed (only once per word)
+          if (!animationTriggeredRef.current.has(word)) {
+            animationTriggeredRef.current.add(word);
+            setShowFinishedWordAnimation(true);
+          }
         } else {
           copy[idx] = it;
         }

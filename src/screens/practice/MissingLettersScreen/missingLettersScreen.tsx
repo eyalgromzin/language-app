@@ -172,6 +172,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
+  const animationTriggeredRef = React.useRef<Set<string>>(new Set());
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -226,6 +227,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setWrongHighlightIndex(null);
       setShowCorrectToast(false);
       setShowWrongToast(false);
+      setShowFinishedWordAnimation(false);
       return;
     }
     setLoading(true);
@@ -253,8 +255,11 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       const content = await RNFS.readFile(filePath, 'utf8');
       const parsed: unknown = JSON.parse(content);
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]) : [];
-      const filtered = arr
-        .filter((w) => w.word && w.translation)
+      // First, get all valid words
+      const validWords = arr.filter((w) => w.word && w.translation);
+      
+      // Apply strict filtering first
+      const strictlyFiltered = validWords
         .filter((w) => (mode === 'translation'
           ? (w.numberOfCorrectAnswers?.writeTranslation ?? 0)
           : (w.numberOfCorrectAnswers?.missingLetters ?? 0)) < threshold)
@@ -270,11 +275,38 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
             (noa.writeWord || 0);
           return total < totalThreshold;
         });
+      
+      // If we have enough words with strict filtering, use those
+      // Otherwise, include more words to ensure we have at least 1 word available
+      let filtered = strictlyFiltered;
+      if (strictlyFiltered.length < 1) {
+        // If no words pass strict filtering, include words that haven't reached total threshold
+        const totalFiltered = validWords.filter((w) => {
+          const noa = w.numberOfCorrectAnswers || ({} as any);
+          const total =
+            (noa.missingLetters || 0) +
+            (noa.missingWords || 0) +
+            (noa.chooseTranslation || 0) +
+            (noa.chooseWord || 0) +
+            (noa.memoryGame || 0) +
+            (noa.writeTranslation || 0) +
+            (noa.writeWord || 0);
+          return total < totalThreshold;
+        });
+        
+        if (totalFiltered.length > 0) {
+          filtered = totalFiltered;
+        } else {
+          // If still no words, include all valid words
+          filtered = validWords;
+        }
+      }
       const prepared = prepare(filtered, threshold);
       setItems(prepared);
       setCurrentIndex(pickRandomIndex(prepared.length));
       setInputs({});
       setWrongHighlightIndex(null);
+      setShowFinishedWordAnimation(false);
     } catch {
       setItems([]);
     } finally {
@@ -292,6 +324,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       if (!props.embedded) {
         setShowCorrectToast(false);
         setShowWrongToast(false);
+        setShowFinishedWordAnimation(false);
         loadData();
       }
     }, [loadData, props.embedded])
@@ -379,8 +412,11 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
         const totalThreshold = removeAfterTotalCorrect || 6;
         if (total >= totalThreshold) {
           copy.splice(idx, 1);
-          // Show finished word animation when word is removed
-          setShowFinishedWordAnimation(true);
+          // Show finished word animation when word is removed (only once per word)
+          if (!animationTriggeredRef.current.has(word)) {
+            animationTriggeredRef.current.add(word);
+            setShowFinishedWordAnimation(true);
+          }
         } else {
           copy[idx] = it;
         }

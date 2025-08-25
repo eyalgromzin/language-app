@@ -143,6 +143,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [wordChoices, setWordChoices] = React.useState<string[]>([]);
   const lastWordKeyRef = React.useRef<string | null>(null);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
+  const animationTriggeredRef = React.useRef<Set<string>>(new Set());
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -168,6 +169,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setWrongHighlightIndex(null);
       setShowCorrectToast(false);
       setShowWrongToast(false);
+      setShowFinishedWordAnimation(false);
       return;
     }
     setLoading(true);
@@ -231,6 +233,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setWrongHighlightIndex(null);
       setShowCorrectToast(false);
       setShowWrongToast(false);
+      setShowFinishedWordAnimation(false);
     } catch {
       setItems([]);
     } finally {
@@ -302,8 +305,11 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
         const totalThreshold = removeAfterTotalCorrect || 6;
         if (total >= totalThreshold) {
           copy.splice(idx, 1);
-          // Show finished word animation when word is removed
-          setShowFinishedWordAnimation(true);
+          // Show finished word animation when word is removed (only once per word)
+          if (!animationTriggeredRef.current.has(wordKey)) {
+            animationTriggeredRef.current.add(wordKey);
+            setShowFinishedWordAnimation(true);
+          }
         } else {
           copy[idx] = it;
         }
