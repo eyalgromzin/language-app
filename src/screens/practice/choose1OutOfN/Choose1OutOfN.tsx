@@ -154,6 +154,8 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
           clearTimeout(successToastTimeoutRef.current);
           successToastTimeoutRef.current = null;
         }
+        // Hide finished word animation when leaving the screen
+        setShowFinishedWordAnimation(false);
       };
     }, [])
   );
@@ -364,6 +366,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
     setShowCorrectToast(false);
     setShowWrongToast(false);
     setIsShowingSuccessToast(false);
+    setShowFinishedWordAnimation(false);
     // Clear success toast timeout
     if (successToastTimeoutRef.current) {
       clearTimeout(successToastTimeoutRef.current);
@@ -460,6 +463,8 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       successToastTimeoutRef.current = setTimeout(() => {
         setShowCorrectToast(false);
         setIsShowingSuccessToast(false);
+        // Hide finished word animation before loading next word
+        setShowFinishedWordAnimation(false);
         // Reload base data after toast is hidden
         loadBase();
         setTimeout(() => {
@@ -579,7 +584,10 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         </View>
 
         {!props.embedded && revealCorrect ? (
-          <TouchableOpacity style={styles.nextButton} onPress={() => prepareRound(allEntries, false)}>
+          <TouchableOpacity style={styles.nextButton} onPress={() => {
+            setShowFinishedWordAnimation(false);
+            prepareRound(allEntries, false);
+          }}>
             <Text style={styles.nextButtonText}>Next</Text>
           </TouchableOpacity>
         ) : null}
