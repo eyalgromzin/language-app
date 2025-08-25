@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 
-const SUPPORT_EMAIL = 'support@languagelearn.app';
+const SUPPORT_EMAIL = 'support@HelloLingo.app';
 
 function ContactUsScreen(): React.JSX.Element {
   const handleEmailPress = React.useCallback(() => {
