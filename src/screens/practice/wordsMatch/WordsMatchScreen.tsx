@@ -82,6 +82,7 @@ function WordsMatchScreen(): React.JSX.Element {
   }, [navigation, route]);
   const [loading, setLoading] = React.useState<boolean>(true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
+  const [allWords, setAllWords] = React.useState<WordEntry[]>([]); // Store all words for fallback
   const [pairCount, setPairCount] = React.useState<number>(3);
   const [threshold, setThreshold] = React.useState<number>(3);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
@@ -109,6 +110,10 @@ function WordsMatchScreen(): React.JSX.Element {
       const content = await RNFS.readFile(filePath, 'utf8');
       const parsed: unknown = JSON.parse(content);
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]).map(ensureCounters) : [];
+      // Store all valid words for fallback
+      const allValidWords = arr.filter((w) => w.word && w.translation);
+      setAllWords(allValidWords);
+      
       // Filter: keep entries that have word and translation
       let thr = 3;
       let totalThr = 6;
@@ -122,8 +127,7 @@ function WordsMatchScreen(): React.JSX.Element {
         setRemoveAfterTotalCorrect(totalThr);
       } catch {}
       setThreshold(thr);
-      const filtered = arr
-        .filter((w) => w.word && w.translation)
+      const filtered = allValidWords
         .filter((w) => (w.numberOfCorrectAnswers?.chooseTranslation ?? 0) < thr)
         .filter((w) => {
           const noa = w.numberOfCorrectAnswers || ({} as any);
@@ -147,8 +151,19 @@ function WordsMatchScreen(): React.JSX.Element {
 
   const prepareRound = React.useCallback(() => {
     const available = allEntries;
-    const desired = Math.max(1, Math.min(9, Math.max(3, pairCount)));
-    const chosen = sampleN(available, Math.min(desired, Math.max(1, available.length)));
+    const desired = Math.max(3, Math.min(9, pairCount));
+    
+    console.log(`WordsMatch: desired=${desired}, available=${available.length}, allWords=${allWords.length}`);
+    
+    // If we don't have enough filtered words, use all valid words as fallback
+    let chosen = sampleN(available, Math.min(desired, available.length));
+    
+    if (chosen.length < desired && allWords.length > 0) {
+      // Use all valid words if we don't have enough filtered words
+      chosen = sampleN(allWords, Math.min(desired, allWords.length));
+      console.log(`WordsMatch: Using fallback words, chosen=${chosen.length}`);
+    }
+    
     const left: MatchItem[] = chosen.map((e) => ({ key: e.word, label: e.word }));
     const right: MatchItem[] = chosen.map((e) => ({ key: e.word, label: e.translation }));
     setLeftItems(shuffleArray(left));
@@ -158,7 +173,7 @@ function WordsMatchScreen(): React.JSX.Element {
     setSelectedLeftKey(null);
     setSelectedRightKey(null);
     setWrongFlash(null);
-  }, [allEntries, pairCount]);
+  }, [allEntries, allWords, pairCount]);
 
   React.useEffect(() => {
     loadBase();
