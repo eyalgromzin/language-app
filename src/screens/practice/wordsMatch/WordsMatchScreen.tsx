@@ -344,8 +344,35 @@ function WordsMatchScreen(): React.JSX.Element {
     );
   }
 
+  // Show not enough words message if we don't have enough words for the minimum game size
+  const minRequiredWords = Math.max(3, pairCount);
+  const hasEnoughWords = allWords.length >= minRequiredWords;
+  
+  if (!hasEnoughWords) {
+    return (
+      <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.topRow}>
+          <Text style={styles.title}>match the words to their translations</Text>
+        </View>
+        {renderCountSelector()}
+        <NotEnoughWordsMessage 
+          message={`Not enough words to play Words Match. You need at least ${minRequiredWords} words, but you only have ${allWords.length}. Add more words in one of the learning options below.`}
+        />
+      </ScrollView>
+    );
+  }
+
+  // Additional safety check in case the game somehow ends up with no items
   if (leftItems.length === 0 || rightItems.length === 0) {
-    return <NotEnoughWordsMessage />;
+    return (
+      <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.topRow}>
+          <Text style={styles.title}>match the words to their translations</Text>
+        </View>
+        {renderCountSelector()}
+        <NotEnoughWordsMessage />
+      </ScrollView>
+    );
   }
 
   return (

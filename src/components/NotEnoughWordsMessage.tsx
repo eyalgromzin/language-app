@@ -51,6 +51,14 @@ const NotEnoughWordsMessage: React.FC<NotEnoughWordsMessageProps> = ({
         >
           <Text style={styles.buttonText}>Categories</Text>
         </TouchableOpacity>
+        <TouchableOpacity 
+          style={styles.button} 
+          onPress={() => navigateToScreen('BabySteps')}
+          accessibilityRole="button"
+          accessibilityLabel="Go to Baby Steps"
+        >
+          <Text style={styles.buttonText}>Baby Steps</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -79,9 +87,9 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#007AFF',
     paddingVertical: 12,
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
     borderRadius: 8,
-    minWidth: 80,
+    minWidth: 70,
     alignItems: 'center',
   },
   buttonText: {

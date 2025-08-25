@@ -2,8 +2,10 @@
     - on practice finish word total - make some big animation on the screen - hand
 
 - dont enalbe to save to favourites websites that have harmful words like anything related to porn / palestine / kill / hurt ... 
+    - get words list from server 
 
 - deep link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
+
 
 - register app - to enable open urls with it 
 
