@@ -113,6 +113,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
 
   const lastWordKeyRef = React.useRef<string | null>(null);
   const animationTriggeredRef = React.useRef<Set<string>>(new Set());
+  const processingWordsRef = React.useRef<Set<string>>(new Set());
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -465,6 +466,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
           prepareRound(allEntries, false); // Now safe to prepare next round
         }, 200); // Small delay to ensure toast is hidden before preparing next round
       }, 4000);
+      return; // Add return to prevent wrong answer logic from executing
     }
     if (wrongAttempts >= 1) {
       setWrongKey(opt.key);
@@ -597,8 +599,8 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         visible={showFinishedWordAnimation}
         onHide={() => {
           setShowFinishedWordAnimation(false);
-          // Clear the animation trigger set when animation is hidden
-          animationTriggeredRef.current.clear();
+          // Don't clear the animation trigger set - keep track of all finished words
+          // This prevents the animation from showing twice for the same word
         }}
       />
     </View>
