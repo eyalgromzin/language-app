@@ -7,7 +7,6 @@ import MissingWordsScreen from './missingWords/MissingWordsScreen.tsx';
 import WordsMatchScreen from './wordsMatch/WordsMatchScreen.tsx';
 // Removed separate chooseTranslation screen; both routes use Choose1OutOfN
 import Choose1OutOfN from './choose1OutOfN/Choose1OutOfN.tsx';
-import WriteWordScreen from './writeWord/WriteWordScreen.tsx';
 import MemoryGameScreen from './memoryGame/MemoryGameScreen.tsx';
 import HearingPracticeScreen from './hearing/HearingPracticeScreen.tsx';
 import FormulateSentenseScreen from './formulateSentense/FormulateSentenseScreen.tsx';
@@ -23,7 +22,6 @@ export type PracticeStackParamList = {
   Translate: ModeParam;
   ChooseWord: SurpriseParam;
   ChooseTranslation: SurpriseParam;
-  WriteWord: SurpriseParam;
   MemoryGame: SurpriseParam;
   HearingPractice: SurpriseParam;
   FormulateSentense: SurpriseParam;
@@ -146,21 +144,6 @@ function PracticeNavigator(): React.JSX.Element {
           ),
         }}
         initialParams={{ mode: 'translation' }}
-      />
-      <Stack.Screen
-        name="WriteWord"
-        component={WriteWordScreen}
-        options={{
-          title: 'Write the word',
-          headerShown: true,
-          headerLargeTitle: false,
-          headerBackTitle: '',
-          headerTitle: (props) => (
-            <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
-              {props?.children}
-            </Text>
-          ),
-        }}
       />
       <Stack.Screen
         name="ChooseWord"

@@ -108,6 +108,8 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   const [revealCorrect, setRevealCorrect] = React.useState<boolean>(false);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
+  const [isShowingSuccessToast, setIsShowingSuccessToast] = React.useState<boolean>(false);
+  const successToastTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
   const lastWordKeyRef = React.useRef<string | null>(null);
   const animationTriggeredRef = React.useRef<Set<string>>(new Set());
@@ -146,6 +148,11 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
     React.useCallback(() => {
       return () => {
         try { TTS.stop(); } catch {}
+        // Clear success toast timeout when leaving the screen
+        if (successToastTimeoutRef.current) {
+          clearTimeout(successToastTimeoutRef.current);
+          successToastTimeoutRef.current = null;
+        }
       };
     }, [])
   );
@@ -220,7 +227,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
     return pool[Math.floor(Math.random() * pool.length)];
   }, []);
 
-  const prepareRound = React.useCallback((entries: WordEntry[]) => {
+  const prepareRound = React.useCallback((entries: WordEntry[], preserveSuccessToast: boolean = false) => {
     if (entries.length === 0) {
       setOptions([]);
       return;
@@ -268,7 +275,9 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
     setWrongKey(null);
     setWrongAttempts(0);
     setShowWrongToast(false);
-    setShowCorrectToast(false);
+    if (!preserveSuccessToast) {
+      setShowCorrectToast(false);
+    }
     setRevealCorrect(false);
     // Auto play the translation on load
     const toSpeak = isChooseTranslationMode ? entries[idx]?.word : entries[idx]?.translation;
@@ -279,6 +288,14 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
 
   React.useEffect(() => {
     loadBase();
+    
+    // Cleanup function to clear timeout when component unmounts
+    return () => {
+      if (successToastTimeoutRef.current) {
+        clearTimeout(successToastTimeoutRef.current);
+        successToastTimeoutRef.current = null;
+      }
+    };
   }, [loadBase]);
 
   useFocusEffect(
@@ -289,7 +306,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
 
   React.useEffect(() => {
     if (props.embedded) return;
-    if (!loading) {
+    if (!loading && !isShowingSuccessToast) {
       // Check if there are enough words to continue the game
       if (allEntries.length === 0) {
         // No words available, show empty state
@@ -300,10 +317,10 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         setOptions([]);
         setCurrentIndex(0);
       } else {
-        prepareRound(allEntries);
+        prepareRound(allEntries, false);
       }
     }
-  }, [loading, allEntries, prepareRound, props.embedded]);
+  }, [loading, allEntries, prepareRound, props.embedded, isShowingSuccessToast]);
 
   const current = props.embedded
     ? ({ translation: props.translation || '' } as WordEntry)
@@ -345,7 +362,13 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   const moveToNext = React.useCallback(() => {
     setShowCorrectToast(false);
     setShowWrongToast(false);
-    prepareRound(allEntries);
+    setIsShowingSuccessToast(false);
+    // Clear success toast timeout
+    if (successToastTimeoutRef.current) {
+      clearTimeout(successToastTimeoutRef.current);
+      successToastTimeoutRef.current = null;
+    }
+    prepareRound(allEntries, false);
   }, [prepareRound, allEntries]);
 
   const writeBackIncrement = React.useCallback(async (wordKey: string) => {
@@ -391,8 +414,8 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
           await RNFS.writeFile(filePath, JSON.stringify(copy, null, 2), 'utf8');
         } catch {}
         
-        // After updating the file, reload the base data to check if there are enough words
-        await loadBase();
+        // Don't reload base data immediately to avoid interfering with toast display
+        // The loadBase will be called when the success toast is finished
       }
     } catch {}
   }, [filePath, removeAfterTotalCorrect, isChooseTranslationMode, loadBase]);
@@ -419,12 +442,29 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       setSelectedKey(opt.key);
       setShowWrongToast(false);
       setShowCorrectToast(true);
+      setIsShowingSuccessToast(true);
       try { playCorrectFeedback(); } catch {}
-      writeBackIncrement(current.word);
-      const t = setTimeout(() => {
-        prepareRound(allEntries);
-      }, 2000);
-      return () => clearTimeout(t as unknown as number);
+      
+      // Clear any existing timeout
+      if (successToastTimeoutRef.current) {
+        clearTimeout(successToastTimeoutRef.current);
+      }
+      
+      // Delay the writeBackIncrement to avoid interfering with toast display
+      setTimeout(() => {
+        writeBackIncrement(current.word);
+      }, 1000);
+      
+      // Keep success toast visible for 4 seconds before moving to next round
+      successToastTimeoutRef.current = setTimeout(() => {
+        setShowCorrectToast(false);
+        setIsShowingSuccessToast(false);
+        // Reload base data after toast is hidden
+        loadBase();
+        setTimeout(() => {
+          prepareRound(allEntries, false); // Now safe to prepare next round
+        }, 200); // Small delay to ensure toast is hidden before preparing next round
+      }, 4000);
     }
     if (wrongAttempts >= 1) {
       setWrongKey(opt.key);
@@ -537,7 +577,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         </View>
 
         {!props.embedded && revealCorrect ? (
-          <TouchableOpacity style={styles.nextButton} onPress={() => prepareRound(allEntries)}>
+          <TouchableOpacity style={styles.nextButton} onPress={() => prepareRound(allEntries, false)}>
             <Text style={styles.nextButtonText}>Next</Text>
           </TouchableOpacity>
         ) : null}
