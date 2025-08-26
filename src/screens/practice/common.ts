@@ -104,3 +104,38 @@ export function parseYandexImageUrlsFromHtml(html: string): string[] {
     return [];
   }
 }
+
+export interface ImageScrapeCallbacks {
+  onImageScrapeStart: (url: string, word: string) => void;
+  onImageScrapeComplete: (urls: string[]) => void;
+  onImageScrapeError: () => void;
+}
+
+export const fetchImageUrls = async (
+  word: string, 
+  callbacks: ImageScrapeCallbacks
+): Promise<string[]> => {
+  const searchUrl = `https://yandex.com/images/search?text=${encodeURIComponent(word)}`;
+  
+  return new Promise<string[]>((resolve, reject) => {
+    callbacks.onImageScrapeStart(searchUrl, word);
+    
+    // Store the callbacks for later use
+    const originalOnComplete = callbacks.onImageScrapeComplete;
+    const originalOnError = callbacks.onImageScrapeError;
+    
+    callbacks.onImageScrapeComplete = (urls: string[]) => {
+      originalOnComplete(urls);
+      if (Array.isArray(urls) && urls.length > 0) {
+        resolve(urls.slice(0, 6));
+      } else {
+        resolve([]);
+      }
+    };
+    
+    callbacks.onImageScrapeError = () => {
+      originalOnError();
+      resolve([]);
+    };
+  }).catch(() => [] as string[]);
+};

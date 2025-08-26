@@ -7,7 +7,7 @@ import { fetchTranslation as fetchTranslationCommon } from '../../utils/translat
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
-import { parseYandexImageUrlsFromHtml } from '../practice/common';
+import { parseYandexImageUrlsFromHtml, fetchImageUrls as fetchImageUrlsCommon, type ImageScrapeCallbacks } from '../practice/common';
 import harmfulWordsService from '../../services/harmfulWordsService';
 import { addLibraryUrl } from '../../config/api';
 
@@ -875,20 +875,34 @@ function SurfScreen(): React.JSX.Element {
   
 
   const fetchImageUrls = async (word: string): Promise<string[]> => {
-    const searchUrl = `https://yandex.com/images/search?text=${encodeURIComponent(word)}`;
-
     if (imageScrape) {
       return [];
     }
+    
+    const callbacks: ImageScrapeCallbacks = {
+      onImageScrapeStart: (url: string, word: string) => {
+        setImageScrape({ url, word });
+      },
+      onImageScrapeComplete: (urls: string[]) => {
+        imageScrapeResolveRef.current?.(urls);
+        imageScrapeResolveRef.current = null;
+        imageScrapeRejectRef.current = null;
+        setImageScrape(null);
+      },
+      onImageScrapeError: () => {
+        imageScrapeResolveRef.current?.([]);
+        imageScrapeResolveRef.current = null;
+        imageScrapeRejectRef.current = null;
+        setImageScrape(null);
+      }
+    };
 
-    const result: string[] = await new Promise<string[]>((resolve, reject) => {
+    return new Promise<string[]>((resolve, reject) => {
       imageScrapeResolveRef.current = resolve;
       imageScrapeRejectRef.current = reject;
-      setImageScrape({ url: searchUrl, word });
+      
+      fetchImageUrlsCommon(word, callbacks);
     }).catch(() => [] as string[]);
-
-    if (Array.isArray(result) && result.length > 0) return result.slice(0, 6);
-    return [];
   };
 
   const onScrapeMessage = (event: WebViewMessageEvent) => {

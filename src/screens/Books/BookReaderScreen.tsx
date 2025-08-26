@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
-import { parseYandexImageUrlsFromHtml } from '../practice/common';
+import { parseYandexImageUrlsFromHtml, fetchImageUrls as fetchImageUrlsCommon, type ImageScrapeCallbacks } from '../practice/common';
 import { getLibraryMeta, getLibraryUrlsWithCriterias, addLibraryUrl } from '../../config/api';
 
 type StoredBook = {
@@ -1002,17 +1002,34 @@ function BookReaderScreen(): React.JSX.Element {
   
 
   const fetchImageUrls = async (word: string): Promise<string[]> => {
-    const searchUrl = `https://yandex.com/images/search?text=${encodeURIComponent(word)}`;
     if (imageScrape) {
       return [];
     }
-    const result: string[] = await new Promise<string[]>((resolve, reject) => {
+    
+    const callbacks: ImageScrapeCallbacks = {
+      onImageScrapeStart: (url: string, word: string) => {
+        setImageScrape({ url, word });
+      },
+      onImageScrapeComplete: (urls: string[]) => {
+        imageScrapeResolveRef.current?.(urls);
+        imageScrapeResolveRef.current = null;
+        imageScrapeRejectRef.current = null;
+        setImageScrape(null);
+      },
+      onImageScrapeError: () => {
+        imageScrapeResolveRef.current?.([]);
+        imageScrapeResolveRef.current = null;
+        imageScrapeRejectRef.current = null;
+        setImageScrape(null);
+      }
+    };
+
+    return new Promise<string[]>((resolve, reject) => {
       imageScrapeResolveRef.current = resolve;
       imageScrapeRejectRef.current = reject;
-      setImageScrape({ url: searchUrl, word });
+      
+      fetchImageUrlsCommon(word, callbacks);
     }).catch(() => [] as string[]);
-    if (Array.isArray(result) && result.length > 0) return result.slice(0, 6);
-    return [];
   };
 
   const onScrapeMessage = (event: WebViewMessageEvent) => {

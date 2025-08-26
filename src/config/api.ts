@@ -1,7 +1,8 @@
+
 // API Configuration
 export const API_CONFIG = {
   // Production server URL with fallback to localhost
-  SERVER_URL: process.env.REACT_APP_SERVER_URL || 'http://localhost:3000',
+  SERVER_URL: 'https://language-learn-server.onrender.com',
   
   // API endpoints
   ENDPOINTS: {
@@ -122,8 +123,11 @@ export const addLibraryUrl = async (
 };
 
 // Video API
-export const getVideoStartupPage = async (): Promise<any> => {
-  return apiRequest(API_CONFIG.ENDPOINTS.VIDEO_STARTUP);
+export const getVideoStartupPage = async (symbol?: string): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.VIDEO_STARTUP, {
+    method: 'POST',
+    body: JSON.stringify({ symbol }),
+  });
 };
 
 export const upsertVideoNowPlaying = async (
