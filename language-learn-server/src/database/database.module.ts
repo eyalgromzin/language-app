@@ -3,8 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { NowPlayingEntity } from './entities/now-playing.entity';
 import { WordCacheEntity } from './entities/word-cache.entity';
 import { TranslationCacheEntity } from './entities/translation-cache.entity';
+import { TranslationEntity } from './entities/translation.entity';
 import { VideoCacheEntity } from './entities/video-cache.entity';
-import { NowPlayingDbService, WordCacheDbService, VideoCacheDbService } from './services';
+import { NowPlayingDbService, WordCacheDbService, VideoCacheDbService, TranslationDbService } from './services';
 
 @Module({
   imports: [
@@ -15,15 +16,15 @@ import { NowPlayingDbService, WordCacheDbService, VideoCacheDbService } from './
       username: 'admin',
       password: 'pXhtaqRCFlb5v2BTav6gulaoVpLzlpWC',
       database: 'hello_lingo',
-      entities: [NowPlayingEntity, WordCacheEntity, TranslationCacheEntity, VideoCacheEntity],
+      entities: [NowPlayingEntity, WordCacheEntity, TranslationCacheEntity, TranslationEntity, VideoCacheEntity],
       synchronize: true, // Be careful with this in production
       ssl: {
         rejectUnauthorized: false,
       },
     }),
-    TypeOrmModule.forFeature([NowPlayingEntity, WordCacheEntity, TranslationCacheEntity, VideoCacheEntity]),
+    TypeOrmModule.forFeature([NowPlayingEntity, WordCacheEntity, TranslationCacheEntity, TranslationEntity, VideoCacheEntity]),
   ],
-  providers: [NowPlayingDbService, WordCacheDbService, VideoCacheDbService],
-  exports: [TypeOrmModule, NowPlayingDbService, WordCacheDbService, VideoCacheDbService],
+  providers: [NowPlayingDbService, WordCacheDbService, VideoCacheDbService, TranslationDbService],
+  exports: [TypeOrmModule, NowPlayingDbService, WordCacheDbService, VideoCacheDbService, TranslationDbService],
 })
 export class DatabaseModule {}

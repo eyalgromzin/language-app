@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { WordCacheDbService } from '../database/services/word-cache-db.service';
+import { TranslationDbService } from '../database/services/translation-db.service';
 
 export const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
   Czech: 'cs',
@@ -60,7 +61,10 @@ export const getLangCode = (nameOrCode: string | null | undefined): string | nul
 
 @Injectable()
 export class TranslateService {
-    constructor(private readonly wordCacheService: WordCacheDbService) {}
+    constructor(
+        private readonly wordCacheService: WordCacheDbService,
+        private readonly translationDbService: TranslationDbService
+    ) {}
 
 async fetchTranslation (
     word: string,
@@ -71,11 +75,18 @@ async fetchTranslation (
     const toCode = getLangCode(toLanguageSymbol) || 'en';
     if (!word || fromCode === toCode) return word;
 
-    // check cache first
+    // First check word cache
     const cached = await this.wordCacheService.getCachedTranslation(word, fromCode, toCode);
     if (typeof cached === 'string' && cached.length > 0) {
         await this.wordCacheService.record(word);
         return cached;
+    }
+
+    // Then check if translation exists in the translation table
+    const existingTranslation = await this.translationDbService.getTranslation(word, toCode);
+    if (existingTranslation) {
+        await this.wordCacheService.record(word);
+        return existingTranslation;
     }
 
     try {
@@ -86,6 +97,13 @@ async fetchTranslation (
         const txt = json?.responseData?.translatedText;
         if (typeof txt === 'string' && txt.trim().length > 0) {
             const translated = txt.trim();
+            
+            // Only save to translation table if the translation is different from the original word
+            if (translated.toLowerCase() !== word.toLowerCase()) {
+                await this.translationDbService.saveTranslation(word, toCode, translated);
+            }
+            
+            // Also save to old cache system for backward compatibility
             await this.wordCacheService.setCachedTranslation(word, fromCode, toCode, translated);
             await this.wordCacheService.record(word);
             return translated;
