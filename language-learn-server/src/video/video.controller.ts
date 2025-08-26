@@ -1,11 +1,11 @@
 import { Body, Controller, Post, BadRequestException } from '@nestjs/common';
 import { YouTubeService } from '../youtube/youtube.service';
-import { NowPlayingService, NowPlayingItem } from '../cache/now-playing.service';
+import { NowPlayingDbService, NowPlayingItem } from '../database/services/now-playing-db.service';
 
 @Controller('video')
 export class VideoController {
   constructor(
-    private readonly nowPlayingService: NowPlayingService,
+    private readonly nowPlayingService: NowPlayingDbService,
     private readonly youTubeService: YouTubeService,
   ) {}
 

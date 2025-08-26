@@ -2,13 +2,13 @@ import { Injectable, BadRequestException } from '@nestjs/common';
 import { YoutubeTranscript } from 'youtube-transcript';
 import { Innertube } from 'youtubei.js';
 import { LibraryService } from '../library/library.service';
-import { VideoCacheService } from '../cache/video-cache.service';
+import { VideoCacheDbService } from '../database/services/video-cache-db.service';
 
 @Injectable()
 export class YouTubeService {
   constructor(
     private readonly libraryService: LibraryService,
-    private readonly videoCacheService: VideoCacheService,
+    private readonly videoCacheService: VideoCacheDbService,
   ) {}
 
   async getTranscript(

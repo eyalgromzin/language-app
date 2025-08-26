@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { WordCacheService } from '../cache/word-cache.service';
+import { WordCacheDbService } from '../database/services/word-cache-db.service';
 
 export const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
   Czech: 'cs',
@@ -60,7 +60,7 @@ export const getLangCode = (nameOrCode: string | null | undefined): string | nul
 
 @Injectable()
 export class TranslateService {
-    constructor(private readonly wordCacheService: WordCacheService) {}
+    constructor(private readonly wordCacheService: WordCacheDbService) {}
 
 async fetchTranslation (
     word: string,
