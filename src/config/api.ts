@@ -145,8 +145,11 @@ export const upsertVideoNowPlaying = async (
   });
 };
 
-export const getVideoNowPlaying = async (): Promise<any> => {
-  return apiRequest(API_CONFIG.ENDPOINTS.VIDEO_NOW_PLAYING_GET);
+export const getVideoNowPlaying = async (symbol?: string): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.VIDEO_NOW_PLAYING_GET, {
+    method: 'POST',
+    body: JSON.stringify({ languageSymbol: symbol }),
+  });
 };
 
 export const searchYouTube = async (query: string): Promise<any> => {

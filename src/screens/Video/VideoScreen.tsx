@@ -381,6 +381,7 @@ function VideoScreen(): React.JSX.Element {
         const enriched = await enrichWithLengths(typed);
         if (!cancelled) setStartupVideos(enriched);
       } catch (e) {
+        console.error('Failed to load startup videos:', e);
         if (!cancelled) {
           setStartupVideos([]);
           setStartupVideosError('Failed to load startup videos.');
@@ -430,6 +431,7 @@ function VideoScreen(): React.JSX.Element {
         // getting time for each video takes a long time - should save it in the server with video length already 
         if (!cancelled) setNowPlayingVideos(normalized);
       } catch (e) {
+        console.error('Failed to load now-playing videos:', e);
         if (!cancelled) {
           setNowPlayingVideos([]);
           setNowPlayingError('Failed to load now-playing videos.');
@@ -936,7 +938,7 @@ function VideoScreen(): React.JSX.Element {
             ))}
           </View>
         ) : (
-          <Text style={styles.helper}>No suggestions.</Text>
+          <Text style={styles.helper}>app just started, you're the first to watch a video!</Text>
         )}
       </>
     );
@@ -1110,7 +1112,7 @@ function VideoScreen(): React.JSX.Element {
 
       <SearchResults />
 
-      {!isPlaying && !hidePlayback && !nowPlayingLoading && !nowPlayingError && nowPlayingVideos.length === 0 && <NewestVideos />}
+      {/* {!isPlaying && !hidePlayback && !nowPlayingLoading && !nowPlayingError && nowPlayingVideos.length === 0 && <NewestVideos />} */}
 
       <TranslationPanel
         panel={translationPanel}
