@@ -21,7 +21,6 @@ import {
 import Transcript from './Transcript';
 import harmfulWordsService from '../../services/harmfulWordsService';
 import { 
-  getVideoStartupPage, 
   upsertVideoNowPlaying, 
   getVideoNowPlaying, 
   searchYouTube, 
@@ -369,31 +368,7 @@ function VideoScreen(): React.JSX.Element {
 
   
 
-  React.useEffect(() => {
-    let cancelled = false;
-    const fetchStartupVideos = async (langSymbol: string) => {
-      setStartupVideosLoading(true);
-      setStartupVideosError(null);
-      try {
-        const data = await getVideoStartupPage(langSymbol);
-        const results = Array.isArray(data?.results) ? data.results : [];
-        const typed = (results as Array<{ url: string; thumbnail: string; title: string; description: string }>);
-        const enriched = await enrichWithLengths(typed);
-        if (!cancelled) setStartupVideos(enriched);
-      } catch (e) {
-        console.error('Failed to load startup videos:', e);
-        if (!cancelled) {
-          setStartupVideos([]);
-          setStartupVideosError('Failed to load startup videos.');
-        }
-      } finally {
-        if (!cancelled) setStartupVideosLoading(false);
-      }
-    };
-    const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
-    fetchStartupVideos(symbol);
-    return () => { cancelled = true; };
-  }, [learningLanguage, mapLanguageNameToYoutubeCode]);
+
 
   React.useEffect(() => {
     let cancelled = false;
@@ -419,7 +394,7 @@ function VideoScreen(): React.JSX.Element {
       setNowPlayingLoading(true);
       setNowPlayingError(null);
       try {
-        const data = await getVideoNowPlaying();
+        const data = await getVideoNowPlaying(langSymbol);
         const results = Array.isArray(data?.results) ? data.results : Array.isArray(data) ? data : [];
         const normalized = (results as any[]).map(r => ({
           url: r.url,
@@ -440,6 +415,9 @@ function VideoScreen(): React.JSX.Element {
         if (!cancelled) setNowPlayingLoading(false);
       }
     };
+
+    if(!learningLanguage) return;
+    
     const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
     fetchNowPlaying(symbol);
     return () => { cancelled = true; };

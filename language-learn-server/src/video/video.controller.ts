@@ -35,9 +35,11 @@ export class VideoController {
   @Post('now-playing')
   async getNowPlaying(@Body('languageSymbol') languageSymbol?: string): Promise<NowPlayingItem[] | Record<string, NowPlayingItem[]>> {
     if (languageSymbol && languageSymbol.trim()) {
-      return this.nowPlayingService.getNowPlaying(languageSymbol);
+      const result = await this.nowPlayingService.getNowPlaying(languageSymbol);
+      return result;
     }
-    return this.nowPlayingService.getAllNowPlaying();
+    
+    return [];
   }
 }
 

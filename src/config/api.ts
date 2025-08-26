@@ -38,19 +38,25 @@ const apiRequest = async <T>(
   options: RequestInit = {}
 ): Promise<T> => {
   const url = getApiUrl(endpoint);
-  const response = await fetch(url, {
-    headers: {
-      'Content-Type': 'application/json',
-      ...options.headers,
-    },
-    ...options,
-  });
+  
+  try {
+    const response = await fetch(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        ...options.headers,
+      },
+      ...options,
+    });
 
-  if (!response.ok) {
-    throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error(`[API] Request failed for ${url}:`, error);
+    throw error;
   }
-
-  return response.json();
 };
 
 // Translation API
@@ -147,10 +153,11 @@ export const upsertVideoNowPlaying = async (
 };
 
 export const getVideoNowPlaying = async (symbol?: string): Promise<any> => {
-  return apiRequest(API_CONFIG.ENDPOINTS.VIDEO_NOW_PLAYING_GET, {
+  const data = await apiRequest(API_CONFIG.ENDPOINTS.VIDEO_NOW_PLAYING_GET, {
     method: 'POST',
     body: JSON.stringify({ languageSymbol: symbol }),
   });
+  return data;
 };
 
 export const searchYouTube = async (query: string): Promise<any> => {
