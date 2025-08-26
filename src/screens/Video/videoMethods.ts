@@ -34,9 +34,7 @@ export function mapLanguageNameToYoutubeCode(name: string | null): string {
 
 export async function fetchYouTubeTitleById(id: string): Promise<string> {
   try {
-    const res = await fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${id}`)}&format=json`);
-    if (!res.ok) return '';
-    const data = await res.json();
+    const data = await getYouTubeOembed(id);
     const t = typeof (data as any)?.title === 'string' ? (data as any).title : '';
     return t;
   } catch {
@@ -56,9 +54,7 @@ export async function fetchYouTubeLengthString(id: string): Promise<string | nul
     return `${minutes}:${String(secs).padStart(2, '0')}`;
   };
   try {
-    const res = await fetch(`https://www.youtube.com/watch?v=${id}&hl=en`);
-    if (!res.ok) return null;
-    const html = await res.text();
+    const html = await getYouTubePage(id);
     let m = html.match(/\"lengthSeconds\":\"(\d+)\"/);
     if (m && m[1]) {
       const secs = Math.max(0, parseInt(m[1], 10) || 0);
@@ -100,18 +96,10 @@ export async function enrichWithLengths<T extends { url: string }>(items: T[], c
 
 export type TranscriptSegment = { text: string; duration: number; offset: number };
 
+import { getVideoTranscript as getVideoTranscriptApi, getYouTubeOembed, getYouTubePage } from '../../config/api';
+
 export async function getVideoTranscript(video: string, lang: string): Promise<TranscriptSegment[]> {
-  const response = await fetch('http://localhost:3000/transcript', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ video, lang }),
-  });
-  if (!response.ok) {
-    throw new Error(`Transcript request failed: ${response.status}`);
-  }
-  const data = await response.json();
+  const data = await getVideoTranscriptApi(video, lang);
   return data as TranscriptSegment[];
 }
 

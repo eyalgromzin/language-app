@@ -1,5 +1,5 @@
 
-- upload  server 
+- connect app to server 
 
 - deep link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
 

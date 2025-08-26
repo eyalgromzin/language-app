@@ -8,6 +8,7 @@ import { playCorrectFeedback, playWrongFeedback } from '../common';
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
+import { getBabySteps } from '../../../config/api';
 
 type WordEntry = {
   word: string;
@@ -45,16 +46,7 @@ type StepsFile = {
   }>;
 };
 
-const apiBaseUrl = (() => {
-  const scriptURL: string | undefined = (NativeModules as any)?.SourceCode?.scriptURL;
-  if (scriptURL) {
-    try {
-      const { hostname } = new URL(scriptURL);
-      return `http://${hostname}:3000`;
-    } catch {}
-  }
-  return 'http://localhost:3000';
-})();
+
 
 function ensureCounters(entry: WordEntry): WordEntry {
   return {
@@ -161,22 +153,14 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
       const nativeCode = getLangCode(nativeName) || 'en';
       const otherCode = nativeCode !== currentCode ? nativeCode : (currentCode === 'en' ? 'es' : 'en');
 
-      const res = await fetch(`${apiBaseUrl}/baby-steps/get`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ language: otherCode }),
-      });
-
-      if (res.ok) {
-        const stepsFile: StepsFile = await res.json();
-        for (const step of (stepsFile.steps || [])) {
-          const match = step.items.find((it) => it.id === itemId);
-          if (match) return match.text;
-        }
+      const stepsFile: StepsFile = await getBabySteps(otherCode);
+      for (const step of (stepsFile.steps || [])) {
+        const match = step.items.find((it) => it.id === itemId);
+        if (match) return match.text;
       }
     } catch {}
     return null;
-  }, [apiBaseUrl]);
+  }, []);
 
   const loadBase = React.useCallback(async () => {
     if (props.embedded) {
@@ -198,27 +182,18 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
       try {
         const learningName = await AsyncStorage.getItem('language.learning');
         const code = getLangCode(learningName) || 'en';
-        const res = await fetch(`${apiBaseUrl}/baby-steps/get`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ language: code }),
-        });
-        if (res.ok) {
-          const stepsFile: StepsFile = await res.json();
-          const tokensSet = new Set<string>();
-          (stepsFile.steps || []).forEach((step) => {
-            (step.items || []).forEach((it) => {
-              if (it.type === 'sentence' || it.practiceType === 'missingWords' || it.practiceType === 'formulateSentense') {
-                tokenizeSentence(it.text).forEach((t) => t && tokensSet.add(t));
-              } else if (it.type === 'word' || it.practiceType === 'chooseTranslation') {
-                if (it.text) tokensSet.add(it.text);
-              }
-            });
+        const stepsFile: StepsFile = await getBabySteps(code);
+        const tokensSet = new Set<string>();
+        (stepsFile.steps || []).forEach((step) => {
+          (step.items || []).forEach((it) => {
+            if (it.type === 'sentence' || it.practiceType === 'missingWords' || it.practiceType === 'formulateSentense') {
+              tokenizeSentence(it.text).forEach((t) => t && tokensSet.add(t));
+            } else if (it.type === 'word' || it.practiceType === 'chooseTranslation') {
+              if (it.text) tokensSet.add(it.text);
+            }
           });
-          setFallbackTokens(Array.from(tokensSet));
-        } else {
-          setFallbackTokens([]);
-        }
+        });
+        setFallbackTokens(Array.from(tokensSet));
       } catch {
         setFallbackTokens([]);
       }

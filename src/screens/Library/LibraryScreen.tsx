@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList, TouchableOpacity, ActivityIndicator, Platform, NativeModules, Modal, Pressable, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
+import { getLibraryMeta, getLibraryUrlsWithCriterias } from '../../config/api';
 
 function LibraryScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
@@ -18,18 +19,7 @@ function LibraryScreen(): React.JSX.Element {
   const [metaLevels, setMetaLevels] = React.useState<string[] | null>(null);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
 
-  const apiBaseUrl = React.useMemo(() => {
-    // In dev, derive host from Metro bundler URL so device can reach the PC
-    const scriptURL: string | undefined = (NativeModules as any)?.SourceCode?.scriptURL;
-    if (scriptURL) {
-      try {
-        const { hostname } = new URL(scriptURL);
-        return `http://${hostname}:3000`;
-      } catch {}
-    }
-    // Fallbacks for emulators/simulators
-    return 'http://localhost:3000';
-  }, []);
+
 
   // Resolve persisted learning language
   React.useEffect(() => {
@@ -62,11 +52,7 @@ function LibraryScreen(): React.JSX.Element {
     let isCancelled = false;
     const loadMeta = async () => {
       try {
-        const response = await fetch(`${apiBaseUrl}/library/getMeta`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-        });
-        const json: { itemTypes?: string[]; levels?: string[] } = await response.json();
+        const json: { itemTypes?: string[]; levels?: string[] } = await getLibraryMeta();
         if (!isCancelled) {
           if (Array.isArray(json.itemTypes)) setMetaTypes(json.itemTypes);
           if (Array.isArray(json.levels)) setMetaLevels(json.levels);
@@ -77,7 +63,7 @@ function LibraryScreen(): React.JSX.Element {
     return () => {
       isCancelled = true;
     };
-  }, [apiBaseUrl]);
+  }, []);
 
   const typeOptions = React.useMemo(() => {
     if (metaTypes && metaTypes.length) return ['All', ...metaTypes];
@@ -114,12 +100,7 @@ function LibraryScreen(): React.JSX.Element {
           return;
         }
         setLoading(true);
-        const response = await fetch(`${apiBaseUrl}/library/getUrlsWithCriterias`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ language: toLanguageSymbol(learningLanguage), level: selectedLevel, type: selectedType }),
-        });
-        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await response.json();
+        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await getLibraryUrlsWithCriterias(selectedType, selectedLevel);
         if (!isCancelled) setUrls(json.urls ?? []);
       } catch (e) {
         if (!isCancelled) setError('Failed to load URLs');
@@ -131,7 +112,7 @@ function LibraryScreen(): React.JSX.Element {
     return () => {
       isCancelled = true;
     };
-  }, [selectedType, selectedLevel, apiBaseUrl, allUrls, toLanguageSymbol, learningLanguage]);
+  }, [selectedType, selectedLevel, allUrls, toLanguageSymbol, learningLanguage]);
 
   // On tab change, fetch from server with empty media/level/type (only language)
   React.useEffect(() => {
@@ -139,12 +120,7 @@ function LibraryScreen(): React.JSX.Element {
     const run = async () => {
       try {
         setError(null);
-        const response = await fetch(`${apiBaseUrl}/library/getUrlsWithCriterias`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ language: toLanguageSymbol(learningLanguage) }),
-        });
-        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await response.json();
+        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await getLibraryUrlsWithCriterias();
         if (!isCancelled) {
           const list = json.urls ?? [];
           setUrls(list);
@@ -158,7 +134,7 @@ function LibraryScreen(): React.JSX.Element {
     return () => {
       isCancelled = true;
     };
-  }, [selectedMedia, apiBaseUrl, toLanguageSymbol, learningLanguage]);
+  }, [selectedMedia, toLanguageSymbol, learningLanguage]);
 
   // Close any open dropdowns when switching tabs
   React.useEffect(() => {

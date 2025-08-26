@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { translateWord, getMyMemoryTranslation } from '../config/api';
 
 export const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
   English: 'en',
@@ -119,40 +120,28 @@ export const fetchTranslation = async (
   const cacheKey = makeCacheKey(normalizedWord, fromCode, toCode);
   const cached = getCached(cacheKey);
   if (cached) return cached;
+  
   try {
     // First try local server endpoint
-    const serverRes = await fetch('http://localhost:3000/translate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        word: normalizedWord,
-        fromLanguageSymbol: fromCode,
-        toLanguageSymbol: toCode,
-      }),
-    });
-    if (serverRes.ok) {
-      const text = await serverRes.text();
-      if (typeof text === 'string' && text.trim().length > 0) {
-        const t = text.trim();
-        setCached(cacheKey, t);
-        return t;
-      }
+    const text = await translateWord(normalizedWord, fromCode, toCode);
+    if (typeof text === 'string' && text.trim().length > 0) {
+      const t = text.trim();
+      setCached(cacheKey, t);
+      return t;
     }
   } catch {}
+  
   // Fallback to direct external API if local server is unavailable
   try {
-    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(normalizedWord)}&langpair=${encodeURIComponent(fromCode)}|${encodeURIComponent(toCode)}`;
-    const res = await fetch(url);
-    if (res.ok) {
-      const json = await res.json();
-      const txt = json?.responseData?.translatedText;
-      if (typeof txt === 'string' && txt.trim().length > 0) {
-        const t = txt.trim();
-        setCached(cacheKey, t);
-        return t;
-      }
+    const json = await getMyMemoryTranslation(normalizedWord, fromCode, toCode);
+    const txt = json?.responseData?.translatedText;
+    if (typeof txt === 'string' && txt.trim().length > 0) {
+      const t = txt.trim();
+      setCached(cacheKey, t);
+      return t;
     }
   } catch {}
+  
   return word;
 };
 

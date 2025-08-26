@@ -9,6 +9,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import { parseYandexImageUrlsFromHtml } from '../practice/common';
+import { getLibraryMeta, getLibraryUrlsWithCriterias, addLibraryUrl } from '../../config/api';
 
 type StoredBook = {
   id: string;
@@ -81,16 +82,7 @@ function BookReaderScreen(): React.JSX.Element {
     } as const;
   }, [readerTheme]);
 
-  const apiBaseUrl = React.useMemo(() => {
-    const scriptURL: string | undefined = (NativeModules as any)?.SourceCode?.scriptURL;
-    if (scriptURL) {
-      try {
-        const { hostname } = new URL(scriptURL);
-        return `http://${hostname}:3000`;
-      } catch {}
-    }
-    return 'http://localhost:3000';
-  }, []);
+
 
   // Add-to-library modal state
   const [showAddBookModal, setShowAddBookModal] = React.useState<boolean>(false);
@@ -200,16 +192,12 @@ function BookReaderScreen(): React.JSX.Element {
     let cancelled = false;
     (async () => {
       try {
-        const response = await fetch(`${apiBaseUrl}/library/getMeta`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-        });
-        const json: { itemTypes?: string[] } = await response.json();
+        const json: { itemTypes?: string[] } = await getLibraryMeta();
         if (!cancelled && Array.isArray(json.itemTypes)) setItemTypes(json.itemTypes);
       } catch {}
     })();
     return () => { cancelled = true; };
-  }, [apiBaseUrl]);
+  }, []);
 
   // Weekly prompt logic: check last prompt time, verify URL existence in library, then either ask or open add dialog
   React.useEffect(() => {
@@ -256,13 +244,7 @@ function BookReaderScreen(): React.JSX.Element {
         if (normalizedSaved) {
           try {
             // Query server for existing book entries and match by exact URL
-            const payload = { language: toLanguageSymbol(learningLanguage), media: 'book' } as any;
-            const response = await fetch(`${apiBaseUrl}/library/getUrlsWithCriterias`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload),
-            });
-            const json: { urls?: { url: string }[] } = await response.json();
+            const json: { urls?: { url: string }[] } = await getLibraryUrlsWithCriterias(undefined, undefined, 'book');
             const list = Array.isArray(json?.urls) ? json.urls : [];
             existsInLibrary = list.some((it) => (it && typeof it.url === 'string' ? it.url.trim() : '') === normalizedSaved);
           } catch {}
@@ -313,7 +295,7 @@ function BookReaderScreen(): React.JSX.Element {
       } catch {}
     })();
     return () => { cancelled = true; };
-  }, [bookId, learningLanguage, apiBaseUrl, bookTitle]);
+  }, [bookId, learningLanguage, bookTitle]);
 
   // Mark this book as "opened before" on unmount so future sessions can show the prompt
   React.useEffect(() => {
@@ -371,11 +353,7 @@ function BookReaderScreen(): React.JSX.Element {
         name: safeName,
         media: 'book',
       } as const;
-      await fetch(`${apiBaseUrl}/library/addUrl`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
+      await addLibraryUrl(normalizedUrl, safeType, 'easy', safeName);
       // Persist this URL for future existence checks per book
       if (bookId) {
         try {

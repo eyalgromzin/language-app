@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity, Image, Alert, ToastAndroid, Modal } from 'react-native';
+import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity, Image, Alert, ToastAndroid, Modal, NativeModules } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -20,6 +20,13 @@ import {
 } from './videoMethods';
 import Transcript from './Transcript';
 import harmfulWordsService from '../../services/harmfulWordsService';
+import { 
+  getVideoStartupPage, 
+  upsertVideoNowPlaying, 
+  getVideoNowPlaying, 
+  searchYouTube, 
+  addLibraryUrl 
+} from '../../config/api';
 
 
 
@@ -169,6 +176,8 @@ function VideoScreen(): React.JSX.Element {
   const [nowPlayingError, setNowPlayingError] = React.useState<string | null>(null);
   const [hidePlayback, setHidePlayback] = React.useState<boolean>(false);
 
+
+  
   type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
   const FAVOURITES_KEY = 'video.favourites';
   const [favourites, setFavourites] = React.useState<FavouriteItem[]>([]);
@@ -354,16 +363,7 @@ function VideoScreen(): React.JSX.Element {
       const title = (currentVideoTitle && currentVideoTitle.trim()) ? currentVideoTitle : postUrl;
       const thumb = videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : undefined;
 
-      await fetch('http://localhost:3000/video/now-playing/upsert', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          languageSymbol: symbol,
-          title,
-          url: postUrl,
-          ...(thumb ? { thumbnailUrl: thumb } : {}),
-        }),
-      });
+      await upsertVideoNowPlaying(postUrl, title, symbol);
     } catch {}
   }, [url, inputUrl, learningLanguage, currentVideoTitle, videoId, mapLanguageNameToYoutubeCode]);
 
@@ -375,15 +375,7 @@ function VideoScreen(): React.JSX.Element {
       setStartupVideosLoading(true);
       setStartupVideosError(null);
       try {
-        const response = await fetch('http://localhost:3000/getVideoStartupPage', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ symbol: langSymbol }),
-        });
-        if (!response.ok) throw new Error(String(response.status));
-        const data = await response.json();
+        const data = await getVideoStartupPage();
         const results = Array.isArray(data?.results) ? data.results : [];
         const typed = (results as Array<{ url: string; thumbnail: string; title: string; description: string }>);
         const enriched = await enrichWithLengths(typed);
@@ -426,13 +418,7 @@ function VideoScreen(): React.JSX.Element {
       setNowPlayingLoading(true);
       setNowPlayingError(null);
       try {
-        const response = await fetch('http://localhost:3000/video/now-playing', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ languageSymbol: langSymbol }),
-        });
-        if (!response.ok) throw new Error(String(response.status));
-        const data = await response.json();
+        const data = await getVideoNowPlaying();
         const results = Array.isArray(data?.results) ? data.results : Array.isArray(data) ? data : [];
         const normalized = (results as any[]).map(r => ({
           url: r.url,
@@ -459,7 +445,7 @@ function VideoScreen(): React.JSX.Element {
 
   
 
-  const fetchTranslation = async (word: string): Promise<string> => fetchTranslationCommon(word, learningLanguage, nativeLanguage);
+      const fetchTranslation = async (word: string): Promise<string> => fetchTranslationCommon(word, learningLanguage, nativeLanguage);
 
   
 
@@ -709,13 +695,7 @@ function VideoScreen(): React.JSX.Element {
     setSearchError(null);
     (async () => {
       try {
-        const response = await fetch('http://localhost:3000/youtube/search', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ query: q }),
-        });
-        if (!response.ok) throw new Error(String(response.status));
-        const data = await response.json();
+        const data = await searchYouTube(q);
         const results = Array.isArray(data) ? data : Array.isArray((data || {}).results) ? (data.results as any[]) : [];
         const typed = (results as Array<{ url: string; thumbnail: string | null; title: string; description?: string }>)
           .map((r) => ({ ...r }));

@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getApiUrl, API_CONFIG } from '../config/api';
+import { getHarmfulWords } from '../config/api';
 
 const HARMFUL_WORDS_KEY = 'harmful.words';
 const HARMFUL_WORDS_CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
@@ -26,17 +26,9 @@ class HarmfulWordsService {
       }
 
       console.log('[HarmfulWords] Cache invalid or missing, fetching from server...');
-      console.log('[HarmfulWords] API URL:', getApiUrl(API_CONFIG.ENDPOINTS.HARMFUL_WORDS));
       
       // Fetch from server
-      const response = await fetch(getApiUrl(API_CONFIG.ENDPOINTS.HARMFUL_WORDS));
-      console.log('[HarmfulWords] Response status:', response.status);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const words = await response.json();
+      const words = await getHarmfulWords();
       console.log('[HarmfulWords] Received words from server:', words.length, 'words');
       this.cachedWords = words;
       this.lastFetchTime = Date.now();

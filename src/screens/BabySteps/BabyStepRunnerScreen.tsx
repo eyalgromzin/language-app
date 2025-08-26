@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView, NativeModules } f
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
+import { getBabySteps } from '../../config/api';
 import FormulateSentenseScreen from '../practice/formulateSentense/FormulateSentenseScreen';
 import MissingWordsScreen from '../practice/missingWords/MissingWordsScreen';
 import Choose1OutOfN from '../practice/choose1OutOfN/Choose1OutOfN';
@@ -133,16 +134,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
   const [currentHadMistake, setCurrentHadMistake] = React.useState<boolean>(false);
   const [resetSeed, setResetSeed] = React.useState<number>(0);
   const [selectedIndices, setSelectedIndices] = React.useState<number[]>([]);
-  const apiBaseUrl = React.useMemo(() => {
-    const scriptURL: string | undefined = (NativeModules as any)?.SourceCode?.scriptURL;
-    if (scriptURL) {
-      try {
-        const { hostname } = new URL(scriptURL);
-        return `http://${hostname}:3000`;
-      } catch {}
-    }
-    return 'http://localhost:3000';
-  }, []);
+
 
   React.useEffect(() => {
     let mounted = true;
@@ -161,15 +153,8 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         // Load steps from server only
         const loadSteps = async (code: string): Promise<StepsFile> => {
           try {
-            const res = await fetch(`${apiBaseUrl}/baby-steps/get`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ language: code }),
-            });
-            if (res.ok) {
-              const json = (await res.json()) as StepsFile;
-              if (json && Array.isArray(json.steps) && json.steps.length) return json;
-            }
+            const json = await getBabySteps(code);
+            if (json && Array.isArray(json.steps) && json.steps.length) return json;
           } catch {}
           return { language: code, steps: [], overview: undefined } as StepsFile;
         };

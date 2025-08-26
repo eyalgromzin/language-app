@@ -1,7 +1,7 @@
 // API Configuration
 export const API_CONFIG = {
-  // Development server URL - update this for production
-  SERVER_URL: 'http://localhost:3000',
+  // Production server URL with fallback to localhost
+  SERVER_URL: process.env.REACT_APP_SERVER_URL || 'http://localhost:3000',
   
   // API endpoints
   ENDPOINTS: {
@@ -10,8 +10,13 @@ export const API_CONFIG = {
     YOUTUBE_SEARCH: '/youtube/search',
     VIDEO_STARTUP: '/getVideoStartupPage',
     LIBRARY_ADD_URL: '/library/addUrl',
+    LIBRARY_GET_META: '/library/getMeta',
+    LIBRARY_GET_URLS_WITH_CRITERIAS: '/library/getUrlsWithCriterias',
     VIDEO_NOW_PLAYING: '/video/now-playing/upsert',
+    VIDEO_NOW_PLAYING_GET: '/video/now-playing',
     CACHE_LAST_WORDS: '/cache/last-words',
+    BABY_STEPS_GET: '/baby-steps/get',
+    TRANSCRIPT: '/transcript',
   }
 };
 
@@ -23,4 +28,173 @@ export const getApiUrl = (endpoint: string): string => {
 // Helper function to update server URL (useful for different environments)
 export const updateServerUrl = (newUrl: string): void => {
   API_CONFIG.SERVER_URL = newUrl;
+};
+
+// Generic API request function
+const apiRequest = async <T>(
+  endpoint: string, 
+  options: RequestInit = {}
+): Promise<T> => {
+  const url = getApiUrl(endpoint);
+  const response = await fetch(url, {
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+    ...options,
+  });
+
+  if (!response.ok) {
+    throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+  }
+
+  return response.json();
+};
+
+// Translation API
+export const translateWord = async (
+  word: string,
+  fromLanguageSymbol: string,
+  toLanguageSymbol: string
+): Promise<string> => {
+  const response = await fetch(getApiUrl(API_CONFIG.ENDPOINTS.TRANSLATE), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      word,
+      fromLanguageSymbol,
+      toLanguageSymbol,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Translation request failed: ${response.status}`);
+  }
+
+  const text = await response.text();
+  return text.trim();
+};
+
+// Baby Steps API
+export const getBabySteps = async (language: string): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.BABY_STEPS_GET, {
+    method: 'POST',
+    body: JSON.stringify({ language }),
+  });
+};
+
+// Library API
+export const getLibraryMeta = async (): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.LIBRARY_GET_META);
+};
+
+export const getLibraryUrlsWithCriterias = async (
+  type?: string,
+  level?: string,
+  media?: string
+): Promise<any> => {
+  const body: any = {};
+  if (type) body.type = type;
+  if (level) body.level = level;
+  if (media) body.media = media;
+
+  return apiRequest(API_CONFIG.ENDPOINTS.LIBRARY_GET_URLS_WITH_CRITERIAS, {
+    method: 'POST',
+    body: JSON.stringify(body),
+  });
+};
+
+export const addLibraryUrl = async (
+  url: string,
+  type: string,
+  level: string,
+  title?: string
+): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.LIBRARY_ADD_URL, {
+    method: 'POST',
+    body: JSON.stringify({
+      url,
+      type,
+      level,
+      title,
+    }),
+  });
+};
+
+// Video API
+export const getVideoStartupPage = async (): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.VIDEO_STARTUP);
+};
+
+export const upsertVideoNowPlaying = async (
+  url: string,
+  title: string,
+  language: string
+): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.VIDEO_NOW_PLAYING, {
+    method: 'POST',
+    body: JSON.stringify({
+      url,
+      title,
+      language,
+    }),
+  });
+};
+
+export const getVideoNowPlaying = async (): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.VIDEO_NOW_PLAYING_GET);
+};
+
+export const searchYouTube = async (query: string): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.YOUTUBE_SEARCH, {
+    method: 'POST',
+    body: JSON.stringify({ query }),
+  });
+};
+
+export const getVideoTranscript = async (
+  video: string,
+  lang: string
+): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.TRANSCRIPT, {
+    method: 'POST',
+    body: JSON.stringify({ video, lang }),
+  });
+};
+
+// Harmful Words API
+export const getHarmfulWords = async (): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.HARMFUL_WORDS);
+};
+
+// External APIs (not our server)
+export const getYouTubeOembed = async (videoId: string): Promise<any> => {
+  const url = `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${videoId}`)}&format=json`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`YouTube oembed request failed: ${response.status}`);
+  }
+  return response.json();
+};
+
+export const getYouTubePage = async (videoId: string): Promise<string> => {
+  const url = `https://www.youtube.com/watch?v=${videoId}&hl=en`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`YouTube page request failed: ${response.status}`);
+  }
+  return response.text();
+};
+
+export const getMyMemoryTranslation = async (
+  word: string,
+  fromCode: string,
+  toCode: string
+): Promise<any> => {
+  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(word)}&langpair=${encodeURIComponent(fromCode)}|${encodeURIComponent(toCode)}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`MyMemory translation request failed: ${response.status}`);
+  }
+  return response.json();
 };

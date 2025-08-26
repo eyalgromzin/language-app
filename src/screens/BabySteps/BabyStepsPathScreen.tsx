@@ -4,6 +4,7 @@ import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { Svg, Path } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
+import { getBabySteps } from '../../config/api';
 
 type StepItem = {
   id: string;
@@ -32,16 +33,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
   const [maxCompletedIndex, setMaxCompletedIndex] = React.useState<number>(0); // 0 means none finished
   const [translatedTitleById, setTranslatedTitleById] = React.useState<Record<string, string>>({});
   const navigation = useNavigation<any>();
-  const apiBaseUrl = React.useMemo(() => {
-    const scriptURL: string | undefined = (NativeModules as any)?.SourceCode?.scriptURL;
-    if (scriptURL) {
-      try {
-        const { hostname } = new URL(scriptURL);
-        return `http://${hostname}:3000`;
-      } catch {}
-    }
-    return 'http://localhost:3000';
-  }, []);
+
 
   React.useEffect(() => {
     let mounted = true;
@@ -55,19 +47,10 @@ function BabyStepsPathScreen(): React.JSX.Element {
         const nativeCode = getLangCode(nativeName) || 'en';
         // Load steps for current learning language from server only
         try {
-          const res = await fetch(`${apiBaseUrl}/baby-steps/get`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ language: learningCode }),
-          });
+          const json: StepsFile = await getBabySteps(learningCode);
           if (!mounted) return;
-          if (res.ok) {
-            const json: StepsFile = await res.json();
-            if (json && Array.isArray(json.steps) && json.steps.length) {
-              setSteps(json.steps);
-            } else {
-              setSteps([]);
-            }
+          if (json && Array.isArray(json.steps) && json.steps.length) {
+            setSteps(json.steps);
           } else {
             setSteps([]);
           }
@@ -77,19 +60,10 @@ function BabyStepsPathScreen(): React.JSX.Element {
         }
         // Build translated titles map from native language file if available
         try {
-          const resNative = await fetch(`${apiBaseUrl}/baby-steps/get`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ language: nativeCode }),
-          });
-          if (resNative.ok) {
-            const nativeJson: StepsFile = await resNative.json();
-            const map: Record<string, string> = {};
-            (nativeJson.steps || []).forEach((st) => { map[st.id] = st.title; });
-            setTranslatedTitleById(map);
-          } else {
-            setTranslatedTitleById({});
-          }
+          const nativeJson: StepsFile = await getBabySteps(nativeCode);
+          const map: Record<string, string> = {};
+          (nativeJson.steps || []).forEach((st) => { map[st.id] = st.title; });
+          setTranslatedTitleById(map);
         } catch {
           setTranslatedTitleById({});
         }
@@ -131,20 +105,13 @@ function BabyStepsPathScreen(): React.JSX.Element {
           const nativeName = await AsyncStorage.getItem('language.native');
           const nativeCode = getLangCode(nativeName) || 'en';
           try {
-            const resNative = await fetch(`${apiBaseUrl}/baby-steps/get`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ language: nativeCode }),
-            });
-            if (resNative.ok) {
-              const nativeJson: StepsFile = await resNative.json();
-              const map: Record<string, string> = {};
-              (nativeJson.steps || []).forEach((st) => { map[st.id] = st.title; });
-              setTranslatedTitleById(map);
-            } else {
-              setTranslatedTitleById({});
-            }
-          } catch {}
+            const nativeJson: StepsFile = await getBabySteps(nativeCode);
+            const map: Record<string, string> = {};
+            (nativeJson.steps || []).forEach((st) => { map[st.id] = st.title; });
+            setTranslatedTitleById(map);
+          } catch {
+            setTranslatedTitleById({});
+          }
         } catch {}
       })();
       return () => { active = false; };

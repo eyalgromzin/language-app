@@ -9,6 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { parseYandexImageUrlsFromHtml } from '../practice/common';
 import harmfulWordsService from '../../services/harmfulWordsService';
+import { addLibraryUrl } from '../../config/api';
 
 function SurfScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
@@ -499,16 +500,7 @@ function SurfScreen(): React.JSX.Element {
 
   const HOMEPAGE_KEY = 'surf.homepage';
 
-  const apiBaseUrl = React.useMemo(() => {
-    const scriptURL: string | undefined = (NativeModules as any)?.SourceCode?.scriptURL;
-    if (scriptURL) {
-      try {
-        const { hostname } = new URL(scriptURL);
-        return `http://${hostname}:3000`;
-      } catch {}
-    }
-    return 'http://localhost:3000';
-  }, []);
+
 
   React.useEffect(() => {
     let mounted = true;
@@ -639,11 +631,7 @@ function SurfScreen(): React.JSX.Element {
         name: safeName,
         media,
       } as const;
-      await fetch(`${apiBaseUrl}/library/addUrl`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
+      await addLibraryUrl(url, typeName || 'any', level || 'easy', displayName);
     } catch {}
   };
 
