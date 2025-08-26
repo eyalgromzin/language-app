@@ -11,12 +11,12 @@ export class VideoController {
 
   @Post('now-playing/upsert')
   async upsertNowPlaying(
-    @Body('languageSymbol') languageSymbol?: string,
-    @Body('title') title?: string,
-    @Body('description') description?: string,
-    @Body('thumbnailUrl') thumbnailUrl?: string,
-    @Body('url') url?: string,
-    @Body('length') length?: string,
+    @Body('languageSymbol') languageSymbol: string,
+    @Body('title') title: string,
+    @Body('description') description: string,
+    @Body('thumbnailUrl') thumbnailUrl: string,
+    @Body('url') url: string,
+    @Body('length') length: string,
   ): Promise<{ ok: true }>
   {
     if (!languageSymbol || !title || !url) {

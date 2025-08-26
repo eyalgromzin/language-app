@@ -354,16 +354,16 @@ function VideoScreen(): React.JSX.Element {
 
   const upsertNowPlayingForCurrent = React.useCallback(async () => {
     try {
-      const postUrl = (url || inputUrl || '').trim();
-      if (!postUrl) return;
-      if (lastUpsertedUrlRef.current === postUrl) return;
-      lastUpsertedUrlRef.current = postUrl;
+      const videoUrl = (url || inputUrl || '').trim();
+      if (!videoUrl) return;
+      if (lastUpsertedUrlRef.current === videoUrl) return;
+      lastUpsertedUrlRef.current = videoUrl;
 
       const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
-      const title = (currentVideoTitle && currentVideoTitle.trim()) ? currentVideoTitle : postUrl;
+      const title = (currentVideoTitle && currentVideoTitle.trim()) ? currentVideoTitle : videoUrl;
       const thumb = videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : undefined;
 
-      await upsertVideoNowPlaying(postUrl, title, symbol);
+      await upsertVideoNowPlaying(videoUrl, title, symbol);
     } catch {}
   }, [url, inputUrl, learningLanguage, currentVideoTitle, videoId, mapLanguageNameToYoutubeCode]);
 

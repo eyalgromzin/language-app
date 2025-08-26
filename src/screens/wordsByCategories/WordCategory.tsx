@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView, View, Text, TouchableOpacity, StyleProp, ViewStyle, TextStyle, ImageStyle, SafeAreaView } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity, StyleProp, ViewStyle, TextStyle, ImageStyle, SafeAreaView, Animated } from 'react-native';
 import type { WordItem, WordCategoryType } from '../../types/words';
 
 type Styles = {
@@ -44,6 +44,31 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
     saveItemToMyWords,
   } = props;
 
+  // Animation value for plus button rotation
+  const spinValue = React.useRef(new Animated.Value(0)).current;
+
+  const spinPlus = React.useCallback((onComplete?: () => void) => {
+    // Reset to 0 and animate to 360 degrees
+    spinValue.setValue(0);
+    Animated.timing(spinValue, {
+      toValue: 1,
+      duration: 500,
+      useNativeDriver: true,
+    }).start(onComplete);
+  }, [spinValue]);
+
+  // Create rotation interpolate
+  const spin = spinValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '360deg'],
+  });
+
+  const handlePlusPress = React.useCallback((item: WordItem) => {
+    spinPlus(() => {
+      saveItemToMyWords(item);
+    });
+  }, [spinPlus, saveItemToMyWords]);
+
   if (!selectedCategory) return null;
 
   return (
@@ -87,14 +112,16 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
                   </View>
                 )}
                 <TouchableOpacity
-                  onPress={() => saveItemToMyWords(item)}
+                  onPress={() => handlePlusPress(item)}
                   style={styles.addBtnWrap}
                   accessibilityRole="button"
                   accessibilityLabel="Add to My Words"
                   hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
                   activeOpacity={0.85}
                 >
-                  <Text style={styles.addBtnText}>+</Text>
+                  <Animated.View style={{ transform: [{ rotate: spin }] }}>
+                    <Text style={styles.addBtnText}>+</Text>
+                  </Animated.View>
                 </TouchableOpacity>
               </View>
               {item.type === 'sentence' ? (

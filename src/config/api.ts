@@ -2,7 +2,8 @@
 // API Configuration
 export const API_CONFIG = {
   // Production server URL with fallback to localhost
-  SERVER_URL: 'https://language-learn-server.onrender.com',
+  // SERVER_URL: 'https://language-learn-server.onrender.com',
+  SERVER_URL: 'http://localhost:3000',
   
   // API endpoints
   ENDPOINTS: {
@@ -13,7 +14,7 @@ export const API_CONFIG = {
     LIBRARY_ADD_URL: '/library/addUrl',
     LIBRARY_GET_META: '/library/getMeta',
     LIBRARY_GET_URLS_WITH_CRITERIAS: '/library/getUrlsWithCriterias',
-    VIDEO_NOW_PLAYING: '/video/now-playing/upsert',
+    VIDEO_NOW_PLAYING_UPSERT: '/video/now-playing/upsert',
     VIDEO_NOW_PLAYING_GET: '/video/now-playing',
     CACHE_LAST_WORDS: '/cache/last-words',
     BABY_STEPS_GET: '/baby-steps/get',
@@ -135,7 +136,7 @@ export const upsertVideoNowPlaying = async (
   title: string,
   language: string
 ): Promise<any> => {
-  return apiRequest(API_CONFIG.ENDPOINTS.VIDEO_NOW_PLAYING, {
+  return apiRequest(API_CONFIG.ENDPOINTS.VIDEO_NOW_PLAYING_UPSERT, {
     method: 'POST',
     body: JSON.stringify({
       url,
