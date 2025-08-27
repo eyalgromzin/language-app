@@ -17,22 +17,22 @@ export class NowPlaying {
   @Column({ nullable: true })
   description: string;
 
-  @Column({ nullable: true })
+  @Column({ name: 'thumbnail_url', nullable: true })
   thumbnailUrl: string;
 
   @Column({ nullable: true })
   length: string;
 
-  @Column()
+  @Column({ name: 'language_id' })
   languageId: number;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 
   @ManyToOne(() => Language, language => language.nowPlaying)
-  @JoinColumn({ name: 'languageId' })
+  @JoinColumn({ name: 'language_id' })
   language: Language;
 }
