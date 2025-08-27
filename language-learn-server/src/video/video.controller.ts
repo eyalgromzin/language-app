@@ -11,25 +11,51 @@ export class VideoController {
 
   @Post('now-playing/upsert')
   async upsertNowPlaying(
-    @Body('languageSymbol') languageSymbol: string,
-    @Body('title') title: string,
-    @Body('description') description: string,
-    @Body('thumbnailUrl') thumbnailUrl: string,
     @Body('url') url: string,
-    @Body('length') length: string,
+    @Body('title') title: string,
+    @Body('language') language: string,
   ): Promise<{ ok: true }>
   {
-    if (!languageSymbol || !title || !url) {
-      throw new BadRequestException('Missing required body params: languageSymbol, title, url');
+    if (!url || !title || !language) {
+      throw new BadRequestException('Missing required body params: url, title, language');
     }
-    let len = (length ?? '').trim();
-    if (!len) {
+    
+    // Extract video ID for thumbnail
+    const videoId = this.extractYouTubeVideoId(url);
+    const thumbnailUrl = videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : undefined;
+    
+    // Get video length if possible
+    let length: string | undefined;
+    if (videoId) {
       try {
-        len = (await this.youTubeService.getLengthString(url)) || '';
+        length = await this.youTubeService.getLengthString(url) || undefined;
       } catch {}
     }
-    await this.nowPlayingService.upsertNowPlaying({ languageSymbol, title, description, thumbnailUrl, url, length: len || undefined });
+    
+    await this.nowPlayingService.upsertNowPlaying({ 
+      languageSymbol: language, 
+      title, 
+      url, 
+      thumbnailUrl,
+      length
+    });
     return { ok: true };
+  }
+
+  private extractYouTubeVideoId(url: string): string | null {
+    const patterns = [
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+      /youtube\.com\/watch\?.*v=([^&\n?#]+)/,
+    ];
+    
+    for (const pattern of patterns) {
+      const match = url.match(pattern);
+      if (match && match[1]) {
+        return match[1];
+      }
+    }
+    
+    return null;
   }
 
   @Post('now-playing')

@@ -5,19 +5,21 @@ import { Level } from './entities/level.entity';
 import { Language } from './entities/language.entity';
 import { Media } from './entities/media.entity';
 import { LibraryItem } from './entities/library-item.entity';
+import { NowPlaying } from './entities/now-playing.entity';
 import { LibraryService } from './services/library.service';
 import { LibraryMigrationService } from './services/library-migration.service';
+import { NowPlayingService } from './services/now-playing.service';
 import { databaseConfig } from '../config/database.config';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       ...databaseConfig,
-      entities: [ItemType, Level, Language, Media, LibraryItem],
+      entities: [ItemType, Level, Language, Media, LibraryItem, NowPlaying],
     }),
-    TypeOrmModule.forFeature([ItemType, Level, Language, Media, LibraryItem]),
+    TypeOrmModule.forFeature([ItemType, Level, Language, Media, LibraryItem, NowPlaying]),
   ],
-  providers: [LibraryService, LibraryMigrationService],
-  exports: [LibraryService, LibraryMigrationService],
+  providers: [LibraryService, LibraryMigrationService, NowPlayingService],
+  exports: [LibraryService, LibraryMigrationService, NowPlayingService],
 })
 export class DatabaseModule {}

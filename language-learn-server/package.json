@@ -19,12 +19,14 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migrate:library": "ts-node src/migrate-library.ts",
-    "migrate:language-symbol": "ts-node src/migrate-language-symbol-to-id.ts"
+    "migrate:language-symbol": "ts-node src/migrate-language-symbol-to-id.ts",
+    "migrate:now-playing": "ts-node src/database/migrations/create-now-playing-table.ts"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/schedule": "^6.0.0",
     "@nestjs/typeorm": "^11.0.0",
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",

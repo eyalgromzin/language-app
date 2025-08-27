@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ScheduleModule } from '@nestjs/schedule';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LibraryController } from './library/library.controller';
@@ -14,7 +15,7 @@ import { HarmfulWordsModule } from './harmful-words/harmful-words.module';
 import { DatabaseModule } from './database/database.module';
 
 @Module({
-  imports: [HarmfulWordsModule, DatabaseModule],
+  imports: [HarmfulWordsModule, DatabaseModule, ScheduleModule.forRoot()],
   controllers: [AppController, LibraryController, BabyStepsController, VideoController],
   providers: [AppService, YouTubeService, TranslateService, WordCacheService, VideoCacheService, NowPlayingService, BabyStepsService],
 })

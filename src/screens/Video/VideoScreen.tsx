@@ -360,11 +360,33 @@ function VideoScreen(): React.JSX.Element {
 
       const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
       const title = (currentVideoTitle && currentVideoTitle.trim()) ? currentVideoTitle : videoUrl;
-      const thumb = videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : undefined;
 
       await upsertVideoNowPlaying(videoUrl, title, symbol);
     } catch {}
   }, [url, inputUrl, learningLanguage, currentVideoTitle, videoId, mapLanguageNameToYoutubeCode]);
+
+  // Set up minute-based upsert timer
+  React.useEffect(() => {
+    if (!isPlaying || !url || !learningLanguage) {
+      return;
+    }
+
+    const interval = setInterval(async () => {
+      try {
+        const videoUrl = (url || inputUrl || '').trim();
+        if (!videoUrl) return;
+
+        const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
+        const title = (currentVideoTitle && currentVideoTitle.trim()) ? currentVideoTitle : videoUrl;
+
+        await upsertVideoNowPlaying(videoUrl, title, symbol);
+      } catch (error) {
+        console.error('Failed to upsert now playing:', error);
+      }
+    }, 60000); // Every minute
+
+    return () => clearInterval(interval);
+  }, [isPlaying, url, inputUrl, learningLanguage, currentVideoTitle, mapLanguageNameToYoutubeCode]);
 
   
 
