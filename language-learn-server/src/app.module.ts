@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { LibraryService } from './database/services/library.service';
 import { LibraryController } from './library/library.controller';
 import { YouTubeService } from './youtube/youtube.service';
 import { TranslateService } from './translate/translate.service';
@@ -17,6 +16,6 @@ import { DatabaseModule } from './database/database.module';
 @Module({
   imports: [HarmfulWordsModule, DatabaseModule],
   controllers: [AppController, LibraryController, BabyStepsController, VideoController],
-  providers: [AppService, LibraryService, YouTubeService, TranslateService, WordCacheService, VideoCacheService, NowPlayingService, BabyStepsService],
+  providers: [AppService, YouTubeService, TranslateService, WordCacheService, VideoCacheService, NowPlayingService, BabyStepsService],
 })
 export class AppModule {}
