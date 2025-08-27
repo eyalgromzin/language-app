@@ -1,7 +1,7 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
 import { YoutubeTranscript } from 'youtube-transcript';
 import { Innertube } from 'youtubei.js';
-import { LibraryService } from '../library/library.service';
+import { LibraryService } from '../database/services/library.service';
 import { VideoCacheService } from '../cache/video-cache.service';
 
 @Injectable()
@@ -51,7 +51,7 @@ export class YouTubeService {
 
     let languageName = (language ?? '').trim();
     if (!languageName && symbol) {
-      const resolved = this.libraryService.getLanguageNameBySymbol(symbol);
+      const resolved = await this.libraryService.getLanguageNameBySymbol(symbol);
       if (!resolved) {
         throw new BadRequestException(`Unknown language symbol: ${symbol}`);
       }

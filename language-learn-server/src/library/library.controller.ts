@@ -89,4 +89,37 @@ export class LibraryController {
   async createMedia(@Body() mediaData: any) {
     return this.libraryService.createMedia(mediaData);
   }
+
+  // Frontend compatibility endpoints
+  @Get('getMeta')
+  async getMeta() {
+    return this.libraryService.getMeta();
+  }
+
+  @Get('getUrlsByLanguage/:languageOrSymbol')
+  async getUrlsByLanguage(@Param('languageOrSymbol') languageOrSymbol: string) {
+    return this.libraryService.getUrlsByLanguage(languageOrSymbol);
+  }
+
+  @Get('getUrlsWithCriterias')
+  async getUrlsWithCriteria(
+    @Query('languageOrSymbol') languageOrSymbol: string,
+    @Query('level') level?: string,
+    @Query('type') type?: string,
+    @Query('media') media?: string,
+  ) {
+    return this.libraryService.getUrlsWithCriteria(languageOrSymbol, level, type, media);
+  }
+
+  @Post('addUrl')
+  async addUrl(@Body() body: {
+    url: string;
+    language: string;
+    level: string | number;
+    type: string | number;
+    name: string;
+    media: string;
+  }) {
+    return this.libraryService.addUrl(body.url, body.language, body.level, body.type, body.name, body.media);
+  }
 }

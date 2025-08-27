@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { LibraryService } from './library/library.service';
+import { LibraryService } from './database/services/library.service';
 import { LibraryController } from './library/library.controller';
 import { YouTubeService } from './youtube/youtube.service';
 import { TranslateService } from './translate/translate.service';

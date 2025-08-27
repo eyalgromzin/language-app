@@ -2,7 +2,75 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ItemType, Level, Language, Media, LibraryItem } from '../entities';
-const libraryData = require('../../library/library.json');
+
+// Hardcoded library data (previously from library.json)
+const libraryData = {
+  itemTypes: [
+    { id: 1, name: "article" },
+    { id: 2, name: "story" },
+    { id: 3, name: "conversation" },
+    { id: 4, name: "lyrics" },
+    { id: 5, name: "any" }
+  ],
+  levels: [
+    { id: 1, name: "easy" },
+    { id: 2, name: "easy-medium" },
+    { id: 3, name: "medium" },
+    { id: 4, name: "medium-hard" },
+    { id: 5, name: "hard" }
+  ],
+  languages: [
+    { id: 1, name: "english", symbol: "en" },
+    { id: 2, name: "spanish", symbol: "es" }
+  ],
+  media: [
+    { id: 1, name: "web" },
+    { id: 2, name: "youtube" },
+    { id: 3, name: "book" }
+  ],
+  library: [
+    {
+      url: "cnn.com",
+      name: "English Article - Easy 1",
+      language: "en",
+      typeId: 1,
+      level: 2,
+      media: "web"
+    },
+    {
+      url: "https://www.youtube.com/watch?v=UijM1gt0-hM&t=3s",
+      name: "pollito titto",
+      language: "es",
+      typeId: 2,
+      level: 2,
+      media: "youtube"
+    },
+    {
+      url: "https://www.gutenberg.org/ebooks/41915",
+      name: "Spanish Dialogues, and Idiomatic Phrases Indispensible",
+      language: "es",
+      typeId: 1,
+      level: 2,
+      media: "book"
+    },
+    {
+      url: "https://www.test.com",
+      name: "Stories spanish",
+      language: "es",
+      typeId: 2,
+      level: "easy",
+      media: "book"
+    },
+    {
+      url: "https://cnnespanol.cnn.com/",
+      name: "cnnespanol.cnn.com",
+      language: "es",
+      typeId: 4,
+      level: "easy",
+      media: "web"
+    }
+  ]
+};
 
 @Injectable()
 export class LibraryMigrationService {
