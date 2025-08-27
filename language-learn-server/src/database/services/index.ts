@@ -1,2 +1,2 @@
 export { LibraryService } from './library.service';
-export { LibraryMigrationService } from './library-migration.service';
+export { NowPlayingService } from './now-playing.service';

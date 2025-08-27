@@ -7,7 +7,6 @@ import { Media } from './entities/media.entity';
 import { LibraryItem } from './entities/library-item.entity';
 import { NowPlaying } from './entities/now-playing.entity';
 import { LibraryService } from './services/library.service';
-import { LibraryMigrationService } from './services/library-migration.service';
 import { NowPlayingService } from './services/now-playing.service';
 import { databaseConfig } from '../config/database.config';
 
@@ -19,7 +18,7 @@ import { databaseConfig } from '../config/database.config';
     }),
     TypeOrmModule.forFeature([ItemType, Level, Language, Media, LibraryItem, NowPlaying]),
   ],
-  providers: [LibraryService, LibraryMigrationService, NowPlayingService],
-  exports: [LibraryService, LibraryMigrationService, NowPlayingService],
+  providers: [LibraryService, NowPlayingService],
+  exports: [LibraryService, NowPlayingService],
 })
 export class DatabaseModule {}
