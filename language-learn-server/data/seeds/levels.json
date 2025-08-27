@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "easy / a1"
+  },
+  {
+    "id": 2,
+    "name": "easy-medium / a2"
+  },
+  {
+    "id": 3,
+    "name": "medium / b1"
+  },
+  {
+    "id": 4,
+    "name": "medium-hard / b2"
+  },
+  {
+    "id": 5,
+    "name": "hard / c1"
+  }, 
+  {
+    "id": 5,
+    "name": "native / c2"
+  }
+]

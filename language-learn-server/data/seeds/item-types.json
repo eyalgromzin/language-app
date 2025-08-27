@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "article"
+  },
+  {
+    "id": 2,
+    "name": "story"
+  },
+  {
+    "id": 3,
+    "name": "conversation"
+  },
+  {
+    "id": 4,
+    "name": "lyrics"
+  },
+  {
+    "id": 5,
+    "name": "any"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "English",
+    "symbol": "en"
+  },
+  {
+    "id": 2,
+    "name": "Spanish",
+    "symbol": "es"
+  },
+  {
+    "id": 3,
+    "name": "French",
+    "symbol": "fr"
+  },
+  {
+    "id": 4,
+    "name": "German",
+    "symbol": "de"
+  },
+  {
+    "id": 5,
+    "name": "Italian",
+    "symbol": "it"
+  },
+  {
+    "id": 6,
+    "name": "Portuguese",
+    "symbol": "pt"
+  },
+  {
+    "id": 7,
+    "name": "Russian",
+    "symbol": "ru"
+  },
+  {
+    "id": 8,
+    "name": "Hindi",
+    "symbol": "hi"
+  },
+  {
+    "id": 9,
+    "name": "Turkish",
+    "symbol": "tr"
+  },
+  {
+    "id": 10,
+    "name": "Polish",
+    "symbol": "pl"
+  },
+  {
+    "id": 11,
+    "name": "Dutch",
+    "symbol": "nl"
+  },
+  {
+    "id": 12,
+    "name": "Greek",
+    "symbol": "el"
+  },
+  {
+    "id": 13,
+    "name": "Swedish",
+    "symbol": "sv"
+  },
+  {
+    "id": 14,
+    "name": "Norwegian",
+    "symbol": "no"
+  },
+  {
+    "id": 15,
+    "name": "Finnish",
+    "symbol": "fi"
+  },
+  {
+    "id": 16,
+    "name": "Czech",
+    "symbol": "cs"
+  },
+  {
+    "id": 17,
+    "name": "Ukrainian",
+    "symbol": "uk"
+  },
+  {
+    "id": 18,
+    "name": "Hebrew",
+    "symbol": "he"
+  },
+  {
+    "id": 19,
+    "name": "Thai",
+    "symbol": "th"
+  },
+  {
+    "id": 20,
+    "name": "Vietnamese",
+    "symbol": "vi"
+  },
+  {
+    "id": 21,
+    "name": "Japanese",
+    "symbol": "ja"
+  },
+  {
+    "id": 22,
+    "name": "Korean",
+    "symbol": "ko"
+  },
+  {
+    "id": 23,
+    "name": "Chinese",
+    "symbol": "zh"
+  },
+  {
+    "id": 24,
+    "name": "Arabic",
+    "symbol": "ar"
+  }
+]
