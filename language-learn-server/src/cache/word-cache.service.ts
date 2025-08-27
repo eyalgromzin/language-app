@@ -17,7 +17,7 @@ export class WordCacheService {
     private readonly maxEntries = 500;
     private readonly dataDir = path.join(process.cwd(), 'data');
     private readonly wordsFilePath = path.join(this.dataDir, 'last_words.json');
-    private readonly translationsFilePath = path.join(this.dataDir, 'last_translations.json');
+    private readonly translationsFilePath = path.join(this.dataDir, 'last_translations_cache.json');
     private initialized = false;
     private initializePromise: Promise<void> | null = null;
 
