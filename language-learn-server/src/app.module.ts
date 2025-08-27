@@ -12,9 +12,10 @@ import { BabyStepsService } from './baby-steps';
 import { BabyStepsController } from './baby-steps';
 import { VideoController } from './video/video.controller';
 import { HarmfulWordsModule } from './harmful-words/harmful-words.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
-  imports: [HarmfulWordsModule],
+  imports: [HarmfulWordsModule, DatabaseModule],
   controllers: [AppController, LibraryController, BabyStepsController, VideoController],
   providers: [AppService, LibraryService, YouTubeService, TranslateService, WordCacheService, VideoCacheService, NowPlayingService, BabyStepsService],
 })

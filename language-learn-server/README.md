@@ -96,3 +96,154 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+# Language Learn Server
+
+A NestJS server for the Language Learn application with PostgreSQL database integration.
+
+## Database Setup
+
+The server is configured to connect to a PostgreSQL database hosted on Render:
+
+- **Host**: dpg-d2mpmr15pdvs7395ke1g-a.oregon-postgres.render.com
+- **Database**: hello_lingo
+- **Username**: admin
+- **Port**: 5432
+
+### Connection Details
+
+```bash
+# Direct psql connection
+PGPASSWORD=pXhtaqRCFlb5v2BTav6gulaoVpLzlpWC psql -h dpg-d2mpmr15pdvs7395ke1g-a.oregon-postgres.render.com -U admin hello_lingo
+
+# External URL
+postgresql://admin:pXhtaqRCFlb5v2BTav6gulaoVpLzlpWC@dpg-d2mpmr15pdvs7395ke1g-a.oregon-postgres.render.com/hello_lingo
+```
+
+## Database Schema
+
+The database contains the following tables created from `library.json`:
+
+### Tables
+
+1. **item_types** - Content types (article, story, conversation, lyrics, any)
+2. **levels** - Difficulty levels (easy, easy-medium, medium, medium-hard, hard)
+3. **languages** - Supported languages (english, spanish)
+4. **media** - Media types (web, youtube, book)
+5. **library_items** - Main library content with relationships to other tables
+
+### Entity Relationships
+
+- `library_items` has foreign keys to:
+  - `languages.symbol` (via `languageSymbol`)
+  - `item_types.id` (via `typeId`)
+  - `levels.id` (via `levelId`)
+  - `media.id` (via `mediaId`)
+
+## Installation
+
+```bash
+npm install
+```
+
+## Database Migration
+
+To populate the database with data from `library.json`:
+
+```bash
+npm run migrate:library
+```
+
+## Running the Server
+
+### Development
+```bash
+npm run start:dev
+```
+
+### Production
+```bash
+npm run build
+npm run start:prod
+```
+
+## API Endpoints
+
+### Library Items
+
+- `GET /library/items` - Get all library items
+- `GET /library/items/language/:languageSymbol` - Get items by language (e.g., 'en', 'es')
+- `GET /library/items/level/:levelId` - Get items by level ID
+- `GET /library/items/type/:typeId` - Get items by type ID
+- `GET /library/items/media/:mediaId` - Get items by media ID
+- `POST /library/items` - Create a new library item
+- `PUT /library/items/:id` - Update a library item
+- `DELETE /library/items/:id` - Delete a library item
+
+### Item Types
+
+- `GET /library/item-types` - Get all item types
+- `POST /library/item-types` - Create a new item type
+
+### Levels
+
+- `GET /library/levels` - Get all levels
+- `POST /library/levels` - Create a new level
+
+### Languages
+
+- `GET /library/languages` - Get all languages
+- `POST /library/languages` - Create a new language
+
+### Media
+
+- `GET /library/media` - Get all media types
+- `POST /library/media` - Create a new media type
+
+## Example API Usage
+
+### Get all Spanish content
+```bash
+curl http://localhost:3000/library/items/language/es
+```
+
+### Get all easy level content
+```bash
+curl http://localhost:3000/library/items/level/1
+```
+
+### Get all YouTube content
+```bash
+curl http://localhost:3000/library/items/media/2
+```
+
+### Create a new library item
+```bash
+curl -X POST http://localhost:3000/library/items \
+  -H "Content-Type: application/json" \
+  -d '{
+    "url": "https://example.com",
+    "name": "Example Article",
+    "languageSymbol": "en",
+    "typeId": 1,
+    "levelId": 2,
+    "mediaId": 1
+  }'
+```
+
+## Data Structure
+
+The library items include:
+- **URL**: The source URL
+- **Name**: Display name for the content
+- **Language**: Language symbol (en, es)
+- **Type**: Content type (article, story, conversation, lyrics, any)
+- **Level**: Difficulty level (easy, easy-medium, medium, medium-hard, hard)
+- **Media**: Media type (web, youtube, book)
+
+## Development Notes
+
+- The database uses `synchronize: true` for automatic schema updates (disable in production)
+- SSL is configured for the Render PostgreSQL connection
+- All entities include timestamps (`createdAt`, `updatedAt`)
+- The migration service handles both ID and string-based level references
