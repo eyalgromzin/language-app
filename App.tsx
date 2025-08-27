@@ -10,6 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSheet, Share, ActivityIndicator } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AuthProvider, useAuth } from './src/contexts/AuthContext';
+import { WordCategoriesProvider } from './src/contexts/WordCategoriesContext';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
 import SurfScreen from './src/screens/Surf/SurfScreen';
@@ -335,7 +336,9 @@ function AppNavigator(): React.JSX.Element {
 function App(): React.JSX.Element {
   return (
     <AuthProvider>
-      <AppNavigator />
+      <WordCategoriesProvider>
+        <AppNavigator />
+      </WordCategoriesProvider>
     </AuthProvider>
   );
 }

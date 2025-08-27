@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, BackHandler, SafeAreaView } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, BackHandler, SafeAreaView, ActivityIndicator } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import WordCategory from './WordCategory';
 import type { WordItem, WordCategoryType, LocalizedText } from '../../types/words';
-
- 
+import { useWordCategories } from '../../contexts/WordCategoriesContext';
 
 // moved WordCategory component to its own file
 
@@ -15,13 +14,12 @@ type CategoriesData = {
   categories: WordCategoryType[];
 };
 
-const CATEGORIES_DATA: CategoriesData = require('../../userData/wordCategories.json');
-
 function WordsByCategoriesScreen(): React.JSX.Element {
   const [selectedCategory, setSelectedCategory] = React.useState<WordCategoryType | null>(null);
   const navigation = useNavigation<any>();
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
+  const { categoriesData, loading, error, refreshCategories } = useWordCategories();
 
   useFocusEffect(
     React.useCallback(() => {
@@ -179,12 +177,38 @@ function WordsByCategoriesScreen(): React.JSX.Element {
     );
   }
 
+  // Show loading state
+  if (loading) {
+    return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F8FA' }}>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#007AFF" />
+          <Text style={styles.loadingText}>Loading categories...</Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  // Show error state
+  if (error || !categoriesData) {
+    return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F8FA' }}>
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>Failed to load categories</Text>
+          <TouchableOpacity style={styles.retryButton} onPress={refreshCategories}>
+            <Text style={styles.retryButtonText}>Retry</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F8FA' }}>
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.screenTitle}>Categories</Text>
         <View style={styles.grid}>
-          {CATEGORIES_DATA.categories.map((cat) => {
+          {categoriesData.categories.map((cat: WordCategoryType) => {
             const title = cat.name[SOURCE_LANGUAGE] || cat.name[TARGET_LANGUAGE] || cat.id;
             const subtitle = cat.name[SOURCE_LANGUAGE] && cat.name[TARGET_LANGUAGE] && cat.name[SOURCE_LANGUAGE] !== cat.name[TARGET_LANGUAGE]
               ? `${cat.name[SOURCE_LANGUAGE]} • ${cat.name[TARGET_LANGUAGE]}`
@@ -390,6 +414,41 @@ const styles = StyleSheet.create({
   itemExampleTranslation: {
     color: '#2563EB',
     fontWeight: '700',
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F7F8FA',
+  },
+  loadingText: {
+    marginTop: 16,
+    fontSize: 16,
+    color: '#666',
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F7F8FA',
+    padding: 20,
+  },
+  errorText: {
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  retryButton: {
+    backgroundColor: '#007AFF',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 8,
+  },
+  retryButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
   },
 });
 

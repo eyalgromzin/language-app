@@ -1,10 +1,6 @@
 
 - connect app to server - make sure all screens work 
-    - video 
-    - practice 
-    - baby steps 
     - categories
-    - books 
     - library 
 
 - deep link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 

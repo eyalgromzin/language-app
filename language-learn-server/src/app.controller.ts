@@ -3,6 +3,9 @@ import { AppService } from './app.service';
 import { YouTubeService } from './youtube/youtube.service';
 import { TranslateService } from './translate/translate.service';
 import { WordCacheService } from './cache/word-cache.service';
+import * as fs from 'fs';
+import * as path from 'path';
+
 @Controller()
 export class AppController {
   constructor(
@@ -15,6 +18,17 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
+  }
+
+  @Get('word-categories')
+  async getWordCategories(): Promise<any> {
+    try {
+      const filePath = path.join(__dirname, '..', 'data', 'wordCategories.json');
+      const fileContent = fs.readFileSync(filePath, 'utf8');
+      return JSON.parse(fileContent);
+    } catch (error) {
+      throw new BadRequestException('Failed to load word categories');
+    }
   }
 
   @Post('transcript')
