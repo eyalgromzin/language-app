@@ -1,7 +1,3 @@
-
-- connect app to server - make sure all screens work 
-    - library 
-
 - deep link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
 
 - register app - to enable open urls with it 
