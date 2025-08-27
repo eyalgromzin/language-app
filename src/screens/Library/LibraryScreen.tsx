@@ -29,7 +29,7 @@ function LibraryScreen(): React.JSX.Element {
         const value = await AsyncStorage.getItem('language.learning');
         if (!mounted) return;
         setLearningLanguage(value ?? null);
-      } catch {
+      } catch (error) {
         if (!mounted) return;
         setLearningLanguage(null);
       }
@@ -39,9 +39,49 @@ function LibraryScreen(): React.JSX.Element {
     };
   }, []);
 
-  const toLanguageSymbol = React.useCallback((input: string | null): 'en' | 'es' => {
+  const toLanguageSymbol = React.useCallback((input: string | null): string => {
     const v = (input || '').trim().toLowerCase();
-    if (v === 'es' || v === 'spanish') return 'es';
+    
+    // Map language names to symbols
+    const languageMap: Record<string, string> = {
+      'english': 'en',
+      'spanish': 'es',
+      'french': 'fr',
+      'german': 'de',
+      'italian': 'it',
+      'portuguese': 'pt',
+      'russian': 'ru',
+      'chinese (mandarin)': 'zh',
+      'japanese': 'ja',
+      'korean': 'ko',
+      'arabic': 'ar',
+      'hindi': 'hi',
+      'turkish': 'tr',
+      'polish': 'pl',
+      'dutch': 'nl',
+      'greek': 'el',
+      'swedish': 'sv',
+      'norwegian': 'no',
+      'finnish': 'fi',
+      'czech': 'cs',
+      'ukrainian': 'uk',
+      'hebrew': 'he',
+      'thai': 'th',
+      'vietnamese': 'vi',
+    };
+    
+    // If it's already a symbol, return it
+    if (v === 'en' || v === 'es' || v === 'fr' || v === 'de' || v === 'it' || v === 'pt' || v === 'ru' || v === 'zh' || v === 'ja' || v === 'ko' || v === 'ar' || v === 'hi' || v === 'tr' || v === 'pl' || v === 'nl' || v === 'el' || v === 'sv' || v === 'no' || v === 'fi' || v === 'cs' || v === 'uk' || v === 'he' || v === 'th' || v === 'vi') {
+      return v;
+    }
+    
+    // Map from language name to symbol
+    const symbol = languageMap[v];
+    if (symbol) {
+      return symbol;
+    }
+    
+    // Default to English if not found
     return 'en';
   }, []);
 
@@ -80,38 +120,30 @@ function LibraryScreen(): React.JSX.Element {
   }, [metaLevels, urls, allUrls]);
 
   const filteredUrls = React.useMemo(() => {
-    return urls.filter(
+    const res = urls.filter(
       (u) =>
         (selectedMedia === 'all' || u.media === selectedMedia) &&
         (selectedType === 'All' || u.type === selectedType) &&
         (selectedMedia === 'book' || selectedLevel === 'All' || u.level === selectedLevel),
     );
+
+    return res
   }, [urls, selectedType, selectedLevel, selectedMedia]);
 
   React.useEffect(() => {
-    if (!allUrls.length) return;
-    let isCancelled = false;
     const run = async () => {
       try {
         setError(null);
-        if (selectedType === 'All' || selectedLevel === 'All') {
-          // Show all when any filter is All
-          setUrls(allUrls);
-          return;
-        }
         setLoading(true);
-        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage), selectedType, selectedLevel);
-        if (!isCancelled) setUrls(json.urls ?? []);
+        const json: { url: string; name?: string; thumbnailUrl?: string; type: string; level: string; media: string }[] = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage), selectedType, selectedLevel);
+        setUrls(json ?? []);
       } catch (e) {
-        if (!isCancelled) setError('Failed to load URLs');
+        setError('Failed to load URLs');
       } finally {
-        if (!isCancelled) setLoading(false);
+        setLoading(false);
       }
     };
     run();
-    return () => {
-      isCancelled = true;
-    };
   }, [selectedType, selectedLevel, allUrls, toLanguageSymbol, learningLanguage]);
 
   // On tab change, fetch from server with empty media/level/type (only language)
@@ -121,13 +153,17 @@ function LibraryScreen(): React.JSX.Element {
       try {
         setError(null);
         setLoading(true);
+        console.log('[Library] Fetching URLs for language:', toLanguageSymbol(learningLanguage));
         const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage));
+        console.log('[Library] Received response:', json);
         if (!isCancelled) {
           const list = json.urls ?? [];
+          console.log('[Library] Setting URLs:', list);
           setUrls(list);
           setAllUrls(list);
         }
       } catch (e) {
+        console.error('[Library] Error fetching URLs:', e);
         if (!isCancelled) setError('Failed to load URLs');
       } finally {
         if (!isCancelled) setLoading(false);
