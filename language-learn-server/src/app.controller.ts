@@ -2,14 +2,14 @@ import { Controller, Get, Post, Body, Query, BadRequestException } from '@nestjs
 import { AppService } from './app.service';
 import { YouTubeService } from './youtube/youtube.service';
 import { TranslateService } from './translate/translate.service';
-import { WordCacheDbService } from './database/services/word-cache-db.service';
+import { WordCacheService } from './cache/word-cache.service';
 @Controller()
 export class AppController {
   constructor(
     private readonly appService: AppService,
     private readonly youTubeService: YouTubeService,
     private readonly translateService: TranslateService,
-    private readonly wordCacheService: WordCacheDbService,
+    private readonly wordCacheService: WordCacheService,
   ) {}
 
   @Get()
