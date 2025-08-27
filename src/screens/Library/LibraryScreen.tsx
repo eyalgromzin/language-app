@@ -120,6 +120,7 @@ function LibraryScreen(): React.JSX.Element {
     const run = async () => {
       try {
         setError(null);
+        setLoading(true);
         const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage));
         if (!isCancelled) {
           const list = json.urls ?? [];
@@ -128,6 +129,8 @@ function LibraryScreen(): React.JSX.Element {
         }
       } catch (e) {
         if (!isCancelled) setError('Failed to load URLs');
+      } finally {
+        if (!isCancelled) setLoading(false);
       }
     };
     run();
@@ -216,60 +219,65 @@ function LibraryScreen(): React.JSX.Element {
           </TouchableOpacity>
         ))}
       </View>
-      <FlatList
-        data={filteredUrls}
-        keyExtractor={(item) => item.url}
-        renderItem={renderItem}
-        ItemSeparatorComponent={() => <View style={styles.separator} />}
-        contentContainerStyle={styles.listContent}
-        ListHeaderComponent={
-          <View style={styles.filtersBar}>
-            <View style={styles.filtersRow}>
-              <View style={styles.dropdownContainer}>
-                <TouchableOpacity
-                  style={styles.dropdownButton}
-                  onPress={() => {
-                    setShowTypeDropdown((prev) => !prev);
-                    setShowLevelDropdown(false);
-                  }}
-                >
-                  <Text style={styles.dropdownButtonText}>Type: {selectedType}</Text>
-                </TouchableOpacity>
-                {/* options rendered in modal overlay */}
-              </View>
+             <FlatList
+         data={filteredUrls}
+         keyExtractor={(item) => item.url}
+         renderItem={renderItem}
+         ItemSeparatorComponent={() => <View style={styles.separator} />}
+         contentContainerStyle={styles.listContent}
+         ListHeaderComponent={
+           <View style={styles.filtersBar}>
+             <View style={styles.filtersRow}>
+               <View style={styles.dropdownContainer}>
+                 <TouchableOpacity
+                   style={styles.dropdownButton}
+                   onPress={() => {
+                     setShowTypeDropdown((prev) => !prev);
+                     setShowLevelDropdown(false);
+                   }}
+                 >
+                   <Text style={styles.dropdownButtonText}>Type: {selectedType}</Text>
+                 </TouchableOpacity>
+                 {/* options rendered in modal overlay */}
+               </View>
 
-              {selectedMedia !== 'book' && (
-                <View style={styles.dropdownContainer}>
-                  <TouchableOpacity
-                    style={styles.dropdownButton}
-                    onPress={() => {
-                      setShowLevelDropdown((prev) => !prev);
-                      setShowTypeDropdown(false);
-                    }}
-                  >
-                    <Text style={styles.dropdownButtonText}>Level: {selectedLevel}</Text>
-                  </TouchableOpacity>
-                  {/* options rendered in modal overlay */}
-                </View>
-              )}
-            </View>
+               {selectedMedia !== 'book' && (
+                 <View style={styles.dropdownContainer}>
+                   <TouchableOpacity
+                     style={styles.dropdownButton}
+                     onPress={() => {
+                       setShowLevelDropdown((prev) => !prev);
+                       setShowTypeDropdown(false);
+                     }}
+                   >
+                     <Text style={styles.dropdownButtonText}>Level: {selectedLevel}</Text>
+                   </TouchableOpacity>
+                   {/* options rendered in modal overlay */}
+                 </View>
+               )}
+             </View>
 
-            {(selectedType !== 'All' || selectedLevel !== 'All') && (
-              <TouchableOpacity
-                style={styles.clearFiltersButton}
-                onPress={() => {
-                  setSelectedType('All');
-                  setSelectedLevel('All');
-                  setShowTypeDropdown(false);
-                  setShowLevelDropdown(false);
-                }}
-              >
-                <Text style={styles.clearFiltersText}>Clear filters</Text>
-              </TouchableOpacity>
-            )}
-          </View>
-        }
-      />
+             {(selectedType !== 'All' || selectedLevel !== 'All') && (
+               <TouchableOpacity
+                 style={styles.clearFiltersButton}
+                 onPress={() => {
+                   setSelectedType('All');
+                   setSelectedLevel('All');
+                   setShowTypeDropdown(false);
+                   setShowLevelDropdown(false);
+                 }}
+               >
+                 <Text style={styles.clearFiltersText}>Clear filters</Text>
+               </TouchableOpacity>
+             )}
+           </View>
+         }
+         ListEmptyComponent={
+           <View style={styles.emptyContainer}>
+             <Text style={styles.emptyText}>No items</Text>
+           </View>
+         }
+       />
 
       {/* Type modal */}
       <Modal
@@ -463,6 +471,17 @@ const styles = StyleSheet.create({
   },
   separator: {
     height: 12,
+  },
+  emptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 40,
+  },
+  emptyText: {
+    fontSize: 16,
+    color: '#6b7280',
+    textAlign: 'center',
   },
 });
 
