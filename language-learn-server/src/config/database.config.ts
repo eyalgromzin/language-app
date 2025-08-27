@@ -5,7 +5,7 @@ export const databaseConfig = {
   username: 'admin',
   password: 'pXhtaqRCFlb5v2BTav6gulaoVpLzlpWC',
   database: 'hello_lingo',
-  synchronize: false, // Disabled to prevent schema conflicts
+  synchronize: true, // Enabled for automatic schema updates
   ssl: {
     rejectUnauthorized: false,
   },

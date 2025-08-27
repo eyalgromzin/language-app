@@ -96,19 +96,21 @@ export class LibraryController {
     return this.libraryService.getMeta();
   }
 
-  @Get('getUrlsByLanguage/:languageOrSymbol')
+  @Post('getUrlsByLanguage/:languageOrSymbol')
   async getUrlsByLanguage(@Param('languageOrSymbol') languageOrSymbol: string) {
     return this.libraryService.getUrlsByLanguage(languageOrSymbol);
   }
 
-  @Get('getUrlsWithCriterias')
+  @Post('getUrlsWithCriterias')
   async getUrlsWithCriteria(
-    @Query('languageOrSymbol') languageOrSymbol: string,
-    @Query('level') level?: string,
-    @Query('type') type?: string,
-    @Query('media') media?: string,
+    @Body() body: {
+      languageOrSymbol: string;
+      level?: string;
+      type?: string;
+      media?: string;
+    }
   ) {
-    return this.libraryService.getUrlsWithCriteria(languageOrSymbol, level, type, media);
+    return this.libraryService.getUrlsWithCriteria(body.languageOrSymbol, body.level, body.type, body.media);
   }
 
   @Post('addUrl')

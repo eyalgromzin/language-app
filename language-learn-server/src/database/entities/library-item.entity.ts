@@ -15,37 +15,37 @@ export class LibraryItem {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ name: 'language_id' })
   languageId: number;
 
-  @Column()
+  @Column({ name: 'type_id' })
   typeId: number;
 
-  @Column()
+  @Column({ name: 'level_id' })
   levelId: number;
 
-  @Column()
+  @Column({ name: 'media_id' })
   mediaId: number;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 
   @ManyToOne(() => Language, language => language.libraryItems)
-  @JoinColumn({ name: 'languageId' })
+  @JoinColumn({ name: 'language_id' })
   language: Language;
 
   @ManyToOne(() => ItemType, itemType => itemType.libraryItems)
-  @JoinColumn({ name: 'typeId' })
+  @JoinColumn({ name: 'type_id' })
   itemType: ItemType;
 
   @ManyToOne(() => Level, level => level.libraryItems)
-  @JoinColumn({ name: 'levelId' })
+  @JoinColumn({ name: 'level_id' })
   level: Level;
 
   @ManyToOne(() => Media, media => media.libraryItems)
-  @JoinColumn({ name: 'mediaId' })
+  @JoinColumn({ name: 'media_id' })
   media: Media;
 }

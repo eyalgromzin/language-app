@@ -161,6 +161,10 @@ export class LibraryService {
     type?: string | number,
     media?: string,
   ): Promise<{ url: string; name?: string; type: string; level: string; media: string }[]> {
+    if (!languageOrSymbol) {
+      return [];
+    }
+    
     const language = await this.languageRepository.findOne({
       where: [
         { symbol: languageOrSymbol.trim().toLowerCase() },

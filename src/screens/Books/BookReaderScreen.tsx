@@ -244,7 +244,7 @@ function BookReaderScreen(): React.JSX.Element {
         if (normalizedSaved) {
           try {
             // Query server for existing book entries and match by exact URL
-            const json: { urls?: { url: string }[] } = await getLibraryUrlsWithCriterias(undefined, undefined, 'book');
+            const json: { urls?: { url: string }[] } = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage), undefined, undefined, 'book');
             const list = Array.isArray(json?.urls) ? json.urls : [];
             existsInLibrary = list.some((it) => (it && typeof it.url === 'string' ? it.url.trim() : '') === normalizedSaved);
           } catch {}

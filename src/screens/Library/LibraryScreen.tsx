@@ -100,7 +100,7 @@ function LibraryScreen(): React.JSX.Element {
           return;
         }
         setLoading(true);
-        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await getLibraryUrlsWithCriterias(selectedType, selectedLevel);
+        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage), selectedType, selectedLevel);
         if (!isCancelled) setUrls(json.urls ?? []);
       } catch (e) {
         if (!isCancelled) setError('Failed to load URLs');
@@ -120,7 +120,7 @@ function LibraryScreen(): React.JSX.Element {
     const run = async () => {
       try {
         setError(null);
-        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await getLibraryUrlsWithCriterias();
+        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage));
         if (!isCancelled) {
           const list = json.urls ?? [];
           setUrls(list);

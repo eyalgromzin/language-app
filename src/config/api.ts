@@ -98,11 +98,14 @@ export const getLibraryMeta = async (): Promise<any> => {
 };
 
 export const getLibraryUrlsWithCriterias = async (
+  languageOrSymbol: string,
   type?: string,
   level?: string,
   media?: string
 ): Promise<any> => {
-  const body: any = {};
+  const body: any = {
+    languageOrSymbol
+  };
   if (type) body.type = type;
   if (level) body.level = level;
   if (media) body.media = media;
