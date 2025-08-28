@@ -3,7 +3,6 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View, NativeModules, Modal, ActionSheetIOS, Keyboard } from 'react-native';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
-import HamburgerMenu from '../../components/HamburgerMenu';
 import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -44,7 +43,6 @@ function SurfScreen(): React.JSX.Element {
   const [favTypeError, setFavTypeError] = React.useState<boolean>(false);
   const [newFavLevelName, setNewFavLevelName] = React.useState<string | null>(null);
   const [showLevelOptions, setShowLevelOptions] = React.useState<boolean>(false);
-  const [showHamburgerMenu, setShowHamburgerMenu] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     let mounted = true;
@@ -674,7 +672,36 @@ function SurfScreen(): React.JSX.Element {
 
   const openOptionsMenu = () => {
     Keyboard.dismiss();
-    setShowHamburgerMenu(true);
+    const actions = [
+      { title: 'Set homepage', onPress: () => promptSetHomepage() },
+      { title: 'Favourites list', onPress: () => setShowFavouritesList(true) },
+      { title: 'Cancel', onPress: () => {}, isCancel: true },
+    ];
+    if (Platform.OS === 'ios') {
+      ActionSheetIOS.showActionSheetWithOptions(
+        {
+          options: actions.map(a => a.title),
+          cancelButtonIndex: actions.findIndex(a => a.isCancel),
+          userInterfaceStyle: 'light',
+        },
+        (buttonIndex) => {
+          const action = actions[buttonIndex];
+          if (action && action.onPress) action.onPress();
+        }
+      );
+      return;
+    }
+    try {
+      Alert.alert(
+        'Options',
+        undefined,
+        actions.map(a => ({ text: a.title, onPress: a.onPress, style: a.isCancel ? 'cancel' as const : undefined })),
+        { cancelable: true },
+      );
+    } catch {
+      // Fallback: just open favourites if alert fails
+      setShowFavouritesList(true);
+    }
   };
 
   const onMessage = (event: WebViewMessageEvent) => {
@@ -987,7 +1014,7 @@ function SurfScreen(): React.JSX.Element {
           accessibilityLabel="More options"
           hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
         >
-          <Ionicons name="menu" size={22} color="#007AFF" />
+          <Ionicons name="ellipsis-vertical" size={22} color="#007AFF" />
         </TouchableOpacity>
       </View>
       <Modal
@@ -1138,22 +1165,6 @@ function SurfScreen(): React.JSX.Element {
           </View>
         </View>
       </Modal>
-      <HamburgerMenu
-        visible={showHamburgerMenu}
-        onClose={() => setShowHamburgerMenu(false)}
-        items={[
-          {
-            title: 'Set homepage',
-            icon: 'home-outline',
-            onPress: () => promptSetHomepage(),
-          },
-          {
-            title: 'Favourites list',
-            icon: 'star-outline',
-            onPress: () => setShowFavouritesList(true),
-          },
-        ]}
-      />
       {isAddressFocused && filteredDomains.length > 0 && (
         <View style={styles.suggestionsContainer}>
           <ScrollView keyboardShouldPersistTaps="handled" style={{ maxHeight: 200 }}>
