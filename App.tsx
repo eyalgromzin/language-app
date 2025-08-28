@@ -7,7 +7,7 @@ import React from 'react';
 import { NavigationContainer, DefaultTheme, DarkTheme, getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSheet, Share, ActivityIndicator } from 'react-native';
+import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSheet, Share, ActivityIndicator, Linking } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AuthProvider, useAuth } from './src/contexts/AuthContext';
 import { WordCategoriesProvider } from './src/contexts/WordCategoriesContext';
@@ -28,6 +28,7 @@ import BabyStepsPathScreen from './src/screens/BabySteps/BabyStepsPathScreen';
 import BabyStepRunnerScreen from './src/screens/BabySteps/BabyStepRunnerScreen';
 import ContactUsScreen from './src/screens/ContactUs/ContactUsScreen';
 import ProgressScreen from './src/screens/Progress/ProgressScreen';
+import linkingService from './src/services/linkingService';
 
 enableScreens();
 
@@ -63,6 +64,46 @@ function MainTabs(): React.JSX.Element {
   const currentTabNavRef = React.useRef<any>(null);
   const [videoKey, setVideoKey] = React.useState<number>(0);
   const [initialTabRouteName, setInitialTabRouteName] = React.useState<keyof RootTabParamList | null>(null);
+
+  // Handle deep links
+  React.useEffect(() => {
+    const handleDeepLink = (url: string) => {
+      if (!url) return;
+      
+      const linkData = linkingService.parseAppLink(url);
+      if (!linkData) return;
+
+      if (linkData.type === 'video') {
+        // Navigate to Video tab with the video URL
+        currentTabNavRef.current?.navigate('Video', {
+          youtubeUrl: linkData.url,
+          youtubeTitle: linkData.title,
+        });
+      } else if (linkData.type === 'surf') {
+        // Navigate to Surf tab with the URL
+        currentTabNavRef.current?.navigate('Surf');
+        // We'll need to pass the URL to Surf screen via a different mechanism
+        // For now, we'll store it in AsyncStorage and let Surf screen pick it up
+        AsyncStorage.setItem('surf.deepLinkUrl', linkData.url).catch(() => {});
+      }
+    };
+
+    // Check for initial URL when app starts
+    Linking.getInitialURL().then((url) => {
+      if (url) {
+        handleDeepLink(url);
+      }
+    });
+
+    // Listen for incoming links
+    const subscription = Linking.addEventListener('url', ({ url }) => {
+      handleDeepLink(url);
+    });
+
+    return () => {
+      subscription?.remove();
+    };
+  }, []);
 
   const handleShare = React.useCallback(async () => {
     try {
@@ -303,8 +344,33 @@ function AppNavigator(): React.JSX.Element {
     return <LoadingScreen />;
   }
 
+  // Configure deep linking
+  const linking = {
+    prefixes: ['https://hellolingo.app', 'http://hellolingo.app'],
+    config: {
+      screens: {
+        Main: 'Main',
+      },
+    },
+    async getInitialURL() {
+      // Check if app was opened from a deep link
+      const url = await Linking.getInitialURL();
+      return url;
+    },
+    subscribe(listener: (url: string) => void) {
+      const onReceiveURL = ({ url }: { url: string }) => listener(url);
+      
+      // Listen to incoming links from deep linking
+      const subscription = Linking.addEventListener('url', onReceiveURL);
+      
+      return () => {
+        subscription?.remove();
+      };
+    },
+  };
+
   return (
-    <NavigationContainer theme={isDarkMode ? DarkTheme : DefaultTheme}>
+    <NavigationContainer linking={linking} theme={isDarkMode ? DarkTheme : DefaultTheme}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {isAuthenticated ? (
