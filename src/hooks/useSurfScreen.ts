@@ -457,6 +457,7 @@ export const useSurfScreen = () => {
     removeFromFavourites,
     promptFavourite,
     openOptionsMenu,
+    promptSetHomepage,
     postAddUrlToLibrary,
     
     // Computed

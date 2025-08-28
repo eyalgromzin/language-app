@@ -60,6 +60,7 @@ function SurfScreen(): React.JSX.Element {
     removeFromFavourites,
     promptFavourite,
     openOptionsMenu,
+    promptSetHomepage,
     postAddUrlToLibrary,
     urlForStar,
     isFav,
@@ -139,7 +140,9 @@ function SurfScreen(): React.JSX.Element {
         onFavouritePress={() => promptFavourite(urlForStar, isFav)}
         onBackPress={goBack}
         onLibraryPress={() => navigation.navigate('Library')}
-        onOptionsPress={openOptionsMenu}
+        onOptionsPress={() => {}}
+        onSetHomepage={promptSetHomepage}
+        onShowFavourites={() => setShowFavouritesList(true)}
         canGoBack={canGoBack}
         isFavourite={isFav}
         isAddressFocused={isAddressFocused}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextInput, TouchableOpacity, View, StyleSheet, ScrollView, Keyboard, Text } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import OptionsMenu from './OptionsMenu';
 
 interface UrlBarProps {
   addressText: string;
@@ -10,6 +11,8 @@ interface UrlBarProps {
   onBackPress: () => void;
   onLibraryPress: () => void;
   onOptionsPress: () => void;
+  onSetHomepage: () => void;
+  onShowFavourites: () => void;
   canGoBack: boolean;
   isFavourite: boolean;
   isAddressFocused: boolean;
@@ -27,6 +30,8 @@ const UrlBar: React.FC<UrlBarProps> = ({
   onBackPress,
   onLibraryPress,
   onOptionsPress,
+  onSetHomepage,
+  onShowFavourites,
   canGoBack,
   isFavourite,
   isAddressFocused,
@@ -35,6 +40,9 @@ const UrlBar: React.FC<UrlBarProps> = ({
   onSelectSuggestion,
   addressInputRef,
 }) => {
+  const [showOptionsMenu, setShowOptionsMenu] = React.useState(false);
+  const [optionsButtonPosition, setOptionsButtonPosition] = React.useState<{ x: number; y: number; width: number; height: number } | null>(null);
+  const optionsButtonRef = React.useRef<any>(null);
   return (
     <>
       <View style={styles.urlBarContainer}>
@@ -92,7 +100,15 @@ const UrlBar: React.FC<UrlBarProps> = ({
           <Ionicons name="albums-outline" size={22} color="#007AFF" />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={onOptionsPress}
+          ref={optionsButtonRef}
+          onPress={() => {
+            if (optionsButtonRef.current) {
+              optionsButtonRef.current.measure((x: number, y: number, width: number, height: number, pageX: number, pageY: number) => {
+                setOptionsButtonPosition({ x: pageX, y: pageY, width, height });
+                setShowOptionsMenu(true);
+              });
+            }
+          }}
           style={styles.libraryBtn}
           accessibilityRole="button"
           accessibilityLabel="More options"
@@ -113,6 +129,14 @@ const UrlBar: React.FC<UrlBarProps> = ({
           </ScrollView>
         </View>
       )}
+      
+      <OptionsMenu
+        visible={showOptionsMenu}
+        onClose={() => setShowOptionsMenu(false)}
+        onSetHomepage={onSetHomepage}
+        onShowFavourites={onShowFavourites}
+        buttonPosition={optionsButtonPosition}
+      />
     </>
   );
 };
