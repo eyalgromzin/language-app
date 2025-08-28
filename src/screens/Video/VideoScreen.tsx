@@ -1,8 +1,7 @@
 import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { View, TextInput, StyleSheet, Text, Platform, ScrollView, ActivityIndicator, TouchableOpacity, Image, Alert, ToastAndroid, Modal, NativeModules } from 'react-native';
+import { View, TextInput, StyleSheet, Text, Platform, ScrollView, TouchableOpacity, Alert, ToastAndroid, NativeModules } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import YoutubePlayer from 'react-native-youtube-iframe';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
 import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
@@ -26,6 +25,13 @@ import {
   searchYouTube, 
   addLibraryUrl 
 } from '../../config/api';
+import {
+  VideoPlayer,
+  VideoList,
+  FavouritesModal,
+  SuggestionsDropdown,
+  ImageScrape,
+} from '../../components/Video';
 
 
 
@@ -880,137 +886,59 @@ function VideoScreen(): React.JSX.Element {
 
   const NewestVideos = () => {
     return (
-      <>
-        <Text style={styles.sectionTitle}>newest videos</Text>
-        {startupVideosLoading ? (
-          <View style={styles.centered}><ActivityIndicator /></View>
-        ) : startupVideosError ? (
-          <Text style={[styles.helper, { color: '#cc3333' }]}>{startupVideosError}</Text>
-        ) : startupVideos.length > 0 ? (
-          <View style={styles.videosList}>
-            {startupVideos.map((v, idx) => (
-              <TouchableOpacity key={`${v.url}-${idx}`} style={styles.videoItem} onPress={() => openStartupVideo(v.url, v.title)} activeOpacity={0.7}>
-                <View style={styles.thumbWrapper}>
-                  <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
-                  {v.length ? (
-                    <View style={styles.thumbBadge}><Text style={styles.thumbBadgeText}>{v.length}</Text></View>
-                  ) : null}
-                </View>
-                <View style={styles.videoInfo}>
-                  <Text style={styles.videoTitle} numberOfLines={2}>{v.title}</Text>
-                  <Text style={styles.videoDescription} numberOfLines={3}>{v.description}</Text>
-                </View>
-              </TouchableOpacity>
-            ))}
-          </View>
-        ) : (
-          <Text style={styles.helper}>No videos yet.</Text>
-        )}
-      </>
+      <VideoList
+        title="newest videos"
+        videos={startupVideos}
+        loading={startupVideosLoading}
+        error={startupVideosError}
+        onVideoPress={openStartupVideo}
+        emptyMessage="No videos yet."
+      />
     );
   };
 
   const NowPlaying = () => {
     return (
-      <>
-        <Text style={styles.sectionTitle}>now playing by other people</Text>
-        {nowPlayingLoading ? (
-          <View style={styles.centered}><ActivityIndicator /></View>
-        ) : nowPlayingError ? (
-          <Text style={[styles.helper, { color: '#cc3333' }]}>{nowPlayingError}</Text>
-        ) : nowPlayingVideos.length > 0 ? (
-          <View style={styles.videosList}>
-            {nowPlayingVideos.map((v, idx) => (
-              <TouchableOpacity key={`${v.url}-${idx}`} style={styles.videoItem} onPress={() => openStartupVideo(v.url, v.title)} activeOpacity={0.7}>
-                <View style={styles.thumbWrapper}>
-                  <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
-                  {v.length ? (
-                    <View style={styles.thumbBadge}><Text style={styles.thumbBadgeText}>{v.length}</Text></View>
-                  ) : null}
-                </View>
-                <View style={styles.videoInfo}>
-                  <Text style={styles.videoTitle} numberOfLines={2}>{v.title}</Text>
-                  {v.description ? (
-                    <Text style={styles.videoDescription} numberOfLines={3}>{v.description}</Text>
-                  ) : null}
-                </View>
-              </TouchableOpacity>
-            ))}
-          </View>
-        ) : (
-          <Text style={styles.helper}>app just started, you're the first to watch a video!</Text>
-        )}
-      </>
+      <VideoList
+        title="now playing by other people"
+        videos={nowPlayingVideos}
+        loading={nowPlayingLoading}
+        error={nowPlayingError}
+        onVideoPress={openStartupVideo}
+        emptyMessage="app just started, you're the first to watch a video!"
+      />
     );
   };
 
   const SearchResults = () => {
     if (!searchLoading && !searchError && searchResults.length === 0) return null;
     return (
-      <>
-        <Text style={styles.sectionTitle}>search results</Text>
-        {searchLoading ? (
-          <View style={styles.centered}><ActivityIndicator /></View>
-        ) : searchError ? (
-          <Text style={[styles.helper, { color: '#cc3333' }]}>{searchError}</Text>
-        ) : searchResults.length > 0 ? (
-          <View style={styles.videosList}>
-            {searchResults.map((v, idx) => (
-              <TouchableOpacity key={`${v.url}-${idx}`} style={styles.videoItem} onPress={() => openStartupVideo(v.url, v.title)} activeOpacity={0.7}>
-                <View style={styles.thumbWrapper}>
-                  {v.thumbnail ? (
-                    <Image source={{ uri: v.thumbnail }} style={styles.videoThumb} />
-                  ) : (
-                    <View style={[styles.videoThumb, { backgroundColor: '#ddd', alignItems: 'center', justifyContent: 'center' }]}>
-                      <Text style={{ color: '#666', fontSize: 12 }}>No image</Text>
-                    </View>
-                  )}
-                  {v.length ? (
-                    <View style={styles.thumbBadge}><Text style={styles.thumbBadgeText}>{v.length}</Text></View>
-                  ) : null}
-                </View>
-                <View style={styles.videoInfo}>
-                  <Text style={styles.videoTitle} numberOfLines={2}>{v.title}</Text>
-                  <Text style={styles.videoDescription} numberOfLines={3}>{v.description || ''}</Text>
-                </View>
-              </TouchableOpacity>
-            ))}
-          </View>
-        ) : (
-          <Text style={styles.helper}>No results.</Text>
-        )}
-      </>
+      <VideoList
+        title="search results"
+        videos={searchResults}
+        loading={searchLoading}
+        error={searchError}
+        onVideoPress={openStartupVideo}
+        emptyMessage="No results."
+      />
     );
   };
 
   
 
-  const ImageScrape = () => {
+  const ImageScrapeComponent = () => {
     return (
-      <>{imageScrape && (
-        <View style={{ position: 'absolute', left: -10000, top: 0, width: 360, height: 1200, opacity: 0 }}>
-          <WebView
-            ref={hiddenWebViewRef}
-            source={{ uri: imageScrape.url }}
-            style={{ width: '100%', height: '100%' }}
-            injectedJavaScript={imageScrapeInjection}
-            injectedJavaScriptBeforeContentLoaded={imageScrapeInjection}
-            onMessage={onScrapeMessage}
-            javaScriptEnabled
-            domStorageEnabled
-            originWhitelist={["*"]}
-            onLoad={() => {
-              try { hiddenWebViewRef.current?.injectJavaScript(imageScrapeInjection); } catch (e) {}
-            }}
-            onError={() => {
-              imageScrapeRejectRef.current?.();
-              imageScrapeResolveRef.current = null;
-              imageScrapeRejectRef.current = null;
-              setImageScrape(null);
-            }}
-          />
-        </View>
-      )}</>
+      <ImageScrape
+        imageScrape={imageScrape}
+        hiddenWebViewRef={hiddenWebViewRef}
+        onScrapeMessage={onScrapeMessage}
+        onImageScrapeError={() => {
+          imageScrapeRejectRef.current?.();
+          imageScrapeResolveRef.current = null;
+          imageScrapeRejectRef.current = null;
+          setImageScrape(null);
+        }}
+      />
     );
   };
 
@@ -1036,58 +964,35 @@ function VideoScreen(): React.JSX.Element {
         isFavourite={isFavourite}
         onToggleFavourite={onToggleFavourite}
       />
-      {showHistory && !isInputFocused && savedHistory.length > 0 ? (
-        <View style={styles.suggestionsContainer}>
-          <ScrollView keyboardShouldPersistTaps="handled" style={{ maxHeight: 200 }}>
-            {savedHistory.map((h) => (
-              <TouchableOpacity key={h.url} style={styles.suggestionItem} onPress={() => onSelectHistory(h)}>
-                <Ionicons name="time-outline" size={16} color="#4b5563" style={{ marginRight: 8 }} />
-                <Text style={styles.suggestionText} numberOfLines={1}>{h.title?.trim() ? h.title : h.url}</Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-        </View>
-      ) : null}
-      {showFavouritesList && !isInputFocused && favourites.length > 0 ? (
-        <View style={styles.suggestionsContainer}>
-          <ScrollView keyboardShouldPersistTaps="handled" style={{ maxHeight: 240 }}>
-            {favourites.map((f) => (
-              <TouchableOpacity key={f.url} style={styles.suggestionItem} onPress={() => onSelectFavourite(f)}>
-                <Ionicons name="star" size={16} color="#f59e0b" style={{ marginRight: 8 }} />
-                <Text style={styles.suggestionText} numberOfLines={1}>{(f.name || f.url)}</Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-        </View>
-      ) : null}
+      <SuggestionsDropdown
+        showHistory={showHistory}
+        showFavourites={showFavouritesList}
+        isInputFocused={isInputFocused}
+        savedHistory={savedHistory}
+        favourites={favourites}
+        onSelectHistory={onSelectHistory}
+        onSelectFavourite={onSelectFavourite}
+      />
       {videoId && !hidePlayback ? (
-        <>
-        {currentVideoTitle ? <Text style={styles.nowPlayingTitle} numberOfLines={2}>{currentVideoTitle}</Text> : null}
-        <View style={styles.playerWrapper}>
-          <YoutubePlayer
-            height={220}
-            play={isPlaying}
-            videoId={videoId}
-            webViewProps={{
-              allowsFullscreenVideo: true,
-            }}
-            ref={playerRef}
-            onReady={() => setPlayerReady(true)}
-            onChangeState={(state) => {
-              if (state === 'playing') {
-                setIsPlaying(true);
-                setHidePlayback(false);
-                // Ensure we record history whenever playback starts
-                (async () => {
-                  try { await saveHistory(url || inputUrl, currentVideoTitle); } catch {}
-                })();
-                (async () => { try { await upsertNowPlayingForCurrent(); } catch {} })();
-              }
-              if (state === 'paused' || state === 'ended') setIsPlaying(false);
-            }}
-          />
-        </View>
-        </>
+        <VideoPlayer
+          videoId={videoId}
+          isPlaying={isPlaying}
+          currentVideoTitle={currentVideoTitle}
+          playerRef={playerRef}
+          onReady={() => setPlayerReady(true)}
+          onChangeState={(state: string) => {
+            if (state === 'playing') {
+              setIsPlaying(true);
+              setHidePlayback(false);
+              // Ensure we record history whenever playback starts
+              (async () => {
+                try { await saveHistory(url || inputUrl, currentVideoTitle); } catch {}
+              })();
+              (async () => { try { await upsertNowPlayingForCurrent(); } catch {} })();
+            }
+            if (state === 'paused' || state === 'ended') setIsPlaying(false);
+          }}
+        />
       ) : (
         <Text style={styles.helper}>Enter a valid YouTube link or 11-character ID to load the video.</Text>
       )}
@@ -1108,7 +1013,7 @@ function VideoScreen(): React.JSX.Element {
 
       {!searchLoading && !searchError && searchResults.length === 0 ? <NowPlaying /> : null}
 
-      <ImageScrape />
+      <ImageScrapeComponent />
 
       <SearchResults />
 
@@ -1120,78 +1025,29 @@ function VideoScreen(): React.JSX.Element {
         onClose={() => setTranslationPanel(null)}
       />
 
-      <Modal
+      <FavouritesModal
         visible={showAddFavouriteModal}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setShowAddFavouriteModal(false)}
-      >
-        <View style={styles.modalBackdrop}>
-          <View style={styles.modalCard}>
-            <Text style={styles.modalTitle}>Add to favourites</Text>
-            <Text style={styles.inputLabel}>Level</Text>
-            <TouchableOpacity
-              onPress={() => setShowLevelOptions(prev => !prev)}
-              style={styles.modalInput}
-              activeOpacity={0.7}
-            >
-              <Text style={{ color: newFavLevelName ? '#111827' : '#9ca3af' }}>
-                {newFavLevelName || 'Select level'}
-              </Text>
-            </TouchableOpacity>
-            {showLevelOptions && (
-              <View style={[styles.modalInput, { paddingVertical: 0, marginTop: 8 }]}> 
-                {['easy','easy-medium','medium','medium-hard','hard'].map((lv) => (
-                  <TouchableOpacity
-                    key={lv}
-                    onPress={() => { setNewFavLevelName(lv); setShowLevelOptions(false); }}
-                    style={{ paddingVertical: 10 }}
-                  >
-                    <Text style={{ color: '#111827' }}>{lv}</Text>
-                  </TouchableOpacity>
-                ))}
-              </View>
-            )}
-            <Text style={styles.inputLabel}>Name</Text>
-            <TextInput
-              style={styles.modalInput}
-              value={newFavName}
-              onChangeText={setNewFavName}
-              placeholder="Enter a name"
-            />
-            <Text style={styles.inputLabel}>URL</Text>
-            <TextInput
-              style={styles.modalInput}
-              value={newFavUrl}
-              onChangeText={setNewFavUrl}
-              autoCapitalize="none"
-              autoCorrect={false}
-              keyboardType="url"
-            />
-            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 12, gap: 8 }}>
-              <TouchableOpacity onPress={() => setShowAddFavouriteModal(false)} style={styles.modalCloseBtn}>
-                <Text style={styles.modalCloseText}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={async () => {
-                  const u = normalizeYouTubeUrl(newFavUrl || currentCanonicalUrl);
-                  const nm = (newFavName || '').trim();
-                  if (!u) {
-                    try { if (Platform.OS === 'android') ToastAndroid.show('Invalid URL', ToastAndroid.SHORT); else Alert.alert('Invalid URL'); } catch {}
-                    return;
-                  }
-                  await addToFavourites(u, nm, newFavLevelName);
-                  setShowAddFavouriteModal(false);
-                  try { if (Platform.OS === 'android') ToastAndroid.show('Added to favourites', ToastAndroid.SHORT); else Alert.alert('Added'); } catch {}
-                }}
-                style={[styles.modalCloseBtn, { backgroundColor: '#007AFF' }]}
-              >
-                <Text style={[styles.modalCloseText, { color: 'white' }]}>OK</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
+        newFavName={newFavName}
+        newFavUrl={newFavUrl}
+        newFavLevelName={newFavLevelName}
+        showLevelOptions={showLevelOptions}
+        onClose={() => setShowAddFavouriteModal(false)}
+        onSave={async () => {
+          const u = normalizeYouTubeUrl(newFavUrl || currentCanonicalUrl);
+          const nm = (newFavName || '').trim();
+          if (!u) {
+            try { if (Platform.OS === 'android') ToastAndroid.show('Invalid URL', ToastAndroid.SHORT); else Alert.alert('Invalid URL'); } catch {}
+            return;
+          }
+          await addToFavourites(u, nm, newFavLevelName);
+          setShowAddFavouriteModal(false);
+          try { if (Platform.OS === 'android') ToastAndroid.show('Added to favourites', ToastAndroid.SHORT); else Alert.alert('Added'); } catch {}
+        }}
+        onNameChange={setNewFavName}
+        onUrlChange={setNewFavUrl}
+        onLevelChange={setNewFavLevelName}
+        onToggleLevelOptions={() => setShowLevelOptions(prev => !prev)}
+      />
 
 
     </ScrollView>
@@ -1243,91 +1099,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
-  playerWrapper: {
-    borderRadius: 8,
-    overflow: 'hidden',
-  },
   helper: {
     color: '#888',
     fontSize: 14,
-  },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: '600',
-    marginBottom: 8,
-  },
-  videosList: {
-    marginBottom: 12,
-  },
-  videoItem: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    marginBottom: 10,
-  },
-  thumbWrapper: {
-    width: 120,
-    height: 68,
-    marginRight: 10,
-    position: 'relative',
-  },
-  videoThumb: {
-    width: '100%',
-    height: '100%',
-    borderRadius: 6,
-    backgroundColor: '#eee',
-  },
-  thumbBadge: {
-    position: 'absolute',
-    right: 4,
-    bottom: 4,
-    backgroundColor: 'rgba(0,0,0,0.75)',
-    paddingHorizontal: 6,
-    paddingVertical: 2,
-    borderRadius: 4,
-  },
-  thumbBadgeText: {
-    color: '#fff',
-    fontSize: 12,
-    fontWeight: '700',
-  },
-  videoInfo: {
-    flex: 1,
-  },
-  videoTitle: {
-    fontSize: 15,
-    fontWeight: '600',
-    color: '#111',
-    marginBottom: 4,
-  },
-  videoDescription: {
-    fontSize: 13,
-    color: '#555',
-  },
-  centered: {
-    alignItems: 'center',
-  },
-  suggestionsContainer: {
-    marginTop: -4,
-    marginBottom: 8,
-    backgroundColor: 'white',
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#e5e7eb',
-    overflow: 'hidden',
-    zIndex: 1000,
-  },
-  suggestionItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#f3f4f6',
-  },
-  suggestionText: {
-    fontSize: 14,
-    color: '#111827',
-    flexShrink: 1,
   },
   transcriptBox: {
     borderWidth: 1,
@@ -1357,51 +1131,6 @@ const styles = StyleSheet.create({
     color: '#666',
     fontSize: 12,
     marginBottom: 2,
-  },
-  nowPlayingTitle: {
-    fontSize: 16,
-    fontWeight: '700',
-    marginBottom: 8,
-    color: '#111',
-  },
-  modalBackdrop: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.3)',
-    justifyContent: 'center',
-    padding: 16,
-  },
-  modalCard: {
-    backgroundColor: 'white',
-    borderRadius: 12,
-    padding: 14,
-  },
-  modalTitle: {
-    fontSize: 16,
-    fontWeight: '700',
-    marginBottom: 10,
-  },
-  inputLabel: {
-    fontSize: 12,
-    color: '#374151',
-    marginTop: 8,
-    marginBottom: 6,
-  },
-  modalInput: {
-    borderWidth: 1,
-    borderColor: '#e5e7eb',
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-  },
-  modalCloseBtn: {
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    backgroundColor: '#f3f4f6',
-    borderRadius: 8,
-  },
-  modalCloseText: {
-    fontSize: 13,
-    color: '#374151',
   },
 });
 
