@@ -32,6 +32,7 @@ import {
   SuggestionsDropdown,
   ImageScrape,
 } from '../../components/Video';
+import VideoOptionsMenu from '../../components/Video/VideoOptionsMenu';
 
 
 
@@ -52,94 +53,100 @@ type SearchBarProps = {
 };
 
 const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, onToggleFavouritesList, showAuxButtons, isFavourite, onToggleFavourite }) => {
+  const [showOptionsMenu, setShowOptionsMenu] = React.useState(false);
+  const [optionsButtonPosition, setOptionsButtonPosition] = React.useState<{ x: number; y: number; width: number; height: number } | null>(null);
+  const optionsButtonRef = React.useRef<any>(null);
+
   return (
-    <View id="searchBar">
-      <View style={styles.inputRow}>
-        <TextInput
-          ref={urlInputRef}
-          value={inputUrl}
-          onChangeText={onChangeText}
-          placeholder="Paste a YouTube URL (or video ID)"
-          autoCapitalize="none"
-          autoCorrect={false}
-          keyboardType={Platform.OS === 'ios' ? 'url' : 'default'}
-          style={[styles.input, { flex: 1 }]}
-          accessibilityLabel="YouTube URL input"
-          onSubmitEditing={onSubmit}
-          returnKeyType="go"
-          blurOnSubmit={false}
-          selectTextOnFocus
-          onFocus={() => {
-            try {
-              onFocus();
-              urlInputRef.current?.setNativeProps({ selection: { start: 0, end: inputUrl.length } });
-            } catch {}
-          }}
-          onBlur={onBlur}
-          onPressIn={() => {
-            try {
-              urlInputRef.current?.focus();
-              urlInputRef.current?.setNativeProps({ selection: { start: 0, end: inputUrl.length } });
-            } catch {}
-          }}
-        />
-        <TouchableOpacity
-          style={styles.goButton}
-          onPress={onOpenPress}
-          accessibilityRole="button"
-          accessibilityLabel="Open video"
-        >
-          <Text style={styles.goButtonText}>Go</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={onToggleFavourite}
-          style={styles.libraryBtn}
-          accessibilityRole="button"
-          accessibilityLabel={isFavourite ? 'Remove from favourites' : 'Add to favourites'}
-          hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
-        >
-          <Ionicons name={isFavourite ? 'star' : 'star-outline'} size={20} color={isFavourite ? '#f59e0b' : '#007AFF'} />
-        </TouchableOpacity>
-        {showAuxButtons ? (
-          <>
-            <TouchableOpacity
-              onPress={onOpenLibrary}
-              style={styles.libraryBtn}
-              accessibilityRole="button"
-              accessibilityLabel="Open Library"
-              hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
-            >
-              <Ionicons name="albums-outline" size={20} color="#007AFF" />
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => {
-                try {
-                  Alert.alert(
-                    'Menu',
-                    undefined,
-                    [
-                      { text: 'history', onPress: onToggleHistory },
-                      { text: 'favourites list', onPress: onToggleFavouritesList },
-                      { text: 'Cancel', style: 'cancel' },
-                    ],
-                    { cancelable: true }
-                  );
-                } catch {
-                  // Fallback: toggle history
-                  onToggleHistory();
-                }
-              }}
-              style={styles.libraryBtn}
-              accessibilityRole="button"
-              accessibilityLabel="Open menu"
-              hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
-            >
-              <Ionicons name="ellipsis-vertical" size={18} color="#007AFF" />
-            </TouchableOpacity>
-          </>
-        ) : null}
+    <>
+      <View id="searchBar">
+        <View style={styles.inputRow}>
+          <TextInput
+            ref={urlInputRef}
+            value={inputUrl}
+            onChangeText={onChangeText}
+            placeholder="Paste a YouTube URL (or video ID)"
+            autoCapitalize="none"
+            autoCorrect={false}
+            keyboardType={Platform.OS === 'ios' ? 'url' : 'default'}
+            style={[styles.input, { flex: 1 }]}
+            accessibilityLabel="YouTube URL input"
+            onSubmitEditing={onSubmit}
+            returnKeyType="go"
+            blurOnSubmit={false}
+            selectTextOnFocus
+            onFocus={() => {
+              try {
+                onFocus();
+                urlInputRef.current?.setNativeProps({ selection: { start: 0, end: inputUrl.length } });
+              } catch {}
+            }}
+            onBlur={onBlur}
+            onPressIn={() => {
+              try {
+                urlInputRef.current?.focus();
+                urlInputRef.current?.setNativeProps({ selection: { start: 0, end: inputUrl.length } });
+              } catch {}
+            }}
+          />
+          <TouchableOpacity
+            style={styles.goButton}
+            onPress={onOpenPress}
+            accessibilityRole="button"
+            accessibilityLabel="Open video"
+          >
+            <Text style={styles.goButtonText}>Go</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={onToggleFavourite}
+            style={styles.libraryBtn}
+            accessibilityRole="button"
+            accessibilityLabel={isFavourite ? 'Remove from favourites' : 'Add to favourites'}
+            hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+          >
+            <Ionicons name={isFavourite ? 'star' : 'star-outline'} size={20} color={isFavourite ? '#f59e0b' : '#007AFF'} />
+          </TouchableOpacity>
+          {showAuxButtons ? (
+            <>
+              <TouchableOpacity
+                onPress={onOpenLibrary}
+                style={styles.libraryBtn}
+                accessibilityRole="button"
+                accessibilityLabel="Open Library"
+                hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+              >
+                <Ionicons name="albums-outline" size={20} color="#007AFF" />
+              </TouchableOpacity>
+              <TouchableOpacity
+                ref={optionsButtonRef}
+                onPress={() => {
+                  if (optionsButtonRef.current) {
+                    optionsButtonRef.current.measure((x: number, y: number, width: number, height: number, pageX: number, pageY: number) => {
+                      setOptionsButtonPosition({ x: pageX, y: pageY, width, height });
+                      setShowOptionsMenu(true);
+                    });
+                  }
+                }}
+                style={styles.libraryBtn}
+                accessibilityRole="button"
+                accessibilityLabel="Open menu"
+                hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+              >
+                <Ionicons name="ellipsis-vertical" size={18} color="#007AFF" />
+              </TouchableOpacity>
+            </>
+          ) : null}
+        </View>
       </View>
-    </View>
+      
+      <VideoOptionsMenu
+        visible={showOptionsMenu}
+        onClose={() => setShowOptionsMenu(false)}
+        onToggleHistory={onToggleHistory}
+        onToggleFavouritesList={onToggleFavouritesList}
+        buttonPosition={optionsButtonPosition}
+      />
+    </>
   );
 };
 
