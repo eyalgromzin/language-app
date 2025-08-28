@@ -33,6 +33,7 @@ import {
   ImageScrape,
 } from '../../components/Video';
 import VideoOptionsMenu from '../../components/Video/VideoOptionsMenu';
+import linkingService from '../../services/linkingService';
 
 
 
@@ -50,9 +51,11 @@ type SearchBarProps = {
   showAuxButtons: boolean;
   isFavourite: boolean;
   onToggleFavourite: () => void;
+  onShare: () => void;
+  canShare: boolean;
 };
 
-const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, onToggleFavouritesList, showAuxButtons, isFavourite, onToggleFavourite }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, onToggleFavouritesList, showAuxButtons, isFavourite, onToggleFavourite, onShare, canShare }) => {
   const [showOptionsMenu, setShowOptionsMenu] = React.useState(false);
   const [optionsButtonPosition, setOptionsButtonPosition] = React.useState<{ x: number; y: number; width: number; height: number } | null>(null);
   const optionsButtonRef = React.useRef<any>(null);
@@ -117,6 +120,17 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
               >
                 <Ionicons name="albums-outline" size={20} color="#007AFF" />
               </TouchableOpacity>
+              {canShare && (
+                <TouchableOpacity
+                  onPress={onShare}
+                  style={styles.libraryBtn}
+                  accessibilityRole="button"
+                  accessibilityLabel="Share video"
+                  hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+                >
+                  <Ionicons name="share-outline" size={20} color="#007AFF" />
+                </TouchableOpacity>
+              )}
               <TouchableOpacity
                 ref={optionsButtonRef}
                 onPress={() => {
@@ -333,6 +347,21 @@ function VideoScreen(): React.JSX.Element {
     setShowLevelOptions(false);
     setShowAddFavouriteModal(true);
   }, [currentCanonicalUrl, isFavourite, removeFromFavourites, addToFavourites, currentVideoTitle]);
+
+  const onShareVideo = React.useCallback(async () => {
+    const targetUrl = currentCanonicalUrl;
+    if (!targetUrl) {
+      try { if (Platform.OS === 'android') ToastAndroid.show('No video to share', ToastAndroid.SHORT); else Alert.alert('No video to share'); } catch {}
+      return;
+    }
+    
+    try {
+      await linkingService.shareVideo(targetUrl, currentVideoTitle);
+    } catch (error) {
+      console.error('Error sharing video:', error);
+      try { if (Platform.OS === 'android') ToastAndroid.show('Failed to share video', ToastAndroid.SHORT); else Alert.alert('Failed to share video'); } catch {}
+    }
+  }, [currentCanonicalUrl, currentVideoTitle]);
 
   // Hidden WebView state to scrape lazy-loaded image results (same approach as Surf/Books)
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
@@ -970,6 +999,8 @@ function VideoScreen(): React.JSX.Element {
         showAuxButtons={true}
         isFavourite={isFavourite}
         onToggleFavourite={onToggleFavourite}
+        onShare={onShareVideo}
+        canShare={!!currentCanonicalUrl}
       />
       <SuggestionsDropdown
         showHistory={showHistory}

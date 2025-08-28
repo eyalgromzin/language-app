@@ -29,6 +29,21 @@
             <category android:name="android.intent.category.BROWSABLE" />
             <data android:scheme="@string/fb_login_protocol_scheme" />
         </intent-filter>
+        <!-- App Links for helloLingo.app -->
+        <intent-filter android:autoVerify="true">
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+            <data android:host="hellolingo.app" />
+        </intent-filter>
+        <intent-filter android:autoVerify="true">
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="http" />
+            <data android:host="hellolingo.app" />
+        </intent-filter>
       </activity>
       <!-- Facebook metadata -->
       <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />

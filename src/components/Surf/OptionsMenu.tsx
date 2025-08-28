@@ -7,6 +7,8 @@ interface OptionsMenuProps {
   onClose: () => void;
   onSetHomepage: () => void;
   onShowFavourites: () => void;
+  onShare: () => void;
+  canShare: boolean;
   buttonPosition: { x: number; y: number; width: number; height: number } | null;
 }
 
@@ -15,6 +17,8 @@ const OptionsMenu: React.FC<OptionsMenuProps> = ({
   onClose,
   onSetHomepage,
   onShowFavourites,
+  onShare,
+  canShare,
   buttonPosition,
 }) => {
   if (!visible || !buttonPosition) return null;
@@ -36,6 +40,14 @@ const OptionsMenu: React.FC<OptionsMenuProps> = ({
         onShowFavourites();
       },
     },
+    ...(canShare ? [{
+      title: 'Share page',
+      icon: 'share-outline',
+      onPress: () => {
+        onClose();
+        onShare();
+      },
+    }] : []),
   ];
 
   return (

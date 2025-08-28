@@ -1,6 +1,6 @@
-- deep link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
+- app link - on link click, enable to open it with the app and go straight to url in the surf tab / to video tab 
 
-- register app - to enable open urls with it 
+- register app? - to enable open urls with it 
 
 - on 100 downloads : create a table for translation .for all my languages - to not take translation from 3rd party. 
        with indexes on all languages columns.
