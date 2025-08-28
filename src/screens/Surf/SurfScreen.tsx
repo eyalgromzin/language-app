@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { View, StyleSheet, Platform, Alert, ToastAndroid } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import UrlBar from '../../components/Surf/UrlBar';
 import FavouritesModal from '../../components/Surf/FavouritesModal';
 import AddFavouriteModal from '../../components/Surf/AddFavouriteModal';
@@ -11,7 +10,6 @@ import { useSurfScreen } from '../../hooks/useSurfScreen';
 import { useTranslationAndImages } from '../../hooks/useTranslationAndImages';
 import { baseInjection, imageScrapeInjection } from '../../constants/webViewInjections';
 import harmfulWordsService from '../../services/harmfulWordsService';
-import linkingService from '../../services/linkingService';
 
 function SurfScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
@@ -133,47 +131,6 @@ function SurfScreen(): React.JSX.Element {
     })();
   }, []);
 
-  // Handle deep link URL if present
-  React.useEffect(() => {
-    const checkDeepLinkUrl = async () => {
-      try {
-        const deepLinkUrl = await AsyncStorage.getItem('surf.deepLinkUrl');
-        if (deepLinkUrl) {
-          setAddressText(deepLinkUrl);
-          setCurrentUrl(deepLinkUrl);
-          await AsyncStorage.removeItem('surf.deepLinkUrl');
-        }
-      } catch (error) {
-        console.error('Error checking deep link URL:', error);
-      }
-    };
-    
-    checkDeepLinkUrl();
-  }, []);
-
-  const onShareSurfUrl = React.useCallback(async () => {
-    const targetUrl = currentUrl || addressText;
-    if (!targetUrl || targetUrl === 'about:blank') {
-      if (Platform.OS === 'android') {
-        ToastAndroid.show('No page to share', ToastAndroid.SHORT);
-      } else {
-        Alert.alert('No page to share');
-      }
-      return;
-    }
-    
-    try {
-      await linkingService.shareSurfUrl(targetUrl);
-    } catch (error) {
-      console.error('Error sharing surf URL:', error);
-      if (Platform.OS === 'android') {
-        ToastAndroid.show('Failed to share page', ToastAndroid.SHORT);
-      } else {
-        Alert.alert('Failed to share page');
-      }
-    }
-  }, [currentUrl, addressText]);
-
   return (
     <View style={{ flex: 1 }}>
       <UrlBar
@@ -186,8 +143,6 @@ function SurfScreen(): React.JSX.Element {
         onOptionsPress={() => {}}
         onSetHomepage={promptSetHomepage}
         onShowFavourites={() => setShowFavouritesList(true)}
-        onShare={onShareSurfUrl}
-        canShare={!!(currentUrl && currentUrl !== 'about:blank')}
         canGoBack={canGoBack}
         isFavourite={isFav}
         isAddressFocused={isAddressFocused}

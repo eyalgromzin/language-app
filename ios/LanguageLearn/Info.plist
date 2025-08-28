@@ -62,24 +62,10 @@
           <string>fbYOUR_FB_APP_ID</string>
         </array>
       </dict>
-             <dict>
-         <key>CFBundleURLName</key>
-         <string>hellolingo.app</string>
-         <key>CFBundleURLSchemes</key>
-         <array>
-           <string>https</string>
-           <string>http</string>
-         </array>
-       </dict>
     </array>
     <key>FacebookAppID</key>
     <string>YOUR_FB_APP_ID</string>
     <key>FacebookDisplayName</key>
     <string>LanguageLearn</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>https</string>
-      <string>http</string>
-    </array>
 </dict>
 </plist>
