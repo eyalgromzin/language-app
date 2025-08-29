@@ -1,107 +1,98 @@
-// Test file to demonstrate HelloLingo app links functionality
-// This file shows examples of how to generate and use the app links
+const linkingService = require('./src/services/linkingService');
 
-const linkingService = {
-  generateVideoShareUrl: (videoUrl, title) => {
-    const baseUrl = 'https://hellolingo.app/video';
-    const params = new URLSearchParams();
-    params.append('url', encodeURIComponent(videoUrl));
-    if (title) {
-      params.append('title', encodeURIComponent(title));
-    }
-    return `${baseUrl}?${params.toString()}`;
+// Test video links
+console.log('=== VIDEO LINK EXAMPLES ===');
+console.log();
+
+const videoExamples = [
+  {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    title: 'Rick Astley - Never Gonna Give You Up'
   },
-
-  generateSurfShareUrl: (surfUrl) => {
-    const baseUrl = 'https://hellolingo.app/surf';
-    const params = new URLSearchParams();
-    params.append('url', encodeURIComponent(surfUrl));
-    return `${baseUrl}?${params.toString()}`;
+  {
+    url: 'https://www.youtube.com/watch?v=9bZkp7q19f0',
+    title: 'PSY - GANGNAM STYLE (강남스타일) M/V'
   },
-
-  parseAppLink: (url) => {
-    try {
-      const urlObj = new URL(url);
-      
-      if (urlObj.hostname !== 'hellolingo.app') {
-        return null;
-      }
-
-      const path = urlObj.pathname;
-      const searchParams = urlObj.searchParams;
-
-      if (path === '/video') {
-        const videoUrl = searchParams.get('url');
-        const title = searchParams.get('title');
-        
-        if (videoUrl) {
-          return {
-            type: 'video',
-            url: decodeURIComponent(videoUrl),
-            title: title ? decodeURIComponent(title) : undefined
-          };
-        }
-      }
-
-      if (path === '/surf') {
-        const surfUrl = searchParams.get('url');
-        
-        if (surfUrl) {
-          return {
-            type: 'surf',
-            url: decodeURIComponent(surfUrl)
-          };
-        }
-      }
-
-      return null;
-    } catch (error) {
-      console.error('Error parsing app link:', error);
-      return null;
-    }
+  {
+    url: 'https://www.youtube.com/watch?v=3d6DsjIBzJ4',
+    title: 'Learn English - Basic Conversation for Beginners'
   }
-};
+];
 
-// Test examples
-console.log('=== HelloLingo App Links Test ===\n');
+videoExamples.forEach((example, index) => {
+  console.log(`Example ${index + 1}:`);
+  console.log(`Original URL: ${example.url}`);
+  console.log(`Title: ${example.title}`);
+  
+  try {
+    const shareUrl = linkingService.generateVideoShareUrl(example.url, example.title);
+    console.log(`Generated App Link: ${shareUrl}`);
+    
+    // Test parsing
+    const parsed = linkingService.parseAppLink(shareUrl);
+    console.log(`Parsed Result:`, parsed);
+  } catch (error) {
+    console.log(`Error: ${error.message}`);
+  }
+  console.log();
+});
 
-// Test video sharing
-const videoUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
-const videoTitle = 'Rick Astley - Never Gonna Give You Up';
-const videoShareUrl = linkingService.generateVideoShareUrl(videoUrl, videoTitle);
-console.log('Video Share URL:');
-console.log(videoShareUrl);
-console.log('');
+// Test surf links
+console.log('=== SURF LINK EXAMPLES ===');
+console.log();
 
-// Test surf sharing
-const surfUrl = 'https://www.example.com';
-const surfShareUrl = linkingService.generateSurfShareUrl(surfUrl);
-console.log('Surf Share URL:');
-console.log(surfShareUrl);
-console.log('');
+const surfExamples = [
+  'https://www.duolingo.com',
+  'https://www.babbel.com',
+  'https://www.bbc.com/news',
+  'https://dictionary.cambridge.org'
+];
 
-// Test parsing video link
-const parsedVideo = linkingService.parseAppLink(videoShareUrl);
-console.log('Parsed Video Link:');
-console.log(JSON.stringify(parsedVideo, null, 2));
-console.log('');
+surfExamples.forEach((url, index) => {
+  console.log(`Example ${index + 1}:`);
+  console.log(`Original URL: ${url}`);
+  
+  try {
+    const shareUrl = linkingService.generateSurfShareUrl(url);
+    console.log(`Generated App Link: ${shareUrl}`);
+    
+    // Test parsing
+    const parsed = linkingService.parseAppLink(shareUrl);
+    console.log(`Parsed Result:`, parsed);
+  } catch (error) {
+    console.log(`Error: ${error.message}`);
+  }
+  console.log();
+});
 
-// Test parsing surf link
-const parsedSurf = linkingService.parseAppLink(surfShareUrl);
-console.log('Parsed Surf Link:');
-console.log(JSON.stringify(parsedSurf, null, 2));
-console.log('');
+// Test invalid links
+console.log('=== INVALID LINK TESTS ===');
+console.log();
 
-// Test invalid link
-const invalidUrl = 'https://google.com';
-const parsedInvalid = linkingService.parseAppLink(invalidUrl);
-console.log('Parsed Invalid Link:');
-console.log(parsedInvalid);
-console.log('');
+const invalidLinks = [
+  'https://hellolingo.app/invalid',
+  'https://hellolingo.app/video',
+  'https://hellolingo.app/video?invalid=param',
+  'https://example.com/video?url=test'
+];
 
-console.log('=== Test Complete ===');
-console.log('\nTo test the app links:');
-console.log('1. Copy one of the generated URLs above');
-console.log('2. Open it in a browser or share it');
-console.log('3. If the HelloLingo app is installed, it should open and navigate to the appropriate screen');
-console.log('4. If the app is not installed, it will open in the browser');
+invalidLinks.forEach((link, index) => {
+  console.log(`Invalid Link ${index + 1}: ${link}`);
+  try {
+    const parsed = linkingService.parseAppLink(link);
+    console.log(`Parsed Result:`, parsed);
+  } catch (error) {
+    console.log(`Error: ${error.message}`);
+  }
+  console.log();
+});
+
+console.log('=== TESTING COMPLETE ===');
+console.log();
+console.log('To test these links:');
+console.log('1. Copy any of the generated app links above');
+console.log('2. Paste it into your browser');
+console.log('3. Your app should open automatically (if installed)');
+console.log();
+console.log('Or use ADB to test:');
+console.log('adb shell am start -W -a android.intent.action.VIEW -d "APP_LINK_HERE" com.languagelearn');
