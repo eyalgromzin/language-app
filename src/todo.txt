@@ -23,7 +23,10 @@
 
 - design app better  
 
-- register app? - to enable open urls with it 
+- enable in book screen , in translate panel , edit the word. because many times the word after a click comes without the last letter 
+
+
+- register app
 
 - on 100 downloads : create a table for translation .for all my languages - to not take translation from 3rd party. 
        with indexes on all languages columns.
