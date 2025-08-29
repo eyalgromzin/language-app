@@ -1,3 +1,28 @@
+- change hellolingo.app to be a landing page to android app 
+
+- create translate table with all languages that will be filled each time a user clicks a word 
+
+- logo
+
+
+- more lessons in step by step 
+
+- more words in categories 
+
+- share button in video screen
+
+- share button in surf screen 
+
+- if a book is in the library already , set in localstorage to not even check  again if its in the library, and not just not asking  
+
+- make video transcript work better
+
+- make share button for book - will show dialog to check if its a book downloaded from website. or some local book that got in some other way . 
+    - if its from a website , require for user to add location and then share it . 
+    - if its in the phone itself , share the file itself from storage. 
+
+- design app better  
+
 - register app? - to enable open urls with it 
 
 - on 100 downloads : create a table for translation .for all my languages - to not take translation from 3rd party. 
