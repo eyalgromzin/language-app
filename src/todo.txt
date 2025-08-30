@@ -2,9 +2,6 @@
 
 - create translate table with all languages that will be filled each time a user clicks a word 
 
-- logo
-
-
 - more lessons in step by step 
 
 - more words in categories 

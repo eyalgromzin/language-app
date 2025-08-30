@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Lingo - Learn Languages the Fun Way</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #FB6977 0%, #43B3F3 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .app-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .app-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features {
+            background: white;
+            padding: 80px 0;
+            border-radius: 30px 30px 0 0;
+            margin-top: 40px;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FB6977, #43B3F3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #FB6977 0%, #43B3F3 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: white;
+            color: #FB6977;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .app-title { font-size: 2rem; }
+            .hero h1 { font-size: 2rem; }
+            .features h2 { font-size: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-links { margin-top: 20px; }
+            .footer-links a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <svg width="120" height="120" viewBox="0 0 354 321" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#FDFDFD" d="M210,322C140,322 70.5,322 1,322C1,215 1,108 1,1C119,1 237,1 355,1C355,108 355,215 355,322C306.833,322 258.667,322 210,322Z"/>
+                    <path fill="#FB6B78" d="M216,219C186.521,218.977 157.044,218.886 127.567,218.975C125.837,218.98 123.735,220.036 122.443,221.27C110.415,232.758 98.553,244.421 86.569,255.956C84.737,257.72 82.527,259.091 80.702,260.483C79.916,259.925 79.664,259.832 79.661,259.732C79.331,248.345 79.002,236.959 78.73,225.571C78.694,224.091 78.881,222.593 79.099,221.123C79.71,217.012 78.093,215.688 73.89,215.745C43.928,216.152 25.173,192.857 25.167,166.57C25.163,147.915 25.115,129.26 25.236,110.607C25.253,107.841 26.091,105.081 26.549,102.319C27.058,102.335 27.567,102.352 28.076,102.369C28.813,105.163 29.551,107.958 30.559,111.399C31.024,113.009 31.171,113.986 31.423,114.935C35.763,131.328 40.488,147.594 41.994,164.641C43.5,181.691 52.123,193.689 69.399,199.027C83.563,202.711 103.445,199.835 113.404,184.016C116.252,179.217 118.765,174.593 121.402,170.041C127.94,158.755 134.533,147.501 141.361,135.994C142.662,134.314 143.795,132.93 144.734,131.425C147.246,127.397 148.137,123.186 145.328,118.949C142.295,114.375 136.376,112.417 130.895,114.535C126.644,116.176 122.478,118.342 122.454,124.241C121.484,125.865 120.735,127.287 119.68,128.888C118.598,129.928 117.883,130.855 117.03,131.632C115.538,132.99 113.028,135.629 112.582,135.325C110.59,133.969 108.814,131.953 107.68,129.797C106.907,128.326 107.234,126.231 107.221,124.414C107.074,104.619 106.957,84.823 106.769,64.667C105.802,59.824 104.432,55.726 98.624,54.934C95.056,55.165 91.863,55.448 87.735,55.814C85.139,49.917 80.957,44.28 71.589,47.863C67.912,49.928 65.865,52.601 65.798,56.733C65.706,62.466 65.433,62.56 60.207,60.567C54.389,58.347 49.452,60.073 47.185,65.842C46.093,68.619 46.371,71.933 46.029,75.004C46.289,79.663 46.55,84.321 46.828,89.297C42.791,87.683 39.587,86.556 36.543,85.097C35.538,84.616 34.233,83.247 34.271,82.333C34.745,70.82 32.306,59.131 37.137,47.883C44.305,31.196 59.298,20.577 77.049,20.352C122.676,19.775 168.318,19.821 213.947,20.319C232.214,20.519 248.596,31.972 255.765,49.803C256.381,51.335 257.056,52.843 257.828,54.978C258.253,56.084 258.553,56.574 258.853,57.064C259.133,58.814 259.414,60.564 259.796,63.12C259.954,84.618 260.009,105.31 259.993,126.466C259.964,137.621 260.008,148.313 259.981,159.468C259.565,167.219 259.218,174.507 258.602,182.038C256.519,186.787 254.706,191.292 252.619,196C246.621,204.084 239.472,210.363 230.65,215.234C225.527,216.546 220.763,217.787 216,219.028M166.898,162.421C182.803,153.204 198.777,144.101 214.54,134.647C216.916,133.222 219.414,130.317 219.782,127.794C220.046,125.986 217.168,123.258 215.119,121.686C212.255,119.488 208.845,118.005 205.69,116.18C191.353,107.885 177.113,99.418 162.654,91.342C155.656,87.433 152.007,89.854 151.917,97.941C151.814,107.091 151.858,116.242 151.855,125.393C151.851,136.706 151.658,148.026 152.04,159.327C152.12,161.7 153.86,164.623 155.761,166.104C156.932,167.016 159.924,165.893 161.974,165.272C163.517,164.804 164.862,163.682 166.898,162.421Z"/>
+                    <path fill="#45B4F3" d="M265.114,60.792C264.563,58.055 264.017,55.317 263.459,52.583C262.968,50.181 263.03,48.172 266.297,48.16C279.39,48.111 292.515,47.298 304.136,55.507C315.178,63.308 322.694,73.427 323.693,86.912C324.67,100.096 323.995,113.4 324.103,126.651C324.322,153.433 324.802,180.216 324.75,206.998C324.709,228.511 311.205,247.695 288.901,252.405C284.877,253.255 280.698,253.746 276.589,253.757C237.777,253.857 198.961,254.069 160.155,253.583C153.201,253.496 150.136,257.796 146.32,261.427C131.493,275.535 116.959,289.951 102.3,304.236C101.281,305.229 100.127,306.084 98.132,307.764C97.703,305.114 97.214,303.478 97.207,301.84C97.147,287.682 96.965,273.517 97.342,259.368C97.421,256.413 98.977,252.858 101.037,250.721C106.084,245.486 111.865,240.966 117.264,236.062C119.93,233.64 122.843,231.304 124.836,228.378C126.753,225.564 128.956,225.147 131.941,225.155C157.927,225.225 183.913,225.221 209.899,225.145C212.32,225.138 214.74,224.487 217.987,224.144C222.232,223.171 225.651,222.19 229.447,221.192C240.793,216.947 250.431,211.053 256.396,199.999C259.074,194.528 261.47,189.258 264.007,183.614C264.767,176.16 265.387,169.08 266.082,161.536C266.11,153.048 266.062,145.025 266.086,136.537C266.152,112.707 266.169,89.342 266.099,65.977C266.094,64.247 265.457,62.52 265.114,60.792Z"/>
+                    <path fill="#FCB368" d="M119.985,128.708C120.735,127.287 121.484,125.865 122.81,124.158C124.777,122.257 126.005,120.455 127.593,119.066C131.266,115.854 137.653,115.728 141.177,118.833C144.99,122.192 144.281,126.035 142.001,129.989C141.109,131.536 140.539,133.27 139.567,135.14C136.229,140.439 133.094,145.485 130.078,150.602C123.72,161.387 117.425,172.208 110.9,183.283C104.371,190.916 96.808,196.43 86.916,197.319C81.408,197.814 75.788,197.049 69.966,196.594C63.164,194.064 57.764,190.329 53.009,185.133C44.949,176.327 45.115,165.243 42.965,154.602C39.935,139.598 35.884,124.8 32.269,109.913C31.513,106.37 30.825,102.812 29.986,99.288C28.647,93.659 29.83,90.778 34.429,88.842C38.157,87.273 41.73,89.078 44.379,93.874C44.7,94.455 44.997,95.049 45.574,96.251C47.696,102.624 49.55,108.383 51.403,114.141C51.771,114.065 52.139,113.989 52.508,113.913C51.67,107.608 50.832,101.304 49.994,94.999C49.448,88.582 48.902,82.165 48.238,74.95C48.099,70.504 47.72,66.747 51.422,64.339C57.653,60.285 64.086,64.555 64.9,72.903C65.789,82.027 67.155,91.104 68.313,100.201C69.122,98.585 69.159,96.999 69.116,95.415C68.798,83.671 68.485,71.927 68.123,60.184C67.99,55.885 69.495,52.472 73.576,50.11C81.384,50.091 82.79,51.058 84.077,58.301C84.759,62.135 84.739,66.094 84.98,70.444C85.522,82.638 86.118,94.385 86.714,106.131C87.132,106.113 87.55,106.096 87.967,106.078C87.967,94.051 87.967,82.023 88.021,69.572C88.279,59.968 90.86,57.13 99.178,57.43C101.218,60.509 103.05,63.329 104.879,66.574C104.876,79.831 104.883,92.662 104.874,105.492C104.868,113.481 104.802,121.47 104.833,129.459C104.857,135.449 108.329,139.356 113.217,139.046C116.702,138.825 120.155,133.551 119.985,128.708Z"/>
+                </svg>
+            </div>
+            <h1 class="app-title">Hello Lingo</h1>
+            <p class="app-subtitle">Learn Languages the Fun Way</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Master New Languages with Confidence</h1>
+            <p>Transform your language learning journey with interactive lessons, personalized practice, and real-world conversations. Start speaking fluently today!</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Hello Lingo?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Learning</h3>
+                    <p>Adaptive lessons that match your learning pace and style. Track your progress and focus on areas that need improvement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗣️</div>
+                    <h3>Interactive Conversations</h3>
+                    <p>Practice with AI-powered conversations and real-world scenarios. Build confidence through speaking exercises.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Comprehensive Content</h3>
+                    <p>Access thousands of lessons, vocabulary lists, grammar exercises, and cultural insights for multiple languages.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Gamified Experience</h3>
+                    <p>Earn points, unlock achievements, and compete with friends. Make learning fun and motivating.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Learn Anywhere</h3>
+                    <p>Download lessons for offline study. Practice during your commute, breaks, or whenever you have free time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Multiple Languages</h3>
+                    <p>Choose from Spanish, French, German, Italian, Japanese, Chinese, and many more languages to learn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Language Journey?</h2>
+            <p>Join millions of learners worldwide and discover the joy of speaking new languages</p>
+            <a href="#" class="download-btn">Download Hello Lingo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Hello Lingo. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Support</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
