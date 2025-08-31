@@ -33,7 +33,7 @@ KEY_PASSWORD=your_key_password_here
 
 function checkKeystoreSetup() {
   const androidDir = path.join(process.cwd(), 'android', 'app');
-  const keystorePath = path.join(androidDir, 'release-key.keystore');
+  const keystorePath = path.join(androidDir, 'release.keystore');
   const buildGradlePath = path.join(androidDir, 'build.gradle');
   const envPath = path.join(process.cwd(), '.env');
 
@@ -74,7 +74,7 @@ function checkKeystoreSetup() {
 
 function generateKeystoreCommand() {
   const androidDir = path.join(process.cwd(), 'android', 'app');
-  const keystorePath = path.join(androidDir, 'release-key.keystore');
+  const keystorePath = path.join(androidDir, 'release.keystore');
   
   console.log('🔑 To create a release keystore, run this command:');
   console.log('');
@@ -100,7 +100,7 @@ function showBuildGradleConfig() {
   console.log('        keyPassword \'android\'');
   console.log('    }');
   console.log('    release {');
-  console.log('        storeFile file(\'release-key.keystore\')');
+  console.log('        storeFile file(\'release.keystore\')');
   console.log('        storePassword System.getenv("KEYSTORE_PASSWORD")');
   console.log('        keyAlias System.getenv("KEY_ALIAS")');
   console.log('        keyPassword System.getenv("KEY_PASSWORD")');

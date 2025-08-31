@@ -3,3 +3,5 @@ cd 'C:\my projects\language-learn'; adb shell run-as com.languagelearn cat files
 
 - to make app word with local server - run 
 adb reverse tcp:3000 tcp:3000
+
+- open keystore
