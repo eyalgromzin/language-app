@@ -1,175 +1,127 @@
 {
   "id": "02_introductions",
-  "title": "Présentations et informations de base",
+  "title": "Introductions & basic info",
   "emoji": "💬",
-  "language": "Français",
+  "language": "English",
   "items": [
     {
       "id": "02_introductions_name",
       "type": "word",
-      "text": "nom",
+      "text": "name",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_meet",
       "type": "word",
-      "text": "rencontrer",
+      "text": "meet",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_from",
       "type": "word",
-      "text": "de",
+      "text": "from",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_speak",
       "type": "word",
-      "text": "parler",
+      "text": "speak",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_language",
       "type": "word",
-      "text": "langue",
+      "text": "language",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_country",
       "type": "word",
-      "text": "pays",
+      "text": "country",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_city",
       "type": "word",
-      "text": "ville",
+      "text": "city",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_job",
       "type": "word",
-      "text": "travail",
+      "text": "job",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_student",
       "type": "word",
-      "text": "étudiant",
+      "text": "student",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_teacher",
       "type": "word",
-      "text": "professeur",
+      "text": "teacher",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_my_name_is",
       "type": "sentence",
-      "text": "Je m'appelle …",
+      "text": "My name is …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_what_is_your_name",
       "type": "sentence",
-      "text": "Comment vous appelez-vous ?",
+      "text": "What is your name?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_nice_to_meet_you",
       "type": "sentence",
-      "text": "Enchanté de vous rencontrer.",
+      "text": "Nice to meet you.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_how_are_you",
       "type": "sentence",
-      "text": "Comment allez-vous ?",
+      "text": "How are you?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_fine_thank_you",
       "type": "sentence",
-      "text": "Je vais bien, merci.",
+      "text": "I am fine, thank you.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_where_are_you_from",
       "type": "sentence",
-      "text": "D'où venez-vous ?",
+      "text": "Where are you from?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_from",
       "type": "sentence",
-      "text": "Je viens de …",
+      "text": "I am from …",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "02_introductions_what_language_do_you_speak",
+      "id": "02_introductions_do_you_speak_english",
       "type": "sentence",
-      "text": "Quelle langue parlez-vous ?",
+      "text": "Do you speak English?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "02_introductions_i_speak",
+      "id": "02_introductions_i_speak_a_little",
       "type": "sentence",
-      "text": "Je parle …",
+      "text": "I speak a little.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_what_do_you_do",
       "type": "sentence",
-      "text": "Que faites-vous ?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "02_introductions_i_am_a",
-      "type": "sentence",
-      "text": "Je suis …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "02_introductions_how_old_are_you",
-      "type": "sentence",
-      "text": "Quel âge avez-vous ?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "02_introductions_i_am_years_old",
-      "type": "sentence",
-      "text": "J'ai … ans.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "02_introductions_do_you_like",
-      "type": "sentence",
-      "text": "Aimez-vous … ?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "02_introductions_yes_i_like",
-      "type": "sentence",
-      "text": "Oui, j'aime …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "02_introductions_no_i_dont_like",
-      "type": "sentence",
-      "text": "Non, je n'aime pas …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "02_introductions_what_about_you",
-      "type": "sentence",
-      "text": "Et vous ?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "02_introductions_pleasure_to_meet_you",
-      "type": "sentence",
-      "text": "Ravi de vous rencontrer.",
+      "text": "What do you do?",
       "practiceType": "formulateSentense"
     }
   ]

@@ -1,127 +1,127 @@
 {
   "id": "01_essentials",
-  "title": "挨拶と礼儀",
+  "title": "greetings & politeness",
   "emoji": "👋",
-  "language": "日本語",
+  "language": "English",
   "items": [
     {
       "id": "01_essentials_hello",
       "type": "word",
-      "text": "こんにちは",
+      "text": "hello",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_hi",
       "type": "word",
-      "text": "やあ",
+      "text": "hi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_please",
       "type": "word",
-      "text": "お願いします",
+      "text": "please",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thank_you",
       "type": "word",
-      "text": "ありがとう",
+      "text": "thank you",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thanks",
       "type": "word",
-      "text": "ありがとう",
+      "text": "thanks",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_yes",
       "type": "word",
-      "text": "はい",
+      "text": "yes",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_no",
       "type": "word",
-      "text": "いいえ",
+      "text": "no",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_goodbye",
       "type": "word",
-      "text": "さようなら",
+      "text": "goodbye",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_welcome",
       "type": "word",
-      "text": "ようこそ",
+      "text": "welcome",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_okay",
       "type": "word",
-      "text": "オーケー",
+      "text": "okay",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_excuse_me",
       "type": "sentence",
-      "text": "すみません。",
+      "text": "Excuse me.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_sorry",
       "type": "sentence",
-      "text": "ごめんなさい。",
+      "text": "Sorry.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_morning",
       "type": "sentence",
-      "text": "おはようございます。",
+      "text": "Good morning.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_evening",
       "type": "sentence",
-      "text": "こんばんは。",
+      "text": "Good evening.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_night",
       "type": "sentence",
-      "text": "おやすみなさい。",
+      "text": "Good night.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_see_you_later",
       "type": "sentence",
-      "text": "また後で。",
+      "text": "See you later.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_have_a_nice_day",
       "type": "sentence",
-      "text": "良い一日を。",
+      "text": "Have a nice day.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_you_are_welcome",
       "type": "sentence",
-      "text": "どういたしまして。",
+      "text": "You are welcome.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_no_problem",
       "type": "sentence",
-      "text": "問題ありません。",
+      "text": "No problem.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_take_care",
       "type": "sentence",
-      "text": "お気をつけて。",
+      "text": "Take care.",
       "practiceType": "formulateSentense"
     }
   ]

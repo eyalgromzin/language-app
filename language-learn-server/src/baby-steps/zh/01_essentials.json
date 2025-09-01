@@ -1,127 +1,127 @@
 {
   "id": "01_essentials",
-  "title": "问候和礼貌",
+  "title": "greetings & politeness",
   "emoji": "👋",
-  "language": "中文",
+  "language": "English",
   "items": [
     {
       "id": "01_essentials_hello",
       "type": "word",
-      "text": "你好",
+      "text": "hello",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_hi",
       "type": "word",
-      "text": "嗨",
+      "text": "hi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_please",
       "type": "word",
-      "text": "请",
+      "text": "please",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thank_you",
       "type": "word",
-      "text": "谢谢",
+      "text": "thank you",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thanks",
       "type": "word",
-      "text": "谢谢",
+      "text": "thanks",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_yes",
       "type": "word",
-      "text": "是",
+      "text": "yes",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_no",
       "type": "word",
-      "text": "不",
+      "text": "no",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_goodbye",
       "type": "word",
-      "text": "再见",
+      "text": "goodbye",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_welcome",
       "type": "word",
-      "text": "欢迎",
+      "text": "welcome",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_okay",
       "type": "word",
-      "text": "好的",
+      "text": "okay",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_excuse_me",
       "type": "sentence",
-      "text": "对不起。",
+      "text": "Excuse me.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_sorry",
       "type": "sentence",
-      "text": "抱歉。",
+      "text": "Sorry.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_morning",
       "type": "sentence",
-      "text": "早上好。",
+      "text": "Good morning.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_evening",
       "type": "sentence",
-      "text": "晚上好。",
+      "text": "Good evening.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_night",
       "type": "sentence",
-      "text": "晚安。",
+      "text": "Good night.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_see_you_later",
       "type": "sentence",
-      "text": "待会儿见。",
+      "text": "See you later.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_have_a_nice_day",
       "type": "sentence",
-      "text": "祝你有美好的一天。",
+      "text": "Have a nice day.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_you_are_welcome",
       "type": "sentence",
-      "text": "不客气。",
+      "text": "You are welcome.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_no_problem",
       "type": "sentence",
-      "text": "没问题。",
+      "text": "No problem.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_take_care",
       "type": "sentence",
-      "text": "保重。",
+      "text": "Take care.",
       "practiceType": "formulateSentense"
     }
   ]

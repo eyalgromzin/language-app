@@ -1,127 +1,127 @@
 {
   "id": "01_essentials",
-  "title": "приветствия и вежливость",
+  "title": "greetings & politeness",
   "emoji": "👋",
-  "language": "Русский",
+  "language": "English",
   "items": [
     {
       "id": "01_essentials_hello",
       "type": "word",
-      "text": "привет",
+      "text": "hello",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_hi",
       "type": "word",
-      "text": "привет",
+      "text": "hi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_please",
       "type": "word",
-      "text": "пожалуйста",
+      "text": "please",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thank_you",
       "type": "word",
-      "text": "спасибо",
+      "text": "thank you",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thanks",
       "type": "word",
-      "text": "спасибо",
+      "text": "thanks",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_yes",
       "type": "word",
-      "text": "да",
+      "text": "yes",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_no",
       "type": "word",
-      "text": "нет",
+      "text": "no",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_goodbye",
       "type": "word",
-      "text": "до свидания",
+      "text": "goodbye",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_welcome",
       "type": "word",
-      "text": "добро пожаловать",
+      "text": "welcome",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_okay",
       "type": "word",
-      "text": "хорошо",
+      "text": "okay",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_excuse_me",
       "type": "sentence",
-      "text": "Извините.",
+      "text": "Excuse me.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_sorry",
       "type": "sentence",
-      "text": "Извините.",
+      "text": "Sorry.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_morning",
       "type": "sentence",
-      "text": "Доброе утро.",
+      "text": "Good morning.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_evening",
       "type": "sentence",
-      "text": "Добрый вечер.",
+      "text": "Good evening.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_night",
       "type": "sentence",
-      "text": "Спокойной ночи.",
+      "text": "Good night.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_see_you_later",
       "type": "sentence",
-      "text": "До встречи.",
+      "text": "See you later.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_have_a_nice_day",
       "type": "sentence",
-      "text": "Хорошего дня.",
+      "text": "Have a nice day.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_you_are_welcome",
       "type": "sentence",
-      "text": "Пожалуйста.",
+      "text": "You are welcome.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_no_problem",
       "type": "sentence",
-      "text": "Нет проблем.",
+      "text": "No problem.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_take_care",
       "type": "sentence",
-      "text": "Береги себя.",
+      "text": "Take care.",
       "practiceType": "formulateSentense"
     }
   ]
