@@ -7,31 +7,31 @@
     {
       "id": "35_food_and_drinks_food",
       "type": "word",
-      "text": "food",
+      "text": "thức ăn",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_drink",
       "type": "word",
-      "text": "drink",
+      "text": "uống",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_breakfast",
       "type": "word",
-      "text": "breakfast",
+      "text": "bữa sáng",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_lunch",
       "type": "word",
-      "text": "lunch",
+      "text": "bữa trưa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_dinner",
       "type": "word",
-      "text": "dinner",
+      "text": "bữa tối",
       "practiceType": "chooseTranslation"
     },
     {
@@ -43,13 +43,13 @@
     {
       "id": "35_food_and_drinks_menu",
       "type": "word",
-      "text": "menu",
+      "text": "thực đơn",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_order",
       "type": "word",
-      "text": "order",
+      "text": "đặt món",
       "practiceType": "chooseTranslation"
     },
     {

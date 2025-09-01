@@ -1,6 +1,6 @@
 {
   "id": "05_getting_around",
-  "title": "Directions & getting around",
+  "title": "Напрямки та орієнтування",
   "emoji": "🧭",
   "language": "Ukrainian",
   "items": [
@@ -67,43 +67,43 @@
     {
       "id": "05_getting_around_where_is_the_bathroom",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "Де знаходиться ванна кімната?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_where_is_the_station",
       "type": "sentence",
-      "text": "Where is the station?",
+      "text": "Де знаходиться станція?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_how_do_i_get_to",
       "type": "sentence",
-      "text": "How do I get to …?",
+      "text": "Як мені дістатися до …?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_is_it_close",
       "type": "sentence",
-      "text": "Is it close?",
+      "text": "Це близько?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_i_am_lost",
       "type": "sentence",
-      "text": "I am lost.",
+      "text": "Я заблукав.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_turn_left",
       "type": "sentence",
-      "text": "Turn left.",
+      "text": "Поверніть ліворуч.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_go_straight",
       "type": "sentence",
-      "text": "Go straight.",
+      "text": "Йдіть прямо.",
       "practiceType": "formulateSentense"
     },
     {

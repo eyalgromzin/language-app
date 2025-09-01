@@ -1,6 +1,6 @@
 {
   "id": "08_travel_hotel",
-  "title": "Travel & hotel",
+  "title": "Du lịch và khách sạn",
   "emoji": "🧳",
   "language": "Vietnamese",
   "items": [
@@ -13,7 +13,7 @@
     {
       "id": "08_travel_hotel_reservation",
       "type": "word",
-      "text": "reservation",
+      "text": "đặt bàn",
       "practiceType": "chooseTranslation"
     },
     {

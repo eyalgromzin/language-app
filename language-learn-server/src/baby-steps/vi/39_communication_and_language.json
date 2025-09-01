@@ -7,7 +7,7 @@
     {
       "id": "39_communication_and_language_speak",
       "type": "word",
-      "text": "speak",
+      "text": "nói",
       "practiceType": "chooseTranslation"
     },
     {
@@ -25,7 +25,7 @@
     {
       "id": "39_communication_and_language_understand",
       "type": "word",
-      "text": "understand",
+      "text": "hiểu",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,7 +67,7 @@
     {
       "id": "39_communication_and_language_do_you_speak_english",
       "type": "sentence",
-      "text": "Do you speak English?",
+      "text": "Bạn có nói tiếng Anh không?",
       "practiceType": "formulateSentense"
     },
     {

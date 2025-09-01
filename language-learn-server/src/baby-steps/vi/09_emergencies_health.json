@@ -1,13 +1,13 @@
 {
   "id": "09_emergencies_health",
-  "title": "Emergencies & health",
+  "title": "Tình huống khẩn cấp và sức khỏe",
   "emoji": "⛑️",
   "language": "Vietnamese",
   "items": [
     {
       "id": "09_emergencies_health_help",
       "type": "word",
-      "text": "help",
+      "text": "giúp đỡ",
       "practiceType": "chooseTranslation"
     },
     {
