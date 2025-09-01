@@ -2,126 +2,126 @@
   "id": "24_family_and_relationships",
   "title": "Family & Relationships",
   "emoji": "👨‍👩‍👧‍👦",
-  "language": "English",
+  "language": "Spanish",
   "items": [
     {
       "id": "24_family_and_relationships_family",
       "type": "word",
-      "text": "family",
+      "text": "familia",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_mother",
       "type": "word",
-      "text": "mother",
+      "text": "madre",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_father",
       "type": "word",
-      "text": "father",
+      "text": "padre",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_sister",
       "type": "word",
-      "text": "sister",
+      "text": "hermana",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_brother",
       "type": "word",
-      "text": "brother",
+      "text": "hermano",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_friend",
       "type": "word",
-      "text": "friend",
+      "text": "amigo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_husband",
       "type": "word",
-      "text": "husband",
+      "text": "esposo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_wife",
       "type": "word",
-      "text": "wife",
+      "text": "esposa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_child",
       "type": "word",
-      "text": "child",
+      "text": "hijo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_parent",
       "type": "word",
-      "text": "parent",
+      "text": "padre",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_how_is_your_family",
       "type": "sentence",
-      "text": "How is your family?",
+      "text": "¿Cómo está tu familia?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_mother_is_a_teacher",
       "type": "sentence",
-      "text": "My mother is a teacher.",
+      "text": "Mi madre es profesora.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_i_have_two_sisters",
       "type": "sentence",
-      "text": "I have two sisters.",
+      "text": "Tengo dos hermanas.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_where_does_your_father_work",
       "type": "sentence",
-      "text": "Where does your father work?",
+      "text": "¿Dónde trabaja tu padre?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_brother_is_older_than_me",
       "type": "sentence",
-      "text": "My brother is older than me.",
+      "text": "Mi hermano es mayor que yo.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_we_are_good_friends",
       "type": "sentence",
-      "text": "We are good friends.",
+      "text": "Somos buenos amigos.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_husband_likes_cooking",
       "type": "sentence",
-      "text": "My husband likes cooking.",
+      "text": "A mi esposo le gusta cocinar.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_do_you_have_children",
       "type": "sentence",
-      "text": "Do you have children?",
+      "text": "¿Tienes hijos?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_parents_live_in_the_city",
       "type": "sentence",
-      "text": "My parents live in the city.",
+      "text": "Mis padres viven en la ciudad.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_i_love_my_family_very_much",
       "type": "sentence",
-      "text": "I love my family very much.",
+      "text": "Amo mucho a mi familia.",
       "practiceType": "formulateSentense"
     }
   ]
