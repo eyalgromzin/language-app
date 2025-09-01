@@ -1,0 +1,176 @@
+{
+  "id": "02_introductions",
+  "title": "Presentaciones e información básica",
+  "emoji": "💬",
+  "language": "Español",
+  "items": [
+    {
+      "id": "02_introductions_name",
+      "type": "word",
+      "text": "nombre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_meet",
+      "type": "word",
+      "text": "conocer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_from",
+      "type": "word",
+      "text": "de",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_speak",
+      "type": "word",
+      "text": "hablar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_language",
+      "type": "word",
+      "text": "idioma",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_country",
+      "type": "word",
+      "text": "país",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_city",
+      "type": "word",
+      "text": "ciudad",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_job",
+      "type": "word",
+      "text": "trabajo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_student",
+      "type": "word",
+      "text": "estudiante",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_teacher",
+      "type": "word",
+      "text": "profesor",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_my_name_is",
+      "type": "sentence",
+      "text": "Me llamo …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_is_your_name",
+      "type": "sentence",
+      "text": "¿Cómo te llamas?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_nice_to_meet_you",
+      "type": "sentence",
+      "text": "Encantado de conocerte.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_how_are_you",
+      "type": "sentence",
+      "text": "¿Cómo estás?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_fine_thank_you",
+      "type": "sentence",
+      "text": "Estoy bien, gracias.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_where_are_you_from",
+      "type": "sentence",
+      "text": "¿De dónde eres?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_from",
+      "type": "sentence",
+      "text": "Soy de …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_language_do_you_speak",
+      "type": "sentence",
+      "text": "¿Qué idioma hablas?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_speak",
+      "type": "sentence",
+      "text": "Hablo …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_do_you_do",
+      "type": "sentence",
+      "text": "¿A qué te dedicas?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_a",
+      "type": "sentence",
+      "text": "Soy …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_how_old_are_you",
+      "type": "sentence",
+      "text": "¿Cuántos años tienes?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_years_old",
+      "type": "sentence",
+      "text": "Tengo … años.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_do_you_like",
+      "type": "sentence",
+      "text": "¿Te gusta …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_yes_i_like",
+      "type": "sentence",
+      "text": "Sí, me gusta …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_no_i_dont_like",
+      "type": "sentence",
+      "text": "No, no me gusta …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_about_you",
+      "type": "sentence",
+      "text": "¿Y tú?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_pleasure_to_meet_you",
+      "type": "sentence",
+      "text": "Un placer conocerte.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

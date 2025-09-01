@@ -1,0 +1,176 @@
+{
+  "id": "02_introductions",
+  "title": "Vorstellungen und grundlegende Informationen",
+  "emoji": "💬",
+  "language": "Deutsch",
+  "items": [
+    {
+      "id": "02_introductions_name",
+      "type": "word",
+      "text": "Name",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_meet",
+      "type": "word",
+      "text": "treffen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_from",
+      "type": "word",
+      "text": "aus",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_speak",
+      "type": "word",
+      "text": "sprechen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_language",
+      "type": "word",
+      "text": "Sprache",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_country",
+      "type": "word",
+      "text": "Land",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_city",
+      "type": "word",
+      "text": "Stadt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_job",
+      "type": "word",
+      "text": "Beruf",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_student",
+      "type": "word",
+      "text": "Student",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_teacher",
+      "type": "word",
+      "text": "Lehrer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_my_name_is",
+      "type": "sentence",
+      "text": "Ich heiße …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_is_your_name",
+      "type": "sentence",
+      "text": "Wie heißt du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_nice_to_meet_you",
+      "type": "sentence",
+      "text": "Freut mich, dich kennenzulernen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_how_are_you",
+      "type": "sentence",
+      "text": "Wie geht es dir?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_fine_thank_you",
+      "type": "sentence",
+      "text": "Mir geht es gut, danke.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_where_are_you_from",
+      "type": "sentence",
+      "text": "Woher kommst du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_from",
+      "type": "sentence",
+      "text": "Ich komme aus …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_language_do_you_speak",
+      "type": "sentence",
+      "text": "Welche Sprache sprichst du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_speak",
+      "type": "sentence",
+      "text": "Ich spreche …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_do_you_do",
+      "type": "sentence",
+      "text": "Was machst du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_a",
+      "type": "sentence",
+      "text": "Ich bin …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_how_old_are_you",
+      "type": "sentence",
+      "text": "Wie alt bist du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_years_old",
+      "type": "sentence",
+      "text": "Ich bin … Jahre alt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_do_you_like",
+      "type": "sentence",
+      "text": "Magst du …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_yes_i_like",
+      "type": "sentence",
+      "text": "Ja, ich mag …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_no_i_dont_like",
+      "type": "sentence",
+      "text": "Nein, ich mag … nicht.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_about_you",
+      "type": "sentence",
+      "text": "Und du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_pleasure_to_meet_you",
+      "type": "sentence",
+      "text": "Freut mich, dich kennenzulernen.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

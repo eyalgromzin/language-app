@@ -1,0 +1,248 @@
+{
+  "id": "fr",
+  "title": "Français",
+  "language": "Français",
+  "emoji": "🇫🇷",
+  "steps": [
+    {
+      "id": "01_essentials",
+      "title": "salutations et politesse",
+      "emoji": "👋",
+      "file": "01_essentials.json"
+    },
+    {
+      "id": "02_introductions",
+      "title": "présentations",
+      "emoji": "👤",
+      "file": "02_introductions.json"
+    },
+    {
+      "id": "03_core_verbs_pronouns",
+      "title": "verbes essentiels et pronoms",
+      "emoji": "🔤",
+      "file": "03_core_verbs_pronouns.json"
+    },
+    {
+      "id": "04_numbers_time_basics",
+      "title": "nombres et temps de base",
+      "emoji": "⏰",
+      "file": "04_numbers_time_basics.json"
+    },
+    {
+      "id": "05_getting_around",
+      "title": "se déplacer",
+      "emoji": "🚶",
+      "file": "05_getting_around.json"
+    },
+    {
+      "id": "06_food_drink_basics",
+      "title": "nourriture et boissons de base",
+      "emoji": "🍽️",
+      "file": "06_food_drink_basics.json"
+    },
+    {
+      "id": "07_shopping_money",
+      "title": "shopping et argent",
+      "emoji": "🛒",
+      "file": "07_shopping_money.json"
+    },
+    {
+      "id": "08_travel_hotel",
+      "title": "voyage et hôtel",
+      "emoji": "✈️",
+      "file": "08_travel_hotel.json"
+    },
+    {
+      "id": "09_emergencies_health",
+      "title": "urgences et santé",
+      "emoji": "🚨",
+      "file": "09_emergencies_health.json"
+    },
+    {
+      "id": "10_daily_routines",
+      "title": "routines quotidiennes",
+      "emoji": "📅",
+      "file": "10_daily_routines.json"
+    },
+    {
+      "id": "11_family_people",
+      "title": "famille et personnes",
+      "emoji": "👨‍👩‍👧‍👦",
+      "file": "11_family_people.json"
+    },
+    {
+      "id": "12_weather_smalltalk",
+      "title": "météo et conversation",
+      "emoji": "🌤️",
+      "file": "12_weather_smalltalk.json"
+    },
+    {
+      "id": "13_work_study",
+      "title": "travail et études",
+      "emoji": "💼",
+      "file": "13_work_study.json"
+    },
+    {
+      "id": "14_plans_invitations",
+      "title": "plans et invitations",
+      "emoji": "📋",
+      "file": "14_plans_invitations.json"
+    },
+    {
+      "id": "15_requests_help",
+      "title": "demandes et aide",
+      "emoji": "🙏",
+      "file": "15_requests_help.json"
+    },
+    {
+      "id": "16_phone_internet",
+      "title": "téléphone et internet",
+      "emoji": "📱",
+      "file": "16_phone_internet.json"
+    },
+    {
+      "id": "17_restaurant",
+      "title": "restaurant",
+      "emoji": "🍴",
+      "file": "17_restaurant.json"
+    },
+    {
+      "id": "18_transportation_details",
+      "title": "détails de transport",
+      "emoji": "🚌",
+      "file": "18_transportation_details.json"
+    },
+    {
+      "id": "19_housing_utilities",
+      "title": "logement et services",
+      "emoji": "🏠",
+      "file": "19_housing_utilities.json"
+    },
+    {
+      "id": "20_connectors_advanced",
+      "title": "connecteurs avancés",
+      "emoji": "🔗",
+      "file": "20_connectors_advanced.json"
+    },
+    {
+      "id": "21_technology_basics",
+      "title": "technologie de base",
+      "emoji": "💻",
+      "file": "21_technology_basics.json"
+    },
+    {
+      "id": "22_weather_and_nature",
+      "title": "météo et nature",
+      "emoji": "🌿",
+      "file": "22_weather_and_nature.json"
+    },
+    {
+      "id": "23_shopping_and_money",
+      "title": "shopping et argent",
+      "emoji": "💰",
+      "file": "23_shopping_and_money.json"
+    },
+    {
+      "id": "24_family_and_relationships",
+      "title": "famille et relations",
+      "emoji": "❤️",
+      "file": "24_family_and_relationships.json"
+    },
+    {
+      "id": "25_work_and_profession",
+      "title": "travail et profession",
+      "emoji": "👷",
+      "file": "25_work_and_profession.json"
+    },
+    {
+      "id": "26_health_and_medical",
+      "title": "santé et médical",
+      "emoji": "🏥",
+      "file": "26_health_and_medical.json"
+    },
+    {
+      "id": "27_education_and_learning",
+      "title": "éducation et apprentissage",
+      "emoji": "📚",
+      "file": "27_education_and_learning.json"
+    },
+    {
+      "id": "28_sports_and_exercise",
+      "title": "sports et exercice",
+      "emoji": "⚽",
+      "file": "28_sports_and_exercise.json"
+    },
+    {
+      "id": "29_travel_and_transportation",
+      "title": "voyage et transport",
+      "emoji": "🚗",
+      "file": "29_travel_and_transportation.json"
+    },
+    {
+      "id": "30_hobbies_and_entertainment",
+      "title": "loisirs et divertissement",
+      "emoji": "🎮",
+      "file": "30_hobbies_and_entertainment.json"
+    },
+    {
+      "id": "31_emotions_and_feelings",
+      "title": "émotions et sentiments",
+      "emoji": "😊",
+      "file": "31_emotions_and_feelings.json"
+    },
+    {
+      "id": "32_time_and_dates",
+      "title": "temps et dates",
+      "emoji": "📅",
+      "file": "32_time_and_dates.json"
+    },
+    {
+      "id": "33_numbers_and_quantities",
+      "title": "nombres et quantités",
+      "emoji": "🔢",
+      "file": "33_numbers_and_quantities.json"
+    },
+    {
+      "id": "34_colors_and_appearance",
+      "title": "couleurs et apparence",
+      "emoji": "🎨",
+      "file": "34_colors_and_appearance.json"
+    },
+    {
+      "id": "35_food_and_drinks",
+      "title": "nourriture et boissons",
+      "emoji": "🍕",
+      "file": "35_food_and_drinks.json"
+    },
+    {
+      "id": "36_clothing_and_fashion",
+      "title": "vêtements et mode",
+      "emoji": "👕",
+      "file": "36_clothing_and_fashion.json"
+    },
+    {
+      "id": "37_home_and_furniture",
+      "title": "maison et meubles",
+      "emoji": "🛋️",
+      "file": "37_home_and_furniture.json"
+    },
+    {
+      "id": "38_animals_and_pets",
+      "title": "animaux et animaux de compagnie",
+      "emoji": "🐕",
+      "file": "38_animals_and_pets.json"
+    },
+    {
+      "id": "39_communication_and_language",
+      "title": "communication et langue",
+      "emoji": "💬",
+      "file": "39_communication_and_language.json"
+    },
+    {
+      "id": "40_advanced_phrases",
+      "title": "phrases avancées",
+      "emoji": "📝",
+      "file": "40_advanced_phrases.json"
+    }
+  ]
+}

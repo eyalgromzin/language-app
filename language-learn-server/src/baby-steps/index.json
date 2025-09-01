@@ -5,6 +5,66 @@
       "name": "English",
       "folder": "en",
       "indexFile": "en/index.json"
+    },
+    {
+      "code": "fr",
+      "name": "Français",
+      "folder": "fr",
+      "indexFile": "fr/index.json"
+    },
+    {
+      "code": "es",
+      "name": "Español",
+      "folder": "es",
+      "indexFile": "es/index.json"
+    },
+    {
+      "code": "de",
+      "name": "Deutsch",
+      "folder": "de",
+      "indexFile": "de/index.json"
+    },
+    {
+      "code": "it",
+      "name": "Italiano",
+      "folder": "it",
+      "indexFile": "it/index.json"
+    },
+    {
+      "code": "pt",
+      "name": "Português",
+      "folder": "pt",
+      "indexFile": "pt/index.json"
+    },
+    {
+      "code": "ru",
+      "name": "Русский",
+      "folder": "ru",
+      "indexFile": "ru/index.json"
+    },
+    {
+      "code": "ja",
+      "name": "日本語",
+      "folder": "ja",
+      "indexFile": "ja/index.json"
+    },
+    {
+      "code": "zh",
+      "name": "中文",
+      "folder": "zh",
+      "indexFile": "zh/index.json"
+    },
+    {
+      "code": "ar",
+      "name": "العربية",
+      "folder": "ar",
+      "indexFile": "ar/index.json"
+    },
+    {
+      "code": "hi",
+      "name": "हिन्दी",
+      "folder": "hi",
+      "indexFile": "hi/index.json"
     }
   ],
   "overview": "Language learning steps organized by language and step category"
