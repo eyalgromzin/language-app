@@ -2,126 +2,126 @@
   "id": "10_daily_routines",
   "title": "Daily routines & common verbs",
   "emoji": "☀️",
-  "language": "English",
+  "language": "Spanish",
   "items": [
     {
       "id": "10_daily_routines_to_go",
       "type": "word",
-      "text": "to go",
+      "text": "ir",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_come",
       "type": "word",
-      "text": "to come",
+      "text": "venir",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_do",
       "type": "word",
-      "text": "to do",
+      "text": "hacer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_make",
       "type": "word",
-      "text": "to make",
+      "text": "hacer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_like",
       "type": "word",
-      "text": "to like",
+      "text": "gustar",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_work",
       "type": "word",
-      "text": "to work",
+      "text": "trabajar",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_study",
       "type": "word",
-      "text": "to study",
+      "text": "estudiar",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_eat",
       "type": "word",
-      "text": "to eat",
+      "text": "comer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_sleep",
       "type": "word",
-      "text": "to sleep",
+      "text": "dormir",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_wake",
       "type": "word",
-      "text": "to wake",
+      "text": "despertar",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_i_go_to_work",
       "type": "sentence",
-      "text": "I go to work.",
+      "text": "Voy al trabajo.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_like_this",
       "type": "sentence",
-      "text": "I like this.",
+      "text": "Me gusta esto.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_do_not_understand",
       "type": "sentence",
-      "text": "I do not understand.",
+      "text": "No entiendo.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_wake_up_early",
       "type": "sentence",
-      "text": "I wake up early.",
+      "text": "Me despierto temprano.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_eat_breakfast",
       "type": "sentence",
-      "text": "I eat breakfast.",
+      "text": "Desayuno.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_study_english",
       "type": "sentence",
-      "text": "I study English.",
+      "text": "Estudio inglés.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_go_to_bed",
       "type": "sentence",
-      "text": "I go to bed.",
+      "text": "Me voy a la cama.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_what_do_you_do",
       "type": "sentence",
-      "text": "What do you do?",
+      "text": "¿Qué haces?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_make_dinner",
       "type": "sentence",
-      "text": "I make dinner.",
+      "text": "Hago la cena.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "¿Te gusta tu trabajo?",
       "practiceType": "formulateSentense"
     }
   ]

@@ -2,126 +2,126 @@
   "id": "05_getting_around",
   "title": "Directions & getting around",
   "emoji": "🧭",
-  "language": "English",
+  "language": "Spanish",
   "items": [
     {
       "id": "05_getting_around_left",
       "type": "word",
-      "text": "left",
+      "text": "izquierda",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_right",
       "type": "word",
-      "text": "right",
+      "text": "derecha",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_straight",
       "type": "word",
-      "text": "straight",
+      "text": "recto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_near",
       "type": "word",
-      "text": "near",
+      "text": "cerca",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_far",
       "type": "word",
-      "text": "far",
+      "text": "lejos",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_here",
       "type": "word",
-      "text": "here",
+      "text": "aquí",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_there",
       "type": "word",
-      "text": "there",
+      "text": "allí",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_up",
       "type": "word",
-      "text": "up",
+      "text": "arriba",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_down",
       "type": "word",
-      "text": "down",
+      "text": "abajo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_around",
       "type": "word",
-      "text": "around",
+      "text": "alrededor",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_where_is_the_bathroom",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "¿Dónde está el baño?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_where_is_the_station",
       "type": "sentence",
-      "text": "Where is the station?",
+      "text": "¿Dónde está la estación?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_how_do_i_get_to",
       "type": "sentence",
-      "text": "How do I get to …?",
+      "text": "¿Cómo llego a …?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_is_it_close",
       "type": "sentence",
-      "text": "Is it close?",
+      "text": "¿Está cerca?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_i_am_lost",
       "type": "sentence",
-      "text": "I am lost.",
+      "text": "Estoy perdido.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_turn_left",
       "type": "sentence",
-      "text": "Turn left.",
+      "text": "Gira a la izquierda.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_go_straight",
       "type": "sentence",
-      "text": "Go straight.",
+      "text": "Ve recto.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_it_is_over_there",
       "type": "sentence",
-      "text": "It is over there.",
+      "text": "Está por allí.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_can_you_help_me",
       "type": "sentence",
-      "text": "Can you help me?",
+      "text": "¿Puedes ayudarme?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_how_far_is_it",
       "type": "sentence",
-      "text": "How far is it?",
+      "text": "¿A qué distancia está?",
       "practiceType": "formulateSentense"
     }
   ]

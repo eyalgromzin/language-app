@@ -2,126 +2,126 @@
   "id": "19_housing_utilities",
   "title": "Housing & utilities",
   "emoji": "🏠",
-  "language": "English",
+  "language": "Spanish",
   "items": [
     {
       "id": "19_housing_utilities_apartment",
       "type": "word",
-      "text": "apartment",
+      "text": "apartamento",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_room",
       "type": "word",
-      "text": "room",
+      "text": "habitación",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_key",
       "type": "word",
-      "text": "key",
+      "text": "llave",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_electricity",
       "type": "word",
-      "text": "electricity",
+      "text": "electricidad",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_water",
       "type": "word",
-      "text": "water",
+      "text": "agua",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_house",
       "type": "word",
-      "text": "house",
+      "text": "casa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_kitchen",
       "type": "word",
-      "text": "kitchen",
+      "text": "cocina",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_bathroom",
       "type": "word",
-      "text": "bathroom",
+      "text": "baño",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_heating",
       "type": "word",
-      "text": "heating",
+      "text": "calefacción",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_rent",
       "type": "word",
-      "text": "rent",
+      "text": "alquiler",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_i_am_looking_for_an_apartment",
       "type": "sentence",
-      "text": "I am looking for an apartment.",
+      "text": "Estoy buscando un apartamento.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_the_key_does_not_work",
       "type": "sentence",
-      "text": "The key does not work.",
+      "text": "La llave no funciona.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_there_is_no_hot_water",
       "type": "sentence",
-      "text": "There is no hot water.",
+      "text": "No hay agua caliente.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_how_much_is_the_rent",
       "type": "sentence",
-      "text": "How much is the rent?",
+      "text": "¿Cuánto es el alquiler?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_do_you_have_a_kitchen",
       "type": "sentence",
-      "text": "Do you have a kitchen?",
+      "text": "¿Tienes cocina?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_the_heating_is_broken",
       "type": "sentence",
-      "text": "The heating is broken.",
+      "text": "La calefacción está rota.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_where_is_the_bathroom",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "¿Dónde está el baño?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_is_electricity_included",
       "type": "sentence",
-      "text": "Is electricity included?",
+      "text": "¿Está incluida la electricidad?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_can_i_see_the_house",
       "type": "sentence",
-      "text": "Can I see the house?",
+      "text": "¿Puedo ver la casa?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_do_you_have_parking",
       "type": "sentence",
-      "text": "Do you have parking?",
+      "text": "¿Tienes estacionamiento?",
       "practiceType": "formulateSentense"
     }
   ]

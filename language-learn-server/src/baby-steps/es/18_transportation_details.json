@@ -2,18 +2,18 @@
   "id": "18_transportation_details",
   "title": "Transportation details",
   "emoji": "🚌",
-  "language": "English",
+  "language": "Spanish",
   "items": [
     {
       "id": "18_transportation_details_bus",
       "type": "word",
-      "text": "bus",
+      "text": "autobús",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_train",
       "type": "word",
-      "text": "train",
+      "text": "tren",
       "practiceType": "chooseTranslation"
     },
     {
@@ -25,103 +25,103 @@
     {
       "id": "18_transportation_details_schedule",
       "type": "word",
-      "text": "schedule",
+      "text": "horario",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "boleto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_station",
       "type": "word",
-      "text": "station",
+      "text": "estación",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_platform",
       "type": "word",
-      "text": "platform",
+      "text": "andén",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_departure",
       "type": "word",
-      "text": "departure",
+      "text": "salida",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_arrival",
       "type": "word",
-      "text": "arrival",
+      "text": "llegada",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_delay",
       "type": "word",
-      "text": "delay",
+      "text": "retraso",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_what_time_does_the_bus_leave",
       "type": "sentence",
-      "text": "What time does the bus leave?",
+      "text": "¿A qué hora sale el autobús?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_where_can_i_buy_a_ticket",
       "type": "sentence",
-      "text": "Where can I buy a ticket?",
+      "text": "¿Dónde puedo comprar un boleto?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_is_there_a_discount",
       "type": "sentence",
-      "text": "Is there a discount?",
+      "text": "¿Hay descuento?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_which_platform_is_it",
       "type": "sentence",
-      "text": "Which platform is it?",
+      "text": "¿Cuál es el andén?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_is_the_train_delayed",
       "type": "sentence",
-      "text": "Is the train delayed?",
+      "text": "¿El tren está retrasado?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_how_much_is_a_ticket",
       "type": "sentence",
-      "text": "How much is a ticket?",
+      "text": "¿Cuánto cuesta un boleto?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_does_this_bus_go_to",
       "type": "sentence",
-      "text": "Does this bus go to …?",
+      "text": "¿Este autobús va a …?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_where_is_the_nearest_station",
       "type": "sentence",
-      "text": "Where is the nearest station?",
+      "text": "¿Dónde está la estación más cercana?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_what_time_does_it_arrive",
       "type": "sentence",
-      "text": "What time does it arrive?",
+      "text": "¿A qué hora llega?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_can_i_get_a_refund",
       "type": "sentence",
-      "text": "Can I get a refund?",
+      "text": "¿Puedo obtener un reembolso?",
       "practiceType": "formulateSentense"
     }
   ]

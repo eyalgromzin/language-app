@@ -2,12 +2,12 @@
   "id": "09_emergencies_health",
   "title": "Emergencies & health",
   "emoji": "⛑️",
-  "language": "English",
+  "language": "Spanish",
   "items": [
     {
       "id": "09_emergencies_health_help",
       "type": "word",
-      "text": "help",
+      "text": "ayuda",
       "practiceType": "chooseTranslation"
     },
     {
@@ -19,13 +19,13 @@
     {
       "id": "09_emergencies_health_pharmacy",
       "type": "word",
-      "text": "pharmacy",
+      "text": "farmacia",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_emergency",
       "type": "word",
-      "text": "emergency",
+      "text": "emergencia",
       "practiceType": "chooseTranslation"
     },
     {
@@ -37,91 +37,91 @@
     {
       "id": "09_emergencies_health_pain",
       "type": "word",
-      "text": "pain",
+      "text": "dolor",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "medicina",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_ambulance",
       "type": "word",
-      "text": "ambulance",
+      "text": "ambulancia",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_police",
       "type": "word",
-      "text": "police",
+      "text": "policía",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_fire",
       "type": "word",
-      "text": "fire",
+      "text": "fuego",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_call_an_ambulance",
       "type": "sentence",
-      "text": "Call an ambulance!",
+      "text": "¡Llama una ambulancia!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_a_doctor",
       "type": "sentence",
-      "text": "I need a doctor.",
+      "text": "Necesito un doctor.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_feel_sick",
       "type": "sentence",
-      "text": "I feel sick.",
+      "text": "Me siento enfermo.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_lost_my_passport",
       "type": "sentence",
-      "text": "I lost my passport.",
+      "text": "Perdí mi pasaporte.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_where_is_the_nearest_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "¿Dónde está el hospital más cercano?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_have_a_headache",
       "type": "sentence",
-      "text": "I have a headache.",
+      "text": "Tengo dolor de cabeza.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_call_the_police",
       "type": "sentence",
-      "text": "Call the police!",
+      "text": "¡Llama a la policía!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_this_is_an_emergency",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "Esta es una emergencia.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_help",
       "type": "sentence",
-      "text": "I need help.",
+      "text": "Necesito ayuda.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_are_you_okay",
       "type": "sentence",
-      "text": "Are you okay?",
+      "text": "¿Estás bien?",
       "practiceType": "formulateSentense"
     }
   ]

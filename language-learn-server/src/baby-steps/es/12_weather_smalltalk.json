@@ -1,127 +1,127 @@
 {
   "id": "12_weather_smalltalk",
   "title": "Weather & small talk",
-  "emoji": "🌦️",
-  "language": "English",
+  "emoji": "��️",
+  "language": "Spanish",
   "items": [
     {
       "id": "12_weather_smalltalk_hot",
       "type": "word",
-      "text": "hot",
+      "text": "caliente",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cold",
       "type": "word",
-      "text": "cold",
+      "text": "frío",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_rain",
       "type": "word",
-      "text": "rain",
+      "text": "lluvia",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_sunny",
       "type": "word",
-      "text": "sunny",
+      "text": "soleado",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_warm",
       "type": "word",
-      "text": "warm",
+      "text": "cálido",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_windy",
       "type": "word",
-      "text": "windy",
+      "text": "ventoso",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cloudy",
       "type": "word",
-      "text": "cloudy",
+      "text": "nublado",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_snow",
       "type": "word",
-      "text": "snow",
+      "text": "nieve",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_nice",
       "type": "word",
-      "text": "nice",
+      "text": "agradable",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_bad",
       "type": "word",
-      "text": "bad",
+      "text": "malo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_it_is_very_hot_today",
       "type": "sentence",
-      "text": "It is very hot today.",
+      "text": "Hoy hace mucho calor.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_might_rain_tomorrow",
       "type": "sentence",
-      "text": "It might rain tomorrow.",
+      "text": "Puede que llueva mañana.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_have_a_nice_day",
       "type": "sentence",
-      "text": "Have a nice day!",
+      "text": "¡Que tengas un buen día!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_how_is_the_weather",
       "type": "sentence",
-      "text": "How is the weather?",
+      "text": "¿Cómo está el clima?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_is_nice_weather",
       "type": "sentence",
-      "text": "It is nice weather.",
+      "text": "El clima está agradable.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_what_a_beautiful_day",
       "type": "sentence",
-      "text": "What a beautiful day!",
+      "text": "¡Qué día tan hermoso!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_the_weather_is_bad",
       "type": "sentence",
-      "text": "The weather is bad.",
+      "text": "El clima está malo.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_do_you_like_this_weather",
       "type": "sentence",
-      "text": "Do you like this weather?",
+      "text": "¿Te gusta este clima?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_is_windy_today",
       "type": "sentence",
-      "text": "It is windy today.",
+      "text": "Hoy hace viento.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_how_are_you_today",
       "type": "sentence",
-      "text": "How are you today?",
+      "text": "¿Cómo estás hoy?",
       "practiceType": "formulateSentense"
     }
   ]

@@ -2,126 +2,126 @@
   "id": "02_introductions",
   "title": "Introductions & basic info",
   "emoji": "💬",
-  "language": "English",
+  "language": "Spanish",
   "items": [
     {
       "id": "02_introductions_name",
       "type": "word",
-      "text": "name",
+      "text": "nombre",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_meet",
       "type": "word",
-      "text": "meet",
+      "text": "conocer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_from",
       "type": "word",
-      "text": "from",
+      "text": "de",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_speak",
       "type": "word",
-      "text": "speak",
+      "text": "hablar",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_language",
       "type": "word",
-      "text": "language",
+      "text": "idioma",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_country",
       "type": "word",
-      "text": "country",
+      "text": "país",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_city",
       "type": "word",
-      "text": "city",
+      "text": "ciudad",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_job",
       "type": "word",
-      "text": "job",
+      "text": "trabajo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_student",
       "type": "word",
-      "text": "student",
+      "text": "estudiante",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_teacher",
       "type": "word",
-      "text": "teacher",
+      "text": "profesor",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_my_name_is",
       "type": "sentence",
-      "text": "My name is …",
+      "text": "Me llamo …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_what_is_your_name",
       "type": "sentence",
-      "text": "What is your name?",
+      "text": "¿Cómo te llamas?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_nice_to_meet_you",
       "type": "sentence",
-      "text": "Nice to meet you.",
+      "text": "Encantado de conocerte.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_how_are_you",
       "type": "sentence",
-      "text": "How are you?",
+      "text": "¿Cómo estás?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_fine_thank_you",
       "type": "sentence",
-      "text": "I am fine, thank you.",
+      "text": "Estoy bien, gracias.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_where_are_you_from",
       "type": "sentence",
-      "text": "Where are you from?",
+      "text": "¿De dónde eres?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_from",
       "type": "sentence",
-      "text": "I am from …",
+      "text": "Soy de …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_do_you_speak_english",
       "type": "sentence",
-      "text": "Do you speak English?",
+      "text": "¿Hablas inglés?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_speak_a_little",
       "type": "sentence",
-      "text": "I speak a little.",
+      "text": "Hablo un poco.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_what_do_you_do",
       "type": "sentence",
-      "text": "What do you do?",
+      "text": "¿A qué te dedicas?",
       "practiceType": "formulateSentense"
     }
   ]

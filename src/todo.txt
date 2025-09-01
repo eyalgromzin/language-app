@@ -1,8 +1,4 @@
-2 create translate table with all languages that will be filled each time a user clicks a word 
-
-3 more lessons in step by step 
-
-4 more words in each category 
+11 enable in book screen , in translate panel , edit the word. because many times the word after a click comes without the last letter 
 
 5 share button in video screen
 
@@ -10,15 +6,20 @@
 
 7 if a book is in the library already , set in localstorage to not even check  again if its in the library, and not just not asking  
 
-8 make video transcript work better
+2 create translate table with all languages that will be filled each time a user clicks a word 
 
 9 make share button for book - will show dialog to check if its a book downloaded from website. or some local book that got in some other way . 
     - if its from a website , require for user to add location and then share it . 
     - if its in the phone itself , share the file itself from storage. 
 
+
+==================== tomorrow ========================
+
+8 make video transcript work better
+
+
 10 design app better  
 
-11 enable in book screen , in translate panel , edit the word. because many times the word after a click comes without the last letter 
 
 
 12 register app
