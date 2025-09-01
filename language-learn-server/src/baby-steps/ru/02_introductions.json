@@ -1,127 +1,115 @@
 {
   "id": "02_introductions",
-  "title": "Introductions & basic info",
+  "title": "представления",
   "emoji": "💬",
-  "language": "English",
+  "language": "Russian",
   "items": [
     {
       "id": "02_introductions_name",
       "type": "word",
-      "text": "name",
+      "text": "имя",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "02_introductions_meet",
+      "id": "02_introductions_my",
       "type": "word",
-      "text": "meet",
+      "text": "мой",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_your",
+      "type": "word",
+      "text": "ваш",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_what",
+      "type": "word",
+      "text": "что",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_where",
+      "type": "word",
+      "text": "где",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_from",
       "type": "word",
-      "text": "from",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "02_introductions_speak",
-      "type": "word",
-      "text": "speak",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "02_introductions_language",
-      "type": "word",
-      "text": "language",
+      "text": "из",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_country",
       "type": "word",
-      "text": "country",
+      "text": "страна",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_city",
       "type": "word",
-      "text": "city",
+      "text": "город",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "02_introductions_job",
+      "id": "02_introductions_nice",
       "type": "word",
-      "text": "job",
+      "text": "приятно",
       "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "02_introductions_student",
-      "type": "word",
-      "text": "student",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "02_introductions_teacher",
-      "type": "word",
-      "text": "teacher",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "02_introductions_my_name_is",
-      "type": "sentence",
-      "text": "My name is …",
-      "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_what_is_your_name",
       "type": "sentence",
-      "text": "What is your name?",
+      "text": "Как вас зовут?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_my_name_is",
+      "type": "sentence",
+      "text": "Меня зовут",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_nice_to_meet_you",
       "type": "sentence",
-      "text": "Nice to meet you.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "02_introductions_how_are_you",
-      "type": "sentence",
-      "text": "How are you?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "02_introductions_i_am_fine_thank_you",
-      "type": "sentence",
-      "text": "I am fine, thank you.",
+      "text": "Приятно познакомиться.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_where_are_you_from",
       "type": "sentence",
-      "text": "Where are you from?",
+      "text": "Откуда вы?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_from",
       "type": "sentence",
-      "text": "I am from …",
+      "text": "Я из",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "02_introductions_do_you_speak_english",
+      "id": "02_introductions_what_language_do_you_speak",
       "type": "sentence",
-      "text": "Do you speak English?",
+      "text": "На каком языке вы говорите?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "02_introductions_i_speak_a_little",
+      "id": "02_introductions_i_speak",
       "type": "sentence",
-      "text": "I speak a little.",
+      "text": "Я говорю",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "02_introductions_what_do_you_do",
+      "id": "02_introductions_introductions_are_important",
       "type": "sentence",
-      "text": "What do you do?",
+      "text": "Представления важны.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_learning_names_is_polite",
+      "type": "sentence",
+      "text": "Запоминать имена вежливо.",
       "practiceType": "formulateSentense"
     }
   ]

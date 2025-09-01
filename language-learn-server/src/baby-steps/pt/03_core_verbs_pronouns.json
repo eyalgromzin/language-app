@@ -1,127 +1,127 @@
 {
   "id": "03_core_verbs_pronouns",
-  "title": "Core pronouns & helper verbs",
+  "title": "pronomes principais e verbos auxiliares",
   "emoji": "🔤",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
       "id": "03_core_verbs_pronouns_i",
       "type": "word",
-      "text": "I",
+      "text": "eu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_you",
       "type": "word",
-      "text": "you",
+      "text": "você",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_he",
       "type": "word",
-      "text": "he",
+      "text": "ele",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_she",
       "type": "word",
-      "text": "she",
+      "text": "ela",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_we",
       "type": "word",
-      "text": "we",
+      "text": "nós",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_they",
       "type": "word",
-      "text": "they",
+      "text": "eles",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "03_core_verbs_pronouns_it",
+      "id": "03_core_verbs_pronouns_am",
       "type": "word",
-      "text": "it",
+      "text": "sou",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "03_core_verbs_pronouns_me",
+      "id": "03_core_verbs_pronouns_are",
       "type": "word",
-      "text": "me",
+      "text": "é",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "03_core_verbs_pronouns_him",
+      "id": "03_core_verbs_pronouns_is",
       "type": "word",
-      "text": "him",
+      "text": "é",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "03_core_verbs_pronouns_her",
+      "id": "03_core_verbs_pronouns_have",
       "type": "word",
-      "text": "her",
+      "text": "tenho",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_i_am",
       "type": "sentence",
-      "text": "I am …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "03_core_verbs_pronouns_i_have",
-      "type": "sentence",
-      "text": "I have …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "03_core_verbs_pronouns_i_want",
-      "type": "sentence",
-      "text": "I want …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "03_core_verbs_pronouns_i_need",
-      "type": "sentence",
-      "text": "I need …",
+      "text": "Eu sou",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_you_are",
       "type": "sentence",
-      "text": "You are …",
+      "text": "Você é",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_he_is",
       "type": "sentence",
-      "text": "He is …",
+      "text": "Ele é",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_she_is",
       "type": "sentence",
-      "text": "She is …",
+      "text": "Ela é",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_we_are",
       "type": "sentence",
-      "text": "We are …",
+      "text": "Nós somos",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_they_are",
       "type": "sentence",
-      "text": "They are …",
+      "text": "Eles são",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "03_core_verbs_pronouns_it_is",
+      "id": "03_core_verbs_pronouns_i_have",
       "type": "sentence",
-      "text": "It is …",
+      "text": "Eu tenho",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you_have",
+      "type": "sentence",
+      "text": "Você tem",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he_has",
+      "type": "sentence",
+      "text": "Ele tem",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she_has",
+      "type": "sentence",
+      "text": "Ela tem",
       "practiceType": "formulateSentense"
     }
   ]

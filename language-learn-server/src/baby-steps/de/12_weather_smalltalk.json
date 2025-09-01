@@ -1,31 +1,25 @@
 {
   "id": "12_weather_smalltalk",
-  "title": "Weather & small talk",
+  "title": "Weather & Small Talk",
   "emoji": "🌦️",
-  "language": "English",
+  "language": "German",
   "items": [
+    {
+      "id": "12_weather_smalltalk_weather",
+      "type": "word",
+      "text": "Wetter",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "12_weather_smalltalk_hot",
       "type": "word",
-      "text": "hot",
+      "text": "heiß",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cold",
       "type": "word",
-      "text": "cold",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "12_weather_smalltalk_rain",
-      "type": "word",
-      "text": "rain",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "12_weather_smalltalk_sunny",
-      "type": "word",
-      "text": "sunny",
+      "text": "kalt",
       "practiceType": "chooseTranslation"
     },
     {
@@ -35,93 +29,99 @@
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "12_weather_smalltalk_windy",
+      "id": "12_weather_smalltalk_sunny",
       "type": "word",
-      "text": "windy",
+      "text": "sonnig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_rainy",
+      "type": "word",
+      "text": "regnerisch",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cloudy",
       "type": "word",
-      "text": "cloudy",
+      "text": "bewölkt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_windy",
+      "type": "word",
+      "text": "windig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_snow",
       "type": "word",
-      "text": "snow",
+      "text": "Schnee",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "12_weather_smalltalk_nice",
+      "id": "12_weather_smalltalk_rain",
       "type": "word",
-      "text": "nice",
+      "text": "Regen",
       "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "12_weather_smalltalk_bad",
-      "type": "word",
-      "text": "bad",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "12_weather_smalltalk_it_is_very_hot_today",
-      "type": "sentence",
-      "text": "It is very hot today.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "12_weather_smalltalk_it_might_rain_tomorrow",
-      "type": "sentence",
-      "text": "It might rain tomorrow.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "12_weather_smalltalk_have_a_nice_day",
-      "type": "sentence",
-      "text": "Have a nice day!",
-      "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_how_is_the_weather",
       "type": "sentence",
-      "text": "How is the weather?",
+      "text": "Wie ist das Wetter?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_it_is_nice_weather",
+      "id": "12_weather_smalltalk_it_is_sunny_today",
       "type": "sentence",
-      "text": "It is nice weather.",
+      "text": "Es ist heute sonnig.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_what_a_beautiful_day",
+      "id": "12_weather_smalltalk_it_is_very_hot",
       "type": "sentence",
-      "text": "What a beautiful day!",
+      "text": "Es ist sehr heiß.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_the_weather_is_bad",
+      "id": "12_weather_smalltalk_it_is_cold_today",
       "type": "sentence",
-      "text": "The weather is bad.",
+      "text": "Es ist heute kalt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_raining",
+      "type": "sentence",
+      "text": "Es regnet.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_do_you_like_this_weather",
       "type": "sentence",
-      "text": "Do you like this weather?",
+      "text": "Gefällt Ihnen dieses Wetter?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_it_is_windy_today",
+      "id": "12_weather_smalltalk_what_is_your_name",
       "type": "sentence",
-      "text": "It is windy today.",
+      "text": "Wie heißen Sie?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_how_are_you_today",
+      "id": "12_weather_smalltalk_nice_to_meet_you",
       "type": "sentence",
-      "text": "How are you today?",
+      "text": "Freut mich, Sie kennenzulernen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_are_you",
+      "type": "sentence",
+      "text": "Wie geht es Ihnen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_have_a_nice_day",
+      "type": "sentence",
+      "text": "Einen schönen Tag noch.",
       "practiceType": "formulateSentense"
     }
   ]

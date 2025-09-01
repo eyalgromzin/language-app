@@ -1,8 +1,8 @@
 {
   "id": "30_hobbies_and_entertainment",
-  "title": "Hobbies & Entertainment",
-  "emoji": "🎬",
-  "language": "English",
+  "title": "hobby e intrattenimento",
+  "emoji": "🎮",
+  "language": "Italian",
   "items": [
     {
       "id": "30_hobbies_and_entertainment_hobby",
@@ -13,115 +13,115 @@
     {
       "id": "30_hobbies_and_entertainment_music",
       "type": "word",
-      "text": "music",
+      "text": "musica",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_movie",
       "type": "word",
-      "text": "movie",
+      "text": "film",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_book",
       "type": "word",
-      "text": "book",
+      "text": "libro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_game",
+      "type": "word",
+      "text": "gioco",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_dance",
       "type": "word",
-      "text": "dance",
+      "text": "ballo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_paint",
       "type": "word",
-      "text": "paint",
+      "text": "dipingere",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_cook",
       "type": "word",
-      "text": "cook",
+      "text": "cucinare",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_garden",
       "type": "word",
-      "text": "garden",
+      "text": "giardinaggio",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_photography",
       "type": "word",
-      "text": "photography",
+      "text": "fotografia",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "30_hobbies_and_entertainment_collect",
-      "type": "word",
-      "text": "collect",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "30_hobbies_and_entertainment_what_is_your_favorite_hobby",
+      "id": "30_hobbies_and_entertainment_what_are_your_hobbies",
       "type": "sentence",
-      "text": "What is your favorite hobby?",
+      "text": "Quali sono i suoi hobby?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_i_love_listening_to_music",
       "type": "sentence",
-      "text": "I love listening to music.",
+      "text": "Amo ascoltare musica.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_what_movie_did_you_watch",
+      "id": "30_hobbies_and_entertainment_do_you_like_watching_movies",
       "type": "sentence",
-      "text": "What movie did you watch?",
+      "text": "Le piace guardare film?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_do_you_like_reading_books",
+      "id": "30_hobbies_and_entertainment_reading_is_my_favorite_hobby",
       "type": "sentence",
-      "text": "Do you like reading books?",
+      "text": "Leggere è il mio hobby preferito.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_can_you_dance",
+      "id": "30_hobbies_and_entertainment_i_enjoy_playing_games",
       "type": "sentence",
-      "text": "Can you dance?",
+      "text": "Mi piace giocare ai giochi.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_i_want_to_learn_to_paint",
+      "id": "30_hobbies_and_entertainment_dancing_is_fun",
       "type": "sentence",
-      "text": "I want to learn to paint.",
+      "text": "Ballare è divertente.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_do_you_like_cooking",
+      "id": "30_hobbies_and_entertainment_i_love_cooking_italian_food",
       "type": "sentence",
-      "text": "Do you like cooking?",
+      "text": "Amo cucinare cibo italiano.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_my_garden_is_very_beautiful",
+      "id": "30_hobbies_and_entertainment_photography_is_my_passion",
       "type": "sentence",
-      "text": "My garden is very beautiful.",
+      "text": "La fotografia è la mia passione.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_i_take_photos_as_a_hobby",
+      "id": "30_hobbies_and_entertainment_gardening_is_relaxing",
       "type": "sentence",
-      "text": "I take photos as a hobby.",
+      "text": "Il giardinaggio è rilassante.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_what_do_you_collect",
+      "id": "30_hobbies_and_entertainment_entertainment_is_important",
       "type": "sentence",
-      "text": "What do you collect?",
+      "text": "L'intrattenimento è importante.",
       "practiceType": "formulateSentense"
     }
   ]

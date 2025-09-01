@@ -1,127 +1,127 @@
 {
   "id": "22_weather_and_nature",
   "title": "Weather & Nature",
-  "emoji": "🌤️",
-  "language": "English",
+  "emoji": "��️",
+  "language": "German",
   "items": [
     {
-      "id": "22_weather_and_nature_sunny",
+      "id": "22_weather_and_nature_weather",
       "type": "word",
-      "text": "sunny",
+      "text": "Wetter",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "22_weather_and_nature_rainy",
+      "id": "22_weather_and_nature_sunny",
       "type": "word",
-      "text": "rainy",
+      "text": "sonnig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_cloudy",
       "type": "word",
-      "text": "cloudy",
+      "text": "bewölkt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_rainy",
+      "type": "word",
+      "text": "regnerisch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_snowy",
+      "type": "word",
+      "text": "verschneit",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_windy",
       "type": "word",
-      "text": "windy",
+      "text": "windig",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "22_weather_and_nature_snow",
+      "id": "22_weather_and_nature_nature",
       "type": "word",
-      "text": "snow",
+      "text": "Natur",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_tree",
       "type": "word",
-      "text": "tree",
+      "text": "Baum",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_flower",
       "type": "word",
-      "text": "flower",
+      "text": "Blume",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_mountain",
       "type": "word",
-      "text": "mountain",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "22_weather_and_nature_ocean",
-      "type": "word",
-      "text": "ocean",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "22_weather_and_nature_forest",
-      "type": "word",
-      "text": "forest",
+      "text": "Berg",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_it_is_sunny_today",
       "type": "sentence",
-      "text": "It is sunny today.",
+      "text": "Es ist heute sonnig.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "22_weather_and_nature_the_weather_is_nice",
       "type": "sentence",
-      "text": "The weather is nice.",
+      "text": "Das Wetter ist schön.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "22_weather_and_nature_it_might_rain_later",
       "type": "sentence",
-      "text": "It might rain later.",
+      "text": "Es könnte später regnen.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "22_weather_and_nature_the_wind_is_very_strong",
+      "id": "22_weather_and_nature_look_at_those_beautiful_flowers",
       "type": "sentence",
-      "text": "The wind is very strong.",
+      "text": "Schauen Sie sich diese schönen Blumen an.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "22_weather_and_nature_i_love_walking_in_the_forest",
+      "id": "22_weather_and_nature_the_mountains_are_beautiful",
       "type": "sentence",
-      "text": "I love walking in the forest.",
+      "text": "Die Berge sind wunderschön.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "22_weather_and_nature_the_mountain_view_is_beautiful",
+      "id": "22_weather_and_nature_i_love_nature",
       "type": "sentence",
-      "text": "The mountain view is beautiful.",
+      "text": "Ich liebe die Natur.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "22_weather_and_nature_these_flowers_are_lovely",
+      "id": "22_weather_and_nature_what_beautiful_weather",
       "type": "sentence",
-      "text": "These flowers are lovely.",
+      "text": "Was für ein schönes Wetter.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "22_weather_and_nature_the_ocean_is_very_blue",
+      "id": "22_weather_and_nature_the_trees_are_green",
       "type": "sentence",
-      "text": "The ocean is very blue.",
+      "text": "Die Bäume sind grün.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "22_weather_and_nature_what_is_the_weather_like",
+      "id": "22_weather_and_nature_it_is_very_windy_today",
       "type": "sentence",
-      "text": "What is the weather like?",
+      "text": "Es ist heute sehr windig.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "22_weather_and_nature_i_hope_it_does_not_snow",
+      "id": "22_weather_and_nature_nature_is_amazing",
       "type": "sentence",
-      "text": "I hope it does not snow.",
+      "text": "Die Natur ist erstaunlich.",
       "practiceType": "formulateSentense"
     }
   ]

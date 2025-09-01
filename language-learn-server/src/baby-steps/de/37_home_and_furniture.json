@@ -2,126 +2,126 @@
   "id": "37_home_and_furniture",
   "title": "Home & Furniture",
   "emoji": "🏠",
-  "language": "English",
+  "language": "German",
   "items": [
     {
       "id": "37_home_and_furniture_home",
       "type": "word",
-      "text": "home",
+      "text": "Zuhause",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "37_home_and_furniture_house",
+      "id": "37_home_and_furniture_furniture",
       "type": "word",
-      "text": "house",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "37_home_and_furniture_room",
-      "type": "word",
-      "text": "room",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "37_home_and_furniture_kitchen",
-      "type": "word",
-      "text": "kitchen",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "37_home_and_furniture_bedroom",
-      "type": "word",
-      "text": "bedroom",
+      "text": "Möbel",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_table",
       "type": "word",
-      "text": "table",
+      "text": "Tisch",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_chair",
       "type": "word",
-      "text": "chair",
+      "text": "Stuhl",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_bed",
       "type": "word",
-      "text": "bed",
+      "text": "Bett",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "37_home_and_furniture_door",
+      "id": "37_home_and_furniture_sofa",
       "type": "word",
-      "text": "door",
+      "text": "Sofa",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "37_home_and_furniture_window",
+      "id": "37_home_and_furniture_shelf",
       "type": "word",
-      "text": "window",
+      "text": "Regal",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_lamp",
+      "type": "word",
+      "text": "Lampe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_mirror",
+      "type": "word",
+      "text": "Spiegel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_picture",
+      "type": "word",
+      "text": "Bild",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_welcome_to_my_home",
       "type": "sentence",
-      "text": "Welcome to my home.",
+      "text": "Willkommen in meinem Zuhause.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "37_home_and_furniture_how_many_rooms_does_your_house_have",
+      "id": "37_home_and_furniture_where_is_the_furniture_store",
       "type": "sentence",
-      "text": "How many rooms does your house have?",
+      "text": "Wo ist das Möbelgeschäft?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "37_home_and_furniture_the_kitchen_is_very_modern",
+      "id": "37_home_and_furniture_i_like_this_table",
       "type": "sentence",
-      "text": "The kitchen is very modern.",
+      "text": "Ich mag diesen Tisch.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "37_home_and_furniture_my_bedroom_is_on_the_second_floor",
+      "id": "37_home_and_furniture_can_i_sit_in_this_chair",
       "type": "sentence",
-      "text": "My bedroom is on the second floor.",
+      "text": "Kann ich in diesem Stuhl sitzen?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "37_home_and_furniture_please_sit_at_the_table",
+      "id": "37_home_and_furniture_where_is_my_bed",
       "type": "sentence",
-      "text": "Please sit at the table.",
+      "text": "Wo ist mein Bett?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "37_home_and_furniture_this_chair_is_very_comfortable",
+      "id": "37_home_and_furniture_this_sofa_is_very_comfortable",
       "type": "sentence",
-      "text": "This chair is very comfortable.",
+      "text": "Dieses Sofa ist sehr bequem.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "37_home_and_furniture_i_like_my_new_bed",
+      "id": "37_home_and_furniture_do_you_have_a_lamp",
       "type": "sentence",
-      "text": "I like my new bed.",
+      "text": "Haben Sie eine Lampe?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "37_home_and_furniture_please_close_the_door",
+      "id": "37_home_and_furniture_home_is_where_the_heart_is",
       "type": "sentence",
-      "text": "Please close the door.",
+      "text": "Zuhause ist, wo das Herz ist.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "37_home_and_furniture_open_the_window_for_fresh_air",
+      "id": "37_home_and_furniture_furniture_makes_a_home",
       "type": "sentence",
-      "text": "Open the window for fresh air.",
+      "text": "Möbel machen ein Zuhause.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "37_home_and_furniture_where_do_you_live",
+      "id": "37_home_and_furniture_i_love_my_home",
       "type": "sentence",
-      "text": "Where do you live?",
+      "text": "Ich liebe mein Zuhause.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -1,19 +1,13 @@
 {
   "id": "21_technology_basics",
-  "title": "Technology Basics",
+  "title": "tecnologia e computadores",
   "emoji": "💻",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
       "id": "21_technology_basics_computer",
       "type": "word",
-      "text": "computer",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "21_technology_basics_phone",
-      "type": "word",
-      "text": "phone",
+      "text": "computador",
       "practiceType": "chooseTranslation"
     },
     {
@@ -23,15 +17,9 @@
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "21_technology_basics_app",
+      "id": "21_technology_basics_website",
       "type": "word",
-      "text": "app",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "21_technology_basics_password",
-      "type": "word",
-      "text": "password",
+      "text": "site",
       "practiceType": "chooseTranslation"
     },
     {
@@ -41,87 +29,93 @@
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "21_technology_basics_website",
+      "id": "21_technology_basics_password",
       "type": "word",
-      "text": "website",
+      "text": "senha",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_download",
       "type": "word",
-      "text": "download",
+      "text": "baixar",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_upload",
       "type": "word",
-      "text": "upload",
+      "text": "enviar",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "21_technology_basics_wifi",
+      "id": "21_technology_basics_search",
       "type": "word",
-      "text": "wifi",
+      "text": "pesquisar",
       "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_save",
+      "type": "word",
+      "text": "salvar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_delete",
+      "type": "word",
+      "text": "deletar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_do_you_have_a_computer",
+      "type": "sentence",
+      "text": "Você tem um computador?",
+      "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_can_you_help_me_with_my_computer",
       "type": "sentence",
-      "text": "Can you help me with my computer?",
+      "text": "Você pode me ajudar com o meu computador?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_i_need_to_connect_to_wifi",
+      "id": "21_technology_basics_how_do_i_connect_to_the_internet",
       "type": "sentence",
-      "text": "I need to connect to wifi.",
+      "text": "Como eu me conecto à internet?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_what_is_your_email_address",
       "type": "sentence",
-      "text": "What is your email address?",
+      "text": "Qual é o seu endereço de email?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_i_want_to_download_this_app",
+      "id": "21_technology_basics_can_you_send_me_an_email",
       "type": "sentence",
-      "text": "I want to download this app.",
+      "text": "Você pode me enviar um email?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_do_you_have_a_website",
+      "id": "21_technology_basics_do_you_use_social_media",
       "type": "sentence",
-      "text": "Do you have a website?",
+      "text": "Você usa redes sociais?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_my_phone_is_not_working",
+      "id": "21_technology_basics_my_computer_is_not_working",
       "type": "sentence",
-      "text": "My phone is not working.",
+      "text": "O meu computador não está funcionando.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_i_forgot_my_password",
+      "id": "21_technology_basics_can_you_help_me_download_this_file",
       "type": "sentence",
-      "text": "I forgot my password.",
+      "text": "Você pode me ajudar a baixar este arquivo?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_the_internet_is_slow_today",
+      "id": "21_technology_basics_what_is_the_wifi_password",
       "type": "sentence",
-      "text": "The internet is slow today.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "21_technology_basics_can_you_upload_the_file",
-      "type": "sentence",
-      "text": "Can you upload the file?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "21_technology_basics_this_app_is_very_useful",
-      "type": "sentence",
-      "text": "This app is very useful.",
+      "text": "Qual é a senha do wifi?",
       "practiceType": "formulateSentense"
     }
   ]

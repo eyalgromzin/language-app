@@ -2,126 +2,126 @@
   "id": "26_health_and_medical",
   "title": "Health & Medical",
   "emoji": "🏥",
-  "language": "English",
+  "language": "German",
   "items": [
     {
       "id": "26_health_and_medical_health",
       "type": "word",
-      "text": "health",
+      "text": "Gesundheit",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_medical",
+      "type": "word",
+      "text": "medizinisch",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "Arzt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_hospital",
       "type": "word",
-      "text": "hospital",
+      "text": "Krankenhaus",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "Medizin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_pain",
       "type": "word",
-      "text": "pain",
+      "text": "Schmerz",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_sick",
       "type": "word",
-      "text": "sick",
+      "text": "krank",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_fever",
+      "id": "26_health_and_medical_well",
       "type": "word",
-      "text": "fever",
+      "text": "wohl",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_appointment",
+      "id": "26_health_and_medical_pharmacy",
       "type": "word",
-      "text": "appointment",
+      "text": "Apotheke",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_emergency",
+      "id": "26_health_and_medical_ambulance",
       "type": "word",
-      "text": "emergency",
+      "text": "Krankenwagen",
       "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "26_health_and_medical_treatment",
-      "type": "word",
-      "text": "treatment",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "26_health_and_medical_how_are_you_feeling_today",
-      "type": "sentence",
-      "text": "How are you feeling today?",
-      "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_i_need_to_see_a_doctor",
       "type": "sentence",
-      "text": "I need to see a doctor.",
+      "text": "Ich muss einen Arzt sehen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_where_is_the_nearest_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "Wo ist das nächste Krankenhaus?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_i_have_a_headache",
+      "id": "26_health_and_medical_i_am_not_feeling_well",
       "type": "sentence",
-      "text": "I have a headache.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "26_health_and_medical_can_i_make_an_appointment",
-      "type": "sentence",
-      "text": "Can I make an appointment?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "26_health_and_medical_i_am_feeling_sick",
-      "type": "sentence",
-      "text": "I am feeling sick.",
+      "text": "Mir geht es nicht gut.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_do_you_have_any_medicine",
       "type": "sentence",
-      "text": "Do you have any medicine?",
+      "text": "Haben Sie Medizin?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_this_is_an_emergency",
+      "id": "26_health_and_medical_i_have_a_headache",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "Ich habe Kopfschmerzen.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_what_treatment_do_i_need",
+      "id": "26_health_and_medical_call_an_ambulance",
       "type": "sentence",
-      "text": "What treatment do I need?",
+      "text": "Rufen Sie einen Krankenwagen.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_my_fever_is_very_high",
+      "id": "26_health_and_medical_where_is_the_pharmacy",
       "type": "sentence",
-      "text": "My fever is very high.",
+      "text": "Wo ist die Apotheke?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_am_allergic_to",
+      "type": "sentence",
+      "text": "Ich bin allergisch gegen",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_how_are_you_feeling",
+      "type": "sentence",
+      "text": "Wie fühlen Sie sich?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_health_is_very_important",
+      "type": "sentence",
+      "text": "Gesundheit ist sehr wichtig.",
       "practiceType": "formulateSentense"
     }
   ]

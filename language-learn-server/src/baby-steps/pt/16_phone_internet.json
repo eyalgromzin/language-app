@@ -1,19 +1,43 @@
 {
   "id": "16_phone_internet",
-  "title": "Phone & internet",
+  "title": "telefone e internet",
   "emoji": "📱",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
       "id": "16_phone_internet_phone",
       "type": "word",
-      "text": "phone",
+      "text": "telefone",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_call",
+      "type": "word",
+      "text": "chamada",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_number",
       "type": "word",
-      "text": "number",
+      "text": "número",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_message",
+      "type": "word",
+      "text": "mensagem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_internet",
+      "type": "word",
+      "text": "internet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_website",
+      "type": "word",
+      "text": "site",
       "practiceType": "chooseTranslation"
     },
     {
@@ -29,99 +53,69 @@
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "16_phone_internet_call",
+      "id": "16_phone_internet_download",
       "type": "word",
-      "text": "call",
+      "text": "baixar",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "16_phone_internet_text",
+      "id": "16_phone_internet_upload",
       "type": "word",
-      "text": "text",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "16_phone_internet_message",
-      "type": "word",
-      "text": "message",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "16_phone_internet_password",
-      "type": "word",
-      "text": "password",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "16_phone_internet_internet",
-      "type": "word",
-      "text": "internet",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "16_phone_internet_online",
-      "type": "word",
-      "text": "online",
+      "text": "enviar",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_what_is_your_phone_number",
       "type": "sentence",
-      "text": "What is your phone number?",
+      "text": "Qual é o seu número de telefone?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_i_call_you",
+      "type": "sentence",
+      "text": "Posso te ligar?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_do_you_have_wifi",
+      "type": "sentence",
+      "text": "Você tem wifi?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_the_wifi_password",
       "type": "sentence",
-      "text": "What is the wifi password?",
+      "text": "Qual é a senha do wifi?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "16_phone_internet_can_i_use_your_phone",
+      "id": "16_phone_internet_can_you_send_me_an_email",
       "type": "sentence",
-      "text": "Can I use your phone?",
+      "text": "Você pode me enviar um email?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "16_phone_internet_can_you_call_me",
+      "id": "16_phone_internet_what_is_your_email_address",
       "type": "sentence",
-      "text": "Can you call me?",
+      "text": "Qual é o seu endereço de email?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "16_phone_internet_i_will_text_you",
+      "id": "16_phone_internet_do_you_use_social_media",
       "type": "sentence",
-      "text": "I will text you.",
+      "text": "Você usa redes sociais?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "16_phone_internet_do_you_have_internet",
+      "id": "16_phone_internet_can_you_help_me_with_my_phone",
       "type": "sentence",
-      "text": "Do you have internet?",
+      "text": "Você pode me ajudar com o meu telefone?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "16_phone_internet_what_is_your_email",
+      "id": "16_phone_internet_my_phone_is_broken",
       "type": "sentence",
-      "text": "What is your email?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "16_phone_internet_i_am_online",
-      "type": "sentence",
-      "text": "I am online.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "16_phone_internet_can_you_send_me_a_message",
-      "type": "sentence",
-      "text": "Can you send me a message?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "16_phone_internet_the_wifi_is_slow",
-      "type": "sentence",
-      "text": "The wifi is slow.",
+      "text": "O meu telefone está quebrado.",
       "practiceType": "formulateSentense"
     }
   ]

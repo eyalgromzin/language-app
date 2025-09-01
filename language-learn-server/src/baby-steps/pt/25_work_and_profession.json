@@ -1,127 +1,121 @@
 {
   "id": "25_work_and_profession",
-  "title": "Work & Profession",
+  "title": "trabalho e profissão",
   "emoji": "💼",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
-    {
-      "id": "25_work_and_profession_job",
-      "type": "word",
-      "text": "job",
-      "practiceType": "chooseTranslation"
-    },
     {
       "id": "25_work_and_profession_work",
       "type": "word",
-      "text": "work",
+      "text": "trabalho",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_job",
+      "type": "word",
+      "text": "emprego",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_profession",
+      "type": "word",
+      "text": "profissão",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_office",
       "type": "word",
-      "text": "office",
+      "text": "escritório",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_meeting",
       "type": "word",
-      "text": "meeting",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "25_work_and_profession_boss",
-      "type": "word",
-      "text": "boss",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "25_work_and_profession_colleague",
-      "type": "word",
-      "text": "colleague",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "25_work_and_profession_salary",
-      "type": "word",
-      "text": "salary",
+      "text": "reunião",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_project",
       "type": "word",
-      "text": "project",
+      "text": "projeto",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "25_work_and_profession_deadline",
+      "id": "25_work_and_profession_boss",
       "type": "word",
-      "text": "deadline",
+      "text": "chefe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_colleague",
+      "type": "word",
+      "text": "colega",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_salary",
+      "type": "word",
+      "text": "salário",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_career",
       "type": "word",
-      "text": "career",
+      "text": "carreira",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "O que você faz no trabalho?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_i_work_in_an_office",
+      "id": "25_work_and_profession_where_do_you_work",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Onde você trabalha?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_how_long_have_you_been_working_there",
+      "type": "sentence",
+      "text": "Há quanto tempo você trabalha lá?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Você gosta do seu trabalho?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_i_have_a_meeting_at_nine",
+      "id": "25_work_and_profession_i_have_a_meeting_at",
       "type": "sentence",
-      "text": "I have a meeting at nine.",
+      "text": "Eu tenho uma reunião às",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_my_boss_is_very_nice",
       "type": "sentence",
-      "text": "My boss is very nice.",
+      "text": "O meu chefe é muito legal.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_i_work_with_great_colleagues",
+      "id": "25_work_and_profession_i_work_from_home",
       "type": "sentence",
-      "text": "I work with great colleagues.",
+      "text": "Eu trabalho de casa.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_what_is_your_salary",
+      "id": "25_work_and_profession_what_time_do_you_start_work",
       "type": "sentence",
-      "text": "What is your salary?",
+      "text": "A que horas você começa a trabalhar?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_this_project_is_very_important",
+      "id": "25_work_and_profession_good_luck_with_your_career",
       "type": "sentence",
-      "text": "This project is very important.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "25_work_and_profession_the_deadline_is_next_week",
-      "type": "sentence",
-      "text": "The deadline is next week.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "25_work_and_profession_i_want_to_advance_my_career",
-      "type": "sentence",
-      "text": "I want to advance my career.",
+      "text": "Boa sorte com a sua carreira!",
       "practiceType": "formulateSentense"
     }
   ]

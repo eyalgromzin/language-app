@@ -1,127 +1,121 @@
 {
   "id": "31_emotions_and_feelings",
-  "title": "Emotions & Feelings",
+  "title": "emoções e sentimentos",
   "emoji": "😊",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
       "id": "31_emotions_and_feelings_happy",
       "type": "word",
-      "text": "happy",
+      "text": "feliz",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_sad",
       "type": "word",
-      "text": "sad",
+      "text": "triste",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_angry",
       "type": "word",
-      "text": "angry",
+      "text": "irritado",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_excited",
       "type": "word",
-      "text": "excited",
+      "text": "empolgado",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_nervous",
       "type": "word",
-      "text": "nervous",
+      "text": "nervoso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_calm",
+      "type": "word",
+      "text": "calmo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_tired",
       "type": "word",
-      "text": "tired",
+      "text": "cansado",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_surprised",
       "type": "word",
-      "text": "surprised",
+      "text": "surpreso",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "31_emotions_and_feelings_worried",
+      "id": "31_emotions_and_feelings_scared",
       "type": "word",
-      "text": "worried",
+      "text": "assustado",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "31_emotions_and_feelings_confused",
+      "id": "31_emotions_and_feelings_love",
       "type": "word",
-      "text": "confused",
+      "text": "amor",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "31_emotions_and_feelings_proud",
-      "type": "word",
-      "text": "proud",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "31_emotions_and_feelings_how_are_you_feeling_today",
+      "id": "31_emotions_and_feelings_how_are_you_feeling",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "Como você está se sentindo?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_very_happy_today",
       "type": "sentence",
-      "text": "I am very happy today.",
+      "text": "Eu estou muito feliz hoje.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_why_are_you_sad",
       "type": "sentence",
-      "text": "Why are you sad?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "31_emotions_and_feelings_don_t_be_angry_with_me",
-      "type": "sentence",
-      "text": "Don't be angry with me.",
+      "text": "Por que você está triste?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_excited_about_the_trip",
       "type": "sentence",
-      "text": "I am excited about the trip.",
+      "text": "Eu estou empolgado com a viagem.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_i_feel_nervous_before_exams",
+      "id": "31_emotions_and_feelings_dont_be_nervous",
       "type": "sentence",
-      "text": "I feel nervous before exams.",
+      "text": "Não fique nervoso.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_are_you_tired",
+      "id": "31_emotions_and_feelings_i_love_this_song",
       "type": "sentence",
-      "text": "Are you tired?",
+      "text": "Eu amo esta música.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_are_you_okay",
+      "type": "sentence",
+      "text": "Você está bem?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
       "type": "sentence",
-      "text": "I am surprised by the news.",
+      "text": "Eu estou surpreso com a notícia.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_don_t_worry_about_it",
+      "id": "31_emotions_and_feelings_feelings_are_important",
       "type": "sentence",
-      "text": "Don't worry about it.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "31_emotions_and_feelings_i_am_proud_of_my_achievement",
-      "type": "sentence",
-      "text": "I am proud of my achievement.",
+      "text": "Sentimentos são importantes.",
       "practiceType": "formulateSentense"
     }
   ]

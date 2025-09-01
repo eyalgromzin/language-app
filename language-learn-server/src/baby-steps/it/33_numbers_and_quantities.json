@@ -1,127 +1,127 @@
 {
   "id": "33_numbers_and_quantities",
-  "title": "Numbers & Quantities",
+  "title": "numeri e quantità",
   "emoji": "🔢",
-  "language": "English",
+  "language": "Italian",
   "items": [
     {
-      "id": "33_numbers_and_quantities_number",
+      "id": "33_numbers_and_quantities_one",
       "type": "word",
-      "text": "number",
+      "text": "uno",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_count",
+      "id": "33_numbers_and_quantities_two",
       "type": "word",
-      "text": "count",
+      "text": "due",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_many",
+      "id": "33_numbers_and_quantities_three",
       "type": "word",
-      "text": "many",
+      "text": "tre",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_few",
+      "id": "33_numbers_and_quantities_four",
       "type": "word",
-      "text": "few",
+      "text": "quattro",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_some",
+      "id": "33_numbers_and_quantities_five",
       "type": "word",
-      "text": "some",
+      "text": "cinque",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_all",
+      "id": "33_numbers_and_quantities_six",
       "type": "word",
-      "text": "all",
+      "text": "sei",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_none",
+      "id": "33_numbers_and_quantities_seven",
       "type": "word",
-      "text": "none",
+      "text": "sette",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_half",
+      "id": "33_numbers_and_quantities_eight",
       "type": "word",
-      "text": "half",
+      "text": "otto",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_double",
+      "id": "33_numbers_and_quantities_nine",
       "type": "word",
-      "text": "double",
+      "text": "nove",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_total",
+      "id": "33_numbers_and_quantities_ten",
       "type": "word",
-      "text": "total",
+      "text": "dieci",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_how_many_people_are_here",
+      "id": "33_numbers_and_quantities_how_many",
       "type": "sentence",
-      "text": "How many people are here?",
+      "text": "Quanti",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_can_you_count_to_ten",
+      "id": "33_numbers_and_quantities_i_have",
       "type": "sentence",
-      "text": "Can you count to ten?",
+      "text": "Io ho",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_there_are_many_books_in_the_library",
+      "id": "33_numbers_and_quantities_how_old_are_you",
       "type": "sentence",
-      "text": "There are many books in the library.",
+      "text": "Quanti anni ha?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_i_have_few_friends_here",
+      "id": "33_numbers_and_quantities_i_am_years_old",
       "type": "sentence",
-      "text": "I have few friends here.",
+      "text": "Ho anni.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_would_you_like_some_water",
+      "id": "33_numbers_and_quantities_what_is_the_price",
       "type": "sentence",
-      "text": "Would you like some water?",
+      "text": "Qual è il prezzo?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_all_students_are_present",
+      "id": "33_numbers_and_quantities_how_much_does_it_cost",
       "type": "sentence",
-      "text": "All students are present.",
+      "text": "Quanto costa?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_none_of_them_came",
+      "id": "33_numbers_and_quantities_i_need",
       "type": "sentence",
-      "text": "None of them came.",
+      "text": "Ho bisogno di",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_i_ate_half_of_the_pizza",
+      "id": "33_numbers_and_quantities_how_long",
       "type": "sentence",
-      "text": "I ate half of the pizza.",
+      "text": "Quanto tempo",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_the_price_doubled_last_year",
+      "id": "33_numbers_and_quantities_numbers_are_important",
       "type": "sentence",
-      "text": "The price doubled last year.",
+      "text": "I numeri sono importanti.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_what_is_the_total_cost",
+      "id": "33_numbers_and_quantities_count_with_me",
       "type": "sentence",
-      "text": "What is the total cost?",
+      "text": "Conta con me.",
       "practiceType": "formulateSentense"
     }
   ]

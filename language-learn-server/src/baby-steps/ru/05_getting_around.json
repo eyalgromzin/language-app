@@ -1,127 +1,109 @@
 {
   "id": "05_getting_around",
-  "title": "Directions & getting around",
+  "title": "ориентация",
   "emoji": "🧭",
-  "language": "English",
+  "language": "Russian",
   "items": [
     {
       "id": "05_getting_around_left",
       "type": "word",
-      "text": "left",
+      "text": "лево",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_right",
       "type": "word",
-      "text": "right",
+      "text": "право",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_straight",
       "type": "word",
-      "text": "straight",
+      "text": "прямо",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "05_getting_around_near",
+      "id": "05_getting_around_back",
       "type": "word",
-      "text": "near",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "05_getting_around_far",
-      "type": "word",
-      "text": "far",
+      "text": "назад",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_here",
       "type": "word",
-      "text": "here",
+      "text": "здесь",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_there",
       "type": "word",
-      "text": "there",
+      "text": "там",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "05_getting_around_up",
+      "id": "05_getting_around_near",
       "type": "word",
-      "text": "up",
+      "text": "близко",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "05_getting_around_down",
+      "id": "05_getting_around_far",
       "type": "word",
-      "text": "down",
+      "text": "далеко",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "05_getting_around_around",
-      "type": "word",
-      "text": "around",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "05_getting_around_where_is_the_bathroom",
+      "id": "05_getting_around_where_is",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "Где",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "05_getting_around_where_is_the_station",
+      "id": "05_getting_around_go_left",
       "type": "sentence",
-      "text": "Where is the station?",
+      "text": "Идите налево.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "05_getting_around_how_do_i_get_to",
+      "id": "05_getting_around_go_right",
       "type": "sentence",
-      "text": "How do I get to …?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_is_it_close",
-      "type": "sentence",
-      "text": "Is it close?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_i_am_lost",
-      "type": "sentence",
-      "text": "I am lost.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_turn_left",
-      "type": "sentence",
-      "text": "Turn left.",
+      "text": "Идите направо.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_go_straight",
       "type": "sentence",
-      "text": "Go straight.",
+      "text": "Идите прямо.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "05_getting_around_it_is_over_there",
+      "id": "05_getting_around_turn_around",
       "type": "sentence",
-      "text": "It is over there.",
+      "text": "Повернитесь.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "05_getting_around_can_you_help_me",
+      "id": "05_getting_around_it_is_here",
       "type": "sentence",
-      "text": "Can you help me?",
+      "text": "Это здесь.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "05_getting_around_how_far_is_it",
+      "id": "05_getting_around_it_is_there",
       "type": "sentence",
-      "text": "How far is it?",
+      "text": "Это там.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_directions_are_important",
+      "type": "sentence",
+      "text": "Направления важны.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_learning_directions_helps",
+      "type": "sentence",
+      "text": "Изучение направлений помогает.",
       "practiceType": "formulateSentense"
     }
   ]

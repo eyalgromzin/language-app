@@ -1,0 +1,110 @@
+{
+  "id": "37_shopping_and_money",
+  "title": "compras e dinheiro",
+  "emoji": "🛍️",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "37_shopping_and_money_store",
+      "type": "word",
+      "text": "loja",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_shopping_and_money_market",
+      "type": "word",
+      "text": "mercado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_shopping_and_money_mall",
+      "type": "word",
+      "text": "shopping",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_shopping_and_money_price",
+      "type": "word",
+      "text": "preço",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_shopping_and_money_cost",
+      "type": "word",
+      "text": "custo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_shopping_and_money_buy",
+      "type": "word",
+      "text": "comprar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_shopping_and_money_sell",
+      "type": "word",
+      "text": "vender",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_shopping_and_money_money",
+      "type": "word",
+      "text": "dinheiro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_shopping_and_money_card",
+      "type": "word",
+      "text": "cartão",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_shopping_and_money_how_much_does_it_cost",
+      "type": "sentence",
+      "text": "Quanto custa?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_shopping_and_money_where_can_i_buy_this",
+      "type": "sentence",
+      "text": "Onde posso comprar isto?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_shopping_and_money_do_you_have_this_in_blue",
+      "type": "sentence",
+      "text": "Você tem isto em azul?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_shopping_and_money_can_i_try_it_on",
+      "type": "sentence",
+      "text": "Posso experimentar?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_shopping_and_money_is_there_a_discount",
+      "type": "sentence",
+      "text": "Há desconto?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_shopping_and_money_i_will_take_it",
+      "type": "sentence",
+      "text": "Vou levar.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_shopping_and_money_shopping_is_fun",
+      "type": "sentence",
+      "text": "Fazer compras é divertido.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_shopping_and_money_money_does_not_grow_on_trees",
+      "type": "sentence",
+      "text": "Dinheiro não cresce em árvores.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

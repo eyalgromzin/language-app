@@ -1,0 +1,110 @@
+{
+  "id": "39_work_and_profession",
+  "title": "trabalho e profissão",
+  "emoji": "💼",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "39_work_and_profession_job",
+      "type": "word",
+      "text": "trabalho",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_work_and_profession_work",
+      "type": "word",
+      "text": "trabalhar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_work_and_profession_office",
+      "type": "word",
+      "text": "escritório",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_work_and_profession_meeting",
+      "type": "word",
+      "text": "reunião",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_work_and_profession_boss",
+      "type": "word",
+      "text": "chefe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_work_and_profession_colleague",
+      "type": "word",
+      "text": "colega",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_work_and_profession_salary",
+      "type": "word",
+      "text": "salário",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_work_and_profession_project",
+      "type": "word",
+      "text": "projeto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_work_and_profession_deadline",
+      "type": "word",
+      "text": "prazo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_work_and_profession_what_do_you_do_for_a_living",
+      "type": "sentence",
+      "text": "O que você faz para viver?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_work_and_profession_i_work_as_a_teacher",
+      "type": "sentence",
+      "text": "Eu trabalho como professor.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_work_and_profession_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Você gosta do seu trabalho?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_work_and_profession_work_is_important",
+      "type": "sentence",
+      "text": "Trabalho é importante.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_work_and_profession_i_have_a_meeting_tomorrow",
+      "type": "sentence",
+      "text": "Tenho uma reunião amanhã.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_work_and_profession_work_life_balance_is_important",
+      "type": "sentence",
+      "text": "Equilíbrio entre trabalho e vida é importante.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_work_and_profession_profession_requires_skills",
+      "type": "sentence",
+      "text": "Profissão requer habilidades.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_work_and_profession_hard_work_pays_off",
+      "type": "sentence",
+      "text": "Trabalho duro compensa.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

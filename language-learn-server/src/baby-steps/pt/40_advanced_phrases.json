@@ -1,127 +1,91 @@
 {
   "id": "40_advanced_phrases",
-  "title": "Advanced Phrases",
+  "title": "frases avançadas",
   "emoji": "🚀",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
       "id": "40_advanced_phrases_nevertheless",
       "type": "word",
-      "text": "nevertheless",
+      "text": "não obstante",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_furthermore",
       "type": "word",
-      "text": "furthermore",
+      "text": "além disso",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "40_advanced_phrases_otherwise",
+      "id": "40_advanced_phrases_however",
       "type": "word",
-      "text": "otherwise",
+      "text": "entretanto",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "40_advanced_phrases_meanwhile",
+      "id": "40_advanced_phrases_therefore",
       "type": "word",
-      "text": "meanwhile",
+      "text": "portanto",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "40_advanced_phrases_consequently",
+      "id": "40_advanced_phrases_although",
       "type": "word",
-      "text": "consequently",
+      "text": "embora",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "40_advanced_phrases_approximately",
-      "type": "word",
-      "text": "approximately",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "40_advanced_phrases_occasionally",
-      "type": "word",
-      "text": "occasionally",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "40_advanced_phrases_gradually",
-      "type": "word",
-      "text": "gradually",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "40_advanced_phrases_ultimately",
-      "type": "word",
-      "text": "ultimately",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "40_advanced_phrases_essentially",
-      "type": "word",
-      "text": "essentially",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
+      "id": "40_advanced_phrases_nevertheless_i_agree",
       "type": "sentence",
-      "text": "Nevertheless, I still want to try.",
+      "text": "Não obstante, eu concordo.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
+      "id": "40_advanced_phrases_furthermore_this_is_important",
       "type": "sentence",
-      "text": "Furthermore, I believe this is correct.",
+      "text": "Além disso, isto é importante.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
+      "id": "40_advanced_phrases_however_i_disagree",
       "type": "sentence",
-      "text": "We must leave now, otherwise we will be late.",
+      "text": "Entretanto, eu discordo.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
+      "id": "40_advanced_phrases_therefore_we_must_act",
       "type": "sentence",
-      "text": "Meanwhile, I will prepare dinner.",
+      "text": "Portanto, devemos agir.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
+      "id": "40_advanced_phrases_although_it_is_difficult",
       "type": "sentence",
-      "text": "Consequently, the meeting was cancelled.",
+      "text": "Embora seja difícil.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "40_advanced_phrases_it_will_cost_approximately_fifty_dollars",
+      "id": "40_advanced_phrases_advanced_phrases_improve_communication",
       "type": "sentence",
-      "text": "It will cost approximately fifty dollars.",
+      "text": "Frases avançadas melhoram a comunicação.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "40_advanced_phrases_i_occasionally_visit_my_grandparents",
+      "id": "40_advanced_phrases_practice_makes_perfect",
       "type": "sentence",
-      "text": "I occasionally visit my grandparents.",
+      "text": "Prática leva à perfeição.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "40_advanced_phrases_the_weather_gradually_improved",
+      "id": "40_advanced_phrases_learning_is_a_journey",
       "type": "sentence",
-      "text": "The weather gradually improved.",
+      "text": "Aprender é uma jornada.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "40_advanced_phrases_ultimately_we_reached_our_goal",
+      "id": "40_advanced_phrases_never_stop_learning",
       "type": "sentence",
-      "text": "Ultimately, we reached our goal.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "40_advanced_phrases_essentially_this_is_the_same_thing",
-      "type": "sentence",
-      "text": "Essentially, this is the same thing.",
+      "text": "Nunca pare de aprender.",
       "practiceType": "formulateSentense"
     }
   ]

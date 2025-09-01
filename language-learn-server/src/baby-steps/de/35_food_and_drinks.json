@@ -2,126 +2,126 @@
   "id": "35_food_and_drinks",
   "title": "Food & Drinks",
   "emoji": "🍕",
-  "language": "English",
+  "language": "German",
   "items": [
     {
       "id": "35_food_and_drinks_food",
       "type": "word",
-      "text": "food",
+      "text": "Essen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_drink",
       "type": "word",
-      "text": "drink",
+      "text": "Getränk",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_breakfast",
       "type": "word",
-      "text": "breakfast",
+      "text": "Frühstück",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_lunch",
       "type": "word",
-      "text": "lunch",
+      "text": "Mittagessen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_dinner",
       "type": "word",
-      "text": "dinner",
+      "text": "Abendessen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_snack",
+      "type": "word",
+      "text": "Snack",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_meal",
+      "type": "word",
+      "text": "Mahlzeit",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_restaurant",
       "type": "word",
-      "text": "restaurant",
+      "text": "Restaurant",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_menu",
+      "id": "35_food_and_drinks_cafe",
       "type": "word",
-      "text": "menu",
+      "text": "Café",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_order",
+      "id": "35_food_and_drinks_kitchen",
       "type": "word",
-      "text": "order",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "35_food_and_drinks_hungry",
-      "type": "word",
-      "text": "hungry",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "35_food_and_drinks_thirsty",
-      "type": "word",
-      "text": "thirsty",
+      "text": "Küche",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_what_would_you_like_to_eat",
       "type": "sentence",
-      "text": "What would you like to eat?",
+      "text": "Was möchten Sie essen?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_can_i_have_something_to_drink",
+      "id": "35_food_and_drinks_i_am_hungry",
       "type": "sentence",
-      "text": "Can I have something to drink?",
+      "text": "Ich habe Hunger.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_what_did_you_have_for_breakfast",
+      "id": "35_food_and_drinks_do_you_like_this_food",
       "type": "sentence",
-      "text": "What did you have for breakfast?",
+      "text": "Gefällt Ihnen dieses Essen?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_let_s_go_to_a_restaurant_for_lunch",
+      "id": "35_food_and_drinks_what_is_for_dinner",
       "type": "sentence",
-      "text": "Let's go to a restaurant for lunch.",
+      "text": "Was gibt es zum Abendessen?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_what_time_is_dinner",
+      "id": "35_food_and_drinks_i_love_cooking",
       "type": "sentence",
-      "text": "What time is dinner?",
+      "text": "Ich liebe es zu kochen.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_can_i_see_the_menu",
+      "id": "35_food_and_drinks_where_should_we_eat",
       "type": "sentence",
-      "text": "Can I see the menu?",
+      "text": "Wo sollen wir essen?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_i_want_to_order_pizza",
+      "id": "35_food_and_drinks_this_food_is_delicious",
       "type": "sentence",
-      "text": "I want to order pizza.",
+      "text": "Dieses Essen ist köstlich.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_are_you_hungry",
+      "id": "35_food_and_drinks_do_you_have_any_drinks",
       "type": "sentence",
-      "text": "Are you hungry?",
+      "text": "Haben Sie Getränke?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_i_am_thirsty_can_i_have_water",
+      "id": "35_food_and_drinks_food_is_important",
       "type": "sentence",
-      "text": "I am thirsty, can I have water?",
+      "text": "Essen ist wichtig.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_this_food_tastes_delicious",
+      "id": "35_food_and_drinks_i_enjoy_good_food",
       "type": "sentence",
-      "text": "This food tastes delicious.",
+      "text": "Ich genieße gutes Essen.",
       "practiceType": "formulateSentense"
     }
   ]

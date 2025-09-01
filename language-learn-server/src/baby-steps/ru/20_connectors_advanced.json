@@ -1,127 +1,109 @@
 {
   "id": "20_connectors_advanced",
-  "title": "Connectors & advanced phrases",
+  "title": "связки и продвинутые фразы",
   "emoji": "🔗",
-  "language": "English",
+  "language": "Russian",
   "items": [
-    {
-      "id": "20_connectors_advanced_because",
-      "type": "word",
-      "text": "because",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "20_connectors_advanced_although",
-      "type": "word",
-      "text": "although",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "20_connectors_advanced_however",
-      "type": "word",
-      "text": "however",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "20_connectors_advanced_therefore",
-      "type": "word",
-      "text": "therefore",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "20_connectors_advanced_also",
-      "type": "word",
-      "text": "also",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "20_connectors_advanced_but",
-      "type": "word",
-      "text": "but",
-      "practiceType": "chooseTranslation"
-    },
     {
       "id": "20_connectors_advanced_and",
       "type": "word",
-      "text": "and",
+      "text": "и",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_or",
       "type": "word",
-      "text": "or",
+      "text": "или",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_but",
+      "type": "word",
+      "text": "но",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_because",
+      "type": "word",
+      "text": "потому что",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_although",
+      "type": "word",
+      "text": "хотя",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_however",
+      "type": "word",
+      "text": "однако",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_therefore",
+      "type": "word",
+      "text": "поэтому",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_also",
+      "type": "word",
+      "text": "также",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_if",
       "type": "word",
-      "text": "if",
+      "text": "если",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_when",
-      "type": "word",
-      "text": "when",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "20_connectors_advanced_could_you_please_recommend_a_good_place_to_eat",
       "type": "sentence",
-      "text": "Could you please recommend a good place to eat?",
+      "text": "когда",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "20_connectors_advanced_i_have_been_waiting_for_a_long_time",
+      "id": "20_connectors_advanced_where",
       "type": "sentence",
-      "text": "I have been waiting for a long time.",
+      "text": "где",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "20_connectors_advanced_would_you_mind_helping_me_with_this_form",
+      "id": "20_connectors_advanced_why",
       "type": "sentence",
-      "text": "Would you mind helping me with this form?",
+      "text": "почему",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "20_connectors_advanced_i_prefer_to_pay_by_card_because_it_is_faster",
+      "id": "20_connectors_advanced_how",
       "type": "sentence",
-      "text": "I prefer to pay by card because it is faster.",
+      "text": "как",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "20_connectors_advanced_although_it_is_expensive_it_is_worth_it",
+      "id": "20_connectors_advanced_what",
       "type": "sentence",
-      "text": "Although it is expensive, it is worth it.",
+      "text": "что",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "20_connectors_advanced_i_would_like_to_order_but_i_am_not_sure_what",
+      "id": "20_connectors_advanced_connectors_improve_communication",
       "type": "sentence",
-      "text": "I would like to order, but I am not sure what.",
+      "text": "Связки улучшают общение.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "20_connectors_advanced_if_you_have_time_can_you_help_me",
+      "id": "20_connectors_advanced_advanced_phrases_show_skill",
       "type": "sentence",
-      "text": "If you have time, can you help me?",
+      "text": "Продвинутые фразы показывают навык.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "20_connectors_advanced_when_you_arrive_please_call_me",
+      "id": "20_connectors_advanced_practice_makes_perfect",
       "type": "sentence",
-      "text": "When you arrive, please call me.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "20_connectors_advanced_i_also_want_to_visit_the_museum",
-      "type": "sentence",
-      "text": "I also want to visit the museum.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "20_connectors_advanced_therefore_i_need_to_leave_early",
-      "type": "sentence",
-      "text": "Therefore, I need to leave early.",
+      "text": "Практика ведет к совершенству.",
       "practiceType": "formulateSentense"
     }
   ]

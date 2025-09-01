@@ -2,126 +2,126 @@
   "id": "31_emotions_and_feelings",
   "title": "Emotions & Feelings",
   "emoji": "😊",
-  "language": "English",
+  "language": "German",
   "items": [
+    {
+      "id": "31_emotions_and_feelings_emotion",
+      "type": "word",
+      "text": "Emotion",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_feeling",
+      "type": "word",
+      "text": "Gefühl",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "31_emotions_and_feelings_happy",
       "type": "word",
-      "text": "happy",
+      "text": "glücklich",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_sad",
       "type": "word",
-      "text": "sad",
+      "text": "traurig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_angry",
       "type": "word",
-      "text": "angry",
+      "text": "wütend",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_excited",
       "type": "word",
-      "text": "excited",
+      "text": "aufgeregt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_nervous",
       "type": "word",
-      "text": "nervous",
+      "text": "nervös",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_calm",
+      "type": "word",
+      "text": "ruhig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_tired",
       "type": "word",
-      "text": "tired",
+      "text": "müde",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "31_emotions_and_feelings_surprised",
+      "id": "31_emotions_and_feelings_energetic",
       "type": "word",
-      "text": "surprised",
+      "text": "energisch",
       "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "31_emotions_and_feelings_worried",
-      "type": "word",
-      "text": "worried",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "31_emotions_and_feelings_confused",
-      "type": "word",
-      "text": "confused",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "31_emotions_and_feelings_proud",
-      "type": "word",
-      "text": "proud",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "31_emotions_and_feelings_how_are_you_feeling_today",
-      "type": "sentence",
-      "text": "How are you feeling today?",
-      "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_very_happy_today",
       "type": "sentence",
-      "text": "I am very happy today.",
+      "text": "Ich bin heute sehr glücklich.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_how_are_you_feeling",
+      "type": "sentence",
+      "text": "Wie fühlen Sie sich?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_excited_about",
+      "type": "sentence",
+      "text": "Ich bin aufgeregt wegen",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_why_are_you_sad",
       "type": "sentence",
-      "text": "Why are you sad?",
+      "text": "Warum sind Sie traurig?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_don_t_be_angry_with_me",
+      "id": "31_emotions_and_feelings_i_feel_nervous",
       "type": "sentence",
-      "text": "Don't be angry with me.",
+      "text": "Ich fühle mich nervös.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_i_am_excited_about_the_trip",
+      "id": "31_emotions_and_feelings_are_you_angry_with_me",
       "type": "sentence",
-      "text": "I am excited about the trip.",
+      "text": "Sind Sie wütend auf mich?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_i_feel_nervous_before_exams",
+      "id": "31_emotions_and_feelings_i_am_calm_now",
       "type": "sentence",
-      "text": "I feel nervous before exams.",
+      "text": "Ich bin jetzt ruhig.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_are_you_tired",
+      "id": "31_emotions_and_feelings_emotions_are_important",
       "type": "sentence",
-      "text": "Are you tired?",
+      "text": "Emotionen sind wichtig.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
+      "id": "31_emotions_and_feelings_how_do_you_feel_about",
       "type": "sentence",
-      "text": "I am surprised by the news.",
+      "text": "Wie fühlen Sie sich über?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_don_t_worry_about_it",
+      "id": "31_emotions_and_feelings_feelings_matter",
       "type": "sentence",
-      "text": "Don't worry about it.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "31_emotions_and_feelings_i_am_proud_of_my_achievement",
-      "type": "sentence",
-      "text": "I am proud of my achievement.",
+      "text": "Gefühle sind wichtig.",
       "practiceType": "formulateSentense"
     }
   ]

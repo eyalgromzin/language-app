@@ -1,127 +1,127 @@
 {
   "id": "24_family_and_relationships",
-  "title": "Family & Relationships",
-  "emoji": "👨‍👩‍👧‍👦",
-  "language": "English",
+  "title": "famiglia e relazioni",
+  "emoji": "👪",
+  "language": "Italian",
   "items": [
     {
       "id": "24_family_and_relationships_family",
       "type": "word",
-      "text": "family",
+      "text": "famiglia",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_mother",
       "type": "word",
-      "text": "mother",
+      "text": "madre",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_father",
       "type": "word",
-      "text": "father",
+      "text": "padre",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_sister",
       "type": "word",
-      "text": "sister",
+      "text": "sorella",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_brother",
       "type": "word",
-      "text": "brother",
+      "text": "fratello",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_son",
+      "type": "word",
+      "text": "figlio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_daughter",
+      "type": "word",
+      "text": "figlia",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_grandmother",
+      "type": "word",
+      "text": "nonna",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_grandfather",
+      "type": "word",
+      "text": "nonno",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_friend",
       "type": "word",
-      "text": "friend",
+      "text": "amico",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "24_family_and_relationships_husband",
-      "type": "word",
-      "text": "husband",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_wife",
-      "type": "word",
-      "text": "wife",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_child",
-      "type": "word",
-      "text": "child",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_parent",
-      "type": "word",
-      "text": "parent",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_how_is_your_family",
+      "id": "24_family_and_relationships_how_many_people_are_in_your_family",
       "type": "sentence",
-      "text": "How is your family?",
+      "text": "Quante persone ci sono nella sua famiglia?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_my_mother_is_a_teacher",
+      "id": "24_family_and_relationships_do_you_have_brothers_and_sisters",
       "type": "sentence",
-      "text": "My mother is a teacher.",
+      "text": "Ha fratelli e sorelle?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_i_have_two_sisters",
+      "id": "24_family_and_relationships_my_family_is_very_large",
       "type": "sentence",
-      "text": "I have two sisters.",
+      "text": "La mia famiglia è molto numerosa.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_where_does_your_father_work",
+      "id": "24_family_and_relationships_i_love_my_family",
       "type": "sentence",
-      "text": "Where does your father work?",
+      "text": "Amo la mia famiglia.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_my_brother_is_older_than_me",
+      "id": "24_family_and_relationships_where_does_your_family_live",
       "type": "sentence",
-      "text": "My brother is older than me.",
+      "text": "Dove vive la sua famiglia?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_we_are_good_friends",
+      "id": "24_family_and_relationships_my_parents_are_very_nice",
       "type": "sentence",
-      "text": "We are good friends.",
+      "text": "I miei genitori sono molto gentili.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_my_husband_likes_cooking",
+      "id": "24_family_and_relationships_i_have_a_good_relationship_with",
       "type": "sentence",
-      "text": "My husband likes cooking.",
+      "text": "Ho una buona relazione con",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_do_you_have_children",
+      "id": "24_family_and_relationships_family_is_very_important",
       "type": "sentence",
-      "text": "Do you have children?",
+      "text": "La famiglia è molto importante.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_my_parents_live_in_the_city",
+      "id": "24_family_and_relationships_my_friend_is_like_family",
       "type": "sentence",
-      "text": "My parents live in the city.",
+      "text": "Il mio amico è come famiglia.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_i_love_my_family_very_much",
+      "id": "24_family_and_relationships_thank_you_for_being_my_friend",
       "type": "sentence",
-      "text": "I love my family very much.",
+      "text": "Grazie per essere mio amico.",
       "practiceType": "formulateSentense"
     }
   ]

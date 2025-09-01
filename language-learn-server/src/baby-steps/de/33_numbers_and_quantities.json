@@ -2,126 +2,126 @@
   "id": "33_numbers_and_quantities",
   "title": "Numbers & Quantities",
   "emoji": "🔢",
-  "language": "English",
+  "language": "German",
   "items": [
     {
       "id": "33_numbers_and_quantities_number",
       "type": "word",
-      "text": "number",
+      "text": "Zahl",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_count",
+      "id": "33_numbers_and_quantities_quantity",
       "type": "word",
-      "text": "count",
+      "text": "Menge",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "33_numbers_and_quantities_many",
       "type": "word",
-      "text": "many",
+      "text": "viele",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "33_numbers_and_quantities_few",
       "type": "word",
-      "text": "few",
+      "text": "wenige",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "33_numbers_and_quantities_some",
       "type": "word",
-      "text": "some",
+      "text": "einige",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "33_numbers_and_quantities_all",
       "type": "word",
-      "text": "all",
+      "text": "alle",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "33_numbers_and_quantities_none",
       "type": "word",
-      "text": "none",
+      "text": "keine",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "33_numbers_and_quantities_half",
       "type": "word",
-      "text": "half",
+      "text": "Hälfte",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "33_numbers_and_quantities_double",
       "type": "word",
-      "text": "double",
+      "text": "doppelt",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_total",
+      "id": "33_numbers_and_quantities_triple",
       "type": "word",
-      "text": "total",
+      "text": "dreifach",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "33_numbers_and_quantities_how_many_people_are_here",
       "type": "sentence",
-      "text": "How many people are here?",
+      "text": "Wie viele Menschen sind hier?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_can_you_count_to_ten",
+      "id": "33_numbers_and_quantities_i_have_many_books",
       "type": "sentence",
-      "text": "Can you count to ten?",
+      "text": "Ich habe viele Bücher.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_there_are_many_books_in_the_library",
+      "id": "33_numbers_and_quantities_there_are_few_cars",
       "type": "sentence",
-      "text": "There are many books in the library.",
+      "text": "Es gibt wenige Autos.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_i_have_few_friends_here",
+      "id": "33_numbers_and_quantities_some_people_like_coffee",
       "type": "sentence",
-      "text": "I have few friends here.",
+      "text": "Einige Menschen mögen Kaffee.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_would_you_like_some_water",
+      "id": "33_numbers_and_quantities_all_students_are_here",
       "type": "sentence",
-      "text": "Would you like some water?",
+      "text": "Alle Studenten sind hier.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_all_students_are_present",
+      "id": "33_numbers_and_quantities_none_of_them_speak_german",
       "type": "sentence",
-      "text": "All students are present.",
+      "text": "Keiner von ihnen spricht Deutsch.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_none_of_them_came",
+      "id": "33_numbers_and_quantities_half_of_the_people_left",
       "type": "sentence",
-      "text": "None of them came.",
+      "text": "Die Hälfte der Menschen ist gegangen.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_i_ate_half_of_the_pizza",
+      "id": "33_numbers_and_quantities_the_price_doubled",
       "type": "sentence",
-      "text": "I ate half of the pizza.",
+      "text": "Der Preis hat sich verdoppelt.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_the_price_doubled_last_year",
+      "id": "33_numbers_and_quantities_numbers_are_important",
       "type": "sentence",
-      "text": "The price doubled last year.",
+      "text": "Zahlen sind wichtig.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_what_is_the_total_cost",
+      "id": "33_numbers_and_quantities_quantities_matter",
       "type": "sentence",
-      "text": "What is the total cost?",
+      "text": "Mengen sind wichtig.",
       "practiceType": "formulateSentense"
     }
   ]

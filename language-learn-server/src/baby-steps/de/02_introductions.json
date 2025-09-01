@@ -1,127 +1,127 @@
 {
   "id": "02_introductions",
-  "title": "Introductions & basic info",
+  "title": "Introductions & Basic Info",
   "emoji": "💬",
-  "language": "English",
+  "language": "German",
   "items": [
     {
       "id": "02_introductions_name",
       "type": "word",
-      "text": "name",
+      "text": "Name",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "02_introductions_meet",
+      "id": "02_introductions_age",
       "type": "word",
-      "text": "meet",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "02_introductions_from",
-      "type": "word",
-      "text": "from",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "02_introductions_speak",
-      "type": "word",
-      "text": "speak",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "02_introductions_language",
-      "type": "word",
-      "text": "language",
+      "text": "Alter",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_country",
       "type": "word",
-      "text": "country",
+      "text": "Land",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_city",
       "type": "word",
-      "text": "city",
+      "text": "Stadt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_job",
       "type": "word",
-      "text": "job",
+      "text": "Beruf",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_student",
       "type": "word",
-      "text": "student",
+      "text": "Student",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_teacher",
       "type": "word",
-      "text": "teacher",
+      "text": "Lehrer",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "02_introductions_my_name_is",
-      "type": "sentence",
-      "text": "My name is …",
-      "practiceType": "formulateSentense"
+      "id": "02_introductions_engineer",
+      "type": "word",
+      "text": "Ingenieur",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_doctor",
+      "type": "word",
+      "text": "Arzt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_language",
+      "type": "word",
+      "text": "Sprache",
+      "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_what_is_your_name",
       "type": "sentence",
-      "text": "What is your name?",
+      "text": "Wie heißt du?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "02_introductions_nice_to_meet_you",
+      "id": "02_introductions_my_name_is",
       "type": "sentence",
-      "text": "Nice to meet you.",
+      "text": "Ich heiße",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "02_introductions_how_are_you",
+      "id": "02_introductions_how_old_are_you",
       "type": "sentence",
-      "text": "How are you?",
+      "text": "Wie alt bist du?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "02_introductions_i_am_fine_thank_you",
+      "id": "02_introductions_i_am_years_old",
       "type": "sentence",
-      "text": "I am fine, thank you.",
+      "text": "Ich bin Jahre alt.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_where_are_you_from",
       "type": "sentence",
-      "text": "Where are you from?",
+      "text": "Woher kommst du?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_from",
       "type": "sentence",
-      "text": "I am from …",
+      "text": "Ich komme aus",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "02_introductions_do_you_speak_english",
+      "id": "02_introductions_where_do_you_live",
       "type": "sentence",
-      "text": "Do you speak English?",
+      "text": "Wo wohnst du?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "02_introductions_i_speak_a_little",
+      "id": "02_introductions_i_live_in",
       "type": "sentence",
-      "text": "I speak a little.",
+      "text": "Ich wohne in",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_what_do_you_do",
       "type": "sentence",
-      "text": "What do you do?",
+      "text": "Was machst du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_nice_to_meet_you",
+      "type": "sentence",
+      "text": "Freut mich, dich kennenzulernen.",
       "practiceType": "formulateSentense"
     }
   ]

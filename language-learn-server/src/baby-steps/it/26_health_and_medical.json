@@ -1,127 +1,127 @@
 {
   "id": "26_health_and_medical",
-  "title": "Health & Medical",
+  "title": "salute e medicina",
   "emoji": "🏥",
-  "language": "English",
+  "language": "Italian",
   "items": [
     {
       "id": "26_health_and_medical_health",
       "type": "word",
-      "text": "health",
+      "text": "salute",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "medico",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_hospital",
       "type": "word",
-      "text": "hospital",
+      "text": "ospedale",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "medicina",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_pain",
       "type": "word",
-      "text": "pain",
+      "text": "dolore",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_sick",
       "type": "word",
-      "text": "sick",
+      "text": "malato",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_fever",
       "type": "word",
-      "text": "fever",
+      "text": "febbre",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_appointment",
+      "id": "26_health_and_medical_cold",
       "type": "word",
-      "text": "appointment",
+      "text": "raffreddore",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_headache",
+      "type": "word",
+      "text": "mal di testa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_emergency",
       "type": "word",
-      "text": "emergency",
+      "text": "emergenza",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_treatment",
-      "type": "word",
-      "text": "treatment",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "26_health_and_medical_how_are_you_feeling_today",
+      "id": "26_health_and_medical_i_am_not_feeling_well",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "Non mi sento bene.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_i_need_to_see_a_doctor",
       "type": "sentence",
-      "text": "I need to see a doctor.",
+      "text": "Devo vedere un medico.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_where_is_the_nearest_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "Dove è l'ospedale più vicino?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_i_have_a_headache",
       "type": "sentence",
-      "text": "I have a headache.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "26_health_and_medical_can_i_make_an_appointment",
-      "type": "sentence",
-      "text": "Can I make an appointment?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "26_health_and_medical_i_am_feeling_sick",
-      "type": "sentence",
-      "text": "I am feeling sick.",
+      "text": "Ho mal di testa.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_do_you_have_any_medicine",
       "type": "sentence",
-      "text": "Do you have any medicine?",
+      "text": "Ha qualche medicina?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_this_is_an_emergency",
+      "id": "26_health_and_medical_i_am_allergic_to",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "Sono allergico a",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_what_treatment_do_i_need",
+      "id": "26_health_and_medical_please_call_an_ambulance",
       "type": "sentence",
-      "text": "What treatment do I need?",
+      "text": "Per favore chiami un'ambulanza.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_my_fever_is_very_high",
+      "id": "26_health_and_medical_my_temperature_is_high",
       "type": "sentence",
-      "text": "My fever is very high.",
+      "text": "La mia temperatura è alta.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_have_an_appointment_with",
+      "type": "sentence",
+      "text": "Ho un appuntamento con",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_health_is_very_important",
+      "type": "sentence",
+      "text": "La salute è molto importante.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -1,127 +1,127 @@
 {
   "id": "06_food_drink_basics",
-  "title": "Food & drink basics",
+  "title": "concetti di base di cibo e bevande",
   "emoji": "🍎",
-  "language": "English",
+  "language": "Italian",
   "items": [
+    {
+      "id": "06_food_drink_basics_food",
+      "type": "word",
+      "text": "cibo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_drink",
+      "type": "word",
+      "text": "bevanda",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "06_food_drink_basics_water",
       "type": "word",
-      "text": "water",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "06_food_drink_basics_coffee",
-      "type": "word",
-      "text": "coffee",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "06_food_drink_basics_tea",
-      "type": "word",
-      "text": "tea",
+      "text": "acqua",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_bread",
       "type": "word",
-      "text": "bread",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "06_food_drink_basics_apple",
-      "type": "word",
-      "text": "apple",
+      "text": "pane",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_milk",
       "type": "word",
-      "text": "milk",
+      "text": "latte",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "06_food_drink_basics_juice",
+      "id": "06_food_drink_basics_coffee",
       "type": "word",
-      "text": "juice",
+      "text": "caffè",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "06_food_drink_basics_rice",
+      "id": "06_food_drink_basics_tea",
       "type": "word",
-      "text": "rice",
+      "text": "tè",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "06_food_drink_basics_chicken",
+      "id": "06_food_drink_basics_apple",
       "type": "word",
-      "text": "chicken",
+      "text": "mela",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "06_food_drink_basics_fish",
+      "id": "06_food_drink_basics_banana",
       "type": "word",
-      "text": "fish",
+      "text": "banana",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "06_food_drink_basics_i_would_like_water_please",
-      "type": "sentence",
-      "text": "I would like water, please.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "06_food_drink_basics_the_food_is_delicious",
-      "type": "sentence",
-      "text": "The food is delicious.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "06_food_drink_basics_i_am_allergic_to",
-      "type": "sentence",
-      "text": "I am allergic to …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "06_food_drink_basics_no_sugar_please",
-      "type": "sentence",
-      "text": "No sugar, please.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "06_food_drink_basics_do_you_have_vegetarian_food",
-      "type": "sentence",
-      "text": "Do you have vegetarian food?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "06_food_drink_basics_how_much_is_it",
-      "type": "sentence",
-      "text": "How much is it?",
-      "practiceType": "formulateSentense"
+      "id": "06_food_drink_basics_egg",
+      "type": "word",
+      "text": "uovo",
+      "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_i_am_hungry",
       "type": "sentence",
-      "text": "I am hungry.",
+      "text": "Ho fame.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_thirsty",
       "type": "sentence",
-      "text": "I am thirsty.",
+      "text": "Ho sete.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "06_food_drink_basics_what_do_you_recommend",
+      "id": "06_food_drink_basics_i_want_to_eat",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "Voglio mangiare.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "06_food_drink_basics_the_bill_please",
+      "id": "06_food_drink_basics_i_want_to_drink",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "Voglio bere.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_what_do_you_want_to_eat",
+      "type": "sentence",
+      "text": "Cosa vuole mangiare?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_do_you_like",
+      "type": "sentence",
+      "text": "Le piace",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_this_is_delicious",
+      "type": "sentence",
+      "text": "Questo è delizioso.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_dont_like",
+      "type": "sentence",
+      "text": "Non mi piace",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_can_i_have",
+      "type": "sentence",
+      "text": "Posso avere",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_thank_you_for_the_meal",
+      "type": "sentence",
+      "text": "Grazie per il pasto.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -1,127 +1,109 @@
 {
   "id": "25_work_and_profession",
-  "title": "Work & Profession",
+  "title": "работа и профессия",
   "emoji": "💼",
-  "language": "English",
+  "language": "Russian",
   "items": [
-    {
-      "id": "25_work_and_profession_job",
-      "type": "word",
-      "text": "job",
-      "practiceType": "chooseTranslation"
-    },
     {
       "id": "25_work_and_profession_work",
       "type": "word",
-      "text": "work",
+      "text": "работа",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_profession",
+      "type": "word",
+      "text": "профессия",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_job",
+      "type": "word",
+      "text": "работа",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_office",
       "type": "word",
-      "text": "office",
+      "text": "офис",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_meeting",
       "type": "word",
-      "text": "meeting",
+      "text": "встреча",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_boss",
       "type": "word",
-      "text": "boss",
+      "text": "начальник",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_colleague",
       "type": "word",
-      "text": "colleague",
+      "text": "коллега",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_salary",
       "type": "word",
-      "text": "salary",
+      "text": "зарплата",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_project",
       "type": "word",
-      "text": "project",
+      "text": "проект",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "25_work_and_profession_deadline",
-      "type": "word",
-      "text": "deadline",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "25_work_and_profession_career",
-      "type": "word",
-      "text": "career",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "25_work_and_profession_what_do_you_do_for_work",
+      "id": "25_work_and_profession_what_do_you_do_for_a_living",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Чем вы зарабатываете на жизнь?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_i_work_in_an_office",
+      "id": "25_work_and_profession_i_work_as_a",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Я работаю как",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Вам нравится ваша работа?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_i_have_a_meeting_at_nine",
+      "id": "25_work_and_profession_work_is_important",
       "type": "sentence",
-      "text": "I have a meeting at nine.",
+      "text": "Работа важна.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_my_boss_is_very_nice",
+      "id": "25_work_and_profession_work_life_balance_is_important",
       "type": "sentence",
-      "text": "My boss is very nice.",
+      "text": "Баланс работы и жизни важен.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_i_work_with_great_colleagues",
+      "id": "25_work_and_profession_profession_requires_skills",
       "type": "sentence",
-      "text": "I work with great colleagues.",
+      "text": "Профессия требует навыков.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_what_is_your_salary",
+      "id": "25_work_and_profession_hard_work_pays_off",
       "type": "sentence",
-      "text": "What is your salary?",
+      "text": "Тяжелый труд окупается.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_this_project_is_very_important",
+      "id": "25_work_and_profession_choose_a_profession_you_love",
       "type": "sentence",
-      "text": "This project is very important.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "25_work_and_profession_the_deadline_is_next_week",
-      "type": "sentence",
-      "text": "The deadline is next week.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "25_work_and_profession_i_want_to_advance_my_career",
-      "type": "sentence",
-      "text": "I want to advance my career.",
+      "text": "Выбирайте профессию, которую любите.",
       "practiceType": "formulateSentense"
     }
   ]

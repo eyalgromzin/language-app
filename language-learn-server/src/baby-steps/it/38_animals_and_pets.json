@@ -1,127 +1,127 @@
 {
   "id": "38_animals_and_pets",
-  "title": "Animals & Pets",
+  "title": "animali e animali domestici",
   "emoji": "🐕",
-  "language": "English",
+  "language": "Italian",
   "items": [
     {
       "id": "38_animals_and_pets_animal",
       "type": "word",
-      "text": "animal",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "38_animals_and_pets_pet",
-      "type": "word",
-      "text": "pet",
+      "text": "animale",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_dog",
       "type": "word",
-      "text": "dog",
+      "text": "cane",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cat",
       "type": "word",
-      "text": "cat",
+      "text": "gatto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_bird",
       "type": "word",
-      "text": "bird",
+      "text": "uccello",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_fish",
       "type": "word",
-      "text": "fish",
+      "text": "pesce",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_horse",
       "type": "word",
-      "text": "horse",
+      "text": "cavallo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cow",
       "type": "word",
-      "text": "cow",
+      "text": "mucca",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "pollo",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "38_animals_and_pets_pig",
+      "id": "38_animals_and_pets_pet",
       "type": "word",
-      "text": "pig",
+      "text": "animale domestico",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "38_animals_and_pets_do_you_have_any_pets",
-      "type": "sentence",
-      "text": "Do you have any pets?",
-      "practiceType": "formulateSentense"
+      "id": "38_animals_and_pets_wild",
+      "type": "word",
+      "text": "selvaggio",
+      "practiceType": "chooseTranslation"
     },
     {
-      "id": "38_animals_and_pets_my_dog_is_very_friendly",
+      "id": "38_animals_and_pets_do_you_have_a_pet",
       "type": "sentence",
-      "text": "My dog is very friendly.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "38_animals_and_pets_cats_are_independent_animals",
-      "type": "sentence",
-      "text": "Cats are independent animals.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "38_animals_and_pets_i_love_watching_birds_fly",
-      "type": "sentence",
-      "text": "I love watching birds fly.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "38_animals_and_pets_how_many_fish_do_you_have",
-      "type": "sentence",
-      "text": "How many fish do you have?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "38_animals_and_pets_horses_are_beautiful_animals",
-      "type": "sentence",
-      "text": "Horses are beautiful animals.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "38_animals_and_pets_cows_give_us_milk",
-      "type": "sentence",
-      "text": "Cows give us milk.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "38_animals_and_pets_do_you_like_chicken",
-      "type": "sentence",
-      "text": "Do you like chicken?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "38_animals_and_pets_pigs_are_very_intelligent",
-      "type": "sentence",
-      "text": "Pigs are very intelligent.",
+      "text": "Ha un animale domestico?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_what_is_your_favorite_animal",
       "type": "sentence",
-      "text": "What is your favorite animal?",
+      "text": "Qual è il suo animale preferito?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_i_love_animals",
+      "type": "sentence",
+      "text": "Amo gli animali.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_my_dog_is_very_friendly",
+      "type": "sentence",
+      "text": "Il mio cane è molto amichevole.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_cats_are_independent",
+      "type": "sentence",
+      "text": "I gatti sono indipendenti.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_birds_can_fly",
+      "type": "sentence",
+      "text": "Gli uccelli possono volare.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_horses_are_beautiful",
+      "type": "sentence",
+      "text": "I cavalli sono belli.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_like_farm_animals",
+      "type": "sentence",
+      "text": "Le piacciono gli animali da fattoria?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_animals_are_amazing",
+      "type": "sentence",
+      "text": "Gli animali sono fantastici.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_pets_are_good_companions",
+      "type": "sentence",
+      "text": "Gli animali domestici sono buoni compagni.",
       "practiceType": "formulateSentense"
     }
   ]

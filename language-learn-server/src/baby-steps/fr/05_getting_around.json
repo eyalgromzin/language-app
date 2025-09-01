@@ -1,127 +1,127 @@
 {
   "id": "05_getting_around",
-  "title": "Directions & getting around",
+  "title": "directions et orientation",
   "emoji": "🧭",
-  "language": "English",
+  "language": "French",
   "items": [
     {
       "id": "05_getting_around_left",
       "type": "word",
-      "text": "left",
+      "text": "gauche",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_right",
       "type": "word",
-      "text": "right",
+      "text": "droite",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_straight",
       "type": "word",
-      "text": "straight",
+      "text": "tout droit",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_north",
+      "type": "word",
+      "text": "nord",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_south",
+      "type": "word",
+      "text": "sud",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_east",
+      "type": "word",
+      "text": "est",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_west",
+      "type": "word",
+      "text": "ouest",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_near",
       "type": "word",
-      "text": "near",
+      "text": "près",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_far",
       "type": "word",
-      "text": "far",
+      "text": "loin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_here",
       "type": "word",
-      "text": "here",
+      "text": "ici",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "05_getting_around_there",
-      "type": "word",
-      "text": "there",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "05_getting_around_up",
-      "type": "word",
-      "text": "up",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "05_getting_around_down",
-      "type": "word",
-      "text": "down",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "05_getting_around_around",
-      "type": "word",
-      "text": "around",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "05_getting_around_where_is_the_bathroom",
+      "id": "05_getting_around_where_is",
       "type": "sentence",
-      "text": "Where is the bathroom?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_where_is_the_station",
-      "type": "sentence",
-      "text": "Where is the station?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_how_do_i_get_to",
-      "type": "sentence",
-      "text": "How do I get to …?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_is_it_close",
-      "type": "sentence",
-      "text": "Is it close?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_i_am_lost",
-      "type": "sentence",
-      "text": "I am lost.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_turn_left",
-      "type": "sentence",
-      "text": "Turn left.",
+      "text": "Où est",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_go_straight",
       "type": "sentence",
-      "text": "Go straight.",
+      "text": "Allez tout droit.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "05_getting_around_it_is_over_there",
+      "id": "05_getting_around_turn_left",
       "type": "sentence",
-      "text": "It is over there.",
+      "text": "Tournez à gauche.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "05_getting_around_can_you_help_me",
+      "id": "05_getting_around_turn_right",
       "type": "sentence",
-      "text": "Can you help me?",
+      "text": "Tournez à droite.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_how_far_is_it",
       "type": "sentence",
-      "text": "How far is it?",
+      "text": "À quelle distance est-ce ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_it_is_near",
+      "type": "sentence",
+      "text": "C'est près.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_it_is_far",
+      "type": "sentence",
+      "text": "C'est loin.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_can_you_help_me",
+      "type": "sentence",
+      "text": "Pouvez-vous m'aider ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_i_am_lost",
+      "type": "sentence",
+      "text": "Je suis perdu.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_where_am_i",
+      "type": "sentence",
+      "text": "Où suis-je ?",
       "practiceType": "formulateSentense"
     }
   ]

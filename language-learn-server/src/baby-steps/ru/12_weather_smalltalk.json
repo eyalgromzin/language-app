@@ -1,127 +1,109 @@
 {
   "id": "12_weather_smalltalk",
-  "title": "Weather & small talk",
+  "title": "погода и светская беседа",
   "emoji": "🌦️",
-  "language": "English",
+  "language": "Russian",
   "items": [
     {
-      "id": "12_weather_smalltalk_hot",
+      "id": "12_weather_smalltalk_weather",
       "type": "word",
-      "text": "hot",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "12_weather_smalltalk_cold",
-      "type": "word",
-      "text": "cold",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "12_weather_smalltalk_rain",
-      "type": "word",
-      "text": "rain",
+      "text": "погода",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_sunny",
       "type": "word",
-      "text": "sunny",
+      "text": "солнечно",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "12_weather_smalltalk_warm",
+      "id": "12_weather_smalltalk_rainy",
       "type": "word",
-      "text": "warm",
+      "text": "дождливо",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "12_weather_smalltalk_windy",
+      "id": "12_weather_smalltalk_cold",
       "type": "word",
-      "text": "windy",
+      "text": "холодно",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "12_weather_smalltalk_cloudy",
+      "id": "12_weather_smalltalk_hot",
       "type": "word",
-      "text": "cloudy",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "12_weather_smalltalk_snow",
-      "type": "word",
-      "text": "snow",
+      "text": "жарко",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_nice",
       "type": "word",
-      "text": "nice",
+      "text": "хорошо",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_bad",
       "type": "word",
-      "text": "bad",
+      "text": "плохо",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "12_weather_smalltalk_it_is_very_hot_today",
-      "type": "sentence",
-      "text": "It is very hot today.",
-      "practiceType": "formulateSentense"
+      "id": "12_weather_smalltalk_talk",
+      "type": "word",
+      "text": "говорить",
+      "practiceType": "chooseTranslation"
     },
     {
-      "id": "12_weather_smalltalk_it_might_rain_tomorrow",
-      "type": "sentence",
-      "text": "It might rain tomorrow.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "12_weather_smalltalk_have_a_nice_day",
-      "type": "sentence",
-      "text": "Have a nice day!",
-      "practiceType": "formulateSentense"
+      "id": "12_weather_smalltalk_conversation",
+      "type": "word",
+      "text": "разговор",
+      "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_how_is_the_weather",
       "type": "sentence",
-      "text": "How is the weather?",
+      "text": "Какая погода?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_it_is_nice_weather",
+      "id": "12_weather_smalltalk_it_is_sunny_today",
       "type": "sentence",
-      "text": "It is nice weather.",
+      "text": "Сегодня солнечно.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_what_a_beautiful_day",
+      "id": "12_weather_smalltalk_it_is_cold_today",
       "type": "sentence",
-      "text": "What a beautiful day!",
+      "text": "Сегодня холодно.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_the_weather_is_bad",
+      "id": "12_weather_smalltalk_nice_weather",
       "type": "sentence",
-      "text": "The weather is bad.",
+      "text": "Хорошая погода.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_do_you_like_this_weather",
+      "id": "12_weather_smalltalk_bad_weather",
       "type": "sentence",
-      "text": "Do you like this weather?",
+      "text": "Плохая погода.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_it_is_windy_today",
+      "id": "12_weather_smalltalk_weather_affects_mood",
       "type": "sentence",
-      "text": "It is windy today.",
+      "text": "Погода влияет на настроение.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_how_are_you_today",
+      "id": "12_weather_smalltalk_small_talk_is_polite",
       "type": "sentence",
-      "text": "How are you today?",
+      "text": "Светская беседа вежлива.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_weather_is_a_common_topic",
+      "type": "sentence",
+      "text": "Погода - общая тема.",
       "practiceType": "formulateSentense"
     }
   ]

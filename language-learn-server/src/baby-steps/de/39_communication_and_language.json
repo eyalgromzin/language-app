@@ -2,126 +2,126 @@
   "id": "39_communication_and_language",
   "title": "Communication & Language",
   "emoji": "💬",
-  "language": "English",
+  "language": "German",
   "items": [
+    {
+      "id": "39_communication_and_language_communication",
+      "type": "word",
+      "text": "Kommunikation",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_language",
+      "type": "word",
+      "text": "Sprache",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "39_communication_and_language_speak",
       "type": "word",
-      "text": "speak",
+      "text": "sprechen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_talk",
       "type": "word",
-      "text": "talk",
+      "text": "reden",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_listen",
       "type": "word",
-      "text": "listen",
+      "text": "zuhören",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_understand",
       "type": "word",
-      "text": "understand",
+      "text": "verstehen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_explain",
       "type": "word",
-      "text": "explain",
+      "text": "erklären",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "39_communication_and_language_question",
+      "id": "39_communication_and_language_ask",
       "type": "word",
-      "text": "question",
+      "text": "fragen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_answer",
       "type": "word",
-      "text": "answer",
+      "text": "antworten",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_conversation",
       "type": "word",
-      "text": "conversation",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "39_communication_and_language_message",
-      "type": "word",
-      "text": "message",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "39_communication_and_language_translate",
-      "type": "word",
-      "text": "translate",
+      "text": "Gespräch",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_do_you_speak_english",
       "type": "sentence",
-      "text": "Do you speak English?",
+      "text": "Sprechen Sie Englisch?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_can_we_talk_about_it",
+      "id": "39_communication_and_language_can_you_understand_me",
       "type": "sentence",
-      "text": "Can we talk about it?",
+      "text": "Können Sie mich verstehen?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_please_listen_to_me",
+      "id": "39_communication_and_language_please_explain_this",
       "type": "sentence",
-      "text": "Please listen to me.",
+      "text": "Bitte erklären Sie das.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_do_you_understand_what_i_mean",
+      "id": "39_communication_and_language_what_language_do_you_speak",
       "type": "sentence",
-      "text": "Do you understand what I mean?",
+      "text": "Welche Sprache sprechen Sie?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_can_you_explain_this_to_me",
+      "id": "39_communication_and_language_communication_is_important",
       "type": "sentence",
-      "text": "Can you explain this to me?",
+      "text": "Kommunikation ist wichtig.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_i_have_a_question_for_you",
+      "id": "39_communication_and_language_can_we_talk",
       "type": "sentence",
-      "text": "I have a question for you.",
+      "text": "Können wir reden?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_what_is_your_answer",
+      "id": "39_communication_and_language_i_like_this_conversation",
       "type": "sentence",
-      "text": "What is your answer?",
+      "text": "Ich mag dieses Gespräch.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_this_is_an_interesting_conversation",
+      "id": "39_communication_and_language_language_connects_people",
       "type": "sentence",
-      "text": "This is an interesting conversation.",
+      "text": "Sprache verbindet Menschen.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_did_you_get_my_message",
+      "id": "39_communication_and_language_do_you_understand_german",
       "type": "sentence",
-      "text": "Did you get my message?",
+      "text": "Verstehen Sie Deutsch?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_can_you_translate_this_word",
+      "id": "39_communication_and_language_communication_brings_us_together",
       "type": "sentence",
-      "text": "Can you translate this word?",
+      "text": "Kommunikation bringt uns zusammen.",
       "practiceType": "formulateSentense"
     }
   ]

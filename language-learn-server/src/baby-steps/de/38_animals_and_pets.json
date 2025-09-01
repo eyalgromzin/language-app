@@ -2,126 +2,126 @@
   "id": "38_animals_and_pets",
   "title": "Animals & Pets",
   "emoji": "🐕",
-  "language": "English",
+  "language": "German",
   "items": [
     {
       "id": "38_animals_and_pets_animal",
       "type": "word",
-      "text": "animal",
+      "text": "Tier",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pet",
       "type": "word",
-      "text": "pet",
+      "text": "Haustier",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_dog",
       "type": "word",
-      "text": "dog",
+      "text": "Hund",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cat",
       "type": "word",
-      "text": "cat",
+      "text": "Katze",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_bird",
       "type": "word",
-      "text": "bird",
+      "text": "Vogel",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_fish",
       "type": "word",
-      "text": "fish",
+      "text": "Fisch",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_horse",
       "type": "word",
-      "text": "horse",
+      "text": "Pferd",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cow",
       "type": "word",
-      "text": "cow",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "38_animals_and_pets_chicken",
-      "type": "word",
-      "text": "chicken",
+      "text": "Kuh",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pig",
       "type": "word",
-      "text": "pig",
+      "text": "Schwein",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_chicken",
+      "type": "word",
+      "text": "Huhn",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_do_you_have_any_pets",
       "type": "sentence",
-      "text": "Do you have any pets?",
+      "text": "Haben Sie Haustiere?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "38_animals_and_pets_my_dog_is_very_friendly",
+      "id": "38_animals_and_pets_what_is_your_pet_s_name",
       "type": "sentence",
-      "text": "My dog is very friendly.",
+      "text": "Wie heißt Ihr Haustier?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "38_animals_and_pets_cats_are_independent_animals",
+      "id": "38_animals_and_pets_i_love_animals",
       "type": "sentence",
-      "text": "Cats are independent animals.",
+      "text": "Ich liebe Tiere.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "38_animals_and_pets_i_love_watching_birds_fly",
+      "id": "38_animals_and_pets_this_dog_is_very_friendly",
       "type": "sentence",
-      "text": "I love watching birds fly.",
+      "text": "Dieser Hund ist sehr freundlich.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "38_animals_and_pets_how_many_fish_do_you_have",
+      "id": "38_animals_and_pets_where_is_the_nearest_pet_store",
       "type": "sentence",
-      "text": "How many fish do you have?",
+      "text": "Wo ist der nächste Zoofachhandel?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "38_animals_and_pets_horses_are_beautiful_animals",
+      "id": "38_animals_and_pets_animals_are_amazing",
       "type": "sentence",
-      "text": "Horses are beautiful animals.",
+      "text": "Tiere sind erstaunlich.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "38_animals_and_pets_cows_give_us_milk",
+      "id": "38_animals_and_pets_my_cat_likes_to_sleep",
       "type": "sentence",
-      "text": "Cows give us milk.",
+      "text": "Meine Katze schläft gerne.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "38_animals_and_pets_do_you_like_chicken",
+      "id": "38_animals_and_pets_do_you_like_dogs",
       "type": "sentence",
-      "text": "Do you like chicken?",
+      "text": "Mögen Sie Hunde?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "38_animals_and_pets_pigs_are_very_intelligent",
+      "id": "38_animals_and_pets_pets_are_great_companions",
       "type": "sentence",
-      "text": "Pigs are very intelligent.",
+      "text": "Haustiere sind tolle Begleiter.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "38_animals_and_pets_what_is_your_favorite_animal",
+      "id": "38_animals_and_pets_animals_are_our_friends",
       "type": "sentence",
-      "text": "What is your favorite animal?",
+      "text": "Tiere sind unsere Freunde.",
       "practiceType": "formulateSentense"
     }
   ]

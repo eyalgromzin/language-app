@@ -1,127 +1,121 @@
 {
   "id": "12_weather_smalltalk",
-  "title": "Weather & small talk",
+  "title": "clima e conversa",
   "emoji": "🌦️",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
-      "id": "12_weather_smalltalk_hot",
+      "id": "12_weather_smalltalk_weather",
       "type": "word",
-      "text": "hot",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "12_weather_smalltalk_cold",
-      "type": "word",
-      "text": "cold",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "12_weather_smalltalk_rain",
-      "type": "word",
-      "text": "rain",
+      "text": "clima",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_sunny",
       "type": "word",
-      "text": "sunny",
+      "text": "ensolarado",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "12_weather_smalltalk_warm",
+      "id": "12_weather_smalltalk_rainy",
       "type": "word",
-      "text": "warm",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "12_weather_smalltalk_windy",
-      "type": "word",
-      "text": "windy",
+      "text": "chuvoso",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cloudy",
       "type": "word",
-      "text": "cloudy",
+      "text": "nublado",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "12_weather_smalltalk_snow",
+      "id": "12_weather_smalltalk_cold",
       "type": "word",
-      "text": "snow",
+      "text": "frio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_hot",
+      "type": "word",
+      "text": "quente",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_warm",
+      "type": "word",
+      "text": "morno",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_nice",
       "type": "word",
-      "text": "nice",
+      "text": "bom",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "12_weather_smalltalk_bad",
+      "id": "12_weather_smalltalk_beautiful",
       "type": "word",
-      "text": "bad",
+      "text": "bonito",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "12_weather_smalltalk_it_is_very_hot_today",
-      "type": "sentence",
-      "text": "It is very hot today.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "12_weather_smalltalk_it_might_rain_tomorrow",
-      "type": "sentence",
-      "text": "It might rain tomorrow.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "12_weather_smalltalk_have_a_nice_day",
-      "type": "sentence",
-      "text": "Have a nice day!",
-      "practiceType": "formulateSentense"
+      "id": "12_weather_smalltalk_today",
+      "type": "word",
+      "text": "hoje",
+      "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_how_is_the_weather",
       "type": "sentence",
-      "text": "How is the weather?",
+      "text": "Como está o clima?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_it_is_nice_weather",
+      "id": "12_weather_smalltalk_it_is_sunny_today",
       "type": "sentence",
-      "text": "It is nice weather.",
+      "text": "Está ensolarado hoje.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_raining",
+      "type": "sentence",
+      "text": "Está chovendo.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_cold_today",
+      "type": "sentence",
+      "text": "Está frio hoje.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_what_a_beautiful_day",
       "type": "sentence",
-      "text": "What a beautiful day!",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "12_weather_smalltalk_the_weather_is_bad",
-      "type": "sentence",
-      "text": "The weather is bad.",
+      "text": "Que dia bonito!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_do_you_like_this_weather",
       "type": "sentence",
-      "text": "Do you like this weather?",
+      "text": "Você gosta deste clima?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_it_is_windy_today",
+      "id": "12_weather_smalltalk_the_weather_is_nice",
       "type": "sentence",
-      "text": "It is windy today.",
+      "text": "O clima está bom.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "12_weather_smalltalk_how_are_you_today",
+      "id": "12_weather_smalltalk_it_is_very_hot",
       "type": "sentence",
-      "text": "How are you today?",
+      "text": "Está muito quente.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_have_a_nice_day",
+      "type": "sentence",
+      "text": "Tenha um bom dia!",
       "practiceType": "formulateSentense"
     }
   ]

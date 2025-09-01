@@ -1,31 +1,13 @@
 {
   "id": "08_travel_hotel",
-  "title": "Travel & hotel",
+  "title": "viagens e hotéis",
   "emoji": "🧳",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
-      "id": "08_travel_hotel_ticket",
+      "id": "08_travel_hotel_travel",
       "type": "word",
-      "text": "ticket",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "08_travel_hotel_reservation",
-      "type": "word",
-      "text": "reservation",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "08_travel_hotel_passport",
-      "type": "word",
-      "text": "passport",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "08_travel_hotel_luggage",
-      "type": "word",
-      "text": "luggage",
+      "text": "viagem",
       "practiceType": "chooseTranslation"
     },
     {
@@ -35,93 +17,105 @@
       "practiceType": "chooseTranslation"
     },
     {
+      "id": "08_travel_hotel_room",
+      "type": "word",
+      "text": "quarto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_reservation",
+      "type": "word",
+      "text": "reserva",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_passport",
+      "type": "word",
+      "text": "passaporte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_ticket",
+      "type": "word",
+      "text": "passagem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_luggage",
+      "type": "word",
+      "text": "bagagem",
+      "practiceType": "chooseTranslation"
+    },
+    {
       "id": "08_travel_hotel_airport",
       "type": "word",
-      "text": "airport",
+      "text": "aeroporto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_station",
       "type": "word",
-      "text": "station",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "08_travel_hotel_room",
-      "type": "word",
-      "text": "room",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "08_travel_hotel_key",
-      "type": "word",
-      "text": "key",
+      "text": "estação",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_map",
       "type": "word",
-      "text": "map",
+      "text": "mapa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_i_have_a_reservation",
       "type": "sentence",
-      "text": "I have a reservation.",
+      "text": "Eu tenho uma reserva.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "08_travel_hotel_what_time_is_check_in",
+      "id": "08_travel_hotel_what_time_is_my_flight",
       "type": "sentence",
-      "text": "What time is check-in?",
+      "text": "A que horas é o meu voo?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "08_travel_hotel_where_is_the_platform",
+      "id": "08_travel_hotel_where_is_my_gate",
       "type": "sentence",
-      "text": "Where is the platform?",
+      "text": "Onde fica o meu portão?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "08_travel_hotel_i_need_a_taxi",
+      "id": "08_travel_hotel_do_you_have_any_rooms_available",
       "type": "sentence",
-      "text": "I need a taxi.",
+      "text": "Você tem quartos disponíveis?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_how_much_is_the_room_per_night",
+      "type": "sentence",
+      "text": "Quanto custa o quarto por noite?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_where_is_the_elevator",
+      "type": "sentence",
+      "text": "Onde fica o elevador?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_what_time_is_check_out",
       "type": "sentence",
-      "text": "What time is check-out?",
+      "text": "A que horas é o check-out?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "08_travel_hotel_where_is_my_room",
+      "id": "08_travel_hotel_can_i_get_a_wake_up_call",
       "type": "sentence",
-      "text": "Where is my room?",
+      "text": "Posso receber uma chamada de despertar?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "08_travel_hotel_do_you_have_wifi",
+      "id": "08_travel_hotel_where_is_the_nearest_restaurant",
       "type": "sentence",
-      "text": "Do you have WiFi?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "08_travel_hotel_how_do_i_get_to_the_airport",
-      "type": "sentence",
-      "text": "How do I get to the airport?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "08_travel_hotel_is_breakfast_included",
-      "type": "sentence",
-      "text": "Is breakfast included?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "08_travel_hotel_can_you_call_me_a_taxi",
-      "type": "sentence",
-      "text": "Can you call me a taxi?",
+      "text": "Onde fica o restaurante mais próximo?",
       "practiceType": "formulateSentense"
     }
   ]

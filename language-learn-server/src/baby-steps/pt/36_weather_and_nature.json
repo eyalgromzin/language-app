@@ -1,0 +1,110 @@
+{
+  "id": "36_weather_and_nature",
+  "title": "clima e natureza",
+  "emoji": "🌤️",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "36_weather_and_nature_sunny",
+      "type": "word",
+      "text": "ensolarado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_weather_and_nature_rainy",
+      "type": "word",
+      "text": "chuvoso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_weather_and_nature_cloudy",
+      "type": "word",
+      "text": "nublado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_weather_and_nature_windy",
+      "type": "word",
+      "text": "ventoso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_weather_and_nature_snow",
+      "type": "word",
+      "text": "neve",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_weather_and_nature_forest",
+      "type": "word",
+      "text": "floresta",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_weather_and_nature_mountain",
+      "type": "word",
+      "text": "montanha",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_weather_and_nature_river",
+      "type": "word",
+      "text": "rio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_weather_and_nature_ocean",
+      "type": "word",
+      "text": "oceano",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_weather_and_nature_how_is_the_weather",
+      "type": "sentence",
+      "text": "Como está o clima?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_weather_and_nature_it_is_sunny_today",
+      "type": "sentence",
+      "text": "Está ensolarado hoje.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_weather_and_nature_it_will_rain_tomorrow",
+      "type": "sentence",
+      "text": "Vai chover amanhã.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_weather_and_nature_nature_is_beautiful",
+      "type": "sentence",
+      "text": "A natureza é bonita.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_weather_and_nature_i_love_the_mountains",
+      "type": "sentence",
+      "text": "Eu amo as montanhas.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_weather_and_nature_the_ocean_is_vast",
+      "type": "sentence",
+      "text": "O oceano é vasto.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_weather_and_nature_weather_affects_mood",
+      "type": "sentence",
+      "text": "O clima afeta o humor.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_weather_and_nature_nature_is_amazing",
+      "type": "sentence",
+      "text": "A natureza é incrível.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,127 +1,127 @@
 {
   "id": "27_education_and_learning",
-  "title": "Education & Learning",
+  "title": "educazione e apprendimento",
   "emoji": "📚",
-  "language": "English",
+  "language": "Italian",
   "items": [
+    {
+      "id": "27_education_and_learning_education",
+      "type": "word",
+      "text": "educazione",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "27_education_and_learning_school",
       "type": "word",
-      "text": "school",
+      "text": "scuola",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_university",
+      "type": "word",
+      "text": "università",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_student",
       "type": "word",
-      "text": "student",
+      "text": "studente",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_teacher",
       "type": "word",
-      "text": "teacher",
+      "text": "insegnante",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "27_education_and_learning_class",
+      "id": "27_education_and_learning_book",
       "type": "word",
-      "text": "class",
+      "text": "libro",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_lesson",
       "type": "word",
-      "text": "lesson",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "27_education_and_learning_homework",
-      "type": "word",
-      "text": "homework",
+      "text": "lezione",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_exam",
       "type": "word",
-      "text": "exam",
+      "text": "esame",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "27_education_and_learning_grade",
+      "id": "27_education_and_learning_homework",
       "type": "word",
-      "text": "grade",
+      "text": "compiti",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_study",
       "type": "word",
-      "text": "study",
+      "text": "studiare",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "27_education_and_learning_learn",
-      "type": "word",
-      "text": "learn",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "27_education_and_learning_what_subject_do_you_study",
+      "id": "27_education_and_learning_what_are_you_studying",
       "type": "sentence",
-      "text": "What subject do you study?",
+      "text": "Cosa sta studiando?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "27_education_and_learning_i_am_a_student_at_university",
+      "id": "27_education_and_learning_i_am_a_student",
       "type": "sentence",
-      "text": "I am a student at university.",
+      "text": "Sono uno studente.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "27_education_and_learning_my_teacher_is_very_good",
+      "id": "27_education_and_learning_do_you_like_school",
       "type": "sentence",
-      "text": "My teacher is very good.",
+      "text": "Le piace la scuola?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "27_education_and_learning_what_time_does_class_start",
+      "id": "27_education_and_learning_i_have_a_test_tomorrow",
       "type": "sentence",
-      "text": "What time does class start?",
+      "text": "Domani ho un test.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "27_education_and_learning_i_have_a_lot_of_homework",
+      "id": "27_education_and_learning_can_you_help_me_with_my_homework",
       "type": "sentence",
-      "text": "I have a lot of homework.",
+      "text": "Può aiutarmi con i miei compiti?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "27_education_and_learning_when_is_your_next_exam",
+      "id": "27_education_and_learning_learning_is_fun",
       "type": "sentence",
-      "text": "When is your next exam?",
+      "text": "Imparare è divertente.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "27_education_and_learning_what_grade_did_you_get",
+      "id": "27_education_and_learning_i_want_to_learn",
       "type": "sentence",
-      "text": "What grade did you get?",
+      "text": "Voglio imparare",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "27_education_and_learning_i_need_to_study_for_the_test",
+      "id": "27_education_and_learning_this_book_is_very_interesting",
       "type": "sentence",
-      "text": "I need to study for the test.",
+      "text": "Questo libro è molto interessante.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "27_education_and_learning_this_lesson_is_very_interesting",
+      "id": "27_education_and_learning_my_teacher_is_excellent",
       "type": "sentence",
-      "text": "This lesson is very interesting.",
+      "text": "Il mio insegnante è eccellente.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "27_education_and_learning_i_want_to_learn_english",
+      "id": "27_education_and_learning_education_is_important",
       "type": "sentence",
-      "text": "I want to learn English.",
+      "text": "L'educazione è importante.",
       "practiceType": "formulateSentense"
     }
   ]

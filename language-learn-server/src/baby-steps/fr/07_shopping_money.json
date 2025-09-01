@@ -1,127 +1,127 @@
 {
   "id": "07_shopping_money",
-  "title": "Shopping & money",
+  "title": "achats et argent",
   "emoji": "🛍️",
-  "language": "English",
+  "language": "French",
   "items": [
-    {
-      "id": "07_shopping_money_price",
-      "type": "word",
-      "text": "price",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "07_shopping_money_cash",
-      "type": "word",
-      "text": "cash",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "07_shopping_money_card",
-      "type": "word",
-      "text": "card",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "07_shopping_money_receipt",
-      "type": "word",
-      "text": "receipt",
-      "practiceType": "chooseTranslation"
-    },
     {
       "id": "07_shopping_money_money",
       "type": "word",
-      "text": "money",
+      "text": "argent",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "07_shopping_money_change",
+      "id": "07_shopping_money_price",
       "type": "word",
-      "text": "change",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "07_shopping_money_expensive",
-      "type": "word",
-      "text": "expensive",
+      "text": "prix",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "07_shopping_money_cheap",
       "type": "word",
-      "text": "cheap",
+      "text": "bon marché",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "07_shopping_money_sale",
+      "id": "07_shopping_money_expensive",
       "type": "word",
-      "text": "sale",
+      "text": "cher",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "07_shopping_money_discount",
+      "id": "07_shopping_money_shop",
       "type": "word",
-      "text": "discount",
+      "text": "magasin",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "07_shopping_money_how_much_is_this",
+      "id": "07_shopping_money_buy",
+      "type": "word",
+      "text": "acheter",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_sell",
+      "type": "word",
+      "text": "vendre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_card",
+      "type": "word",
+      "text": "carte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cash",
+      "type": "word",
+      "text": "espèces",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_change",
+      "type": "word",
+      "text": "monnaie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_how_much_is_it",
       "type": "sentence",
-      "text": "How much is this?",
+      "text": "Combien ça coûte ?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "07_shopping_money_do_you_take_cards",
+      "id": "07_shopping_money_it_is_expensive",
       "type": "sentence",
-      "text": "Do you take cards?",
+      "text": "C'est cher.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "07_shopping_money_i_am_just_looking",
+      "id": "07_shopping_money_it_is_cheap",
       "type": "sentence",
-      "text": "I am just looking.",
+      "text": "C'est bon marché.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "07_shopping_money_can_i_try_it_on",
+      "id": "07_shopping_money_can_i_pay_by_card",
       "type": "sentence",
-      "text": "Can I try it on?",
+      "text": "Puis-je payer par carte ?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "07_shopping_money_is_there_a_discount",
+      "id": "07_shopping_money_do_you_have_change",
       "type": "sentence",
-      "text": "Is there a discount?",
+      "text": "Avez-vous de la monnaie ?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "07_shopping_money_do_you_have_this_in_blue",
+      "id": "07_shopping_money_i_want_to_buy",
       "type": "sentence",
-      "text": "Do you have this in blue?",
+      "text": "Je veux acheter",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "07_shopping_money_where_is_the_changing_room",
+      "id": "07_shopping_money_where_can_i_buy",
       "type": "sentence",
-      "text": "Where is the changing room?",
+      "text": "Où puis-je acheter",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "07_shopping_money_can_i_get_a_receipt",
+      "id": "07_shopping_money_do_you_sell",
       "type": "sentence",
-      "text": "Can I get a receipt?",
+      "text": "Vendez-vous",
       "practiceType": "formulateSentense"
     },
     {
       "id": "07_shopping_money_this_is_too_expensive",
       "type": "sentence",
-      "text": "This is too expensive.",
+      "text": "C'est trop cher.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "07_shopping_money_do_you_accept_returns",
+      "id": "07_shopping_money_thank_you_for_your_help",
       "type": "sentence",
-      "text": "Do you accept returns?",
+      "text": "Merci pour votre aide.",
       "practiceType": "formulateSentense"
     }
   ]

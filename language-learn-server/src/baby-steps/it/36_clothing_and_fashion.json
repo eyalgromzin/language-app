@@ -1,127 +1,127 @@
 {
   "id": "36_clothing_and_fashion",
-  "title": "Clothing & Fashion",
-  "emoji": "👕",
-  "language": "English",
+  "title": "vestiti e moda",
+  "emoji": "👗",
+  "language": "Italian",
   "items": [
-    {
-      "id": "36_clothing_and_fashion_clothes",
-      "type": "word",
-      "text": "clothes",
-      "practiceType": "chooseTranslation"
-    },
     {
       "id": "36_clothing_and_fashion_shirt",
       "type": "word",
-      "text": "shirt",
+      "text": "camicia",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_pants",
       "type": "word",
-      "text": "pants",
+      "text": "pantaloni",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_dress",
       "type": "word",
-      "text": "dress",
+      "text": "vestito",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_shoes",
       "type": "word",
-      "text": "shoes",
+      "text": "scarpe",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_hat",
       "type": "word",
-      "text": "hat",
+      "text": "cappello",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_jacket",
       "type": "word",
-      "text": "jacket",
+      "text": "giacca",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_socks",
+      "type": "word",
+      "text": "calzini",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_bag",
+      "type": "word",
+      "text": "borsa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_size",
       "type": "word",
-      "text": "size",
+      "text": "taglia",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_style",
       "type": "word",
-      "text": "style",
+      "text": "stile",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "36_clothing_and_fashion_fashion",
-      "type": "word",
-      "text": "fashion",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "36_clothing_and_fashion_what_are_you_wearing_today",
+      "id": "36_clothing_and_fashion_what_size_are_you",
       "type": "sentence",
-      "text": "What are you wearing today?",
+      "text": "Che taglia ha?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_i_like_your_new_shirt",
+      "id": "36_clothing_and_fashion_do_you_like_this_shirt",
       "type": "sentence",
-      "text": "I like your new shirt.",
+      "text": "Le piace questa camicia?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
+      "id": "36_clothing_and_fashion_where_can_i_buy_clothes",
       "type": "sentence",
-      "text": "Where did you buy those pants?",
+      "text": "Dove posso comprare vestiti?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
+      "id": "36_clothing_and_fashion_this_dress_is_beautiful",
       "type": "sentence",
-      "text": "That dress looks beautiful on you.",
+      "text": "Questo vestito è bello.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
+      "id": "36_clothing_and_fashion_do_you_have_this_in_my_size",
       "type": "sentence",
-      "text": "Do you like my new shoes?",
+      "text": "Ha questo nella mia taglia?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_what_size_do_you_wear",
+      "id": "36_clothing_and_fashion_i_love_italian_fashion",
       "type": "sentence",
-      "text": "What size do you wear?",
+      "text": "Amo la moda italiana.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_i_need_a_warm_jacket_for_winter",
+      "id": "36_clothing_and_fashion_what_style_do_you_prefer",
       "type": "sentence",
-      "text": "I need a warm jacket for winter.",
+      "text": "Che stile preferisce?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_what_is_your_fashion_style",
+      "id": "36_clothing_and_fashion_these_shoes_are_comfortable",
       "type": "sentence",
-      "text": "What is your fashion style?",
+      "text": "Queste scarpe sono comode.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_this_hat_protects_me_from_the_sun",
+      "id": "36_clothing_and_fashion_fashion_is_important",
       "type": "sentence",
-      "text": "This hat protects me from the sun.",
+      "text": "La moda è importante.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_do_you_follow_fashion_trends",
+      "id": "36_clothing_and_fashion_you_look_great",
       "type": "sentence",
-      "text": "Do you follow fashion trends?",
+      "text": "Sembra fantastico.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -1,19 +1,19 @@
 {
   "id": "26_health_and_medical",
-  "title": "Health & Medical",
+  "title": "saúde e medicina",
   "emoji": "🏥",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
       "id": "26_health_and_medical_health",
       "type": "word",
-      "text": "health",
+      "text": "saúde",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "médico",
       "practiceType": "chooseTranslation"
     },
     {
@@ -25,103 +25,97 @@
     {
       "id": "26_health_and_medical_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "remédio",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_pain",
       "type": "word",
-      "text": "pain",
+      "text": "dor",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_sick",
       "type": "word",
-      "text": "sick",
+      "text": "doente",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_fever",
+      "id": "26_health_and_medical_well",
       "type": "word",
-      "text": "fever",
+      "text": "bem",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_appointment",
       "type": "word",
-      "text": "appointment",
+      "text": "consulta",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_emergency",
+      "id": "26_health_and_medical_symptoms",
       "type": "word",
-      "text": "emergency",
+      "text": "sintomas",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_treatment",
       "type": "word",
-      "text": "treatment",
+      "text": "tratamento",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_how_are_you_feeling_today",
+      "id": "26_health_and_medical_how_are_you_feeling",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "Como você está se sentindo?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_am_not_feeling_well",
+      "type": "sentence",
+      "text": "Eu não estou me sentindo bem.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_i_need_to_see_a_doctor",
       "type": "sentence",
-      "text": "I need to see a doctor.",
+      "text": "Eu preciso ver um médico.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_where_is_the_nearest_hospital",
+      "id": "26_health_and_medical_do_you_have_an_appointment",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "Você tem uma consulta?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_what_are_your_symptoms",
+      "type": "sentence",
+      "text": "Quais são os seus sintomas?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_i_have_a_headache",
       "type": "sentence",
-      "text": "I have a headache.",
+      "text": "Eu tenho dor de cabeça.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_can_i_make_an_appointment",
+      "id": "26_health_and_medical_where_is_the_nearest_hospital",
       "type": "sentence",
-      "text": "Can I make an appointment?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "26_health_and_medical_i_am_feeling_sick",
-      "type": "sentence",
-      "text": "I am feeling sick.",
+      "text": "Onde fica o hospital mais próximo?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_do_you_have_any_medicine",
       "type": "sentence",
-      "text": "Do you have any medicine?",
+      "text": "Você tem algum remédio?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_this_is_an_emergency",
+      "id": "26_health_and_medical_get_well_soon",
       "type": "sentence",
-      "text": "This is an emergency.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "26_health_and_medical_what_treatment_do_i_need",
-      "type": "sentence",
-      "text": "What treatment do I need?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "26_health_and_medical_my_fever_is_very_high",
-      "type": "sentence",
-      "text": "My fever is very high.",
+      "text": "Melhore logo!",
       "practiceType": "formulateSentense"
     }
   ]

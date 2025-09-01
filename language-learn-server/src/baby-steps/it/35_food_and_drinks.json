@@ -1,127 +1,127 @@
 {
   "id": "35_food_and_drinks",
-  "title": "Food & Drinks",
+  "title": "cibo e bevande",
   "emoji": "🍕",
-  "language": "English",
+  "language": "Italian",
   "items": [
     {
       "id": "35_food_and_drinks_food",
       "type": "word",
-      "text": "food",
+      "text": "cibo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_drink",
       "type": "word",
-      "text": "drink",
+      "text": "bevanda",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_breakfast",
+      "id": "35_food_and_drinks_bread",
       "type": "word",
-      "text": "breakfast",
+      "text": "pane",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_lunch",
+      "id": "35_food_and_drinks_meat",
       "type": "word",
-      "text": "lunch",
+      "text": "carne",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_dinner",
+      "id": "35_food_and_drinks_fish",
       "type": "word",
-      "text": "dinner",
+      "text": "pesce",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_restaurant",
+      "id": "35_food_and_drinks_vegetables",
       "type": "word",
-      "text": "restaurant",
+      "text": "verdure",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_menu",
+      "id": "35_food_and_drinks_fruit",
       "type": "word",
-      "text": "menu",
+      "text": "frutta",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_order",
+      "id": "35_food_and_drinks_water",
       "type": "word",
-      "text": "order",
+      "text": "acqua",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_hungry",
+      "id": "35_food_and_drinks_coffee",
       "type": "word",
-      "text": "hungry",
+      "text": "caffè",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_thirsty",
+      "id": "35_food_and_drinks_tea",
       "type": "word",
-      "text": "thirsty",
+      "text": "tè",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_what_would_you_like_to_eat",
       "type": "sentence",
-      "text": "What would you like to eat?",
+      "text": "Cosa vorrebbe mangiare?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_can_i_have_something_to_drink",
+      "id": "35_food_and_drinks_i_am_hungry",
       "type": "sentence",
-      "text": "Can I have something to drink?",
+      "text": "Ho fame.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_what_did_you_have_for_breakfast",
+      "id": "35_food_and_drinks_do_you_like_italian_food",
       "type": "sentence",
-      "text": "What did you have for breakfast?",
+      "text": "Le piace il cibo italiano?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_let_s_go_to_a_restaurant_for_lunch",
+      "id": "35_food_and_drinks_this_food_is_delicious",
       "type": "sentence",
-      "text": "Let's go to a restaurant for lunch.",
+      "text": "Questo cibo è delizioso.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_what_time_is_dinner",
+      "id": "35_food_and_drinks_would_you_like_something_to_drink",
       "type": "sentence",
-      "text": "What time is dinner?",
+      "text": "Vorrebbe qualcosa da bere?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_can_i_see_the_menu",
+      "id": "35_food_and_drinks_i_love_pizza",
       "type": "sentence",
-      "text": "Can I see the menu?",
+      "text": "Amo la pizza.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_i_want_to_order_pizza",
+      "id": "35_food_and_drinks_the_restaurant_has_good_food",
       "type": "sentence",
-      "text": "I want to order pizza.",
+      "text": "Il ristorante ha buon cibo.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_are_you_hungry",
+      "id": "35_food_and_drinks_do_you_cook",
       "type": "sentence",
-      "text": "Are you hungry?",
+      "text": "Cucina?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_i_am_thirsty_can_i_have_water",
+      "id": "35_food_and_drinks_food_is_important",
       "type": "sentence",
-      "text": "I am thirsty, can I have water?",
+      "text": "Il cibo è importante.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_this_food_tastes_delicious",
+      "id": "35_food_and_drinks_bon_appetit",
       "type": "sentence",
-      "text": "This food tastes delicious.",
+      "text": "Buon appetito!",
       "practiceType": "formulateSentense"
     }
   ]

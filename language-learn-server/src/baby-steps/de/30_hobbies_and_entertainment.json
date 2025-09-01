@@ -1,127 +1,127 @@
 {
   "id": "30_hobbies_and_entertainment",
   "title": "Hobbies & Entertainment",
-  "emoji": "🎬",
-  "language": "English",
+  "emoji": "🎮",
+  "language": "German",
   "items": [
     {
       "id": "30_hobbies_and_entertainment_hobby",
       "type": "word",
-      "text": "hobby",
+      "text": "Hobby",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_entertainment",
+      "type": "word",
+      "text": "Unterhaltung",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_music",
       "type": "word",
-      "text": "music",
+      "text": "Musik",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_movie",
       "type": "word",
-      "text": "movie",
+      "text": "Film",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_book",
       "type": "word",
-      "text": "book",
+      "text": "Buch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_game",
+      "type": "word",
+      "text": "Spiel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_art",
+      "type": "word",
+      "text": "Kunst",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_dance",
       "type": "word",
-      "text": "dance",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "30_hobbies_and_entertainment_paint",
-      "type": "word",
-      "text": "paint",
+      "text": "Tanz",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_cook",
       "type": "word",
-      "text": "cook",
+      "text": "kochen",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "30_hobbies_and_entertainment_garden",
+      "id": "30_hobbies_and_entertainment_read",
       "type": "word",
-      "text": "garden",
+      "text": "lesen",
       "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "30_hobbies_and_entertainment_photography",
-      "type": "word",
-      "text": "photography",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "30_hobbies_and_entertainment_collect",
-      "type": "word",
-      "text": "collect",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "30_hobbies_and_entertainment_what_is_your_favorite_hobby",
-      "type": "sentence",
-      "text": "What is your favorite hobby?",
-      "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_i_love_listening_to_music",
       "type": "sentence",
-      "text": "I love listening to music.",
+      "text": "Ich liebe es, Musik zu hören.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_what_movie_did_you_watch",
+      "id": "30_hobbies_and_entertainment_what_is_your_favorite_hobby",
       "type": "sentence",
-      "text": "What movie did you watch?",
+      "text": "Was ist Ihr Lieblingshobby?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_do_you_like_reading_books",
+      "id": "30_hobbies_and_entertainment_do_you_like_watching_movies",
       "type": "sentence",
-      "text": "Do you like reading books?",
+      "text": "Schauen Sie gerne Filme?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_can_you_dance",
+      "id": "30_hobbies_and_entertainment_i_enjoy_reading_books",
       "type": "sentence",
-      "text": "Can you dance?",
+      "text": "Ich lese gerne Bücher.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_i_want_to_learn_to_paint",
+      "id": "30_hobbies_and_entertainment_what_kind_of_music_do_you_like",
       "type": "sentence",
-      "text": "I want to learn to paint.",
+      "text": "Welche Art von Musik mögen Sie?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_do_you_like_cooking",
+      "id": "30_hobbies_and_entertainment_do_you_play_any_games",
       "type": "sentence",
-      "text": "Do you like cooking?",
+      "text": "Spielen Sie Spiele?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_my_garden_is_very_beautiful",
+      "id": "30_hobbies_and_entertainment_i_love_cooking",
       "type": "sentence",
-      "text": "My garden is very beautiful.",
+      "text": "Ich liebe es zu kochen.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_i_take_photos_as_a_hobby",
+      "id": "30_hobbies_and_entertainment_what_do_you_do_for_fun",
       "type": "sentence",
-      "text": "I take photos as a hobby.",
+      "text": "Was machen Sie zum Spaß?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_what_do_you_collect",
+      "id": "30_hobbies_and_entertainment_entertainment_is_important",
       "type": "sentence",
-      "text": "What do you collect?",
+      "text": "Unterhaltung ist wichtig.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_hobbies_are_great",
+      "type": "sentence",
+      "text": "Hobbys sind toll.",
       "practiceType": "formulateSentense"
     }
   ]

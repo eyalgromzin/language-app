@@ -1,127 +1,109 @@
 {
   "id": "10_daily_routines",
-  "title": "Daily routines & common verbs",
+  "title": "ежедневные рутины",
   "emoji": "☀️",
-  "language": "English",
+  "language": "Russian",
   "items": [
     {
-      "id": "10_daily_routines_to_go",
+      "id": "10_daily_routines_wake_up",
       "type": "word",
-      "text": "to go",
+      "text": "просыпаться",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_come",
+      "id": "10_daily_routines_get_up",
       "type": "word",
-      "text": "to come",
+      "text": "вставать",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_do",
+      "id": "10_daily_routines_brush_teeth",
       "type": "word",
-      "text": "to do",
+      "text": "чистить зубы",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_make",
+      "id": "10_daily_routines_shower",
       "type": "word",
-      "text": "to make",
+      "text": "душ",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_like",
+      "id": "10_daily_routines_breakfast",
       "type": "word",
-      "text": "to like",
+      "text": "завтрак",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_work",
+      "id": "10_daily_routines_work",
       "type": "word",
-      "text": "to work",
+      "text": "работа",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_study",
+      "id": "10_daily_routines_lunch",
       "type": "word",
-      "text": "to study",
+      "text": "обед",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_eat",
+      "id": "10_daily_routines_dinner",
       "type": "word",
-      "text": "to eat",
+      "text": "ужин",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_sleep",
+      "id": "10_daily_routines_sleep",
       "type": "word",
-      "text": "to sleep",
+      "text": "спать",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_wake",
-      "type": "word",
-      "text": "to wake",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "10_daily_routines_i_go_to_work",
+      "id": "10_daily_routines_i_wake_up_at",
       "type": "sentence",
-      "text": "I go to work.",
+      "text": "Я просыпаюсь в",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_like_this",
+      "id": "10_daily_routines_i_brush_my_teeth",
       "type": "sentence",
-      "text": "I like this.",
+      "text": "Я чищу зубы.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_do_not_understand",
+      "id": "10_daily_routines_i_take_a_shower",
       "type": "sentence",
-      "text": "I do not understand.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "10_daily_routines_i_wake_up_early",
-      "type": "sentence",
-      "text": "I wake up early.",
+      "text": "Я принимаю душ.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_eat_breakfast",
       "type": "sentence",
-      "text": "I eat breakfast.",
+      "text": "Я завтракаю.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_study_english",
+      "id": "10_daily_routines_i_go_to_work",
       "type": "sentence",
-      "text": "I study English.",
+      "text": "Я иду на работу.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_go_to_bed",
+      "id": "10_daily_routines_routines_are_important",
       "type": "sentence",
-      "text": "I go to bed.",
+      "text": "Рутины важны.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_what_do_you_do",
+      "id": "10_daily_routines_good_habits_help",
       "type": "sentence",
-      "text": "What do you do?",
+      "text": "Хорошие привычки помогают.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_make_dinner",
+      "id": "10_daily_routines_consistency_is_key",
       "type": "sentence",
-      "text": "I make dinner.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "10_daily_routines_do_you_like_your_job",
-      "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Последовательность - ключ.",
       "practiceType": "formulateSentense"
     }
   ]

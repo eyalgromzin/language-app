@@ -1,8 +1,8 @@
 {
   "id": "28_sports_and_exercise",
-  "title": "Sports & Exercise",
+  "title": "sport ed esercizio",
   "emoji": "⚽",
-  "language": "English",
+  "language": "Italian",
   "items": [
     {
       "id": "28_sports_and_exercise_sport",
@@ -11,117 +11,117 @@
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_game",
+      "id": "28_sports_and_exercise_football",
       "type": "word",
-      "text": "game",
+      "text": "calcio",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_team",
+      "id": "28_sports_and_exercise_basketball",
       "type": "word",
-      "text": "team",
+      "text": "pallacanestro",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_player",
+      "id": "28_sports_and_exercise_tennis",
       "type": "word",
-      "text": "player",
+      "text": "tennis",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_coach",
+      "id": "28_sports_and_exercise_swimming",
       "type": "word",
-      "text": "coach",
+      "text": "nuoto",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_win",
+      "id": "28_sports_and_exercise_running",
       "type": "word",
-      "text": "win",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "28_sports_and_exercise_lose",
-      "type": "word",
-      "text": "lose",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "28_sports_and_exercise_score",
-      "type": "word",
-      "text": "score",
+      "text": "corsa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_exercise",
       "type": "word",
-      "text": "exercise",
+      "text": "esercizio",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_fitness",
+      "id": "28_sports_and_exercise_team",
       "type": "word",
-      "text": "fitness",
+      "text": "squadra",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_what_sport_do_you_like",
+      "id": "28_sports_and_exercise_game",
+      "type": "word",
+      "text": "partita",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_win",
+      "type": "word",
+      "text": "vincere",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_like_sports",
       "type": "sentence",
-      "text": "What sport do you like?",
+      "text": "Le piacciono gli sport?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_i_love_playing_soccer",
+      "id": "28_sports_and_exercise_i_love_playing_football",
       "type": "sentence",
-      "text": "I love playing soccer.",
+      "text": "Amo giocare a calcio.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
+      "id": "28_sports_and_exercise_what_sport_do_you_play",
       "type": "sentence",
-      "text": "Do you want to join our team?",
+      "text": "Che sport pratica?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_who_is_your_favorite_player",
+      "id": "28_sports_and_exercise_i_go_to_the_gym_every_day",
       "type": "sentence",
-      "text": "Who is your favorite player?",
+      "text": "Vado in palestra ogni giorno.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_our_coach_is_very_good",
+      "id": "28_sports_and_exercise_exercise_is_good_for_health",
       "type": "sentence",
-      "text": "Our coach is very good.",
+      "text": "L'esercizio è buono per la salute.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_did_you_win_the_game",
+      "id": "28_sports_and_exercise_my_team_won_the_game",
       "type": "sentence",
-      "text": "Did you win the game?",
+      "text": "La mia squadra ha vinto la partita.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_what_is_the_score",
+      "id": "28_sports_and_exercise_i_am_very_tired_after_exercise",
       "type": "sentence",
-      "text": "What is the score?",
+      "text": "Sono molto stanco dopo l'esercizio.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_i_exercise_every_morning",
+      "id": "28_sports_and_exercise_do_you_want_to_play_tennis",
       "type": "sentence",
-      "text": "I exercise every morning.",
+      "text": "Vuole giocare a tennis?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_do_you_go_to_the_gym",
+      "id": "28_sports_and_exercise_sports_are_fun",
       "type": "sentence",
-      "text": "Do you go to the gym?",
+      "text": "Gli sport sono divertenti.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_fitness_is_important_for_health",
+      "id": "28_sports_and_exercise_i_need_to_exercise_more",
       "type": "sentence",
-      "text": "Fitness is important for health.",
+      "text": "Devo fare più esercizio.",
       "practiceType": "formulateSentense"
     }
   ]

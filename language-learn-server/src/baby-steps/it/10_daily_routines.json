@@ -1,127 +1,127 @@
 {
   "id": "10_daily_routines",
-  "title": "Daily routines & common verbs",
+  "title": "routine quotidiane e verbi comuni",
   "emoji": "☀️",
-  "language": "English",
+  "language": "Italian",
   "items": [
     {
-      "id": "10_daily_routines_to_go",
+      "id": "10_daily_routines_wake_up",
       "type": "word",
-      "text": "to go",
+      "text": "svegliarsi",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_come",
+      "id": "10_daily_routines_get_up",
       "type": "word",
-      "text": "to come",
+      "text": "alzarsi",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_do",
+      "id": "10_daily_routines_breakfast",
       "type": "word",
-      "text": "to do",
+      "text": "colazione",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_make",
+      "id": "10_daily_routines_work",
       "type": "word",
-      "text": "to make",
+      "text": "lavorare",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_like",
+      "id": "10_daily_routines_lunch",
       "type": "word",
-      "text": "to like",
+      "text": "pranzo",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_work",
+      "id": "10_daily_routines_dinner",
       "type": "word",
-      "text": "to work",
+      "text": "cena",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_study",
+      "id": "10_daily_routines_sleep",
       "type": "word",
-      "text": "to study",
+      "text": "dormire",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_eat",
+      "id": "10_daily_routines_shower",
       "type": "word",
-      "text": "to eat",
+      "text": "doccia",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_sleep",
+      "id": "10_daily_routines_brush_teeth",
       "type": "word",
-      "text": "to sleep",
+      "text": "lavarsi i denti",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_wake",
+      "id": "10_daily_routines_go_to_bed",
       "type": "word",
-      "text": "to wake",
+      "text": "andare a letto",
       "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_i_wake_up_at",
+      "type": "sentence",
+      "text": "Mi sveglio alle",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_get_up_at",
+      "type": "sentence",
+      "text": "Mi alzo alle",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_have_breakfast",
+      "type": "sentence",
+      "text": "Faccio colazione.",
+      "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_go_to_work",
       "type": "sentence",
-      "text": "I go to work.",
+      "text": "Vado al lavoro.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_like_this",
+      "id": "10_daily_routines_i_have_lunch",
       "type": "sentence",
-      "text": "I like this.",
+      "text": "Pranzo.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_do_not_understand",
+      "id": "10_daily_routines_i_have_dinner",
       "type": "sentence",
-      "text": "I do not understand.",
+      "text": "Ceno.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_wake_up_early",
+      "id": "10_daily_routines_i_take_a_shower",
       "type": "sentence",
-      "text": "I wake up early.",
+      "text": "Faccio la doccia.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_eat_breakfast",
+      "id": "10_daily_routines_i_brush_my_teeth",
       "type": "sentence",
-      "text": "I eat breakfast.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "10_daily_routines_i_study_english",
-      "type": "sentence",
-      "text": "I study English.",
+      "text": "Mi lavo i denti.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_go_to_bed",
       "type": "sentence",
-      "text": "I go to bed.",
+      "text": "Vado a letto.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_what_do_you_do",
+      "id": "10_daily_routines_good_night",
       "type": "sentence",
-      "text": "What do you do?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "10_daily_routines_i_make_dinner",
-      "type": "sentence",
-      "text": "I make dinner.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "10_daily_routines_do_you_like_your_job",
-      "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Buonanotte.",
       "practiceType": "formulateSentense"
     }
   ]

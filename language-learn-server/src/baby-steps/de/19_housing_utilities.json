@@ -1,127 +1,127 @@
 {
   "id": "19_housing_utilities",
-  "title": "Housing & utilities",
+  "title": "Housing & Utilities",
   "emoji": "🏠",
-  "language": "English",
+  "language": "German",
   "items": [
+    {
+      "id": "19_housing_utilities_house",
+      "type": "word",
+      "text": "Haus",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "19_housing_utilities_apartment",
       "type": "word",
-      "text": "apartment",
+      "text": "Wohnung",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_room",
       "type": "word",
-      "text": "room",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_key",
-      "type": "word",
-      "text": "key",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_electricity",
-      "type": "word",
-      "text": "electricity",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_water",
-      "type": "word",
-      "text": "water",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_house",
-      "type": "word",
-      "text": "house",
+      "text": "Zimmer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_kitchen",
       "type": "word",
-      "text": "kitchen",
+      "text": "Küche",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_bathroom",
       "type": "word",
-      "text": "bathroom",
+      "text": "Badezimmer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_bedroom",
+      "type": "word",
+      "text": "Schlafzimmer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_living_room",
+      "type": "word",
+      "text": "Wohnzimmer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_electricity",
+      "type": "word",
+      "text": "Strom",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_water",
+      "type": "word",
+      "text": "Wasser",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_heating",
       "type": "word",
-      "text": "heating",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_rent",
-      "type": "word",
-      "text": "rent",
+      "text": "Heizung",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_i_am_looking_for_an_apartment",
       "type": "sentence",
-      "text": "I am looking for an apartment.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "19_housing_utilities_the_key_does_not_work",
-      "type": "sentence",
-      "text": "The key does not work.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "19_housing_utilities_there_is_no_hot_water",
-      "type": "sentence",
-      "text": "There is no hot water.",
+      "text": "Ich suche eine Wohnung.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_how_much_is_the_rent",
       "type": "sentence",
-      "text": "How much is the rent?",
+      "text": "Wie viel ist die Miete?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_do_you_have_a_kitchen",
+      "id": "19_housing_utilities_does_it_have_furniture",
       "type": "sentence",
-      "text": "Do you have a kitchen?",
+      "text": "Ist es möbliert?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_the_heating_is_broken",
+      "id": "19_housing_utilities_where_is_the_nearest_bus_stop",
       "type": "sentence",
-      "text": "The heating is broken.",
+      "text": "Wo ist die nächste Bushaltestelle?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_where_is_the_bathroom",
+      "id": "19_housing_utilities_the_heating_is_not_working",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "Die Heizung funktioniert nicht.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_is_electricity_included",
+      "id": "19_housing_utilities_i_need_to_call_a_plumber",
       "type": "sentence",
-      "text": "Is electricity included?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "19_housing_utilities_can_i_see_the_house",
-      "type": "sentence",
-      "text": "Can I see the house?",
+      "text": "Ich muss einen Klempner rufen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_do_you_have_parking",
       "type": "sentence",
-      "text": "Do you have parking?",
+      "text": "Haben Sie Parkplätze?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_is_there_a_garden",
+      "type": "sentence",
+      "text": "Gibt es einen Garten?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_the_electricity_bill_is_high",
+      "type": "sentence",
+      "text": "Die Stromrechnung ist hoch.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_welcome_to_my_home",
+      "type": "sentence",
+      "text": "Willkommen in meinem Zuhause.",
       "practiceType": "formulateSentense"
     }
   ]

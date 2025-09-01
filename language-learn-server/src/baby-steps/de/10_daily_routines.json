@@ -1,127 +1,127 @@
 {
   "id": "10_daily_routines",
-  "title": "Daily routines & common verbs",
+  "title": "Daily Routines & Common Verbs",
   "emoji": "☀️",
-  "language": "English",
+  "language": "German",
   "items": [
     {
       "id": "10_daily_routines_to_go",
       "type": "word",
-      "text": "to go",
+      "text": "gehen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_come",
       "type": "word",
-      "text": "to come",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "10_daily_routines_to_do",
-      "type": "word",
-      "text": "to do",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "10_daily_routines_to_make",
-      "type": "word",
-      "text": "to make",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "10_daily_routines_to_like",
-      "type": "word",
-      "text": "to like",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "10_daily_routines_to_work",
-      "type": "word",
-      "text": "to work",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "10_daily_routines_to_study",
-      "type": "word",
-      "text": "to study",
+      "text": "kommen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_eat",
       "type": "word",
-      "text": "to eat",
+      "text": "essen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_drink",
+      "type": "word",
+      "text": "trinken",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_sleep",
       "type": "word",
-      "text": "to sleep",
+      "text": "schlafen",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_wake",
+      "id": "10_daily_routines_to_wake_up",
       "type": "word",
-      "text": "to wake",
+      "text": "aufwachen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_work",
+      "type": "word",
+      "text": "arbeiten",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_study",
+      "type": "word",
+      "text": "studieren",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_read",
+      "type": "word",
+      "text": "lesen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_write",
+      "type": "word",
+      "text": "schreiben",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_i_go_to_work",
       "type": "sentence",
-      "text": "I go to work.",
+      "text": "Ich gehe zur Arbeit.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_like_this",
+      "id": "10_daily_routines_i_come_home",
       "type": "sentence",
-      "text": "I like this.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "10_daily_routines_i_do_not_understand",
-      "type": "sentence",
-      "text": "I do not understand.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "10_daily_routines_i_wake_up_early",
-      "type": "sentence",
-      "text": "I wake up early.",
+      "text": "Ich komme nach Hause.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_eat_breakfast",
       "type": "sentence",
-      "text": "I eat breakfast.",
+      "text": "Ich frühstücke.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_study_english",
+      "id": "10_daily_routines_i_drink_coffee",
       "type": "sentence",
-      "text": "I study English.",
+      "text": "Ich trinke Kaffee.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_go_to_bed",
+      "id": "10_daily_routines_i_sleep_eight_hours",
       "type": "sentence",
-      "text": "I go to bed.",
+      "text": "Ich schlafe acht Stunden.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_what_do_you_do",
+      "id": "10_daily_routines_i_wake_up_at_seven",
       "type": "sentence",
-      "text": "What do you do?",
+      "text": "Ich wache um sieben auf.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_make_dinner",
+      "id": "10_daily_routines_i_work_from_nine_to_five",
       "type": "sentence",
-      "text": "I make dinner.",
+      "text": "Ich arbeite von neun bis fünf.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_do_you_like_your_job",
+      "id": "10_daily_routines_i_study_german",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Ich studiere Deutsch.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_read_a_book",
+      "type": "sentence",
+      "text": "Ich lese ein Buch.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_write_in_my_diary",
+      "type": "sentence",
+      "text": "Ich schreibe in mein Tagebuch.",
       "practiceType": "formulateSentense"
     }
   ]

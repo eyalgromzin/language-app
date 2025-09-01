@@ -1,127 +1,109 @@
 {
   "id": "24_family_and_relationships",
-  "title": "Family & Relationships",
-  "emoji": "👨‍👩‍👧‍👦",
-  "language": "English",
+  "title": "семья и отношения",
+  "emoji": "👪",
+  "language": "Russian",
   "items": [
+    {
+      "id": "24_family_and_relationships_parents",
+      "type": "word",
+      "text": "родители",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_children",
+      "type": "word",
+      "text": "дети",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_boyfriend",
+      "type": "word",
+      "text": "парень",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_girlfriend",
+      "type": "word",
+      "text": "девушка",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_love",
+      "type": "word",
+      "text": "любовь",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_marriage",
+      "type": "word",
+      "text": "брак",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_relationship",
+      "type": "word",
+      "text": "отношения",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "24_family_and_relationships_family",
       "type": "word",
-      "text": "family",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_mother",
-      "type": "word",
-      "text": "mother",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_father",
-      "type": "word",
-      "text": "father",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_sister",
-      "type": "word",
-      "text": "sister",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_brother",
-      "type": "word",
-      "text": "brother",
+      "text": "семья",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_friend",
       "type": "word",
-      "text": "friend",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_husband",
-      "type": "word",
-      "text": "husband",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_wife",
-      "type": "word",
-      "text": "wife",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_child",
-      "type": "word",
-      "text": "child",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_parent",
-      "type": "word",
-      "text": "parent",
+      "text": "друг",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_how_is_your_family",
       "type": "sentence",
-      "text": "How is your family?",
+      "text": "Как ваша семья?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_my_mother_is_a_teacher",
+      "id": "24_family_and_relationships_family_is_important",
       "type": "sentence",
-      "text": "My mother is a teacher.",
+      "text": "Семья важна.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_i_have_two_sisters",
+      "id": "24_family_and_relationships_love_is_beautiful",
       "type": "sentence",
-      "text": "I have two sisters.",
+      "text": "Любовь прекрасна.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_where_does_your_father_work",
+      "id": "24_family_and_relationships_relationships_require_work",
       "type": "sentence",
-      "text": "Where does your father work?",
+      "text": "Отношения требуют работы.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_my_brother_is_older_than_me",
+      "id": "24_family_and_relationships_friends_are_family",
       "type": "sentence",
-      "text": "My brother is older than me.",
+      "text": "Друзья - это семья.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_we_are_good_friends",
+      "id": "24_family_and_relationships_communication_is_key",
       "type": "sentence",
-      "text": "We are good friends.",
+      "text": "Общение - ключ.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_my_husband_likes_cooking",
+      "id": "24_family_and_relationships_trust_is_essential",
       "type": "sentence",
-      "text": "My husband likes cooking.",
+      "text": "Доверие необходимо.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_do_you_have_children",
+      "id": "24_family_and_relationships_family_love_is_unconditional",
       "type": "sentence",
-      "text": "Do you have children?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "24_family_and_relationships_my_parents_live_in_the_city",
-      "type": "sentence",
-      "text": "My parents live in the city.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "24_family_and_relationships_i_love_my_family_very_much",
-      "type": "sentence",
-      "text": "I love my family very much.",
+      "text": "Семейная любовь безусловна.",
       "practiceType": "formulateSentense"
     }
   ]

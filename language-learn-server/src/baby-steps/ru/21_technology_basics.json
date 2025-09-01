@@ -1,127 +1,109 @@
 {
   "id": "21_technology_basics",
-  "title": "Technology Basics",
+  "title": "технологии и компьютеры",
   "emoji": "💻",
-  "language": "English",
+  "language": "Russian",
   "items": [
     {
       "id": "21_technology_basics_computer",
       "type": "word",
-      "text": "computer",
+      "text": "компьютер",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_phone",
       "type": "word",
-      "text": "phone",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "21_technology_basics_internet",
-      "type": "word",
-      "text": "internet",
+      "text": "телефон",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_app",
       "type": "word",
-      "text": "app",
+      "text": "приложение",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_password",
       "type": "word",
-      "text": "password",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "21_technology_basics_email",
-      "type": "word",
-      "text": "email",
+      "text": "пароль",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_website",
       "type": "word",
-      "text": "website",
+      "text": "веб-сайт",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_download",
       "type": "word",
-      "text": "download",
+      "text": "скачивать",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_upload",
       "type": "word",
-      "text": "upload",
+      "text": "загружать",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_wifi",
       "type": "word",
-      "text": "wifi",
+      "text": "вай-фай",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "21_technology_basics_can_you_help_me_with_my_computer",
+      "id": "21_technology_basics_online",
+      "type": "word",
+      "text": "онлайн",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_do_you_have_wifi",
       "type": "sentence",
-      "text": "Can you help me with my computer?",
+      "text": "У вас есть вай-фай?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_i_need_to_connect_to_wifi",
+      "id": "21_technology_basics_what_is_the_password",
       "type": "sentence",
-      "text": "I need to connect to wifi.",
+      "text": "Какой пароль?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_what_is_your_email_address",
+      "id": "21_technology_basics_technology_is_important",
       "type": "sentence",
-      "text": "What is your email address?",
+      "text": "Технологии важны.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_i_want_to_download_this_app",
+      "id": "21_technology_basics_computers_make_life_easier",
       "type": "sentence",
-      "text": "I want to download this app.",
+      "text": "Компьютеры делают жизнь проще.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_do_you_have_a_website",
+      "id": "21_technology_basics_learning_technology_is_essential",
       "type": "sentence",
-      "text": "Do you have a website?",
+      "text": "Изучение технологий необходимо.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_my_phone_is_not_working",
+      "id": "21_technology_basics_digital_skills_are_valuable",
       "type": "sentence",
-      "text": "My phone is not working.",
+      "text": "Цифровые навыки ценны.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_i_forgot_my_password",
+      "id": "21_technology_basics_technology_evolves_quickly",
       "type": "sentence",
-      "text": "I forgot my password.",
+      "text": "Технологии быстро развиваются.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "21_technology_basics_the_internet_is_slow_today",
+      "id": "21_technology_basics_stay_updated_with_tech",
       "type": "sentence",
-      "text": "The internet is slow today.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "21_technology_basics_can_you_upload_the_file",
-      "type": "sentence",
-      "text": "Can you upload the file?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "21_technology_basics_this_app_is_very_useful",
-      "type": "sentence",
-      "text": "This app is very useful.",
+      "text": "Будьте в курсе технологий.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -1,127 +1,121 @@
 {
   "id": "17_restaurant",
-  "title": "At the restaurant",
+  "title": "no restaurante",
   "emoji": "🍽️",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
+    {
+      "id": "17_restaurant_restaurant",
+      "type": "word",
+      "text": "restaurante",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "17_restaurant_menu",
       "type": "word",
-      "text": "menu",
+      "text": "cardápio",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_table",
       "type": "word",
-      "text": "table",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "17_restaurant_bill",
-      "type": "word",
-      "text": "bill",
+      "text": "mesa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_waiter",
       "type": "word",
-      "text": "waiter",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "17_restaurant_food",
-      "type": "word",
-      "text": "food",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "17_restaurant_drink",
-      "type": "word",
-      "text": "drink",
+      "text": "garçom",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_order",
       "type": "word",
-      "text": "order",
+      "text": "pedido",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "17_restaurant_reservation",
+      "id": "17_restaurant_drink",
       "type": "word",
-      "text": "reservation",
+      "text": "bebida",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "17_restaurant_service",
+      "id": "17_restaurant_food",
       "type": "word",
-      "text": "service",
+      "text": "comida",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_bill",
+      "type": "word",
+      "text": "conta",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_tip",
       "type": "word",
-      "text": "tip",
+      "text": "gorjeta",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "17_restaurant_a_table_for_two_please",
+      "id": "17_restaurant_delicious",
+      "type": "word",
+      "text": "delicioso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_table_for_two_please",
       "type": "sentence",
-      "text": "A table for two, please.",
+      "text": "Uma mesa para dois, por favor.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "17_restaurant_could_we_have_the_menu",
+      "id": "17_restaurant_can_i_see_the_menu",
       "type": "sentence",
-      "text": "Could we have the menu?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "17_restaurant_the_bill_please",
-      "type": "sentence",
-      "text": "The bill, please.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "17_restaurant_do_you_have_vegetarian_options",
-      "type": "sentence",
-      "text": "Do you have vegetarian options?",
+      "text": "Posso ver o cardápio?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "O que você recomenda?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "17_restaurant_i_would_like_to_order",
+      "id": "17_restaurant_i_would_like",
       "type": "sentence",
-      "text": "I would like to order.",
+      "text": "Eu gostaria de",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "17_restaurant_how_long_will_it_take",
+      "id": "17_restaurant_do_you_have_vegetarian_options",
       "type": "sentence",
-      "text": "How long will it take?",
+      "text": "Você tem opções vegetarianas?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "17_restaurant_can_we_have_some_water",
+      "id": "17_restaurant_the_food_is_excellent",
       "type": "sentence",
-      "text": "Can we have some water?",
+      "text": "A comida está excelente.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "17_restaurant_the_food_is_delicious",
+      "id": "17_restaurant_can_i_have_the_bill_please",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "Posso ter a conta, por favor?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_do_you_accept_credit_cards",
       "type": "sentence",
-      "text": "Do you accept credit cards?",
+      "text": "Você aceita cartões de crédito?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_thank_you_for_the_meal",
+      "type": "sentence",
+      "text": "Obrigado pela refeição.",
       "practiceType": "formulateSentense"
     }
   ]

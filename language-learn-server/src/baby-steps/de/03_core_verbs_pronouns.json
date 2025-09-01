@@ -1,127 +1,127 @@
 {
   "id": "03_core_verbs_pronouns",
-  "title": "Core pronouns & helper verbs",
+  "title": "Core Pronouns & Helper Verbs",
   "emoji": "🔤",
-  "language": "English",
+  "language": "German",
   "items": [
     {
       "id": "03_core_verbs_pronouns_i",
       "type": "word",
-      "text": "I",
+      "text": "ich",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_you",
       "type": "word",
-      "text": "you",
+      "text": "du",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_he",
       "type": "word",
-      "text": "he",
+      "text": "er",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_she",
       "type": "word",
-      "text": "she",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "03_core_verbs_pronouns_we",
-      "type": "word",
-      "text": "we",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "03_core_verbs_pronouns_they",
-      "type": "word",
-      "text": "they",
+      "text": "sie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_it",
       "type": "word",
-      "text": "it",
+      "text": "es",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "03_core_verbs_pronouns_me",
+      "id": "03_core_verbs_pronouns_we",
       "type": "word",
-      "text": "me",
+      "text": "wir",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "03_core_verbs_pronouns_him",
+      "id": "03_core_verbs_pronouns_they",
       "type": "word",
-      "text": "him",
+      "text": "sie",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "03_core_verbs_pronouns_her",
+      "id": "03_core_verbs_pronouns_am",
       "type": "word",
-      "text": "her",
+      "text": "bin",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_are",
+      "type": "word",
+      "text": "bist",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_is",
+      "type": "word",
+      "text": "ist",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_i_am",
       "type": "sentence",
-      "text": "I am …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "03_core_verbs_pronouns_i_have",
-      "type": "sentence",
-      "text": "I have …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "03_core_verbs_pronouns_i_want",
-      "type": "sentence",
-      "text": "I want …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "03_core_verbs_pronouns_i_need",
-      "type": "sentence",
-      "text": "I need …",
+      "text": "Ich bin",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_you_are",
       "type": "sentence",
-      "text": "You are …",
+      "text": "Du bist",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_he_is",
       "type": "sentence",
-      "text": "He is …",
+      "text": "Er ist",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_she_is",
       "type": "sentence",
-      "text": "She is …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "03_core_verbs_pronouns_we_are",
-      "type": "sentence",
-      "text": "We are …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "03_core_verbs_pronouns_they_are",
-      "type": "sentence",
-      "text": "They are …",
+      "text": "Sie ist",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_it_is",
       "type": "sentence",
-      "text": "It is …",
+      "text": "Es ist",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_we_are",
+      "type": "sentence",
+      "text": "Wir sind",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_they_are",
+      "type": "sentence",
+      "text": "Sie sind",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_who_are_you",
+      "type": "sentence",
+      "text": "Wer bist du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_where_are_you",
+      "type": "sentence",
+      "text": "Wo bist du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_how_are_you",
+      "type": "sentence",
+      "text": "Wie geht es dir?",
       "practiceType": "formulateSentense"
     }
   ]

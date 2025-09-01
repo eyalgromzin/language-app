@@ -1,127 +1,121 @@
 {
   "id": "33_numbers_and_quantities",
-  "title": "Numbers & Quantities",
+  "title": "números e quantidades",
   "emoji": "🔢",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
-      "id": "33_numbers_and_quantities_number",
+      "id": "33_numbers_and_quantities_zero",
       "type": "word",
-      "text": "number",
+      "text": "zero",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_count",
+      "id": "33_numbers_and_quantities_one",
       "type": "word",
-      "text": "count",
+      "text": "um",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_many",
+      "id": "33_numbers_and_quantities_two",
       "type": "word",
-      "text": "many",
+      "text": "dois",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_few",
+      "id": "33_numbers_and_quantities_three",
       "type": "word",
-      "text": "few",
+      "text": "três",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_some",
+      "id": "33_numbers_and_quantities_four",
       "type": "word",
-      "text": "some",
+      "text": "quatro",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_all",
+      "id": "33_numbers_and_quantities_five",
       "type": "word",
-      "text": "all",
+      "text": "cinco",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_none",
+      "id": "33_numbers_and_quantities_six",
       "type": "word",
-      "text": "none",
+      "text": "seis",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_half",
+      "id": "33_numbers_and_quantities_seven",
       "type": "word",
-      "text": "half",
+      "text": "sete",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_double",
+      "id": "33_numbers_and_quantities_eight",
       "type": "word",
-      "text": "double",
+      "text": "oito",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_total",
+      "id": "33_numbers_and_quantities_nine",
       "type": "word",
-      "text": "total",
+      "text": "nove",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_how_many_people_are_here",
+      "id": "33_numbers_and_quantities_how_many",
       "type": "sentence",
-      "text": "How many people are here?",
+      "text": "Quantos",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_can_you_count_to_ten",
+      "id": "33_numbers_and_quantities_i_have",
       "type": "sentence",
-      "text": "Can you count to ten?",
+      "text": "Eu tenho",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_there_are_many_books_in_the_library",
+      "id": "33_numbers_and_quantities_how_much",
       "type": "sentence",
-      "text": "There are many books in the library.",
+      "text": "Quanto",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_i_have_few_friends_here",
+      "id": "33_numbers_and_quantities_it_costs",
       "type": "sentence",
-      "text": "I have few friends here.",
+      "text": "Custa",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_would_you_like_some_water",
+      "id": "33_numbers_and_quantities_how_old_are_you",
       "type": "sentence",
-      "text": "Would you like some water?",
+      "text": "Quantos anos você tem?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_all_students_are_present",
+      "id": "33_numbers_and_quantities_i_am_years_old",
       "type": "sentence",
-      "text": "All students are present.",
+      "text": "Eu tenho anos.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_none_of_them_came",
+      "id": "33_numbers_and_quantities_what_is_your_phone_number",
       "type": "sentence",
-      "text": "None of them came.",
+      "text": "Qual é o seu número de telefone?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_i_ate_half_of_the_pizza",
+      "id": "33_numbers_and_quantities_numbers_are_important",
       "type": "sentence",
-      "text": "I ate half of the pizza.",
+      "text": "Números são importantes.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_the_price_doubled_last_year",
+      "id": "33_numbers_and_quantities_count_with_me",
       "type": "sentence",
-      "text": "The price doubled last year.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "33_numbers_and_quantities_what_is_the_total_cost",
-      "type": "sentence",
-      "text": "What is the total cost?",
+      "text": "Conte comigo.",
       "practiceType": "formulateSentense"
     }
   ]

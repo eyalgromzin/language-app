@@ -2,126 +2,126 @@
   "id": "34_colors_and_appearance",
   "title": "Colors & Appearance",
   "emoji": "🎨",
-  "language": "English",
+  "language": "German",
   "items": [
     {
       "id": "34_colors_and_appearance_color",
       "type": "word",
-      "text": "color",
+      "text": "Farbe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_appearance",
+      "type": "word",
+      "text": "Aussehen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_red",
       "type": "word",
-      "text": "red",
+      "text": "rot",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_blue",
       "type": "word",
-      "text": "blue",
+      "text": "blau",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_green",
       "type": "word",
-      "text": "green",
+      "text": "grün",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_yellow",
       "type": "word",
-      "text": "yellow",
+      "text": "gelb",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "34_colors_and_appearance_beautiful",
+      "id": "34_colors_and_appearance_black",
       "type": "word",
-      "text": "beautiful",
+      "text": "schwarz",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "34_colors_and_appearance_ugly",
+      "id": "34_colors_and_appearance_white",
       "type": "word",
-      "text": "ugly",
+      "text": "weiß",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_big",
       "type": "word",
-      "text": "big",
+      "text": "groß",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_small",
       "type": "word",
-      "text": "small",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "34_colors_and_appearance_new",
-      "type": "word",
-      "text": "new",
+      "text": "klein",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_what_color_is_your_car",
       "type": "sentence",
-      "text": "What color is your car?",
+      "text": "Welche Farbe hat Ihr Auto?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "34_colors_and_appearance_i_like_red_flowers",
+      "id": "34_colors_and_appearance_i_like_blue",
       "type": "sentence",
-      "text": "I like red flowers.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "34_colors_and_appearance_the_sky_is_very_blue_today",
-      "type": "sentence",
-      "text": "The sky is very blue today.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "34_colors_and_appearance_this_green_shirt_looks_nice",
-      "type": "sentence",
-      "text": "This green shirt looks nice.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "34_colors_and_appearance_the_yellow_banana_is_ripe",
-      "type": "sentence",
-      "text": "The yellow banana is ripe.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "34_colors_and_appearance_you_look_beautiful_today",
-      "type": "sentence",
-      "text": "You look beautiful today.",
+      "text": "Ich mag Blau.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_this_is_a_big_house",
       "type": "sentence",
-      "text": "This is a big house.",
+      "text": "Das ist ein großes Haus.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "34_colors_and_appearance_i_have_a_small_dog",
+      "id": "34_colors_and_appearance_do_you_like_this_color",
       "type": "sentence",
-      "text": "I have a small dog.",
+      "text": "Gefällt Ihnen diese Farbe?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "34_colors_and_appearance_where_did_you_get_that_new_phone",
+      "id": "34_colors_and_appearance_she_is_very_beautiful",
       "type": "sentence",
-      "text": "Where did you get that new phone?",
+      "text": "Sie ist sehr schön.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_what_does_it_look_like",
+      "type": "sentence",
+      "text": "Wie sieht es aus?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_colors_are_beautiful",
+      "type": "sentence",
+      "text": "Farben sind schön.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_appearance_is_not_everything",
+      "type": "sentence",
+      "text": "Aussehen ist nicht alles.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_what_is_your_favorite_color",
       "type": "sentence",
-      "text": "What is your favorite color?",
+      "text": "Was ist Ihre Lieblingsfarbe?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_beauty_is_in_the_eye_of_the_beholder",
+      "type": "sentence",
+      "text": "Schönheit liegt im Auge des Betrachters.",
       "practiceType": "formulateSentense"
     }
   ]

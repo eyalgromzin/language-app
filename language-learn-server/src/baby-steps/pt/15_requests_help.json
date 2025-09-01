@@ -1,127 +1,127 @@
 {
   "id": "15_requests_help",
-  "title": "Requests & asking for help",
+  "title": "pedidos e pedir ajuda",
   "emoji": "🙋",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
       "id": "15_requests_help_help",
       "type": "word",
-      "text": "help",
+      "text": "ajuda",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_please",
       "type": "word",
-      "text": "please",
+      "text": "por favor",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_can",
+      "type": "word",
+      "text": "pode",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_could",
       "type": "word",
-      "text": "could",
+      "text": "poderia",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_would",
       "type": "word",
-      "text": "would",
+      "text": "gostaria",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "15_requests_help_repeat",
+      "id": "15_requests_help_want",
       "type": "word",
-      "text": "repeat",
+      "text": "querer",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "15_requests_help_slowly",
+      "id": "15_requests_help_need",
       "type": "word",
-      "text": "slowly",
+      "text": "precisar",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "15_requests_help_mean",
+      "id": "15_requests_help_show",
       "type": "word",
-      "text": "mean",
+      "text": "mostrar",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "15_requests_help_say",
+      "id": "15_requests_help_tell",
       "type": "word",
-      "text": "say",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "15_requests_help_understand",
-      "type": "word",
-      "text": "understand",
+      "text": "dizer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_explain",
       "type": "word",
-      "text": "explain",
+      "text": "explicar",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "15_requests_help_could_you_help_me_please",
+      "id": "15_requests_help_can_you_help_me",
       "type": "sentence",
-      "text": "Could you help me, please?",
+      "text": "Você pode me ajudar?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "15_requests_help_can_you_repeat_that_please",
+      "id": "15_requests_help_could_you_please",
       "type": "sentence",
-      "text": "Can you repeat that, please?",
+      "text": "Você poderia por favor",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "15_requests_help_please_speak_more_slowly",
+      "id": "15_requests_help_i_need_help",
       "type": "sentence",
-      "text": "Please speak more slowly.",
+      "text": "Eu preciso de ajuda.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "15_requests_help_how_do_you_say_this_in_english",
+      "id": "15_requests_help_can_you_show_me",
       "type": "sentence",
-      "text": "How do you say this in English?",
+      "text": "Você pode me mostrar",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "15_requests_help_what_does_this_mean",
+      "id": "15_requests_help_could_you_explain",
       "type": "sentence",
-      "text": "What does this mean?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "15_requests_help_can_you_explain_this",
-      "type": "sentence",
-      "text": "Can you explain this?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "15_requests_help_i_dont_understand",
-      "type": "sentence",
-      "text": "I don't understand.",
+      "text": "Você poderia explicar",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_would_you_mind",
       "type": "sentence",
-      "text": "Would you mind …?",
+      "text": "Você se importaria de",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "15_requests_help_can_i_ask_you_something",
+      "id": "15_requests_help_i_want_to",
       "type": "sentence",
-      "text": "Can I ask you something?",
+      "text": "Eu quero",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_please_tell_me",
+      "type": "sentence",
+      "text": "Por favor me diga",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_is_it_possible",
+      "type": "sentence",
+      "text": "É possível",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_thank_you_for_helping",
       "type": "sentence",
-      "text": "Thank you for helping.",
+      "text": "Obrigado por ajudar.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -1,127 +1,127 @@
 {
   "id": "13_work_study",
-  "title": "Work & study basics",
+  "title": "concetti di base del lavoro e degli studi",
   "emoji": "💼",
-  "language": "English",
+  "language": "Italian",
   "items": [
-    {
-      "id": "13_work_study_office",
-      "type": "word",
-      "text": "office",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "13_work_study_school",
-      "type": "word",
-      "text": "school",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "13_work_study_meeting",
-      "type": "word",
-      "text": "meeting",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "13_work_study_project",
-      "type": "word",
-      "text": "project",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "13_work_study_job",
-      "type": "word",
-      "text": "job",
-      "practiceType": "chooseTranslation"
-    },
     {
       "id": "13_work_study_work",
       "type": "word",
-      "text": "work",
+      "text": "lavoro",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_study",
       "type": "word",
-      "text": "study",
+      "text": "studiare",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "13_work_study_class",
+      "id": "13_work_study_office",
       "type": "word",
-      "text": "class",
+      "text": "ufficio",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "13_work_study_boss",
+      "id": "13_work_study_school",
       "type": "word",
-      "text": "boss",
+      "text": "scuola",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "13_work_study_colleague",
+      "id": "13_work_study_university",
       "type": "word",
-      "text": "colleague",
+      "text": "università",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "13_work_study_i_have_a_meeting",
-      "type": "sentence",
-      "text": "I have a meeting.",
-      "practiceType": "formulateSentense"
+      "id": "13_work_study_job",
+      "type": "word",
+      "text": "professione",
+      "practiceType": "chooseTranslation"
     },
     {
-      "id": "13_work_study_i_work_from_home",
-      "type": "sentence",
-      "text": "I work from home.",
-      "practiceType": "formulateSentense"
+      "id": "13_work_study_student",
+      "type": "word",
+      "text": "studente",
+      "practiceType": "chooseTranslation"
     },
     {
-      "id": "13_work_study_i_am_studying",
-      "type": "sentence",
-      "text": "I am studying …",
-      "practiceType": "formulateSentense"
+      "id": "13_work_study_teacher",
+      "type": "word",
+      "text": "insegnante",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_engineer",
+      "type": "word",
+      "text": "ingegnere",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_doctor",
+      "type": "word",
+      "text": "medico",
+      "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Cosa fa di lavoro?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Lavoro in un ufficio.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "13_work_study_do_you_like_your_job",
+      "id": "13_work_study_i_am_a_student",
       "type": "sentence",
-      "text": "Do you like your job?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "13_work_study_i_am_busy_with_work",
-      "type": "sentence",
-      "text": "I am busy with work.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "13_work_study_what_are_you_studying",
-      "type": "sentence",
-      "text": "What are you studying?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "13_work_study_i_have_a_lot_of_homework",
-      "type": "sentence",
-      "text": "I have a lot of homework.",
+      "text": "Sono studente.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_where_do_you_work",
       "type": "sentence",
-      "text": "Where do you work?",
+      "text": "Dove lavora?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_what_time_do_you_start_work",
+      "type": "sentence",
+      "text": "A che ora inizia a lavorare?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_study_at_the_university",
+      "type": "sentence",
+      "text": "Studio all'università.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_what_are_you_studying",
+      "type": "sentence",
+      "text": "Cosa sta studiando?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Le piace il suo lavoro?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_need_to_study",
+      "type": "sentence",
+      "text": "Devo studiare.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_work_is_finished",
+      "type": "sentence",
+      "text": "Il lavoro è finito.",
       "practiceType": "formulateSentense"
     }
   ]

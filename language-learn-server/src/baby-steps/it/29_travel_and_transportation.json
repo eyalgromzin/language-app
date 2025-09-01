@@ -1,25 +1,25 @@
 {
   "id": "29_travel_and_transportation",
-  "title": "Travel & Transportation",
+  "title": "viaggi e trasporto",
   "emoji": "✈️",
-  "language": "English",
+  "language": "Italian",
   "items": [
     {
       "id": "29_travel_and_transportation_travel",
       "type": "word",
-      "text": "travel",
+      "text": "viaggio",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_trip",
       "type": "word",
-      "text": "trip",
+      "text": "gita",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_airport",
       "type": "word",
-      "text": "airport",
+      "text": "aeroporto",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,97 +31,97 @@
     {
       "id": "29_travel_and_transportation_passport",
       "type": "word",
-      "text": "passport",
+      "text": "passaporto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "biglietto",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "29_travel_and_transportation_bus",
+      "id": "29_travel_and_transportation_luggage",
       "type": "word",
-      "text": "bus",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "29_travel_and_transportation_train",
-      "type": "word",
-      "text": "train",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "29_ttravel_and_transportation_car",
-      "type": "word",
-      "text": "car",
+      "text": "bagaglio",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_map",
       "type": "word",
-      "text": "map",
+      "text": "mappa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_guide",
+      "type": "word",
+      "text": "guida",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_tourist",
+      "type": "word",
+      "text": "turista",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_where_are_you_traveling_to",
       "type": "sentence",
-      "text": "Where are you traveling to?",
+      "text": "Dove sta viaggiando?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_i_am_going_on_a_trip",
+      "id": "29_travel_and_transportation_i_love_traveling",
       "type": "sentence",
-      "text": "I am going on a trip.",
+      "text": "Amo viaggiare.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_how_do_i_get_to_the_airport",
+      "id": "29_travel_and_transportation_do_you_have_your_passport",
       "type": "sentence",
-      "text": "How do I get to the airport?",
+      "text": "Ha il suo passaporto?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_do_you_have_a_hotel_reservation",
+      "id": "29_travel_and_transportation_where_is_your_hotel",
       "type": "sentence",
-      "text": "Do you have a hotel reservation?",
+      "text": "Dove è il suo hotel?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_where_is_my_passport",
+      "id": "29_travel_and_transportation_i_need_a_map",
       "type": "sentence",
-      "text": "Where is my passport?",
+      "text": "Ho bisogno di una mappa.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_i_need_to_buy_a_ticket",
+      "id": "29_travel_and_transportation_this_is_my_first_time_here",
       "type": "sentence",
-      "text": "I need to buy a ticket.",
+      "text": "Questa è la mia prima volta qui.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_does_this_bus_go_to_the_city",
+      "id": "29_travel_and_transportation_can_you_recommend_a_good_hotel",
       "type": "sentence",
-      "text": "Does this bus go to the city?",
+      "text": "Può consigliare un buon hotel?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_the_train_is_delayed",
+      "id": "29_travel_and_transportation_how_long_are_you_staying",
       "type": "sentence",
-      "text": "The train is delayed.",
+      "text": "Per quanto tempo rimane?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_can_you_drive_me_to_the_station",
+      "id": "29_travel_and_transportation_traveling_is_expensive",
       "type": "sentence",
-      "text": "Can you drive me to the station?",
+      "text": "Viaggiare è costoso.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_i_need_a_map_of_the_city",
+      "id": "29_travel_and_transportation_i_hope_you_enjoy_your_trip",
       "type": "sentence",
-      "text": "I need a map of the city.",
+      "text": "Spero che si diverta nel suo viaggio.",
       "practiceType": "formulateSentense"
     }
   ]

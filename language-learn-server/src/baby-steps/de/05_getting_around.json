@@ -1,127 +1,127 @@
 {
   "id": "05_getting_around",
-  "title": "Directions & getting around",
+  "title": "Directions & Getting Around",
   "emoji": "🧭",
-  "language": "English",
+  "language": "German",
   "items": [
     {
       "id": "05_getting_around_left",
       "type": "word",
-      "text": "left",
+      "text": "links",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_right",
       "type": "word",
-      "text": "right",
+      "text": "rechts",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_straight",
       "type": "word",
-      "text": "straight",
+      "text": "geradeaus",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_back",
+      "type": "word",
+      "text": "zurück",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_near",
       "type": "word",
-      "text": "near",
+      "text": "nah",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_far",
       "type": "word",
-      "text": "far",
+      "text": "weit",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_here",
       "type": "word",
-      "text": "here",
+      "text": "hier",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_there",
       "type": "word",
-      "text": "there",
+      "text": "dort",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "05_getting_around_up",
+      "id": "05_getting_around_where",
       "type": "word",
-      "text": "up",
+      "text": "wo",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "05_getting_around_down",
+      "id": "05_getting_around_how",
       "type": "word",
-      "text": "down",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "05_getting_around_around",
-      "type": "word",
-      "text": "around",
+      "text": "wie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_where_is_the_bathroom",
       "type": "sentence",
-      "text": "Where is the bathroom?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_where_is_the_station",
-      "type": "sentence",
-      "text": "Where is the station?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_how_do_i_get_to",
-      "type": "sentence",
-      "text": "How do I get to …?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_is_it_close",
-      "type": "sentence",
-      "text": "Is it close?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_i_am_lost",
-      "type": "sentence",
-      "text": "I am lost.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "05_getting_around_turn_left",
-      "type": "sentence",
-      "text": "Turn left.",
+      "text": "Wo ist die Toilette?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_go_straight",
       "type": "sentence",
-      "text": "Go straight.",
+      "text": "Gehen Sie geradeaus.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "05_getting_around_it_is_over_there",
+      "id": "05_getting_around_turn_left",
       "type": "sentence",
-      "text": "It is over there.",
+      "text": "Biegen Sie links ab.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_turn_right",
+      "type": "sentence",
+      "text": "Biegen Sie rechts ab.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_go_back",
+      "type": "sentence",
+      "text": "Gehen Sie zurück.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_is_it_far",
+      "type": "sentence",
+      "text": "Ist es weit?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_is_it_near",
+      "type": "sentence",
+      "text": "Ist es nah?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_how_do_i_get_there",
+      "type": "sentence",
+      "text": "Wie komme ich dorthin?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_can_you_help_me",
       "type": "sentence",
-      "text": "Can you help me?",
+      "text": "Können Sie mir helfen?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "05_getting_around_how_far_is_it",
+      "id": "05_getting_around_i_am_lost",
       "type": "sentence",
-      "text": "How far is it?",
+      "text": "Ich bin verloren.",
       "practiceType": "formulateSentense"
     }
   ]

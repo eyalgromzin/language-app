@@ -1,127 +1,109 @@
 {
   "id": "19_housing_utilities",
-  "title": "Housing & utilities",
+  "title": "жилье и коммунальные услуги",
   "emoji": "🏠",
-  "language": "English",
+  "language": "Russian",
   "items": [
+    {
+      "id": "19_housing_utilities_house",
+      "type": "word",
+      "text": "дом",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "19_housing_utilities_apartment",
       "type": "word",
-      "text": "apartment",
+      "text": "квартира",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_room",
       "type": "word",
-      "text": "room",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_key",
-      "type": "word",
-      "text": "key",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_electricity",
-      "type": "word",
-      "text": "electricity",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_water",
-      "type": "word",
-      "text": "water",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_house",
-      "type": "word",
-      "text": "house",
+      "text": "комната",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_kitchen",
       "type": "word",
-      "text": "kitchen",
+      "text": "кухня",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_bathroom",
       "type": "word",
-      "text": "bathroom",
+      "text": "ванная",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "19_housing_utilities_heating",
+      "id": "19_housing_utilities_bedroom",
       "type": "word",
-      "text": "heating",
+      "text": "спальня",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "19_housing_utilities_rent",
+      "id": "19_housing_utilities_living_room",
       "type": "word",
-      "text": "rent",
+      "text": "гостиная",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "19_housing_utilities_i_am_looking_for_an_apartment",
+      "id": "19_housing_utilities_electricity",
+      "type": "word",
+      "text": "электричество",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_water",
+      "type": "word",
+      "text": "вода",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_do_you_live_in_a_house",
       "type": "sentence",
-      "text": "I am looking for an apartment.",
+      "text": "Вы живете в доме?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_the_key_does_not_work",
+      "id": "19_housing_utilities_how_many_rooms_do_you_have",
       "type": "sentence",
-      "text": "The key does not work.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "19_housing_utilities_there_is_no_hot_water",
-      "type": "sentence",
-      "text": "There is no hot water.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "19_housing_utilities_how_much_is_the_rent",
-      "type": "sentence",
-      "text": "How much is the rent?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "19_housing_utilities_do_you_have_a_kitchen",
-      "type": "sentence",
-      "text": "Do you have a kitchen?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "19_housing_utilities_the_heating_is_broken",
-      "type": "sentence",
-      "text": "The heating is broken.",
+      "text": "Сколько у вас комнат?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_where_is_the_bathroom",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "Где ванная?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_is_electricity_included",
+      "id": "19_housing_utilities_housing_is_expensive",
       "type": "sentence",
-      "text": "Is electricity included?",
+      "text": "Жилье дорогое.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_can_i_see_the_house",
+      "id": "19_housing_utilities_utilities_are_necessary",
       "type": "sentence",
-      "text": "Can I see the house?",
+      "text": "Коммунальные услуги необходимы.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_do_you_have_parking",
+      "id": "19_housing_utilities_home_is_where_the_heart_is",
       "type": "sentence",
-      "text": "Do you have parking?",
+      "text": "Дом там, где сердце.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_maintenance_is_important",
+      "type": "sentence",
+      "text": "Обслуживание важно.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_comfortable_housing_matters",
+      "type": "sentence",
+      "text": "Комфортное жилье важно.",
       "practiceType": "formulateSentense"
     }
   ]

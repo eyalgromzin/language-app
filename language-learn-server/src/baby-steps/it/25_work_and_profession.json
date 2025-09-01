@@ -1,127 +1,127 @@
 {
   "id": "25_work_and_profession",
-  "title": "Work & Profession",
+  "title": "lavoro e professione",
   "emoji": "💼",
-  "language": "English",
+  "language": "Italian",
   "items": [
-    {
-      "id": "25_work_and_profession_job",
-      "type": "word",
-      "text": "job",
-      "practiceType": "chooseTranslation"
-    },
     {
       "id": "25_work_and_profession_work",
       "type": "word",
-      "text": "work",
+      "text": "lavoro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_job",
+      "type": "word",
+      "text": "lavoro",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_office",
       "type": "word",
-      "text": "office",
+      "text": "ufficio",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_meeting",
       "type": "word",
-      "text": "meeting",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "25_work_and_profession_boss",
-      "type": "word",
-      "text": "boss",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "25_work_and_profession_colleague",
-      "type": "word",
-      "text": "colleague",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "25_work_and_profession_salary",
-      "type": "word",
-      "text": "salary",
+      "text": "riunione",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_project",
       "type": "word",
-      "text": "project",
+      "text": "progetto",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "25_work_and_profession_deadline",
+      "id": "25_work_and_profession_boss",
       "type": "word",
-      "text": "deadline",
+      "text": "capo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_colleague",
+      "type": "word",
+      "text": "collega",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_client",
+      "type": "word",
+      "text": "cliente",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_salary",
+      "type": "word",
+      "text": "stipendio",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_career",
       "type": "word",
-      "text": "career",
+      "text": "carriera",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Che lavoro fa?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Lavoro in un ufficio.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Le piace il suo lavoro?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_i_have_a_meeting_at_nine",
+      "id": "25_work_and_profession_i_have_a_meeting_at",
       "type": "sentence",
-      "text": "I have a meeting at nine.",
+      "text": "Ho una riunione alle",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_my_boss_is_very_nice",
       "type": "sentence",
-      "text": "My boss is very nice.",
+      "text": "Il mio capo è molto gentile.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_with_great_colleagues",
       "type": "sentence",
-      "text": "I work with great colleagues.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "25_work_and_profession_what_is_your_salary",
-      "type": "sentence",
-      "text": "What is your salary?",
+      "text": "Lavoro con grandi colleghi.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_this_project_is_very_important",
       "type": "sentence",
-      "text": "This project is very important.",
+      "text": "Questo progetto è molto importante.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_the_deadline_is_next_week",
+      "id": "25_work_and_profession_i_need_to_finish_this_work",
       "type": "sentence",
-      "text": "The deadline is next week.",
+      "text": "Devo finire questo lavoro.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_i_want_to_advance_my_career",
+      "id": "25_work_and_profession_work_is_very_busy_this_week",
       "type": "sentence",
-      "text": "I want to advance my career.",
+      "text": "Il lavoro è molto impegnativo questa settimana.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_hope_to_get_a_promotion",
+      "type": "sentence",
+      "text": "Spero di ottenere una promozione.",
       "practiceType": "formulateSentense"
     }
   ]

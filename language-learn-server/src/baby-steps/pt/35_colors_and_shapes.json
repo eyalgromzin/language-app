@@ -1,0 +1,110 @@
+{
+  "id": "35_colors_and_shapes",
+  "title": "cores e formas",
+  "emoji": "🎨",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "35_colors_and_shapes_red",
+      "type": "word",
+      "text": "vermelho",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_blue",
+      "type": "word",
+      "text": "azul",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_green",
+      "type": "word",
+      "text": "verde",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_yellow",
+      "type": "word",
+      "text": "amarelo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_black",
+      "type": "word",
+      "text": "preto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_white",
+      "type": "word",
+      "text": "branco",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_circle",
+      "type": "word",
+      "text": "círculo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_square",
+      "type": "word",
+      "text": "quadrado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_triangle",
+      "type": "word",
+      "text": "triângulo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_what_color_is_it",
+      "type": "sentence",
+      "text": "Que cor é?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_i_like_this_color",
+      "type": "sentence",
+      "text": "Eu gosto desta cor.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_what_shape_is_it",
+      "type": "sentence",
+      "text": "Que forma é?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_colors_are_beautiful",
+      "type": "sentence",
+      "text": "Cores são bonitas.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_shapes_are_interesting",
+      "type": "sentence",
+      "text": "Formas são interessantes.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_this_is_a_red_circle",
+      "type": "sentence",
+      "text": "Este é um círculo vermelho.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_blue_is_my_favorite_color",
+      "type": "sentence",
+      "text": "Azul é minha cor favorita.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_learning_colors_is_fun",
+      "type": "sentence",
+      "text": "Aprender cores é divertido.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

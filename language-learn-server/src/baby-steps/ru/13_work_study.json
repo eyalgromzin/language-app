@@ -1,127 +1,109 @@
 {
   "id": "13_work_study",
-  "title": "Work & study basics",
+  "title": "работа и учеба",
   "emoji": "💼",
-  "language": "English",
+  "language": "Russian",
   "items": [
-    {
-      "id": "13_work_study_office",
-      "type": "word",
-      "text": "office",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "13_work_study_school",
-      "type": "word",
-      "text": "school",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "13_work_study_meeting",
-      "type": "word",
-      "text": "meeting",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "13_work_study_project",
-      "type": "word",
-      "text": "project",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "13_work_study_job",
-      "type": "word",
-      "text": "job",
-      "practiceType": "chooseTranslation"
-    },
     {
       "id": "13_work_study_work",
       "type": "word",
-      "text": "work",
+      "text": "работа",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_study",
       "type": "word",
-      "text": "study",
+      "text": "учеба",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "13_work_study_class",
+      "id": "13_work_study_school",
       "type": "word",
-      "text": "class",
+      "text": "школа",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "13_work_study_boss",
+      "id": "13_work_study_university",
       "type": "word",
-      "text": "boss",
+      "text": "университет",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "13_work_study_colleague",
+      "id": "13_work_study_student",
       "type": "word",
-      "text": "colleague",
+      "text": "студент",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "13_work_study_i_have_a_meeting",
+      "id": "13_work_study_teacher",
+      "type": "word",
+      "text": "учитель",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_office",
+      "type": "word",
+      "text": "офис",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_meeting",
+      "type": "word",
+      "text": "встреча",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_project",
+      "type": "word",
+      "text": "проект",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_i_work_at",
       "type": "sentence",
-      "text": "I have a meeting.",
+      "text": "Я работаю в",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "13_work_study_i_work_from_home",
+      "id": "13_work_study_i_study_at",
       "type": "sentence",
-      "text": "I work from home.",
+      "text": "Я учусь в",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "13_work_study_i_am_studying",
+      "id": "13_work_study_what_do_you_do",
       "type": "sentence",
-      "text": "I am studying …",
+      "text": "Что вы делаете?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "13_work_study_what_do_you_do_for_work",
+      "id": "13_work_study_work_is_important",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Работа важна.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "13_work_study_i_work_in_an_office",
+      "id": "13_work_study_study_opens_doors",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Учеба открывает двери.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "13_work_study_do_you_like_your_job",
+      "id": "13_work_study_learning_is_lifelong",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Обучение на всю жизнь.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "13_work_study_i_am_busy_with_work",
+      "id": "13_work_study_work_hard_study_hard",
       "type": "sentence",
-      "text": "I am busy with work.",
+      "text": "Работай усердно, учись усердно.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "13_work_study_what_are_you_studying",
+      "id": "13_work_study_knowledge_is_power",
       "type": "sentence",
-      "text": "What are you studying?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "13_work_study_i_have_a_lot_of_homework",
-      "type": "sentence",
-      "text": "I have a lot of homework.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "13_work_study_where_do_you_work",
-      "type": "sentence",
-      "text": "Where do you work?",
+      "text": "Знание - сила.",
       "practiceType": "formulateSentense"
     }
   ]

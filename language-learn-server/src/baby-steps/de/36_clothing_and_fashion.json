@@ -1,127 +1,127 @@
 {
   "id": "36_clothing_and_fashion",
   "title": "Clothing & Fashion",
-  "emoji": "👕",
-  "language": "English",
+  "emoji": "👗",
+  "language": "German",
   "items": [
     {
       "id": "36_clothing_and_fashion_clothes",
       "type": "word",
-      "text": "clothes",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "36_clothing_and_fashion_shirt",
-      "type": "word",
-      "text": "shirt",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "36_clothing_and_fashion_pants",
-      "type": "word",
-      "text": "pants",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "36_clothing_and_fashion_dress",
-      "type": "word",
-      "text": "dress",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "36_clothing_and_fashion_shoes",
-      "type": "word",
-      "text": "shoes",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "36_clothing_and_fashion_hat",
-      "type": "word",
-      "text": "hat",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "36_clothing_and_fashion_jacket",
-      "type": "word",
-      "text": "jacket",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "36_clothing_and_fashion_size",
-      "type": "word",
-      "text": "size",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "36_clothing_and_fashion_style",
-      "type": "word",
-      "text": "style",
+      "text": "Kleidung",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_fashion",
       "type": "word",
-      "text": "fashion",
+      "text": "Mode",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shirt",
+      "type": "word",
+      "text": "Hemd",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_pants",
+      "type": "word",
+      "text": "Hose",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_dress",
+      "type": "word",
+      "text": "Kleid",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shoes",
+      "type": "word",
+      "text": "Schuhe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_hat",
+      "type": "word",
+      "text": "Hut",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_jacket",
+      "type": "word",
+      "text": "Jacke",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_socks",
+      "type": "word",
+      "text": "Socken",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_bag",
+      "type": "word",
+      "text": "Tasche",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_what_are_you_wearing_today",
       "type": "sentence",
-      "text": "What are you wearing today?",
+      "text": "Was tragen Sie heute?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_i_like_your_new_shirt",
+      "id": "36_clothing_and_fashion_i_like_your_shirt",
       "type": "sentence",
-      "text": "I like your new shirt.",
+      "text": "Ich mag Ihr Hemd.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
+      "id": "36_clothing_and_fashion_where_did_you_buy_those_shoes",
       "type": "sentence",
-      "text": "Where did you buy those pants?",
+      "text": "Wo haben Sie diese Schuhe gekauft?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
+      "id": "36_clothing_and_fashion_do_you_like_fashion",
       "type": "sentence",
-      "text": "That dress looks beautiful on you.",
+      "text": "Gefällt Ihnen Mode?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
+      "id": "36_clothing_and_fashion_this_dress_is_beautiful",
       "type": "sentence",
-      "text": "Do you like my new shoes?",
+      "text": "Dieses Kleid ist schön.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_what_size_do_you_wear",
+      "id": "36_clothing_and_fashion_can_i_try_on_this_jacket",
       "type": "sentence",
-      "text": "What size do you wear?",
+      "text": "Kann ich diese Jacke anprobieren?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_i_need_a_warm_jacket_for_winter",
+      "id": "36_clothing_and_fashion_fashion_is_important",
       "type": "sentence",
-      "text": "I need a warm jacket for winter.",
+      "text": "Mode ist wichtig.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_what_is_your_fashion_style",
+      "id": "36_clothing_and_fashion_clothes_make_the_person",
       "type": "sentence",
-      "text": "What is your fashion style?",
+      "text": "Kleider machen Leute.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_this_hat_protects_me_from_the_sun",
+      "id": "36_clothing_and_fashion_what_is_your_favorite_color_for_clothes",
       "type": "sentence",
-      "text": "This hat protects me from the sun.",
+      "text": "Welche Farbe mögen Sie am liebsten für Kleidung?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_do_you_follow_fashion_trends",
+      "id": "36_clothing_and_fashion_i_love_shopping_for_clothes",
       "type": "sentence",
-      "text": "Do you follow fashion trends?",
+      "text": "Ich liebe es, Kleidung zu kaufen.",
       "practiceType": "formulateSentense"
     }
   ]

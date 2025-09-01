@@ -1,127 +1,127 @@
 {
   "id": "01_essentials",
-  "title": "greetings & politeness",
+  "title": "saudações e cortesia",
   "emoji": "👋",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
       "id": "01_essentials_hello",
       "type": "word",
-      "text": "hello",
+      "text": "olá",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_hi",
       "type": "word",
-      "text": "hi",
+      "text": "oi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_please",
       "type": "word",
-      "text": "please",
+      "text": "por favor",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thank_you",
       "type": "word",
-      "text": "thank you",
+      "text": "obrigado",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thanks",
       "type": "word",
-      "text": "thanks",
+      "text": "obrigado",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_yes",
       "type": "word",
-      "text": "yes",
+      "text": "sim",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_no",
       "type": "word",
-      "text": "no",
+      "text": "não",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_goodbye",
       "type": "word",
-      "text": "goodbye",
+      "text": "adeus",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_welcome",
       "type": "word",
-      "text": "welcome",
+      "text": "bem-vindo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_okay",
       "type": "word",
-      "text": "okay",
+      "text": "ok",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_excuse_me",
       "type": "sentence",
-      "text": "Excuse me.",
+      "text": "Com licença.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_sorry",
       "type": "sentence",
-      "text": "Sorry.",
+      "text": "Desculpe.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_morning",
       "type": "sentence",
-      "text": "Good morning.",
+      "text": "Bom dia.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_evening",
       "type": "sentence",
-      "text": "Good evening.",
+      "text": "Boa tarde.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_night",
       "type": "sentence",
-      "text": "Good night.",
+      "text": "Boa noite.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_see_you_later",
       "type": "sentence",
-      "text": "See you later.",
+      "text": "Até logo.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "01_essentials_have_a_nice_day",
+      "id": "01_essentials_nice_to_meet_you",
       "type": "sentence",
-      "text": "Have a nice day.",
+      "text": "Prazer em conhecê-lo.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_how_are_you",
+      "type": "sentence",
+      "text": "Como está?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_i_am_fine",
+      "type": "sentence",
+      "text": "Estou bem.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_you_are_welcome",
       "type": "sentence",
-      "text": "You are welcome.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "01_essentials_no_problem",
-      "type": "sentence",
-      "text": "No problem.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "01_essentials_take_care",
-      "type": "sentence",
-      "text": "Take care.",
+      "text": "De nada.",
       "practiceType": "formulateSentense"
     }
   ]

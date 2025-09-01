@@ -1,127 +1,109 @@
 {
   "id": "16_phone_internet",
-  "title": "Phone & internet",
+  "title": "телефон и интернет",
   "emoji": "📱",
-  "language": "English",
+  "language": "Russian",
   "items": [
     {
       "id": "16_phone_internet_phone",
       "type": "word",
-      "text": "phone",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "16_phone_internet_number",
-      "type": "word",
-      "text": "number",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "16_phone_internet_email",
-      "type": "word",
-      "text": "email",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "16_phone_internet_wifi",
-      "type": "word",
-      "text": "wifi",
+      "text": "телефон",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_call",
       "type": "word",
-      "text": "call",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "16_phone_internet_text",
-      "type": "word",
-      "text": "text",
+      "text": "звонить",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_message",
       "type": "word",
-      "text": "message",
+      "text": "сообщение",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "16_phone_internet_password",
+      "id": "16_phone_internet_number",
       "type": "word",
-      "text": "password",
+      "text": "номер",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_internet",
       "type": "word",
-      "text": "internet",
+      "text": "интернет",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "16_phone_internet_online",
+      "id": "16_phone_internet_wifi",
       "type": "word",
-      "text": "online",
+      "text": "вай-фай",
       "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_email",
+      "type": "word",
+      "text": "электронная почта",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_website",
+      "type": "word",
+      "text": "веб-сайт",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_app",
+      "type": "word",
+      "text": "приложение",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_can_i_call_you",
+      "type": "sentence",
+      "text": "Могу я позвонить вам?",
+      "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_your_phone_number",
       "type": "sentence",
-      "text": "What is your phone number?",
+      "text": "Какой ваш номер телефона?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "16_phone_internet_what_is_the_wifi_password",
+      "id": "16_phone_internet_do_you_have_wifi",
       "type": "sentence",
-      "text": "What is the wifi password?",
+      "text": "У вас есть вай-фай?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "16_phone_internet_can_i_use_your_phone",
+      "id": "16_phone_internet_technology_connects_people",
       "type": "sentence",
-      "text": "Can I use your phone?",
+      "text": "Технологии соединяют людей.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "16_phone_internet_can_you_call_me",
+      "id": "16_phone_internet_phones_are_useful",
       "type": "sentence",
-      "text": "Can you call me?",
+      "text": "Телефоны полезны.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "16_phone_internet_i_will_text_you",
+      "id": "16_phone_internet_internet_makes_life_easier",
       "type": "sentence",
-      "text": "I will text you.",
+      "text": "Интернет делает жизнь проще.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "16_phone_internet_do_you_have_internet",
+      "id": "16_phone_internet_communication_is_important",
       "type": "sentence",
-      "text": "Do you have internet?",
+      "text": "Общение важно.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "16_phone_internet_what_is_your_email",
+      "id": "16_phone_internet_digital_literacy_matters",
       "type": "sentence",
-      "text": "What is your email?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "16_phone_internet_i_am_online",
-      "type": "sentence",
-      "text": "I am online.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "16_phone_internet_can_you_send_me_a_message",
-      "type": "sentence",
-      "text": "Can you send me a message?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "16_phone_internet_the_wifi_is_slow",
-      "type": "sentence",
-      "text": "The wifi is slow.",
+      "text": "Цифровая грамотность важна.",
       "practiceType": "formulateSentense"
     }
   ]

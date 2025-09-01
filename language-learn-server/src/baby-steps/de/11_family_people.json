@@ -1,127 +1,127 @@
 {
   "id": "11_family_people",
-  "title": "Family & people",
+  "title": "Family & People",
   "emoji": "👪",
-  "language": "English",
+  "language": "German",
   "items": [
+    {
+      "id": "11_family_people_family",
+      "type": "word",
+      "text": "Familie",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "11_family_people_mother",
       "type": "word",
-      "text": "mother",
+      "text": "Mutter",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_father",
       "type": "word",
-      "text": "father",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "11_family_people_brother",
-      "type": "word",
-      "text": "brother",
+      "text": "Vater",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_sister",
       "type": "word",
-      "text": "sister",
+      "text": "Schwester",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "11_family_people_friend",
+      "id": "11_family_people_brother",
       "type": "word",
-      "text": "friend",
+      "text": "Bruder",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_son",
       "type": "word",
-      "text": "son",
+      "text": "Sohn",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_daughter",
       "type": "word",
-      "text": "daughter",
+      "text": "Tochter",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "11_family_people_baby",
+      "id": "11_family_people_grandmother",
       "type": "word",
-      "text": "baby",
+      "text": "Großmutter",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "11_family_people_man",
+      "id": "11_family_people_grandfather",
       "type": "word",
-      "text": "man",
+      "text": "Großvater",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "11_family_people_woman",
+      "id": "11_family_people_friend",
       "type": "word",
-      "text": "woman",
+      "text": "Freund",
       "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_this_is_my_family",
+      "type": "sentence",
+      "text": "Das ist meine Familie.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_my_mother_is_a_teacher",
+      "type": "sentence",
+      "text": "Meine Mutter ist Lehrerin.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_my_father_works_in_an_office",
+      "type": "sentence",
+      "text": "Mein Vater arbeitet in einem Büro.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_i_have_two_sisters",
+      "type": "sentence",
+      "text": "Ich habe zwei Schwestern.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_my_brother_is_older_than_me",
+      "type": "sentence",
+      "text": "Mein Bruder ist älter als ich.",
+      "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_this_is_my_friend",
       "type": "sentence",
-      "text": "This is my friend.",
+      "text": "Das ist mein Freund.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "11_family_people_i_am_with_my_family",
+      "id": "11_family_people_how_many_people_are_in_your_family",
       "type": "sentence",
-      "text": "I am with my family.",
+      "text": "Wie viele Menschen sind in Ihrer Familie?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "11_family_people_how_many_children_do_you_have",
+      "id": "11_family_people_where_does_your_family_live",
       "type": "sentence",
-      "text": "How many children do you have?",
+      "text": "Wo wohnt Ihre Familie?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "11_family_people_this_is_my_mother",
+      "id": "11_family_people_do_you_have_any_siblings",
       "type": "sentence",
-      "text": "This is my mother.",
+      "text": "Haben Sie Geschwister?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "11_family_people_where_is_your_family",
+      "id": "11_family_people_what_does_your_father_do",
       "type": "sentence",
-      "text": "Where is your family?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "11_family_people_do_you_have_brothers_and_sisters",
-      "type": "sentence",
-      "text": "Do you have brothers and sisters?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "11_family_people_my_family_lives_in",
-      "type": "sentence",
-      "text": "My family lives in …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "11_family_people_how_old_is_your_son",
-      "type": "sentence",
-      "text": "How old is your son?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "11_family_people_this_is_my_baby",
-      "type": "sentence",
-      "text": "This is my baby.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "11_family_people_are_you_married",
-      "type": "sentence",
-      "text": "Are you married?",
+      "text": "Was macht Ihr Vater?",
       "practiceType": "formulateSentense"
     }
   ]

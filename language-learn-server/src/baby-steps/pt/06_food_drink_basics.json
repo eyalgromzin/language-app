@@ -1,127 +1,121 @@
 {
   "id": "06_food_drink_basics",
-  "title": "Food & drink basics",
+  "title": "conceitos básicos de comida e bebidas",
   "emoji": "🍎",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
+    {
+      "id": "06_food_drink_basics_food",
+      "type": "word",
+      "text": "comida",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_drink",
+      "type": "word",
+      "text": "bebida",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "06_food_drink_basics_water",
       "type": "word",
-      "text": "water",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "06_food_drink_basics_coffee",
-      "type": "word",
-      "text": "coffee",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "06_food_drink_basics_tea",
-      "type": "word",
-      "text": "tea",
+      "text": "água",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_bread",
       "type": "word",
-      "text": "bread",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "06_food_drink_basics_apple",
-      "type": "word",
-      "text": "apple",
+      "text": "pão",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_milk",
       "type": "word",
-      "text": "milk",
+      "text": "leite",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_coffee",
+      "type": "word",
+      "text": "café",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_tea",
+      "type": "word",
+      "text": "chá",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_juice",
       "type": "word",
-      "text": "juice",
+      "text": "suco",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "06_food_drink_basics_rice",
+      "id": "06_food_drink_basics_meat",
       "type": "word",
-      "text": "rice",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "06_food_drink_basics_chicken",
-      "type": "word",
-      "text": "chicken",
+      "text": "carne",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_fish",
       "type": "word",
-      "text": "fish",
+      "text": "peixe",
       "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "06_food_drink_basics_i_would_like_water_please",
-      "type": "sentence",
-      "text": "I would like water, please.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "06_food_drink_basics_the_food_is_delicious",
-      "type": "sentence",
-      "text": "The food is delicious.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "06_food_drink_basics_i_am_allergic_to",
-      "type": "sentence",
-      "text": "I am allergic to …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "06_food_drink_basics_no_sugar_please",
-      "type": "sentence",
-      "text": "No sugar, please.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "06_food_drink_basics_do_you_have_vegetarian_food",
-      "type": "sentence",
-      "text": "Do you have vegetarian food?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "06_food_drink_basics_how_much_is_it",
-      "type": "sentence",
-      "text": "How much is it?",
-      "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_hungry",
       "type": "sentence",
-      "text": "I am hungry.",
+      "text": "Estou com fome.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_thirsty",
       "type": "sentence",
-      "text": "I am thirsty.",
+      "text": "Estou com sede.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "06_food_drink_basics_what_do_you_recommend",
+      "id": "06_food_drink_basics_what_would_you_like",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "O que você gostaria?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "06_food_drink_basics_the_bill_please",
+      "id": "06_food_drink_basics_i_would_like",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "Eu gostaria de",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_do_you_have",
+      "type": "sentence",
+      "text": "Você tem",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_how_much_is_it",
+      "type": "sentence",
+      "text": "Quanto custa?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_it_tastes_good",
+      "type": "sentence",
+      "text": "Está gostoso.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_bon_appetit",
+      "type": "sentence",
+      "text": "Bom apetite!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_cheers",
+      "type": "sentence",
+      "text": "Saúde!",
       "practiceType": "formulateSentense"
     }
   ]

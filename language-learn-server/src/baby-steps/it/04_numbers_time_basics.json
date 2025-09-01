@@ -1,271 +1,187 @@
 {
   "id": "04_numbers_time_basics",
-  "title": "Numbers & time basics",
+  "title": "numeri e concetti di base del tempo",
   "emoji": "🔢",
-  "language": "English",
+  "language": "Italian",
   "items": [
-    {
-      "id": "04_numbers_time_basics_zero",
-      "type": "word",
-      "text": "zero",
-      "practiceType": "chooseTranslation"
-    },
     {
       "id": "04_numbers_time_basics_one",
       "type": "word",
-      "text": "one",
+      "text": "uno",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_two",
       "type": "word",
-      "text": "two",
+      "text": "due",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_three",
       "type": "word",
-      "text": "three",
+      "text": "tre",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_four",
       "type": "word",
-      "text": "four",
+      "text": "quattro",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_five",
       "type": "word",
-      "text": "five",
+      "text": "cinque",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_six",
       "type": "word",
-      "text": "six",
+      "text": "sei",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seven",
       "type": "word",
-      "text": "seven",
+      "text": "sette",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eight",
       "type": "word",
-      "text": "eight",
+      "text": "otto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_nine",
       "type": "word",
-      "text": "nine",
+      "text": "nove",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_ten",
       "type": "word",
-      "text": "ten",
+      "text": "dieci",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "04_numbers_time_basics_twenty",
+      "id": "04_numbers_time_basics_morning",
       "type": "word",
-      "text": "twenty",
+      "text": "mattina",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "04_numbers_time_basics_thirty",
+      "id": "04_numbers_time_basics_afternoon",
       "type": "word",
-      "text": "thirty",
+      "text": "pomeriggio",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "04_numbers_time_basics_forty",
+      "id": "04_numbers_time_basics_evening",
       "type": "word",
-      "text": "forty",
+      "text": "sera",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "04_numbers_time_basics_fifty",
+      "id": "04_numbers_time_basics_night",
       "type": "word",
-      "text": "fifty",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_sixty",
-      "type": "word",
-      "text": "sixty",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_seventy",
-      "type": "word",
-      "text": "seventy",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_eighty",
-      "type": "word",
-      "text": "eighty",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_ninety",
-      "type": "word",
-      "text": "ninety",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_hundred",
-      "type": "word",
-      "text": "hundred",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_two_hundred",
-      "type": "word",
-      "text": "two hundred",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_three_hundred",
-      "type": "word",
-      "text": "three hundred",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_fifteen",
-      "type": "word",
-      "text": "fifteen",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_twenty_five",
-      "type": "word",
-      "text": "twenty-five",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_forty_two",
-      "type": "word",
-      "text": "forty-two",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_seventy_eight",
-      "type": "word",
-      "text": "seventy-eight",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_one_hundred_twenty",
-      "type": "word",
-      "text": "one hundred twenty",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_five_hundred",
-      "type": "word",
-      "text": "five hundred",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_eight_hundred_fifty",
-      "type": "word",
-      "text": "eight hundred fifty",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "04_numbers_time_basics_thousand",
-      "type": "word",
-      "text": "thousand",
+      "text": "notte",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_today",
       "type": "word",
-      "text": "today",
+      "text": "oggi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "domani",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_yesterday",
       "type": "word",
-      "text": "yesterday",
+      "text": "ieri",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "04_numbers_time_basics_now",
+      "id": "04_numbers_time_basics_week",
       "type": "word",
-      "text": "now",
+      "text": "settimana",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_month",
+      "type": "word",
+      "text": "mese",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_year",
+      "type": "word",
+      "text": "anno",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_what_time_is_it",
       "type": "sentence",
-      "text": "What time is it?",
+      "text": "Che ore sono?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "04_numbers_time_basics_it_is_three_o_clock",
+      "id": "04_numbers_time_basics_it_is_oclock",
       "type": "sentence",
-      "text": "It is three o'clock.",
+      "text": "Sono le ore.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "04_numbers_time_basics_it_is_half_past_two",
+      "id": "04_numbers_time_basics_what_day_is_it",
       "type": "sentence",
-      "text": "It is half past two.",
+      "text": "Che giorno è oggi?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "04_numbers_time_basics_what_day_is_today",
+      "id": "04_numbers_time_basics_today_is",
       "type": "sentence",
-      "text": "What day is today?",
+      "text": "Oggi è",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "04_numbers_time_basics_today_is_monday",
+      "id": "04_numbers_time_basics_what_date_is_it",
       "type": "sentence",
-      "text": "Today is Monday.",
+      "text": "Che data è oggi?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "04_numbers_time_basics_see_you_tomorrow",
+      "id": "04_numbers_time_basics_it_is",
       "type": "sentence",
-      "text": "See you tomorrow.",
+      "text": "È il",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "04_numbers_time_basics_i_am_late",
+      "id": "04_numbers_time_basics_how_many",
       "type": "sentence",
-      "text": "I am late.",
+      "text": "Quanti",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "04_numbers_time_basics_what_time_do_you_start",
+      "id": "04_numbers_time_basics_i_have",
       "type": "sentence",
-      "text": "What time do you start?",
+      "text": "Io ho",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "04_numbers_time_basics_it_is_time_to_go",
+      "id": "04_numbers_time_basics_how_old_are_you",
       "type": "sentence",
-      "text": "It is time to go.",
+      "text": "Quanti anni ha?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "04_numbers_time_basics_how_long_does_it_take",
+      "id": "04_numbers_time_basics_i_am_years_old",
       "type": "sentence",
-      "text": "How long does it take?",
+      "text": "Ho anni.",
       "practiceType": "formulateSentense"
     }
   ]

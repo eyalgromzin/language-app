@@ -1,127 +1,127 @@
 {
   "id": "18_transportation_details",
-  "title": "Transportation details",
+  "title": "dettagli di trasporto",
   "emoji": "🚌",
-  "language": "English",
+  "language": "Italian",
   "items": [
     {
       "id": "18_transportation_details_bus",
       "type": "word",
-      "text": "bus",
+      "text": "autobus",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_train",
       "type": "word",
-      "text": "train",
+      "text": "treno",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "18_transportation_details_metro",
+      "id": "18_transportation_details_subway",
       "type": "word",
-      "text": "metro",
+      "text": "metropolitana",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "18_transportation_details_schedule",
+      "id": "18_transportation_details_taxi",
       "type": "word",
-      "text": "schedule",
+      "text": "taxi",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "18_transportation_details_ticket",
+      "id": "18_transportation_details_car",
       "type": "word",
-      "text": "ticket",
+      "text": "macchina",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_bicycle",
+      "type": "word",
+      "text": "bicicletta",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_walk",
+      "type": "word",
+      "text": "camminare",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_station",
       "type": "word",
-      "text": "station",
+      "text": "stazione",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "18_transportation_details_platform",
+      "id": "18_transportation_details_stop",
       "type": "word",
-      "text": "platform",
+      "text": "fermata",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "18_transportation_details_departure",
+      "id": "18_transportation_details_ticket",
       "type": "word",
-      "text": "departure",
+      "text": "biglietto",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "18_transportation_details_arrival",
-      "type": "word",
-      "text": "arrival",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "18_transportation_details_delay",
-      "type": "word",
-      "text": "delay",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "18_transportation_details_what_time_does_the_bus_leave",
+      "id": "18_transportation_details_where_is_the_bus_stop",
       "type": "sentence",
-      "text": "What time does the bus leave?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "18_transportation_details_where_can_i_buy_a_ticket",
-      "type": "sentence",
-      "text": "Where can I buy a ticket?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "18_transportation_details_is_there_a_discount",
-      "type": "sentence",
-      "text": "Is there a discount?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "18_transportation_details_which_platform_is_it",
-      "type": "sentence",
-      "text": "Which platform is it?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "18_transportation_details_is_the_train_delayed",
-      "type": "sentence",
-      "text": "Is the train delayed?",
+      "text": "Dove è la fermata dell'autobus?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_how_much_is_a_ticket",
       "type": "sentence",
-      "text": "How much is a ticket?",
+      "text": "Quanto costa un biglietto?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_does_this_bus_go_to",
       "type": "sentence",
-      "text": "Does this bus go to …?",
+      "text": "Questo autobus va a",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "18_transportation_details_where_is_the_nearest_station",
+      "id": "18_transportation_details_when_is_the_next_train",
       "type": "sentence",
-      "text": "Where is the nearest station?",
+      "text": "Quando è il prossimo treno?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "18_transportation_details_what_time_does_it_arrive",
+      "id": "18_transportation_details_how_long_does_it_take",
       "type": "sentence",
-      "text": "What time does it arrive?",
+      "text": "Quanto tempo ci vuole?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "18_transportation_details_can_i_get_a_refund",
+      "id": "18_transportation_details_can_i_buy_a_ticket_here",
       "type": "sentence",
-      "text": "Can I get a refund?",
+      "text": "Posso comprare un biglietto qui?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_the_train_is_delayed",
+      "type": "sentence",
+      "text": "Il treno è in ritardo.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_i_need_to_get_off_at",
+      "type": "sentence",
+      "text": "Devo scendere a",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_this_the_right_platform",
+      "type": "sentence",
+      "text": "È questo il binario giusto?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_how_do_i_get_to",
+      "type": "sentence",
+      "text": "Come arrivo a",
       "practiceType": "formulateSentense"
     }
   ]

@@ -1,127 +1,127 @@
 {
   "id": "24_family_and_relationships",
   "title": "Family & Relationships",
-  "emoji": "👨‍👩‍👧‍👦",
-  "language": "English",
+  "emoji": "👪",
+  "language": "German",
   "items": [
     {
       "id": "24_family_and_relationships_family",
       "type": "word",
-      "text": "family",
+      "text": "Familie",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "24_family_and_relationships_mother",
+      "id": "24_family_and_relationships_relationship",
       "type": "word",
-      "text": "mother",
+      "text": "Beziehung",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "24_family_and_relationships_father",
+      "id": "24_family_and_relationships_parents",
       "type": "word",
-      "text": "father",
+      "text": "Eltern",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "24_family_and_relationships_sister",
+      "id": "24_family_and_relationships_children",
       "type": "word",
-      "text": "sister",
+      "text": "Kinder",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "24_family_and_relationships_brother",
+      "id": "24_family_and_relationships_grandparents",
       "type": "word",
-      "text": "brother",
+      "text": "Großeltern",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "24_family_and_relationships_friend",
+      "id": "24_family_and_relationships_uncle",
       "type": "word",
-      "text": "friend",
+      "text": "Onkel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_aunt",
+      "type": "word",
+      "text": "Tante",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_cousin",
+      "type": "word",
+      "text": "Cousin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_husband",
       "type": "word",
-      "text": "husband",
+      "text": "Ehemann",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_wife",
       "type": "word",
-      "text": "wife",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_child",
-      "type": "word",
-      "text": "child",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "24_family_and_relationships_parent",
-      "type": "word",
-      "text": "parent",
+      "text": "Ehefrau",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_how_is_your_family",
       "type": "sentence",
-      "text": "How is your family?",
+      "text": "Wie geht es Ihrer Familie?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_my_mother_is_a_teacher",
+      "id": "24_family_and_relationships_my_family_lives_in",
       "type": "sentence",
-      "text": "My mother is a teacher.",
+      "text": "Meine Familie wohnt in",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_i_have_two_sisters",
+      "id": "24_family_and_relationships_i_have_a_large_family",
       "type": "sentence",
-      "text": "I have two sisters.",
+      "text": "Ich habe eine große Familie.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_where_does_your_father_work",
+      "id": "24_family_and_relationships_my_parents_are_very_nice",
       "type": "sentence",
-      "text": "Where does your father work?",
+      "text": "Meine Eltern sind sehr nett.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_my_brother_is_older_than_me",
+      "id": "24_family_and_relationships_do_you_have_any_siblings",
       "type": "sentence",
-      "text": "My brother is older than me.",
+      "text": "Haben Sie Geschwister?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_we_are_good_friends",
+      "id": "24_family_and_relationships_my_grandparents_are_very_old",
       "type": "sentence",
-      "text": "We are good friends.",
+      "text": "Meine Großeltern sind sehr alt.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_my_husband_likes_cooking",
+      "id": "24_family_and_relationships_i_love_my_family",
       "type": "sentence",
-      "text": "My husband likes cooking.",
+      "text": "Ich liebe meine Familie.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_are_you_married",
+      "type": "sentence",
+      "text": "Sind Sie verheiratet?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_do_you_have_children",
       "type": "sentence",
-      "text": "Do you have children?",
+      "text": "Haben Sie Kinder?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "24_family_and_relationships_my_parents_live_in_the_city",
+      "id": "24_family_and_relationships_family_is_very_important",
       "type": "sentence",
-      "text": "My parents live in the city.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "24_family_and_relationships_i_love_my_family_very_much",
-      "type": "sentence",
-      "text": "I love my family very much.",
+      "text": "Familie ist sehr wichtig.",
       "practiceType": "formulateSentense"
     }
   ]

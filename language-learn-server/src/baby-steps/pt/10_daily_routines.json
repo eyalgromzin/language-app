@@ -1,127 +1,121 @@
 {
   "id": "10_daily_routines",
-  "title": "Daily routines & common verbs",
+  "title": "rotinas diárias e verbos comuns",
   "emoji": "☀️",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
     {
-      "id": "10_daily_routines_to_go",
+      "id": "10_daily_routines_wake_up",
       "type": "word",
-      "text": "to go",
+      "text": "acordar",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_come",
+      "id": "10_daily_routines_get_up",
       "type": "word",
-      "text": "to come",
+      "text": "levantar",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_do",
+      "id": "10_daily_routines_brush",
       "type": "word",
-      "text": "to do",
+      "text": "escovar",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_make",
+      "id": "10_daily_routines_shower",
       "type": "word",
-      "text": "to make",
+      "text": "tomar banho",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_like",
+      "id": "10_daily_routines_eat",
       "type": "word",
-      "text": "to like",
+      "text": "comer",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_work",
+      "id": "10_daily_routines_drink",
       "type": "word",
-      "text": "to work",
+      "text": "beber",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_study",
+      "id": "10_daily_routines_work",
       "type": "word",
-      "text": "to study",
+      "text": "trabalhar",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_eat",
+      "id": "10_daily_routines_study",
       "type": "word",
-      "text": "to eat",
+      "text": "estudar",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_sleep",
+      "id": "10_daily_routines_sleep",
       "type": "word",
-      "text": "to sleep",
+      "text": "dormir",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_to_wake",
+      "id": "10_daily_routines_go",
       "type": "word",
-      "text": "to wake",
+      "text": "ir",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "10_daily_routines_i_go_to_work",
+      "id": "10_daily_routines_i_wake_up_at",
       "type": "sentence",
-      "text": "I go to work.",
+      "text": "Eu acordo às",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_like_this",
+      "id": "10_daily_routines_i_get_up_at",
       "type": "sentence",
-      "text": "I like this.",
+      "text": "Eu me levanto às",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_do_not_understand",
+      "id": "10_daily_routines_i_brush_my_teeth",
       "type": "sentence",
-      "text": "I do not understand.",
+      "text": "Eu escovo os dentes.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_wake_up_early",
+      "id": "10_daily_routines_i_take_a_shower",
       "type": "sentence",
-      "text": "I wake up early.",
+      "text": "Eu tomo banho.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_eat_breakfast",
       "type": "sentence",
-      "text": "I eat breakfast.",
+      "text": "Eu tomo café da manhã.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_i_study_english",
+      "id": "10_daily_routines_i_go_to_work",
       "type": "sentence",
-      "text": "I study English.",
+      "text": "Eu vou trabalhar.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_come_home",
+      "type": "sentence",
+      "text": "Eu volto para casa.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_go_to_bed",
       "type": "sentence",
-      "text": "I go to bed.",
+      "text": "Eu vou para a cama.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "10_daily_routines_what_do_you_do",
+      "id": "10_daily_routines_good_night",
       "type": "sentence",
-      "text": "What do you do?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "10_daily_routines_i_make_dinner",
-      "type": "sentence",
-      "text": "I make dinner.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "10_daily_routines_do_you_like_your_job",
-      "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Boa noite.",
       "practiceType": "formulateSentense"
     }
   ]

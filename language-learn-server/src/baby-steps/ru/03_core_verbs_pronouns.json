@@ -1,127 +1,109 @@
 {
   "id": "03_core_verbs_pronouns",
-  "title": "Core pronouns & helper verbs",
+  "title": "основные глаголы и местоимения",
   "emoji": "🔤",
-  "language": "English",
+  "language": "Russian",
   "items": [
     {
       "id": "03_core_verbs_pronouns_i",
       "type": "word",
-      "text": "I",
+      "text": "я",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_you",
       "type": "word",
-      "text": "you",
+      "text": "вы",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_he",
       "type": "word",
-      "text": "he",
+      "text": "он",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_she",
       "type": "word",
-      "text": "she",
+      "text": "она",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_we",
       "type": "word",
-      "text": "we",
+      "text": "мы",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_they",
       "type": "word",
-      "text": "they",
+      "text": "они",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "03_core_verbs_pronouns_it",
+      "id": "03_core_verbs_pronouns_am",
       "type": "word",
-      "text": "it",
+      "text": "есть",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "03_core_verbs_pronouns_me",
+      "id": "03_core_verbs_pronouns_is",
       "type": "word",
-      "text": "me",
+      "text": "есть",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "03_core_verbs_pronouns_him",
+      "id": "03_core_verbs_pronouns_are",
       "type": "word",
-      "text": "him",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "03_core_verbs_pronouns_her",
-      "type": "word",
-      "text": "her",
+      "text": "есть",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_i_am",
       "type": "sentence",
-      "text": "I am …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "03_core_verbs_pronouns_i_have",
-      "type": "sentence",
-      "text": "I have …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "03_core_verbs_pronouns_i_want",
-      "type": "sentence",
-      "text": "I want …",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "03_core_verbs_pronouns_i_need",
-      "type": "sentence",
-      "text": "I need …",
+      "text": "Я есть",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_you_are",
       "type": "sentence",
-      "text": "You are …",
+      "text": "Вы есть",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_he_is",
       "type": "sentence",
-      "text": "He is …",
+      "text": "Он есть",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_she_is",
       "type": "sentence",
-      "text": "She is …",
+      "text": "Она есть",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_we_are",
       "type": "sentence",
-      "text": "We are …",
+      "text": "Мы есть",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_they_are",
       "type": "sentence",
-      "text": "They are …",
+      "text": "Они есть",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "03_core_verbs_pronouns_it_is",
+      "id": "03_core_verbs_pronouns_pronouns_are_important",
       "type": "sentence",
-      "text": "It is …",
+      "text": "Местоимения важны.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_verbs_connect_words",
+      "type": "sentence",
+      "text": "Глаголы соединяют слова.",
       "practiceType": "formulateSentense"
     }
   ]

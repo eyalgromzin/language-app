@@ -1,127 +1,121 @@
 {
   "id": "19_housing_utilities",
-  "title": "Housing & utilities",
+  "title": "moradia e serviços públicos",
   "emoji": "🏠",
-  "language": "English",
+  "language": "Portuguese",
   "items": [
+    {
+      "id": "19_housing_utilities_house",
+      "type": "word",
+      "text": "casa",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "19_housing_utilities_apartment",
       "type": "word",
-      "text": "apartment",
+      "text": "apartamento",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_room",
       "type": "word",
-      "text": "room",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_key",
-      "type": "word",
-      "text": "key",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_electricity",
-      "type": "word",
-      "text": "electricity",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_water",
-      "type": "word",
-      "text": "water",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "19_housing_utilities_house",
-      "type": "word",
-      "text": "house",
+      "text": "quarto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_kitchen",
       "type": "word",
-      "text": "kitchen",
+      "text": "cozinha",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_bathroom",
       "type": "word",
-      "text": "bathroom",
+      "text": "banheiro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_electricity",
+      "type": "word",
+      "text": "eletricidade",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_water",
+      "type": "word",
+      "text": "água",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_heating",
       "type": "word",
-      "text": "heating",
+      "text": "aquecimento",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_rent",
       "type": "word",
-      "text": "rent",
+      "text": "aluguel",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "19_housing_utilities_i_am_looking_for_an_apartment",
+      "id": "19_housing_utilities_bills",
+      "type": "word",
+      "text": "contas",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_do_you_live_in_a_house_or_apartment",
       "type": "sentence",
-      "text": "I am looking for an apartment.",
+      "text": "Você mora em uma casa ou apartamento?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_the_key_does_not_work",
+      "id": "19_housing_utilities_how_many_rooms_do_you_have",
       "type": "sentence",
-      "text": "The key does not work.",
+      "text": "Quantos quartos você tem?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_there_is_no_hot_water",
+      "id": "19_housing_utilities_where_is_your_bathroom",
       "type": "sentence",
-      "text": "There is no hot water.",
+      "text": "Onde fica o seu banheiro?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_do_you_have_heating",
+      "type": "sentence",
+      "text": "Você tem aquecimento?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_how_much_is_the_rent",
       "type": "sentence",
-      "text": "How much is the rent?",
+      "text": "Quanto é o aluguel?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_do_you_have_a_kitchen",
+      "id": "19_housing_utilities_are_utilities_included",
       "type": "sentence",
-      "text": "Do you have a kitchen?",
+      "text": "Os serviços públicos estão incluídos?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_the_heating_is_broken",
+      "id": "19_housing_utilities_the_heating_is_not_working",
       "type": "sentence",
-      "text": "The heating is broken.",
+      "text": "O aquecimento não está funcionando.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_where_is_the_bathroom",
+      "id": "19_housing_utilities_can_you_fix_the_electricity",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "Você pode consertar a eletricidade?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "19_housing_utilities_is_electricity_included",
+      "id": "19_housing_utilities_i_love_my_new_apartment",
       "type": "sentence",
-      "text": "Is electricity included?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "19_housing_utilities_can_i_see_the_house",
-      "type": "sentence",
-      "text": "Can I see the house?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "19_housing_utilities_do_you_have_parking",
-      "type": "sentence",
-      "text": "Do you have parking?",
+      "text": "Eu amo o meu novo apartamento.",
       "practiceType": "formulateSentense"
     }
   ]

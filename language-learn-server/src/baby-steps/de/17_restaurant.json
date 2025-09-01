@@ -1,127 +1,127 @@
 {
   "id": "17_restaurant",
-  "title": "At the restaurant",
+  "title": "At the Restaurant",
   "emoji": "🍽️",
-  "language": "English",
+  "language": "German",
   "items": [
+    {
+      "id": "17_restaurant_restaurant",
+      "type": "word",
+      "text": "Restaurant",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "17_restaurant_menu",
       "type": "word",
-      "text": "menu",
+      "text": "Menü",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_table",
       "type": "word",
-      "text": "table",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "17_restaurant_bill",
-      "type": "word",
-      "text": "bill",
+      "text": "Tisch",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_waiter",
       "type": "word",
-      "text": "waiter",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "17_restaurant_food",
-      "type": "word",
-      "text": "food",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "17_restaurant_drink",
-      "type": "word",
-      "text": "drink",
+      "text": "Kellner",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_order",
       "type": "word",
-      "text": "order",
+      "text": "Bestellung",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "17_restaurant_reservation",
+      "id": "17_restaurant_food",
       "type": "word",
-      "text": "reservation",
+      "text": "Essen",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "17_restaurant_service",
+      "id": "17_restaurant_drink",
       "type": "word",
-      "text": "service",
+      "text": "Getränk",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_bill",
+      "type": "word",
+      "text": "Rechnung",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_tip",
       "type": "word",
-      "text": "tip",
+      "text": "Trinkgeld",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_delicious",
+      "type": "word",
+      "text": "köstlich",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_a_table_for_two_please",
       "type": "sentence",
-      "text": "A table for two, please.",
+      "text": "Ein Tisch für zwei, bitte.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "17_restaurant_could_we_have_the_menu",
+      "id": "17_restaurant_can_i_see_the_menu",
       "type": "sentence",
-      "text": "Could we have the menu?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "17_restaurant_the_bill_please",
-      "type": "sentence",
-      "text": "The bill, please.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "17_restaurant_do_you_have_vegetarian_options",
-      "type": "sentence",
-      "text": "Do you have vegetarian options?",
+      "text": "Kann ich die Speisekarte sehen?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "Was empfehlen Sie?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_i_would_like_to_order",
       "type": "sentence",
-      "text": "I would like to order.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "17_restaurant_how_long_will_it_take",
-      "type": "sentence",
-      "text": "How long will it take?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "17_restaurant_can_we_have_some_water",
-      "type": "sentence",
-      "text": "Can we have some water?",
+      "text": "Ich möchte bestellen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_the_food_is_delicious",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "Das Essen ist köstlich.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "17_restaurant_do_you_accept_credit_cards",
+      "id": "17_restaurant_can_i_have_the_bill",
       "type": "sentence",
-      "text": "Do you accept credit cards?",
+      "text": "Kann ich die Rechnung haben?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_how_much_is_the_tip",
+      "type": "sentence",
+      "text": "Wie viel ist das Trinkgeld?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_do_you_have_vegetarian_options",
+      "type": "sentence",
+      "text": "Haben Sie vegetarische Optionen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_i_am_allergic_to",
+      "type": "sentence",
+      "text": "Ich bin allergisch gegen",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_thank_you_for_the_meal",
+      "type": "sentence",
+      "text": "Vielen Dank für das Essen.",
       "practiceType": "formulateSentense"
     }
   ]
