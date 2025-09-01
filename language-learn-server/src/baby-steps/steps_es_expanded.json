@@ -66,6 +66,66 @@
           "type": "sentence",
           "text": "De nada, es un placer ayudarte.",
           "practiceType": "formulateSentense"
+        },
+        {
+          "id": "01_saludos_basicos_hola_word",
+          "type": "word",
+          "text": "hola",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_gracias_word",
+          "type": "word",
+          "text": "gracias",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_por_favor_word",
+          "type": "word",
+          "text": "por favor",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_disculpe_word",
+          "type": "word",
+          "text": "disculpe",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_lo_siento_word",
+          "type": "word",
+          "text": "lo siento",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_buenos_dias_word",
+          "type": "word",
+          "text": "buenos días",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_buenas_tardes_word",
+          "type": "word",
+          "text": "buenas tardes",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_buenas_noches_word",
+          "type": "word",
+          "text": "buenas noches",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_con_permiso_word",
+          "type": "word",
+          "text": "con permiso",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_de_nada_word",
+          "type": "word",
+          "text": "de nada",
+          "practiceType": "chooseTranslation"
         }
       ]
     },
@@ -133,6 +193,66 @@
           "type": "sentence",
           "text": "Hablo un poco de español, pero estoy aprendiendo.",
           "practiceType": "formulateSentense"
+        },
+        {
+          "id": "02_presentaciones_nombre_word",
+          "type": "word",
+          "text": "nombre",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_apellido_word",
+          "type": "word",
+          "text": "apellido",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_edad_word",
+          "type": "word",
+          "text": "edad",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_pais_word",
+          "type": "word",
+          "text": "país",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_ciudad_word",
+          "type": "word",
+          "text": "ciudad",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_profesion_word",
+          "type": "word",
+          "text": "profesión",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_estudiante_word",
+          "type": "word",
+          "text": "estudiante",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_trabajo_word",
+          "type": "word",
+          "text": "trabajo",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_idioma_word",
+          "type": "word",
+          "text": "idioma",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_encantado_word",
+          "type": "word",
+          "text": "encantado",
+          "practiceType": "chooseTranslation"
         }
       ]
     },
@@ -200,6 +320,66 @@
           "type": "sentence",
           "text": "Tú tienes razón, deberíamos hacerlo así.",
           "practiceType": "formulateSentense"
+        },
+        {
+          "id": "03_pronombres_verbos_yo_word",
+          "type": "word",
+          "text": "yo",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_pronombres_verbos_tu_word",
+          "type": "word",
+          "text": "tú",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_pronombres_verbos_el_word",
+          "type": "word",
+          "text": "él",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_pronombres_verbos_ella_word",
+          "type": "word",
+          "text": "ella",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_pronombres_verbos_nosotros_word",
+          "type": "word",
+          "text": "nosotros",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_pronombres_verbos_vosotros_word",
+          "type": "word",
+          "text": "vosotros",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_pronombres_verbos_ellos_word",
+          "type": "word",
+          "text": "ellos",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_pronombres_verbos_ellas_word",
+          "type": "word",
+          "text": "ellas",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_pronombres_verbos_ser_word",
+          "type": "word",
+          "text": "ser",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_pronombres_verbos_tener_word",
+          "type": "word",
+          "text": "tener",
+          "practiceType": "chooseTranslation"
         }
       ]
     },
@@ -267,6 +447,66 @@
           "type": "sentence",
           "text": "Por la tarde estudio español y por la noche veo películas.",
           "practiceType": "formulateSentense"
+        },
+        {
+          "id": "04_numeros_tiempo_uno_word",
+          "type": "word",
+          "text": "uno",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numeros_tiempo_dos_word",
+          "type": "word",
+          "text": "dos",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numeros_tiempo_tres_word",
+          "type": "word",
+          "text": "tres",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numeros_tiempo_cuatro_word",
+          "type": "word",
+          "text": "cuatro",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numeros_tiempo_cinco_word",
+          "type": "word",
+          "text": "cinco",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numeros_tiempo_diez_word",
+          "type": "word",
+          "text": "diez",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numeros_tiempo_veinte_word",
+          "type": "word",
+          "text": "veinte",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numeros_tiempo_cien_word",
+          "type": "word",
+          "text": "cien",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numeros_tiempo_hoy_word",
+          "type": "word",
+          "text": "hoy",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_numeros_tiempo_ayer_word",
+          "type": "word",
+          "text": "ayer",
+          "practiceType": "chooseTranslation"
         }
       ]
     },
@@ -334,6 +574,66 @@
           "type": "sentence",
           "text": "¿Qué autobús debo tomar para ir al museo?",
           "practiceType": "formulateSentense"
+        },
+        {
+          "id": "05_direcciones_movimiento_izquierda_word",
+          "type": "word",
+          "text": "izquierda",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_direcciones_movimiento_derecha_word",
+          "type": "word",
+          "text": "derecha",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_direcciones_movimiento_recto_word",
+          "type": "word",
+          "text": "recto",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_direcciones_movimiento_cerca_word",
+          "type": "word",
+          "text": "cerca",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_direcciones_movimiento_lejos_word",
+          "type": "word",
+          "text": "lejos",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_direcciones_movimiento_arriba_word",
+          "type": "word",
+          "text": "arriba",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_direcciones_movimiento_abajo_word",
+          "type": "word",
+          "text": "abajo",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_direcciones_movimiento_dentro_word",
+          "type": "word",
+          "text": "dentro",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_direcciones_movimiento_fuera_word",
+          "type": "word",
+          "text": "fuera",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_direcciones_movimiento_donde_word",
+          "type": "word",
+          "text": "dónde",
+          "practiceType": "chooseTranslation"
         }
       ]
     },
@@ -401,6 +701,66 @@
           "type": "sentence",
           "text": "El aceite de oliva es muy bueno para la salud.",
           "practiceType": "formulateSentense"
+        },
+        {
+          "id": "06_comida_bebida_agua_word",
+          "type": "word",
+          "text": "agua",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebida_cafe_word",
+          "type": "word",
+          "text": "café",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebida_pan_word",
+          "type": "word",
+          "text": "pan",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebida_manzana_word",
+          "type": "word",
+          "text": "manzana",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebida_carne_word",
+          "type": "word",
+          "text": "carne",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebida_pescado_word",
+          "type": "word",
+          "text": "pescado",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebida_arroz_word",
+          "type": "word",
+          "text": "arroz",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebida_vino_word",
+          "type": "word",
+          "text": "vino",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebida_azucar_word",
+          "type": "word",
+          "text": "azúcar",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebida_sal_word",
+          "type": "word",
+          "text": "sal",
+          "practiceType": "chooseTranslation"
         }
       ]
     },
