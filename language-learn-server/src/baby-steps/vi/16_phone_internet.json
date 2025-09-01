@@ -1,0 +1,128 @@
+{
+  "id": "16_phone_internet",
+  "title": "Phone & internet",
+  "emoji": "📱",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "16_phone_internet_phone",
+      "type": "word",
+      "text": "phone",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_number",
+      "type": "word",
+      "text": "number",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_email",
+      "type": "word",
+      "text": "email",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_wifi",
+      "type": "word",
+      "text": "wifi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_call",
+      "type": "word",
+      "text": "call",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_text",
+      "type": "word",
+      "text": "text",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_message",
+      "type": "word",
+      "text": "message",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_password",
+      "type": "word",
+      "text": "password",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_internet",
+      "type": "word",
+      "text": "internet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_online",
+      "type": "word",
+      "text": "online",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_phone_number",
+      "type": "sentence",
+      "text": "What is your phone number?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_what_is_the_wifi_password",
+      "type": "sentence",
+      "text": "What is the wifi password?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_i_use_your_phone",
+      "type": "sentence",
+      "text": "Can I use your phone?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_call_me",
+      "type": "sentence",
+      "text": "Can you call me?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_i_will_text_you",
+      "type": "sentence",
+      "text": "I will text you.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_do_you_have_internet",
+      "type": "sentence",
+      "text": "Do you have internet?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_email",
+      "type": "sentence",
+      "text": "What is your email?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_i_am_online",
+      "type": "sentence",
+      "text": "I am online.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_send_me_a_message",
+      "type": "sentence",
+      "text": "Can you send me a message?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_the_wifi_is_slow",
+      "type": "sentence",
+      "text": "The wifi is slow.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

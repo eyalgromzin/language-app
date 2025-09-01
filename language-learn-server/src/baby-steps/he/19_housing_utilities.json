@@ -1,0 +1,128 @@
+{
+  "id": "19_housing_utilities",
+  "title": "Housing & utilities",
+  "emoji": "🏠",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "19_housing_utilities_apartment",
+      "type": "word",
+      "text": "apartment",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_room",
+      "type": "word",
+      "text": "room",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_key",
+      "type": "word",
+      "text": "key",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_electricity",
+      "type": "word",
+      "text": "electricity",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_water",
+      "type": "word",
+      "text": "water",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_house",
+      "type": "word",
+      "text": "house",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_kitchen",
+      "type": "word",
+      "text": "kitchen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_bathroom",
+      "type": "word",
+      "text": "bathroom",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_heating",
+      "type": "word",
+      "text": "heating",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_rent",
+      "type": "word",
+      "text": "rent",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_i_am_looking_for_an_apartment",
+      "type": "sentence",
+      "text": "I am looking for an apartment.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_the_key_does_not_work",
+      "type": "sentence",
+      "text": "The key does not work.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_there_is_no_hot_water",
+      "type": "sentence",
+      "text": "There is no hot water.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_how_much_is_the_rent",
+      "type": "sentence",
+      "text": "How much is the rent?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_do_you_have_a_kitchen",
+      "type": "sentence",
+      "text": "Do you have a kitchen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_the_heating_is_broken",
+      "type": "sentence",
+      "text": "The heating is broken.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_where_is_the_bathroom",
+      "type": "sentence",
+      "text": "Where is the bathroom?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_is_electricity_included",
+      "type": "sentence",
+      "text": "Is electricity included?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_can_i_see_the_house",
+      "type": "sentence",
+      "text": "Can I see the house?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_do_you_have_parking",
+      "type": "sentence",
+      "text": "Do you have parking?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

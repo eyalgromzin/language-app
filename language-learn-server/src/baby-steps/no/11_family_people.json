@@ -1,0 +1,128 @@
+{
+  "id": "11_family_people",
+  "title": "Family & people",
+  "emoji": "👪",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "11_family_people_mother",
+      "type": "word",
+      "text": "mother",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_father",
+      "type": "word",
+      "text": "father",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_brother",
+      "type": "word",
+      "text": "brother",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_sister",
+      "type": "word",
+      "text": "sister",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_friend",
+      "type": "word",
+      "text": "friend",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_son",
+      "type": "word",
+      "text": "son",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_daughter",
+      "type": "word",
+      "text": "daughter",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_baby",
+      "type": "word",
+      "text": "baby",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_man",
+      "type": "word",
+      "text": "man",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_woman",
+      "type": "word",
+      "text": "woman",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_this_is_my_friend",
+      "type": "sentence",
+      "text": "This is my friend.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_i_am_with_my_family",
+      "type": "sentence",
+      "text": "I am with my family.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_how_many_children_do_you_have",
+      "type": "sentence",
+      "text": "How many children do you have?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_this_is_my_mother",
+      "type": "sentence",
+      "text": "This is my mother.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_where_is_your_family",
+      "type": "sentence",
+      "text": "Where is your family?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_do_you_have_brothers_and_sisters",
+      "type": "sentence",
+      "text": "Do you have brothers and sisters?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_my_family_lives_in",
+      "type": "sentence",
+      "text": "My family lives in …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_how_old_is_your_son",
+      "type": "sentence",
+      "text": "How old is your son?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_this_is_my_baby",
+      "type": "sentence",
+      "text": "This is my baby.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_are_you_married",
+      "type": "sentence",
+      "text": "Are you married?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

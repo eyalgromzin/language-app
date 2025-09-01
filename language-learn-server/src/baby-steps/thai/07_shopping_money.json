@@ -1,0 +1,128 @@
+{
+  "id": "07_shopping_money",
+  "title": "Shopping & money",
+  "emoji": "🛍️",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "07_shopping_money_price",
+      "type": "word",
+      "text": "price",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cash",
+      "type": "word",
+      "text": "cash",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_card",
+      "type": "word",
+      "text": "card",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_receipt",
+      "type": "word",
+      "text": "receipt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_money",
+      "type": "word",
+      "text": "money",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_change",
+      "type": "word",
+      "text": "change",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_expensive",
+      "type": "word",
+      "text": "expensive",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cheap",
+      "type": "word",
+      "text": "cheap",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_sale",
+      "type": "word",
+      "text": "sale",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_discount",
+      "type": "word",
+      "text": "discount",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_how_much_is_this",
+      "type": "sentence",
+      "text": "How much is this?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_take_cards",
+      "type": "sentence",
+      "text": "Do you take cards?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_i_am_just_looking",
+      "type": "sentence",
+      "text": "I am just looking.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_can_i_try_it_on",
+      "type": "sentence",
+      "text": "Can I try it on?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_is_there_a_discount",
+      "type": "sentence",
+      "text": "Is there a discount?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_have_this_in_blue",
+      "type": "sentence",
+      "text": "Do you have this in blue?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_where_is_the_changing_room",
+      "type": "sentence",
+      "text": "Where is the changing room?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_can_i_get_a_receipt",
+      "type": "sentence",
+      "text": "Can I get a receipt?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_this_is_too_expensive",
+      "type": "sentence",
+      "text": "This is too expensive.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_accept_returns",
+      "type": "sentence",
+      "text": "Do you accept returns?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

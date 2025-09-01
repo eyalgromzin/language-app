@@ -1,127 +1,127 @@
 {
   "id": "01_essentials",
-  "title": "greetings & politeness",
+  "title": "अभिवादन और शिष्टाचार",
   "emoji": "👋",
-  "language": "English",
+  "language": "Hindi",
   "items": [
     {
       "id": "01_essentials_hello",
       "type": "word",
-      "text": "hello",
+      "text": "नमस्ते",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_hi",
       "type": "word",
-      "text": "hi",
+      "text": "नमस्ते",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_please",
       "type": "word",
-      "text": "please",
+      "text": "कृपया",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thank_you",
       "type": "word",
-      "text": "thank you",
+      "text": "धन्यवाद",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thanks",
       "type": "word",
-      "text": "thanks",
+      "text": "धन्यवाद",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_yes",
       "type": "word",
-      "text": "yes",
+      "text": "हाँ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_no",
       "type": "word",
-      "text": "no",
+      "text": "नहीं",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_goodbye",
       "type": "word",
-      "text": "goodbye",
+      "text": "अलविदा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_welcome",
       "type": "word",
-      "text": "welcome",
+      "text": "स्वागत है",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_okay",
       "type": "word",
-      "text": "okay",
+      "text": "ठीक है",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_excuse_me",
       "type": "sentence",
-      "text": "Excuse me.",
+      "text": "माफ़ कीजिए।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_sorry",
       "type": "sentence",
-      "text": "Sorry.",
+      "text": "माफ़ कीजिए।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_morning",
       "type": "sentence",
-      "text": "Good morning.",
+      "text": "सुप्रभात।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_evening",
       "type": "sentence",
-      "text": "Good evening.",
+      "text": "सुसंध्या।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_good_night",
       "type": "sentence",
-      "text": "Good night.",
+      "text": "शुभ रात्रि।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_see_you_later",
       "type": "sentence",
-      "text": "See you later.",
+      "text": "फिर मिलेंगे।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_have_a_nice_day",
       "type": "sentence",
-      "text": "Have a nice day.",
+      "text": "आपका दिन शुभ हो।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_you_are_welcome",
       "type": "sentence",
-      "text": "You are welcome.",
+      "text": "आपका स्वागत है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_no_problem",
       "type": "sentence",
-      "text": "No problem.",
+      "text": "कोई बात नहीं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "01_essentials_take_care",
       "type": "sentence",
-      "text": "Take care.",
+      "text": "ध्यान रखना।",
       "practiceType": "formulateSentense"
     }
   ]

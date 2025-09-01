@@ -1,0 +1,128 @@
+{
+  "id": "01_essentials",
+  "title": "ברכות ונימוסים",
+  "emoji": "👋",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "01_essentials_hello",
+      "type": "word",
+      "text": "שלום",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_hi",
+      "type": "word",
+      "text": "שלום",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_please",
+      "type": "word",
+      "text": "בבקשה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thank_you",
+      "type": "word",
+      "text": "תודה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thanks",
+      "type": "word",
+      "text": "תודה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_yes",
+      "type": "word",
+      "text": "כן",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_no",
+      "type": "word",
+      "text": "לא",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_goodbye",
+      "type": "word",
+      "text": "להתראות",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_welcome",
+      "type": "word",
+      "text": "ברוך הבא",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_okay",
+      "type": "word",
+      "text": "בסדר",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_excuse_me",
+      "type": "sentence",
+      "text": "סליחה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_sorry",
+      "type": "sentence",
+      "text": "סליחה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_morning",
+      "type": "sentence",
+      "text": "בוקר טוב.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_evening",
+      "type": "sentence",
+      "text": "ערב טוב.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_night",
+      "type": "sentence",
+      "text": "לילה טוב.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_see_you_later",
+      "type": "sentence",
+      "text": "נתראה מאוחר יותר.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_have_a_nice_day",
+      "type": "sentence",
+      "text": "יום נעים.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_you_are_welcome",
+      "type": "sentence",
+      "text": "בשמחה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_no_problem",
+      "type": "sentence",
+      "text": "אין בעיה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_take_care",
+      "type": "sentence",
+      "text": "שמור על עצמך.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

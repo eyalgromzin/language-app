@@ -1,0 +1,128 @@
+{
+  "id": "23_shopping_and_money",
+  "title": "Shopping & Money",
+  "emoji": "🛒",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "23_shopping_and_money_price",
+      "type": "word",
+      "text": "price",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_money",
+      "type": "word",
+      "text": "money",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_card",
+      "type": "word",
+      "text": "card",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_cash",
+      "type": "word",
+      "text": "cash",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_store",
+      "type": "word",
+      "text": "store",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_sale",
+      "type": "word",
+      "text": "sale",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_discount",
+      "type": "word",
+      "text": "discount",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_receipt",
+      "type": "word",
+      "text": "receipt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_change",
+      "type": "word",
+      "text": "change",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_bill",
+      "type": "word",
+      "text": "bill",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_how_much_does_this_cost",
+      "type": "sentence",
+      "text": "How much does this cost?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_do_you_accept_credit_cards",
+      "type": "sentence",
+      "text": "Do you accept credit cards?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_is_there_a_sale_today",
+      "type": "sentence",
+      "text": "Is there a sale today?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_can_i_get_a_discount",
+      "type": "sentence",
+      "text": "Can I get a discount?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_i_would_like_to_pay_by_cash",
+      "type": "sentence",
+      "text": "I would like to pay by cash.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_where_is_the_nearest_store",
+      "type": "sentence",
+      "text": "Where is the nearest store?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_can_i_have_a_receipt",
+      "type": "sentence",
+      "text": "Can I have a receipt?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_the_price_is_too_high",
+      "type": "sentence",
+      "text": "The price is too high.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_i_need_change_for_a_bill",
+      "type": "sentence",
+      "text": "I need change for a bill.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_this_store_has_good_prices",
+      "type": "sentence",
+      "text": "This store has good prices.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

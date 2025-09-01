@@ -1,0 +1,128 @@
+{
+  "id": "01_essentials",
+  "title": "pozdravy a zdvořilost",
+  "emoji": "👋",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "01_essentials_hello",
+      "type": "word",
+      "text": "ahoj",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_hi",
+      "type": "word",
+      "text": "ahoj",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_please",
+      "type": "word",
+      "text": "prosím",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thank_you",
+      "type": "word",
+      "text": "děkuji",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thanks",
+      "type": "word",
+      "text": "díky",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_yes",
+      "type": "word",
+      "text": "ano",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_no",
+      "type": "word",
+      "text": "ne",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_goodbye",
+      "type": "word",
+      "text": "na shledanou",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_welcome",
+      "type": "word",
+      "text": "vítejte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_okay",
+      "type": "word",
+      "text": "dobře",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_excuse_me",
+      "type": "sentence",
+      "text": "Omlouvám se.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_sorry",
+      "type": "sentence",
+      "text": "Omlouvám se.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_morning",
+      "type": "sentence",
+      "text": "Dobré ráno.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_evening",
+      "type": "sentence",
+      "text": "Dobrý večer.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_night",
+      "type": "sentence",
+      "text": "Dobrou noc.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_see_you_later",
+      "type": "sentence",
+      "text": "Uvidíme se později.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_have_a_nice_day",
+      "type": "sentence",
+      "text": "Hezký den.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_you_are_welcome",
+      "type": "sentence",
+      "text": "Není za co.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_no_problem",
+      "type": "sentence",
+      "text": "Žádný problém.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_take_care",
+      "type": "sentence",
+      "text": "Měj se.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

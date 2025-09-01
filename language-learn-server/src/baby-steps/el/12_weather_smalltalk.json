@@ -1,0 +1,128 @@
+{
+  "id": "12_weather_smalltalk",
+  "title": "Weather & small talk",
+  "emoji": "🌦️",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_hot",
+      "type": "word",
+      "text": "hot",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_cold",
+      "type": "word",
+      "text": "cold",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_rain",
+      "type": "word",
+      "text": "rain",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_sunny",
+      "type": "word",
+      "text": "sunny",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_warm",
+      "type": "word",
+      "text": "warm",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_windy",
+      "type": "word",
+      "text": "windy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_cloudy",
+      "type": "word",
+      "text": "cloudy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_snow",
+      "type": "word",
+      "text": "snow",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_nice",
+      "type": "word",
+      "text": "nice",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_bad",
+      "type": "word",
+      "text": "bad",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_very_hot_today",
+      "type": "sentence",
+      "text": "It is very hot today.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_might_rain_tomorrow",
+      "type": "sentence",
+      "text": "It might rain tomorrow.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_have_a_nice_day",
+      "type": "sentence",
+      "text": "Have a nice day!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_is_the_weather",
+      "type": "sentence",
+      "text": "How is the weather?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_nice_weather",
+      "type": "sentence",
+      "text": "It is nice weather.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_what_a_beautiful_day",
+      "type": "sentence",
+      "text": "What a beautiful day!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_the_weather_is_bad",
+      "type": "sentence",
+      "text": "The weather is bad.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_do_you_like_this_weather",
+      "type": "sentence",
+      "text": "Do you like this weather?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_windy_today",
+      "type": "sentence",
+      "text": "It is windy today.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_are_you_today",
+      "type": "sentence",
+      "text": "How are you today?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "01_essentials",
+  "title": "привітання та ввічливість",
+  "emoji": "👋",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "01_essentials_hello",
+      "type": "word",
+      "text": "привіт",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_hi",
+      "type": "word",
+      "text": "привіт",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_please",
+      "type": "word",
+      "text": "будь ласка",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thank_you",
+      "type": "word",
+      "text": "дякую",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thanks",
+      "type": "word",
+      "text": "дякую",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_yes",
+      "type": "word",
+      "text": "так",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_no",
+      "type": "word",
+      "text": "ні",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_goodbye",
+      "type": "word",
+      "text": "до побачення",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_welcome",
+      "type": "word",
+      "text": "ласкаво просимо",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_okay",
+      "type": "word",
+      "text": "добре",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_excuse_me",
+      "type": "sentence",
+      "text": "Перепрошую.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_sorry",
+      "type": "sentence",
+      "text": "Перепрошую.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_morning",
+      "type": "sentence",
+      "text": "Доброго ранку.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_evening",
+      "type": "sentence",
+      "text": "Добрий вечір.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_night",
+      "type": "sentence",
+      "text": "Доброї ночі.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_see_you_later",
+      "type": "sentence",
+      "text": "До побачення.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_have_a_nice_day",
+      "type": "sentence",
+      "text": "Гарного дня.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_you_are_welcome",
+      "type": "sentence",
+      "text": "Будь ласка.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_no_problem",
+      "type": "sentence",
+      "text": "Немає проблем.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_take_care",
+      "type": "sentence",
+      "text": "Бережіть себе.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

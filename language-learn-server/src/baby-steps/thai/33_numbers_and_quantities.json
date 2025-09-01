@@ -1,0 +1,128 @@
+{
+  "id": "33_numbers_and_quantities",
+  "title": "Numbers & Quantities",
+  "emoji": "🔢",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "33_numbers_and_quantities_number",
+      "type": "word",
+      "text": "number",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_count",
+      "type": "word",
+      "text": "count",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_many",
+      "type": "word",
+      "text": "many",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_few",
+      "type": "word",
+      "text": "few",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_some",
+      "type": "word",
+      "text": "some",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_all",
+      "type": "word",
+      "text": "all",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_none",
+      "type": "word",
+      "text": "none",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_half",
+      "type": "word",
+      "text": "half",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_double",
+      "type": "word",
+      "text": "double",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_total",
+      "type": "word",
+      "text": "total",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_how_many_people_are_here",
+      "type": "sentence",
+      "text": "How many people are here?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_can_you_count_to_ten",
+      "type": "sentence",
+      "text": "Can you count to ten?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_there_are_many_books_in_the_library",
+      "type": "sentence",
+      "text": "There are many books in the library.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_have_few_friends_here",
+      "type": "sentence",
+      "text": "I have few friends here.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_would_you_like_some_water",
+      "type": "sentence",
+      "text": "Would you like some water?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_all_students_are_present",
+      "type": "sentence",
+      "text": "All students are present.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_none_of_them_came",
+      "type": "sentence",
+      "text": "None of them came.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_ate_half_of_the_pizza",
+      "type": "sentence",
+      "text": "I ate half of the pizza.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_the_price_doubled_last_year",
+      "type": "sentence",
+      "text": "The price doubled last year.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_what_is_the_total_cost",
+      "type": "sentence",
+      "text": "What is the total cost?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

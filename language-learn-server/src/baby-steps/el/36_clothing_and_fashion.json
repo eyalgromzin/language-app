@@ -1,0 +1,128 @@
+{
+  "id": "36_clothing_and_fashion",
+  "title": "Clothing & Fashion",
+  "emoji": "👕",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_clothes",
+      "type": "word",
+      "text": "clothes",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shirt",
+      "type": "word",
+      "text": "shirt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_pants",
+      "type": "word",
+      "text": "pants",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_dress",
+      "type": "word",
+      "text": "dress",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shoes",
+      "type": "word",
+      "text": "shoes",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_hat",
+      "type": "word",
+      "text": "hat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_jacket",
+      "type": "word",
+      "text": "jacket",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_size",
+      "type": "word",
+      "text": "size",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_style",
+      "type": "word",
+      "text": "style",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_fashion",
+      "type": "word",
+      "text": "fashion",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_are_you_wearing_today",
+      "type": "sentence",
+      "text": "What are you wearing today?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_like_your_new_shirt",
+      "type": "sentence",
+      "text": "I like your new shirt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
+      "type": "sentence",
+      "text": "Where did you buy those pants?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
+      "type": "sentence",
+      "text": "That dress looks beautiful on you.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
+      "type": "sentence",
+      "text": "Do you like my new shoes?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_size_do_you_wear",
+      "type": "sentence",
+      "text": "What size do you wear?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_need_a_warm_jacket_for_winter",
+      "type": "sentence",
+      "text": "I need a warm jacket for winter.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_is_your_fashion_style",
+      "type": "sentence",
+      "text": "What is your fashion style?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_this_hat_protects_me_from_the_sun",
+      "type": "sentence",
+      "text": "This hat protects me from the sun.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_follow_fashion_trends",
+      "type": "sentence",
+      "text": "Do you follow fashion trends?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "08_travel_hotel",
+  "title": "Travel & hotel",
+  "emoji": "🧳",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "08_travel_hotel_ticket",
+      "type": "word",
+      "text": "ticket",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_reservation",
+      "type": "word",
+      "text": "reservation",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_passport",
+      "type": "word",
+      "text": "passport",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_luggage",
+      "type": "word",
+      "text": "luggage",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_hotel",
+      "type": "word",
+      "text": "hotel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_airport",
+      "type": "word",
+      "text": "airport",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_station",
+      "type": "word",
+      "text": "station",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_room",
+      "type": "word",
+      "text": "room",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_key",
+      "type": "word",
+      "text": "key",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_map",
+      "type": "word",
+      "text": "map",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_i_have_a_reservation",
+      "type": "sentence",
+      "text": "I have a reservation.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_what_time_is_check_in",
+      "type": "sentence",
+      "text": "What time is check-in?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_where_is_the_platform",
+      "type": "sentence",
+      "text": "Where is the platform?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_i_need_a_taxi",
+      "type": "sentence",
+      "text": "I need a taxi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_what_time_is_check_out",
+      "type": "sentence",
+      "text": "What time is check-out?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_where_is_my_room",
+      "type": "sentence",
+      "text": "Where is my room?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_do_you_have_wifi",
+      "type": "sentence",
+      "text": "Do you have WiFi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_how_do_i_get_to_the_airport",
+      "type": "sentence",
+      "text": "How do I get to the airport?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_is_breakfast_included",
+      "type": "sentence",
+      "text": "Is breakfast included?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_can_you_call_me_a_taxi",
+      "type": "sentence",
+      "text": "Can you call me a taxi?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

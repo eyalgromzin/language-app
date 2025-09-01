@@ -1,0 +1,128 @@
+{
+  "id": "25_work_and_profession",
+  "title": "Work & Profession",
+  "emoji": "💼",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "25_work_and_profession_job",
+      "type": "word",
+      "text": "job",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_work",
+      "type": "word",
+      "text": "work",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_office",
+      "type": "word",
+      "text": "office",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_meeting",
+      "type": "word",
+      "text": "meeting",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_boss",
+      "type": "word",
+      "text": "boss",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_colleague",
+      "type": "word",
+      "text": "colleague",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_salary",
+      "type": "word",
+      "text": "salary",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_project",
+      "type": "word",
+      "text": "project",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_deadline",
+      "type": "word",
+      "text": "deadline",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_career",
+      "type": "word",
+      "text": "career",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_what_do_you_do_for_work",
+      "type": "sentence",
+      "text": "What do you do for work?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_work_in_an_office",
+      "type": "sentence",
+      "text": "I work in an office.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Do you like your job?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_have_a_meeting_at_nine",
+      "type": "sentence",
+      "text": "I have a meeting at nine.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_my_boss_is_very_nice",
+      "type": "sentence",
+      "text": "My boss is very nice.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_work_with_great_colleagues",
+      "type": "sentence",
+      "text": "I work with great colleagues.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_what_is_your_salary",
+      "type": "sentence",
+      "text": "What is your salary?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_this_project_is_very_important",
+      "type": "sentence",
+      "text": "This project is very important.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_the_deadline_is_next_week",
+      "type": "sentence",
+      "text": "The deadline is next week.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_want_to_advance_my_career",
+      "type": "sentence",
+      "text": "I want to advance my career.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

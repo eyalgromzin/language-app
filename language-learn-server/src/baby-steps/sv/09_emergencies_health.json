@@ -1,0 +1,128 @@
+{
+  "id": "09_emergencies_health",
+  "title": "Emergencies & health",
+  "emoji": "⛑️",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "09_emergencies_health_help",
+      "type": "word",
+      "text": "help",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_doctor",
+      "type": "word",
+      "text": "doctor",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_pharmacy",
+      "type": "word",
+      "text": "pharmacy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_emergency",
+      "type": "word",
+      "text": "emergency",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_hospital",
+      "type": "word",
+      "text": "hospital",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_pain",
+      "type": "word",
+      "text": "pain",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_medicine",
+      "type": "word",
+      "text": "medicine",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_ambulance",
+      "type": "word",
+      "text": "ambulance",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_police",
+      "type": "word",
+      "text": "police",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_fire",
+      "type": "word",
+      "text": "fire",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_call_an_ambulance",
+      "type": "sentence",
+      "text": "Call an ambulance!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_need_a_doctor",
+      "type": "sentence",
+      "text": "I need a doctor.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_feel_sick",
+      "type": "sentence",
+      "text": "I feel sick.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_lost_my_passport",
+      "type": "sentence",
+      "text": "I lost my passport.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_where_is_the_nearest_hospital",
+      "type": "sentence",
+      "text": "Where is the nearest hospital?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_have_a_headache",
+      "type": "sentence",
+      "text": "I have a headache.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_the_police",
+      "type": "sentence",
+      "text": "Call the police!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_this_is_an_emergency",
+      "type": "sentence",
+      "text": "This is an emergency.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_need_help",
+      "type": "sentence",
+      "text": "I need help.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_are_you_okay",
+      "type": "sentence",
+      "text": "Are you okay?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

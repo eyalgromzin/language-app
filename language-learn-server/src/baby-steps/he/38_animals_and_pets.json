@@ -1,0 +1,128 @@
+{
+  "id": "38_animals_and_pets",
+  "title": "Animals & Pets",
+  "emoji": "🐕",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "38_animals_and_pets_animal",
+      "type": "word",
+      "text": "animal",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_pet",
+      "type": "word",
+      "text": "pet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_dog",
+      "type": "word",
+      "text": "dog",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_cat",
+      "type": "word",
+      "text": "cat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_bird",
+      "type": "word",
+      "text": "bird",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_fish",
+      "type": "word",
+      "text": "fish",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_horse",
+      "type": "word",
+      "text": "horse",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_cow",
+      "type": "word",
+      "text": "cow",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_chicken",
+      "type": "word",
+      "text": "chicken",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_pig",
+      "type": "word",
+      "text": "pig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_have_any_pets",
+      "type": "sentence",
+      "text": "Do you have any pets?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_my_dog_is_very_friendly",
+      "type": "sentence",
+      "text": "My dog is very friendly.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_cats_are_independent_animals",
+      "type": "sentence",
+      "text": "Cats are independent animals.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_i_love_watching_birds_fly",
+      "type": "sentence",
+      "text": "I love watching birds fly.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_how_many_fish_do_you_have",
+      "type": "sentence",
+      "text": "How many fish do you have?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_horses_are_beautiful_animals",
+      "type": "sentence",
+      "text": "Horses are beautiful animals.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_cows_give_us_milk",
+      "type": "sentence",
+      "text": "Cows give us milk.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_like_chicken",
+      "type": "sentence",
+      "text": "Do you like chicken?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_pigs_are_very_intelligent",
+      "type": "sentence",
+      "text": "Pigs are very intelligent.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_what_is_your_favorite_animal",
+      "type": "sentence",
+      "text": "What is your favorite animal?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

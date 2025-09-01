@@ -1,0 +1,128 @@
+{
+  "id": "15_requests_help",
+  "title": "Requests & asking for help",
+  "emoji": "🙋",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "15_requests_help_help",
+      "type": "word",
+      "text": "help",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_please",
+      "type": "word",
+      "text": "alsjeblieft",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could",
+      "type": "word",
+      "text": "could",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_would",
+      "type": "word",
+      "text": "would",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_repeat",
+      "type": "word",
+      "text": "repeat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_slowly",
+      "type": "word",
+      "text": "slowly",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_mean",
+      "type": "word",
+      "text": "mean",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_say",
+      "type": "word",
+      "text": "say",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_understand",
+      "type": "word",
+      "text": "understand",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_explain",
+      "type": "word",
+      "text": "explain",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could_you_help_me_please",
+      "type": "sentence",
+      "text": "Could you help me, please?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_you_repeat_that_please",
+      "type": "sentence",
+      "text": "Can you repeat that, please?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_please_speak_more_slowly",
+      "type": "sentence",
+      "text": "Please speak more slowly.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_how_do_you_say_this_in_english",
+      "type": "sentence",
+      "text": "How do you say this in English?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_what_does_this_mean",
+      "type": "sentence",
+      "text": "What does this mean?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_you_explain_this",
+      "type": "sentence",
+      "text": "Can you explain this?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_i_dont_understand",
+      "type": "sentence",
+      "text": "I don't understand.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_would_you_mind",
+      "type": "sentence",
+      "text": "Would you mind …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_i_ask_you_something",
+      "type": "sentence",
+      "text": "Can I ask you something?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_thank_you_for_helping",
+      "type": "sentence",
+      "text": "Thank you for helping.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

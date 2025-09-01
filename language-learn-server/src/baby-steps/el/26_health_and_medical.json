@@ -1,0 +1,128 @@
+{
+  "id": "26_health_and_medical",
+  "title": "Health & Medical",
+  "emoji": "🏥",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "26_health_and_medical_health",
+      "type": "word",
+      "text": "health",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_doctor",
+      "type": "word",
+      "text": "doctor",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_hospital",
+      "type": "word",
+      "text": "hospital",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_medicine",
+      "type": "word",
+      "text": "medicine",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_pain",
+      "type": "word",
+      "text": "pain",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_sick",
+      "type": "word",
+      "text": "sick",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_fever",
+      "type": "word",
+      "text": "fever",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_appointment",
+      "type": "word",
+      "text": "appointment",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_emergency",
+      "type": "word",
+      "text": "emergency",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_treatment",
+      "type": "word",
+      "text": "treatment",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_how_are_you_feeling_today",
+      "type": "sentence",
+      "text": "How are you feeling today?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_need_to_see_a_doctor",
+      "type": "sentence",
+      "text": "I need to see a doctor.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_where_is_the_nearest_hospital",
+      "type": "sentence",
+      "text": "Where is the nearest hospital?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_have_a_headache",
+      "type": "sentence",
+      "text": "I have a headache.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_can_i_make_an_appointment",
+      "type": "sentence",
+      "text": "Can I make an appointment?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_am_feeling_sick",
+      "type": "sentence",
+      "text": "I am feeling sick.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_do_you_have_any_medicine",
+      "type": "sentence",
+      "text": "Do you have any medicine?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_this_is_an_emergency",
+      "type": "sentence",
+      "text": "This is an emergency.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_what_treatment_do_i_need",
+      "type": "sentence",
+      "text": "What treatment do I need?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_my_fever_is_very_high",
+      "type": "sentence",
+      "text": "My fever is very high.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

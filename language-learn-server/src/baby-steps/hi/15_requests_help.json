@@ -2,7 +2,7 @@
   "id": "15_requests_help",
   "title": "Requests & asking for help",
   "emoji": "🙋",
-  "language": "English",
+  "language": "Hindi",
   "items": [
     {
       "id": "15_requests_help_help",
@@ -13,7 +13,7 @@
     {
       "id": "15_requests_help_please",
       "type": "word",
-      "text": "please",
+      "text": "कृपया",
       "practiceType": "chooseTranslation"
     },
     {

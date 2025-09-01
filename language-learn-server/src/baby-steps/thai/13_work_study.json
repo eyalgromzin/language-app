@@ -1,0 +1,128 @@
+{
+  "id": "13_work_study",
+  "title": "Work & study basics",
+  "emoji": "💼",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "13_work_study_office",
+      "type": "word",
+      "text": "office",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_school",
+      "type": "word",
+      "text": "school",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_meeting",
+      "type": "word",
+      "text": "meeting",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_project",
+      "type": "word",
+      "text": "project",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_job",
+      "type": "word",
+      "text": "job",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_work",
+      "type": "word",
+      "text": "work",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_study",
+      "type": "word",
+      "text": "study",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_class",
+      "type": "word",
+      "text": "class",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_boss",
+      "type": "word",
+      "text": "boss",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_colleague",
+      "type": "word",
+      "text": "colleague",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_i_have_a_meeting",
+      "type": "sentence",
+      "text": "I have a meeting.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_work_from_home",
+      "type": "sentence",
+      "text": "I work from home.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_am_studying",
+      "type": "sentence",
+      "text": "I am studying …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_what_do_you_do_for_work",
+      "type": "sentence",
+      "text": "What do you do for work?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_work_in_an_office",
+      "type": "sentence",
+      "text": "I work in an office.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Do you like your job?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_am_busy_with_work",
+      "type": "sentence",
+      "text": "I am busy with work.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_what_are_you_studying",
+      "type": "sentence",
+      "text": "What are you studying?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_have_a_lot_of_homework",
+      "type": "sentence",
+      "text": "I have a lot of homework.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_where_do_you_work",
+      "type": "sentence",
+      "text": "Where do you work?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

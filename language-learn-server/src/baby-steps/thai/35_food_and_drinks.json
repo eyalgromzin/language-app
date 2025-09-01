@@ -1,0 +1,128 @@
+{
+  "id": "35_food_and_drinks",
+  "title": "Food & Drinks",
+  "emoji": "🍕",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "35_food_and_drinks_food",
+      "type": "word",
+      "text": "food",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_drink",
+      "type": "word",
+      "text": "drink",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_breakfast",
+      "type": "word",
+      "text": "breakfast",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_lunch",
+      "type": "word",
+      "text": "lunch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_dinner",
+      "type": "word",
+      "text": "dinner",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_restaurant",
+      "type": "word",
+      "text": "restaurant",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_menu",
+      "type": "word",
+      "text": "menu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_order",
+      "type": "word",
+      "text": "order",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_hungry",
+      "type": "word",
+      "text": "hungry",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_thirsty",
+      "type": "word",
+      "text": "thirsty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_what_would_you_like_to_eat",
+      "type": "sentence",
+      "text": "What would you like to eat?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_can_i_have_something_to_drink",
+      "type": "sentence",
+      "text": "Can I have something to drink?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_did_you_have_for_breakfast",
+      "type": "sentence",
+      "text": "What did you have for breakfast?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_let_s_go_to_a_restaurant_for_lunch",
+      "type": "sentence",
+      "text": "Let's go to a restaurant for lunch.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_time_is_dinner",
+      "type": "sentence",
+      "text": "What time is dinner?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_can_i_see_the_menu",
+      "type": "sentence",
+      "text": "Can I see the menu?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_want_to_order_pizza",
+      "type": "sentence",
+      "text": "I want to order pizza.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_are_you_hungry",
+      "type": "sentence",
+      "text": "Are you hungry?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_am_thirsty_can_i_have_water",
+      "type": "sentence",
+      "text": "I am thirsty, can I have water?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_this_food_tastes_delicious",
+      "type": "sentence",
+      "text": "This food tastes delicious.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -2,15 +2,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { translateWord, getMyMemoryTranslation } from '../config/api';
 
 export const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
-  English: 'en',
-  Spanish: 'es',
-  French: 'fr',
-  German: 'de',
-  Italian: 'it',
-  Portuguese: 'pt',
-  Russian: 'ru',
-  Hindi: 'hi',
-  Turkish: 'tr',
+  English: 'en', //
+  Spanish: 'es', //
+  French: 'fr', //
+  German: 'de', //
+  Italian: 'it', //
+  Portuguese: 'pt', //
+  Russian: 'ru', //
+  Hindi: 'hi', 
   Polish: 'pl',
   Dutch: 'nl',
   Greek: 'el',

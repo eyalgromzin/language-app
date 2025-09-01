@@ -1,0 +1,128 @@
+{
+  "id": "01_essentials",
+  "title": "tervehdykset ja kohteliaisuus",
+  "emoji": "👋",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "01_essentials_hello",
+      "type": "word",
+      "text": "hei",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_hi",
+      "type": "word",
+      "text": "hei",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_please",
+      "type": "word",
+      "text": "ole hyvä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thank_you",
+      "type": "word",
+      "text": "kiitos",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thanks",
+      "type": "word",
+      "text": "kiitos",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_yes",
+      "type": "word",
+      "text": "kyllä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_no",
+      "type": "word",
+      "text": "ei",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_goodbye",
+      "type": "word",
+      "text": "näkemiin",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_welcome",
+      "type": "word",
+      "text": "tervetuloa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_okay",
+      "type": "word",
+      "text": "okei",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_excuse_me",
+      "type": "sentence",
+      "text": "Anteeksi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_sorry",
+      "type": "sentence",
+      "text": "Anteeksi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_morning",
+      "type": "sentence",
+      "text": "Hyvää huomenta.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_evening",
+      "type": "sentence",
+      "text": "Hyvää iltaa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_night",
+      "type": "sentence",
+      "text": "Hyvää yötä.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_see_you_later",
+      "type": "sentence",
+      "text": "Nähdään myöhemmin.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_have_a_nice_day",
+      "type": "sentence",
+      "text": "Hyvää päivää.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_you_are_welcome",
+      "type": "sentence",
+      "text": "Ole hyvä.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_no_problem",
+      "type": "sentence",
+      "text": "Ei ongelmaa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_take_care",
+      "type": "sentence",
+      "text": "Pidä huolta itsestäsi.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

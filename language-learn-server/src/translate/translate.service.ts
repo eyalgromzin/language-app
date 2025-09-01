@@ -19,7 +19,6 @@ export const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
     Russian: 'ru',
     Swedish: 'sv',
     Thai: 'th',
-    Turkish: 'tr',
     Ukrainian: 'uk',
     Vietnamese: 'vi',
   };

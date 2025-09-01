@@ -10,7 +10,6 @@ export const LANGUAGE_NAME_TO_TTS: Record<string, string> = {
   Portuguese: 'pt-PT',
   Russian: 'ru-RU',
   Hindi: 'hi-IN',
-  Turkish: 'tr-TR',
   Polish: 'pl-PL',
   Dutch: 'nl-NL',
   Greek: 'el-GR',

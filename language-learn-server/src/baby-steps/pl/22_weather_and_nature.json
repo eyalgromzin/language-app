@@ -1,0 +1,128 @@
+{
+  "id": "22_weather_and_nature",
+  "title": "Weather & Nature",
+  "emoji": "🌤️",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "22_weather_and_nature_sunny",
+      "type": "word",
+      "text": "sunny",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_rainy",
+      "type": "word",
+      "text": "rainy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_cloudy",
+      "type": "word",
+      "text": "cloudy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_windy",
+      "type": "word",
+      "text": "windy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_snow",
+      "type": "word",
+      "text": "snow",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_tree",
+      "type": "word",
+      "text": "tree",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_flower",
+      "type": "word",
+      "text": "flower",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_mountain",
+      "type": "word",
+      "text": "mountain",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_ocean",
+      "type": "word",
+      "text": "ocean",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_forest",
+      "type": "word",
+      "text": "forest",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_it_is_sunny_today",
+      "type": "sentence",
+      "text": "It is sunny today.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_weather_is_nice",
+      "type": "sentence",
+      "text": "The weather is nice.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_it_might_rain_later",
+      "type": "sentence",
+      "text": "It might rain later.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_wind_is_very_strong",
+      "type": "sentence",
+      "text": "The wind is very strong.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_i_love_walking_in_the_forest",
+      "type": "sentence",
+      "text": "I love walking in the forest.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_mountain_view_is_beautiful",
+      "type": "sentence",
+      "text": "The mountain view is beautiful.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_these_flowers_are_lovely",
+      "type": "sentence",
+      "text": "These flowers are lovely.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_ocean_is_very_blue",
+      "type": "sentence",
+      "text": "The ocean is very blue.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_what_is_the_weather_like",
+      "type": "sentence",
+      "text": "What is the weather like?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_i_hope_it_does_not_snow",
+      "type": "sentence",
+      "text": "I hope it does not snow.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}
