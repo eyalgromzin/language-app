@@ -1,0 +1,126 @@
+{
+  "language": "English",
+  "overview": "A progressive path from essential words to full sentences and advanced phrases, ordered by real-life usefulness.",
+  "steps": [
+    {
+      "id": "01_essentials",
+      "title": "greetings & politeness",
+      "emoji": "👋",
+      "file": "01_essentials.json"
+    },
+    {
+      "id": "02_introductions",
+      "title": "Introductions & basic info",
+      "emoji": "💬",
+      "file": "02_introductions.json"
+    },
+    {
+      "id": "03_core_verbs_pronouns",
+      "title": "Core pronouns & helper verbs",
+      "emoji": "🔤",
+      "file": "03_core_verbs_pronouns.json"
+    },
+    {
+      "id": "04_numbers_time_basics",
+      "title": "Numbers & time basics",
+      "emoji": "🔢",
+      "file": "04_numbers_time_basics.json"
+    },
+    {
+      "id": "05_getting_around",
+      "title": "Directions & getting around",
+      "emoji": "🧭",
+      "file": "05_getting_around.json"
+    },
+    {
+      "id": "06_food_drink_basics",
+      "title": "Food & drink basics",
+      "emoji": "🍎",
+      "file": "06_food_drink_basics.json"
+    },
+    {
+      "id": "07_shopping_money",
+      "title": "Shopping & money",
+      "emoji": "🛍️",
+      "file": "07_shopping_money.json"
+    },
+    {
+      "id": "08_travel_hotel",
+      "title": "Travel & hotel",
+      "emoji": "🧳",
+      "file": "08_travel_hotel.json"
+    },
+    {
+      "id": "09_emergencies_health",
+      "title": "Emergencies & health",
+      "emoji": "⛑️",
+      "file": "09_emergencies_health.json"
+    },
+    {
+      "id": "10_daily_routines",
+      "title": "Daily routines & common verbs",
+      "emoji": "☀️",
+      "file": "10_daily_routines.json"
+    },
+    {
+      "id": "11_family_people",
+      "title": "Family & people",
+      "emoji": "👪",
+      "file": "11_family_people.json"
+    },
+    {
+      "id": "12_weather_smalltalk",
+      "title": "Weather & small talk",
+      "emoji": "🌦️",
+      "file": "12_weather_smalltalk.json"
+    },
+    {
+      "id": "13_work_study",
+      "title": "Work & study basics",
+      "emoji": "💼",
+      "file": "13_work_study.json"
+    },
+    {
+      "id": "14_plans_invitations",
+      "title": "Making plans & invitations",
+      "emoji": "📅",
+      "file": "14_plans_invitations.json"
+    },
+    {
+      "id": "15_requests_help",
+      "title": "Requests & asking for help",
+      "emoji": "🙋",
+      "file": "15_requests_help.json"
+    },
+    {
+      "id": "16_phone_internet",
+      "title": "Phone & internet",
+      "emoji": "📱",
+      "file": "16_phone_internet.json"
+    },
+    {
+      "id": "17_restaurant",
+      "title": "At the restaurant",
+      "emoji": "🍽️",
+      "file": "17_restaurant.json"
+    },
+    {
+      "id": "18_transportation_details",
+      "title": "Transportation details",
+      "emoji": "🚌",
+      "file": "18_transportation_details.json"
+    },
+    {
+      "id": "19_housing_utilities",
+      "title": "Housing & utilities",
+      "emoji": "🏠",
+      "file": "19_housing_utilities.json"
+    },
+    {
+      "id": "20_connectors_advanced",
+      "title": "Connectors & advanced phrases",
+      "emoji": "🔗",
+      "file": "20_connectors_advanced.json"
+    }
+  ]
+}

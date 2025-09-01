@@ -1,0 +1,11 @@
+{
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "folder": "en",
+      "indexFile": "en/index.json"
+    }
+  ],
+  "overview": "Language learning steps organized by language and step category"
+}
