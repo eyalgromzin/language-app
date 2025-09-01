@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, FlatList, TouchableOpacity, ActivityIndicator, 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { getLibraryMeta, getLibraryUrlsWithCriterias } from '../../config/api';
+import { LANGUAGE_NAME_TO_CODE } from '../../utils/translation';
 
 function LibraryScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
@@ -42,37 +43,13 @@ function LibraryScreen(): React.JSX.Element {
   const toLanguageSymbol = React.useCallback((input: string | null): string => {
     const v = (input || '').trim().toLowerCase();
     
-    // Map language names to symbols
-    const languageMap: Record<string, string> = {
-      'czech': 'cs',
-      'german': 'de',
-      'greek': 'el',
-      'english': 'en',
-      'spanish': 'es',
-      'finnish': 'fi',
-      'french': 'fr',
-      'hebrew': 'he',
-      'hindi': 'hi',
-      'italian': 'it',
-      'dutch': 'nl',
-      'norwegian': 'no',
-      'polish': 'pl',
-      'portuguese': 'pt',
-      'russian': 'ru',
-      'swedish': 'sv',
-      'thai': 'th',
-      'turkish': 'tr',
-      'ukrainian': 'uk',
-      'vietnamese': 'vi',
-    };
-    
     // If it's already a symbol, return it
     if (v === 'en' || v === 'es' || v === 'fr' || v === 'de' || v === 'it' || v === 'pt' || v === 'ru' || v === 'zh' || v === 'ja' || v === 'ko' || v === 'ar' || v === 'hi' || v === 'tr' || v === 'pl' || v === 'nl' || v === 'el' || v === 'sv' || v === 'no' || v === 'fi' || v === 'cs' || v === 'uk' || v === 'he' || v === 'th' || v === 'vi') {
       return v;
     }
     
-    // Map from language name to symbol
-    const symbol = languageMap[v];
+    // Map from language name to symbol using imported constant
+    const symbol = LANGUAGE_NAME_TO_CODE[v];
     if (symbol) {
       return symbol;
     }
