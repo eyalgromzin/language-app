@@ -1,4 +1,4 @@
-package com.languagelearn
+package com.hellolingo
 
 import android.app.Application
 import com.facebook.react.PackageList

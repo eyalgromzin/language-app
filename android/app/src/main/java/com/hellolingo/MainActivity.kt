@@ -1,4 +1,4 @@
-package com.languagelearn
+package com.hellolingo
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

@@ -22,7 +22,7 @@ The `assetlinks.json` file should contain:
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.languagelearn",
+      "package_name": "com.hellolingo",
       "sha256_cert_fingerprints": [
         "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C"
       ]
@@ -66,7 +66,7 @@ When you're ready to release your app to the Play Store, you'll need to:
        "relation": ["delegate_permission/common.handle_all_urls"],
        "target": {
          "namespace": "android_app",
-         "package_name": "com.languagelearn",
+         "package_name": "com.hellolingo",
          "sha256_cert_fingerprints": [
            "DEBUG_FINGERPRINT_HERE",
            "RELEASE_FINGERPRINT_HERE"
@@ -106,7 +106,7 @@ After uploading the file to your website:
 
 #### Wrong Package Name
 - Ensure the package_name matches your app's applicationId in build.gradle
-- Your app uses: `com.languagelearn`
+- Your app uses: `com.hellolingo`
 
 ### 7. Security Considerations
 

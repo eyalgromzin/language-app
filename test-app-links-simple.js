@@ -158,9 +158,9 @@ console.log('5. If app is not installed, it will open in the browser');
 console.log('\n\n🔧 ADB TESTING (for developers):');
 console.log('─────────────────────────────────');
 console.log('# Test video link:');
-console.log('adb shell am start -W -a android.intent.action.VIEW -d "https://hellolingo.app/video?url=https%3A//www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&title=Test%20Video" com.languagelearn');
+console.log('adb shell am start -W -a android.intent.action.VIEW -d "https://hellolingo.app/video?url=https%3A//www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&title=Test%20Video" com.hellolingo');
 console.log('\n# Test surf link:');
-console.log('adb shell am start -W -a android.intent.action.VIEW -d "https://hellolingo.app/surf?url=https%3A//www.duolingo.com" com.languagelearn');
+console.log('adb shell am start -W -a android.intent.action.VIEW -d "https://hellolingo.app/surf?url=https%3A//www.duolingo.com" com.hellolingo');
 
 console.log('\n\n✅ READY TO TEST!');
 console.log('Make sure you have:');

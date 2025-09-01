@@ -104,10 +104,10 @@ https://hellolingo.app/video?title=Test%20Title
 ### 4. Command Line Testing (Android)
 ```bash
 # Test video link
-adb shell am start -W -a android.intent.action.VIEW -d "https://hellolingo.app/video?url=https%3A//www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&title=Test%20Video" com.languagelearn
+adb shell am start -W -a android.intent.action.VIEW -d "https://hellolingo.app/video?url=https%3A//www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&title=Test%20Video" com.hellolingo
 
 # Test surf link
-adb shell am start -W -a android.intent.action.VIEW -d "https://hellolingo.app/surf?url=https%3A//www.duolingo.com" com.languagelearn
+adb shell am start -W -a android.intent.action.VIEW -d "https://hellolingo.app/surf?url=https%3A//www.duolingo.com" com.hellolingo
 ```
 
 ## URL Encoding Reference

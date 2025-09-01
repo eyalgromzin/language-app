@@ -95,4 +95,4 @@ console.log('2. Paste it into your browser');
 console.log('3. Your app should open automatically (if installed)');
 console.log();
 console.log('Or use ADB to test:');
-console.log('adb shell am start -W -a android.intent.action.VIEW -d "APP_LINK_HERE" com.languagelearn');
+console.log('adb shell am start -W -a android.intent.action.VIEW -d "APP_LINK_HERE" com.hellolingo');

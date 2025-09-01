@@ -1,15 +1,15 @@
 {
-  "name": "LanguageLearn",
+  "name": "HelloLingo",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "clean": "cd android && .\\gradlew.bat clean",
+    "clean": "rimraf \"C:\\proj\\ll\\android\\app\\.cxx\" && cd android && .\\gradlew.bat clean",
     "start": "react-native start",
     "test": "jest",
-    "bundle:release": "node scripts/createReleaseBundle.js",
+    "bundle:release": "rimraf \"C:\\proj\\ll\\android\\app\\.cxx\" && node scripts/createReleaseBundle.js",
     "setup-keystore": "node scripts/setupReleaseKeystore.js",
     "test-aab": "node scripts/testAppBundle.js",
     "icons": "node scripts/generateAppIcons.js",

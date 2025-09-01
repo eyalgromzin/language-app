@@ -84,7 +84,7 @@ KEY_PASSWORD=your_key_password
 Update your app version in `android/app/build.gradle`:
 ```gradle
 defaultConfig {
-    applicationId "com.languagelearn"
+            applicationId "com.hellolingo"
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode 2  // Increment this for each release

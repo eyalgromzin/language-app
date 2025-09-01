@@ -1,5 +1,5 @@
 - copy words.json to src : 
-cd 'C:\my projects\language-learn'; adb shell run-as com.languagelearn cat files/words.json > src\userData\words.json
+cd 'C:\my projects\language-learn'; adb shell run-as com.hellolingo cat files/words.json > src\userData\words.json
 
 - to make app word with local server - run 
 adb reverse tcp:3000 tcp:3000
