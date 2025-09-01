@@ -93,25 +93,5 @@
     "id": 20,
     "name": "Vietnamese",
     "symbol": "vi"
-  },
-  {
-    "id": 21,
-    "name": "Japanese",
-    "symbol": "ja"
-  },
-  {
-    "id": 22,
-    "name": "Korean",
-    "symbol": "ko"
-  },
-  {
-    "id": 23,
-    "name": "Chinese",
-    "symbol": "zh"
-  },
-  {
-    "id": 24,
-    "name": "Arabic",
-    "symbol": "ar"
   }
 ]

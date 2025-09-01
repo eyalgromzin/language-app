@@ -7,13 +7,13 @@
     {
       "id": "14_plans_invitations_today",
       "type": "word",
-      "text": "today",
+      "text": "сьогодні",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "завтра",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,7 +31,7 @@
     {
       "id": "14_plans_invitations_meet",
       "type": "word",
-      "text": "meet",
+      "text": "зустрічатися",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,7 +55,7 @@
     {
       "id": "14_plans_invitations_time",
       "type": "word",
-      "text": "time",
+      "text": "час",
       "practiceType": "chooseTranslation"
     },
     {

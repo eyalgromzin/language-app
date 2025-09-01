@@ -7,31 +7,31 @@
     {
       "id": "35_food_and_drinks_food",
       "type": "word",
-      "text": "food",
+      "text": "їжа",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_drink",
       "type": "word",
-      "text": "drink",
+      "text": "пити",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_breakfast",
       "type": "word",
-      "text": "breakfast",
+      "text": "сніданок",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_lunch",
       "type": "word",
-      "text": "lunch",
+      "text": "обід",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_dinner",
       "type": "word",
-      "text": "dinner",
+      "text": "вечеря",
       "practiceType": "chooseTranslation"
     },
     {
@@ -43,13 +43,13 @@
     {
       "id": "35_food_and_drinks_menu",
       "type": "word",
-      "text": "menu",
+      "text": "меню",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_order",
       "type": "word",
-      "text": "order",
+      "text": "замовлення",
       "practiceType": "chooseTranslation"
     },
     {

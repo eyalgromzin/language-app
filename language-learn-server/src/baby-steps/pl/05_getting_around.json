@@ -7,61 +7,61 @@
     {
       "id": "05_getting_around_left",
       "type": "word",
-      "text": "left",
+      "text": "lewo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_right",
       "type": "word",
-      "text": "right",
+      "text": "prawo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_straight",
       "type": "word",
-      "text": "straight",
+      "text": "prosto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_near",
       "type": "word",
-      "text": "near",
+      "text": "blisko",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_far",
       "type": "word",
-      "text": "far",
+      "text": "daleko",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_here",
       "type": "word",
-      "text": "here",
+      "text": "tutaj",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_there",
       "type": "word",
-      "text": "there",
+      "text": "tam",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_up",
       "type": "word",
-      "text": "up",
+      "text": "góra",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_down",
       "type": "word",
-      "text": "down",
+      "text": "dół",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_around",
       "type": "word",
-      "text": "around",
+      "text": "wokół",
       "practiceType": "chooseTranslation"
     },
     {

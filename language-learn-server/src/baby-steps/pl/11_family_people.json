@@ -7,61 +7,61 @@
     {
       "id": "11_family_people_mother",
       "type": "word",
-      "text": "mother",
+      "text": "matka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_father",
       "type": "word",
-      "text": "father",
+      "text": "ojciec",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_brother",
       "type": "word",
-      "text": "brother",
+      "text": "brat",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_sister",
       "type": "word",
-      "text": "sister",
+      "text": "siostra",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_friend",
       "type": "word",
-      "text": "friend",
+      "text": "przyjaciel",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_son",
       "type": "word",
-      "text": "son",
+      "text": "syn",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_daughter",
       "type": "word",
-      "text": "daughter",
+      "text": "córka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_baby",
       "type": "word",
-      "text": "baby",
+      "text": "niemowlę",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_man",
       "type": "word",
-      "text": "man",
+      "text": "mężczyzna",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_woman",
       "type": "word",
-      "text": "woman",
+      "text": "kobieta",
       "practiceType": "chooseTranslation"
     },
     {

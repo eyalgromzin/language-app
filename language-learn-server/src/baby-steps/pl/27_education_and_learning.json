@@ -19,7 +19,7 @@
     {
       "id": "27_education_and_learning_teacher",
       "type": "word",
-      "text": "teacher",
+      "text": "nauczyciel",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,13 +55,13 @@
     {
       "id": "27_education_and_learning_study",
       "type": "word",
-      "text": "study",
+      "text": "studiować",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_learn",
       "type": "word",
-      "text": "learn",
+      "text": "uczyć się",
       "practiceType": "chooseTranslation"
     },
     {

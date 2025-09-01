@@ -7,7 +7,7 @@
     {
       "id": "32_time_and_dates_time",
       "type": "word",
-      "text": "time",
+      "text": "समय",
       "practiceType": "chooseTranslation"
     },
     {
@@ -19,19 +19,19 @@
     {
       "id": "32_time_and_dates_hour",
       "type": "word",
-      "text": "hour",
+      "text": "घंटा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_minute",
       "type": "word",
-      "text": "minute",
+      "text": "मिनट",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_second",
       "type": "word",
-      "text": "second",
+      "text": "सेकंड",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,13 +55,13 @@
     {
       "id": "32_time_and_dates_today",
       "type": "word",
-      "text": "today",
+      "text": "आज",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "कल",
       "practiceType": "chooseTranslation"
     },
     {

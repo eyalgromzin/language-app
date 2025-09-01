@@ -1,55 +1,55 @@
 {
   "id": "02_introductions",
-  "title": "Introductions & basic info",
+  "title": "Wprowadzenie i podstawowe informacje",
   "emoji": "💬",
   "language": "Polish",
   "items": [
     {
       "id": "02_introductions_name",
       "type": "word",
-      "text": "name",
+      "text": "imię",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_meet",
       "type": "word",
-      "text": "meet",
+      "text": "spotkać",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_from",
       "type": "word",
-      "text": "from",
+      "text": "z",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_speak",
       "type": "word",
-      "text": "speak",
+      "text": "mówić",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_language",
       "type": "word",
-      "text": "language",
+      "text": "język",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_country",
       "type": "word",
-      "text": "country",
+      "text": "kraj",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_city",
       "type": "word",
-      "text": "city",
+      "text": "miasto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_job",
       "type": "word",
-      "text": "job",
+      "text": "praca",
       "practiceType": "chooseTranslation"
     },
     {
@@ -61,55 +61,55 @@
     {
       "id": "02_introductions_teacher",
       "type": "word",
-      "text": "teacher",
+      "text": "nauczyciel",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_my_name_is",
       "type": "sentence",
-      "text": "My name is …",
+      "text": "Nazywam się …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_what_is_your_name",
       "type": "sentence",
-      "text": "What is your name?",
+      "text": "Jak się nazywasz?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_nice_to_meet_you",
       "type": "sentence",
-      "text": "Nice to meet you.",
+      "text": "Miło cię poznać.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_how_are_you",
       "type": "sentence",
-      "text": "How are you?",
+      "text": "Jak się masz?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_fine_thank_you",
       "type": "sentence",
-      "text": "I am fine, thank you.",
+      "text": "Mam się dobrze, dziękuję.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_where_are_you_from",
       "type": "sentence",
-      "text": "Where are you from?",
+      "text": "Skąd jesteś?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_from",
       "type": "sentence",
-      "text": "I am from …",
+      "text": "Jestem z …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_do_you_speak_english",
       "type": "sentence",
-      "text": "Do you speak English?",
+      "text": "Czy mówisz po angielsku?",
       "practiceType": "formulateSentense"
     },
     {

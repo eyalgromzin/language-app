@@ -1,6 +1,6 @@
 {
   "id": "04_numbers_time_basics",
-  "title": "Numbers & time basics",
+  "title": "संख्याएं और समय के मूल",
   "emoji": "🔢",
   "language": "Hindi",
   "items": [
@@ -13,61 +13,61 @@
     {
       "id": "04_numbers_time_basics_one",
       "type": "word",
-      "text": "one",
+      "text": "एक",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_two",
       "type": "word",
-      "text": "two",
+      "text": "दो",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_three",
       "type": "word",
-      "text": "three",
+      "text": "तीन",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_four",
       "type": "word",
-      "text": "four",
+      "text": "चार",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_five",
       "type": "word",
-      "text": "five",
+      "text": "पांच",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_six",
       "type": "word",
-      "text": "six",
+      "text": "छह",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seven",
       "type": "word",
-      "text": "seven",
+      "text": "सात",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eight",
       "type": "word",
-      "text": "eight",
+      "text": "आठ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_nine",
       "type": "word",
-      "text": "nine",
+      "text": "नौ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_ten",
       "type": "word",
-      "text": "ten",
+      "text": "दस",
       "practiceType": "chooseTranslation"
     },
     {
@@ -187,19 +187,19 @@
     {
       "id": "04_numbers_time_basics_today",
       "type": "word",
-      "text": "today",
+      "text": "आज",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "कल",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_yesterday",
       "type": "word",
-      "text": "yesterday",
+      "text": "बीता कल",
       "practiceType": "chooseTranslation"
     },
     {

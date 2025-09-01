@@ -7,43 +7,43 @@
     {
       "id": "11_family_people_mother",
       "type": "word",
-      "text": "mother",
+      "text": "mor",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_father",
       "type": "word",
-      "text": "father",
+      "text": "langt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_brother",
       "type": "word",
-      "text": "brother",
+      "text": "bror",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_sister",
       "type": "word",
-      "text": "sister",
+      "text": "søster",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_friend",
       "type": "word",
-      "text": "friend",
+      "text": "venn",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_son",
       "type": "word",
-      "text": "son",
+      "text": "sønn",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_daughter",
       "type": "word",
-      "text": "daughter",
+      "text": "datter",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,13 +55,13 @@
     {
       "id": "11_family_people_man",
       "type": "word",
-      "text": "man",
+      "text": "mann",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_woman",
       "type": "word",
-      "text": "woman",
+      "text": "kvinne",
       "practiceType": "chooseTranslation"
     },
     {

@@ -1,31 +1,31 @@
 {
   "id": "06_food_drink_basics",
-  "title": "Food & drink basics",
+  "title": "Grunnleggende om mat og drikke",
   "emoji": "🍎",
   "language": "Norwegian",
   "items": [
     {
       "id": "06_food_drink_basics_water",
       "type": "word",
-      "text": "water",
+      "text": "vann",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_coffee",
       "type": "word",
-      "text": "coffee",
+      "text": "kaffe",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_tea",
       "type": "word",
-      "text": "tea",
+      "text": "te",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_bread",
       "type": "word",
-      "text": "bread",
+      "text": "brød",
       "practiceType": "chooseTranslation"
     },
     {
@@ -37,7 +37,7 @@
     {
       "id": "06_food_drink_basics_milk",
       "type": "word",
-      "text": "milk",
+      "text": "melk",
       "practiceType": "chooseTranslation"
     },
     {
@@ -49,7 +49,7 @@
     {
       "id": "06_food_drink_basics_rice",
       "type": "word",
-      "text": "rice",
+      "text": "ris",
       "practiceType": "chooseTranslation"
     },
     {

@@ -15,7 +15,7 @@
 
 ==================== tomorrow ========================
 
-8 make video transcript work better
+8 make video transcript work better - it lags now 
 
 
 10 design app better  

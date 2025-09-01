@@ -7,31 +7,31 @@
     {
       "id": "35_food_and_drinks_food",
       "type": "word",
-      "text": "food",
+      "text": "mat",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_drink",
       "type": "word",
-      "text": "drink",
+      "text": "drikke",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_breakfast",
       "type": "word",
-      "text": "breakfast",
+      "text": "frokost",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_lunch",
       "type": "word",
-      "text": "lunch",
+      "text": "lunsj",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_dinner",
       "type": "word",
-      "text": "dinner",
+      "text": "middag",
       "practiceType": "chooseTranslation"
     },
     {

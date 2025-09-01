@@ -1,13 +1,13 @@
 {
   "id": "09_emergencies_health",
-  "title": "Emergencies & health",
+  "title": "Надзвичайні ситуації та здоров'я",
   "emoji": "⛑️",
   "language": "Ukrainian",
   "items": [
     {
       "id": "09_emergencies_health_help",
       "type": "word",
-      "text": "help",
+      "text": "допомога",
       "practiceType": "chooseTranslation"
     },
     {

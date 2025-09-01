@@ -1,13 +1,13 @@
 {
   "id": "09_emergencies_health",
-  "title": "Emergencies & health",
+  "title": "आपातकाल और स्वास्थ्य",
   "emoji": "⛑️",
   "language": "Hindi",
   "items": [
     {
       "id": "09_emergencies_health_help",
       "type": "word",
-      "text": "help",
+      "text": "मदद",
       "practiceType": "chooseTranslation"
     },
     {

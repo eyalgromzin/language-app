@@ -1,13 +1,13 @@
 {
   "id": "09_emergencies_health",
-  "title": "Emergencies & health",
+  "title": "Nødsituasjoner og helse",
   "emoji": "⛑️",
   "language": "Norwegian",
   "items": [
     {
       "id": "09_emergencies_health_help",
       "type": "word",
-      "text": "help",
+      "text": "hjelp",
       "practiceType": "chooseTranslation"
     },
     {

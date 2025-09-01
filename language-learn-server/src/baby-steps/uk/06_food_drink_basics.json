@@ -1,31 +1,31 @@
 {
   "id": "06_food_drink_basics",
-  "title": "Food & drink basics",
+  "title": "Основы їжі та напоїв",
   "emoji": "🍎",
   "language": "Ukrainian",
   "items": [
     {
       "id": "06_food_drink_basics_water",
       "type": "word",
-      "text": "water",
+      "text": "вода",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_coffee",
       "type": "word",
-      "text": "coffee",
+      "text": "кава",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_tea",
       "type": "word",
-      "text": "tea",
+      "text": "чай",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_bread",
       "type": "word",
-      "text": "bread",
+      "text": "хліб",
       "practiceType": "chooseTranslation"
     },
     {
@@ -37,7 +37,7 @@
     {
       "id": "06_food_drink_basics_milk",
       "type": "word",
-      "text": "milk",
+      "text": "молоко",
       "practiceType": "chooseTranslation"
     },
     {
@@ -49,7 +49,7 @@
     {
       "id": "06_food_drink_basics_rice",
       "type": "word",
-      "text": "rice",
+      "text": "рис",
       "practiceType": "chooseTranslation"
     },
     {
@@ -115,13 +115,13 @@
     {
       "id": "06_food_drink_basics_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "Що ви рекомендуєте?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_the_bill_please",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "Рахунок, будь ласка.",
       "practiceType": "formulateSentense"
     }
   ]

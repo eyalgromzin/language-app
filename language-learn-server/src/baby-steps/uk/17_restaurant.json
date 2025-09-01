@@ -1,103 +1,103 @@
 {
   "id": "17_restaurant",
-  "title": "At the restaurant",
+  "title": "У ресторані",
   "emoji": "🍽️",
   "language": "Ukrainian",
   "items": [
     {
       "id": "17_restaurant_menu",
       "type": "word",
-      "text": "menu",
+      "text": "меню",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_table",
       "type": "word",
-      "text": "table",
+      "text": "стіл",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_bill",
       "type": "word",
-      "text": "bill",
+      "text": "рахунок",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_waiter",
       "type": "word",
-      "text": "waiter",
+      "text": "офіціант",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_food",
       "type": "word",
-      "text": "food",
+      "text": "їжа",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_drink",
       "type": "word",
-      "text": "drink",
+      "text": "пити",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_order",
       "type": "word",
-      "text": "order",
+      "text": "замовлення",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_reservation",
       "type": "word",
-      "text": "reservation",
+      "text": "бронювання",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_service",
       "type": "word",
-      "text": "service",
+      "text": "обслуговування",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_tip",
       "type": "word",
-      "text": "tip",
+      "text": "чайові",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_a_table_for_two_please",
       "type": "sentence",
-      "text": "A table for two, please.",
+      "text": "Стіл на двох, будь ласка.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_could_we_have_the_menu",
       "type": "sentence",
-      "text": "Could we have the menu?",
+      "text": "Чи можемо ми отримати меню?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_the_bill_please",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "Рахунок, будь ласка.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_do_you_have_vegetarian_options",
       "type": "sentence",
-      "text": "Do you have vegetarian options?",
+      "text": "Чи є у вас вегетаріанські варіанти?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "Що ви рекомендуєте?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_i_would_like_to_order",
       "type": "sentence",
-      "text": "I would like to order.",
+      "text": "Я хотів би зробити замовлення.",
       "practiceType": "formulateSentense"
     },
     {

@@ -1,115 +1,115 @@
 {
   "id": "02_introductions",
-  "title": "Introductions & basic info",
+  "title": "Знайомство та основна інформація",
   "emoji": "💬",
   "language": "Ukrainian",
   "items": [
     {
       "id": "02_introductions_name",
       "type": "word",
-      "text": "name",
+      "text": "ім'я",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_meet",
       "type": "word",
-      "text": "meet",
+      "text": "зустрічатися",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_from",
       "type": "word",
-      "text": "from",
+      "text": "з",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_speak",
       "type": "word",
-      "text": "speak",
+      "text": "говорити",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_language",
       "type": "word",
-      "text": "language",
+      "text": "мова",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_country",
       "type": "word",
-      "text": "country",
+      "text": "країна",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_city",
       "type": "word",
-      "text": "city",
+      "text": "місто",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_job",
       "type": "word",
-      "text": "job",
+      "text": "робота",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_student",
       "type": "word",
-      "text": "student",
+      "text": "студент",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_teacher",
       "type": "word",
-      "text": "teacher",
+      "text": "вчитель",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_my_name_is",
       "type": "sentence",
-      "text": "My name is …",
+      "text": "Мене звати …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_what_is_your_name",
       "type": "sentence",
-      "text": "What is your name?",
+      "text": "Як вас звати?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_nice_to_meet_you",
       "type": "sentence",
-      "text": "Nice to meet you.",
+      "text": "Приємно познайомитися.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_how_are_you",
       "type": "sentence",
-      "text": "How are you?",
+      "text": "Як справи?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_fine_thank_you",
       "type": "sentence",
-      "text": "I am fine, thank you.",
+      "text": "Добре, дякую.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_where_are_you_from",
       "type": "sentence",
-      "text": "Where are you from?",
+      "text": "Звідки ви?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_from",
       "type": "sentence",
-      "text": "I am from …",
+      "text": "Я з …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_do_you_speak_english",
       "type": "sentence",
-      "text": "Do you speak English?",
+      "text": "Ви говорите англійською?",
       "practiceType": "formulateSentense"
     },
     {

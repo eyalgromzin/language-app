@@ -1,115 +1,115 @@
 {
   "id": "02_introductions",
-  "title": "Introductions & basic info",
+  "title": "परिचय और बुनियादी जानकारी",
   "emoji": "💬",
   "language": "Hindi",
   "items": [
     {
       "id": "02_introductions_name",
       "type": "word",
-      "text": "name",
+      "text": "नाम",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_meet",
       "type": "word",
-      "text": "meet",
+      "text": "मिलना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_from",
       "type": "word",
-      "text": "from",
+      "text": "से",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_speak",
       "type": "word",
-      "text": "speak",
+      "text": "बोलना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_language",
       "type": "word",
-      "text": "language",
+      "text": "भाषा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_country",
       "type": "word",
-      "text": "country",
+      "text": "देश",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_city",
       "type": "word",
-      "text": "city",
+      "text": "शहर",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_job",
       "type": "word",
-      "text": "job",
+      "text": "नौकरी",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_student",
       "type": "word",
-      "text": "student",
+      "text": "छात्र",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_teacher",
       "type": "word",
-      "text": "teacher",
+      "text": "शिक्षक",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "02_introductions_my_name_is",
       "type": "sentence",
-      "text": "My name is …",
+      "text": "मेरा नाम … है",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_what_is_your_name",
       "type": "sentence",
-      "text": "What is your name?",
+      "text": "आपका नाम क्या है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_nice_to_meet_you",
       "type": "sentence",
-      "text": "Nice to meet you.",
+      "text": "आपसे मिलकर खुशी हुई।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_how_are_you",
       "type": "sentence",
-      "text": "How are you?",
+      "text": "आप कैसे हैं?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_fine_thank_you",
       "type": "sentence",
-      "text": "I am fine, thank you.",
+      "text": "मैं ठीक हूँ, धन्यवाद।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_where_are_you_from",
       "type": "sentence",
-      "text": "Where are you from?",
+      "text": "आप कहाँ से हैं?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_i_am_from",
       "type": "sentence",
-      "text": "I am from …",
+      "text": "मैं … से हूँ",
       "practiceType": "formulateSentense"
     },
     {
       "id": "02_introductions_do_you_speak_english",
       "type": "sentence",
-      "text": "Do you speak English?",
+      "text": "क्या आप अंग्रेजी बोलते हैं?",
       "practiceType": "formulateSentense"
     },
     {

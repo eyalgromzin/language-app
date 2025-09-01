@@ -1,6 +1,6 @@
 {
   "id": "08_travel_hotel",
-  "title": "Travel & hotel",
+  "title": "Подорожі та готелі",
   "emoji": "🧳",
   "language": "Ukrainian",
   "items": [
@@ -13,7 +13,7 @@
     {
       "id": "08_travel_hotel_reservation",
       "type": "word",
-      "text": "reservation",
+      "text": "бронювання",
       "practiceType": "chooseTranslation"
     },
     {

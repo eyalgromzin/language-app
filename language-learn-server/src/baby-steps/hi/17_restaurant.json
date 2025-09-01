@@ -31,13 +31,13 @@
     {
       "id": "17_restaurant_food",
       "type": "word",
-      "text": "food",
+      "text": "खाना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_drink",
       "type": "word",
-      "text": "drink",
+      "text": "पीना",
       "practiceType": "chooseTranslation"
     },
     {

@@ -1,13 +1,13 @@
 {
   "id": "09_emergencies_health",
-  "title": "Emergencies & health",
+  "title": "Nagłe wypadki i zdrowie",
   "emoji": "⛑️",
   "language": "Polish",
   "items": [
     {
       "id": "09_emergencies_health_help",
       "type": "word",
-      "text": "help",
+      "text": "pomoc",
       "practiceType": "chooseTranslation"
     },
     {

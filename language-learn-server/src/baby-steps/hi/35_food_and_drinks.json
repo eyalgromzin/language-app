@@ -7,31 +7,31 @@
     {
       "id": "35_food_and_drinks_food",
       "type": "word",
-      "text": "food",
+      "text": "खाना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_drink",
       "type": "word",
-      "text": "drink",
+      "text": "पीना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_breakfast",
       "type": "word",
-      "text": "breakfast",
+      "text": "नाश्ता",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_lunch",
       "type": "word",
-      "text": "lunch",
+      "text": "दोपहर का खाना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_dinner",
       "type": "word",
-      "text": "dinner",
+      "text": "रात का खाना",
       "practiceType": "chooseTranslation"
     },
     {

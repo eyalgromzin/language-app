@@ -13,13 +13,13 @@
     {
       "id": "27_education_and_learning_student",
       "type": "word",
-      "text": "student",
+      "text": "студент",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_teacher",
       "type": "word",
-      "text": "teacher",
+      "text": "вчитель",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,13 +55,13 @@
     {
       "id": "27_education_and_learning_study",
       "type": "word",
-      "text": "study",
+      "text": "навчатися",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_learn",
       "type": "word",
-      "text": "learn",
+      "text": "вивчати",
       "practiceType": "chooseTranslation"
     },
     {

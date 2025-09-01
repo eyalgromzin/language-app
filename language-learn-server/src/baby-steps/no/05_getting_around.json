@@ -7,61 +7,61 @@
     {
       "id": "05_getting_around_left",
       "type": "word",
-      "text": "left",
+      "text": "venstre",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_right",
       "type": "word",
-      "text": "right",
+      "text": "høyre",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_straight",
       "type": "word",
-      "text": "straight",
+      "text": "rett",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_near",
       "type": "word",
-      "text": "near",
+      "text": "nær",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_far",
       "type": "word",
-      "text": "far",
+      "text": "langt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_here",
       "type": "word",
-      "text": "here",
+      "text": "her",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_there",
       "type": "word",
-      "text": "there",
+      "text": "der",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_up",
       "type": "word",
-      "text": "up",
+      "text": "opp",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_down",
       "type": "word",
-      "text": "down",
+      "text": "ned",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "05_getting_around_around",
       "type": "word",
-      "text": "around",
+      "text": "rundt",
       "practiceType": "chooseTranslation"
     },
     {
