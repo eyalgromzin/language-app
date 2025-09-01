@@ -29,15 +29,159 @@
       "practiceType": "chooseTranslation"
     },
     {
+      "id": "04_numbers_time_basics_four",
+      "type": "word",
+      "text": "four",
+      "practiceType": "chooseTranslation"
+    },
+    {
       "id": "04_numbers_time_basics_five",
       "type": "word",
       "text": "five",
       "practiceType": "chooseTranslation"
     },
     {
+      "id": "04_numbers_time_basics_six",
+      "type": "word",
+      "text": "six",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_seven",
+      "type": "word",
+      "text": "seven",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_eight",
+      "type": "word",
+      "text": "eight",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_nine",
+      "type": "word",
+      "text": "nine",
+      "practiceType": "chooseTranslation"
+    },
+    {
       "id": "04_numbers_time_basics_ten",
       "type": "word",
       "text": "ten",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_twenty",
+      "type": "word",
+      "text": "twenty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_thirty",
+      "type": "word",
+      "text": "thirty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_forty",
+      "type": "word",
+      "text": "forty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_fifty",
+      "type": "word",
+      "text": "fifty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_sixty",
+      "type": "word",
+      "text": "sixty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_seventy",
+      "type": "word",
+      "text": "seventy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_eighty",
+      "type": "word",
+      "text": "eighty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_ninety",
+      "type": "word",
+      "text": "ninety",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_hundred",
+      "type": "word",
+      "text": "hundred",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_two_hundred",
+      "type": "word",
+      "text": "two hundred",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_three_hundred",
+      "type": "word",
+      "text": "three hundred",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_fifteen",
+      "type": "word",
+      "text": "fifteen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_twenty_five",
+      "type": "word",
+      "text": "twenty-five",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_forty_two",
+      "type": "word",
+      "text": "forty-two",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_seventy_eight",
+      "type": "word",
+      "text": "seventy-eight",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_one_hundred_twenty",
+      "type": "word",
+      "text": "one hundred twenty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_five_hundred",
+      "type": "word",
+      "text": "five hundred",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_eight_hundred_fifty",
+      "type": "word",
+      "text": "eight hundred fifty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_thousand",
+      "type": "word",
+      "text": "thousand",
       "practiceType": "chooseTranslation"
     },
     {

@@ -121,6 +121,126 @@
       "title": "Connectors & advanced phrases",
       "emoji": "🔗",
       "file": "20_connectors_advanced.json"
+    },
+    {
+      "id": "21_emotions_feelings",
+      "title": "Emotions & feelings",
+      "emoji": "😊",
+      "file": "21_emotions_feelings.json"
+    },
+    {
+      "id": "22_hobbies_entertainment",
+      "title": "Hobbies & entertainment",
+      "emoji": "🎮",
+      "file": "22_hobbies_entertainment.json"
+    },
+    {
+      "id": "23_technology_computers",
+      "title": "Technology & computers",
+      "emoji": "💻",
+      "file": "23_technology_computers.json"
+    },
+    {
+      "id": "24_health_fitness",
+      "title": "Health & fitness",
+      "emoji": "🏃",
+      "file": "24_health_fitness.json"
+    },
+    {
+      "id": "25_education_academic",
+      "title": "Education & academic",
+      "emoji": "📚",
+      "file": "25_education_academic.json"
+    },
+    {
+      "id": "26_business_professional",
+      "title": "Business & professional",
+      "emoji": "🏢",
+      "file": "26_business_professional.json"
+    },
+    {
+      "id": "27_media_news",
+      "title": "Media & news",
+      "emoji": "📰",
+      "file": "27_media_news.json"
+    },
+    {
+      "id": "28_arts_culture",
+      "title": "Arts & culture",
+      "emoji": "🎨",
+      "file": "28_arts_culture.json"
+    },
+    {
+      "id": "29_sports_recreation",
+      "title": "Sports & recreation",
+      "emoji": "⚽",
+      "file": "29_sports_recreation.json"
+    },
+    {
+      "id": "30_nature_environment",
+      "title": "Nature & environment",
+      "emoji": "🌿",
+      "file": "30_nature_environment.json"
+    },
+    {
+      "id": "31_social_relationships",
+      "title": "Social relationships",
+      "emoji": "🤝",
+      "file": "31_social_relationships.json"
+    },
+    {
+      "id": "32_politics_government",
+      "title": "Politics & government",
+      "emoji": "🏛️",
+      "file": "32_politics_government.json"
+    },
+    {
+      "id": "33_finance_banking",
+      "title": "Finance & banking",
+      "emoji": "🏦",
+      "file": "33_finance_banking.json"
+    },
+    {
+      "id": "34_legal_law",
+      "title": "Legal & law",
+      "emoji": "⚖️",
+      "file": "34_legal_law.json"
+    },
+    {
+      "id": "35_medical_healthcare",
+      "title": "Medical & healthcare",
+      "emoji": "🏥",
+      "file": "35_medical_healthcare.json"
+    },
+    {
+      "id": "36_science_research",
+      "title": "Science & research",
+      "emoji": "🔬",
+      "file": "36_science_research.json"
+    },
+    {
+      "id": "37_religion_spirituality",
+      "title": "Religion & spirituality",
+      "emoji": "🙏",
+      "file": "37_religion_spirituality.json"
+    },
+    {
+      "id": "38_fashion_beauty",
+      "title": "Fashion & beauty",
+      "emoji": "👗",
+      "file": "38_fashion_beauty.json"
+    },
+    {
+      "id": "39_automotive_vehicles",
+      "title": "Automotive & vehicles",
+      "emoji": "🚗",
+      "file": "39_automotive_vehicles.json"
+    },
+    {
+      "id": "40_advanced_conversation",
+      "title": "Advanced conversation",
+      "emoji": "🗣️",
+      "file": "40_advanced_conversation.json"
     }
   ]
 }
