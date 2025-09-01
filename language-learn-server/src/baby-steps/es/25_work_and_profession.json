@@ -2,126 +2,126 @@
   "id": "25_work_and_profession",
   "title": "Work & Profession",
   "emoji": "💼",
-  "language": "English",
+  "language": "Spanish",
   "items": [
     {
       "id": "25_work_and_profession_job",
       "type": "word",
-      "text": "job",
+      "text": "trabajo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_work",
       "type": "word",
-      "text": "work",
+      "text": "trabajo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_office",
       "type": "word",
-      "text": "office",
+      "text": "oficina",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_meeting",
       "type": "word",
-      "text": "meeting",
+      "text": "reunión",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_boss",
       "type": "word",
-      "text": "boss",
+      "text": "jefe",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_colleague",
       "type": "word",
-      "text": "colleague",
+      "text": "colega",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_salary",
       "type": "word",
-      "text": "salary",
+      "text": "salario",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_project",
       "type": "word",
-      "text": "project",
+      "text": "proyecto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_deadline",
       "type": "word",
-      "text": "deadline",
+      "text": "fecha límite",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_career",
       "type": "word",
-      "text": "career",
+      "text": "carrera",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "¿A qué te dedicas?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Trabajo en una oficina.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "¿Te gusta tu trabajo?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_have_a_meeting_at_nine",
       "type": "sentence",
-      "text": "I have a meeting at nine.",
+      "text": "Tengo una reunión a las nueve.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_my_boss_is_very_nice",
       "type": "sentence",
-      "text": "My boss is very nice.",
+      "text": "Mi jefe es muy amable.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_with_great_colleagues",
       "type": "sentence",
-      "text": "I work with great colleagues.",
+      "text": "Trabajo con excelentes colegas.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_what_is_your_salary",
       "type": "sentence",
-      "text": "What is your salary?",
+      "text": "¿Cuál es tu salario?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_this_project_is_very_important",
       "type": "sentence",
-      "text": "This project is very important.",
+      "text": "Este proyecto es muy importante.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_the_deadline_is_next_week",
       "type": "sentence",
-      "text": "The deadline is next week.",
+      "text": "La fecha límite es la próxima semana.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_want_to_advance_my_career",
       "type": "sentence",
-      "text": "I want to advance my career.",
+      "text": "Quiero avanzar en mi carrera.",
       "practiceType": "formulateSentense"
     }
   ]

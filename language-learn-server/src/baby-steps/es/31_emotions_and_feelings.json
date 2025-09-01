@@ -2,126 +2,126 @@
   "id": "31_emotions_and_feelings",
   "title": "Emotions & Feelings",
   "emoji": "😊",
-  "language": "English",
+  "language": "Spanish",
   "items": [
     {
       "id": "31_emotions_and_feelings_happy",
       "type": "word",
-      "text": "happy",
+      "text": "feliz",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_sad",
       "type": "word",
-      "text": "sad",
+      "text": "triste",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_angry",
       "type": "word",
-      "text": "angry",
+      "text": "enojado",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_excited",
       "type": "word",
-      "text": "excited",
+      "text": "emocionado",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_nervous",
       "type": "word",
-      "text": "nervous",
+      "text": "nervioso",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_tired",
       "type": "word",
-      "text": "tired",
+      "text": "cansado",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_surprised",
       "type": "word",
-      "text": "surprised",
+      "text": "sorprendido",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_worried",
       "type": "word",
-      "text": "worried",
+      "text": "preocupado",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_confused",
       "type": "word",
-      "text": "confused",
+      "text": "confundido",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_proud",
       "type": "word",
-      "text": "proud",
+      "text": "orgulloso",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_how_are_you_feeling_today",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "¿Cómo te sientes hoy?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_very_happy_today",
       "type": "sentence",
-      "text": "I am very happy today.",
+      "text": "Estoy muy feliz hoy.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_why_are_you_sad",
       "type": "sentence",
-      "text": "Why are you sad?",
+      "text": "¿Por qué estás triste?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_don_t_be_angry_with_me",
       "type": "sentence",
-      "text": "Don't be angry with me.",
+      "text": "No te enojes conmigo.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_excited_about_the_trip",
       "type": "sentence",
-      "text": "I am excited about the trip.",
+      "text": "Estoy emocionado por el viaje.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_feel_nervous_before_exams",
       "type": "sentence",
-      "text": "I feel nervous before exams.",
+      "text": "Me siento nervioso antes de los exámenes.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_are_you_tired",
       "type": "sentence",
-      "text": "Are you tired?",
+      "text": "¿Estás cansado?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
       "type": "sentence",
-      "text": "I am surprised by the news.",
+      "text": "Estoy sorprendido por las noticias.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_don_t_worry_about_it",
       "type": "sentence",
-      "text": "Don't worry about it.",
+      "text": "No te preocupes por eso.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_proud_of_my_achievement",
       "type": "sentence",
-      "text": "I am proud of my achievement.",
+      "text": "Estoy orgulloso de mi logro.",
       "practiceType": "formulateSentense"
     }
   ]

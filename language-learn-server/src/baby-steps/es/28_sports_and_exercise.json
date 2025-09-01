@@ -2,126 +2,126 @@
   "id": "28_sports_and_exercise",
   "title": "Sports & Exercise",
   "emoji": "⚽",
-  "language": "English",
+  "language": "Spanish",
   "items": [
     {
       "id": "28_sports_and_exercise_sport",
       "type": "word",
-      "text": "sport",
+      "text": "deporte",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_game",
       "type": "word",
-      "text": "game",
+      "text": "juego",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_team",
       "type": "word",
-      "text": "team",
+      "text": "equipo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_player",
       "type": "word",
-      "text": "player",
+      "text": "jugador",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_coach",
       "type": "word",
-      "text": "coach",
+      "text": "entrenador",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_win",
       "type": "word",
-      "text": "win",
+      "text": "ganar",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_lose",
       "type": "word",
-      "text": "lose",
+      "text": "perder",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_score",
       "type": "word",
-      "text": "score",
+      "text": "puntuación",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_exercise",
       "type": "word",
-      "text": "exercise",
+      "text": "ejercicio",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_fitness",
       "type": "word",
-      "text": "fitness",
+      "text": "aptitud física",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_what_sport_do_you_like",
       "type": "sentence",
-      "text": "What sport do you like?",
+      "text": "¿Qué deporte te gusta?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_love_playing_soccer",
       "type": "sentence",
-      "text": "I love playing soccer.",
+      "text": "Me encanta jugar fútbol.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
       "type": "sentence",
-      "text": "Do you want to join our team?",
+      "text": "¿Quieres unirte a nuestro equipo?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_who_is_your_favorite_player",
       "type": "sentence",
-      "text": "Who is your favorite player?",
+      "text": "¿Quién es tu jugador favorito?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_our_coach_is_very_good",
       "type": "sentence",
-      "text": "Our coach is very good.",
+      "text": "Nuestro entrenador es muy bueno.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_did_you_win_the_game",
       "type": "sentence",
-      "text": "Did you win the game?",
+      "text": "¿Ganaste el juego?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_what_is_the_score",
       "type": "sentence",
-      "text": "What is the score?",
+      "text": "¿Cuál es la puntuación?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_exercise_every_morning",
       "type": "sentence",
-      "text": "I exercise every morning.",
+      "text": "Hago ejercicio todas las mañanas.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_go_to_the_gym",
       "type": "sentence",
-      "text": "Do you go to the gym?",
+      "text": "¿Vas al gimnasio?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_fitness_is_important_for_health",
       "type": "sentence",
-      "text": "Fitness is important for health.",
+      "text": "La aptitud física es importante para la salud.",
       "practiceType": "formulateSentense"
     }
   ]

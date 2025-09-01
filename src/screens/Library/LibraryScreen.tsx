@@ -51,8 +51,6 @@ function LibraryScreen(): React.JSX.Element {
       'italian': 'it',
       'portuguese': 'pt',
       'russian': 'ru',
-      'chinese (mandarin)': 'zh',
-      'japanese': 'ja',
       'korean': 'ko',
       'arabic': 'ar',
       'hindi': 'hi',

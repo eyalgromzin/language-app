@@ -1,244 +1,244 @@
 {
-  "language": "English",
-  "overview": "A progressive path from essential words to full sentences and advanced phrases, ordered by real-life usefulness.",
+  "language": "Spanish",
+  "overview": "Un camino progresivo desde palabras esenciales hasta oraciones completas y frases avanzadas, ordenadas por utilidad en la vida real.",
   "steps": [
     {
       "id": "01_essentials",
-      "title": "greetings & politeness",
+      "title": "saludos y cortesía",
       "emoji": "👋",
       "file": "01_essentials.json"
     },
     {
       "id": "02_introductions",
-      "title": "Introductions & basic info",
+      "title": "Presentaciones e información básica",
       "emoji": "💬",
       "file": "02_introductions.json"
     },
     {
       "id": "03_core_verbs_pronouns",
-      "title": "Core pronouns & helper verbs",
+      "title": "Pronombres principales y verbos auxiliares",
       "emoji": "🔤",
       "file": "03_core_verbs_pronouns.json"
     },
     {
       "id": "04_numbers_time_basics",
-      "title": "Numbers & time basics",
+      "title": "Números y conceptos básicos de tiempo",
       "emoji": "🔢",
       "file": "04_numbers_time_basics.json"
     },
     {
       "id": "05_getting_around",
-      "title": "Directions & getting around",
+      "title": "Direcciones y orientación",
       "emoji": "🧭",
       "file": "05_getting_around.json"
     },
     {
       "id": "06_food_drink_basics",
-      "title": "Food & drink basics",
+      "title": "Conceptos básicos de comida y bebida",
       "emoji": "🍎",
       "file": "06_food_drink_basics.json"
     },
     {
       "id": "07_shopping_money",
-      "title": "Shopping & money",
+      "title": "Compras y dinero",
       "emoji": "🛍️",
       "file": "07_shopping_money.json"
     },
     {
       "id": "08_travel_hotel",
-      "title": "Travel & hotel",
+      "title": "Viajes y hoteles",
       "emoji": "🧳",
       "file": "08_travel_hotel.json"
     },
     {
       "id": "09_emergencies_health",
-      "title": "Emergencies & health",
+      "title": "Emergencias y salud",
       "emoji": "⛑️",
       "file": "09_emergencies_health.json"
     },
     {
       "id": "10_daily_routines",
-      "title": "Daily routines & common verbs",
+      "title": "Rutinas diarias y verbos comunes",
       "emoji": "☀️",
       "file": "10_daily_routines.json"
     },
     {
       "id": "11_family_people",
-      "title": "Family & people",
+      "title": "Familia y personas",
       "emoji": "👪",
       "file": "11_family_people.json"
     },
     {
       "id": "12_weather_smalltalk",
-      "title": "Weather & small talk",
+      "title": "Clima y conversación casual",
       "emoji": "🌦️",
       "file": "12_weather_smalltalk.json"
     },
     {
       "id": "13_work_study",
-      "title": "Work & study basics",
+      "title": "Conceptos básicos de trabajo y estudio",
       "emoji": "💼",
       "file": "13_work_study.json"
     },
     {
       "id": "14_plans_invitations",
-      "title": "Making plans & invitations",
+      "title": "Hacer planes e invitaciones",
       "emoji": "📅",
       "file": "14_plans_invitations.json"
     },
     {
       "id": "15_requests_help",
-      "title": "Requests & asking for help",
+      "title": "Solicitudes y pedir ayuda",
       "emoji": "🙋",
       "file": "15_requests_help.json"
     },
     {
       "id": "16_phone_internet",
-      "title": "Phone & internet",
+      "title": "Teléfono e internet",
       "emoji": "📱",
       "file": "16_phone_internet.json"
     },
     {
       "id": "17_restaurant",
-      "title": "At the restaurant",
+      "title": "En el restaurante",
       "emoji": "🍽️",
       "file": "17_restaurant.json"
     },
     {
       "id": "18_transportation_details",
-      "title": "Transportation details",
+      "title": "Detalles de transporte",
       "emoji": "🚌",
       "file": "18_transportation_details.json"
     },
     {
       "id": "19_housing_utilities",
-      "title": "Housing & utilities",
+      "title": "Vivienda y servicios públicos",
       "emoji": "🏠",
       "file": "19_housing_utilities.json"
     },
     {
       "id": "20_connectors_advanced",
-      "title": "Connectors & advanced phrases",
+      "title": "Conectores y frases avanzadas",
       "emoji": "🔗",
       "file": "20_connectors_advanced.json"
     },
     {
       "id": "21_emotions_feelings",
-      "title": "Emotions & feelings",
+      "title": "Emociones y sentimientos",
       "emoji": "😊",
       "file": "21_emotions_feelings.json"
     },
     {
       "id": "22_hobbies_entertainment",
-      "title": "Hobbies & entertainment",
+      "title": "Pasatiempos y entretenimiento",
       "emoji": "🎮",
       "file": "22_hobbies_entertainment.json"
     },
     {
       "id": "23_technology_computers",
-      "title": "Technology & computers",
+      "title": "Tecnología y computadoras",
       "emoji": "💻",
       "file": "23_technology_computers.json"
     },
     {
       "id": "24_health_fitness",
-      "title": "Health & fitness",
+      "title": "Salud y aptitud física",
       "emoji": "🏃",
       "file": "24_health_fitness.json"
     },
     {
       "id": "25_education_academic",
-      "title": "Education & academic",
+      "title": "Educación y académico",
       "emoji": "📚",
       "file": "25_education_academic.json"
     },
     {
       "id": "26_business_professional",
-      "title": "Business & professional",
+      "title": "Negocios y profesional",
       "emoji": "🏢",
       "file": "26_business_professional.json"
     },
     {
       "id": "27_media_news",
-      "title": "Media & news",
+      "title": "Medios y noticias",
       "emoji": "📰",
       "file": "27_media_news.json"
     },
     {
       "id": "28_arts_culture",
-      "title": "Arts & culture",
+      "title": "Artes y cultura",
       "emoji": "🎨",
       "file": "28_arts_culture.json"
     },
     {
       "id": "29_sports_recreation",
-      "title": "Sports & recreation",
+      "title": "Deportes y recreación",
       "emoji": "⚽",
       "file": "29_sports_recreation.json"
     },
     {
       "id": "30_nature_environment",
-      "title": "Nature & environment",
+      "title": "Naturaleza y medio ambiente",
       "emoji": "🌿",
       "file": "30_nature_environment.json"
     },
     {
       "id": "31_social_relationships",
-      "title": "Social relationships",
+      "title": "Relaciones sociales",
       "emoji": "🤝",
       "file": "31_social_relationships.json"
     },
     {
       "id": "32_politics_government",
-      "title": "Politics & government",
+      "title": "Política y gobierno",
       "emoji": "🏛️",
       "file": "32_politics_government.json"
     },
     {
       "id": "33_finance_banking",
-      "title": "Finance & banking",
+      "title": "Finanzas y banca",
       "emoji": "🏦",
       "file": "33_finance_banking.json"
     },
     {
       "id": "34_legal_law",
-      "title": "Legal & law",
+      "title": "Legal y derecho",
       "emoji": "⚖️",
       "file": "34_legal_law.json"
     },
     {
       "id": "35_medical_healthcare",
-      "title": "Medical & healthcare",
+      "title": "Médico y atención médica",
       "emoji": "🏥",
       "file": "35_medical_healthcare.json"
     },
     {
       "id": "36_science_research",
-      "title": "Science & research",
+      "title": "Ciencia e investigación",
       "emoji": "🔬",
       "file": "36_science_research.json"
     },
     {
       "id": "37_religion_spirituality",
-      "title": "Religion & spirituality",
+      "title": "Religión y espiritualidad",
       "emoji": "🙏",
       "file": "37_religion_spirituality.json"
     },
     {
       "id": "38_fashion_beauty",
-      "title": "Fashion & beauty",
+      "title": "Moda y belleza",
       "emoji": "👗",
       "file": "38_fashion_beauty.json"
     },
     {
       "id": "39_automotive_vehicles",
-      "title": "Automotive & vehicles",
+      "title": "Automotriz y vehículos",
       "emoji": "🚗",
       "file": "39_automotive_vehicles.json"
     },
     {
       "id": "40_advanced_conversation",
-      "title": "Advanced conversation",
+      "title": "Conversación avanzada",
       "emoji": "🗣️",
       "file": "40_advanced_conversation.json"
     }
