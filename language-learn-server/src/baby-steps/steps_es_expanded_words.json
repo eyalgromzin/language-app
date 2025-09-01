@@ -1,0 +1,1161 @@
+{
+  "language": "Spanish",
+  "overview": "Un camino progresivo desde palabras esenciales hasta oraciones completas y frases avanzadas, ordenado por su utilidad en la vida real.",
+  "steps": [
+    {
+      "id": "01_saludos_basicos",
+      "title": "Saludos y cortesía básica",
+      "emoji": "👋",
+      "items": [
+        {
+          "id": "01_saludos_basicos_hola",
+          "type": "word",
+          "text": "hola",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_buenos_dias",
+          "type": "word",
+          "text": "buenos días",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_buenas_tardes",
+          "type": "word",
+          "text": "buenas tardes",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_buenas_noches",
+          "type": "word",
+          "text": "buenas noches",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_gracias",
+          "type": "word",
+          "text": "gracias",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_por_favor",
+          "type": "word",
+          "text": "por favor",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_disculpe",
+          "type": "word",
+          "text": "disculpe",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_lo_siento",
+          "type": "word",
+          "text": "lo siento",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_con_permiso",
+          "type": "word",
+          "text": "con permiso",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "01_saludos_basicos_de_nada",
+          "type": "word",
+          "text": "de nada",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "02_presentaciones",
+      "title": "Presentaciones e información personal",
+      "emoji": "💬",
+      "items": [
+        {
+          "id": "02_presentaciones_me_llamo",
+          "type": "word",
+          "text": "me llamo",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_como_te_llamas",
+          "type": "word",
+          "text": "cómo te llamas",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_mucho_gusto",
+          "type": "word",
+          "text": "mucho gusto",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_encantado",
+          "type": "word",
+          "text": "encantado",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_soy",
+          "type": "word",
+          "text": "soy",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_eres",
+          "type": "word",
+          "text": "eres",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_nombre",
+          "type": "word",
+          "text": "nombre",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_apellido",
+          "type": "word",
+          "text": "apellido",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_edad",
+          "type": "word",
+          "text": "edad",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "02_presentaciones_nacionalidad",
+          "type": "word",
+          "text": "nacionalidad",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "03_numeros_fechas",
+      "title": "Números, fechas y tiempo",
+      "emoji": "📅",
+      "items": [
+        {
+          "id": "03_numeros_fechas_uno",
+          "type": "word",
+          "text": "uno",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_numeros_fechas_dos",
+          "type": "word",
+          "text": "dos",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_numeros_fechas_tres",
+          "type": "word",
+          "text": "tres",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_numeros_fechas_cuatro",
+          "type": "word",
+          "text": "cuatro",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_numeros_fechas_cinco",
+          "type": "word",
+          "text": "cinco",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_numeros_fechas_seis",
+          "type": "word",
+          "text": "seis",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_numeros_fechas_siete",
+          "type": "word",
+          "text": "siete",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_numeros_fechas_ocho",
+          "type": "word",
+          "text": "ocho",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_numeros_fechas_nueve",
+          "type": "word",
+          "text": "nueve",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "03_numeros_fechas_diez",
+          "type": "word",
+          "text": "diez",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "04_familia_amigos",
+      "title": "Familia y relaciones personales",
+      "emoji": "👨‍👩‍👧‍👦",
+      "items": [
+        {
+          "id": "04_familia_amigos_madre",
+          "type": "word",
+          "text": "madre",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_familia_amigos_padre",
+          "type": "word",
+          "text": "padre",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_familia_amigos_hermano",
+          "type": "word",
+          "text": "hermano",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_familia_amigos_hermana",
+          "type": "word",
+          "text": "hermana",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_familia_amigos_abuelo",
+          "type": "word",
+          "text": "abuelo",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_familia_amigos_abuela",
+          "type": "word",
+          "text": "abuela",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_familia_amigos_tio",
+          "type": "word",
+          "text": "tío",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_familia_amigos_tia",
+          "type": "word",
+          "text": "tía",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_familia_amigos_primo",
+          "type": "word",
+          "text": "primo",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "04_familia_amigos_amigo",
+          "type": "word",
+          "text": "amigo",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "05_casa_hogar",
+      "title": "Casa y objetos del hogar",
+      "emoji": "🏠",
+      "items": [
+        {
+          "id": "05_casa_hogar_casa",
+          "type": "word",
+          "text": "casa",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_casa_hogar_habitacion",
+          "type": "word",
+          "text": "habitación",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_casa_hogar_cocina",
+          "type": "word",
+          "text": "cocina",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_casa_hogar_baño",
+          "type": "word",
+          "text": "baño",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_casa_hogar_sala",
+          "type": "word",
+          "text": "sala",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_casa_hogar_mesa",
+          "type": "word",
+          "text": "mesa",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_casa_hogar_silla",
+          "type": "word",
+          "text": "silla",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_casa_hogar_cama",
+          "type": "word",
+          "text": "cama",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_casa_hogar_puerta",
+          "type": "word",
+          "text": "puerta",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "05_casa_hogar_ventana",
+          "type": "word",
+          "text": "ventana",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "06_comida_bebidas",
+      "title": "Comida, bebidas y restaurantes",
+      "emoji": "🍽️",
+      "items": [
+        {
+          "id": "06_comida_bebidas_pan",
+          "type": "word",
+          "text": "pan",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebidas_agua",
+          "type": "word",
+          "text": "agua",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebidas_carne",
+          "type": "word",
+          "text": "carne",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebidas_pescado",
+          "type": "word",
+          "text": "pescado",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebidas_arroz",
+          "type": "word",
+          "text": "arroz",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebidas_ensalada",
+          "type": "word",
+          "text": "ensalada",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebidas_fruta",
+          "type": "word",
+          "text": "fruta",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebidas_verdura",
+          "type": "word",
+          "text": "verdura",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebidas_restaurante",
+          "type": "word",
+          "text": "restaurante",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "06_comida_bebidas_comida",
+          "type": "word",
+          "text": "comida",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "07_trabajo_profesiones",
+      "title": "Trabajo y profesiones",
+      "emoji": "💼",
+      "items": [
+        {
+          "id": "07_trabajo_profesiones_trabajo",
+          "type": "word",
+          "text": "trabajo",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_trabajo_profesiones_profesor",
+          "type": "word",
+          "text": "profesor",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_trabajo_profesiones_medico",
+          "type": "word",
+          "text": "médico",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_trabajo_profesiones_ingeniero",
+          "type": "word",
+          "text": "ingeniero",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_trabajo_profesiones_abogado",
+          "type": "word",
+          "text": "abogado",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_trabajo_profesiones_estudiante",
+          "type": "word",
+          "text": "estudiante",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_trabajo_profesiones_empleado",
+          "type": "word",
+          "text": "empleado",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_trabajo_profesiones_jefe",
+          "type": "word",
+          "text": "jefe",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_trabajo_profesiones_oficina",
+          "type": "word",
+          "text": "oficina",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "07_trabajo_profesiones_sueldo",
+          "type": "word",
+          "text": "sueldo",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "08_estudios_educacion",
+      "title": "Estudios y educación",
+      "emoji": "📚",
+      "items": [
+        {
+          "id": "08_estudios_educacion_escuela",
+          "type": "word",
+          "text": "escuela",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_estudios_educacion_universidad",
+          "type": "word",
+          "text": "universidad",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_estudios_educacion_libro",
+          "type": "word",
+          "text": "libro",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_estudios_educacion_lapiz",
+          "type": "word",
+          "text": "lápiz",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_estudios_educacion_papel",
+          "type": "word",
+          "text": "papel",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_estudios_educacion_clase",
+          "type": "word",
+          "text": "clase",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_estudios_educacion_examen",
+          "type": "word",
+          "text": "examen",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_estudios_educacion_tarea",
+          "type": "word",
+          "text": "tarea",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_estudios_educacion_aprender",
+          "type": "word",
+          "text": "aprender",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "08_estudios_educacion_ensenar",
+          "type": "word",
+          "text": "enseñar",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "09_salud_medicina",
+      "title": "Salud y medicina",
+      "emoji": "🏥",
+      "items": [
+        {
+          "id": "09_salud_medicina_salud",
+          "type": "word",
+          "text": "salud",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_salud_medicina_enfermedad",
+          "type": "word",
+          "text": "enfermedad",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_salud_medicina_medicina",
+          "type": "word",
+          "text": "medicina",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_salud_medicina_hospital",
+          "type": "word",
+          "text": "hospital",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_salud_medicina_doctor",
+          "type": "word",
+          "text": "doctor",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_salud_medicina_dolor",
+          "type": "word",
+          "text": "dolor",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_salud_medicina_fiebre",
+          "type": "word",
+          "text": "fiebre",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_salud_medicina_resfriado",
+          "type": "word",
+          "text": "resfriado",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_salud_medicina_herida",
+          "type": "word",
+          "text": "herida",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "09_salud_medicina_curar",
+          "type": "word",
+          "text": "curar",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "10_transporte_viajes",
+      "title": "Transporte y viajes",
+      "emoji": "✈️",
+      "items": [
+        {
+          "id": "10_transporte_viajes_coche",
+          "type": "word",
+          "text": "coche",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_transporte_viajes_autobus",
+          "type": "word",
+          "text": "autobús",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_transporte_viajes_tren",
+          "type": "word",
+          "text": "tren",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_transporte_viajes_avion",
+          "type": "word",
+          "text": "avión",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_transporte_viajes_barco",
+          "type": "word",
+          "text": "barco",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_transporte_viajes_bicicleta",
+          "type": "word",
+          "text": "bicicleta",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_transporte_viajes_estacion",
+          "type": "word",
+          "text": "estación",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_transporte_viajes_aeropuerto",
+          "type": "word",
+          "text": "aeropuerto",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_transporte_viajes_viaje",
+          "type": "word",
+          "text": "viaje",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "10_transporte_viajes_destino",
+          "type": "word",
+          "text": "destino",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "11_compras_comercio",
+      "title": "Compras y comercio",
+      "emoji": "🛒",
+      "items": [
+        {
+          "id": "11_compras_comercio_tienda",
+          "type": "word",
+          "text": "tienda",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_compras_comercio_centro_comercial",
+          "type": "word",
+          "text": "centro comercial",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_compras_comercio_dinero",
+          "type": "word",
+          "text": "dinero",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_compras_comercio_precio",
+          "type": "word",
+          "text": "precio",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_compras_comercio_barato",
+          "type": "word",
+          "text": "barato",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_compras_comercio_caro",
+          "type": "word",
+          "text": "caro",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_compras_comercio_comprar",
+          "type": "word",
+          "text": "comprar",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_compras_comercio_vender",
+          "type": "word",
+          "text": "vender",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_compras_comercio_oferta",
+          "type": "word",
+          "text": "oferta",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "11_compras_comercio_descuento",
+          "type": "word",
+          "text": "descuento",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "12_entretenimiento_ocio",
+      "title": "Entretenimiento y ocio",
+      "emoji": "🎬",
+      "items": [
+        {
+          "id": "12_entretenimiento_ocio_pelicula",
+          "type": "word",
+          "text": "película",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_entretenimiento_ocio_teatro",
+          "type": "word",
+          "text": "teatro",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_entretenimiento_ocio_concierto",
+          "type": "word",
+          "text": "concierto",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_entretenimiento_ocio_museo",
+          "type": "word",
+          "text": "museo",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_entretenimiento_ocio_parque",
+          "type": "word",
+          "text": "parque",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_entretenimiento_ocio_diversion",
+          "type": "word",
+          "text": "diversión",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_entretenimiento_ocio_entretenido",
+          "type": "word",
+          "text": "entretenido",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_entretenimiento_ocio_aburrido",
+          "type": "word",
+          "text": "aburrido",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_entretenimiento_ocio_actividad",
+          "type": "word",
+          "text": "actividad",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "12_entretenimiento_ocio_pasatiempo",
+          "type": "word",
+          "text": "pasatiempo",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "13_deportes_ejercicio",
+      "title": "Deportes y ejercicio físico",
+      "emoji": "⚽",
+      "items": [
+        {
+          "id": "13_deportes_ejercicio_futbol",
+          "type": "word",
+          "text": "fútbol",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_deportes_ejercicio_baloncesto",
+          "type": "word",
+          "text": "baloncesto",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_deportes_ejercicio_tenis",
+          "type": "word",
+          "text": "tenis",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_deportes_ejercicio_natacion",
+          "type": "word",
+          "text": "natación",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_deportes_ejercicio_correr",
+          "type": "word",
+          "text": "correr",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_deportes_ejercicio_caminar",
+          "type": "word",
+          "text": "caminar",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_deportes_ejercicio_gimnasio",
+          "type": "word",
+          "text": "gimnasio",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_deportes_ejercicio_ejercicio",
+          "type": "word",
+          "text": "ejercicio",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_deportes_ejercicio_competencia",
+          "type": "word",
+          "text": "competencia",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "13_deportes_ejercicio_victoria",
+          "type": "word",
+          "text": "victoria",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "14_tecnologia_internet",
+      "title": "Tecnología e internet",
+      "emoji": "💻",
+      "items": [
+        {
+          "id": "14_tecnologia_internet_computadora",
+          "type": "word",
+          "text": "computadora",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_tecnologia_internet_telefono",
+          "type": "word",
+          "text": "teléfono",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_tecnologia_internet_internet",
+          "type": "word",
+          "text": "internet",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_tecnologia_internet_redes_sociales",
+          "type": "word",
+          "text": "redes sociales",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_tecnologia_internet_aplicacion",
+          "type": "word",
+          "text": "aplicación",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_tecnologia_internet_software",
+          "type": "word",
+          "text": "software",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_tecnologia_internet_programa",
+          "type": "word",
+          "text": "programa",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_tecnologia_internet_datos",
+          "type": "word",
+          "text": "datos",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_tecnologia_internet_archivo",
+          "type": "word",
+          "text": "archivo",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "14_tecnologia_internet_descargar",
+          "type": "word",
+          "text": "descargar",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "15_medio_ambiente",
+      "title": "Medio ambiente y naturaleza",
+      "emoji": "🌍",
+      "items": [
+        {
+          "id": "15_medio_ambiente_naturaleza",
+          "type": "word",
+          "text": "naturaleza",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "15_medio_ambiente_medio_ambiente",
+          "type": "word",
+          "text": "medio ambiente",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "15_medio_ambiente_contaminacion",
+          "type": "word",
+          "text": "contaminación",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "15_medio_ambiente_reciclaje",
+          "type": "word",
+          "text": "reciclaje",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "15_medio_ambiente_energia",
+          "type": "word",
+          "text": "energía",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "15_medio_ambiente_sostenible",
+          "type": "word",
+          "text": "sostenible",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "15_medio_ambiente_bosque",
+          "type": "word",
+          "text": "bosque",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "15_medio_ambiente_rio",
+          "type": "word",
+          "text": "río",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "15_medio_ambiente_montana",
+          "type": "word",
+          "text": "montaña",
+          "practiceType": "chooseTranslation"
+        },
+        {
+          "id": "15_medio_ambiente_proteger",
+          "type": "word",
+          "text": "proteger",
+          "practiceType": "chooseTranslation"
+        }
+      ]
+    },
+    {
+      "id": "16_clima_tiempo",
+      "title": "Clima y condiciones meteorológicas",
+      "emoji": "🌤️",
+      "items": []
+    },
+    {
+      "id": "17_emociones_sentimientos",
+      "title": "Emociones y sentimientos",
+      "emoji": "😊",
+      "items": []
+    },
+    {
+      "id": "18_personalidad_caracter",
+      "title": "Personalidad y características personales",
+      "emoji": "🎭",
+      "items": []
+    },
+    {
+      "id": "19_ropa_moda",
+      "title": "Ropa, moda y accesorios",
+      "emoji": "👗",
+      "items": []
+    },
+    {
+      "id": "20_arte_cultura",
+      "title": "Arte, cultura y literatura",
+      "emoji": "🎨",
+      "items": []
+    },
+    {
+      "id": "21_musica_baile",
+      "title": "Música y baile",
+      "emoji": "🎵",
+      "items": []
+    },
+    {
+      "id": "22_historia_politica",
+      "title": "Historia y política",
+      "emoji": "🏛️",
+      "items": []
+    },
+    {
+      "id": "23_economia_finanzas",
+      "title": "Economía y finanzas",
+      "emoji": "💰",
+      "items": []
+    },
+    {
+      "id": "24_medios_comunicacion",
+      "title": "Medios de comunicación y noticias",
+      "emoji": "📰",
+      "items": []
+    },
+    {
+      "id": "25_religion_filosofia",
+      "title": "Religión y filosofía",
+      "emoji": "🙏",
+      "items": []
+    },
+    {
+      "id": "26_ciencia_investigacion",
+      "title": "Ciencia e investigación",
+      "emoji": "🔬",
+      "items": []
+    },
+    {
+      "id": "27_espacio_astronomia",
+      "title": "Espacio y astronomía",
+      "emoji": "🚀",
+      "items": []
+    },
+    {
+      "id": "28_marinismo_oceanos",
+      "title": "Marinismo y océanos",
+      "emoji": "🌊",
+      "items": []
+    },
+    {
+      "id": "29_montanas_aventura",
+      "title": "Montañas y aventura al aire libre",
+      "emoji": "⛰️",
+      "items": []
+    },
+    {
+      "id": "30_animales_fauna",
+      "title": "Animales y fauna silvestre",
+      "emoji": "🦁",
+      "items": []
+    },
+    {
+      "id": "31_plantas_jardineria",
+      "title": "Plantas y jardinería",
+      "emoji": "🌸",
+      "items": []
+    },
+    {
+      "id": "32_cocina_gastronomia",
+      "title": "Cocina y gastronomía",
+      "emoji": "👨‍🍳",
+      "items": []
+    },
+    {
+      "id": "33_vino_cerveza",
+      "title": "Vino, cerveza y bebidas alcohólicas",
+      "emoji": "🍷",
+      "items": []
+    },
+    {
+      "id": "34_cafe_te",
+      "title": "Café, té y bebidas calientes",
+      "emoji": "☕",
+      "items": []
+    },
+    {
+      "id": "35_fotografia_video",
+      "title": "Fotografía y video",
+      "emoji": "📸",
+      "items": []
+    },
+    {
+      "id": "36_juegos_pasatiempos",
+      "title": "Juegos y pasatiempos",
+      "emoji": "🎮",
+      "items": []
+    },
+    {
+      "id": "37_festivales_celebraciones",
+      "title": "Festivales y celebraciones",
+      "emoji": "🎉",
+      "items": []
+    },
+    {
+      "id": "38_idiomas_aprendizaje",
+      "title": "Idiomas y aprendizaje de idiomas",
+      "emoji": "🌐",
+      "items": []
+    },
+    {
+      "id": "39_globalizacion_mundo",
+      "title": "Globalización y mundo interconectado",
+      "emoji": "🌍",
+      "items": []
+    },
+    {
+      "id": "40_fluidez_avanzada",
+      "title": "Fluidez conversacional avanzada",
+      "emoji": "🎯",
+      "items": []
+    }
+  ]
+}
