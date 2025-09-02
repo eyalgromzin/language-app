@@ -7,121 +7,121 @@
     {
       "id": "29_travel_and_transportation_travel",
       "type": "word",
-      "text": "travel",
+      "text": "נסיעה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_trip",
       "type": "word",
-      "text": "trip",
+      "text": "טיול",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_airport",
       "type": "word",
-      "text": "airport",
+      "text": "שדה תעופה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_hotel",
       "type": "word",
-      "text": "hotel",
+      "text": "מלון",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_passport",
       "type": "word",
-      "text": "passport",
+      "text": "דרכון",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "כרטיס",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_bus",
       "type": "word",
-      "text": "bus",
+      "text": "אוטובוס",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_train",
       "type": "word",
-      "text": "train",
+      "text": "רכבת",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_ttravel_and_transportation_car",
       "type": "word",
-      "text": "car",
+      "text": "מכונית",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_map",
       "type": "word",
-      "text": "map",
+      "text": "מפה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_where_are_you_traveling_to",
       "type": "sentence",
-      "text": "Where are you traveling to?",
+      "text": "לאן אתה נוסע?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_i_am_going_on_a_trip",
       "type": "sentence",
-      "text": "I am going on a trip.",
+      "text": "אני יוצא לטיול.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_how_do_i_get_to_the_airport",
       "type": "sentence",
-      "text": "How do I get to the airport?",
+      "text": "איך אני מגיע לשדה התעופה?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_do_you_have_a_hotel_reservation",
       "type": "sentence",
-      "text": "Do you have a hotel reservation?",
+      "text": "האם יש לך הזמנה במלון?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_where_is_my_passport",
       "type": "sentence",
-      "text": "Where is my passport?",
+      "text": "איפה הדרכון שלי?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_i_need_to_buy_a_ticket",
       "type": "sentence",
-      "text": "I need to buy a ticket.",
+      "text": "אני צריך לקנות כרטיס.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_does_this_bus_go_to_the_city",
       "type": "sentence",
-      "text": "Does this bus go to the city?",
+      "text": "האם האוטובוס הזה הולך לעיר?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_the_train_is_delayed",
       "type": "sentence",
-      "text": "The train is delayed.",
+      "text": "הרכבת מתעכבת.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_can_you_drive_me_to_the_station",
       "type": "sentence",
-      "text": "Can you drive me to the station?",
+      "text": "האם אתה יכול לנסוע איתי לתחנה?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_i_need_a_map_of_the_city",
       "type": "sentence",
-      "text": "I need a map of the city.",
+      "text": "אני צריך מפה של העיר.",
       "practiceType": "formulateSentense"
     }
   ]

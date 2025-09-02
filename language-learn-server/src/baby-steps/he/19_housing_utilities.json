@@ -7,121 +7,121 @@
     {
       "id": "19_housing_utilities_apartment",
       "type": "word",
-      "text": "apartment",
+      "text": "דירה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_room",
       "type": "word",
-      "text": "room",
+      "text": "חדר",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_key",
       "type": "word",
-      "text": "key",
+      "text": "מפתח",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_electricity",
       "type": "word",
-      "text": "electricity",
+      "text": "חשמל",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_water",
       "type": "word",
-      "text": "water",
+      "text": "מים",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_house",
       "type": "word",
-      "text": "house",
+      "text": "בית",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_kitchen",
       "type": "word",
-      "text": "kitchen",
+      "text": "מטבח",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_bathroom",
       "type": "word",
-      "text": "bathroom",
+      "text": "שירותים",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_heating",
       "type": "word",
-      "text": "heating",
+      "text": "חימום",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_rent",
       "type": "word",
-      "text": "rent",
+      "text": "שכירות",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_i_am_looking_for_an_apartment",
       "type": "sentence",
-      "text": "I am looking for an apartment.",
+      "text": "אני מחפש דירה.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_the_key_does_not_work",
       "type": "sentence",
-      "text": "The key does not work.",
+      "text": "המפתח לא עובד.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_there_is_no_hot_water",
       "type": "sentence",
-      "text": "There is no hot water.",
+      "text": "אין מים חמים.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_how_much_is_the_rent",
       "type": "sentence",
-      "text": "How much is the rent?",
+      "text": "כמה עולה השכירות?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_do_you_have_a_kitchen",
       "type": "sentence",
-      "text": "Do you have a kitchen?",
+      "text": "האם יש לך מטבח?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_the_heating_is_broken",
       "type": "sentence",
-      "text": "The heating is broken.",
+      "text": "החימום מקולקל.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_where_is_the_bathroom",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "איפה השירותים?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_is_electricity_included",
       "type": "sentence",
-      "text": "Is electricity included?",
+      "text": "האם חשמל כלול?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_can_i_see_the_house",
       "type": "sentence",
-      "text": "Can I see the house?",
+      "text": "האם אני יכול לראות את הבית?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_do_you_have_parking",
       "type": "sentence",
-      "text": "Do you have parking?",
+      "text": "האם יש לך חניה?",
       "practiceType": "formulateSentense"
     }
   ]

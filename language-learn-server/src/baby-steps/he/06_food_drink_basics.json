@@ -7,121 +7,121 @@
     {
       "id": "06_food_drink_basics_water",
       "type": "word",
-      "text": "water",
+      "text": "מים",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_coffee",
       "type": "word",
-      "text": "coffee",
+      "text": "קפה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_tea",
       "type": "word",
-      "text": "tea",
+      "text": "תה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_bread",
       "type": "word",
-      "text": "bread",
+      "text": "לחם",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_apple",
       "type": "word",
-      "text": "apple",
+      "text": "תפוח",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_milk",
       "type": "word",
-      "text": "milk",
+      "text": "חלב",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_juice",
       "type": "word",
-      "text": "juice",
+      "text": "מיץ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_rice",
       "type": "word",
-      "text": "rice",
+      "text": "אורז",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "עוף",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_fish",
       "type": "word",
-      "text": "fish",
+      "text": "דג",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_i_would_like_water_please",
       "type": "sentence",
-      "text": "I would like water, please.",
+      "text": "אני רוצה מים, בבקשה.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_the_food_is_delicious",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "האוכל טעים.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_allergic_to",
       "type": "sentence",
-      "text": "I am allergic to …",
+      "text": "אני אלרגי ל …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_no_sugar_please",
       "type": "sentence",
-      "text": "No sugar, please.",
+      "text": "בלי סוכר, בבקשה.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_do_you_have_vegetarian_food",
       "type": "sentence",
-      "text": "Do you have vegetarian food?",
+      "text": "האם יש לכם אוכל צמחוני?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_how_much_is_it",
       "type": "sentence",
-      "text": "How much is it?",
+      "text": "כמה זה עולה?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_hungry",
       "type": "sentence",
-      "text": "I am hungry.",
+      "text": "אני רעב.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_thirsty",
       "type": "sentence",
-      "text": "I am thirsty.",
+      "text": "אני צמא.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "מה אתה ממליץ?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_the_bill_please",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "החשבון, בבקשה.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -7,7 +7,7 @@
     {
       "id": "15_requests_help_help",
       "type": "word",
-      "text": "help",
+      "text": "עזרה",
       "practiceType": "chooseTranslation"
     },
     {
@@ -19,109 +19,109 @@
     {
       "id": "15_requests_help_could",
       "type": "word",
-      "text": "could",
+      "text": "יכול",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_would",
       "type": "word",
-      "text": "would",
+      "text": "היה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_repeat",
       "type": "word",
-      "text": "repeat",
+      "text": "לחזור",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_slowly",
       "type": "word",
-      "text": "slowly",
+      "text": "לאט",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_mean",
       "type": "word",
-      "text": "mean",
+      "text": "משמעות",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_say",
       "type": "word",
-      "text": "say",
+      "text": "לומר",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_understand",
       "type": "word",
-      "text": "understand",
+      "text": "להבין",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_explain",
       "type": "word",
-      "text": "explain",
+      "text": "להסביר",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_could_you_help_me_please",
       "type": "sentence",
-      "text": "Could you help me, please?",
+      "text": "האם אתה יכול לעזור לי, בבקשה?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_you_repeat_that_please",
       "type": "sentence",
-      "text": "Can you repeat that, please?",
+      "text": "האם אתה יכול לחזור על זה, בבקשה?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_please_speak_more_slowly",
       "type": "sentence",
-      "text": "Please speak more slowly.",
+      "text": "בבקשה דבר יותר לאט.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_how_do_you_say_this_in_english",
       "type": "sentence",
-      "text": "How do you say this in English?",
+      "text": "איך אומרים את זה באנגלית?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_what_does_this_mean",
       "type": "sentence",
-      "text": "What does this mean?",
+      "text": "מה זה אומר?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_you_explain_this",
       "type": "sentence",
-      "text": "Can you explain this?",
+      "text": "האם אתה יכול להסביר את זה?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_i_dont_understand",
       "type": "sentence",
-      "text": "I don't understand.",
+      "text": "אני לא מבין.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_would_you_mind",
       "type": "sentence",
-      "text": "Would you mind …?",
+      "text": "האם אכפת לך …?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_i_ask_you_something",
       "type": "sentence",
-      "text": "Can I ask you something?",
+      "text": "האם אני יכול לשאול אותך משהו?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_thank_you_for_helping",
       "type": "sentence",
-      "text": "Thank you for helping.",
+      "text": "תודה על העזרה.",
       "practiceType": "formulateSentense"
     }
   ]

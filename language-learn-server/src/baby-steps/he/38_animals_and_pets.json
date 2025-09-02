@@ -7,121 +7,121 @@
     {
       "id": "38_animals_and_pets_animal",
       "type": "word",
-      "text": "animal",
+      "text": "חיה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pet",
       "type": "word",
-      "text": "pet",
+      "text": "חיית מחמד",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_dog",
       "type": "word",
-      "text": "dog",
+      "text": "כלב",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cat",
       "type": "word",
-      "text": "cat",
+      "text": "חתול",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_bird",
       "type": "word",
-      "text": "bird",
+      "text": "ציפור",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_fish",
       "type": "word",
-      "text": "fish",
+      "text": "דג",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_horse",
       "type": "word",
-      "text": "horse",
+      "text": "סוס",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cow",
       "type": "word",
-      "text": "cow",
+      "text": "פרה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "תרנגולת",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pig",
       "type": "word",
-      "text": "pig",
+      "text": "חזיר",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_do_you_have_any_pets",
       "type": "sentence",
-      "text": "Do you have any pets?",
+      "text": "האם יש לך חיות מחמד?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_my_dog_is_very_friendly",
       "type": "sentence",
-      "text": "My dog is very friendly.",
+      "text": "הכלב שלי מאוד ידידותי.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_cats_are_independent_animals",
       "type": "sentence",
-      "text": "Cats are independent animals.",
+      "text": "חתולים הם חיות עצמאיות.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_i_love_watching_birds_fly",
       "type": "sentence",
-      "text": "I love watching birds fly.",
+      "text": "אני אוהב לראות ציפורים עפות.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_how_many_fish_do_you_have",
       "type": "sentence",
-      "text": "How many fish do you have?",
+      "text": "כמה דגים יש לך?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_horses_are_beautiful_animals",
       "type": "sentence",
-      "text": "Horses are beautiful animals.",
+      "text": "סוסים הם חיות יפות.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_cows_give_us_milk",
       "type": "sentence",
-      "text": "Cows give us milk.",
+      "text": "פרות נותנות לנו חלב.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_do_you_like_chicken",
       "type": "sentence",
-      "text": "Do you like chicken?",
+      "text": "האם אתה אוהב עוף?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_pigs_are_very_intelligent",
       "type": "sentence",
-      "text": "Pigs are very intelligent.",
+      "text": "חזירים מאוד חכמים.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_what_is_your_favorite_animal",
       "type": "sentence",
-      "text": "What is your favorite animal?",
+      "text": "מה החיה האהובה עליך?",
       "practiceType": "formulateSentense"
     }
   ]

@@ -7,121 +7,121 @@
     {
       "id": "20_connectors_advanced_because",
       "type": "word",
-      "text": "because",
+      "text": "כי",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_although",
       "type": "word",
-      "text": "although",
+      "text": "למרות",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_however",
       "type": "word",
-      "text": "however",
+      "text": "אולם",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_therefore",
       "type": "word",
-      "text": "therefore",
+      "text": "לכן",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_also",
       "type": "word",
-      "text": "also",
+      "text": "גם",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_but",
       "type": "word",
-      "text": "but",
+      "text": "אבל",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_and",
       "type": "word",
-      "text": "and",
+      "text": "ו",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_or",
       "type": "word",
-      "text": "or",
+      "text": "או",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_if",
       "type": "word",
-      "text": "if",
+      "text": "אם",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_when",
       "type": "word",
-      "text": "when",
+      "text": "כאשר",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_could_you_please_recommend_a_good_place_to_eat",
       "type": "sentence",
-      "text": "Could you please recommend a good place to eat?",
+      "text": "האם אתה יכול בבקשה להמליץ על מקום טוב לאכול?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_i_have_been_waiting_for_a_long_time",
       "type": "sentence",
-      "text": "I have been waiting for a long time.",
+      "text": "אני מחכה הרבה זמן.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_would_you_mind_helping_me_with_this_form",
       "type": "sentence",
-      "text": "Would you mind helping me with this form?",
+      "text": "האם אכפת לך לעזור לי עם הטופס הזה?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_i_prefer_to_pay_by_card_because_it_is_faster",
       "type": "sentence",
-      "text": "I prefer to pay by card because it is faster.",
+      "text": "אני מעדיף לשלם בכרטיס כי זה יותר מהיר.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_although_it_is_expensive_it_is_worth_it",
       "type": "sentence",
-      "text": "Although it is expensive, it is worth it.",
+      "text": "למרות שזה יקר, זה שווה את זה.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_i_would_like_to_order_but_i_am_not_sure_what",
       "type": "sentence",
-      "text": "I would like to order, but I am not sure what.",
+      "text": "אני רוצה להזמין, אבל אני לא בטוח מה.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_if_you_have_time_can_you_help_me",
       "type": "sentence",
-      "text": "If you have time, can you help me?",
+      "text": "אם יש לך זמן, האם אתה יכול לעזור לי?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_when_you_arrive_please_call_me",
       "type": "sentence",
-      "text": "When you arrive, please call me.",
+      "text": "כאשר אתה מגיע, בבקשה התקשר אליי.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_i_also_want_to_visit_the_museum",
       "type": "sentence",
-      "text": "I also want to visit the museum.",
+      "text": "אני גם רוצה לבקר במוזיאון.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_therefore_i_need_to_leave_early",
       "type": "sentence",
-      "text": "Therefore, I need to leave early.",
+      "text": "לכן, אני צריך לצאת מוקדם.",
       "practiceType": "formulateSentense"
     }
   ]

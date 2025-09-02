@@ -7,121 +7,121 @@
     {
       "id": "08_travel_hotel_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "כרטיס",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_reservation",
       "type": "word",
-      "text": "reservation",
+      "text": "הזמנה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_passport",
       "type": "word",
-      "text": "passport",
+      "text": "דרכון",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_luggage",
       "type": "word",
-      "text": "luggage",
+      "text": "מזוודה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_hotel",
       "type": "word",
-      "text": "hotel",
+      "text": "מלון",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_airport",
       "type": "word",
-      "text": "airport",
+      "text": "שדה תעופה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_station",
       "type": "word",
-      "text": "station",
+      "text": "תחנה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_room",
       "type": "word",
-      "text": "room",
+      "text": "חדר",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_key",
       "type": "word",
-      "text": "key",
+      "text": "מפתח",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_map",
       "type": "word",
-      "text": "map",
+      "text": "מפה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_i_have_a_reservation",
       "type": "sentence",
-      "text": "I have a reservation.",
+      "text": "יש לי הזמנה.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_what_time_is_check_in",
       "type": "sentence",
-      "text": "What time is check-in?",
+      "text": "באיזו שעה זה צ'ק-אין?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_where_is_the_platform",
       "type": "sentence",
-      "text": "Where is the platform?",
+      "text": "איפה הרציף?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_i_need_a_taxi",
       "type": "sentence",
-      "text": "I need a taxi.",
+      "text": "אני צריך מונית.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_what_time_is_check_out",
       "type": "sentence",
-      "text": "What time is check-out?",
+      "text": "באיזו שעה זה צ'ק-אאוט?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_where_is_my_room",
       "type": "sentence",
-      "text": "Where is my room?",
+      "text": "איפה החדר שלי?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_do_you_have_wifi",
       "type": "sentence",
-      "text": "Do you have WiFi?",
+      "text": "האם יש לכם וויי-פיי?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_how_do_i_get_to_the_airport",
       "type": "sentence",
-      "text": "How do I get to the airport?",
+      "text": "איך אני מגיע לשדה התעופה?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_is_breakfast_included",
       "type": "sentence",
-      "text": "Is breakfast included?",
+      "text": "האם ארוחת בוקר כלולה?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_can_you_call_me_a_taxi",
       "type": "sentence",
-      "text": "Can you call me a taxi?",
+      "text": "האם אתה יכול להזמין לי מונית?",
       "practiceType": "formulateSentense"
     }
   ]

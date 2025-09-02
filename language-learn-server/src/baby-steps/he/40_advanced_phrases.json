@@ -7,121 +7,121 @@
     {
       "id": "40_advanced_phrases_nevertheless",
       "type": "word",
-      "text": "nevertheless",
+      "text": "למרות זאת",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_furthermore",
       "type": "word",
-      "text": "furthermore",
+      "text": "יתר על כן",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_otherwise",
       "type": "word",
-      "text": "otherwise",
+      "text": "אחרת",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_meanwhile",
       "type": "word",
-      "text": "meanwhile",
+      "text": "בינתיים",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_consequently",
       "type": "word",
-      "text": "consequently",
+      "text": "כתוצאה מכך",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_approximately",
       "type": "word",
-      "text": "approximately",
+      "text": "בערך",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_occasionally",
       "type": "word",
-      "text": "occasionally",
+      "text": "לעיתים",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_gradually",
       "type": "word",
-      "text": "gradually",
+      "text": "בהדרגה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_ultimately",
       "type": "word",
-      "text": "ultimately",
+      "text": "בסופו של דבר",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_essentially",
       "type": "word",
-      "text": "essentially",
+      "text": "במהות",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
       "type": "sentence",
-      "text": "Nevertheless, I still want to try.",
+      "text": "למרות זאת, אני עדיין רוצה לנסות.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
       "type": "sentence",
-      "text": "Furthermore, I believe this is correct.",
+      "text": "יתר על כן, אני מאמין שזה נכון.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
       "type": "sentence",
-      "text": "We must leave now, otherwise we will be late.",
+      "text": "אנחנו חייבים לצאת עכשיו, אחרת נאחר.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
       "type": "sentence",
-      "text": "Meanwhile, I will prepare dinner.",
+      "text": "בינתיים, אני אכין ארוחת ערב.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
       "type": "sentence",
-      "text": "Consequently, the meeting was cancelled.",
+      "text": "כתוצאה מכך, הפגישה בוטלה.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_it_will_cost_approximately_fifty_dollars",
       "type": "sentence",
-      "text": "It will cost approximately fifty dollars.",
+      "text": "זה יעלה בערך חמישים דולר.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_i_occasionally_visit_my_grandparents",
       "type": "sentence",
-      "text": "I occasionally visit my grandparents.",
+      "text": "אני מבקר את הסבים שלי לעיתים.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_the_weather_gradually_improved",
       "type": "sentence",
-      "text": "The weather gradually improved.",
+      "text": "המזג אוויר השתפר בהדרגה.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_ultimately_we_reached_our_goal",
       "type": "sentence",
-      "text": "Ultimately, we reached our goal.",
+      "text": "בסופו של דבר, הגענו למטרה שלנו.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_essentially_this_is_the_same_thing",
       "type": "sentence",
-      "text": "Essentially, this is the same thing.",
+      "text": "במהות, זה אותו דבר.",
       "practiceType": "formulateSentense"
     }
   ]

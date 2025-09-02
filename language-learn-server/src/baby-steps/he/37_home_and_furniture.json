@@ -7,121 +7,121 @@
     {
       "id": "37_home_and_furniture_home",
       "type": "word",
-      "text": "home",
+      "text": "בית",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_house",
       "type": "word",
-      "text": "house",
+      "text": "בית",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_room",
       "type": "word",
-      "text": "room",
+      "text": "חדר",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_kitchen",
       "type": "word",
-      "text": "kitchen",
+      "text": "מטבח",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_bedroom",
       "type": "word",
-      "text": "bedroom",
+      "text": "חדר שינה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_table",
       "type": "word",
-      "text": "table",
+      "text": "שולחן",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_chair",
       "type": "word",
-      "text": "chair",
+      "text": "כיסא",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_bed",
       "type": "word",
-      "text": "bed",
+      "text": "מיטה",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_door",
       "type": "word",
-      "text": "door",
+      "text": "דלת",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_window",
       "type": "word",
-      "text": "window",
+      "text": "חלון",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_welcome_to_my_home",
       "type": "sentence",
-      "text": "Welcome to my home.",
+      "text": "ברוך הבא לבית שלי.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_how_many_rooms_does_your_house_have",
       "type": "sentence",
-      "text": "How many rooms does your house have?",
+      "text": "כמה חדרים יש בבית שלך?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_the_kitchen_is_very_modern",
       "type": "sentence",
-      "text": "The kitchen is very modern.",
+      "text": "המטבח מאוד מודרני.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_my_bedroom_is_on_the_second_floor",
       "type": "sentence",
-      "text": "My bedroom is on the second floor.",
+      "text": "חדר השינה שלי בקומה השנייה.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_please_sit_at_the_table",
       "type": "sentence",
-      "text": "Please sit at the table.",
+      "text": "בבקשה שב בשולחן.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_this_chair_is_very_comfortable",
       "type": "sentence",
-      "text": "This chair is very comfortable.",
+      "text": "הכיסא הזה מאוד נוח.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_i_like_my_new_bed",
       "type": "sentence",
-      "text": "I like my new bed.",
+      "text": "אני אוהב את המיטה החדשה שלי.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_please_close_the_door",
       "type": "sentence",
-      "text": "Please close the door.",
+      "text": "בבקשה סגור את הדלת.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_open_the_window_for_fresh_air",
       "type": "sentence",
-      "text": "Open the window for fresh air.",
+      "text": "פתח את החלון לאוויר צח.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_where_do_you_live",
       "type": "sentence",
-      "text": "Where do you live?",
+      "text": "איפה אתה גר?",
       "practiceType": "formulateSentense"
     }
   ]
