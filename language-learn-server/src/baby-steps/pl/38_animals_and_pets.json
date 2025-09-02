@@ -1,127 +1,127 @@
 {
   "id": "38_animals_and_pets",
-  "title": "Animals & Pets",
+  "title": "Zwierzęta i pupile",
   "emoji": "🐕",
   "language": "Polish",
   "items": [
     {
       "id": "38_animals_and_pets_animal",
       "type": "word",
-      "text": "animal",
+      "text": "zwierzę",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pet",
       "type": "word",
-      "text": "pet",
+      "text": "pupil",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_dog",
       "type": "word",
-      "text": "dog",
+      "text": "pies",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cat",
       "type": "word",
-      "text": "cat",
+      "text": "kot",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_bird",
       "type": "word",
-      "text": "bird",
+      "text": "ptak",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_fish",
       "type": "word",
-      "text": "fish",
+      "text": "ryba",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_horse",
       "type": "word",
-      "text": "horse",
+      "text": "koń",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cow",
       "type": "word",
-      "text": "cow",
+      "text": "krowa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "kurczak",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pig",
       "type": "word",
-      "text": "pig",
+      "text": "świnia",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_do_you_have_any_pets",
       "type": "sentence",
-      "text": "Do you have any pets?",
+      "text": "Czy masz jakieś pupile?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_my_dog_is_very_friendly",
       "type": "sentence",
-      "text": "My dog is very friendly.",
+      "text": "Mój pies jest bardzo przyjazny.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_cats_are_independent_animals",
       "type": "sentence",
-      "text": "Cats are independent animals.",
+      "text": "Koty to niezależne zwierzęta.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_i_love_watching_birds_fly",
       "type": "sentence",
-      "text": "I love watching birds fly.",
+      "text": "Uwielbiam patrzeć jak ptaki latają.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_how_many_fish_do_you_have",
       "type": "sentence",
-      "text": "How many fish do you have?",
+      "text": "Ile masz ryb?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_horses_are_beautiful_animals",
       "type": "sentence",
-      "text": "Horses are beautiful animals.",
+      "text": "Konie to piękne zwierzęta.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_cows_give_us_milk",
       "type": "sentence",
-      "text": "Cows give us milk.",
+      "text": "Krowy dają nam mleko.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_do_you_like_chicken",
       "type": "sentence",
-      "text": "Do you like chicken?",
+      "text": "Czy lubisz kurczaka?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_pigs_are_very_intelligent",
       "type": "sentence",
-      "text": "Pigs are very intelligent.",
+      "text": "Świnie są bardzo inteligentne.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_what_is_your_favorite_animal",
       "type": "sentence",
-      "text": "What is your favorite animal?",
+      "text": "Jakie jest twoje ulubione zwierzę?",
       "practiceType": "formulateSentense"
     }
   ]

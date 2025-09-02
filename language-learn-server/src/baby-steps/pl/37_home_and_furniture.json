@@ -1,127 +1,127 @@
 {
   "id": "37_home_and_furniture",
-  "title": "Home & Furniture",
+  "title": "Dom i meble",
   "emoji": "🏠",
   "language": "Polish",
   "items": [
     {
       "id": "37_home_and_furniture_home",
       "type": "word",
-      "text": "home",
+      "text": "dom",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_house",
       "type": "word",
-      "text": "house",
+      "text": "dom",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_room",
       "type": "word",
-      "text": "room",
+      "text": "pokój",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_kitchen",
       "type": "word",
-      "text": "kitchen",
+      "text": "kuchnia",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_bedroom",
       "type": "word",
-      "text": "bedroom",
+      "text": "sypialnia",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_table",
       "type": "word",
-      "text": "table",
+      "text": "stół",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_chair",
       "type": "word",
-      "text": "chair",
+      "text": "krzesło",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_bed",
       "type": "word",
-      "text": "bed",
+      "text": "łóżko",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_door",
       "type": "word",
-      "text": "door",
+      "text": "drzwi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_window",
       "type": "word",
-      "text": "window",
+      "text": "okno",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_welcome_to_my_home",
       "type": "sentence",
-      "text": "Welcome to my home.",
+      "text": "Witaj w moim domu.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_how_many_rooms_does_your_house_have",
       "type": "sentence",
-      "text": "How many rooms does your house have?",
+      "text": "Ile pokoi ma twój dom?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_the_kitchen_is_very_modern",
       "type": "sentence",
-      "text": "The kitchen is very modern.",
+      "text": "Kuchnia jest bardzo nowoczesna.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_my_bedroom_is_on_the_second_floor",
       "type": "sentence",
-      "text": "My bedroom is on the second floor.",
+      "text": "Moja sypialnia jest na drugim piętrze.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_please_sit_at_the_table",
       "type": "sentence",
-      "text": "Please sit at the table.",
+      "text": "Proszę usiąść przy stole.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_this_chair_is_very_comfortable",
       "type": "sentence",
-      "text": "This chair is very comfortable.",
+      "text": "To krzesło jest bardzo wygodne.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_i_like_my_new_bed",
       "type": "sentence",
-      "text": "I like my new bed.",
+      "text": "Lubię moje nowe łóżko.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_please_close_the_door",
       "type": "sentence",
-      "text": "Please close the door.",
+      "text": "Proszę zamknąć drzwi.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_open_the_window_for_fresh_air",
       "type": "sentence",
-      "text": "Open the window for fresh air.",
+      "text": "Otwórz okno dla świeżego powietrza.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_where_do_you_live",
       "type": "sentence",
-      "text": "Where do you live?",
+      "text": "Gdzie mieszkasz?",
       "practiceType": "formulateSentense"
     }
   ]

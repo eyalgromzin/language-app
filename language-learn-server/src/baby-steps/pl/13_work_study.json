@@ -1,31 +1,31 @@
 {
   "id": "13_work_study",
-  "title": "Work & study basics",
+  "title": "Podstawy pracy i nauki",
   "emoji": "💼",
   "language": "Polish",
   "items": [
     {
       "id": "13_work_study_office",
       "type": "word",
-      "text": "office",
+      "text": "biuro",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_school",
       "type": "word",
-      "text": "school",
+      "text": "szkoła",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_meeting",
       "type": "word",
-      "text": "meeting",
+      "text": "spotkanie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_project",
       "type": "word",
-      "text": "project",
+      "text": "projekt",
       "practiceType": "chooseTranslation"
     },
     {
@@ -49,55 +49,55 @@
     {
       "id": "13_work_study_class",
       "type": "word",
-      "text": "class",
+      "text": "lekcja",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_boss",
       "type": "word",
-      "text": "boss",
+      "text": "szef",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_colleague",
       "type": "word",
-      "text": "colleague",
+      "text": "kolega",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_i_have_a_meeting",
       "type": "sentence",
-      "text": "I have a meeting.",
+      "text": "Mam spotkanie.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_work_from_home",
       "type": "sentence",
-      "text": "I work from home.",
+      "text": "Pracuję z domu.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_am_studying",
       "type": "sentence",
-      "text": "I am studying …",
+      "text": "Studiuję …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Czym się zajmujesz w pracy?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Pracuję w biurze.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Czy lubisz swoją pracę?",
       "practiceType": "formulateSentense"
     },
     {

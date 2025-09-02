@@ -1,55 +1,55 @@
 {
   "id": "22_weather_and_nature",
-  "title": "Weather & Nature",
+  "title": "Pogoda i natura",
   "emoji": "🌤️",
   "language": "Polish",
   "items": [
     {
       "id": "22_weather_and_nature_sunny",
       "type": "word",
-      "text": "sunny",
+      "text": "słonecznie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_rainy",
       "type": "word",
-      "text": "rainy",
+      "text": "deszczowo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_cloudy",
       "type": "word",
-      "text": "cloudy",
+      "text": "pochmurno",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_windy",
       "type": "word",
-      "text": "windy",
+      "text": "wietrznie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_snow",
       "type": "word",
-      "text": "snow",
+      "text": "śnieg",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_tree",
       "type": "word",
-      "text": "tree",
+      "text": "drzewo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_flower",
       "type": "word",
-      "text": "flower",
+      "text": "kwiat",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_mountain",
       "type": "word",
-      "text": "mountain",
+      "text": "góra",
       "practiceType": "chooseTranslation"
     },
     {
@@ -61,43 +61,43 @@
     {
       "id": "22_weather_and_nature_forest",
       "type": "word",
-      "text": "forest",
+      "text": "las",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "22_weather_and_nature_it_is_sunny_today",
       "type": "sentence",
-      "text": "It is sunny today.",
+      "text": "Dzisiaj jest słonecznie.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "22_weather_and_nature_the_weather_is_nice",
       "type": "sentence",
-      "text": "The weather is nice.",
+      "text": "Pogoda jest ładna.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "22_weather_and_nature_it_might_rain_later",
       "type": "sentence",
-      "text": "It might rain later.",
+      "text": "Później może padać deszcz.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "22_weather_and_nature_the_wind_is_very_strong",
       "type": "sentence",
-      "text": "The wind is very strong.",
+      "text": "Wiatr jest bardzo silny.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "22_weather_and_nature_i_love_walking_in_the_forest",
       "type": "sentence",
-      "text": "I love walking in the forest.",
+      "text": "Uwielbiam spacerować po lesie.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "22_weather_and_nature_the_mountain_view_is_beautiful",
       "type": "sentence",
-      "text": "The mountain view is beautiful.",
+      "text": "Widok na góry jest piękny.",
       "practiceType": "formulateSentense"
     },
     {

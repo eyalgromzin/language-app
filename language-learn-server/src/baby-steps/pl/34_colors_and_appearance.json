@@ -1,127 +1,127 @@
 {
   "id": "34_colors_and_appearance",
-  "title": "Colors & Appearance",
+  "title": "Kolory i wygląd",
   "emoji": "🎨",
   "language": "Polish",
   "items": [
     {
       "id": "34_colors_and_appearance_color",
       "type": "word",
-      "text": "color",
+      "text": "kolor",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_red",
       "type": "word",
-      "text": "red",
+      "text": "czerwony",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_blue",
       "type": "word",
-      "text": "blue",
+      "text": "niebieski",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_green",
       "type": "word",
-      "text": "green",
+      "text": "zielony",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_yellow",
       "type": "word",
-      "text": "yellow",
+      "text": "żółty",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_beautiful",
       "type": "word",
-      "text": "beautiful",
+      "text": "piękny",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_ugly",
       "type": "word",
-      "text": "ugly",
+      "text": "brzydki",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_big",
       "type": "word",
-      "text": "big",
+      "text": "duży",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_small",
       "type": "word",
-      "text": "small",
+      "text": "mały",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_new",
       "type": "word",
-      "text": "new",
+      "text": "nowy",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_what_color_is_your_car",
       "type": "sentence",
-      "text": "What color is your car?",
+      "text": "Jaki kolor ma twój samochód?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_i_like_red_flowers",
       "type": "sentence",
-      "text": "I like red flowers.",
+      "text": "Lubię czerwone kwiaty.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_the_sky_is_very_blue_today",
       "type": "sentence",
-      "text": "The sky is very blue today.",
+      "text": "Dzisiaj niebo jest bardzo niebieskie.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_this_green_shirt_looks_nice",
       "type": "sentence",
-      "text": "This green shirt looks nice.",
+      "text": "Ta zielona koszula wygląda ładnie.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_the_yellow_banana_is_ripe",
       "type": "sentence",
-      "text": "The yellow banana is ripe.",
+      "text": "Żółty banan jest dojrzały.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_you_look_beautiful_today",
       "type": "sentence",
-      "text": "You look beautiful today.",
+      "text": "Dzisiaj wyglądasz pięknie.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_this_is_a_big_house",
       "type": "sentence",
-      "text": "This is a big house.",
+      "text": "To jest duży dom.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_i_have_a_small_dog",
       "type": "sentence",
-      "text": "I have a small dog.",
+      "text": "Mam małego psa.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_where_did_you_get_that_new_phone",
       "type": "sentence",
-      "text": "Where did you get that new phone?",
+      "text": "Skąd wziąłeś ten nowy telefon?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_what_is_your_favorite_color",
       "type": "sentence",
-      "text": "What is your favorite color?",
+      "text": "Jaki jest twój ulubiony kolor?",
       "practiceType": "formulateSentense"
     }
   ]

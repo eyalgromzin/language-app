@@ -1,6 +1,6 @@
 {
   "id": "28_sports_and_exercise",
-  "title": "Sports & Exercise",
+  "title": "Sport i ćwiczenia",
   "emoji": "⚽",
   "language": "Polish",
   "items": [
@@ -13,115 +13,115 @@
     {
       "id": "28_sports_and_exercise_game",
       "type": "word",
-      "text": "game",
+      "text": "gra",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_team",
       "type": "word",
-      "text": "team",
+      "text": "drużyna",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_player",
       "type": "word",
-      "text": "player",
+      "text": "zawodnik",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_coach",
       "type": "word",
-      "text": "coach",
+      "text": "trener",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_win",
       "type": "word",
-      "text": "win",
+      "text": "wygrywać",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_lose",
       "type": "word",
-      "text": "lose",
+      "text": "przegrywać",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_score",
       "type": "word",
-      "text": "score",
+      "text": "wynik",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_exercise",
       "type": "word",
-      "text": "exercise",
+      "text": "ćwiczenie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_fitness",
       "type": "word",
-      "text": "fitness",
+      "text": "sprawność",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_what_sport_do_you_like",
       "type": "sentence",
-      "text": "What sport do you like?",
+      "text": "Jaki sport lubisz?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_love_playing_soccer",
       "type": "sentence",
-      "text": "I love playing soccer.",
+      "text": "Uwielbiam grać w piłkę nożną.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
       "type": "sentence",
-      "text": "Do you want to join our team?",
+      "text": "Czy chcesz dołączyć do naszej drużyny?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_who_is_your_favorite_player",
       "type": "sentence",
-      "text": "Who is your favorite player?",
+      "text": "Kto jest twoim ulubionym zawodnikiem?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_our_coach_is_very_good",
       "type": "sentence",
-      "text": "Our coach is very good.",
+      "text": "Nasz trener jest bardzo dobry.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_did_you_win_the_game",
       "type": "sentence",
-      "text": "Did you win the game?",
+      "text": "Czy wygraliście grę?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_what_is_the_score",
       "type": "sentence",
-      "text": "What is the score?",
+      "text": "Jaki jest wynik?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_exercise_every_morning",
       "type": "sentence",
-      "text": "I exercise every morning.",
+      "text": "Ćwiczę codziennie rano.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_go_to_the_gym",
       "type": "sentence",
-      "text": "Do you go to the gym?",
+      "text": "Idziesz na siłownię?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_fitness_is_important_for_health",
       "type": "sentence",
-      "text": "Fitness is important for health.",
+      "text": "Sprawność jest ważna dla zdrowia.",
       "practiceType": "formulateSentense"
     }
   ]

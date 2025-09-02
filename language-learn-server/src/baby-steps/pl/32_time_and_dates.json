@@ -1,6 +1,6 @@
 {
   "id": "32_time_and_dates",
-  "title": "Time & Dates",
+  "title": "Czas i daty",
   "emoji": "⏰",
   "language": "Polish",
   "items": [
@@ -13,7 +13,7 @@
     {
       "id": "32_time_and_dates_date",
       "type": "word",
-      "text": "date",
+      "text": "data",
       "practiceType": "chooseTranslation"
     },
     {
@@ -37,19 +37,19 @@
     {
       "id": "32_time_and_dates_week",
       "type": "word",
-      "text": "week",
+      "text": "tydzień",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_month",
       "type": "word",
-      "text": "month",
+      "text": "miesiąc",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_year",
       "type": "word",
-      "text": "year",
+      "text": "rok",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,61 @@
     {
       "id": "32_time_and_dates_what_time_is_it",
       "type": "sentence",
-      "text": "What time is it?",
+      "text": "Która jest godzina?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_date_is_today",
       "type": "sentence",
-      "text": "What date is today?",
+      "text": "Jaka jest dzisiaj data?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_it_is_half_past_two",
       "type": "sentence",
-      "text": "It is half past two.",
+      "text": "Jest wpół do trzeciej.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_how_many_minutes_until_break",
       "type": "sentence",
-      "text": "How many minutes until break?",
+      "text": "Ile minut do przerwy?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_see_you_in_an_hour",
       "type": "sentence",
-      "text": "See you in an hour.",
+      "text": "Do zobaczenia za godzinę.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_day_of_the_week_is_it",
       "type": "sentence",
-      "text": "What day of the week is it?",
+      "text": "Jaki jest dzisiaj dzień tygodnia?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_next_month_i_am_going_on_vacation",
       "type": "sentence",
-      "text": "Next month I am going on vacation.",
+      "text": "W następnym miesiącu iść na wakacje.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_year_were_you_born",
       "type": "sentence",
-      "text": "What year were you born?",
+      "text": "W jakim roku się urodziłeś?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_today_is_a_beautiful_day",
       "type": "sentence",
-      "text": "Today is a beautiful day.",
+      "text": "Dzisiaj jest piękna pogoda.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_see_you_tomorrow",
       "type": "sentence",
-      "text": "See you tomorrow.",
+      "text": "Do zobaczenia jutro.",
       "practiceType": "formulateSentense"
     }
   ]

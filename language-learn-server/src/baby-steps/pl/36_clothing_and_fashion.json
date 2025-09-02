@@ -1,103 +1,103 @@
 {
   "id": "36_clothing_and_fashion",
-  "title": "Clothing & Fashion",
+  "title": "Ubrania i moda",
   "emoji": "👕",
   "language": "Polish",
   "items": [
     {
       "id": "36_clothing_and_fashion_clothes",
       "type": "word",
-      "text": "clothes",
+      "text": "ubrania",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_shirt",
       "type": "word",
-      "text": "shirt",
+      "text": "koszula",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_pants",
       "type": "word",
-      "text": "pants",
+      "text": "spodnie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_dress",
       "type": "word",
-      "text": "dress",
+      "text": "sukienka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_shoes",
       "type": "word",
-      "text": "shoes",
+      "text": "buty",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_hat",
       "type": "word",
-      "text": "hat",
+      "text": "kapelusz",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_jacket",
       "type": "word",
-      "text": "jacket",
+      "text": "kurtka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_size",
       "type": "word",
-      "text": "size",
+      "text": "rozmiar",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_style",
       "type": "word",
-      "text": "style",
+      "text": "styl",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_fashion",
       "type": "word",
-      "text": "fashion",
+      "text": "moda",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_what_are_you_wearing_today",
       "type": "sentence",
-      "text": "What are you wearing today?",
+      "text": "Co dzisiaj nosisz?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_i_like_your_new_shirt",
       "type": "sentence",
-      "text": "I like your new shirt.",
+      "text": "Lubię twoją nową koszulę.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
       "type": "sentence",
-      "text": "Where did you buy those pants?",
+      "text": "Gdzie kupiłeś te spodnie?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
       "type": "sentence",
-      "text": "That dress looks beautiful on you.",
+      "text": "Ta sukienka wygląda na tobie pięknie.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
       "type": "sentence",
-      "text": "Do you like my new shoes?",
+      "text": "Czy lubisz moje nowe buty?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_what_size_do_you_wear",
       "type": "sentence",
-      "text": "What size do you wear?",
+      "text": "Jaki rozmiar nosisz?",
       "practiceType": "formulateSentense"
     },
     {
