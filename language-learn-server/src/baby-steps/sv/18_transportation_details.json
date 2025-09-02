@@ -7,31 +7,31 @@
     {
       "id": "18_transportation_details_bus",
       "type": "word",
-      "text": "bus",
+      "text": "buss",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_train",
       "type": "word",
-      "text": "train",
+      "text": "tåg",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_metro",
       "type": "word",
-      "text": "metro",
+      "text": "tunnelbana",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_schedule",
       "type": "word",
-      "text": "schedule",
+      "text": "tidtabell",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "biljett",
       "practiceType": "chooseTranslation"
     },
     {
@@ -43,85 +43,85 @@
     {
       "id": "18_transportation_details_platform",
       "type": "word",
-      "text": "platform",
+      "text": "plattform",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_departure",
       "type": "word",
-      "text": "departure",
+      "text": "avgång",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_arrival",
       "type": "word",
-      "text": "arrival",
+      "text": "ankomst",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_delay",
       "type": "word",
-      "text": "delay",
+      "text": "försening",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_what_time_does_the_bus_leave",
       "type": "sentence",
-      "text": "What time does the bus leave?",
+      "text": "Vilken tid går bussen?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_where_can_i_buy_a_ticket",
       "type": "sentence",
-      "text": "Where can I buy a ticket?",
+      "text": "Var kan jag köpa en biljett?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_is_there_a_discount",
       "type": "sentence",
-      "text": "Is there a discount?",
+      "text": "Finns det rabatt?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_which_platform_is_it",
       "type": "sentence",
-      "text": "Which platform is it?",
+      "text": "Vilken plattform är det?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_is_the_train_delayed",
       "type": "sentence",
-      "text": "Is the train delayed?",
+      "text": "Är tåget försenat?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_how_much_is_a_ticket",
       "type": "sentence",
-      "text": "How much is a ticket?",
+      "text": "Hur mycket kostar en biljett?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_does_this_bus_go_to",
       "type": "sentence",
-      "text": "Does this bus go to …?",
+      "text": "Går denna buss till …?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_where_is_the_nearest_station",
       "type": "sentence",
-      "text": "Where is the nearest station?",
+      "text": "Var är närmaste station?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_what_time_does_it_arrive",
       "type": "sentence",
-      "text": "What time does it arrive?",
+      "text": "Vilken tid ankommer det?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_can_i_get_a_refund",
       "type": "sentence",
-      "text": "Can I get a refund?",
+      "text": "Kan jag få en återbetalning?",
       "practiceType": "formulateSentense"
     }
   ]

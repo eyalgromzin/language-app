@@ -7,49 +7,49 @@
     {
       "id": "17_restaurant_menu",
       "type": "word",
-      "text": "menu",
+      "text": "meny",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_table",
       "type": "word",
-      "text": "table",
+      "text": "bord",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_bill",
       "type": "word",
-      "text": "bill",
+      "text": "nota",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_waiter",
       "type": "word",
-      "text": "waiter",
+      "text": "servitör",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_food",
       "type": "word",
-      "text": "food",
+      "text": "mat",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_drink",
       "type": "word",
-      "text": "drink",
+      "text": "dryck",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_order",
       "type": "word",
-      "text": "order",
+      "text": "beställning",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_reservation",
       "type": "word",
-      "text": "reservation",
+      "text": "bokning",
       "practiceType": "chooseTranslation"
     },
     {
@@ -61,67 +61,67 @@
     {
       "id": "17_restaurant_tip",
       "type": "word",
-      "text": "tip",
+      "text": "dricks",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_a_table_for_two_please",
       "type": "sentence",
-      "text": "A table for two, please.",
+      "text": "Ett bord för två, tack.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_could_we_have_the_menu",
       "type": "sentence",
-      "text": "Could we have the menu?",
+      "text": "Kan vi få menyn?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_the_bill_please",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "Notan, tack.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_do_you_have_vegetarian_options",
       "type": "sentence",
-      "text": "Do you have vegetarian options?",
+      "text": "Har ni vegetariska alternativ?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "Vad rekommenderar du?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_i_would_like_to_order",
       "type": "sentence",
-      "text": "I would like to order.",
+      "text": "Jag skulle vilja beställa.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_how_long_will_it_take",
       "type": "sentence",
-      "text": "How long will it take?",
+      "text": "Hur lång tid tar det?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_can_we_have_some_water",
       "type": "sentence",
-      "text": "Can we have some water?",
+      "text": "Kan vi få lite vatten?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_the_food_is_delicious",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "Maten är utsökt.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_do_you_accept_credit_cards",
       "type": "sentence",
-      "text": "Do you accept credit cards?",
+      "text": "Tar ni kreditkort?",
       "practiceType": "formulateSentense"
     }
   ]

@@ -4,241 +4,241 @@
   "steps": [
     {
       "id": "01_essentials",
-      "title": "greetings & politeness",
+      "title": "hälsningar och artighet",
       "emoji": "👋",
       "file": "01_essentials.json"
     },
     {
       "id": "02_introductions",
-      "title": "Introductions & basic info",
+      "title": "Introduktioner och grundläggande info",
       "emoji": "💬",
       "file": "02_introductions.json"
     },
     {
       "id": "03_core_verbs_pronouns",
-      "title": "Core pronouns & helper verbs",
+      "title": "Grundläggande pronomen och hjälpverb",
       "emoji": "🔤",
       "file": "03_core_verbs_pronouns.json"
     },
     {
       "id": "04_numbers_time_basics",
-      "title": "Numbers & time basics",
+      "title": "Siffror och tid grunderna",
       "emoji": "🔢",
       "file": "04_numbers_time_basics.json"
     },
     {
       "id": "05_getting_around",
-      "title": "Directions & getting around",
+      "title": "Riktningar och att ta sig fram",
       "emoji": "🧭",
       "file": "05_getting_around.json"
     },
     {
       "id": "06_food_drink_basics",
-      "title": "Food & drink basics",
+      "title": "Mat och dryck grunderna",
       "emoji": "🍎",
       "file": "06_food_drink_basics.json"
     },
     {
       "id": "07_shopping_money",
-      "title": "Shopping & money",
+      "title": "Shopping och pengar",
       "emoji": "🛍️",
       "file": "07_shopping_money.json"
     },
     {
       "id": "08_travel_hotel",
-      "title": "Travel & hotel",
+      "title": "Resor och hotell",
       "emoji": "🧳",
       "file": "08_travel_hotel.json"
     },
     {
       "id": "09_emergencies_health",
-      "title": "Emergencies & health",
+      "title": "Nödsituationer och hälsa",
       "emoji": "⛑️",
       "file": "09_emergencies_health.json"
     },
     {
       "id": "10_daily_routines",
-      "title": "Daily routines & common verbs",
+      "title": "Dagliga rutiner och vanliga verb",
       "emoji": "☀️",
       "file": "10_daily_routines.json"
     },
     {
       "id": "11_family_people",
-      "title": "Family & people",
+      "title": "Familj och människor",
       "emoji": "👪",
       "file": "11_family_people.json"
     },
     {
       "id": "12_weather_smalltalk",
-      "title": "Weather & small talk",
+      "title": "Väder och småprat",
       "emoji": "🌦️",
       "file": "12_weather_smalltalk.json"
     },
     {
       "id": "13_work_study",
-      "title": "Work & study basics",
+      "title": "Arbete och studier grunderna",
       "emoji": "💼",
       "file": "13_work_study.json"
     },
     {
       "id": "14_plans_invitations",
-      "title": "Making plans & invitations",
+      "title": "Att göra planer och inbjudningar",
       "emoji": "📅",
       "file": "14_plans_invitations.json"
     },
     {
       "id": "15_requests_help",
-      "title": "Requests & asking for help",
+      "title": "Förfrågningar och att be om hjälp",
       "emoji": "🙋",
       "file": "15_requests_help.json"
     },
     {
       "id": "16_phone_internet",
-      "title": "Phone & internet",
+      "title": "Telefon och internet",
       "emoji": "📱",
       "file": "16_phone_internet.json"
     },
     {
       "id": "17_restaurant",
-      "title": "At the restaurant",
+      "title": "På restaurangen",
       "emoji": "🍽️",
       "file": "17_restaurant.json"
     },
     {
       "id": "18_transportation_details",
-      "title": "Transportation details",
+      "title": "Transportdetaljer",
       "emoji": "🚌",
       "file": "18_transportation_details.json"
     },
     {
       "id": "19_housing_utilities",
-      "title": "Housing & utilities",
+      "title": "Bostad och allmännyttiga tjänster",
       "emoji": "🏠",
       "file": "19_housing_utilities.json"
     },
     {
       "id": "20_connectors_advanced",
-      "title": "Connectors & advanced phrases",
+      "title": "Konnektorer och avancerade fraser",
       "emoji": "🔗",
       "file": "20_connectors_advanced.json"
     },
     {
       "id": "21_emotions_feelings",
-      "title": "Emotions & feelings",
+      "title": "Känslor och känslor",
       "emoji": "😊",
       "file": "21_emotions_feelings.json"
     },
     {
       "id": "22_hobbies_entertainment",
-      "title": "Hobbies & entertainment",
+      "title": "Hobbyer och underhållning",
       "emoji": "🎮",
       "file": "22_hobbies_entertainment.json"
     },
     {
       "id": "23_technology_computers",
-      "title": "Technology & computers",
+      "title": "Teknologi och datorer",
       "emoji": "💻",
       "file": "23_technology_computers.json"
     },
     {
       "id": "24_health_fitness",
-      "title": "Health & fitness",
+      "title": "Hälsa och träning",
       "emoji": "🏃",
       "file": "24_health_fitness.json"
     },
     {
       "id": "25_education_academic",
-      "title": "Education & academic",
+      "title": "Utbildning och akademi",
       "emoji": "📚",
       "file": "25_education_academic.json"
     },
     {
       "id": "26_business_professional",
-      "title": "Business & professional",
+      "title": "Företag och professionell",
       "emoji": "🏢",
       "file": "26_business_professional.json"
     },
     {
       "id": "27_media_news",
-      "title": "Media & news",
+      "title": "Media och nyheter",
       "emoji": "📰",
       "file": "27_media_news.json"
     },
     {
       "id": "28_arts_culture",
-      "title": "Arts & culture",
+      "title": "Konst och kultur",
       "emoji": "🎨",
       "file": "28_arts_culture.json"
     },
     {
       "id": "29_sports_recreation",
-      "title": "Sports & recreation",
+      "title": "Sport och rekreation",
       "emoji": "⚽",
       "file": "29_sports_recreation.json"
     },
     {
       "id": "30_nature_environment",
-      "title": "Nature & environment",
+      "title": "Natur och miljö",
       "emoji": "🌿",
       "file": "30_nature_environment.json"
     },
     {
       "id": "31_social_relationships",
-      "title": "Social relationships",
+      "title": "Sociala relationer",
       "emoji": "🤝",
       "file": "31_social_relationships.json"
     },
     {
       "id": "32_politics_government",
-      "title": "Politics & government",
+      "title": "Politik och regering",
       "emoji": "🏛️",
       "file": "32_politics_government.json"
     },
     {
       "id": "33_finance_banking",
-      "title": "Finance & banking",
+      "title": "Finans och bank",
       "emoji": "🏦",
       "file": "33_finance_banking.json"
     },
     {
       "id": "34_legal_law",
-      "title": "Legal & law",
+      "title": "Juridik och lag",
       "emoji": "⚖️",
       "file": "34_legal_law.json"
     },
     {
       "id": "35_medical_healthcare",
-      "title": "Medical & healthcare",
+      "title": "Medicin och sjukvård",
       "emoji": "🏥",
       "file": "35_medical_healthcare.json"
     },
     {
       "id": "36_science_research",
-      "title": "Science & research",
+      "title": "Vetenskap och forskning",
       "emoji": "🔬",
       "file": "36_science_research.json"
     },
     {
       "id": "37_religion_spirituality",
-      "title": "Religion & spirituality",
+      "title": "Religion och andlighet",
       "emoji": "🙏",
       "file": "37_religion_spirituality.json"
     },
     {
       "id": "38_fashion_beauty",
-      "title": "Fashion & beauty",
+      "title": "Mode och skönhet",
       "emoji": "👗",
       "file": "38_fashion_beauty.json"
     },
     {
       "id": "39_automotive_vehicles",
-      "title": "Automotive & vehicles",
+      "title": "Bilar och fordon",
       "emoji": "🚗",
       "file": "39_automotive_vehicles.json"
     },
     {
       "id": "40_advanced_conversation",
-      "title": "Advanced conversation",
+      "title": "Avancerade konversationer",
       "emoji": "🗣️",
       "file": "40_advanced_conversation.json"
     }

@@ -20,7 +20,7 @@
 
 10 design app better  
 
-
+13 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
 
 12 register app
 

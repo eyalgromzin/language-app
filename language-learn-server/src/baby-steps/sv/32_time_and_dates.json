@@ -7,121 +7,121 @@
     {
       "id": "32_time_and_dates_time",
       "type": "word",
-      "text": "time",
+      "text": "tid",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_date",
       "type": "word",
-      "text": "date",
+      "text": "datum",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_hour",
       "type": "word",
-      "text": "hour",
+      "text": "timme",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_minute",
       "type": "word",
-      "text": "minute",
+      "text": "minut",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_second",
       "type": "word",
-      "text": "second",
+      "text": "sekund",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_week",
       "type": "word",
-      "text": "week",
+      "text": "vecka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_month",
       "type": "word",
-      "text": "month",
+      "text": "månad",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_year",
       "type": "word",
-      "text": "year",
+      "text": "år",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_today",
       "type": "word",
-      "text": "today",
+      "text": "idag",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "imorgon",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_what_time_is_it",
       "type": "sentence",
-      "text": "What time is it?",
+      "text": "Vad är klockan?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_date_is_today",
       "type": "sentence",
-      "text": "What date is today?",
+      "text": "Vilket datum är det idag?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_it_is_half_past_two",
       "type": "sentence",
-      "text": "It is half past two.",
+      "text": "Klockan är halv tre.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_how_many_minutes_until_break",
       "type": "sentence",
-      "text": "How many minutes until break?",
+      "text": "Hur många minuter till rast?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_see_you_in_an_hour",
       "type": "sentence",
-      "text": "See you in an hour.",
+      "text": "Vi ses om en timme.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_day_of_the_week_is_it",
       "type": "sentence",
-      "text": "What day of the week is it?",
+      "text": "Vilken veckodag är det?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_next_month_i_am_going_on_vacation",
       "type": "sentence",
-      "text": "Next month I am going on vacation.",
+      "text": "Nästa månad ska jag på semester.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_year_were_you_born",
       "type": "sentence",
-      "text": "What year were you born?",
+      "text": "Vilket år föddes du?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_today_is_a_beautiful_day",
       "type": "sentence",
-      "text": "Today is a beautiful day.",
+      "text": "Idag är en vacker dag.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_see_you_tomorrow",
       "type": "sentence",
-      "text": "See you tomorrow.",
+      "text": "Vi ses imorgon.",
       "practiceType": "formulateSentense"
     }
   ]

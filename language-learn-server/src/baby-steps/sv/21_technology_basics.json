@@ -7,13 +7,13 @@
     {
       "id": "21_technology_basics_computer",
       "type": "word",
-      "text": "computer",
+      "text": "dator",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_phone",
       "type": "word",
-      "text": "phone",
+      "text": "telefon",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,31 +31,31 @@
     {
       "id": "21_technology_basics_password",
       "type": "word",
-      "text": "password",
+      "text": "lösenord",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_email",
       "type": "word",
-      "text": "email",
+      "text": "e-post",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_website",
       "type": "word",
-      "text": "website",
+      "text": "hemsida",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_download",
       "type": "word",
-      "text": "download",
+      "text": "ladda ner",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_upload",
       "type": "word",
-      "text": "upload",
+      "text": "ladda upp",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,61 @@
     {
       "id": "21_technology_basics_can_you_help_me_with_my_computer",
       "type": "sentence",
-      "text": "Can you help me with my computer?",
+      "text": "Kan du hjälpa mig med min dator?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_need_to_connect_to_wifi",
       "type": "sentence",
-      "text": "I need to connect to wifi.",
+      "text": "Jag behöver ansluta till wifi.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_what_is_your_email_address",
       "type": "sentence",
-      "text": "What is your email address?",
+      "text": "Vad är din e-postadress?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_want_to_download_this_app",
       "type": "sentence",
-      "text": "I want to download this app.",
+      "text": "Jag vill ladda ner denna app.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_do_you_have_a_website",
       "type": "sentence",
-      "text": "Do you have a website?",
+      "text": "Har du en hemsida?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_my_phone_is_not_working",
       "type": "sentence",
-      "text": "My phone is not working.",
+      "text": "Min telefon fungerar inte.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_forgot_my_password",
       "type": "sentence",
-      "text": "I forgot my password.",
+      "text": "Jag har glömt mitt lösenord.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_the_internet_is_slow_today",
       "type": "sentence",
-      "text": "The internet is slow today.",
+      "text": "Internet är långsamt idag.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_can_you_upload_the_file",
       "type": "sentence",
-      "text": "Can you upload the file?",
+      "text": "Kan du ladda upp filen?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_this_app_is_very_useful",
       "type": "sentence",
-      "text": "This app is very useful.",
+      "text": "Denna app är mycket användbar.",
       "practiceType": "formulateSentense"
     }
   ]

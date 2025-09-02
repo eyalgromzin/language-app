@@ -7,121 +7,121 @@
     {
       "id": "31_emotions_and_feelings_happy",
       "type": "word",
-      "text": "happy",
+      "text": "glad",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_sad",
       "type": "word",
-      "text": "sad",
+      "text": "ledsen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_angry",
       "type": "word",
-      "text": "angry",
+      "text": "arg",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_excited",
       "type": "word",
-      "text": "excited",
+      "text": "exalterad",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_nervous",
       "type": "word",
-      "text": "nervous",
+      "text": "nervös",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_tired",
       "type": "word",
-      "text": "tired",
+      "text": "trött",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_surprised",
       "type": "word",
-      "text": "surprised",
+      "text": "förvånad",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_worried",
       "type": "word",
-      "text": "worried",
+      "text": "orolig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_confused",
       "type": "word",
-      "text": "confused",
+      "text": "förvirrad",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_proud",
       "type": "word",
-      "text": "proud",
+      "text": "stolt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_how_are_you_feeling_today",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "Hur mår du idag?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_very_happy_today",
       "type": "sentence",
-      "text": "I am very happy today.",
+      "text": "Jag är mycket glad idag.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_why_are_you_sad",
       "type": "sentence",
-      "text": "Why are you sad?",
+      "text": "Varför är du ledsen?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_don_t_be_angry_with_me",
       "type": "sentence",
-      "text": "Don't be angry with me.",
+      "text": "Var inte arg på mig.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_excited_about_the_trip",
       "type": "sentence",
-      "text": "I am excited about the trip.",
+      "text": "Jag är exalterad över resan.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_feel_nervous_before_exams",
       "type": "sentence",
-      "text": "I feel nervous before exams.",
+      "text": "Jag känner mig nervös före prov.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_are_you_tired",
       "type": "sentence",
-      "text": "Are you tired?",
+      "text": "Är du trött?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
       "type": "sentence",
-      "text": "I am surprised by the news.",
+      "text": "Jag är förvånad av nyheterna.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_don_t_worry_about_it",
       "type": "sentence",
-      "text": "Don't worry about it.",
+      "text": "Oroa dig inte för det.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_proud_of_my_achievement",
       "type": "sentence",
-      "text": "I am proud of my achievement.",
+      "text": "Jag är stolt över min prestation.",
       "practiceType": "formulateSentense"
     }
   ]

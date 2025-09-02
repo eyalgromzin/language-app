@@ -7,121 +7,121 @@
     {
       "id": "36_clothing_and_fashion_clothes",
       "type": "word",
-      "text": "clothes",
+      "text": "kläder",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_shirt",
       "type": "word",
-      "text": "shirt",
+      "text": "skjorta",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_pants",
       "type": "word",
-      "text": "pants",
+      "text": "byxor",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_dress",
       "type": "word",
-      "text": "dress",
+      "text": "klänning",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_shoes",
       "type": "word",
-      "text": "shoes",
+      "text": "skor",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_hat",
       "type": "word",
-      "text": "hat",
+      "text": "hatt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_jacket",
       "type": "word",
-      "text": "jacket",
+      "text": "jacka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_size",
       "type": "word",
-      "text": "size",
+      "text": "storlek",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_style",
       "type": "word",
-      "text": "style",
+      "text": "stil",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_fashion",
       "type": "word",
-      "text": "fashion",
+      "text": "mode",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_what_are_you_wearing_today",
       "type": "sentence",
-      "text": "What are you wearing today?",
+      "text": "Vad har du på dig idag?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_i_like_your_new_shirt",
       "type": "sentence",
-      "text": "I like your new shirt.",
+      "text": "Jag tycker om din nya skjorta.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
       "type": "sentence",
-      "text": "Where did you buy those pants?",
+      "text": "Var köpte du de byxorna?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
       "type": "sentence",
-      "text": "That dress looks beautiful on you.",
+      "text": "Den klänningen ser vacker ut på dig.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
       "type": "sentence",
-      "text": "Do you like my new shoes?",
+      "text": "Tycker du om mina nya skor?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_what_size_do_you_wear",
       "type": "sentence",
-      "text": "What size do you wear?",
+      "text": "Vilken storlek har du?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_i_need_a_warm_jacket_for_winter",
       "type": "sentence",
-      "text": "I need a warm jacket for winter.",
+      "text": "Jag behöver en varm jacka för vintern.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_what_is_your_fashion_style",
       "type": "sentence",
-      "text": "What is your fashion style?",
+      "text": "Vad är din modestil?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_this_hat_protects_me_from_the_sun",
       "type": "sentence",
-      "text": "This hat protects me from the sun.",
+      "text": "Denna hatt skyddar mig från solen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_do_you_follow_fashion_trends",
       "type": "sentence",
-      "text": "Do you follow fashion trends?",
+      "text": "Följer du modetrender?",
       "practiceType": "formulateSentense"
     }
   ]

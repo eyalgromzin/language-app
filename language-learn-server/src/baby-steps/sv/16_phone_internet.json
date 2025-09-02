@@ -7,19 +7,19 @@
     {
       "id": "16_phone_internet_phone",
       "type": "word",
-      "text": "phone",
+      "text": "telefon",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_number",
       "type": "word",
-      "text": "number",
+      "text": "nummer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_email",
       "type": "word",
-      "text": "email",
+      "text": "e-post",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,25 +31,25 @@
     {
       "id": "16_phone_internet_call",
       "type": "word",
-      "text": "call",
+      "text": "ringa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_text",
       "type": "word",
-      "text": "text",
+      "text": "sms",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_message",
       "type": "word",
-      "text": "message",
+      "text": "meddelande",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_password",
       "type": "word",
-      "text": "password",
+      "text": "lösenord",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,61 @@
     {
       "id": "16_phone_internet_what_is_your_phone_number",
       "type": "sentence",
-      "text": "What is your phone number?",
+      "text": "Vad är ditt telefonnummer?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_the_wifi_password",
       "type": "sentence",
-      "text": "What is the wifi password?",
+      "text": "Vad är wifi-lösenordet?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_i_use_your_phone",
       "type": "sentence",
-      "text": "Can I use your phone?",
+      "text": "Kan jag använda din telefon?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_call_me",
       "type": "sentence",
-      "text": "Can you call me?",
+      "text": "Kan du ringa mig?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_will_text_you",
       "type": "sentence",
-      "text": "I will text you.",
+      "text": "Jag ska smsa dig.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_do_you_have_internet",
       "type": "sentence",
-      "text": "Do you have internet?",
+      "text": "Har du internet?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_your_email",
       "type": "sentence",
-      "text": "What is your email?",
+      "text": "Vad är din e-post?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_am_online",
       "type": "sentence",
-      "text": "I am online.",
+      "text": "Jag är online.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_send_me_a_message",
       "type": "sentence",
-      "text": "Can you send me a message?",
+      "text": "Kan du skicka mig ett meddelande?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_the_wifi_is_slow",
       "type": "sentence",
-      "text": "The wifi is slow.",
+      "text": "Wifin är långsamt.",
       "practiceType": "formulateSentense"
     }
   ]
