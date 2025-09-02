@@ -7,25 +7,25 @@
     {
       "id": "13_work_study_office",
       "type": "word",
-      "text": "office",
+      "text": "văn phòng",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_school",
       "type": "word",
-      "text": "school",
+      "text": "trường học",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_meeting",
       "type": "word",
-      "text": "meeting",
+      "text": "cuộc họp",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_project",
       "type": "word",
-      "text": "project",
+      "text": "dự án",
       "practiceType": "chooseTranslation"
     },
     {
@@ -49,79 +49,79 @@
     {
       "id": "13_work_study_class",
       "type": "word",
-      "text": "class",
+      "text": "lớp học",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_boss",
       "type": "word",
-      "text": "boss",
+      "text": "sếp",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_colleague",
       "type": "word",
-      "text": "colleague",
+      "text": "đồng nghiệp",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_i_have_a_meeting",
       "type": "sentence",
-      "text": "I have a meeting.",
+      "text": "Tôi có cuộc họp.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_work_from_home",
       "type": "sentence",
-      "text": "I work from home.",
+      "text": "Tôi làm việc từ nhà.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_am_studying",
       "type": "sentence",
-      "text": "I am studying …",
+      "text": "Tôi đang học …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Bạn làm gì để kiếm sống?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Tôi làm việc trong văn phòng.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Bạn có thích công việc của mình không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_am_busy_with_work",
       "type": "sentence",
-      "text": "I am busy with work.",
+      "text": "Tôi bận với công việc.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_what_are_you_studying",
       "type": "sentence",
-      "text": "What are you studying?",
+      "text": "Bạn đang học gì?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_have_a_lot_of_homework",
       "type": "sentence",
-      "text": "I have a lot of homework.",
+      "text": "Tôi có nhiều bài tập về nhà.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_where_do_you_work",
       "type": "sentence",
-      "text": "Where do you work?",
+      "text": "Bạn làm việc ở đâu?",
       "practiceType": "formulateSentense"
     }
   ]

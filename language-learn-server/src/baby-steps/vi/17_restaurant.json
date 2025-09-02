@@ -103,25 +103,25 @@
     {
       "id": "17_restaurant_how_long_will_it_take",
       "type": "sentence",
-      "text": "How long will it take?",
+      "text": "Mất bao lâu?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_can_we_have_some_water",
       "type": "sentence",
-      "text": "Can we have some water?",
+      "text": "Chúng tôi có thể có nước không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_the_food_is_delicious",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "Thức ăn rất ngon.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_do_you_accept_credit_cards",
       "type": "sentence",
-      "text": "Do you accept credit cards?",
+      "text": "Bạn có nhận thẻ tín dụng không?",
       "practiceType": "formulateSentense"
     }
   ]

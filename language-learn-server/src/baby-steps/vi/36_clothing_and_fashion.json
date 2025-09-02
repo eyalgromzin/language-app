@@ -7,121 +7,121 @@
     {
       "id": "36_clothing_and_fashion_clothes",
       "type": "word",
-      "text": "clothes",
+      "text": "quần áo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_shirt",
       "type": "word",
-      "text": "shirt",
+      "text": "áo sơ mi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_pants",
       "type": "word",
-      "text": "pants",
+      "text": "quần",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_dress",
       "type": "word",
-      "text": "dress",
+      "text": "váy",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_shoes",
       "type": "word",
-      "text": "shoes",
+      "text": "giày",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_hat",
       "type": "word",
-      "text": "hat",
+      "text": "mũ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_jacket",
       "type": "word",
-      "text": "jacket",
+      "text": "áo khoác",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_size",
       "type": "word",
-      "text": "size",
+      "text": "kích thước",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_style",
       "type": "word",
-      "text": "style",
+      "text": "phong cách",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_fashion",
       "type": "word",
-      "text": "fashion",
+      "text": "thời trang",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_what_are_you_wearing_today",
       "type": "sentence",
-      "text": "What are you wearing today?",
+      "text": "Hôm nay bạn mặc gì?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_i_like_your_new_shirt",
       "type": "sentence",
-      "text": "I like your new shirt.",
+      "text": "Tôi thích áo sơ mi mới của bạn.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
       "type": "sentence",
-      "text": "Where did you buy those pants?",
+      "text": "Bạn mua quần đó ở đâu?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
       "type": "sentence",
-      "text": "That dress looks beautiful on you.",
+      "text": "Váy đó trông đẹp trên bạn.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
       "type": "sentence",
-      "text": "Do you like my new shoes?",
+      "text": "Bạn có thích giày mới của tôi không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_what_size_do_you_wear",
       "type": "sentence",
-      "text": "What size do you wear?",
+      "text": "Bạn mặc kích thước gì?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_i_need_a_warm_jacket_for_winter",
       "type": "sentence",
-      "text": "I need a warm jacket for winter.",
+      "text": "Tôi cần một chiếc áo khoác ấm cho mùa đông.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_what_is_your_fashion_style",
       "type": "sentence",
-      "text": "What is your fashion style?",
+      "text": "Phong cách thời trang của bạn là gì?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_this_hat_protects_me_from_the_sun",
       "type": "sentence",
-      "text": "This hat protects me from the sun.",
+      "text": "Mũ này bảo vệ tôi khỏi ánh nắng.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_do_you_follow_fashion_trends",
       "type": "sentence",
-      "text": "Do you follow fashion trends?",
+      "text": "Bạn có theo xu hướng thời trang không?",
       "practiceType": "formulateSentense"
     }
   ]

@@ -7,13 +7,13 @@
     {
       "id": "16_phone_internet_phone",
       "type": "word",
-      "text": "phone",
+      "text": "điện thoại",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_number",
       "type": "word",
-      "text": "number",
+      "text": "số",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,25 +31,25 @@
     {
       "id": "16_phone_internet_call",
       "type": "word",
-      "text": "call",
+      "text": "gọi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_text",
       "type": "word",
-      "text": "text",
+      "text": "nhắn tin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_message",
       "type": "word",
-      "text": "message",
+      "text": "tin nhắn",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_password",
       "type": "word",
-      "text": "password",
+      "text": "mật khẩu",
       "practiceType": "chooseTranslation"
     },
     {
@@ -61,67 +61,67 @@
     {
       "id": "16_phone_internet_online",
       "type": "word",
-      "text": "online",
+      "text": "trực tuyến",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_what_is_your_phone_number",
       "type": "sentence",
-      "text": "What is your phone number?",
+      "text": "Số điện thoại của bạn là gì?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_the_wifi_password",
       "type": "sentence",
-      "text": "What is the wifi password?",
+      "text": "Mật khẩu wifi là gì?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_i_use_your_phone",
       "type": "sentence",
-      "text": "Can I use your phone?",
+      "text": "Tôi có thể dùng điện thoại của bạn không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_call_me",
       "type": "sentence",
-      "text": "Can you call me?",
+      "text": "Bạn có thể gọi tôi không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_will_text_you",
       "type": "sentence",
-      "text": "I will text you.",
+      "text": "Tôi sẽ nhắn tin cho bạn.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_do_you_have_internet",
       "type": "sentence",
-      "text": "Do you have internet?",
+      "text": "Bạn có internet không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_your_email",
       "type": "sentence",
-      "text": "What is your email?",
+      "text": "Email của bạn là gì?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_am_online",
       "type": "sentence",
-      "text": "I am online.",
+      "text": "Tôi đang trực tuyến.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_send_me_a_message",
       "type": "sentence",
-      "text": "Can you send me a message?",
+      "text": "Bạn có thể gửi tin nhắn cho tôi không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_the_wifi_is_slow",
       "type": "sentence",
-      "text": "The wifi is slow.",
+      "text": "Wifi chậm.",
       "practiceType": "formulateSentense"
     }
   ]

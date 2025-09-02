@@ -1,6 +1,6 @@
 {
   "id": "25_work_and_profession",
-  "title": "Work & Profession",
+  "title": "Công việc và nghề nghiệp",
   "emoji": "💼",
   "language": "Vietnamese",
   "items": [
@@ -19,109 +19,109 @@
     {
       "id": "25_work_and_profession_office",
       "type": "word",
-      "text": "office",
+      "text": "văn phòng",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_meeting",
       "type": "word",
-      "text": "meeting",
+      "text": "cuộc họp",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_boss",
       "type": "word",
-      "text": "boss",
+      "text": "sếp",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_colleague",
       "type": "word",
-      "text": "colleague",
+      "text": "đồng nghiệp",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_salary",
       "type": "word",
-      "text": "salary",
+      "text": "lương",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_project",
       "type": "word",
-      "text": "project",
+      "text": "dự án",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_deadline",
       "type": "word",
-      "text": "deadline",
+      "text": "hạn chót",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_career",
       "type": "word",
-      "text": "career",
+      "text": "sự nghiệp",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Bạn làm gì để kiếm sống?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Tôi làm việc trong văn phòng.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Bạn có thích công việc của mình không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_have_a_meeting_at_nine",
       "type": "sentence",
-      "text": "I have a meeting at nine.",
+      "text": "Tôi có cuộc họp lúc chín giờ.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_my_boss_is_very_nice",
       "type": "sentence",
-      "text": "My boss is very nice.",
+      "text": "Sếp của tôi rất tốt.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_with_great_colleagues",
       "type": "sentence",
-      "text": "I work with great colleagues.",
+      "text": "Tôi làm việc với những đồng nghiệp tuyệt vời.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_what_is_your_salary",
       "type": "sentence",
-      "text": "What is your salary?",
+      "text": "Lương của bạn là bao nhiêu?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_this_project_is_very_important",
       "type": "sentence",
-      "text": "This project is very important.",
+      "text": "Dự án này rất quan trọng.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_the_deadline_is_next_week",
       "type": "sentence",
-      "text": "The deadline is next week.",
+      "text": "Hạn chót là tuần tới.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_want_to_advance_my_career",
       "type": "sentence",
-      "text": "I want to advance my career.",
+      "text": "Tôi muốn thăng tiến sự nghiệp.",
       "practiceType": "formulateSentense"
     }
   ]

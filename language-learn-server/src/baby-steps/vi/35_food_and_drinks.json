@@ -37,7 +37,7 @@
     {
       "id": "35_food_and_drinks_restaurant",
       "type": "word",
-      "text": "restaurant",
+      "text": "nhà hàng",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,73 +55,73 @@
     {
       "id": "35_food_and_drinks_hungry",
       "type": "word",
-      "text": "hungry",
+      "text": "đói",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_thirsty",
       "type": "word",
-      "text": "thirsty",
+      "text": "khát",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_what_would_you_like_to_eat",
       "type": "sentence",
-      "text": "What would you like to eat?",
+      "text": "Bạn muốn ăn gì?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_can_i_have_something_to_drink",
       "type": "sentence",
-      "text": "Can I have something to drink?",
+      "text": "Tôi có thể có gì để uống không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_what_did_you_have_for_breakfast",
       "type": "sentence",
-      "text": "What did you have for breakfast?",
+      "text": "Bạn đã ăn gì cho bữa sáng?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_let_s_go_to_a_restaurant_for_lunch",
       "type": "sentence",
-      "text": "Let's go to a restaurant for lunch.",
+      "text": "Hãy đi đến nhà hàng để ăn trưa.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_what_time_is_dinner",
       "type": "sentence",
-      "text": "What time is dinner?",
+      "text": "Bữa tối lúc mấy giờ?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_can_i_see_the_menu",
       "type": "sentence",
-      "text": "Can I see the menu?",
+      "text": "Tôi có thể xem thực đơn không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_i_want_to_order_pizza",
       "type": "sentence",
-      "text": "I want to order pizza.",
+      "text": "Tôi muốn đặt pizza.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_are_you_hungry",
       "type": "sentence",
-      "text": "Are you hungry?",
+      "text": "Bạn có đói không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_i_am_thirsty_can_i_have_water",
       "type": "sentence",
-      "text": "I am thirsty, can I have water?",
+      "text": "Tôi khát, tôi có thể có nước không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_this_food_tastes_delicious",
       "type": "sentence",
-      "text": "This food tastes delicious.",
+      "text": "Thức ăn này rất ngon.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -7,13 +7,13 @@
     {
       "id": "21_technology_basics_computer",
       "type": "word",
-      "text": "computer",
+      "text": "máy tính",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_phone",
       "type": "word",
-      "text": "phone",
+      "text": "điện thoại",
       "practiceType": "chooseTranslation"
     },
     {
@@ -25,13 +25,13 @@
     {
       "id": "21_technology_basics_app",
       "type": "word",
-      "text": "app",
+      "text": "ứng dụng",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_password",
       "type": "word",
-      "text": "password",
+      "text": "mật khẩu",
       "practiceType": "chooseTranslation"
     },
     {
@@ -43,19 +43,19 @@
     {
       "id": "21_technology_basics_website",
       "type": "word",
-      "text": "website",
+      "text": "trang web",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_download",
       "type": "word",
-      "text": "download",
+      "text": "tải xuống",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_upload",
       "type": "word",
-      "text": "upload",
+      "text": "tải lên",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,61 @@
     {
       "id": "21_technology_basics_can_you_help_me_with_my_computer",
       "type": "sentence",
-      "text": "Can you help me with my computer?",
+      "text": "Bạn có thể giúp tôi với máy tính không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_need_to_connect_to_wifi",
       "type": "sentence",
-      "text": "I need to connect to wifi.",
+      "text": "Tôi cần kết nối wifi.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_what_is_your_email_address",
       "type": "sentence",
-      "text": "What is your email address?",
+      "text": "Địa chỉ email của bạn là gì?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_want_to_download_this_app",
       "type": "sentence",
-      "text": "I want to download this app.",
+      "text": "Tôi muốn tải xuống ứng dụng này.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_do_you_have_a_website",
       "type": "sentence",
-      "text": "Do you have a website?",
+      "text": "Bạn có trang web không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_my_phone_is_not_working",
       "type": "sentence",
-      "text": "My phone is not working.",
+      "text": "Điện thoại của tôi không hoạt động.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_forgot_my_password",
       "type": "sentence",
-      "text": "I forgot my password.",
+      "text": "Tôi quên mật khẩu.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_the_internet_is_slow_today",
       "type": "sentence",
-      "text": "The internet is slow today.",
+      "text": "Internet hôm nay chậm.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_can_you_upload_the_file",
       "type": "sentence",
-      "text": "Can you upload the file?",
+      "text": "Bạn có thể tải lên tệp không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_this_app_is_very_useful",
       "type": "sentence",
-      "text": "This app is very useful.",
+      "text": "Ứng dụng này rất hữu ích.",
       "practiceType": "formulateSentense"
     }
   ]

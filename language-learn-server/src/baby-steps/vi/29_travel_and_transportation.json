@@ -1,127 +1,127 @@
 {
   "id": "29_travel_and_transportation",
-  "title": "Travel & Transportation",
+  "title": "Du lịch và giao thông",
   "emoji": "✈️",
   "language": "Vietnamese",
   "items": [
     {
       "id": "29_travel_and_transportation_travel",
       "type": "word",
-      "text": "travel",
+      "text": "du lịch",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_trip",
       "type": "word",
-      "text": "trip",
+      "text": "chuyến đi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_airport",
       "type": "word",
-      "text": "airport",
+      "text": "sân bay",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_hotel",
       "type": "word",
-      "text": "hotel",
+      "text": "khách sạn",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_passport",
       "type": "word",
-      "text": "passport",
+      "text": "hộ chiếu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "vé",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_bus",
       "type": "word",
-      "text": "bus",
+      "text": "xe buýt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_train",
       "type": "word",
-      "text": "train",
+      "text": "tàu hỏa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_ttravel_and_transportation_car",
       "type": "word",
-      "text": "car",
+      "text": "xe hơi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_map",
       "type": "word",
-      "text": "map",
+      "text": "bản đồ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_where_are_you_traveling_to",
       "type": "sentence",
-      "text": "Where are you traveling to?",
+      "text": "Bạn đang du lịch đến đâu?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_i_am_going_on_a_trip",
       "type": "sentence",
-      "text": "I am going on a trip.",
+      "text": "Tôi đang đi du lịch.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_how_do_i_get_to_the_airport",
       "type": "sentence",
-      "text": "How do I get to the airport?",
+      "text": "Làm sao để đến sân bay?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_do_you_have_a_hotel_reservation",
       "type": "sentence",
-      "text": "Do you have a hotel reservation?",
+      "text": "Bạn có đặt phòng khách sạn không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_where_is_my_passport",
       "type": "sentence",
-      "text": "Where is my passport?",
+      "text": "Hộ chiếu của tôi ở đâu?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_i_need_to_buy_a_ticket",
       "type": "sentence",
-      "text": "I need to buy a ticket.",
+      "text": "Tôi cần mua vé.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_does_this_bus_go_to_the_city",
       "type": "sentence",
-      "text": "Does this bus go to the city?",
+      "text": "Xe buýt này có đi đến thành phố không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_the_train_is_delayed",
       "type": "sentence",
-      "text": "The train is delayed.",
+      "text": "Tàu bị trễ.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_can_you_drive_me_to_the_station",
       "type": "sentence",
-      "text": "Can you drive me to the station?",
+      "text": "Bạn có thể lái xe đưa tôi đến ga không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_i_need_a_map_of_the_city",
       "type": "sentence",
-      "text": "I need a map of the city.",
+      "text": "Tôi cần bản đồ thành phố.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -19,37 +19,37 @@
     {
       "id": "15_requests_help_could",
       "type": "word",
-      "text": "could",
+      "text": "có thể",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_would",
       "type": "word",
-      "text": "would",
+      "text": "sẽ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_repeat",
       "type": "word",
-      "text": "repeat",
+      "text": "lặp lại",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_slowly",
       "type": "word",
-      "text": "slowly",
+      "text": "chậm",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_mean",
       "type": "word",
-      "text": "mean",
+      "text": "nghĩa là",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_say",
       "type": "word",
-      "text": "say",
+      "text": "nói",
       "practiceType": "chooseTranslation"
     },
     {
@@ -61,67 +61,67 @@
     {
       "id": "15_requests_help_explain",
       "type": "word",
-      "text": "explain",
+      "text": "giải thích",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_could_you_help_me_please",
       "type": "sentence",
-      "text": "Could you help me, please?",
+      "text": "Bạn có thể giúp tôi không, xin vui lòng?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_you_repeat_that_please",
       "type": "sentence",
-      "text": "Can you repeat that, please?",
+      "text": "Bạn có thể lặp lại không, xin vui lòng?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_please_speak_more_slowly",
       "type": "sentence",
-      "text": "Please speak more slowly.",
+      "text": "Xin vui lòng nói chậm hơn.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_how_do_you_say_this_in_english",
       "type": "sentence",
-      "text": "How do you say this in English?",
+      "text": "Làm sao để nói cái này bằng tiếng Anh?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_what_does_this_mean",
       "type": "sentence",
-      "text": "What does this mean?",
+      "text": "Cái này nghĩa là gì?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_you_explain_this",
       "type": "sentence",
-      "text": "Can you explain this?",
+      "text": "Bạn có thể giải thích cái này không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_i_dont_understand",
       "type": "sentence",
-      "text": "I don't understand.",
+      "text": "Tôi không hiểu.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_would_you_mind",
       "type": "sentence",
-      "text": "Would you mind …?",
+      "text": "Bạn có phiền … không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_i_ask_you_something",
       "type": "sentence",
-      "text": "Can I ask you something?",
+      "text": "Tôi có thể hỏi bạn điều gì đó không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_thank_you_for_helping",
       "type": "sentence",
-      "text": "Thank you for helping.",
+      "text": "Cảm ơn bạn đã giúp đỡ.",
       "practiceType": "formulateSentense"
     }
   ]

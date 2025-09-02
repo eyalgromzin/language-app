@@ -7,121 +7,121 @@
     {
       "id": "40_advanced_phrases_nevertheless",
       "type": "word",
-      "text": "nevertheless",
+      "text": "tuy nhiên",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_furthermore",
       "type": "word",
-      "text": "furthermore",
+      "text": "hơn nữa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_otherwise",
       "type": "word",
-      "text": "otherwise",
+      "text": "nếu không",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_meanwhile",
       "type": "word",
-      "text": "meanwhile",
+      "text": "trong khi đó",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_consequently",
       "type": "word",
-      "text": "consequently",
+      "text": "do đó",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_approximately",
       "type": "word",
-      "text": "approximately",
+      "text": "khoảng",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_occasionally",
       "type": "word",
-      "text": "occasionally",
+      "text": "thỉnh thoảng",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_gradually",
       "type": "word",
-      "text": "gradually",
+      "text": "dần dần",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_ultimately",
       "type": "word",
-      "text": "ultimately",
+      "text": "cuối cùng",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_essentially",
       "type": "word",
-      "text": "essentially",
+      "text": "về cơ bản",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
       "type": "sentence",
-      "text": "Nevertheless, I still want to try.",
+      "text": "Tuy nhiên, tôi vẫn muốn thử.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
       "type": "sentence",
-      "text": "Furthermore, I believe this is correct.",
+      "text": "Hơn nữa, tôi tin rằng điều này là đúng.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
       "type": "sentence",
-      "text": "We must leave now, otherwise we will be late.",
+      "text": "Chúng ta phải đi ngay, nếu không chúng ta sẽ muộn.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
       "type": "sentence",
-      "text": "Meanwhile, I will prepare dinner.",
+      "text": "Trong khi đó, tôi sẽ chuẩn bị bữa tối.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
       "type": "sentence",
-      "text": "Consequently, the meeting was cancelled.",
+      "text": "Do đó, cuộc họp đã bị hủy.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_it_will_cost_approximately_fifty_dollars",
       "type": "sentence",
-      "text": "It will cost approximately fifty dollars.",
+      "text": "Nó sẽ có giá khoảng năm mươi đô la.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_i_occasionally_visit_my_grandparents",
       "type": "sentence",
-      "text": "I occasionally visit my grandparents.",
+      "text": "Tôi thỉnh thoảng thăm ông bà.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_the_weather_gradually_improved",
       "type": "sentence",
-      "text": "The weather gradually improved.",
+      "text": "Thời tiết dần dần cải thiện.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_ultimately_we_reached_our_goal",
       "type": "sentence",
-      "text": "Ultimately, we reached our goal.",
+      "text": "Cuối cùng, chúng ta đã đạt được mục tiêu.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_essentially_this_is_the_same_thing",
       "type": "sentence",
-      "text": "Essentially, this is the same thing.",
+      "text": "Về cơ bản, đây là cùng một thứ.",
       "practiceType": "formulateSentense"
     }
   ]

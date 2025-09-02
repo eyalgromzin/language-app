@@ -15,12 +15,18 @@
 
 2 create translate table with all languages that will be filled each time a user clicks a word 
 
+14- in baby steps , enable to state multiple practices for each word / sentense . 
+
+13 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
+
 8 make video transcript work better - it lags now 
 
 
 10 design app better  
 
-13 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
+
+
+15 - split each  baby steps file into 2 files. where each will have 5 words and 5 sentenses with 2 practices for each . 
 
 12 register app
 

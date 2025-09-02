@@ -13,13 +13,13 @@
     {
       "id": "39_communication_and_language_talk",
       "type": "word",
-      "text": "talk",
+      "text": "nói chuyện",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_listen",
       "type": "word",
-      "text": "listen",
+      "text": "nghe",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,37 +31,37 @@
     {
       "id": "39_communication_and_language_explain",
       "type": "word",
-      "text": "explain",
+      "text": "giải thích",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_question",
       "type": "word",
-      "text": "question",
+      "text": "câu hỏi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_answer",
       "type": "word",
-      "text": "answer",
+      "text": "câu trả lời",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_conversation",
       "type": "word",
-      "text": "conversation",
+      "text": "cuộc trò chuyện",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_message",
       "type": "word",
-      "text": "message",
+      "text": "tin nhắn",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_translate",
       "type": "word",
-      "text": "translate",
+      "text": "dịch",
       "practiceType": "chooseTranslation"
     },
     {
@@ -73,55 +73,55 @@
     {
       "id": "39_communication_and_language_can_we_talk_about_it",
       "type": "sentence",
-      "text": "Can we talk about it?",
+      "text": "Chúng ta có thể nói chuyện về nó không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_please_listen_to_me",
       "type": "sentence",
-      "text": "Please listen to me.",
+      "text": "Vui lòng lắng nghe tôi.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_do_you_understand_what_i_mean",
       "type": "sentence",
-      "text": "Do you understand what I mean?",
+      "text": "Bạn có hiểu ý tôi không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_can_you_explain_this_to_me",
       "type": "sentence",
-      "text": "Can you explain this to me?",
+      "text": "Bạn có thể giải thích điều này cho tôi không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_i_have_a_question_for_you",
       "type": "sentence",
-      "text": "I have a question for you.",
+      "text": "Tôi có một câu hỏi cho bạn.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_what_is_your_answer",
       "type": "sentence",
-      "text": "What is your answer?",
+      "text": "Câu trả lời của bạn là gì?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_this_is_an_interesting_conversation",
       "type": "sentence",
-      "text": "This is an interesting conversation.",
+      "text": "Đây là một cuộc trò chuyện thú vị.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_did_you_get_my_message",
       "type": "sentence",
-      "text": "Did you get my message?",
+      "text": "Bạn có nhận được tin nhắn của tôi không?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_can_you_translate_this_word",
       "type": "sentence",
-      "text": "Can you translate this word?",
+      "text": "Bạn có thể dịch từ này không?",
       "practiceType": "formulateSentense"
     }
   ]
