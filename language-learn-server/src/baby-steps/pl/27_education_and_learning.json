@@ -1,19 +1,19 @@
 {
   "id": "27_education_and_learning",
-  "title": "Education & Learning",
+  "title": "Edukacja i Nauka",
   "emoji": "📚",
   "language": "Polish",
   "items": [
     {
       "id": "27_education_and_learning_school",
       "type": "word",
-      "text": "school",
+      "text": "szkoła",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_student",
       "type": "word",
-      "text": "student",
+      "text": "uczeń",
       "practiceType": "chooseTranslation"
     },
     {
@@ -25,37 +25,37 @@
     {
       "id": "27_education_and_learning_class",
       "type": "word",
-      "text": "class",
+      "text": "klasa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_lesson",
       "type": "word",
-      "text": "lesson",
+      "text": "lekcja",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_homework",
       "type": "word",
-      "text": "homework",
+      "text": "praca domowa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_exam",
       "type": "word",
-      "text": "exam",
+      "text": "egzamin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_grade",
       "type": "word",
-      "text": "grade",
+      "text": "ocena",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_study",
       "type": "word",
-      "text": "studiować",
+      "text": "nauka",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,91 @@
     {
       "id": "27_education_and_learning_what_subject_do_you_study",
       "type": "sentence",
-      "text": "What subject do you study?",
+      "text": "Jakiego przedmiotu się uczysz?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_i_am_a_student_at_university",
       "type": "sentence",
-      "text": "I am a student at university.",
+      "text": "Jestem studentem na uniwersytecie.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_my_teacher_is_very_good",
       "type": "sentence",
-      "text": "My teacher is very good.",
+      "text": "Mój nauczyciel jest bardzo dobry.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_what_time_does_class_start",
       "type": "sentence",
-      "text": "What time does class start?",
+      "text": "O której zaczyna się lekcja?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_i_have_a_lot_of_homework",
       "type": "sentence",
-      "text": "I have a lot of homework.",
+      "text": "Mam dużo pracy domowej.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_when_is_your_next_exam",
       "type": "sentence",
-      "text": "When is your next exam?",
+      "text": "Kiedy masz następny egzamin?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_what_grade_did_you_get",
       "type": "sentence",
-      "text": "What grade did you get?",
+      "text": "Jaką ocenę dostałeś?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_i_need_to_study_for_the_test",
       "type": "sentence",
-      "text": "I need to study for the test.",
+      "text": "Muszę się uczyć do testu.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_this_lesson_is_very_interesting",
       "type": "sentence",
-      "text": "This lesson is very interesting.",
+      "text": "Ta lekcja jest bardzo interesująca.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_i_want_to_learn_english",
       "type": "sentence",
-      "text": "I want to learn English.",
+      "text": "Chcę się uczyć angielskiego.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_education_is_very_important",
+      "type": "sentence",
+      "text": "Edukacja jest bardzo ważna.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_love_learning_new_things",
+      "type": "sentence",
+      "text": "Uwielbiam uczyć się nowych rzeczy.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_my_school_is_very_big",
+      "type": "sentence",
+      "text": "Moja szkoła jest bardzo duża.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_have_class_tomorrow",
+      "type": "sentence",
+      "text": "Jutro mam lekcję.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_learning_is_fun",
+      "type": "sentence",
+      "text": "Nauka jest fajna.",
       "practiceType": "formulateSentense"
     }
   ]

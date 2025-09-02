@@ -1,127 +1,157 @@
 {
   "id": "36_clothing_and_fashion",
-  "title": "Clothing & Fashion",
+  "title": "कपड़े और फैशन",
   "emoji": "👕",
   "language": "Hindi",
   "items": [
     {
       "id": "36_clothing_and_fashion_clothes",
       "type": "word",
-      "text": "clothes",
+      "text": "कपड़े",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_shirt",
       "type": "word",
-      "text": "shirt",
+      "text": "शर्ट",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_pants",
       "type": "word",
-      "text": "pants",
+      "text": "पैंट",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_dress",
       "type": "word",
-      "text": "dress",
+      "text": "ड्रेस",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_shoes",
       "type": "word",
-      "text": "shoes",
+      "text": "जूते",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_hat",
       "type": "word",
-      "text": "hat",
+      "text": "टोपी",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "36_clothing_and_fashion_jacket",
+      "id": "36_clothing_and_fashion_bag",
       "type": "word",
-      "text": "jacket",
+      "text": "बैग",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "36_clothing_and_fashion_size",
+      "id": "36_clothing_and_fashion_jewelry",
       "type": "word",
-      "text": "size",
+      "text": "गहने",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_style",
       "type": "word",
-      "text": "style",
+      "text": "स्टाइल",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_fashion",
       "type": "word",
-      "text": "fashion",
+      "text": "फैशन",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "36_clothing_and_fashion_what_are_you_wearing_today",
+      "id": "36_clothing_and_fashion_what_are_you_wearing",
       "type": "sentence",
-      "text": "What are you wearing today?",
+      "text": "आप क्या पहने हुए हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_i_like_your_new_shirt",
+      "id": "36_clothing_and_fashion_i_like_your_shirt",
       "type": "sentence",
-      "text": "I like your new shirt.",
+      "text": "मुझे आपकी शर्ट पसंद है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
+      "id": "36_clothing_and_fashion_where_did_you_buy_those_shoes",
       "type": "sentence",
-      "text": "Where did you buy those pants?",
+      "text": "आपने वे जूते कहाँ से खरीदे?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
+      "id": "36_clothing_and_fashion_do_you_like_fashion",
       "type": "sentence",
-      "text": "That dress looks beautiful on you.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
-      "type": "sentence",
-      "text": "Do you like my new shoes?",
+      "text": "क्या आपको फैशन पसंद है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_what_size_do_you_wear",
       "type": "sentence",
-      "text": "What size do you wear?",
+      "text": "आप क्या साइज पहनते हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_i_need_a_warm_jacket_for_winter",
+      "id": "36_clothing_and_fashion_i_need_new_clothes",
       "type": "sentence",
-      "text": "I need a warm jacket for winter.",
+      "text": "मुझे नए कपड़े चाहिए।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_what_is_your_fashion_style",
+      "id": "36_clothing_and_fashion_this_dress_is_beautiful",
       "type": "sentence",
-      "text": "What is your fashion style?",
+      "text": "यह ड्रेस बहुत सुंदर है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_this_hat_protects_me_from_the_sun",
+      "id": "36_clothing_and_fashion_do_you_like_this_style",
       "type": "sentence",
-      "text": "This hat protects me from the sun.",
+      "text": "क्या आपको यह स्टाइल पसंद है?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "36_clothing_and_fashion_do_you_follow_fashion_trends",
+      "id": "36_clothing_and_fashion_fashion_is_very_important",
       "type": "sentence",
-      "text": "Do you follow fashion trends?",
+      "text": "फैशन बहुत महत्वपूर्ण है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_want_to_buy_a_new_bag",
+      "type": "sentence",
+      "text": "मैं एक नया बैग खरीदना चाहता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_clothes_make_a_person",
+      "type": "sentence",
+      "text": "कपड़े इंसान को बनाते हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_is_your_favorite_color_for_clothes",
+      "type": "sentence",
+      "text": "कपड़ों के लिए आपका पसंदीदा रंग क्या है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_love_shopping_for_clothes",
+      "type": "sentence",
+      "text": "मुझे कपड़े खरीदना बहुत पसंद है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_style_is_personal",
+      "type": "sentence",
+      "text": "स्टाइल व्यक्तिगत होता है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_clothes_should_be_comfortable",
+      "type": "sentence",
+      "text": "कपड़े आरामदायक होने चाहिए।",
       "practiceType": "formulateSentense"
     }
   ]

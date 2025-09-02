@@ -1,9 +1,21 @@
 {
   "id": "39_communication_and_language",
-  "title": "Communication & Language",
+  "title": "संचार और भाषा",
   "emoji": "💬",
   "language": "Hindi",
   "items": [
+    {
+      "id": "39_communication_and_language_communication",
+      "type": "word",
+      "text": "संचार",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_language",
+      "type": "word",
+      "text": "भाषा",
+      "practiceType": "chooseTranslation"
+    },
     {
       "id": "39_communication_and_language_speak",
       "type": "word",
@@ -11,15 +23,9 @@
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "39_communication_and_language_talk",
-      "type": "word",
-      "text": "talk",
-      "practiceType": "chooseTranslation"
-    },
-    {
       "id": "39_communication_and_language_listen",
       "type": "word",
-      "text": "listen",
+      "text": "सुनना",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,97 +37,121 @@
     {
       "id": "39_communication_and_language_explain",
       "type": "word",
-      "text": "explain",
+      "text": "समझाना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_question",
       "type": "word",
-      "text": "question",
+      "text": "प्रश्न",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_answer",
       "type": "word",
-      "text": "answer",
+      "text": "उत्तर",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_conversation",
       "type": "word",
-      "text": "conversation",
+      "text": "बातचीत",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "39_communication_and_language_message",
+      "id": "39_communication_and_language_discussion",
       "type": "word",
-      "text": "message",
+      "text": "चर्चा",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "39_communication_and_language_translate",
-      "type": "word",
-      "text": "translate",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "39_communication_and_language_do_you_speak_english",
+      "id": "39_communication_and_language_do_you_speak_hindi",
       "type": "sentence",
-      "text": "क्या आप अंग्रेजी बोलते हैं?",
+      "text": "क्या आप हिंदी बोलते हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_can_we_talk_about_it",
+      "id": "39_communication_and_language_i_want_to_learn_english",
       "type": "sentence",
-      "text": "Can we talk about it?",
+      "text": "मैं अंग्रेजी सीखना चाहता हूं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_please_listen_to_me",
+      "id": "39_communication_and_language_can_you_understand_me",
       "type": "sentence",
-      "text": "Please listen to me.",
+      "text": "क्या आप मुझे समझ सकते हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_do_you_understand_what_i_mean",
+      "id": "39_communication_and_language_what_language_do_you_speak",
       "type": "sentence",
-      "text": "Do you understand what I mean?",
+      "text": "आप कौन सी भाषा बोलते हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_can_you_explain_this_to_me",
+      "id": "39_communication_and_language_communication_is_very_important",
       "type": "sentence",
-      "text": "Can you explain this to me?",
+      "text": "संचार बहुत महत्वपूर्ण है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_i_have_a_question_for_you",
+      "id": "39_communication_and_language_i_love_learning_new_languages",
       "type": "sentence",
-      "text": "I have a question for you.",
+      "text": "मुझे नई भाषाएं सीखना बहुत पसंद है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_what_is_your_answer",
+      "id": "39_communication_and_language_can_you_explain_this",
       "type": "sentence",
-      "text": "What is your answer?",
+      "text": "क्या आप इसे समझा सकते हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_this_is_an_interesting_conversation",
+      "id": "39_communication_and_language_i_have_a_question",
       "type": "sentence",
-      "text": "This is an interesting conversation.",
+      "text": "मेरे पास एक प्रश्न है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_did_you_get_my_message",
+      "id": "39_communication_and_language_language_connects_people",
       "type": "sentence",
-      "text": "Did you get my message?",
+      "text": "भाषा लोगों को जोड़ती है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "39_communication_and_language_can_you_translate_this_word",
+      "id": "39_communication_and_language_do_you_like_conversations",
       "type": "sentence",
-      "text": "Can you translate this word?",
+      "text": "क्या आपको बातचीत पसंद है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_communication_helps_us_connect",
+      "type": "sentence",
+      "text": "संचार हमें जोड़ने में मदद करता है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_i_enjoy_discussions",
+      "type": "sentence",
+      "text": "मुझे चर्चाएं करना अच्छा लगता है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_what_is_your_native_language",
+      "type": "sentence",
+      "text": "आपकी मातृभाषा क्या है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_language_is_a_tool",
+      "type": "sentence",
+      "text": "भाषा एक उपकरण है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_communication_brings_people_together",
+      "type": "sentence",
+      "text": "संचार लोगों को एक साथ लाता है।",
       "practiceType": "formulateSentense"
     }
   ]

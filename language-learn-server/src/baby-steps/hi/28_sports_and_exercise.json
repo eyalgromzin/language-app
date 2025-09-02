@@ -1,127 +1,157 @@
 {
   "id": "28_sports_and_exercise",
-  "title": "Sports & Exercise",
+  "title": "खेल और व्यायाम",
   "emoji": "⚽",
   "language": "Hindi",
   "items": [
     {
       "id": "28_sports_and_exercise_sport",
       "type": "word",
-      "text": "sport",
+      "text": "खेल",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_game",
+      "id": "28_sports_and_exercise_football",
       "type": "word",
-      "text": "game",
+      "text": "फुटबॉल",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_team",
+      "id": "28_sports_and_exercise_basketball",
       "type": "word",
-      "text": "team",
+      "text": "बास्केटबॉल",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_player",
+      "id": "28_sports_and_exercise_tennis",
       "type": "word",
-      "text": "player",
+      "text": "टेनिस",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_coach",
+      "id": "28_sports_and_exercise_swimming",
       "type": "word",
-      "text": "coach",
+      "text": "तैराकी",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_win",
+      "id": "28_sports_and_exercise_running",
       "type": "word",
-      "text": "win",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "28_sports_and_exercise_lose",
-      "type": "word",
-      "text": "lose",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "28_sports_and_exercise_score",
-      "type": "word",
-      "text": "score",
+      "text": "दौड़ना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_exercise",
       "type": "word",
-      "text": "exercise",
+      "text": "व्यायाम",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_fitness",
+      "id": "28_sports_and_exercise_team",
       "type": "word",
-      "text": "fitness",
+      "text": "टीम",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "28_sports_and_exercise_what_sport_do_you_like",
+      "id": "28_sports_and_exercise_player",
+      "type": "word",
+      "text": "खिलाड़ी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_game",
+      "type": "word",
+      "text": "खेल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_like_sports",
       "type": "sentence",
-      "text": "What sport do you like?",
+      "text": "क्या आपको खेल पसंद हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_i_love_playing_soccer",
+      "id": "28_sports_and_exercise_i_love_playing_football",
       "type": "sentence",
-      "text": "I love playing soccer.",
+      "text": "मुझे फुटबॉल खेलना बहुत पसंद है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
+      "id": "28_sports_and_exercise_what_sport_do_you_play",
       "type": "sentence",
-      "text": "Do you want to join our team?",
+      "text": "आप कौन सा खेल खेलते हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_who_is_your_favorite_player",
+      "id": "28_sports_and_exercise_i_go_swimming_every_week",
       "type": "sentence",
-      "text": "Who is your favorite player?",
+      "text": "मैं हर हफ्ते तैराकी करने जाता हूं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_our_coach_is_very_good",
+      "id": "28_sports_and_exercise_do_you_exercise_regularly",
       "type": "sentence",
-      "text": "Our coach is very good.",
+      "text": "क्या आप नियमित रूप से व्यायाम करते हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_did_you_win_the_game",
+      "id": "28_sports_and_exercise_i_run_every_morning",
       "type": "sentence",
-      "text": "Did you win the game?",
+      "text": "मैं हर सुबह दौड़ता हूं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_what_is_the_score",
+      "id": "28_sports_and_exercise_are_you_good_at_tennis",
       "type": "sentence",
-      "text": "What is the score?",
+      "text": "क्या आप टेनिस में अच्छे हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_i_exercise_every_morning",
+      "id": "28_sports_and_exercise_i_want_to_join_a_sports_team",
       "type": "sentence",
-      "text": "I exercise every morning.",
+      "text": "मैं एक खेल टीम में शामिल होना चाहता हूं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_do_you_go_to_the_gym",
+      "id": "28_sports_and_exercise_sports_are_good_for_health",
       "type": "sentence",
-      "text": "Do you go to the gym?",
+      "text": "खेल स्वास्थ्य के लिए अच्छे हैं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "28_sports_and_exercise_fitness_is_important_for_health",
+      "id": "28_sports_and_exercise_i_play_basketball_with_friends",
       "type": "sentence",
-      "text": "Fitness is important for health.",
+      "text": "मैं दोस्तों के साथ बास्केटबॉल खेलता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_what_is_your_favorite_sport",
+      "type": "sentence",
+      "text": "आपका पसंदीदा खेल क्या है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_need_to_exercise_more",
+      "type": "sentence",
+      "text": "मुझे और व्यायाम करने की जरूरत है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_playing_sports_is_fun",
+      "type": "sentence",
+      "text": "खेल खेलना मजेदार है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_want_to_be_a_professional_player",
+      "type": "sentence",
+      "text": "मैं एक पेशेवर खिलाड़ी बनना चाहता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_exercise_makes_me_feel_good",
+      "type": "sentence",
+      "text": "व्यायाम करने से मुझे अच्छा लगता है।",
       "practiceType": "formulateSentense"
     }
   ]

@@ -1,127 +1,157 @@
 {
   "id": "26_health_and_medical",
-  "title": "Health & Medical",
+  "title": "स्वास्थ्य और चिकित्सा",
   "emoji": "🏥",
   "language": "Hindi",
   "items": [
     {
       "id": "26_health_and_medical_health",
       "type": "word",
-      "text": "health",
+      "text": "स्वास्थ्य",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "डॉक्टर",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_hospital",
       "type": "word",
-      "text": "hospital",
+      "text": "अस्पताल",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "दवा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_pain",
       "type": "word",
-      "text": "pain",
+      "text": "दर्द",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_sick",
       "type": "word",
-      "text": "sick",
+      "text": "बीमार",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_fever",
+      "id": "26_health_and_medical_better",
       "type": "word",
-      "text": "fever",
+      "text": "बेहतर",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_appointment",
+      "id": "26_health_and_medical_worse",
       "type": "word",
-      "text": "appointment",
+      "text": "बदतर",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_emergency",
       "type": "word",
-      "text": "emergency",
+      "text": "आपातकाल",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_treatment",
+      "id": "26_health_and_medical_appointment",
       "type": "word",
-      "text": "treatment",
+      "text": "अपॉइंटमेंट",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_how_are_you_feeling_today",
+      "id": "26_health_and_medical_i_am_sick",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "मैं बीमार हूं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_i_need_to_see_a_doctor",
+      "id": "26_health_and_medical_i_need_a_doctor",
       "type": "sentence",
-      "text": "I need to see a doctor.",
+      "text": "मुझे डॉक्टर की जरूरत है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_where_is_the_nearest_hospital",
+      "id": "26_health_and_medical_where_is_the_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "अस्पताल कहाँ है?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_i_have_a_headache",
+      "id": "26_health_and_medical_i_have_pain",
       "type": "sentence",
-      "text": "I have a headache.",
+      "text": "मुझे दर्द है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_can_i_make_an_appointment",
+      "id": "26_health_and_medical_do_you_have_medicine",
       "type": "sentence",
-      "text": "Can I make an appointment?",
+      "text": "क्या आपके पास दवा है?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_i_am_feeling_sick",
+      "id": "26_health_and_medical_i_feel_better",
       "type": "sentence",
-      "text": "I am feeling sick.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "26_health_and_medical_do_you_have_any_medicine",
-      "type": "sentence",
-      "text": "Do you have any medicine?",
+      "text": "मैं बेहतर महसूस कर रहा हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_this_is_an_emergency",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "यह एक आपातकाल है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_what_treatment_do_i_need",
+      "id": "26_health_and_medical_i_have_an_appointment",
       "type": "sentence",
-      "text": "What treatment do I need?",
+      "text": "मेरी अपॉइंटमेंट है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_my_fever_is_very_high",
+      "id": "26_health_and_medical_what_is_wrong_with_me",
       "type": "sentence",
-      "text": "My fever is very high.",
+      "text": "मुझे क्या हुआ है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_need_help",
+      "type": "sentence",
+      "text": "मुझे मदद की जरूरत है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_are_you_okay",
+      "type": "sentence",
+      "text": "क्या आप ठीक हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_health_is_very_important",
+      "type": "sentence",
+      "text": "स्वास्थ्य बहुत महत्वपूर्ण है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_want_to_see_a_doctor",
+      "type": "sentence",
+      "text": "मैं डॉक्टर से मिलना चाहता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_please_help_me",
+      "type": "sentence",
+      "text": "कृपया मेरी मदद करें।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_thank_you_doctor",
+      "type": "sentence",
+      "text": "धन्यवाद डॉक्टर।",
       "practiceType": "formulateSentense"
     }
   ]

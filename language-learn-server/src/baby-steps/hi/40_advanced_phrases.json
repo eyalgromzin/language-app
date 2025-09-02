@@ -1,127 +1,157 @@
 {
   "id": "40_advanced_phrases",
-  "title": "Advanced Phrases",
+  "title": "उन्नत वाक्यांश",
   "emoji": "🚀",
   "language": "Hindi",
   "items": [
     {
       "id": "40_advanced_phrases_nevertheless",
       "type": "word",
-      "text": "nevertheless",
+      "text": "फिर भी",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_furthermore",
       "type": "word",
-      "text": "furthermore",
+      "text": "इसके अलावा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_otherwise",
       "type": "word",
-      "text": "otherwise",
+      "text": "अन्यथा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_meanwhile",
       "type": "word",
-      "text": "meanwhile",
+      "text": "इस बीच",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_consequently",
       "type": "word",
-      "text": "consequently",
+      "text": "नतीजतन",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_approximately",
       "type": "word",
-      "text": "approximately",
+      "text": "लगभग",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_occasionally",
       "type": "word",
-      "text": "occasionally",
+      "text": "कभी-कभी",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_gradually",
       "type": "word",
-      "text": "gradually",
+      "text": "धीरे-धीरे",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_ultimately",
       "type": "word",
-      "text": "ultimately",
+      "text": "अंततः",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_essentially",
       "type": "word",
-      "text": "essentially",
+      "text": "मूल रूप से",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
       "type": "sentence",
-      "text": "Nevertheless, I still want to try.",
+      "text": "फिर भी, मैं अभी भी कोशिश करना चाहता हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
       "type": "sentence",
-      "text": "Furthermore, I believe this is correct.",
+      "text": "इसके अलावा, मुझे विश्वास है कि यह सही है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
       "type": "sentence",
-      "text": "We must leave now, otherwise we will be late.",
+      "text": "हमें अभी जाना होगा, अन्यथा हम देर हो जाएंगे।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
       "type": "sentence",
-      "text": "Meanwhile, I will prepare dinner.",
+      "text": "इस बीच, मैं रात का खाना तैयार करूंगा।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
       "type": "sentence",
-      "text": "Consequently, the meeting was cancelled.",
+      "text": "नतीजतन, बैठक रद्द कर दी गई।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_it_will_cost_approximately_fifty_dollars",
       "type": "sentence",
-      "text": "It will cost approximately fifty dollars.",
+      "text": "इसकी कीमत लगभग पचास डॉलर होगी।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_i_occasionally_visit_my_grandparents",
       "type": "sentence",
-      "text": "I occasionally visit my grandparents.",
+      "text": "मैं कभी-कभी अपने दादा-दादी से मिलने जाता हूं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "40_advanced_phrases_the_weather_gradually_improved",
+      "id": "40_advanced_phrases_gradually_i_learned_to_speak_english",
       "type": "sentence",
-      "text": "The weather gradually improved.",
+      "text": "धीरे-धीरे, मैंने अंग्रेजी बोलना सीखा।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "40_advanced_phrases_ultimately_we_reached_our_goal",
+      "id": "40_advanced_phrases_ultimately_success_comes_to_those_who_work_hard",
       "type": "sentence",
-      "text": "Ultimately, we reached our goal.",
+      "text": "अंततः, सफलता उन्हीं को मिलती है जो कड़ी मेहनत करते हैं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "40_advanced_phrases_essentially_this_is_the_same_thing",
+      "id": "40_advanced_phrases_essentially_this_is_a_simple_problem",
       "type": "sentence",
-      "text": "Essentially, this is the same thing.",
+      "text": "मूल रूप से, यह एक सरल समस्या है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_advanced_phrases_improve_communication",
+      "type": "sentence",
+      "text": "उन्नत वाक्यांश संचार को बेहतर बनाते हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_learning_advanced_language_takes_time",
+      "type": "sentence",
+      "text": "उन्नत भाषा सीखने में समय लगता है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_practice_makes_perfect",
+      "type": "sentence",
+      "text": "अभ्यास परिपूर्ण बनाता है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_advanced_phrases_show_mastery",
+      "type": "sentence",
+      "text": "उन्नत वाक्यांश निपुणता दिखाते हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_language_learning_is_a_journey",
+      "type": "sentence",
+      "text": "भाषा सीखना एक यात्रा है।",
       "practiceType": "formulateSentense"
     }
   ]

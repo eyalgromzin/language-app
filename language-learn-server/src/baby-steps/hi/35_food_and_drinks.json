@@ -1,127 +1,157 @@
 {
   "id": "35_food_and_drinks",
-  "title": "Food & Drinks",
-  "emoji": "🍕",
+  "title": "भोजन और पेय",
+  "emoji": "🍽️",
   "language": "Hindi",
   "items": [
     {
       "id": "35_food_and_drinks_food",
       "type": "word",
-      "text": "खाना",
+      "text": "भोजन",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_drink",
       "type": "word",
-      "text": "पीना",
+      "text": "पेय",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_breakfast",
+      "id": "35_food_and_drinks_water",
       "type": "word",
-      "text": "नाश्ता",
+      "text": "पानी",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_lunch",
+      "id": "35_food_and_drinks_bread",
       "type": "word",
-      "text": "दोपहर का खाना",
+      "text": "रोटी",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_dinner",
+      "id": "35_food_and_drinks_rice",
       "type": "word",
-      "text": "रात का खाना",
+      "text": "चावल",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_restaurant",
+      "id": "35_food_and_drinks_meat",
       "type": "word",
-      "text": "restaurant",
+      "text": "मांस",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_menu",
+      "id": "35_food_and_drinks_vegetables",
       "type": "word",
-      "text": "menu",
+      "text": "सब्जियां",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_order",
+      "id": "35_food_and_drinks_fruit",
       "type": "word",
-      "text": "order",
+      "text": "फल",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_hungry",
+      "id": "35_food_and_drinks_milk",
       "type": "word",
-      "text": "hungry",
+      "text": "दूध",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "35_food_and_drinks_thirsty",
+      "id": "35_food_and_drinks_coffee",
       "type": "word",
-      "text": "thirsty",
+      "text": "कॉफी",
       "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "35_food_and_drinks_what_would_you_like_to_eat",
-      "type": "sentence",
-      "text": "What would you like to eat?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "35_food_and_drinks_can_i_have_something_to_drink",
-      "type": "sentence",
-      "text": "Can I have something to drink?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "35_food_and_drinks_what_did_you_have_for_breakfast",
-      "type": "sentence",
-      "text": "What did you have for breakfast?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "35_food_and_drinks_let_s_go_to_a_restaurant_for_lunch",
-      "type": "sentence",
-      "text": "Let's go to a restaurant for lunch.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "35_food_and_drinks_what_time_is_dinner",
-      "type": "sentence",
-      "text": "What time is dinner?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "35_food_and_drinks_can_i_see_the_menu",
-      "type": "sentence",
-      "text": "Can I see the menu?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "35_food_and_drinks_i_want_to_order_pizza",
-      "type": "sentence",
-      "text": "I want to order pizza.",
-      "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_are_you_hungry",
       "type": "sentence",
-      "text": "Are you hungry?",
+      "text": "क्या आप भूखे हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_i_am_thirsty_can_i_have_water",
+      "id": "35_food_and_drinks_i_am_very_hungry",
       "type": "sentence",
-      "text": "I am thirsty, can I have water?",
+      "text": "मैं बहुत भूखा हूं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "35_food_and_drinks_this_food_tastes_delicious",
+      "id": "35_food_and_drinks_what_would_you_like_to_eat",
       "type": "sentence",
-      "text": "This food tastes delicious.",
+      "text": "आप क्या खाना चाहेंगे?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_want_some_water",
+      "type": "sentence",
+      "text": "मुझे कुछ पानी चाहिए।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_do_you_like_indian_food",
+      "type": "sentence",
+      "text": "क्या आपको भारतीय भोजन पसंद है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_this_food_is_delicious",
+      "type": "sentence",
+      "text": "यह भोजन बहुत स्वादिष्ट है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_prefer_vegetarian_food",
+      "type": "sentence",
+      "text": "मुझे शाकाहारी भोजन पसंद है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_is_for_dinner",
+      "type": "sentence",
+      "text": "रात के खाने में क्या है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_love_fruits",
+      "type": "sentence",
+      "text": "मुझे फल बहुत पसंद हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_do_you_want_some_coffee",
+      "type": "sentence",
+      "text": "क्या आप कुछ कॉफी चाहेंगे?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_food_is_essential_for_life",
+      "type": "sentence",
+      "text": "भोजन जीवन के लिए आवश्यक है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_need_to_eat_breakfast",
+      "type": "sentence",
+      "text": "मुझे नाश्ता करने की जरूरत है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_is_your_favorite_food",
+      "type": "sentence",
+      "text": "आपका पसंदीदा भोजन क्या है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_drinking_water_is_healthy",
+      "type": "sentence",
+      "text": "पानी पीना स्वास्थ्य के लिए अच्छा है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_enjoy_cooking",
+      "type": "sentence",
+      "text": "मुझे खाना बनाना अच्छा लगता है।",
       "practiceType": "formulateSentense"
     }
   ]

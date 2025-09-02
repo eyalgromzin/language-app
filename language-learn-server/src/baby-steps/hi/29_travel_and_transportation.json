@@ -1,127 +1,157 @@
 {
   "id": "29_travel_and_transportation",
-  "title": "Travel & Transportation",
+  "title": "यात्रा और परिवहन",
   "emoji": "✈️",
   "language": "Hindi",
   "items": [
     {
       "id": "29_travel_and_transportation_travel",
       "type": "word",
-      "text": "travel",
+      "text": "यात्रा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_trip",
       "type": "word",
-      "text": "trip",
+      "text": "यात्रा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_journey",
+      "type": "word",
+      "text": "सफर",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_airport",
       "type": "word",
-      "text": "airport",
+      "text": "हवाई अड्डा",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "29_travel_and_transportation_hotel",
+      "id": "29_travel_and_transportation_station",
       "type": "word",
-      "text": "hotel",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "29_travel_and_transportation_passport",
-      "type": "word",
-      "text": "passport",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "29_travel_and_transportation_ticket",
-      "type": "word",
-      "text": "ticket",
+      "text": "स्टेशन",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_bus",
       "type": "word",
-      "text": "bus",
+      "text": "बस",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_train",
       "type": "word",
-      "text": "train",
+      "text": "ट्रेन",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "29_ttravel_and_transportation_car",
+      "id": "29_travel_and_transportation_plane",
       "type": "word",
-      "text": "car",
+      "text": "हवाई जहाज",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "29_travel_and_transportation_map",
+      "id": "29_travel_and_transportation_car",
       "type": "word",
-      "text": "map",
+      "text": "कार",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "29_travel_and_transportation_where_are_you_traveling_to",
+      "id": "29_travel_and_transportation_ticket",
+      "type": "word",
+      "text": "टिकट",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_where_are_you_going",
       "type": "sentence",
-      "text": "Where are you traveling to?",
+      "text": "आप कहाँ जा रहे हैं?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_i_am_going_on_a_trip",
       "type": "sentence",
-      "text": "I am going on a trip.",
+      "text": "मैं एक यात्रा पर जा रहा हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_how_do_i_get_to_the_airport",
       "type": "sentence",
-      "text": "How do I get to the airport?",
+      "text": "मैं हवाई अड्डे तक कैसे पहुंचूं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_do_you_have_a_hotel_reservation",
+      "id": "29_travel_and_transportation_what_time_does_the_train_leave",
       "type": "sentence",
-      "text": "Do you have a hotel reservation?",
+      "text": "ट्रेन कब जाती है?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_where_is_my_passport",
+      "id": "29_travel_and_transportation_i_need_a_ticket_to_london",
       "type": "sentence",
-      "text": "Where is my passport?",
+      "text": "मुझे लंदन के लिए टिकट चाहिए।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_i_need_to_buy_a_ticket",
+      "id": "29_travel_and_transportation_how_long_is_the_journey",
       "type": "sentence",
-      "text": "I need to buy a ticket.",
+      "text": "यात्रा कितनी लंबी है?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_does_this_bus_go_to_the_city",
+      "id": "29_travel_and_transportation_do_you_like_traveling",
       "type": "sentence",
-      "text": "Does this bus go to the city?",
+      "text": "क्या आपको यात्रा करना पसंद है?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_the_train_is_delayed",
+      "id": "29_travel_and_transportation_i_want_to_visit_paris",
       "type": "sentence",
-      "text": "The train is delayed.",
+      "text": "मैं पेरिस जाना चाहता हूं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_can_you_drive_me_to_the_station",
+      "id": "29_travel_and_transportation_what_is_the_best_way_to_travel",
       "type": "sentence",
-      "text": "Can you drive me to the station?",
+      "text": "यात्रा करने का सबसे अच्छा तरीका क्या है?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "29_travel_and_transportation_i_need_a_map_of_the_city",
+      "id": "29_travel_and_transportation_i_prefer_traveling_by_train",
       "type": "sentence",
-      "text": "I need a map of the city.",
+      "text": "मुझे ट्रेन से यात्रा करना पसंद है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_how_much_does_the_ticket_cost",
+      "type": "sentence",
+      "text": "टिकट की कीमत कितनी है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_traveling_is_very_exciting",
+      "type": "sentence",
+      "text": "यात्रा करना बहुत रोमांचक है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_i_love_visiting_new_places",
+      "type": "sentence",
+      "text": "मुझे नई जगहें देखना बहुत पसंद है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_what_countries_have_you_visited",
+      "type": "sentence",
+      "text": "आपने कौन से देश देखे हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_traveling_broadens_your_mind",
+      "type": "sentence",
+      "text": "यात्रा करने से दिमाग खुलता है।",
       "practiceType": "formulateSentense"
     }
   ]

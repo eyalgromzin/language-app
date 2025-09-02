@@ -1,13 +1,13 @@
 {
   "id": "27_education_and_learning",
-  "title": "Education & Learning",
+  "title": "शिक्षा और सीखना",
   "emoji": "📚",
   "language": "Hindi",
   "items": [
     {
       "id": "27_education_and_learning_school",
       "type": "word",
-      "text": "school",
+      "text": "स्कूल",
       "practiceType": "chooseTranslation"
     },
     {
@@ -25,31 +25,31 @@
     {
       "id": "27_education_and_learning_class",
       "type": "word",
-      "text": "class",
+      "text": "कक्षा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_lesson",
       "type": "word",
-      "text": "lesson",
+      "text": "पाठ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_homework",
       "type": "word",
-      "text": "homework",
+      "text": "होमवर्क",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_exam",
       "type": "word",
-      "text": "exam",
+      "text": "परीक्षा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "27_education_and_learning_grade",
       "type": "word",
-      "text": "grade",
+      "text": "ग्रेड",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,91 @@
     {
       "id": "27_education_and_learning_what_subject_do_you_study",
       "type": "sentence",
-      "text": "What subject do you study?",
+      "text": "आप कौन सा विषय पढ़ते हैं?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_i_am_a_student_at_university",
       "type": "sentence",
-      "text": "I am a student at university.",
+      "text": "मैं विश्वविद्यालय में छात्र हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_my_teacher_is_very_good",
       "type": "sentence",
-      "text": "My teacher is very good.",
+      "text": "मेरे शिक्षक बहुत अच्छे हैं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_what_time_does_class_start",
       "type": "sentence",
-      "text": "What time does class start?",
+      "text": "कक्षा कब शुरू होती है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_i_have_a_lot_of_homework",
       "type": "sentence",
-      "text": "I have a lot of homework.",
+      "text": "मेरे पास बहुत होमवर्क है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_when_is_your_next_exam",
       "type": "sentence",
-      "text": "When is your next exam?",
+      "text": "आपकी अगली परीक्षा कब है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_what_grade_did_you_get",
       "type": "sentence",
-      "text": "What grade did you get?",
+      "text": "आपको क्या ग्रेड मिला?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_i_need_to_study_for_the_test",
       "type": "sentence",
-      "text": "I need to study for the test.",
+      "text": "मुझे टेस्ट के लिए पढ़ाई करनी है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_this_lesson_is_very_interesting",
       "type": "sentence",
-      "text": "This lesson is very interesting.",
+      "text": "यह पाठ बहुत दिलचस्प है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "27_education_and_learning_i_want_to_learn_english",
       "type": "sentence",
-      "text": "I want to learn English.",
+      "text": "मैं अंग्रेजी सीखना चाहता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_education_is_very_important",
+      "type": "sentence",
+      "text": "शिक्षा बहुत महत्वपूर्ण है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_love_learning_new_things",
+      "type": "sentence",
+      "text": "मुझे नई चीजें सीखना पसंद है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_my_school_is_very_big",
+      "type": "sentence",
+      "text": "मेरा स्कूल बहुत बड़ा है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_have_class_tomorrow",
+      "type": "sentence",
+      "text": "कल मेरी कक्षा है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_learning_is_fun",
+      "type": "sentence",
+      "text": "सीखना मजेदार है।",
       "practiceType": "formulateSentense"
     }
   ]

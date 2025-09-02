@@ -1,127 +1,157 @@
 {
   "id": "33_numbers_and_quantities",
-  "title": "Numbers & Quantities",
+  "title": "संख्या और मात्रा",
   "emoji": "🔢",
   "language": "Hindi",
   "items": [
     {
-      "id": "33_numbers_and_quantities_number",
+      "id": "33_numbers_and_quantities_one",
       "type": "word",
-      "text": "number",
+      "text": "एक",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_count",
+      "id": "33_numbers_and_quantities_two",
       "type": "word",
-      "text": "count",
+      "text": "दो",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_many",
+      "id": "33_numbers_and_quantities_three",
       "type": "word",
-      "text": "many",
+      "text": "तीन",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_few",
+      "id": "33_numbers_and_quantities_four",
       "type": "word",
-      "text": "few",
+      "text": "चार",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_some",
+      "id": "33_numbers_and_quantities_five",
       "type": "word",
-      "text": "some",
+      "text": "पांच",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_all",
+      "id": "33_numbers_and_quantities_six",
       "type": "word",
-      "text": "all",
+      "text": "छह",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_none",
+      "id": "33_numbers_and_quantities_seven",
       "type": "word",
-      "text": "none",
+      "text": "सात",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_half",
+      "id": "33_numbers_and_quantities_eight",
       "type": "word",
-      "text": "half",
+      "text": "आठ",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_double",
+      "id": "33_numbers_and_quantities_nine",
       "type": "word",
-      "text": "double",
+      "text": "नौ",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "33_numbers_and_quantities_total",
+      "id": "33_numbers_and_quantities_ten",
       "type": "word",
-      "text": "total",
+      "text": "दस",
       "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_how_many",
+      "type": "sentence",
+      "text": "कितने?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_need_two_tickets",
+      "type": "sentence",
+      "text": "मुझे दो टिकट चाहिए।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_how_much_does_it_cost",
+      "type": "sentence",
+      "text": "इसकी कीमत कितनी है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_want_three_apples",
+      "type": "sentence",
+      "text": "मुझे तीन सेब चाहिए।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_there_are_five_people",
+      "type": "sentence",
+      "text": "पांच लोग हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_how_many_hours",
+      "type": "sentence",
+      "text": "कितने घंटे?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_have_seven_days",
+      "type": "sentence",
+      "text": "मेरे पास सात दिन हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_what_is_the_total",
+      "type": "sentence",
+      "text": "कुल क्या है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_numbers_are_important",
+      "type": "sentence",
+      "text": "संख्या महत्वपूर्ण हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_count_to_ten",
+      "type": "sentence",
+      "text": "मैं दस तक गिनता हूं।",
+      "practiceType": "formulateSentense"
     },
     {
       "id": "33_numbers_and_quantities_how_many_people_are_here",
       "type": "sentence",
-      "text": "How many people are here?",
+      "text": "यहाँ कितने लोग हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_can_you_count_to_ten",
+      "id": "33_numbers_and_quantities_quantities_matter",
       "type": "sentence",
-      "text": "Can you count to ten?",
+      "text": "मात्रा मायने रखती है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_there_are_many_books_in_the_library",
+      "id": "33_numbers_and_quantities_i_need_more",
       "type": "sentence",
-      "text": "There are many books in the library.",
+      "text": "मुझे और चाहिए।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_i_have_few_friends_here",
+      "id": "33_numbers_and_quantities_that_is_enough",
       "type": "sentence",
-      "text": "I have few friends here.",
+      "text": "वह काफी है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "33_numbers_and_quantities_would_you_like_some_water",
+      "id": "33_numbers_and_quantities_numbers_help_us_count",
       "type": "sentence",
-      "text": "Would you like some water?",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "33_numbers_and_quantities_all_students_are_present",
-      "type": "sentence",
-      "text": "All students are present.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "33_numbers_and_quantities_none_of_them_came",
-      "type": "sentence",
-      "text": "None of them came.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "33_numbers_and_quantities_i_ate_half_of_the_pizza",
-      "type": "sentence",
-      "text": "I ate half of the pizza.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "33_numbers_and_quantities_the_price_doubled_last_year",
-      "type": "sentence",
-      "text": "The price doubled last year.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "33_numbers_and_quantities_what_is_the_total_cost",
-      "type": "sentence",
-      "text": "What is the total cost?",
+      "text": "संख्या हमें गिनने में मदद करती हैं।",
       "practiceType": "formulateSentense"
     }
   ]

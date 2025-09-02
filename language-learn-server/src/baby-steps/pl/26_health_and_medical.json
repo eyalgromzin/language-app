@@ -1,127 +1,157 @@
 {
   "id": "26_health_and_medical",
-  "title": "Health & Medical",
+  "title": "Zdrowie i Medycyna",
   "emoji": "🏥",
   "language": "Polish",
   "items": [
     {
       "id": "26_health_and_medical_health",
       "type": "word",
-      "text": "health",
+      "text": "zdrowie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "lekarz",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_hospital",
       "type": "word",
-      "text": "hospital",
+      "text": "szpital",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "lekarstwo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_pain",
       "type": "word",
-      "text": "pain",
+      "text": "ból",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_sick",
       "type": "word",
-      "text": "sick",
+      "text": "chory",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_fever",
+      "id": "26_health_and_medical_better",
       "type": "word",
-      "text": "fever",
+      "text": "lepiej",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_appointment",
+      "id": "26_health_and_medical_worse",
       "type": "word",
-      "text": "appointment",
+      "text": "gorzej",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_emergency",
       "type": "word",
-      "text": "emergency",
+      "text": "nagły wypadek",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_treatment",
+      "id": "26_health_and_medical_appointment",
       "type": "word",
-      "text": "treatment",
+      "text": "wizyta",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "26_health_and_medical_how_are_you_feeling_today",
+      "id": "26_health_and_medical_i_am_sick",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "Jestem chory.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_i_need_to_see_a_doctor",
+      "id": "26_health_and_medical_i_need_a_doctor",
       "type": "sentence",
-      "text": "I need to see a doctor.",
+      "text": "Potrzebuję lekarza.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_where_is_the_nearest_hospital",
+      "id": "26_health_and_medical_where_is_the_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "Gdzie jest szpital?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_i_have_a_headache",
+      "id": "26_health_and_medical_i_have_pain",
       "type": "sentence",
-      "text": "I have a headache.",
+      "text": "Mam ból.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_can_i_make_an_appointment",
+      "id": "26_health_and_medical_do_you_have_medicine",
       "type": "sentence",
-      "text": "Can I make an appointment?",
+      "text": "Czy masz lekarstwo?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_i_am_feeling_sick",
+      "id": "26_health_and_medical_i_feel_better",
       "type": "sentence",
-      "text": "I am feeling sick.",
-      "practiceType": "formulateSentense"
-    },
-    {
-      "id": "26_health_and_medical_do_you_have_any_medicine",
-      "type": "sentence",
-      "text": "Do you have any medicine?",
+      "text": "Czuję się lepiej.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_this_is_an_emergency",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "To nagły wypadek.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_what_treatment_do_i_need",
+      "id": "26_health_and_medical_i_have_an_appointment",
       "type": "sentence",
-      "text": "What treatment do I need?",
+      "text": "Mam wizytę.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "26_health_and_medical_my_fever_is_very_high",
+      "id": "26_health_and_medical_what_is_wrong_with_me",
       "type": "sentence",
-      "text": "My fever is very high.",
+      "text": "Co mi jest?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_need_help",
+      "type": "sentence",
+      "text": "Potrzebuję pomocy.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_are_you_okay",
+      "type": "sentence",
+      "text": "Czy wszystko w porządku?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_health_is_very_important",
+      "type": "sentence",
+      "text": "Zdrowie jest bardzo ważne.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_want_to_see_a_doctor",
+      "type": "sentence",
+      "text": "Chcę zobaczyć lekarza.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_please_help_me",
+      "type": "sentence",
+      "text": "Proszę, pomóż mi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_thank_you_doctor",
+      "type": "sentence",
+      "text": "Dziękuję, doktorze.",
       "practiceType": "formulateSentense"
     }
   ]

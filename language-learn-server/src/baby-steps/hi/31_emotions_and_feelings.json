@@ -1,127 +1,157 @@
 {
   "id": "31_emotions_and_feelings",
-  "title": "Emotions & Feelings",
+  "title": "भावनाएं और एहसास",
   "emoji": "😊",
   "language": "Hindi",
   "items": [
     {
       "id": "31_emotions_and_feelings_happy",
       "type": "word",
-      "text": "happy",
+      "text": "खुश",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_sad",
       "type": "word",
-      "text": "sad",
+      "text": "दुखी",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_angry",
       "type": "word",
-      "text": "angry",
+      "text": "गुस्सा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_excited",
       "type": "word",
-      "text": "excited",
+      "text": "उत्साहित",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_nervous",
       "type": "word",
-      "text": "nervous",
+      "text": "घबराया हुआ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_tired",
       "type": "word",
-      "text": "tired",
+      "text": "थका हुआ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_scared",
+      "type": "word",
+      "text": "डरा हुआ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_surprised",
       "type": "word",
-      "text": "surprised",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "31_emotions_and_feelings_worried",
-      "type": "word",
-      "text": "worried",
+      "text": "आश्चर्यचकित",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_confused",
       "type": "word",
-      "text": "confused",
+      "text": "उलझन में",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_proud",
       "type": "word",
-      "text": "proud",
+      "text": "गर्वित",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "31_emotions_and_feelings_how_are_you_feeling_today",
+      "id": "31_emotions_and_feelings_how_are_you_feeling",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "आप कैसा महसूस कर रहे हैं?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_very_happy_today",
       "type": "sentence",
-      "text": "I am very happy today.",
+      "text": "आज मैं बहुत खुश हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_why_are_you_sad",
       "type": "sentence",
-      "text": "Why are you sad?",
+      "text": "आप दुखी क्यों हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_don_t_be_angry_with_me",
+      "id": "31_emotions_and_feelings_i_feel_excited_about_the_trip",
       "type": "sentence",
-      "text": "Don't be angry with me.",
+      "text": "मुझे यात्रा के बारे में उत्साह महसूस हो रहा है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_i_am_excited_about_the_trip",
+      "id": "31_emotions_and_feelings_are_you_angry_with_me",
       "type": "sentence",
-      "text": "I am excited about the trip.",
+      "text": "क्या आप मुझसे गुस्सा हैं?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_i_feel_nervous_before_exams",
+      "id": "31_emotions_and_feelings_i_am_nervous_about_the_exam",
       "type": "sentence",
-      "text": "I feel nervous before exams.",
+      "text": "मैं परीक्षा के बारे में घबरा रहा हूं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_are_you_tired",
+      "id": "31_emotions_and_feelings_what_makes_you_happy",
       "type": "sentence",
-      "text": "Are you tired?",
+      "text": "आपको क्या खुश करता है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_feel_tired_after_work",
+      "type": "sentence",
+      "text": "काम के बाद मुझे थकान महसूस होती है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_don_t_be_scared",
+      "type": "sentence",
+      "text": "डरो मत।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
       "type": "sentence",
-      "text": "I am surprised by the news.",
+      "text": "मैं खबर से आश्चर्यचकित हूं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "31_emotions_and_feelings_don_t_worry_about_it",
+      "id": "31_emotions_and_feelings_emotions_are_very_important",
       "type": "sentence",
-      "text": "Don't worry about it.",
+      "text": "भावनाएं बहुत महत्वपूर्ण हैं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_proud_of_my_achievement",
       "type": "sentence",
-      "text": "I am proud of my achievement.",
+      "text": "मुझे अपनी उपलब्धि पर गर्व है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_feelings_can_change_quickly",
+      "type": "sentence",
+      "text": "भावनाएं जल्दी बदल सकती हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_understand_your_feelings",
+      "type": "sentence",
+      "text": "मैं आपकी भावनाओं को समझता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_emotions_are_part_of_life",
+      "type": "sentence",
+      "text": "भावनाएं जीवन का हिस्सा हैं।",
       "practiceType": "formulateSentense"
     }
   ]

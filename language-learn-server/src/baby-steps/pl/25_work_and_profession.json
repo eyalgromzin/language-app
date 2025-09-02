@@ -1,6 +1,6 @@
 {
   "id": "25_work_and_profession",
-  "title": "Work & Profession",
+  "title": "Praca i Zawód",
   "emoji": "💼",
   "language": "Polish",
   "items": [
@@ -19,109 +19,139 @@
     {
       "id": "25_work_and_profession_office",
       "type": "word",
-      "text": "office",
+      "text": "biuro",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_meeting",
       "type": "word",
-      "text": "meeting",
+      "text": "spotkanie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_boss",
       "type": "word",
-      "text": "boss",
+      "text": "szef",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_colleague",
       "type": "word",
-      "text": "colleague",
+      "text": "kolega",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_salary",
       "type": "word",
-      "text": "salary",
+      "text": "wynagrodzenie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_project",
       "type": "word",
-      "text": "project",
+      "text": "projekt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_deadline",
       "type": "word",
-      "text": "deadline",
+      "text": "termin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_career",
       "type": "word",
-      "text": "career",
+      "text": "kariera",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Czym się zajmujesz w pracy?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Pracuję w biurze.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Czy lubisz swoją pracę?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_have_a_meeting_at_nine",
       "type": "sentence",
-      "text": "I have a meeting at nine.",
+      "text": "Mam spotkanie o dziewiątej.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_my_boss_is_very_nice",
       "type": "sentence",
-      "text": "My boss is very nice.",
+      "text": "Mój szef jest bardzo miły.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_with_great_colleagues",
       "type": "sentence",
-      "text": "I work with great colleagues.",
+      "text": "Pracuję ze wspaniałymi kolegami.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_what_is_your_salary",
       "type": "sentence",
-      "text": "What is your salary?",
+      "text": "Jakie masz wynagrodzenie?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_this_project_is_very_important",
+      "id": "25_work_and_profession_i_work_from_nine_to_five",
       "type": "sentence",
-      "text": "This project is very important.",
+      "text": "Pracuję od dziewiątej do piątej.",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "25_work_and_profession_the_deadline_is_next_week",
+      "id": "25_work_and_profession_do_you_have_a_lot_of_work",
       "type": "sentence",
-      "text": "The deadline is next week.",
+      "text": "Czy masz dużo pracy?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_need_to_finish_this_project",
+      "type": "sentence",
+      "text": "Muszę skończyć ten projekt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_what_time_do_you_start_work",
+      "type": "sentence",
+      "text": "O której zaczynasz pracę?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_want_to_advance_my_career",
       "type": "sentence",
-      "text": "I want to advance my career.",
+      "text": "Chcę rozwijać swoją karierę.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_my_job_is_very_interesting",
+      "type": "sentence",
+      "text": "Moja praca jest bardzo interesująca.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_have_a_good_salary",
+      "type": "sentence",
+      "text": "Mam dobre wynagrodzenie.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_work_is_very_important",
+      "type": "sentence",
+      "text": "Praca jest bardzo ważna.",
       "practiceType": "formulateSentense"
     }
   ]

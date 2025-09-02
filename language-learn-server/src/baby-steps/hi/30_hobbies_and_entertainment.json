@@ -1,127 +1,157 @@
 {
   "id": "30_hobbies_and_entertainment",
-  "title": "Hobbies & Entertainment",
-  "emoji": "🎬",
+  "title": "शौक और मनोरंजन",
+  "emoji": "🎨",
   "language": "Hindi",
   "items": [
     {
       "id": "30_hobbies_and_entertainment_hobby",
       "type": "word",
-      "text": "hobby",
+      "text": "शौक",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_music",
       "type": "word",
-      "text": "music",
+      "text": "संगीत",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_movie",
       "type": "word",
-      "text": "movie",
+      "text": "फिल्म",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_book",
       "type": "word",
-      "text": "book",
+      "text": "किताब",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "30_hobbies_and_entertainment_dance",
+      "id": "30_hobbies_and_entertainment_painting",
       "type": "word",
-      "text": "dance",
+      "text": "चित्रकला",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "30_hobbies_and_entertainment_paint",
+      "id": "30_hobbies_and_entertainment_cooking",
       "type": "word",
-      "text": "paint",
-      "practiceType": "chooseTranslation"
-    },
-    {
-      "id": "30_hobbies_and_entertainment_cook",
-      "type": "word",
-      "text": "cook",
+      "text": "खाना बनाना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_garden",
       "type": "word",
-      "text": "garden",
+      "text": "बगीचा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_photography",
       "type": "word",
-      "text": "photography",
+      "text": "फोटोग्राफी",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "30_hobbies_and_entertainment_collect",
+      "id": "30_hobbies_and_entertainment_dancing",
       "type": "word",
-      "text": "collect",
+      "text": "नृत्य",
       "practiceType": "chooseTranslation"
     },
     {
-      "id": "30_hobbies_and_entertainment_what_is_your_favorite_hobby",
+      "id": "30_hobbies_and_entertainment_singing",
+      "type": "word",
+      "text": "गायन",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_is_your_hobby",
       "type": "sentence",
-      "text": "What is your favorite hobby?",
+      "text": "आपका शौक क्या है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_i_love_listening_to_music",
       "type": "sentence",
-      "text": "I love listening to music.",
+      "text": "मुझे संगीत सुनना बहुत पसंद है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_what_movie_did_you_watch",
+      "id": "30_hobbies_and_entertainment_do_you_like_watching_movies",
       "type": "sentence",
-      "text": "What movie did you watch?",
+      "text": "क्या आपको फिल्में देखना पसंद है?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_do_you_like_reading_books",
+      "id": "30_hobbies_and_entertainment_i_enjoy_reading_books",
       "type": "sentence",
-      "text": "Do you like reading books?",
+      "text": "मुझे किताबें पढ़ना अच्छा लगता है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_can_you_dance",
+      "id": "30_hobbies_and_entertainment_what_kind_of_music_do_you_like",
       "type": "sentence",
-      "text": "Can you dance?",
+      "text": "आपको किस तरह का संगीत पसंद है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_i_want_to_learn_to_paint",
       "type": "sentence",
-      "text": "I want to learn to paint.",
+      "text": "मैं चित्रकला सीखना चाहता हूं।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_do_you_like_cooking",
+      "id": "30_hobbies_and_entertainment_cooking_is_my_favorite_hobby",
       "type": "sentence",
-      "text": "Do you like cooking?",
+      "text": "खाना बनाना मेरा पसंदीदा शौक है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_my_garden_is_very_beautiful",
       "type": "sentence",
-      "text": "My garden is very beautiful.",
+      "text": "मेरा बगीचा बहुत सुंदर है।",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_i_take_photos_as_a_hobby",
+      "id": "30_hobbies_and_entertainment_do_you_like_dancing",
       "type": "sentence",
-      "text": "I take photos as a hobby.",
+      "text": "क्या आपको नृत्य करना पसंद है?",
       "practiceType": "formulateSentense"
     },
     {
-      "id": "30_hobbies_and_entertainment_what_do_you_collect",
+      "id": "30_hobbies_and_entertainment_i_love_taking_photographs",
       "type": "sentence",
-      "text": "What do you collect?",
+      "text": "मुझे फोटो खींचना बहुत पसंद है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_do_you_do_for_fun",
+      "type": "sentence",
+      "text": "आप मनोरंजन के लिए क्या करते हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_hobbies_make_life_interesting",
+      "type": "sentence",
+      "text": "शौक जीवन को दिलचस्प बनाते हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_want_to_try_new_hobbies",
+      "type": "sentence",
+      "text": "मैं नए शौक आजमाना चाहता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_entertainment_is_important",
+      "type": "sentence",
+      "text": "मनोरंजन महत्वपूर्ण है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_love_my_hobbies",
+      "type": "sentence",
+      "text": "मुझे अपने शौक बहुत पसंद हैं।",
       "practiceType": "formulateSentense"
     }
   ]
