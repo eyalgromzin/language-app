@@ -7,121 +7,121 @@
     {
       "id": "06_food_drink_basics_water",
       "type": "word",
-      "text": "water",
+      "text": "น้ำ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_coffee",
       "type": "word",
-      "text": "coffee",
+      "text": "กาแฟ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_tea",
       "type": "word",
-      "text": "tea",
+      "text": "ชา",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_bread",
       "type": "word",
-      "text": "bread",
+      "text": "ขนมปัง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_apple",
       "type": "word",
-      "text": "apple",
+      "text": "แอปเปิล",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_milk",
       "type": "word",
-      "text": "milk",
+      "text": "นม",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_juice",
       "type": "word",
-      "text": "juice",
+      "text": "น้ำผลไม้",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_rice",
       "type": "word",
-      "text": "rice",
+      "text": "ข้าว",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "ไก่",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_fish",
       "type": "word",
-      "text": "fish",
+      "text": "ปลา",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_i_would_like_water_please",
       "type": "sentence",
-      "text": "I would like water, please.",
+      "text": "ฉันต้องการน้ำ กรุณา.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_the_food_is_delicious",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "อาหารอร่อย.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_allergic_to",
       "type": "sentence",
-      "text": "I am allergic to …",
+      "text": "ฉันแพ้ …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_no_sugar_please",
       "type": "sentence",
-      "text": "No sugar, please.",
+      "text": "ไม่ใส่น้ำตาล กรุณา.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_do_you_have_vegetarian_food",
       "type": "sentence",
-      "text": "Do you have vegetarian food?",
+      "text": "คุณมีอาหารมังสวิรัติไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_how_much_is_it",
       "type": "sentence",
-      "text": "How much is it?",
+      "text": "ราคาเท่าไหร่?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_hungry",
       "type": "sentence",
-      "text": "I am hungry.",
+      "text": "ฉันหิว.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_thirsty",
       "type": "sentence",
-      "text": "I am thirsty.",
+      "text": "ฉันกระหาย.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "คุณแนะนำอะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_the_bill_please",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "บิล กรุณา.",
       "practiceType": "formulateSentense"
     }
   ]

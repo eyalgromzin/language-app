@@ -7,265 +7,265 @@
     {
       "id": "04_numbers_time_basics_zero",
       "type": "word",
-      "text": "zero",
+      "text": "ศูนย์",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_one",
       "type": "word",
-      "text": "one",
+      "text": "หนึ่ง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_two",
       "type": "word",
-      "text": "two",
+      "text": "สอง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_three",
       "type": "word",
-      "text": "three",
+      "text": "สาม",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_four",
       "type": "word",
-      "text": "four",
+      "text": "สี่",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_five",
       "type": "word",
-      "text": "five",
+      "text": "ห้า",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_six",
       "type": "word",
-      "text": "six",
+      "text": "หก",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seven",
       "type": "word",
-      "text": "seven",
+      "text": "เจ็ด",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eight",
       "type": "word",
-      "text": "eight",
+      "text": "แปด",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_nine",
       "type": "word",
-      "text": "nine",
+      "text": "เก้า",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_ten",
       "type": "word",
-      "text": "ten",
+      "text": "สิบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_twenty",
       "type": "word",
-      "text": "twenty",
+      "text": "ยี่สิบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_thirty",
       "type": "word",
-      "text": "thirty",
+      "text": "สามสิบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_forty",
       "type": "word",
-      "text": "forty",
+      "text": "สี่สิบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_fifty",
       "type": "word",
-      "text": "fifty",
+      "text": "ห้าสิบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_sixty",
       "type": "word",
-      "text": "sixty",
+      "text": "หกสิบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seventy",
       "type": "word",
-      "text": "seventy",
+      "text": "เจ็ดสิบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eighty",
       "type": "word",
-      "text": "eighty",
+      "text": "แปดสิบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_ninety",
       "type": "word",
-      "text": "ninety",
+      "text": "เก้าสิบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_hundred",
       "type": "word",
-      "text": "hundred",
+      "text": "ร้อย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_two_hundred",
       "type": "word",
-      "text": "two hundred",
+      "text": "สองร้อย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_three_hundred",
       "type": "word",
-      "text": "three hundred",
+      "text": "สามร้อย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_fifteen",
       "type": "word",
-      "text": "fifteen",
+      "text": "สิบห้า",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_twenty_five",
       "type": "word",
-      "text": "twenty-five",
+      "text": "ยี่สิบห้า",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_forty_two",
       "type": "word",
-      "text": "forty-two",
+      "text": "สี่สิบสอง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seventy_eight",
       "type": "word",
-      "text": "seventy-eight",
+      "text": "เจ็ดสิบแปด",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_one_hundred_twenty",
       "type": "word",
-      "text": "one hundred twenty",
+      "text": "หนึ่งร้อยยี่สิบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_five_hundred",
       "type": "word",
-      "text": "five hundred",
+      "text": "ห้าร้อย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eight_hundred_fifty",
       "type": "word",
-      "text": "eight hundred fifty",
+      "text": "แปดร้อยห้าสิบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_thousand",
       "type": "word",
-      "text": "thousand",
+      "text": "พัน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_today",
       "type": "word",
-      "text": "today",
+      "text": "วันนี้",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "พรุ่งนี้",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_yesterday",
       "type": "word",
-      "text": "yesterday",
+      "text": "เมื่อวาน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_now",
       "type": "word",
-      "text": "now",
+      "text": "ตอนนี้",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_what_time_is_it",
       "type": "sentence",
-      "text": "What time is it?",
+      "text": "กี่โมงแล้ว?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_three_o_clock",
       "type": "sentence",
-      "text": "It is three o'clock.",
+      "text": "สามโมงแล้ว.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_half_past_two",
       "type": "sentence",
-      "text": "It is half past two.",
+      "text": "สองโมงครึ่งแล้ว.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_what_day_is_today",
       "type": "sentence",
-      "text": "What day is today?",
+      "text": "วันนี้วันอะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_today_is_monday",
       "type": "sentence",
-      "text": "Today is Monday.",
+      "text": "วันนี้วันจันทร์.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_see_you_tomorrow",
       "type": "sentence",
-      "text": "See you tomorrow.",
+      "text": "เจอกันพรุ่งนี้.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_i_am_late",
       "type": "sentence",
-      "text": "I am late.",
+      "text": "ฉันมาสาย.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_what_time_do_you_start",
       "type": "sentence",
-      "text": "What time do you start?",
+      "text": "คุณเริ่มกี่โมง?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_time_to_go",
       "type": "sentence",
-      "text": "It is time to go.",
+      "text": "ถึงเวลาไปแล้ว.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_how_long_does_it_take",
       "type": "sentence",
-      "text": "How long does it take?",
+      "text": "ใช้เวลานานเท่าไหร่?",
       "practiceType": "formulateSentense"
     }
   ]

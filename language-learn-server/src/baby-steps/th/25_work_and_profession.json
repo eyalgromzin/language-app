@@ -1,127 +1,127 @@
 {
   "id": "25_work_and_profession",
-  "title": "Work & Profession",
+  "title": "งานและอาชีพ",
   "emoji": "💼",
   "language": "Thai",
   "items": [
     {
       "id": "25_work_and_profession_job",
       "type": "word",
-      "text": "job",
+      "text": "งาน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_work",
       "type": "word",
-      "text": "work",
+      "text": "งาน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_office",
       "type": "word",
-      "text": "office",
+      "text": "สำนักงาน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_meeting",
       "type": "word",
-      "text": "meeting",
+      "text": "การประชุม",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_boss",
       "type": "word",
-      "text": "boss",
+      "text": "เจ้านาย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_colleague",
       "type": "word",
-      "text": "colleague",
+      "text": "เพื่อนร่วมงาน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_salary",
       "type": "word",
-      "text": "salary",
+      "text": "เงินเดือน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_project",
       "type": "word",
-      "text": "project",
+      "text": "โครงการ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_deadline",
       "type": "word",
-      "text": "deadline",
+      "text": "กำหนดเวลา",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_career",
       "type": "word",
-      "text": "career",
+      "text": "อาชีพ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "คุณทำงานอะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "ฉันทำงานในสำนักงาน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "คุณชอบงานของคุณไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_have_a_meeting_at_nine",
       "type": "sentence",
-      "text": "I have a meeting at nine.",
+      "text": "ฉันมีการประชุมตอนเก้าโมง.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_my_boss_is_very_nice",
       "type": "sentence",
-      "text": "My boss is very nice.",
+      "text": "เจ้านายของฉันดีมาก.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_with_great_colleagues",
       "type": "sentence",
-      "text": "I work with great colleagues.",
+      "text": "ฉันทำงานกับเพื่อนร่วมงานที่ดี.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_what_is_your_salary",
       "type": "sentence",
-      "text": "What is your salary?",
+      "text": "เงินเดือนของคุณเท่าไหร่?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_this_project_is_very_important",
       "type": "sentence",
-      "text": "This project is very important.",
+      "text": "โครงการนี้สำคัญมาก.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_the_deadline_is_next_week",
       "type": "sentence",
-      "text": "The deadline is next week.",
+      "text": "กำหนดเวลาคือสัปดาห์หน้า.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_want_to_advance_my_career",
       "type": "sentence",
-      "text": "I want to advance my career.",
+      "text": "ฉันต้องการก้าวหน้าในอาชีพของฉัน.",
       "practiceType": "formulateSentense"
     }
   ]

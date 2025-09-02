@@ -7,121 +7,121 @@
     {
       "id": "24_family_and_relationships_family",
       "type": "word",
-      "text": "family",
+      "text": "ครอบครัว",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_mother",
       "type": "word",
-      "text": "mother",
+      "text": "แม่",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_father",
       "type": "word",
-      "text": "father",
+      "text": "พ่อ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_sister",
       "type": "word",
-      "text": "sister",
+      "text": "พี่สาว",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_brother",
       "type": "word",
-      "text": "brother",
+      "text": "พี่ชาย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_friend",
       "type": "word",
-      "text": "friend",
+      "text": "เพื่อน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_husband",
       "type": "word",
-      "text": "husband",
+      "text": "สามี",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_wife",
       "type": "word",
-      "text": "wife",
+      "text": "ภรรยา",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_child",
       "type": "word",
-      "text": "child",
+      "text": "เด็ก",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_parent",
       "type": "word",
-      "text": "parent",
+      "text": "พ่อแม่",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_how_is_your_family",
       "type": "sentence",
-      "text": "How is your family?",
+      "text": "ครอบครัวของคุณเป็นอย่างไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_mother_is_a_teacher",
       "type": "sentence",
-      "text": "My mother is a teacher.",
+      "text": "แม่ของฉันเป็นครู.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_i_have_two_sisters",
       "type": "sentence",
-      "text": "I have two sisters.",
+      "text": "ฉันมีพี่สาวสองคน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_where_does_your_father_work",
       "type": "sentence",
-      "text": "Where does your father work?",
+      "text": "พ่อของคุณทำงานที่ไหน?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_brother_is_older_than_me",
       "type": "sentence",
-      "text": "My brother is older than me.",
+      "text": "พี่ชายของฉันอายุมากกว่าฉัน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_we_are_good_friends",
       "type": "sentence",
-      "text": "We are good friends.",
+      "text": "เราเป็นเพื่อนที่ดี.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_husband_likes_cooking",
       "type": "sentence",
-      "text": "My husband likes cooking.",
+      "text": "สามีของฉันชอบทำอาหาร.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_do_you_have_children",
       "type": "sentence",
-      "text": "Do you have children?",
+      "text": "คุณมีลูกไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_parents_live_in_the_city",
       "type": "sentence",
-      "text": "My parents live in the city.",
+      "text": "พ่อแม่ของฉันอาศัยอยู่ในเมือง.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_i_love_my_family_very_much",
       "type": "sentence",
-      "text": "I love my family very much.",
+      "text": "ฉันรักครอบครัวของฉันมาก.",
       "practiceType": "formulateSentense"
     }
   ]

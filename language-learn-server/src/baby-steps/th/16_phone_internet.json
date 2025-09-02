@@ -7,121 +7,121 @@
     {
       "id": "16_phone_internet_phone",
       "type": "word",
-      "text": "phone",
+      "text": "โทรศัพท์",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_number",
       "type": "word",
-      "text": "number",
+      "text": "หมายเลข",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_email",
       "type": "word",
-      "text": "email",
+      "text": "อีเมล",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_wifi",
       "type": "word",
-      "text": "wifi",
+      "text": "ไวไฟ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_call",
       "type": "word",
-      "text": "call",
+      "text": "โทร",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_text",
       "type": "word",
-      "text": "text",
+      "text": "ข้อความ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_message",
       "type": "word",
-      "text": "message",
+      "text": "ข้อความ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_password",
       "type": "word",
-      "text": "password",
+      "text": "รหัสผ่าน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_internet",
       "type": "word",
-      "text": "internet",
+      "text": "อินเทอร์เน็ต",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_online",
       "type": "word",
-      "text": "online",
+      "text": "ออนไลน์",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_what_is_your_phone_number",
       "type": "sentence",
-      "text": "What is your phone number?",
+      "text": "หมายเลขโทรศัพท์ของคุณคืออะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_the_wifi_password",
       "type": "sentence",
-      "text": "What is the wifi password?",
+      "text": "รหัสผ่านไวไฟคืออะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_i_use_your_phone",
       "type": "sentence",
-      "text": "Can I use your phone?",
+      "text": "ฉันใช้โทรศัพท์ของคุณได้ไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_call_me",
       "type": "sentence",
-      "text": "Can you call me?",
+      "text": "คุณโทรหาฉันได้ไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_will_text_you",
       "type": "sentence",
-      "text": "I will text you.",
+      "text": "ฉันจะส่งข้อความให้คุณ.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_do_you_have_internet",
       "type": "sentence",
-      "text": "Do you have internet?",
+      "text": "คุณมีอินเทอร์เน็ตไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_your_email",
       "type": "sentence",
-      "text": "What is your email?",
+      "text": "อีเมลของคุณคืออะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_am_online",
       "type": "sentence",
-      "text": "I am online.",
+      "text": "ฉันออนไลน์.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_send_me_a_message",
       "type": "sentence",
-      "text": "Can you send me a message?",
+      "text": "คุณส่งข้อความให้ฉันได้ไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_the_wifi_is_slow",
       "type": "sentence",
-      "text": "The wifi is slow.",
+      "text": "ไวไฟช้า.",
       "practiceType": "formulateSentense"
     }
   ]

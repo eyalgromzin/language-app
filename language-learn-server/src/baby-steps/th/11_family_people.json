@@ -7,121 +7,121 @@
     {
       "id": "11_family_people_mother",
       "type": "word",
-      "text": "mother",
+      "text": "แม่",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_father",
       "type": "word",
-      "text": "father",
+      "text": "พ่อ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_brother",
       "type": "word",
-      "text": "brother",
+      "text": "พี่ชาย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_sister",
       "type": "word",
-      "text": "sister",
+      "text": "พี่สาว",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_friend",
       "type": "word",
-      "text": "friend",
+      "text": "เพื่อน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_son",
       "type": "word",
-      "text": "son",
+      "text": "ลูกชาย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_daughter",
       "type": "word",
-      "text": "daughter",
+      "text": "ลูกสาว",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_baby",
       "type": "word",
-      "text": "baby",
+      "text": "ทารก",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_man",
       "type": "word",
-      "text": "man",
+      "text": "ผู้ชาย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_woman",
       "type": "word",
-      "text": "woman",
+      "text": "ผู้หญิง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_this_is_my_friend",
       "type": "sentence",
-      "text": "This is my friend.",
+      "text": "นี่คือเพื่อนของฉัน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_i_am_with_my_family",
       "type": "sentence",
-      "text": "I am with my family.",
+      "text": "ฉันอยู่กับครอบครัวของฉัน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_how_many_children_do_you_have",
       "type": "sentence",
-      "text": "How many children do you have?",
+      "text": "คุณมีลูกกี่คน?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_this_is_my_mother",
       "type": "sentence",
-      "text": "This is my mother.",
+      "text": "นี่คือแม่ของฉัน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_where_is_your_family",
       "type": "sentence",
-      "text": "Where is your family?",
+      "text": "ครอบครัวของคุณอยู่ไหน?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_do_you_have_brothers_and_sisters",
       "type": "sentence",
-      "text": "Do you have brothers and sisters?",
+      "text": "คุณมีพี่ชายและพี่สาวไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_my_family_lives_in",
       "type": "sentence",
-      "text": "My family lives in …",
+      "text": "ครอบครัวของฉันอาศัยอยู่ใน …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_how_old_is_your_son",
       "type": "sentence",
-      "text": "How old is your son?",
+      "text": "ลูกชายของคุณอายุเท่าไหร่?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_this_is_my_baby",
       "type": "sentence",
-      "text": "This is my baby.",
+      "text": "นี่คือทารกของฉัน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_are_you_married",
       "type": "sentence",
-      "text": "Are you married?",
+      "text": "คุณแต่งงานแล้วไหม?",
       "practiceType": "formulateSentense"
     }
   ]

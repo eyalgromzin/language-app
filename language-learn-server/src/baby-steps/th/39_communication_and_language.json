@@ -7,121 +7,121 @@
     {
       "id": "39_communication_and_language_speak",
       "type": "word",
-      "text": "speak",
+      "text": "พูด",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_talk",
       "type": "word",
-      "text": "talk",
+      "text": "คุย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_listen",
       "type": "word",
-      "text": "listen",
+      "text": "ฟัง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_understand",
       "type": "word",
-      "text": "understand",
+      "text": "เข้าใจ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_explain",
       "type": "word",
-      "text": "explain",
+      "text": "อธิบาย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_question",
       "type": "word",
-      "text": "question",
+      "text": "คำถาม",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_answer",
       "type": "word",
-      "text": "answer",
+      "text": "คำตอบ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_conversation",
       "type": "word",
-      "text": "conversation",
+      "text": "การสนทนา",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_message",
       "type": "word",
-      "text": "message",
+      "text": "ข้อความ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_translate",
       "type": "word",
-      "text": "translate",
+      "text": "แปล",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_do_you_speak_english",
       "type": "sentence",
-      "text": "Do you speak English?",
+      "text": "คุณพูดภาษาอังกฤษไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_can_we_talk_about_it",
       "type": "sentence",
-      "text": "Can we talk about it?",
+      "text": "เราคุยเรื่องนี้ได้ไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_please_listen_to_me",
       "type": "sentence",
-      "text": "Please listen to me.",
+      "text": "กรุณาฟังฉัน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_do_you_understand_what_i_mean",
       "type": "sentence",
-      "text": "Do you understand what I mean?",
+      "text": "คุณเข้าใจสิ่งที่ฉันหมายถึงไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_can_you_explain_this_to_me",
       "type": "sentence",
-      "text": "Can you explain this to me?",
+      "text": "คุณอธิบายสิ่งนี้ให้ฉันได้ไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_i_have_a_question_for_you",
       "type": "sentence",
-      "text": "I have a question for you.",
+      "text": "ฉันมีคำถามสำหรับคุณ.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_what_is_your_answer",
       "type": "sentence",
-      "text": "What is your answer?",
+      "text": "คำตอบของคุณคืออะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_this_is_an_interesting_conversation",
       "type": "sentence",
-      "text": "This is an interesting conversation.",
+      "text": "นี่เป็นการสนทนาที่น่าสนใจ.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_did_you_get_my_message",
       "type": "sentence",
-      "text": "Did you get my message?",
+      "text": "คุณได้รับข้อความของฉันไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_can_you_translate_this_word",
       "type": "sentence",
-      "text": "Can you translate this word?",
+      "text": "คุณแปลคำนี้ได้ไหม?",
       "practiceType": "formulateSentense"
     }
   ]

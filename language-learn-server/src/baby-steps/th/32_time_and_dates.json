@@ -7,121 +7,121 @@
     {
       "id": "32_time_and_dates_time",
       "type": "word",
-      "text": "time",
+      "text": "เวลา",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_date",
       "type": "word",
-      "text": "date",
+      "text": "วันที่",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_hour",
       "type": "word",
-      "text": "hour",
+      "text": "ชั่วโมง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_minute",
       "type": "word",
-      "text": "minute",
+      "text": "นาที",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_second",
       "type": "word",
-      "text": "second",
+      "text": "วินาที",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_week",
       "type": "word",
-      "text": "week",
+      "text": "สัปดาห์",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_month",
       "type": "word",
-      "text": "month",
+      "text": "เดือน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_year",
       "type": "word",
-      "text": "year",
+      "text": "ปี",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_today",
       "type": "word",
-      "text": "today",
+      "text": "วันนี้",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "พรุ่งนี้",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_what_time_is_it",
       "type": "sentence",
-      "text": "What time is it?",
+      "text": "กี่โมงแล้ว?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_date_is_today",
       "type": "sentence",
-      "text": "What date is today?",
+      "text": "วันนี้วันที่เท่าไหร่?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_it_is_half_past_two",
       "type": "sentence",
-      "text": "It is half past two.",
+      "text": "สองโมงครึ่งแล้ว.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_how_many_minutes_until_break",
       "type": "sentence",
-      "text": "How many minutes until break?",
+      "text": "อีกกี่นาทีถึงพัก?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_see_you_in_an_hour",
       "type": "sentence",
-      "text": "See you in an hour.",
+      "text": "เจอกันในอีกชั่วโมง.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_day_of_the_week_is_it",
       "type": "sentence",
-      "text": "What day of the week is it?",
+      "text": "วันนี้วันอะไรของสัปดาห์?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_next_month_i_am_going_on_vacation",
       "type": "sentence",
-      "text": "Next month I am going on vacation.",
+      "text": "เดือนหน้าฉันจะไปพักร้อน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_year_were_you_born",
       "type": "sentence",
-      "text": "What year were you born?",
+      "text": "คุณเกิดปีอะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_today_is_a_beautiful_day",
       "type": "sentence",
-      "text": "Today is a beautiful day.",
+      "text": "วันนี้เป็นวันที่สวยงาม.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_see_you_tomorrow",
       "type": "sentence",
-      "text": "See you tomorrow.",
+      "text": "เจอกันพรุ่งนี้.",
       "practiceType": "formulateSentense"
     }
   ]

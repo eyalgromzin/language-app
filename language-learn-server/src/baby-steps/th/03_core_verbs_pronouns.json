@@ -1,6 +1,6 @@
 {
   "id": "03_core_verbs_pronouns",
-  "title": "Core pronouns & helper verbs",
+  "title": "คำสรรพนามหลักและคำกริยาช่วย",
   "emoji": "🔤",
   "language": "Thai",
   "items": [
@@ -31,97 +31,97 @@
     {
       "id": "03_core_verbs_pronouns_we",
       "type": "word",
-      "text": "we",
+      "text": "เรา",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_they",
       "type": "word",
-      "text": "they",
+      "text": "พวกเขา",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_it",
       "type": "word",
-      "text": "it",
+      "text": "มัน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_me",
       "type": "word",
-      "text": "me",
+      "text": "ฉัน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_him",
       "type": "word",
-      "text": "him",
+      "text": "เขา",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_her",
       "type": "word",
-      "text": "her",
+      "text": "เธอ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_i_am",
       "type": "sentence",
-      "text": "I am …",
+      "text": "ฉันเป็น …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_have",
       "type": "sentence",
-      "text": "I have …",
+      "text": "ฉันมี …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_want",
       "type": "sentence",
-      "text": "I want …",
+      "text": "ฉันต้องการ …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_need",
       "type": "sentence",
-      "text": "I need …",
+      "text": "ฉันต้องการ …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_you_are",
       "type": "sentence",
-      "text": "You are …",
+      "text": "คุณเป็น …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_he_is",
       "type": "sentence",
-      "text": "He is …",
+      "text": "เขาเป็น …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_she_is",
       "type": "sentence",
-      "text": "She is …",
+      "text": "เธอเป็น …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_we_are",
       "type": "sentence",
-      "text": "We are …",
+      "text": "เราเป็น …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_they_are",
       "type": "sentence",
-      "text": "They are …",
+      "text": "พวกเขาเป็น …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_it_is",
       "type": "sentence",
-      "text": "It is …",
+      "text": "มันเป็น …",
       "practiceType": "formulateSentense"
     }
   ]

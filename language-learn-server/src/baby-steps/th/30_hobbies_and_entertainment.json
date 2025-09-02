@@ -7,121 +7,121 @@
     {
       "id": "30_hobbies_and_entertainment_hobby",
       "type": "word",
-      "text": "hobby",
+      "text": "งานอดิเรก",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_music",
       "type": "word",
-      "text": "music",
+      "text": "เพลง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_movie",
       "type": "word",
-      "text": "movie",
+      "text": "หนัง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_book",
       "type": "word",
-      "text": "book",
+      "text": "หนังสือ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_dance",
       "type": "word",
-      "text": "dance",
+      "text": "เต้น",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_paint",
       "type": "word",
-      "text": "paint",
+      "text": "วาด",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_cook",
       "type": "word",
-      "text": "cook",
+      "text": "ทำอาหาร",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_garden",
       "type": "word",
-      "text": "garden",
+      "text": "สวน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_photography",
       "type": "word",
-      "text": "photography",
+      "text": "การถ่ายภาพ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_collect",
       "type": "word",
-      "text": "collect",
+      "text": "สะสม",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "30_hobbies_and_entertainment_what_is_your_favorite_hobby",
       "type": "sentence",
-      "text": "What is your favorite hobby?",
+      "text": "งานอดิเรกที่คุณชอบคืออะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_i_love_listening_to_music",
       "type": "sentence",
-      "text": "I love listening to music.",
+      "text": "ฉันชอบฟังเพลง.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_what_movie_did_you_watch",
       "type": "sentence",
-      "text": "What movie did you watch?",
+      "text": "คุณดูหนังเรื่องอะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_do_you_like_reading_books",
       "type": "sentence",
-      "text": "Do you like reading books?",
+      "text": "คุณชอบอ่านหนังสือไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_can_you_dance",
       "type": "sentence",
-      "text": "Can you dance?",
+      "text": "คุณเต้นได้ไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_i_want_to_learn_to_paint",
       "type": "sentence",
-      "text": "I want to learn to paint.",
+      "text": "ฉันต้องการเรียนวาด.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_do_you_like_cooking",
       "type": "sentence",
-      "text": "Do you like cooking?",
+      "text": "คุณชอบทำอาหารไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_my_garden_is_very_beautiful",
       "type": "sentence",
-      "text": "My garden is very beautiful.",
+      "text": "สวนของฉันสวยมาก.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_i_take_photos_as_a_hobby",
       "type": "sentence",
-      "text": "I take photos as a hobby.",
+      "text": "ฉันถ่ายภาพเป็นงานอดิเรก.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "30_hobbies_and_entertainment_what_do_you_collect",
       "type": "sentence",
-      "text": "What do you collect?",
+      "text": "คุณสะสมอะไร?",
       "practiceType": "formulateSentense"
     }
   ]

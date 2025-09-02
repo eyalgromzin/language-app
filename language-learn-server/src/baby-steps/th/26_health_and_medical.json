@@ -1,127 +1,127 @@
 {
   "id": "26_health_and_medical",
-  "title": "Health & Medical",
+  "title": "สุขภาพและการแพทย์",
   "emoji": "🏥",
   "language": "Thai",
   "items": [
     {
       "id": "26_health_and_medical_health",
       "type": "word",
-      "text": "health",
+      "text": "สุขภาพ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "หมอ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_hospital",
       "type": "word",
-      "text": "hospital",
+      "text": "โรงพยาบาล",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "ยา",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_pain",
       "type": "word",
-      "text": "pain",
+      "text": "เจ็บ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_sick",
       "type": "word",
-      "text": "sick",
+      "text": "ป่วย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_fever",
       "type": "word",
-      "text": "fever",
+      "text": "ไข้",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_appointment",
       "type": "word",
-      "text": "appointment",
+      "text": "การนัด",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_emergency",
       "type": "word",
-      "text": "emergency",
+      "text": "ฉุกเฉิน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_treatment",
       "type": "word",
-      "text": "treatment",
+      "text": "การรักษา",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_how_are_you_feeling_today",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "วันนี้คุณรู้สึกอย่างไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_i_need_to_see_a_doctor",
       "type": "sentence",
-      "text": "I need to see a doctor.",
+      "text": "ฉันต้องการพบหมอ.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_where_is_the_nearest_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "โรงพยาบาลที่ใกล้ที่สุดอยู่ไหน?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_i_have_a_headache",
       "type": "sentence",
-      "text": "I have a headache.",
+      "text": "ฉันปวดหัว.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_can_i_make_an_appointment",
       "type": "sentence",
-      "text": "Can I make an appointment?",
+      "text": "ฉันนัดได้ไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_i_am_feeling_sick",
       "type": "sentence",
-      "text": "I am feeling sick.",
+      "text": "ฉันรู้สึกป่วย.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_do_you_have_any_medicine",
       "type": "sentence",
-      "text": "Do you have any medicine?",
+      "text": "คุณมียาไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_this_is_an_emergency",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "นี่เป็นเหตุฉุกเฉิน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_what_treatment_do_i_need",
       "type": "sentence",
-      "text": "What treatment do I need?",
+      "text": "ฉันต้องการการรักษาอะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_my_fever_is_very_high",
       "type": "sentence",
-      "text": "My fever is very high.",
+      "text": "ไข้ของฉันสูงมาก.",
       "practiceType": "formulateSentense"
     }
   ]

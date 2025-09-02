@@ -7,121 +7,121 @@
     {
       "id": "31_emotions_and_feelings_happy",
       "type": "word",
-      "text": "happy",
+      "text": "มีความสุข",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_sad",
       "type": "word",
-      "text": "sad",
+      "text": "เศร้า",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_angry",
       "type": "word",
-      "text": "angry",
+      "text": "โกรธ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_excited",
       "type": "word",
-      "text": "excited",
+      "text": "ตื่นเต้น",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_nervous",
       "type": "word",
-      "text": "nervous",
+      "text": "ประหม่า",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_tired",
       "type": "word",
-      "text": "tired",
+      "text": "เหนื่อย",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_surprised",
       "type": "word",
-      "text": "surprised",
+      "text": "ประหลาดใจ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_worried",
       "type": "word",
-      "text": "worried",
+      "text": "กังวล",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_confused",
       "type": "word",
-      "text": "confused",
+      "text": "สับสน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_proud",
       "type": "word",
-      "text": "proud",
+      "text": "ภูมิใจ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_how_are_you_feeling_today",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "วันนี้คุณรู้สึกอย่างไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_very_happy_today",
       "type": "sentence",
-      "text": "I am very happy today.",
+      "text": "วันนี้ฉันมีความสุขมาก.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_why_are_you_sad",
       "type": "sentence",
-      "text": "Why are you sad?",
+      "text": "ทำไมคุณเศร้า?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_don_t_be_angry_with_me",
       "type": "sentence",
-      "text": "Don't be angry with me.",
+      "text": "อย่าโกรธฉัน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_excited_about_the_trip",
       "type": "sentence",
-      "text": "I am excited about the trip.",
+      "text": "ฉันตื่นเต้นกับการเดินทาง.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_feel_nervous_before_exams",
       "type": "sentence",
-      "text": "I feel nervous before exams.",
+      "text": "ฉันรู้สึกประหม่าก่อนสอบ.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_are_you_tired",
       "type": "sentence",
-      "text": "Are you tired?",
+      "text": "คุณเหนื่อยไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
       "type": "sentence",
-      "text": "I am surprised by the news.",
+      "text": "ฉันประหลาดใจกับข่าว.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_don_t_worry_about_it",
       "type": "sentence",
-      "text": "Don't worry about it.",
+      "text": "อย่ากังวลเรื่องนั้น.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_proud_of_my_achievement",
       "type": "sentence",
-      "text": "I am proud of my achievement.",
+      "text": "ฉันภูมิใจในความสำเร็จของฉัน.",
       "practiceType": "formulateSentense"
     }
   ]

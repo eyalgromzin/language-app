@@ -7,121 +7,121 @@
     {
       "id": "21_technology_basics_computer",
       "type": "word",
-      "text": "computer",
+      "text": "คอมพิวเตอร์",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_phone",
       "type": "word",
-      "text": "phone",
+      "text": "โทรศัพท์",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_internet",
       "type": "word",
-      "text": "internet",
+      "text": "อินเทอร์เน็ต",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_app",
       "type": "word",
-      "text": "app",
+      "text": "แอป",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_password",
       "type": "word",
-      "text": "password",
+      "text": "รหัสผ่าน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_email",
       "type": "word",
-      "text": "email",
+      "text": "อีเมล",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_website",
       "type": "word",
-      "text": "website",
+      "text": "เว็บไซต์",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_download",
       "type": "word",
-      "text": "download",
+      "text": "ดาวน์โหลด",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_upload",
       "type": "word",
-      "text": "upload",
+      "text": "อัปโหลด",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_wifi",
       "type": "word",
-      "text": "wifi",
+      "text": "ไวไฟ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_can_you_help_me_with_my_computer",
       "type": "sentence",
-      "text": "Can you help me with my computer?",
+      "text": "คุณช่วยฉันกับคอมพิวเตอร์ของฉันได้ไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_need_to_connect_to_wifi",
       "type": "sentence",
-      "text": "I need to connect to wifi.",
+      "text": "ฉันต้องการเชื่อมต่อไวไฟ.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_what_is_your_email_address",
       "type": "sentence",
-      "text": "What is your email address?",
+      "text": "ที่อยู่อีเมลของคุณคืออะไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_want_to_download_this_app",
       "type": "sentence",
-      "text": "I want to download this app.",
+      "text": "ฉันต้องการดาวน์โหลดแอปนี้.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_do_you_have_a_website",
       "type": "sentence",
-      "text": "Do you have a website?",
+      "text": "คุณมีเว็บไซต์ไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_my_phone_is_not_working",
       "type": "sentence",
-      "text": "My phone is not working.",
+      "text": "โทรศัพท์ของฉันไม่ทำงาน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_forgot_my_password",
       "type": "sentence",
-      "text": "I forgot my password.",
+      "text": "ฉันลืมรหัสผ่านของฉัน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_the_internet_is_slow_today",
       "type": "sentence",
-      "text": "The internet is slow today.",
+      "text": "วันนี้อินเทอร์เน็ตช้า.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_can_you_upload_the_file",
       "type": "sentence",
-      "text": "Can you upload the file?",
+      "text": "คุณอัปโหลดไฟล์ได้ไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_this_app_is_very_useful",
       "type": "sentence",
-      "text": "This app is very useful.",
+      "text": "แอปนี้มีประโยชน์มาก.",
       "practiceType": "formulateSentense"
     }
   ]

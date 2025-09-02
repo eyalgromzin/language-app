@@ -7,121 +7,121 @@
     {
       "id": "19_housing_utilities_apartment",
       "type": "word",
-      "text": "apartment",
+      "text": "อพาร์ตเมนต์",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_room",
       "type": "word",
-      "text": "room",
+      "text": "ห้อง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_key",
       "type": "word",
-      "text": "key",
+      "text": "กุญแจ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_electricity",
       "type": "word",
-      "text": "electricity",
+      "text": "ไฟฟ้า",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_water",
       "type": "word",
-      "text": "water",
+      "text": "น้ำ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_house",
       "type": "word",
-      "text": "house",
+      "text": "บ้าน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_kitchen",
       "type": "word",
-      "text": "kitchen",
+      "text": "ครัว",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_bathroom",
       "type": "word",
-      "text": "bathroom",
+      "text": "ห้องน้ำ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_heating",
       "type": "word",
-      "text": "heating",
+      "text": "เครื่องทำความร้อน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_rent",
       "type": "word",
-      "text": "rent",
+      "text": "ค่าเช่า",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_i_am_looking_for_an_apartment",
       "type": "sentence",
-      "text": "I am looking for an apartment.",
+      "text": "ฉันกำลังหาอพาร์ตเมนต์.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_the_key_does_not_work",
       "type": "sentence",
-      "text": "The key does not work.",
+      "text": "กุญแจใช้ไม่ได้.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_there_is_no_hot_water",
       "type": "sentence",
-      "text": "There is no hot water.",
+      "text": "ไม่มีน้ำร้อน.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_how_much_is_the_rent",
       "type": "sentence",
-      "text": "How much is the rent?",
+      "text": "ค่าเช่าเท่าไหร่?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_do_you_have_a_kitchen",
       "type": "sentence",
-      "text": "Do you have a kitchen?",
+      "text": "คุณมีครัวไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_the_heating_is_broken",
       "type": "sentence",
-      "text": "The heating is broken.",
+      "text": "เครื่องทำความร้อนเสีย.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_where_is_the_bathroom",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "ห้องน้ำอยู่ไหน?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_is_electricity_included",
       "type": "sentence",
-      "text": "Is electricity included?",
+      "text": "ไฟฟ้ารวมอยู่ด้วยไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_can_i_see_the_house",
       "type": "sentence",
-      "text": "Can I see the house?",
+      "text": "ฉันดูบ้านได้ไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_do_you_have_parking",
       "type": "sentence",
-      "text": "Do you have parking?",
+      "text": "คุณมีที่จอดรถไหม?",
       "practiceType": "formulateSentense"
     }
   ]

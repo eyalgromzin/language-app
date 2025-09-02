@@ -7,121 +7,121 @@
     {
       "id": "08_travel_hotel_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "ตั๋ว",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_reservation",
       "type": "word",
-      "text": "reservation",
+      "text": "การจอง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_passport",
       "type": "word",
-      "text": "passport",
+      "text": "หนังสือเดินทาง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_luggage",
       "type": "word",
-      "text": "luggage",
+      "text": "กระเป๋าเดินทาง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_hotel",
       "type": "word",
-      "text": "hotel",
+      "text": "โรงแรม",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_airport",
       "type": "word",
-      "text": "airport",
+      "text": "สนามบิน",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_station",
       "type": "word",
-      "text": "station",
+      "text": "สถานี",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_room",
       "type": "word",
-      "text": "room",
+      "text": "ห้อง",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_key",
       "type": "word",
-      "text": "key",
+      "text": "กุญแจ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_map",
       "type": "word",
-      "text": "map",
+      "text": "แผนที่",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_i_have_a_reservation",
       "type": "sentence",
-      "text": "I have a reservation.",
+      "text": "ฉันมีการจอง.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_what_time_is_check_in",
       "type": "sentence",
-      "text": "What time is check-in?",
+      "text": "เช็คอินกี่โมง?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_where_is_the_platform",
       "type": "sentence",
-      "text": "Where is the platform?",
+      "text": "ชานชาลาอยู่ไหน?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_i_need_a_taxi",
       "type": "sentence",
-      "text": "I need a taxi.",
+      "text": "ฉันต้องการแท็กซี่.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_what_time_is_check_out",
       "type": "sentence",
-      "text": "What time is check-out?",
+      "text": "เช็คเอาต์กี่โมง?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_where_is_my_room",
       "type": "sentence",
-      "text": "Where is my room?",
+      "text": "ห้องของฉันอยู่ไหน?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_do_you_have_wifi",
       "type": "sentence",
-      "text": "Do you have WiFi?",
+      "text": "คุณมีไวไฟไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_how_do_i_get_to_the_airport",
       "type": "sentence",
-      "text": "How do I get to the airport?",
+      "text": "ฉันจะไปสนามบินได้อย่างไร?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_is_breakfast_included",
       "type": "sentence",
-      "text": "Is breakfast included?",
+      "text": "อาหารเช้ารวมอยู่ด้วยไหม?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_can_you_call_me_a_taxi",
       "type": "sentence",
-      "text": "Can you call me a taxi?",
+      "text": "คุณเรียกแท็กซี่ให้ฉันได้ไหม?",
       "practiceType": "formulateSentense"
     }
   ]
