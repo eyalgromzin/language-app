@@ -7,265 +7,265 @@
     {
       "id": "04_numbers_time_basics_zero",
       "type": "word",
-      "text": "zero",
+      "text": "nolla",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_one",
       "type": "word",
-      "text": "one",
+      "text": "yksi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_two",
       "type": "word",
-      "text": "two",
+      "text": "kaksi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_three",
       "type": "word",
-      "text": "three",
+      "text": "kolme",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_four",
       "type": "word",
-      "text": "four",
+      "text": "neljä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_five",
       "type": "word",
-      "text": "five",
+      "text": "viisi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_six",
       "type": "word",
-      "text": "six",
+      "text": "kuusi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seven",
       "type": "word",
-      "text": "seven",
+      "text": "seitsemän",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eight",
       "type": "word",
-      "text": "eight",
+      "text": "kahdeksan",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_nine",
       "type": "word",
-      "text": "nine",
+      "text": "yhdeksän",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_ten",
       "type": "word",
-      "text": "ten",
+      "text": "kymmenen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_twenty",
       "type": "word",
-      "text": "twenty",
+      "text": "kaksikymmentä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_thirty",
       "type": "word",
-      "text": "thirty",
+      "text": "kolmekymmentä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_forty",
       "type": "word",
-      "text": "forty",
+      "text": "neljäkymmentä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_fifty",
       "type": "word",
-      "text": "fifty",
+      "text": "viisikymmentä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_sixty",
       "type": "word",
-      "text": "sixty",
+      "text": "kuusikymmentä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seventy",
       "type": "word",
-      "text": "seventy",
+      "text": "seitsemänkymmentä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eighty",
       "type": "word",
-      "text": "eighty",
+      "text": "kahdeksankymmentä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_ninety",
       "type": "word",
-      "text": "ninety",
+      "text": "yhdeksänkymmentä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_hundred",
       "type": "word",
-      "text": "hundred",
+      "text": "sata",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_two_hundred",
       "type": "word",
-      "text": "two hundred",
+      "text": "kaksisataa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_three_hundred",
       "type": "word",
-      "text": "three hundred",
+      "text": "kolmesataa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_fifteen",
       "type": "word",
-      "text": "fifteen",
+      "text": "viisitoista",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_twenty_five",
       "type": "word",
-      "text": "twenty-five",
+      "text": "kaksikymmentäviisi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_forty_two",
       "type": "word",
-      "text": "forty-two",
+      "text": "neljäkymmentäkaksi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seventy_eight",
       "type": "word",
-      "text": "seventy-eight",
+      "text": "seitsemänkymmentäkahdeksan",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_one_hundred_twenty",
       "type": "word",
-      "text": "one hundred twenty",
+      "text": "satakaksikymmentä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_five_hundred",
       "type": "word",
-      "text": "five hundred",
+      "text": "viisisataa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eight_hundred_fifty",
       "type": "word",
-      "text": "eight hundred fifty",
+      "text": "kahdeksansataaviisikymmentä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_thousand",
       "type": "word",
-      "text": "thousand",
+      "text": "tuhat",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_today",
       "type": "word",
-      "text": "today",
+      "text": "tänään",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "huomenna",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_yesterday",
       "type": "word",
-      "text": "yesterday",
+      "text": "eilen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_now",
       "type": "word",
-      "text": "now",
+      "text": "nyt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_what_time_is_it",
       "type": "sentence",
-      "text": "What time is it?",
+      "text": "Mitä kello on?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_three_o_clock",
       "type": "sentence",
-      "text": "It is three o'clock.",
+      "text": "Kello on kolme.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_half_past_two",
       "type": "sentence",
-      "text": "It is half past two.",
+      "text": "Kello on puoli kolme.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_what_day_is_today",
       "type": "sentence",
-      "text": "What day is today?",
+      "text": "Mikä päivä tänään on?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_today_is_monday",
       "type": "sentence",
-      "text": "Today is Monday.",
+      "text": "Tänään on maanantai.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_see_you_tomorrow",
       "type": "sentence",
-      "text": "See you tomorrow.",
+      "text": "Nähdään huomenna.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_i_am_late",
       "type": "sentence",
-      "text": "I am late.",
+      "text": "Olen myöhässä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_what_time_do_you_start",
       "type": "sentence",
-      "text": "What time do you start?",
+      "text": "Mihin aikaan aloitat?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_time_to_go",
       "type": "sentence",
-      "text": "It is time to go.",
+      "text": "On aika lähteä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_how_long_does_it_take",
       "type": "sentence",
-      "text": "How long does it take?",
+      "text": "Kauanko se kestää?",
       "practiceType": "formulateSentense"
     }
   ]

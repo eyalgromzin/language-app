@@ -7,121 +7,121 @@
     {
       "id": "06_food_drink_basics_water",
       "type": "word",
-      "text": "water",
+      "text": "vesi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_coffee",
       "type": "word",
-      "text": "coffee",
+      "text": "kahvi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_tea",
       "type": "word",
-      "text": "tea",
+      "text": "tee",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_bread",
       "type": "word",
-      "text": "bread",
+      "text": "leipä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_apple",
       "type": "word",
-      "text": "apple",
+      "text": "omena",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_milk",
       "type": "word",
-      "text": "milk",
+      "text": "maito",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_juice",
       "type": "word",
-      "text": "juice",
+      "text": "mehu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_rice",
       "type": "word",
-      "text": "rice",
+      "text": "riisi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "kana",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_fish",
       "type": "word",
-      "text": "fish",
+      "text": "kala",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_i_would_like_water_please",
       "type": "sentence",
-      "text": "I would like water, please.",
+      "text": "Saisinko vettä, kiitos.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_the_food_is_delicious",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "Ruoka on herkullista.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_allergic_to",
       "type": "sentence",
-      "text": "I am allergic to …",
+      "text": "Olen allerginen …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_no_sugar_please",
       "type": "sentence",
-      "text": "No sugar, please.",
+      "text": "Ei sokeria, kiitos.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_do_you_have_vegetarian_food",
       "type": "sentence",
-      "text": "Do you have vegetarian food?",
+      "text": "Onko teillä kasvisruokaa?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_how_much_is_it",
       "type": "sentence",
-      "text": "How much is it?",
+      "text": "Paljonko se maksaa?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_hungry",
       "type": "sentence",
-      "text": "I am hungry.",
+      "text": "Minulla on nälkä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_thirsty",
       "type": "sentence",
-      "text": "I am thirsty.",
+      "text": "Minulla on jano.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "Mitä suosittelette?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_the_bill_please",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "Lasku, kiitos.",
       "practiceType": "formulateSentense"
     }
   ]

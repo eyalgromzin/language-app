@@ -7,121 +7,121 @@
     {
       "id": "24_family_and_relationships_family",
       "type": "word",
-      "text": "family",
+      "text": "perhe",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_mother",
       "type": "word",
-      "text": "mother",
+      "text": "äiti",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_father",
       "type": "word",
-      "text": "father",
+      "text": "isä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_sister",
       "type": "word",
-      "text": "sister",
+      "text": "sisko",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_brother",
       "type": "word",
-      "text": "brother",
+      "text": "veli",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_friend",
       "type": "word",
-      "text": "friend",
+      "text": "ystävä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_husband",
       "type": "word",
-      "text": "husband",
+      "text": "aviomies",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_wife",
       "type": "word",
-      "text": "wife",
+      "text": "vaimo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_child",
       "type": "word",
-      "text": "child",
+      "text": "lapsi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_parent",
       "type": "word",
-      "text": "parent",
+      "text": "vanhempi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_how_is_your_family",
       "type": "sentence",
-      "text": "How is your family?",
+      "text": "Miten perheesi voi?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_mother_is_a_teacher",
       "type": "sentence",
-      "text": "My mother is a teacher.",
+      "text": "Äitini on opettaja.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_i_have_two_sisters",
       "type": "sentence",
-      "text": "I have two sisters.",
+      "text": "Minulla on kaksi siskoa.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_where_does_your_father_work",
       "type": "sentence",
-      "text": "Where does your father work?",
+      "text": "Missä isäsi työskentelee?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_brother_is_older_than_me",
       "type": "sentence",
-      "text": "My brother is older than me.",
+      "text": "Veljeni on vanhempi kuin minä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_we_are_good_friends",
       "type": "sentence",
-      "text": "We are good friends.",
+      "text": "Olemme hyviä ystäviä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_husband_likes_cooking",
       "type": "sentence",
-      "text": "My husband likes cooking.",
+      "text": "Aviomieheni pitää kokkaamisesta.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_do_you_have_children",
       "type": "sentence",
-      "text": "Do you have children?",
+      "text": "Onko sinulla lapsia?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_parents_live_in_the_city",
       "type": "sentence",
-      "text": "My parents live in the city.",
+      "text": "Vanhempani asuvat kaupungissa.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_i_love_my_family_very_much",
       "type": "sentence",
-      "text": "I love my family very much.",
+      "text": "Rakastan perhettäni erittäin paljon.",
       "practiceType": "formulateSentense"
     }
   ]

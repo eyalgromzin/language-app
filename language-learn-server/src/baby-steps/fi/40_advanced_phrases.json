@@ -7,121 +7,121 @@
     {
       "id": "40_advanced_phrases_nevertheless",
       "type": "word",
-      "text": "nevertheless",
+      "text": "silti",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_furthermore",
       "type": "word",
-      "text": "furthermore",
+      "text": "lisäksi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_otherwise",
       "type": "word",
-      "text": "otherwise",
+      "text": "muuten",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_meanwhile",
       "type": "word",
-      "text": "meanwhile",
+      "text": "sillä välin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_consequently",
       "type": "word",
-      "text": "consequently",
+      "text": "siten",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_approximately",
       "type": "word",
-      "text": "approximately",
+      "text": "noin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_occasionally",
       "type": "word",
-      "text": "occasionally",
+      "text": "aika ajoin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_gradually",
       "type": "word",
-      "text": "gradually",
+      "text": "vähitellen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_ultimately",
       "type": "word",
-      "text": "ultimately",
+      "text": "lopulta",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_essentially",
       "type": "word",
-      "text": "essentially",
+      "text": "pohjimmiltaan",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
       "type": "sentence",
-      "text": "Nevertheless, I still want to try.",
+      "text": "Silti haluan yrittää.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
       "type": "sentence",
-      "text": "Furthermore, I believe this is correct.",
+      "text": "Lisäksi uskon, että tämä on oikein.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
       "type": "sentence",
-      "text": "We must leave now, otherwise we will be late.",
+      "text": "Meidän täytyy lähteä nyt, muuten olemme myöhässä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
       "type": "sentence",
-      "text": "Meanwhile, I will prepare dinner.",
+      "text": "Sillä välin valmistelen illallisen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
       "type": "sentence",
-      "text": "Consequently, the meeting was cancelled.",
+      "text": "Siten kokous peruttiin.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_it_will_cost_approximately_fifty_dollars",
       "type": "sentence",
-      "text": "It will cost approximately fifty dollars.",
+      "text": "Se maksaa noin viisikymmentä dollaria.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_i_occasionally_visit_my_grandparents",
       "type": "sentence",
-      "text": "I occasionally visit my grandparents.",
+      "text": "Käyn aika ajoin isoäitini ja -isäni luona.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_the_weather_gradually_improved",
       "type": "sentence",
-      "text": "The weather gradually improved.",
+      "text": "Sää parani vähitellen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_ultimately_we_reached_our_goal",
       "type": "sentence",
-      "text": "Ultimately, we reached our goal.",
+      "text": "Lopulta saavutimme tavoitteemme.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_essentially_this_is_the_same_thing",
       "type": "sentence",
-      "text": "Essentially, this is the same thing.",
+      "text": "Pohjimmiltaan tämä on sama asia.",
       "practiceType": "formulateSentense"
     }
   ]

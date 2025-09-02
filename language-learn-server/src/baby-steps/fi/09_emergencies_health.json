@@ -7,121 +7,121 @@
     {
       "id": "09_emergencies_health_help",
       "type": "word",
-      "text": "help",
+      "text": "apua",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "lääkäri",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_pharmacy",
       "type": "word",
-      "text": "pharmacy",
+      "text": "apteekki",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_emergency",
       "type": "word",
-      "text": "emergency",
+      "text": "hätätilanne",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_hospital",
       "type": "word",
-      "text": "hospital",
+      "text": "sairaala",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_pain",
       "type": "word",
-      "text": "pain",
+      "text": "kipu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "lääke",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_ambulance",
       "type": "word",
-      "text": "ambulance",
+      "text": "ambulanssi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_police",
       "type": "word",
-      "text": "police",
+      "text": "poliisi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_fire",
       "type": "word",
-      "text": "fire",
+      "text": "tuli",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_call_an_ambulance",
       "type": "sentence",
-      "text": "Call an ambulance!",
+      "text": "Soita ambulanssi!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_a_doctor",
       "type": "sentence",
-      "text": "I need a doctor.",
+      "text": "Tarvitsen lääkärin.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_feel_sick",
       "type": "sentence",
-      "text": "I feel sick.",
+      "text": "Minulla on paha olo.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_lost_my_passport",
       "type": "sentence",
-      "text": "I lost my passport.",
+      "text": "Kadotin passini.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_where_is_the_nearest_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "Missä on lähin sairaala?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_have_a_headache",
       "type": "sentence",
-      "text": "I have a headache.",
+      "text": "Minulla on päänsärky.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_call_the_police",
       "type": "sentence",
-      "text": "Call the police!",
+      "text": "Soita poliisi!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_this_is_an_emergency",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "Tämä on hätätilanne.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_help",
       "type": "sentence",
-      "text": "I need help.",
+      "text": "Tarvitsen apua.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_are_you_okay",
       "type": "sentence",
-      "text": "Are you okay?",
+      "text": "Oletko kunnossa?",
       "practiceType": "formulateSentense"
     }
   ]

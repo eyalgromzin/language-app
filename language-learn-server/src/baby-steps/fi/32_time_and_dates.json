@@ -7,121 +7,121 @@
     {
       "id": "32_time_and_dates_time",
       "type": "word",
-      "text": "time",
+      "text": "aika",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_date",
       "type": "word",
-      "text": "date",
+      "text": "päivämäärä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_hour",
       "type": "word",
-      "text": "hour",
+      "text": "tunti",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_minute",
       "type": "word",
-      "text": "minute",
+      "text": "minuutti",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_second",
       "type": "word",
-      "text": "second",
+      "text": "sekunti",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_week",
       "type": "word",
-      "text": "week",
+      "text": "viikko",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_month",
       "type": "word",
-      "text": "month",
+      "text": "kuukausi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_year",
       "type": "word",
-      "text": "year",
+      "text": "vuosi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_today",
       "type": "word",
-      "text": "today",
+      "text": "tänään",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "huomenna",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_what_time_is_it",
       "type": "sentence",
-      "text": "What time is it?",
+      "text": "Mitä kello on?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_date_is_today",
       "type": "sentence",
-      "text": "What date is today?",
+      "text": "Mikä päivämäärä tänään on?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_it_is_half_past_two",
       "type": "sentence",
-      "text": "It is half past two.",
+      "text": "Kello on puoli kolme.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_how_many_minutes_until_break",
       "type": "sentence",
-      "text": "How many minutes until break?",
+      "text": "Kuinka monta minuuttia taukoon?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_see_you_in_an_hour",
       "type": "sentence",
-      "text": "See you in an hour.",
+      "text": "Nähdään tunnin kuluttua.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_day_of_the_week_is_it",
       "type": "sentence",
-      "text": "What day of the week is it?",
+      "text": "Mikä viikonpäivä tänään on?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_next_month_i_am_going_on_vacation",
       "type": "sentence",
-      "text": "Next month I am going on vacation.",
+      "text": "Ensi kuussa lähden lomalle.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_year_were_you_born",
       "type": "sentence",
-      "text": "What year were you born?",
+      "text": "Miltä vuodelta olet kotoisin?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_today_is_a_beautiful_day",
       "type": "sentence",
-      "text": "Today is a beautiful day.",
+      "text": "Tänään on kaunis päivä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_see_you_tomorrow",
       "type": "sentence",
-      "text": "See you tomorrow.",
+      "text": "Nähdään huomenna.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -7,121 +7,121 @@
     {
       "id": "39_communication_and_language_speak",
       "type": "word",
-      "text": "speak",
+      "text": "puhua",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_talk",
       "type": "word",
-      "text": "talk",
+      "text": "puhua",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_listen",
       "type": "word",
-      "text": "listen",
+      "text": "kuunnella",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_understand",
       "type": "word",
-      "text": "understand",
+      "text": "ymmärtää",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_explain",
       "type": "word",
-      "text": "explain",
+      "text": "selittää",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_question",
       "type": "word",
-      "text": "question",
+      "text": "kysymys",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_answer",
       "type": "word",
-      "text": "answer",
+      "text": "vastaus",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_conversation",
       "type": "word",
-      "text": "conversation",
+      "text": "keskustelu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_message",
       "type": "word",
-      "text": "message",
+      "text": "viesti",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_translate",
       "type": "word",
-      "text": "translate",
+      "text": "kääntää",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "39_communication_and_language_do_you_speak_english",
       "type": "sentence",
-      "text": "Do you speak English?",
+      "text": "Puhutko englantia?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_can_we_talk_about_it",
       "type": "sentence",
-      "text": "Can we talk about it?",
+      "text": "Voimmeko puhua siitä?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_please_listen_to_me",
       "type": "sentence",
-      "text": "Please listen to me.",
+      "text": "Kuuntele minua.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_do_you_understand_what_i_mean",
       "type": "sentence",
-      "text": "Do you understand what I mean?",
+      "text": "Ymmärrätkö mitä tarkoitan?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_can_you_explain_this_to_me",
       "type": "sentence",
-      "text": "Can you explain this to me?",
+      "text": "Voisitko selittää tämän minulle?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_i_have_a_question_for_you",
       "type": "sentence",
-      "text": "I have a question for you.",
+      "text": "Minulla on sinulle kysymys.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_what_is_your_answer",
       "type": "sentence",
-      "text": "What is your answer?",
+      "text": "Mikä on vastauksesi?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_this_is_an_interesting_conversation",
       "type": "sentence",
-      "text": "This is an interesting conversation.",
+      "text": "Tämä on mielenkiintoinen keskustelu.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_did_you_get_my_message",
       "type": "sentence",
-      "text": "Did you get my message?",
+      "text": "Saitko viestini?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "39_communication_and_language_can_you_translate_this_word",
       "type": "sentence",
-      "text": "Can you translate this word?",
+      "text": "Voisitko kääntää tämän sanan?",
       "practiceType": "formulateSentense"
     }
   ]

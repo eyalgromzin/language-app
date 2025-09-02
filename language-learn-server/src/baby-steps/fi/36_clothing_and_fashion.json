@@ -7,121 +7,121 @@
     {
       "id": "36_clothing_and_fashion_clothes",
       "type": "word",
-      "text": "clothes",
+      "text": "vaatteet",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_shirt",
       "type": "word",
-      "text": "shirt",
+      "text": "paita",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_pants",
       "type": "word",
-      "text": "pants",
+      "text": "housut",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_dress",
       "type": "word",
-      "text": "dress",
+      "text": "mekko",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_shoes",
       "type": "word",
-      "text": "shoes",
+      "text": "kengät",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_hat",
       "type": "word",
-      "text": "hat",
+      "text": "hattu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_jacket",
       "type": "word",
-      "text": "jacket",
+      "text": "takki",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_size",
       "type": "word",
-      "text": "size",
+      "text": "koko",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_style",
       "type": "word",
-      "text": "style",
+      "text": "tyyli",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_fashion",
       "type": "word",
-      "text": "fashion",
+      "text": "muoti",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "36_clothing_and_fashion_what_are_you_wearing_today",
       "type": "sentence",
-      "text": "What are you wearing today?",
+      "text": "Mitä sinulla on päällä tänään?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_i_like_your_new_shirt",
       "type": "sentence",
-      "text": "I like your new shirt.",
+      "text": "Pidän uudesta paidastasi.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
       "type": "sentence",
-      "text": "Where did you buy those pants?",
+      "text": "Mistä ostit nuo housut?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
       "type": "sentence",
-      "text": "That dress looks beautiful on you.",
+      "text": "Tuo mekko näyttää kauniilta sinulla.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
       "type": "sentence",
-      "text": "Do you like my new shoes?",
+      "text": "Pidätkö uusista kengistäni?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_what_size_do_you_wear",
       "type": "sentence",
-      "text": "What size do you wear?",
+      "text": "Mikä koko sinulla on?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_i_need_a_warm_jacket_for_winter",
       "type": "sentence",
-      "text": "I need a warm jacket for winter.",
+      "text": "Tarvitsen lämpimän takin talvea varten.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_what_is_your_fashion_style",
       "type": "sentence",
-      "text": "What is your fashion style?",
+      "text": "Mikä on muotityylisi?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_this_hat_protects_me_from_the_sun",
       "type": "sentence",
-      "text": "This hat protects me from the sun.",
+      "text": "Tämä hattu suojaa minua auringolta.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "36_clothing_and_fashion_do_you_follow_fashion_trends",
       "type": "sentence",
-      "text": "Do you follow fashion trends?",
+      "text": "Seuraatko muotitrendejä?",
       "practiceType": "formulateSentense"
     }
   ]

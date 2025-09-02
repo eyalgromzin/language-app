@@ -7,121 +7,121 @@
     {
       "id": "14_plans_invitations_today",
       "type": "word",
-      "text": "today",
+      "text": "tänään",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "huomenna",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_weekend",
       "type": "word",
-      "text": "weekend",
+      "text": "viikonloppu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_plan",
       "type": "word",
-      "text": "plan",
+      "text": "suunnitelma",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_meet",
       "type": "word",
-      "text": "meet",
+      "text": "tavata",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_invite",
       "type": "word",
-      "text": "invite",
+      "text": "kutsua",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_free",
       "type": "word",
-      "text": "free",
+      "text": "vapaa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_busy",
       "type": "word",
-      "text": "busy",
+      "text": "kiireinen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_time",
       "type": "word",
-      "text": "time",
+      "text": "aika",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_place",
       "type": "word",
-      "text": "place",
+      "text": "paikka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_what_are_you_doing_tomorrow",
       "type": "sentence",
-      "text": "What are you doing tomorrow?",
+      "text": "Mitä teet huomenna?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "14_plans_invitations_would_you_like_to",
       "type": "sentence",
-      "text": "Would you like to …?",
+      "text": "Haluaisitko …?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "14_plans_invitations_let_us_meet_at",
       "type": "sentence",
-      "text": "Let us meet at …",
+      "text": "Tavataan …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "14_plans_invitations_see_you_soon",
       "type": "sentence",
-      "text": "See you soon!",
+      "text": "Nähdään pian!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "14_plans_invitations_are_you_free_this_weekend",
       "type": "sentence",
-      "text": "Are you free this weekend?",
+      "text": "Oletko vapaa tänä viikonloppuna?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "14_plans_invitations_what_time_should_we_meet",
       "type": "sentence",
-      "text": "What time should we meet?",
+      "text": "Mihin aikaan tavataan?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "14_plans_invitations_i_am_busy_today",
       "type": "sentence",
-      "text": "I am busy today.",
+      "text": "Olen kiireinen tänään.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "14_plans_invitations_do_you_want_to_have_coffee",
       "type": "sentence",
-      "text": "Do you want to have coffee?",
+      "text": "Haluatko juoda kahvia?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "14_plans_invitations_let_us_make_plans",
       "type": "sentence",
-      "text": "Let us make plans.",
+      "text": "Tehdään suunnitelmia.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "14_plans_invitations_where_should_we_go",
       "type": "sentence",
-      "text": "Where should we go?",
+      "text": "Minne mennään?",
       "practiceType": "formulateSentense"
     }
   ]

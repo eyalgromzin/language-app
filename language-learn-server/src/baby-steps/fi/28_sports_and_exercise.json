@@ -7,121 +7,121 @@
     {
       "id": "28_sports_and_exercise_sport",
       "type": "word",
-      "text": "sport",
+      "text": "urheilu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_game",
       "type": "word",
-      "text": "game",
+      "text": "peli",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_team",
       "type": "word",
-      "text": "team",
+      "text": "joukkue",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_player",
       "type": "word",
-      "text": "player",
+      "text": "pelaaja",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_coach",
       "type": "word",
-      "text": "coach",
+      "text": "valmentaja",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_win",
       "type": "word",
-      "text": "win",
+      "text": "voittaa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_lose",
       "type": "word",
-      "text": "lose",
+      "text": "hävitä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_score",
       "type": "word",
-      "text": "score",
+      "text": "tulos",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_exercise",
       "type": "word",
-      "text": "exercise",
+      "text": "harjoittelu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_fitness",
       "type": "word",
-      "text": "fitness",
+      "text": "kunto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_what_sport_do_you_like",
       "type": "sentence",
-      "text": "What sport do you like?",
+      "text": "Mitä urheilua pidät?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_love_playing_soccer",
       "type": "sentence",
-      "text": "I love playing soccer.",
+      "text": "Rakastan jalkapallon pelaamista.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
       "type": "sentence",
-      "text": "Do you want to join our team?",
+      "text": "Haluatko liittyä joukkueeseemme?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_who_is_your_favorite_player",
       "type": "sentence",
-      "text": "Who is your favorite player?",
+      "text": "Kuka on suosikkipelaajasi?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_our_coach_is_very_good",
       "type": "sentence",
-      "text": "Our coach is very good.",
+      "text": "Valmentajamme on erittäin hyvä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_did_you_win_the_game",
       "type": "sentence",
-      "text": "Did you win the game?",
+      "text": "Voititko pelin?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_what_is_the_score",
       "type": "sentence",
-      "text": "What is the score?",
+      "text": "Mikä on tulos?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_exercise_every_morning",
       "type": "sentence",
-      "text": "I exercise every morning.",
+      "text": "Harjoittelen joka aamu.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_go_to_the_gym",
       "type": "sentence",
-      "text": "Do you go to the gym?",
+      "text": "Käytkö salilla?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_fitness_is_important_for_health",
       "type": "sentence",
-      "text": "Fitness is important for health.",
+      "text": "Kunto on tärkeää terveydelle.",
       "practiceType": "formulateSentense"
     }
   ]

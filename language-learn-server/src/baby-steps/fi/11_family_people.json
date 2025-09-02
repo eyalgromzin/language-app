@@ -7,121 +7,121 @@
     {
       "id": "11_family_people_mother",
       "type": "word",
-      "text": "mother",
+      "text": "äiti",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_father",
       "type": "word",
-      "text": "father",
+      "text": "isä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_brother",
       "type": "word",
-      "text": "brother",
+      "text": "veli",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_sister",
       "type": "word",
-      "text": "sister",
+      "text": "sisko",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_friend",
       "type": "word",
-      "text": "friend",
+      "text": "ystävä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_son",
       "type": "word",
-      "text": "son",
+      "text": "poika",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_daughter",
       "type": "word",
-      "text": "daughter",
+      "text": "tytär",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_baby",
       "type": "word",
-      "text": "baby",
+      "text": "vauva",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_man",
       "type": "word",
-      "text": "man",
+      "text": "mies",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_woman",
       "type": "word",
-      "text": "woman",
+      "text": "nainen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "11_family_people_this_is_my_friend",
       "type": "sentence",
-      "text": "This is my friend.",
+      "text": "Tämä on ystäväni.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_i_am_with_my_family",
       "type": "sentence",
-      "text": "I am with my family.",
+      "text": "Olen perheeni kanssa.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_how_many_children_do_you_have",
       "type": "sentence",
-      "text": "How many children do you have?",
+      "text": "Kuinka monta lasta sinulla on?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_this_is_my_mother",
       "type": "sentence",
-      "text": "This is my mother.",
+      "text": "Tämä on äitini.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_where_is_your_family",
       "type": "sentence",
-      "text": "Where is your family?",
+      "text": "Missä perheesi on?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_do_you_have_brothers_and_sisters",
       "type": "sentence",
-      "text": "Do you have brothers and sisters?",
+      "text": "Onko sinulla veljiä ja siskoja?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_my_family_lives_in",
       "type": "sentence",
-      "text": "My family lives in …",
+      "text": "Perheeni asuu …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_how_old_is_your_son",
       "type": "sentence",
-      "text": "How old is your son?",
+      "text": "Kuinka vanha poikasi on?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_this_is_my_baby",
       "type": "sentence",
-      "text": "This is my baby.",
+      "text": "Tämä on vauvani.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "11_family_people_are_you_married",
       "type": "sentence",
-      "text": "Are you married?",
+      "text": "Oletko naimisissa?",
       "practiceType": "formulateSentense"
     }
   ]

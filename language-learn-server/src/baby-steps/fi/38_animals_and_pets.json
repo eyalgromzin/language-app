@@ -7,121 +7,121 @@
     {
       "id": "38_animals_and_pets_animal",
       "type": "word",
-      "text": "animal",
+      "text": "eläin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pet",
       "type": "word",
-      "text": "pet",
+      "text": "lemmikki",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_dog",
       "type": "word",
-      "text": "dog",
+      "text": "koira",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cat",
       "type": "word",
-      "text": "cat",
+      "text": "kissa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_bird",
       "type": "word",
-      "text": "bird",
+      "text": "lintu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_fish",
       "type": "word",
-      "text": "fish",
+      "text": "kala",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_horse",
       "type": "word",
-      "text": "horse",
+      "text": "hevonen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cow",
       "type": "word",
-      "text": "cow",
+      "text": "lehmä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "kana",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pig",
       "type": "word",
-      "text": "pig",
+      "text": "sika",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_do_you_have_any_pets",
       "type": "sentence",
-      "text": "Do you have any pets?",
+      "text": "Onko sinulla lemmikkejä?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_my_dog_is_very_friendly",
       "type": "sentence",
-      "text": "My dog is very friendly.",
+      "text": "Koirani on erittäin ystävällinen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_cats_are_independent_animals",
       "type": "sentence",
-      "text": "Cats are independent animals.",
+      "text": "Kissat ovat itsenäisiä eläimiä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_i_love_watching_birds_fly",
       "type": "sentence",
-      "text": "I love watching birds fly.",
+      "text": "Rakastan katsella lintuja lentämässä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_how_many_fish_do_you_have",
       "type": "sentence",
-      "text": "How many fish do you have?",
+      "text": "Kuinka monta kalaa sinulla on?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_horses_are_beautiful_animals",
       "type": "sentence",
-      "text": "Horses are beautiful animals.",
+      "text": "Hevoset ovat kauniita eläimiä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_cows_give_us_milk",
       "type": "sentence",
-      "text": "Cows give us milk.",
+      "text": "Lehmät antavat meille maitoa.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_do_you_like_chicken",
       "type": "sentence",
-      "text": "Do you like chicken?",
+      "text": "Pidätkö kanasta?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_pigs_are_very_intelligent",
       "type": "sentence",
-      "text": "Pigs are very intelligent.",
+      "text": "Siat ovat erittäin älykkäitä.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_what_is_your_favorite_animal",
       "type": "sentence",
-      "text": "What is your favorite animal?",
+      "text": "Mikä on suosikkieläimesi?",
       "practiceType": "formulateSentense"
     }
   ]

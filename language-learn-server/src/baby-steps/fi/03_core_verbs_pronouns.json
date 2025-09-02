@@ -31,97 +31,97 @@
     {
       "id": "03_core_verbs_pronouns_we",
       "type": "word",
-      "text": "we",
+      "text": "me",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_they",
       "type": "word",
-      "text": "they",
+      "text": "he",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_it",
       "type": "word",
-      "text": "it",
+      "text": "se",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_me",
       "type": "word",
-      "text": "me",
+      "text": "minua",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_him",
       "type": "word",
-      "text": "him",
+      "text": "häntä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_her",
       "type": "word",
-      "text": "her",
+      "text": "häntä",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_i_am",
       "type": "sentence",
-      "text": "I am …",
+      "text": "Minä olen …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_have",
       "type": "sentence",
-      "text": "I have …",
+      "text": "Minulla on …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_want",
       "type": "sentence",
-      "text": "I want …",
+      "text": "Minä haluan …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_need",
       "type": "sentence",
-      "text": "I need …",
+      "text": "Minä tarvitsen …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_you_are",
       "type": "sentence",
-      "text": "You are …",
+      "text": "Sinä olet …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_he_is",
       "type": "sentence",
-      "text": "He is …",
+      "text": "Hän on …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_she_is",
       "type": "sentence",
-      "text": "She is …",
+      "text": "Hän on …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_we_are",
       "type": "sentence",
-      "text": "We are …",
+      "text": "Me olemme …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_they_are",
       "type": "sentence",
-      "text": "They are …",
+      "text": "He ovat …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_it_is",
       "type": "sentence",
-      "text": "It is …",
+      "text": "Se on …",
       "practiceType": "formulateSentense"
     }
   ]
