@@ -7,121 +7,121 @@
     {
       "id": "13_work_study_office",
       "type": "word",
-      "text": "office",
+      "text": "kancelář",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_school",
       "type": "word",
-      "text": "school",
+      "text": "škola",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_meeting",
       "type": "word",
-      "text": "meeting",
+      "text": "schůzka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_project",
       "type": "word",
-      "text": "project",
+      "text": "projekt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_job",
       "type": "word",
-      "text": "job",
+      "text": "práce",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_work",
       "type": "word",
-      "text": "work",
+      "text": "práce",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_study",
       "type": "word",
-      "text": "study",
+      "text": "studium",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_class",
       "type": "word",
-      "text": "class",
+      "text": "třída",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_boss",
       "type": "word",
-      "text": "boss",
+      "text": "šéf",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_colleague",
       "type": "word",
-      "text": "colleague",
+      "text": "kolega",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_i_have_a_meeting",
       "type": "sentence",
-      "text": "I have a meeting.",
+      "text": "Mám schůzku.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_work_from_home",
       "type": "sentence",
-      "text": "I work from home.",
+      "text": "Pracuji z domova.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_am_studying",
       "type": "sentence",
-      "text": "I am studying …",
+      "text": "Studuji …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Co děláte v práci?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Pracuji v kanceláři.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Líbí se vám vaše práce?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_am_busy_with_work",
       "type": "sentence",
-      "text": "I am busy with work.",
+      "text": "Jsem zaneprázdněný prací.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_what_are_you_studying",
       "type": "sentence",
-      "text": "What are you studying?",
+      "text": "Co studujete?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_have_a_lot_of_homework",
       "type": "sentence",
-      "text": "I have a lot of homework.",
+      "text": "Mám hodně domácích úkolů.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_where_do_you_work",
       "type": "sentence",
-      "text": "Where do you work?",
+      "text": "Kde pracujete?",
       "practiceType": "formulateSentense"
     }
   ]

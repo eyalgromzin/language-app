@@ -7,25 +7,25 @@
     {
       "id": "08_travel_hotel_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "jízdenka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_reservation",
       "type": "word",
-      "text": "reservation",
+      "text": "rezervace",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_passport",
       "type": "word",
-      "text": "passport",
+      "text": "pas",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_luggage",
       "type": "word",
-      "text": "luggage",
+      "text": "zavazadla",
       "practiceType": "chooseTranslation"
     },
     {
@@ -37,91 +37,91 @@
     {
       "id": "08_travel_hotel_airport",
       "type": "word",
-      "text": "airport",
+      "text": "letiště",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_station",
       "type": "word",
-      "text": "station",
+      "text": "stanice",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_room",
       "type": "word",
-      "text": "room",
+      "text": "pokoj",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_key",
       "type": "word",
-      "text": "key",
+      "text": "klíč",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_map",
       "type": "word",
-      "text": "map",
+      "text": "mapa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_i_have_a_reservation",
       "type": "sentence",
-      "text": "I have a reservation.",
+      "text": "Mám rezervaci.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_what_time_is_check_in",
       "type": "sentence",
-      "text": "What time is check-in?",
+      "text": "V kolik je příjezd?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_where_is_the_platform",
       "type": "sentence",
-      "text": "Where is the platform?",
+      "text": "Kde je nástupiště?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_i_need_a_taxi",
       "type": "sentence",
-      "text": "I need a taxi.",
+      "text": "Potřebuji taxi.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_what_time_is_check_out",
       "type": "sentence",
-      "text": "What time is check-out?",
+      "text": "V kolik je odjezd?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_where_is_my_room",
       "type": "sentence",
-      "text": "Where is my room?",
+      "text": "Kde je můj pokoj?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_do_you_have_wifi",
       "type": "sentence",
-      "text": "Do you have WiFi?",
+      "text": "Máte WiFi?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_how_do_i_get_to_the_airport",
       "type": "sentence",
-      "text": "How do I get to the airport?",
+      "text": "Jak se dostanu na letiště?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_is_breakfast_included",
       "type": "sentence",
-      "text": "Is breakfast included?",
+      "text": "Je snídaně v ceně?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_can_you_call_me_a_taxi",
       "type": "sentence",
-      "text": "Can you call me a taxi?",
+      "text": "Můžete mi zavolat taxi?",
       "practiceType": "formulateSentense"
     }
   ]

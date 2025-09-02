@@ -6,14 +6,14 @@
 
 7 if a book is in the library already , set in localstorage to not even check  again if its in the library, and not just not asking  
 
-2 create translate table with all languages that will be filled each time a user clicks a word 
-
 9 make share button for book - will show dialog to check if its a book downloaded from website. or some local book that got in some other way . 
     - if its from a website , require for user to add location and then share it . 
     - if its in the phone itself , share the file itself from storage. 
 
 
 ==================== tomorrow ========================
+
+2 create translate table with all languages that will be filled each time a user clicks a word 
 
 8 make video transcript work better - it lags now 
 

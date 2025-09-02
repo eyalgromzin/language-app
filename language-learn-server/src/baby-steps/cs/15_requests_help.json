@@ -7,7 +7,7 @@
     {
       "id": "15_requests_help_help",
       "type": "word",
-      "text": "help",
+      "text": "pomoc",
       "practiceType": "chooseTranslation"
     },
     {
@@ -19,109 +19,109 @@
     {
       "id": "15_requests_help_could",
       "type": "word",
-      "text": "could",
+      "text": "mohl by",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_would",
       "type": "word",
-      "text": "would",
+      "text": "chtěl by",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_repeat",
       "type": "word",
-      "text": "repeat",
+      "text": "opakovat",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_slowly",
       "type": "word",
-      "text": "slowly",
+      "text": "pomalu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_mean",
       "type": "word",
-      "text": "mean",
+      "text": "znamenat",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_say",
       "type": "word",
-      "text": "say",
+      "text": "říct",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_understand",
       "type": "word",
-      "text": "understand",
+      "text": "rozumět",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_explain",
       "type": "word",
-      "text": "explain",
+      "text": "vysvětlit",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_could_you_help_me_please",
       "type": "sentence",
-      "text": "Could you help me, please?",
+      "text": "Můžete mi prosím pomoci?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_you_repeat_that_please",
       "type": "sentence",
-      "text": "Can you repeat that, please?",
+      "text": "Můžete to prosím zopakovat?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_please_speak_more_slowly",
       "type": "sentence",
-      "text": "Please speak more slowly.",
+      "text": "Prosím mluvte pomaleji.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_how_do_you_say_this_in_english",
       "type": "sentence",
-      "text": "How do you say this in English?",
+      "text": "Jak se to řekne anglicky?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_what_does_this_mean",
       "type": "sentence",
-      "text": "What does this mean?",
+      "text": "Co to znamená?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_you_explain_this",
       "type": "sentence",
-      "text": "Can you explain this?",
+      "text": "Můžete to vysvětlit?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_i_dont_understand",
       "type": "sentence",
-      "text": "I don't understand.",
+      "text": "Nerozumím.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_would_you_mind",
       "type": "sentence",
-      "text": "Would you mind …?",
+      "text": "Vadilo by vám …?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_i_ask_you_something",
       "type": "sentence",
-      "text": "Can I ask you something?",
+      "text": "Můžu se vás na něco zeptat?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_thank_you_for_helping",
       "type": "sentence",
-      "text": "Thank you for helping.",
+      "text": "Děkuji za pomoc.",
       "practiceType": "formulateSentense"
     }
   ]

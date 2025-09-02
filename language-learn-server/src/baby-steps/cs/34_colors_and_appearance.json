@@ -7,121 +7,121 @@
     {
       "id": "34_colors_and_appearance_color",
       "type": "word",
-      "text": "color",
+      "text": "barva",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_red",
       "type": "word",
-      "text": "red",
+      "text": "červená",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_blue",
       "type": "word",
-      "text": "blue",
+      "text": "modrá",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_green",
       "type": "word",
-      "text": "green",
+      "text": "zelená",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_yellow",
       "type": "word",
-      "text": "yellow",
+      "text": "žlutá",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_beautiful",
       "type": "word",
-      "text": "beautiful",
+      "text": "krásný",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_ugly",
       "type": "word",
-      "text": "ugly",
+      "text": "ošklivý",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_big",
       "type": "word",
-      "text": "big",
+      "text": "velký",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_small",
       "type": "word",
-      "text": "small",
+      "text": "malý",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_new",
       "type": "word",
-      "text": "new",
+      "text": "nový",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_what_color_is_your_car",
       "type": "sentence",
-      "text": "What color is your car?",
+      "text": "Jakou barvu má vaše auto?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_i_like_red_flowers",
       "type": "sentence",
-      "text": "I like red flowers.",
+      "text": "Mám rád červené květiny.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_the_sky_is_very_blue_today",
       "type": "sentence",
-      "text": "The sky is very blue today.",
+      "text": "Dnes je obloha velmi modrá.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_this_green_shirt_looks_nice",
       "type": "sentence",
-      "text": "This green shirt looks nice.",
+      "text": "Tato zelená košile vypadá hezky.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_the_yellow_banana_is_ripe",
       "type": "sentence",
-      "text": "The yellow banana is ripe.",
+      "text": "Žlutý banán je zralý.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_you_look_beautiful_today",
       "type": "sentence",
-      "text": "You look beautiful today.",
+      "text": "Dnes vypadáte krásně.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_this_is_a_big_house",
       "type": "sentence",
-      "text": "This is a big house.",
+      "text": "Toto je velký dům.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_i_have_a_small_dog",
       "type": "sentence",
-      "text": "I have a small dog.",
+      "text": "Mám malého psa.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_where_did_you_get_that_new_phone",
       "type": "sentence",
-      "text": "Where did you get that new phone?",
+      "text": "Kde jste dostali ten nový telefon?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_what_is_your_favorite_color",
       "type": "sentence",
-      "text": "What is your favorite color?",
+      "text": "Jaká je vaše oblíbená barva?",
       "practiceType": "formulateSentense"
     }
   ]

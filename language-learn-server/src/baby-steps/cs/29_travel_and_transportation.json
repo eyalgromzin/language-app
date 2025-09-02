@@ -1,25 +1,25 @@
 {
   "id": "29_travel_and_transportation",
-  "title": "Travel & Transportation",
+  "title": "Cestování a doprava",
   "emoji": "✈️",
   "language": "Czech",
   "items": [
     {
       "id": "29_travel_and_transportation_travel",
       "type": "word",
-      "text": "travel",
+      "text": "cestovat",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_trip",
       "type": "word",
-      "text": "trip",
+      "text": "cesta",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_airport",
       "type": "word",
-      "text": "airport",
+      "text": "letiště",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,97 +31,97 @@
     {
       "id": "29_travel_and_transportation_passport",
       "type": "word",
-      "text": "passport",
+      "text": "pas",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "jízdenka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_bus",
       "type": "word",
-      "text": "bus",
+      "text": "autobus",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_train",
       "type": "word",
-      "text": "train",
+      "text": "vlak",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_ttravel_and_transportation_car",
       "type": "word",
-      "text": "car",
+      "text": "auto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_map",
       "type": "word",
-      "text": "map",
+      "text": "mapa",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "29_travel_and_transportation_where_are_you_traveling_to",
       "type": "sentence",
-      "text": "Where are you traveling to?",
+      "text": "Kam cestujete?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_i_am_going_on_a_trip",
       "type": "sentence",
-      "text": "I am going on a trip.",
+      "text": "Jdu na cestu.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_how_do_i_get_to_the_airport",
       "type": "sentence",
-      "text": "How do I get to the airport?",
+      "text": "Jak se dostanu na letiště?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_do_you_have_a_hotel_reservation",
       "type": "sentence",
-      "text": "Do you have a hotel reservation?",
+      "text": "Máte rezervaci v hotelu?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_where_is_my_passport",
       "type": "sentence",
-      "text": "Where is my passport?",
+      "text": "Kde je můj pas?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_i_need_to_buy_a_ticket",
       "type": "sentence",
-      "text": "I need to buy a ticket.",
+      "text": "Potřebuji koupit jízdenku.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_does_this_bus_go_to_the_city",
       "type": "sentence",
-      "text": "Does this bus go to the city?",
+      "text": "Jede tento autobus do města?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_the_train_is_delayed",
       "type": "sentence",
-      "text": "The train is delayed.",
+      "text": "Vlak je zpožděný.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_can_you_drive_me_to_the_station",
       "type": "sentence",
-      "text": "Can you drive me to the station?",
+      "text": "Můžete mě odvézt na stanici?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "29_travel_and_transportation_i_need_a_map_of_the_city",
       "type": "sentence",
-      "text": "I need a map of the city.",
+      "text": "Potřebuji mapu města.",
       "practiceType": "formulateSentense"
     }
   ]

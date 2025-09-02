@@ -7,13 +7,13 @@
     {
       "id": "16_phone_internet_phone",
       "type": "word",
-      "text": "phone",
+      "text": "telefon",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_number",
       "type": "word",
-      "text": "number",
+      "text": "číslo",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,7 +31,7 @@
     {
       "id": "16_phone_internet_call",
       "type": "word",
-      "text": "call",
+      "text": "volat",
       "practiceType": "chooseTranslation"
     },
     {
@@ -43,13 +43,13 @@
     {
       "id": "16_phone_internet_message",
       "type": "word",
-      "text": "message",
+      "text": "zpráva",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_password",
       "type": "word",
-      "text": "password",
+      "text": "heslo",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,61 @@
     {
       "id": "16_phone_internet_what_is_your_phone_number",
       "type": "sentence",
-      "text": "What is your phone number?",
+      "text": "Jaké je vaše telefonní číslo?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_the_wifi_password",
       "type": "sentence",
-      "text": "What is the wifi password?",
+      "text": "Jaké je heslo na wifi?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_i_use_your_phone",
       "type": "sentence",
-      "text": "Can I use your phone?",
+      "text": "Můžu použít váš telefon?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_call_me",
       "type": "sentence",
-      "text": "Can you call me?",
+      "text": "Můžete mi zavolat?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_will_text_you",
       "type": "sentence",
-      "text": "I will text you.",
+      "text": "Napíšu vám.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_do_you_have_internet",
       "type": "sentence",
-      "text": "Do you have internet?",
+      "text": "Máte internet?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_your_email",
       "type": "sentence",
-      "text": "What is your email?",
+      "text": "Jaký je váš email?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_am_online",
       "type": "sentence",
-      "text": "I am online.",
+      "text": "Jsem online.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_send_me_a_message",
       "type": "sentence",
-      "text": "Can you send me a message?",
+      "text": "Můžete mi poslat zprávu?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_the_wifi_is_slow",
       "type": "sentence",
-      "text": "The wifi is slow.",
+      "text": "Wifi je pomalá.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -7,121 +7,121 @@
     {
       "id": "38_animals_and_pets_animal",
       "type": "word",
-      "text": "animal",
+      "text": "zvíře",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pet",
       "type": "word",
-      "text": "pet",
+      "text": "domácí mazlíček",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_dog",
       "type": "word",
-      "text": "dog",
+      "text": "pes",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cat",
       "type": "word",
-      "text": "cat",
+      "text": "kočka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_bird",
       "type": "word",
-      "text": "bird",
+      "text": "pták",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_fish",
       "type": "word",
-      "text": "fish",
+      "text": "ryba",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_horse",
       "type": "word",
-      "text": "horse",
+      "text": "kůň",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cow",
       "type": "word",
-      "text": "cow",
+      "text": "kráva",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "kuře",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pig",
       "type": "word",
-      "text": "pig",
+      "text": "prase",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_do_you_have_any_pets",
       "type": "sentence",
-      "text": "Do you have any pets?",
+      "text": "Máte nějaké domácí mazlíčky?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_my_dog_is_very_friendly",
       "type": "sentence",
-      "text": "My dog is very friendly.",
+      "text": "Můj pes je velmi přátelský.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_cats_are_independent_animals",
       "type": "sentence",
-      "text": "Cats are independent animals.",
+      "text": "Kočky jsou nezávislá zvířata.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_i_love_watching_birds_fly",
       "type": "sentence",
-      "text": "I love watching birds fly.",
+      "text": "Miluji sledovat ptáky létat.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_how_many_fish_do_you_have",
       "type": "sentence",
-      "text": "How many fish do you have?",
+      "text": "Kolik ryb máte?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_horses_are_beautiful_animals",
       "type": "sentence",
-      "text": "Horses are beautiful animals.",
+      "text": "Koně jsou krásná zvířata.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_cows_give_us_milk",
       "type": "sentence",
-      "text": "Cows give us milk.",
+      "text": "Krávy nám dávají mléko.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_do_you_like_chicken",
       "type": "sentence",
-      "text": "Do you like chicken?",
+      "text": "Máte rádi kuře?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_pigs_are_very_intelligent",
       "type": "sentence",
-      "text": "Pigs are very intelligent.",
+      "text": "Prasata jsou velmi inteligentní.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_what_is_your_favorite_animal",
       "type": "sentence",
-      "text": "What is your favorite animal?",
+      "text": "Jaké je vaše oblíbené zvíře?",
       "practiceType": "formulateSentense"
     }
   ]

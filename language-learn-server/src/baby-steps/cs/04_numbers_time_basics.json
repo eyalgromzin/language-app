@@ -7,265 +7,265 @@
     {
       "id": "04_numbers_time_basics_zero",
       "type": "word",
-      "text": "zero",
+      "text": "nula",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_one",
       "type": "word",
-      "text": "one",
+      "text": "jeden",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_two",
       "type": "word",
-      "text": "two",
+      "text": "dva",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_three",
       "type": "word",
-      "text": "three",
+      "text": "tři",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_four",
       "type": "word",
-      "text": "four",
+      "text": "čtyři",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_five",
       "type": "word",
-      "text": "five",
+      "text": "pět",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_six",
       "type": "word",
-      "text": "six",
+      "text": "šest",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seven",
       "type": "word",
-      "text": "seven",
+      "text": "sedm",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eight",
       "type": "word",
-      "text": "eight",
+      "text": "osm",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_nine",
       "type": "word",
-      "text": "nine",
+      "text": "devět",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_ten",
       "type": "word",
-      "text": "ten",
+      "text": "deset",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_twenty",
       "type": "word",
-      "text": "twenty",
+      "text": "dvacet",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_thirty",
       "type": "word",
-      "text": "thirty",
+      "text": "třicet",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_forty",
       "type": "word",
-      "text": "forty",
+      "text": "čtyřicet",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_fifty",
       "type": "word",
-      "text": "fifty",
+      "text": "padesát",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_sixty",
       "type": "word",
-      "text": "sixty",
+      "text": "šedesát",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seventy",
       "type": "word",
-      "text": "seventy",
+      "text": "sedmdesát",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eighty",
       "type": "word",
-      "text": "eighty",
+      "text": "osmdesát",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_ninety",
       "type": "word",
-      "text": "ninety",
+      "text": "devadesát",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_hundred",
       "type": "word",
-      "text": "hundred",
+      "text": "sto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_two_hundred",
       "type": "word",
-      "text": "two hundred",
+      "text": "dvě stě",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_three_hundred",
       "type": "word",
-      "text": "three hundred",
+      "text": "tři sta",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_fifteen",
       "type": "word",
-      "text": "fifteen",
+      "text": "patnáct",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_twenty_five",
       "type": "word",
-      "text": "twenty-five",
+      "text": "dvacet pět",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_forty_two",
       "type": "word",
-      "text": "forty-two",
+      "text": "čtyřicet dva",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seventy_eight",
       "type": "word",
-      "text": "seventy-eight",
+      "text": "sedmdesát osm",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_one_hundred_twenty",
       "type": "word",
-      "text": "one hundred twenty",
+      "text": "sto dvacet",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_five_hundred",
       "type": "word",
-      "text": "five hundred",
+      "text": "pět set",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eight_hundred_fifty",
       "type": "word",
-      "text": "eight hundred fifty",
+      "text": "osm set padesát",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_thousand",
       "type": "word",
-      "text": "thousand",
+      "text": "tisíc",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_today",
       "type": "word",
-      "text": "today",
+      "text": "dnes",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "zítra",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_yesterday",
       "type": "word",
-      "text": "yesterday",
+      "text": "včera",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_now",
       "type": "word",
-      "text": "now",
+      "text": "teď",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_what_time_is_it",
       "type": "sentence",
-      "text": "What time is it?",
+      "text": "Kolik je hodin?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_three_o_clock",
       "type": "sentence",
-      "text": "It is three o'clock.",
+      "text": "Jsou tři hodiny.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_half_past_two",
       "type": "sentence",
-      "text": "It is half past two.",
+      "text": "Jsou půl třetí.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_what_day_is_today",
       "type": "sentence",
-      "text": "What day is today?",
+      "text": "Jaký je dnes den?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_today_is_monday",
       "type": "sentence",
-      "text": "Today is Monday.",
+      "text": "Dnes je pondělí.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_see_you_tomorrow",
       "type": "sentence",
-      "text": "See you tomorrow.",
+      "text": "Uvidíme se zítra.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_i_am_late",
       "type": "sentence",
-      "text": "I am late.",
+      "text": "Jsem pozdě.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_what_time_do_you_start",
       "type": "sentence",
-      "text": "What time do you start?",
+      "text": "V kolik začínáš?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_time_to_go",
       "type": "sentence",
-      "text": "It is time to go.",
+      "text": "Je čas jít.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_how_long_does_it_take",
       "type": "sentence",
-      "text": "How long does it take?",
+      "text": "Jak dlouho to trvá?",
       "practiceType": "formulateSentense"
     }
   ]

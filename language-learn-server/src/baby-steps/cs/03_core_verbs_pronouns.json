@@ -31,97 +31,97 @@
     {
       "id": "03_core_verbs_pronouns_we",
       "type": "word",
-      "text": "we",
+      "text": "my",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_they",
       "type": "word",
-      "text": "they",
+      "text": "oni",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_it",
       "type": "word",
-      "text": "it",
+      "text": "to",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_me",
       "type": "word",
-      "text": "me",
+      "text": "mě",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_him",
       "type": "word",
-      "text": "him",
+      "text": "ho",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_her",
       "type": "word",
-      "text": "her",
+      "text": "ji",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_i_am",
       "type": "sentence",
-      "text": "I am …",
+      "text": "Jsem …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_have",
       "type": "sentence",
-      "text": "I have …",
+      "text": "Mám …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_want",
       "type": "sentence",
-      "text": "I want …",
+      "text": "Chci …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_need",
       "type": "sentence",
-      "text": "I need …",
+      "text": "Potřebuji …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_you_are",
       "type": "sentence",
-      "text": "You are …",
+      "text": "Ty jsi …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_he_is",
       "type": "sentence",
-      "text": "He is …",
+      "text": "On je …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_she_is",
       "type": "sentence",
-      "text": "She is …",
+      "text": "Ona je …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_we_are",
       "type": "sentence",
-      "text": "We are …",
+      "text": "My jsme …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_they_are",
       "type": "sentence",
-      "text": "They are …",
+      "text": "Oni jsou …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_it_is",
       "type": "sentence",
-      "text": "It is …",
+      "text": "To je …",
       "practiceType": "formulateSentense"
     }
   ]

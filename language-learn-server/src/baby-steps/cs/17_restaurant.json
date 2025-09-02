@@ -7,121 +7,121 @@
     {
       "id": "17_restaurant_menu",
       "type": "word",
-      "text": "menu",
+      "text": "jídelní lístek",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_table",
       "type": "word",
-      "text": "table",
+      "text": "stůl",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_bill",
       "type": "word",
-      "text": "bill",
+      "text": "účet",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_waiter",
       "type": "word",
-      "text": "waiter",
+      "text": "číšník",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_food",
       "type": "word",
-      "text": "food",
+      "text": "jídlo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_drink",
       "type": "word",
-      "text": "drink",
+      "text": "nápoj",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_order",
       "type": "word",
-      "text": "order",
+      "text": "objednávka",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_reservation",
       "type": "word",
-      "text": "reservation",
+      "text": "rezervace",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_service",
       "type": "word",
-      "text": "service",
+      "text": "obsluha",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_tip",
       "type": "word",
-      "text": "tip",
+      "text": "spropitné",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_a_table_for_two_please",
       "type": "sentence",
-      "text": "A table for two, please.",
+      "text": "Stůl pro dva, prosím.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_could_we_have_the_menu",
       "type": "sentence",
-      "text": "Could we have the menu?",
+      "text": "Můžeme dostat jídelní lístek?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_the_bill_please",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "Účet, prosím.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_do_you_have_vegetarian_options",
       "type": "sentence",
-      "text": "Do you have vegetarian options?",
+      "text": "Máte vegetariánské možnosti?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "Co doporučujete?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_i_would_like_to_order",
       "type": "sentence",
-      "text": "I would like to order.",
+      "text": "Chtěl bych si objednat.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_how_long_will_it_take",
       "type": "sentence",
-      "text": "How long will it take?",
+      "text": "Jak dlouho to bude trvat?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_can_we_have_some_water",
       "type": "sentence",
-      "text": "Can we have some water?",
+      "text": "Můžeme dostat vodu?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_the_food_is_delicious",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "Jídlo je výborné.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_do_you_accept_credit_cards",
       "type": "sentence",
-      "text": "Do you accept credit cards?",
+      "text": "Berete kreditní karty?",
       "practiceType": "formulateSentense"
     }
   ]

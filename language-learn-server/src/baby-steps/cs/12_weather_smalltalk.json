@@ -7,121 +7,121 @@
     {
       "id": "12_weather_smalltalk_hot",
       "type": "word",
-      "text": "hot",
+      "text": "horko",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cold",
       "type": "word",
-      "text": "cold",
+      "text": "zima",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_rain",
       "type": "word",
-      "text": "rain",
+      "text": "déšť",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_sunny",
       "type": "word",
-      "text": "sunny",
+      "text": "slunečno",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_warm",
       "type": "word",
-      "text": "warm",
+      "text": "teplo",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_windy",
       "type": "word",
-      "text": "windy",
+      "text": "větrno",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cloudy",
       "type": "word",
-      "text": "cloudy",
+      "text": "oblačno",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_snow",
       "type": "word",
-      "text": "snow",
+      "text": "sníh",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_nice",
       "type": "word",
-      "text": "nice",
+      "text": "hezké",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_bad",
       "type": "word",
-      "text": "bad",
+      "text": "špatné",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_it_is_very_hot_today",
       "type": "sentence",
-      "text": "It is very hot today.",
+      "text": "Dnes je velmi horko.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_might_rain_tomorrow",
       "type": "sentence",
-      "text": "It might rain tomorrow.",
+      "text": "Zítra může pršet.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_have_a_nice_day",
       "type": "sentence",
-      "text": "Have a nice day!",
+      "text": "Hezký den!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_how_is_the_weather",
       "type": "sentence",
-      "text": "How is the weather?",
+      "text": "Jaké je počasí?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_is_nice_weather",
       "type": "sentence",
-      "text": "It is nice weather.",
+      "text": "Je hezké počasí.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_what_a_beautiful_day",
       "type": "sentence",
-      "text": "What a beautiful day!",
+      "text": "Jaký krásný den!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_the_weather_is_bad",
       "type": "sentence",
-      "text": "The weather is bad.",
+      "text": "Počasí je špatné.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_do_you_like_this_weather",
       "type": "sentence",
-      "text": "Do you like this weather?",
+      "text": "Líbí se vám toto počasí?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_is_windy_today",
       "type": "sentence",
-      "text": "It is windy today.",
+      "text": "Dnes je větrno.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_how_are_you_today",
       "type": "sentence",
-      "text": "How are you today?",
+      "text": "Jak se máte dnes?",
       "practiceType": "formulateSentense"
     }
   ]

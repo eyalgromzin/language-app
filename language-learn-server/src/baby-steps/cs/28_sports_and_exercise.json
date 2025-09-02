@@ -13,49 +13,49 @@
     {
       "id": "28_sports_and_exercise_game",
       "type": "word",
-      "text": "game",
+      "text": "hra",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_team",
       "type": "word",
-      "text": "team",
+      "text": "tým",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_player",
       "type": "word",
-      "text": "player",
+      "text": "hráč",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_coach",
       "type": "word",
-      "text": "coach",
+      "text": "trenér",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_win",
       "type": "word",
-      "text": "win",
+      "text": "vyhrát",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_lose",
       "type": "word",
-      "text": "lose",
+      "text": "prohrát",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_score",
       "type": "word",
-      "text": "score",
+      "text": "skóre",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_exercise",
       "type": "word",
-      "text": "exercise",
+      "text": "cvičení",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,61 @@
     {
       "id": "28_sports_and_exercise_what_sport_do_you_like",
       "type": "sentence",
-      "text": "What sport do you like?",
+      "text": "Jaký sport máte rádi?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_love_playing_soccer",
       "type": "sentence",
-      "text": "I love playing soccer.",
+      "text": "Miluji hrát fotbal.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
       "type": "sentence",
-      "text": "Do you want to join our team?",
+      "text": "Chcete se připojit k našemu týmu?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_who_is_your_favorite_player",
       "type": "sentence",
-      "text": "Who is your favorite player?",
+      "text": "Kdo je váš oblíbený hráč?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_our_coach_is_very_good",
       "type": "sentence",
-      "text": "Our coach is very good.",
+      "text": "Náš trenér je velmi dobrý.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_did_you_win_the_game",
       "type": "sentence",
-      "text": "Did you win the game?",
+      "text": "Vyhráli jste hru?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_what_is_the_score",
       "type": "sentence",
-      "text": "What is the score?",
+      "text": "Jaké je skóre?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_exercise_every_morning",
       "type": "sentence",
-      "text": "I exercise every morning.",
+      "text": "Cvičím každé ráno.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_go_to_the_gym",
       "type": "sentence",
-      "text": "Do you go to the gym?",
+      "text": "Chodíte do posilovny?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_fitness_is_important_for_health",
       "type": "sentence",
-      "text": "Fitness is important for health.",
+      "text": "Fitness je důležité pro zdraví.",
       "practiceType": "formulateSentense"
     }
   ]

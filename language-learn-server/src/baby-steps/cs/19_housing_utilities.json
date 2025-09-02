@@ -7,121 +7,121 @@
     {
       "id": "19_housing_utilities_apartment",
       "type": "word",
-      "text": "apartment",
+      "text": "byt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_room",
       "type": "word",
-      "text": "room",
+      "text": "pokoj",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_key",
       "type": "word",
-      "text": "key",
+      "text": "klíč",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_electricity",
       "type": "word",
-      "text": "electricity",
+      "text": "elektřina",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_water",
       "type": "word",
-      "text": "water",
+      "text": "voda",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_house",
       "type": "word",
-      "text": "house",
+      "text": "dům",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_kitchen",
       "type": "word",
-      "text": "kitchen",
+      "text": "kuchyň",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_bathroom",
       "type": "word",
-      "text": "bathroom",
+      "text": "koupelna",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_heating",
       "type": "word",
-      "text": "heating",
+      "text": "vytápění",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_rent",
       "type": "word",
-      "text": "rent",
+      "text": "nájem",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_i_am_looking_for_an_apartment",
       "type": "sentence",
-      "text": "I am looking for an apartment.",
+      "text": "Hledám byt.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_the_key_does_not_work",
       "type": "sentence",
-      "text": "The key does not work.",
+      "text": "Klíč nefunguje.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_there_is_no_hot_water",
       "type": "sentence",
-      "text": "There is no hot water.",
+      "text": "Není teplá voda.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_how_much_is_the_rent",
       "type": "sentence",
-      "text": "How much is the rent?",
+      "text": "Kolik je nájem?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_do_you_have_a_kitchen",
       "type": "sentence",
-      "text": "Do you have a kitchen?",
+      "text": "Máte kuchyň?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_the_heating_is_broken",
       "type": "sentence",
-      "text": "The heating is broken.",
+      "text": "Vytápění je rozbité.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_where_is_the_bathroom",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "Kde je koupelna?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_is_electricity_included",
       "type": "sentence",
-      "text": "Is electricity included?",
+      "text": "Je elektřina v ceně?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_can_i_see_the_house",
       "type": "sentence",
-      "text": "Can I see the house?",
+      "text": "Můžu vidět dům?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_do_you_have_parking",
       "type": "sentence",
-      "text": "Do you have parking?",
+      "text": "Máte parkování?",
       "practiceType": "formulateSentense"
     }
   ]

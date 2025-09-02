@@ -7,121 +7,121 @@
     {
       "id": "40_advanced_phrases_nevertheless",
       "type": "word",
-      "text": "nevertheless",
+      "text": "přesto",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_furthermore",
       "type": "word",
-      "text": "furthermore",
+      "text": "navíc",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_otherwise",
       "type": "word",
-      "text": "otherwise",
+      "text": "jinak",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_meanwhile",
       "type": "word",
-      "text": "meanwhile",
+      "text": "mezitím",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_consequently",
       "type": "word",
-      "text": "consequently",
+      "text": "v důsledku toho",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_approximately",
       "type": "word",
-      "text": "approximately",
+      "text": "přibližně",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_occasionally",
       "type": "word",
-      "text": "occasionally",
+      "text": "občas",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_gradually",
       "type": "word",
-      "text": "gradually",
+      "text": "postupně",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_ultimately",
       "type": "word",
-      "text": "ultimately",
+      "text": "nakonec",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_essentially",
       "type": "word",
-      "text": "essentially",
+      "text": "v podstatě",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
       "type": "sentence",
-      "text": "Nevertheless, I still want to try.",
+      "text": "Přesto to chci zkusit.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
       "type": "sentence",
-      "text": "Furthermore, I believe this is correct.",
+      "text": "Navíc věřím, že toto je správné.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
       "type": "sentence",
-      "text": "We must leave now, otherwise we will be late.",
+      "text": "Musíme odejít nyní, jinak budeme pozdě.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
       "type": "sentence",
-      "text": "Meanwhile, I will prepare dinner.",
+      "text": "Mezitím připravím večeři.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
       "type": "sentence",
-      "text": "Consequently, the meeting was cancelled.",
+      "text": "V důsledku toho byla schůzka zrušena.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_it_will_cost_approximately_fifty_dollars",
       "type": "sentence",
-      "text": "It will cost approximately fifty dollars.",
+      "text": "Bude to stát přibližně padesát dolarů.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_i_occasionally_visit_my_grandparents",
       "type": "sentence",
-      "text": "I occasionally visit my grandparents.",
+      "text": "Občas navštěvuji své prarodiče.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_the_weather_gradually_improved",
       "type": "sentence",
-      "text": "The weather gradually improved.",
+      "text": "Počasí se postupně zlepšilo.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_ultimately_we_reached_our_goal",
       "type": "sentence",
-      "text": "Ultimately, we reached our goal.",
+      "text": "Nakonec jsme dosáhli svého cíle.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_essentially_this_is_the_same_thing",
       "type": "sentence",
-      "text": "Essentially, this is the same thing.",
+      "text": "V podstatě je to to samé.",
       "practiceType": "formulateSentense"
     }
   ]
