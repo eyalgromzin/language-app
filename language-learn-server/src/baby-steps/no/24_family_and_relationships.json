@@ -19,7 +19,7 @@
     {
       "id": "24_family_and_relationships_father",
       "type": "word",
-      "text": "langt",
+      "text": "far",
       "practiceType": "chooseTranslation"
     },
     {
@@ -43,13 +43,13 @@
     {
       "id": "24_family_and_relationships_husband",
       "type": "word",
-      "text": "husband",
+      "text": "mann",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_wife",
       "type": "word",
-      "text": "wife",
+      "text": "kone",
       "practiceType": "chooseTranslation"
     },
     {
@@ -61,67 +61,67 @@
     {
       "id": "24_family_and_relationships_parent",
       "type": "word",
-      "text": "parent",
+      "text": "forelder",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_how_is_your_family",
       "type": "sentence",
-      "text": "How is your family?",
+      "text": "Hvordan har familien din det?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_mother_is_a_teacher",
       "type": "sentence",
-      "text": "My mother is a teacher.",
+      "text": "Moren min er lærer.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_i_have_two_sisters",
       "type": "sentence",
-      "text": "I have two sisters.",
+      "text": "Jeg har to søstre.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_where_does_your_father_work",
       "type": "sentence",
-      "text": "Where does your father work?",
+      "text": "Hvor jobber faren din?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_brother_is_older_than_me",
       "type": "sentence",
-      "text": "My brother is older than me.",
+      "text": "Broren min er eldre enn meg.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_we_are_good_friends",
       "type": "sentence",
-      "text": "We are good friends.",
+      "text": "Vi er gode venner.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_husband_likes_cooking",
       "type": "sentence",
-      "text": "My husband likes cooking.",
+      "text": "Mannen min liker å lage mat.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_do_you_have_children",
       "type": "sentence",
-      "text": "Do you have children?",
+      "text": "Har du barn?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_parents_live_in_the_city",
       "type": "sentence",
-      "text": "My parents live in the city.",
+      "text": "Foreldrene mine bor i byen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_i_love_my_family_very_much",
       "type": "sentence",
-      "text": "I love my family very much.",
+      "text": "Jeg elsker familien min veldig mye.",
       "practiceType": "formulateSentense"
     }
   ]

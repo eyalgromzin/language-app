@@ -13,115 +13,115 @@
     {
       "id": "09_emergencies_health_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "lege",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_pharmacy",
       "type": "word",
-      "text": "pharmacy",
+      "text": "apotek",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_emergency",
       "type": "word",
-      "text": "emergency",
+      "text": "nødsituasjon",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_hospital",
       "type": "word",
-      "text": "hospital",
+      "text": "sykehus",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_pain",
       "type": "word",
-      "text": "pain",
+      "text": "smerte",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "medisin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_ambulance",
       "type": "word",
-      "text": "ambulance",
+      "text": "ambulanse",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_police",
       "type": "word",
-      "text": "police",
+      "text": "politi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_fire",
       "type": "word",
-      "text": "fire",
+      "text": "brann",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_call_an_ambulance",
       "type": "sentence",
-      "text": "Call an ambulance!",
+      "text": "Ring en ambulanse!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_a_doctor",
       "type": "sentence",
-      "text": "I need a doctor.",
+      "text": "Jeg trenger en lege.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_feel_sick",
       "type": "sentence",
-      "text": "I feel sick.",
+      "text": "Jeg føler meg syk.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_lost_my_passport",
       "type": "sentence",
-      "text": "I lost my passport.",
+      "text": "Jeg mistet passet mitt.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_where_is_the_nearest_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "Hvor er det nærmeste sykehuset?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_have_a_headache",
       "type": "sentence",
-      "text": "I have a headache.",
+      "text": "Jeg har hodepine.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_call_the_police",
       "type": "sentence",
-      "text": "Call the police!",
+      "text": "Ring politiet!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_this_is_an_emergency",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "Dette er en nødsituasjon.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_help",
       "type": "sentence",
-      "text": "I need help.",
+      "text": "Jeg trenger hjelp.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_are_you_okay",
       "type": "sentence",
-      "text": "Are you okay?",
+      "text": "Er du i orden?",
       "practiceType": "formulateSentense"
     }
   ]

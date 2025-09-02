@@ -1,127 +1,127 @@
 {
   "id": "26_health_and_medical",
-  "title": "Health & Medical",
+  "title": "Helse og medisin",
   "emoji": "🏥",
   "language": "Norwegian",
   "items": [
     {
       "id": "26_health_and_medical_health",
       "type": "word",
-      "text": "health",
+      "text": "helse",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "lege",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_hospital",
       "type": "word",
-      "text": "hospital",
+      "text": "sykehus",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "medisin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_pain",
       "type": "word",
-      "text": "pain",
+      "text": "smerte",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_sick",
       "type": "word",
-      "text": "sick",
+      "text": "syk",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_fever",
       "type": "word",
-      "text": "fever",
+      "text": "feber",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_appointment",
       "type": "word",
-      "text": "appointment",
+      "text": "time",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_emergency",
       "type": "word",
-      "text": "emergency",
+      "text": "nødsituasjon",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_treatment",
       "type": "word",
-      "text": "treatment",
+      "text": "behandling",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "26_health_and_medical_how_are_you_feeling_today",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "Hvordan føler du deg i dag?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_i_need_to_see_a_doctor",
       "type": "sentence",
-      "text": "I need to see a doctor.",
+      "text": "Jeg må se en lege.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_where_is_the_nearest_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "Hvor er det nærmeste sykehuset?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_i_have_a_headache",
       "type": "sentence",
-      "text": "I have a headache.",
+      "text": "Jeg har hodepine.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_can_i_make_an_appointment",
       "type": "sentence",
-      "text": "Can I make an appointment?",
+      "text": "Kan jeg bestille time?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_i_am_feeling_sick",
       "type": "sentence",
-      "text": "I am feeling sick.",
+      "text": "Jeg føler meg syk.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_do_you_have_any_medicine",
       "type": "sentence",
-      "text": "Do you have any medicine?",
+      "text": "Har du noen medisin?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_this_is_an_emergency",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "Dette er en nødsituasjon.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_what_treatment_do_i_need",
       "type": "sentence",
-      "text": "What treatment do I need?",
+      "text": "Hvilken behandling trenger jeg?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "26_health_and_medical_my_fever_is_very_high",
       "type": "sentence",
-      "text": "My fever is very high.",
+      "text": "Feberen min er veldig høy.",
       "practiceType": "formulateSentense"
     }
   ]

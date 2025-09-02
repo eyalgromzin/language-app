@@ -7,121 +7,121 @@
     {
       "id": "18_transportation_details_bus",
       "type": "word",
-      "text": "bus",
+      "text": "buss",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_train",
       "type": "word",
-      "text": "train",
+      "text": "tog",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_metro",
       "type": "word",
-      "text": "metro",
+      "text": "t-bane",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_schedule",
       "type": "word",
-      "text": "schedule",
+      "text": "rute",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "billett",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_station",
       "type": "word",
-      "text": "station",
+      "text": "stasjon",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_platform",
       "type": "word",
-      "text": "platform",
+      "text": "plattform",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_departure",
       "type": "word",
-      "text": "departure",
+      "text": "avgang",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_arrival",
       "type": "word",
-      "text": "arrival",
+      "text": "ankomst",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_delay",
       "type": "word",
-      "text": "delay",
+      "text": "forsinkelse",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_what_time_does_the_bus_leave",
       "type": "sentence",
-      "text": "What time does the bus leave?",
+      "text": "Når går bussen?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_where_can_i_buy_a_ticket",
       "type": "sentence",
-      "text": "Where can I buy a ticket?",
+      "text": "Hvor kan jeg kjøpe en billett?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_is_there_a_discount",
       "type": "sentence",
-      "text": "Is there a discount?",
+      "text": "Er det rabatt?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_which_platform_is_it",
       "type": "sentence",
-      "text": "Which platform is it?",
+      "text": "Hvilken plattform er det?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_is_the_train_delayed",
       "type": "sentence",
-      "text": "Is the train delayed?",
+      "text": "Er toget forsinket?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_how_much_is_a_ticket",
       "type": "sentence",
-      "text": "How much is a ticket?",
+      "text": "Hvor mye koster en billett?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_does_this_bus_go_to",
       "type": "sentence",
-      "text": "Does this bus go to …?",
+      "text": "Går denne bussen til …?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_where_is_the_nearest_station",
       "type": "sentence",
-      "text": "Where is the nearest station?",
+      "text": "Hvor er den nærmeste stasjonen?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_what_time_does_it_arrive",
       "type": "sentence",
-      "text": "What time does it arrive?",
+      "text": "Når kommer det?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_can_i_get_a_refund",
       "type": "sentence",
-      "text": "Can I get a refund?",
+      "text": "Kan jeg få pengene tilbake?",
       "practiceType": "formulateSentense"
     }
   ]
