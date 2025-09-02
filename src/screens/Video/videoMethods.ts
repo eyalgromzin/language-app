@@ -1,5 +1,4 @@
 // Shared utilities for Video screen
-import { LANGUAGE_NAME_TO_CODE } from '../../utils/translation';
 
 export function extractYouTubeVideoId(input: string): string | null {
   if (!input) return null;
@@ -27,9 +26,9 @@ export function normalizeYouTubeUrl(input: string): string {
   return (input || '').trim();
 }
 
-export function mapLanguageNameToYoutubeCode(name: string | null): string {
+export function mapLanguageNameToYoutubeCode(name: string | null, languageMappings: Record<string, string>): string {
   if (!name) return 'en';
-  return LANGUAGE_NAME_TO_CODE[name] || 'en';
+  return languageMappings[name] || 'en';
 }
 
 export async function fetchYouTubeTitleById(id: string): Promise<string> {

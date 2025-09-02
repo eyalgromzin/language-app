@@ -1,28 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { translateWord, getMyMemoryTranslation } from '../config/api';
 
-export const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
-  English: 'en', //
-  Spanish: 'es', //
-  French: 'fr', //
-  German: 'de', //
-  Italian: 'it', //
-  Portuguese: 'pt', //
-  Russian: 'ru', //
-  Hindi: 'hi', 
-  Polish: 'pl',
-  Dutch: 'nl',
-  Greek: 'el',
-  Swedish: 'sv',
-  Norwegian: 'no',
-  Finnish: 'fi',
-  Czech: 'cs',
-  Ukrainian: 'uk',
-  Hebrew: 'he',
-  Thai: 'th',
-  Vietnamese: 'vi',
-};
-
 // Simple FIFO cache backed by a dictionary and an insertion-order queue
 const MAX_TRANSLATION_CACHE_SIZE = 500;
 const translationCache: Record<string, string> = {};
@@ -100,19 +78,20 @@ const schedulePersist = (): void => {
   }, 750);
 };
 
-export const getLangCode = (nameOrNull: string | null | undefined): string | null => {
+export const getLangCode = (nameOrNull: string | null | undefined, languageMappings: Record<string, string>): string | null => {
   if (!nameOrNull) return null;
-  const code = LANGUAGE_NAME_TO_CODE[nameOrNull];
+  const code = languageMappings[nameOrNull];
   return typeof code === 'string' ? code : null;
 };
 
 export const fetchTranslation = async (
   word: string,
   fromLanguageName: string | null | undefined,
-  toLanguageName: string | null | undefined
+  toLanguageName: string | null | undefined,
+  languageMappings: Record<string, string>
 ): Promise<string> => {
-  const fromCode = getLangCode(fromLanguageName) || 'en';
-  const toCode = getLangCode(toLanguageName) || 'en';
+  const fromCode = getLangCode(fromLanguageName, languageMappings) || 'en';
+  const toCode = getLangCode(toLanguageName, languageMappings) || 'en';
   if (!word || fromCode === toCode) return word;
   await ensureCacheLoaded();
   const normalizedWord = word.trim();

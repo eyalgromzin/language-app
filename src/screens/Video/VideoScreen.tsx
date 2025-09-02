@@ -34,6 +34,7 @@ import {
 } from '../../components/Video';
 import VideoOptionsMenu from '../../components/Video/VideoOptionsMenu';
 import linkingService from '../../services/linkingService';
+import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 
 
 
@@ -167,6 +168,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
 function VideoScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
+  const { languageMappings } = useLanguageMappings();
   const [inputUrl, setInputUrl] = React.useState<string>('');
   const [url, setUrl] = React.useState<string>('');
   const videoId = React.useMemo(() => extractYouTubeVideoId(url) ?? '', [url]);
@@ -400,12 +402,12 @@ function VideoScreen(): React.JSX.Element {
       if (lastUpsertedUrlRef.current === videoUrl) return;
       lastUpsertedUrlRef.current = videoUrl;
 
-      const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
+      const symbol = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
       const title = (currentVideoTitle && currentVideoTitle.trim()) ? currentVideoTitle : videoUrl;
 
       await upsertVideoNowPlaying(videoUrl, title, symbol);
     } catch {}
-  }, [url, inputUrl, learningLanguage, currentVideoTitle, videoId, mapLanguageNameToYoutubeCode]);
+  }, [url, inputUrl, learningLanguage, currentVideoTitle, videoId, mapLanguageNameToYoutubeCode, languageMappings]);
 
   // Set up minute-based upsert timer
   React.useEffect(() => {
@@ -418,7 +420,7 @@ function VideoScreen(): React.JSX.Element {
         const videoUrl = (url || inputUrl || '').trim();
         if (!videoUrl) return;
 
-        const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
+        const symbol = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
         const title = (currentVideoTitle && currentVideoTitle.trim()) ? currentVideoTitle : videoUrl;
 
         await upsertVideoNowPlaying(videoUrl, title, symbol);
@@ -428,7 +430,7 @@ function VideoScreen(): React.JSX.Element {
     }, 60000); // Every minute
 
     return () => clearInterval(interval);
-  }, [isPlaying, url, inputUrl, learningLanguage, currentVideoTitle, mapLanguageNameToYoutubeCode]);
+  }, [isPlaying, url, inputUrl, learningLanguage, currentVideoTitle, mapLanguageNameToYoutubeCode, languageMappings]);
 
   
 
@@ -450,7 +452,7 @@ function VideoScreen(): React.JSX.Element {
     return () => {
       cancelled = true;
     };
-  }, [videoId, learningLanguage, mapLanguageNameToYoutubeCode]);
+  }, [videoId, learningLanguage, mapLanguageNameToYoutubeCode, languageMappings]);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -482,14 +484,14 @@ function VideoScreen(): React.JSX.Element {
 
     if(!learningLanguage) return;
     
-    const symbol = mapLanguageNameToYoutubeCode(learningLanguage);
+    const symbol = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
     fetchNowPlaying(symbol);
     return () => { cancelled = true; };
-  }, [learningLanguage, mapLanguageNameToYoutubeCode, enrichWithLengths]);
+  }, [learningLanguage, mapLanguageNameToYoutubeCode, enrichWithLengths, languageMappings];
 
   
 
-      const fetchTranslation = async (word: string): Promise<string> => fetchTranslationCommon(word, learningLanguage, nativeLanguage);
+      const fetchTranslation = async (word: string): Promise<string> => fetchTranslationCommon(word, learningLanguage, nativeLanguage, languageMappings);
 
   
 
@@ -509,7 +511,7 @@ function VideoScreen(): React.JSX.Element {
     setTranscriptError(null);
     setLoadingTranscript(true);
     try {
-      const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
+      const langCode = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
       const segments = await getVideoTranscript(id, langCode);
       setTranscript(segments);
     } catch (err) {
@@ -803,7 +805,7 @@ function VideoScreen(): React.JSX.Element {
           setLoadingTranscript(true);
           setTranscriptError(null);
           try {
-            const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
+            const langCode = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
             const segments = await getVideoTranscript(id, langCode);
             setTranscript(segments);
           } catch (err) {
@@ -832,7 +834,7 @@ function VideoScreen(): React.JSX.Element {
       (async () => {
         setLoadingTranscript(true);
         try {
-          const langCode = mapLanguageNameToYoutubeCode(learningLanguage);
+          const langCode = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
           const segments = await getVideoTranscript(id, langCode);
           setTranscript(segments);
         } catch (err) {
@@ -854,7 +856,7 @@ function VideoScreen(): React.JSX.Element {
       setIsPlaying(false);
       return;
     }
-  }, [inputUrl, videoId, transcript.length, isPlaying, currentTime, learningLanguage]);
+  }, [inputUrl, videoId, transcript.length, isPlaying, currentTime, learningLanguage, languageMappings]);
 
   
 

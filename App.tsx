@@ -11,6 +11,7 @@ import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSh
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AuthProvider, useAuth } from './src/contexts/AuthContext';
 import { WordCategoriesProvider } from './src/contexts/WordCategoriesContext';
+import { LanguageMappingsProvider } from './src/contexts/LanguageMappingsContext';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
 import SurfScreen from './src/screens/Surf/SurfScreen';
@@ -403,7 +404,9 @@ function App(): React.JSX.Element {
   return (
     <AuthProvider>
       <WordCategoriesProvider>
-        <AppNavigator />
+        <LanguageMappingsProvider>
+          <AppNavigator />
+        </LanguageMappingsProvider>
       </WordCategoriesProvider>
     </AuthProvider>
   );

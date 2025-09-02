@@ -3,7 +3,7 @@ import { Alert, Button, StyleSheet, Text, View, Pressable } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { LANGUAGE_OPTIONS } from '../../constants/languages';
+import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import { useAuth } from '../../contexts/AuthContext';
 
 type RootStackParamList = {
@@ -18,6 +18,7 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Startup'>;
 
 function StartupScreen({ navigation }: Props): React.JSX.Element {
   const { completeSetup } = useAuth();
+  const { languageMappings, isLoading: languagesLoading } = useLanguageMappings();
   const [learningLanguage, setLearningLanguage] = React.useState<string>('');
   const [nativeLanguage, setNativeLanguage] = React.useState<string>('');
   const [saving, setSaving] = React.useState<boolean>(false);
@@ -46,6 +47,15 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
     }
   };
 
+  if (languagesLoading) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>Loading...</Text>
+        <Text style={styles.subtitle}>Please wait while we load available languages.</Text>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome!</Text>
@@ -59,7 +69,7 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
             onValueChange={(value) => setLearningLanguage(value)}
           >
             <Picker.Item label="Select a language..." value="" />
-            {LANGUAGE_OPTIONS.map((lang) => (
+            {Object.keys(languageMappings).map((lang) => (
               <Picker.Item key={lang} label={lang} value={lang} />
             ))}
           </Picker>
@@ -74,8 +84,8 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
             onValueChange={(value) => setNativeLanguage(value)}
           >
             <Picker.Item label="Select your native language..." value="" />
-            {LANGUAGE_OPTIONS.map((lang) => (
-              <Picker.Item key={lang} label={lang} value={lang} />
+            {Object.keys(languageMappings).map((lang) => (
+              <Picker.Item key={lang} value={lang} />
             ))}
           </Picker>
         </View>

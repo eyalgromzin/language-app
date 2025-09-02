@@ -3,10 +3,11 @@ import { StyleSheet, Text, View, FlatList, TouchableOpacity, ActivityIndicator, 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { getLibraryMeta, getLibraryUrlsWithCriterias } from '../../config/api';
-import { LANGUAGE_NAME_TO_CODE } from '../../utils/translation';
+import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 
 function LibraryScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
+  const { languageMappings } = useLanguageMappings();
   const [urls, setUrls] = React.useState<{ url: string; name?: string; type: string; level: string; media: string }[]>([]);
   const [allUrls, setAllUrls] = React.useState<{ url: string; name?: string; type: string; level: string; media: string }[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
@@ -48,15 +49,15 @@ function LibraryScreen(): React.JSX.Element {
       return v;
     }
     
-    // Map from language name to symbol using imported constant
-    const symbol = LANGUAGE_NAME_TO_CODE[v];
+    // Map from language name to symbol using context
+    const symbol = languageMappings[v];
     if (symbol) {
       return symbol;
     }
     
     // Default to English if not found
     return 'en';
-  }, []);
+  }, [languageMappings]);
 
   // Initial load relies on selected media effect that queries getUrlsWithCriterias
   // with only language parameter to populate the list.
