@@ -1,25 +1,25 @@
 {
   "id": "12_weather_smalltalk",
-  "title": "Weather & small talk",
+  "title": "मौसम और छोटी बातचीत",
   "emoji": "🌦️",
   "language": "Hindi",
   "items": [
     {
       "id": "12_weather_smalltalk_hot",
       "type": "word",
-      "text": "hot",
+      "text": "गर्म",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cold",
       "type": "word",
-      "text": "cold",
+      "text": "ठंडा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_rain",
       "type": "word",
-      "text": "rain",
+      "text": "बारिश",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,7 +31,7 @@
     {
       "id": "12_weather_smalltalk_warm",
       "type": "word",
-      "text": "warm",
+      "text": "गरम",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,73 +55,73 @@
     {
       "id": "12_weather_smalltalk_nice",
       "type": "word",
-      "text": "nice",
+      "text": "अच्छा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_bad",
       "type": "word",
-      "text": "bad",
+      "text": "बुरा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_it_is_very_hot_today",
       "type": "sentence",
-      "text": "It is very hot today.",
+      "text": "आज बहुत गर्मी है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_might_rain_tomorrow",
       "type": "sentence",
-      "text": "It might rain tomorrow.",
+      "text": "कल बारिश हो सकती है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_have_a_nice_day",
       "type": "sentence",
-      "text": "Have a nice day!",
+      "text": "आपका दिन शुभ हो!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_how_is_the_weather",
       "type": "sentence",
-      "text": "How is the weather?",
+      "text": "मौसम कैसा है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_is_nice_weather",
       "type": "sentence",
-      "text": "It is nice weather.",
+      "text": "मौसम अच्छा है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_what_a_beautiful_day",
       "type": "sentence",
-      "text": "What a beautiful day!",
+      "text": "क्या सुंदर दिन है!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_the_weather_is_bad",
       "type": "sentence",
-      "text": "The weather is bad.",
+      "text": "मौसम खराब है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_do_you_like_this_weather",
       "type": "sentence",
-      "text": "Do you like this weather?",
+      "text": "क्या आपको यह मौसम पसंद है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_is_windy_today",
       "type": "sentence",
-      "text": "It is windy today.",
+      "text": "आज हवा चल रही है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_how_are_you_today",
       "type": "sentence",
-      "text": "How are you today?",
+      "text": "आज आप कैसे हैं?",
       "practiceType": "formulateSentense"
     }
   ]

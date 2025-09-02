@@ -1,127 +1,127 @@
 {
   "id": "16_phone_internet",
-  "title": "Phone & internet",
+  "title": "फोन और इंटरनेट",
   "emoji": "📱",
   "language": "Hindi",
   "items": [
     {
       "id": "16_phone_internet_phone",
       "type": "word",
-      "text": "phone",
+      "text": "फोन",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_number",
       "type": "word",
-      "text": "number",
+      "text": "नंबर",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_email",
       "type": "word",
-      "text": "email",
+      "text": "ईमेल",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_wifi",
       "type": "word",
-      "text": "wifi",
+      "text": "वाईफाई",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_call",
       "type": "word",
-      "text": "call",
+      "text": "कॉल",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_text",
       "type": "word",
-      "text": "text",
+      "text": "टेक्स्ट",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_message",
       "type": "word",
-      "text": "message",
+      "text": "संदेश",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_password",
       "type": "word",
-      "text": "password",
+      "text": "पासवर्ड",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_internet",
       "type": "word",
-      "text": "internet",
+      "text": "इंटरनेट",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_online",
       "type": "word",
-      "text": "online",
+      "text": "ऑनलाइन",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_what_is_your_phone_number",
       "type": "sentence",
-      "text": "What is your phone number?",
+      "text": "आपका फोन नंबर क्या है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_the_wifi_password",
       "type": "sentence",
-      "text": "What is the wifi password?",
+      "text": "वाईफाई का पासवर्ड क्या है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_i_use_your_phone",
       "type": "sentence",
-      "text": "Can I use your phone?",
+      "text": "क्या मैं आपका फोन इस्तेमाल कर सकता हूं?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_call_me",
       "type": "sentence",
-      "text": "Can you call me?",
+      "text": "क्या आप मुझे कॉल कर सकते हैं?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_will_text_you",
       "type": "sentence",
-      "text": "I will text you.",
+      "text": "मैं आपको टेक्स्ट करूंगा।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_do_you_have_internet",
       "type": "sentence",
-      "text": "Do you have internet?",
+      "text": "क्या आपके पास इंटरनेट है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_your_email",
       "type": "sentence",
-      "text": "What is your email?",
+      "text": "आपका ईमेल क्या है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_am_online",
       "type": "sentence",
-      "text": "I am online.",
+      "text": "मैं ऑनलाइन हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_send_me_a_message",
       "type": "sentence",
-      "text": "Can you send me a message?",
+      "text": "क्या आप मुझे संदेश भेज सकते हैं?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_the_wifi_is_slow",
       "type": "sentence",
-      "text": "The wifi is slow.",
+      "text": "वाईफाई धीमा है।",
       "practiceType": "formulateSentense"
     }
   ]

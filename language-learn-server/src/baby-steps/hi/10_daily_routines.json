@@ -1,109 +1,109 @@
 {
   "id": "10_daily_routines",
-  "title": "Daily routines & common verbs",
+  "title": "दैनिक दिनचर्या और सामान्य क्रियाएं",
   "emoji": "☀️",
   "language": "Hindi",
   "items": [
     {
       "id": "10_daily_routines_to_go",
       "type": "word",
-      "text": "to go",
+      "text": "जाना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_come",
       "type": "word",
-      "text": "to come",
+      "text": "आना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_do",
       "type": "word",
-      "text": "to do",
+      "text": "करना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_make",
       "type": "word",
-      "text": "to make",
+      "text": "बनाना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_like",
       "type": "word",
-      "text": "to like",
+      "text": "पसंद करना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_work",
       "type": "word",
-      "text": "to work",
+      "text": "काम करना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_study",
       "type": "word",
-      "text": "to study",
+      "text": "पढ़ाई करना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_eat",
       "type": "word",
-      "text": "to eat",
+      "text": "खाना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_sleep",
       "type": "word",
-      "text": "to sleep",
+      "text": "सोना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_wake",
       "type": "word",
-      "text": "to wake",
+      "text": "जागना",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_i_go_to_work",
       "type": "sentence",
-      "text": "I go to work.",
+      "text": "मैं काम पर जाता हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_like_this",
       "type": "sentence",
-      "text": "I like this.",
+      "text": "मुझे यह पसंद है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_do_not_understand",
       "type": "sentence",
-      "text": "I do not understand.",
+      "text": "मैं नहीं समझता।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_wake_up_early",
       "type": "sentence",
-      "text": "I wake up early.",
+      "text": "मैं जल्दी जागता हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_eat_breakfast",
       "type": "sentence",
-      "text": "I eat breakfast.",
+      "text": "मैं नाश्ता करता हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_study_english",
       "type": "sentence",
-      "text": "I study English.",
+      "text": "मैं अंग्रेजी पढ़ता हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_go_to_bed",
       "type": "sentence",
-      "text": "I go to bed.",
+      "text": "मैं सोने जाता हूं।",
       "practiceType": "formulateSentense"
     },
     {
@@ -115,7 +115,7 @@
     {
       "id": "10_daily_routines_i_make_dinner",
       "type": "sentence",
-      "text": "I make dinner.",
+      "text": "मैं रात का खाना बनाता हूं।",
       "practiceType": "formulateSentense"
     },
     {
