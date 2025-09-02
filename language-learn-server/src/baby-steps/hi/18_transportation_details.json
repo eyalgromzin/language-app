@@ -7,13 +7,13 @@
     {
       "id": "18_transportation_details_bus",
       "type": "word",
-      "text": "bus",
+      "text": "बस",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_train",
       "type": "word",
-      "text": "train",
+      "text": "ट्रेन",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,13 +31,13 @@
     {
       "id": "18_transportation_details_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "टिकट",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_station",
       "type": "word",
-      "text": "station",
+      "text": "स्टेशन",
       "practiceType": "chooseTranslation"
     },
     {

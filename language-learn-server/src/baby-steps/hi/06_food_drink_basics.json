@@ -31,7 +31,7 @@
     {
       "id": "06_food_drink_basics_apple",
       "type": "word",
-      "text": "apple",
+      "text": "सेब",
       "practiceType": "chooseTranslation"
     },
     {
@@ -43,7 +43,7 @@
     {
       "id": "06_food_drink_basics_juice",
       "type": "word",
-      "text": "juice",
+      "text": "रस",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,73 +55,73 @@
     {
       "id": "06_food_drink_basics_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "मुर्गी",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_fish",
       "type": "word",
-      "text": "fish",
+      "text": "मछली",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_i_would_like_water_please",
       "type": "sentence",
-      "text": "I would like water, please.",
+      "text": "मुझे पानी चाहिए, कृपया।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_the_food_is_delicious",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "भोजन बहुत स्वादिष्ट है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_allergic_to",
       "type": "sentence",
-      "text": "I am allergic to …",
+      "text": "मुझे … से एलर्जी है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_no_sugar_please",
       "type": "sentence",
-      "text": "No sugar, please.",
+      "text": "चीनी नहीं, कृपया।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_do_you_have_vegetarian_food",
       "type": "sentence",
-      "text": "Do you have vegetarian food?",
+      "text": "क्या आपके पास शाकाहारी भोजन है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_how_much_is_it",
       "type": "sentence",
-      "text": "How much is it?",
+      "text": "इसकी कीमत कितनी है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_hungry",
       "type": "sentence",
-      "text": "I am hungry.",
+      "text": "मैं भूखा हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_thirsty",
       "type": "sentence",
-      "text": "I am thirsty.",
+      "text": "मुझे प्यास लगी है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "आप क्या सलाह देंगे?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_the_bill_please",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "बिल, कृपया।",
       "practiceType": "formulateSentense"
     }
   ]

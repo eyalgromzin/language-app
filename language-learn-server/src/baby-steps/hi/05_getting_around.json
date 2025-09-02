@@ -67,61 +67,61 @@
     {
       "id": "05_getting_around_where_is_the_bathroom",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "बाथरूम कहाँ है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_where_is_the_station",
       "type": "sentence",
-      "text": "Where is the station?",
+      "text": "स्टेशन कहाँ है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_how_do_i_get_to",
       "type": "sentence",
-      "text": "How do I get to …?",
+      "text": "मैं … तक कैसे पहुंचूं?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_is_it_close",
       "type": "sentence",
-      "text": "Is it close?",
+      "text": "क्या यह पास है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_i_am_lost",
       "type": "sentence",
-      "text": "I am lost.",
+      "text": "मैं खो गया हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_turn_left",
       "type": "sentence",
-      "text": "Turn left.",
+      "text": "बाएं मुड़ें।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_go_straight",
       "type": "sentence",
-      "text": "Go straight.",
+      "text": "सीधे जाएं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_it_is_over_there",
       "type": "sentence",
-      "text": "It is over there.",
+      "text": "यह वहां है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_can_you_help_me",
       "type": "sentence",
-      "text": "Can you help me?",
+      "text": "क्या आप मेरी मदद कर सकते हैं?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_how_far_is_it",
       "type": "sentence",
-      "text": "How far is it?",
+      "text": "यह कितनी दूर है?",
       "practiceType": "formulateSentense"
     }
   ]

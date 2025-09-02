@@ -13,115 +13,115 @@
     {
       "id": "09_emergencies_health_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "डॉक्टर",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_pharmacy",
       "type": "word",
-      "text": "pharmacy",
+      "text": "फार्मेसी",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_emergency",
       "type": "word",
-      "text": "emergency",
+      "text": "आपातकाल",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_hospital",
       "type": "word",
-      "text": "hospital",
+      "text": "अस्पताल",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_pain",
       "type": "word",
-      "text": "pain",
+      "text": "दर्द",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "दवा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_ambulance",
       "type": "word",
-      "text": "ambulance",
+      "text": "एम्बुलेंस",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_police",
       "type": "word",
-      "text": "police",
+      "text": "पुलिस",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_fire",
       "type": "word",
-      "text": "fire",
+      "text": "आग",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_call_an_ambulance",
       "type": "sentence",
-      "text": "Call an ambulance!",
+      "text": "एम्बुलेंस बुलाएं!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_a_doctor",
       "type": "sentence",
-      "text": "I need a doctor.",
+      "text": "मुझे डॉक्टर की जरूरत है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_feel_sick",
       "type": "sentence",
-      "text": "I feel sick.",
+      "text": "मैं बीमार महसूस कर रहा हूं।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_lost_my_passport",
       "type": "sentence",
-      "text": "I lost my passport.",
+      "text": "मैंने अपना पासपोर्ट खो दिया है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_where_is_the_nearest_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "निकटतम अस्पताल कहाँ है?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_have_a_headache",
       "type": "sentence",
-      "text": "I have a headache.",
+      "text": "मुझे सिरदर्द है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_call_the_police",
       "type": "sentence",
-      "text": "Call the police!",
+      "text": "पुलिस बुलाएं!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_this_is_an_emergency",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "यह एक आपातकाल है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_help",
       "type": "sentence",
-      "text": "I need help.",
+      "text": "मुझे मदद की जरूरत है।",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_are_you_okay",
       "type": "sentence",
-      "text": "Are you okay?",
+      "text": "क्या आप ठीक हैं?",
       "practiceType": "formulateSentense"
     }
   ]

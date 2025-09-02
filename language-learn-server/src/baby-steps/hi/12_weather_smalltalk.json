@@ -25,7 +25,7 @@
     {
       "id": "12_weather_smalltalk_sunny",
       "type": "word",
-      "text": "sunny",
+      "text": "धूप",
       "practiceType": "chooseTranslation"
     },
     {
@@ -37,19 +37,19 @@
     {
       "id": "12_weather_smalltalk_windy",
       "type": "word",
-      "text": "windy",
+      "text": "हवा",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cloudy",
       "type": "word",
-      "text": "cloudy",
+      "text": "बादल",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_snow",
       "type": "word",
-      "text": "snow",
+      "text": "बर्फ",
       "practiceType": "chooseTranslation"
     },
     {

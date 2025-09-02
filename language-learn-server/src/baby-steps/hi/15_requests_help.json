@@ -61,7 +61,7 @@
     {
       "id": "15_requests_help_explain",
       "type": "word",
-      "text": "explain",
+      "text": "समझाना",
       "practiceType": "chooseTranslation"
     },
     {
@@ -97,7 +97,7 @@
     {
       "id": "15_requests_help_can_you_explain_this",
       "type": "sentence",
-      "text": "Can you explain this?",
+      "text": "क्या आप इसे समझा सकते हैं?",
       "practiceType": "formulateSentense"
     },
     {

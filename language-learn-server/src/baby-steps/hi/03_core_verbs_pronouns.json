@@ -7,121 +7,121 @@
     {
       "id": "03_core_verbs_pronouns_i",
       "type": "word",
-      "text": "I",
+      "text": "मैं",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_you",
       "type": "word",
-      "text": "you",
+      "text": "आप",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_he",
       "type": "word",
-      "text": "he",
+      "text": "वह",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_she",
       "type": "word",
-      "text": "she",
+      "text": "वह",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_we",
       "type": "word",
-      "text": "we",
+      "text": "हम",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_they",
       "type": "word",
-      "text": "they",
+      "text": "वे",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_it",
       "type": "word",
-      "text": "it",
+      "text": "यह",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_me",
       "type": "word",
-      "text": "me",
+      "text": "मुझे",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_him",
       "type": "word",
-      "text": "him",
+      "text": "उसे",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_her",
       "type": "word",
-      "text": "her",
+      "text": "उसे",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_i_am",
       "type": "sentence",
-      "text": "I am …",
+      "text": "मैं … हूं",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_have",
       "type": "sentence",
-      "text": "I have …",
+      "text": "मेरे पास … है",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_want",
       "type": "sentence",
-      "text": "I want …",
+      "text": "मुझे … चाहिए",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_need",
       "type": "sentence",
-      "text": "I need …",
+      "text": "मुझे … की जरूरत है",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_you_are",
       "type": "sentence",
-      "text": "You are …",
+      "text": "आप … हैं",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_he_is",
       "type": "sentence",
-      "text": "He is …",
+      "text": "वह … है",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_she_is",
       "type": "sentence",
-      "text": "She is …",
+      "text": "वह … है",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_we_are",
       "type": "sentence",
-      "text": "We are …",
+      "text": "हम … हैं",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_they_are",
       "type": "sentence",
-      "text": "They are …",
+      "text": "वे … हैं",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_it_is",
       "type": "sentence",
-      "text": "It is …",
+      "text": "यह … है",
       "practiceType": "formulateSentense"
     }
   ]
