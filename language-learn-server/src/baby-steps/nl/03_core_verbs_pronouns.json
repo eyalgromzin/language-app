@@ -1,127 +1,127 @@
 {
   "id": "03_core_verbs_pronouns",
-  "title": "Core pronouns & helper verbs",
+  "title": "Kernzinnen en hulpwerkwoorden",
   "emoji": "🔤",
   "language": "Dutch",
   "items": [
     {
       "id": "03_core_verbs_pronouns_i",
       "type": "word",
-      "text": "I",
+      "text": "ik",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_you",
       "type": "word",
-      "text": "you",
+      "text": "jij",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_he",
       "type": "word",
-      "text": "he",
+      "text": "hij",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_she",
       "type": "word",
-      "text": "she",
+      "text": "zij",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_we",
       "type": "word",
-      "text": "we",
+      "text": "wij",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_they",
       "type": "word",
-      "text": "they",
+      "text": "zij",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_it",
       "type": "word",
-      "text": "it",
+      "text": "het",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_me",
       "type": "word",
-      "text": "me",
+      "text": "mij",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_him",
       "type": "word",
-      "text": "him",
+      "text": "hem",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_her",
       "type": "word",
-      "text": "her",
+      "text": "haar",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "03_core_verbs_pronouns_i_am",
       "type": "sentence",
-      "text": "I am …",
+      "text": "Ik ben …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_have",
       "type": "sentence",
-      "text": "I have …",
+      "text": "Ik heb …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_want",
       "type": "sentence",
-      "text": "I want …",
+      "text": "Ik wil …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_i_need",
       "type": "sentence",
-      "text": "I need …",
+      "text": "Ik heb nodig …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_you_are",
       "type": "sentence",
-      "text": "You are …",
+      "text": "Jij bent …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_he_is",
       "type": "sentence",
-      "text": "He is …",
+      "text": "Hij is …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_she_is",
       "type": "sentence",
-      "text": "She is …",
+      "text": "Zij is …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_we_are",
       "type": "sentence",
-      "text": "We are …",
+      "text": "Wij zijn …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_they_are",
       "type": "sentence",
-      "text": "They are …",
+      "text": "Zij zijn …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "03_core_verbs_pronouns_it_is",
       "type": "sentence",
-      "text": "It is …",
+      "text": "Het is …",
       "practiceType": "formulateSentense"
     }
   ]

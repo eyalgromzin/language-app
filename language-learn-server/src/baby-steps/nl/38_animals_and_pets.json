@@ -1,6 +1,6 @@
 {
   "id": "38_animals_and_pets",
-  "title": "Animals & Pets",
+  "title": "Dieren en huisdieren",
   "emoji": "🐕",
   "language": "Dutch",
   "items": [
@@ -37,7 +37,7 @@
     {
       "id": "38_animals_and_pets_fish",
       "type": "word",
-      "text": "fish",
+      "text": "vis",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,7 +55,7 @@
     {
       "id": "38_animals_and_pets_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "kip",
       "practiceType": "chooseTranslation"
     },
     {

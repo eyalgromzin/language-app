@@ -1,19 +1,19 @@
 {
   "id": "14_plans_invitations",
-  "title": "Making plans & invitations",
+  "title": "Plannen maken en uitnodigingen",
   "emoji": "📅",
   "language": "Dutch",
   "items": [
     {
       "id": "14_plans_invitations_today",
       "type": "word",
-      "text": "today",
+      "text": "vandaag",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "14_plans_invitations_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "morgen",
       "practiceType": "chooseTranslation"
     },
     {

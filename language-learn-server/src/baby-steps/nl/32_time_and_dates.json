@@ -1,6 +1,6 @@
 {
   "id": "32_time_and_dates",
-  "title": "Time & Dates",
+  "title": "Tijd en data",
   "emoji": "⏰",
   "language": "Dutch",
   "items": [
@@ -55,13 +55,13 @@
     {
       "id": "32_time_and_dates_today",
       "type": "word",
-      "text": "today",
+      "text": "vandaag",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "morgen",
       "practiceType": "chooseTranslation"
     },
     {

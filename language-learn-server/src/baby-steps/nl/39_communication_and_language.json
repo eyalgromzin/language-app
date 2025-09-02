@@ -1,13 +1,13 @@
 {
   "id": "39_communication_and_language",
-  "title": "Communication & Language",
+  "title": "Communicatie en taal",
   "emoji": "💬",
   "language": "Dutch",
   "items": [
     {
       "id": "39_communication_and_language_speak",
       "type": "word",
-      "text": "speak",
+      "text": "spreken",
       "practiceType": "chooseTranslation"
     },
     {
@@ -25,7 +25,7 @@
     {
       "id": "39_communication_and_language_understand",
       "type": "word",
-      "text": "understand",
+      "text": "begrijpen",
       "practiceType": "chooseTranslation"
     },
     {

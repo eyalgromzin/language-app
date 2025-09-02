@@ -1,271 +1,271 @@
 {
   "id": "04_numbers_time_basics",
-  "title": "Numbers & time basics",
+  "title": "Cijfers en tijd basis",
   "emoji": "🔢",
   "language": "Dutch",
   "items": [
     {
       "id": "04_numbers_time_basics_zero",
       "type": "word",
-      "text": "zero",
+      "text": "nul",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_one",
       "type": "word",
-      "text": "one",
+      "text": "één",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_two",
       "type": "word",
-      "text": "two",
+      "text": "twee",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_three",
       "type": "word",
-      "text": "three",
+      "text": "drie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_four",
       "type": "word",
-      "text": "four",
+      "text": "vier",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_five",
       "type": "word",
-      "text": "five",
+      "text": "vijf",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_six",
       "type": "word",
-      "text": "six",
+      "text": "zes",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seven",
       "type": "word",
-      "text": "seven",
+      "text": "zeven",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eight",
       "type": "word",
-      "text": "eight",
+      "text": "acht",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_nine",
       "type": "word",
-      "text": "nine",
+      "text": "negen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_ten",
       "type": "word",
-      "text": "ten",
+      "text": "tien",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_twenty",
       "type": "word",
-      "text": "twenty",
+      "text": "twintig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_thirty",
       "type": "word",
-      "text": "thirty",
+      "text": "dertig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_forty",
       "type": "word",
-      "text": "forty",
+      "text": "veertig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_fifty",
       "type": "word",
-      "text": "fifty",
+      "text": "vijftig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_sixty",
       "type": "word",
-      "text": "sixty",
+      "text": "zestig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seventy",
       "type": "word",
-      "text": "seventy",
+      "text": "zeventig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eighty",
       "type": "word",
-      "text": "eighty",
+      "text": "tachtig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_ninety",
       "type": "word",
-      "text": "ninety",
+      "text": "negentig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_hundred",
       "type": "word",
-      "text": "hundred",
+      "text": "honderd",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_two_hundred",
       "type": "word",
-      "text": "two hundred",
+      "text": "tweehonderd",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_three_hundred",
       "type": "word",
-      "text": "three hundred",
+      "text": "driehonderd",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_fifteen",
       "type": "word",
-      "text": "fifteen",
+      "text": "vijftien",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_twenty_five",
       "type": "word",
-      "text": "twenty-five",
+      "text": "vijfentwintig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_forty_two",
       "type": "word",
-      "text": "forty-two",
+      "text": "tweeënveertig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_seventy_eight",
       "type": "word",
-      "text": "seventy-eight",
+      "text": "achtenzeventig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_one_hundred_twenty",
       "type": "word",
-      "text": "one hundred twenty",
+      "text": "honderdtwintig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_five_hundred",
       "type": "word",
-      "text": "five hundred",
+      "text": "vijfhonderd",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_eight_hundred_fifty",
       "type": "word",
-      "text": "eight hundred fifty",
+      "text": "achthonderdvijftig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_thousand",
       "type": "word",
-      "text": "thousand",
+      "text": "duizend",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_today",
       "type": "word",
-      "text": "today",
+      "text": "vandaag",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_tomorrow",
       "type": "word",
-      "text": "tomorrow",
+      "text": "morgen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_yesterday",
       "type": "word",
-      "text": "yesterday",
+      "text": "gisteren",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_now",
       "type": "word",
-      "text": "now",
+      "text": "nu",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "04_numbers_time_basics_what_time_is_it",
       "type": "sentence",
-      "text": "What time is it?",
+      "text": "Hoe laat is het?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_three_o_clock",
       "type": "sentence",
-      "text": "It is three o'clock.",
+      "text": "Het is drie uur.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_half_past_two",
       "type": "sentence",
-      "text": "It is half past two.",
+      "text": "Het is half drie.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_what_day_is_today",
       "type": "sentence",
-      "text": "What day is today?",
+      "text": "Welke dag is het vandaag?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_today_is_monday",
       "type": "sentence",
-      "text": "Today is Monday.",
+      "text": "Vandaag is maandag.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_see_you_tomorrow",
       "type": "sentence",
-      "text": "See you tomorrow.",
+      "text": "Tot morgen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_i_am_late",
       "type": "sentence",
-      "text": "I am late.",
+      "text": "Ik ben laat.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_what_time_do_you_start",
       "type": "sentence",
-      "text": "What time do you start?",
+      "text": "Hoe laat begin je?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_it_is_time_to_go",
       "type": "sentence",
-      "text": "It is time to go.",
+      "text": "Het is tijd om te gaan.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "04_numbers_time_basics_how_long_does_it_take",
       "type": "sentence",
-      "text": "How long does it take?",
+      "text": "Hoe lang duurt het?",
       "practiceType": "formulateSentense"
     }
   ]

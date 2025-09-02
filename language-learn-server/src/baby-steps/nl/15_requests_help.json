@@ -1,6 +1,6 @@
 {
   "id": "15_requests_help",
-  "title": "Requests & asking for help",
+  "title": "Verzoeken en om hulp vragen",
   "emoji": "🙋",
   "language": "Dutch",
   "items": [
@@ -55,7 +55,7 @@
     {
       "id": "15_requests_help_understand",
       "type": "word",
-      "text": "understand",
+      "text": "begrijpen",
       "practiceType": "chooseTranslation"
     },
     {

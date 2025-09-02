@@ -1,6 +1,6 @@
 {
   "id": "17_restaurant",
-  "title": "At the restaurant",
+  "title": "In het restaurant",
   "emoji": "🍽️",
   "language": "Dutch",
   "items": [
@@ -37,7 +37,7 @@
     {
       "id": "17_restaurant_drink",
       "type": "word",
-      "text": "drink",
+      "text": "drinken",
       "practiceType": "chooseTranslation"
     },
     {

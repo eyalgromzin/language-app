@@ -1,6 +1,6 @@
 {
   "id": "35_food_and_drinks",
-  "title": "Food & Drinks",
+  "title": "Eten en drinken",
   "emoji": "🍕",
   "language": "Dutch",
   "items": [
@@ -13,7 +13,7 @@
     {
       "id": "35_food_and_drinks_drink",
       "type": "word",
-      "text": "drink",
+      "text": "drinken",
       "practiceType": "chooseTranslation"
     },
     {

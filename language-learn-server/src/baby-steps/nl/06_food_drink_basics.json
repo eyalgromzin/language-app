@@ -1,6 +1,6 @@
 {
   "id": "06_food_drink_basics",
-  "title": "Food & drink basics",
+  "title": "Eten en drinken basis",
   "emoji": "🍎",
   "language": "Dutch",
   "items": [
@@ -13,55 +13,55 @@
     {
       "id": "06_food_drink_basics_coffee",
       "type": "word",
-      "text": "coffee",
+      "text": "koffie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_tea",
       "type": "word",
-      "text": "tea",
+      "text": "thee",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_bread",
       "type": "word",
-      "text": "bread",
+      "text": "brood",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_apple",
       "type": "word",
-      "text": "apple",
+      "text": "appel",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_milk",
       "type": "word",
-      "text": "milk",
+      "text": "melk",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_juice",
       "type": "word",
-      "text": "juice",
+      "text": "sap",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_rice",
       "type": "word",
-      "text": "rice",
+      "text": "rijst",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "kip",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "06_food_drink_basics_fish",
       "type": "word",
-      "text": "fish",
+      "text": "vis",
       "practiceType": "chooseTranslation"
     },
     {
