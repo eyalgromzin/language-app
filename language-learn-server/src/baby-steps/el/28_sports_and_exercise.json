@@ -7,121 +7,121 @@
     {
       "id": "28_sports_and_exercise_sport",
       "type": "word",
-      "text": "sport",
+      "text": "άθλημα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_game",
       "type": "word",
-      "text": "game",
+      "text": "παιχνίδι",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_team",
       "type": "word",
-      "text": "team",
+      "text": "ομάδα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_player",
       "type": "word",
-      "text": "player",
+      "text": "παίκτης",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_coach",
       "type": "word",
-      "text": "coach",
+      "text": "προπονητής",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_win",
       "type": "word",
-      "text": "win",
+      "text": "νίκη",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_lose",
       "type": "word",
-      "text": "lose",
+      "text": "ήττα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_score",
       "type": "word",
-      "text": "score",
+      "text": "σκορ",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_exercise",
       "type": "word",
-      "text": "exercise",
+      "text": "άσκηση",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_fitness",
       "type": "word",
-      "text": "fitness",
+      "text": "φυσική κατάσταση",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_what_sport_do_you_like",
       "type": "sentence",
-      "text": "What sport do you like?",
+      "text": "Τι άθλημα σου αρέσει;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_love_playing_soccer",
       "type": "sentence",
-      "text": "I love playing soccer.",
+      "text": "Λατρεύω να παίζω ποδόσφαιρο.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
       "type": "sentence",
-      "text": "Do you want to join our team?",
+      "text": "Θέλεις να μπεις στην ομάδα μας;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_who_is_your_favorite_player",
       "type": "sentence",
-      "text": "Who is your favorite player?",
+      "text": "Ποιος είναι ο αγαπημένος σου παίκτης;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_our_coach_is_very_good",
       "type": "sentence",
-      "text": "Our coach is very good.",
+      "text": "Ο προπονητής μας είναι πολύ καλός.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_did_you_win_the_game",
       "type": "sentence",
-      "text": "Did you win the game?",
+      "text": "Κέρδισες το παιχνίδι;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_what_is_the_score",
       "type": "sentence",
-      "text": "What is the score?",
+      "text": "Ποιο είναι το σκορ;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_exercise_every_morning",
       "type": "sentence",
-      "text": "I exercise every morning.",
+      "text": "Κάνω άσκηση κάθε πρωί.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_go_to_the_gym",
       "type": "sentence",
-      "text": "Do you go to the gym?",
+      "text": "Πας στο γυμναστήριο;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_fitness_is_important_for_health",
       "type": "sentence",
-      "text": "Fitness is important for health.",
+      "text": "Η φυσική κατάσταση είναι σημαντική για την υγεία.",
       "practiceType": "formulateSentense"
     }
   ]

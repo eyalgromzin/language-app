@@ -7,121 +7,121 @@
     {
       "id": "09_emergencies_health_help",
       "type": "word",
-      "text": "help",
+      "text": "βοήθεια",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "γιατρός",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_pharmacy",
       "type": "word",
-      "text": "pharmacy",
+      "text": "φαρμακείο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_emergency",
       "type": "word",
-      "text": "emergency",
+      "text": "επείγον",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_hospital",
       "type": "word",
-      "text": "hospital",
+      "text": "νοσοκομείο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_pain",
       "type": "word",
-      "text": "pain",
+      "text": "πόνος",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "φάρμακο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_ambulance",
       "type": "word",
-      "text": "ambulance",
+      "text": "ασθενοφόρο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_police",
       "type": "word",
-      "text": "police",
+      "text": "αστυνομία",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_fire",
       "type": "word",
-      "text": "fire",
+      "text": "φωτιά",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_call_an_ambulance",
       "type": "sentence",
-      "text": "Call an ambulance!",
+      "text": "Καλέστε ασθενοφόρο!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_a_doctor",
       "type": "sentence",
-      "text": "I need a doctor.",
+      "text": "Χρειάζομαι γιατρό.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_feel_sick",
       "type": "sentence",
-      "text": "I feel sick.",
+      "text": "Αισθάνομαι άρρωστος.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_lost_my_passport",
       "type": "sentence",
-      "text": "I lost my passport.",
+      "text": "Έχασα το διαβατήριό μου.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_where_is_the_nearest_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "Πού είναι το πλησιέστερο νοσοκομείο;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_have_a_headache",
       "type": "sentence",
-      "text": "I have a headache.",
+      "text": "Έχω πονοκέφαλο.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_call_the_police",
       "type": "sentence",
-      "text": "Call the police!",
+      "text": "Καλέστε την αστυνομία!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_this_is_an_emergency",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "Αυτό είναι επείγον.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_help",
       "type": "sentence",
-      "text": "I need help.",
+      "text": "Χρειάζομαι βοήθεια.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_are_you_okay",
       "type": "sentence",
-      "text": "Are you okay?",
+      "text": "Είσαι εντάξει;",
       "practiceType": "formulateSentense"
     }
   ]

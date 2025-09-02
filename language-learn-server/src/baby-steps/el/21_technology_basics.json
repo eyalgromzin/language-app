@@ -7,31 +7,31 @@
     {
       "id": "21_technology_basics_computer",
       "type": "word",
-      "text": "computer",
+      "text": "υπολογιστής",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_phone",
       "type": "word",
-      "text": "phone",
+      "text": "τηλέφωνο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_internet",
       "type": "word",
-      "text": "internet",
+      "text": "διαδίκτυο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_app",
       "type": "word",
-      "text": "app",
+      "text": "εφαρμογή",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_password",
       "type": "word",
-      "text": "password",
+      "text": "κωδικός",
       "practiceType": "chooseTranslation"
     },
     {
@@ -43,19 +43,19 @@
     {
       "id": "21_technology_basics_website",
       "type": "word",
-      "text": "website",
+      "text": "ιστοσελίδα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_download",
       "type": "word",
-      "text": "download",
+      "text": "κατέβασμα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_upload",
       "type": "word",
-      "text": "upload",
+      "text": "ανέβασμα",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,61 @@
     {
       "id": "21_technology_basics_can_you_help_me_with_my_computer",
       "type": "sentence",
-      "text": "Can you help me with my computer?",
+      "text": "Μπορείτε να με βοηθήσετε με τον υπολογιστή μου;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_need_to_connect_to_wifi",
       "type": "sentence",
-      "text": "I need to connect to wifi.",
+      "text": "Χρειάζομαι να συνδεθώ στο wifi.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_what_is_your_email_address",
       "type": "sentence",
-      "text": "What is your email address?",
+      "text": "Ποια είναι η διεύθυνση email σας;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_want_to_download_this_app",
       "type": "sentence",
-      "text": "I want to download this app.",
+      "text": "Θέλω να κατεβάσω αυτή την εφαρμογή.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_do_you_have_a_website",
       "type": "sentence",
-      "text": "Do you have a website?",
+      "text": "Έχετε ιστοσελίδα;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_my_phone_is_not_working",
       "type": "sentence",
-      "text": "My phone is not working.",
+      "text": "Το τηλέφωνό μου δεν δουλεύει.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_forgot_my_password",
       "type": "sentence",
-      "text": "I forgot my password.",
+      "text": "Ξέχασα τον κωδικό μου.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_the_internet_is_slow_today",
       "type": "sentence",
-      "text": "The internet is slow today.",
+      "text": "Το διαδίκτυο είναι αργό σήμερα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_can_you_upload_the_file",
       "type": "sentence",
-      "text": "Can you upload the file?",
+      "text": "Μπορείτε να ανεβάσετε το αρχείο;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_this_app_is_very_useful",
       "type": "sentence",
-      "text": "This app is very useful.",
+      "text": "Αυτή η εφαρμογή είναι πολύ χρήσιμη.",
       "practiceType": "formulateSentense"
     }
   ]

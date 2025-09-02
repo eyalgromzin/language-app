@@ -7,121 +7,121 @@
     {
       "id": "08_travel_hotel_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "εισιτήριο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_reservation",
       "type": "word",
-      "text": "reservation",
+      "text": "κράτηση",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_passport",
       "type": "word",
-      "text": "passport",
+      "text": "διαβατήριο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_luggage",
       "type": "word",
-      "text": "luggage",
+      "text": "αποσκευές",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_hotel",
       "type": "word",
-      "text": "hotel",
+      "text": "ξενοδοχείο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_airport",
       "type": "word",
-      "text": "airport",
+      "text": "αεροδρόμιο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_station",
       "type": "word",
-      "text": "station",
+      "text": "σταθμός",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_room",
       "type": "word",
-      "text": "room",
+      "text": "δωμάτιο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_key",
       "type": "word",
-      "text": "key",
+      "text": "κλειδί",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_map",
       "type": "word",
-      "text": "map",
+      "text": "χάρτης",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "08_travel_hotel_i_have_a_reservation",
       "type": "sentence",
-      "text": "I have a reservation.",
+      "text": "Έχω κράτηση.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_what_time_is_check_in",
       "type": "sentence",
-      "text": "What time is check-in?",
+      "text": "Τι ώρα είναι το check-in;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_where_is_the_platform",
       "type": "sentence",
-      "text": "Where is the platform?",
+      "text": "Πού είναι η πλατφόρμα;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_i_need_a_taxi",
       "type": "sentence",
-      "text": "I need a taxi.",
+      "text": "Χρειάζομαι ταξί.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_what_time_is_check_out",
       "type": "sentence",
-      "text": "What time is check-out?",
+      "text": "Τι ώρα είναι το check-out;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_where_is_my_room",
       "type": "sentence",
-      "text": "Where is my room?",
+      "text": "Πού είναι το δωμάτιό μου;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_do_you_have_wifi",
       "type": "sentence",
-      "text": "Do you have WiFi?",
+      "text": "Έχετε WiFi;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_how_do_i_get_to_the_airport",
       "type": "sentence",
-      "text": "How do I get to the airport?",
+      "text": "Πώς πάω στο αεροδρόμιο;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_is_breakfast_included",
       "type": "sentence",
-      "text": "Is breakfast included?",
+      "text": "Συμπεριλαμβάνεται το πρωινό;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "08_travel_hotel_can_you_call_me_a_taxi",
       "type": "sentence",
-      "text": "Can you call me a taxi?",
+      "text": "Μπορείτε να μου καλέσετε ταξί;",
       "practiceType": "formulateSentense"
     }
   ]

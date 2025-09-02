@@ -7,13 +7,13 @@
     {
       "id": "16_phone_internet_phone",
       "type": "word",
-      "text": "phone",
+      "text": "τηλέφωνο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_number",
       "type": "word",
-      "text": "number",
+      "text": "αριθμός",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,97 +31,97 @@
     {
       "id": "16_phone_internet_call",
       "type": "word",
-      "text": "call",
+      "text": "κλήση",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_text",
       "type": "word",
-      "text": "text",
+      "text": "κείμενο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_message",
       "type": "word",
-      "text": "message",
+      "text": "μήνυμα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_password",
       "type": "word",
-      "text": "password",
+      "text": "κωδικός",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_internet",
       "type": "word",
-      "text": "internet",
+      "text": "διαδίκτυο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_online",
       "type": "word",
-      "text": "online",
+      "text": "συνδεδεμένος",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "16_phone_internet_what_is_your_phone_number",
       "type": "sentence",
-      "text": "What is your phone number?",
+      "text": "Ποιος είναι ο αριθμός τηλεφώνου σου;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_the_wifi_password",
       "type": "sentence",
-      "text": "What is the wifi password?",
+      "text": "Ποιος είναι ο κωδικός wifi;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_i_use_your_phone",
       "type": "sentence",
-      "text": "Can I use your phone?",
+      "text": "Μπορώ να χρησιμοποιήσω το τηλέφωνό σου;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_call_me",
       "type": "sentence",
-      "text": "Can you call me?",
+      "text": "Μπορείτε να με καλέσετε;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_will_text_you",
       "type": "sentence",
-      "text": "I will text you.",
+      "text": "Θα σου στείλω μήνυμα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_do_you_have_internet",
       "type": "sentence",
-      "text": "Do you have internet?",
+      "text": "Έχετε διαδίκτυο;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_what_is_your_email",
       "type": "sentence",
-      "text": "What is your email?",
+      "text": "Ποιο είναι το email σου;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_i_am_online",
       "type": "sentence",
-      "text": "I am online.",
+      "text": "Είμαι συνδεδεμένος.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_can_you_send_me_a_message",
       "type": "sentence",
-      "text": "Can you send me a message?",
+      "text": "Μπορείτε να μου στείλετε μήνυμα;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "16_phone_internet_the_wifi_is_slow",
       "type": "sentence",
-      "text": "The wifi is slow.",
+      "text": "Το wifi είναι αργό.",
       "practiceType": "formulateSentense"
     }
   ]

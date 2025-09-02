@@ -7,121 +7,121 @@
     {
       "id": "18_transportation_details_bus",
       "type": "word",
-      "text": "bus",
+      "text": "λεωφορείο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_train",
       "type": "word",
-      "text": "train",
+      "text": "τρένο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_metro",
       "type": "word",
-      "text": "metro",
+      "text": "μετρό",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_schedule",
       "type": "word",
-      "text": "schedule",
+      "text": "πρόγραμμα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_ticket",
       "type": "word",
-      "text": "ticket",
+      "text": "εισιτήριο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_station",
       "type": "word",
-      "text": "station",
+      "text": "σταθμός",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_platform",
       "type": "word",
-      "text": "platform",
+      "text": "πλατφόρμα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_departure",
       "type": "word",
-      "text": "departure",
+      "text": "αναχώρηση",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_arrival",
       "type": "word",
-      "text": "arrival",
+      "text": "άφιξη",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_delay",
       "type": "word",
-      "text": "delay",
+      "text": "καθυστέρηση",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "18_transportation_details_what_time_does_the_bus_leave",
       "type": "sentence",
-      "text": "What time does the bus leave?",
+      "text": "Τι ώρα φεύγει το λεωφορείο;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_where_can_i_buy_a_ticket",
       "type": "sentence",
-      "text": "Where can I buy a ticket?",
+      "text": "Πού μπορώ να αγοράσω εισιτήριο;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_is_there_a_discount",
       "type": "sentence",
-      "text": "Is there a discount?",
+      "text": "Υπάρχει έκπτωση;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_which_platform_is_it",
       "type": "sentence",
-      "text": "Which platform is it?",
+      "text": "Ποια πλατφόρμα είναι;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_is_the_train_delayed",
       "type": "sentence",
-      "text": "Is the train delayed?",
+      "text": "Το τρένο έχει καθυστέρηση;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_how_much_is_a_ticket",
       "type": "sentence",
-      "text": "How much is a ticket?",
+      "text": "Πόσο κοστίζει το εισιτήριο;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_does_this_bus_go_to",
       "type": "sentence",
-      "text": "Does this bus go to …?",
+      "text": "Πάει αυτό το λεωφορείο στο …;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_where_is_the_nearest_station",
       "type": "sentence",
-      "text": "Where is the nearest station?",
+      "text": "Πού είναι ο πλησιέστερος σταθμός;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_what_time_does_it_arrive",
       "type": "sentence",
-      "text": "What time does it arrive?",
+      "text": "Τι ώρα φτάνει;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "18_transportation_details_can_i_get_a_refund",
       "type": "sentence",
-      "text": "Can I get a refund?",
+      "text": "Μπορώ να πάρω επιστροφή;",
       "practiceType": "formulateSentense"
     }
   ]

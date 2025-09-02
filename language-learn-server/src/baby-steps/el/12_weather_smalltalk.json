@@ -7,121 +7,121 @@
     {
       "id": "12_weather_smalltalk_hot",
       "type": "word",
-      "text": "hot",
+      "text": "ζεστό",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cold",
       "type": "word",
-      "text": "cold",
+      "text": "κρύο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_rain",
       "type": "word",
-      "text": "rain",
+      "text": "βροχή",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_sunny",
       "type": "word",
-      "text": "sunny",
+      "text": "ηλιόλουστο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_warm",
       "type": "word",
-      "text": "warm",
+      "text": "ζεστό",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_windy",
       "type": "word",
-      "text": "windy",
+      "text": "ανεμώδες",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cloudy",
       "type": "word",
-      "text": "cloudy",
+      "text": "συννεφιασμένο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_snow",
       "type": "word",
-      "text": "snow",
+      "text": "χιόνι",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_nice",
       "type": "word",
-      "text": "nice",
+      "text": "ωραίο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_bad",
       "type": "word",
-      "text": "bad",
+      "text": "κακό",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_it_is_very_hot_today",
       "type": "sentence",
-      "text": "It is very hot today.",
+      "text": "Είναι πολύ ζεστά σήμερα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_might_rain_tomorrow",
       "type": "sentence",
-      "text": "It might rain tomorrow.",
+      "text": "Μπορεί να βρέξει αύριο.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_have_a_nice_day",
       "type": "sentence",
-      "text": "Have a nice day!",
+      "text": "Καλή σου μέρα!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_how_is_the_weather",
       "type": "sentence",
-      "text": "How is the weather?",
+      "text": "Πώς είναι ο καιρός;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_is_nice_weather",
       "type": "sentence",
-      "text": "It is nice weather.",
+      "text": "Είναι ωραίος καιρός.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_what_a_beautiful_day",
       "type": "sentence",
-      "text": "What a beautiful day!",
+      "text": "Τι ωραία μέρα!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_the_weather_is_bad",
       "type": "sentence",
-      "text": "The weather is bad.",
+      "text": "Ο καιρός είναι κακός.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_do_you_like_this_weather",
       "type": "sentence",
-      "text": "Do you like this weather?",
+      "text": "Σου αρέσει αυτός ο καιρός;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_is_windy_today",
       "type": "sentence",
-      "text": "It is windy today.",
+      "text": "Είναι ανεμώδες σήμερα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_how_are_you_today",
       "type": "sentence",
-      "text": "How are you today?",
+      "text": "Πώς είσαι σήμερα;",
       "practiceType": "formulateSentense"
     }
   ]

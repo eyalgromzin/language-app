@@ -7,121 +7,121 @@
     {
       "id": "13_work_study_office",
       "type": "word",
-      "text": "office",
+      "text": "γραφείο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_school",
       "type": "word",
-      "text": "school",
+      "text": "σχολείο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_meeting",
       "type": "word",
-      "text": "meeting",
+      "text": "συνάντηση",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_project",
       "type": "word",
-      "text": "project",
+      "text": "έργο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_job",
       "type": "word",
-      "text": "job",
+      "text": "δουλειά",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_work",
       "type": "word",
-      "text": "work",
+      "text": "εργασία",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_study",
       "type": "word",
-      "text": "study",
+      "text": "μελέτη",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_class",
       "type": "word",
-      "text": "class",
+      "text": "τάξη",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_boss",
       "type": "word",
-      "text": "boss",
+      "text": "αφεντικό",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_colleague",
       "type": "word",
-      "text": "colleague",
+      "text": "συνάδελφος",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_i_have_a_meeting",
       "type": "sentence",
-      "text": "I have a meeting.",
+      "text": "Έχω συνάντηση.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_work_from_home",
       "type": "sentence",
-      "text": "I work from home.",
+      "text": "Δουλεύω από το σπίτι.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_am_studying",
       "type": "sentence",
-      "text": "I am studying …",
+      "text": "Μελετώ …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Τι κάνεις για δουλειά;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Δουλεύω σε γραφείο.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Σου αρέσει η δουλειά σου;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_am_busy_with_work",
       "type": "sentence",
-      "text": "I am busy with work.",
+      "text": "Είμαι απασχολημένος με τη δουλειά.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_what_are_you_studying",
       "type": "sentence",
-      "text": "What are you studying?",
+      "text": "Τι μελετάς;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_have_a_lot_of_homework",
       "type": "sentence",
-      "text": "I have a lot of homework.",
+      "text": "Έχω πολλές εργασίες.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_where_do_you_work",
       "type": "sentence",
-      "text": "Where do you work?",
+      "text": "Πού δουλεύεις;",
       "practiceType": "formulateSentense"
     }
   ]

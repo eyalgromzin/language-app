@@ -7,121 +7,121 @@
     {
       "id": "25_work_and_profession_job",
       "type": "word",
-      "text": "job",
+      "text": "δουλειά",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_work",
       "type": "word",
-      "text": "work",
+      "text": "εργασία",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_office",
       "type": "word",
-      "text": "office",
+      "text": "γραφείο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_meeting",
       "type": "word",
-      "text": "meeting",
+      "text": "συνάντηση",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_boss",
       "type": "word",
-      "text": "boss",
+      "text": "αφεντικό",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_colleague",
       "type": "word",
-      "text": "colleague",
+      "text": "συνάδελφος",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_salary",
       "type": "word",
-      "text": "salary",
+      "text": "μισθός",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_project",
       "type": "word",
-      "text": "project",
+      "text": "έργο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_deadline",
       "type": "word",
-      "text": "deadline",
+      "text": "προθεσμία",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_career",
       "type": "word",
-      "text": "career",
+      "text": "καριέρα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "25_work_and_profession_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Τι κάνεις για δουλειά;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Δουλεύω σε γραφείο.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Σου αρέσει η δουλειά σου;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_have_a_meeting_at_nine",
       "type": "sentence",
-      "text": "I have a meeting at nine.",
+      "text": "Έχω συνάντηση στις εννέα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_my_boss_is_very_nice",
       "type": "sentence",
-      "text": "My boss is very nice.",
+      "text": "Το αφεντικό μου είναι πολύ καλό.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_work_with_great_colleagues",
       "type": "sentence",
-      "text": "I work with great colleagues.",
+      "text": "Δουλεύω με υπέροχους συναδέλφους.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_what_is_your_salary",
       "type": "sentence",
-      "text": "What is your salary?",
+      "text": "Ποιος είναι ο μισθός σου;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_this_project_is_very_important",
       "type": "sentence",
-      "text": "This project is very important.",
+      "text": "Αυτό το έργο είναι πολύ σημαντικό.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_the_deadline_is_next_week",
       "type": "sentence",
-      "text": "The deadline is next week.",
+      "text": "Η προθεσμία είναι την επόμενη εβδομάδα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "25_work_and_profession_i_want_to_advance_my_career",
       "type": "sentence",
-      "text": "I want to advance my career.",
+      "text": "Θέλω να προχωρήσω στην καριέρα μου.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -7,121 +7,121 @@
     {
       "id": "24_family_and_relationships_family",
       "type": "word",
-      "text": "family",
+      "text": "οικογένεια",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_mother",
       "type": "word",
-      "text": "mother",
+      "text": "μητέρα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_father",
       "type": "word",
-      "text": "father",
+      "text": "πατέρας",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_sister",
       "type": "word",
-      "text": "sister",
+      "text": "αδερφή",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_brother",
       "type": "word",
-      "text": "brother",
+      "text": "αδερφός",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_friend",
       "type": "word",
-      "text": "friend",
+      "text": "φίλος",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_husband",
       "type": "word",
-      "text": "husband",
+      "text": "σύζυγος",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_wife",
       "type": "word",
-      "text": "wife",
+      "text": "σύζυγος",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_child",
       "type": "word",
-      "text": "child",
+      "text": "παιδί",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_parent",
       "type": "word",
-      "text": "parent",
+      "text": "γονέας",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "24_family_and_relationships_how_is_your_family",
       "type": "sentence",
-      "text": "How is your family?",
+      "text": "Πώς είναι η οικογένειά σου;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_mother_is_a_teacher",
       "type": "sentence",
-      "text": "My mother is a teacher.",
+      "text": "Η μητέρα μου είναι δασκάλα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_i_have_two_sisters",
       "type": "sentence",
-      "text": "I have two sisters.",
+      "text": "Έχω δύο αδερφές.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_where_does_your_father_work",
       "type": "sentence",
-      "text": "Where does your father work?",
+      "text": "Πού δουλεύει ο πατέρας σου;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_brother_is_older_than_me",
       "type": "sentence",
-      "text": "My brother is older than me.",
+      "text": "Ο αδερφός μου είναι μεγαλύτερος από εμένα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_we_are_good_friends",
       "type": "sentence",
-      "text": "We are good friends.",
+      "text": "Είμαστε καλοί φίλοι.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_husband_likes_cooking",
       "type": "sentence",
-      "text": "My husband likes cooking.",
+      "text": "Ο σύζυγός μου του αρέσει η μαγειρική.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_do_you_have_children",
       "type": "sentence",
-      "text": "Do you have children?",
+      "text": "Έχετε παιδιά;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_my_parents_live_in_the_city",
       "type": "sentence",
-      "text": "My parents live in the city.",
+      "text": "Οι γονείς μου ζουν στην πόλη.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "24_family_and_relationships_i_love_my_family_very_much",
       "type": "sentence",
-      "text": "I love my family very much.",
+      "text": "Αγαπώ πολύ την οικογένειά μου.",
       "practiceType": "formulateSentense"
     }
   ]

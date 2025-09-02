@@ -7,121 +7,121 @@
     {
       "id": "17_restaurant_menu",
       "type": "word",
-      "text": "menu",
+      "text": "μενού",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_table",
       "type": "word",
-      "text": "table",
+      "text": "τραπέζι",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_bill",
       "type": "word",
-      "text": "bill",
+      "text": "λογαριασμός",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_waiter",
       "type": "word",
-      "text": "waiter",
+      "text": "σερβιτόρος",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_food",
       "type": "word",
-      "text": "food",
+      "text": "φαγητό",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_drink",
       "type": "word",
-      "text": "drink",
+      "text": "ποτό",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_order",
       "type": "word",
-      "text": "order",
+      "text": "παραγγελία",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_reservation",
       "type": "word",
-      "text": "reservation",
+      "text": "κράτηση",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_service",
       "type": "word",
-      "text": "service",
+      "text": "εξυπηρέτηση",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_tip",
       "type": "word",
-      "text": "tip",
+      "text": "φιλοδώρημα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_a_table_for_two_please",
       "type": "sentence",
-      "text": "A table for two, please.",
+      "text": "Ένα τραπέζι για δύο, παρακαλώ.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_could_we_have_the_menu",
       "type": "sentence",
-      "text": "Could we have the menu?",
+      "text": "Θα μπορούσαμε να έχουμε το μενού;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_the_bill_please",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "Τον λογαριασμό, παρακαλώ.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_do_you_have_vegetarian_options",
       "type": "sentence",
-      "text": "Do you have vegetarian options?",
+      "text": "Έχετε χορτοφαγικές επιλογές;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "Τι προτείνετε;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_i_would_like_to_order",
       "type": "sentence",
-      "text": "I would like to order.",
+      "text": "Θα ήθελα να παραγγείλω.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_how_long_will_it_take",
       "type": "sentence",
-      "text": "How long will it take?",
+      "text": "Πόσο θα πάρει;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_can_we_have_some_water",
       "type": "sentence",
-      "text": "Can we have some water?",
+      "text": "Μπορούμε να έχουμε λίγο νερό;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_the_food_is_delicious",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "Το φαγητό είναι νόστιμο.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_do_you_accept_credit_cards",
       "type": "sentence",
-      "text": "Do you accept credit cards?",
+      "text": "Δέχεστε πιστωτικές κάρτες;",
       "practiceType": "formulateSentense"
     }
   ]

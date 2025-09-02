@@ -7,121 +7,121 @@
     {
       "id": "38_animals_and_pets_animal",
       "type": "word",
-      "text": "animal",
+      "text": "ζώο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pet",
       "type": "word",
-      "text": "pet",
+      "text": "κατοικίδιο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_dog",
       "type": "word",
-      "text": "dog",
+      "text": "σκυλί",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cat",
       "type": "word",
-      "text": "cat",
+      "text": "γάτα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_bird",
       "type": "word",
-      "text": "bird",
+      "text": "πουλί",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_fish",
       "type": "word",
-      "text": "fish",
+      "text": "ψάρι",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_horse",
       "type": "word",
-      "text": "horse",
+      "text": "άλογο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_cow",
       "type": "word",
-      "text": "cow",
+      "text": "αγελάδα",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_chicken",
       "type": "word",
-      "text": "chicken",
+      "text": "κοτόπουλο",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_pig",
       "type": "word",
-      "text": "pig",
+      "text": "γουρούνι",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "38_animals_and_pets_do_you_have_any_pets",
       "type": "sentence",
-      "text": "Do you have any pets?",
+      "text": "Έχεις κατοικίδια;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_my_dog_is_very_friendly",
       "type": "sentence",
-      "text": "My dog is very friendly.",
+      "text": "Το σκυλί μου είναι πολύ φιλικό.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_cats_are_independent_animals",
       "type": "sentence",
-      "text": "Cats are independent animals.",
+      "text": "Οι γάτες είναι ανεξάρτητα ζώα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_i_love_watching_birds_fly",
       "type": "sentence",
-      "text": "I love watching birds fly.",
+      "text": "Μου αρέσει να βλέπω τα πουλιά να πετούν.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_how_many_fish_do_you_have",
       "type": "sentence",
-      "text": "How many fish do you have?",
+      "text": "Πόσα ψάρια έχεις;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_horses_are_beautiful_animals",
       "type": "sentence",
-      "text": "Horses are beautiful animals.",
+      "text": "Τα άλογα είναι όμορφα ζώα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_cows_give_us_milk",
       "type": "sentence",
-      "text": "Cows give us milk.",
+      "text": "Οι αγελάδες μας δίνουν γάλα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_do_you_like_chicken",
       "type": "sentence",
-      "text": "Do you like chicken?",
+      "text": "Σου αρέσει το κοτόπουλο;",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_pigs_are_very_intelligent",
       "type": "sentence",
-      "text": "Pigs are very intelligent.",
+      "text": "Τα γουρούνια είναι πολύ έξυπνα.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "38_animals_and_pets_what_is_your_favorite_animal",
       "type": "sentence",
-      "text": "What is your favorite animal?",
+      "text": "Ποιο είναι το αγαπημένο σου ζώο;",
       "practiceType": "formulateSentense"
     }
   ]
