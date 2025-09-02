@@ -13,7 +13,7 @@
     {
       "id": "28_sports_and_exercise_game",
       "type": "word",
-      "text": "game",
+      "text": "spel",
       "practiceType": "chooseTranslation"
     },
     {
@@ -25,7 +25,7 @@
     {
       "id": "28_sports_and_exercise_player",
       "type": "word",
-      "text": "player",
+      "text": "speler",
       "practiceType": "chooseTranslation"
     },
     {
@@ -37,13 +37,13 @@
     {
       "id": "28_sports_and_exercise_win",
       "type": "word",
-      "text": "win",
+      "text": "winnen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "28_sports_and_exercise_lose",
       "type": "word",
-      "text": "lose",
+      "text": "verliezen",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,7 +55,7 @@
     {
       "id": "28_sports_and_exercise_exercise",
       "type": "word",
-      "text": "exercise",
+      "text": "oefening",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,61 @@
     {
       "id": "28_sports_and_exercise_what_sport_do_you_like",
       "type": "sentence",
-      "text": "What sport do you like?",
+      "text": "Welke sport vind je leuk?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_love_playing_soccer",
       "type": "sentence",
-      "text": "I love playing soccer.",
+      "text": "Ik hou van voetballen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
       "type": "sentence",
-      "text": "Do you want to join our team?",
+      "text": "Wil je bij ons team komen?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_who_is_your_favorite_player",
       "type": "sentence",
-      "text": "Who is your favorite player?",
+      "text": "Wie is je favoriete speler?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_our_coach_is_very_good",
       "type": "sentence",
-      "text": "Our coach is very good.",
+      "text": "Onze coach is heel goed.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_did_you_win_the_game",
       "type": "sentence",
-      "text": "Did you win the game?",
+      "text": "Heb je het spel gewonnen?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_what_is_the_score",
       "type": "sentence",
-      "text": "What is the score?",
+      "text": "Wat is de score?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_i_exercise_every_morning",
       "type": "sentence",
-      "text": "I exercise every morning.",
+      "text": "Ik sport elke ochtend.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_do_you_go_to_the_gym",
       "type": "sentence",
-      "text": "Do you go to the gym?",
+      "text": "Ga je naar de sportschool?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "28_sports_and_exercise_fitness_is_important_for_health",
       "type": "sentence",
-      "text": "Fitness is important for health.",
+      "text": "Fitness is belangrijk voor de gezondheid.",
       "practiceType": "formulateSentense"
     }
   ]

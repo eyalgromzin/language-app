@@ -7,25 +7,25 @@
     {
       "id": "19_housing_utilities_apartment",
       "type": "word",
-      "text": "apartment",
+      "text": "appartement",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_room",
       "type": "word",
-      "text": "room",
+      "text": "kamer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_key",
       "type": "word",
-      "text": "key",
+      "text": "sleutel",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_electricity",
       "type": "word",
-      "text": "electricity",
+      "text": "elektriciteit",
       "practiceType": "chooseTranslation"
     },
     {
@@ -37,91 +37,91 @@
     {
       "id": "19_housing_utilities_house",
       "type": "word",
-      "text": "house",
+      "text": "huis",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_kitchen",
       "type": "word",
-      "text": "kitchen",
+      "text": "keuken",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_bathroom",
       "type": "word",
-      "text": "bathroom",
+      "text": "badkamer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_heating",
       "type": "word",
-      "text": "heating",
+      "text": "verwarming",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_rent",
       "type": "word",
-      "text": "rent",
+      "text": "huur",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "19_housing_utilities_i_am_looking_for_an_apartment",
       "type": "sentence",
-      "text": "I am looking for an apartment.",
+      "text": "Ik zoek een appartement.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_the_key_does_not_work",
       "type": "sentence",
-      "text": "The key does not work.",
+      "text": "De sleutel werkt niet.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_there_is_no_hot_water",
       "type": "sentence",
-      "text": "There is no hot water.",
+      "text": "Er is geen warm water.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_how_much_is_the_rent",
       "type": "sentence",
-      "text": "How much is the rent?",
+      "text": "Hoeveel is de huur?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_do_you_have_a_kitchen",
       "type": "sentence",
-      "text": "Do you have a kitchen?",
+      "text": "Heb je een keuken?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_the_heating_is_broken",
       "type": "sentence",
-      "text": "The heating is broken.",
+      "text": "De verwarming is kapot.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_where_is_the_bathroom",
       "type": "sentence",
-      "text": "Where is the bathroom?",
+      "text": "Waar is de badkamer?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_is_electricity_included",
       "type": "sentence",
-      "text": "Is electricity included?",
+      "text": "Is elektriciteit inbegrepen?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_can_i_see_the_house",
       "type": "sentence",
-      "text": "Can I see the house?",
+      "text": "Mag ik het huis bekijken?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "19_housing_utilities_do_you_have_parking",
       "type": "sentence",
-      "text": "Do you have parking?",
+      "text": "Heb je parkeerplaatsen?",
       "practiceType": "formulateSentense"
     }
   ]

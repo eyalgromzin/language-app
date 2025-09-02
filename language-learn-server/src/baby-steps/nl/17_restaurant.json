@@ -13,25 +13,25 @@
     {
       "id": "17_restaurant_table",
       "type": "word",
-      "text": "table",
+      "text": "tafel",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_bill",
       "type": "word",
-      "text": "bill",
+      "text": "rekening",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_waiter",
       "type": "word",
-      "text": "waiter",
+      "text": "ober",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_food",
       "type": "word",
-      "text": "food",
+      "text": "eten",
       "practiceType": "chooseTranslation"
     },
     {
@@ -43,85 +43,85 @@
     {
       "id": "17_restaurant_order",
       "type": "word",
-      "text": "order",
+      "text": "bestellen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_reservation",
       "type": "word",
-      "text": "reservation",
+      "text": "reservering",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_service",
       "type": "word",
-      "text": "service",
+      "text": "bediening",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_tip",
       "type": "word",
-      "text": "tip",
+      "text": "fooi",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "17_restaurant_a_table_for_two_please",
       "type": "sentence",
-      "text": "A table for two, please.",
+      "text": "Een tafel voor twee, alsjeblieft.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_could_we_have_the_menu",
       "type": "sentence",
-      "text": "Could we have the menu?",
+      "text": "Kunnen we het menu hebben?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_the_bill_please",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "De rekening, alsjeblieft.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_do_you_have_vegetarian_options",
       "type": "sentence",
-      "text": "Do you have vegetarian options?",
+      "text": "Heb je vegetarische opties?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "Wat raad je aan?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_i_would_like_to_order",
       "type": "sentence",
-      "text": "I would like to order.",
+      "text": "Ik zou graag willen bestellen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_how_long_will_it_take",
       "type": "sentence",
-      "text": "How long will it take?",
+      "text": "Hoe lang duurt het?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_can_we_have_some_water",
       "type": "sentence",
-      "text": "Can we have some water?",
+      "text": "Kunnen we wat water hebben?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_the_food_is_delicious",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "Het eten is heerlijk.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "17_restaurant_do_you_accept_credit_cards",
       "type": "sentence",
-      "text": "Do you accept credit cards?",
+      "text": "Aanvaard je creditcards?",
       "practiceType": "formulateSentense"
     }
   ]

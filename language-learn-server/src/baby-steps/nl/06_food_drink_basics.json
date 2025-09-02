@@ -67,61 +67,61 @@
     {
       "id": "06_food_drink_basics_i_would_like_water_please",
       "type": "sentence",
-      "text": "I would like water, please.",
+      "text": "Ik wil graag water, alsjeblieft.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_the_food_is_delicious",
       "type": "sentence",
-      "text": "The food is delicious.",
+      "text": "Het eten is heerlijk.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_allergic_to",
       "type": "sentence",
-      "text": "I am allergic to …",
+      "text": "Ik ben allergisch voor …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_no_sugar_please",
       "type": "sentence",
-      "text": "No sugar, please.",
+      "text": "Geen suiker, alsjeblieft.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_do_you_have_vegetarian_food",
       "type": "sentence",
-      "text": "Do you have vegetarian food?",
+      "text": "Heb je vegetarisch eten?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_how_much_is_it",
       "type": "sentence",
-      "text": "How much is it?",
+      "text": "Hoeveel kost het?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_hungry",
       "type": "sentence",
-      "text": "I am hungry.",
+      "text": "Ik heb honger.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_i_am_thirsty",
       "type": "sentence",
-      "text": "I am thirsty.",
+      "text": "Ik heb dorst.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_what_do_you_recommend",
       "type": "sentence",
-      "text": "What do you recommend?",
+      "text": "Wat raad je aan?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "06_food_drink_basics_the_bill_please",
       "type": "sentence",
-      "text": "The bill, please.",
+      "text": "De rekening, alsjeblieft.",
       "practiceType": "formulateSentense"
     }
   ]

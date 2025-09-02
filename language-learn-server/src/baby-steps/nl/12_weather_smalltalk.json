@@ -7,25 +7,25 @@
     {
       "id": "12_weather_smalltalk_hot",
       "type": "word",
-      "text": "hot",
+      "text": "heet",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cold",
       "type": "word",
-      "text": "cold",
+      "text": "koud",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_rain",
       "type": "word",
-      "text": "rain",
+      "text": "regen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_sunny",
       "type": "word",
-      "text": "sunny",
+      "text": "zonnig",
       "practiceType": "chooseTranslation"
     },
     {
@@ -37,91 +37,91 @@
     {
       "id": "12_weather_smalltalk_windy",
       "type": "word",
-      "text": "windy",
+      "text": "winderig",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_cloudy",
       "type": "word",
-      "text": "cloudy",
+      "text": "bewolkt",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_snow",
       "type": "word",
-      "text": "snow",
+      "text": "sneeuw",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_nice",
       "type": "word",
-      "text": "nice",
+      "text": "leuk",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_bad",
       "type": "word",
-      "text": "bad",
+      "text": "slecht",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "12_weather_smalltalk_it_is_very_hot_today",
       "type": "sentence",
-      "text": "It is very hot today.",
+      "text": "Het is vandaag heel heet.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_might_rain_tomorrow",
       "type": "sentence",
-      "text": "It might rain tomorrow.",
+      "text": "Het kan morgen regenen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_have_a_nice_day",
       "type": "sentence",
-      "text": "Have a nice day!",
+      "text": "Fijne dag!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_how_is_the_weather",
       "type": "sentence",
-      "text": "How is the weather?",
+      "text": "Hoe is het weer?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_is_nice_weather",
       "type": "sentence",
-      "text": "It is nice weather.",
+      "text": "Het is leuk weer.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_what_a_beautiful_day",
       "type": "sentence",
-      "text": "What a beautiful day!",
+      "text": "Wat een mooie dag!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_the_weather_is_bad",
       "type": "sentence",
-      "text": "The weather is bad.",
+      "text": "Het weer is slecht.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_do_you_like_this_weather",
       "type": "sentence",
-      "text": "Do you like this weather?",
+      "text": "Vind je dit weer leuk?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_it_is_windy_today",
       "type": "sentence",
-      "text": "It is windy today.",
+      "text": "Het is vandaag winderig.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "12_weather_smalltalk_how_are_you_today",
       "type": "sentence",
-      "text": "How are you today?",
+      "text": "Hoe gaat het vandaag met je?",
       "practiceType": "formulateSentense"
     }
   ]

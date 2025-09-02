@@ -7,43 +7,43 @@
     {
       "id": "37_home_and_furniture_home",
       "type": "word",
-      "text": "home",
+      "text": "thuis",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_house",
       "type": "word",
-      "text": "house",
+      "text": "huis",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_room",
       "type": "word",
-      "text": "room",
+      "text": "kamer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_kitchen",
       "type": "word",
-      "text": "kitchen",
+      "text": "keuken",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_bedroom",
       "type": "word",
-      "text": "bedroom",
+      "text": "slaapkamer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_table",
       "type": "word",
-      "text": "table",
+      "text": "tafel",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_chair",
       "type": "word",
-      "text": "chair",
+      "text": "stoel",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,73 +55,73 @@
     {
       "id": "37_home_and_furniture_door",
       "type": "word",
-      "text": "door",
+      "text": "deur",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_window",
       "type": "word",
-      "text": "window",
+      "text": "raam",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "37_home_and_furniture_welcome_to_my_home",
       "type": "sentence",
-      "text": "Welcome to my home.",
+      "text": "Welkom in mijn huis.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_how_many_rooms_does_your_house_have",
       "type": "sentence",
-      "text": "How many rooms does your house have?",
+      "text": "Hoeveel kamers heeft je huis?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_the_kitchen_is_very_modern",
       "type": "sentence",
-      "text": "The kitchen is very modern.",
+      "text": "De keuken is heel modern.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_my_bedroom_is_on_the_second_floor",
       "type": "sentence",
-      "text": "My bedroom is on the second floor.",
+      "text": "Mijn slaapkamer is op de tweede verdieping.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_please_sit_at_the_table",
       "type": "sentence",
-      "text": "Please sit at the table.",
+      "text": "Ga alsjeblieft aan tafel zitten.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_this_chair_is_very_comfortable",
       "type": "sentence",
-      "text": "This chair is very comfortable.",
+      "text": "Deze stoel is heel comfortabel.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_i_like_my_new_bed",
       "type": "sentence",
-      "text": "I like my new bed.",
+      "text": "Ik vind mijn nieuwe bed leuk.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_please_close_the_door",
       "type": "sentence",
-      "text": "Please close the door.",
+      "text": "Sluit alsjeblieft de deur.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_open_the_window_for_fresh_air",
       "type": "sentence",
-      "text": "Open the window for fresh air.",
+      "text": "Open het raam voor frisse lucht.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "37_home_and_furniture_where_do_you_live",
       "type": "sentence",
-      "text": "Where do you live?",
+      "text": "Waar woon je?",
       "practiceType": "formulateSentense"
     }
   ]

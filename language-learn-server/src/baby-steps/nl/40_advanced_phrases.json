@@ -7,121 +7,121 @@
     {
       "id": "40_advanced_phrases_nevertheless",
       "type": "word",
-      "text": "nevertheless",
+      "text": "niettemin",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_furthermore",
       "type": "word",
-      "text": "furthermore",
+      "text": "bovendien",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_otherwise",
       "type": "word",
-      "text": "otherwise",
+      "text": "anders",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_meanwhile",
       "type": "word",
-      "text": "meanwhile",
+      "text": "ondertussen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_consequently",
       "type": "word",
-      "text": "consequently",
+      "text": "gevolg",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_approximately",
       "type": "word",
-      "text": "approximately",
+      "text": "ongeveer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_occasionally",
       "type": "word",
-      "text": "occasionally",
+      "text": "af en toe",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_gradually",
       "type": "word",
-      "text": "gradually",
+      "text": "geleidelijk",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_ultimately",
       "type": "word",
-      "text": "ultimately",
+      "text": "uiteindelijk",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_essentially",
       "type": "word",
-      "text": "essentially",
+      "text": "in wezen",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
       "type": "sentence",
-      "text": "Nevertheless, I still want to try.",
+      "text": "Niettemin wil ik het nog steeds proberen.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
       "type": "sentence",
-      "text": "Furthermore, I believe this is correct.",
+      "text": "Bovendien geloof ik dat dit correct is.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
       "type": "sentence",
-      "text": "We must leave now, otherwise we will be late.",
+      "text": "We moeten nu vertrekken, anders komen we te laat.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
       "type": "sentence",
-      "text": "Meanwhile, I will prepare dinner.",
+      "text": "Ondertussen zal ik het avondeten bereiden.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
       "type": "sentence",
-      "text": "Consequently, the meeting was cancelled.",
+      "text": "Gevolg, de vergadering werd geannuleerd.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_it_will_cost_approximately_fifty_dollars",
       "type": "sentence",
-      "text": "It will cost approximately fifty dollars.",
+      "text": "Het zal ongeveer vijftig dollar kosten.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_i_occasionally_visit_my_grandparents",
       "type": "sentence",
-      "text": "I occasionally visit my grandparents.",
+      "text": "Ik bezoek af en toe mijn grootouders.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_the_weather_gradually_improved",
       "type": "sentence",
-      "text": "The weather gradually improved.",
+      "text": "Het weer verbeterde geleidelijk.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_ultimately_we_reached_our_goal",
       "type": "sentence",
-      "text": "Ultimately, we reached our goal.",
+      "text": "Uiteindelijk bereikten we ons doel.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "40_advanced_phrases_essentially_this_is_the_same_thing",
       "type": "sentence",
-      "text": "Essentially, this is the same thing.",
+      "text": "In wezen is dit hetzelfde.",
       "practiceType": "formulateSentense"
     }
   ]

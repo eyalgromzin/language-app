@@ -7,121 +7,121 @@
     {
       "id": "20_connectors_advanced_because",
       "type": "word",
-      "text": "because",
+      "text": "omdat",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_although",
       "type": "word",
-      "text": "although",
+      "text": "hoewel",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_however",
       "type": "word",
-      "text": "however",
+      "text": "echter",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_therefore",
       "type": "word",
-      "text": "therefore",
+      "text": "daarom",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_also",
       "type": "word",
-      "text": "also",
+      "text": "ook",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_but",
       "type": "word",
-      "text": "but",
+      "text": "maar",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_and",
       "type": "word",
-      "text": "and",
+      "text": "en",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_or",
       "type": "word",
-      "text": "or",
+      "text": "of",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_if",
       "type": "word",
-      "text": "if",
+      "text": "als",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_when",
       "type": "word",
-      "text": "when",
+      "text": "wanneer",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "20_connectors_advanced_could_you_please_recommend_a_good_place_to_eat",
       "type": "sentence",
-      "text": "Could you please recommend a good place to eat?",
+      "text": "Kun je alsjeblieft een goede plek om te eten aanraden?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_i_have_been_waiting_for_a_long_time",
       "type": "sentence",
-      "text": "I have been waiting for a long time.",
+      "text": "Ik wacht al lang.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_would_you_mind_helping_me_with_this_form",
       "type": "sentence",
-      "text": "Would you mind helping me with this form?",
+      "text": "Zou je het erg vinden om me te helpen met dit formulier?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_i_prefer_to_pay_by_card_because_it_is_faster",
       "type": "sentence",
-      "text": "I prefer to pay by card because it is faster.",
+      "text": "Ik betaal liever met kaart omdat het sneller is.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_although_it_is_expensive_it_is_worth_it",
       "type": "sentence",
-      "text": "Although it is expensive, it is worth it.",
+      "text": "Hoewel het duur is, is het het waard.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_i_would_like_to_order_but_i_am_not_sure_what",
       "type": "sentence",
-      "text": "I would like to order, but I am not sure what.",
+      "text": "Ik zou graag willen bestellen, maar ik weet niet zeker wat.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_if_you_have_time_can_you_help_me",
       "type": "sentence",
-      "text": "If you have time, can you help me?",
+      "text": "Als je tijd hebt, kun je me dan helpen?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_when_you_arrive_please_call_me",
       "type": "sentence",
-      "text": "When you arrive, please call me.",
+      "text": "Wanneer je aankomt, bel me dan alsjeblieft.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_i_also_want_to_visit_the_museum",
       "type": "sentence",
-      "text": "I also want to visit the museum.",
+      "text": "Ik wil ook het museum bezoeken.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "20_connectors_advanced_therefore_i_need_to_leave_early",
       "type": "sentence",
-      "text": "Therefore, I need to leave early.",
+      "text": "Daarom moet ik vroeg vertrekken.",
       "practiceType": "formulateSentense"
     }
   ]

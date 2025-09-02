@@ -7,43 +7,43 @@
     {
       "id": "09_emergencies_health_help",
       "type": "word",
-      "text": "help",
+      "text": "hulp",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_doctor",
       "type": "word",
-      "text": "doctor",
+      "text": "arts",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_pharmacy",
       "type": "word",
-      "text": "pharmacy",
+      "text": "apotheek",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_emergency",
       "type": "word",
-      "text": "emergency",
+      "text": "noodgeval",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_hospital",
       "type": "word",
-      "text": "hospital",
+      "text": "ziekenhuis",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_pain",
       "type": "word",
-      "text": "pain",
+      "text": "pijn",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_medicine",
       "type": "word",
-      "text": "medicine",
+      "text": "medicijn",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,73 +55,73 @@
     {
       "id": "09_emergencies_health_police",
       "type": "word",
-      "text": "police",
+      "text": "politie",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_fire",
       "type": "word",
-      "text": "fire",
+      "text": "brand",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "09_emergencies_health_call_an_ambulance",
       "type": "sentence",
-      "text": "Call an ambulance!",
+      "text": "Bel een ambulance!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_a_doctor",
       "type": "sentence",
-      "text": "I need a doctor.",
+      "text": "Ik heb een arts nodig.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_feel_sick",
       "type": "sentence",
-      "text": "I feel sick.",
+      "text": "Ik voel me ziek.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_lost_my_passport",
       "type": "sentence",
-      "text": "I lost my passport.",
+      "text": "Ik ben mijn paspoort kwijt.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_where_is_the_nearest_hospital",
       "type": "sentence",
-      "text": "Where is the nearest hospital?",
+      "text": "Waar is het dichtstbijzijnde ziekenhuis?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_have_a_headache",
       "type": "sentence",
-      "text": "I have a headache.",
+      "text": "Ik heb hoofdpijn.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_call_the_police",
       "type": "sentence",
-      "text": "Call the police!",
+      "text": "Bel de politie!",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_this_is_an_emergency",
       "type": "sentence",
-      "text": "This is an emergency.",
+      "text": "Dit is een noodgeval.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_i_need_help",
       "type": "sentence",
-      "text": "I need help.",
+      "text": "Ik heb hulp nodig.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "09_emergencies_health_are_you_okay",
       "type": "sentence",
-      "text": "Are you okay?",
+      "text": "Gaat het goed met je?",
       "practiceType": "formulateSentense"
     }
   ]

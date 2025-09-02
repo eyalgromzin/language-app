@@ -13,7 +13,7 @@
     {
       "id": "21_technology_basics_phone",
       "type": "word",
-      "text": "phone",
+      "text": "telefoon",
       "practiceType": "chooseTranslation"
     },
     {
@@ -31,19 +31,19 @@
     {
       "id": "21_technology_basics_password",
       "type": "word",
-      "text": "password",
+      "text": "wachtwoord",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_email",
       "type": "word",
-      "text": "email",
+      "text": "e-mail",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "21_technology_basics_website",
       "type": "word",
-      "text": "website",
+      "text": "webpagina",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,61 @@
     {
       "id": "21_technology_basics_can_you_help_me_with_my_computer",
       "type": "sentence",
-      "text": "Can you help me with my computer?",
+      "text": "Kun je me helpen met mijn computer?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_need_to_connect_to_wifi",
       "type": "sentence",
-      "text": "I need to connect to wifi.",
+      "text": "Ik moet verbinding maken met wifi.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_what_is_your_email_address",
       "type": "sentence",
-      "text": "What is your email address?",
+      "text": "Wat is je e-mailadres?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_want_to_download_this_app",
       "type": "sentence",
-      "text": "I want to download this app.",
+      "text": "Ik wil deze app downloaden.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_do_you_have_a_website",
       "type": "sentence",
-      "text": "Do you have a website?",
+      "text": "Heb je een website?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_my_phone_is_not_working",
       "type": "sentence",
-      "text": "My phone is not working.",
+      "text": "Mijn telefoon werkt niet.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_i_forgot_my_password",
       "type": "sentence",
-      "text": "I forgot my password.",
+      "text": "Ik ben mijn wachtwoord vergeten.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_the_internet_is_slow_today",
       "type": "sentence",
-      "text": "The internet is slow today.",
+      "text": "Het internet is vandaag langzaam.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_can_you_upload_the_file",
       "type": "sentence",
-      "text": "Can you upload the file?",
+      "text": "Kun je het bestand uploaden?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "21_technology_basics_this_app_is_very_useful",
       "type": "sentence",
-      "text": "This app is very useful.",
+      "text": "Deze app is heel nuttig.",
       "practiceType": "formulateSentense"
     }
   ]
