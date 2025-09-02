@@ -13,7 +13,7 @@
     {
       "id": "32_time_and_dates_date",
       "type": "word",
-      "text": "date",
+      "text": "дата",
       "practiceType": "chooseTranslation"
     },
     {
@@ -37,19 +37,19 @@
     {
       "id": "32_time_and_dates_week",
       "type": "word",
-      "text": "week",
+      "text": "тиждень",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_month",
       "type": "word",
-      "text": "month",
+      "text": "місяць",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "32_time_and_dates_year",
       "type": "word",
-      "text": "year",
+      "text": "рік",
       "practiceType": "chooseTranslation"
     },
     {
@@ -67,61 +67,61 @@
     {
       "id": "32_time_and_dates_what_time_is_it",
       "type": "sentence",
-      "text": "What time is it?",
+      "text": "Котра година?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_date_is_today",
       "type": "sentence",
-      "text": "What date is today?",
+      "text": "Яка сьогодні дата?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_it_is_half_past_two",
       "type": "sentence",
-      "text": "It is half past two.",
+      "text": "Пів на третю.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_how_many_minutes_until_break",
       "type": "sentence",
-      "text": "How many minutes until break?",
+      "text": "Скільки хвилин до перерви?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_see_you_in_an_hour",
       "type": "sentence",
-      "text": "See you in an hour.",
+      "text": "До зустрічі через годину.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_day_of_the_week_is_it",
       "type": "sentence",
-      "text": "What day of the week is it?",
+      "text": "Який день тижня?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_next_month_i_am_going_on_vacation",
       "type": "sentence",
-      "text": "Next month I am going on vacation.",
+      "text": "Наступного місяця я їду у відпустку.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_what_year_were_you_born",
       "type": "sentence",
-      "text": "What year were you born?",
+      "text": "В якому році ви народилися?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_today_is_a_beautiful_day",
       "type": "sentence",
-      "text": "Today is a beautiful day.",
+      "text": "Сьогодні прекрасний день.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "32_time_and_dates_see_you_tomorrow",
       "type": "sentence",
-      "text": "See you tomorrow.",
+      "text": "До завтра.",
       "practiceType": "formulateSentense"
     }
   ]

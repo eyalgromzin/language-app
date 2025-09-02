@@ -7,121 +7,121 @@
     {
       "id": "34_colors_and_appearance_color",
       "type": "word",
-      "text": "color",
+      "text": "колір",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_red",
       "type": "word",
-      "text": "red",
+      "text": "червоний",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_blue",
       "type": "word",
-      "text": "blue",
+      "text": "синій",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_green",
       "type": "word",
-      "text": "green",
+      "text": "зелений",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_yellow",
       "type": "word",
-      "text": "yellow",
+      "text": "жовтий",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_beautiful",
       "type": "word",
-      "text": "beautiful",
+      "text": "красивий",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_ugly",
       "type": "word",
-      "text": "ugly",
+      "text": "потворний",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_big",
       "type": "word",
-      "text": "big",
+      "text": "великий",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_small",
       "type": "word",
-      "text": "small",
+      "text": "малий",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_new",
       "type": "word",
-      "text": "new",
+      "text": "новий",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "34_colors_and_appearance_what_color_is_your_car",
       "type": "sentence",
-      "text": "What color is your car?",
+      "text": "Якого кольору ваш автомобіль?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_i_like_red_flowers",
       "type": "sentence",
-      "text": "I like red flowers.",
+      "text": "Мені подобаються червоні квіти.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_the_sky_is_very_blue_today",
       "type": "sentence",
-      "text": "The sky is very blue today.",
+      "text": "Небо сьогодні дуже синє.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_this_green_shirt_looks_nice",
       "type": "sentence",
-      "text": "This green shirt looks nice.",
+      "text": "Ця зелена сорочка виглядає гарно.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_the_yellow_banana_is_ripe",
       "type": "sentence",
-      "text": "The yellow banana is ripe.",
+      "text": "Жовтий банан дозрів.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_you_look_beautiful_today",
       "type": "sentence",
-      "text": "You look beautiful today.",
+      "text": "Ви сьогодні красиво виглядаєте.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_this_is_a_big_house",
       "type": "sentence",
-      "text": "This is a big house.",
+      "text": "Це великий будинок.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_i_have_a_small_dog",
       "type": "sentence",
-      "text": "I have a small dog.",
+      "text": "У мене є маленький пес.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_where_did_you_get_that_new_phone",
       "type": "sentence",
-      "text": "Where did you get that new phone?",
+      "text": "Де ви взяли цей новий телефон?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "34_colors_and_appearance_what_is_your_favorite_color",
       "type": "sentence",
-      "text": "What is your favorite color?",
+      "text": "Який ваш улюблений колір?",
       "practiceType": "formulateSentense"
     }
   ]

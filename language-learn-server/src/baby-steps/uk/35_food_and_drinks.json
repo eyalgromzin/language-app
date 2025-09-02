@@ -37,7 +37,7 @@
     {
       "id": "35_food_and_drinks_restaurant",
       "type": "word",
-      "text": "restaurant",
+      "text": "ресторан",
       "practiceType": "chooseTranslation"
     },
     {
@@ -55,73 +55,73 @@
     {
       "id": "35_food_and_drinks_hungry",
       "type": "word",
-      "text": "hungry",
+      "text": "голодний",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_thirsty",
       "type": "word",
-      "text": "thirsty",
+      "text": "спитий",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "35_food_and_drinks_what_would_you_like_to_eat",
       "type": "sentence",
-      "text": "What would you like to eat?",
+      "text": "Що б ви хотіли поїсти?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_can_i_have_something_to_drink",
       "type": "sentence",
-      "text": "Can I have something to drink?",
+      "text": "Можу я щось попити?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_what_did_you_have_for_breakfast",
       "type": "sentence",
-      "text": "What did you have for breakfast?",
+      "text": "Що ви їли на сніданок?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_let_s_go_to_a_restaurant_for_lunch",
       "type": "sentence",
-      "text": "Let's go to a restaurant for lunch.",
+      "text": "Давайте підемо в ресторан на обід.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_what_time_is_dinner",
       "type": "sentence",
-      "text": "What time is dinner?",
+      "text": "О котрій годині вечеря?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_can_i_see_the_menu",
       "type": "sentence",
-      "text": "Can I see the menu?",
+      "text": "Можу я побачити меню?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_i_want_to_order_pizza",
       "type": "sentence",
-      "text": "I want to order pizza.",
+      "text": "Я хочу замовити піцу.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_are_you_hungry",
       "type": "sentence",
-      "text": "Are you hungry?",
+      "text": "Ви голодні?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_i_am_thirsty_can_i_have_water",
       "type": "sentence",
-      "text": "I am thirsty, can I have water?",
+      "text": "Я хочу пити, можу я отримати воду?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "35_food_and_drinks_this_food_tastes_delicious",
       "type": "sentence",
-      "text": "This food tastes delicious.",
+      "text": "Ця їжа смачна.",
       "practiceType": "formulateSentense"
     }
   ]

@@ -7,121 +7,121 @@
     {
       "id": "31_emotions_and_feelings_happy",
       "type": "word",
-      "text": "happy",
+      "text": "щасливий",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_sad",
       "type": "word",
-      "text": "sad",
+      "text": "сумний",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_angry",
       "type": "word",
-      "text": "angry",
+      "text": "сердитий",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_excited",
       "type": "word",
-      "text": "excited",
+      "text": "схвильований",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_nervous",
       "type": "word",
-      "text": "nervous",
+      "text": "нервовий",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_tired",
       "type": "word",
-      "text": "tired",
+      "text": "втомлений",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_surprised",
       "type": "word",
-      "text": "surprised",
+      "text": "здивований",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_worried",
       "type": "word",
-      "text": "worried",
+      "text": "стурбований",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_confused",
       "type": "word",
-      "text": "confused",
+      "text": "плутаний",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_proud",
       "type": "word",
-      "text": "proud",
+      "text": "гордий",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "31_emotions_and_feelings_how_are_you_feeling_today",
       "type": "sentence",
-      "text": "How are you feeling today?",
+      "text": "Як ви почуваєтеся сьогодні?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_very_happy_today",
       "type": "sentence",
-      "text": "I am very happy today.",
+      "text": "Я дуже щасливий сьогодні.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_why_are_you_sad",
       "type": "sentence",
-      "text": "Why are you sad?",
+      "text": "Чому ви сумні?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_don_t_be_angry_with_me",
       "type": "sentence",
-      "text": "Don't be angry with me.",
+      "text": "Не сердіться на мене.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_excited_about_the_trip",
       "type": "sentence",
-      "text": "I am excited about the trip.",
+      "text": "Я схвильований поїздкою.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_feel_nervous_before_exams",
       "type": "sentence",
-      "text": "I feel nervous before exams.",
+      "text": "Я почуваюся нервово перед іспитами.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_are_you_tired",
       "type": "sentence",
-      "text": "Are you tired?",
+      "text": "Ви втомлені?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
       "type": "sentence",
-      "text": "I am surprised by the news.",
+      "text": "Я здивований новинами.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_don_t_worry_about_it",
       "type": "sentence",
-      "text": "Don't worry about it.",
+      "text": "Не турбуйтеся про це.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "31_emotions_and_feelings_i_am_proud_of_my_achievement",
       "type": "sentence",
-      "text": "I am proud of my achievement.",
+      "text": "Я гордий своїм досягненням.",
       "practiceType": "formulateSentense"
     }
   ]

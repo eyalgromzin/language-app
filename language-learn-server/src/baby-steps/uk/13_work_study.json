@@ -7,25 +7,25 @@
     {
       "id": "13_work_study_office",
       "type": "word",
-      "text": "office",
+      "text": "офіс",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_school",
       "type": "word",
-      "text": "school",
+      "text": "школа",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_meeting",
       "type": "word",
-      "text": "meeting",
+      "text": "зустріч",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_project",
       "type": "word",
-      "text": "project",
+      "text": "проект",
       "practiceType": "chooseTranslation"
     },
     {
@@ -49,79 +49,79 @@
     {
       "id": "13_work_study_class",
       "type": "word",
-      "text": "class",
+      "text": "урок",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_boss",
       "type": "word",
-      "text": "boss",
+      "text": "начальник",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_colleague",
       "type": "word",
-      "text": "colleague",
+      "text": "колега",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "13_work_study_i_have_a_meeting",
       "type": "sentence",
-      "text": "I have a meeting.",
+      "text": "У мене є зустріч.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_work_from_home",
       "type": "sentence",
-      "text": "I work from home.",
+      "text": "Я працюю з дому.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_am_studying",
       "type": "sentence",
-      "text": "I am studying …",
+      "text": "Я вивчаю …",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_what_do_you_do_for_work",
       "type": "sentence",
-      "text": "What do you do for work?",
+      "text": "Що ви робите на роботі?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_work_in_an_office",
       "type": "sentence",
-      "text": "I work in an office.",
+      "text": "Я працюю в офісі.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Вам подобається ваша робота?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_am_busy_with_work",
       "type": "sentence",
-      "text": "I am busy with work.",
+      "text": "Я зайнятий роботою.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_what_are_you_studying",
       "type": "sentence",
-      "text": "What are you studying?",
+      "text": "Що ви вивчаєте?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_i_have_a_lot_of_homework",
       "type": "sentence",
-      "text": "I have a lot of homework.",
+      "text": "У мене багато домашнього завдання.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "13_work_study_where_do_you_work",
       "type": "sentence",
-      "text": "Where do you work?",
+      "text": "Де ви працюєте?",
       "practiceType": "formulateSentense"
     }
   ]

@@ -19,37 +19,37 @@
     {
       "id": "15_requests_help_could",
       "type": "word",
-      "text": "could",
+      "text": "могти",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_would",
       "type": "word",
-      "text": "would",
+      "text": "хотіти",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_repeat",
       "type": "word",
-      "text": "repeat",
+      "text": "повторювати",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_slowly",
       "type": "word",
-      "text": "slowly",
+      "text": "повільно",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_mean",
       "type": "word",
-      "text": "mean",
+      "text": "означати",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_say",
       "type": "word",
-      "text": "say",
+      "text": "говорити",
       "practiceType": "chooseTranslation"
     },
     {
@@ -61,67 +61,67 @@
     {
       "id": "15_requests_help_explain",
       "type": "word",
-      "text": "explain",
+      "text": "пояснювати",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "15_requests_help_could_you_help_me_please",
       "type": "sentence",
-      "text": "Could you help me, please?",
+      "text": "Чи могли б ви мені допомогти, будь ласка?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_you_repeat_that_please",
       "type": "sentence",
-      "text": "Can you repeat that, please?",
+      "text": "Чи можете ви повторити це, будь ласка?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_please_speak_more_slowly",
       "type": "sentence",
-      "text": "Please speak more slowly.",
+      "text": "Будь ласка, говоріть повільніше.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_how_do_you_say_this_in_english",
       "type": "sentence",
-      "text": "How do you say this in English?",
+      "text": "Як це сказати англійською?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_what_does_this_mean",
       "type": "sentence",
-      "text": "What does this mean?",
+      "text": "Що це означає?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_you_explain_this",
       "type": "sentence",
-      "text": "Can you explain this?",
+      "text": "Чи можете ви пояснити це?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_i_dont_understand",
       "type": "sentence",
-      "text": "I don't understand.",
+      "text": "Я не розумію.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_would_you_mind",
       "type": "sentence",
-      "text": "Would you mind …?",
+      "text": "Чи не заперечуєте ви …?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_can_i_ask_you_something",
       "type": "sentence",
-      "text": "Can I ask you something?",
+      "text": "Можу я запитати вас про щось?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "15_requests_help_thank_you_for_helping",
       "type": "sentence",
-      "text": "Thank you for helping.",
+      "text": "Дякую за допомогу.",
       "practiceType": "formulateSentense"
     }
   ]

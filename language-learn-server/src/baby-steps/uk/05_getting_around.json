@@ -109,19 +109,19 @@
     {
       "id": "05_getting_around_it_is_over_there",
       "type": "sentence",
-      "text": "It is over there.",
+      "text": "Це там.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_can_you_help_me",
       "type": "sentence",
-      "text": "Can you help me?",
+      "text": "Можете ви мені допомогти?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "05_getting_around_how_far_is_it",
       "type": "sentence",
-      "text": "How far is it?",
+      "text": "Як далеко це?",
       "practiceType": "formulateSentense"
     }
   ]

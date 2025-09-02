@@ -7,121 +7,121 @@
     {
       "id": "10_daily_routines_to_go",
       "type": "word",
-      "text": "to go",
+      "text": "йти",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_come",
       "type": "word",
-      "text": "to come",
+      "text": "приходити",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_do",
       "type": "word",
-      "text": "to do",
+      "text": "робити",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_make",
       "type": "word",
-      "text": "to make",
+      "text": "робити",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_like",
       "type": "word",
-      "text": "to like",
+      "text": "подобатися",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_work",
       "type": "word",
-      "text": "to work",
+      "text": "працювати",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_study",
       "type": "word",
-      "text": "to study",
+      "text": "вивчати",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_eat",
       "type": "word",
-      "text": "to eat",
+      "text": "їсти",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_sleep",
       "type": "word",
-      "text": "to sleep",
+      "text": "спати",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_to_wake",
       "type": "word",
-      "text": "to wake",
+      "text": "прокидатися",
       "practiceType": "chooseTranslation"
     },
     {
       "id": "10_daily_routines_i_go_to_work",
       "type": "sentence",
-      "text": "I go to work.",
+      "text": "Я йду на роботу.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_like_this",
       "type": "sentence",
-      "text": "I like this.",
+      "text": "Мені це подобається.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_do_not_understand",
       "type": "sentence",
-      "text": "I do not understand.",
+      "text": "Я не розумію.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_wake_up_early",
       "type": "sentence",
-      "text": "I wake up early.",
+      "text": "Я рано прокидаюся.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_eat_breakfast",
       "type": "sentence",
-      "text": "I eat breakfast.",
+      "text": "Я їм сніданок.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_study_english",
       "type": "sentence",
-      "text": "I study English.",
+      "text": "Я вивчаю англійську.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_go_to_bed",
       "type": "sentence",
-      "text": "I go to bed.",
+      "text": "Я йду спати.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_what_do_you_do",
       "type": "sentence",
-      "text": "What do you do?",
+      "text": "Що ви робите?",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_i_make_dinner",
       "type": "sentence",
-      "text": "I make dinner.",
+      "text": "Я готую вечерю.",
       "practiceType": "formulateSentense"
     },
     {
       "id": "10_daily_routines_do_you_like_your_job",
       "type": "sentence",
-      "text": "Do you like your job?",
+      "text": "Вам подобається ваша робота?",
       "practiceType": "formulateSentense"
     }
   ]
