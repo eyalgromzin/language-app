@@ -1,32 +1,32 @@
-11 enable in book screen , in translate panel , edit the word. because many times the word after a click comes without the last letter 
+1 enable in book screen , in translate panel , edit the word. because many times the word after a click comes without the last letter 
 
-5 share button in video screen
+2 share button in video screen
 
-6 share button in surf screen 
+3 share button in surf screen 
 
-7 if a book is in the library already , set in localstorage to not even check  again if its in the library, and not just not asking  
+4 if a book is in the library already , set in localstorage to not even check  again if its in the library, and not just not asking  
 
-9 make share button for book - will show dialog to check if its a book downloaded from website. or some local book that got in some other way . 
+5 make share button for book - will show dialog to check if its a book downloaded from website. or some local book that got in some other way . 
     - if its from a website , require for user to add location and then share it . 
     - if its in the phone itself , share the file itself from storage. 
 
 
 ==================== tomorrow ========================
 
-2 create translate table with all languages that will be filled each time a user clicks a word 
+6 create translate table with all languages that will be filled each time a user clicks a word 
 
-14- in baby steps , enable to state multiple practices for each word / sentense . 
+7- in baby steps , enable to state multiple practices for each word / sentense . 
 
-13 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
+8 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
 
-8 make video transcript work better - it lags now 
+9 make video transcript work better - it lags now 
 
 
 10 design app better  
 
 
 
-15 - split each  baby steps file into 2 files. where each will have 5 words and 5 sentenses with 2 practices for each . 
+11 - split each  baby steps file into 2 files. where each will have 5 words and 5 sentenses with 2 practices for each . 
 
 12 register app
 
