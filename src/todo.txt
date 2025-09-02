@@ -21,17 +21,11 @@
 
 9 make video transcript work better - it lags now 
 
-
 10 design app better  
-
-
 
 11 - split each  baby steps file into 2 files. where each will have 5 words and 5 sentenses with 2 practices for each . 
 
 12 register app
-
-- on 100 downloads : create a table for translation .for all my languages - to not take translation from 3rd party. 
-       with indexes on all languages columns.
 
 - payed version - when ill have 1000 users 
     - limit num of words possible to add to learning per day - for example 20 - payed will be limitless.
