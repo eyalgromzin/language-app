@@ -83,7 +83,7 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
           >
             <Picker.Item label="Select your native language..." value="" />
             {Object.keys(languageMappings).map((lang) => (
-              <Picker.Item key={lang} value={lang} />
+              <Picker.Item key={lang} label={lang} value={lang} />
             ))}
           </Picker>
         </View>
