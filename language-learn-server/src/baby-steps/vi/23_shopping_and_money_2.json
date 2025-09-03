@@ -1,0 +1,68 @@
+{
+  "id": "23_shopping_and_money_2",
+  "title": "Mua sắm và tiền bạc (Part 2)",
+  "emoji": "🛒",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "23_shopping_and_money_sale",
+      "type": "word",
+      "text": "giảm giá",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_discount",
+      "type": "word",
+      "text": "chiết khấu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_receipt",
+      "type": "word",
+      "text": "hóa đơn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_change",
+      "type": "word",
+      "text": "tiền thối",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_bill",
+      "type": "word",
+      "text": "hóa đơn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_where_is_the_nearest_store",
+      "type": "sentence",
+      "text": "Cửa hàng gần nhất ở đâu?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_can_i_have_a_receipt",
+      "type": "sentence",
+      "text": "Tôi có thể có hóa đơn không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_the_price_is_too_high",
+      "type": "sentence",
+      "text": "Giá quá cao.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_i_need_change_for_a_bill",
+      "type": "sentence",
+      "text": "Tôi cần tiền thối cho một tờ tiền.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_this_store_has_good_prices",
+      "type": "sentence",
+      "text": "Cửa hàng này có giá tốt.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_1",
+  "title": "Urheilu ja harjoittelu (Part 1)",
+  "emoji": "⚽",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_sport",
+      "type": "word",
+      "text": "urheilu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_game",
+      "type": "word",
+      "text": "peli",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_team",
+      "type": "word",
+      "text": "joukkue",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_player",
+      "type": "word",
+      "text": "pelaaja",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_coach",
+      "type": "word",
+      "text": "valmentaja",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_what_sport_do_you_like",
+      "type": "sentence",
+      "text": "Mitä urheilua pidät?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_love_playing_soccer",
+      "type": "sentence",
+      "text": "Rakastan jalkapallon pelaamista.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
+      "type": "sentence",
+      "text": "Haluatko liittyä joukkueeseemme?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_who_is_your_favorite_player",
+      "type": "sentence",
+      "text": "Kuka on suosikkipelaajasi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_our_coach_is_very_good",
+      "type": "sentence",
+      "text": "Valmentajamme on erittäin hyvä.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

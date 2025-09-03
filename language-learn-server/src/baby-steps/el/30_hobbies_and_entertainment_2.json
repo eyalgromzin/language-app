@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_2",
+  "title": "Χόμπι και διασκέδαση (Part 2)",
+  "emoji": "🎬",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_paint",
+      "type": "word",
+      "text": "ζωγραφική",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_cook",
+      "type": "word",
+      "text": "μαγειρική",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_garden",
+      "type": "word",
+      "text": "κήπος",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_photography",
+      "type": "word",
+      "text": "φωτογραφία",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_collect",
+      "type": "word",
+      "text": "συλλογή",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_want_to_learn_to_paint",
+      "type": "sentence",
+      "text": "Θέλω να μάθω ζωγραφική.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_cooking",
+      "type": "sentence",
+      "text": "Σου αρέσει η μαγειρική;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_my_garden_is_very_beautiful",
+      "type": "sentence",
+      "text": "Ο κήπος μου είναι πολύ όμορφος.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_take_photos_as_a_hobby",
+      "type": "sentence",
+      "text": "Βγάζω φωτογραφίες ως χόμπι.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_do_you_collect",
+      "type": "sentence",
+      "text": "Τι συλλέγεις;",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

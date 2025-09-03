@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_1",
+  "title": "Χόμπι και διασκέδαση (Part 1)",
+  "emoji": "🎬",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_hobby",
+      "type": "word",
+      "text": "χόμπι",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_music",
+      "type": "word",
+      "text": "μουσική",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_movie",
+      "type": "word",
+      "text": "ταινία",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_book",
+      "type": "word",
+      "text": "βιβλίο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_dance",
+      "type": "word",
+      "text": "χορός",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_is_your_favorite_hobby",
+      "type": "sentence",
+      "text": "Ποιο είναι το αγαπημένο σου χόμπι;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_love_listening_to_music",
+      "type": "sentence",
+      "text": "Λατρεύω να ακούω μουσική.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_movie_did_you_watch",
+      "type": "sentence",
+      "text": "Τι ταινία είδες;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_reading_books",
+      "type": "sentence",
+      "text": "Σου αρέσει να διαβάζεις βιβλία;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_can_you_dance",
+      "type": "sentence",
+      "text": "Μπορείς να χορέψεις;",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

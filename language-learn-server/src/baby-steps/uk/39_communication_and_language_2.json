@@ -1,0 +1,68 @@
+{
+  "id": "39_communication_and_language_2",
+  "title": "Спілкування та мова (Part 2)",
+  "emoji": "💬",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "39_communication_and_language_question",
+      "type": "word",
+      "text": "питання",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_answer",
+      "type": "word",
+      "text": "відповідь",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_conversation",
+      "type": "word",
+      "text": "розмова",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_message",
+      "type": "word",
+      "text": "повідомлення",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_translate",
+      "type": "word",
+      "text": "перекладати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_i_have_a_question_for_you",
+      "type": "sentence",
+      "text": "У мене є питання до вас.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_what_is_your_answer",
+      "type": "sentence",
+      "text": "Яка ваша відповідь?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_this_is_an_interesting_conversation",
+      "type": "sentence",
+      "text": "Це цікава розмова.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_did_you_get_my_message",
+      "type": "sentence",
+      "text": "Ви отримали моє повідомлення?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_can_you_translate_this_word",
+      "type": "sentence",
+      "text": "Можете ви перекласти це слово?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

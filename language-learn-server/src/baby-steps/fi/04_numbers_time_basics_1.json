@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_1",
+  "title": "Numerot ja aika perusteet (Part 1)",
+  "emoji": "🔢",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_zero",
+      "type": "word",
+      "text": "nolla",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_one",
+      "type": "word",
+      "text": "yksi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_two",
+      "type": "word",
+      "text": "kaksi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_three",
+      "type": "word",
+      "text": "kolme",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_four",
+      "type": "word",
+      "text": "neljä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_what_time_is_it",
+      "type": "sentence",
+      "text": "Mitä kello on?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_three_o_clock",
+      "type": "sentence",
+      "text": "Kello on kolme.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_half_past_two",
+      "type": "sentence",
+      "text": "Kello on puoli kolme.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_day_is_today",
+      "type": "sentence",
+      "text": "Mikä päivä tänään on?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_today_is_monday",
+      "type": "sentence",
+      "text": "Tänään on maanantai.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

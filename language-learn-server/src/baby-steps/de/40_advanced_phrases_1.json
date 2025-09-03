@@ -1,0 +1,68 @@
+{
+  "id": "40_advanced_phrases_1",
+  "title": "Advanced Phrases (Part 1)",
+  "emoji": "🗣️",
+  "language": "German",
+  "items": [
+    {
+      "id": "40_advanced_phrases_nevertheless",
+      "type": "word",
+      "text": "trotzdem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore",
+      "type": "word",
+      "text": "außerdem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_however",
+      "type": "word",
+      "text": "jedoch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_therefore",
+      "type": "word",
+      "text": "deshalb",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_although",
+      "type": "word",
+      "text": "obwohl",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
+      "type": "sentence",
+      "text": "Trotzdem möchte ich es noch versuchen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore_i_believe_that",
+      "type": "sentence",
+      "text": "Außerdem glaube ich, dass",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_however_this_is_not_easy",
+      "type": "sentence",
+      "text": "Jedoch ist das nicht einfach.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_therefore_we_must_act",
+      "type": "sentence",
+      "text": "Deshalb müssen wir handeln.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_although_it_is_difficult",
+      "type": "sentence",
+      "text": "Obwohl es schwierig ist",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

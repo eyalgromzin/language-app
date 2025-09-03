@@ -1,0 +1,68 @@
+{
+  "id": "25_work_and_profession_1",
+  "title": "Arbete och yrke (Part 1)",
+  "emoji": "💼",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "25_work_and_profession_job",
+      "type": "word",
+      "text": "jobb",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_work",
+      "type": "word",
+      "text": "arbete",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_office",
+      "type": "word",
+      "text": "kontor",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_meeting",
+      "type": "word",
+      "text": "möte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_boss",
+      "type": "word",
+      "text": "chef",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_what_do_you_do_for_work",
+      "type": "sentence",
+      "text": "Vad arbetar du med?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_work_in_an_office",
+      "type": "sentence",
+      "text": "Jag arbetar på ett kontor.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Tycker du om ditt jobb?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_have_a_meeting_at_nine",
+      "type": "sentence",
+      "text": "Jag har ett möte klockan nio.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_my_boss_is_very_nice",
+      "type": "sentence",
+      "text": "Min chef är mycket snäll.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

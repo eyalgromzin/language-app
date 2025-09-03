@@ -1,0 +1,68 @@
+{
+  "id": "16_phone_internet_2",
+  "title": "Telefon och internet (Part 2)",
+  "emoji": "📱",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "16_phone_internet_text",
+      "type": "word",
+      "text": "sms",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_message",
+      "type": "word",
+      "text": "meddelande",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_password",
+      "type": "word",
+      "text": "lösenord",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_internet",
+      "type": "word",
+      "text": "internet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_online",
+      "type": "word",
+      "text": "online",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_do_you_have_internet",
+      "type": "sentence",
+      "text": "Har du internet?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_email",
+      "type": "sentence",
+      "text": "Vad är din e-post?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_i_am_online",
+      "type": "sentence",
+      "text": "Jag är online.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_send_me_a_message",
+      "type": "sentence",
+      "text": "Kan du skicka mig ett meddelande?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_the_wifi_is_slow",
+      "type": "sentence",
+      "text": "Wifin är långsamt.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

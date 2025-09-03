@@ -1,0 +1,68 @@
+{
+  "id": "14_plans_invitations_2",
+  "title": "Making plans & invitations (Part 2)",
+  "emoji": "📅",
+  "language": "English",
+  "items": [
+    {
+      "id": "14_plans_invitations_invite",
+      "type": "word",
+      "text": "invite",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_free",
+      "type": "word",
+      "text": "free",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_busy",
+      "type": "word",
+      "text": "busy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_time",
+      "type": "word",
+      "text": "time",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_place",
+      "type": "word",
+      "text": "place",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_what_time_should_we_meet",
+      "type": "sentence",
+      "text": "What time should we meet?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_i_am_busy_today",
+      "type": "sentence",
+      "text": "I am busy today.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_do_you_want_to_have_coffee",
+      "type": "sentence",
+      "text": "Do you want to have coffee?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_let_us_make_plans",
+      "type": "sentence",
+      "text": "Let us make plans.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_where_should_we_go",
+      "type": "sentence",
+      "text": "Where should we go?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

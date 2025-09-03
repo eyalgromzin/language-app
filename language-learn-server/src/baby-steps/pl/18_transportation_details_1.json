@@ -1,0 +1,68 @@
+{
+  "id": "18_transportation_details_1",
+  "title": "Szczegóły transportu (Part 1)",
+  "emoji": "🚌",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "18_transportation_details_bus",
+      "type": "word",
+      "text": "autobus",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_train",
+      "type": "word",
+      "text": "pociąg",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_metro",
+      "type": "word",
+      "text": "metro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_schedule",
+      "type": "word",
+      "text": "rozklad",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_ticket",
+      "type": "word",
+      "text": "bilet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_what_time_does_the_bus_leave",
+      "type": "sentence",
+      "text": "O której odjeżdża autobus?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_where_can_i_buy_a_ticket",
+      "type": "sentence",
+      "text": "Gdzie mogę kupić bilet?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_there_a_discount",
+      "type": "sentence",
+      "text": "Czy jest zniżka?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_which_platform_is_it",
+      "type": "sentence",
+      "text": "Który to peron?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_the_train_delayed",
+      "type": "sentence",
+      "text": "Czy pociąg jest opóźniony?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

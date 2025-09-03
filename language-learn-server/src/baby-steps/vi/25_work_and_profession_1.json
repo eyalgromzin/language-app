@@ -1,0 +1,68 @@
+{
+  "id": "25_work_and_profession_1",
+  "title": "Công việc và nghề nghiệp (Part 1)",
+  "emoji": "💼",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "25_work_and_profession_job",
+      "type": "word",
+      "text": "công việc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_work",
+      "type": "word",
+      "text": "làm việc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_office",
+      "type": "word",
+      "text": "văn phòng",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_meeting",
+      "type": "word",
+      "text": "cuộc họp",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_boss",
+      "type": "word",
+      "text": "sếp",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_what_do_you_do_for_work",
+      "type": "sentence",
+      "text": "Bạn làm gì để kiếm sống?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_work_in_an_office",
+      "type": "sentence",
+      "text": "Tôi làm việc trong văn phòng.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Bạn có thích công việc của mình không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_have_a_meeting_at_nine",
+      "type": "sentence",
+      "text": "Tôi có cuộc họp lúc chín giờ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_my_boss_is_very_nice",
+      "type": "sentence",
+      "text": "Sếp của tôi rất tốt.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_1",
+  "title": "Connectors & Advanced Phrases (Part 1)",
+  "emoji": "🔗",
+  "language": "German",
+  "items": [
+    {
+      "id": "20_connectors_advanced_because",
+      "type": "word",
+      "text": "weil",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_but",
+      "type": "word",
+      "text": "aber",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_and",
+      "type": "word",
+      "text": "und",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_or",
+      "type": "word",
+      "text": "oder",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_if",
+      "type": "word",
+      "text": "wenn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_could_you_please_recommend_a_good_place_to_eat",
+      "type": "sentence",
+      "text": "Könnten Sie mir bitte einen guten Ort zum Essen empfehlen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_would_like_to_know_more_about",
+      "type": "sentence",
+      "text": "Ich würde gerne mehr über erfahren.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_that_sounds_interesting",
+      "type": "sentence",
+      "text": "Das klingt interessant.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_agree_with_you",
+      "type": "sentence",
+      "text": "Ich stimme Ihnen zu.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_that_is_a_good_idea",
+      "type": "sentence",
+      "text": "Das ist eine gute Idee.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "23_shopping_and_money_2",
+  "title": "compras e dinheiro (Part 2)",
+  "emoji": "🛍️",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "23_shopping_and_money_expensive",
+      "type": "word",
+      "text": "caro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_cheap",
+      "type": "word",
+      "text": "barato",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_sale",
+      "type": "word",
+      "text": "promoção",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_discount",
+      "type": "word",
+      "text": "desconto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_buy",
+      "type": "word",
+      "text": "comprar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_this_is_too_expensive",
+      "type": "sentence",
+      "text": "Isso é muito caro.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_do_you_accept_credit_cards",
+      "type": "sentence",
+      "text": "Você aceita cartões de crédito?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_can_i_get_a_receipt",
+      "type": "sentence",
+      "text": "Posso ter um recibo?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_thank_you_for_shopping",
+      "type": "sentence",
+      "text": "Obrigado pelas compras.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

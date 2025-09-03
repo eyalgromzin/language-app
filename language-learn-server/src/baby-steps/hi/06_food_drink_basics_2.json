@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_2",
+  "title": "भोजन और पेय के मूल (Part 2)",
+  "emoji": "🍎",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "06_food_drink_basics_milk",
+      "type": "word",
+      "text": "दूध",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_juice",
+      "type": "word",
+      "text": "रस",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_rice",
+      "type": "word",
+      "text": "चावल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_chicken",
+      "type": "word",
+      "text": "मुर्गी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_fish",
+      "type": "word",
+      "text": "मछली",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_how_much_is_it",
+      "type": "sentence",
+      "text": "इसकी कीमत कितनी है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_hungry",
+      "type": "sentence",
+      "text": "मैं भूखा हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_thirsty",
+      "type": "sentence",
+      "text": "मुझे प्यास लगी है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_what_do_you_recommend",
+      "type": "sentence",
+      "text": "आप क्या सलाह देंगे?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_the_bill_please",
+      "type": "sentence",
+      "text": "बिल, कृपया।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

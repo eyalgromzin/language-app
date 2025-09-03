@@ -1,0 +1,68 @@
+{
+  "id": "02_introductions_2",
+  "title": "présentations et informations de base (Part 2)",
+  "emoji": "💬",
+  "language": "French",
+  "items": [
+    {
+      "id": "02_introductions_student",
+      "type": "word",
+      "text": "étudiant",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_teacher",
+      "type": "word",
+      "text": "professeur",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_engineer",
+      "type": "word",
+      "text": "ingénieur",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_doctor",
+      "type": "word",
+      "text": "médecin",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_language",
+      "type": "word",
+      "text": "langue",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_i_am_from",
+      "type": "sentence",
+      "text": "Je viens de",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_do_you_do",
+      "type": "sentence",
+      "text": "Que faites-vous ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_a",
+      "type": "sentence",
+      "text": "Je suis",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_do_you_speak_english",
+      "type": "sentence",
+      "text": "Parlez-vous anglais ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_speak_a_little",
+      "type": "sentence",
+      "text": "Je parle un peu.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

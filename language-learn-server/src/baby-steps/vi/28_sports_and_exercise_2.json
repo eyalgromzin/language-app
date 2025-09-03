@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_2",
+  "title": "Thể thao và tập thể dục (Part 2)",
+  "emoji": "⚽",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_win",
+      "type": "word",
+      "text": "thắng",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_lose",
+      "type": "word",
+      "text": "thua",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_score",
+      "type": "word",
+      "text": "điểm số",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_exercise",
+      "type": "word",
+      "text": "tập thể dục",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_fitness",
+      "type": "word",
+      "text": "thể hình",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_did_you_win_the_game",
+      "type": "sentence",
+      "text": "Bạn có thắng trò chơi không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_what_is_the_score",
+      "type": "sentence",
+      "text": "Điểm số là gì?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_exercise_every_morning",
+      "type": "sentence",
+      "text": "Tôi tập thể dục mỗi sáng.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_go_to_the_gym",
+      "type": "sentence",
+      "text": "Bạn có đi phòng tập không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_fitness_is_important_for_health",
+      "type": "sentence",
+      "text": "Thể hình quan trọng cho sức khỏe.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

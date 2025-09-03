@@ -1,0 +1,68 @@
+{
+  "id": "39_communication_and_language_2",
+  "title": "Communication & Language (Part 2)",
+  "emoji": "💬",
+  "language": "German",
+  "items": [
+    {
+      "id": "39_communication_and_language_understand",
+      "type": "word",
+      "text": "verstehen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_explain",
+      "type": "word",
+      "text": "erklären",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_ask",
+      "type": "word",
+      "text": "fragen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_answer",
+      "type": "word",
+      "text": "antworten",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_conversation",
+      "type": "word",
+      "text": "Gespräch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_can_we_talk",
+      "type": "sentence",
+      "text": "Können wir reden?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_i_like_this_conversation",
+      "type": "sentence",
+      "text": "Ich mag dieses Gespräch.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_language_connects_people",
+      "type": "sentence",
+      "text": "Sprache verbindet Menschen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_do_you_understand_german",
+      "type": "sentence",
+      "text": "Verstehen Sie Deutsch?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_communication_brings_us_together",
+      "type": "sentence",
+      "text": "Kommunikation bringt uns zusammen.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

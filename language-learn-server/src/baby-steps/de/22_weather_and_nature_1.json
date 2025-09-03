@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_1",
+  "title": "Weather & Nature (Part 1)",
+  "emoji": "��️",
+  "language": "German",
+  "items": [
+    {
+      "id": "22_weather_and_nature_weather",
+      "type": "word",
+      "text": "Wetter",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_sunny",
+      "type": "word",
+      "text": "sonnig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_cloudy",
+      "type": "word",
+      "text": "bewölkt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_rainy",
+      "type": "word",
+      "text": "regnerisch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_snowy",
+      "type": "word",
+      "text": "verschneit",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_it_is_sunny_today",
+      "type": "sentence",
+      "text": "Es ist heute sonnig.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_weather_is_nice",
+      "type": "sentence",
+      "text": "Das Wetter ist schön.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_it_might_rain_later",
+      "type": "sentence",
+      "text": "Es könnte später regnen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_look_at_those_beautiful_flowers",
+      "type": "sentence",
+      "text": "Schauen Sie sich diese schönen Blumen an.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_mountains_are_beautiful",
+      "type": "sentence",
+      "text": "Die Berge sind wunderschön.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

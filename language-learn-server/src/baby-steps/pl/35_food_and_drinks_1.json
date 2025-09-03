@@ -1,0 +1,68 @@
+{
+  "id": "35_food_and_drinks_1",
+  "title": "Jedzenie i napoje (Part 1)",
+  "emoji": "🍕",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "35_food_and_drinks_food",
+      "type": "word",
+      "text": "jedzenie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_drink",
+      "type": "word",
+      "text": "pić",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_breakfast",
+      "type": "word",
+      "text": "śniadanie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_lunch",
+      "type": "word",
+      "text": "obiad",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_dinner",
+      "type": "word",
+      "text": "kolacja",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_what_would_you_like_to_eat",
+      "type": "sentence",
+      "text": "Co chciałbyś zjeść?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_can_i_have_something_to_drink",
+      "type": "sentence",
+      "text": "Czy mogę dostać coś do picia?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_did_you_have_for_breakfast",
+      "type": "sentence",
+      "text": "Co jadłeś na śniadanie?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_let_s_go_to_a_restaurant_for_lunch",
+      "type": "sentence",
+      "text": "Chodźmy do restauracji na obiad.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_time_is_dinner",
+      "type": "sentence",
+      "text": "O której jest kolacja?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

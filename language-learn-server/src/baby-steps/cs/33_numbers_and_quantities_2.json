@@ -1,0 +1,68 @@
+{
+  "id": "33_numbers_and_quantities_2",
+  "title": "Čísla a množství (Part 2)",
+  "emoji": "🔢",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "33_numbers_and_quantities_all",
+      "type": "word",
+      "text": "všechny",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_none",
+      "type": "word",
+      "text": "žádný",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_half",
+      "type": "word",
+      "text": "půl",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_double",
+      "type": "word",
+      "text": "dvojnásobek",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_total",
+      "type": "word",
+      "text": "celkem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_all_students_are_present",
+      "type": "sentence",
+      "text": "Všichni studenti jsou přítomni.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_none_of_them_came",
+      "type": "sentence",
+      "text": "Nikdo z nich nepřišel.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_ate_half_of_the_pizza",
+      "type": "sentence",
+      "text": "Snědl jsem půl pizzy.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_the_price_doubled_last_year",
+      "type": "sentence",
+      "text": "Cena se loni zdvojnásobila.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_what_is_the_total_cost",
+      "type": "sentence",
+      "text": "Jaká je celková cena?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

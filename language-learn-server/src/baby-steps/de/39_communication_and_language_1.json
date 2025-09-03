@@ -1,0 +1,68 @@
+{
+  "id": "39_communication_and_language_1",
+  "title": "Communication & Language (Part 1)",
+  "emoji": "💬",
+  "language": "German",
+  "items": [
+    {
+      "id": "39_communication_and_language_communication",
+      "type": "word",
+      "text": "Kommunikation",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_language",
+      "type": "word",
+      "text": "Sprache",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_speak",
+      "type": "word",
+      "text": "sprechen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_talk",
+      "type": "word",
+      "text": "reden",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_listen",
+      "type": "word",
+      "text": "zuhören",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_do_you_speak_english",
+      "type": "sentence",
+      "text": "Sprechen Sie Englisch?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_can_you_understand_me",
+      "type": "sentence",
+      "text": "Können Sie mich verstehen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_please_explain_this",
+      "type": "sentence",
+      "text": "Bitte erklären Sie das.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_what_language_do_you_speak",
+      "type": "sentence",
+      "text": "Welche Sprache sprechen Sie?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_communication_is_important",
+      "type": "sentence",
+      "text": "Kommunikation ist wichtig.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

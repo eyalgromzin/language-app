@@ -1,0 +1,68 @@
+{
+  "id": "12_weather_smalltalk_2",
+  "title": "tempo e conversazione (Part 2)",
+  "emoji": "🌦️",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_cloudy",
+      "type": "word",
+      "text": "nuvoloso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_windy",
+      "type": "word",
+      "text": "ventoso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_snow",
+      "type": "word",
+      "text": "neve",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_rain",
+      "type": "word",
+      "text": "pioggia",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_nice",
+      "type": "word",
+      "text": "bello",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_do_you_like_this_weather",
+      "type": "sentence",
+      "text": "Le piace questo tempo?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_what_is_your_name",
+      "type": "sentence",
+      "text": "Come si chiama?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_nice_to_meet_you",
+      "type": "sentence",
+      "text": "Piacere di conoscerla.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_are_you",
+      "type": "sentence",
+      "text": "Come sta?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_have_a_nice_day",
+      "type": "sentence",
+      "text": "Buona giornata.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "40_advanced_phrases_1",
+  "title": "frases avançadas (Part 1)",
+  "emoji": "🚀",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "40_advanced_phrases_nevertheless",
+      "type": "word",
+      "text": "não obstante",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore",
+      "type": "word",
+      "text": "além disso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_however",
+      "type": "word",
+      "text": "entretanto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_therefore",
+      "type": "word",
+      "text": "portanto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_although",
+      "type": "word",
+      "text": "embora",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_nevertheless_i_agree",
+      "type": "sentence",
+      "text": "Não obstante, eu concordo.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore_this_is_important",
+      "type": "sentence",
+      "text": "Além disso, isto é importante.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_however_i_disagree",
+      "type": "sentence",
+      "text": "Entretanto, eu discordo.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_therefore_we_must_act",
+      "type": "sentence",
+      "text": "Portanto, devemos agir.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_although_it_is_difficult",
+      "type": "sentence",
+      "text": "Embora seja difícil.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

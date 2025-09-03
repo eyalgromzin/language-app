@@ -1,0 +1,68 @@
+{
+  "id": "05_getting_around_1",
+  "title": "Kierunki i poruszanie się (Part 1)",
+  "emoji": "🧭",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "05_getting_around_left",
+      "type": "word",
+      "text": "lewo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_right",
+      "type": "word",
+      "text": "prawo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_straight",
+      "type": "word",
+      "text": "prosto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_near",
+      "type": "word",
+      "text": "blisko",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_far",
+      "type": "word",
+      "text": "daleko",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_where_is_the_bathroom",
+      "type": "sentence",
+      "text": "Gdzie jest łazienka?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_where_is_the_station",
+      "type": "sentence",
+      "text": "Gdzie jest stacja?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_how_do_i_get_to",
+      "type": "sentence",
+      "text": "Jak dojść do …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_is_it_close",
+      "type": "sentence",
+      "text": "Czy to blisko?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_i_am_lost",
+      "type": "sentence",
+      "text": "Zgubiłem się.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

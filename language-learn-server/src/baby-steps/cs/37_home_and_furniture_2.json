@@ -1,0 +1,68 @@
+{
+  "id": "37_home_and_furniture_2",
+  "title": "Domov a nábytek (Part 2)",
+  "emoji": "🏠",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "37_home_and_furniture_table",
+      "type": "word",
+      "text": "stůl",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_chair",
+      "type": "word",
+      "text": "židle",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_bed",
+      "type": "word",
+      "text": "postel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_door",
+      "type": "word",
+      "text": "dveře",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_window",
+      "type": "word",
+      "text": "okno",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_this_chair_is_very_comfortable",
+      "type": "sentence",
+      "text": "Tato židle je velmi pohodlná.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_i_like_my_new_bed",
+      "type": "sentence",
+      "text": "Líbí se mi moje nová postel.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_please_close_the_door",
+      "type": "sentence",
+      "text": "Prosím, zavřete dveře.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_open_the_window_for_fresh_air",
+      "type": "sentence",
+      "text": "Otevřete okno pro čerstvý vzduch.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_where_do_you_live",
+      "type": "sentence",
+      "text": "Kde bydlíte?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

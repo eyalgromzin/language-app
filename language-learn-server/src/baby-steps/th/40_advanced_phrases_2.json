@@ -1,0 +1,68 @@
+{
+  "id": "40_advanced_phrases_2",
+  "title": "วลีขั้นสูง (Part 2)",
+  "emoji": "🚀",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "40_advanced_phrases_approximately",
+      "type": "word",
+      "text": "ประมาณ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_occasionally",
+      "type": "word",
+      "text": "เป็นครั้งคราว",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_gradually",
+      "type": "word",
+      "text": "ค่อยๆ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_ultimately",
+      "type": "word",
+      "text": "ในที่สุด",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_essentially",
+      "type": "word",
+      "text": "โดยพื้นฐาน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_it_will_cost_approximately_fifty_dollars",
+      "type": "sentence",
+      "text": "มันจะมีราคาประมาณห้าสิบดอลลาร์.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_i_occasionally_visit_my_grandparents",
+      "type": "sentence",
+      "text": "ฉันไปเยี่ยมปู่ย่าตายายเป็นครั้งคราว.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_the_weather_gradually_improved",
+      "type": "sentence",
+      "text": "อากาศค่อยๆ ดีขึ้น.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_ultimately_we_reached_our_goal",
+      "type": "sentence",
+      "text": "ในที่สุดเราก็บรรลุเป้าหมาย.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_essentially_this_is_the_same_thing",
+      "type": "sentence",
+      "text": "โดยพื้นฐานแล้ว นี่คือสิ่งเดียวกัน.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

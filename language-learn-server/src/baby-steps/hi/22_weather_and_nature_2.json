@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_2",
+  "title": "मौसम और प्रकृति (Part 2)",
+  "emoji": "🌤️",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "22_weather_and_nature_tree",
+      "type": "word",
+      "text": "पेड़",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_flower",
+      "type": "word",
+      "text": "फूल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_mountain",
+      "type": "word",
+      "text": "पहाड़",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_ocean",
+      "type": "word",
+      "text": "समुद्र",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_forest",
+      "type": "word",
+      "text": "जंगल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_the_mountain_view_is_beautiful",
+      "type": "sentence",
+      "text": "पहाड़ का दृश्य बहुत सुंदर है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_these_flowers_are_lovely",
+      "type": "sentence",
+      "text": "ये फूल बहुत सुंदर हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_ocean_is_very_blue",
+      "type": "sentence",
+      "text": "समुद्र बहुत नीला है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_what_is_the_weather_like",
+      "type": "sentence",
+      "text": "मौसम कैसा है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_i_hope_it_does_not_snow",
+      "type": "sentence",
+      "text": "मुझे उम्मीद है कि बर्फ नहीं पड़ेगी।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "27_education_and_learning_1",
+  "title": "educação e aprendizado (Part 1)",
+  "emoji": "📚",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "27_education_and_learning_education",
+      "type": "word",
+      "text": "educação",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_school",
+      "type": "word",
+      "text": "escola",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_university",
+      "type": "word",
+      "text": "universidade",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_study",
+      "type": "word",
+      "text": "estudar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_learn",
+      "type": "word",
+      "text": "aprender",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_what_are_you_studying",
+      "type": "sentence",
+      "text": "O que você está estudando?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_which_school_do_you_go_to",
+      "type": "sentence",
+      "text": "Qual escola você frequenta?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_do_you_like_studying",
+      "type": "sentence",
+      "text": "Você gosta de estudar?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_am_learning_portuguese",
+      "type": "sentence",
+      "text": "Eu estou aprendendo português.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_my_teacher_is_very_good",
+      "type": "sentence",
+      "text": "O meu professor é muito bom.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

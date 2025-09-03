@@ -1,0 +1,68 @@
+{
+  "id": "01_essentials_1",
+  "title": "การทักทายและมารยาท (Part 1)",
+  "emoji": "👋",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "01_essentials_hello",
+      "type": "word",
+      "text": "สวัสดี",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_hi",
+      "type": "word",
+      "text": "สวัสดี",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_please",
+      "type": "word",
+      "text": "กรุณา",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thank_you",
+      "type": "word",
+      "text": "ขอบคุณ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thanks",
+      "type": "word",
+      "text": "ขอบคุณ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_excuse_me",
+      "type": "sentence",
+      "text": "ขออภัย.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_sorry",
+      "type": "sentence",
+      "text": "ขออภัย.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_morning",
+      "type": "sentence",
+      "text": "สวัสดีตอนเช้า.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_evening",
+      "type": "sentence",
+      "text": "สวัสดีตอนเย็น.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_night",
+      "type": "sentence",
+      "text": "ราตรีสวัสดิ์.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

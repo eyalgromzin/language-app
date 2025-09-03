@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_2",
+  "title": "Weer en natuur (Part 2)",
+  "emoji": "🌤️",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "22_weather_and_nature_tree",
+      "type": "word",
+      "text": "boom",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_flower",
+      "type": "word",
+      "text": "bloem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_mountain",
+      "type": "word",
+      "text": "berg",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_ocean",
+      "type": "word",
+      "text": "oceaan",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_forest",
+      "type": "word",
+      "text": "bos",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_the_mountain_view_is_beautiful",
+      "type": "sentence",
+      "text": "Het bergzicht is mooi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_these_flowers_are_lovely",
+      "type": "sentence",
+      "text": "Deze bloemen zijn lief.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_ocean_is_very_blue",
+      "type": "sentence",
+      "text": "De oceaan is heel blauw.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_what_is_the_weather_like",
+      "type": "sentence",
+      "text": "Hoe is het weer?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_i_hope_it_does_not_snow",
+      "type": "sentence",
+      "text": "Ik hoop dat het niet sneeuwt.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

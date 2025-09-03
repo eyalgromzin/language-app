@@ -1,0 +1,68 @@
+{
+  "id": "37_home_and_furniture_1",
+  "title": "Home & Furniture (Part 1)",
+  "emoji": "🏠",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "37_home_and_furniture_home",
+      "type": "word",
+      "text": "casa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_house",
+      "type": "word",
+      "text": "casa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_room",
+      "type": "word",
+      "text": "habitación",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_kitchen",
+      "type": "word",
+      "text": "cocina",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_bedroom",
+      "type": "word",
+      "text": "dormitorio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_welcome_to_my_home",
+      "type": "sentence",
+      "text": "Bienvenido a mi casa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_how_many_rooms_does_your_house_have",
+      "type": "sentence",
+      "text": "¿Cuántas habitaciones tiene tu casa?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_the_kitchen_is_very_modern",
+      "type": "sentence",
+      "text": "La cocina es muy moderna.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_my_bedroom_is_on_the_second_floor",
+      "type": "sentence",
+      "text": "Mi dormitorio está en el segundo piso.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_please_sit_at_the_table",
+      "type": "sentence",
+      "text": "Por favor, siéntate en la mesa.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

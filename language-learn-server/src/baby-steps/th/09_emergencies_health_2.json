@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_2",
+  "title": "เหตุฉุกเฉินและสุขภาพ (Part 2)",
+  "emoji": "⛑️",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "09_emergencies_health_pain",
+      "type": "word",
+      "text": "เจ็บ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_medicine",
+      "type": "word",
+      "text": "ยา",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_ambulance",
+      "type": "word",
+      "text": "รถพยาบาล",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_police",
+      "type": "word",
+      "text": "ตำรวจ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_fire",
+      "type": "word",
+      "text": "ไฟ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_i_have_a_headache",
+      "type": "sentence",
+      "text": "ฉันปวดหัว.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_the_police",
+      "type": "sentence",
+      "text": "เรียกตำรวจ!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_this_is_an_emergency",
+      "type": "sentence",
+      "text": "นี่เป็นเหตุฉุกเฉิน.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_need_help",
+      "type": "sentence",
+      "text": "ฉันต้องการความช่วยเหลือ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_are_you_okay",
+      "type": "sentence",
+      "text": "คุณโอเคไหม?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

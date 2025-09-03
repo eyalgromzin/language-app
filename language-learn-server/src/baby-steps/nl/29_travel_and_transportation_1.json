@@ -1,0 +1,68 @@
+{
+  "id": "29_travel_and_transportation_1",
+  "title": "Travel & Transportation (Part 1)",
+  "emoji": "✈️",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "29_travel_and_transportation_travel",
+      "type": "word",
+      "text": "reizen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_trip",
+      "type": "word",
+      "text": "reis",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_airport",
+      "type": "word",
+      "text": "luchthaven",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_hotel",
+      "type": "word",
+      "text": "hotel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_passport",
+      "type": "word",
+      "text": "paspoort",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_where_are_you_traveling_to",
+      "type": "sentence",
+      "text": "Waar reis je naartoe?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_i_am_going_on_a_trip",
+      "type": "sentence",
+      "text": "Ik ga op reis.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_how_do_i_get_to_the_airport",
+      "type": "sentence",
+      "text": "Hoe kom ik bij de luchthaven?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_do_you_have_a_hotel_reservation",
+      "type": "sentence",
+      "text": "Heb je een hotelreservering?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_where_is_my_passport",
+      "type": "sentence",
+      "text": "Waar is mijn paspoort?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

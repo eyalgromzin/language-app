@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_2",
+  "title": "יסודות מזון ומשקאות (Part 2)",
+  "emoji": "🍎",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "06_food_drink_basics_milk",
+      "type": "word",
+      "text": "חלב",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_juice",
+      "type": "word",
+      "text": "מיץ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_rice",
+      "type": "word",
+      "text": "אורז",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_chicken",
+      "type": "word",
+      "text": "עוף",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_fish",
+      "type": "word",
+      "text": "דג",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_how_much_is_it",
+      "type": "sentence",
+      "text": "כמה זה עולה?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_hungry",
+      "type": "sentence",
+      "text": "אני רעב.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_thirsty",
+      "type": "sentence",
+      "text": "אני צמא.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_what_do_you_recommend",
+      "type": "sentence",
+      "text": "מה אתה ממליץ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_the_bill_please",
+      "type": "sentence",
+      "text": "החשבון, בבקשה.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

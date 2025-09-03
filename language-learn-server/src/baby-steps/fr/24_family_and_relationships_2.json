@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_2",
+  "title": "Family & Relationships (Part 2)",
+  "emoji": "👨‍👩‍👧‍👦",
+  "language": "English",
+  "items": [
+    {
+      "id": "24_family_and_relationships_friend",
+      "type": "word",
+      "text": "friend",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_husband",
+      "type": "word",
+      "text": "husband",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_wife",
+      "type": "word",
+      "text": "wife",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_child",
+      "type": "word",
+      "text": "child",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_parent",
+      "type": "word",
+      "text": "parent",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_we_are_good_friends",
+      "type": "sentence",
+      "text": "We are good friends.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_husband_likes_cooking",
+      "type": "sentence",
+      "text": "My husband likes cooking.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_do_you_have_children",
+      "type": "sentence",
+      "text": "Do you have children?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_parents_live_in_the_city",
+      "type": "sentence",
+      "text": "My parents live in the city.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_love_my_family_very_much",
+      "type": "sentence",
+      "text": "I love my family very much.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

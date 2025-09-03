@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_2",
+  "title": "Sport en beweging (Part 2)",
+  "emoji": "⚽",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_win",
+      "type": "word",
+      "text": "winnen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_lose",
+      "type": "word",
+      "text": "verliezen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_score",
+      "type": "word",
+      "text": "score",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_exercise",
+      "type": "word",
+      "text": "oefening",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_fitness",
+      "type": "word",
+      "text": "fitness",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_did_you_win_the_game",
+      "type": "sentence",
+      "text": "Heb je het spel gewonnen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_what_is_the_score",
+      "type": "sentence",
+      "text": "Wat is de score?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_exercise_every_morning",
+      "type": "sentence",
+      "text": "Ik sport elke ochtend.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_go_to_the_gym",
+      "type": "sentence",
+      "text": "Ga je naar de sportschool?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_fitness_is_important_for_health",
+      "type": "sentence",
+      "text": "Fitness is belangrijk voor de gezondheid.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

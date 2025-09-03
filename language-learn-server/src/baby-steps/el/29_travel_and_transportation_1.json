@@ -1,0 +1,68 @@
+{
+  "id": "29_travel_and_transportation_1",
+  "title": "Travel & Transportation (Part 1)",
+  "emoji": "✈️",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "29_travel_and_transportation_travel",
+      "type": "word",
+      "text": "ταξίδι",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_trip",
+      "type": "word",
+      "text": "εκδρομή",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_airport",
+      "type": "word",
+      "text": "αεροδρόμιο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_hotel",
+      "type": "word",
+      "text": "ξενοδοχείο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_passport",
+      "type": "word",
+      "text": "διαβατήριο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_where_are_you_traveling_to",
+      "type": "sentence",
+      "text": "Πού ταξιδεύεις;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_i_am_going_on_a_trip",
+      "type": "sentence",
+      "text": "Πάω σε εκδρομή.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_how_do_i_get_to_the_airport",
+      "type": "sentence",
+      "text": "Πώς πάω στο αεροδρόμιο;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_do_you_have_a_hotel_reservation",
+      "type": "sentence",
+      "text": "Έχετε κράτηση στο ξενοδοχείο;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_where_is_my_passport",
+      "type": "sentence",
+      "text": "Πού είναι το διαβατήριό μου;",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

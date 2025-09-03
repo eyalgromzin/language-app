@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_1",
+  "title": "чрезвычайные ситуации и здоровье (Part 1)",
+  "emoji": "⛑️",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "09_emergencies_health_help",
+      "type": "word",
+      "text": "помощь",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_emergency",
+      "type": "word",
+      "text": "чрезвычайная ситуация",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_doctor",
+      "type": "word",
+      "text": "врач",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_hospital",
+      "type": "word",
+      "text": "больница",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_pain",
+      "type": "word",
+      "text": "боль",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_i_need_help",
+      "type": "sentence",
+      "text": "Мне нужна помощь.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_the_police",
+      "type": "sentence",
+      "text": "Вызовите полицию.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_an_ambulance",
+      "type": "sentence",
+      "text": "Вызовите скорую помощь.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_am_sick",
+      "type": "sentence",
+      "text": "Я болен.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_where_is_the_hospital",
+      "type": "sentence",
+      "text": "Где больница?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "10_daily_routines_1",
+  "title": "routine quotidiane e verbi comuni (Part 1)",
+  "emoji": "☀️",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "10_daily_routines_wake_up",
+      "type": "word",
+      "text": "svegliarsi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_get_up",
+      "type": "word",
+      "text": "alzarsi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_breakfast",
+      "type": "word",
+      "text": "colazione",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_work",
+      "type": "word",
+      "text": "lavorare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_lunch",
+      "type": "word",
+      "text": "pranzo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_i_wake_up_at",
+      "type": "sentence",
+      "text": "Mi sveglio alle",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_get_up_at",
+      "type": "sentence",
+      "text": "Mi alzo alle",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_have_breakfast",
+      "type": "sentence",
+      "text": "Faccio colazione.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_go_to_work",
+      "type": "sentence",
+      "text": "Vado al lavoro.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_have_lunch",
+      "type": "sentence",
+      "text": "Pranzo.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

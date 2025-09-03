@@ -1,0 +1,68 @@
+{
+  "id": "31_emotions_and_feelings_2",
+  "title": "Емоції та почуття (Part 2)",
+  "emoji": "😊",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_tired",
+      "type": "word",
+      "text": "втомлений",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_surprised",
+      "type": "word",
+      "text": "здивований",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_worried",
+      "type": "word",
+      "text": "стурбований",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_confused",
+      "type": "word",
+      "text": "плутаний",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_proud",
+      "type": "word",
+      "text": "гордий",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_feel_nervous_before_exams",
+      "type": "sentence",
+      "text": "Я почуваюся нервово перед іспитами.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_are_you_tired",
+      "type": "sentence",
+      "text": "Ви втомлені?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
+      "type": "sentence",
+      "text": "Я здивований новинами.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_don_t_worry_about_it",
+      "type": "sentence",
+      "text": "Не турбуйтеся про це.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_proud_of_my_achievement",
+      "type": "sentence",
+      "text": "Я гордий своїм досягненням.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

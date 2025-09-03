@@ -1,0 +1,68 @@
+{
+  "id": "29_travel_and_transportation_1",
+  "title": "Du lịch và giao thông (Part 1)",
+  "emoji": "✈️",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "29_travel_and_transportation_travel",
+      "type": "word",
+      "text": "du lịch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_trip",
+      "type": "word",
+      "text": "chuyến đi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_airport",
+      "type": "word",
+      "text": "sân bay",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_hotel",
+      "type": "word",
+      "text": "khách sạn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_passport",
+      "type": "word",
+      "text": "hộ chiếu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_where_are_you_traveling_to",
+      "type": "sentence",
+      "text": "Bạn đang du lịch đến đâu?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_i_am_going_on_a_trip",
+      "type": "sentence",
+      "text": "Tôi đang đi du lịch.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_how_do_i_get_to_the_airport",
+      "type": "sentence",
+      "text": "Làm sao để đến sân bay?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_do_you_have_a_hotel_reservation",
+      "type": "sentence",
+      "text": "Bạn có đặt phòng khách sạn không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_where_is_my_passport",
+      "type": "sentence",
+      "text": "Hộ chiếu của tôi ở đâu?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

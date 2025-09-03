@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_2",
+  "title": "משפחה ומערכות יחסים (Part 2)",
+  "emoji": "👨‍👩‍👧‍👦",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "24_family_and_relationships_friend",
+      "type": "word",
+      "text": "חבר",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_husband",
+      "type": "word",
+      "text": "בעל",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_wife",
+      "type": "word",
+      "text": "אישה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_child",
+      "type": "word",
+      "text": "ילד",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_parent",
+      "type": "word",
+      "text": "הורה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_we_are_good_friends",
+      "type": "sentence",
+      "text": "אנחנו חברים טובים.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_husband_likes_cooking",
+      "type": "sentence",
+      "text": "הבעל שלי אוהב לבשל.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_do_you_have_children",
+      "type": "sentence",
+      "text": "האם יש לך ילדים?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_parents_live_in_the_city",
+      "type": "sentence",
+      "text": "ההורים שלי גרים בעיר.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_love_my_family_very_much",
+      "type": "sentence",
+      "text": "אני אוהב מאוד את המשפחה שלי.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

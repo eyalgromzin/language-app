@@ -1,0 +1,68 @@
+{
+  "id": "13_work_study_1",
+  "title": "concetti di base del lavoro e degli studi (Part 1)",
+  "emoji": "💼",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "13_work_study_work",
+      "type": "word",
+      "text": "lavoro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_study",
+      "type": "word",
+      "text": "studiare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_office",
+      "type": "word",
+      "text": "ufficio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_school",
+      "type": "word",
+      "text": "scuola",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_university",
+      "type": "word",
+      "text": "università",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_what_do_you_do_for_work",
+      "type": "sentence",
+      "text": "Cosa fa di lavoro?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_work_in_an_office",
+      "type": "sentence",
+      "text": "Lavoro in un ufficio.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_am_a_student",
+      "type": "sentence",
+      "text": "Sono studente.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_where_do_you_work",
+      "type": "sentence",
+      "text": "Dove lavora?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_what_time_do_you_start_work",
+      "type": "sentence",
+      "text": "A che ora inizia a lavorare?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

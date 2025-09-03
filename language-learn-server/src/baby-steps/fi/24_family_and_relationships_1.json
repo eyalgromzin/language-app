@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_1",
+  "title": "Perhe ja suhteet (Part 1)",
+  "emoji": "👨‍👩‍👧‍👦",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "24_family_and_relationships_family",
+      "type": "word",
+      "text": "perhe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_mother",
+      "type": "word",
+      "text": "äiti",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_father",
+      "type": "word",
+      "text": "isä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_sister",
+      "type": "word",
+      "text": "sisko",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_brother",
+      "type": "word",
+      "text": "veli",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_how_is_your_family",
+      "type": "sentence",
+      "text": "Miten perheesi voi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_mother_is_a_teacher",
+      "type": "sentence",
+      "text": "Äitini on opettaja.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_have_two_sisters",
+      "type": "sentence",
+      "text": "Minulla on kaksi siskoa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_where_does_your_father_work",
+      "type": "sentence",
+      "text": "Missä isäsi työskentelee?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_brother_is_older_than_me",
+      "type": "sentence",
+      "text": "Veljeni on vanhempi kuin minä.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

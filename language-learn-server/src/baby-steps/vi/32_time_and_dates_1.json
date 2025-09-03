@@ -1,0 +1,68 @@
+{
+  "id": "32_time_and_dates_1",
+  "title": "Thời gian và ngày tháng (Part 1)",
+  "emoji": "⏰",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "32_time_and_dates_time",
+      "type": "word",
+      "text": "thời gian",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_date",
+      "type": "word",
+      "text": "ngày",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_hour",
+      "type": "word",
+      "text": "giờ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_minute",
+      "type": "word",
+      "text": "phút",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_second",
+      "type": "word",
+      "text": "giây",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_what_time_is_it",
+      "type": "sentence",
+      "text": "Mấy giờ rồi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_date_is_today",
+      "type": "sentence",
+      "text": "Hôm nay là ngày mấy?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_it_is_half_past_two",
+      "type": "sentence",
+      "text": "Bây giờ là hai giờ rưỡi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_how_many_minutes_until_break",
+      "type": "sentence",
+      "text": "Còn bao nhiêu phút nữa đến giờ nghỉ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_see_you_in_an_hour",
+      "type": "sentence",
+      "text": "Hẹn gặp lại trong một giờ.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

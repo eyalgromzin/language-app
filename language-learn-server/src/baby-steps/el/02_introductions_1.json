@@ -1,0 +1,68 @@
+{
+  "id": "02_introductions_1",
+  "title": "Introductions & basic info (Part 1)",
+  "emoji": "💬",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "02_introductions_name",
+      "type": "word",
+      "text": "όνομα",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_meet",
+      "type": "word",
+      "text": "γνωρίζω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_from",
+      "type": "word",
+      "text": "από",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_speak",
+      "type": "word",
+      "text": "μιλώ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_language",
+      "type": "word",
+      "text": "γλώσσα",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_my_name_is",
+      "type": "sentence",
+      "text": "Το όνομά μου είναι …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_is_your_name",
+      "type": "sentence",
+      "text": "Πώς σε λένε;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_nice_to_meet_you",
+      "type": "sentence",
+      "text": "Χαίρομαι που σε γνώρισα.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_how_are_you",
+      "type": "sentence",
+      "text": "Πώς είσαι;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_fine_thank_you",
+      "type": "sentence",
+      "text": "Είμαι καλά, ευχαριστώ.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

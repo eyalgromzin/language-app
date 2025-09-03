@@ -1,0 +1,68 @@
+{
+  "id": "40_advanced_phrases_2",
+  "title": "ביטויים מתקדמים (Part 2)",
+  "emoji": "🚀",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "40_advanced_phrases_approximately",
+      "type": "word",
+      "text": "בערך",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_occasionally",
+      "type": "word",
+      "text": "לעיתים",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_gradually",
+      "type": "word",
+      "text": "בהדרגה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_ultimately",
+      "type": "word",
+      "text": "בסופו של דבר",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_essentially",
+      "type": "word",
+      "text": "במהות",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_it_will_cost_approximately_fifty_dollars",
+      "type": "sentence",
+      "text": "זה יעלה בערך חמישים דולר.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_i_occasionally_visit_my_grandparents",
+      "type": "sentence",
+      "text": "אני מבקר את הסבים שלי לעיתים.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_the_weather_gradually_improved",
+      "type": "sentence",
+      "text": "המזג אוויר השתפר בהדרגה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_ultimately_we_reached_our_goal",
+      "type": "sentence",
+      "text": "בסופו של דבר, הגענו למטרה שלנו.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_essentially_this_is_the_same_thing",
+      "type": "sentence",
+      "text": "במהות, זה אותו דבר.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

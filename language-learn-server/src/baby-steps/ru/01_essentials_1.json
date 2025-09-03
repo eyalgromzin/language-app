@@ -1,0 +1,68 @@
+{
+  "id": "01_essentials_1",
+  "title": "основы (Part 1)",
+  "emoji": "👋",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "01_essentials_hello",
+      "type": "word",
+      "text": "привет",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_goodbye",
+      "type": "word",
+      "text": "до свидания",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_please",
+      "type": "word",
+      "text": "пожалуйста",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thank_you",
+      "type": "word",
+      "text": "спасибо",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_yes",
+      "type": "word",
+      "text": "да",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_hello_how_are_you",
+      "type": "sentence",
+      "text": "Привет, как дела?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_please_help_me",
+      "type": "sentence",
+      "text": "Пожалуйста, помогите мне.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_thank_you_very_much",
+      "type": "sentence",
+      "text": "Спасибо большое.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_yes_i_understand",
+      "type": "sentence",
+      "text": "Да, я понимаю.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_no_i_dont_know",
+      "type": "sentence",
+      "text": "Нет, я не знаю.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

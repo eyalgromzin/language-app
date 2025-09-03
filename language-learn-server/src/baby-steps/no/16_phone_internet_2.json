@@ -1,0 +1,68 @@
+{
+  "id": "16_phone_internet_2",
+  "title": "Telefon og internett (Part 2)",
+  "emoji": "📱",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "16_phone_internet_text",
+      "type": "word",
+      "text": "tekst",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_message",
+      "type": "word",
+      "text": "melding",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_password",
+      "type": "word",
+      "text": "passord",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_internet",
+      "type": "word",
+      "text": "internett",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_online",
+      "type": "word",
+      "text": "online",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_do_you_have_internet",
+      "type": "sentence",
+      "text": "Har du internett?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_email",
+      "type": "sentence",
+      "text": "Hva er e-postadressen din?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_i_am_online",
+      "type": "sentence",
+      "text": "Jeg er online.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_send_me_a_message",
+      "type": "sentence",
+      "text": "Kan du sende meg en melding?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_the_wifi_is_slow",
+      "type": "sentence",
+      "text": "Wifien er treg.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

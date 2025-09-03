@@ -1,0 +1,68 @@
+{
+  "id": "25_work_and_profession_2",
+  "title": "งานและอาชีพ (Part 2)",
+  "emoji": "💼",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "25_work_and_profession_colleague",
+      "type": "word",
+      "text": "เพื่อนร่วมงาน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_salary",
+      "type": "word",
+      "text": "เงินเดือน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_project",
+      "type": "word",
+      "text": "โครงการ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_deadline",
+      "type": "word",
+      "text": "กำหนดเวลา",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_career",
+      "type": "word",
+      "text": "อาชีพ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_i_work_with_great_colleagues",
+      "type": "sentence",
+      "text": "ฉันทำงานกับเพื่อนร่วมงานที่ดี.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_what_is_your_salary",
+      "type": "sentence",
+      "text": "เงินเดือนของคุณเท่าไหร่?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_this_project_is_very_important",
+      "type": "sentence",
+      "text": "โครงการนี้สำคัญมาก.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_the_deadline_is_next_week",
+      "type": "sentence",
+      "text": "กำหนดเวลาคือสัปดาห์หน้า.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_want_to_advance_my_career",
+      "type": "sentence",
+      "text": "ฉันต้องการก้าวหน้าในอาชีพของฉัน.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_2",
+  "title": "Sở thích và giải trí (Part 2)",
+  "emoji": "🎬",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_paint",
+      "type": "word",
+      "text": "vẽ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_cook",
+      "type": "word",
+      "text": "nấu ăn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_garden",
+      "type": "word",
+      "text": "vườn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_photography",
+      "type": "word",
+      "text": "nhiếp ảnh",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_collect",
+      "type": "word",
+      "text": "sưu tầm",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_want_to_learn_to_paint",
+      "type": "sentence",
+      "text": "Tôi muốn học vẽ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_cooking",
+      "type": "sentence",
+      "text": "Bạn có thích nấu ăn không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_my_garden_is_very_beautiful",
+      "type": "sentence",
+      "text": "Vườn của tôi rất đẹp.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_take_photos_as_a_hobby",
+      "type": "sentence",
+      "text": "Tôi chụp ảnh như một sở thích.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_do_you_collect",
+      "type": "sentence",
+      "text": "Bạn sưu tầm gì?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

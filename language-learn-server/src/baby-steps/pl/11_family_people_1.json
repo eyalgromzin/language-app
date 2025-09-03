@@ -1,0 +1,68 @@
+{
+  "id": "11_family_people_1",
+  "title": "Rodzina i ludzie (Part 1)",
+  "emoji": "👪",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "11_family_people_mother",
+      "type": "word",
+      "text": "matka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_father",
+      "type": "word",
+      "text": "ojciec",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_brother",
+      "type": "word",
+      "text": "brat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_sister",
+      "type": "word",
+      "text": "siostra",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_friend",
+      "type": "word",
+      "text": "przyjaciel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_this_is_my_friend",
+      "type": "sentence",
+      "text": "To jest mój przyjaciel.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_i_am_with_my_family",
+      "type": "sentence",
+      "text": "Jestem z moją rodziną.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_how_many_children_do_you_have",
+      "type": "sentence",
+      "text": "Ile masz dzieci?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_this_is_my_mother",
+      "type": "sentence",
+      "text": "To jest moja matka.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_where_is_your_family",
+      "type": "sentence",
+      "text": "Gdzie jest twoja rodzina?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

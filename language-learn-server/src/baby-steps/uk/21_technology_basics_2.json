@@ -1,0 +1,68 @@
+{
+  "id": "21_technology_basics_2",
+  "title": "Основи технологій (Part 2)",
+  "emoji": "💻",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "21_technology_basics_email",
+      "type": "word",
+      "text": "електронна пошта",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_website",
+      "type": "word",
+      "text": "веб-сайт",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_download",
+      "type": "word",
+      "text": "завантажувати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_upload",
+      "type": "word",
+      "text": "завантажувати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_wifi",
+      "type": "word",
+      "text": "вай-фай",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_my_phone_is_not_working",
+      "type": "sentence",
+      "text": "Мій телефон не працює.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_forgot_my_password",
+      "type": "sentence",
+      "text": "Я забув свій пароль.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_the_internet_is_slow_today",
+      "type": "sentence",
+      "text": "Інтернет сьогодні повільний.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_can_you_upload_the_file",
+      "type": "sentence",
+      "text": "Можете ви завантажити файл?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_this_app_is_very_useful",
+      "type": "sentence",
+      "text": "Цей додаток дуже корисний.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

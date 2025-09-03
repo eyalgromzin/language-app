@@ -1,0 +1,68 @@
+{
+  "id": "25_work_and_profession_2",
+  "title": "Práce a povolání (Part 2)",
+  "emoji": "💼",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "25_work_and_profession_colleague",
+      "type": "word",
+      "text": "kolega",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_salary",
+      "type": "word",
+      "text": "plat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_project",
+      "type": "word",
+      "text": "projekt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_deadline",
+      "type": "word",
+      "text": "termín",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_career",
+      "type": "word",
+      "text": "kariéra",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_i_work_with_great_colleagues",
+      "type": "sentence",
+      "text": "Pracuji se skvělými kolegy.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_what_is_your_salary",
+      "type": "sentence",
+      "text": "Jaký je váš plat?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_this_project_is_very_important",
+      "type": "sentence",
+      "text": "Tento projekt je velmi důležitý.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_the_deadline_is_next_week",
+      "type": "sentence",
+      "text": "Termín je příští týden.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_want_to_advance_my_career",
+      "type": "sentence",
+      "text": "Chci rozvíjet svou kariéru.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

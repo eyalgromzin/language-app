@@ -1,0 +1,68 @@
+{
+  "id": "31_emotions_and_feelings_1",
+  "title": "emozioni e sentimenti (Part 1)",
+  "emoji": "😊",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_happy",
+      "type": "word",
+      "text": "felice",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_sad",
+      "type": "word",
+      "text": "triste",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_angry",
+      "type": "word",
+      "text": "arrabbiato",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_excited",
+      "type": "word",
+      "text": "eccitato",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_nervous",
+      "type": "word",
+      "text": "nervoso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_how_are_you_feeling_today",
+      "type": "sentence",
+      "text": "Come si sente oggi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_very_happy",
+      "type": "sentence",
+      "text": "Sono molto felice.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_why_are_you_sad",
+      "type": "sentence",
+      "text": "Perché è triste?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_excited_about",
+      "type": "sentence",
+      "text": "Sono eccitato per",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_dont_be_nervous",
+      "type": "sentence",
+      "text": "Non essere nervoso.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

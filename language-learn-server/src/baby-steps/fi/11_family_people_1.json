@@ -1,0 +1,68 @@
+{
+  "id": "11_family_people_1",
+  "title": "Perhe ja ihmiset (Part 1)",
+  "emoji": "👪",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "11_family_people_mother",
+      "type": "word",
+      "text": "äiti",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_father",
+      "type": "word",
+      "text": "isä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_brother",
+      "type": "word",
+      "text": "veli",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_sister",
+      "type": "word",
+      "text": "sisko",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_friend",
+      "type": "word",
+      "text": "ystävä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_this_is_my_friend",
+      "type": "sentence",
+      "text": "Tämä on ystäväni.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_i_am_with_my_family",
+      "type": "sentence",
+      "text": "Olen perheeni kanssa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_how_many_children_do_you_have",
+      "type": "sentence",
+      "text": "Kuinka monta lasta sinulla on?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_this_is_my_mother",
+      "type": "sentence",
+      "text": "Tämä on äitini.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_where_is_your_family",
+      "type": "sentence",
+      "text": "Missä perheesi on?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

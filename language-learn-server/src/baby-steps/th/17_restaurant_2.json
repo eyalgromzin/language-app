@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_2",
+  "title": "ที่ร้านอาหาร (Part 2)",
+  "emoji": "🍽️",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "17_restaurant_drink",
+      "type": "word",
+      "text": "เครื่องดื่ม",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_order",
+      "type": "word",
+      "text": "สั่ง",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_reservation",
+      "type": "word",
+      "text": "การจอง",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_service",
+      "type": "word",
+      "text": "บริการ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_tip",
+      "type": "word",
+      "text": "ทิป",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_i_would_like_to_order",
+      "type": "sentence",
+      "text": "ฉันต้องการสั่ง.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_how_long_will_it_take",
+      "type": "sentence",
+      "text": "จะใช้เวลานานเท่าไหร่?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_can_we_have_some_water",
+      "type": "sentence",
+      "text": "เราขอน้ำได้ไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_the_food_is_delicious",
+      "type": "sentence",
+      "text": "อาหารอร่อย.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_do_you_accept_credit_cards",
+      "type": "sentence",
+      "text": "คุณรับบัตรเครดิตไหม?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

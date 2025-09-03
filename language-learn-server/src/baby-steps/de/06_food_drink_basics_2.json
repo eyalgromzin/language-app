@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_2",
+  "title": "Food & Drink Basics (Part 2)",
+  "emoji": "🍎",
+  "language": "German",
+  "items": [
+    {
+      "id": "06_food_drink_basics_coffee",
+      "type": "word",
+      "text": "Kaffee",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_tea",
+      "type": "word",
+      "text": "Tee",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_juice",
+      "type": "word",
+      "text": "Saft",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_meat",
+      "type": "word",
+      "text": "Fleisch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_fish",
+      "type": "word",
+      "text": "Fisch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_how_much_is_it",
+      "type": "sentence",
+      "text": "Wie viel kostet es?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_it_is_delicious",
+      "type": "sentence",
+      "text": "Es ist köstlich.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_like_it",
+      "type": "sentence",
+      "text": "Es gefällt mir.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_don_t_like_it",
+      "type": "sentence",
+      "text": "Es gefällt mir nicht.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_the_bill_please",
+      "type": "sentence",
+      "text": "Die Rechnung, bitte.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

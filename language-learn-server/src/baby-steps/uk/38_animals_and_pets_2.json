@@ -1,0 +1,68 @@
+{
+  "id": "38_animals_and_pets_2",
+  "title": "Тварини та домашні тварини (Part 2)",
+  "emoji": "🐕",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "38_animals_and_pets_fish",
+      "type": "word",
+      "text": "риба",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_horse",
+      "type": "word",
+      "text": "кінь",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_cow",
+      "type": "word",
+      "text": "корова",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_chicken",
+      "type": "word",
+      "text": "курка",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_pig",
+      "type": "word",
+      "text": "свиня",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_horses_are_beautiful_animals",
+      "type": "sentence",
+      "text": "Коні - красиві тварини.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_cows_give_us_milk",
+      "type": "sentence",
+      "text": "Корови дають нам молоко.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_like_chicken",
+      "type": "sentence",
+      "text": "Вам подобається курка?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_pigs_are_very_intelligent",
+      "type": "sentence",
+      "text": "Свині дуже розумні.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_what_is_your_favorite_animal",
+      "type": "sentence",
+      "text": "Яка ваша улюблена тварина?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

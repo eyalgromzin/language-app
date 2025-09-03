@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_1",
+  "title": "sport ed esercizio (Part 1)",
+  "emoji": "⚽",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_sport",
+      "type": "word",
+      "text": "sport",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_football",
+      "type": "word",
+      "text": "calcio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_basketball",
+      "type": "word",
+      "text": "pallacanestro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_tennis",
+      "type": "word",
+      "text": "tennis",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_swimming",
+      "type": "word",
+      "text": "nuoto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_like_sports",
+      "type": "sentence",
+      "text": "Le piacciono gli sport?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_love_playing_football",
+      "type": "sentence",
+      "text": "Amo giocare a calcio.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_what_sport_do_you_play",
+      "type": "sentence",
+      "text": "Che sport pratica?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_go_to_the_gym_every_day",
+      "type": "sentence",
+      "text": "Vado in palestra ogni giorno.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_exercise_is_good_for_health",
+      "type": "sentence",
+      "text": "L'esercizio è buono per la salute.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

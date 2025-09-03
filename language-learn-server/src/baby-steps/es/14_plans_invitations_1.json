@@ -1,0 +1,68 @@
+{
+  "id": "14_plans_invitations_1",
+  "title": "Making plans & invitations (Part 1)",
+  "emoji": "📅",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "14_plans_invitations_today",
+      "type": "word",
+      "text": "hoy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_tomorrow",
+      "type": "word",
+      "text": "mañana",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_weekend",
+      "type": "word",
+      "text": "fin de semana",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_plan",
+      "type": "word",
+      "text": "plan",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_meet",
+      "type": "word",
+      "text": "encontrar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_what_are_you_doing_tomorrow",
+      "type": "sentence",
+      "text": "¿Qué haces mañana?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_would_you_like_to",
+      "type": "sentence",
+      "text": "¿Te gustaría …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_let_us_meet_at",
+      "type": "sentence",
+      "text": "Encontrémonos en …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_see_you_soon",
+      "type": "sentence",
+      "text": "¡Hasta pronto!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_are_you_free_this_weekend",
+      "type": "sentence",
+      "text": "¿Estás libre este fin de semana?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

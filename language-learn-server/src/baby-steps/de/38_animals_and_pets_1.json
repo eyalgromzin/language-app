@@ -1,0 +1,68 @@
+{
+  "id": "38_animals_and_pets_1",
+  "title": "Animals & Pets (Part 1)",
+  "emoji": "🐕",
+  "language": "German",
+  "items": [
+    {
+      "id": "38_animals_and_pets_animal",
+      "type": "word",
+      "text": "Tier",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_pet",
+      "type": "word",
+      "text": "Haustier",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_dog",
+      "type": "word",
+      "text": "Hund",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_cat",
+      "type": "word",
+      "text": "Katze",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_bird",
+      "type": "word",
+      "text": "Vogel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_have_any_pets",
+      "type": "sentence",
+      "text": "Haben Sie Haustiere?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_what_is_your_pet_s_name",
+      "type": "sentence",
+      "text": "Wie heißt Ihr Haustier?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_i_love_animals",
+      "type": "sentence",
+      "text": "Ich liebe Tiere.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_this_dog_is_very_friendly",
+      "type": "sentence",
+      "text": "Dieser Hund ist sehr freundlich.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_where_is_the_nearest_pet_store",
+      "type": "sentence",
+      "text": "Wo ist der nächste Zoofachhandel?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

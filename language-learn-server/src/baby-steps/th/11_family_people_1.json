@@ -1,0 +1,68 @@
+{
+  "id": "11_family_people_1",
+  "title": "ครอบครัวและผู้คน (Part 1)",
+  "emoji": "👪",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "11_family_people_mother",
+      "type": "word",
+      "text": "แม่",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_father",
+      "type": "word",
+      "text": "พ่อ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_brother",
+      "type": "word",
+      "text": "พี่ชาย",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_sister",
+      "type": "word",
+      "text": "พี่สาว",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_friend",
+      "type": "word",
+      "text": "เพื่อน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_this_is_my_friend",
+      "type": "sentence",
+      "text": "นี่คือเพื่อนของฉัน.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_i_am_with_my_family",
+      "type": "sentence",
+      "text": "ฉันอยู่กับครอบครัวของฉัน.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_how_many_children_do_you_have",
+      "type": "sentence",
+      "text": "คุณมีลูกกี่คน?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_this_is_my_mother",
+      "type": "sentence",
+      "text": "นี่คือแม่ของฉัน.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_where_is_your_family",
+      "type": "sentence",
+      "text": "ครอบครัวของคุณอยู่ไหน?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

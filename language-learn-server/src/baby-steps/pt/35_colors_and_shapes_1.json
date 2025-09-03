@@ -1,0 +1,68 @@
+{
+  "id": "35_colors_and_shapes_1",
+  "title": "cores e formas (Part 1)",
+  "emoji": "🎨",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "35_colors_and_shapes_red",
+      "type": "word",
+      "text": "vermelho",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_blue",
+      "type": "word",
+      "text": "azul",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_green",
+      "type": "word",
+      "text": "verde",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_yellow",
+      "type": "word",
+      "text": "amarelo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_black",
+      "type": "word",
+      "text": "preto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_what_color_is_it",
+      "type": "sentence",
+      "text": "Que cor é?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_i_like_this_color",
+      "type": "sentence",
+      "text": "Eu gosto desta cor.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_what_shape_is_it",
+      "type": "sentence",
+      "text": "Que forma é?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_colors_are_beautiful",
+      "type": "sentence",
+      "text": "Cores são bonitas.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_shapes_are_interesting",
+      "type": "sentence",
+      "text": "Formas são interessantes.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

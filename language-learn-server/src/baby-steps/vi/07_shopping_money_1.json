@@ -1,0 +1,68 @@
+{
+  "id": "07_shopping_money_1",
+  "title": "Mua sắm và tiền bạc (Part 1)",
+  "emoji": "🛍️",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "07_shopping_money_price",
+      "type": "word",
+      "text": "giá",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cash",
+      "type": "word",
+      "text": "tiền mặt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_card",
+      "type": "word",
+      "text": "thẻ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_receipt",
+      "type": "word",
+      "text": "hóa đơn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_money",
+      "type": "word",
+      "text": "tiền",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_how_much_is_this",
+      "type": "sentence",
+      "text": "Cái này bao nhiêu tiền?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_take_cards",
+      "type": "sentence",
+      "text": "Bạn có nhận thẻ không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_i_am_just_looking",
+      "type": "sentence",
+      "text": "Tôi chỉ xem thôi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_can_i_try_it_on",
+      "type": "sentence",
+      "text": "Tôi có thể thử không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_is_there_a_discount",
+      "type": "sentence",
+      "text": "Có giảm giá không?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

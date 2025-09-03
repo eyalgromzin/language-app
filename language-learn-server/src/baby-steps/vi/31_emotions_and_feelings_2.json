@@ -1,0 +1,68 @@
+{
+  "id": "31_emotions_and_feelings_2",
+  "title": "Cảm xúc và cảm giác (Part 2)",
+  "emoji": "😊",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_tired",
+      "type": "word",
+      "text": "mệt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_surprised",
+      "type": "word",
+      "text": "ngạc nhiên",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_worried",
+      "type": "word",
+      "text": "lo lắng",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_confused",
+      "type": "word",
+      "text": "bối rối",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_proud",
+      "type": "word",
+      "text": "tự hào",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_feel_nervous_before_exams",
+      "type": "sentence",
+      "text": "Tôi cảm thấy lo lắng trước kỳ thi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_are_you_tired",
+      "type": "sentence",
+      "text": "Bạn có mệt không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
+      "type": "sentence",
+      "text": "Tôi ngạc nhiên về tin tức.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_don_t_worry_about_it",
+      "type": "sentence",
+      "text": "Đừng lo lắng về nó.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_proud_of_my_achievement",
+      "type": "sentence",
+      "text": "Tôi tự hào về thành tích của mình.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

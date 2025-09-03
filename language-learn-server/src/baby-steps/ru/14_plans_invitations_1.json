@@ -1,0 +1,68 @@
+{
+  "id": "14_plans_invitations_1",
+  "title": "планы и приглашения (Part 1)",
+  "emoji": "📅",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "14_plans_invitations_plan",
+      "type": "word",
+      "text": "план",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_free",
+      "type": "word",
+      "text": "свободный",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_busy",
+      "type": "word",
+      "text": "занятый",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_meet",
+      "type": "word",
+      "text": "встречаться",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_invite",
+      "type": "word",
+      "text": "приглашать",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_what_are_your_plans",
+      "type": "sentence",
+      "text": "Какие у вас планы?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_are_you_free_tomorrow",
+      "type": "sentence",
+      "text": "Вы свободны завтра?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_i_am_busy_today",
+      "type": "sentence",
+      "text": "Я занят сегодня.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_would_you_like_to_meet",
+      "type": "sentence",
+      "text": "Хотели бы вы встретиться?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_you_are_invited",
+      "type": "sentence",
+      "text": "Вы приглашены.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

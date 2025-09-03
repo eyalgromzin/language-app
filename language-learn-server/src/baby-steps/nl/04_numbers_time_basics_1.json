@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_1",
+  "title": "Cijfers en tijd basis (Part 1)",
+  "emoji": "🔢",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_zero",
+      "type": "word",
+      "text": "nul",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_one",
+      "type": "word",
+      "text": "één",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_two",
+      "type": "word",
+      "text": "twee",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_three",
+      "type": "word",
+      "text": "drie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_four",
+      "type": "word",
+      "text": "vier",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_what_time_is_it",
+      "type": "sentence",
+      "text": "Hoe laat is het?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_three_o_clock",
+      "type": "sentence",
+      "text": "Het is drie uur.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_half_past_two",
+      "type": "sentence",
+      "text": "Het is half drie.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_day_is_today",
+      "type": "sentence",
+      "text": "Welke dag is het vandaag?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_today_is_monday",
+      "type": "sentence",
+      "text": "Vandaag is maandag.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_2",
+  "title": "Số và thời gian cơ bản (Part 2)",
+  "emoji": "🔢",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_five",
+      "type": "word",
+      "text": "năm",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_six",
+      "type": "word",
+      "text": "sáu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_seven",
+      "type": "word",
+      "text": "bảy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_eight",
+      "type": "word",
+      "text": "tám",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_nine",
+      "type": "word",
+      "text": "chín",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_see_you_tomorrow",
+      "type": "sentence",
+      "text": "Hẹn gặp lại ngày mai.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_i_am_late",
+      "type": "sentence",
+      "text": "Tôi đến muộn.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_time_do_you_start",
+      "type": "sentence",
+      "text": "Bạn bắt đầu lúc mấy giờ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_time_to_go",
+      "type": "sentence",
+      "text": "Đã đến lúc phải đi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_how_long_does_it_take",
+      "type": "sentence",
+      "text": "Mất bao lâu?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

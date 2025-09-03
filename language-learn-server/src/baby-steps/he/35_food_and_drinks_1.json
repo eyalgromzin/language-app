@@ -1,0 +1,68 @@
+{
+  "id": "35_food_and_drinks_1",
+  "title": "מזון ומשקאות (Part 1)",
+  "emoji": "🍕",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "35_food_and_drinks_food",
+      "type": "word",
+      "text": "מזון",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_drink",
+      "type": "word",
+      "text": "משקה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_breakfast",
+      "type": "word",
+      "text": "ארוחת בוקר",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_lunch",
+      "type": "word",
+      "text": "ארוחת צהריים",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_dinner",
+      "type": "word",
+      "text": "ארוחת ערב",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_what_would_you_like_to_eat",
+      "type": "sentence",
+      "text": "מה תרצה לאכול?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_can_i_have_something_to_drink",
+      "type": "sentence",
+      "text": "האם אני יכול לקבל משהו לשתות?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_did_you_have_for_breakfast",
+      "type": "sentence",
+      "text": "מה אכלת לארוחת בוקר?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_let_s_go_to_a_restaurant_for_lunch",
+      "type": "sentence",
+      "text": "בוא נלך למסעדה לארוחת צהריים.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_time_is_dinner",
+      "type": "sentence",
+      "text": "באיזו שעה ארוחת הערב?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

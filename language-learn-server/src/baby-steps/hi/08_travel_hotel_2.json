@@ -1,0 +1,68 @@
+{
+  "id": "08_travel_hotel_2",
+  "title": "यात्रा और होटल (Part 2)",
+  "emoji": "🧳",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "08_travel_hotel_airport",
+      "type": "word",
+      "text": "हवाई अड्डा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_station",
+      "type": "word",
+      "text": "स्टेशन",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_room",
+      "type": "word",
+      "text": "कमरा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_key",
+      "type": "word",
+      "text": "key",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_map",
+      "type": "word",
+      "text": "map",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_where_is_my_room",
+      "type": "sentence",
+      "text": "Where is my room?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_do_you_have_wifi",
+      "type": "sentence",
+      "text": "Do you have WiFi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_how_do_i_get_to_the_airport",
+      "type": "sentence",
+      "text": "मैं हवाई अड्डे तक कैसे पहुंचूं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_is_breakfast_included",
+      "type": "sentence",
+      "text": "Is breakfast included?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_can_you_call_me_a_taxi",
+      "type": "sentence",
+      "text": "Can you call me a taxi?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

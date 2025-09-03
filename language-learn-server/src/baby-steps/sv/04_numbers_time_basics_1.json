@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_1",
+  "title": "Siffror och tid grunderna (Part 1)",
+  "emoji": "🔢",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_zero",
+      "type": "word",
+      "text": "noll",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_one",
+      "type": "word",
+      "text": "ett",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_two",
+      "type": "word",
+      "text": "två",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_three",
+      "type": "word",
+      "text": "tre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_four",
+      "type": "word",
+      "text": "fyra",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_what_time_is_it",
+      "type": "sentence",
+      "text": "Vad är klockan?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_three_o_clock",
+      "type": "sentence",
+      "text": "Klockan är tre.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_half_past_two",
+      "type": "sentence",
+      "text": "Klockan är halv tre.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_day_is_today",
+      "type": "sentence",
+      "text": "Vilken dag är det idag?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_today_is_monday",
+      "type": "sentence",
+      "text": "Idag är det måndag.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

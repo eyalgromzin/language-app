@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_1",
+  "title": "в ресторане (Part 1)",
+  "emoji": "🍽️",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "17_restaurant_restaurant",
+      "type": "word",
+      "text": "ресторан",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_menu",
+      "type": "word",
+      "text": "меню",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_food",
+      "type": "word",
+      "text": "еда",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_drink",
+      "type": "word",
+      "text": "напиток",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_table",
+      "type": "word",
+      "text": "стол",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_can_i_see_the_menu",
+      "type": "sentence",
+      "text": "Могу я посмотреть меню?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_i_would_like_to_order",
+      "type": "sentence",
+      "text": "Я хотел бы заказать.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_what_do_you_recommend",
+      "type": "sentence",
+      "text": "Что вы рекомендуете?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_the_bill_please",
+      "type": "sentence",
+      "text": "Счет, пожалуйста.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_restaurants_are_expensive",
+      "type": "sentence",
+      "text": "Рестораны дорогие.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

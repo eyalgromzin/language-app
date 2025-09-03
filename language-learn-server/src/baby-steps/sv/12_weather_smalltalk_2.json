@@ -1,0 +1,68 @@
+{
+  "id": "12_weather_smalltalk_2",
+  "title": "Väder och småprat (Part 2)",
+  "emoji": "🌦️",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_windy",
+      "type": "word",
+      "text": "blåsigt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_cloudy",
+      "type": "word",
+      "text": "molnigt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_snow",
+      "type": "word",
+      "text": "snö",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_nice",
+      "type": "word",
+      "text": "fint",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_bad",
+      "type": "word",
+      "text": "dåligt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_what_a_beautiful_day",
+      "type": "sentence",
+      "text": "Vilken vacker dag!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_the_weather_is_bad",
+      "type": "sentence",
+      "text": "Vädret är dåligt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_do_you_like_this_weather",
+      "type": "sentence",
+      "text": "Tycker du om detta väder?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_windy_today",
+      "type": "sentence",
+      "text": "Det är blåsigt idag.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_are_you_today",
+      "type": "sentence",
+      "text": "Hur mår du idag?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

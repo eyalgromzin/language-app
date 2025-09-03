@@ -1,0 +1,68 @@
+{
+  "id": "25_work_and_profession_1",
+  "title": "trabalho e profissão (Part 1)",
+  "emoji": "💼",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "25_work_and_profession_work",
+      "type": "word",
+      "text": "trabalho",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_job",
+      "type": "word",
+      "text": "emprego",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_profession",
+      "type": "word",
+      "text": "profissão",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_office",
+      "type": "word",
+      "text": "escritório",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_meeting",
+      "type": "word",
+      "text": "reunião",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_what_do_you_do_for_work",
+      "type": "sentence",
+      "text": "O que você faz no trabalho?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_where_do_you_work",
+      "type": "sentence",
+      "text": "Onde você trabalha?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_how_long_have_you_been_working_there",
+      "type": "sentence",
+      "text": "Há quanto tempo você trabalha lá?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Você gosta do seu trabalho?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_have_a_meeting_at",
+      "type": "sentence",
+      "text": "Eu tenho uma reunião às",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

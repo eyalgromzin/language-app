@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_1",
+  "title": "Ruoka ja juoma perusteet (Part 1)",
+  "emoji": "🍎",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "06_food_drink_basics_water",
+      "type": "word",
+      "text": "vesi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_coffee",
+      "type": "word",
+      "text": "kahvi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_tea",
+      "type": "word",
+      "text": "tee",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_bread",
+      "type": "word",
+      "text": "leipä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_apple",
+      "type": "word",
+      "text": "omena",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_i_would_like_water_please",
+      "type": "sentence",
+      "text": "Saisinko vettä, kiitos.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_the_food_is_delicious",
+      "type": "sentence",
+      "text": "Ruoka on herkullista.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_allergic_to",
+      "type": "sentence",
+      "text": "Olen allerginen …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_no_sugar_please",
+      "type": "sentence",
+      "text": "Ei sokeria, kiitos.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_do_you_have_vegetarian_food",
+      "type": "sentence",
+      "text": "Onko teillä kasvisruokaa?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

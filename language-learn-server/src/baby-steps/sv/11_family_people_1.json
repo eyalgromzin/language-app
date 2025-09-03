@@ -1,0 +1,68 @@
+{
+  "id": "11_family_people_1",
+  "title": "Familj och människor (Part 1)",
+  "emoji": "👪",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "11_family_people_mother",
+      "type": "word",
+      "text": "mamma",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_father",
+      "type": "word",
+      "text": "pappa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_brother",
+      "type": "word",
+      "text": "bror",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_sister",
+      "type": "word",
+      "text": "syster",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_friend",
+      "type": "word",
+      "text": "vän",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_this_is_my_friend",
+      "type": "sentence",
+      "text": "Detta är min vän.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_i_am_with_my_family",
+      "type": "sentence",
+      "text": "Jag är med min familj.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_how_many_children_do_you_have",
+      "type": "sentence",
+      "text": "Hur många barn har du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_this_is_my_mother",
+      "type": "sentence",
+      "text": "Detta är min mamma.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_where_is_your_family",
+      "type": "sentence",
+      "text": "Var är din familj?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_1",
+  "title": "связки и продвинутые фразы (Part 1)",
+  "emoji": "🔗",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "20_connectors_advanced_and",
+      "type": "word",
+      "text": "и",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_or",
+      "type": "word",
+      "text": "или",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_but",
+      "type": "word",
+      "text": "но",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_because",
+      "type": "word",
+      "text": "потому что",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_although",
+      "type": "word",
+      "text": "хотя",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_when",
+      "type": "sentence",
+      "text": "когда",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_where",
+      "type": "sentence",
+      "text": "где",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_why",
+      "type": "sentence",
+      "text": "почему",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_how",
+      "type": "sentence",
+      "text": "как",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_what",
+      "type": "sentence",
+      "text": "что",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

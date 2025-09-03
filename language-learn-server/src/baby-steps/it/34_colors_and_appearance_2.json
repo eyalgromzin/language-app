@@ -1,0 +1,68 @@
+{
+  "id": "34_colors_and_appearance_2",
+  "title": "colori e aspetto (Part 2)",
+  "emoji": "🎨",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "34_colors_and_appearance_white",
+      "type": "word",
+      "text": "bianco",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_big",
+      "type": "word",
+      "text": "grande",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_small",
+      "type": "word",
+      "text": "piccolo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_beautiful",
+      "type": "word",
+      "text": "bello",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_ugly",
+      "type": "word",
+      "text": "brutto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_do_you_like_this_color",
+      "type": "sentence",
+      "text": "Le piace questo colore?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_it_is_too_small",
+      "type": "sentence",
+      "text": "È troppo piccolo.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_colors_are_important",
+      "type": "sentence",
+      "text": "I colori sono importanti.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_what_does_it_look_like",
+      "type": "sentence",
+      "text": "Come appare?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_appearance_matters",
+      "type": "sentence",
+      "text": "L'aspetto conta.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

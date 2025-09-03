@@ -1,0 +1,68 @@
+{
+  "id": "38_animals_and_pets_1",
+  "title": "Động vật và thú cưng (Part 1)",
+  "emoji": "🐕",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "38_animals_and_pets_animal",
+      "type": "word",
+      "text": "động vật",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_pet",
+      "type": "word",
+      "text": "thú cưng",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_dog",
+      "type": "word",
+      "text": "chó",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_cat",
+      "type": "word",
+      "text": "mèo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_bird",
+      "type": "word",
+      "text": "chim",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_have_any_pets",
+      "type": "sentence",
+      "text": "Bạn có thú cưng nào không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_my_dog_is_very_friendly",
+      "type": "sentence",
+      "text": "Chó của tôi rất thân thiện.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_cats_are_independent_animals",
+      "type": "sentence",
+      "text": "Mèo là động vật độc lập.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_i_love_watching_birds_fly",
+      "type": "sentence",
+      "text": "Tôi thích xem chim bay.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_how_many_fish_do_you_have",
+      "type": "sentence",
+      "text": "Bạn có bao nhiêu con cá?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "36_clothing_and_fashion_2",
+  "title": "Одяг та мода (Part 2)",
+  "emoji": "👕",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_hat",
+      "type": "word",
+      "text": "капелюх",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_jacket",
+      "type": "word",
+      "text": "куртка",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_size",
+      "type": "word",
+      "text": "розмір",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_style",
+      "type": "word",
+      "text": "стиль",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_fashion",
+      "type": "word",
+      "text": "мода",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_size_do_you_wear",
+      "type": "sentence",
+      "text": "Який розмір ви носите?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_need_a_warm_jacket_for_winter",
+      "type": "sentence",
+      "text": "Мені потрібна тепла куртка на зиму.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_is_your_fashion_style",
+      "type": "sentence",
+      "text": "Який ваш стиль моди?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_this_hat_protects_me_from_the_sun",
+      "type": "sentence",
+      "text": "Цей капелюх захищає мене від сонця.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_follow_fashion_trends",
+      "type": "sentence",
+      "text": "Ви слідкуєте за модними трендами?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

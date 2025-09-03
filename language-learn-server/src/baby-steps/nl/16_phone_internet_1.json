@@ -1,0 +1,68 @@
+{
+  "id": "16_phone_internet_1",
+  "title": "Telefoon en internet (Part 1)",
+  "emoji": "📱",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "16_phone_internet_phone",
+      "type": "word",
+      "text": "telefoon",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_number",
+      "type": "word",
+      "text": "nummer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_email",
+      "type": "word",
+      "text": "e-mail",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_wifi",
+      "type": "word",
+      "text": "wifi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_call",
+      "type": "word",
+      "text": "bellen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_phone_number",
+      "type": "sentence",
+      "text": "Wat is je telefoonnummer?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_what_is_the_wifi_password",
+      "type": "sentence",
+      "text": "Wat is het wifi-wachtwoord?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_i_use_your_phone",
+      "type": "sentence",
+      "text": "Mag ik je telefoon gebruiken?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_call_me",
+      "type": "sentence",
+      "text": "Kun je me bellen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_i_will_text_you",
+      "type": "sentence",
+      "text": "Ik stuur je een bericht.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

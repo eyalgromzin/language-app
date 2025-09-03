@@ -1,0 +1,68 @@
+{
+  "id": "26_health_and_medical_2",
+  "title": "Sức khỏe và y tế (Part 2)",
+  "emoji": "🏥",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "26_health_and_medical_sick",
+      "type": "word",
+      "text": "ốm",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_fever",
+      "type": "word",
+      "text": "sốt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_appointment",
+      "type": "word",
+      "text": "cuộc hẹn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_emergency",
+      "type": "word",
+      "text": "khẩn cấp",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_treatment",
+      "type": "word",
+      "text": "điều trị",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_i_am_feeling_sick",
+      "type": "sentence",
+      "text": "Tôi cảm thấy ốm.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_do_you_have_any_medicine",
+      "type": "sentence",
+      "text": "Bạn có thuốc gì không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_this_is_an_emergency",
+      "type": "sentence",
+      "text": "Đây là tình huống khẩn cấp.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_what_treatment_do_i_need",
+      "type": "sentence",
+      "text": "Tôi cần điều trị gì?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_my_fever_is_very_high",
+      "type": "sentence",
+      "text": "Sốt của tôi rất cao.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

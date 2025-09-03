@@ -1,0 +1,68 @@
+{
+  "id": "18_transportation_details_1",
+  "title": "dettagli di trasporto (Part 1)",
+  "emoji": "🚌",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "18_transportation_details_bus",
+      "type": "word",
+      "text": "autobus",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_train",
+      "type": "word",
+      "text": "treno",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_subway",
+      "type": "word",
+      "text": "metropolitana",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_taxi",
+      "type": "word",
+      "text": "taxi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_car",
+      "type": "word",
+      "text": "macchina",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_where_is_the_bus_stop",
+      "type": "sentence",
+      "text": "Dove è la fermata dell'autobus?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_how_much_is_a_ticket",
+      "type": "sentence",
+      "text": "Quanto costa un biglietto?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_does_this_bus_go_to",
+      "type": "sentence",
+      "text": "Questo autobus va a",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_when_is_the_next_train",
+      "type": "sentence",
+      "text": "Quando è il prossimo treno?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_how_long_does_it_take",
+      "type": "sentence",
+      "text": "Quanto tempo ci vuole?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

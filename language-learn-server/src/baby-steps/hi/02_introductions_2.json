@@ -1,0 +1,68 @@
+{
+  "id": "02_introductions_2",
+  "title": "परिचय और बुनियादी जानकारी (Part 2)",
+  "emoji": "💬",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "02_introductions_country",
+      "type": "word",
+      "text": "देश",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_city",
+      "type": "word",
+      "text": "शहर",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_job",
+      "type": "word",
+      "text": "नौकरी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_student",
+      "type": "word",
+      "text": "छात्र",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_teacher",
+      "type": "word",
+      "text": "शिक्षक",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_where_are_you_from",
+      "type": "sentence",
+      "text": "आप कहाँ से हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_from",
+      "type": "sentence",
+      "text": "मैं … से हूँ",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_do_you_speak_english",
+      "type": "sentence",
+      "text": "क्या आप अंग्रेजी बोलते हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_speak_a_little",
+      "type": "sentence",
+      "text": "मैं थोड़ी बोलता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_do_you_do",
+      "type": "sentence",
+      "text": "आप क्या करते हैं?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

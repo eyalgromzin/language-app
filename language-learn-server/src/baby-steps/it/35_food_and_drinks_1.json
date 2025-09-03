@@ -1,0 +1,68 @@
+{
+  "id": "35_food_and_drinks_1",
+  "title": "cibo e bevande (Part 1)",
+  "emoji": "🍕",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "35_food_and_drinks_food",
+      "type": "word",
+      "text": "cibo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_drink",
+      "type": "word",
+      "text": "bevanda",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_bread",
+      "type": "word",
+      "text": "pane",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_meat",
+      "type": "word",
+      "text": "carne",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_fish",
+      "type": "word",
+      "text": "pesce",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_what_would_you_like_to_eat",
+      "type": "sentence",
+      "text": "Cosa vorrebbe mangiare?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_am_hungry",
+      "type": "sentence",
+      "text": "Ho fame.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_do_you_like_italian_food",
+      "type": "sentence",
+      "text": "Le piace il cibo italiano?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_this_food_is_delicious",
+      "type": "sentence",
+      "text": "Questo cibo è delizioso.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_would_you_like_something_to_drink",
+      "type": "sentence",
+      "text": "Vorrebbe qualcosa da bere?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

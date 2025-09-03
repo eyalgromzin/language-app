@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_2",
+  "title": "nombres et concepts de base du temps (Part 2)",
+  "emoji": "🔢",
+  "language": "French",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_six",
+      "type": "word",
+      "text": "six",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_seven",
+      "type": "word",
+      "text": "sept",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_eight",
+      "type": "word",
+      "text": "huit",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_nine",
+      "type": "word",
+      "text": "neuf",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_ten",
+      "type": "word",
+      "text": "dix",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is",
+      "type": "sentence",
+      "text": "C'est le",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_how_many",
+      "type": "sentence",
+      "text": "Combien de",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_i_have",
+      "type": "sentence",
+      "text": "J'ai",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_how_old_are_you",
+      "type": "sentence",
+      "text": "Quel âge avez-vous ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_i_am_years_old",
+      "type": "sentence",
+      "text": "J'ai ans.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

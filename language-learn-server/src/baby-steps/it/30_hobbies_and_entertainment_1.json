@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_1",
+  "title": "hobby e intrattenimento (Part 1)",
+  "emoji": "🎮",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_hobby",
+      "type": "word",
+      "text": "hobby",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_music",
+      "type": "word",
+      "text": "musica",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_movie",
+      "type": "word",
+      "text": "film",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_book",
+      "type": "word",
+      "text": "libro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_game",
+      "type": "word",
+      "text": "gioco",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_are_your_hobbies",
+      "type": "sentence",
+      "text": "Quali sono i suoi hobby?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_love_listening_to_music",
+      "type": "sentence",
+      "text": "Amo ascoltare musica.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_watching_movies",
+      "type": "sentence",
+      "text": "Le piace guardare film?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_reading_is_my_favorite_hobby",
+      "type": "sentence",
+      "text": "Leggere è il mio hobby preferito.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_enjoy_playing_games",
+      "type": "sentence",
+      "text": "Mi piace giocare ai giochi.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

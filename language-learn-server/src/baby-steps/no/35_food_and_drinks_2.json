@@ -1,0 +1,68 @@
+{
+  "id": "35_food_and_drinks_2",
+  "title": "Mat og drikke (Part 2)",
+  "emoji": "🍕",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "35_food_and_drinks_restaurant",
+      "type": "word",
+      "text": "restaurant",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_menu",
+      "type": "word",
+      "text": "meny",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_order",
+      "type": "word",
+      "text": "bestilling",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_hungry",
+      "type": "word",
+      "text": "sulten",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_thirsty",
+      "type": "word",
+      "text": "tørst",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_can_i_see_the_menu",
+      "type": "sentence",
+      "text": "Kan jeg se menyen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_want_to_order_pizza",
+      "type": "sentence",
+      "text": "Jeg vil bestille pizza.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_are_you_hungry",
+      "type": "sentence",
+      "text": "Er du sulten?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_am_thirsty_can_i_have_water",
+      "type": "sentence",
+      "text": "Jeg er tørst, kan jeg få vann?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_this_food_tastes_delicious",
+      "type": "sentence",
+      "text": "Denne maten smaker deilig.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "07_shopping_money_2",
+  "title": "Zakupy i pieniądze (Part 2)",
+  "emoji": "🛍️",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "07_shopping_money_change",
+      "type": "word",
+      "text": "reszta",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_expensive",
+      "type": "word",
+      "text": "drogi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cheap",
+      "type": "word",
+      "text": "tani",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_sale",
+      "type": "word",
+      "text": "wyprzedaż",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_discount",
+      "type": "word",
+      "text": "zniżka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_do_you_have_this_in_blue",
+      "type": "sentence",
+      "text": "Czy macie to w kolorze niebieskim?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_where_is_the_changing_room",
+      "type": "sentence",
+      "text": "Gdzie jest pomieszczenie do przymiernięcia?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_can_i_get_a_receipt",
+      "type": "sentence",
+      "text": "Czy mogę dostać paragon?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_this_is_too_expensive",
+      "type": "sentence",
+      "text": "To jest zbyt drogie.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_accept_returns",
+      "type": "sentence",
+      "text": "Czy przyjmujecie zwroty?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

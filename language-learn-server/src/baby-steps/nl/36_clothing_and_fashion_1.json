@@ -1,0 +1,68 @@
+{
+  "id": "36_clothing_and_fashion_1",
+  "title": "Kleding en mode (Part 1)",
+  "emoji": "👕",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_clothes",
+      "type": "word",
+      "text": "kleren",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shirt",
+      "type": "word",
+      "text": "shirt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_pants",
+      "type": "word",
+      "text": "broek",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_dress",
+      "type": "word",
+      "text": "jurk",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shoes",
+      "type": "word",
+      "text": "schoenen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_are_you_wearing_today",
+      "type": "sentence",
+      "text": "Wat draag je vandaag?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_like_your_new_shirt",
+      "type": "sentence",
+      "text": "Ik vind je nieuwe shirt leuk.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
+      "type": "sentence",
+      "text": "Waar heb je die broek gekocht?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
+      "type": "sentence",
+      "text": "Die jurk staat je mooi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
+      "type": "sentence",
+      "text": "Vind je mijn nieuwe schoenen leuk?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

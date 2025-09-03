@@ -1,0 +1,68 @@
+{
+  "id": "29_travel_and_transportation_1",
+  "title": "Cestování a doprava (Part 1)",
+  "emoji": "✈️",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "29_travel_and_transportation_travel",
+      "type": "word",
+      "text": "cestovat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_trip",
+      "type": "word",
+      "text": "cesta",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_airport",
+      "type": "word",
+      "text": "letiště",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_hotel",
+      "type": "word",
+      "text": "hotel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_passport",
+      "type": "word",
+      "text": "pas",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_where_are_you_traveling_to",
+      "type": "sentence",
+      "text": "Kam cestujete?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_i_am_going_on_a_trip",
+      "type": "sentence",
+      "text": "Jdu na cestu.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_how_do_i_get_to_the_airport",
+      "type": "sentence",
+      "text": "Jak se dostanu na letiště?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_do_you_have_a_hotel_reservation",
+      "type": "sentence",
+      "text": "Máte rezervaci v hotelu?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_where_is_my_passport",
+      "type": "sentence",
+      "text": "Kde je můj pas?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

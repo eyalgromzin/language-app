@@ -1,0 +1,68 @@
+{
+  "id": "16_phone_internet_1",
+  "title": "telefone e internet (Part 1)",
+  "emoji": "📱",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "16_phone_internet_phone",
+      "type": "word",
+      "text": "telefone",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_call",
+      "type": "word",
+      "text": "chamada",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_number",
+      "type": "word",
+      "text": "número",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_message",
+      "type": "word",
+      "text": "mensagem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_internet",
+      "type": "word",
+      "text": "internet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_phone_number",
+      "type": "sentence",
+      "text": "Qual é o seu número de telefone?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_i_call_you",
+      "type": "sentence",
+      "text": "Posso te ligar?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_do_you_have_wifi",
+      "type": "sentence",
+      "text": "Você tem wifi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_what_is_the_wifi_password",
+      "type": "sentence",
+      "text": "Qual é a senha do wifi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_send_me_an_email",
+      "type": "sentence",
+      "text": "Você pode me enviar um email?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

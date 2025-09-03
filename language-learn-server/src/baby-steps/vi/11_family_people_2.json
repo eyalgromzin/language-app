@@ -1,0 +1,68 @@
+{
+  "id": "11_family_people_2",
+  "title": "Gia đình và con người (Part 2)",
+  "emoji": "👪",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "11_family_people_son",
+      "type": "word",
+      "text": "con trai",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_daughter",
+      "type": "word",
+      "text": "con gái",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_baby",
+      "type": "word",
+      "text": "em bé",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_man",
+      "type": "word",
+      "text": "đàn ông",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_woman",
+      "type": "word",
+      "text": "phụ nữ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_do_you_have_brothers_and_sisters",
+      "type": "sentence",
+      "text": "Bạn có anh chị em không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_my_family_lives_in",
+      "type": "sentence",
+      "text": "Gia đình tôi sống ở …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_how_old_is_your_son",
+      "type": "sentence",
+      "text": "Con trai bạn bao nhiêu tuổi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_this_is_my_baby",
+      "type": "sentence",
+      "text": "Đây là em bé của tôi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_are_you_married",
+      "type": "sentence",
+      "text": "Bạn có gia đình chưa?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

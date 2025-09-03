@@ -1,0 +1,68 @@
+{
+  "id": "31_emotions_and_feelings_1",
+  "title": "Емоції та почуття (Part 1)",
+  "emoji": "😊",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_happy",
+      "type": "word",
+      "text": "щасливий",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_sad",
+      "type": "word",
+      "text": "сумний",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_angry",
+      "type": "word",
+      "text": "сердитий",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_excited",
+      "type": "word",
+      "text": "схвильований",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_nervous",
+      "type": "word",
+      "text": "нервовий",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_how_are_you_feeling_today",
+      "type": "sentence",
+      "text": "Як ви почуваєтеся сьогодні?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_very_happy_today",
+      "type": "sentence",
+      "text": "Я дуже щасливий сьогодні.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_why_are_you_sad",
+      "type": "sentence",
+      "text": "Чому ви сумні?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_don_t_be_angry_with_me",
+      "type": "sentence",
+      "text": "Не сердіться на мене.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_excited_about_the_trip",
+      "type": "sentence",
+      "text": "Я схвильований поїздкою.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

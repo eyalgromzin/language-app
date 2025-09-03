@@ -1,0 +1,68 @@
+{
+  "id": "36_clothing_and_fashion_2",
+  "title": "בגדים ואופנה (Part 2)",
+  "emoji": "👕",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_hat",
+      "type": "word",
+      "text": "כובע",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_jacket",
+      "type": "word",
+      "text": "מעיל",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_size",
+      "type": "word",
+      "text": "מידה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_style",
+      "type": "word",
+      "text": "סגנון",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_fashion",
+      "type": "word",
+      "text": "אופנה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_size_do_you_wear",
+      "type": "sentence",
+      "text": "איזו מידה אתה לובש?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_need_a_warm_jacket_for_winter",
+      "type": "sentence",
+      "text": "אני צריך מעיל חם לחורף.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_is_your_fashion_style",
+      "type": "sentence",
+      "text": "מה הסגנון האופנתי שלך?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_this_hat_protects_me_from_the_sun",
+      "type": "sentence",
+      "text": "הכובע הזה מגן עלי מהשמש.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_follow_fashion_trends",
+      "type": "sentence",
+      "text": "האם אתה עוקב אחרי טרנדים אופנתיים?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

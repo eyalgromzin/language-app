@@ -1,0 +1,68 @@
+{
+  "id": "34_colors_and_appearance_1",
+  "title": "Värit ja ulkonäkö (Part 1)",
+  "emoji": "🎨",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "34_colors_and_appearance_color",
+      "type": "word",
+      "text": "väri",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_red",
+      "type": "word",
+      "text": "punainen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_blue",
+      "type": "word",
+      "text": "sininen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_green",
+      "type": "word",
+      "text": "vihreä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_yellow",
+      "type": "word",
+      "text": "keltainen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_what_color_is_your_car",
+      "type": "sentence",
+      "text": "Mikä väri autossasi on?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_i_like_red_flowers",
+      "type": "sentence",
+      "text": "Pidän punaisista kukista.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_the_sky_is_very_blue_today",
+      "type": "sentence",
+      "text": "Taivas on erittäin sininen tänään.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_this_green_shirt_looks_nice",
+      "type": "sentence",
+      "text": "Tämä vihreä paita näyttää hyvältä.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_the_yellow_banana_is_ripe",
+      "type": "sentence",
+      "text": "Keltainen banaani on kypsä.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

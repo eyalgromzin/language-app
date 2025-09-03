@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_2",
+  "title": "กีฬาและการออกกำลังกาย (Part 2)",
+  "emoji": "⚽",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_win",
+      "type": "word",
+      "text": "ชนะ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_lose",
+      "type": "word",
+      "text": "แพ้",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_score",
+      "type": "word",
+      "text": "คะแนน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_exercise",
+      "type": "word",
+      "text": "ออกกำลังกาย",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_fitness",
+      "type": "word",
+      "text": "ฟิตเนส",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_did_you_win_the_game",
+      "type": "sentence",
+      "text": "คุณชนะเกมไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_what_is_the_score",
+      "type": "sentence",
+      "text": "คะแนนเท่าไหร่?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_exercise_every_morning",
+      "type": "sentence",
+      "text": "ฉันออกกำลังกายทุกเช้า.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_go_to_the_gym",
+      "type": "sentence",
+      "text": "คุณไปยิมไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_fitness_is_important_for_health",
+      "type": "sentence",
+      "text": "ฟิตเนสสำคัญสำหรับสุขภาพ.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

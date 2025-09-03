@@ -1,0 +1,68 @@
+{
+  "id": "05_getting_around_2",
+  "title": "Directions & Getting Around (Part 2)",
+  "emoji": "🧭",
+  "language": "German",
+  "items": [
+    {
+      "id": "05_getting_around_far",
+      "type": "word",
+      "text": "weit",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_here",
+      "type": "word",
+      "text": "hier",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_there",
+      "type": "word",
+      "text": "dort",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_where",
+      "type": "word",
+      "text": "wo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_how",
+      "type": "word",
+      "text": "wie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_is_it_far",
+      "type": "sentence",
+      "text": "Ist es weit?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_is_it_near",
+      "type": "sentence",
+      "text": "Ist es nah?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_how_do_i_get_there",
+      "type": "sentence",
+      "text": "Wie komme ich dorthin?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_can_you_help_me",
+      "type": "sentence",
+      "text": "Können Sie mir helfen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_i_am_lost",
+      "type": "sentence",
+      "text": "Ich bin verloren.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

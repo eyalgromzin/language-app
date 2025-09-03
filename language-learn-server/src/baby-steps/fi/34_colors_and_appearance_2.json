@@ -1,0 +1,68 @@
+{
+  "id": "34_colors_and_appearance_2",
+  "title": "Värit ja ulkonäkö (Part 2)",
+  "emoji": "🎨",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "34_colors_and_appearance_beautiful",
+      "type": "word",
+      "text": "kaunis",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_ugly",
+      "type": "word",
+      "text": "ruma",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_big",
+      "type": "word",
+      "text": "iso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_small",
+      "type": "word",
+      "text": "pieni",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_new",
+      "type": "word",
+      "text": "uusi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_you_look_beautiful_today",
+      "type": "sentence",
+      "text": "Näytät kauniilta tänään.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_this_is_a_big_house",
+      "type": "sentence",
+      "text": "Tämä on iso talo.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_i_have_a_small_dog",
+      "type": "sentence",
+      "text": "Minulla on pieni koira.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_where_did_you_get_that_new_phone",
+      "type": "sentence",
+      "text": "Mistä sait tuon uuden puhelimen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_what_is_your_favorite_color",
+      "type": "sentence",
+      "text": "Mikä on suosikkivärisi?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

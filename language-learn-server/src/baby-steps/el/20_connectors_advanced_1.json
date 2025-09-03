@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_1",
+  "title": "Συνδετικοί και προχωρημένες φράσεις (Part 1)",
+  "emoji": "🔗",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "20_connectors_advanced_because",
+      "type": "word",
+      "text": "επειδή",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_although",
+      "type": "word",
+      "text": "αν και",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_however",
+      "type": "word",
+      "text": "ωστόσο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_therefore",
+      "type": "word",
+      "text": "επομένως",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_also",
+      "type": "word",
+      "text": "επίσης",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_could_you_please_recommend_a_good_place_to_eat",
+      "type": "sentence",
+      "text": "Θα μπορούσατε να προτείνετε ένα καλό μέρος για φαγητό;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_have_been_waiting_for_a_long_time",
+      "type": "sentence",
+      "text": "Περιμένω εδώ και πολύ καιρό.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_would_you_mind_helping_me_with_this_form",
+      "type": "sentence",
+      "text": "Θα σας πείραζε να με βοηθήσετε με αυτή τη φόρμα;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_prefer_to_pay_by_card_because_it_is_faster",
+      "type": "sentence",
+      "text": "Προτιμώ να πληρώσω με κάρτα επειδή είναι πιο γρήγορα.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_although_it_is_expensive_it_is_worth_it",
+      "type": "sentence",
+      "text": "Αν και είναι ακριβό, αξίζει τον κόπο.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "06_food_drink_basics_2",
+  "title": "еда и напитки (Part 2)",
+  "emoji": "🍎",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "06_food_drink_basics_tea",
+      "type": "word",
+      "text": "чай",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_eat",
+      "type": "word",
+      "text": "есть",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_drink",
+      "type": "word",
+      "text": "пить",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_hungry",
+      "type": "word",
+      "text": "голодный",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_thirsty",
+      "type": "word",
+      "text": "жаждущий",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_water_is_important",
+      "type": "sentence",
+      "text": "Вода важна.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_eating_is_necessary",
+      "type": "sentence",
+      "text": "Еда необходима.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_drinking_water_is_healthy",
+      "type": "sentence",
+      "text": "Пить воду полезно.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

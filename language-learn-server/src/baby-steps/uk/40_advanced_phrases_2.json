@@ -1,0 +1,68 @@
+{
+  "id": "40_advanced_phrases_2",
+  "title": "Розширені фрази (Part 2)",
+  "emoji": "🚀",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "40_advanced_phrases_approximately",
+      "type": "word",
+      "text": "приблизно",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_occasionally",
+      "type": "word",
+      "text": "час від часу",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_gradually",
+      "type": "word",
+      "text": "поступово",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_ultimately",
+      "type": "word",
+      "text": "врешті-решт",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_essentially",
+      "type": "word",
+      "text": "по суті",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_it_will_cost_approximately_fifty_dollars",
+      "type": "sentence",
+      "text": "Це коштуватиме приблизно п'ятдесят доларів.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_i_occasionally_visit_my_grandparents",
+      "type": "sentence",
+      "text": "Я час від часу відвідую своїх дідуся та бабусю.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_the_weather_gradually_improved",
+      "type": "sentence",
+      "text": "Погода поступово покращилася.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_ultimately_we_reached_our_goal",
+      "type": "sentence",
+      "text": "Врешті-решт ми досягли нашої мети.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_essentially_this_is_the_same_thing",
+      "type": "sentence",
+      "text": "По суті, це те саме.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "32_time_and_dates_1",
+  "title": "Czas i daty (Part 1)",
+  "emoji": "⏰",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "32_time_and_dates_time",
+      "type": "word",
+      "text": "czas",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_date",
+      "type": "word",
+      "text": "data",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_hour",
+      "type": "word",
+      "text": "godzina",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_minute",
+      "type": "word",
+      "text": "minuta",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_second",
+      "type": "word",
+      "text": "sekunda",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_what_time_is_it",
+      "type": "sentence",
+      "text": "Która jest godzina?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_date_is_today",
+      "type": "sentence",
+      "text": "Jaka jest dzisiaj data?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_it_is_half_past_two",
+      "type": "sentence",
+      "text": "Jest wpół do trzeciej.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_how_many_minutes_until_break",
+      "type": "sentence",
+      "text": "Ile minut do przerwy?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_see_you_in_an_hour",
+      "type": "sentence",
+      "text": "Do zobaczenia za godzinę.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

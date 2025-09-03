@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_1",
+  "title": "еда и напитки (Part 1)",
+  "emoji": "🍎",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "06_food_drink_basics_food",
+      "type": "word",
+      "text": "еда",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_water",
+      "type": "word",
+      "text": "вода",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_bread",
+      "type": "word",
+      "text": "хлеб",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_milk",
+      "type": "word",
+      "text": "молоко",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_coffee",
+      "type": "word",
+      "text": "кофе",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_hungry",
+      "type": "sentence",
+      "text": "Я голоден.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_thirsty",
+      "type": "sentence",
+      "text": "Я хочу пить.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_do_you_have_water",
+      "type": "sentence",
+      "text": "У вас есть вода?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_want_to_eat",
+      "type": "sentence",
+      "text": "Я хочу есть.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_food_is_delicious",
+      "type": "sentence",
+      "text": "Еда вкусная.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

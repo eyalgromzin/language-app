@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_1",
+  "title": "urgences et santé (Part 1)",
+  "emoji": "⛑️",
+  "language": "French",
+  "items": [
+    {
+      "id": "09_emergencies_health_emergency",
+      "type": "word",
+      "text": "urgence",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_help",
+      "type": "word",
+      "text": "aide",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_doctor",
+      "type": "word",
+      "text": "médecin",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_hospital",
+      "type": "word",
+      "text": "hôpital",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_pain",
+      "type": "word",
+      "text": "douleur",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_help_me",
+      "type": "sentence",
+      "text": "Aidez-moi !",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_a_doctor",
+      "type": "sentence",
+      "text": "Appelez un médecin !",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_am_sick",
+      "type": "sentence",
+      "text": "Je suis malade.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_have_pain",
+      "type": "sentence",
+      "text": "J'ai mal.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_where_is_the_hospital",
+      "type": "sentence",
+      "text": "Où est l'hôpital ?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

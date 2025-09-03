@@ -1,0 +1,62 @@
+{
+  "id": "18_transportation_details_2",
+  "title": "detalhes de transporte (Part 2)",
+  "emoji": "🚌",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "18_transportation_details_bicycle",
+      "type": "word",
+      "text": "bicicleta",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_walk",
+      "type": "word",
+      "text": "andar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_stop",
+      "type": "word",
+      "text": "parada",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_station",
+      "type": "word",
+      "text": "estação",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_schedule",
+      "type": "word",
+      "text": "horário",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_i_need_to_get_off_at",
+      "type": "sentence",
+      "text": "Eu preciso descer em",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_can_you_call_me_a_taxi",
+      "type": "sentence",
+      "text": "Você pode me chamar um táxi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_how_long_does_it_take",
+      "type": "sentence",
+      "text": "Quanto tempo leva?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_it_far_to_walk",
+      "type": "sentence",
+      "text": "É longe para andar?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

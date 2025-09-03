@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_2",
+  "title": "Tình huống khẩn cấp và sức khỏe (Part 2)",
+  "emoji": "⛑️",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "09_emergencies_health_pain",
+      "type": "word",
+      "text": "đau",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_medicine",
+      "type": "word",
+      "text": "thuốc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_ambulance",
+      "type": "word",
+      "text": "xe cứu thương",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_police",
+      "type": "word",
+      "text": "cảnh sát",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_fire",
+      "type": "word",
+      "text": "lửa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_i_have_a_headache",
+      "type": "sentence",
+      "text": "Tôi bị đau đầu.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_the_police",
+      "type": "sentence",
+      "text": "Gọi cảnh sát!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_this_is_an_emergency",
+      "type": "sentence",
+      "text": "Đây là tình huống khẩn cấp.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_need_help",
+      "type": "sentence",
+      "text": "Tôi cần giúp đỡ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_are_you_okay",
+      "type": "sentence",
+      "text": "Bạn có ổn không?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

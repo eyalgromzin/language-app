@@ -1,0 +1,68 @@
+{
+  "id": "02_introductions_1",
+  "title": "Introductions & Basic Info (Part 1)",
+  "emoji": "💬",
+  "language": "German",
+  "items": [
+    {
+      "id": "02_introductions_name",
+      "type": "word",
+      "text": "Name",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_age",
+      "type": "word",
+      "text": "Alter",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_country",
+      "type": "word",
+      "text": "Land",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_city",
+      "type": "word",
+      "text": "Stadt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_job",
+      "type": "word",
+      "text": "Beruf",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_what_is_your_name",
+      "type": "sentence",
+      "text": "Wie heißt du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_my_name_is",
+      "type": "sentence",
+      "text": "Ich heiße",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_how_old_are_you",
+      "type": "sentence",
+      "text": "Wie alt bist du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_years_old",
+      "type": "sentence",
+      "text": "Ich bin Jahre alt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_where_are_you_from",
+      "type": "sentence",
+      "text": "Woher kommst du?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

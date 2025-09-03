@@ -1,0 +1,68 @@
+{
+  "id": "05_getting_around_1",
+  "title": "direções e orientação (Part 1)",
+  "emoji": "🧭",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "05_getting_around_left",
+      "type": "word",
+      "text": "esquerda",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_right",
+      "type": "word",
+      "text": "direita",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_straight",
+      "type": "word",
+      "text": "direto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_north",
+      "type": "word",
+      "text": "norte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_south",
+      "type": "word",
+      "text": "sul",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_where_is",
+      "type": "sentence",
+      "text": "Onde fica",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_go_straight",
+      "type": "sentence",
+      "text": "Vá direto.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_turn_left",
+      "type": "sentence",
+      "text": "Vire à esquerda.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_turn_right",
+      "type": "sentence",
+      "text": "Vire à direita.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_how_far_is_it",
+      "type": "sentence",
+      "text": "Quão longe fica?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

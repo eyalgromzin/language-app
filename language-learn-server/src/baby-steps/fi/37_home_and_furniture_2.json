@@ -1,0 +1,68 @@
+{
+  "id": "37_home_and_furniture_2",
+  "title": "Koti ja huonekalut (Part 2)",
+  "emoji": "🏠",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "37_home_and_furniture_table",
+      "type": "word",
+      "text": "pöytä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_chair",
+      "type": "word",
+      "text": "tuoli",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_bed",
+      "type": "word",
+      "text": "sänky",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_door",
+      "type": "word",
+      "text": "ovi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_window",
+      "type": "word",
+      "text": "ikkuna",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_this_chair_is_very_comfortable",
+      "type": "sentence",
+      "text": "Tämä tuoli on erittäin mukava.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_i_like_my_new_bed",
+      "type": "sentence",
+      "text": "Pidän uudesta sängystäni.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_please_close_the_door",
+      "type": "sentence",
+      "text": "Sulkea ovi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_open_the_window_for_fresh_air",
+      "type": "sentence",
+      "text": "Avaa ikkuna raitista ilmaa varten.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_where_do_you_live",
+      "type": "sentence",
+      "text": "Missä asut?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

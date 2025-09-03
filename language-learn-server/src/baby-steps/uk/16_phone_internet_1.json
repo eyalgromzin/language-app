@@ -1,0 +1,68 @@
+{
+  "id": "16_phone_internet_1",
+  "title": "Телефон та інтернет (Part 1)",
+  "emoji": "📱",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "16_phone_internet_phone",
+      "type": "word",
+      "text": "телефон",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_number",
+      "type": "word",
+      "text": "номер",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_email",
+      "type": "word",
+      "text": "електронна пошта",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_wifi",
+      "type": "word",
+      "text": "вай-фай",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_call",
+      "type": "word",
+      "text": "дзвонити",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_phone_number",
+      "type": "sentence",
+      "text": "Який ваш номер телефону?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_what_is_the_wifi_password",
+      "type": "sentence",
+      "text": "Який пароль від вай-фай?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_i_use_your_phone",
+      "type": "sentence",
+      "text": "Можу я використати ваш телефон?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_call_me",
+      "type": "sentence",
+      "text": "Можете ви мені подзвонити?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_i_will_text_you",
+      "type": "sentence",
+      "text": "Я напишу вам.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

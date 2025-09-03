@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_2",
+  "title": "Vær og natur (Part 2)",
+  "emoji": "🌤️",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "22_weather_and_nature_tree",
+      "type": "word",
+      "text": "tre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_flower",
+      "type": "word",
+      "text": "blomst",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_mountain",
+      "type": "word",
+      "text": "fjell",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_ocean",
+      "type": "word",
+      "text": "hav",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_forest",
+      "type": "word",
+      "text": "skog",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_the_mountain_view_is_beautiful",
+      "type": "sentence",
+      "text": "Fjellutsikten er vakker.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_these_flowers_are_lovely",
+      "type": "sentence",
+      "text": "Disse blomstene er nydelige.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_ocean_is_very_blue",
+      "type": "sentence",
+      "text": "Havet er veldig blått.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_what_is_the_weather_like",
+      "type": "sentence",
+      "text": "Hvordan er været?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_i_hope_it_does_not_snow",
+      "type": "sentence",
+      "text": "Jeg håper det ikke snør.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

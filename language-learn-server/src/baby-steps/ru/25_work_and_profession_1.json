@@ -1,0 +1,68 @@
+{
+  "id": "25_work_and_profession_1",
+  "title": "работа и профессия (Part 1)",
+  "emoji": "💼",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "25_work_and_profession_work",
+      "type": "word",
+      "text": "работа",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_profession",
+      "type": "word",
+      "text": "профессия",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_job",
+      "type": "word",
+      "text": "работа",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_office",
+      "type": "word",
+      "text": "офис",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_meeting",
+      "type": "word",
+      "text": "встреча",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_what_do_you_do_for_a_living",
+      "type": "sentence",
+      "text": "Чем вы зарабатываете на жизнь?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_work_as_a",
+      "type": "sentence",
+      "text": "Я работаю как",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Вам нравится ваша работа?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_work_is_important",
+      "type": "sentence",
+      "text": "Работа важна.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_work_life_balance_is_important",
+      "type": "sentence",
+      "text": "Баланс работы и жизни важен.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

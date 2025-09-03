@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_1",
+  "title": "Requests & Asking for Help (Part 1)",
+  "emoji": "🙋",
+  "language": "German",
+  "items": [
+    {
+      "id": "15_requests_help_help",
+      "type": "word",
+      "text": "Hilfe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_please",
+      "type": "word",
+      "text": "bitte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_can",
+      "type": "word",
+      "text": "können",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could",
+      "type": "word",
+      "text": "könnten",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_would",
+      "type": "word",
+      "text": "würden",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could_you_help_me_please",
+      "type": "sentence",
+      "text": "Könnten Sie mir bitte helfen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_you_show_me",
+      "type": "sentence",
+      "text": "Können Sie mir zeigen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_i_need_help",
+      "type": "sentence",
+      "text": "Ich brauche Hilfe.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_could_you_tell_me",
+      "type": "sentence",
+      "text": "Könnten Sie mir sagen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_would_you_mind",
+      "type": "sentence",
+      "text": "Würde es Ihnen etwas ausmachen?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

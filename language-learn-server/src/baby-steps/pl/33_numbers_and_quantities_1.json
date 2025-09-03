@@ -1,0 +1,68 @@
+{
+  "id": "33_numbers_and_quantities_1",
+  "title": "Liczby i ilości (Part 1)",
+  "emoji": "🔢",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "33_numbers_and_quantities_number",
+      "type": "word",
+      "text": "liczba",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_count",
+      "type": "word",
+      "text": "liczyć",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_many",
+      "type": "word",
+      "text": "wiele",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_few",
+      "type": "word",
+      "text": "kilka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_some",
+      "type": "word",
+      "text": "trochę",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_how_many_people_are_here",
+      "type": "sentence",
+      "text": "Ile osób jest tutaj?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_can_you_count_to_ten",
+      "type": "sentence",
+      "text": "Czy umiesz liczyć do dziesięciu?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_there_are_many_books_in_the_library",
+      "type": "sentence",
+      "text": "W bibliotece jest wiele książek.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_have_few_friends_here",
+      "type": "sentence",
+      "text": "Mam tutaj kilku przyjaciół.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_would_you_like_some_water",
+      "type": "sentence",
+      "text": "Czy chciałbyś trochę wody?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

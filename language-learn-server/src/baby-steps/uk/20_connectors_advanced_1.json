@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_1",
+  "title": "З'єднувачі та розширені фрази (Part 1)",
+  "emoji": "🔗",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "20_connectors_advanced_because",
+      "type": "word",
+      "text": "тому що",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_although",
+      "type": "word",
+      "text": "хоча",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_however",
+      "type": "word",
+      "text": "однак",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_therefore",
+      "type": "word",
+      "text": "тому",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_also",
+      "type": "word",
+      "text": "також",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_could_you_please_recommend_a_good_place_to_eat",
+      "type": "sentence",
+      "text": "Чи могли б ви порекомендувати гарне місце для їжі?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_have_been_waiting_for_a_long_time",
+      "type": "sentence",
+      "text": "Я довго чекав.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_would_you_mind_helping_me_with_this_form",
+      "type": "sentence",
+      "text": "Чи не заперечуєте ви допомогти мені з цією формою?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_prefer_to_pay_by_card_because_it_is_faster",
+      "type": "sentence",
+      "text": "Я волію платити карткою, тому що це швидше.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_although_it_is_expensive_it_is_worth_it",
+      "type": "sentence",
+      "text": "Хоча це дорого, це того варте.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

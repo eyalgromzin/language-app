@@ -1,0 +1,68 @@
+{
+  "id": "36_clothing_and_fashion_2",
+  "title": "Oblečení a móda (Part 2)",
+  "emoji": "👕",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_hat",
+      "type": "word",
+      "text": "klobouk",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_jacket",
+      "type": "word",
+      "text": "kabát",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_size",
+      "type": "word",
+      "text": "velikost",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_style",
+      "type": "word",
+      "text": "styl",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_fashion",
+      "type": "word",
+      "text": "móda",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_size_do_you_wear",
+      "type": "sentence",
+      "text": "Jakou velikost nosíte?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_need_a_warm_jacket_for_winter",
+      "type": "sentence",
+      "text": "Potřebuji teplý kabát na zimu.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_is_your_fashion_style",
+      "type": "sentence",
+      "text": "Jaký je váš módní styl?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_this_hat_protects_me_from_the_sun",
+      "type": "sentence",
+      "text": "Tento klobouk mě chrání před sluncem.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_follow_fashion_trends",
+      "type": "sentence",
+      "text": "Sledujete módní trendy?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

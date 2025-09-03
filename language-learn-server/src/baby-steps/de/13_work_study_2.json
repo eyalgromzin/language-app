@@ -1,0 +1,68 @@
+{
+  "id": "13_work_study_2",
+  "title": "Work & Study Basics (Part 2)",
+  "emoji": "💼",
+  "language": "German",
+  "items": [
+    {
+      "id": "13_work_study_job",
+      "type": "word",
+      "text": "Beruf",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_student",
+      "type": "word",
+      "text": "Student",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_teacher",
+      "type": "word",
+      "text": "Lehrer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_engineer",
+      "type": "word",
+      "text": "Ingenieur",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_doctor",
+      "type": "word",
+      "text": "Arzt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_i_study_at_the_university",
+      "type": "sentence",
+      "text": "Ich studiere an der Universität.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_what_are_you_studying",
+      "type": "sentence",
+      "text": "Was studieren Sie?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Gefällt Ihnen Ihr Beruf?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_need_to_study",
+      "type": "sentence",
+      "text": "Ich muss lernen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_work_is_finished",
+      "type": "sentence",
+      "text": "Die Arbeit ist fertig.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

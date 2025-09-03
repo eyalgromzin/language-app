@@ -1,0 +1,68 @@
+{
+  "id": "34_colors_and_appearance_2",
+  "title": "Colors & Appearance (Part 2)",
+  "emoji": "🎨",
+  "language": "English",
+  "items": [
+    {
+      "id": "34_colors_and_appearance_beautiful",
+      "type": "word",
+      "text": "beautiful",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_ugly",
+      "type": "word",
+      "text": "ugly",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_big",
+      "type": "word",
+      "text": "big",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_small",
+      "type": "word",
+      "text": "small",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_new",
+      "type": "word",
+      "text": "new",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_you_look_beautiful_today",
+      "type": "sentence",
+      "text": "You look beautiful today.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_this_is_a_big_house",
+      "type": "sentence",
+      "text": "This is a big house.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_i_have_a_small_dog",
+      "type": "sentence",
+      "text": "I have a small dog.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_where_did_you_get_that_new_phone",
+      "type": "sentence",
+      "text": "Where did you get that new phone?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_what_is_your_favorite_color",
+      "type": "sentence",
+      "text": "What is your favorite color?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

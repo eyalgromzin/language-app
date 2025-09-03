@@ -1,0 +1,68 @@
+{
+  "id": "33_numbers_and_quantities_1",
+  "title": "Siffror och kvantiteter (Part 1)",
+  "emoji": "🔢",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "33_numbers_and_quantities_number",
+      "type": "word",
+      "text": "nummer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_count",
+      "type": "word",
+      "text": "räkna",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_many",
+      "type": "word",
+      "text": "många",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_few",
+      "type": "word",
+      "text": "få",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_some",
+      "type": "word",
+      "text": "några",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_how_many_people_are_here",
+      "type": "sentence",
+      "text": "Hur många människor är här?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_can_you_count_to_ten",
+      "type": "sentence",
+      "text": "Kan du räkna till tio?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_there_are_many_books_in_the_library",
+      "type": "sentence",
+      "text": "Det finns många böcker i biblioteket.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_have_few_friends_here",
+      "type": "sentence",
+      "text": "Jag har få vänner här.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_would_you_like_some_water",
+      "type": "sentence",
+      "text": "Vill du ha lite vatten?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

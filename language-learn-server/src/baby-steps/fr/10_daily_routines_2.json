@@ -1,0 +1,68 @@
+{
+  "id": "10_daily_routines_2",
+  "title": "routines quotidiennes et verbes communs (Part 2)",
+  "emoji": "☀️",
+  "language": "French",
+  "items": [
+    {
+      "id": "10_daily_routines_dinner",
+      "type": "word",
+      "text": "dîner",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_sleep",
+      "type": "word",
+      "text": "dormir",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_shower",
+      "type": "word",
+      "text": "douche",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_brush_teeth",
+      "type": "word",
+      "text": "se brosser les dents",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_go_to_bed",
+      "type": "word",
+      "text": "aller au lit",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_i_have_dinner",
+      "type": "sentence",
+      "text": "Je dîne.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_take_a_shower",
+      "type": "sentence",
+      "text": "Je prends une douche.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_brush_my_teeth",
+      "type": "sentence",
+      "text": "Je me brosse les dents.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_go_to_bed",
+      "type": "sentence",
+      "text": "Je vais au lit.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_good_night",
+      "type": "sentence",
+      "text": "Bonne nuit.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

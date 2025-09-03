@@ -1,0 +1,68 @@
+{
+  "id": "21_technology_basics_2",
+  "title": "प्रौद्योगिकी के मूल (Part 2)",
+  "emoji": "💻",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "21_technology_basics_email",
+      "type": "word",
+      "text": "ईमेल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_website",
+      "type": "word",
+      "text": "वेबसाइट",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_download",
+      "type": "word",
+      "text": "डाउनलोड",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_upload",
+      "type": "word",
+      "text": "अपलोड",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_wifi",
+      "type": "word",
+      "text": "वाईफाई",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_my_phone_is_not_working",
+      "type": "sentence",
+      "text": "मेरा फोन काम नहीं कर रहा है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_forgot_my_password",
+      "type": "sentence",
+      "text": "मैं अपना पासवर्ड भूल गया हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_the_internet_is_slow_today",
+      "type": "sentence",
+      "text": "आज इंटरनेट धीमा है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_can_you_upload_the_file",
+      "type": "sentence",
+      "text": "क्या आप फाइल अपलोड कर सकते हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_this_app_is_very_useful",
+      "type": "sentence",
+      "text": "यह ऐप बहुत उपयोगी है।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

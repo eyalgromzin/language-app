@@ -1,0 +1,68 @@
+{
+  "id": "16_phone_internet_2",
+  "title": "telefono e internet (Part 2)",
+  "emoji": "📱",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "16_phone_internet_email",
+      "type": "word",
+      "text": "email",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_website",
+      "type": "word",
+      "text": "sito web",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_password",
+      "type": "word",
+      "text": "password",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_online",
+      "type": "word",
+      "text": "online",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_download",
+      "type": "word",
+      "text": "scaricare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_email",
+      "type": "sentence",
+      "text": "Qual è la sua email?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_i_am_online",
+      "type": "sentence",
+      "text": "Sono online.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_the_internet_is_slow",
+      "type": "sentence",
+      "text": "L'internet è lento.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_send_me_the_link",
+      "type": "sentence",
+      "text": "Può mandarmi il link?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_i_forgot_my_password",
+      "type": "sentence",
+      "text": "Ho dimenticato la mia password.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

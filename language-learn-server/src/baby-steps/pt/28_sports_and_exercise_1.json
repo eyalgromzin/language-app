@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_1",
+  "title": "esportes e exercícios (Part 1)",
+  "emoji": "⚽",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_sport",
+      "type": "word",
+      "text": "esporte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_football",
+      "type": "word",
+      "text": "futebol",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_basketball",
+      "type": "word",
+      "text": "basquete",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_tennis",
+      "type": "word",
+      "text": "tênis",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_swimming",
+      "type": "word",
+      "text": "natação",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_like_sports",
+      "type": "sentence",
+      "text": "Você gosta de esportes?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_what_sport_do_you_play",
+      "type": "sentence",
+      "text": "Qual esporte você pratica?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_exercise_regularly",
+      "type": "sentence",
+      "text": "Você se exercita regularmente?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_love_playing_football",
+      "type": "sentence",
+      "text": "Eu amo jogar futebol.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_watch_sports_on_tv",
+      "type": "sentence",
+      "text": "Você assiste esportes na TV?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

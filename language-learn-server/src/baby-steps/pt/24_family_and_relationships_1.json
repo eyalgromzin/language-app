@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_1",
+  "title": "família e relacionamentos (Part 1)",
+  "emoji": "👪",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "24_family_and_relationships_family",
+      "type": "word",
+      "text": "família",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_parents",
+      "type": "word",
+      "text": "pais",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_children",
+      "type": "word",
+      "text": "filhos",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_husband",
+      "type": "word",
+      "text": "marido",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_wife",
+      "type": "word",
+      "text": "esposa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_how_is_your_family",
+      "type": "sentence",
+      "text": "Como está a sua família?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_are_you_married",
+      "type": "sentence",
+      "text": "Você é casado?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_do_you_have_children",
+      "type": "sentence",
+      "text": "Você tem filhos?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_how_long_have_you_been_married",
+      "type": "sentence",
+      "text": "Há quanto tempo você é casado?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_do_you_live_with_your_family",
+      "type": "sentence",
+      "text": "Você mora com a sua família?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_1",
+  "title": "Yhdistäjät ja edistyneet lauseet (Part 1)",
+  "emoji": "🔗",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "20_connectors_advanced_because",
+      "type": "word",
+      "text": "koska",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_although",
+      "type": "word",
+      "text": "vaikka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_however",
+      "type": "word",
+      "text": "kuitenkin",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_therefore",
+      "type": "word",
+      "text": "siksi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_also",
+      "type": "word",
+      "text": "myös",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_could_you_please_recommend_a_good_place_to_eat",
+      "type": "sentence",
+      "text": "Voisitko suositella hyvää syömispaikkaa?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_have_been_waiting_for_a_long_time",
+      "type": "sentence",
+      "text": "Olen odottanut kauan.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_would_you_mind_helping_me_with_this_form",
+      "type": "sentence",
+      "text": "Voisitko auttaa minua tämän lomakkeen kanssa?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_prefer_to_pay_by_card_because_it_is_faster",
+      "type": "sentence",
+      "text": "Pidän parempana maksaa kortilla, koska se on nopeampaa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_although_it_is_expensive_it_is_worth_it",
+      "type": "sentence",
+      "text": "Vaikka se on kallis, se on sen arvoinen.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

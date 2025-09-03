@@ -1,0 +1,68 @@
+{
+  "id": "26_health_and_medical_2",
+  "title": "Health & Medical (Part 2)",
+  "emoji": "🏥",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "26_health_and_medical_sick",
+      "type": "word",
+      "text": "חולה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_fever",
+      "type": "word",
+      "text": "חום",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_appointment",
+      "type": "word",
+      "text": "תור",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_emergency",
+      "type": "word",
+      "text": "חירום",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_treatment",
+      "type": "word",
+      "text": "טיפול",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_i_am_feeling_sick",
+      "type": "sentence",
+      "text": "אני מרגיש חולה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_do_you_have_any_medicine",
+      "type": "sentence",
+      "text": "האם יש לך תרופה כלשהי?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_this_is_an_emergency",
+      "type": "sentence",
+      "text": "זה חירום.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_what_treatment_do_i_need",
+      "type": "sentence",
+      "text": "איזה טיפול אני צריך?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_my_fever_is_very_high",
+      "type": "sentence",
+      "text": "החום שלי מאוד גבוה.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

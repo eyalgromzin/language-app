@@ -1,0 +1,68 @@
+{
+  "id": "35_food_and_drinks_1",
+  "title": "भोजन और पेय (Part 1)",
+  "emoji": "🍽️",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "35_food_and_drinks_food",
+      "type": "word",
+      "text": "भोजन",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_drink",
+      "type": "word",
+      "text": "पेय",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_water",
+      "type": "word",
+      "text": "पानी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_bread",
+      "type": "word",
+      "text": "रोटी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_rice",
+      "type": "word",
+      "text": "चावल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_are_you_hungry",
+      "type": "sentence",
+      "text": "क्या आप भूखे हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_am_very_hungry",
+      "type": "sentence",
+      "text": "मैं बहुत भूखा हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_would_you_like_to_eat",
+      "type": "sentence",
+      "text": "आप क्या खाना चाहेंगे?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_want_some_water",
+      "type": "sentence",
+      "text": "मुझे कुछ पानी चाहिए।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_do_you_like_indian_food",
+      "type": "sentence",
+      "text": "क्या आपको भारतीय भोजन पसंद है?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

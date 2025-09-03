@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_1",
+  "title": "Yêu cầu và xin giúp đỡ (Part 1)",
+  "emoji": "🙋",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "15_requests_help_help",
+      "type": "word",
+      "text": "giúp đỡ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_please",
+      "type": "word",
+      "text": "xin vui lòng",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could",
+      "type": "word",
+      "text": "có thể",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_would",
+      "type": "word",
+      "text": "sẽ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_repeat",
+      "type": "word",
+      "text": "lặp lại",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could_you_help_me_please",
+      "type": "sentence",
+      "text": "Bạn có thể giúp tôi không, xin vui lòng?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_you_repeat_that_please",
+      "type": "sentence",
+      "text": "Bạn có thể lặp lại không, xin vui lòng?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_please_speak_more_slowly",
+      "type": "sentence",
+      "text": "Xin vui lòng nói chậm hơn.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_how_do_you_say_this_in_english",
+      "type": "sentence",
+      "text": "Làm sao để nói cái này bằng tiếng Anh?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_what_does_this_mean",
+      "type": "sentence",
+      "text": "Cái này nghĩa là gì?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

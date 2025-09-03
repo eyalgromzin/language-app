@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_1",
+  "title": "พื้นฐานอาหารและเครื่องดื่ม (Part 1)",
+  "emoji": "🍎",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "06_food_drink_basics_water",
+      "type": "word",
+      "text": "น้ำ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_coffee",
+      "type": "word",
+      "text": "กาแฟ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_tea",
+      "type": "word",
+      "text": "ชา",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_bread",
+      "type": "word",
+      "text": "ขนมปัง",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_apple",
+      "type": "word",
+      "text": "แอปเปิล",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_i_would_like_water_please",
+      "type": "sentence",
+      "text": "ฉันต้องการน้ำ กรุณา.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_the_food_is_delicious",
+      "type": "sentence",
+      "text": "อาหารอร่อย.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_allergic_to",
+      "type": "sentence",
+      "text": "ฉันแพ้ …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_no_sugar_please",
+      "type": "sentence",
+      "text": "ไม่ใส่น้ำตาล กรุณา.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_do_you_have_vegetarian_food",
+      "type": "sentence",
+      "text": "คุณมีอาหารมังสวิรัติไหม?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "02_introductions_1",
+  "title": "Giới thiệu và thông tin cơ bản (Part 1)",
+  "emoji": "💬",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "02_introductions_name",
+      "type": "word",
+      "text": "tên",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_meet",
+      "type": "word",
+      "text": "gặp",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_from",
+      "type": "word",
+      "text": "từ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_speak",
+      "type": "word",
+      "text": "nói",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_language",
+      "type": "word",
+      "text": "ngôn ngữ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_my_name_is",
+      "type": "sentence",
+      "text": "Tên tôi là …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_is_your_name",
+      "type": "sentence",
+      "text": "Tên bạn là gì?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_nice_to_meet_you",
+      "type": "sentence",
+      "text": "Rất vui được gặp bạn.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_how_are_you",
+      "type": "sentence",
+      "text": "Bạn khỏe không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_fine_thank_you",
+      "type": "sentence",
+      "text": "Tôi khỏe, cảm ơn bạn.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

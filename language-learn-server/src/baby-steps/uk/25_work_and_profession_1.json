@@ -1,0 +1,68 @@
+{
+  "id": "25_work_and_profession_1",
+  "title": "Робота та професія (Part 1)",
+  "emoji": "💼",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "25_work_and_profession_job",
+      "type": "word",
+      "text": "робота",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_work",
+      "type": "word",
+      "text": "праця",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_office",
+      "type": "word",
+      "text": "офіс",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_meeting",
+      "type": "word",
+      "text": "зустріч",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_boss",
+      "type": "word",
+      "text": "начальник",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_what_do_you_do_for_work",
+      "type": "sentence",
+      "text": "Що ви робите на роботі?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_work_in_an_office",
+      "type": "sentence",
+      "text": "Я працюю в офісі.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Вам подобається ваша робота?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_have_a_meeting_at_nine",
+      "type": "sentence",
+      "text": "У мене зустріч о дев'ятій.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_my_boss_is_very_nice",
+      "type": "sentence",
+      "text": "Мій начальник дуже приємний.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

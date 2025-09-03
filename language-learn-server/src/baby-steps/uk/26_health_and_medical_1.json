@@ -1,0 +1,68 @@
+{
+  "id": "26_health_and_medical_1",
+  "title": "Здоров'я та медицина (Part 1)",
+  "emoji": "🏥",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "26_health_and_medical_health",
+      "type": "word",
+      "text": "здоров'я",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_doctor",
+      "type": "word",
+      "text": "лікар",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_hospital",
+      "type": "word",
+      "text": "лікарня",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_medicine",
+      "type": "word",
+      "text": "ліки",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_pain",
+      "type": "word",
+      "text": "біль",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_how_are_you_feeling_today",
+      "type": "sentence",
+      "text": "Як ви почуваєтеся сьогодні?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_need_to_see_a_doctor",
+      "type": "sentence",
+      "text": "Мені потрібно побачити лікаря.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_where_is_the_nearest_hospital",
+      "type": "sentence",
+      "text": "Де найближча лікарня?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_have_a_headache",
+      "type": "sentence",
+      "text": "У мене головний біль.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_can_i_make_an_appointment",
+      "type": "sentence",
+      "text": "Можу я записатися на прийом?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

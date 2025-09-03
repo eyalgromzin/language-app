@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_2",
+  "title": "urgences et santé (Part 2)",
+  "emoji": "⛑️",
+  "language": "French",
+  "items": [
+    {
+      "id": "09_emergencies_health_sick",
+      "type": "word",
+      "text": "malade",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_medicine",
+      "type": "word",
+      "text": "médicament",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_ambulance",
+      "type": "word",
+      "text": "ambulance",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_police",
+      "type": "word",
+      "text": "police",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_fire",
+      "type": "word",
+      "text": "feu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_i_need_medicine",
+      "type": "sentence",
+      "text": "J'ai besoin de médicaments.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_an_ambulance",
+      "type": "sentence",
+      "text": "Appelez une ambulance !",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_the_police",
+      "type": "sentence",
+      "text": "Appelez la police !",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_there_is_a_fire",
+      "type": "sentence",
+      "text": "Il y a un feu !",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_this_is_an_emergency",
+      "type": "sentence",
+      "text": "C'est une urgence !",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

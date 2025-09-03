@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_2",
+  "title": "Základy jídla a pití (Part 2)",
+  "emoji": "🍎",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "06_food_drink_basics_milk",
+      "type": "word",
+      "text": "mléko",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_juice",
+      "type": "word",
+      "text": "džus",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_rice",
+      "type": "word",
+      "text": "rýže",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_chicken",
+      "type": "word",
+      "text": "kuře",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_fish",
+      "type": "word",
+      "text": "ryba",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_how_much_is_it",
+      "type": "sentence",
+      "text": "Kolik to stojí?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_hungry",
+      "type": "sentence",
+      "text": "Mám hlad.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_thirsty",
+      "type": "sentence",
+      "text": "Mám žízeň.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_what_do_you_recommend",
+      "type": "sentence",
+      "text": "Co doporučujete?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_the_bill_please",
+      "type": "sentence",
+      "text": "Účet, prosím.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

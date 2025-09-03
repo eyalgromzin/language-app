@@ -1,0 +1,50 @@
+{
+  "id": "17_restaurant_2",
+  "title": "в ресторане (Part 2)",
+  "emoji": "🍽️",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "17_restaurant_order",
+      "type": "word",
+      "text": "заказ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_bill",
+      "type": "word",
+      "text": "счет",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_service",
+      "type": "word",
+      "text": "обслуживание",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_tip",
+      "type": "word",
+      "text": "чаевые",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_good_service_is_important",
+      "type": "sentence",
+      "text": "Хорошее обслуживание важно.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_tipping_is_customary",
+      "type": "sentence",
+      "text": "Чаевые приняты.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_dining_out_is_enjoyable",
+      "type": "sentence",
+      "text": "Питание вне дома приятно.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

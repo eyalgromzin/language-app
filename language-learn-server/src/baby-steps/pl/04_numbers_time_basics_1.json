@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_1",
+  "title": "Liczby i podstawy czasu (Part 1)",
+  "emoji": "🔢",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_zero",
+      "type": "word",
+      "text": "zero",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_one",
+      "type": "word",
+      "text": "jeden",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_two",
+      "type": "word",
+      "text": "dwa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_three",
+      "type": "word",
+      "text": "trzy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_four",
+      "type": "word",
+      "text": "cztery",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_what_time_is_it",
+      "type": "sentence",
+      "text": "Która jest godzina?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_three_o_clock",
+      "type": "sentence",
+      "text": "Jest trzecia godzina.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_half_past_two",
+      "type": "sentence",
+      "text": "Jest wpół do trzeciej.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_day_is_today",
+      "type": "sentence",
+      "text": "Jaki jest dzisiaj dzień?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_today_is_monday",
+      "type": "sentence",
+      "text": "Dzisiaj jest poniedziałek.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

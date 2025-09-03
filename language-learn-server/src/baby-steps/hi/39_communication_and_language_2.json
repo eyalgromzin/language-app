@@ -1,0 +1,68 @@
+{
+  "id": "39_communication_and_language_2",
+  "title": "संचार और भाषा (Part 2)",
+  "emoji": "💬",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "39_communication_and_language_explain",
+      "type": "word",
+      "text": "समझाना",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_question",
+      "type": "word",
+      "text": "प्रश्न",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_answer",
+      "type": "word",
+      "text": "उत्तर",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_conversation",
+      "type": "word",
+      "text": "बातचीत",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_discussion",
+      "type": "word",
+      "text": "चर्चा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_i_love_learning_new_languages",
+      "type": "sentence",
+      "text": "मुझे नई भाषाएं सीखना बहुत पसंद है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_can_you_explain_this",
+      "type": "sentence",
+      "text": "क्या आप इसे समझा सकते हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_i_have_a_question",
+      "type": "sentence",
+      "text": "मेरे पास एक प्रश्न है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_language_connects_people",
+      "type": "sentence",
+      "text": "भाषा लोगों को जोड़ती है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_do_you_like_conversations",
+      "type": "sentence",
+      "text": "क्या आपको बातचीत पसंद है?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

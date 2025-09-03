@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_1",
+  "title": "Family & Relationships (Part 1)",
+  "emoji": "👪",
+  "language": "German",
+  "items": [
+    {
+      "id": "24_family_and_relationships_family",
+      "type": "word",
+      "text": "Familie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_relationship",
+      "type": "word",
+      "text": "Beziehung",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_parents",
+      "type": "word",
+      "text": "Eltern",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_children",
+      "type": "word",
+      "text": "Kinder",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_grandparents",
+      "type": "word",
+      "text": "Großeltern",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_how_is_your_family",
+      "type": "sentence",
+      "text": "Wie geht es Ihrer Familie?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_family_lives_in",
+      "type": "sentence",
+      "text": "Meine Familie wohnt in",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_have_a_large_family",
+      "type": "sentence",
+      "text": "Ich habe eine große Familie.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_parents_are_very_nice",
+      "type": "sentence",
+      "text": "Meine Eltern sind sehr nett.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_do_you_have_any_siblings",
+      "type": "sentence",
+      "text": "Haben Sie Geschwister?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

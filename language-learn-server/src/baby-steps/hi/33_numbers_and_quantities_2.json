@@ -1,0 +1,68 @@
+{
+  "id": "33_numbers_and_quantities_2",
+  "title": "संख्या और मात्रा (Part 2)",
+  "emoji": "🔢",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "33_numbers_and_quantities_six",
+      "type": "word",
+      "text": "छह",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_seven",
+      "type": "word",
+      "text": "सात",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_eight",
+      "type": "word",
+      "text": "आठ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_nine",
+      "type": "word",
+      "text": "नौ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_ten",
+      "type": "word",
+      "text": "दस",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_how_many_hours",
+      "type": "sentence",
+      "text": "कितने घंटे?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_have_seven_days",
+      "type": "sentence",
+      "text": "मेरे पास सात दिन हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_what_is_the_total",
+      "type": "sentence",
+      "text": "कुल क्या है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_numbers_are_important",
+      "type": "sentence",
+      "text": "संख्या महत्वपूर्ण हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_count_to_ten",
+      "type": "sentence",
+      "text": "मैं दस तक गिनता हूं।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

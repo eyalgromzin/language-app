@@ -1,0 +1,68 @@
+{
+  "id": "14_plans_invitations_2",
+  "title": "Plánování a pozvánky (Part 2)",
+  "emoji": "📅",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "14_plans_invitations_invite",
+      "type": "word",
+      "text": "pozvat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_free",
+      "type": "word",
+      "text": "volný",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_busy",
+      "type": "word",
+      "text": "zaneprázdněný",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_time",
+      "type": "word",
+      "text": "čas",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_place",
+      "type": "word",
+      "text": "místo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_what_time_should_we_meet",
+      "type": "sentence",
+      "text": "V kolik bychom se měli setkat?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_i_am_busy_today",
+      "type": "sentence",
+      "text": "Dnes jsem zaneprázdněný.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_do_you_want_to_have_coffee",
+      "type": "sentence",
+      "text": "Chcete si dát kávu?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_let_us_make_plans",
+      "type": "sentence",
+      "text": "Udělejme plány.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_where_should_we_go",
+      "type": "sentence",
+      "text": "Kam bychom měli jít?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

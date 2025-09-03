@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_2",
+  "title": "Harrastukset ja viihde (Part 2)",
+  "emoji": "🎬",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_paint",
+      "type": "word",
+      "text": "maalata",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_cook",
+      "type": "word",
+      "text": "kokata",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_garden",
+      "type": "word",
+      "text": "puutarha",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_photography",
+      "type": "word",
+      "text": "valokuvaus",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_collect",
+      "type": "word",
+      "text": "kerätä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_want_to_learn_to_paint",
+      "type": "sentence",
+      "text": "Haluan oppia maalaamaan.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_cooking",
+      "type": "sentence",
+      "text": "Pidätkö kokkaamisesta?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_my_garden_is_very_beautiful",
+      "type": "sentence",
+      "text": "Puutarhani on erittäin kaunis.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_take_photos_as_a_hobby",
+      "type": "sentence",
+      "text": "Otin valokuvia harrastuksena.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_do_you_collect",
+      "type": "sentence",
+      "text": "Mitä keräät?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

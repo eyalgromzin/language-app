@@ -1,0 +1,62 @@
+{
+  "id": "28_sports_and_exercise_2",
+  "title": "esportes e exercícios (Part 2)",
+  "emoji": "⚽",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_running",
+      "type": "word",
+      "text": "corrida",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_exercise",
+      "type": "word",
+      "text": "exercício",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_team",
+      "type": "word",
+      "text": "time",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_game",
+      "type": "word",
+      "text": "jogo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_win",
+      "type": "word",
+      "text": "vencer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_which_team_do_you_support",
+      "type": "sentence",
+      "text": "Qual time você torce?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_go_to_the_gym",
+      "type": "sentence",
+      "text": "Eu vou para a academia.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_exercise_is_good_for_health",
+      "type": "sentence",
+      "text": "Exercício é bom para a saúde.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_good_luck_in_your_game",
+      "type": "sentence",
+      "text": "Boa sorte no seu jogo!",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

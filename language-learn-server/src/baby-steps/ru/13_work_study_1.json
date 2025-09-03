@@ -1,0 +1,68 @@
+{
+  "id": "13_work_study_1",
+  "title": "работа и учеба (Part 1)",
+  "emoji": "💼",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "13_work_study_work",
+      "type": "word",
+      "text": "работа",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_study",
+      "type": "word",
+      "text": "учеба",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_school",
+      "type": "word",
+      "text": "школа",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_university",
+      "type": "word",
+      "text": "университет",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_student",
+      "type": "word",
+      "text": "студент",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_i_work_at",
+      "type": "sentence",
+      "text": "Я работаю в",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_study_at",
+      "type": "sentence",
+      "text": "Я учусь в",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_what_do_you_do",
+      "type": "sentence",
+      "text": "Что вы делаете?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_work_is_important",
+      "type": "sentence",
+      "text": "Работа важна.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_study_opens_doors",
+      "type": "sentence",
+      "text": "Учеба открывает двери.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

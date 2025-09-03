@@ -1,0 +1,68 @@
+{
+  "id": "39_communication_and_language_1",
+  "title": "Viestintä ja kieli (Part 1)",
+  "emoji": "💬",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "39_communication_and_language_speak",
+      "type": "word",
+      "text": "puhua",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_talk",
+      "type": "word",
+      "text": "puhua",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_listen",
+      "type": "word",
+      "text": "kuunnella",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_understand",
+      "type": "word",
+      "text": "ymmärtää",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_explain",
+      "type": "word",
+      "text": "selittää",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_do_you_speak_english",
+      "type": "sentence",
+      "text": "Puhutko englantia?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_can_we_talk_about_it",
+      "type": "sentence",
+      "text": "Voimmeko puhua siitä?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_please_listen_to_me",
+      "type": "sentence",
+      "text": "Kuuntele minua.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_do_you_understand_what_i_mean",
+      "type": "sentence",
+      "text": "Ymmärrätkö mitä tarkoitan?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_can_you_explain_this_to_me",
+      "type": "sentence",
+      "text": "Voisitko selittää tämän minulle?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

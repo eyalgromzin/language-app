@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_1",
+  "title": "Hobby i rozrywka (Part 1)",
+  "emoji": "🎬",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_hobby",
+      "type": "word",
+      "text": "hobby",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_music",
+      "type": "word",
+      "text": "muzyka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_movie",
+      "type": "word",
+      "text": "film",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_book",
+      "type": "word",
+      "text": "książka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_dance",
+      "type": "word",
+      "text": "taniec",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_is_your_favorite_hobby",
+      "type": "sentence",
+      "text": "Jakie jest twoje ulubione hobby?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_love_listening_to_music",
+      "type": "sentence",
+      "text": "Uwielbiam słuchać muzyki.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_movie_did_you_watch",
+      "type": "sentence",
+      "text": "Jaki film oglądałeś?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_reading_books",
+      "type": "sentence",
+      "text": "Czy lubisz czytać książki?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_can_you_dance",
+      "type": "sentence",
+      "text": "Czy umiesz tańczyć?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

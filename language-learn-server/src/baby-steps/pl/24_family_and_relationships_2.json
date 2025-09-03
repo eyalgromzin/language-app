@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_2",
+  "title": "Rodzina i relacje (Part 2)",
+  "emoji": "👨‍👩‍👧‍👦",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "24_family_and_relationships_friend",
+      "type": "word",
+      "text": "przyjaciel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_husband",
+      "type": "word",
+      "text": "mąż",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_wife",
+      "type": "word",
+      "text": "żona",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_child",
+      "type": "word",
+      "text": "dziecko",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_parent",
+      "type": "word",
+      "text": "rodzic",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_we_are_good_friends",
+      "type": "sentence",
+      "text": "Jesteśmy dobrymi przyjaciółmi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_husband_likes_cooking",
+      "type": "sentence",
+      "text": "Mój mąż lubi gotować.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_do_you_have_children",
+      "type": "sentence",
+      "text": "Czy masz dzieci?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_parents_live_in_the_city",
+      "type": "sentence",
+      "text": "Moi rodzice mieszkają w mieście.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_love_my_family_very_much",
+      "type": "sentence",
+      "text": "Bardzo kocham moją rodzinę.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

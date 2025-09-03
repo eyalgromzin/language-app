@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_1",
+  "title": "Eten en drinken basis (Part 1)",
+  "emoji": "🍎",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "06_food_drink_basics_water",
+      "type": "word",
+      "text": "water",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_coffee",
+      "type": "word",
+      "text": "koffie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_tea",
+      "type": "word",
+      "text": "thee",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_bread",
+      "type": "word",
+      "text": "brood",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_apple",
+      "type": "word",
+      "text": "appel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_i_would_like_water_please",
+      "type": "sentence",
+      "text": "Ik wil graag water, alsjeblieft.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_the_food_is_delicious",
+      "type": "sentence",
+      "text": "Het eten is heerlijk.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_allergic_to",
+      "type": "sentence",
+      "text": "Ik ben allergisch voor …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_no_sugar_please",
+      "type": "sentence",
+      "text": "Geen suiker, alsjeblieft.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_do_you_have_vegetarian_food",
+      "type": "sentence",
+      "text": "Heb je vegetarisch eten?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

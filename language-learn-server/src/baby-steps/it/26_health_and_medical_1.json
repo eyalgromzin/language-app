@@ -1,0 +1,68 @@
+{
+  "id": "26_health_and_medical_1",
+  "title": "salute e medicina (Part 1)",
+  "emoji": "🏥",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "26_health_and_medical_health",
+      "type": "word",
+      "text": "salute",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_doctor",
+      "type": "word",
+      "text": "medico",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_hospital",
+      "type": "word",
+      "text": "ospedale",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_medicine",
+      "type": "word",
+      "text": "medicina",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_pain",
+      "type": "word",
+      "text": "dolore",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_i_am_not_feeling_well",
+      "type": "sentence",
+      "text": "Non mi sento bene.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_need_to_see_a_doctor",
+      "type": "sentence",
+      "text": "Devo vedere un medico.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_where_is_the_nearest_hospital",
+      "type": "sentence",
+      "text": "Dove è l'ospedale più vicino?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_have_a_headache",
+      "type": "sentence",
+      "text": "Ho mal di testa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_do_you_have_any_medicine",
+      "type": "sentence",
+      "text": "Ha qualche medicina?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

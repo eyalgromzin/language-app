@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_2",
+  "title": "al ristorante (Part 2)",
+  "emoji": "🍽️",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "17_restaurant_wine",
+      "type": "word",
+      "text": "vino",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_bread",
+      "type": "word",
+      "text": "pane",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_pasta",
+      "type": "word",
+      "text": "pasta",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_pizza",
+      "type": "word",
+      "text": "pizza",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_salad",
+      "type": "word",
+      "text": "insalata",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_the_bill_please",
+      "type": "sentence",
+      "text": "Il conto, per favore.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_how_much_is_it",
+      "type": "sentence",
+      "text": "Quanto costa?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_this_is_delicious",
+      "type": "sentence",
+      "text": "Questo è delizioso.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_do_you_have",
+      "type": "sentence",
+      "text": "Ha",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_thank_you_for_the_meal",
+      "type": "sentence",
+      "text": "Grazie per il pasto.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_1",
+  "title": "जोड़ने वाले शब्द और उन्नत वाक्य (Part 1)",
+  "emoji": "🔗",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "20_connectors_advanced_because",
+      "type": "word",
+      "text": "क्योंकि",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_although",
+      "type": "word",
+      "text": "हालांकि",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_however",
+      "type": "word",
+      "text": "हालांकि",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_therefore",
+      "type": "word",
+      "text": "इसलिए",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_also",
+      "type": "word",
+      "text": "भी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_could_you_please_recommend_a_good_place_to_eat",
+      "type": "sentence",
+      "text": "क्या आप कृपया खाने के लिए एक अच्छी जगह की सिफारिश कर सकते हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_have_been_waiting_for_a_long_time",
+      "type": "sentence",
+      "text": "मैं बहुत देर से इंतजार कर रहा हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_would_you_mind_helping_me_with_this_form",
+      "type": "sentence",
+      "text": "क्या आपको इस फॉर्म में मेरी मदद करने में कोई आपत्ति होगी?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_prefer_to_pay_by_card_because_it_is_faster",
+      "type": "sentence",
+      "text": "मैं कार्ड से भुगतान करना पसंद करता हूं क्योंकि यह तेज है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_although_it_is_expensive_it_is_worth_it",
+      "type": "sentence",
+      "text": "हालांकि यह महंगा है, लेकिन यह इसके लायक है।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

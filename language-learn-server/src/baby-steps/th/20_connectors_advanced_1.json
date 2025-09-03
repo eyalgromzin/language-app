@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_1",
+  "title": "คำเชื่อมและวลีขั้นสูง (Part 1)",
+  "emoji": "🔗",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "20_connectors_advanced_because",
+      "type": "word",
+      "text": "เพราะ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_although",
+      "type": "word",
+      "text": "แม้ว่า",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_however",
+      "type": "word",
+      "text": "อย่างไรก็ตาม",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_therefore",
+      "type": "word",
+      "text": "ดังนั้น",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_also",
+      "type": "word",
+      "text": "ด้วย",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_could_you_please_recommend_a_good_place_to_eat",
+      "type": "sentence",
+      "text": "คุณกรุณาแนะนำสถานที่กินอาหารที่ดีได้ไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_have_been_waiting_for_a_long_time",
+      "type": "sentence",
+      "text": "ฉันรอมาเป็นเวลานานแล้ว.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_would_you_mind_helping_me_with_this_form",
+      "type": "sentence",
+      "text": "คุณจะรังเกียจช่วยฉันกับแบบฟอร์มนี้ไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_prefer_to_pay_by_card_because_it_is_faster",
+      "type": "sentence",
+      "text": "ฉันชอบจ่ายด้วยบัตรเพราะมันเร็วกว่า.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_although_it_is_expensive_it_is_worth_it",
+      "type": "sentence",
+      "text": "แม้ว่ามันจะแพง แต่มันคุ้มค่า.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

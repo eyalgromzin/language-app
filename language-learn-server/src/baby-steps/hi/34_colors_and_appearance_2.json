@@ -1,0 +1,68 @@
+{
+  "id": "34_colors_and_appearance_2",
+  "title": "रंग और रूप (Part 2)",
+  "emoji": "🎨",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "34_colors_and_appearance_black",
+      "type": "word",
+      "text": "काला",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_white",
+      "type": "word",
+      "text": "सफेद",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_big",
+      "type": "word",
+      "text": "बड़ा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_small",
+      "type": "word",
+      "text": "छोटा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_beautiful",
+      "type": "word",
+      "text": "सुंदर",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_it_is_very_small",
+      "type": "sentence",
+      "text": "यह बहुत छोटा है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_you_look_beautiful",
+      "type": "sentence",
+      "text": "आप बहुत सुंदर लग रहे हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_colors_are_very_important",
+      "type": "sentence",
+      "text": "रंग बहुत महत्वपूर्ण हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_i_want_a_white_shirt",
+      "type": "sentence",
+      "text": "मुझे सफेद शर्ट चाहिए।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_this_flower_is_yellow",
+      "type": "sentence",
+      "text": "यह फूल पीला है।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

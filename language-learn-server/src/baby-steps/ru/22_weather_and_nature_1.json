@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_1",
+  "title": "погода и природа (Part 1)",
+  "emoji": "🌤️",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "22_weather_and_nature_weather",
+      "type": "word",
+      "text": "погода",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_sun",
+      "type": "word",
+      "text": "солнце",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_rain",
+      "type": "word",
+      "text": "дождь",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_cloud",
+      "type": "word",
+      "text": "облако",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_wind",
+      "type": "word",
+      "text": "ветер",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_how_is_the_weather_today",
+      "type": "sentence",
+      "text": "Какая погода сегодня?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_nature_is_beautiful",
+      "type": "sentence",
+      "text": "Природа красивая.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_sun_is_shining",
+      "type": "sentence",
+      "text": "Солнце светит.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_weather_affects_mood",
+      "type": "sentence",
+      "text": "Погода влияет на настроение.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_nature_provides_peace",
+      "type": "sentence",
+      "text": "Природа дает покой.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

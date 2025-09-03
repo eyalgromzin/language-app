@@ -1,0 +1,68 @@
+{
+  "id": "07_shopping_money_1",
+  "title": "Shopping og penger (Part 1)",
+  "emoji": "🛍️",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "07_shopping_money_price",
+      "type": "word",
+      "text": "pris",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cash",
+      "type": "word",
+      "text": "kontanter",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_card",
+      "type": "word",
+      "text": "kort",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_receipt",
+      "type": "word",
+      "text": "kvittering",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_money",
+      "type": "word",
+      "text": "penger",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_how_much_is_this",
+      "type": "sentence",
+      "text": "Hvor mye koster dette?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_take_cards",
+      "type": "sentence",
+      "text": "Tar dere kort?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_i_am_just_looking",
+      "type": "sentence",
+      "text": "Jeg ser bare.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_can_i_try_it_on",
+      "type": "sentence",
+      "text": "Kan jeg prøve det?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_is_there_a_discount",
+      "type": "sentence",
+      "text": "Er det rabatt?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

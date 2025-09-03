@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_1",
+  "title": "Thể thao và tập thể dục (Part 1)",
+  "emoji": "⚽",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_sport",
+      "type": "word",
+      "text": "thể thao",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_game",
+      "type": "word",
+      "text": "trò chơi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_team",
+      "type": "word",
+      "text": "đội",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_player",
+      "type": "word",
+      "text": "cầu thủ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_coach",
+      "type": "word",
+      "text": "huấn luyện viên",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_what_sport_do_you_like",
+      "type": "sentence",
+      "text": "Bạn thích môn thể thao gì?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_love_playing_soccer",
+      "type": "sentence",
+      "text": "Tôi thích chơi bóng đá.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
+      "type": "sentence",
+      "text": "Bạn có muốn tham gia đội của chúng tôi không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_who_is_your_favorite_player",
+      "type": "sentence",
+      "text": "Cầu thủ yêu thích của bạn là ai?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_our_coach_is_very_good",
+      "type": "sentence",
+      "text": "Huấn luyện viên của chúng tôi rất tốt.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

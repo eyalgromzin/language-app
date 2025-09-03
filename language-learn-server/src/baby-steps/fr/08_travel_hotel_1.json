@@ -1,0 +1,68 @@
+{
+  "id": "08_travel_hotel_1",
+  "title": "voyages et hôtels (Part 1)",
+  "emoji": "🧳",
+  "language": "French",
+  "items": [
+    {
+      "id": "08_travel_hotel_travel",
+      "type": "word",
+      "text": "voyage",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_hotel",
+      "type": "word",
+      "text": "hôtel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_room",
+      "type": "word",
+      "text": "chambre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_reservation",
+      "type": "word",
+      "text": "réservation",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_passport",
+      "type": "word",
+      "text": "passeport",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_i_have_a_reservation",
+      "type": "sentence",
+      "text": "J'ai une réservation.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_where_is_my_room",
+      "type": "sentence",
+      "text": "Où est ma chambre ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_i_need_a_room",
+      "type": "sentence",
+      "text": "J'ai besoin d'une chambre.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_how_much_is_the_room",
+      "type": "sentence",
+      "text": "Combien coûte la chambre ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_where_is_the_airport",
+      "type": "sentence",
+      "text": "Où est l'aéroport ?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

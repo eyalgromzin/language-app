@@ -1,0 +1,68 @@
+{
+  "id": "13_work_study_2",
+  "title": "Základy práce a studia (Part 2)",
+  "emoji": "💼",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "13_work_study_work",
+      "type": "word",
+      "text": "práce",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_study",
+      "type": "word",
+      "text": "studium",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_class",
+      "type": "word",
+      "text": "třída",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_boss",
+      "type": "word",
+      "text": "šéf",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_colleague",
+      "type": "word",
+      "text": "kolega",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Líbí se vám vaše práce?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_am_busy_with_work",
+      "type": "sentence",
+      "text": "Jsem zaneprázdněný prací.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_what_are_you_studying",
+      "type": "sentence",
+      "text": "Co studujete?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_have_a_lot_of_homework",
+      "type": "sentence",
+      "text": "Mám hodně domácích úkolů.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_where_do_you_work",
+      "type": "sentence",
+      "text": "Kde pracujete?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

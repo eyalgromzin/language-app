@@ -1,0 +1,68 @@
+{
+  "id": "07_shopping_money_2",
+  "title": "Winkelen en geld (Part 2)",
+  "emoji": "🛍️",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "07_shopping_money_change",
+      "type": "word",
+      "text": "wisselgeld",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_expensive",
+      "type": "word",
+      "text": "duur",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cheap",
+      "type": "word",
+      "text": "goedkoop",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_sale",
+      "type": "word",
+      "text": "uitverkoop",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_discount",
+      "type": "word",
+      "text": "korting",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_do_you_have_this_in_blue",
+      "type": "sentence",
+      "text": "Heb je dit in blauw?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_where_is_the_changing_room",
+      "type": "sentence",
+      "text": "Waar is de paskamer?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_can_i_get_a_receipt",
+      "type": "sentence",
+      "text": "Kan ik een bon krijgen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_this_is_too_expensive",
+      "type": "sentence",
+      "text": "Dit is te duur.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_accept_returns",
+      "type": "sentence",
+      "text": "Aanvaard je retouren?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

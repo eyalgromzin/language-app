@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_2",
+  "title": "ספורט ופעילות גופנית (Part 2)",
+  "emoji": "⚽",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_win",
+      "type": "word",
+      "text": "לנצח",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_lose",
+      "type": "word",
+      "text": "להפסיד",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_score",
+      "type": "word",
+      "text": "תוצאה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_exercise",
+      "type": "word",
+      "text": "פעילות גופנית",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_fitness",
+      "type": "word",
+      "text": "כושר",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_did_you_win_the_game",
+      "type": "sentence",
+      "text": "האם ניצחת במשחק?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_what_is_the_score",
+      "type": "sentence",
+      "text": "מה התוצאה?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_exercise_every_morning",
+      "type": "sentence",
+      "text": "אני עושה פעילות גופנית כל בוקר.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_go_to_the_gym",
+      "type": "sentence",
+      "text": "האם אתה הולך לחדר כושר?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_fitness_is_important_for_health",
+      "type": "sentence",
+      "text": "כושר חשוב לבריאות.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

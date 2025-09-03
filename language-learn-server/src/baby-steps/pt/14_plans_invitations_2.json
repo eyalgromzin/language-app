@@ -1,0 +1,68 @@
+{
+  "id": "14_plans_invitations_2",
+  "title": "fazer planos e convites (Part 2)",
+  "emoji": "📅",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "14_plans_invitations_busy",
+      "type": "word",
+      "text": "ocupado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_time",
+      "type": "word",
+      "text": "tempo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_meet",
+      "type": "word",
+      "text": "encontrar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_invite",
+      "type": "word",
+      "text": "convidar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_go",
+      "type": "word",
+      "text": "ir",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_do_you_want_to_go_to",
+      "type": "sentence",
+      "text": "Você quer ir para",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_i_have_plans",
+      "type": "sentence",
+      "text": "Eu tenho planos.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_what_time_works_for_you",
+      "type": "sentence",
+      "text": "A que horas funciona para você?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_can_we_meet_later",
+      "type": "sentence",
+      "text": "Podemos nos encontrar mais tarde?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_that_sounds_good",
+      "type": "sentence",
+      "text": "Parece uma boa ideia.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

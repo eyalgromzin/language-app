@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_1",
+  "title": "ที่ร้านอาหาร (Part 1)",
+  "emoji": "🍽️",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "17_restaurant_menu",
+      "type": "word",
+      "text": "เมนู",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_table",
+      "type": "word",
+      "text": "โต๊ะ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_bill",
+      "type": "word",
+      "text": "บิล",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_waiter",
+      "type": "word",
+      "text": "พนักงานเสิร์ฟ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_food",
+      "type": "word",
+      "text": "อาหาร",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_a_table_for_two_please",
+      "type": "sentence",
+      "text": "โต๊ะสำหรับสองคน กรุณา.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_could_we_have_the_menu",
+      "type": "sentence",
+      "text": "เราขอเมนูได้ไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_the_bill_please",
+      "type": "sentence",
+      "text": "บิล กรุณา.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_do_you_have_vegetarian_options",
+      "type": "sentence",
+      "text": "คุณมีตัวเลือกมังสวิรัติไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_what_do_you_recommend",
+      "type": "sentence",
+      "text": "คุณแนะนำอะไร?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

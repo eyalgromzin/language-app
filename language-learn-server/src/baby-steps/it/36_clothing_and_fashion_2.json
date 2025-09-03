@@ -1,0 +1,68 @@
+{
+  "id": "36_clothing_and_fashion_2",
+  "title": "vestiti e moda (Part 2)",
+  "emoji": "👗",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_jacket",
+      "type": "word",
+      "text": "giacca",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_socks",
+      "type": "word",
+      "text": "calzini",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_bag",
+      "type": "word",
+      "text": "borsa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_size",
+      "type": "word",
+      "text": "taglia",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_style",
+      "type": "word",
+      "text": "stile",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_love_italian_fashion",
+      "type": "sentence",
+      "text": "Amo la moda italiana.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_style_do_you_prefer",
+      "type": "sentence",
+      "text": "Che stile preferisce?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_these_shoes_are_comfortable",
+      "type": "sentence",
+      "text": "Queste scarpe sono comode.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_fashion_is_important",
+      "type": "sentence",
+      "text": "La moda è importante.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_you_look_great",
+      "type": "sentence",
+      "text": "Sembra fantastico.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

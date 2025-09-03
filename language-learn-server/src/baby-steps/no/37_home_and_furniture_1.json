@@ -1,0 +1,68 @@
+{
+  "id": "37_home_and_furniture_1",
+  "title": "Hjem og møbler (Part 1)",
+  "emoji": "🏠",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "37_home_and_furniture_home",
+      "type": "word",
+      "text": "hjem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_house",
+      "type": "word",
+      "text": "hus",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_room",
+      "type": "word",
+      "text": "rom",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_kitchen",
+      "type": "word",
+      "text": "kjøkken",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_bedroom",
+      "type": "word",
+      "text": "soverom",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_welcome_to_my_home",
+      "type": "sentence",
+      "text": "Velkommen til hjemmet mitt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_how_many_rooms_does_your_house_have",
+      "type": "sentence",
+      "text": "Hvor mange rom har huset ditt?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_the_kitchen_is_very_modern",
+      "type": "sentence",
+      "text": "Kjøkkenet er veldig moderne.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_my_bedroom_is_on_the_second_floor",
+      "type": "sentence",
+      "text": "Soverommet mitt er på andre etasje.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_please_sit_at_the_table",
+      "type": "sentence",
+      "text": "Vennligst sitt ved bordet.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

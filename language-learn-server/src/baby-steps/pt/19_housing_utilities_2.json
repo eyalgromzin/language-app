@@ -1,0 +1,62 @@
+{
+  "id": "19_housing_utilities_2",
+  "title": "moradia e serviços públicos (Part 2)",
+  "emoji": "🏠",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "19_housing_utilities_electricity",
+      "type": "word",
+      "text": "eletricidade",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_water",
+      "type": "word",
+      "text": "água",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_heating",
+      "type": "word",
+      "text": "aquecimento",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_rent",
+      "type": "word",
+      "text": "aluguel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_bills",
+      "type": "word",
+      "text": "contas",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_are_utilities_included",
+      "type": "sentence",
+      "text": "Os serviços públicos estão incluídos?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_the_heating_is_not_working",
+      "type": "sentence",
+      "text": "O aquecimento não está funcionando.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_can_you_fix_the_electricity",
+      "type": "sentence",
+      "text": "Você pode consertar a eletricidade?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_i_love_my_new_apartment",
+      "type": "sentence",
+      "text": "Eu amo o meu novo apartamento.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}
