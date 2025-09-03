@@ -192,8 +192,8 @@ npm run start:prod
 
 ### Languages
 
-- `GET /library/languages` - Get all languages
-- `POST /library/languages` - Create a new language
+- `GET /languages` - Get all languages
+- `POST /languages` - Create a new language
 
 ### Media
 

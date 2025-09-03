@@ -3,6 +3,7 @@ import { AppService } from './app.service';
 import { YouTubeService } from './youtube/youtube.service';
 import { TranslateService } from './translate/translate.service';
 import { WordCacheService } from './cache/word-cache.service';
+import { LibraryService } from './database/services/library.service';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -13,6 +14,7 @@ export class AppController {
     private readonly youTubeService: YouTubeService,
     private readonly translateService: TranslateService,
     private readonly wordCacheService: WordCacheService,
+    private readonly libraryService: LibraryService,
   ) {}
 
   @Get()
@@ -75,6 +77,16 @@ export class AppController {
   @Get('cache/last-words')
   async getLastWords(): Promise<string[]> {
     return this.wordCacheService.getLastWords();
+  }
+
+  @Get('languages')
+  async getAllLanguages() {
+    return this.appService.getAllLanguages();
+  }
+
+  @Post('languages')
+  async createLanguage(@Body() languageData: any) {
+    return this.appService.createLanguage(languageData);
   }
 
   

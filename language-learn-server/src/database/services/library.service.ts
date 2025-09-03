@@ -87,15 +87,7 @@ export class LibraryService {
     return this.levelRepository.save(level);
   }
 
-  // Languages
-  async getAllLanguages() {
-    return this.languageRepository.find();
-  }
 
-  async createLanguage(languageData: Partial<Language>) {
-    const language = this.languageRepository.create(languageData);
-    return this.languageRepository.save(language);
-  }
 
   // Media
   async getAllMedia() {
@@ -107,6 +99,16 @@ export class LibraryService {
     return this.mediaRepository.save(media);
   }
 
+  // Languages
+  async getAllLanguages() {
+    return this.languageRepository.find();
+  }
+
+  async createLanguage(languageData: Partial<Language>) {
+    const language = this.languageRepository.create(languageData);
+    return this.languageRepository.save(language);
+  }
+
   // Language utilities
   async getLanguageNameBySymbol(symbol: string): Promise<string | undefined> {
     if (!symbol) return undefined;
@@ -115,6 +117,8 @@ export class LibraryService {
     });
     return language?.name;
   }
+
+
 
   // Frontend compatibility methods
   async getMeta(): Promise<{ itemTypes: string[]; levels: string[] }> {

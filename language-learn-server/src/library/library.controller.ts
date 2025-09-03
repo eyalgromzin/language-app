@@ -68,16 +68,7 @@ export class LibraryController {
     return this.libraryService.createLevel(levelData);
   }
 
-  // Languages
-  @Get('languages')
-  async getAllLanguages() {
-    return this.libraryService.getAllLanguages();
-  }
 
-  @Post('languages')
-  async createLanguage(@Body() languageData: any) {
-    return this.libraryService.createLanguage(languageData);
-  }
 
   // Media
   @Get('media')

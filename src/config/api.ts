@@ -15,7 +15,7 @@ export const API_CONFIG = {
     LIBRARY_ADD_URL: '/library/addUrl',
     LIBRARY_GET_META: '/library/getMeta',
     LIBRARY_GET_URLS_WITH_CRITERIAS: '/library/getUrlsWithCriterias',
-    LIBRARY_GET_LANGUAGES: '/library/languages',
+    LIBRARY_GET_LANGUAGES: '/languages',
     VIDEO_NOW_PLAYING_UPSERT: '/video/now-playing/upsert',
     VIDEO_NOW_PLAYING_GET: '/video/now-playing',
     CACHE_LAST_WORDS: '/cache/last-words',
