@@ -7,6 +7,8 @@ interface VideoOptionsMenuProps {
   onClose: () => void;
   onToggleHistory: () => void;
   onToggleFavouritesList: () => void;
+  onShare?: () => void;
+  canShare?: boolean;
   buttonPosition: { x: number; y: number; width: number; height: number } | null;
 }
 
@@ -15,6 +17,8 @@ const VideoOptionsMenu: React.FC<VideoOptionsMenuProps> = ({
   onClose,
   onToggleHistory,
   onToggleFavouritesList,
+  onShare,
+  canShare = false,
   buttonPosition,
 }) => {
   if (!visible || !buttonPosition) return null;
@@ -36,6 +40,14 @@ const VideoOptionsMenu: React.FC<VideoOptionsMenuProps> = ({
         onToggleFavouritesList();
       },
     },
+    ...(canShare && onShare ? [{
+      title: 'Share video',
+      icon: 'share-outline',
+      onPress: () => {
+        onClose();
+        onShare();
+      },
+    }] : []),
   ];
 
   return (

@@ -52,11 +52,10 @@ type SearchBarProps = {
   showAuxButtons: boolean;
   isFavourite: boolean;
   onToggleFavourite: () => void;
-  onShare: () => void;
-  canShare: boolean;
+  onOptionsButtonPress: (position: { x: number; y: number; width: number; height: number }) => void;
 };
 
-const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, onToggleFavouritesList, showAuxButtons, isFavourite, onToggleFavourite, onShare, canShare }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, onToggleFavouritesList, showAuxButtons, isFavourite, onToggleFavourite, onOptionsButtonPress }) => {
   const [showOptionsMenu, setShowOptionsMenu] = React.useState(false);
   const [optionsButtonPosition, setOptionsButtonPosition] = React.useState<{ x: number; y: number; width: number; height: number } | null>(null);
   const optionsButtonRef = React.useRef<any>(null);
@@ -121,24 +120,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
               >
                 <Ionicons name="albums-outline" size={20} color="#007AFF" />
               </TouchableOpacity>
-              {canShare && (
-                <TouchableOpacity
-                  onPress={onShare}
-                  style={styles.libraryBtn}
-                  accessibilityRole="button"
-                  accessibilityLabel="Share video"
-                  hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
-                >
-                  <Ionicons name="share-outline" size={20} color="#007AFF" />
-                </TouchableOpacity>
-              )}
+              
               <TouchableOpacity
                 ref={optionsButtonRef}
                 onPress={() => {
                   if (optionsButtonRef.current) {
                     optionsButtonRef.current.measure((x: number, y: number, width: number, height: number, pageX: number, pageY: number) => {
-                      setOptionsButtonPosition({ x: pageX, y: pageY, width, height });
-                      setShowOptionsMenu(true);
+                      onOptionsButtonPress({ x: pageX, y: pageY, width, height });
                     });
                   }
                 }}
@@ -154,13 +142,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
         </View>
       </View>
       
-      <VideoOptionsMenu
-        visible={showOptionsMenu}
-        onClose={() => setShowOptionsMenu(false)}
-        onToggleHistory={onToggleHistory}
-        onToggleFavouritesList={onToggleFavouritesList}
-        buttonPosition={optionsButtonPosition}
-      />
+
     </>
   );
 };
@@ -203,7 +185,8 @@ function VideoScreen(): React.JSX.Element {
   const [nowPlayingLoading, setNowPlayingLoading] = React.useState<boolean>(false);
   const [nowPlayingError, setNowPlayingError] = React.useState<string | null>(null);
   const [hidePlayback, setHidePlayback] = React.useState<boolean>(false);
-
+  const [showOptionsMenuGlobal, setShowOptionsMenuGlobal] = React.useState<boolean>(false);
+  const [optionsButtonPositionGlobal, setOptionsButtonPositionGlobal] = React.useState<{ x: number; y: number; width: number; height: number } | null>(null);
 
   
   type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
@@ -983,23 +966,25 @@ function VideoScreen(): React.JSX.Element {
       keyboardShouldPersistTaps="always"
       keyboardDismissMode={Platform.OS === 'ios' ? 'interactive' : 'none'}
     >
-      <SearchBar
-        inputUrl={inputUrl}
-        onChangeText={setInputUrl}
-        onSubmit={handleSubmit}
-        onOpenPress={handleOpenPress}
-        urlInputRef={urlInputRef}
-        onFocus={() => { setIsInputFocused(true); setShowHistory(false); setShowFavouritesList(false); }}
-        onBlur={() => { setIsInputFocused(false); }}
-        onOpenLibrary={() => navigation.navigate('Library')}
-        onToggleHistory={() => { setShowHistory(prev => !prev); setShowFavouritesList(false); }}
-        onToggleFavouritesList={() => { setShowFavouritesList(prev => !prev); setShowHistory(false); }}
-        showAuxButtons={true}
-        isFavourite={isFavourite}
-        onToggleFavourite={onToggleFavourite}
-        onShare={onShareVideo}
-        canShare={!!currentCanonicalUrl}
-      />
+             <SearchBar
+         inputUrl={inputUrl}
+         onChangeText={setInputUrl}
+         onSubmit={handleSubmit}
+         onOpenPress={handleOpenPress}
+         urlInputRef={urlInputRef}
+         onFocus={() => { setIsInputFocused(true); setShowHistory(false); setShowFavouritesList(false); }}
+         onBlur={() => { setIsInputFocused(false); }}
+         onOpenLibrary={() => navigation.navigate('Library')}
+         onToggleHistory={() => { setShowHistory(prev => !prev); setShowFavouritesList(false); }}
+         onToggleFavouritesList={() => { setShowFavouritesList(prev => !prev); setShowHistory(false); }}
+         showAuxButtons={true}
+         isFavourite={isFavourite}
+         onToggleFavourite={onToggleFavourite}
+         onOptionsButtonPress={(position) => {
+           setOptionsButtonPositionGlobal(position);
+           setShowOptionsMenuGlobal(true);
+         }}
+       />
       <SuggestionsDropdown
         showHistory={showHistory}
         showFavourites={showFavouritesList}
@@ -1088,6 +1073,15 @@ function VideoScreen(): React.JSX.Element {
         onToggleLevelOptions={() => setShowLevelOptions(prev => !prev)}
       />
 
+      <VideoOptionsMenu
+        visible={showOptionsMenuGlobal}
+        onClose={() => setShowOptionsMenuGlobal(false)}
+        onToggleHistory={() => { setShowHistory(prev => !prev); setShowFavouritesList(false); }}
+        onToggleFavouritesList={() => { setShowFavouritesList(prev => !prev); setShowHistory(false); }}
+        onShare={onShareVideo}
+        canShare={!!currentCanonicalUrl}
+        buttonPosition={optionsButtonPositionGlobal}
+      />
 
     </ScrollView>
   );
