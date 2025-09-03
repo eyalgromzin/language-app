@@ -1,208 +1,486 @@
 {
-  "id": "baby-steps",
-  "title": "Passos de Bebê",
-  "overview": "Aprenda o básico de uma nova língua com lições simples e práticas. Comece com o essencial e construa sua confiança gradualmente.",
   "language": "Portuguese",
+  "overview": "Aprenda o básico de uma nova língua com lições simples e práticas. Comece com o essencial e construa sua confiança gradualmente.",
   "steps": [
     {
-      "id": "01_essentials",
-      "title": "essenciais",
-      "file": "01_essentials.json"
+      "id": "01_essentials_1",
+      "title": "essenciais - parte 1",
+      "emoji": "👋",
+      "file": "01_essentials_1.json"
     },
     {
-      "id": "02_introductions",
-      "title": "apresentações",
-      "file": "02_introductions.json"
+      "id": "01_essentials_2",
+      "title": "essenciais - parte 2",
+      "emoji": "👋",
+      "file": "01_essentials_2.json"
     },
     {
-      "id": "03_core_verbs_pronouns",
-      "title": "verbos principais e pronomes",
-      "file": "03_core_verbs_pronouns.json"
+      "id": "02_introductions_1",
+      "title": "apresentações - parte 1",
+      "emoji": "💬",
+      "file": "02_introductions_1.json"
     },
     {
-      "id": "04_numbers_time_basics",
-      "title": "números e tempo básico",
-      "file": "04_numbers_time_basics.json"
+      "id": "02_introductions_2",
+      "title": "apresentações - parte 2",
+      "emoji": "💬",
+      "file": "02_introductions_2.json"
     },
     {
-      "id": "05_getting_around",
-      "title": "se locomovendo",
-      "file": "05_getting_around.json"
+      "id": "03_core_verbs_pronouns_1",
+      "title": "verbos principais e pronomes - parte 1",
+      "emoji": "🔤",
+      "file": "03_core_verbs_pronouns_1.json"
     },
     {
-      "id": "06_food_drink_basics",
-      "title": "comida e bebida básica",
-      "file": "06_food_drink_basics.json"
+      "id": "03_core_verbs_pronouns_2",
+      "title": "verbos principais e pronomes - parte 2",
+      "emoji": "🔤",
+      "file": "03_core_verbs_pronouns_2.json"
     },
     {
-      "id": "07_shopping_money",
-      "title": "compras e dinheiro",
-      "file": "07_shopping_money.json"
+      "id": "04_numbers_time_basics_1",
+      "title": "números e tempo básico - parte 1",
+      "emoji": "🔢",
+      "file": "04_numbers_time_basics_1.json"
     },
     {
-      "id": "08_travel_hotel",
-      "title": "viagem e hotel",
-      "file": "08_travel_hotel.json"
+      "id": "04_numbers_time_basics_2",
+      "title": "números e tempo básico - parte 2",
+      "emoji": "🔢",
+      "file": "04_numbers_time_basics_2.json"
     },
     {
-      "id": "09_emergencies_health",
-      "title": "emergências e saúde",
-      "file": "09_emergencies_health.json"
+      "id": "05_getting_around_1",
+      "title": "se locomovendo - parte 1",
+      "emoji": "🧭",
+      "file": "05_getting_around_1.json"
     },
     {
-      "id": "10_daily_routines",
-      "title": "rotinas diárias",
-      "file": "10_daily_routines.json"
+      "id": "05_getting_around_2",
+      "title": "se locomovendo - parte 2",
+      "emoji": "🧭",
+      "file": "05_getting_around_2.json"
     },
     {
-      "id": "11_family_people",
-      "title": "família e pessoas",
-      "file": "11_family_people.json"
+      "id": "06_food_drink_basics_1",
+      "title": "comida e bebida básica - parte 1",
+      "emoji": "🍎",
+      "file": "06_food_drink_basics_1.json"
     },
     {
-      "id": "12_weather_smalltalk",
-      "title": "clima e conversa fiada",
-      "file": "12_weather_smalltalk.json"
+      "id": "06_food_drink_basics_2",
+      "title": "comida e bebida básica - parte 2",
+      "emoji": "🍎",
+      "file": "06_food_drink_basics_2.json"
     },
     {
-      "id": "13_work_study",
-      "title": "trabalho e estudo",
-      "file": "13_work_study.json"
+      "id": "07_shopping_money_1",
+      "title": "compras e dinheiro - parte 1",
+      "emoji": "🛍️",
+      "file": "07_shopping_money_1.json"
     },
     {
-      "id": "14_plans_invitations",
-      "title": "planos e convites",
-      "file": "14_plans_invitations.json"
+      "id": "07_shopping_money_2",
+      "title": "compras e dinheiro - parte 2",
+      "emoji": "🛍️",
+      "file": "07_shopping_money_2.json"
     },
     {
-      "id": "15_requests_help",
-      "title": "pedidos e pedir ajuda",
-      "file": "15_requests_help.json"
+      "id": "08_travel_hotel_1",
+      "title": "viagem e hotel - parte 1",
+      "emoji": "🧳",
+      "file": "08_travel_hotel_1.json"
     },
     {
-      "id": "16_phone_internet",
-      "title": "telefone e internet",
-      "file": "16_phone_internet.json"
+      "id": "08_travel_hotel_2",
+      "title": "viagem e hotel - parte 2",
+      "emoji": "🧳",
+      "file": "08_travel_hotel_2.json"
     },
     {
-      "id": "17_restaurant",
-      "title": "no restaurante",
-      "file": "17_restaurant.json"
+      "id": "09_emergencies_health_1",
+      "title": "emergências e saúde - parte 1",
+      "emoji": "⛑️",
+      "file": "09_emergencies_health_1.json"
     },
     {
-      "id": "18_transportation_details",
-      "title": "detalhes de transporte",
-      "file": "18_transportation_details.json"
+      "id": "09_emergencies_health_2",
+      "title": "emergências e saúde - parte 2",
+      "emoji": "⛑️",
+      "file": "09_emergencies_health_2.json"
     },
     {
-      "id": "19_housing_utilities",
-      "title": "moradia e serviços públicos",
-      "file": "19_housing_utilities.json"
+      "id": "10_daily_routines_1",
+      "title": "rotinas diárias - parte 1",
+      "emoji": "☀️",
+      "file": "10_daily_routines_1.json"
     },
     {
-      "id": "20_connectors_advanced",
-      "title": "conectores e frases avançadas",
-      "file": "20_connectors_advanced.json"
+      "id": "10_daily_routines_2",
+      "title": "rotinas diárias - parte 2",
+      "emoji": "☀️",
+      "file": "10_daily_routines_2.json"
     },
     {
-      "id": "21_technology_basics",
-      "title": "tecnologia e computadores",
-      "file": "21_technology_basics.json"
+      "id": "11_family_people_1",
+      "title": "família e pessoas - parte 1",
+      "emoji": "👪",
+      "file": "11_family_people_1.json"
     },
     {
-      "id": "22_weather_and_nature",
-      "title": "clima e natureza",
-      "file": "22_weather_and_nature.json"
+      "id": "11_family_people_2",
+      "title": "família e pessoas - parte 2",
+      "emoji": "👪",
+      "file": "11_family_people_2.json"
     },
     {
-      "id": "23_shopping_and_money",
-      "title": "compras e dinheiro",
-      "file": "23_shopping_and_money.json"
+      "id": "12_weather_smalltalk_1",
+      "title": "clima e conversa fiada - parte 1",
+      "emoji": "🌦️",
+      "file": "12_weather_smalltalk_1.json"
     },
     {
-      "id": "24_family_and_relationships",
-      "title": "família e relacionamentos",
-      "file": "24_family_and_relationships.json"
+      "id": "12_weather_smalltalk_2",
+      "title": "clima e conversa fiada - parte 2",
+      "emoji": "🌦️",
+      "file": "12_weather_smalltalk_2.json"
     },
     {
-      "id": "25_work_and_profession",
-      "title": "trabalho e profissão",
-      "file": "25_work_and_profession.json"
+      "id": "13_work_study_1",
+      "title": "trabalho e estudo - parte 1",
+      "emoji": "💼",
+      "file": "13_work_study_1.json"
     },
     {
-      "id": "26_health_and_medical",
-      "title": "saúde e medicina",
-      "file": "26_health_and_medical.json"
+      "id": "13_work_study_2",
+      "title": "trabalho e estudo - parte 2",
+      "emoji": "💼",
+      "file": "13_work_study_2.json"
     },
     {
-      "id": "27_education_and_learning",
-      "title": "educação e aprendizado",
-      "file": "27_education_and_learning.json"
+      "id": "14_plans_invitations_1",
+      "title": "planos e convites - parte 1",
+      "emoji": "📅",
+      "file": "14_plans_invitations_1.json"
     },
     {
-      "id": "28_sports_and_exercise",
-      "title": "esportes e exercícios",
-      "file": "28_sports_and_exercise.json"
+      "id": "14_plans_invitations_2",
+      "title": "planos e convites - parte 2",
+      "emoji": "📅",
+      "file": "14_plans_invitations_2.json"
     },
     {
-      "id": "29_travel_and_transportation",
-      "title": "viagens e transporte",
-      "file": "29_travel_and_transportation.json"
+      "id": "15_requests_help_1",
+      "title": "pedidos e pedir ajuda - parte 1",
+      "emoji": "🙋",
+      "file": "15_requests_help_1.json"
     },
     {
-      "id": "30_hobbies_and_entertainment",
-      "title": "hobbys e entretenimento",
-      "file": "30_hobbies_and_entertainment.json"
+      "id": "15_requests_help_2",
+      "title": "pedidos e pedir ajuda - parte 2",
+      "emoji": "🙋",
+      "file": "15_requests_help_2.json"
     },
     {
-      "id": "31_emotions_and_feelings",
-      "title": "emoções e sentimentos",
-      "file": "31_emotions_and_feelings.json"
+      "id": "16_phone_internet_1",
+      "title": "telefone e internet - parte 1",
+      "emoji": "📱",
+      "file": "16_phone_internet_1.json"
     },
     {
-      "id": "32_time_and_dates",
-      "title": "tempo e datas",
-      "file": "32_time_and_dates.json"
+      "id": "16_phone_internet_2",
+      "title": "telefone e internet - parte 2",
+      "emoji": "📱",
+      "file": "16_phone_internet_2.json"
     },
     {
-      "id": "33_numbers_and_quantities",
-      "title": "números e quantidades",
-      "file": "33_numbers_and_quantities.json"
+      "id": "17_restaurant_1",
+      "title": "no restaurante - parte 1",
+      "emoji": "🍽️",
+      "file": "17_restaurant_1.json"
     },
     {
-      "id": "34_measurements_and_sizes",
-      "title": "medidas e tamanhos",
-      "file": "34_measurements_and_sizes.json"
+      "id": "17_restaurant_2",
+      "title": "no restaurante - parte 2",
+      "emoji": "🍽️",
+      "file": "17_restaurant_2.json"
     },
     {
-      "id": "35_colors_and_shapes",
-      "title": "cores e formas",
-      "file": "35_colors_and_shapes.json"
+      "id": "18_transportation_details_1",
+      "title": "detalhes de transporte - parte 1",
+      "emoji": "🚌",
+      "file": "18_transportation_details_1.json"
     },
     {
-      "id": "36_weather_and_nature",
-      "title": "clima e natureza",
-      "file": "36_weather_and_nature.json"
+      "id": "18_transportation_details_2",
+      "title": "detalhes de transporte - parte 2",
+      "emoji": "🚌",
+      "file": "18_transportation_details_2.json"
     },
     {
-      "id": "37_shopping_and_money",
-      "title": "compras e dinheiro",
-      "file": "37_shopping_and_money.json"
+      "id": "19_housing_utilities_1",
+      "title": "moradia e serviços públicos - parte 1",
+      "emoji": "🏠",
+      "file": "19_housing_utilities_1.json"
     },
     {
-      "id": "38_family_and_relationships",
-      "title": "família e relacionamentos",
-      "file": "38_family_and_relationships.json"
+      "id": "19_housing_utilities_2",
+      "title": "moradia e serviços públicos - parte 2",
+      "emoji": "🏠",
+      "file": "19_housing_utilities_2.json"
     },
     {
-      "id": "39_work_and_profession",
-      "title": "trabalho e profissão",
-      "file": "39_work_and_profession.json"
+      "id": "20_connectors_advanced_1",
+      "title": "conectores e frases avançadas - parte 1",
+      "emoji": "🔗",
+      "file": "20_connectors_advanced_1.json"
     },
     {
-      "id": "40_advanced_phrases",
-      "title": "frases avançadas",
-      "file": "40_advanced_phrases.json"
+      "id": "20_connectors_advanced_2",
+      "title": "conectores e frases avançadas - parte 2",
+      "emoji": "🔗",
+      "file": "20_connectors_advanced_2.json"
+    },
+    {
+      "id": "21_technology_basics_1",
+      "title": "tecnologia e computadores - parte 1",
+      "emoji": "💻",
+      "file": "21_technology_basics_1.json"
+    },
+    {
+      "id": "21_technology_basics_2",
+      "title": "tecnologia e computadores - parte 2",
+      "emoji": "💻",
+      "file": "21_technology_basics_2.json"
+    },
+    {
+      "id": "22_weather_and_nature_1",
+      "title": "clima e natureza - parte 1",
+      "emoji": "🌤️",
+      "file": "22_weather_and_nature_1.json"
+    },
+    {
+      "id": "22_weather_and_nature_2",
+      "title": "clima e natureza - parte 2",
+      "emoji": "��️",
+      "file": "22_weather_and_nature_2.json"
+    },
+    {
+      "id": "23_shopping_and_money_1",
+      "title": "compras e dinheiro - parte 1",
+      "emoji": "🛍️",
+      "file": "23_shopping_and_money_1.json"
+    },
+    {
+      "id": "23_shopping_and_money_2",
+      "title": "compras e dinheiro - parte 2",
+      "emoji": "🛍️",
+      "file": "23_shopping_and_money_2.json"
+    },
+    {
+      "id": "24_family_and_relationships_1",
+      "title": "família e relacionamentos - parte 1",
+      "emoji": "👪",
+      "file": "24_family_and_relationships_1.json"
+    },
+    {
+      "id": "24_family_and_relationships_2",
+      "title": "família e relacionamentos - parte 2",
+      "emoji": "👪",
+      "file": "24_family_and_relationships_2.json"
+    },
+    {
+      "id": "25_work_and_profession_1",
+      "title": "trabalho e profissão - parte 1",
+      "emoji": "💼",
+      "file": "25_work_and_profession_1.json"
+    },
+    {
+      "id": "25_work_and_profession_2",
+      "title": "trabalho e profissão - parte 2",
+      "emoji": "💼",
+      "file": "25_work_and_profession_2.json"
+    },
+    {
+      "id": "26_health_and_medical_1",
+      "title": "saúde e medicina - parte 1",
+      "emoji": "🏥",
+      "file": "26_health_and_medical_1.json"
+    },
+    {
+      "id": "26_health_and_medical_2",
+      "title": "saúde e medicina - parte 2",
+      "emoji": "🏥",
+      "file": "26_health_and_medical_2.json"
+    },
+    {
+      "id": "27_education_and_learning_1",
+      "title": "educação e aprendizado - parte 1",
+      "emoji": "📚",
+      "file": "27_education_and_learning_1.json"
+    },
+    {
+      "id": "27_education_and_learning_2",
+      "title": "educação e aprendizado - parte 2",
+      "emoji": "📚",
+      "file": "27_education_and_learning_2.json"
+    },
+    {
+      "id": "28_sports_and_exercise_1",
+      "title": "esportes e exercícios - parte 1",
+      "emoji": "⚽",
+      "file": "28_sports_and_exercise_1.json"
+    },
+    {
+      "id": "28_sports_and_exercise_2",
+      "title": "esportes e exercícios - parte 2",
+      "emoji": "⚽",
+      "file": "28_sports_and_exercise_2.json"
+    },
+    {
+      "id": "29_travel_and_transportation_1",
+      "title": "viagens e transporte - parte 1",
+      "emoji": "✈️",
+      "file": "29_travel_and_transportation_1.json"
+    },
+    {
+      "id": "29_travel_and_transportation_2",
+      "title": "viagens e transporte - parte 2",
+      "emoji": "✈️",
+      "file": "29_travel_and_transportation_2.json"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_1",
+      "title": "hobbys e entretenimento - parte 1",
+      "emoji": "🎮",
+      "file": "30_hobbies_and_entertainment_1.json"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_2",
+      "title": "hobbys e entretenimento - parte 2",
+      "emoji": "🎮",
+      "file": "30_hobbies_and_entertainment_2.json"
+    },
+    {
+      "id": "31_emotions_and_feelings_1",
+      "title": "emoções e sentimentos - parte 1",
+      "emoji": "😊",
+      "file": "31_emotions_and_feelings_1.json"
+    },
+    {
+      "id": "31_emotions_and_feelings_2",
+      "title": "emoções e sentimentos - parte 2",
+      "emoji": "😊",
+      "file": "31_emotions_and_feelings_2.json"
+    },
+    {
+      "id": "32_time_and_dates_1",
+      "title": "tempo e datas - parte 1",
+      "emoji": "🕐",
+      "file": "32_time_and_dates_1.json"
+    },
+    {
+      "id": "32_time_and_dates_2",
+      "title": "tempo e datas - parte 2",
+      "emoji": "🕐",
+      "file": "32_time_and_dates_2.json"
+    },
+    {
+      "id": "33_numbers_and_quantities_1",
+      "title": "números e quantidades - parte 1",
+      "emoji": "🔢",
+      "file": "33_numbers_and_quantities_1.json"
+    },
+    {
+      "id": "33_numbers_and_quantities_2",
+      "title": "números e quantidades - parte 2",
+      "emoji": "🔢",
+      "file": "33_numbers_and_quantities_2.json"
+    },
+    {
+      "id": "34_colors_and_appearance_1",
+      "title": "cores e aparência - parte 1",
+      "emoji": "🎨",
+      "file": "34_colors_and_appearance_1.json"
+    },
+    {
+      "id": "34_colors_and_appearance_2",
+      "title": "cores e aparência - parte 2",
+      "emoji": "🎨",
+      "file": "34_colors_and_appearance_2.json"
+    },
+    {
+      "id": "35_food_and_drinks_1",
+      "title": "comida e bebidas - parte 1",
+      "emoji": "🍕",
+      "file": "35_food_and_drinks_1.json"
+    },
+    {
+      "id": "35_food_and_drinks_2",
+      "title": "comida e bebidas - parte 2",
+      "emoji": "🍕",
+      "file": "35_food_and_drinks_2.json"
+    },
+    {
+      "id": "36_clothing_and_fashion_1",
+      "title": "roupas e moda - parte 1",
+      "emoji": "👗",
+      "file": "36_clothing_and_fashion_1.json"
+    },
+    {
+      "id": "36_clothing_and_fashion_2",
+      "title": "roupas e moda - parte 2",
+      "emoji": "👗",
+      "file": "36_clothing_and_fashion_2.json"
+    },
+    {
+      "id": "37_home_and_furniture_1",
+      "title": "casa e móveis - parte 1",
+      "emoji": "🏠",
+      "file": "37_home_and_furniture_1.json"
+    },
+    {
+      "id": "37_home_and_furniture_2",
+      "title": "casa e móveis - parte 2",
+      "emoji": "🏠",
+      "file": "37_home_and_furniture_2.json"
+    },
+    {
+      "id": "38_animals_and_pets_1",
+      "title": "animais e animais de estimação - parte 1",
+      "emoji": "🐕",
+      "file": "38_animals_and_pets_1.json"
+    },
+    {
+      "id": "38_animals_and_pets_2",
+      "title": "animais e animais de estimação - parte 2",
+      "emoji": "🐕",
+      "file": "38_animals_and_pets_2.json"
+    },
+    {
+      "id": "39_communication_and_language_1",
+      "title": "comunicação e linguagem - parte 1",
+      "emoji": "💬",
+      "file": "39_communication_and_language_1.json"
+    },
+    {
+      "id": "39_communication_and_language_2",
+      "title": "comunicação e linguagem - parte 2",
+      "emoji": "💬",
+      "file": "39_communication_and_language_2.json"
+    },
+    {
+      "id": "40_advanced_phrases_1",
+      "title": "frases avançadas - parte 1",
+      "emoji": "🗣️",
+      "file": "40_advanced_phrases_1.json"
+    },
+    {
+      "id": "40_advanced_phrases_2",
+      "title": "frases avançadas - parte 2",
+      "emoji": "🗣️",
+      "file": "40_advanced_phrases_2.json"
     }
   ]
 }
