@@ -400,7 +400,14 @@ export const useSurfScreen = () => {
         return;
       }
       
-      await addLibraryUrl(url, typeName || 'any', level || 'easy', displayName);
+      await addLibraryUrl(
+        url, 
+        typeName || 'any', 
+        level || 'easy', 
+        displayName || 'Untitled',
+        learningLanguage || 'en',
+        'web'
+      );
     } catch {}
   };
 

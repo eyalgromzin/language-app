@@ -1,5 +1,3 @@
-3 share button in surf screen 
-
 4 if a book is in the library already , set in localstorage to not even check  again if its in the library, and not just not asking  
 
 5 make share button for book - will show dialog to check if its a book downloaded from website. or some local book that got in some other way . 
@@ -7,6 +5,8 @@
     - if its in the phone itself , share the file itself from storage. 
 
 5.5 runner screen , on skip , dont add to wrong count 
+
+6 ask shir - if post book url should maybe send me an email with all the details and i will add the book ? 
 
 ==================== tomorrow ========================
 
@@ -24,6 +24,8 @@
 
 11.5 app link not working again 
 
+11.7 login with facebook
+
 12 register app
 
 - payed version - when ill have 1000 users 
@@ -35,4 +37,3 @@
 - check hebrew support - and rtl 
     - formulate sentense - the words are the opposite order 
 
-- login with facebook

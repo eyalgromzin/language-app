@@ -133,7 +133,9 @@ export const addLibraryUrl = async (
   url: string,
   type: string,
   level: string,
-  title?: string
+  name: string,
+  language: string,
+  media: string = 'web'
 ): Promise<any> => {
   return apiRequest(API_CONFIG.ENDPOINTS.LIBRARY_ADD_URL, {
     method: 'POST',
@@ -141,7 +143,9 @@ export const addLibraryUrl = async (
       url,
       type,
       level,
-      title,
+      name,
+      language,
+      media,
     }),
   });
 };

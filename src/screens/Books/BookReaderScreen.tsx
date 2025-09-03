@@ -27,6 +27,7 @@ type StoredBook = {
 
 const STORAGE_KEY = 'books.library';
 const OPENED_BEFORE_KEY = 'books.openedBefore';
+const BOOK_LIBRARY_STATUS_KEY = 'books.libraryStatus';
 
 type RouteParams = { id: string };
 
@@ -243,12 +244,32 @@ function BookReaderScreen(): React.JSX.Element {
 
         const normalizedSaved = savedUrl ? normalizeUrl(savedUrl) : '';
         let existsInLibrary = false;
+        
+        // First check local storage for cached library status
         if (normalizedSaved) {
           try {
-            // Query server for existing book entries and match by exact URL
-            const json: { urls?: { url: string }[] } = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage), undefined, undefined, 'book');
-            const list = Array.isArray(json?.urls) ? json.urls : [];
-            existsInLibrary = list.some((it) => (it && typeof it.url === 'string' ? it.url.trim() : '') === normalizedSaved);
+            const rawStatus = await AsyncStorage.getItem(BOOK_LIBRARY_STATUS_KEY);
+            const statusMap = rawStatus ? JSON.parse(rawStatus) : {};
+            const cachedStatus = statusMap[normalizedSaved];
+            
+            if (cachedStatus === true) {
+              // Book is confirmed to be in library from cache
+              existsInLibrary = true;
+            } else if (cachedStatus === false) {
+              // Book is confirmed to NOT be in library from cache
+              existsInLibrary = false;
+            } else {
+              // No cache, need to query server
+              try {
+                const json: { urls?: { url: string }[] } = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage), undefined, undefined, 'book');
+                const list = Array.isArray(json?.urls) ? json.urls : [];
+                existsInLibrary = list.some((it) => (it && typeof it.url === 'string' ? it.url.trim() : '') === normalizedSaved);
+                
+                // Cache the result for future use
+                const nextStatus = { ...statusMap, [normalizedSaved]: existsInLibrary };
+                await AsyncStorage.setItem(BOOK_LIBRARY_STATUS_KEY, JSON.stringify(nextStatus));
+              } catch {}
+            }
           } catch {}
         }
 
@@ -282,6 +303,7 @@ function BookReaderScreen(): React.JSX.Element {
         const onNo = async () => { await markPromptShownNow(); };
 
         try {
+          console.log('Add book to library');
           Alert.alert(
             'Add book to library',
             'would you like to add a url where to download this book to library ? so that everyone would enjoy it? ',
@@ -355,7 +377,16 @@ function BookReaderScreen(): React.JSX.Element {
         name: safeName,
         media: 'book',
       } as const;
-      await addLibraryUrl(normalizedUrl, safeType, 'easy', safeName);
+      await addLibraryUrl(normalizedUrl, safeType, 'easy', safeName, lang, 'book');
+      
+      // Cache that this URL is now in the library
+      try {
+        const rawStatus = await AsyncStorage.getItem(BOOK_LIBRARY_STATUS_KEY);
+        const statusMap = rawStatus ? JSON.parse(rawStatus) : {};
+        const nextStatus = { ...statusMap, [normalizedUrl]: true };
+        await AsyncStorage.setItem(BOOK_LIBRARY_STATUS_KEY, JSON.stringify(nextStatus));
+      } catch {}
+      
       // Persist this URL for future existence checks per book
       if (bookId) {
         try {
