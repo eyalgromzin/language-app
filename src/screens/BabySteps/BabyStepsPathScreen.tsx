@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimensions, TouchableOpacity, NativeModules } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimensions, TouchableOpacity, NativeModules, Alert } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { Svg, Path } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
 import { getBabySteps } from '../../config/api';
+import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 
 type StepItem = {
   id: string;
@@ -33,7 +34,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
   const [maxCompletedIndex, setMaxCompletedIndex] = React.useState<number>(0); // 0 means none finished
   const [translatedTitleById, setTranslatedTitleById] = React.useState<Record<string, string>>({});
   const navigation = useNavigation<any>();
-
+  const { languageMappings } = useLanguageMappings();
 
   React.useEffect(() => {
     let mounted = true;
@@ -43,8 +44,6 @@ function BabyStepsPathScreen(): React.JSX.Element {
           AsyncStorage.getItem('language.learning'),
           AsyncStorage.getItem('language.native'),
         ]);
-        // Use default languageMappings if not available
-        const languageMappings = {};
         const learningCode = getLangCode(learningName, languageMappings) || 'en';
         const nativeCode = getLangCode(nativeName, languageMappings) || 'en';
         // Load steps for current learning language from server only
@@ -147,6 +146,44 @@ function BabyStepsPathScreen(): React.JSX.Element {
     return CONTENT_PADDING + steps.length * (NODE_DIAMETER + V_SPACING);
   }, [steps]);
 
+  const clearProgress = async () => {
+    try {
+      const learningName = await AsyncStorage.getItem('language.learning');
+      const code = getLangCode(learningName, languageMappings) || 'en';
+      
+      Alert.alert(
+        'Clear Progress',
+        'Are you sure you want to clear all your baby steps progress? This action cannot be undone.',
+        [
+          {
+            text: 'Cancel',
+            style: 'cancel',
+          },
+          {
+            text: 'Clear Progress',
+            style: 'destructive',
+            onPress: async () => {
+              try {
+                // Clear the progress for the current learning language
+                await AsyncStorage.removeItem(`babySteps.maxCompletedIndex.${code}`);
+                setMaxCompletedIndex(0);
+                
+                // Show success message
+                Alert.alert('Progress Cleared', 'Your baby steps progress has been cleared successfully.');
+              } catch (error) {
+                console.error('Error clearing progress:', error);
+                Alert.alert('Error', 'Failed to clear progress. Please try again.');
+              }
+            },
+          },
+        ]
+      );
+    } catch (error) {
+      console.error('Error getting language code:', error);
+      Alert.alert('Error', 'Failed to clear progress. Please try again.');
+    }
+  };
+
   if (loading) {
     return (
       <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#000' : '#fff' }]}>
@@ -200,6 +237,22 @@ function BabyStepsPathScreen(): React.JSX.Element {
 
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#000' : '#fff' }]}>
+      {/* Header with Clear Progress Button */}
+      <View style={[styles.header, { 
+        backgroundColor: isDark ? '#1c1c1e' : '#f2f2f7',
+        borderBottomColor: isDark ? '#38383a' : '#e0e0e0'
+      }]}>
+        <Text style={[styles.headerTitle, { color: isDark ? '#f0f0f0' : '#222' }]}>Baby Steps Path</Text>
+        <TouchableOpacity
+          style={[styles.clearButton, { backgroundColor: isDark ? '#ff453a' : '#ff3b30' }]}
+          onPress={clearProgress}
+          accessibilityRole="button"
+          accessibilityLabel="Clear progress"
+        >
+          <Text style={styles.clearButtonText}>Clear Progress</Text>
+        </TouchableOpacity>
+      </View>
+
       <ScrollView contentContainerStyle={{ height: contentHeight }}>
         <View
           style={styles.canvas}
@@ -313,6 +366,29 @@ function BabyStepsPathScreen(): React.JSX.Element {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#e0e0e0',
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  clearButton: {
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+  },
+  clearButtonText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: '600',
   },
   centerFill: {
     flex: 1,

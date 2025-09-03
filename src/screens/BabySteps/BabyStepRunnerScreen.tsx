@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, NativeModules } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
@@ -10,6 +10,7 @@ import Choose1OutOfN from '../practice/choose1OutOfN/Choose1OutOfN';
 import HearingPracticeScreen from '../practice/hearing/HearingPracticeScreen';
 import WordMissingLettersScreen from '../practice/MissingLettersScreen/missingLettersScreen';
 import WriteWordScreen from '../practice/writeWord/WriteWordScreen';
+import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 
 type StepItem = {
   id: string;
@@ -19,15 +20,7 @@ type StepItem = {
   practiceType?: 'chooseTranslation' | 'missingWords' | 'formulateSentense' | 'chooseWord' | 'hearing' | 'translationMissingLetters' | 'wordMissingLetters' | 'writeWord';
 };
 
-type StepsFile = {
-  language: string;
-  overview?: string;
-  steps: Array<{
-    id: string;
-    title: string;
-    items: StepItem[];
-  }>;
-};
+
 
 type RunnerTask =
   | {
@@ -125,6 +118,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
 
   const [loading, setLoading] = React.useState<boolean>(true);
   const [tasks, setTasks] = React.useState<RunnerTask[]>([]);
+  const [originalTaskCount, setOriginalTaskCount] = React.useState<number>(0);
   const [currentIdx, setCurrentIdx] = React.useState<number>(0);
   const [inputs, setInputs] = React.useState<Record<number, string>>({});
   const [wrongKey, setWrongKey] = React.useState<string | null>(null);
@@ -134,7 +128,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
   const [currentHadMistake, setCurrentHadMistake] = React.useState<boolean>(false);
   const [resetSeed, setResetSeed] = React.useState<number>(0);
   const [selectedIndices, setSelectedIndices] = React.useState<number[]>([]);
-
+  const { languageMappings } = useLanguageMappings();
 
   React.useEffect(() => {
     let mounted = true;
@@ -146,9 +140,8 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           AsyncStorage.getItem('language.learning'),
           AsyncStorage.getItem('language.native'),
         ]);
-        const currentCode = getLangCode(learningName) || 'en';
-        const nativeCode = getLangCode(nativeName) || 'en';
-        const otherCode = nativeCode !== currentCode ? nativeCode : (currentCode === 'en' ? 'es' : 'en');
+        const currentCode = getLangCode(learningName, languageMappings) || 'en';
+        const nativeCode = getLangCode(nativeName, languageMappings) || 'en';
 
         // First, get the steps list to find the stepId for the given stepIndex
         const stepsFile = await getBabySteps(currentCode);
@@ -163,30 +156,29 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         const stepId = stepMeta.id;
 
         // Now get the specific step data using the new API
-        const [currentStep, otherFile] = await Promise.all([
+        const [currentStepLearningLanguage, currentStepNativeLanguage] = await Promise.all([
           getBabyStep(currentCode, stepId),
-          getBabySteps(otherCode),
+          getBabyStep(nativeCode, stepId),
         ]);
 
         if (!mounted) return;
 
-        if (!currentStep || !currentStep.items) {
+        if (!currentStepLearningLanguage || !currentStepLearningLanguage) {
           setTasks([]);
           return;
         }
 
         // Helper to find matching item text by id in other language file
-        const findOtherTextById = (itemId: string): string | null => {
-          for (const s of (otherFile?.steps || [])) {
-            const match = s.items.find((it: any) => it.id === itemId);
-            if (match) return match.text;
+        const findNativeTextById = (itemId: string): string | null => {
+          for (const s of (currentStepNativeLanguage?.items || [])) {
+            if (s.id === itemId) return s.text;
           }
           return null;
         };
 
         // Gather extras from same step for word bank (tokens from sentences, word texts from current language)
         const extrasFromStep: string[] = [];
-        currentStep.items.forEach((it: any) => {
+        currentStepLearningLanguage.items.forEach((it: any) => {
           if (it.type === 'sentence' || it.practiceType === 'missingWords') {
             splitToTokens(it.text).forEach((t: string) => extrasFromStep.push(t));
           } else if (it.type === 'word' || it.practiceType === 'chooseTranslation') {
@@ -194,14 +186,14 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           }
         });
 
-        const built: RunnerTask[] = currentStep.items.map((it: any) => {
-          const otherText = findOtherTextById(it.id) || it.text;
+        const built: RunnerTask[] = currentStepLearningLanguage.items.map((it: any) => {
+          const otherText = findNativeTextById(it.id);
           if (it.practiceType === 'chooseTranslation' || it.type === 'word') {
             // Build distractors from other word items in same step
             const distractorPool: string[] = [];
-            currentStep.items.forEach((o: any) => {
+            currentStepNativeLanguage.items.forEach((o: any) => {
               if (o.id !== it.id && (o.type === 'word' || o.practiceType === 'chooseTranslation')) {
-                const t = findOtherTextById(o.id);
+                const t = findNativeTextById(o.id);
                 if (t && t !== otherText) distractorPool.push(t);
               }
             });
@@ -218,7 +210,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           if (it.practiceType === 'chooseWord') {
             // Show translation and ask to pick the correct word
             const distractorPoolWords: string[] = [];
-            currentStep.items.forEach((o: any) => {
+            currentStepLearningLanguage.items.forEach((o: any) => {
               if (o.id !== it.id && (o.type === 'word' || o.practiceType === 'chooseTranslation' || o.practiceType === 'chooseWord')) {
                 if (o.text && o.text !== it.text) distractorPoolWords.push(o.text);
               }
@@ -249,9 +241,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           if (it.practiceType === 'hearing') {
             // Hearing: pick translation options from other words' translations
             const distractorPool: string[] = [];
-            currentStep.items.forEach((o: any) => {
+            currentStepLearningLanguage.items.forEach((o: any) => {
               if (o.id !== it.id && (o.type === 'word' || o.practiceType === 'chooseTranslation' || o.practiceType === 'hearing')) {
-                const t = findOtherTextById(o.id);
+                const t = findNativeTextById(o.id);
                 if (t && t !== otherText) distractorPool.push(t);
               }
             });
@@ -346,9 +338,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           // Final fallback: treat as chooseTranslation
           {
             const distractorPool: string[] = [];
-            currentStep.items.forEach((o: any) => {
+            currentStepLearningLanguage.items.forEach((o: any) => {
               if (o.id !== it.id && (o.type === 'word' || o.practiceType === 'chooseTranslation')) {
-                const t = findOtherTextById(o.id);
+                const t = findNativeTextById(o.id);
                 if (t && t !== otherText) distractorPool.push(t);
               }
             });
@@ -365,7 +357,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         });
 
         if (!mounted) return;
-        setTasks(shuffleArray(built));
+        const shuffledTasks = shuffleArray(built);
+        setTasks(shuffledTasks);
+        setOriginalTaskCount(shuffledTasks.length);
         setCurrentIdx(0);
         setInputs({});
         setWrongKey(null);
@@ -393,30 +387,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     setSelectedIndices([]);
   }, [currentIdx]);
 
-  const onPickTranslation = (opt: string) => {
-    if (current?.kind !== 'chooseTranslation') return;
-    if (selectedKey) return;
-    if (opt === current.correctTranslation) {
-      // If there was any mistake on this item before getting it right, requeue it to the end
-      setTasks((prev) => (currentHadMistake ? [...prev, prev[currentIdx]] : prev));
-      setCurrentHadMistake(false);
-      setSelectedKey(opt);
-      setNumCorrect((c) => c + 1);
-      setTimeout(() => setCurrentIdx((i) => i + 1), 800);
-      return;
-    }
-    setWrongKey(opt);
-    setNumWrong((c) => c + 1);
-    setCurrentHadMistake(true);
-    setTimeout(() => setWrongKey(null), 1200);
-  };
 
-  const fillNextBlank = (chosen: string) => {
-    if (current?.kind !== 'missingWords') return;
-    const nextBlank = current.missingIndices.find((i) => (inputs[i] ?? '').trim() === '');
-    if (typeof nextBlank !== 'number') return;
-    setInputs((prev) => ({ ...prev, [nextBlank]: chosen }));
-  };
+
+
 
   React.useEffect(() => {
     if (!current || current.kind !== 'missingWords') return;
@@ -457,12 +430,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     setCurrentHadMistake(false);
   }, [currentIdx]);
 
-  const onPickFormulateIndex = (idx: number) => {
-    if (current?.kind !== 'formulateSentense') return;
-    if (selectedIndices.includes(idx)) return;
-    const next = [...selectedIndices, idx];
-    setSelectedIndices(next);
-  };
+
 
   React.useEffect(() => {
     if (!current || current.kind !== 'formulateSentense') return;
@@ -529,8 +497,8 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     );
   }
 
-  // When we've advanced past the end, the user has completed all queued tasks correctly
-  if (currentIdx >= tasks.length) {
+  // When we've completed all original tasks, show completion screen
+  if (originalTaskCount > 0 && numCorrect >= originalTaskCount) {
     return (
       <View style={styles.centered}>
         <Text style={styles.title}>Step {stepIndex + 1} complete!</Text>
@@ -544,11 +512,30 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     );
   }
 
+  // Safety check: if we've run out of tasks but haven't completed all original tasks, restart
+  if (currentIdx >= tasks.length && originalTaskCount > 0) {
+    setResetSeed((s) => s + 1);
+    return (
+      <View style={styles.centered}>
+        <Text>Restarting step...</Text>
+      </View>
+    );
+  }
+
+  // Ensure we have a current task
+  if (!current) {
+    return (
+      <View style={styles.centered}>
+        <Text>Loading task...</Text>
+      </View>
+    );
+  }
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.topRow}>
-        <Text style={styles.title}>Step {stepIndex + 1} • {currentIdx + 1}/{tasks.length} • {numCorrect} correct • {numWrong} wrong</Text>
-        {currentIdx + 1 < tasks.length ? (
+        <Text style={styles.title}>Step {stepIndex + 1} • {numCorrect}/{originalTaskCount} • {numCorrect} correct • {numWrong} wrong</Text>
+        {numCorrect < originalTaskCount ? (
           <TouchableOpacity style={styles.skipButton} onPress={onSkip} accessibilityRole="button" accessibilityLabel="Skip">
             <Text style={styles.skipText}>Skip</Text>
           </TouchableOpacity>
