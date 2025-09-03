@@ -12,6 +12,7 @@ interface SurfWebViewProps {
   translationPanel: TranslationPanelState | null;
   onSaveWord: () => void;
   onCloseTranslationPanel: () => void;
+  onRetranslate: (word: string) => void;
   baseInjection: string;
 }
 
@@ -24,6 +25,7 @@ const SurfWebView: React.FC<SurfWebViewProps> = ({
   translationPanel,
   onSaveWord,
   onCloseTranslationPanel,
+  onRetranslate,
   baseInjection,
 }) => {
   return (
@@ -41,11 +43,12 @@ const SurfWebView: React.FC<SurfWebViewProps> = ({
         domStorageEnabled
         originWhitelist={["*"]}
       />
-      <TranslationPanel
-        panel={translationPanel}
-        onSave={onSaveWord}
-        onClose={onCloseTranslationPanel}
-      />
+              <TranslationPanel
+          panel={translationPanel}
+          onSave={onSaveWord}
+          onClose={onCloseTranslationPanel}
+          onRetranslate={onRetranslate}
+        />
     </>
   );
 };

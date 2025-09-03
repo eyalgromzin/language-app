@@ -206,6 +206,34 @@ export const useTranslationAndImages = (
     }
   };
 
+  // Auto-fetch translation and images when word changes
+  React.useEffect(() => {
+    if (translationPanel && translationPanel.word && 
+        (translationPanel.translationLoading || translationPanel.imagesLoading)) {
+      // Fetch translation
+      fetchTranslation(translationPanel.word)
+        .then((t) => {
+          setTranslationPanel(prev => (prev && prev.word === translationPanel.word ? 
+            { ...prev, translation: t || prev.translation, translationLoading: false } : prev));
+        })
+        .catch(() => {
+          setTranslationPanel(prev => (prev && prev.word === translationPanel.word ? 
+            { ...prev, translationLoading: false } : prev));
+        });
+
+      // Fetch images
+      fetchImageUrls(translationPanel.word)
+        .then((imgs) => {
+          setTranslationPanel(prev => (prev && prev.word === translationPanel.word ? 
+            { ...prev, images: imgs, imagesLoading: false } : prev));
+        })
+        .catch(() => {
+          setTranslationPanel(prev => (prev && prev.word === translationPanel.word ? 
+            { ...prev, images: [], imagesLoading: false } : prev));
+        });
+    }
+  }, [translationPanel?.word, translationPanel?.translationLoading, translationPanel?.imagesLoading, fetchTranslation, fetchImageUrls, setTranslationPanel]);
+
   return {
     translationPanel,
     setTranslationPanel,

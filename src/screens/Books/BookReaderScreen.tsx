@@ -1252,6 +1252,9 @@ function BookReaderScreen(): React.JSX.Element {
           onTranslate={(word: string) => {
             openPanel(word, translationPanel?.sentence);
           }}
+          onRetranslate={(word: string) => {
+            openPanel(word, translationPanel?.sentence);
+          }}
         />
         {/* Add book to library modal */}
         <Modal

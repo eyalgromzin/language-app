@@ -1055,11 +1055,14 @@ function VideoScreen(): React.JSX.Element {
 
       {/* {!isPlaying && !hidePlayback && !nowPlayingLoading && !nowPlayingError && nowPlayingVideos.length === 0 && <NewestVideos />} */}
 
-      <TranslationPanel
-        panel={translationPanel}
-        onSave={saveCurrentWord}
-        onClose={() => setTranslationPanel(null)}
-      />
+              <TranslationPanel
+          panel={translationPanel}
+          onSave={saveCurrentWord}
+          onClose={() => setTranslationPanel(null)}
+          onRetranslate={(word: string) => {
+            openPanel(word, translationPanel?.sentence);
+          }}
+        />
 
       <FavouritesModal
         visible={showAddFavouriteModal}

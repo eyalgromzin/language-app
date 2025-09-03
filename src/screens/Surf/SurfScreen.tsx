@@ -125,6 +125,21 @@ function SurfScreen(): React.JSX.Element {
     languageMappings,
   );
 
+  // Function to handle retranslation
+  const handleRetranslate = React.useCallback((word: string) => {
+    if (translationPanel) {
+      // Update the word and trigger new translation and image fetch
+      setTranslationPanel({
+        ...translationPanel,
+        word,
+        translation: '',
+        images: [],
+        imagesLoading: true,
+        translationLoading: true,
+      });
+    }
+  }, [translationPanel, setTranslationPanel]);
+
   // Print first 3 harmful words to console on screen load
   React.useEffect(() => {
     (async () => {
@@ -269,6 +284,7 @@ function SurfScreen(): React.JSX.Element {
         translationPanel={translationPanel}
         onSaveWord={saveCurrentWord}
         onCloseTranslationPanel={() => setTranslationPanel(null)}
+        onRetranslate={handleRetranslate}
         baseInjection={baseInjection}
       />
       

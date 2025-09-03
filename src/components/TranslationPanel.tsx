@@ -19,10 +19,11 @@ type Props = {
   onClose: () => void;
   isBookScreen?: boolean;
   onTranslate?: (word: string) => void;
+  onRetranslate?: (word: string) => void;
 };
 
 function TranslationPanel(props: Props): React.JSX.Element | null {
-  const { panel, onSave, onClose, isBookScreen = false, onTranslate } = props;
+  const { panel, onSave, onClose, isBookScreen = false, onTranslate, onRetranslate } = props;
   if (!panel) return null;
 
   // Animation value for plus button rotation
@@ -40,6 +41,9 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
     setEditedWord(panel.word);
     setIsEditing(false);
   }, [panel.word]);
+
+  // Check if word has been changed
+  const hasWordChanged = editedWord.trim() !== panel.word.trim();
 
   // Keyboard event listeners
   React.useEffect(() => {
@@ -117,6 +121,12 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
     }
   }, [onTranslate, editedWord]);
 
+  const handleRetranslatePress = React.useCallback(() => {
+    if (onRetranslate && editedWord.trim()) {
+      onRetranslate(editedWord.trim());
+    }
+  }, [onRetranslate, editedWord]);
+
   const handleCancelEdit = React.useCallback(() => {
     setEditedWord(panel.word);
     setIsEditing(false);
@@ -160,6 +170,22 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
           >
             <Text style={styles.speakerIcon}>🔊</Text>
           </TouchableOpacity>
+          
+          {/* Translate button - always visible, enabled when word changes */}
+          <TouchableOpacity
+            onPress={handleRetranslatePress}
+            style={[
+              styles.translateBtnWrap, 
+              !hasWordChanged && styles.translateBtnDisabled
+            ]}
+            hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+            accessibilityRole="button"
+            accessibilityLabel="Translate word again"
+            disabled={!hasWordChanged}
+          >
+            <Text style={styles.translateBtnText}>🔄</Text>
+          </TouchableOpacity>
+          
           {isBookScreen && !isEditing && (
             <TouchableOpacity
               onPress={handleEditPress}
@@ -347,11 +373,13 @@ const styles = StyleSheet.create({
     includeFontPadding: false,
   },
   translateBtnWrap: {
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
     backgroundColor: '#007AFF',
-    borderRadius: 8,
-    marginRight: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 4,
     shadowColor: '#000',
     shadowOpacity: 0.15,
     shadowRadius: 4,
