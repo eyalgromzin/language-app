@@ -15,7 +15,7 @@ export const API_CONFIG = {
     LIBRARY_ADD_URL: '/library/addUrl',
     LIBRARY_GET_META: '/library/getMeta',
     LIBRARY_GET_URLS_WITH_CRITERIAS: '/library/getUrlsWithCriterias',
-    LIBRARY_GET_LANGUAGES: '/languages',
+    GET_LANGUAGES: '/languages',
     VIDEO_NOW_PLAYING_UPSERT: '/video/now-playing/upsert',
     VIDEO_NOW_PLAYING_GET: '/video/now-playing',
     CACHE_LAST_WORDS: '/cache/last-words',
@@ -99,7 +99,7 @@ export const getLibraryMeta = async (): Promise<any> => {
 };
 
 export const getLanguages = async (): Promise<Array<{ id: number; name: string; symbol: string }>> => {
-  return apiRequest(API_CONFIG.ENDPOINTS.LIBRARY_GET_LANGUAGES);
+  return apiRequest(API_CONFIG.ENDPOINTS.GET_LANGUAGES);
 };
 
 export const getLibraryUrlsWithCriterias = async (

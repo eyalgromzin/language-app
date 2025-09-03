@@ -40,7 +40,7 @@ export class LanguagesService {
     this.isLoading = true;
 
     try {
-      const response = await fetch(`${API_CONFIG.SERVER_URL}${API_CONFIG.ENDPOINTS.LIBRARY_GET_LANGUAGES}`);
+      const response = await fetch(`${API_CONFIG.SERVER_URL}${API_CONFIG.ENDPOINTS.GET_LANGUAGES}`);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
