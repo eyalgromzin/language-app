@@ -33,7 +33,7 @@ type StepItem = {
   title?: string;
   type?: 'word' | 'sentence';
   text: string;
-  practiceType?: 'chooseTranslation' | 'missingWords' | 'formulateSentense';
+  practiceType?: 'chooseTranslation' | 'missingWords' | 'formulateSentense' | string;
 };
 
 type StepsFile = {
@@ -186,9 +186,9 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         const tokensSet = new Set<string>();
         (stepsFile.steps || []).forEach((step) => {
           (step.items || []).forEach((it) => {
-            if (it.type === 'sentence' || it.practiceType === 'missingWords' || it.practiceType === 'formulateSentense') {
+            if (it.type === 'sentence' || (it.practiceType && typeof it.practiceType === 'string' && (it.practiceType.includes('missingWords') || it.practiceType.includes('formulateSentense')))) {
               tokenizeSentence(it.text).forEach((t) => t && tokensSet.add(t));
-            } else if (it.type === 'word' || it.practiceType === 'chooseTranslation') {
+            } else if (it.type === 'word' || (it.practiceType && typeof it.practiceType === 'string' && it.practiceType.includes('chooseTranslation'))) {
               if (it.text) tokensSet.add(it.text);
             }
           });

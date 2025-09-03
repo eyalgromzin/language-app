@@ -1,26 +1,25 @@
-5.5 runner screen , on skip , dont add to wrong count 
+1 runner screen , on skip , dont add to wrong count 
 
-6 ask shir - if post book url should maybe send me an email with all the details and i will add the book ? to prevent bad urls ? or add a report button that will report the item.  
+2 ask shir - if post book url should maybe send me an email with all the details and i will add the book ? to prevent bad urls ? or add a report button that will report the item.  
 
-6 create translate table with all languages that will be filled each time a user clicks a word 
+3 create translate table with all languages that will be filled each time a user clicks a word 
 
-7- in baby steps , enable to state multiple practices for each word / sentense . 
+4 - in baby steps , enable to state multiple practices for each word / sentense . 
 
-7.5 - add icons to items in library . book, youtube, web . 
+5 - add icons to items in library . book, youtube, web . 
 
-8 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
+6 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
 
-9 make video transcript work better - it lags now 
+7 make video transcript work better - it lags now 
 
-10 design app better  
+8 design app better  
 
-11 - split each  baby steps file into 2 files. where each will have 5 words and 5 sentenses with 2 practices for each . 
+9 app link not working again 
 
-11.5 app link not working again 
+10 login with facebook
 
-11.7 login with facebook
-
-12 register app
+- refactor - move all types into 1 file. 
+    - wordentry 
 
 - payed version - when ill have 1000 users 
     - limit num of words possible to add to learning per day - for example 20 - payed will be limitless.

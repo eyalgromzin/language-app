@@ -1,65 +1,93 @@
-# Baby Steps Language Learning Structure
+# Baby Steps - Multiple Practice Types
 
-This directory contains language learning steps organized by language and step category.
+## Overview
+The baby-steps system now supports multiple practice types for each word or sentence, allowing for more comprehensive learning experiences. Multiple practice types can be specified by separating them with commas in the `practiceType` field.
 
-## Structure
+## Available Practice Types
 
-```
-baby-steps/
-├── index.json                 # Main index listing all available languages
-├── en/                       # English language folder
-│   ├── index.json           # English language index with all steps
-│   ├── 01_essentials.json   # Step 1: Greetings & politeness
-│   ├── 02_introductions.json # Step 2: Introductions & basic info
-│   ├── 03_core_verbs_pronouns.json # Step 3: Core pronouns & helper verbs
-│   ├── 04_numbers_time_basics.json # Step 4: Numbers & time basics
-│   ├── 05_getting_around.json # Step 5: Directions & getting around
-│   ├── 06_food_drink_basics.json # Step 6: Food & drink basics
-│   ├── 07_shopping_money.json # Step 7: Shopping & money
-│   ├── 08_travel_hotel.json # Step 8: Travel & hotel
-│   ├── 09_emergencies_health.json # Step 9: Emergencies & health
-│   ├── 10_daily_routines.json # Step 10: Daily routines & common verbs
-│   ├── 11_family_people.json # Step 11: Family & people
-│   ├── 12_weather_smalltalk.json # Step 12: Weather & small talk
-│   ├── 13_work_study.json # Step 13: Work & study basics
-│   ├── 14_plans_invitations.json # Step 14: Making plans & invitations
-│   ├── 15_requests_help.json # Step 15: Requests & asking for help
-│   ├── 16_phone_internet.json # Step 16: Phone & internet
-│   ├── 17_restaurant.json # Step 17: At the restaurant
-│   ├── 18_transportation_details.json # Step 18: Transportation details
-│   ├── 19_housing_utilities.json # Step 19: Housing & utilities
-│   └── 20_connectors_advanced.json # Step 20: Connectors & advanced phrases
-└── [other_languages]/        # Future language folders (e.g., fr/, de/, es/)
+### Word Practice Types
+- `chooseTranslation` - Choose the correct translation from multiple options
+- `chooseWord` - Choose the correct word when given a translation
+- `hearing` - Practice listening comprehension with translation options
+- `translationMissingLetters` - Fill in missing letters in the translation
+- `wordMissingLetters` - Fill in missing letters in the word
+- `writeWord` - Write the word with some letters missing
+
+### Sentence Practice Types
+- `formulateSentense` - Arrange shuffled words to form the correct sentence
+- `missingWords` - Fill in missing words in the sentence
+
+## Usage Examples
+
+### Single Practice Type (Legacy)
+```json
+{
+  "id": "example_word",
+  "type": "word",
+  "text": "hello",
+  "practiceType": "chooseTranslation"
+}
 ```
 
-## File Format
+### Multiple Practice Types
+```json
+{
+  "id": "example_word",
+  "type": "word",
+  "text": "hello",
+  "practiceType": "chooseTranslation,chooseWord,wordMissingLetters"
+}
+```
 
-Each step file contains:
-- `id`: Unique identifier for the step
-- `title`: Human-readable title
-- `emoji`: Visual representation
-- `language`: Language name
-- `items`: Array of learning items (words/sentences)
+### Sentence with Multiple Practice Types
+```json
+{
+  "id": "example_sentence",
+  "type": "sentence",
+  "text": "Good morning.",
+  "practiceType": "formulateSentense,missingWords"
+}
+```
 
-Each item contains:
-- `id`: Unique identifier for the item
-- `type`: Either "word" or "sentence"
-- `text`: The actual text to learn
-- `practiceType`: Practice method (e.g., "chooseTranslation", "formulateSentense")
+## How It Works
 
-## Adding New Languages
+1. **Parsing**: The system splits the `practiceType` field by commas and trims whitespace
+2. **Task Generation**: For each practice type, a corresponding task is created
+3. **Multiple Tasks**: One word/sentence can now generate multiple practice tasks
+4. **Fallback Logic**: If no valid practice types are found, the system falls back to default behavior
 
-To add a new language:
+## Benefits
 
-1. Create a new folder (e.g., `fr/` for French)
-2. Create individual step files following the same naming convention
-3. Create an `index.json` file for the language
-4. Update the main `index.json` to include the new language
+- **Variety**: Learners encounter different types of practice for the same content
+- **Reinforcement**: Multiple practice types help reinforce learning
+- **Flexibility**: Content creators can design comprehensive learning experiences
+- **Backward Compatibility**: Existing single practice type files continue to work
 
-## Benefits of This Structure
+## Best Practices
 
-- **Modularity**: Each step is a separate file, making it easier to maintain
-- **Scalability**: Easy to add new languages without affecting existing ones
-- **Organization**: Clear separation between languages and steps
-- **Maintainability**: Individual files are easier to edit and review
-- **Reusability**: Steps can be easily referenced and combined
+- Use 2-3 practice types per item for optimal learning
+- Mix different types of practice (recognition, production, comprehension)
+- Consider the difficulty level when combining practice types
+- Test combinations to ensure they work well together
+
+## Example Combinations
+
+### For Basic Words
+```
+"practiceType": "chooseTranslation,chooseWord"
+```
+
+### For Complex Words
+```
+"practiceType": "chooseTranslation,wordMissingLetters,writeWord"
+```
+
+### For Sentences
+```
+"practiceType": "formulateSentense,missingWords"
+```
+
+### For Advanced Practice
+```
+"practiceType": "chooseTranslation,hearing,translationMissingLetters"
+```

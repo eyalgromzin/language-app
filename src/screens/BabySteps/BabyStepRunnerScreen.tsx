@@ -17,7 +17,7 @@ type StepItem = {
   title?: string;
   type?: 'word' | 'sentence';
   text: string;
-  practiceType?: 'chooseTranslation' | 'missingWords' | 'formulateSentense' | 'chooseWord' | 'hearing' | 'translationMissingLetters' | 'wordMissingLetters' | 'writeWord';
+  practiceType?: 'chooseTranslation' | 'missingWords' | 'formulateSentense' | 'chooseWord' | 'hearing' | 'translationMissingLetters' | 'wordMissingLetters' | 'writeWord' | string;
 };
 
 
@@ -186,173 +186,238 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           }
         });
 
-        const built: RunnerTask[] = currentStepLearningLanguage.items.map((it: any) => {
+        const built: RunnerTask[] = currentStepLearningLanguage.items.flatMap((it: any) => {
           const otherText = findNativeTextById(it.id);
-          if (it.practiceType === 'chooseTranslation' || it.type === 'word') {
-            // Build distractors from other word items in same step
-            const distractorPool: string[] = [];
-            currentStepNativeLanguage.items.forEach((o: any) => {
-              if (o.id !== it.id && (o.type === 'word' || o.practiceType === 'chooseTranslation')) {
-                const t = findNativeTextById(o.id);
-                if (t && t !== otherText) distractorPool.push(t);
-              }
+          
+          // Helper function to create a task based on practice type
+          const createTask = (practiceType: string): RunnerTask | null => {
+            if (practiceType === 'chooseTranslation' || (practiceType === 'default' && it.type === 'word')) {
+              // Build distractors from other word items in same step
+              const distractorPool: string[] = [];
+              currentStepNativeLanguage.items.forEach((o: any) => {
+                if (o.id !== it.id && (o.type === 'word' || o.practiceType?.includes('chooseTranslation'))) {
+                  const t = findNativeTextById(o.id);
+                  if (t && t !== otherText) distractorPool.push(t);
+                }
+              });
+              const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(7, Math.max(0, distractorPool.length)));
+              const allOptions = shuffleArray([otherText, ...picked]);
+              return {
+                kind: 'chooseTranslation',
+                sourceWord: it.text,
+                correctTranslation: otherText,
+                options: allOptions,
+                itemId: it.id,
+              } as RunnerTask;
+            }
+            
+            if (practiceType === 'chooseWord') {
+              // Show translation and ask to pick the correct word
+              const distractorPoolWords: string[] = [];
+              currentStepLearningLanguage.items.forEach((o: any) => {
+                if (o.id !== it.id && (o.type === 'word' || o.practiceType?.includes('chooseTranslation') || o.practiceType?.includes('chooseWord'))) {
+                  if (o.text && o.text !== it.text) distractorPoolWords.push(o.text);
+                }
+              });
+              const pickedWords = sampleN(Array.from(new Set(distractorPoolWords)), Math.min(7, Math.max(0, distractorPoolWords.length)));
+              const allWordOptions = shuffleArray([it.text, ...pickedWords]);
+              return {
+                kind: 'chooseWord',
+                translation: otherText,
+                correctWord: it.text,
+                options: allWordOptions,
+                itemId: it.id,
+              } as RunnerTask;
+            }
+            
+            // Build formulate sentence task (assemble full sentence in current language)
+            if (practiceType === 'formulateSentense') {
+              const tokens = splitToTokens(it.text);
+              const shuffledTokens = shuffleArray(tokens);
+              return {
+                kind: 'formulateSentense',
+                sentence: it.text,
+                translatedSentence: otherText,
+                tokens,
+                shuffledTokens,
+                itemId: it.id,
+              } as RunnerTask;
+            }
+            
+            if (practiceType === 'hearing') {
+              // Hearing: pick translation options from other words' translations
+              const distractorPool: string[] = [];
+              currentStepLearningLanguage.items.forEach((o: any) => {
+                if (o.id !== it.id && (o.type === 'word' || o.practiceType?.includes('chooseTranslation') || o.practiceType?.includes('hearing'))) {
+                  const t = findNativeTextById(o.id);
+                  if (t && t !== otherText) distractorPool.push(t);
+                }
+              });
+              const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(5, Math.max(0, distractorPool.length)));
+              const options = shuffleArray([otherText, ...picked]);
+              return {
+                kind: 'hearing',
+                sourceWord: it.text,
+                correctTranslation: otherText,
+                options,
+                itemId: it.id,
+              } as RunnerTask;
+            }
+            
+            if (practiceType === 'translationMissingLetters') {
+              // Build indices to input over translation
+              const letters = (otherText || '').split('');
+              const candidateIdx: number[] = [];
+              letters.forEach((ch: string, i: number) => { if (/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch)) candidateIdx.push(i); });
+              const desired = Math.min(3, Math.max(1, Math.floor(letters.length / 4)));
+              const inputIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
+              return {
+                kind: 'translationMissingLetters',
+                word: it.text,
+                translation: otherText,
+                inputIndices,
+                itemId: it.id,
+              } as RunnerTask;
+            }
+            
+            if (practiceType === 'wordMissingLetters') {
+              const letters = (it.text || '').split('');
+              const candidateIdx: number[] = [];
+              letters.forEach((ch: string, i: number) => { if (/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch)) candidateIdx.push(i); });
+              const desired = Math.min(3, Math.max(1, Math.floor(letters.length / 4)));
+              const missingIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
+              return {
+                kind: 'wordMissingLetters',
+                word: it.text,
+                translation: otherText,
+                missingIndices,
+                itemId: it.id,
+              } as RunnerTask;
+            }
+            
+            if (practiceType === 'writeWord') {
+              const letters = (it.text || '').split('');
+              const candidateIdx: number[] = [];
+              letters.forEach((ch: string, i: number) => { if (/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch)) candidateIdx.push(i); });
+              const desired = Math.min(3, Math.max(1, Math.floor(letters.length / 4)));
+              const missingIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
+              return {
+                kind: 'writeWord',
+                word: it.text,
+                translation: otherText,
+                missingIndices,
+                itemId: it.id,
+              } as RunnerTask;
+            }
+            
+            // missingWords for sentences (only when explicitly requested)
+            if (practiceType === 'missingWords') {
+              const tokens = splitToTokens(it.text);
+              // Choose 1-2 indices to blank, prefer alphabetic tokens
+              const candidateIdx: number[] = [];
+              tokens.forEach((t: string, i: number) => { if (/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(t)) candidateIdx.push(i); });
+              const desired = Math.min(2, Math.max(1, Math.floor(tokens.length / 6)));
+              const missingIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
+              const required = Array.from(new Set(missingIndices.map((i) => tokens[i])));
+              const pool = extrasFromStep.filter((w) => !required.includes(w));
+              const picked = sampleN(pool, Math.max(0, 12 - required.length));
+              const wordBank = shuffleArray([...required, ...picked]).slice(0, Math.max(6, required.length));
+              return {
+                kind: 'missingWords',
+                sentence: it.text,
+                translatedSentence: otherText,
+                tokens,
+                missingIndices,
+                wordBank,
+                itemId: it.id,
+              } as RunnerTask;
+            }
+            
+            return null;
+          };
+          
+          // Handle multiple practice types separated by commas
+          if (it.practiceType && typeof it.practiceType === 'string') {
+            const practiceTypes = it.practiceType.split(',').map((pt: string) => pt.trim());
+            const tasks: RunnerTask[] = [];
+            
+            practiceTypes.forEach((pt: string) => {
+              const task = createTask(pt);
+              if (task) tasks.push(task);
             });
-            const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(7, Math.max(0, distractorPool.length)));
-            const allOptions = shuffleArray([otherText, ...picked]);
-            return {
-              kind: 'chooseTranslation',
-              sourceWord: it.text,
-              correctTranslation: otherText,
-              options: allOptions,
-              itemId: it.id,
-            } as RunnerTask;
-          }
-          if (it.practiceType === 'chooseWord') {
-            // Show translation and ask to pick the correct word
-            const distractorPoolWords: string[] = [];
-            currentStepLearningLanguage.items.forEach((o: any) => {
-              if (o.id !== it.id && (o.type === 'word' || o.practiceType === 'chooseTranslation' || o.practiceType === 'chooseWord')) {
-                if (o.text && o.text !== it.text) distractorPoolWords.push(o.text);
+            
+            // If no valid practice types were found, use fallback logic
+            if (tasks.length === 0) {
+              // Fallback: if still sentence type, use formulate sentence
+              if (it.type === 'sentence') {
+                const tokens = splitToTokens(it.text);
+                const shuffledTokens = shuffleArray(tokens);
+                tasks.push({
+                  kind: 'formulateSentense',
+                  sentence: it.text,
+                  translatedSentence: otherText,
+                  tokens,
+                  shuffledTokens,
+                  itemId: it.id,
+                } as RunnerTask);
+              } else {
+                // Final fallback: treat as chooseTranslation
+                const distractorPool: string[] = [];
+                currentStepLearningLanguage.items.forEach((o: any) => {
+                  if (o.id !== it.id && (o.type === 'word' || o.practiceType?.includes('chooseTranslation'))) {
+                    const t = findNativeTextById(o.id);
+                    if (t && t !== otherText) distractorPool.push(t);
+                  }
+                });
+                const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(7, Math.max(0, distractorPool.length)));
+                const allOptions = shuffleArray([otherText, ...picked]);
+                tasks.push({
+                  kind: 'chooseTranslation',
+                  sourceWord: it.text,
+                  correctTranslation: otherText,
+                  options: allOptions,
+                  itemId: it.id,
+                } as RunnerTask);
               }
-            });
-            const pickedWords = sampleN(Array.from(new Set(distractorPoolWords)), Math.min(7, Math.max(0, distractorPoolWords.length)));
-            const allWordOptions = shuffleArray([it.text, ...pickedWords]);
-            return {
-              kind: 'chooseWord',
-              translation: otherText,
-              correctWord: it.text,
-              options: allWordOptions,
-              itemId: it.id,
-            } as RunnerTask;
-          }
-          // Build formulate sentence task (assemble full sentence in current language)
-          if (it.practiceType === 'formulateSentense') {
-            const tokens = splitToTokens(it.text);
-            const shuffledTokens = shuffleArray(tokens);
-            return {
-              kind: 'formulateSentense',
-              sentence: it.text,
-              translatedSentence: otherText,
-              tokens,
-              shuffledTokens,
-              itemId: it.id,
-            } as RunnerTask;
-          }
-          if (it.practiceType === 'hearing') {
-            // Hearing: pick translation options from other words' translations
-            const distractorPool: string[] = [];
-            currentStepLearningLanguage.items.forEach((o: any) => {
-              if (o.id !== it.id && (o.type === 'word' || o.practiceType === 'chooseTranslation' || o.practiceType === 'hearing')) {
-                const t = findNativeTextById(o.id);
-                if (t && t !== otherText) distractorPool.push(t);
-              }
-            });
-            const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(5, Math.max(0, distractorPool.length)));
-            const options = shuffleArray([otherText, ...picked]);
-            return {
-              kind: 'hearing',
-              sourceWord: it.text,
-              correctTranslation: otherText,
-              options,
-              itemId: it.id,
-            } as RunnerTask;
-          }
-          if (it.practiceType === 'translationMissingLetters') {
-            // Build indices to input over translation
-            const letters = (otherText || '').split('');
-            const candidateIdx: number[] = [];
-            letters.forEach((ch: string, i: number) => { if (/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch)) candidateIdx.push(i); });
-            const desired = Math.min(3, Math.max(1, Math.floor(letters.length / 4)));
-            const inputIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
-            return {
-              kind: 'translationMissingLetters',
-              word: it.text,
-              translation: otherText,
-              inputIndices,
-              itemId: it.id,
-            } as RunnerTask;
-          }
-          if (it.practiceType === 'wordMissingLetters') {
-            const letters = (it.text || '').split('');
-            const candidateIdx: number[] = [];
-            letters.forEach((ch: string, i: number) => { if (/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch)) candidateIdx.push(i); });
-            const desired = Math.min(3, Math.max(1, Math.floor(letters.length / 4)));
-            const missingIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
-            return {
-              kind: 'wordMissingLetters',
-              word: it.text,
-              translation: otherText,
-              missingIndices,
-              itemId: it.id,
-            } as RunnerTask;
-          }
-          if (it.practiceType === 'writeWord') {
-            const letters = (it.text || '').split('');
-            const candidateIdx: number[] = [];
-            letters.forEach((ch: string, i: number) => { if (/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch)) candidateIdx.push(i); });
-            const desired = Math.min(3, Math.max(1, Math.floor(letters.length / 4)));
-            const missingIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
-            return {
-              kind: 'writeWord',
-              word: it.text,
-              translation: otherText,
-              missingIndices,
-              itemId: it.id,
-            } as RunnerTask;
-          }
-          // missingWords for sentences (only when explicitly requested)
-          if (it.practiceType === 'missingWords') {
-            const tokens = splitToTokens(it.text);
-            // Choose 1-2 indices to blank, prefer alphabetic tokens
-            const candidateIdx: number[] = [];
-            tokens.forEach((t: string, i: number) => { if (/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(t)) candidateIdx.push(i); });
-            const desired = Math.min(2, Math.max(1, Math.floor(tokens.length / 6)));
-            const missingIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
-            const required = Array.from(new Set(missingIndices.map((i) => tokens[i])));
-            const pool = extrasFromStep.filter((w) => !required.includes(w));
-            const picked = sampleN(pool, Math.max(0, 12 - required.length));
-            const wordBank = shuffleArray([...required, ...picked]).slice(0, Math.max(6, required.length));
-            return {
-              kind: 'missingWords',
-              sentence: it.text,
-              translatedSentence: otherText,
-              tokens,
-              missingIndices,
-              wordBank,
-              itemId: it.id,
-            } as RunnerTask;
-          }
-          // Fallback: if still sentence type, use formulate sentence
-          if (it.type === 'sentence' || it.practiceType === 'formulateSentense') {
-            const tokens = splitToTokens(it.text);
-            const shuffledTokens = shuffleArray(tokens);
-            return {
-              kind: 'formulateSentense',
-              sentence: it.text,
-              translatedSentence: otherText,
-              tokens,
-              shuffledTokens,
-              itemId: it.id,
-            } as RunnerTask;
-          }
-          // Final fallback: treat as chooseTranslation
-          {
-            const distractorPool: string[] = [];
-            currentStepLearningLanguage.items.forEach((o: any) => {
-              if (o.id !== it.id && (o.type === 'word' || o.practiceType === 'chooseTranslation')) {
-                const t = findNativeTextById(o.id);
-                if (t && t !== otherText) distractorPool.push(t);
-              }
-            });
-            const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(7, Math.max(0, distractorPool.length)));
-            const allOptions = shuffleArray([otherText, ...picked]);
-            return {
-              kind: 'chooseTranslation',
-              sourceWord: it.text,
-              correctTranslation: otherText,
-              options: allOptions,
-              itemId: it.id,
-            } as RunnerTask;
+            }
+            
+            return tasks;
+          } else {
+            // Handle legacy single practice type or no practice type
+            const task = createTask('default');
+            if (task) return [task];
+            
+            // Fallback: if still sentence type, use formulate sentence
+            if (it.type === 'sentence') {
+              const tokens = splitToTokens(it.text);
+              const shuffledTokens = shuffleArray(tokens);
+              return [{
+                kind: 'formulateSentense',
+                sentence: it.text,
+                translatedSentence: otherText,
+                tokens,
+                shuffledTokens,
+                itemId: it.id,
+              } as RunnerTask];
+            } else {
+              // Final fallback: treat as chooseTranslation
+              const distractorPool: string[] = [];
+              currentStepLearningLanguage.items.forEach((o: any) => {
+                if (o.id !== it.id && (o.type === 'word' || o.practiceType?.includes('chooseTranslation'))) {
+                  const t = findNativeTextById(o.id);
+                  if (t && t !== otherText) distractorPool.push(t);
+                }
+              });
+              const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(7, Math.max(0, distractorPool.length)));
+              const allOptions = shuffleArray([otherText, ...picked]);
+              return [{
+                kind: 'chooseTranslation',
+                sourceWord: it.text,
+                correctTranslation: otherText,
+                options: allOptions,
+                itemId: it.id,
+              } as RunnerTask];
+            }
           }
         });
 
