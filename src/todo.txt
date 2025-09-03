@@ -1,4 +1,4 @@
-1 enable in book screen , in translate panel , edit the word. because many times the word after a click comes without the last letter 
+1 enable in book screen only, in translate panel ,to edit the word. and add translate button in translation panel to click after word was edited 
 
 2 share button in video screen
 

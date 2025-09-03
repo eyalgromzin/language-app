@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Pressable, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
 import { useAuth } from '../../contexts/AuthContext';
-import { LANGUAGE_OPTIONS } from '../../constants/languages';
+import { languagesService } from '../../services/languages';
 
 function SettingsScreen(): React.JSX.Element {
   const { logout } = useAuth();
@@ -11,6 +11,29 @@ function SettingsScreen(): React.JSX.Element {
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
   const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
+  const [languageOptions, setLanguageOptions] = React.useState<string[]>([]);
+  const [isLoadingLanguages, setIsLoadingLanguages] = React.useState(true);
+
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        // Fetch language options from server
+        const languages = await languagesService.getLanguageNames();
+        if (!mounted) return;
+        setLanguageOptions(languages);
+        setIsLoadingLanguages(false);
+      } catch (error) {
+        if (!mounted) return;
+        console.error('Error fetching languages:', error);
+        setLanguageOptions([]);
+        setIsLoadingLanguages(false);
+      }
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   React.useEffect(() => {
     let mounted = true;
@@ -26,8 +49,21 @@ function SettingsScreen(): React.JSX.Element {
         const map = Object.fromEntries(entries);
         const learningRaw = map['language.learning'];
         const nativeRaw = map['language.native'];
-        const learningVal = typeof learningRaw === 'string' && learningRaw.trim().length > 0 ? learningRaw : null;
-        const nativeVal = typeof nativeRaw === 'string' && nativeRaw.trim().length > 0 ? nativeRaw : null;
+        
+        // Convert stored symbols to display names
+        let learningVal = null;
+        let nativeVal = null;
+        
+        if (typeof learningRaw === 'string' && learningRaw.trim().length > 0) {
+          const language = await languagesService.getLanguageBySymbol(learningRaw);
+          learningVal = language?.name ? language.name.charAt(0).toUpperCase() + language.name.slice(1) : learningRaw;
+        }
+        
+        if (typeof nativeRaw === 'string' && nativeRaw.trim().length > 0) {
+          const language = await languagesService.getLanguageBySymbol(nativeRaw);
+          nativeVal = language?.name ? language.name.charAt(0).toUpperCase() + language.name.slice(1) : nativeRaw;
+        }
+        
         setLearningLanguage(learningVal);
         setNativeLanguage(nativeVal);
         const raw = map['words.removeAfterNCorrect'];
@@ -55,8 +91,14 @@ function SettingsScreen(): React.JSX.Element {
     const v = typeof value === 'string' && value.trim().length > 0 ? value : null;
     setLearningLanguage(v);
     try {
-      if (v) await AsyncStorage.setItem('language.learning', v);
-      else await AsyncStorage.removeItem('language.learning');
+      if (v) {
+        // Find the language by display name and store the symbol
+        const language = await languagesService.getLanguageByName(v);
+        const symbolToStore = language?.symbol || v;
+        await AsyncStorage.setItem('language.learning', symbolToStore);
+      } else {
+        await AsyncStorage.removeItem('language.learning');
+      }
     } catch {}
   };
 
@@ -64,8 +106,14 @@ function SettingsScreen(): React.JSX.Element {
     const v = typeof value === 'string' && value.trim().length > 0 ? value : null;
     setNativeLanguage(v);
     try {
-      if (v) await AsyncStorage.setItem('language.native', v);
-      else await AsyncStorage.removeItem('language.native');
+      if (v) {
+        // Find the language by display name and store the symbol
+        const language = await languagesService.getLanguageByName(v);
+        const symbolToStore = language?.symbol || v;
+        await AsyncStorage.setItem('language.native', symbolToStore);
+      } else {
+        await AsyncStorage.removeItem('language.native');
+      }
     } catch {}
   };
 
@@ -120,13 +168,21 @@ function SettingsScreen(): React.JSX.Element {
           <Picker
             selectedValue={learningLanguage || ''}
             onValueChange={onChangeLearning}
+            enabled={!isLoadingLanguages}
           >
-            <Picker.Item label="Select a language..." value="" />
-            {LANGUAGE_OPTIONS.map((lang) => (
-              <Picker.Item key={lang} label={lang} value={lang} />
-            ))}
+            <Picker.Item label={isLoadingLanguages ? "Loading languages..." : "Select a language..."} value="" />
+            {languageOptions.length > 0 ? (
+              languageOptions.map((lang: string) => (
+                <Picker.Item key={lang} label={lang} value={lang} />
+              ))
+            ) : (
+              <Picker.Item label="No languages available" value="" />
+            )}
           </Picker>
         </View>
+        {isLoadingLanguages && (
+          <Text style={styles.loadingText}>Loading language options...</Text>
+        )}
       </View>
 
       <View style={styles.pickerBlock}>
@@ -135,13 +191,21 @@ function SettingsScreen(): React.JSX.Element {
           <Picker
             selectedValue={nativeLanguage || ''}
             onValueChange={onChangeNative}
+            enabled={!isLoadingLanguages}
           >
-            <Picker.Item label="Select your native language..." value="" />
-            {LANGUAGE_OPTIONS.map((lang) => (
-              <Picker.Item key={lang} label={lang} value={lang} />
-            ))}
+            <Picker.Item label={isLoadingLanguages ? "Loading languages..." : "Select your native language..."} value="" />
+            {languageOptions.length > 0 ? (
+              languageOptions.map((lang: string) => (
+                <Picker.Item key={lang} label={lang} value={lang} />
+              ))
+            ) : (
+              <Picker.Item label="No languages available" value="" />
+            )}
           </Picker>
         </View>
+        {isLoadingLanguages && (
+          <Text style={styles.loadingText}>Loading language options...</Text>
+        )}
       </View>
 
       <View style={styles.pickerBlock}>
@@ -216,6 +280,12 @@ const styles = StyleSheet.create({
   infoLabel: {
     fontSize: 14,
     color: '#666',
+  },
+  loadingText: {
+    fontSize: 12,
+    color: '#999',
+    fontStyle: 'italic',
+    marginTop: 4,
   },
   pickerBlock: {
     marginBottom: 16,

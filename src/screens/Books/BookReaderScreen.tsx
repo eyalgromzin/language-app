@@ -10,6 +10,7 @@ import * as RNFS from 'react-native-fs';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import { parseYandexImageUrlsFromHtml, fetchImageUrls as fetchImageUrlsCommon, type ImageScrapeCallbacks } from '../practice/common';
 import { getLibraryMeta, getLibraryUrlsWithCriterias, addLibraryUrl } from '../../config/api';
+import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 
 type StoredBook = {
   id: string;
@@ -47,6 +48,7 @@ function BookReaderScreen(): React.JSX.Element {
 
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
+  const { languageMappings } = useLanguageMappings();
 
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
   const imageScrapeResolveRef = React.useRef<((urls: string[]) => void) | null>(null);
@@ -933,7 +935,7 @@ function BookReaderScreen(): React.JSX.Element {
     const map = Object.fromEntries(entries);
     const learningRaw = map['language.learning'];
     const nativeRaw = map['language.native'];
-    return await fetchTranslationCommon(word, learningRaw, nativeRaw);
+    return await fetchTranslationCommon(word, learningRaw, nativeRaw, languageMappings);
   }
 
   const imageScrapeInjection = `
@@ -1246,6 +1248,10 @@ function BookReaderScreen(): React.JSX.Element {
           panel={translationPanel}
           onSave={saveCurrentWord}
           onClose={() => setTranslationPanel(null)}
+          isBookScreen={true}
+          onTranslate={(word: string) => {
+            openPanel(word, translationPanel?.sentence);
+          }}
         />
         {/* Add book to library modal */}
         <Modal

@@ -14,8 +14,6 @@ type RootStackParamList = {
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Startup'>;
 
-// LANGUAGE_OPTIONS imported from shared constants
-
 function StartupScreen({ navigation }: Props): React.JSX.Element {
   const { completeSetup } = useAuth();
   const { languageMappings, isLoading: languagesLoading } = useLanguageMappings();

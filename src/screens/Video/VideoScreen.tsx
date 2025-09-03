@@ -487,13 +487,9 @@ function VideoScreen(): React.JSX.Element {
     const symbol = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
     fetchNowPlaying(symbol);
     return () => { cancelled = true; };
-  }, [learningLanguage, mapLanguageNameToYoutubeCode, enrichWithLengths, languageMappings];
+  }, [learningLanguage, mapLanguageNameToYoutubeCode, enrichWithLengths, languageMappings]);
 
-  
-
-      const fetchTranslation = async (word: string): Promise<string> => fetchTranslationCommon(word, learningLanguage, nativeLanguage, languageMappings);
-
-  
+  const fetchTranslation = async (word: string): Promise<string> => fetchTranslationCommon(word, learningLanguage, nativeLanguage, languageMappings);
 
   const openStartupVideo = async (urlString: string, title?: string) => {
     const id = extractYouTubeVideoId(urlString);
