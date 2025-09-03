@@ -12,6 +12,17 @@ export class BabyStepsController {
     const lang = (body?.language ?? 'en');
     return this.babyStepsService.getSteps(lang);
   }
+
+  // POST /baby-steps/get-step
+  @Post('get-step')
+  getStep(@Body() body: { language: string; stepId: string }): any {
+    const lang = (body?.language ?? 'en');
+    const stepId = body?.stepId;
+    if (!stepId) {
+      throw new Error('stepId is required');
+    }
+    return this.babyStepsService.getSpecificStep(lang, stepId);
+  }
 }
 
 

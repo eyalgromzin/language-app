@@ -43,8 +43,10 @@ function BabyStepsPathScreen(): React.JSX.Element {
           AsyncStorage.getItem('language.learning'),
           AsyncStorage.getItem('language.native'),
         ]);
-        const learningCode = getLangCode(learningName) || 'en';
-        const nativeCode = getLangCode(nativeName) || 'en';
+        // Use default languageMappings if not available
+        const languageMappings = {};
+        const learningCode = getLangCode(learningName, languageMappings) || 'en';
+        const nativeCode = getLangCode(nativeName, languageMappings) || 'en';
         // Load steps for current learning language from server only
         try {
           const json: StepsFile = await getBabySteps(learningCode);
@@ -54,8 +56,10 @@ function BabyStepsPathScreen(): React.JSX.Element {
           } else {
             setSteps([]);
           }
-        } catch {
+        } catch (error) {
+          console.error('Error loading baby steps:', error);
           if (!mounted) return;
+          setError(`Failed to load steps: ${error.message}`);
           setSteps([]);
         }
         // Build translated titles map from native language file if available

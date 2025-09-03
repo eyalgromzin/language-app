@@ -4,7 +4,6 @@ export const API_CONFIG = {
   // Production server URL with fallback to localhost
   // SERVER_URL: 'https://language-learn-server.onrender.com',
   SERVER_URL: 'http://localhost:3000',
-  // SERVER_URL: 'https://language-learn-server.onrender.com',
   
   // API endpoints
   ENDPOINTS: {
@@ -20,6 +19,7 @@ export const API_CONFIG = {
     VIDEO_NOW_PLAYING_GET: '/video/now-playing',
     CACHE_LAST_WORDS: '/cache/last-words',
     BABY_STEPS_GET: '/baby-steps/get',
+    BABY_STEPS_GET_STEP: '/baby-steps/get-step',
     TRANSCRIPT: '/transcript',
   }
 };
@@ -90,6 +90,14 @@ export const getBabySteps = async (language: string): Promise<any> => {
   return apiRequest(API_CONFIG.ENDPOINTS.BABY_STEPS_GET, {
     method: 'POST',
     body: JSON.stringify({ language }),
+  });
+};
+
+// Get specific baby step
+export const getBabyStep = async (language: string, stepId: string): Promise<any> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.BABY_STEPS_GET_STEP, {
+    method: 'POST',
+    body: JSON.stringify({ language, stepId }),
   });
 };
 
