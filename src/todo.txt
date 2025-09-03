@@ -1,5 +1,3 @@
-2 share button in video screen
-
 3 share button in surf screen 
 
 4 if a book is in the library already , set in localstorage to not even check  again if its in the library, and not just not asking  
@@ -23,6 +21,8 @@
 10 design app better  
 
 11 - split each  baby steps file into 2 files. where each will have 5 words and 5 sentenses with 2 practices for each . 
+
+11.5 app link not working again 
 
 12 register app
 

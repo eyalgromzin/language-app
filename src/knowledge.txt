@@ -5,3 +5,7 @@ cd 'C:\my projects\language-learn'; adb shell run-as com.hellolingo cat files/wo
 adb reverse tcp:3000 tcp:3000
 
 - open keystore
+
+
+- generate sha1 and sha256 command
+keytool -list -v -keystore android/app/release.keystore -alias your-release-alias
