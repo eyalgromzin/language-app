@@ -1,7 +1,7 @@
 import { Linking, Share, Platform } from 'react-native';
 
 export interface AppLinkData {
-  type: 'video' | 'surf';
+  type: 'video' | 'surf' | 'library';
   url: string;
   title?: string;
 }
@@ -57,6 +57,14 @@ export class LinkingService {
         }
       }
 
+      // Handle library links: https://helloLingo.app/library
+      if (path === '/library') {
+        return {
+          type: 'library',
+          url: 'https://hellolingo.app/library'
+        };
+      }
+
       return null;
     } catch (error) {
       console.error('Error parsing app link:', error);
@@ -85,6 +93,13 @@ export class LinkingService {
     const params = new URLSearchParams();
     params.append('url', encodeURIComponent(surfUrl));
     return `${baseUrl}?${params.toString()}`;
+  }
+
+  /**
+   * Generate a shareable helloLingo.app URL for library content
+   */
+  public generateLibraryShareUrl(): string {
+    return 'https://hellolingo.app/library';
   }
 
   /**
@@ -133,6 +148,17 @@ export class LinkingService {
     const shareUrl = this.generateSurfShareUrl(surfUrl);
     const shareTitle = 'Web Page';
     const shareMessage = `Check out this webpage:`;
+    
+    await this.shareContent(shareUrl, shareTitle, shareMessage);
+  }
+
+  /**
+   * Share the library screen with a helloLingo.app link
+   */
+  public async shareLibrary(): Promise<void> {
+    const shareUrl = this.generateLibraryShareUrl();
+    const shareTitle = 'HelloLingo Library';
+    const shareMessage = `Check out the HelloLingo library for language learning content!`;
     
     await this.shareContent(shareUrl, shareTitle, shareMessage);
   }

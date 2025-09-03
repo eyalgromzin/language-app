@@ -4,6 +4,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { getLibraryMeta, getLibraryUrlsWithCriterias } from '../../config/api';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
+import LinkingService from '../../services/linkingService';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 function LibraryScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
@@ -212,22 +214,32 @@ function LibraryScreen(): React.JSX.Element {
   return (
     <View style={styles.container}>
       <View style={styles.tabsBar}>
-        {([
-          { key: 'all', label: 'All' },
-          { key: 'web', label: 'Web' },
-          { key: 'youtube', label: 'YouTube' },
-          { key: 'book', label: 'Books' },
-        ] as const).map((tab) => (
-          <TouchableOpacity
-            key={tab.key}
-            style={[styles.tabButton, selectedMedia === tab.key && styles.tabButtonActive]}
-            onPress={() => setSelectedMedia(tab.key)}
-            accessibilityRole="tab"
-            accessibilityState={{ selected: selectedMedia === tab.key }}
-          >
-            <Text style={[styles.tabText, selectedMedia === tab.key && styles.tabTextActive]}>{tab.label}</Text>
-          </TouchableOpacity>
-        ))}
+        <View style={styles.tabsContainer}>
+          {([
+            { key: 'all', label: 'All' },
+            { key: 'web', label: 'Web' },
+            { key: 'youtube', label: 'YouTube' },
+            { key: 'book', label: 'Books' },
+          ] as const).map((tab) => (
+            <TouchableOpacity
+              key={tab.key}
+              style={[styles.tabButton, selectedMedia === tab.key && styles.tabButtonActive]}
+              onPress={() => setSelectedMedia(tab.key)}
+              accessibilityRole="tab"
+              accessibilityState={{ selected: selectedMedia === tab.key }}
+            >
+              <Text style={[styles.tabText, selectedMedia === tab.key && styles.tabTextActive]}>{tab.label}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+        <TouchableOpacity
+          style={styles.shareButton}
+          onPress={() => LinkingService.shareLibrary()}
+          accessibilityRole="button"
+          accessibilityLabel="Share Library"
+        >
+          <Ionicons name="share-outline" size={20} color="#007AFF" />
+        </TouchableOpacity>
       </View>
              <FlatList
          data={filteredUrls}
@@ -367,6 +379,17 @@ const styles = StyleSheet.create({
     gap: 8,
     borderBottomWidth: 1,
     borderBottomColor: '#e5e7eb',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  tabsContainer: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  shareButton: {
+    padding: 8,
+    borderRadius: 8,
+    backgroundColor: '#f3f4f6',
   },
   tabButton: {
     paddingVertical: 8,

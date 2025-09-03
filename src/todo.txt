@@ -1,8 +1,4 @@
-4 if a book is in the library already , set in localstorage to not even check  again if its in the library, and not just not asking  
-
-5 make share button for book - will show dialog to check if its a book downloaded from website. or some local book that got in some other way . 
-    - if its from a website , require for user to add location and then share it . 
-    - if its in the phone itself , share the file itself from storage. 
+✓ make library share button - DONE 
 
 5.5 runner screen , on skip , dont add to wrong count 
 
@@ -13,6 +9,8 @@
 6 create translate table with all languages that will be filled each time a user clicks a word 
 
 7- in baby steps , enable to state multiple practices for each word / sentense . 
+
+7.5 - add icons to items in library . book, youtube, web . 
 
 8 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
 

@@ -86,6 +86,9 @@ function MainTabs(): React.JSX.Element {
         // We'll need to pass the URL to Surf screen via a different mechanism
         // For now, we'll store it in AsyncStorage and let Surf screen pick it up
         AsyncStorage.setItem('surf.deepLinkUrl', linkData.url).catch(() => {});
+      } else if (linkData.type === 'library') {
+        // Navigate to Library tab
+        currentTabNavRef.current?.navigate('Library');
       }
     };
 
