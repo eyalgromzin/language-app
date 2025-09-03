@@ -10,6 +10,7 @@
     - if its from a website , require for user to add location and then share it . 
     - if its in the phone itself , share the file itself from storage. 
 
+5.5 runner screen , on skip , dont add to wrong count 
 
 ==================== tomorrow ========================
 
