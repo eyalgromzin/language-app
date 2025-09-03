@@ -13,6 +13,7 @@ export const useTranslationAndImages = (
   setImageScrape: React.Dispatch<React.SetStateAction<{ url: string; word: string } | null>>,
   imageScrapeResolveRef: React.MutableRefObject<((urls: string[]) => void) | null>,
   imageScrapeRejectRef: React.MutableRefObject<((err?: unknown) => void) | null>,
+  languageMappings: Record<string, string> = {},
 ) => {
   const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
 
@@ -122,7 +123,7 @@ export const useTranslationAndImages = (
   };
 
   const fetchTranslation = async (word: string): Promise<string> => 
-    fetchTranslationCommon(word, learningLanguage, nativeLanguage);
+    fetchTranslationCommon(word, learningLanguage, nativeLanguage, languageMappings);
 
   const fetchImageUrls = async (word: string): Promise<string[]> => {
     if (imageScrape) {

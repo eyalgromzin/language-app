@@ -9,12 +9,16 @@ import SurfWebView from '../../components/Surf/SurfWebView';
 import ImageScrapeWebView from '../../components/Surf/ImageScrapeWebView';
 import { useSurfScreen } from '../../hooks/useSurfScreen';
 import { useTranslationAndImages } from '../../hooks/useTranslationAndImages';
+import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import { baseInjection, imageScrapeInjection } from '../../constants/webViewInjections';
 import harmfulWordsService from '../../services/harmfulWordsService';
 import linkingService from '../../services/linkingService';
 
 function SurfScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
+  
+  // Get language mappings for translation
+  const { languageMappings } = useLanguageMappings();
   
   // Use custom hooks for business logic
   const {
@@ -118,6 +122,7 @@ function SurfScreen(): React.JSX.Element {
     setImageScrape,
     imageScrapeResolveRef,
     imageScrapeRejectRef,
+    languageMappings,
   );
 
   // Print first 3 harmful words to console on screen load
