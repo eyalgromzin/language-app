@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, Animated, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
+import { ActivityIndicator, Animated, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, TextInput, KeyboardAvoidingView, Keyboard, Platform } from 'react-native';
 import Tts from 'react-native-tts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../utils/translation';
@@ -31,12 +31,37 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
   // State for word editing in book mode
   const [isEditing, setIsEditing] = React.useState(false);
   const [editedWord, setEditedWord] = React.useState(panel.word);
+  
+  // State for keyboard height
+  const [keyboardHeight, setKeyboardHeight] = React.useState(0);
 
   // Update edited word when panel changes
   React.useEffect(() => {
     setEditedWord(panel.word);
     setIsEditing(false);
   }, [panel.word]);
+
+  // Keyboard event listeners
+  React.useEffect(() => {
+    const keyboardWillShow = Keyboard.addListener(
+      Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow',
+      (e) => {
+        setKeyboardHeight(e.endCoordinates.height);
+      }
+    );
+
+    const keyboardWillHide = Keyboard.addListener(
+      Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide',
+      () => {
+        setKeyboardHeight(0);
+      }
+    );
+
+    return () => {
+      keyboardWillShow?.remove();
+      keyboardWillHide?.remove();
+    };
+  }, []);
 
   const spinPlus = React.useCallback((onComplete?: () => void) => {
     // Reset to 0 and animate to 360 degrees
@@ -109,22 +134,23 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
   }, [speakWord]);
 
   return (
-    <View style={styles.bottomPanel}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={[
+        styles.bottomPanel,
+        { bottom: keyboardHeight > 0 ? keyboardHeight : 0 }
+      ]}
+    >
       <View style={styles.bottomHeader}>
         <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1, marginRight: 12 }}>
-          {isBookScreen && isEditing ? (
-            <TextInput
-              style={styles.wordInput}
-              value={editedWord}
-              onChangeText={setEditedWord}
-              autoFocus
-              selectTextOnFocus
-            />
-          ) : (
-            <Text style={styles.bottomWord} numberOfLines={1}>
-              {panel.word}
-            </Text>
-          )}
+          <TextInput
+            style={styles.wordInput}
+            value={editedWord}
+            onChangeText={setEditedWord}
+            autoFocus
+            selectTextOnFocus
+          />
+      
           <TouchableOpacity
             onPress={speakWord}
             style={styles.speakerBtnWrap}
@@ -214,7 +240,7 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
           ))}
         </ScrollView>
       )}
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -254,12 +280,11 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     flexShrink: 1,
     marginRight: 12,
-    borderWidth: 1,
-    borderColor: '#007AFF',
-    borderRadius: 6,
+    borderBottomWidth: 1,
+    borderBottomColor: '#007AFF',
     paddingHorizontal: 8,
     paddingVertical: 4,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: 'transparent',
   },
   speakerBtnWrap: {
     width: 32,
