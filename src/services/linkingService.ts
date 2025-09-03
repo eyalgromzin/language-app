@@ -132,7 +132,7 @@ export class LinkingService {
   public async shareSurfUrl(surfUrl: string): Promise<void> {
     const shareUrl = this.generateSurfShareUrl(surfUrl);
     const shareTitle = 'Web Page';
-    const shareMessage = `Check out this webpage: ${surfUrl}`;
+    const shareMessage = `Check out this webpage:`;
     
     await this.shareContent(shareUrl, shareTitle, shareMessage);
   }
