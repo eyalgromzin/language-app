@@ -110,7 +110,7 @@ function MainTabs(): React.JSX.Element {
     try {
       await Share.share({
         message:
-          'I am learning languages with LanguageLearn! Give it a try and see if it helps you too.',
+          'I am learning languages with HelloLingo! Give it a try and see if it helps you too.',
       });
     } catch {
       // no-op

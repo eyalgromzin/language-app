@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>LanguageLearn</string>
+	<string>HelloLingo</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -75,7 +75,7 @@
     <key>FacebookAppID</key>
     <string>YOUR_FB_APP_ID</string>
     <key>FacebookDisplayName</key>
-    <string>LanguageLearn</string>
+    <string>HelloLingo</string>
     <key>LSApplicationQueriesSchemes</key>
     <array>
       <string>https</string>

@@ -5,8 +5,8 @@ const SUPPORT_EMAIL = 'support@HelloLingo.app';
 
 function ContactUsScreen(): React.JSX.Element {
   const handleEmailPress = React.useCallback(() => {
-    const subject = encodeURIComponent('LanguageLearn Support');
-    const body = encodeURIComponent('Hi LanguageLearn team,\n\n');
+    const subject = encodeURIComponent('HelloLingo Support');
+    const body = encodeURIComponent('Hi HelloLingo team,\n\n');
     const mailtoUrl = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
     Linking.openURL(mailtoUrl).catch(() => {
       // no-op if unable to open the mail client

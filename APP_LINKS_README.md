@@ -50,7 +50,7 @@ Added intent filters in `android/app/src/main/AndroidManifest.xml`:
 ```
 
 ### iOS Configuration
-Added URL schemes in `ios/LanguageLearn/Info.plist`:
+Added URL schemes in `ios/HelloLingo/Info.plist`:
 ```xml
 <key>CFBundleURLTypes</key>
 <array>

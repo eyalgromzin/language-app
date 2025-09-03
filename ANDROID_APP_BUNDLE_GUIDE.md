@@ -116,7 +116,7 @@ The script will:
 
 The generated App Bundle will be saved as:
 ```
-dist/LanguageLearn-1.0.1-release-2024-01-15_10-30-45.aab
+dist/HelloLingo-1.0.1-release-2024-01-15_10-30-45.aab
 ```
 
 ## Uploading to Google Play Console

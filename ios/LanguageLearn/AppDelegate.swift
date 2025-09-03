@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
 
     factory.startReactNative(
-      withModuleName: "LanguageLearn",
+      withModuleName: "HelloLingo",
       in: window,
       launchOptions: launchOptions
     )

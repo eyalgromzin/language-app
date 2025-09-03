@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LanguageLearn</string>
+    <string name="app_name">HelloLingo</string>
     <string name="facebook_app_id">YOUR_FB_APP_ID</string>
     <string name="fb_login_protocol_scheme">fbYOUR_FB_APP_ID</string>
     <string name="default_web_client_id">991572944669-ht962460cmp9t2fa8mgofg3sn7bmb1je.apps.googleusercontent.com</string>

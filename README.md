@@ -107,11 +107,11 @@ Replace placeholders in native files with your real IDs:
 - Android (`android/app/src/main/AndroidManifest.xml`):
   - `com.facebook.sdk.ApplicationId` meta-data
   - `com.facebook.sdk.ClientToken` meta-data
-- iOS (`ios/LanguageLearn/Info.plist`):
+- iOS (`ios/HelloLingo/Info.plist`):
   - Add URL scheme for Google: `com.googleusercontent.apps.YOUR_IOS_REVERSED_CLIENT_ID`
   - Add URL scheme for Facebook: `fbYOUR_FB_APP_ID`
   - Keys: `FacebookAppID`, `FacebookDisplayName`
-- iOS (`ios/LanguageLearn/AppDelegate.swift`):
+- iOS (`ios/HelloLingo/AppDelegate.swift`):
   - Facebook SDK initialization is added.
 
 For Google, configure `GoogleSignin.configure({ webClientId: ..., iosClientId: ... })` in your app if required.
