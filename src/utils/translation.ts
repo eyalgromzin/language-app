@@ -80,8 +80,20 @@ const schedulePersist = (): void => {
 
 export const getLangCode = (nameOrNull: string | null | undefined, languageMappings: Record<string, string>): string | null => {
   if (!nameOrNull) return null;
-  const code = languageMappings[nameOrNull];
-  return typeof code === 'string' ? code : null;
+  
+  // First try exact match
+  let code = languageMappings[nameOrNull];
+  if (typeof code === 'string') return code;
+  
+  // If no exact match, try case-insensitive lookup
+  const normalizedName = nameOrNull.toLowerCase();
+  for (const [key, value] of Object.entries(languageMappings)) {
+    if (key.toLowerCase() === normalizedName) {
+      return value;
+    }
+  }
+  
+  return null;
 };
 
 export const fetchTranslation = async (
