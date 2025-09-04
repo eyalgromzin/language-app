@@ -56,6 +56,159 @@
         "es": "asustado", 
         "he": "מפוחד" 
       } 
+    },
+    { 
+      "id": "excited", 
+      "type": "word", 
+      "text": { 
+        "en": "excited", 
+        "es": "emocionado", 
+        "he": "נרגש" 
+      } 
+    },
+    { 
+      "id": "nervous", 
+      "type": "word", 
+      "text": { 
+        "en": "nervous", 
+        "es": "nervioso", 
+        "he": "עצבני" 
+      } 
+    },
+    { 
+      "id": "surprised", 
+      "type": "word", 
+      "text": { 
+        "en": "surprised", 
+        "es": "sorprendido", 
+        "he": "מופתע" 
+      } 
+    },
+    { 
+      "id": "confused", 
+      "type": "word", 
+      "text": { 
+        "en": "confused", 
+        "es": "confundido", 
+        "he": "מבולבל" 
+      } 
+    },
+    { 
+      "id": "proud", 
+      "type": "word", 
+      "text": { 
+        "en": "proud", 
+        "es": "orgulloso", 
+        "he": "גאה" 
+      } 
+    },
+    { 
+      "id": "embarrassed", 
+      "type": "word", 
+      "text": { 
+        "en": "embarrassed", 
+        "es": "avergonzado", 
+        "he": "נבוך" 
+      } 
+    },
+    { 
+      "id": "jealous", 
+      "type": "word", 
+      "text": { 
+        "en": "jealous", 
+        "es": "celoso", 
+        "he": "קנאי" 
+      } 
+    },
+    { 
+      "id": "lonely", 
+      "type": "word", 
+      "text": { 
+        "en": "lonely", 
+        "es": "solitario", 
+        "he": "בודד" 
+      } 
+    },
+    { 
+      "id": "worried", 
+      "type": "word", 
+      "text": { 
+        "en": "worried", 
+        "es": "preocupado", 
+        "he": "מודאג" 
+      } 
+    },
+    { 
+      "id": "relaxed", 
+      "type": "word", 
+      "text": { 
+        "en": "relaxed", 
+        "es": "relajado", 
+        "he": "רגוע" 
+      } 
+    },
+    { 
+      "id": "bored", 
+      "type": "word", 
+      "text": { 
+        "en": "bored", 
+        "es": "aburrido", 
+        "he": "משעמם" 
+      } 
+    },
+    { 
+      "id": "curious", 
+      "type": "word", 
+      "text": { 
+        "en": "curious", 
+        "es": "curioso", 
+        "he": "סקרן" 
+      } 
+    },
+    { 
+      "id": "grateful", 
+      "type": "word", 
+      "text": { 
+        "en": "grateful", 
+        "es": "agradecido", 
+        "he": "אסיר תודה" 
+      } 
+    },
+    { 
+      "id": "hopeful", 
+      "type": "word", 
+      "text": { 
+        "en": "hopeful", 
+        "es": "esperanzado", 
+        "he": "מלא תקווה" 
+      } 
+    },
+    { 
+      "id": "disappointed", 
+      "type": "word", 
+      "text": { 
+        "en": "disappointed", 
+        "es": "decepcionado", 
+        "he": "מאוכזב" 
+      } 
+    },
+    { 
+      "id": "frustrated", 
+      "type": "word", 
+      "text": { 
+        "en": "frustrated", 
+        "es": "frustrado", 
+        "he": "מתוסכל" 
+      } 
+    },
+    { 
+      "id": "peaceful", 
+      "type": "word", 
+      "text": { 
+        "en": "peaceful", 
+        "es": "tranquilo", 
+        "he": "שלווה" 
+      } 
     }
   ]
 }

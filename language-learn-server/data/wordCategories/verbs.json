@@ -1,0 +1,196 @@
+{
+  "id": "verbs",
+  "emoji": "🏃",
+  "name": { 
+    "en": "Verbs", 
+    "es": "Verbos", 
+    "he": "פועלים" 
+  },
+  "description": { 
+    "en": "Common action words and verbs", 
+    "es": "Palabras de acción y verbos comunes", 
+    "he": "מילות פעולה ופועלים נפוצים" 
+  },
+  "items": [
+    { 
+      "id": "run", 
+      "type": "word", 
+      "text": { 
+        "en": "run", 
+        "es": "correr", 
+        "he": "לרוץ" 
+      } 
+    },
+    { 
+      "id": "walk", 
+      "type": "word", 
+      "text": { 
+        "en": "walk", 
+        "es": "caminar", 
+        "he": "ללכת" 
+      } 
+    },
+    { 
+      "id": "eat", 
+      "type": "word", 
+      "text": { 
+        "en": "eat", 
+        "es": "comer", 
+        "he": "לאכול" 
+      } 
+    },
+    { 
+      "id": "drink", 
+      "type": "word", 
+      "text": { 
+        "en": "drink", 
+        "es": "beber", 
+        "he": "לשתות" 
+      } 
+    },
+    { 
+      "id": "sleep", 
+      "type": "word", 
+      "text": { 
+        "en": "sleep", 
+        "es": "dormir", 
+        "he": "לישון" 
+      } 
+    },
+    { 
+      "id": "wake", 
+      "type": "word", 
+      "text": { 
+        "en": "wake", 
+        "es": "despertar", 
+        "he": "להתעורר" 
+      } 
+    },
+    { 
+      "id": "speak", 
+      "type": "word", 
+      "text": { 
+        "en": "speak", 
+        "es": "hablar", 
+        "he": "לדבר" 
+      } 
+    },
+    { 
+      "id": "listen", 
+      "type": "word", 
+      "text": { 
+        "en": "listen", 
+        "es": "escuchar", 
+        "he": "להקשיב" 
+      } 
+    },
+    { 
+      "id": "see", 
+      "type": "word", 
+      "text": { 
+        "en": "see", 
+        "es": "ver", 
+        "he": "לראות" 
+      } 
+    },
+    { 
+      "id": "look", 
+      "type": "word", 
+      "text": { 
+        "en": "look", 
+        "es": "mirar", 
+        "he": "להסתכל" 
+      } 
+    },
+    { 
+      "id": "think", 
+      "type": "word", 
+      "text": { 
+        "en": "think", 
+        "es": "pensar", 
+        "he": "לחשוב" 
+      } 
+    },
+    { 
+      "id": "know", 
+      "type": "word", 
+      "text": { 
+        "en": "know", 
+        "es": "saber", 
+        "he": "לדעת" 
+      } 
+    },
+    { 
+      "id": "learn", 
+      "type": "word", 
+      "text": { 
+        "en": "learn", 
+        "es": "aprender", 
+        "he": "ללמוד" 
+      } 
+    },
+    { 
+      "id": "teach", 
+      "type": "word", 
+      "text": { 
+        "en": "teach", 
+        "es": "enseñar", 
+        "he": "ללמד" 
+      } 
+    },
+    { 
+      "id": "work", 
+      "type": "word", 
+      "text": { 
+        "en": "work", 
+        "es": "trabajar", 
+        "he": "לעבוד" 
+      } 
+    },
+    { 
+      "id": "play", 
+      "type": "word", 
+      "text": { 
+        "en": "play", 
+        "es": "jugar", 
+        "he": "לשחק" 
+      } 
+    },
+    { 
+      "id": "read", 
+      "type": "word", 
+      "text": { 
+        "en": "read", 
+        "es": "leer", 
+        "he": "לקרוא" 
+      } 
+    },
+    { 
+      "id": "write", 
+      "type": "word", 
+      "text": { 
+        "en": "write", 
+        "es": "escribir", 
+        "he": "לכתוב" 
+      } 
+    },
+    { 
+      "id": "sing", 
+      "type": "word", 
+      "text": { 
+        "en": "sing", 
+        "es": "cantar", 
+        "he": "לשיר" 
+      } 
+    },
+    { 
+      "id": "dance", 
+      "type": "word", 
+      "text": { 
+        "en": "dance", 
+        "es": "bailar", 
+        "he": "לרקוד" 
+      } 
+    }
+  ]
+}

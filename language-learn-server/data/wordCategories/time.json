@@ -56,6 +56,159 @@
         "es": "hora", 
         "he": "שעה" 
       } 
+    },
+    { 
+      "id": "minute", 
+      "type": "word", 
+      "text": { 
+        "en": "minute", 
+        "es": "minuto", 
+        "he": "דקה" 
+      } 
+    },
+    { 
+      "id": "second", 
+      "type": "word", 
+      "text": { 
+        "en": "second", 
+        "es": "segundo", 
+        "he": "שנייה" 
+      } 
+    },
+    { 
+      "id": "morning", 
+      "type": "word", 
+      "text": { 
+        "en": "morning", 
+        "es": "mañana", 
+        "he": "בוקר" 
+      } 
+    },
+    { 
+      "id": "afternoon", 
+      "type": "word", 
+      "text": { 
+        "en": "afternoon", 
+        "es": "tarde", 
+        "he": "צהריים" 
+      } 
+    },
+    { 
+      "id": "evening", 
+      "type": "word", 
+      "text": { 
+        "en": "evening", 
+        "es": "noche", 
+        "he": "ערב" 
+      } 
+    },
+    { 
+      "id": "night", 
+      "type": "word", 
+      "text": { 
+        "en": "night", 
+        "es": "noche", 
+        "he": "לילה" 
+      } 
+    },
+    { 
+      "id": "monday", 
+      "type": "word", 
+      "text": { 
+        "en": "Monday", 
+        "es": "lunes", 
+        "he": "שני" 
+      } 
+    },
+    { 
+      "id": "tuesday", 
+      "type": "word", 
+      "text": { 
+        "en": "Tuesday", 
+        "es": "martes", 
+        "he": "שלישי" 
+      } 
+    },
+    { 
+      "id": "wednesday", 
+      "type": "word", 
+      "text": { 
+        "en": "Wednesday", 
+        "es": "miércoles", 
+        "he": "רביעי" 
+      } 
+    },
+    { 
+      "id": "thursday", 
+      "type": "word", 
+      "text": { 
+        "en": "Thursday", 
+        "es": "jueves", 
+        "he": "חמישי" 
+      } 
+    },
+    { 
+      "id": "friday", 
+      "type": "word", 
+      "text": { 
+        "en": "Friday", 
+        "es": "viernes", 
+        "he": "שישי" 
+      } 
+    },
+    { 
+      "id": "saturday", 
+      "type": "word", 
+      "text": { 
+        "en": "Saturday", 
+        "es": "sábado", 
+        "he": "שבת" 
+      } 
+    },
+    { 
+      "id": "sunday", 
+      "type": "word", 
+      "text": { 
+        "en": "Sunday", 
+        "es": "domingo", 
+        "he": "ראשון" 
+      } 
+    },
+    { 
+      "id": "month", 
+      "type": "word", 
+      "text": { 
+        "en": "month", 
+        "es": "mes", 
+        "he": "חודש" 
+      } 
+    },
+    { 
+      "id": "year", 
+      "type": "word", 
+      "text": { 
+        "en": "year", 
+        "es": "año", 
+        "he": "שנה" 
+      } 
+    },
+    { 
+      "id": "season", 
+      "type": "word", 
+      "text": { 
+        "en": "season", 
+        "es": "estación", 
+        "he": "עונה" 
+      } 
+    },
+    { 
+      "id": "century", 
+      "type": "word", 
+      "text": { 
+        "en": "century", 
+        "es": "siglo", 
+        "he": "מאה" 
+      } 
     }
   ]
 }

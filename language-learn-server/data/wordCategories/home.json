@@ -56,6 +56,177 @@
         "es": "cama", 
         "he": "מיטה" 
       } 
+    },
+    { 
+      "id": "table", 
+      "type": "word", 
+      "text": { 
+        "en": "table", 
+        "es": "mesa", 
+        "he": "שולחן" 
+      } 
+    },
+    { 
+      "id": "chair", 
+      "type": "word", 
+      "text": { 
+        "en": "chair", 
+        "es": "silla", 
+        "he": "כיסא" 
+      } 
+    },
+    { 
+      "id": "sofa", 
+      "type": "word", 
+      "text": { 
+        "en": "sofa", 
+        "es": "sofá", 
+        "he": "ספה" 
+      } 
+    },
+    { 
+      "id": "window", 
+      "type": "word", 
+      "text": { 
+        "en": "window", 
+        "es": "ventana", 
+        "he": "חלון" 
+      } 
+    },
+    { 
+      "id": "door", 
+      "type": "word", 
+      "text": { 
+        "en": "door", 
+        "es": "puerta", 
+        "he": "דלת" 
+      } 
+    },
+    { 
+      "id": "wall", 
+      "type": "word", 
+      "text": { 
+        "en": "wall", 
+        "es": "pared", 
+        "he": "קיר" 
+      } 
+    },
+    { 
+      "id": "floor", 
+      "type": "word", 
+      "text": { 
+        "en": "floor", 
+        "es": "suelo", 
+        "he": "רצפה" 
+      } 
+    },
+    { 
+      "id": "ceiling", 
+      "type": "word", 
+      "text": { 
+        "en": "ceiling", 
+        "es": "techo", 
+        "he": "תקרה" 
+      } 
+    },
+    { 
+      "id": "stairs", 
+      "type": "word", 
+      "text": { 
+        "en": "stairs", 
+        "es": "escaleras", 
+        "he": "מדרגות" 
+      } 
+    },
+    { 
+      "id": "lamp", 
+      "type": "word", 
+      "text": { 
+        "en": "lamp", 
+        "es": "lámpara", 
+        "he": "מנורה" 
+      } 
+    },
+    { 
+      "id": "mirror", 
+      "type": "word", 
+      "text": { 
+        "en": "mirror", 
+        "es": "espejo", 
+        "he": "מראה" 
+      } 
+    },
+    { 
+      "id": "curtain", 
+      "type": "word", 
+      "text": { 
+        "en": "curtain", 
+        "es": "cortina", 
+        "he": "וילון" 
+      } 
+    },
+    { 
+      "id": "carpet", 
+      "type": "word", 
+      "text": { 
+        "en": "carpet", 
+        "es": "alfombra", 
+        "he": "שטיח" 
+      } 
+    },
+    { 
+      "id": "closet", 
+      "type": "word", 
+      "text": { 
+        "en": "closet", 
+        "es": "armario", 
+        "he": "ארון" 
+      } 
+    },
+    { 
+      "id": "refrigerator", 
+      "type": "word", 
+      "text": { 
+        "en": "refrigerator", 
+        "es": "refrigerador", 
+        "he": "מקרר" 
+      } 
+    },
+    { 
+      "id": "stove", 
+      "type": "word", 
+      "text": { 
+        "en": "stove", 
+        "es": "estufa", 
+        "he": "כיריים" 
+      } 
+    },
+    { 
+      "id": "sink", 
+      "type": "word", 
+      "text": { 
+        "en": "sink", 
+        "es": "fregadero", 
+        "he": "כיור" 
+      } 
+    },
+    { 
+      "id": "shower", 
+      "type": "word", 
+      "text": { 
+        "en": "shower", 
+        "es": "ducha", 
+        "he": "מקלחת" 
+      } 
+    },
+    { 
+      "id": "toilet", 
+      "type": "word", 
+      "text": { 
+        "en": "toilet", 
+        "es": "inodoro", 
+        "he": "אסלה" 
+      } 
     }
   ]
 }

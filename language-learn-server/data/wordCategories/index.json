@@ -285,6 +285,21 @@
         "he": "אלמנטים טבעיים ונופים" 
       },
       "filename": "nature.json"
+    },
+    {
+      "id": "verbs",
+      "emoji": "🏃",
+      "name": { 
+        "en": "Verbs", 
+        "es": "Verbos", 
+        "he": "פועלים" 
+      },
+      "description": { 
+        "en": "Common action words and verbs", 
+        "es": "Palabras de acción y verbos comunes", 
+        "he": "מילות פעולה ופועלים נפוצים" 
+      },
+      "filename": "verbs.json"
     }
   ]
 }

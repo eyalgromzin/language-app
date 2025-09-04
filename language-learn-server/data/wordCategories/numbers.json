@@ -65,6 +65,132 @@
         "es": "cien", 
         "he": "מאה" 
       } 
+    },
+    { 
+      "id": "four", 
+      "type": "word", 
+      "text": { 
+        "en": "four", 
+        "es": "cuatro", 
+        "he": "ארבע" 
+      } 
+    },
+    { 
+      "id": "five", 
+      "type": "word", 
+      "text": { 
+        "en": "five", 
+        "es": "cinco", 
+        "he": "חמש" 
+      } 
+    },
+    { 
+      "id": "six", 
+      "type": "word", 
+      "text": { 
+        "en": "six", 
+        "es": "seis", 
+        "he": "שש" 
+      } 
+    },
+    { 
+      "id": "seven", 
+      "type": "word", 
+      "text": { 
+        "en": "seven", 
+        "es": "siete", 
+        "he": "שבע" 
+      } 
+    },
+    { 
+      "id": "eight", 
+      "type": "word", 
+      "text": { 
+        "en": "eight", 
+        "es": "ocho", 
+        "he": "שמונה" 
+      } 
+    },
+    { 
+      "id": "nine", 
+      "type": "word", 
+      "text": { 
+        "en": "nine", 
+        "es": "nueve", 
+        "he": "תשע" 
+      } 
+    },
+    { 
+      "id": "eleven", 
+      "type": "word", 
+      "text": { 
+        "en": "eleven", 
+        "es": "once", 
+        "he": "אחת עשרה" 
+      } 
+    },
+    { 
+      "id": "twelve", 
+      "type": "word", 
+      "text": { 
+        "en": "twelve", 
+        "es": "doce", 
+        "he": "שתים עשרה" 
+      } 
+    },
+    { 
+      "id": "twenty", 
+      "type": "word", 
+      "text": { 
+        "en": "twenty", 
+        "es": "veinte", 
+        "he": "עשרים" 
+      } 
+    },
+    { 
+      "id": "thirty", 
+      "type": "word", 
+      "text": { 
+        "en": "thirty", 
+        "es": "treinta", 
+        "he": "שלושים" 
+      } 
+    },
+    { 
+      "id": "forty", 
+      "type": "word", 
+      "text": { 
+        "en": "forty", 
+        "es": "cuarenta", 
+        "he": "ארבעים" 
+      } 
+    },
+    { 
+      "id": "fifty", 
+      "type": "word", 
+      "text": { 
+        "en": "fifty", 
+        "es": "cincuenta", 
+        "he": "חמישים" 
+      } 
+    },
+    { 
+      "id": "thousand", 
+      "type": "word", 
+      "text": { 
+        "en": "thousand", 
+        "es": "mil", 
+        "he": "אלף" 
+      } 
+    },
+    { 
+      "id": "million", 
+      "type": "word", 
+      "text": { 
+        "en": "million", 
+        "es": "millón", 
+        "he": "מיליון" 
+      } 
     }
   ]
 }

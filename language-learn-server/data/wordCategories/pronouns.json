@@ -83,6 +83,150 @@
         "es": "ellos", 
         "he": "אותם" 
       } 
+    },
+    { 
+      "id": "me", 
+      "type": "word", 
+      "text": { 
+        "en": "me", 
+        "es": "me", 
+        "he": "אותי" 
+      } 
+    },
+    { 
+      "id": "him", 
+      "type": "word", 
+      "text": { 
+        "en": "him", 
+        "es": "le", 
+        "he": "אותו" 
+      } 
+    },
+    { 
+      "id": "her", 
+      "type": "word", 
+      "text": { 
+        "en": "her", 
+        "es": "la", 
+        "he": "אותה" 
+      } 
+    },
+    { 
+      "id": "us", 
+      "type": "word", 
+      "text": { 
+        "en": "us", 
+        "es": "nos", 
+        "he": "אותנו" 
+      } 
+    },
+    { 
+      "id": "my", 
+      "type": "word", 
+      "text": { 
+        "en": "my", 
+        "es": "mi", 
+        "he": "שלי" 
+      } 
+    },
+    { 
+      "id": "your", 
+      "type": "word", 
+      "text": { 
+        "en": "your", 
+        "es": "tu", 
+        "he": "שלך" 
+      } 
+    },
+    { 
+      "id": "his", 
+      "type": "word", 
+      "text": { 
+        "en": "his", 
+        "es": "su", 
+        "he": "שלו" 
+      } 
+    },
+    { 
+      "id": "her_possessive", 
+      "type": "word", 
+      "text": { 
+        "en": "her", 
+        "es": "su", 
+        "he": "שלה" 
+      } 
+    },
+    { 
+      "id": "its", 
+      "type": "word", 
+      "text": { 
+        "en": "its", 
+        "es": "su", 
+        "he": "שלו" 
+      } 
+    },
+    { 
+      "id": "our", 
+      "type": "word", 
+      "text": { 
+        "en": "our", 
+        "es": "nuestro", 
+        "he": "שלנו" 
+      } 
+    },
+    { 
+      "id": "their", 
+      "type": "word", 
+      "text": { 
+        "en": "their", 
+        "es": "su", 
+        "he": "שלהם" 
+      } 
+    },
+    { 
+      "id": "myself", 
+      "type": "word", 
+      "text": { 
+        "en": "myself", 
+        "es": "mí mismo", 
+        "he": "עצמי" 
+      } 
+    },
+    { 
+      "id": "yourself", 
+      "type": "word", 
+      "text": { 
+        "en": "yourself", 
+        "es": "tú mismo", 
+        "he": "עצמך" 
+      } 
+    },
+    { 
+      "id": "himself", 
+      "type": "word", 
+      "text": { 
+        "en": "himself", 
+        "es": "sí mismo", 
+        "he": "עצמו" 
+      } 
+    },
+    { 
+      "id": "herself", 
+      "type": "word", 
+      "text": { 
+        "en": "herself", 
+        "es": "sí misma", 
+        "he": "עצמה" 
+      } 
+    },
+    { 
+      "id": "themselves", 
+      "type": "word", 
+      "text": { 
+        "en": "themselves", 
+        "es": "sí mismos", 
+        "he": "עצמם" 
+      } 
     }
   ]
 }

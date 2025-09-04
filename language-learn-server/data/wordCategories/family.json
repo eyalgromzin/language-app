@@ -56,6 +56,168 @@
         "es": "familia", 
         "he": "משפחה" 
       } 
+    },
+    { 
+      "id": "grandmother", 
+      "type": "word", 
+      "text": { 
+        "en": "grandmother", 
+        "es": "abuela", 
+        "he": "סבתא" 
+      } 
+    },
+    { 
+      "id": "grandfather", 
+      "type": "word", 
+      "text": { 
+        "en": "grandfather", 
+        "es": "abuelo", 
+        "he": "סבא" 
+      } 
+    },
+    { 
+      "id": "aunt", 
+      "type": "word", 
+      "text": { 
+        "en": "aunt", 
+        "es": "tía", 
+        "he": "דודה" 
+      } 
+    },
+    { 
+      "id": "uncle", 
+      "type": "word", 
+      "text": { 
+        "en": "uncle", 
+        "es": "tío", 
+        "he": "דוד" 
+      } 
+    },
+    { 
+      "id": "cousin", 
+      "type": "word", 
+      "text": { 
+        "en": "cousin", 
+        "es": "primo", 
+        "he": "בן דוד" 
+      } 
+    },
+    { 
+      "id": "niece", 
+      "type": "word", 
+      "text": { 
+        "en": "niece", 
+        "es": "sobrina", 
+        "he": "אחיינית" 
+      } 
+    },
+    { 
+      "id": "nephew", 
+      "type": "word", 
+      "text": { 
+        "en": "nephew", 
+        "es": "sobrino", 
+        "he": "אחיין" 
+      } 
+    },
+    { 
+      "id": "daughter", 
+      "type": "word", 
+      "text": { 
+        "en": "daughter", 
+        "es": "hija", 
+        "he": "בת" 
+      } 
+    },
+    { 
+      "id": "son", 
+      "type": "word", 
+      "text": { 
+        "en": "son", 
+        "es": "hijo", 
+        "he": "בן" 
+      } 
+    },
+    { 
+      "id": "wife", 
+      "type": "word", 
+      "text": { 
+        "en": "wife", 
+        "es": "esposa", 
+        "he": "אישה" 
+      } 
+    },
+    { 
+      "id": "husband", 
+      "type": "word", 
+      "text": { 
+        "en": "husband", 
+        "es": "esposo", 
+        "he": "בעל" 
+      } 
+    },
+    { 
+      "id": "baby", 
+      "type": "word", 
+      "text": { 
+        "en": "baby", 
+        "es": "bebé", 
+        "he": "תינוק" 
+      } 
+    },
+    { 
+      "id": "child", 
+      "type": "word", 
+      "text": { 
+        "en": "child", 
+        "es": "niño", 
+        "he": "ילד" 
+      } 
+    },
+    { 
+      "id": "parents", 
+      "type": "word", 
+      "text": { 
+        "en": "parents", 
+        "es": "padres", 
+        "he": "הורים" 
+      } 
+    },
+    { 
+      "id": "children", 
+      "type": "word", 
+      "text": { 
+        "en": "children", 
+        "es": "hijos", 
+        "he": "ילדים" 
+      } 
+    },
+    { 
+      "id": "siblings", 
+      "type": "word", 
+      "text": { 
+        "en": "siblings", 
+        "es": "hermanos", 
+        "he": "אחים" 
+      } 
+    },
+    { 
+      "id": "stepmother", 
+      "type": "word", 
+      "text": { 
+        "en": "stepmother", 
+        "es": "madrastra", 
+        "he": "אם חורגת" 
+      } 
+    },
+    { 
+      "id": "stepfather", 
+      "type": "word", 
+      "text": { 
+        "en": "stepfather", 
+        "es": "padrastro", 
+        "he": "אב חורג" 
+      } 
     }
   ]
 }
