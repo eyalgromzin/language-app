@@ -1,17 +1,14 @@
-3 in baby steps , if not enough words , just take the words from other steps instead of from my words . 
+1 design app ui better
 
-4 design app ui better
+2 make video transcript work better - it lags now 
 
------------------
+3 app link not working again
 
-5 make video transcript work better - it lags now 
+4 ask shir - if post book url should maybe send me an email with all the details and i will add the book ? to prevent bad urls ? or add a report button that will report the item.  
 
-6 app link not working again
+5 login with facebook
 
-7 ask shir - if post book url should maybe send me an email with all the details and i will add the book ? to prevent bad urls ? or add a report button that will report the item.  
-
-8 login with facebook
-
+6 on formulate sentence success, its not clearing the screen and moving to the next item.
 
 - refactor - move all types into 1 file. 
     - wordentry 
