@@ -1,0 +1,196 @@
+{
+  "id": "weather",
+  "emoji": "🌤️",
+  "name": { 
+    "en": "Weather", 
+    "es": "Clima", 
+    "he": "מזג אוויר" 
+  },
+  "description": { 
+    "en": "Weather conditions and seasons", 
+    "es": "Condiciones climáticas y estaciones", 
+    "he": "תנאי מזג אוויר ועונות" 
+  },
+  "items": [
+    { 
+      "id": "sunny", 
+      "type": "word", 
+      "text": { 
+        "en": "sunny", 
+        "es": "soleado", 
+        "he": "שמשי" 
+      } 
+    },
+    { 
+      "id": "cloudy", 
+      "type": "word", 
+      "text": { 
+        "en": "cloudy", 
+        "es": "nublado", 
+        "he": "מעונן" 
+      } 
+    },
+    { 
+      "id": "rainy", 
+      "type": "word", 
+      "text": { 
+        "en": "rainy", 
+        "es": "lluvioso", 
+        "he": "גשום" 
+      } 
+    },
+    { 
+      "id": "snowy", 
+      "type": "word", 
+      "text": { 
+        "en": "snowy", 
+        "es": "nevado", 
+        "he": "מושלג" 
+      } 
+    },
+    { 
+      "id": "windy", 
+      "type": "word", 
+      "text": { 
+        "en": "windy", 
+        "es": "ventoso", 
+        "he": "רוח" 
+      } 
+    },
+    { 
+      "id": "hot", 
+      "type": "word", 
+      "text": { 
+        "en": "hot", 
+        "es": "caliente", 
+        "he": "חם" 
+      } 
+    },
+    { 
+      "id": "cold", 
+      "type": "word", 
+      "text": { 
+        "en": "cold", 
+        "es": "frío", 
+        "he": "קר" 
+      } 
+    },
+    { 
+      "id": "warm", 
+      "type": "word", 
+      "text": { 
+        "en": "warm", 
+        "es": "tibio", 
+        "he": "חמים" 
+      } 
+    },
+    { 
+      "id": "cool", 
+      "type": "word", 
+      "text": { 
+        "en": "cool", 
+        "es": "fresco", 
+        "he": "מגניב" 
+      } 
+    },
+    { 
+      "id": "storm", 
+      "type": "word", 
+      "text": { 
+        "en": "storm", 
+        "es": "tormenta", 
+        "he": "סערה" 
+      } 
+    },
+    { 
+      "id": "thunder", 
+      "type": "word", 
+      "text": { 
+        "en": "thunder", 
+        "es": "trueno", 
+        "he": "רעם" 
+      } 
+    },
+    { 
+      "id": "lightning", 
+      "type": "word", 
+      "text": { 
+        "en": "lightning", 
+        "es": "relámpago", 
+        "he": "ברק" 
+      } 
+    },
+    { 
+      "id": "fog", 
+      "type": "word", 
+      "text": { 
+        "en": "fog", 
+        "es": "niebla", 
+        "he": "ערפל" 
+      } 
+    },
+    { 
+      "id": "mist", 
+      "type": "word", 
+      "text": { 
+        "en": "mist", 
+        "es": "bruma", 
+        "he": "אד" 
+      } 
+    },
+    { 
+      "id": "hail", 
+      "type": "word", 
+      "text": { 
+        "en": "hail", 
+        "es": "granizo", 
+        "he": "ברד" 
+      } 
+    },
+    { 
+      "id": "sleet", 
+      "type": "word", 
+      "text": { 
+        "en": "sleet", 
+        "es": "aguanieve", 
+        "he": "שלג גשם" 
+      } 
+    },
+    { 
+      "id": "drizzle", 
+      "type": "word", 
+      "text": { 
+        "en": "drizzle", 
+        "es": "llovizna", 
+        "he": "טפטוף" 
+      } 
+    },
+    { 
+      "id": "shower", 
+      "type": "word", 
+      "text": { 
+        "en": "shower", 
+        "es": "ducha", 
+        "he": "מקלחת" 
+      } 
+    },
+    { 
+      "id": "breeze", 
+      "type": "word", 
+      "text": { 
+        "en": "breeze", 
+        "es": "brisa", 
+        "he": "רוח קלה" 
+      } 
+    },
+    { 
+      "id": "humidity", 
+      "type": "word", 
+      "text": { 
+        "en": "humidity", 
+        "es": "humedad", 
+        "he": "לחות" 
+      } 
+    }
+  ]
+}

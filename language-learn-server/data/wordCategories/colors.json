@@ -1,0 +1,196 @@
+{
+  "id": "colors",
+  "emoji": "🎨",
+  "name": { 
+    "en": "Colors", 
+    "es": "Colores", 
+    "he": "צבעים" 
+  },
+  "description": { 
+    "en": "Basic colors and shades", 
+    "es": "Colores básicos y tonos", 
+    "he": "צבעים בסיסיים וגוונים" 
+  },
+  "items": [
+    { 
+      "id": "red", 
+      "type": "word", 
+      "text": { 
+        "en": "red", 
+        "es": "rojo", 
+        "he": "אדום" 
+      } 
+    },
+    { 
+      "id": "blue", 
+      "type": "word", 
+      "text": { 
+        "en": "blue", 
+        "es": "azul", 
+        "he": "כחול" 
+      } 
+    },
+    { 
+      "id": "green", 
+      "type": "word", 
+      "text": { 
+        "en": "green", 
+        "es": "verde", 
+        "he": "ירוק" 
+      } 
+    },
+    { 
+      "id": "yellow", 
+      "type": "word", 
+      "text": { 
+        "en": "yellow", 
+        "es": "amarillo", 
+        "he": "צהוב" 
+      } 
+    },
+    { 
+      "id": "orange", 
+      "type": "word", 
+      "text": { 
+        "en": "orange", 
+        "es": "naranja", 
+        "he": "כתום" 
+      } 
+    },
+    { 
+      "id": "purple", 
+      "type": "word", 
+      "text": { 
+        "en": "purple", 
+        "es": "morado", 
+        "he": "סגול" 
+      } 
+    },
+    { 
+      "id": "pink", 
+      "type": "word", 
+      "text": { 
+        "en": "pink", 
+        "es": "rosa", 
+        "he": "ורוד" 
+      } 
+    },
+    { 
+      "id": "brown", 
+      "type": "word", 
+      "text": { 
+        "en": "brown", 
+        "es": "marrón", 
+        "he": "חום" 
+      } 
+    },
+    { 
+      "id": "black", 
+      "type": "word", 
+      "text": { 
+        "en": "black", 
+        "es": "negro", 
+        "he": "שחור" 
+      } 
+    },
+    { 
+      "id": "white", 
+      "type": "word", 
+      "text": { 
+        "en": "white", 
+        "es": "blanco", 
+        "he": "לבן" 
+      } 
+    },
+    { 
+      "id": "gray", 
+      "type": "word", 
+      "text": { 
+        "en": "gray", 
+        "es": "gris", 
+        "he": "אפור" 
+      } 
+    },
+    { 
+      "id": "gold", 
+      "type": "word", 
+      "text": { 
+        "en": "gold", 
+        "es": "dorado", 
+        "he": "זהב" 
+      } 
+    },
+    { 
+      "id": "silver", 
+      "type": "word", 
+      "text": { 
+        "en": "silver", 
+        "es": "plateado", 
+        "he": "כסף" 
+      } 
+    },
+    { 
+      "id": "turquoise", 
+      "type": "word", 
+      "text": { 
+        "en": "turquoise", 
+        "es": "turquesa", 
+        "he": "טורקיז" 
+      } 
+    },
+    { 
+      "id": "lime", 
+      "type": "word", 
+      "text": { 
+        "en": "lime", 
+        "es": "lima", 
+        "he": "ליים" 
+      } 
+    },
+    { 
+      "id": "navy", 
+      "type": "word", 
+      "text": { 
+        "en": "navy", 
+        "es": "azul marino", 
+        "he": "כחול כהה" 
+      } 
+    },
+    { 
+      "id": "coral", 
+      "type": "word", 
+      "text": { 
+        "en": "coral", 
+        "es": "coral", 
+        "he": "אלמוג" 
+      } 
+    },
+    { 
+      "id": "lavender", 
+      "type": "word", 
+      "text": { 
+        "en": "lavender", 
+        "es": "lavanda", 
+        "he": "לבנדר" 
+      } 
+    },
+    { 
+      "id": "teal", 
+      "type": "word", 
+      "text": { 
+        "en": "teal", 
+        "es": "verde azulado", 
+        "he": "ירוק כחלחל" 
+      } 
+    },
+    { 
+      "id": "maroon", 
+      "type": "word", 
+      "text": { 
+        "en": "maroon", 
+        "es": "granate", 
+        "he": "בורדו" 
+      } 
+    }
+  ]
+}

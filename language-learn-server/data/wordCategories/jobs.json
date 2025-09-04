@@ -1,0 +1,196 @@
+{
+  "id": "jobs",
+  "emoji": "💼",
+  "name": { 
+    "en": "Jobs", 
+    "es": "Trabajos", 
+    "he": "עבודות" 
+  },
+  "description": { 
+    "en": "Common professions and occupations", 
+    "es": "Profesiones y ocupaciones comunes", 
+    "he": "מקצועות ועיסוקים נפוצים" 
+  },
+  "items": [
+    { 
+      "id": "teacher", 
+      "type": "word", 
+      "text": { 
+        "en": "teacher", 
+        "es": "maestro", 
+        "he": "מורה" 
+      } 
+    },
+    { 
+      "id": "doctor", 
+      "type": "word", 
+      "text": { 
+        "en": "doctor", 
+        "es": "médico", 
+        "he": "רופא" 
+      } 
+    },
+    { 
+      "id": "nurse", 
+      "type": "word", 
+      "text": { 
+        "en": "nurse", 
+        "es": "enfermero", 
+        "he": "אחות" 
+      } 
+    },
+    { 
+      "id": "engineer", 
+      "type": "word", 
+      "text": { 
+        "en": "engineer", 
+        "es": "ingeniero", 
+        "he": "מהנדס" 
+      } 
+    },
+    { 
+      "id": "lawyer", 
+      "type": "word", 
+      "text": { 
+        "en": "lawyer", 
+        "es": "abogado", 
+        "he": "עורך דין" 
+      } 
+    },
+    { 
+      "id": "police_officer", 
+      "type": "word", 
+      "text": { 
+        "en": "police officer", 
+        "es": "policía", 
+        "he": "שוטר" 
+      } 
+    },
+    { 
+      "id": "firefighter", 
+      "type": "word", 
+      "text": { 
+        "en": "firefighter", 
+        "es": "bombero", 
+        "he": "כבאי" 
+      } 
+    },
+    { 
+      "id": "chef", 
+      "type": "word", 
+      "text": { 
+        "en": "chef", 
+        "es": "chef", 
+        "he": "שף" 
+      } 
+    },
+    { 
+      "id": "waiter", 
+      "type": "word", 
+      "text": { 
+        "en": "waiter", 
+        "es": "camarero", 
+        "he": "מלצר" 
+      } 
+    },
+    { 
+      "id": "driver", 
+      "type": "word", 
+      "text": { 
+        "en": "driver", 
+        "es": "conductor", 
+        "he": "נהג" 
+      } 
+    },
+    { 
+      "id": "pilot", 
+      "type": "word", 
+      "text": { 
+        "en": "pilot", 
+        "es": "piloto", 
+        "he": "טייס" 
+      } 
+    },
+    { 
+      "id": "sailor", 
+      "type": "word", 
+      "text": { 
+        "en": "sailor", 
+        "es": "marinero", 
+        "he": "מלח" 
+      } 
+    },
+    { 
+      "id": "artist", 
+      "type": "word", 
+      "text": { 
+        "en": "artist", 
+        "es": "artista", 
+        "he": "אמן" 
+      } 
+    },
+    { 
+      "id": "musician", 
+      "type": "word", 
+      "text": { 
+        "en": "musician", 
+        "es": "músico", 
+        "he": "מוזיקאי" 
+      } 
+    },
+    { 
+      "id": "actor", 
+      "type": "word", 
+      "text": { 
+        "en": "actor", 
+        "es": "actor", 
+        "he": "שחקן" 
+      } 
+    },
+    { 
+      "id": "writer", 
+      "type": "word", 
+      "text": { 
+        "en": "writer", 
+        "es": "escritor", 
+        "he": "סופר" 
+      } 
+    },
+    { 
+      "id": "journalist", 
+      "type": "word", 
+      "text": { 
+        "en": "journalist", 
+        "es": "periodista", 
+        "he": "עיתונאי" 
+      } 
+    },
+    { 
+      "id": "dentist", 
+      "type": "word", 
+      "text": { 
+        "en": "dentist", 
+        "es": "dentista", 
+        "he": "רופא שיניים" 
+      } 
+    },
+    { 
+      "id": "veterinarian", 
+      "type": "word", 
+      "text": { 
+        "en": "veterinarian", 
+        "es": "veterinario", 
+        "he": "וטרינר" 
+      } 
+    },
+    { 
+      "id": "architect", 
+      "type": "word", 
+      "text": { 
+        "en": "architect", 
+        "es": "arquitecto", 
+        "he": "אדריכל" 
+      } 
+    }
+  ]
+}

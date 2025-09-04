@@ -150,6 +150,141 @@
         "he": "מילים של הבית" 
       },
       "filename": "home.json"
+    },
+    {
+      "id": "animals",
+      "emoji": "🐾",
+      "name": { 
+        "en": "Animals", 
+        "es": "Animales", 
+        "he": "חיות" 
+      },
+      "description": { 
+        "en": "Common animals and pets", 
+        "es": "Animales y mascotas comunes", 
+        "he": "חיות ומחמדים נפוצים" 
+      },
+      "filename": "animals.json"
+    },
+    {
+      "id": "colors",
+      "emoji": "🎨",
+      "name": { 
+        "en": "Colors", 
+        "es": "Colores", 
+        "he": "צבעים" 
+      },
+      "description": { 
+        "en": "Basic colors and shades", 
+        "es": "Colores básicos y tonos", 
+        "he": "צבעים בסיסיים וגוונים" 
+      },
+      "filename": "colors.json"
+    },
+    {
+      "id": "body_parts",
+      "emoji": "👤",
+      "name": { 
+        "en": "Body Parts", 
+        "es": "Partes del Cuerpo", 
+        "he": "איברי הגוף" 
+      },
+      "description": { 
+        "en": "Human body parts and anatomy", 
+        "es": "Partes del cuerpo humano y anatomía", 
+        "he": "איברי הגוף האנושי ואנטומיה" 
+      },
+      "filename": "body_parts.json"
+    },
+    {
+      "id": "weather",
+      "emoji": "🌤️",
+      "name": { 
+        "en": "Weather", 
+        "es": "Clima", 
+        "he": "מזג אוויר" 
+      },
+      "description": { 
+        "en": "Weather conditions and seasons", 
+        "es": "Condiciones climáticas y estaciones", 
+        "he": "תנאי מזג אוויר ועונות" 
+      },
+      "filename": "weather.json"
+    },
+    {
+      "id": "transportation",
+      "emoji": "🚗",
+      "name": { 
+        "en": "Transportation", 
+        "es": "Transporte", 
+        "he": "תחבורה" 
+      },
+      "description": { 
+        "en": "Vehicles and ways to travel", 
+        "es": "Vehículos y formas de viajar", 
+        "he": "כלי רכב ודרכי נסיעה" 
+      },
+      "filename": "transportation.json"
+    },
+    {
+      "id": "jobs",
+      "emoji": "💼",
+      "name": { 
+        "en": "Jobs", 
+        "es": "Trabajos", 
+        "he": "עבודות" 
+      },
+      "description": { 
+        "en": "Common professions and occupations", 
+        "es": "Profesiones y ocupaciones comunes", 
+        "he": "מקצועות ועיסוקים נפוצים" 
+      },
+      "filename": "jobs.json"
+    },
+    {
+      "id": "hobbies",
+      "emoji": "🎯",
+      "name": { 
+        "en": "Hobbies", 
+        "es": "Pasatiempos", 
+        "he": "תחביבים" 
+      },
+      "description": { 
+        "en": "Fun activities and hobbies", 
+        "es": "Actividades divertidas y pasatiempos", 
+        "he": "פעילויות מהנות ותחביבים" 
+      },
+      "filename": "hobbies.json"
+    },
+    {
+      "id": "school",
+      "emoji": "🎓",
+      "name": { 
+        "en": "School", 
+        "es": "Escuela", 
+        "he": "בית ספר" 
+      },
+      "description": { 
+        "en": "School subjects and supplies", 
+        "es": "Materias escolares y útiles", 
+        "he": "מקצועות לימוד וציוד בית ספר" 
+      },
+      "filename": "school.json"
+    },
+    {
+      "id": "nature",
+      "emoji": "🌿",
+      "name": { 
+        "en": "Nature", 
+        "es": "Naturaleza", 
+        "he": "טבע" 
+      },
+      "description": { 
+        "en": "Natural elements and landscapes", 
+        "es": "Elementos naturales y paisajes", 
+        "he": "אלמנטים טבעיים ונופים" 
+      },
+      "filename": "nature.json"
     }
   ]
 }

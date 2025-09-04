@@ -1,0 +1,196 @@
+{
+  "id": "animals",
+  "emoji": "🐾",
+  "name": { 
+    "en": "Animals", 
+    "es": "Animales", 
+    "he": "חיות" 
+  },
+  "description": { 
+    "en": "Common animals and pets", 
+    "es": "Animales y mascotas comunes", 
+    "he": "חיות ומחמדים נפוצים" 
+  },
+  "items": [
+    { 
+      "id": "dog", 
+      "type": "word", 
+      "text": { 
+        "en": "dog", 
+        "es": "perro", 
+        "he": "כלב" 
+      } 
+    },
+    { 
+      "id": "cat", 
+      "type": "word", 
+      "text": { 
+        "en": "cat", 
+        "es": "gato", 
+        "he": "חתול" 
+      } 
+    },
+    { 
+      "id": "bird", 
+      "type": "word", 
+      "text": { 
+        "en": "bird", 
+        "es": "pájaro", 
+        "he": "ציפור" 
+      } 
+    },
+    { 
+      "id": "fish", 
+      "type": "word", 
+      "text": { 
+        "en": "fish", 
+        "es": "pez", 
+        "he": "דג" 
+      } 
+    },
+    { 
+      "id": "horse", 
+      "type": "word", 
+      "text": { 
+        "en": "horse", 
+        "es": "caballo", 
+        "he": "סוס" 
+      } 
+    },
+    { 
+      "id": "cow", 
+      "type": "word", 
+      "text": { 
+        "en": "cow", 
+        "es": "vaca", 
+        "he": "פרה" 
+      } 
+    },
+    { 
+      "id": "pig", 
+      "type": "word", 
+      "text": { 
+        "en": "pig", 
+        "es": "cerdo", 
+        "he": "חזיר" 
+      } 
+    },
+    { 
+      "id": "sheep", 
+      "type": "word", 
+      "text": { 
+        "en": "sheep", 
+        "es": "oveja", 
+        "he": "כבשה" 
+      } 
+    },
+    { 
+      "id": "chicken", 
+      "type": "word", 
+      "text": { 
+        "en": "chicken", 
+        "es": "pollo", 
+        "he": "תרנגולת" 
+      } 
+    },
+    { 
+      "id": "duck", 
+      "type": "word", 
+      "text": { 
+        "en": "duck", 
+        "es": "pato", 
+        "he": "ברווז" 
+      } 
+    },
+    { 
+      "id": "rabbit", 
+      "type": "word", 
+      "text": { 
+        "en": "rabbit", 
+        "es": "conejo", 
+        "he": "ארנב" 
+      } 
+    },
+    { 
+      "id": "mouse", 
+      "type": "word", 
+      "text": { 
+        "en": "mouse", 
+        "es": "ratón", 
+        "he": "עכבר" 
+      } 
+    },
+    { 
+      "id": "elephant", 
+      "type": "word", 
+      "text": { 
+        "en": "elephant", 
+        "es": "elefante", 
+        "he": "פיל" 
+      } 
+    },
+    { 
+      "id": "lion", 
+      "type": "word", 
+      "text": { 
+        "en": "lion", 
+        "es": "león", 
+        "he": "אריה" 
+      } 
+    },
+    { 
+      "id": "tiger", 
+      "type": "word", 
+      "text": { 
+        "en": "tiger", 
+        "es": "tigre", 
+        "he": "נמר" 
+      } 
+    },
+    { 
+      "id": "bear", 
+      "type": "word", 
+      "text": { 
+        "en": "bear", 
+        "es": "oso", 
+        "he": "דוב" 
+      } 
+    },
+    { 
+      "id": "wolf", 
+      "type": "word", 
+      "text": { 
+        "en": "wolf", 
+        "es": "lobo", 
+        "he": "זאב" 
+      } 
+    },
+    { 
+      "id": "fox", 
+      "type": "word", 
+      "text": { 
+        "en": "fox", 
+        "es": "zorro", 
+        "he": "שועל" 
+      } 
+    },
+    { 
+      "id": "deer", 
+      "type": "word", 
+      "text": { 
+        "en": "deer", 
+        "es": "ciervo", 
+        "he": "צבי" 
+      } 
+    },
+    { 
+      "id": "monkey", 
+      "type": "word", 
+      "text": { 
+        "en": "monkey", 
+        "es": "mono", 
+        "he": "קוף" 
+      } 
+    }
+  ]
+}

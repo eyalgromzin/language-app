@@ -1,0 +1,196 @@
+{
+  "id": "nature",
+  "emoji": "🌿",
+  "name": { 
+    "en": "Nature", 
+    "es": "Naturaleza", 
+    "he": "טבע" 
+  },
+  "description": { 
+    "en": "Natural elements and landscapes", 
+    "es": "Elementos naturales y paisajes", 
+    "he": "אלמנטים טבעיים ונופים" 
+  },
+  "items": [
+    { 
+      "id": "tree", 
+      "type": "word", 
+      "text": { 
+        "en": "tree", 
+        "es": "árbol", 
+        "he": "עץ" 
+      } 
+    },
+    { 
+      "id": "flower", 
+      "type": "word", 
+      "text": { 
+        "en": "flower", 
+        "es": "flor", 
+        "he": "פרח" 
+      } 
+    },
+    { 
+      "id": "grass", 
+      "type": "word", 
+      "text": { 
+        "en": "grass", 
+        "es": "hierba", 
+        "he": "דשא" 
+      } 
+    },
+    { 
+      "id": "mountain", 
+      "type": "word", 
+      "text": { 
+        "en": "mountain", 
+        "es": "montaña", 
+        "he": "הר" 
+      } 
+    },
+    { 
+      "id": "river", 
+      "type": "word", 
+      "text": { 
+        "en": "river", 
+        "es": "río", 
+        "he": "נהר" 
+      } 
+    },
+    { 
+      "id": "lake", 
+      "type": "word", 
+      "text": { 
+        "en": "lake", 
+        "es": "lago", 
+        "he": "אגם" 
+      } 
+    },
+    { 
+      "id": "ocean", 
+      "type": "word", 
+      "text": { 
+        "en": "ocean", 
+        "es": "océano", 
+        "he": "אוקיינוס" 
+      } 
+    },
+    { 
+      "id": "beach", 
+      "type": "word", 
+      "text": { 
+        "en": "beach", 
+        "es": "playa", 
+        "he": "חוף" 
+      } 
+    },
+    { 
+      "id": "forest", 
+      "type": "word", 
+      "text": { 
+        "en": "forest", 
+        "es": "bosque", 
+        "he": "יער" 
+      } 
+    },
+    { 
+      "id": "desert", 
+      "type": "word", 
+      "text": { 
+        "en": "desert", 
+        "es": "desierto", 
+        "he": "מדבר" 
+      } 
+    },
+    { 
+      "id": "island", 
+      "type": "word", 
+      "text": { 
+        "en": "island", 
+        "es": "isla", 
+        "he": "אי" 
+      } 
+    },
+    { 
+      "id": "valley", 
+      "type": "word", 
+      "text": { 
+        "en": "valley", 
+        "es": "valle", 
+        "he": "עמק" 
+      } 
+    },
+    { 
+      "id": "cave", 
+      "type": "word", 
+      "text": { 
+        "en": "cave", 
+        "es": "cueva", 
+        "he": "מערה" 
+      } 
+    },
+    { 
+      "id": "waterfall", 
+      "type": "word", 
+      "text": { 
+        "en": "waterfall", 
+        "es": "cascada", 
+        "he": "מפל" 
+      } 
+    },
+    { 
+      "id": "volcano", 
+      "type": "word", 
+      "text": { 
+        "en": "volcano", 
+        "es": "volcán", 
+        "he": "הר געש" 
+      } 
+    },
+    { 
+      "id": "cliff", 
+      "type": "word", 
+      "text": { 
+        "en": "cliff", 
+        "es": "acantilado", 
+        "he": "צוק" 
+      } 
+    },
+    { 
+      "id": "meadow", 
+      "type": "word", 
+      "text": { 
+        "en": "meadow", 
+        "es": "prado", 
+        "he": "אחו" 
+      } 
+    },
+    { 
+      "id": "pond", 
+      "type": "word", 
+      "text": { 
+        "en": "pond", 
+        "es": "estanque", 
+        "he": "בריכה" 
+      } 
+    },
+    { 
+      "id": "stream", 
+      "type": "word", 
+      "text": { 
+        "en": "stream", 
+        "es": "arroyo", 
+        "he": "נחל" 
+      } 
+    },
+    { 
+      "id": "hill", 
+      "type": "word", 
+      "text": { 
+        "en": "hill", 
+        "es": "colina", 
+        "he": "גבעה" 
+      } 
+    }
+  ]
+}

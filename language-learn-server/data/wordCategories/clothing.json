@@ -56,6 +56,132 @@
         "es": "chaqueta", 
         "he": "מעיל" 
       } 
+    },
+    { 
+      "id": "sweater", 
+      "type": "word", 
+      "text": { 
+        "en": "sweater", 
+        "es": "suéter", 
+        "he": "סוודר" 
+      } 
+    },
+    { 
+      "id": "coat", 
+      "type": "word", 
+      "text": { 
+        "en": "coat", 
+        "es": "abrigo", 
+        "he": "מעיל" 
+      } 
+    },
+    { 
+      "id": "hat", 
+      "type": "word", 
+      "text": { 
+        "en": "hat", 
+        "es": "sombrero", 
+        "he": "כובע" 
+      } 
+    },
+    { 
+      "id": "cap", 
+      "type": "word", 
+      "text": { 
+        "en": "cap", 
+        "es": "gorra", 
+        "he": "כובע בייסבול" 
+      } 
+    },
+    { 
+      "id": "scarf", 
+      "type": "word", 
+      "text": { 
+        "en": "scarf", 
+        "es": "bufanda", 
+        "he": "צעיף" 
+      } 
+    },
+    { 
+      "id": "gloves", 
+      "type": "word", 
+      "text": { 
+        "en": "gloves", 
+        "es": "guantes", 
+        "he": "כפפות" 
+      } 
+    },
+    { 
+      "id": "socks", 
+      "type": "word", 
+      "text": { 
+        "en": "socks", 
+        "es": "calcetines", 
+        "he": "גרביים" 
+      } 
+    },
+    { 
+      "id": "underwear", 
+      "type": "word", 
+      "text": { 
+        "en": "underwear", 
+        "es": "ropa interior", 
+        "he": "תחתונים" 
+      } 
+    },
+    { 
+      "id": "bra", 
+      "type": "word", 
+      "text": { 
+        "en": "bra", 
+        "es": "sostén", 
+        "he": "חזייה" 
+      } 
+    },
+    { 
+      "id": "tie", 
+      "type": "word", 
+      "text": { 
+        "en": "tie", 
+        "es": "corbata", 
+        "he": "עניבה" 
+      } 
+    },
+    { 
+      "id": "belt", 
+      "type": "word", 
+      "text": { 
+        "en": "belt", 
+        "es": "cinturón", 
+        "he": "חגורה" 
+      } 
+    },
+    { 
+      "id": "watch", 
+      "type": "word", 
+      "text": { 
+        "en": "watch", 
+        "es": "reloj", 
+        "he": "שעון" 
+      } 
+    },
+    { 
+      "id": "jewelry", 
+      "type": "word", 
+      "text": { 
+        "en": "jewelry", 
+        "es": "joyas", 
+        "he": "תכשיטים" 
+      } 
+    },
+    { 
+      "id": "bag", 
+      "type": "word", 
+      "text": { 
+        "en": "bag", 
+        "es": "bolsa", 
+        "he": "תיק" 
+      } 
     }
   ]
 }

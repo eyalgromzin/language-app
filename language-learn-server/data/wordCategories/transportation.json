@@ -1,0 +1,196 @@
+{
+  "id": "transportation",
+  "emoji": "🚗",
+  "name": { 
+    "en": "Transportation", 
+    "es": "Transporte", 
+    "he": "תחבורה" 
+  },
+  "description": { 
+    "en": "Vehicles and ways to travel", 
+    "es": "Vehículos y formas de viajar", 
+    "he": "כלי רכב ודרכי נסיעה" 
+  },
+  "items": [
+    { 
+      "id": "car", 
+      "type": "word", 
+      "text": { 
+        "en": "car", 
+        "es": "coche", 
+        "he": "מכונית" 
+      } 
+    },
+    { 
+      "id": "bus", 
+      "type": "word", 
+      "text": { 
+        "en": "bus", 
+        "es": "autobús", 
+        "he": "אוטובוס" 
+      } 
+    },
+    { 
+      "id": "train", 
+      "type": "word", 
+      "text": { 
+        "en": "train", 
+        "es": "tren", 
+        "he": "רכבת" 
+      } 
+    },
+    { 
+      "id": "airplane", 
+      "type": "word", 
+      "text": { 
+        "en": "airplane", 
+        "es": "avión", 
+        "he": "מטוס" 
+      } 
+    },
+    { 
+      "id": "bicycle", 
+      "type": "word", 
+      "text": { 
+        "en": "bicycle", 
+        "es": "bicicleta", 
+        "he": "אופניים" 
+      } 
+    },
+    { 
+      "id": "motorcycle", 
+      "type": "word", 
+      "text": { 
+        "en": "motorcycle", 
+        "es": "motocicleta", 
+        "he": "אופנוע" 
+      } 
+    },
+    { 
+      "id": "truck", 
+      "type": "word", 
+      "text": { 
+        "en": "truck", 
+        "es": "camión", 
+        "he": "משאית" 
+      } 
+    },
+    { 
+      "id": "boat", 
+      "type": "word", 
+      "text": { 
+        "en": "boat", 
+        "es": "barco", 
+        "he": "סירה" 
+      } 
+    },
+    { 
+      "id": "ship", 
+      "type": "word", 
+      "text": { 
+        "en": "ship", 
+        "es": "barco", 
+        "he": "אנייה" 
+      } 
+    },
+    { 
+      "id": "subway", 
+      "type": "word", 
+      "text": { 
+        "en": "subway", 
+        "es": "metro", 
+        "he": "רכבת תחתית" 
+      } 
+    },
+    { 
+      "id": "taxi", 
+      "type": "word", 
+      "text": { 
+        "en": "taxi", 
+        "es": "taxi", 
+        "he": "מונית" 
+      } 
+    },
+    { 
+      "id": "helicopter", 
+      "type": "word", 
+      "text": { 
+        "en": "helicopter", 
+        "es": "helicóptero", 
+        "he": "מסוק" 
+      } 
+    },
+    { 
+      "id": "scooter", 
+      "type": "word", 
+      "text": { 
+        "en": "scooter", 
+        "es": "patinete", 
+        "he": "קורקינט" 
+      } 
+    },
+    { 
+      "id": "skateboard", 
+      "type": "word", 
+      "text": { 
+        "en": "skateboard", 
+        "es": "patineta", 
+        "he": "סקייטבורד" 
+      } 
+    },
+    { 
+      "id": "rollerblades", 
+      "type": "word", 
+      "text": { 
+        "en": "rollerblades", 
+        "es": "patines", 
+        "he": "גלגיליות" 
+      } 
+    },
+    { 
+      "id": "tram", 
+      "type": "word", 
+      "text": { 
+        "en": "tram", 
+        "es": "tranvía", 
+        "he": "חשמלית" 
+      } 
+    },
+    { 
+      "id": "ferry", 
+      "type": "word", 
+      "text": { 
+        "en": "ferry", 
+        "es": "ferry", 
+        "he": "מעבורת" 
+      } 
+    },
+    { 
+      "id": "van", 
+      "type": "word", 
+      "text": { 
+        "en": "van", 
+        "es": "furgoneta", 
+        "he": "ואן" 
+      } 
+    },
+    { 
+      "id": "ambulance", 
+      "type": "word", 
+      "text": { 
+        "en": "ambulance", 
+        "es": "ambulancia", 
+        "he": "אמבולנס" 
+      } 
+    },
+    { 
+      "id": "police_car", 
+      "type": "word", 
+      "text": { 
+        "en": "police car", 
+        "es": "coche de policía", 
+        "he": "מכונית משטרה" 
+      } 
+    }
+  ]
+}

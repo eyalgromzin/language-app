@@ -1,0 +1,196 @@
+{
+  "id": "school",
+  "emoji": "🎓",
+  "name": { 
+    "en": "School", 
+    "es": "Escuela", 
+    "he": "בית ספר" 
+  },
+  "description": { 
+    "en": "School subjects and supplies", 
+    "es": "Materias escolares y útiles", 
+    "he": "מקצועות לימוד וציוד בית ספר" 
+  },
+  "items": [
+    { 
+      "id": "math", 
+      "type": "word", 
+      "text": { 
+        "en": "math", 
+        "es": "matemáticas", 
+        "he": "מתמטיקה" 
+      } 
+    },
+    { 
+      "id": "science", 
+      "type": "word", 
+      "text": { 
+        "en": "science", 
+        "es": "ciencia", 
+        "he": "מדע" 
+      } 
+    },
+    { 
+      "id": "history", 
+      "type": "word", 
+      "text": { 
+        "en": "history", 
+        "es": "historia", 
+        "he": "היסטוריה" 
+      } 
+    },
+    { 
+      "id": "geography", 
+      "type": "word", 
+      "text": { 
+        "en": "geography", 
+        "es": "geografía", 
+        "he": "גיאוגרפיה" 
+      } 
+    },
+    { 
+      "id": "english", 
+      "type": "word", 
+      "text": { 
+        "en": "English", 
+        "es": "inglés", 
+        "he": "אנגלית" 
+      } 
+    },
+    { 
+      "id": "spanish", 
+      "type": "word", 
+      "text": { 
+        "en": "Spanish", 
+        "es": "español", 
+        "he": "ספרדית" 
+      } 
+    },
+    { 
+      "id": "hebrew", 
+      "type": "word", 
+      "text": { 
+        "en": "Hebrew", 
+        "es": "hebreo", 
+        "he": "עברית" 
+      } 
+    },
+    { 
+      "id": "art", 
+      "type": "word", 
+      "text": { 
+        "en": "art", 
+        "es": "arte", 
+        "he": "אמנות" 
+      } 
+    },
+    { 
+      "id": "music", 
+      "type": "word", 
+      "text": { 
+        "en": "music", 
+        "es": "música", 
+        "he": "מוזיקה" 
+      } 
+    },
+    { 
+      "id": "gym", 
+      "type": "word", 
+      "text": { 
+        "en": "gym", 
+        "es": "gimnasia", 
+        "he": "חינוך גופני" 
+      } 
+    },
+    { 
+      "id": "pencil", 
+      "type": "word", 
+      "text": { 
+        "en": "pencil", 
+        "es": "lápiz", 
+        "he": "עיפרון" 
+      } 
+    },
+    { 
+      "id": "pen", 
+      "type": "word", 
+      "text": { 
+        "en": "pen", 
+        "es": "bolígrafo", 
+        "he": "עט" 
+      } 
+    },
+    { 
+      "id": "notebook", 
+      "type": "word", 
+      "text": { 
+        "en": "notebook", 
+        "es": "cuaderno", 
+        "he": "מחברת" 
+      } 
+    },
+    { 
+      "id": "book", 
+      "type": "word", 
+      "text": { 
+        "en": "book", 
+        "es": "libro", 
+        "he": "ספר" 
+      } 
+    },
+    { 
+      "id": "backpack", 
+      "type": "word", 
+      "text": { 
+        "en": "backpack", 
+        "es": "mochila", 
+        "he": "תיק גב" 
+      } 
+    },
+    { 
+      "id": "ruler", 
+      "type": "word", 
+      "text": { 
+        "en": "ruler", 
+        "es": "regla", 
+        "he": "סרגל" 
+      } 
+    },
+    { 
+      "id": "eraser", 
+      "type": "word", 
+      "text": { 
+        "en": "eraser", 
+        "es": "borrador", 
+        "he": "מחק" 
+      } 
+    },
+    { 
+      "id": "scissors", 
+      "type": "word", 
+      "text": { 
+        "en": "scissors", 
+        "es": "tijeras", 
+        "he": "מספריים" 
+      } 
+    },
+    { 
+      "id": "glue", 
+      "type": "word", 
+      "text": { 
+        "en": "glue", 
+        "es": "pegamento", 
+        "he": "דבק" 
+      } 
+    },
+    { 
+      "id": "crayons", 
+      "type": "word", 
+      "text": { 
+        "en": "crayons", 
+        "es": "crayones", 
+        "he": "צבעי עפרון" 
+      } 
+    }
+  ]
+}

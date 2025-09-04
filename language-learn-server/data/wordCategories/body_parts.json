@@ -1,0 +1,196 @@
+{
+  "id": "body_parts",
+  "emoji": "👤",
+  "name": { 
+    "en": "Body Parts", 
+    "es": "Partes del Cuerpo", 
+    "he": "איברי הגוף" 
+  },
+  "description": { 
+    "en": "Human body parts and anatomy", 
+    "es": "Partes del cuerpo humano y anatomía", 
+    "he": "איברי הגוף האנושי ואנטומיה" 
+  },
+  "items": [
+    { 
+      "id": "head", 
+      "type": "word", 
+      "text": { 
+        "en": "head", 
+        "es": "cabeza", 
+        "he": "ראש" 
+      } 
+    },
+    { 
+      "id": "face", 
+      "type": "word", 
+      "text": { 
+        "en": "face", 
+        "es": "cara", 
+        "he": "פנים" 
+      } 
+    },
+    { 
+      "id": "eyes", 
+      "type": "word", 
+      "text": { 
+        "en": "eyes", 
+        "es": "ojos", 
+        "he": "עיניים" 
+      } 
+    },
+    { 
+      "id": "nose", 
+      "type": "word", 
+      "text": { 
+        "en": "nose", 
+        "es": "nariz", 
+        "he": "אף" 
+      } 
+    },
+    { 
+      "id": "mouth", 
+      "type": "word", 
+      "text": { 
+        "en": "mouth", 
+        "es": "boca", 
+        "he": "פה" 
+      } 
+    },
+    { 
+      "id": "ears", 
+      "type": "word", 
+      "text": { 
+        "en": "ears", 
+        "es": "orejas", 
+        "he": "אוזניים" 
+      } 
+    },
+    { 
+      "id": "hair", 
+      "type": "word", 
+      "text": { 
+        "en": "hair", 
+        "es": "pelo", 
+        "he": "שיער" 
+      } 
+    },
+    { 
+      "id": "neck", 
+      "type": "word", 
+      "text": { 
+        "en": "neck", 
+        "es": "cuello", 
+        "he": "צוואר" 
+      } 
+    },
+    { 
+      "id": "shoulders", 
+      "type": "word", 
+      "text": { 
+        "en": "shoulders", 
+        "es": "hombros", 
+        "he": "כתפיים" 
+      } 
+    },
+    { 
+      "id": "arms", 
+      "type": "word", 
+      "text": { 
+        "en": "arms", 
+        "es": "brazos", 
+        "he": "זרועות" 
+      } 
+    },
+    { 
+      "id": "hands", 
+      "type": "word", 
+      "text": { 
+        "en": "hands", 
+        "es": "manos", 
+        "he": "ידיים" 
+      } 
+    },
+    { 
+      "id": "fingers", 
+      "type": "word", 
+      "text": { 
+        "en": "fingers", 
+        "es": "dedos", 
+        "he": "אצבעות" 
+      } 
+    },
+    { 
+      "id": "chest", 
+      "type": "word", 
+      "text": { 
+        "en": "chest", 
+        "es": "pecho", 
+        "he": "חזה" 
+      } 
+    },
+    { 
+      "id": "back", 
+      "type": "word", 
+      "text": { 
+        "en": "back", 
+        "es": "espalda", 
+        "he": "גב" 
+      } 
+    },
+    { 
+      "id": "stomach", 
+      "type": "word", 
+      "text": { 
+        "en": "stomach", 
+        "es": "estómago", 
+        "he": "בטן" 
+      } 
+    },
+    { 
+      "id": "legs", 
+      "type": "word", 
+      "text": { 
+        "en": "legs", 
+        "es": "piernas", 
+        "he": "רגליים" 
+      } 
+    },
+    { 
+      "id": "feet", 
+      "type": "word", 
+      "text": { 
+        "en": "feet", 
+        "es": "pies", 
+        "he": "כפות רגליים" 
+      } 
+    },
+    { 
+      "id": "toes", 
+      "type": "word", 
+      "text": { 
+        "en": "toes", 
+        "es": "dedos del pie", 
+        "he": "בהונות" 
+      } 
+    },
+    { 
+      "id": "knees", 
+      "type": "word", 
+      "text": { 
+        "en": "knees", 
+        "es": "rodillas", 
+        "he": "ברכיים" 
+      } 
+    },
+    { 
+      "id": "elbows", 
+      "type": "word", 
+      "text": { 
+        "en": "elbows", 
+        "es": "codos", 
+        "he": "מרפקים" 
+      } 
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "id": "hobbies",
+  "emoji": "🎯",
+  "name": { 
+    "en": "Hobbies", 
+    "es": "Pasatiempos", 
+    "he": "תחביבים" 
+  },
+  "description": { 
+    "en": "Fun activities and hobbies", 
+    "es": "Actividades divertidas y pasatiempos", 
+    "he": "פעילויות מהנות ותחביבים" 
+  },
+  "items": [
+    { 
+      "id": "reading", 
+      "type": "word", 
+      "text": { 
+        "en": "reading", 
+        "es": "lectura", 
+        "he": "קריאה" 
+      } 
+    },
+    { 
+      "id": "writing", 
+      "type": "word", 
+      "text": { 
+        "en": "writing", 
+        "es": "escritura", 
+        "he": "כתיבה" 
+      } 
+    },
+    { 
+      "id": "drawing", 
+      "type": "word", 
+      "text": { 
+        "en": "drawing", 
+        "es": "dibujo", 
+        "he": "ציור" 
+      } 
+    },
+    { 
+      "id": "painting", 
+      "type": "word", 
+      "text": { 
+        "en": "painting", 
+        "es": "pintura", 
+        "he": "ציור" 
+      } 
+    },
+    { 
+      "id": "singing", 
+      "type": "word", 
+      "text": { 
+        "en": "singing", 
+        "es": "canto", 
+        "he": "שירה" 
+      } 
+    },
+    { 
+      "id": "dancing", 
+      "type": "word", 
+      "text": { 
+        "en": "dancing", 
+        "es": "baile", 
+        "he": "ריקוד" 
+      } 
+    },
+    { 
+      "id": "swimming", 
+      "type": "word", 
+      "text": { 
+        "en": "swimming", 
+        "es": "natación", 
+        "he": "שחייה" 
+      } 
+    },
+    { 
+      "id": "running", 
+      "type": "word", 
+      "text": { 
+        "en": "running", 
+        "es": "correr", 
+        "he": "ריצה" 
+      } 
+    },
+    { 
+      "id": "cycling", 
+      "type": "word", 
+      "text": { 
+        "en": "cycling", 
+        "es": "ciclismo", 
+        "he": "רכיבה על אופניים" 
+      } 
+    },
+    { 
+      "id": "cooking", 
+      "type": "word", 
+      "text": { 
+        "en": "cooking", 
+        "es": "cocina", 
+        "he": "בישול" 
+      } 
+    },
+    { 
+      "id": "baking", 
+      "type": "word", 
+      "text": { 
+        "en": "baking", 
+        "es": "hornear", 
+        "he": "אפייה" 
+      } 
+    },
+    { 
+      "id": "gardening", 
+      "type": "word", 
+      "text": { 
+        "en": "gardening", 
+        "es": "jardinería", 
+        "he": "גינון" 
+      } 
+    },
+    { 
+      "id": "photography", 
+      "type": "word", 
+      "text": { 
+        "en": "photography", 
+        "es": "fotografía", 
+        "he": "צילום" 
+      } 
+    },
+    { 
+      "id": "fishing", 
+      "type": "word", 
+      "text": { 
+        "en": "fishing", 
+        "es": "pesca", 
+        "he": "דיג" 
+      } 
+    },
+    { 
+      "id": "hiking", 
+      "type": "word", 
+      "text": { 
+        "en": "hiking", 
+        "es": "senderismo", 
+        "he": "טיול רגלי" 
+      } 
+    },
+    { 
+      "id": "camping", 
+      "type": "word", 
+      "text": { 
+        "en": "camping", 
+        "es": "camping", 
+        "he": "קמפינג" 
+      } 
+    },
+    { 
+      "id": "knitting", 
+      "type": "word", 
+      "text": { 
+        "en": "knitting", 
+        "es": "tejer", 
+        "he": "סריגה" 
+      } 
+    },
+    { 
+      "id": "sewing", 
+      "type": "word", 
+      "text": { 
+        "en": "sewing", 
+        "es": "costura", 
+        "he": "תפירה" 
+      } 
+    },
+    { 
+      "id": "collecting", 
+      "type": "word", 
+      "text": { 
+        "en": "collecting", 
+        "es": "coleccionar", 
+        "he": "איסוף" 
+      } 
+    },
+    { 
+      "id": "puzzles", 
+      "type": "word", 
+      "text": { 
+        "en": "puzzles", 
+        "es": "rompecabezas", 
+        "he": "פאזלים" 
+      } 
+    }
+  ]
+}
