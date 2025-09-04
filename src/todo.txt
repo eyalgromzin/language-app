@@ -1,8 +1,6 @@
-3 create translate table with all languages that will be filled each time a user clicks a word 
-
 6 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
 
-8 design app better
+8 design app ui better
 
 7 make video transcript work better - it lags now 
 

@@ -9,7 +9,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import { parseYandexImageUrlsFromHtml, fetchImageUrls as fetchImageUrlsCommon, type ImageScrapeCallbacks } from '../practice/common';
-import { getLibraryMeta, getLibraryUrlsWithCriterias, addLibraryUrl } from '../../config/api';
+import { getLibraryMeta, searchLibraryWithCriterias, addLibraryUrl } from '../../config/api';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 
 type StoredBook = {
@@ -261,7 +261,7 @@ function BookReaderScreen(): React.JSX.Element {
             } else {
               // No cache, need to query server
               try {
-                const json: { urls?: { url: string }[] } = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage), undefined, undefined, 'book');
+                const json: { urls?: { url: string }[] } = await searchLibraryWithCriterias(toLanguageSymbol(learningLanguage), undefined, undefined, 'book');
                 const list = Array.isArray(json?.urls) ? json.urls : [];
                 existsInLibrary = list.some((it) => (it && typeof it.url === 'string' ? it.url.trim() : '') === normalizedSaved);
                 

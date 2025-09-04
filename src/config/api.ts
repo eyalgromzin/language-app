@@ -7,19 +7,18 @@ export const API_CONFIG = {
   
   // API endpoints
   ENDPOINTS: {
-    HARMFUL_WORDS: '/harmful-words',
-    TRANSLATE: '/translate',
+    HARMFUL_WORDS: '/harmful-words',  //
+    TRANSLATE: '/translate',  //
     YOUTUBE_SEARCH: '/youtube/search',
     VIDEO_STARTUP: '/getVideoStartupPage',
     LIBRARY_ADD_URL: '/library/addUrl',
-    LIBRARY_GET_META: '/library/getMeta',
-    LIBRARY_GET_URLS_WITH_CRITERIAS: '/library/getUrlsWithCriterias',
-    GET_LANGUAGES: '/languages',
+    LIBRARY_GET_META: '/library/getMeta', //
+    SEARCH_LIBRARY_WITH_CRITERIAS: '/library/searchWithCriterias',
+    GET_LANGUAGES: '/languages',  //
     VIDEO_NOW_PLAYING_UPSERT: '/video/now-playing/upsert',
     VIDEO_NOW_PLAYING_GET: '/video/now-playing',
-    CACHE_LAST_WORDS: '/cache/last-words',
-    BABY_STEPS_GET: '/baby-steps/get',
-    BABY_STEPS_GET_STEP: '/baby-steps/get-step',
+    BABY_STEPS_GET: '/baby-steps/get',  //
+    BABY_STEPS_GET_STEP: '/baby-steps/get-step',  //
     TRANSCRIPT: '/transcript',
   }
 };
@@ -110,7 +109,7 @@ export const getLanguages = async (): Promise<Array<{ id: number; name: string; 
   return apiRequest(API_CONFIG.ENDPOINTS.GET_LANGUAGES);
 };
 
-export const getLibraryUrlsWithCriterias = async (
+export const searchLibraryWithCriterias = async (
   languageOrSymbol: string,
   type?: string,
   level?: string,
@@ -123,7 +122,7 @@ export const getLibraryUrlsWithCriterias = async (
   if (level) body.level = level;
   if (media) body.media = media;
 
-  return apiRequest(API_CONFIG.ENDPOINTS.LIBRARY_GET_URLS_WITH_CRITERIAS, {
+  return apiRequest(API_CONFIG.ENDPOINTS.SEARCH_LIBRARY_WITH_CRITERIAS, {
     method: 'POST',
     body: JSON.stringify(body),
   });

@@ -11,7 +11,6 @@ export const SERVER_CONFIG = {
     TRANSCRIPT: '/transcript',
     YOUTUBE_SEARCH: '/youtube/search',
     VIDEO_STARTUP: '/getVideoStartupPage',
-    CACHE_LAST_WORDS: '/cache/last-words',
   },
 };
 

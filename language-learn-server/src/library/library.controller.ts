@@ -92,7 +92,7 @@ export class LibraryController {
     return this.libraryService.getUrlsByLanguage(languageOrSymbol);
   }
 
-  @Post('getUrlsWithCriterias')
+  @Post('searchWithCriterias')
   async getUrlsWithCriteria(
     @Body() body: {
       languageOrSymbol: string;

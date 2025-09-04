@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList, TouchableOpacity, ActivityIndicator, Platform, NativeModules, Modal, Pressable, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
-import { getLibraryMeta, getLibraryUrlsWithCriterias } from '../../config/api';
+import { getLibraryMeta, searchLibraryWithCriterias } from '../../config/api';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import LinkingService from '../../services/linkingService';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -61,7 +61,7 @@ function LibraryScreen(): React.JSX.Element {
     return 'en';
   }, [languageMappings]);
 
-  // Initial load relies on selected media effect that queries getUrlsWithCriterias
+  // Initial load relies on selected media effect that queries searchWithCriterias
   // with only language parameter to populate the list.
 
   React.useEffect(() => {
@@ -111,7 +111,7 @@ function LibraryScreen(): React.JSX.Element {
       try {
         setError(null);
         setLoading(true);
-        const json: { url: string; name?: string; thumbnailUrl?: string; type: string; level: string; media: string }[] = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage), selectedType, selectedLevel);
+        const json: { url: string; name?: string; thumbnailUrl?: string; type: string; level: string; media: string }[] = await searchLibraryWithCriterias(toLanguageSymbol(learningLanguage), selectedType, selectedLevel);
         setUrls(json ?? []);
       } catch (e) {
         setError('Failed to load URLs');
@@ -130,7 +130,7 @@ function LibraryScreen(): React.JSX.Element {
         setError(null);
         setLoading(true);
         console.log('[Library] Fetching URLs for language:', toLanguageSymbol(learningLanguage));
-        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await getLibraryUrlsWithCriterias(toLanguageSymbol(learningLanguage));
+        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await searchLibraryWithCriterias(toLanguageSymbol(learningLanguage));
         console.log('[Library] Received response:', json);
         if (!isCancelled) {
           const list = json.urls ?? [];

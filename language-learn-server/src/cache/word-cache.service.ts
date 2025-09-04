@@ -16,7 +16,7 @@ export class WordCacheService {
     private translations: TranslationEntry[] = [];
     private readonly maxEntries = 500;
     private readonly dataDir = path.join(process.cwd(), 'data');
-    private readonly wordsFilePath = path.join(this.dataDir, 'last_words.json');
+    private readonly lastWordsFilePath = path.join(this.dataDir, 'last_words.json');
     private readonly translationsFilePath = path.join(this.dataDir, 'last_translations_cache.json');
     private initialized = false;
     private initializePromise: Promise<void> | null = null;
@@ -32,7 +32,7 @@ export class WordCacheService {
 
     private async loadFromDisk(): Promise<void> {
         try {
-            const buf = await fs.readFile(this.wordsFilePath, 'utf8');
+            const buf = await fs.readFile(this.lastWordsFilePath, 'utf8');
             const parsed = JSON.parse(buf);
             if (Array.isArray(parsed)) {
                 this.wordsMap = new Map();
@@ -68,9 +68,9 @@ export class WordCacheService {
     private async persistWords(): Promise<void> {
         try {
             await fs.mkdir(this.dataDir, { recursive: true });
-            const tmpPath = `${this.wordsFilePath}.tmp`;
+            const tmpPath = `${this.lastWordsFilePath}.tmp`;
             await fs.writeFile(tmpPath, JSON.stringify(Array.from(this.wordsMap.keys()), null, 2), 'utf8');
-            await fs.rename(tmpPath, this.wordsFilePath);
+            await fs.rename(tmpPath, this.lastWordsFilePath);
         } catch {
             // ignore
         }
