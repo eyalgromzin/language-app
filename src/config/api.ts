@@ -20,6 +20,7 @@ export const API_CONFIG = {
     BABY_STEPS_GET: '/baby-steps/get',  //
     BABY_STEPS_GET_STEP: '/baby-steps/get-step',  //
     TRANSCRIPT: '/transcript',
+    WORD_CATEGORY_BY_ID: '/word-categories', // Added for word categories
   }
 };
 
@@ -200,6 +201,11 @@ export const getVideoTranscript = async (
 // Harmful Words API
 export const getHarmfulWords = async (): Promise<any> => {
   return apiRequest(API_CONFIG.ENDPOINTS.HARMFUL_WORDS);
+};
+
+// Word Categories API
+export const getWordCategoryById = async (categoryId: string): Promise<any> => {
+  return apiRequest(`${API_CONFIG.ENDPOINTS.WORD_CATEGORY_BY_ID}/${categoryId}`);
 };
 
 // External APIs (not our server)

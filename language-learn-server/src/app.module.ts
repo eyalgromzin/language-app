@@ -15,6 +15,7 @@ import { VideoController } from './video/video.controller';
 import { HarmfulWordsModule } from './harmful-words/harmful-words.module';
 import { DatabaseModule } from './database/database.module';
 import { Language } from './database/entities';
+import { WordCategoriesService } from './word-categories';
 
 @Module({
   imports: [
@@ -24,6 +25,6 @@ import { Language } from './database/entities';
     TypeOrmModule.forFeature([Language])
   ],
   controllers: [AppController, LibraryController, BabyStepsController, VideoController],
-  providers: [AppService, YouTubeService, TranslateService, WordCacheService, VideoCacheService, NowPlayingService, BabyStepsService],
+  providers: [AppService, YouTubeService, TranslateService, WordCacheService, VideoCacheService, NowPlayingService, BabyStepsService, WordCategoriesService],
 })
 export class AppModule {}

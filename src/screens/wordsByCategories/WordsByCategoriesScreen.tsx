@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, BackHandler, SafeAreaView, ActivityIndicator } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, BackHandler, SafeAreaView, ActivityIndicator, RefreshControl } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -27,7 +27,7 @@ function WordsByCategoriesScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
-  const { categoriesData, loading, error, refreshCategories } = useWordCategories();
+  const { categoriesData, loading, error, isFromCache, refreshCategories } = useWordCategories();
 
   useFocusEffect(
     React.useCallback(() => {
@@ -248,48 +248,73 @@ function WordsByCategoriesScreen(): React.JSX.Element {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F8FA' }}>
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView 
+        contentContainerStyle={styles.container}
+        refreshControl={
+          <RefreshControl
+            refreshing={loading}
+            onRefresh={refreshCategories}
+            colors={['#007AFF']}
+            tintColor="#007AFF"
+          />
+        }
+      >
         <Text style={styles.screenTitle}>Categories</Text>
+        <Text style={styles.cacheInfo}>
+          {categoriesData ? (isFromCache ? 'Data loaded from cache' : 'Data loaded from server') : 'Loading...'}
+        </Text>
         <View style={styles.grid}>
-          {categoriesData.categories.map((cat: WordCategoryType) => {
-            // Handle inconsistent language keys in the data
-            const getTextInLanguage = (textObj: LocalizedText, languageCode: string): string => {
-              // First try the exact language code
-              if (textObj[languageCode]) return textObj[languageCode];
+          {categoriesData?.categories && Array.isArray(categoriesData.categories) ? (
+            categoriesData.categories.map((cat: WordCategoryType) => {
+              // Handle inconsistent language keys in the data
+              const getTextInLanguage = (textObj: LocalizedText, languageCode: string): string => {
+                // First try the exact language code
+                if (textObj[languageCode]) return textObj[languageCode];
+                
+                // Then try common aliases
+                if (languageCode === 'es' && textObj['Spanish']) return textObj['Spanish'];
+                if (languageCode === 'en' && textObj['English']) return textObj['English'];
+                if (languageCode === 'he' && textObj['Hebrew']) return textObj['Hebrew'];
+                
+                // Finally, try to find any available text
+                const availableKeys = Object.keys(textObj);
+                if (availableKeys.length > 0) {
+                  return textObj[availableKeys[0]] || '';
+                }
+                
+                return '';
+              };
               
-              // Then try common aliases
-              if (languageCode === 'es' && textObj['Spanish']) return textObj['Spanish'];
-              if (languageCode === 'en' && textObj['English']) return textObj['English'];
-              if (languageCode === 'he' && textObj['Hebrew']) return textObj['Hebrew'];
-              
-              // Finally, try to find any available text
-              const availableKeys = Object.keys(textObj);
-              if (availableKeys.length > 0) {
-                return textObj[availableKeys[0]] || '';
-              }
-              
-              return '';
-            };
-            
-            const title = getTextInLanguage(cat.name, SOURCE_LANGUAGE) || getTextInLanguage(cat.name, TARGET_LANGUAGE) || cat.id;
-            const subtitle = getTextInLanguage(cat.name, SOURCE_LANGUAGE) && getTextInLanguage(cat.name, TARGET_LANGUAGE) && getTextInLanguage(cat.name, SOURCE_LANGUAGE) !== getTextInLanguage(cat.name, TARGET_LANGUAGE)
-              ? `${getTextInLanguage(cat.name, SOURCE_LANGUAGE)} • ${getTextInLanguage(cat.name, TARGET_LANGUAGE)}`
-              : undefined;
-            return (
-              <TouchableOpacity
-                key={cat.id}
-                style={styles.gridItem}
-                onPress={() => onOpenCategory(cat)}
-                accessibilityRole="button"
-                accessibilityLabel={title}
-                activeOpacity={0.85}
-              >
-                <Text style={styles.gridEmoji}>{cat.emoji || '•'}</Text>
-                <Text numberOfLines={1} style={styles.gridTitle}>{title}</Text>
-                {subtitle ? <Text numberOfLines={1} style={styles.gridSubtitle}>{subtitle}</Text> : null}
+              const title = getTextInLanguage(cat.name, SOURCE_LANGUAGE) || getTextInLanguage(cat.name, TARGET_LANGUAGE) || cat.id;
+              const subtitle = getTextInLanguage(cat.name, SOURCE_LANGUAGE) && getTextInLanguage(cat.name, TARGET_LANGUAGE) && getTextInLanguage(cat.name, SOURCE_LANGUAGE) !== getTextInLanguage(cat.name, TARGET_LANGUAGE)
+                ? `${getTextInLanguage(cat.name, SOURCE_LANGUAGE)} • ${getTextInLanguage(cat.name, TARGET_LANGUAGE)}`
+                : undefined;
+              return (
+                <TouchableOpacity
+                  key={cat.id}
+                  style={styles.gridItem}
+                  onPress={() => onOpenCategory(cat)}
+                  accessibilityRole="button"
+                  accessibilityLabel={title}
+                  activeOpacity={0.85}
+                >
+                  <Text style={styles.gridEmoji}>{cat.emoji || '•'}</Text>
+                  <Text numberOfLines={1} style={styles.gridTitle}>{title}</Text>
+                  {subtitle ? <Text numberOfLines={1} style={styles.gridSubtitle}>{subtitle}</Text> : null}
+                </TouchableOpacity>
+              );
+            })
+          ) : (
+            <View style={styles.errorContainer}>
+              <Text style={styles.errorText}>No categories available</Text>
+              <Text style={styles.errorSubtext}>
+                {categoriesData ? 'Categories data is malformed' : 'Categories data is missing'}
+              </Text>
+              <TouchableOpacity style={styles.retryButton} onPress={refreshCategories}>
+                <Text style={styles.retryButtonText}>Retry</Text>
               </TouchableOpacity>
-            );
-          })}
+            </View>
+          )}
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -307,6 +332,12 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     color: '#111827',
     letterSpacing: 0.2,
+  },
+  cacheInfo: {
+    fontSize: 14,
+    color: '#6B7280',
+    marginBottom: 16,
+    fontStyle: 'italic',
   },
   grid: {
     flexDirection: 'row',
@@ -508,6 +539,42 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   retryButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  errorSubtext: {
+    fontSize: 14,
+    color: '#9CA3AF',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  // WordCategory specific styles
+  wordCategoryLoadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  wordCategoryErrorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  wordCategoryErrorText: {
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  wordCategoryRetryButton: {
+    backgroundColor: '#007AFF',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 8,
+  },
+  wordCategoryRetryButtonText: {
     color: 'white',
     fontSize: 16,
     fontWeight: '600',

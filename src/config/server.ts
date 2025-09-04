@@ -11,6 +11,7 @@ export const SERVER_CONFIG = {
   // API endpoints
   ENDPOINTS: {
     WORD_CATEGORIES: '/word-categories',
+    WORD_CATEGORY_BY_ID: '/word-categories',
     TRANSLATE: '/translate',
     TRANSCRIPT: '/transcript',
     YOUTUBE_SEARCH: '/youtube/search',

@@ -110,6 +110,8 @@ const CacheManager: React.FC = () => {
     'GET_LANGUAGES',
     'BABY_STEPS_GET',
     'BABY_STEPS_GET_STEP',
+    'WORD_CATEGORIES',
+    'WORD_CATEGORY_BY_ID',
   ];
 
   return (

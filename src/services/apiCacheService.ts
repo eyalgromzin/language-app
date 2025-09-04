@@ -32,7 +32,9 @@ export type CacheableEndpoint =
   | 'LIBRARY_GET_META'
   | 'GET_LANGUAGES'
   | 'BABY_STEPS_GET'
-  | 'BABY_STEPS_GET_STEP';
+  | 'BABY_STEPS_GET_STEP'
+  | 'WORD_CATEGORIES'
+  | 'WORD_CATEGORY_BY_ID';
 
 // Cache service class
 class ApiCacheService {

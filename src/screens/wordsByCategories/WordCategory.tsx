@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { ScrollView, View, Text, TouchableOpacity, StyleProp, ViewStyle, TextStyle, ImageStyle, SafeAreaView, Animated } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity, StyleProp, ViewStyle, TextStyle, ImageStyle, SafeAreaView, Animated, ActivityIndicator } from 'react-native';
 import type { WordItem, WordCategoryType, LocalizedText } from '../../types/words';
+import { cachedApiService } from '../../services/cachedApiService';
 
 type Styles = {
   container: StyleProp<ViewStyle>;
@@ -23,6 +24,12 @@ type Styles = {
   itemTranslationLine: StyleProp<TextStyle>;
   itemExample: StyleProp<TextStyle>;
   itemExampleTranslation: StyleProp<TextStyle>;
+  wordCategoryLoadingContainer: StyleProp<ViewStyle>;
+  loadingText: StyleProp<TextStyle>;
+  wordCategoryErrorContainer: StyleProp<ViewStyle>;
+  wordCategoryErrorText: StyleProp<TextStyle>;
+  wordCategoryRetryButton: StyleProp<ViewStyle>;
+  wordCategoryRetryButtonText: StyleProp<TextStyle>;
 };
 
 type Props = {
@@ -44,13 +51,55 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
     saveItemToMyWords,
   } = props;
 
+  const [categoryData, setCategoryData] = React.useState<WordCategoryType | null>(null);
+  const [loading, setLoading] = React.useState<boolean>(true);
+  const [error, setError] = React.useState<string | null>(null);
+  const [isFromCache, setIsFromCache] = React.useState<boolean>(false);
+
+  // Fetch category data on component mount
+  React.useEffect(() => {
+    const fetchCategoryData = async () => {
+      if (!selectedCategory?.id) return;
+      
+      try {
+        setLoading(true);
+        setError(null);
+        
+        console.log('[WordCategory] Fetching category data for ID:', selectedCategory.id);
+        
+        // Try to get from cache first, then from server
+        const data = await cachedApiService.getWordCategoryById(selectedCategory.id);
+        
+        if (data) {
+          console.log('[WordCategory] Category data received:', data);
+          setCategoryData(data);
+          setIsFromCache(true); // Data was loaded from cache
+        } else {
+          // If no cached data, use the passed selectedCategory
+          console.log('[WordCategory] Using passed category data');
+          setCategoryData(selectedCategory);
+          setIsFromCache(false);
+        }
+      } catch (err) {
+        console.error('[WordCategory] Failed to fetch category data:', err);
+        setError(err instanceof Error ? err.message : 'Failed to load category data');
+        // Fallback to passed data
+        setCategoryData(selectedCategory);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCategoryData();
+  }, [selectedCategory?.id]);
+
   // Debug logging
   console.log('WordCategory render - selectedCategory:', selectedCategory);
-  console.log('WordCategory render - items length:', selectedCategory?.items?.length || 0);
+  console.log('WordCategory render - categoryData:', categoryData);
+  console.log('WordCategory render - items length:', categoryData?.items?.length || 0);
   console.log('WordCategory render - SOURCE_LANGUAGE:', SOURCE_LANGUAGE);
   console.log('WordCategory render - TARGET_LANGUAGE:', TARGET_LANGUAGE);
-  console.log('WordCategory render - first item text keys:', selectedCategory?.items?.[0]?.text ? Object.keys(selectedCategory.items[0].text) : 'no items');
-  console.log('WordCategory render - first item example keys:', selectedCategory?.items?.[0]?.example ? Object.keys(selectedCategory.items[0].example) : 'no example');
+  console.log('WordCategory render - isFromCache:', isFromCache);
 
   // Handle inconsistent language keys in the data
   const getTextInLanguage = (textObj: LocalizedText, languageCode: string): string => {
@@ -96,7 +145,87 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
     });
   }, [spinPlus, saveItemToMyWords]);
 
-  if (!selectedCategory) return null;
+  const handleRetry = async () => {
+    if (!selectedCategory?.id) return;
+    
+    try {
+      setLoading(true);
+      setError(null);
+      
+      // Clear cache for this specific category to force fresh data
+      await cachedApiService.clearEndpointCache('WORD_CATEGORY_BY_ID');
+      
+      const data = await cachedApiService.getWordCategoryById(selectedCategory.id);
+      if (data) {
+        setCategoryData(data);
+        setIsFromCache(false);
+      } else {
+        setCategoryData(selectedCategory);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load category data');
+      setCategoryData(selectedCategory);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Show loading state
+  if (loading) {
+    return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F8FA' }}>
+        <View style={styles.container}>
+          <View style={styles.headerRow}>
+            <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel="Back" activeOpacity={0.7}>
+              <Text style={styles.backText}>‹ Back</Text>
+            </TouchableOpacity>
+            <Text numberOfLines={1} style={styles.headerTitle}>
+              Loading...
+            </Text>
+            <View style={{ width: 56 }} />
+          </View>
+          <View style={styles.wordCategoryLoadingContainer}>
+            <ActivityIndicator size="large" color="#007AFF" />
+            <Text style={styles.loadingText}>
+              Loading category data...
+            </Text>
+          </View>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  // Show error state
+  if (error && !categoryData) {
+    return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F8FA' }}>
+        <View style={styles.container}>
+          <View style={styles.headerRow}>
+            <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel="Back" activeOpacity={0.7}>
+              <Text style={styles.backText}>‹ Back</Text>
+            </TouchableOpacity>
+            <Text numberOfLines={1} style={styles.headerTitle}>
+              Error
+            </Text>
+            <View style={{ width: 56 }} />
+          </View>
+          <View style={styles.wordCategoryErrorContainer}>
+            <Text style={styles.wordCategoryErrorText}>
+              {error}
+            </Text>
+            <TouchableOpacity style={styles.wordCategoryRetryButton} onPress={handleRetry}>
+              <Text style={styles.wordCategoryRetryButtonText}>Retry</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  // Use categoryData if available, otherwise fallback to selectedCategory
+  const displayCategory = categoryData || selectedCategory;
+  
+  if (!displayCategory || !displayCategory.items) return null;
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F8FA' }}>
@@ -106,18 +235,25 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
           <Text style={styles.backText}>‹ Back</Text>
         </TouchableOpacity>
         <Text numberOfLines={1} style={styles.headerTitle}>
-          {(selectedCategory.emoji ? `${selectedCategory.emoji} ` : '') + (getTextInLanguage(selectedCategory.name, SOURCE_LANGUAGE) || getTextInLanguage(selectedCategory.name, TARGET_LANGUAGE) || selectedCategory.id)}
+          {(displayCategory.emoji ? `${displayCategory.emoji} ` : '') + (getTextInLanguage(displayCategory.name, SOURCE_LANGUAGE) || getTextInLanguage(displayCategory.name, TARGET_LANGUAGE) || displayCategory.id)}
         </Text>
         <View style={{ width: 56 }} />
       </View>
-      {selectedCategory.description ? (
+      {displayCategory.description ? (
         <Text style={styles.categoryDescription}>
-          {getTextInLanguage(selectedCategory.description, SOURCE_LANGUAGE) || getTextInLanguage(selectedCategory.description, TARGET_LANGUAGE)}
+          {getTextInLanguage(displayCategory.description, SOURCE_LANGUAGE) || getTextInLanguage(displayCategory.description, TARGET_LANGUAGE)}
         </Text>
       ) : null}
 
+      {/* Show cache status */}
+      {isFromCache && (
+        <Text style={{ paddingHorizontal: 16, paddingVertical: 8, fontSize: 12, color: '#666', fontStyle: 'italic' }}>
+          📱 Data loaded from cache
+        </Text>
+      )}
+
       <ScrollView contentContainerStyle={styles.list}>
-        {selectedCategory.items.map((item) => {
+        {displayCategory.items?.map((item) => {
           const source = getTextInLanguage(item.text, SOURCE_LANGUAGE);
           const target = getTextInLanguage(item.text, TARGET_LANGUAGE);
           const exampleSource = item.example ? getTextInLanguage(item.example, SOURCE_LANGUAGE) : '';

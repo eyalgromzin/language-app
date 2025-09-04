@@ -1,11 +1,10 @@
-import { Controller, Get, Post, Body, Query, BadRequestException } from '@nestjs/common';
+import { Controller, Get, Post, Body, Query, BadRequestException, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 import { YouTubeService } from './youtube/youtube.service';
 import { TranslateService } from './translate/translate.service';
 import { WordCacheService } from './cache/word-cache.service';
 import { LibraryService } from './database/services/library.service';
-import * as fs from 'fs';
-import * as path from 'path';
+import { WordCategoriesService } from './word-categories';
 
 @Controller()
 export class AppController {
@@ -15,6 +14,7 @@ export class AppController {
     private readonly translateService: TranslateService,
     private readonly wordCacheService: WordCacheService,
     private readonly libraryService: LibraryService,
+    private readonly wordCategoriesService: WordCategoriesService,
   ) {}
 
   @Get()
@@ -24,13 +24,12 @@ export class AppController {
 
   @Get('word-categories')
   async getWordCategories(): Promise<any> {
-    try {
-      const filePath = path.join(__dirname, '..', 'data', 'wordCategories.json');
-      const fileContent = fs.readFileSync(filePath, 'utf8');
-      return JSON.parse(fileContent);
-    } catch (error) {
-      throw new BadRequestException('Failed to load word categories');
-    }
+    return this.wordCategoriesService.getWordCategories();
+  }
+
+  @Get('word-categories/:id')
+  async getWordCategoryById(@Param('id') id: string): Promise<any> {
+    return this.wordCategoriesService.getWordCategoryById(id);
   }
 
   @Post('transcript')

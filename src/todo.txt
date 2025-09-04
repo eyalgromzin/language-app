@@ -1,8 +1,8 @@
-1 when word is spoken, it should be with the countries accent 
-
 2 add more words to word categories 
 
-3 in baby steps , if not enough words , just take them from other steps . 
+1 when word is spoken, it should be with the countries accent 
+
+3 in baby steps , if not enough words , just take the words from other steps instead of from my words . 
 
 4 design app ui better
 
