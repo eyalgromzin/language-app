@@ -90,6 +90,58 @@ function splitToTokens(sentence: string): string[] {
     .filter(Boolean);
 }
 
+function filterUsefulWords(words: string[]): string[] {
+  return words.filter(word => {
+    // Filter out very short words, punctuation, and common articles/prepositions
+    const cleanWord = word.replace(/[^\w\s]/g, '').trim();
+    if (cleanWord.length < 2) return false;
+    
+    // Filter out common short words that aren't very useful for practice
+    const commonWords = ['a', 'an', 'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'can', 'must'];
+    if (commonWords.includes(cleanWord.toLowerCase())) return false;
+    
+    return true;
+  });
+}
+
+// Helper function to add words from sentences in the native language to a distractor pool
+function addSentenceWordsToPool(
+  distractorPool: string[],
+  currentStepNativeLanguage: any,
+  currentItemId: string,
+  excludeText: string
+): void {
+  currentStepNativeLanguage.items.forEach((o: any) => {
+    if (o.id !== currentItemId && o.type === 'sentence') {
+      const sentenceWords = splitToTokens(o.text);
+      sentenceWords.forEach((word: string) => {
+        if (word && word !== excludeText && !distractorPool.includes(word)) {
+          distractorPool.push(word);
+        }
+      });
+    }
+  });
+}
+
+// Helper function to add words from sentences in the learning language to a distractor pool
+function addLearningLanguageSentenceWordsToPool(
+  distractorPool: string[],
+  currentStepLearningLanguage: any,
+  currentItemId: string,
+  excludeText: string
+): void {
+  currentStepLearningLanguage.items.forEach((o: any) => {
+    if (o.id !== currentItemId && o.type === 'sentence') {
+      const sentenceWords = splitToTokens(o.text);
+      sentenceWords.forEach((word: string) => {
+        if (word && word !== excludeText && !distractorPool.includes(word)) {
+          distractorPool.push(word);
+        }
+      });
+    }
+  });
+}
+
 function shuffleArray<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i -= 1) {
@@ -184,7 +236,35 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           } else if (it.type === 'word' || it.practiceType === 'chooseTranslation') {
             if (it.text) extrasFromStep.push(it.text);
           }
+          // Also include words from other practice types for more variety
+          if (it.practiceType && it.practiceType.includes('chooseWord')) {
+            if (it.text) extrasFromStep.push(it.text);
+          }
+          if (it.practiceType && it.practiceType.includes('hearing')) {
+            if (it.text) extrasFromStep.push(it.text);
+          }
         });
+
+        // Also gather words from other language for additional variety
+        const extrasFromNativeLanguage: string[] = [];
+        currentStepNativeLanguage.items.forEach((it: any) => {
+          if (it.type === 'sentence') {
+            splitToTokens(it.text).forEach((t: string) => extrasFromNativeLanguage.push(t));
+          } else if (it.type === 'word') {
+            if (it.text) extrasFromNativeLanguage.push(it.text);
+          }
+          // Also include words from other practice types for more variety
+          if (it.practiceType && it.practiceType.includes('chooseTranslation')) {
+            if (it.text) extrasFromNativeLanguage.push(it.text);
+          }
+          if (it.practiceType && it.practiceType.includes('hearing')) {
+            if (it.text) extrasFromNativeLanguage.push(it.text);
+          }
+        });
+
+        // Filter out common words and punctuation to make the word bank more useful
+        const filteredExtrasFromStep = filterUsefulWords(extrasFromStep);
+        const filteredExtrasFromNativeLanguage = filterUsefulWords(extrasFromNativeLanguage);
 
         const built: RunnerTask[] = currentStepLearningLanguage.items.flatMap((it: any) => {
           const otherText = findNativeTextById(it.id);
@@ -200,6 +280,22 @@ function BabyStepRunnerScreen(): React.JSX.Element {
                   if (t && t !== otherText) distractorPool.push(t);
                 }
               });
+              
+              // Also add words from sentences in the native language for more variety
+              if (otherText) {
+                addSentenceWordsToPool(distractorPool, currentStepNativeLanguage, it.id, otherText);
+              }
+              
+              // Add some additional words from the current step for context
+              currentStepLearningLanguage.items.forEach((o: any) => {
+                if (o.id !== it.id && o.type === 'word') {
+                  const t = findNativeTextById(o.id);
+                  if (t && t !== otherText && !distractorPool.includes(t)) {
+                    distractorPool.push(t);
+                  }
+                }
+              });
+              
               const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(7, Math.max(0, distractorPool.length)));
               const allOptions = shuffleArray([otherText, ...picked]);
               return {
@@ -219,6 +315,19 @@ function BabyStepRunnerScreen(): React.JSX.Element {
                   if (o.text && o.text !== it.text) distractorPoolWords.push(o.text);
                 }
               });
+              
+              // Also add words from sentences in the learning language for more variety
+              addLearningLanguageSentenceWordsToPool(distractorPoolWords, currentStepLearningLanguage, it.id, it.text);
+              
+              // Add some additional words from the current step for context
+              currentStepLearningLanguage.items.forEach((o: any) => {
+                if (o.id !== it.id && o.type === 'word') {
+                  if (o.text && o.text !== it.text && !distractorPoolWords.includes(o.text)) {
+                    distractorPoolWords.push(o.text);
+                  }
+                }
+              });
+              
               const pickedWords = sampleN(Array.from(new Set(distractorPoolWords)), Math.min(7, Math.max(0, distractorPoolWords.length)));
               const allWordOptions = shuffleArray([it.text, ...pickedWords]);
               return {
@@ -253,6 +362,22 @@ function BabyStepRunnerScreen(): React.JSX.Element {
                   if (t && t !== otherText) distractorPool.push(t);
                 }
               });
+              
+              // Also add words from sentences in the native language for more variety
+              if (otherText) {
+                addSentenceWordsToPool(distractorPool, currentStepNativeLanguage, it.id, otherText);
+              }
+              
+              // Add some additional words from the current step for context
+              currentStepLearningLanguage.items.forEach((o: any) => {
+                if (o.id !== it.id && o.type === 'word') {
+                  const t = findNativeTextById(o.id);
+                  if (t && t !== otherText && !distractorPool.includes(t)) {
+                    distractorPool.push(t);
+                  }
+                }
+              });
+              
               const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(5, Math.max(0, distractorPool.length)));
               const options = shuffleArray([otherText, ...picked]);
               return {
@@ -319,9 +444,34 @@ function BabyStepRunnerScreen(): React.JSX.Element {
               const desired = Math.min(2, Math.max(1, Math.floor(tokens.length / 6)));
               const missingIndices = sampleN(candidateIdx, desired).sort((a, b) => a - b);
               const required = Array.from(new Set(missingIndices.map((i) => tokens[i])));
-              const pool = extrasFromStep.filter((w) => !required.includes(w));
-              const picked = sampleN(pool, Math.max(0, 12 - required.length));
-              const wordBank = shuffleArray([...required, ...picked]).slice(0, Math.max(6, required.length));
+              
+              // Create a comprehensive word bank from multiple sources
+              const allExtras = [...filteredExtrasFromStep, ...filteredExtrasFromNativeLanguage];
+              const pool = allExtras.filter((w) => !required.includes(w));
+              
+              // Also add some words from the current step's other items for context
+              const stepContextWords: string[] = [];
+              currentStepLearningLanguage.items.forEach((o: any) => {
+                if (o.id !== it.id) {
+                  if (o.type === 'word') {
+                    if (o.text && !required.includes(o.text)) stepContextWords.push(o.text);
+                  } else if (o.type === 'sentence') {
+                    const sentenceWords = splitToTokens(o.text);
+                    sentenceWords.forEach((word: string) => {
+                      if (word && !required.includes(word) && !stepContextWords.includes(word)) {
+                        stepContextWords.push(word);
+                      }
+                    });
+                  }
+                }
+              });
+              
+              // Combine all sources and take more words from the step to fill the word bank
+              const allPool = [...pool, ...stepContextWords];
+              const targetWordBankSize = Math.max(10, required.length + 6); // Ensure we have enough words
+              const picked = sampleN(allPool, Math.max(0, targetWordBankSize - required.length));
+              const wordBank = shuffleArray([...required, ...picked]).slice(0, targetWordBankSize);
+              
               return {
                 kind: 'missingWords',
                 sentence: it.text,
@@ -369,6 +519,12 @@ function BabyStepRunnerScreen(): React.JSX.Element {
                     if (t && t !== otherText) distractorPool.push(t);
                   }
                 });
+                
+                // Also add words from sentences in the native language for more variety
+                if (otherText) {
+                  addSentenceWordsToPool(distractorPool, currentStepNativeLanguage, it.id, otherText);
+                }
+                
                 const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(7, Math.max(0, distractorPool.length)));
                 const allOptions = shuffleArray([otherText, ...picked]);
                 tasks.push({
@@ -408,6 +564,12 @@ function BabyStepRunnerScreen(): React.JSX.Element {
                   if (t && t !== otherText) distractorPool.push(t);
                 }
               });
+              
+              // Also add words from sentences in the native language for more variety
+              if (otherText) {
+                addSentenceWordsToPool(distractorPool, currentStepNativeLanguage, it.id, otherText);
+              }
+              
               const picked = sampleN(Array.from(new Set(distractorPool)), Math.min(7, Math.max(0, distractorPool.length)));
               const allOptions = shuffleArray([otherText, ...picked]);
               return [{
