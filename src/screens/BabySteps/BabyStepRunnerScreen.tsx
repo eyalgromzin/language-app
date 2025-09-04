@@ -481,7 +481,6 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     setInputs({});
     setWrongKey(null);
     setSelectedKey(null);
-    setNumWrong((c) => c + 1);
     // Requeue skipped item to the end and advance
     setTasks((prev) => [...prev, prev[currentIdx]]);
     setCurrentIdx((i) => i + 1);
