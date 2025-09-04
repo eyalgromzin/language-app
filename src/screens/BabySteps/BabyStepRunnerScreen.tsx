@@ -342,7 +342,37 @@ function BabyStepRunnerScreen(): React.JSX.Element {
             // Build formulate sentence task (assemble full sentence in current language)
             if (practiceType === 'formulateSentense') {
               const tokens = splitToTokens(it.text);
-              const shuffledTokens = shuffleArray(tokens);
+              
+              // Ensure we have at least 6 words in the shuffled tokens
+              let shuffledTokens = [...tokens];
+              if (tokens.length < 6) {
+                // Add filler words from the current step to reach at least 6 words
+                const fillerWords: string[] = [];
+                
+                // Get words from other items in the same step
+                currentStepLearningLanguage.items.forEach((o: any) => {
+                  if (o.id !== it.id) {
+                    if (o.type === 'word' && o.text && !tokens.includes(o.text)) {
+                      fillerWords.push(o.text);
+                    } else if (o.type === 'sentence') {
+                      const sentenceWords = splitToTokens(o.text);
+                      sentenceWords.forEach((word: string) => {
+                        if (word && !tokens.includes(word) && !fillerWords.includes(word)) {
+                          fillerWords.push(word);
+                        }
+                      });
+                    }
+                  }
+                });
+                
+                // Shuffle and take enough words to reach 6 total
+                const neededWords = 6 - tokens.length;
+                const selectedFillers = sampleN(fillerWords, Math.min(neededWords, fillerWords.length));
+                shuffledTokens = shuffleArray([...tokens, ...selectedFillers]);
+              } else {
+                shuffledTokens = shuffleArray(tokens);
+              }
+              
               return {
                 kind: 'formulateSentense',
                 sentence: it.text,
@@ -498,19 +528,49 @@ function BabyStepRunnerScreen(): React.JSX.Element {
             
             // If no valid practice types were found, use fallback logic
             if (tasks.length === 0) {
-              // Fallback: if still sentence type, use formulate sentence
-              if (it.type === 'sentence') {
-                const tokens = splitToTokens(it.text);
-                const shuffledTokens = shuffleArray(tokens);
-                tasks.push({
-                  kind: 'formulateSentense',
-                  sentence: it.text,
-                  translatedSentence: otherText,
-                  tokens,
-                  shuffledTokens,
-                  itemId: it.id,
-                } as RunnerTask);
+                          // Fallback: if still sentence type, use formulate sentence
+            if (it.type === 'sentence') {
+              const tokens = splitToTokens(it.text);
+              
+              // Ensure we have at least 6 words in the shuffled tokens
+              let shuffledTokens = [...tokens];
+              if (tokens.length < 6) {
+                // Add filler words from the current step to reach at least 6 words
+                const fillerWords: string[] = [];
+                
+                // Get words from other items in the same step
+                currentStepLearningLanguage.items.forEach((o: any) => {
+                  if (o.id !== it.id) {
+                    if (o.type === 'word' && o.text && !tokens.includes(o.text)) {
+                      fillerWords.push(o.text);
+                    } else if (o.type === 'sentence') {
+                      const sentenceWords = splitToTokens(o.text);
+                      sentenceWords.forEach((word: string) => {
+                        if (word && !tokens.includes(word) && !fillerWords.includes(word)) {
+                          fillerWords.push(word);
+                        }
+                      });
+                    }
+                  }
+                });
+                
+                // Shuffle and take enough words to reach 6 total
+                const neededWords = 6 - tokens.length;
+                const selectedFillers = sampleN(fillerWords, Math.min(neededWords, fillerWords.length));
+                shuffledTokens = shuffleArray([...tokens, ...selectedFillers]);
               } else {
+                shuffledTokens = shuffleArray(tokens);
+              }
+              
+              tasks.push({
+                kind: 'formulateSentense',
+                sentence: it.text,
+                translatedSentence: otherText,
+                tokens,
+                shuffledTokens,
+                itemId: it.id,
+              } as RunnerTask);
+            } else {
                 // Final fallback: treat as chooseTranslation
                 const distractorPool: string[] = [];
                 currentStepLearningLanguage.items.forEach((o: any) => {
@@ -546,7 +606,37 @@ function BabyStepRunnerScreen(): React.JSX.Element {
             // Fallback: if still sentence type, use formulate sentence
             if (it.type === 'sentence') {
               const tokens = splitToTokens(it.text);
-              const shuffledTokens = shuffleArray(tokens);
+              
+              // Ensure we have at least 6 words in the shuffled tokens
+              let shuffledTokens = [...tokens];
+              if (tokens.length < 6) {
+                // Add filler words from the current step to reach at least 6 words
+                const fillerWords: string[] = [];
+                
+                // Get words from other items in the same step
+                currentStepLearningLanguage.items.forEach((o: any) => {
+                  if (o.id !== it.id) {
+                    if (o.type === 'word' && o.text && !tokens.includes(o.text)) {
+                      fillerWords.push(o.text);
+                    } else if (o.type === 'sentence') {
+                      const sentenceWords = splitToTokens(o.text);
+                      sentenceWords.forEach((word: string) => {
+                        if (word && !tokens.includes(word) && !fillerWords.includes(word)) {
+                          fillerWords.push(word);
+                        }
+                      });
+                    }
+                  }
+                });
+                
+                // Shuffle and take enough words to reach 6 total
+                const neededWords = 6 - tokens.length;
+                const selectedFillers = sampleN(fillerWords, Math.min(neededWords, fillerWords.length));
+                shuffledTokens = shuffleArray([...tokens, ...selectedFillers]);
+              } else {
+                shuffledTokens = shuffleArray(tokens);
+              }
+              
               return [{
                 kind: 'formulateSentense',
                 sentence: it.text,

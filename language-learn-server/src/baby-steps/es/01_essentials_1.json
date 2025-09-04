@@ -8,31 +8,31 @@
       "id": "01_essentials_hello",
       "type": "word",
       "text": "hola",
-      "practiceType": "chooseTranslation,chooseWord"
+      "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_hi",
       "type": "word",
       "text": "hola",
-      "practiceType": "chooseTranslation,chooseWord"
+      "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_please",
       "type": "word",
       "text": "por favor",
-      "practiceType": "chooseTranslation,chooseWord"
+      "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thank_you",
       "type": "word",
       "text": "gracias",
-      "practiceType": "chooseTranslation,chooseWord"
+      "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_thanks",
       "type": "word",
       "text": "gracias",
-      "practiceType": "chooseTranslation,chooseWord"
+      "practiceType": "chooseTranslation"
     },
     {
       "id": "01_essentials_excuse_me",
