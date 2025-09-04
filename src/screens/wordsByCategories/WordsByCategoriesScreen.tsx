@@ -19,7 +19,22 @@ const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
   English: 'en',
   Spanish: 'es',
   Hebrew: 'he',
-  // Add more languages as needed
+  French: 'fr',
+  German: 'de',
+  Italian: 'it',
+  Portuguese: 'pt',
+  Russian: 'ru',
+  Hindi: 'hi',
+  Polish: 'pl',
+  Dutch: 'nl',
+  Greek: 'el',
+  Swedish: 'sv',
+  Norwegian: 'no',
+  Finnish: 'fi',
+  Czech: 'cs',
+  Ukrainian: 'uk',
+  Thai: 'th',
+  Vietnamese: 'vi',
 };
 
 function WordsByCategoriesScreen(): React.JSX.Element {

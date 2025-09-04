@@ -23,11 +23,42 @@ export const LANGUAGE_NAME_TO_TTS: Record<string, string> = {
   Vietnamese: 'vi-VN',
 };
 
+// Language code to TTS language code mapping
+export const LANGUAGE_CODE_TO_TTS: Record<string, string> = {
+  en: 'en-US',
+  es: 'es-ES',
+  fr: 'fr-FR',
+  de: 'de-DE',
+  it: 'it-IT',
+  pt: 'pt-PT',
+  ru: 'ru-RU',
+  hi: 'hi-IN',
+  pl: 'pl-PL',
+  nl: 'nl-NL',
+  el: 'el-GR',
+  sv: 'sv-SE',
+  no: 'nb-NO', // Norwegian
+  fi: 'fi-FI',
+  cs: 'cs-CZ',
+  uk: 'uk-UA',
+  he: 'he-IL',
+  th: 'th-TH',
+  vi: 'vi-VN',
+};
 
-export function getTtsLangCode(nameOrNull: string | null | undefined): string | null {
-  if (!nameOrNull) return null;
-  const code = LANGUAGE_NAME_TO_TTS[nameOrNull];
-  return typeof code === 'string' ? code : null;
+export function getTtsLangCode(nameOrCode: string | null | undefined): string | null {
+  if (!nameOrCode) return null;
+  
+  // First try language code mapping (e.g., "en" -> "en-US")
+  const codeFromCode = LANGUAGE_CODE_TO_TTS[nameOrCode];
+  if (codeFromCode) return codeFromCode;
+  
+  // Then try language name mapping (e.g., "English" -> "en-US")
+  const codeFromName = LANGUAGE_NAME_TO_TTS[nameOrCode];
+  if (codeFromName) return codeFromName;
+  
+  // If no match found, return null
+  return null;
 }
 
 

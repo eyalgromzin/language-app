@@ -83,12 +83,30 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
       const langCode = getTtsLangCode(language);
       if (langCode) {
         await Tts.setDefaultLanguage(langCode);
+        await Tts.setDefaultRate(0.5);
       }
       
       Tts.speak(text);
     } catch (err) {
-      console.error('TTS error:', err);
     }
+  }, []);
+
+  // Initialize TTS settings
+  React.useEffect(() => {
+    const initTTS = async () => {
+      try {
+        await Tts.setDefaultRate(0.5);
+        // Note: setDefaultPitch may not be available on all platforms or TTS modules
+        if (typeof (Tts as any).setDefaultPitch === 'function') {
+          await (Tts as any).setDefaultPitch(1.0);
+        } else {
+        }
+      } catch (err) {
+        console.warn('[TTS] Failed to initialize default settings:', err);
+      }
+    };
+    
+    initTTS();
   }, []);
 
   // Fetch category data on component mount
