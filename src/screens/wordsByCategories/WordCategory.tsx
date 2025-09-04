@@ -61,6 +61,17 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
   const [error, setError] = React.useState<string | null>(null);
   const [isFromCache, setIsFromCache] = React.useState<boolean>(false);
 
+  // Store animation values for each item
+  const animationValues = React.useRef<Map<string, Animated.Value>>(new Map());
+
+  // Function to get or create animation value for an item
+  const getAnimationValue = React.useCallback((itemId: string) => {
+    if (!animationValues.current.has(itemId)) {
+      animationValues.current.set(itemId, new Animated.Value(0));
+    }
+    return animationValues.current.get(itemId)!;
+  }, []);
+
   // Function to speak text using TTS
   const speakText = React.useCallback(async (text: string, language: string) => {
     if (!text) return;
@@ -145,9 +156,8 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
   };
 
   // Animation value for plus button rotation
-  const spinValue = React.useRef(new Animated.Value(0)).current;
-
-  const spinPlus = React.useCallback((onComplete?: () => void) => {
+  const spinPlus = React.useCallback((itemId: string, onComplete?: () => void) => {
+    const spinValue = getAnimationValue(itemId);
     // Reset to 0 and animate to 360 degrees
     spinValue.setValue(0);
     Animated.timing(spinValue, {
@@ -155,16 +165,19 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
       duration: 500,
       useNativeDriver: true,
     }).start(onComplete);
-  }, [spinValue]);
+  }, [getAnimationValue]);
 
-  // Create rotation interpolate
-  const spin = spinValue.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0deg', '360deg'],
-  });
+  // Function to get rotation interpolate for an item
+  const getRotationInterpolate = React.useCallback((itemId: string) => {
+    const spinValue = getAnimationValue(itemId);
+    return spinValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['0deg', '360deg'],
+    });
+  }, [getAnimationValue]);
 
   const handlePlusPress = React.useCallback((item: WordItem) => {
-    spinPlus(() => {
+    spinPlus(item.id, () => {
       saveItemToMyWords(item);
     });
   }, [spinPlus, saveItemToMyWords]);
@@ -325,7 +338,7 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
                   hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
                   activeOpacity={0.85}
                 >
-                  <Animated.View style={{ transform: [{ rotate: spin }] }}>
+                  <Animated.View style={{ transform: [{ rotate: getRotationInterpolate(item.id) }] }}>
                     <Text style={styles.addBtnText}>+</Text>
                   </Animated.View>
                 </TouchableOpacity>
