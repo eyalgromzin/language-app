@@ -1,6 +1,6 @@
-3 create translate table with all languages that will be filled each time a user clicks a word 
-
 5 - add icons to items in library . book, youtube, web . 
+
+3 create translate table with all languages that will be filled each time a user clicks a word 
 
 6 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
 

@@ -177,6 +177,20 @@ function LibraryScreen(): React.JSX.Element {
   };
 
   const renderItem = ({ item }: { item: { url: string; name?: string; type: string; level: string; media: string } }) => {
+    const getMediaIcon = (media: string) => {
+      const mediaLower = media.toLowerCase();
+      switch (mediaLower) {
+        case 'youtube':
+          return <Ionicons name="logo-youtube" size={16} color="#FF0000" />;
+        case 'web':
+          return <Ionicons name="globe-outline" size={16} color="#007AFF" />;
+        case 'book':
+          return <Ionicons name="book-outline" size={16} color="#8B4513" />;
+        default:
+          return <Ionicons name="document-outline" size={16} color="#6B7280" />;
+      }
+    };
+
     return (
       <TouchableOpacity
         accessibilityRole="link"
@@ -190,7 +204,18 @@ function LibraryScreen(): React.JSX.Element {
         style={styles.item}
       >
         <Text style={styles.itemName} numberOfLines={2}>{getDisplayName(item)}</Text>
-        <Text>{`${item.type} • ${item.level} • ${item.media}`}</Text>
+        <View style={styles.itemMeta}>
+          <View style={styles.metaRow}>
+            <Text style={styles.metaText}>{item.type}</Text>
+            <Text style={styles.metaSeparator}>•</Text>
+            <Text style={styles.metaText}>{item.level}</Text>
+            <Text style={styles.metaSeparator}>•</Text>
+            <View style={styles.mediaContainer}>
+              {getMediaIcon(item.media)}
+              <Text style={styles.metaText}>{item.media}</Text>
+            </View>
+          </View>
+        </View>
       </TouchableOpacity>
     );
   };
@@ -501,6 +526,27 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 8,
+  },
+  itemMeta: {
+    marginTop: 8,
+  },
+  metaRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  metaText: {
+    fontSize: 14,
+    color: '#6B7280',
+  },
+  metaSeparator: {
+    marginHorizontal: 4,
+    color: '#6B7280',
+    fontSize: 14,
+  },
+  mediaContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
   },
   separator: {
     height: 12,
