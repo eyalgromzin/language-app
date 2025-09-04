@@ -1,4 +1,3 @@
-2 add more words to word categories 
 
 1 when word is spoken, it should be with the countries accent 
 

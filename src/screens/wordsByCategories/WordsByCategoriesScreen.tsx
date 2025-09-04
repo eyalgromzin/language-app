@@ -459,6 +459,7 @@ const styles = StyleSheet.create({
   itemTextFlex: {
     flex: 1,
     paddingRight: 8,
+    flexDirection: 'row',
   },
   itemWordRow: {
     flexDirection: 'row',

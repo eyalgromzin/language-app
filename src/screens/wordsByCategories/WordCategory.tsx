@@ -2,6 +2,8 @@ import * as React from 'react';
 import { ScrollView, View, Text, TouchableOpacity, StyleProp, ViewStyle, TextStyle, ImageStyle, SafeAreaView, Animated, ActivityIndicator } from 'react-native';
 import type { WordItem, WordCategoryType, LocalizedText } from '../../types/words';
 import { cachedApiService } from '../../services/cachedApiService';
+import Tts from 'react-native-tts';
+import { getTtsLangCode } from '../practice/common';
 
 type Styles = {
   container: StyleProp<ViewStyle>;
@@ -30,6 +32,9 @@ type Styles = {
   wordCategoryErrorText: StyleProp<TextStyle>;
   wordCategoryRetryButton: StyleProp<ViewStyle>;
   wordCategoryRetryButtonText: StyleProp<TextStyle>;
+  speakerBtnWrap: StyleProp<ViewStyle>;
+  speakerIcon: StyleProp<TextStyle>;
+  itemExampleRow: StyleProp<ViewStyle>;
 };
 
 type Props = {
@@ -55,6 +60,25 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string | null>(null);
   const [isFromCache, setIsFromCache] = React.useState<boolean>(false);
+
+  // Function to speak text using TTS
+  const speakText = React.useCallback(async (text: string, language: string) => {
+    if (!text) return;
+    
+    try {
+      Tts.stop();
+      
+      // Set TTS language for proper accent
+      const langCode = getTtsLangCode(language);
+      if (langCode) {
+        await Tts.setDefaultLanguage(langCode);
+      }
+      
+      Tts.speak(text);
+    } catch (err) {
+      console.error('TTS error:', err);
+    }
+  }, []);
 
   // Fetch category data on component mount
   React.useEffect(() => {
@@ -265,19 +289,41 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
           return (
             <View key={item.id} style={styles.itemCard}>
               <View style={styles.itemHeaderRow}>
-                {item.type === 'sentence' ? (
-                  <Text numberOfLines={1} style={[styles.itemText, styles.itemTextFlex]}>
-                    {source} -
-                  </Text>
-                ) : (
-                  <View style={styles.itemTextFlex}>
-                    <Text numberOfLines={1} style={styles.itemText}>
-                      {source}
-                      <Text style={styles.itemSeparator}> — </Text>
-                      <Text style={styles.itemTarget}>{target}</Text>
-                    </Text>
-                  </View>
-                )}
+                                 {item.type === 'sentence' ? (
+                   <View style={styles.itemTextFlex}>
+                     <TouchableOpacity
+                       onPress={() => speakText(source, SOURCE_LANGUAGE)}
+                       style={[styles.speakerBtnWrap, { marginRight: 12 }]}
+                       hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+                       accessibilityRole="button"
+                       accessibilityLabel="Speak source text"
+                       activeOpacity={0.7}
+                     >
+                       <Text style={styles.speakerIcon}>🔊</Text>
+                     </TouchableOpacity>
+                     <Text numberOfLines={1} style={styles.itemText}>
+                       {source} -
+                     </Text>
+                   </View>
+                 ) : (
+                   <View style={styles.itemTextFlex}>
+                     <TouchableOpacity
+                       onPress={() => speakText(source, SOURCE_LANGUAGE)}
+                       style={[styles.speakerBtnWrap, { marginRight: 8 }]}
+                       hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+                       accessibilityRole="button"
+                       accessibilityLabel="Speak source text"
+                       activeOpacity={0.7}
+                     >
+                       <Text style={styles.speakerIcon}>🔊</Text>
+                     </TouchableOpacity>
+                     <Text numberOfLines={1} style={styles.itemText}>
+                       {source}
+                       <Text style={styles.itemSeparator}> — </Text>
+                       <Text style={styles.itemTarget}>{target}</Text>
+                     </Text>
+                   </View>
+                 )}
                 <TouchableOpacity
                   onPress={() => handlePlusPress(item)}
                   style={styles.addBtnWrap}
@@ -291,18 +337,21 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
                   </Animated.View>
                 </TouchableOpacity>
               </View>
-              {item.type === 'sentence' ? (
-                <Text style={styles.itemTranslationLine}>{target}</Text>
-              ) : null}
-              {(exampleSource || exampleTarget) ? (
-                <Text style={styles.itemExample}>
-                  {exampleSource ? exampleSource : null}
-                  {exampleSource && exampleTarget ? '\n' : null}
-                  {exampleTarget ? (
-                    <Text style={styles.itemExampleTranslation}>{exampleTarget}</Text>
-                  ) : null}
-                </Text>
-              ) : null}
+                             {item.type === 'sentence' ? (
+                 <Text style={styles.itemTranslationLine}>{target}</Text>
+               ) : null}
+                             {(exampleSource || exampleTarget) ? (
+                 <View style={styles.itemExampleRow}>
+                   {exampleSource && (
+                     <Text style={styles.itemExample}>{exampleSource}</Text>
+                   )}
+                   {exampleTarget && (
+                     <Text style={styles.itemExample}>
+                       {exampleTarget}
+                     </Text>
+                   )}
+                 </View>
+               ) : null}
             </View>
           );
         })}
