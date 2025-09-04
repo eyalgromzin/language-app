@@ -2,7 +2,7 @@ import React from 'react';
 import { ActivityIndicator, Animated, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, TextInput, KeyboardAvoidingView, Keyboard, Platform } from 'react-native';
 import Tts from 'react-native-tts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getLangCode } from '../utils/translation';
+import { getTtsLangCode } from '../screens/practice/common';
 
 export type TranslationPanelState = {
   word: string;
@@ -98,7 +98,7 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
       // Get the learning language and set TTS language for proper accent
       const learningLanguage = await AsyncStorage.getItem('language.learning');
       if (learningLanguage) {
-        const langCode = getLangCode(learningLanguage, {});
+        const langCode = getTtsLangCode(learningLanguage);
         if (langCode) {
           await Tts.setDefaultLanguage(langCode);
         }

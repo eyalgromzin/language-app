@@ -30,13 +30,22 @@ export const WordCategoriesProvider: React.FC<WordCategoriesProviderProps> = ({ 
       setLoading(true);
       setError(null);
       
-      const response = await fetch(getApiUrl(SERVER_CONFIG.ENDPOINTS.WORD_CATEGORIES));
+      const url = getApiUrl(SERVER_CONFIG.ENDPOINTS.WORD_CATEGORIES);
+      console.log('Fetching word categories from:', url);
+      
+      const response = await fetch(url);
+      
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
       const data = await response.json();
+      console.log('Word categories data received:', data);
+      console.log('Number of categories:', data?.categories?.length || 0);
+      
       setCategoriesData(data);
     } catch (err) {
       console.error('Failed to fetch word categories:', err);

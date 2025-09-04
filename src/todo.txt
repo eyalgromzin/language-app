@@ -1,20 +1,20 @@
-11 when word is spoken, it should be with the countries accent 
+1 when word is spoken, it should be with the countries accent 
 
-12 add more words to word categories 
+2 add more words to word categories 
 
-6 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
+3 in baby steps , if not enough words , just take them from other steps . 
 
-8 design app ui better
+4 design app ui better
 
 -----------------
 
-7 make video transcript work better - it lags now 
+5 make video transcript work better - it lags now 
 
-9 app link not working again
+6 app link not working again
 
-2 ask shir - if post book url should maybe send me an email with all the details and i will add the book ? to prevent bad urls ? or add a report button that will report the item.  
+7 ask shir - if post book url should maybe send me an email with all the details and i will add the book ? to prevent bad urls ? or add a report button that will report the item.  
 
-10 login with facebook
+8 login with facebook
 
 
 - refactor - move all types into 1 file. 

@@ -14,6 +14,14 @@ type CategoriesData = {
   categories: WordCategoryType[];
 };
 
+// Language name to code mapping (matching the server's API response)
+const LANGUAGE_NAME_TO_CODE: Record<string, string> = {
+  English: 'en',
+  Spanish: 'es',
+  Hebrew: 'he',
+  // Add more languages as needed
+};
+
 function WordsByCategoriesScreen(): React.JSX.Element {
   const [selectedCategory, setSelectedCategory] = React.useState<WordCategoryType | null>(null);
   const navigation = useNavigation<any>();
@@ -47,8 +55,21 @@ function WordsByCategoriesScreen(): React.JSX.Element {
     }, [])
   );
 
-  const SOURCE_LANGUAGE = learningLanguage || 'English';
-  const TARGET_LANGUAGE = nativeLanguage || 'Spanish';
+  // Convert language names to API language codes
+  const getLanguageCode = (languageName: string | null): string => {
+    if (!languageName) return 'en'; // Default to English
+    return LANGUAGE_NAME_TO_CODE[languageName] || 'en';
+  };
+
+  const SOURCE_LANGUAGE = getLanguageCode(learningLanguage);
+  const TARGET_LANGUAGE = getLanguageCode(nativeLanguage);
+
+  // Debug logging for language mapping
+  console.log('WordsByCategoriesScreen - Language mapping:');
+  console.log('  learningLanguage from storage:', learningLanguage);
+  console.log('  nativeLanguage from storage:', nativeLanguage);
+  console.log('  SOURCE_LANGUAGE mapped to:', SOURCE_LANGUAGE);
+  console.log('  TARGET_LANGUAGE mapped to:', TARGET_LANGUAGE);
 
   
 
@@ -89,6 +110,9 @@ function WordsByCategoriesScreen(): React.JSX.Element {
   );
 
   const onOpenCategory = (category: WordCategoryType) => {
+    console.log('onOpenCategory called with category:', category);
+    console.log('Category items:', category.items);
+    console.log('Category items length:', category.items?.length || 0);
     setSelectedCategory(category);
   };
 
@@ -97,9 +121,28 @@ function WordsByCategoriesScreen(): React.JSX.Element {
   };
 
   const saveItemToMyWords = async (item: WordItem) => {
-    const source = item.text[SOURCE_LANGUAGE] || '';
-    const target = item.text[TARGET_LANGUAGE] || '';
-    const sentenceSource = item.type === 'sentence' ? source : (item.example?.[SOURCE_LANGUAGE] || '');
+    // Handle inconsistent language keys in the data
+    const getTextInLanguage = (textObj: LocalizedText, languageCode: string): string => {
+      // First try the exact language code
+      if (textObj[languageCode]) return textObj[languageCode];
+      
+      // Then try common aliases
+      if (languageCode === 'es' && textObj['Spanish']) return textObj['Spanish'];
+      if (languageCode === 'en' && textObj['English']) return textObj['English'];
+      if (languageCode === 'he' && textObj['Hebrew']) return textObj['Hebrew'];
+      
+      // Finally, try to find any available text
+      const availableKeys = Object.keys(textObj);
+      if (availableKeys.length > 0) {
+        return textObj[availableKeys[0]] || '';
+      }
+      
+      return '';
+    };
+    
+    const source = getTextInLanguage(item.text, SOURCE_LANGUAGE);
+    const target = getTextInLanguage(item.text, TARGET_LANGUAGE);
+    const sentenceSource = item.type === 'sentence' ? source : (item.example ? getTextInLanguage(item.example, SOURCE_LANGUAGE) : '');
     const entry = {
       word: source,
       translation: target,
@@ -209,9 +252,28 @@ function WordsByCategoriesScreen(): React.JSX.Element {
         <Text style={styles.screenTitle}>Categories</Text>
         <View style={styles.grid}>
           {categoriesData.categories.map((cat: WordCategoryType) => {
-            const title = cat.name[SOURCE_LANGUAGE] || cat.name[TARGET_LANGUAGE] || cat.id;
-            const subtitle = cat.name[SOURCE_LANGUAGE] && cat.name[TARGET_LANGUAGE] && cat.name[SOURCE_LANGUAGE] !== cat.name[TARGET_LANGUAGE]
-              ? `${cat.name[SOURCE_LANGUAGE]} • ${cat.name[TARGET_LANGUAGE]}`
+            // Handle inconsistent language keys in the data
+            const getTextInLanguage = (textObj: LocalizedText, languageCode: string): string => {
+              // First try the exact language code
+              if (textObj[languageCode]) return textObj[languageCode];
+              
+              // Then try common aliases
+              if (languageCode === 'es' && textObj['Spanish']) return textObj['Spanish'];
+              if (languageCode === 'en' && textObj['English']) return textObj['English'];
+              if (languageCode === 'he' && textObj['Hebrew']) return textObj['Hebrew'];
+              
+              // Finally, try to find any available text
+              const availableKeys = Object.keys(textObj);
+              if (availableKeys.length > 0) {
+                return textObj[availableKeys[0]] || '';
+              }
+              
+              return '';
+            };
+            
+            const title = getTextInLanguage(cat.name, SOURCE_LANGUAGE) || getTextInLanguage(cat.name, TARGET_LANGUAGE) || cat.id;
+            const subtitle = getTextInLanguage(cat.name, SOURCE_LANGUAGE) && getTextInLanguage(cat.name, TARGET_LANGUAGE) && getTextInLanguage(cat.name, SOURCE_LANGUAGE) !== getTextInLanguage(cat.name, TARGET_LANGUAGE)
+              ? `${getTextInLanguage(cat.name, SOURCE_LANGUAGE)} • ${getTextInLanguage(cat.name, TARGET_LANGUAGE)}`
               : undefined;
             return (
               <TouchableOpacity

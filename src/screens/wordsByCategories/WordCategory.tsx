@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ScrollView, View, Text, TouchableOpacity, StyleProp, ViewStyle, TextStyle, ImageStyle, SafeAreaView, Animated } from 'react-native';
-import type { WordItem, WordCategoryType } from '../../types/words';
+import type { WordItem, WordCategoryType, LocalizedText } from '../../types/words';
 
 type Styles = {
   container: StyleProp<ViewStyle>;
@@ -44,6 +44,33 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
     saveItemToMyWords,
   } = props;
 
+  // Debug logging
+  console.log('WordCategory render - selectedCategory:', selectedCategory);
+  console.log('WordCategory render - items length:', selectedCategory?.items?.length || 0);
+  console.log('WordCategory render - SOURCE_LANGUAGE:', SOURCE_LANGUAGE);
+  console.log('WordCategory render - TARGET_LANGUAGE:', TARGET_LANGUAGE);
+  console.log('WordCategory render - first item text keys:', selectedCategory?.items?.[0]?.text ? Object.keys(selectedCategory.items[0].text) : 'no items');
+  console.log('WordCategory render - first item example keys:', selectedCategory?.items?.[0]?.example ? Object.keys(selectedCategory.items[0].example) : 'no example');
+
+  // Handle inconsistent language keys in the data
+  const getTextInLanguage = (textObj: LocalizedText, languageCode: string): string => {
+    // First try the exact language code
+    if (textObj[languageCode]) return textObj[languageCode];
+    
+    // Then try common aliases
+    if (languageCode === 'es' && textObj['Spanish']) return textObj['Spanish'];
+    if (languageCode === 'en' && textObj['English']) return textObj['English'];
+    if (languageCode === 'he' && textObj['Hebrew']) return textObj['Hebrew'];
+    
+    // Finally, try to find any available text
+    const availableKeys = Object.keys(textObj);
+    if (availableKeys.length > 0) {
+      return textObj[availableKeys[0]] || '';
+    }
+    
+    return '';
+  };
+
   // Animation value for plus button rotation
   const spinValue = React.useRef(new Animated.Value(0)).current;
 
@@ -79,22 +106,26 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
           <Text style={styles.backText}>‹ Back</Text>
         </TouchableOpacity>
         <Text numberOfLines={1} style={styles.headerTitle}>
-          {(selectedCategory.emoji ? `${selectedCategory.emoji} ` : '') + (selectedCategory.name[SOURCE_LANGUAGE] || selectedCategory.name[TARGET_LANGUAGE] || selectedCategory.id)}
+          {(selectedCategory.emoji ? `${selectedCategory.emoji} ` : '') + (getTextInLanguage(selectedCategory.name, SOURCE_LANGUAGE) || getTextInLanguage(selectedCategory.name, TARGET_LANGUAGE) || selectedCategory.id)}
         </Text>
         <View style={{ width: 56 }} />
       </View>
       {selectedCategory.description ? (
         <Text style={styles.categoryDescription}>
-          {selectedCategory.description[SOURCE_LANGUAGE] || selectedCategory.description[TARGET_LANGUAGE]}
+          {getTextInLanguage(selectedCategory.description, SOURCE_LANGUAGE) || getTextInLanguage(selectedCategory.description, TARGET_LANGUAGE)}
         </Text>
       ) : null}
 
       <ScrollView contentContainerStyle={styles.list}>
         {selectedCategory.items.map((item) => {
-          const source = item.text[SOURCE_LANGUAGE] || '';
-          const target = item.text[TARGET_LANGUAGE] || '';
-          const exampleSource = item.example?.[SOURCE_LANGUAGE];
-          const exampleTarget = item.example?.[TARGET_LANGUAGE];
+          const source = getTextInLanguage(item.text, SOURCE_LANGUAGE);
+          const target = getTextInLanguage(item.text, TARGET_LANGUAGE);
+          const exampleSource = item.example ? getTextInLanguage(item.example, SOURCE_LANGUAGE) : '';
+          const exampleTarget = item.example ? getTextInLanguage(item.example, TARGET_LANGUAGE) : '';
+          
+          // Debug logging for each item
+          console.log(`Item ${item.id}: source="${source}", target="${target}", exampleSource="${exampleSource}", exampleTarget="${exampleTarget}"`);
+          
           return (
             <View key={item.id} style={styles.itemCard}>
               <View style={styles.itemHeaderRow}>
