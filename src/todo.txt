@@ -1,10 +1,4 @@
-1 runner screen , on skip , dont add to wrong count 
-
-2 ask shir - if post book url should maybe send me an email with all the details and i will add the book ? to prevent bad urls ? or add a report button that will report the item.  
-
 3 create translate table with all languages that will be filled each time a user clicks a word 
-
-4 - in baby steps , enable to state multiple practices for each word / sentense . 
 
 5 - add icons to items in library . book, youtube, web . 
 
@@ -12,9 +6,11 @@
 
 7 make video transcript work better - it lags now 
 
+9 app link not working again
+
 8 design app better  
 
-9 app link not working again 
+2 ask shir - if post book url should maybe send me an email with all the details and i will add the book ? to prevent bad urls ? or add a report button that will report the item.  
 
 10 login with facebook
 
