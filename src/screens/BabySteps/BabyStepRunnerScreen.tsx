@@ -523,7 +523,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
   const onFinish = async () => {
     try {
       const learningName = await AsyncStorage.getItem('language.learning');
-      const currentCode = getLangCode(learningName) || 'en';
+      const currentCode = getLangCode(learningName, languageMappings) || 'en';
       const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${currentCode}`);
       const prev = Number.parseInt(stored ?? '0', 10);
       // We store the highest finished node number (1-based). 0 means none.
@@ -538,7 +538,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     // Mark as finished so the path stays completed even if restarting immediately
     try {
       const learningName = await AsyncStorage.getItem('language.learning');
-      const currentCode = getLangCode(learningName) || 'en';
+      const currentCode = getLangCode(learningName, languageMappings) || 'en';
       const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${currentCode}`);
       const prev = Number.parseInt(stored ?? '0', 10);
       const finishedNodeNumber = stepIndex + 1;

@@ -98,7 +98,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
       (async () => {
         try {
           const learningName = await AsyncStorage.getItem('language.learning');
-          const code = getLangCode(learningName) || 'en';
+          const code = getLangCode(learningName, languageMappings) || 'en';
           const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${code}`);
           const parsed = Number.parseInt(stored ?? '0', 10);
           if (active && !Number.isNaN(parsed) && parsed >= 0) {
@@ -106,7 +106,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
           }
           // Also refresh translated titles in case native language changed
           const nativeName = await AsyncStorage.getItem('language.native');
-          const nativeCode = getLangCode(nativeName) || 'en';
+          const nativeCode = getLangCode(nativeName, languageMappings) || 'en';
           try {
             const nativeJson: StepsFile = await getBabySteps(nativeCode);
             const map: Record<string, string> = {};

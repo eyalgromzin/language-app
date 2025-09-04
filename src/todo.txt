@@ -1,18 +1,18 @@
-5 - add icons to items in library . book, youtube, web . 
-
 3 create translate table with all languages that will be filled each time a user clicks a word 
 
 6 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
+
+8 design app better
 
 7 make video transcript work better - it lags now 
 
 9 app link not working again
 
-8 design app better  
-
 2 ask shir - if post book url should maybe send me an email with all the details and i will add the book ? to prevent bad urls ? or add a report button that will report the item.  
 
 10 login with facebook
+
+11 when word is spoken, it should be with the countries accent 
 
 - refactor - move all types into 1 file. 
     - wordentry 

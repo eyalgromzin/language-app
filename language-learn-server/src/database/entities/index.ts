@@ -4,3 +4,4 @@ export { Language } from './language.entity';
 export { Media } from './media.entity';
 export { LibraryItem } from './library-item.entity';
 export { NowPlaying } from './now-playing.entity';
+export { Translation } from './translation.entity';
