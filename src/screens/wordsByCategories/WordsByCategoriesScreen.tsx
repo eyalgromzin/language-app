@@ -260,9 +260,6 @@ function WordsByCategoriesScreen(): React.JSX.Element {
         }
       >
         <Text style={styles.screenTitle}>Categories</Text>
-        <Text style={styles.cacheInfo}>
-          {categoriesData ? (isFromCache ? 'Data loaded from cache' : 'Data loaded from server') : 'Loading...'}
-        </Text>
         <View style={styles.grid}>
           {categoriesData?.categories && Array.isArray(categoriesData.categories) ? (
             categoriesData.categories.map((cat: WordCategoryType) => {

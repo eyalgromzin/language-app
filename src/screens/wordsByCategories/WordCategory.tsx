@@ -265,16 +265,9 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
       </View>
       {displayCategory.description ? (
         <Text style={styles.categoryDescription}>
-          {getTextInLanguage(displayCategory.description, SOURCE_LANGUAGE) || getTextInLanguage(displayCategory.description, TARGET_LANGUAGE)}
+          {getTextInLanguage(displayCategory.description, TARGET_LANGUAGE) || getTextInLanguage(displayCategory.description, SOURCE_LANGUAGE)}
         </Text>
       ) : null}
-
-      {/* Show cache status */}
-      {isFromCache && (
-        <Text style={{ paddingHorizontal: 16, paddingVertical: 8, fontSize: 12, color: '#666', fontStyle: 'italic' }}>
-          📱 Data loaded from cache
-        </Text>
-      )}
 
       <ScrollView contentContainerStyle={styles.list}>
         {displayCategory.items?.map((item) => {
