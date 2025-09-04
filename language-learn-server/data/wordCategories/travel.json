@@ -57,6 +57,210 @@
         "es": "El hotel está cerca de la playa.",
         "he": "המלון קרוב לחוף."
       }
+    },
+    {
+      "id": "airport",
+      "type": "word",
+      "text": {
+        "en": "airport",
+        "es": "aeropuerto",
+        "he": "שדה תעופה"
+      },
+      "example": {
+        "en": "The airport is very busy today.",
+        "es": "El aeropuerto está muy ocupado hoy.",
+        "he": "שדה התעופה עמוס מאוד היום."
+      }
+    },
+    {
+      "id": "passport",
+      "type": "word",
+      "text": {
+        "en": "passport",
+        "es": "pasaporte",
+        "he": "דרכון"
+      },
+      "example": {
+        "en": "Don't forget your passport.",
+        "es": "No olvides tu pasaporte.",
+        "he": "אל תשכח את הדרכון שלך."
+      }
+    },
+    {
+      "id": "luggage",
+      "type": "word",
+      "text": {
+        "en": "luggage",
+        "es": "equipaje",
+        "he": "מזוודות"
+      },
+      "example": {
+        "en": "Where is my luggage?",
+        "es": "¿Dónde está mi equipaje?",
+        "he": "איפה המזוודות שלי?"
+      }
+    },
+    {
+      "id": "train",
+      "type": "word",
+      "text": {
+        "en": "train",
+        "es": "tren",
+        "he": "רכבת"
+      },
+      "example": {
+        "en": "The train leaves at 3 PM.",
+        "es": "El tren sale a las 3 de la tarde.",
+        "he": "הרכבת יוצאת בשעה 3 אחר הצהריים."
+      }
+    },
+    {
+      "id": "bus",
+      "type": "word",
+      "text": {
+        "en": "bus",
+        "es": "autobús",
+        "he": "אוטובוס"
+      },
+      "example": {
+        "en": "Take the bus to the city center.",
+        "es": "Toma el autobús al centro de la ciudad.",
+        "he": "קח את האוטובוס למרכז העיר."
+      }
+    },
+    {
+      "id": "taxi",
+      "type": "word",
+      "text": {
+        "en": "taxi",
+        "es": "taxi",
+        "he": "מונית"
+      },
+      "example": {
+        "en": "I need a taxi to the hotel.",
+        "es": "Necesito un taxi al hotel.",
+        "he": "אני צריך מונית למלון."
+      }
+    },
+    {
+      "id": "map",
+      "type": "word",
+      "text": {
+        "en": "map",
+        "es": "mapa",
+        "he": "מפה"
+      },
+      "example": {
+        "en": "Can you show me on the map?",
+        "es": "¿Puedes mostrarme en el mapa?",
+        "he": "אתה יכול להראות לי במפה?"
+      }
+    },
+    {
+      "id": "guide",
+      "type": "word",
+      "text": {
+        "en": "guide",
+        "es": "guía",
+        "he": "מדריך"
+      },
+      "example": {
+        "en": "We have a tour guide.",
+        "es": "Tenemos un guía turístico.",
+        "he": "יש לנו מדריך טיולים."
+      }
+    },
+    {
+      "id": "suitcase",
+      "type": "word",
+      "text": {
+        "en": "suitcase",
+        "es": "maleta",
+        "he": "מזוודה"
+      },
+      "example": {
+        "en": "My suitcase is heavy.",
+        "es": "Mi maleta está pesada.",
+        "he": "המזוודה שלי כבדה."
+      }
+    },
+    {
+      "id": "flight",
+      "type": "word",
+      "text": {
+        "en": "flight",
+        "es": "vuelo",
+        "he": "טיסה"
+      },
+      "example": {
+        "en": "What time is your flight?",
+        "es": "¿A qué hora es tu vuelo?",
+        "he": "באיזו שעה הטיסה שלך?"
+      }
+    },
+    {
+      "id": "destination",
+      "type": "word",
+      "text": {
+        "en": "destination",
+        "es": "destino",
+        "he": "יעד"
+      },
+      "example": {
+        "en": "What's your final destination?",
+        "es": "¿Cuál es tu destino final?",
+        "he": "מה היעד הסופי שלך?"
+      }
+    },
+    {
+      "id": "journey",
+      "type": "word",
+      "text": {
+        "en": "journey",
+        "es": "viaje",
+        "he": "מסע"
+      },
+      "example": {
+        "en": "It was a long journey.",
+        "es": "Fue un viaje largo.",
+        "he": "זה היה מסע ארוך."
+      }
+    },
+    {
+      "id": "i_am_lost",
+      "type": "sentence",
+      "text": {
+        "en": "I am lost.",
+        "es": "Estoy perdido.",
+        "he": "אני אבוד."
+      }
+    },
+    {
+      "id": "can_you_help_me",
+      "type": "sentence",
+      "text": {
+        "en": "Can you help me?",
+        "es": "¿Puedes ayudarme?",
+        "he": "אתה יכול לעזור לי?"
+      }
+    },
+    {
+      "id": "how_much_does_it_cost",
+      "type": "sentence",
+      "text": {
+        "en": "How much does it cost?",
+        "es": "¿Cuánto cuesta?",
+        "he": "כמה זה עולה?"
+      }
+    },
+    {
+      "id": "i_want_to_go_to",
+      "type": "sentence",
+      "text": {
+        "en": "I want to go to...",
+        "es": "Quiero ir a...",
+        "he": "אני רוצה ללכת ל..."
+      }
     }
   ]
 }

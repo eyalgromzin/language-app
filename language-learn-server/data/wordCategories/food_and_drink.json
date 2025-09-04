@@ -57,6 +57,210 @@
         "es": "La comida está deliciosa.",
         "he": "האוכל טעים."
       }
+    },
+    {
+      "id": "bread",
+      "type": "word",
+      "text": {
+        "en": "bread",
+        "es": "pan",
+        "he": "לחם"
+      },
+      "example": {
+        "en": "I need to buy bread.",
+        "es": "Necesito comprar pan.",
+        "he": "אני צריך לקנות לחם."
+      }
+    },
+    {
+      "id": "milk",
+      "type": "word",
+      "text": {
+        "en": "milk",
+        "es": "leche",
+        "he": "חלב"
+      },
+      "example": {
+        "en": "Do you drink milk?",
+        "es": "¿Bebes leche?",
+        "he": "אתה שותה חלב?"
+      }
+    },
+    {
+      "id": "cheese",
+      "type": "word",
+      "text": {
+        "en": "cheese",
+        "es": "queso",
+        "he": "גבינה"
+      },
+      "example": {
+        "en": "I love cheese pizza.",
+        "es": "Me encanta la pizza de queso.",
+        "he": "אני אוהב פיצה גבינה."
+      }
+    },
+    {
+      "id": "rice",
+      "type": "word",
+      "text": {
+        "en": "rice",
+        "es": "arroz",
+        "he": "אורז"
+      },
+      "example": {
+        "en": "Rice is a staple food.",
+        "es": "El arroz es un alimento básico.",
+        "he": "אורז הוא מזון בסיסי."
+      }
+    },
+    {
+      "id": "chicken",
+      "type": "word",
+      "text": {
+        "en": "chicken",
+        "es": "pollo",
+        "he": "עוף"
+      },
+      "example": {
+        "en": "I prefer chicken to beef.",
+        "es": "Prefiero pollo a ternera.",
+        "he": "אני מעדיף עוף על פני בקר."
+      }
+    },
+    {
+      "id": "fish",
+      "type": "word",
+      "text": {
+        "en": "fish",
+        "es": "pescado",
+        "he": "דג"
+      },
+      "example": {
+        "en": "Fish is healthy food.",
+        "es": "El pescado es comida saludable.",
+        "he": "דג הוא מזון בריא."
+      }
+    },
+    {
+      "id": "vegetables",
+      "type": "word",
+      "text": {
+        "en": "vegetables",
+        "es": "verduras",
+        "he": "ירקות"
+      },
+      "example": {
+        "en": "Eat your vegetables.",
+        "es": "Come tus verduras.",
+        "he": "אכל את הירקות שלך."
+      }
+    },
+    {
+      "id": "fruit",
+      "type": "word",
+      "text": {
+        "en": "fruit",
+        "es": "fruta",
+        "he": "פירות"
+      },
+      "example": {
+        "en": "Fruit is good for you.",
+        "es": "La fruta es buena para ti.",
+        "he": "פירות טובים בשבילך."
+      }
+    },
+    {
+      "id": "soup",
+      "type": "word",
+      "text": {
+        "en": "soup",
+        "es": "sopa",
+        "he": "מרק"
+      },
+      "example": {
+        "en": "This soup is hot.",
+        "es": "Esta sopa está caliente.",
+        "he": "המרק הזה חם."
+      }
+    },
+    {
+      "id": "salad",
+      "type": "word",
+      "text": {
+        "en": "salad",
+        "es": "ensalada",
+        "he": "סלט"
+      },
+      "example": {
+        "en": "I'll have a green salad.",
+        "es": "Tomaré una ensalada verde.",
+        "he": "אני אקח סלט ירוק."
+      }
+    },
+    {
+      "id": "juice",
+      "type": "word",
+      "text": {
+        "en": "juice",
+        "es": "jugo",
+        "he": "מיץ"
+      },
+      "example": {
+        "en": "Orange juice is refreshing.",
+        "es": "El jugo de naranja es refrescante.",
+        "he": "מיץ תפוזים מרענן."
+      }
+    },
+    {
+      "id": "tea",
+      "type": "word",
+      "text": {
+        "en": "tea",
+        "es": "té",
+        "he": "תה"
+      },
+      "example": {
+        "en": "Would you like some tea?",
+        "es": "¿Te gustaría un poco de té?",
+        "he": "האם תרצה קצת תה?"
+      }
+    },
+    {
+      "id": "i_am_hungry",
+      "type": "sentence",
+      "text": {
+        "en": "I am hungry.",
+        "es": "Tengo hambre.",
+        "he": "אני רעב."
+      }
+    },
+    {
+      "id": "what_is_for_dinner",
+      "type": "sentence",
+      "text": {
+        "en": "What is for dinner?",
+        "es": "¿Qué hay para cenar?",
+        "he": "מה יש לארוחת ערב?"
+      }
+    },
+    {
+      "id": "this_tastes_good",
+      "type": "sentence",
+      "text": {
+        "en": "This tastes good.",
+        "es": "Esto sabe bien.",
+        "he": "זה טעים."
+      }
+    },
+    {
+      "id": "i_am_thirsty",
+      "type": "sentence",
+      "text": {
+        "en": "I am thirsty.",
+        "es": "Tengo sed.",
+        "he": "אני צמא."
+      }
     }
   ]
 }

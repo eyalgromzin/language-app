@@ -3,13 +3,13 @@
   "emoji": "👋",
   "name": {
     "en": "Greetings",
-    "Spanish": "Saludos",
-    "Hebrew": "ברכות"
+    "es": "Saludos",
+    "he": "ברכות"
   },
   "description": {
     "en": "Common ways to greet and start conversations",
-    "Spanish": "Formas comunes de saludar y comenzar conversaciones",
-    "Hebrew": "דרכים נפוצות לברך ולהתחיל שיחות"
+    "es": "Formas comunes de saludar y comenzar conversaciones",
+    "he": "דרכים נפוצות לברך ולהתחיל שיחות"
   },
   "items": [
     {
@@ -17,13 +17,13 @@
       "type": "word",
       "text": {
         "en": "hello",
-        "Spanish": "hola",
-        "Hebrew": "שלום"
+        "es": "hola",
+        "he": "שלום"
       },
       "example": {
         "en": "Hello! How are you?",
-        "Spanish": "¡Hola! ¿Cómo estás?",
-        "Hebrew": "שלום! מה שלומך?"
+        "es": "¡Hola! ¿Cómo estás?",
+        "he": "שלום! מה שלומך?"
       }
     },
     {
@@ -31,8 +31,8 @@
       "type": "word",
       "text": {
         "en": "good morning",
-        "Spanish": "buenos días",
-        "Hebrew": "בוקר טוב"
+        "es": "buenos días",
+        "he": "בוקר טוב"
       },
       "example": {
         "en": "Good morning, everyone!",
@@ -56,6 +56,195 @@
         "en": "Nice to meet you.",
         "es": "Mucho gusto.",
         "he": "נעים להכיר."
+      }
+    },
+    {
+      "id": "goodbye",
+      "type": "word",
+      "text": {
+        "en": "goodbye",
+        "es": "adiós",
+        "he": "להתראות"
+      },
+      "example": {
+        "en": "Goodbye, see you later!",
+        "es": "¡Adiós, hasta luego!",
+        "he": "להתראות, נתראה אחר כך!"
+      }
+    },
+    {
+      "id": "good_night",
+      "type": "word",
+      "text": {
+        "en": "good night",
+        "es": "buenas noches",
+        "he": "לילה טוב"
+      },
+      "example": {
+        "en": "Good night, sleep well.",
+        "es": "Buenas noches, duerme bien.",
+        "he": "לילה טוב, שיהיה לך שינה טובה."
+      }
+    },
+    {
+      "id": "good_afternoon",
+      "type": "word",
+      "text": {
+        "en": "good afternoon",
+        "es": "buenas tardes",
+        "he": "צהריים טובים"
+      },
+      "example": {
+        "en": "Good afternoon, how was your day?",
+        "es": "Buenas tardes, ¿cómo estuvo tu día?",
+        "he": "צהריים טובים, איך היה היום שלך?"
+      }
+    },
+    {
+      "id": "good_evening",
+      "type": "word",
+      "text": {
+        "en": "good evening",
+        "es": "buenas noches",
+        "he": "ערב טוב"
+      },
+      "example": {
+        "en": "Good evening, welcome home.",
+        "es": "Buenas noches, bienvenido a casa.",
+        "he": "ערב טוב, ברוך הבא הביתה."
+      }
+    },
+    {
+      "id": "please",
+      "type": "word",
+      "text": {
+        "en": "please",
+        "es": "por favor",
+        "he": "בבקשה"
+      },
+      "example": {
+        "en": "Please help me.",
+        "es": "Por favor ayúdame.",
+        "he": "בבקשה עזור לי."
+      }
+    },
+    {
+      "id": "thank_you",
+      "type": "word",
+      "text": {
+        "en": "thank you",
+        "es": "gracias",
+        "he": "תודה"
+      },
+      "example": {
+        "en": "Thank you very much.",
+        "es": "Muchas gracias.",
+        "he": "תודה רבה."
+      }
+    },
+    {
+      "id": "you_are_welcome",
+      "type": "sentence",
+      "text": {
+        "en": "You are welcome.",
+        "es": "De nada.",
+        "he": "אין בעד מה."
+      }
+    },
+    {
+      "id": "excuse_me",
+      "type": "word",
+      "text": {
+        "en": "excuse me",
+        "es": "perdón",
+        "he": "סליחה"
+      },
+      "example": {
+        "en": "Excuse me, can you help me?",
+        "es": "Perdón, ¿puedes ayudarme?",
+        "he": "סליחה, אתה יכול לעזור לי?"
+      }
+    },
+    {
+      "id": "sorry",
+      "type": "word",
+      "text": {
+        "en": "sorry",
+        "es": "lo siento",
+        "he": "מצטער"
+      },
+      "example": {
+        "en": "I'm sorry for being late.",
+        "es": "Lo siento por llegar tarde.",
+        "he": "אני מצטער על האיחור."
+      }
+    },
+    {
+      "id": "see_you_later",
+      "type": "sentence",
+      "text": {
+        "en": "See you later.",
+        "es": "Hasta luego.",
+        "he": "נתראה אחר כך."
+      }
+    },
+    {
+      "id": "see_you_tomorrow",
+      "type": "sentence",
+      "text": {
+        "en": "See you tomorrow.",
+        "es": "Hasta mañana.",
+        "he": "נתראה מחר."
+      }
+    },
+    {
+      "id": "have_a_nice_day",
+      "type": "sentence",
+      "text": {
+        "en": "Have a nice day.",
+        "es": "Que tengas un buen día.",
+        "he": "שיהיה לך יום נעים."
+      }
+    },
+    {
+      "id": "take_care",
+      "type": "sentence",
+      "text": {
+        "en": "Take care.",
+        "es": "Cuídate.",
+        "he": "שמור על עצמך."
+      }
+    },
+    {
+      "id": "welcome",
+      "type": "word",
+      "text": {
+        "en": "welcome",
+        "es": "bienvenido",
+        "he": "ברוך הבא"
+      },
+      "example": {
+        "en": "Welcome to our home.",
+        "es": "Bienvenido a nuestra casa.",
+        "he": "ברוך הבא לביתנו."
+      }
+    },
+    {
+      "id": "how_are_you_doing",
+      "type": "sentence",
+      "text": {
+        "en": "How are you doing?",
+        "es": "¿Cómo te va?",
+        "he": "איך הולך לך?"
+      }
+    },
+    {
+      "id": "pleasure_to_meet_you",
+      "type": "sentence",
+      "text": {
+        "en": "Pleasure to meet you.",
+        "es": "Un placer conocerte.",
+        "he": "נעים להכיר אותך."
       }
     }
   ]
