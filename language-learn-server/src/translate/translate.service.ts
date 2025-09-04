@@ -77,6 +77,7 @@ async fetchTranslation (
     // check cache first
     const cached = await this.wordCacheService.getCachedTranslation(word, fromCode, toCode);
     if (typeof cached === 'string' && cached.length > 0) {
+        // console.log('fetched cached translation: ', cached);
         await this.wordCacheService.record(word);
         return cached;
     }
@@ -85,6 +86,7 @@ async fetchTranslation (
     const dbTranslation = await this.translationService.findTranslationByWord(word, fromCode);
     if (dbTranslation && Object.prototype.hasOwnProperty.call(dbTranslation, toCode)) {
         const foundTranslation = (dbTranslation as any)[toCode];
+        // console.log('fetched db translation: ', foundTranslation);
         await this.wordCacheService.setCachedTranslation(word, fromCode, toCode, foundTranslation);
         await this.wordCacheService.record(word);
         return foundTranslation;

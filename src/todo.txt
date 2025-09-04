@@ -14,6 +14,8 @@
 
 11 when word is spoken, it should be with the countries accent 
 
+12 add more words to word categories 
+
 - refactor - move all types into 1 file. 
     - wordentry 
 
