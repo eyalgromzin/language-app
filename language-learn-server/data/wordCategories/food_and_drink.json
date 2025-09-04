@@ -1,0 +1,62 @@
+{
+  "id": "food_and_drink",
+  "emoji": "🍽️",
+  "name": {
+    "en": "Food & Drink",
+    "es": "Comida y bebida",
+    "he": "אוכל ושתייה"
+  },
+  "description": {
+    "en": "Everyday food and beverages",
+    "es": "Comidas y bebidas cotidianas",
+    "he": "מזון ומשקאות יומיומיים"
+  },
+  "items": [
+    {
+      "id": "apple",
+      "type": "word",
+      "text": {
+        "en": "apple",
+        "es": "manzana",
+        "he": "תפוח"
+      },
+      "example": {
+        "en": "I eat an apple every day.",
+        "es": "Como una manzana todos los días.",
+        "he": "אני אוכל תפוח כל יום."
+      }
+    },
+    {
+      "id": "water",
+      "type": "word",
+      "text": {
+        "en": "water",
+        "es": "agua",
+        "he": "מים"
+      },
+      "example": {
+        "en": "Can I have some water, please?",
+        "es": "¿Puedo tomar un poco de agua, por favor?",
+        "he": "אפשר לקבל קצת מים, בבקשה?"
+      }
+    },
+    {
+      "id": "i_would_like_a_coffee",
+      "type": "sentence",
+      "text": {
+        "en": "I would like a coffee, please.",
+        "es": "Quisiera un café, por favor.",
+        "he": "הייתי רוצה קפה, בבקשה."
+      }
+    },
+    {
+      "id": "the_food_is_delicious",
+      "type": "sentence",
+      "text": {
+        "en": "The food is delicious.",
+        "es": "La comida está deliciosa.",
+        "he": "האוכל טעים."
+      }
+    }
+  ]
+}

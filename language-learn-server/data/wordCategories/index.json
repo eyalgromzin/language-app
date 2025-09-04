@@ -1,0 +1,155 @@
+{
+  "languages": ["en", "es", "he"],
+  "categories": [
+    {
+      "id": "greetings",
+      "emoji": "👋",
+      "name": {
+        "en": "Greetings",
+        "Spanish": "Saludos",
+        "Hebrew": "ברכות"
+      },
+      "description": {
+        "en": "Common ways to greet and start conversations",
+        "Spanish": "Formas comunes de saludar y comenzar conversaciones",
+        "Hebrew": "דרכים נפוצות לברך ולהתחיל שיחות"
+      },
+      "filename": "greetings.json"
+    },
+    {
+      "id": "food_and_drink",
+      "emoji": "🍽️",
+      "name": {
+        "en": "Food & Drink",
+        "es": "Comida y bebida",
+        "he": "אוכל ושתייה"
+      },
+      "description": {
+        "en": "Everyday food and beverages",
+        "es": "Comidas y bebidas cotidianas",
+        "he": "מזון ומשקאות יומיומיים"
+      },
+      "filename": "food_and_drink.json"
+    },
+    {
+      "id": "travel",
+      "emoji": "✈️",
+      "name": {
+        "en": "Travel",
+        "es": "Viajes",
+        "he": "נסיעות"
+      },
+      "description": {
+        "en": "Useful phrases for getting around",
+        "es": "Frases útiles para moverse",
+        "he": "ביטויים שימושיים להתמצאות"
+      },
+      "filename": "travel.json"
+    },
+    {
+      "id": "numbers",
+      "emoji": "🔢",
+      "name": { 
+        "en": "Numbers", 
+        "es": "Números", 
+        "he": "מספרים" 
+      },
+      "description": { 
+        "en": "Basic counting numbers", 
+        "es": "Números básicos", 
+        "he": "מספרים בסיסיים" 
+      },
+      "filename": "numbers.json"
+    },
+    {
+      "id": "pronouns",
+      "emoji": "🧍",
+      "name": { 
+        "en": "Pronouns", 
+        "es": "Pronombres", 
+        "he": "כינויים" 
+      },
+      "description": { 
+        "en": "Personal pronouns", 
+        "es": "Pronombres personales", 
+        "he": "כינויים אישיים" 
+      },
+      "filename": "pronouns.json"
+    },
+    {
+      "id": "clothing",
+      "emoji": "👕",
+      "name": { 
+        "en": "Clothing", 
+        "es": "Ropa", 
+        "he": "בגדים" 
+      },
+      "description": { 
+        "en": "Everyday clothes", 
+        "es": "Ropa cotidiana", 
+        "he": "בגדים יומיומיים" 
+      },
+      "filename": "clothing.json"
+    },
+    {
+      "id": "time",
+      "emoji": "⏰",
+      "name": { 
+        "en": "Time", 
+        "es": "Tiempo", 
+        "he": "זמן" 
+      },
+      "description": { 
+        "en": "Days and time words", 
+        "es": "Palabras de tiempo", 
+        "he": "מילים של ימים וזמן" 
+      },
+      "filename": "time.json"
+    },
+    {
+      "id": "emotions",
+      "emoji": "😊",
+      "name": { 
+        "en": "Emotions", 
+        "es": "Emociones", 
+        "he": "רגשות" 
+      },
+      "description": { 
+        "en": "Common feelings", 
+        "es": "Sentimientos comunes", 
+        "he": "רגשות נפוצים" 
+      },
+      "filename": "emotions.json"
+    },
+    {
+      "id": "family",
+      "emoji": "👪",
+      "name": { 
+        "en": "Family", 
+        "es": "Familia", 
+        "he": "משפחה" 
+      },
+      "description": { 
+        "en": "Family members", 
+        "es": "Miembros de la familia", 
+        "he": "בני משפחה" 
+      },
+      "filename": "family.json"
+    },
+    {
+      "id": "home",
+      "emoji": "🏠",
+      "name": { 
+        "en": "Home", 
+        "es": "Hogar", 
+        "he": "בית" 
+      },
+      "description": { 
+        "en": "Household words", 
+        "es": "Palabras del hogar", 
+        "he": "מילים של הבית" 
+      },
+      "filename": "home.json"
+    }
+  ]
+}

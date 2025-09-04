@@ -1,0 +1,61 @@
+{
+  "id": "time",
+  "emoji": "⏰",
+  "name": { 
+    "en": "Time", 
+    "es": "Tiempo", 
+    "he": "זמן" 
+  },
+  "description": { 
+    "en": "Days and time words", 
+    "es": "Palabras de tiempo", 
+    "he": "מילים של ימים וזמן" 
+  },
+  "items": [
+    { 
+      "id": "today", 
+      "type": "word", 
+      "text": { 
+        "en": "today", 
+        "es": "hoy", 
+        "he": "היום" 
+      } 
+    },
+    { 
+      "id": "yesterday", 
+      "type": "word", 
+      "text": { 
+        "en": "yesterday", 
+        "es": "ayer", 
+        "he": "אתמול" 
+      } 
+    },
+    { 
+      "id": "tomorrow", 
+      "type": "word", 
+      "text": { 
+        "en": "tomorrow", 
+        "es": "mañana", 
+        "he": "מחר" 
+      } 
+    },
+    { 
+      "id": "week", 
+      "type": "word", 
+      "text": { 
+        "en": "week", 
+        "es": "semana", 
+        "he": "שבוע" 
+      } 
+    },
+    { 
+      "id": "hour", 
+      "type": "word", 
+      "text": { 
+        "en": "hour", 
+        "es": "hora", 
+        "he": "שעה" 
+      } 
+    }
+  ]
+}

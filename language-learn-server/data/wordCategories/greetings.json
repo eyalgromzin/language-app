@@ -1,0 +1,62 @@
+{
+  "id": "greetings",
+  "emoji": "👋",
+  "name": {
+    "en": "Greetings",
+    "Spanish": "Saludos",
+    "Hebrew": "ברכות"
+  },
+  "description": {
+    "en": "Common ways to greet and start conversations",
+    "Spanish": "Formas comunes de saludar y comenzar conversaciones",
+    "Hebrew": "דרכים נפוצות לברך ולהתחיל שיחות"
+  },
+  "items": [
+    {
+      "id": "hello",
+      "type": "word",
+      "text": {
+        "en": "hello",
+        "Spanish": "hola",
+        "Hebrew": "שלום"
+      },
+      "example": {
+        "en": "Hello! How are you?",
+        "Spanish": "¡Hola! ¿Cómo estás?",
+        "Hebrew": "שלום! מה שלומך?"
+      }
+    },
+    {
+      "id": "good_morning",
+      "type": "word",
+      "text": {
+        "en": "good morning",
+        "Spanish": "buenos días",
+        "Hebrew": "בוקר טוב"
+      },
+      "example": {
+        "en": "Good morning, everyone!",
+        "es": "¡Buenos días a todos!",
+        "he": "בוקר טוב לכולם!"
+      }
+    },
+    {
+      "id": "how_are_you",
+      "type": "sentence",
+      "text": {
+        "en": "How are you?",
+        "es": "¿Cómo estás?",
+        "he": "מה שלומך?"
+      }
+    },
+    {
+      "id": "nice_to_meet_you",
+      "type": "sentence",
+      "text": {
+        "en": "Nice to meet you.",
+        "es": "Mucho gusto.",
+        "he": "נעים להכיר."
+      }
+    }
+  ]
+}

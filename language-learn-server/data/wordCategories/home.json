@@ -1,0 +1,61 @@
+{
+  "id": "home",
+  "emoji": "🏠",
+  "name": { 
+    "en": "Home", 
+    "es": "Hogar", 
+    "he": "בית" 
+  },
+  "description": { 
+    "en": "Household words", 
+    "es": "Palabras del hogar", 
+    "he": "מילים של הבית" 
+  },
+  "items": [
+    { 
+      "id": "house", 
+      "type": "word", 
+      "text": { 
+        "en": "house", 
+        "es": "casa", 
+        "he": "בית" 
+      } 
+    },
+    { 
+      "id": "room", 
+      "type": "word", 
+      "text": { 
+        "en": "room", 
+        "es": "habitación", 
+        "he": "חדר" 
+      } 
+    },
+    { 
+      "id": "kitchen", 
+      "type": "word", 
+      "text": { 
+        "en": "kitchen", 
+        "es": "cocina", 
+        "he": "מטבח" 
+      } 
+    },
+    { 
+      "id": "bathroom", 
+      "type": "word", 
+      "text": { 
+        "en": "bathroom", 
+        "es": "baño", 
+        "he": "שירותים" 
+      } 
+    },
+    { 
+      "id": "bed", 
+      "type": "word", 
+      "text": { 
+        "en": "bed", 
+        "es": "cama", 
+        "he": "מיטה" 
+      } 
+    }
+  ]
+}

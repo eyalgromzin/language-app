@@ -1,0 +1,61 @@
+{
+  "id": "clothing",
+  "emoji": "👕",
+  "name": { 
+    "en": "Clothing", 
+    "es": "Ropa", 
+    "he": "בגדים" 
+  },
+  "description": { 
+    "en": "Everyday clothes", 
+    "es": "Ropa cotidiana", 
+    "he": "בגדים יומיומיים" 
+  },
+  "items": [
+    { 
+      "id": "shirt", 
+      "type": "word", 
+      "text": { 
+        "en": "shirt", 
+        "es": "camisa", 
+        "he": "חולצה" 
+      } 
+    },
+    { 
+      "id": "pants", 
+      "type": "word", 
+      "text": { 
+        "en": "pants", 
+        "es": "pantalones", 
+        "he": "מכנסיים" 
+      } 
+    },
+    { 
+      "id": "shoes", 
+      "type": "word", 
+      "text": { 
+        "en": "shoes", 
+        "es": "zapatos", 
+        "he": "נעליים" 
+      } 
+    },
+    { 
+      "id": "dress", 
+      "type": "word", 
+      "text": { 
+        "en": "dress", 
+        "es": "vestido", 
+        "he": "שמלה" 
+      } 
+    },
+    { 
+      "id": "jacket", 
+      "type": "word", 
+      "text": { 
+        "en": "jacket", 
+        "es": "chaqueta", 
+        "he": "מעיל" 
+      } 
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "family",
+  "emoji": "👪",
+  "name": { 
+    "en": "Family", 
+    "es": "Familia", 
+    "he": "משפחה" 
+  },
+  "description": { 
+    "en": "Family members", 
+    "es": "Miembros de la familia", 
+    "he": "בני משפחה" 
+  },
+  "items": [
+    { 
+      "id": "mother", 
+      "type": "word", 
+      "text": { 
+        "en": "mother", 
+        "es": "madre", 
+        "he": "אמא" 
+      } 
+    },
+    { 
+      "id": "father", 
+      "type": "word", 
+      "text": { 
+        "en": "father", 
+        "es": "padre", 
+        "he": "אבא" 
+      } 
+    },
+    { 
+      "id": "brother", 
+      "type": "word", 
+      "text": { 
+        "en": "brother", 
+        "es": "hermano", 
+        "he": "אח" 
+      } 
+    },
+    { 
+      "id": "sister", 
+      "type": "word", 
+      "text": { 
+        "en": "sister", 
+        "es": "hermana", 
+        "he": "אחות" 
+      } 
+    },
+    { 
+      "id": "family_word", 
+      "type": "word", 
+      "text": { 
+        "en": "family", 
+        "es": "familia", 
+        "he": "משפחה" 
+      } 
+    }
+  ]
+}

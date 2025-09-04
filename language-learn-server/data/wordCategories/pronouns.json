@@ -1,0 +1,88 @@
+{
+  "id": "pronouns",
+  "emoji": "🧍",
+  "name": { 
+    "en": "Pronouns", 
+    "es": "Pronombres", 
+    "he": "כינויים" 
+  },
+  "description": { 
+    "en": "Personal pronouns", 
+    "es": "Pronombres personales", 
+    "he": "כינויים אישיים" 
+  },
+  "items": [
+    { 
+      "id": "i", 
+      "type": "word", 
+      "text": { 
+        "en": "I", 
+        "es": "yo", 
+        "he": "אני" 
+      } 
+    },
+    { 
+      "id": "you", 
+      "type": "word", 
+      "text": { 
+        "en": "you", 
+        "es": "tú", 
+        "he": "אתה" 
+      } 
+    },
+    { 
+      "id": "he", 
+      "type": "word", 
+      "text": { 
+        "en": "he", 
+        "es": "él", 
+        "he": "הוא" 
+      } 
+    },
+    { 
+      "id": "she", 
+      "type": "word", 
+      "text": { 
+        "en": "she", 
+        "es": "ella", 
+        "he": "היא" 
+      } 
+    },
+    { 
+      "id": "it", 
+      "type": "word", 
+      "text": { 
+        "en": "it", 
+        "es": "ello", 
+        "he": "זה" 
+      } 
+    },
+    { 
+      "id": "we", 
+      "type": "word", 
+      "text": { 
+        "en": "we", 
+        "es": "nosotros", 
+        "he": "אנחנו" 
+      } 
+    },
+    { 
+      "id": "they", 
+      "type": "word", 
+      "text": { 
+        "en": "they", 
+        "es": "ellos", 
+        "he": "הם" 
+      } 
+    },
+    { 
+      "id": "them", 
+      "type": "word", 
+      "text": { 
+        "en": "them", 
+        "es": "ellos", 
+        "he": "אותם" 
+      } 
+    }
+  ]
+}

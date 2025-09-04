@@ -1,0 +1,70 @@
+{
+  "id": "numbers",
+  "emoji": "🔢",
+  "name": { 
+    "en": "Numbers", 
+    "es": "Números", 
+    "he": "מספרים" 
+  },
+  "description": { 
+    "en": "Basic counting numbers", 
+    "es": "Números básicos", 
+    "he": "מספרים בסיסיים" 
+  },
+  "items": [
+    { 
+      "id": "zero", 
+      "type": "word", 
+      "text": { 
+        "en": "zero", 
+        "es": "cero", 
+        "he": "אפס" 
+      } 
+    },
+    { 
+      "id": "one", 
+      "type": "word", 
+      "text": { 
+        "en": "one", 
+        "es": "uno", 
+        "he": "אחד" 
+      } 
+    },
+    { 
+      "id": "two", 
+      "type": "word", 
+      "text": { 
+        "en": "two", 
+        "es": "dos", 
+        "he": "שתיים" 
+      } 
+    },
+    { 
+      "id": "three", 
+      "type": "word", 
+      "text": { 
+        "en": "three", 
+        "es": "tres", 
+        "he": "שלוש" 
+      } 
+    },
+    { 
+      "id": "ten", 
+      "type": "word", 
+      "text": { 
+        "en": "ten", 
+        "es": "diez", 
+        "he": "עשר" 
+      } 
+    },
+    { 
+      "id": "hundred", 
+      "type": "word", 
+      "text": { 
+        "en": "hundred", 
+        "es": "cien", 
+        "he": "מאה" 
+      } 
+    }
+  ]
+}

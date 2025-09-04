@@ -1,0 +1,62 @@
+{
+  "id": "travel",
+  "emoji": "✈️",
+  "name": {
+    "en": "Travel",
+    "es": "Viajes",
+    "he": "נסיעות"
+  },
+  "description": {
+    "en": "Useful phrases for getting around",
+    "es": "Frases útiles para moverse",
+    "he": "ביטויים שימושיים להתמצאות"
+  },
+  "items": [
+    {
+      "id": "ticket",
+      "type": "word",
+      "text": {
+        "en": "ticket",
+        "es": "boleto",
+        "he": "כרטיס"
+      },
+      "example": {
+        "en": "Where can I buy a train ticket?",
+        "es": "¿Dónde puedo comprar un boleto de tren?",
+        "he": "איפה אפשר לקנות כרטיס רכבת?"
+      }
+    },
+    {
+      "id": "where_is_the_station",
+      "type": "sentence",
+      "text": {
+        "en": "Where is the station?",
+        "es": "¿Dónde está la estación?",
+        "he": "איפה התחנה?"
+      }
+    },
+    {
+      "id": "i_have_a_reservation",
+      "type": "sentence",
+      "text": {
+        "en": "I have a reservation.",
+        "es": "Tengo una reserva.",
+        "he": "יש לי הזמנה."
+      }
+    },
+    {
+      "id": "hotel",
+      "type": "word",
+      "text": {
+        "en": "hotel",
+        "es": "hotel",
+        "he": "מלון"
+      },
+      "example": {
+        "en": "The hotel is near the beach.",
+        "es": "El hotel está cerca de la playa.",
+        "he": "המלון קרוב לחוף."
+      }
+    }
+  ]
+}

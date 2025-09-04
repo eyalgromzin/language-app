@@ -1,0 +1,61 @@
+{
+  "id": "emotions",
+  "emoji": "😊",
+  "name": { 
+    "en": "Emotions", 
+    "es": "Emociones", 
+    "he": "רגשות" 
+  },
+  "description": { 
+    "en": "Common feelings", 
+    "es": "Sentimientos comunes", 
+    "he": "רגשות נפוצים" 
+  },
+  "items": [
+    { 
+      "id": "happy", 
+      "type": "word", 
+      "text": { 
+        "en": "happy", 
+        "es": "feliz", 
+        "he": "שמח" 
+      } 
+    },
+    { 
+      "id": "sad", 
+      "type": "word", 
+      "text": { 
+        "en": "sad", 
+        "es": "triste", 
+        "he": "עצוב" 
+      } 
+    },
+    { 
+      "id": "angry", 
+      "type": "word", 
+      "text": { 
+        "en": "angry", 
+        "es": "enojado", 
+        "he": "כועס" 
+      } 
+    },
+    { 
+      "id": "tired", 
+      "type": "word", 
+      "text": { 
+        "en": "tired", 
+        "es": "cansado", 
+        "he": "עייף" 
+      } 
+    },
+    { 
+      "id": "scared", 
+      "type": "word", 
+      "text": { 
+        "en": "scared", 
+        "es": "asustado", 
+        "he": "מפוחד" 
+      } 
+    }
+  ]
+}
