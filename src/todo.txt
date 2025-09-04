@@ -1,6 +1,12 @@
+11 when word is spoken, it should be with the countries accent 
+
+12 add more words to word categories 
+
 6 every time the app gets data from the server , save it locally and use it . until app version is updated . and then send again and get again data from server 
 
 8 design app ui better
+
+-----------------
 
 7 make video transcript work better - it lags now 
 
@@ -10,9 +16,6 @@
 
 10 login with facebook
 
-11 when word is spoken, it should be with the countries accent 
-
-12 add more words to word categories 
 
 - refactor - move all types into 1 file. 
     - wordentry 
