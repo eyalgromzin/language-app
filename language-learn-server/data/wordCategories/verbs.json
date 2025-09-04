@@ -4,12 +4,44 @@
   "name": { 
     "en": "Verbs", 
     "es": "Verbos", 
-    "he": "פועלים" 
+    "he": "פועלים",
+    "fr": "Verbes",
+    "de": "Verben",
+    "it": "Verbi",
+    "pt": "Verbos",
+    "ru": "Глаголы",
+    "hi": "क्रियाएं",
+    "pl": "Czasowniki",
+    "nl": "Werkwoorden",
+    "el": "Ρήματα",
+    "sv": "Verb",
+    "no": "Verb",
+    "fi": "Verbit",
+    "cs": "Slovesa",
+    "uk": "Дієслова",
+    "th": "คำกริยา",
+    "vi": "Động từ"
   },
   "description": { 
     "en": "Common action words and verbs", 
     "es": "Palabras de acción y verbos comunes", 
-    "he": "מילות פעולה ופועלים נפוצים" 
+    "he": "מילות פעולה ופועלים נפוצים",
+    "fr": "Mots d'action et verbes communs",
+    "de": "Häufige Aktionswörter und Verben",
+    "it": "Parole d'azione e verbi comuni",
+    "pt": "Palavras de ação e verbos comuns",
+    "ru": "Общие слова действия и глаголы",
+    "hi": "सामान्य क्रिया शब्द और क्रियाएं",
+    "pl": "Popularne słowa akcji i czasowniki",
+    "nl": "Veelvoorkomende actiewoorden en werkwoorden",
+    "el": "Κοινές λέξεις δράσης και ρήματα",
+    "sv": "Vanliga aktionsord och verb",
+    "no": "Vanlige aktjonsord og verb",
+    "fi": "Yleisiä toimintasanoja ja verbejä",
+    "cs": "Běžná akční slova a slovesa",
+    "uk": "Звичайні слова дії та дієслова",
+    "th": "คำแสดงการกระทำและคำกริยาทั่วไป",
+    "vi": "Từ hành động và động từ phổ biến"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "run", 
         "es": "correr", 
-        "he": "לרוץ" 
+        "he": "לרוץ",
+        "fr": "courir",
+        "de": "laufen",
+        "it": "correre",
+        "pt": "correr",
+        "ru": "бежать",
+        "hi": "दौड़ना",
+        "pl": "biegać",
+        "nl": "rennen",
+        "el": "τρέχω",
+        "sv": "springa",
+        "no": "løpe",
+        "fi": "juosta",
+        "cs": "běžet",
+        "uk": "бігти",
+        "th": "วิ่ง",
+        "vi": "chạy"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "walk", 
         "es": "caminar", 
-        "he": "ללכת" 
+        "he": "ללכת",
+        "fr": "marcher",
+        "de": "gehen",
+        "it": "camminare",
+        "pt": "andar",
+        "ru": "ходить",
+        "hi": "चलना",
+        "pl": "chodzić",
+        "nl": "lopen",
+        "el": "περπατάω",
+        "sv": "gå",
+        "no": "gå",
+        "fi": "kävellä",
+        "cs": "chodit",
+        "uk": "ходити",
+        "th": "เดิน",
+        "vi": "đi bộ"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "eat", 
         "es": "comer", 
-        "he": "לאכול" 
+        "he": "לאכול",
+        "fr": "manger",
+        "de": "essen",
+        "it": "mangiare",
+        "pt": "comer",
+        "ru": "есть",
+        "hi": "खाना",
+        "pl": "jeść",
+        "nl": "eten",
+        "el": "τρώω",
+        "sv": "äta",
+        "no": "spise",
+        "fi": "syödä",
+        "cs": "jíst",
+        "uk": "їсти",
+        "th": "กิน",
+        "vi": "ăn"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "drink", 
         "es": "beber", 
-        "he": "לשתות" 
+        "he": "לשתות",
+        "fr": "boire",
+        "de": "trinken",
+        "it": "bere",
+        "pt": "beber",
+        "ru": "пить",
+        "hi": "पीना",
+        "pl": "pić",
+        "nl": "drinken",
+        "el": "πίνω",
+        "sv": "dricka",
+        "no": "drikke",
+        "fi": "juoda",
+        "cs": "pít",
+        "uk": "пити",
+        "th": "ดื่ม",
+        "vi": "uống"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "sleep", 
         "es": "dormir", 
-        "he": "לישון" 
+        "he": "לישון",
+        "fr": "dormir",
+        "de": "schlafen",
+        "it": "dormire",
+        "pt": "dormir",
+        "ru": "спать",
+        "hi": "सोना",
+        "pl": "spać",
+        "nl": "slapen",
+        "el": "κοιμάμαι",
+        "sv": "sova",
+        "no": "sove",
+        "fi": "nukkua",
+        "cs": "spát",
+        "uk": "спати",
+        "th": "นอน",
+        "vi": "ngủ"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "wake", 
         "es": "despertar", 
-        "he": "להתעורר" 
+        "he": "להתעורר",
+        "fr": "se réveiller",
+        "de": "aufwachen",
+        "it": "svegliarsi",
+        "pt": "acordar",
+        "ru": "просыпаться",
+        "hi": "जागना",
+        "pl": "budzić się",
+        "nl": "wakker worden",
+        "el": "ξυπνάω",
+        "sv": "vakna",
+        "no": "våkne",
+        "fi": "herätä",
+        "cs": "probudit se",
+        "uk": "прокидатися",
+        "th": "ตื่น",
+        "vi": "thức dậy"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "speak", 
         "es": "hablar", 
-        "he": "לדבר" 
+        "he": "לדבר",
+        "fr": "parler",
+        "de": "sprechen",
+        "it": "parlare",
+        "pt": "falar",
+        "ru": "говорить",
+        "hi": "बोलना",
+        "pl": "mówić",
+        "nl": "spreken",
+        "el": "μιλάω",
+        "sv": "tala",
+        "no": "snakke",
+        "fi": "puhua",
+        "cs": "mluvit",
+        "uk": "говорити",
+        "th": "พูด",
+        "vi": "nói"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "listen", 
         "es": "escuchar", 
-        "he": "להקשיב" 
+        "he": "להקשיב",
+        "fr": "écouter",
+        "de": "zuhören",
+        "it": "ascoltare",
+        "pt": "ouvir",
+        "ru": "слушать",
+        "hi": "सुनना",
+        "pl": "słuchać",
+        "nl": "luisteren",
+        "el": "ακούω",
+        "sv": "lyssna",
+        "no": "lytte",
+        "fi": "kuunnella",
+        "cs": "poslouchat",
+        "uk": "слухати",
+        "th": "ฟัง",
+        "vi": "nghe"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "see", 
         "es": "ver", 
-        "he": "לראות" 
+        "he": "לראות",
+        "fr": "voir",
+        "de": "sehen",
+        "it": "vedere",
+        "pt": "ver",
+        "ru": "видеть",
+        "hi": "देखना",
+        "pl": "widzieć",
+        "nl": "zien",
+        "el": "βλέπω",
+        "sv": "se",
+        "no": "se",
+        "fi": "nähdä",
+        "cs": "vidět",
+        "uk": "бачити",
+        "th": "เห็น",
+        "vi": "nhìn thấy"
       } 
     },
     { 
@@ -99,7 +275,23 @@
       "text": { 
         "en": "look", 
         "es": "mirar", 
-        "he": "להסתכל" 
+        "he": "להסתכל",
+        "fr": "regarder",
+        "de": "schauen",
+        "it": "guardare",
+        "pt": "olhar",
+        "ru": "смотреть",
+        "hi": "देखना",
+        "pl": "patrzeć",
+        "nl": "kijken",
+        "el": "κοιτάζω",
+        "sv": "titta",
+        "no": "se",
+        "fi": "katsoa",
+        "cs": "dívat se",
+        "uk": "дивитися",
+        "th": "มอง",
+        "vi": "nhìn"
       } 
     },
     { 
@@ -108,7 +300,23 @@
       "text": { 
         "en": "think", 
         "es": "pensar", 
-        "he": "לחשוב" 
+        "he": "לחשוב",
+        "fr": "penser",
+        "de": "denken",
+        "it": "pensare",
+        "pt": "pensar",
+        "ru": "думать",
+        "hi": "सोचना",
+        "pl": "myśleć",
+        "nl": "denken",
+        "el": "σκέφτομαι",
+        "sv": "tänka",
+        "no": "tenke",
+        "fi": "ajatella",
+        "cs": "myslet",
+        "uk": "думати",
+        "th": "คิด",
+        "vi": "nghĩ"
       } 
     },
     { 
@@ -117,79 +325,73 @@
       "text": { 
         "en": "know", 
         "es": "saber", 
-        "he": "לדעת" 
+        "he": "לדעת",
+        "fr": "savoir",
+        "de": "wissen",
+        "it": "sapere",
+        "pt": "saber",
+        "ru": "знать",
+        "hi": "जानना",
+        "pl": "wiedzieć",
+        "nl": "weten",
+        "el": "ξέρω",
+        "sv": "veta",
+        "no": "vite",
+        "fi": "tietää",
+        "cs": "vědět",
+        "uk": "знати",
+        "th": "รู้",
+        "vi": "biết"
       } 
     },
     { 
-      "id": "learn", 
+      "id": "want", 
       "type": "word", 
       "text": { 
-        "en": "learn", 
-        "es": "aprender", 
-        "he": "ללמוד" 
+        "en": "want", 
+        "es": "querer", 
+        "he": "לרצות",
+        "fr": "vouloir",
+        "de": "wollen",
+        "it": "volere",
+        "pt": "querer",
+        "ru": "хотеть",
+        "hi": "चाहना",
+        "pl": "chcieć",
+        "nl": "willen",
+        "el": "θέλω",
+        "sv": "vilja",
+        "no": "ville",
+        "fi": "haluta",
+        "cs": "chtít",
+        "uk": "хотіти",
+        "th": "ต้องการ",
+        "vi": "muốn"
       } 
     },
     { 
-      "id": "teach", 
+      "id": "need", 
       "type": "word", 
       "text": { 
-        "en": "teach", 
-        "es": "enseñar", 
-        "he": "ללמד" 
-      } 
-    },
-    { 
-      "id": "work", 
-      "type": "word", 
-      "text": { 
-        "en": "work", 
-        "es": "trabajar", 
-        "he": "לעבוד" 
-      } 
-    },
-    { 
-      "id": "play", 
-      "type": "word", 
-      "text": { 
-        "en": "play", 
-        "es": "jugar", 
-        "he": "לשחק" 
-      } 
-    },
-    { 
-      "id": "read", 
-      "type": "word", 
-      "text": { 
-        "en": "read", 
-        "es": "leer", 
-        "he": "לקרוא" 
-      } 
-    },
-    { 
-      "id": "write", 
-      "type": "word", 
-      "text": { 
-        "en": "write", 
-        "es": "escribir", 
-        "he": "לכתוב" 
-      } 
-    },
-    { 
-      "id": "sing", 
-      "type": "word", 
-      "text": { 
-        "en": "sing", 
-        "es": "cantar", 
-        "he": "לשיר" 
-      } 
-    },
-    { 
-      "id": "dance", 
-      "type": "word", 
-      "text": { 
-        "en": "dance", 
-        "es": "bailar", 
-        "he": "לרקוד" 
+        "en": "need", 
+        "es": "necesitar", 
+        "he": "לצטרך",
+        "fr": "avoir besoin",
+        "de": "brauchen",
+        "it": "avere bisogno",
+        "pt": "precisar",
+        "ru": "нуждаться",
+        "hi": "जरूरत होना",
+        "pl": "potrzebować",
+        "nl": "nodig hebben",
+        "el": "χρειάζομαι",
+        "sv": "behöva",
+        "no": "trenge",
+        "fi": "tarvita",
+        "cs": "potřebovat",
+        "uk": "потребувати",
+        "th": "ต้องการ",
+        "vi": "cần"
       } 
     }
   ]

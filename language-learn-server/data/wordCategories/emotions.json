@@ -4,12 +4,44 @@
   "name": { 
     "en": "Emotions", 
     "es": "Emociones", 
-    "he": "רגשות" 
+    "he": "רגשות",
+    "fr": "Émotions",
+    "de": "Gefühle",
+    "it": "Emozioni",
+    "pt": "Emoções",
+    "ru": "Эмоции",
+    "hi": "भावनाएं",
+    "pl": "Emocje",
+    "nl": "Emoties",
+    "el": "Συναισθήματα",
+    "sv": "Känslor",
+    "no": "Følelser",
+    "fi": "Tunteet",
+    "cs": "Emoce",
+    "uk": "Емоції",
+    "th": "อารมณ์",
+    "vi": "Cảm xúc"
   },
   "description": { 
     "en": "Common feelings", 
     "es": "Sentimientos comunes", 
-    "he": "רגשות נפוצים" 
+    "he": "רגשות נפוצים",
+    "fr": "Sentiments communs",
+    "de": "Häufige Gefühle",
+    "it": "Sentimenti comuni",
+    "pt": "Sentimentos comuns",
+    "ru": "Общие чувства",
+    "hi": "सामान्य भावनाएं",
+    "pl": "Powszechne uczucia",
+    "nl": "Veelvoorkomende gevoelens",
+    "el": "Κοινά συναισθήματα",
+    "sv": "Vanliga känslor",
+    "no": "Vanlige følelser",
+    "fi": "Yleisiä tunteita",
+    "cs": "Běžné pocity",
+    "uk": "Звичайні почуття",
+    "th": "ความรู้สึกทั่วไป",
+    "vi": "Cảm xúc phổ biến"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "happy", 
         "es": "feliz", 
-        "he": "שמח" 
+        "he": "שמח",
+        "fr": "heureux",
+        "de": "glücklich",
+        "it": "felice",
+        "pt": "feliz",
+        "ru": "счастливый",
+        "hi": "खुश",
+        "pl": "szczęśliwy",
+        "nl": "gelukkig",
+        "el": "ευτυχισμένος",
+        "sv": "glad",
+        "no": "glad",
+        "fi": "onnellinen",
+        "cs": "šťastný",
+        "uk": "щасливий",
+        "th": "มีความสุข",
+        "vi": "hạnh phúc"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "sad", 
         "es": "triste", 
-        "he": "עצוב" 
+        "he": "עצוב",
+        "fr": "triste",
+        "de": "traurig",
+        "it": "triste",
+        "pt": "triste",
+        "ru": "грустный",
+        "hi": "दुखी",
+        "pl": "smutny",
+        "nl": "verdrietig",
+        "el": "λυπημένος",
+        "sv": "ledsen",
+        "no": "trist",
+        "fi": "surullinen",
+        "cs": "smutný",
+        "uk": "сумний",
+        "th": "เศร้า",
+        "vi": "buồn"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "angry", 
         "es": "enojado", 
-        "he": "כועס" 
+        "he": "כועס",
+        "fr": "fâché",
+        "de": "wütend",
+        "it": "arrabbiato",
+        "pt": "irritado",
+        "ru": "сердитый",
+        "hi": "गुस्सा",
+        "pl": "zły",
+        "nl": "boos",
+        "el": "θυμωμένος",
+        "sv": "arg",
+        "no": "sint",
+        "fi": "vihainen",
+        "cs": "rozzlobený",
+        "uk": "сердитий",
+        "th": "โกรธ",
+        "vi": "giận"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "tired", 
         "es": "cansado", 
-        "he": "עייף" 
+        "he": "עייף",
+        "fr": "fatigué",
+        "de": "müde",
+        "it": "stanco",
+        "pt": "cansado",
+        "ru": "уставший",
+        "hi": "थका",
+        "pl": "zmęczony",
+        "nl": "moe",
+        "el": "κουρασμένος",
+        "sv": "trött",
+        "no": "sliten",
+        "fi": "väsynyt",
+        "cs": "unavený",
+        "uk": "втомлений",
+        "th": "เหนื่อย",
+        "vi": "mệt mỏi"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "scared", 
         "es": "asustado", 
-        "he": "מפוחד" 
+        "he": "מפוחד",
+        "fr": "effrayé",
+        "de": "ängstlich",
+        "it": "spaventato",
+        "pt": "assustado",
+        "ru": "испуганный",
+        "hi": "डरा हुआ",
+        "pl": "przestraszony",
+        "nl": "bang",
+        "el": "φοβισμένος",
+        "sv": "rädd",
+        "no": "redd",
+        "fi": "pelästynyt",
+        "cs": "vystrašený",
+        "uk": "переляканий",
+        "th": "กลัว",
+        "vi": "sợ hãi"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "excited", 
         "es": "emocionado", 
-        "he": "נרגש" 
+        "he": "נרגש",
+        "fr": "excité",
+        "de": "aufgeregt",
+        "it": "eccitato",
+        "pt": "empolgado",
+        "ru": "возбужденный",
+        "hi": "उत्साहित",
+        "pl": "podekscytowany",
+        "nl": "opgewonden",
+        "el": "ενθουσιασμένος",
+        "sv": "exalterad",
+        "no": "spent",
+        "fi": "innostunut",
+        "cs": "nadšený",
+        "uk": "схвильований",
+        "th": "ตื่นเต้น",
+        "vi": "phấn khích"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "nervous", 
         "es": "nervioso", 
-        "he": "עצבני" 
+        "he": "עצבני",
+        "fr": "nerveux",
+        "de": "nervös",
+        "it": "nervoso",
+        "pt": "nervoso",
+        "ru": "нервный",
+        "hi": "घबराया",
+        "pl": "nerwowy",
+        "nl": "zenuwachtig",
+        "el": "νευρικός",
+        "sv": "nervös",
+        "no": "nervøs",
+        "fi": "hermostunut",
+        "cs": "nervózní",
+        "uk": "нервовий",
+        "th": "ประสาท",
+        "vi": "lo lắng"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "surprised", 
         "es": "sorprendido", 
-        "he": "מופתע" 
+        "he": "מופתע",
+        "fr": "surpris",
+        "de": "überrascht",
+        "it": "sorpreso",
+        "pt": "surpreso",
+        "ru": "удивленный",
+        "hi": "हैरान",
+        "pl": "zaskoczony",
+        "nl": "verbaasd",
+        "el": "έκπληκτος",
+        "sv": "förvånad",
+        "no": "overrasket",
+        "fi": "yllättynyt",
+        "cs": "překvapený",
+        "uk": "здивлений",
+        "th": "ประหลาดใจ",
+        "vi": "ngạc nhiên"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "confused", 
         "es": "confundido", 
-        "he": "מבולבל" 
+        "he": "מבולבל",
+        "fr": "confus",
+        "de": "verwirrt",
+        "it": "confuso",
+        "pt": "confuso",
+        "ru": "растерянный",
+        "hi": "उलझन में",
+        "pl": "zmieszany",
+        "nl": "verward",
+        "el": "μπερδεμένος",
+        "sv": "förvirrad",
+        "no": "forvirret",
+        "fi": "hämmentynyt",
+        "cs": "zmatený",
+        "uk": "розгублений",
+        "th": "สับสน",
+        "vi": "bối rối"
       } 
     },
     { 
@@ -99,34 +275,23 @@
       "text": { 
         "en": "proud", 
         "es": "orgulloso", 
-        "he": "גאה" 
-      } 
-    },
-    { 
-      "id": "embarrassed", 
-      "type": "word", 
-      "text": { 
-        "en": "embarrassed", 
-        "es": "avergonzado", 
-        "he": "נבוך" 
-      } 
-    },
-    { 
-      "id": "jealous", 
-      "type": "word", 
-      "text": { 
-        "en": "jealous", 
-        "es": "celoso", 
-        "he": "קנאי" 
-      } 
-    },
-    { 
-      "id": "lonely", 
-      "type": "word", 
-      "text": { 
-        "en": "lonely", 
-        "es": "solitario", 
-        "he": "בודד" 
+        "he": "גאה",
+        "fr": "fier",
+        "de": "stolz",
+        "it": "orgoglioso",
+        "pt": "orgulhoso",
+        "ru": "гордый",
+        "hi": "गर्व",
+        "pl": "dumny",
+        "nl": "trots",
+        "el": "περήφανος",
+        "sv": "stolt",
+        "no": "stolt",
+        "fi": "ylpeä",
+        "cs": "pyšný",
+        "uk": "гордий",
+        "th": "ภูมิใจ",
+        "vi": "tự hào"
       } 
     },
     { 
@@ -135,16 +300,48 @@
       "text": { 
         "en": "worried", 
         "es": "preocupado", 
-        "he": "מודאג" 
+        "he": "מודאג",
+        "fr": "inquiet",
+        "de": "besorgt",
+        "it": "preoccupato",
+        "pt": "preocupado",
+        "ru": "обеспокоенный",
+        "hi": "चिंतित",
+        "pl": "zmartwiony",
+        "nl": "bezorgd",
+        "el": "ανησυχημένος",
+        "sv": "orolig",
+        "no": "bekymret",
+        "fi": "huolissaan",
+        "cs": "znepokojený",
+        "uk": "стурбований",
+        "th": "กังวล",
+        "vi": "lo lắng"
       } 
     },
     { 
-      "id": "relaxed", 
+      "id": "calm", 
       "type": "word", 
       "text": { 
-        "en": "relaxed", 
-        "es": "relajado", 
-        "he": "רגוע" 
+        "en": "calm", 
+        "es": "tranquilo", 
+        "he": "רגוע",
+        "fr": "calme",
+        "de": "ruhig",
+        "it": "calmo",
+        "pt": "calmo",
+        "ru": "спокойный",
+        "hi": "शांत",
+        "pl": "spokojny",
+        "nl": "kalm",
+        "el": "ήρεμος",
+        "sv": "lugn",
+        "no": "rolig",
+        "fi": "rauhallinen",
+        "cs": "klidný",
+        "uk": "спокійний",
+        "th": "สงบ",
+        "vi": "bình tĩnh"
       } 
     },
     { 
@@ -153,61 +350,48 @@
       "text": { 
         "en": "bored", 
         "es": "aburrido", 
-        "he": "משעמם" 
+        "he": "משעמם",
+        "fr": "ennuyé",
+        "de": "gelangweilt",
+        "it": "annoiato",
+        "pt": "entediado",
+        "ru": "скучающий",
+        "hi": "बोर",
+        "pl": "znudzony",
+        "nl": "verveeld",
+        "el": "βαρεμένος",
+        "sv": "uttråkad",
+        "no": "kjedelig",
+        "fi": "tylsistynyt",
+        "cs": "znuděný",
+        "uk": "нудьгований",
+        "th": "เบื่อ",
+        "vi": "buồn chán"
       } 
     },
     { 
-      "id": "curious", 
+      "id": "lonely", 
       "type": "word", 
       "text": { 
-        "en": "curious", 
-        "es": "curioso", 
-        "he": "סקרן" 
-      } 
-    },
-    { 
-      "id": "grateful", 
-      "type": "word", 
-      "text": { 
-        "en": "grateful", 
-        "es": "agradecido", 
-        "he": "אסיר תודה" 
-      } 
-    },
-    { 
-      "id": "hopeful", 
-      "type": "word", 
-      "text": { 
-        "en": "hopeful", 
-        "es": "esperanzado", 
-        "he": "מלא תקווה" 
-      } 
-    },
-    { 
-      "id": "disappointed", 
-      "type": "word", 
-      "text": { 
-        "en": "disappointed", 
-        "es": "decepcionado", 
-        "he": "מאוכזב" 
-      } 
-    },
-    { 
-      "id": "frustrated", 
-      "type": "word", 
-      "text": { 
-        "en": "frustrated", 
-        "es": "frustrado", 
-        "he": "מתוסכל" 
-      } 
-    },
-    { 
-      "id": "peaceful", 
-      "type": "word", 
-      "text": { 
-        "en": "peaceful", 
-        "es": "tranquilo", 
-        "he": "שלווה" 
+        "en": "lonely", 
+        "es": "solo", 
+        "he": "בודד",
+        "fr": "seul",
+        "de": "einsam",
+        "it": "solo",
+        "pt": "sozinho",
+        "ru": "одинокий",
+        "hi": "अकेला",
+        "pl": "samotny",
+        "nl": "eenzaam",
+        "el": "μοναχικός",
+        "sv": "ensam",
+        "no": "ensom",
+        "fi": "yksinäinen",
+        "cs": "osamělý",
+        "uk": "самотній",
+        "th": "เหงา",
+        "vi": "cô đơn"
       } 
     }
   ]

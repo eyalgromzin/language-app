@@ -4,12 +4,44 @@
   "name": { 
     "en": "Hobbies", 
     "es": "Pasatiempos", 
-    "he": "תחביבים" 
+    "he": "תחביבים",
+    "fr": "Loisirs",
+    "de": "Hobbys",
+    "it": "Passatempi",
+    "pt": "Passatempos",
+    "ru": "Хобби",
+    "hi": "शौक",
+    "pl": "Hobby",
+    "nl": "Hobby's",
+    "el": "Χόμπι",
+    "sv": "Hobbyer",
+    "no": "Hobbyer",
+    "fi": "Harrastukset",
+    "cs": "Koníčky",
+    "uk": "Хобі",
+    "th": "งานอดิเรก",
+    "vi": "Sở thích"
   },
   "description": { 
     "en": "Fun activities and hobbies", 
     "es": "Actividades divertidas y pasatiempos", 
-    "he": "פעילויות מהנות ותחביבים" 
+    "he": "פעילויות מהנות ותחביבים",
+    "fr": "Activités amusantes et loisirs",
+    "de": "Spaßige Aktivitäten und Hobbys",
+    "it": "Attività divertenti e passatempi",
+    "pt": "Atividades divertidas e passatempos",
+    "ru": "Веселые занятия и хобби",
+    "hi": "मजेदार गतिविधियां और शौक",
+    "pl": "Zabawne aktywności i hobby",
+    "nl": "Leuke activiteiten en hobby's",
+    "el": "Διασκεδαστικές δραστηριότητες και χόμπι",
+    "sv": "Roliga aktiviteter och hobbyer",
+    "no": "Morsomme aktiviteter og hobbyer",
+    "fi": "Hauskoja aktiviteetteja ja harrastuksia",
+    "cs": "Zábavné aktivity a koníčky",
+    "uk": "Цікаві заняття та хобі",
+    "th": "กิจกรรมสนุกและงานอดิเรก",
+    "vi": "Hoạt động vui vẻ và sở thích"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "reading", 
         "es": "lectura", 
-        "he": "קריאה" 
+        "he": "קריאה",
+        "fr": "lecture",
+        "de": "Lesen",
+        "it": "lettura",
+        "pt": "leitura",
+        "ru": "чтение",
+        "hi": "पढ़ना",
+        "pl": "czytanie",
+        "nl": "lezen",
+        "el": "ανάγνωση",
+        "sv": "läsning",
+        "no": "lesing",
+        "fi": "lukeminen",
+        "cs": "čtení",
+        "uk": "читання",
+        "th": "การอ่าน",
+        "vi": "đọc sách"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "writing", 
         "es": "escritura", 
-        "he": "כתיבה" 
+        "he": "כתיבה",
+        "fr": "écriture",
+        "de": "Schreiben",
+        "it": "scrittura",
+        "pt": "escrita",
+        "ru": "письмо",
+        "hi": "लिखना",
+        "pl": "pisanie",
+        "nl": "schrijven",
+        "el": "γράψιμο",
+        "sv": "skrivande",
+        "no": "skriving",
+        "fi": "kirjoittaminen",
+        "cs": "psaní",
+        "uk": "писання",
+        "th": "การเขียน",
+        "vi": "viết"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "drawing", 
         "es": "dibujo", 
-        "he": "ציור" 
+        "he": "ציור",
+        "fr": "dessin",
+        "de": "Zeichnen",
+        "it": "disegno",
+        "pt": "desenho",
+        "ru": "рисование",
+        "hi": "चित्र बनाना",
+        "pl": "rysowanie",
+        "nl": "tekenen",
+        "el": "ζωγραφική",
+        "sv": "ritning",
+        "no": "tegning",
+        "fi": "piirtäminen",
+        "cs": "kreslení",
+        "uk": "малювання",
+        "th": "การวาด",
+        "vi": "vẽ"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "painting", 
         "es": "pintura", 
-        "he": "ציור" 
+        "he": "ציור",
+        "fr": "peinture",
+        "de": "Malen",
+        "it": "pittura",
+        "pt": "pintura",
+        "ru": "живопись",
+        "hi": "चित्रकला",
+        "pl": "malowanie",
+        "nl": "schilderen",
+        "el": "ζωγραφική",
+        "sv": "målning",
+        "no": "maling",
+        "fi": "maalaaminen",
+        "cs": "malování",
+        "uk": "малювання",
+        "th": "การวาดภาพ",
+        "vi": "vẽ tranh"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "singing", 
         "es": "canto", 
-        "he": "שירה" 
+        "he": "שירה",
+        "fr": "chant",
+        "de": "Singen",
+        "it": "canto",
+        "pt": "canto",
+        "ru": "пение",
+        "hi": "गाना",
+        "pl": "śpiewanie",
+        "nl": "zingen",
+        "el": "τραγούδι",
+        "sv": "sång",
+        "no": "sang",
+        "fi": "laulaminen",
+        "cs": "zpěv",
+        "uk": "спів",
+        "th": "การร้องเพลง",
+        "vi": "hát"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "dancing", 
         "es": "baile", 
-        "he": "ריקוד" 
+        "he": "ריקוד",
+        "fr": "danse",
+        "de": "Tanzen",
+        "it": "ballo",
+        "pt": "dança",
+        "ru": "танцы",
+        "hi": "नृत्य",
+        "pl": "taniec",
+        "nl": "dansen",
+        "el": "χορός",
+        "sv": "dans",
+        "no": "dans",
+        "fi": "tanssiminen",
+        "cs": "tanec",
+        "uk": "танець",
+        "th": "การเต้น",
+        "vi": "nhảy múa"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "swimming", 
         "es": "natación", 
-        "he": "שחייה" 
+        "he": "שחייה",
+        "fr": "natation",
+        "de": "Schwimmen",
+        "it": "nuoto",
+        "pt": "natação",
+        "ru": "плавание",
+        "hi": "तैरना",
+        "pl": "pływanie",
+        "nl": "zwemmen",
+        "el": "κολύμπι",
+        "sv": "simning",
+        "no": "svømming",
+        "fi": "uinti",
+        "cs": "plavání",
+        "uk": "плавання",
+        "th": "การว่ายน้ำ",
+        "vi": "bơi lội"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "running", 
         "es": "correr", 
-        "he": "ריצה" 
+        "he": "ריצה",
+        "fr": "course",
+        "de": "Laufen",
+        "it": "corsa",
+        "pt": "corrida",
+        "ru": "бег",
+        "hi": "दौड़ना",
+        "pl": "bieganie",
+        "nl": "hardlopen",
+        "el": "τρέξιμο",
+        "sv": "löpning",
+        "no": "løping",
+        "fi": "juoksu",
+        "cs": "běh",
+        "uk": "біг",
+        "th": "การวิ่ง",
+        "vi": "chạy"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "cycling", 
         "es": "ciclismo", 
-        "he": "רכיבה על אופניים" 
+        "he": "רכיבה על אופניים",
+        "fr": "cyclisme",
+        "de": "Radfahren",
+        "it": "ciclismo",
+        "pt": "ciclismo",
+        "ru": "велоспорт",
+        "hi": "साइकिल चलाना",
+        "pl": "kolarstwo",
+        "nl": "fietsen",
+        "el": "ποδηλασία",
+        "sv": "cykling",
+        "no": "sykkling",
+        "fi": "pyöräily",
+        "cs": "cyklistika",
+        "uk": "велоспорт",
+        "th": "การขี่จักรยาน",
+        "vi": "đạp xe"
       } 
     },
     { 
@@ -99,16 +275,23 @@
       "text": { 
         "en": "cooking", 
         "es": "cocina", 
-        "he": "בישול" 
-      } 
-    },
-    { 
-      "id": "baking", 
-      "type": "word", 
-      "text": { 
-        "en": "baking", 
-        "es": "hornear", 
-        "he": "אפייה" 
+        "he": "בישול",
+        "fr": "cuisine",
+        "de": "Kochen",
+        "it": "cucina",
+        "pt": "culinária",
+        "ru": "готовка",
+        "hi": "खाना बनाना",
+        "pl": "gotowanie",
+        "nl": "koken",
+        "el": "μαγειρική",
+        "sv": "matlagning",
+        "no": "matlaging",
+        "fi": "ruoanlaitto",
+        "cs": "vaření",
+        "uk": "приготування їжі",
+        "th": "การทำอาหาร",
+        "vi": "nấu ăn"
       } 
     },
     { 
@@ -117,7 +300,23 @@
       "text": { 
         "en": "gardening", 
         "es": "jardinería", 
-        "he": "גינון" 
+        "he": "גינון",
+        "fr": "jardinage",
+        "de": "Gärtnern",
+        "it": "giardinaggio",
+        "pt": "jardinagem",
+        "ru": "садоводство",
+        "hi": "बागवानी",
+        "pl": "ogrodnictwo",
+        "nl": "tuinieren",
+        "el": "κηπουρική",
+        "sv": "trädgårdsarbete",
+        "no": "gartnering",
+        "fi": "puutarhanhoito",
+        "cs": "zahradničení",
+        "uk": "садоводство",
+        "th": "การทำสวน",
+        "vi": "làm vườn"
       } 
     },
     { 
@@ -126,16 +325,48 @@
       "text": { 
         "en": "photography", 
         "es": "fotografía", 
-        "he": "צילום" 
+        "he": "צילום",
+        "fr": "photographie",
+        "de": "Fotografie",
+        "it": "fotografia",
+        "pt": "fotografia",
+        "ru": "фотография",
+        "hi": "फोटोग्राफी",
+        "pl": "fotografia",
+        "nl": "fotografie",
+        "el": "φωτογραφία",
+        "sv": "fotografi",
+        "no": "fotografering",
+        "fi": "valokuvaus",
+        "cs": "fotografie",
+        "uk": "фотографія",
+        "th": "การถ่ายภาพ",
+        "vi": "nhiếp ảnh"
       } 
     },
     { 
-      "id": "fishing", 
+      "id": "gaming", 
       "type": "word", 
       "text": { 
-        "en": "fishing", 
-        "es": "pesca", 
-        "he": "דיג" 
+        "en": "gaming", 
+        "es": "videojuegos", 
+        "he": "משחקי מחשב",
+        "fr": "jeux vidéo",
+        "de": "Gaming",
+        "it": "videogiochi",
+        "pt": "jogos",
+        "ru": "игры",
+        "hi": "गेमिंग",
+        "pl": "gry",
+        "nl": "gaming",
+        "el": "παιχνίδια",
+        "sv": "spel",
+        "no": "gaming",
+        "fi": "pelaaminen",
+        "cs": "hraní her",
+        "uk": "ігри",
+        "th": "การเล่นเกม",
+        "vi": "chơi game"
       } 
     },
     { 
@@ -144,52 +375,48 @@
       "text": { 
         "en": "hiking", 
         "es": "senderismo", 
-        "he": "טיול רגלי" 
+        "he": "טיולים",
+        "fr": "randonnée",
+        "de": "Wandern",
+        "it": "escursionismo",
+        "pt": "caminhada",
+        "ru": "походы",
+        "hi": "पैदल यात्रा",
+        "pl": "wędrówki",
+        "nl": "wandelen",
+        "el": "πεζοπορία",
+        "sv": "vandring",
+        "no": "fotturer",
+        "fi": "vaeltaminen",
+        "cs": "turistika",
+        "uk": "походи",
+        "th": "การเดินป่า",
+        "vi": "đi bộ đường dài"
       } 
     },
     { 
-      "id": "camping", 
+      "id": "fishing", 
       "type": "word", 
       "text": { 
-        "en": "camping", 
-        "es": "camping", 
-        "he": "קמפינג" 
-      } 
-    },
-    { 
-      "id": "knitting", 
-      "type": "word", 
-      "text": { 
-        "en": "knitting", 
-        "es": "tejer", 
-        "he": "סריגה" 
-      } 
-    },
-    { 
-      "id": "sewing", 
-      "type": "word", 
-      "text": { 
-        "en": "sewing", 
-        "es": "costura", 
-        "he": "תפירה" 
-      } 
-    },
-    { 
-      "id": "collecting", 
-      "type": "word", 
-      "text": { 
-        "en": "collecting", 
-        "es": "coleccionar", 
-        "he": "איסוף" 
-      } 
-    },
-    { 
-      "id": "puzzles", 
-      "type": "word", 
-      "text": { 
-        "en": "puzzles", 
-        "es": "rompecabezas", 
-        "he": "פאזלים" 
+        "en": "fishing", 
+        "es": "pesca", 
+        "he": "דיג",
+        "fr": "pêche",
+        "de": "Angeln",
+        "it": "pesca",
+        "pt": "pesca",
+        "ru": "рыбалка",
+        "hi": "मछली पकड़ना",
+        "pl": "wędkarstwo",
+        "nl": "vissen",
+        "el": "ψάρεμα",
+        "sv": "fiske",
+        "no": "fiske",
+        "fi": "kalastus",
+        "cs": "rybaření",
+        "uk": "риболовля",
+        "th": "การตกปลา",
+        "vi": "câu cá"
       } 
     }
   ]

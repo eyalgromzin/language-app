@@ -4,12 +4,44 @@
   "name": { 
     "en": "Nature", 
     "es": "Naturaleza", 
-    "he": "טבע" 
+    "he": "טבע",
+    "fr": "Nature",
+    "de": "Natur",
+    "it": "Natura",
+    "pt": "Natureza",
+    "ru": "Природа",
+    "hi": "प्रकृति",
+    "pl": "Przyroda",
+    "nl": "Natuur",
+    "el": "Φύση",
+    "sv": "Natur",
+    "no": "Natur",
+    "fi": "Luonto",
+    "cs": "Příroda",
+    "uk": "Природа",
+    "th": "ธรรมชาติ",
+    "vi": "Thiên nhiên"
   },
   "description": { 
     "en": "Natural elements and landscapes", 
     "es": "Elementos naturales y paisajes", 
-    "he": "אלמנטים טבעיים ונופים" 
+    "he": "אלמנטים טבעיים ונופים",
+    "fr": "Éléments naturels et paysages",
+    "de": "Natürliche Elemente und Landschaften",
+    "it": "Elementi naturali e paesaggi",
+    "pt": "Elementos naturais e paisagens",
+    "ru": "Природные элементы и ландшафты",
+    "hi": "प्राकृतिक तत्व और परिदृश्य",
+    "pl": "Elementy naturalne i krajobrazy",
+    "nl": "Natuurlijke elementen en landschappen",
+    "el": "Φυσικά στοιχεία και τοπία",
+    "sv": "Naturliga element och landskap",
+    "no": "Naturlige element og landskap",
+    "fi": "Luonnonelementit ja maisemat",
+    "cs": "Přírodní prvky a krajiny",
+    "uk": "Природні елементи та ландшафти",
+    "th": "องค์ประกอบทางธรรมชาติและภูมิทัศน์",
+    "vi": "Các yếu tố tự nhiên và cảnh quan"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "tree", 
         "es": "árbol", 
-        "he": "עץ" 
+        "he": "עץ",
+        "fr": "arbre",
+        "de": "Baum",
+        "it": "albero",
+        "pt": "árvore",
+        "ru": "дерево",
+        "hi": "पेड़",
+        "pl": "drzewo",
+        "nl": "boom",
+        "el": "δέντρο",
+        "sv": "träd",
+        "no": "tre",
+        "fi": "puu",
+        "cs": "strom",
+        "uk": "дерево",
+        "th": "ต้นไม้",
+        "vi": "cây"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "flower", 
         "es": "flor", 
-        "he": "פרח" 
+        "he": "פרח",
+        "fr": "fleur",
+        "de": "Blume",
+        "it": "fiore",
+        "pt": "flor",
+        "ru": "цветок",
+        "hi": "फूल",
+        "pl": "kwiat",
+        "nl": "bloem",
+        "el": "λουλούδι",
+        "sv": "blomma",
+        "no": "blomst",
+        "fi": "kukka",
+        "cs": "květina",
+        "uk": "квітка",
+        "th": "ดอกไม้",
+        "vi": "hoa"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "grass", 
         "es": "hierba", 
-        "he": "דשא" 
+        "he": "דשא",
+        "fr": "herbe",
+        "de": "Gras",
+        "it": "erba",
+        "pt": "grama",
+        "ru": "трава",
+        "hi": "घास",
+        "pl": "trawa",
+        "nl": "gras",
+        "el": "γρασίδι",
+        "sv": "gräs",
+        "no": "gress",
+        "fi": "ruoho",
+        "cs": "tráva",
+        "uk": "трава",
+        "th": "หญ้า",
+        "vi": "cỏ"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "mountain", 
         "es": "montaña", 
-        "he": "הר" 
+        "he": "הר",
+        "fr": "montagne",
+        "de": "Berg",
+        "it": "montagna",
+        "pt": "montanha",
+        "ru": "гора",
+        "hi": "पहाड़",
+        "pl": "góra",
+        "nl": "berg",
+        "el": "βουνό",
+        "sv": "berg",
+        "no": "fjell",
+        "fi": "vuori",
+        "cs": "hora",
+        "uk": "гора",
+        "th": "ภูเขา",
+        "vi": "núi"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "river", 
         "es": "río", 
-        "he": "נהר" 
+        "he": "נהר",
+        "fr": "rivière",
+        "de": "Fluss",
+        "it": "fiume",
+        "pt": "rio",
+        "ru": "река",
+        "hi": "नदी",
+        "pl": "rzeka",
+        "nl": "rivier",
+        "el": "ποτάμι",
+        "sv": "flod",
+        "no": "elv",
+        "fi": "joki",
+        "cs": "řeka",
+        "uk": "ріка",
+        "th": "แม่น้ำ",
+        "vi": "sông"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "lake", 
         "es": "lago", 
-        "he": "אגם" 
+        "he": "אגם",
+        "fr": "lac",
+        "de": "See",
+        "it": "lago",
+        "pt": "lago",
+        "ru": "озеро",
+        "hi": "झील",
+        "pl": "jezioro",
+        "nl": "meer",
+        "el": "λίμνη",
+        "sv": "sjö",
+        "no": "innsjø",
+        "fi": "järvi",
+        "cs": "jezero",
+        "uk": "озеро",
+        "th": "ทะเลสาบ",
+        "vi": "hồ"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "ocean", 
         "es": "océano", 
-        "he": "אוקיינוס" 
+        "he": "אוקיינוס",
+        "fr": "océan",
+        "de": "Ozean",
+        "it": "oceano",
+        "pt": "oceano",
+        "ru": "океан",
+        "hi": "समुद्र",
+        "pl": "ocean",
+        "nl": "oceaan",
+        "el": "ωκεανός",
+        "sv": "ocean",
+        "no": "hav",
+        "fi": "meri",
+        "cs": "oceán",
+        "uk": "океан",
+        "th": "มหาสมุทร",
+        "vi": "đại dương"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "beach", 
         "es": "playa", 
-        "he": "חוף" 
+        "he": "חוף",
+        "fr": "plage",
+        "de": "Strand",
+        "it": "spiaggia",
+        "pt": "praia",
+        "ru": "пляж",
+        "hi": "समुद्र तट",
+        "pl": "plaża",
+        "nl": "strand",
+        "el": "παραλία",
+        "sv": "strand",
+        "no": "strand",
+        "fi": "ranta",
+        "cs": "pláž",
+        "uk": "пляж",
+        "th": "ชายหาด",
+        "vi": "bãi biển"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "forest", 
         "es": "bosque", 
-        "he": "יער" 
+        "he": "יער",
+        "fr": "forêt",
+        "de": "Wald",
+        "it": "foresta",
+        "pt": "floresta",
+        "ru": "лес",
+        "hi": "जंगल",
+        "pl": "las",
+        "nl": "bos",
+        "el": "δάσος",
+        "sv": "skog",
+        "no": "skog",
+        "fi": "metsä",
+        "cs": "les",
+        "uk": "ліс",
+        "th": "ป่า",
+        "vi": "rừng"
       } 
     },
     { 
@@ -99,97 +275,198 @@
       "text": { 
         "en": "desert", 
         "es": "desierto", 
-        "he": "מדבר" 
+        "he": "מדבר",
+        "fr": "désert",
+        "de": "Wüste",
+        "it": "deserto",
+        "pt": "deserto",
+        "ru": "пустыня",
+        "hi": "रेगिस्तान",
+        "pl": "pustynia",
+        "nl": "woestijn",
+        "el": "έρημος",
+        "sv": "öken",
+        "no": "ørken",
+        "fi": "aavikko",
+        "cs": "poušť",
+        "uk": "пустеля",
+        "th": "ทะเลทราย",
+        "vi": "sa mạc"
       } 
     },
     { 
-      "id": "island", 
+      "id": "sky", 
       "type": "word", 
       "text": { 
-        "en": "island", 
-        "es": "isla", 
-        "he": "אי" 
+        "en": "sky", 
+        "es": "cielo", 
+        "he": "שמיים",
+        "fr": "ciel",
+        "de": "Himmel",
+        "it": "cielo",
+        "pt": "céu",
+        "ru": "небо",
+        "hi": "आसमान",
+        "pl": "niebo",
+        "nl": "lucht",
+        "el": "ουρανός",
+        "sv": "himmel",
+        "no": "himmel",
+        "fi": "taivas",
+        "cs": "obloha",
+        "uk": "небо",
+        "th": "ท้องฟ้า",
+        "vi": "bầu trời"
       } 
     },
     { 
-      "id": "valley", 
+      "id": "sun", 
       "type": "word", 
       "text": { 
-        "en": "valley", 
-        "es": "valle", 
-        "he": "עמק" 
+        "en": "sun", 
+        "es": "sol", 
+        "he": "שמש",
+        "fr": "soleil",
+        "de": "Sonne",
+        "it": "sole",
+        "pt": "sol",
+        "ru": "солнце",
+        "hi": "सूरज",
+        "pl": "słońce",
+        "nl": "zon",
+        "el": "ήλιος",
+        "sv": "sol",
+        "no": "sol",
+        "fi": "aurinko",
+        "cs": "slunce",
+        "uk": "сонце",
+        "th": "ดวงอาทิตย์",
+        "vi": "mặt trời"
       } 
     },
     { 
-      "id": "cave", 
+      "id": "moon", 
       "type": "word", 
       "text": { 
-        "en": "cave", 
-        "es": "cueva", 
-        "he": "מערה" 
+        "en": "moon", 
+        "es": "luna", 
+        "he": "ירח",
+        "fr": "lune",
+        "de": "Mond",
+        "it": "luna",
+        "pt": "lua",
+        "ru": "луна",
+        "hi": "चंद्रमा",
+        "pl": "księżyc",
+        "nl": "maan",
+        "el": "φεγγάρι",
+        "sv": "måne",
+        "no": "måne",
+        "fi": "kuu",
+        "cs": "měsíc",
+        "uk": "місяць",
+        "th": "ดวงจันทร์",
+        "vi": "mặt trăng"
       } 
     },
     { 
-      "id": "waterfall", 
+      "id": "star", 
       "type": "word", 
       "text": { 
-        "en": "waterfall", 
-        "es": "cascada", 
-        "he": "מפל" 
+        "en": "star", 
+        "es": "estrella", 
+        "he": "כוכב",
+        "fr": "étoile",
+        "de": "Stern",
+        "it": "stella",
+        "pt": "estrela",
+        "ru": "звезда",
+        "hi": "तारा",
+        "pl": "gwiazda",
+        "nl": "ster",
+        "el": "αστέρι",
+        "sv": "stjärna",
+        "no": "stjerne",
+        "fi": "tähti",
+        "cs": "hvězda",
+        "uk": "зірка",
+        "th": "ดาว",
+        "vi": "ngôi sao"
       } 
     },
     { 
-      "id": "volcano", 
+      "id": "cloud", 
       "type": "word", 
       "text": { 
-        "en": "volcano", 
-        "es": "volcán", 
-        "he": "הר געש" 
+        "en": "cloud", 
+        "es": "nube", 
+        "he": "ענן",
+        "fr": "nuage",
+        "de": "Wolke",
+        "it": "nuvola",
+        "pt": "nuvem",
+        "ru": "облако",
+        "hi": "बादल",
+        "pl": "chmura",
+        "nl": "wolk",
+        "el": "σύννεφο",
+        "sv": "moln",
+        "no": "sky",
+        "fi": "pilvi",
+        "cs": "mrak",
+        "uk": "хмара",
+        "th": "เมฆ",
+        "vi": "mây"
       } 
     },
     { 
-      "id": "cliff", 
+      "id": "rain", 
       "type": "word", 
       "text": { 
-        "en": "cliff", 
-        "es": "acantilado", 
-        "he": "צוק" 
+        "en": "rain", 
+        "es": "lluvia", 
+        "he": "גשם",
+        "fr": "pluie",
+        "de": "Regen",
+        "it": "pioggia",
+        "pt": "chuva",
+        "ru": "дождь",
+        "hi": "बारिश",
+        "pl": "deszcz",
+        "nl": "regen",
+        "el": "βροχόπτωση",
+        "sv": "regn",
+        "no": "regn",
+        "fi": "sade",
+        "cs": "déšť",
+        "uk": "дощ",
+        "th": "ฝน",
+        "vi": "mưa"
       } 
     },
     { 
-      "id": "meadow", 
+      "id": "snow", 
       "type": "word", 
       "text": { 
-        "en": "meadow", 
-        "es": "prado", 
-        "he": "אחו" 
-      } 
-    },
-    { 
-      "id": "pond", 
-      "type": "word", 
-      "text": { 
-        "en": "pond", 
-        "es": "estanque", 
-        "he": "בריכה" 
-      } 
-    },
-    { 
-      "id": "stream", 
-      "type": "word", 
-      "text": { 
-        "en": "stream", 
-        "es": "arroyo", 
-        "he": "נחל" 
-      } 
-    },
-    { 
-      "id": "hill", 
-      "type": "word", 
-      "text": { 
-        "en": "hill", 
-        "es": "colina", 
-        "he": "גבעה" 
+        "en": "snow", 
+        "es": "nieve", 
+        "he": "שלג",
+        "fr": "neige",
+        "de": "Schnee",
+        "it": "neve",
+        "pt": "neve",
+        "ru": "снег",
+        "hi": "बर्फ",
+        "pl": "śnieg",
+        "nl": "sneeuw",
+        "el": "χιόνι",
+        "sv": "snö",
+        "no": "snø",
+        "fi": "lumi",
+        "cs": "sníh",
+        "uk": "сніг",
+        "th": "หิมะ",
+        "vi": "tuyết"
       } 
     }
   ]

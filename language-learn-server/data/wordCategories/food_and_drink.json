@@ -4,12 +4,44 @@
   "name": {
     "en": "Food & Drink",
     "es": "Comida y bebida",
-    "he": "אוכל ושתייה"
+    "he": "אוכל ושתייה",
+    "fr": "Nourriture et boissons",
+    "de": "Essen und Trinken",
+    "it": "Cibo e bevande",
+    "pt": "Comida e bebida",
+    "ru": "Еда и напитки",
+    "hi": "भोजन और पेय",
+    "pl": "Jedzenie i napoje",
+    "nl": "Eten en drinken",
+    "el": "Τροφή και ποτά",
+    "sv": "Mat och dryck",
+    "no": "Mat og drikke",
+    "fi": "Ruoka ja juoma",
+    "cs": "Jídlo a pití",
+    "uk": "Їжа та напої",
+    "th": "อาหารและเครื่องดื่ม",
+    "vi": "Thức ăn và đồ uống"
   },
   "description": {
     "en": "Everyday food and beverages",
     "es": "Comidas y bebidas cotidianas",
-    "he": "מזון ומשקאות יומיומיים"
+    "he": "מזון ומשקאות יומיומיים",
+    "fr": "Nourriture et boissons de tous les jours",
+    "de": "Alltägliche Lebensmittel und Getränke",
+    "it": "Cibo e bevande quotidiane",
+    "pt": "Comidas e bebidas do dia a dia",
+    "ru": "Повседневная еда и напитки",
+    "hi": "रोजमर्रा का भोजन और पेय",
+    "pl": "Codzienne jedzenie i napoje",
+    "nl": "Dagelijkse voeding en dranken",
+    "el": "Καθημερινή τροφή και ποτά",
+    "sv": "Vardagsmat och drycker",
+    "no": "Hverdagsmat og drikke",
+    "fi": "Arkipäiväinen ruoka ja juoma",
+    "cs": "Každodenní jídlo a pití",
+    "uk": "Щоденна їжа та напої",
+    "th": "อาหารและเครื่องดื่มประจำวัน",
+    "vi": "Thức ăn và đồ uống hàng ngày"
   },
   "items": [
     {
@@ -18,12 +50,44 @@
       "text": {
         "en": "apple",
         "es": "manzana",
-        "he": "תפוח"
+        "he": "תפוח",
+        "fr": "pomme",
+        "de": "Apfel",
+        "it": "mela",
+        "pt": "maçã",
+        "ru": "яблоко",
+        "hi": "सेब",
+        "pl": "jabłko",
+        "nl": "appel",
+        "el": "μήλο",
+        "sv": "äpple",
+        "no": "eple",
+        "fi": "omena",
+        "cs": "jablko",
+        "uk": "яблуко",
+        "th": "แอปเปิ้ล",
+        "vi": "táo"
       },
       "example": {
         "en": "I eat an apple every day.",
         "es": "Como una manzana todos los días.",
-        "he": "אני אוכל תפוח כל יום."
+        "he": "אני אוכל תפוח כל יום.",
+        "fr": "Je mange une pomme tous les jours.",
+        "de": "Ich esse jeden Tag einen Apfel.",
+        "it": "Mangio una mela ogni giorno.",
+        "pt": "Eu como uma maçã todos os dias.",
+        "ru": "Я ем яблоко каждый день.",
+        "hi": "मैं रोज एक सेब खाता हूं।",
+        "pl": "Jem jabłko każdego dnia.",
+        "nl": "Ik eet elke dag een appel.",
+        "el": "Τρώω ένα μήλο κάθε μέρα.",
+        "sv": "Jag äter ett äpple varje dag.",
+        "no": "Jeg spiser et eple hver dag.",
+        "fi": "Syön omenan joka päivä.",
+        "cs": "Jím jablko každý den.",
+        "uk": "Я їм яблуко кожного дня.",
+        "th": "ฉันกินแอปเปิ้ลทุกวัน",
+        "vi": "Tôi ăn một quả táo mỗi ngày."
       }
     },
     {
@@ -32,12 +96,44 @@
       "text": {
         "en": "water",
         "es": "agua",
-        "he": "מים"
+        "he": "מים",
+        "fr": "eau",
+        "de": "Wasser",
+        "it": "acqua",
+        "pt": "água",
+        "ru": "вода",
+        "hi": "पानी",
+        "pl": "woda",
+        "nl": "water",
+        "el": "νερό",
+        "sv": "vatten",
+        "no": "vann",
+        "fi": "vesi",
+        "cs": "voda",
+        "uk": "вода",
+        "th": "น้ำ",
+        "vi": "nước"
       },
       "example": {
         "en": "Can I have some water, please?",
         "es": "¿Puedo tomar un poco de agua, por favor?",
-        "he": "אפשר לקבל קצת מים, בבקשה?"
+        "he": "אפשר לקבל קצת מים, בבקשה?",
+        "fr": "Puis-je avoir de l'eau, s'il vous plaît ?",
+        "de": "Kann ich bitte etwas Wasser haben?",
+        "it": "Posso avere dell'acqua, per favore?",
+        "pt": "Posso ter um pouco de água, por favor?",
+        "ru": "Могу ли я получить немного воды, пожалуйста?",
+        "hi": "क्या मैं कुछ पानी ले सकता हूं, कृपया?",
+        "pl": "Czy mogę dostać trochę wody, proszę?",
+        "nl": "Kan ik wat water hebben, alstublieft?",
+        "el": "Μπορώ να έχω λίγο νερό, παρακαλώ;",
+        "sv": "Kan jag få lite vatten, tack?",
+        "no": "Kan jeg få litt vann, vær så snill?",
+        "fi": "Saisinko vähän vettä, kiitos?",
+        "cs": "Můžu mít trochu vody, prosím?",
+        "uk": "Чи можу я отримати трохи води, будь ласка?",
+        "th": "ฉันสามารถมีน้ำได้ไหม กรุณา?",
+        "vi": "Tôi có thể có một chút nước không, vui lòng?"
       }
     },
     {
@@ -46,7 +142,23 @@
       "text": {
         "en": "I would like a coffee, please.",
         "es": "Quisiera un café, por favor.",
-        "he": "הייתי רוצה קפה, בבקשה."
+        "he": "הייתי רוצה קפה, בבקשה.",
+        "fr": "Je voudrais un café, s'il vous plaît.",
+        "de": "Ich hätte gerne einen Kaffee, bitte.",
+        "it": "Vorrei un caffè, per favore.",
+        "pt": "Eu gostaria de um café, por favor.",
+        "ru": "Я хотел бы кофе, пожалуйста.",
+        "hi": "मैं एक कॉफी चाहूंगा, कृपया।",
+        "pl": "Chciałbym kawę, proszę.",
+        "nl": "Ik zou graag een koffie willen, alstublieft.",
+        "el": "Θα ήθελα έναν καφέ, παρακαλώ.",
+        "sv": "Jag skulle vilja ha en kaffe, tack.",
+        "no": "Jeg vil gjerne ha en kaffe, vær så snill.",
+        "fi": "Haluaisin kahvin, kiitos.",
+        "cs": "Chtěl bych kávu, prosím.",
+        "uk": "Я хотів би каву, будь ласка.",
+        "th": "ฉันต้องการกาแฟ กรุณา",
+        "vi": "Tôi muốn một ly cà phê, vui lòng."
       }
     },
     {
@@ -55,7 +167,23 @@
       "text": {
         "en": "The food is delicious.",
         "es": "La comida está deliciosa.",
-        "he": "האוכל טעים."
+        "he": "האוכל טעים.",
+        "fr": "La nourriture est délicieuse.",
+        "de": "Das Essen ist köstlich.",
+        "it": "Il cibo è delizioso.",
+        "pt": "A comida está deliciosa.",
+        "ru": "Еда вкусная.",
+        "hi": "भोजन स्वादिष्ट है।",
+        "pl": "Jedzenie jest pyszne.",
+        "nl": "Het eten is heerlijk.",
+        "el": "Το φαγητό είναι νόστιμο.",
+        "sv": "Maten är utsökt.",
+        "no": "Maten er deilig.",
+        "fi": "Ruoka on herkullista.",
+        "cs": "Jídlo je výborné.",
+        "uk": "Їжа смачна.",
+        "th": "อาหารอร่อย",
+        "vi": "Thức ăn ngon."
       }
     },
     {
@@ -64,12 +192,44 @@
       "text": {
         "en": "bread",
         "es": "pan",
-        "he": "לחם"
+        "he": "לחם",
+        "fr": "pain",
+        "de": "Brot",
+        "it": "pane",
+        "pt": "pão",
+        "ru": "хлеб",
+        "hi": "रोटी",
+        "pl": "chleb",
+        "nl": "brood",
+        "el": "ψωμί",
+        "sv": "bröd",
+        "no": "brød",
+        "fi": "leipä",
+        "cs": "chléb",
+        "uk": "хліб",
+        "th": "ขนมปัง",
+        "vi": "bánh mì"
       },
       "example": {
         "en": "I need to buy bread.",
         "es": "Necesito comprar pan.",
-        "he": "אני צריך לקנות לחם."
+        "he": "אני צריך לקנות לחם.",
+        "fr": "J'ai besoin d'acheter du pain.",
+        "de": "Ich muss Brot kaufen.",
+        "it": "Devo comprare il pane.",
+        "pt": "Preciso comprar pão.",
+        "ru": "Мне нужно купить хлеб.",
+        "hi": "मुझे रोटी खरीदनी है।",
+        "pl": "Muszę kupić chleb.",
+        "nl": "Ik moet brood kopen.",
+        "el": "Χρειάζομαι να αγοράσω ψωμί.",
+        "sv": "Jag behöver köpa bröd.",
+        "no": "Jeg trenger å kjøpe brød.",
+        "fi": "Minun täytyy ostaa leipää.",
+        "cs": "Musím koupit chléb.",
+        "uk": "Мені потрібно купити хліб.",
+        "th": "ฉันต้องซื้อขนมปัง",
+        "vi": "Tôi cần mua bánh mì."
       }
     },
     {
@@ -78,12 +238,44 @@
       "text": {
         "en": "milk",
         "es": "leche",
-        "he": "חלב"
+        "he": "חלב",
+        "fr": "lait",
+        "de": "Milch",
+        "it": "latte",
+        "pt": "leite",
+        "ru": "молоко",
+        "hi": "दूध",
+        "pl": "mleko",
+        "nl": "melk",
+        "el": "γάλα",
+        "sv": "mjölk",
+        "no": "melk",
+        "fi": "maito",
+        "cs": "mléko",
+        "uk": "молоко",
+        "th": "นม",
+        "vi": "sữa"
       },
       "example": {
         "en": "Do you drink milk?",
         "es": "¿Bebes leche?",
-        "he": "אתה שותה חלב?"
+        "he": "אתה שותה חלב?",
+        "fr": "Buvez-vous du lait ?",
+        "de": "Trinkst du Milch?",
+        "it": "Bevi latte?",
+        "pt": "Você bebe leite?",
+        "ru": "Вы пьете молоко?",
+        "hi": "क्या आप दूध पीते हैं?",
+        "pl": "Czy pijesz mleko?",
+        "nl": "Drinkt u melk?",
+        "el": "Πίνετε γάλα;",
+        "sv": "Dricker du mjölk?",
+        "no": "Drikker du melk?",
+        "fi": "Juotko maitoa?",
+        "cs": "Pijete mléko?",
+        "uk": "Ви п'єте молоко?",
+        "th": "คุณดื่มนมไหม?",
+        "vi": "Bạn có uống sữa không?"
       }
     },
     {
@@ -92,12 +284,44 @@
       "text": {
         "en": "cheese",
         "es": "queso",
-        "he": "גבינה"
+        "he": "גבינה",
+        "fr": "fromage",
+        "de": "Käse",
+        "it": "formaggio",
+        "pt": "queijo",
+        "ru": "сыр",
+        "hi": "पनीर",
+        "pl": "ser",
+        "nl": "kaas",
+        "el": "τυρί",
+        "sv": "ost",
+        "no": "ost",
+        "fi": "juusto",
+        "cs": "sýr",
+        "uk": "сир",
+        "th": "ชีส",
+        "vi": "phô mai"
       },
       "example": {
         "en": "I love cheese pizza.",
         "es": "Me encanta la pizza de queso.",
-        "he": "אני אוהב פיצה גבינה."
+        "he": "אני אוהב פיצה גבינה.",
+        "fr": "J'adore la pizza au fromage.",
+        "de": "Ich liebe Käsepizza.",
+        "it": "Adoro la pizza al formaggio.",
+        "pt": "Eu adoro pizza de queijo.",
+        "ru": "Я люблю пиццу с сыром.",
+        "hi": "मुझे पनीर पिज्जा पसंद है।",
+        "pl": "Uwielbiam pizzę z serem.",
+        "nl": "Ik hou van kaaspizza.",
+        "el": "Λατρεύω την πίτσα με τυρί.",
+        "sv": "Jag älskar ostpizza.",
+        "no": "Jeg elsker ostepizza.",
+        "fi": "Rakastan juustopitsaa.",
+        "cs": "Miluji sýrovou pizzu.",
+        "uk": "Я люблю піцу з сиром.",
+        "th": "ฉันชอบพิซซ่าชีส",
+        "vi": "Tôi thích pizza phô mai."
       }
     },
     {
@@ -106,12 +330,44 @@
       "text": {
         "en": "rice",
         "es": "arroz",
-        "he": "אורז"
+        "he": "אורז",
+        "fr": "riz",
+        "de": "Reis",
+        "it": "riso",
+        "pt": "arroz",
+        "ru": "рис",
+        "hi": "चावल",
+        "pl": "ryż",
+        "nl": "rijst",
+        "el": "ρύζι",
+        "sv": "ris",
+        "no": "ris",
+        "fi": "riisi",
+        "cs": "ris",
+        "uk": "рис",
+        "th": "ข้าว",
+        "vi": "gạo"
       },
       "example": {
         "en": "Rice is a staple food.",
         "es": "El arroz es un alimento básico.",
-        "he": "אורז הוא מזון בסיסי."
+        "he": "אורז הוא מזון בסיסי.",
+        "fr": "Le riz est un aliment de base.",
+        "de": "Reis ist ein Grundnahrungsmittel.",
+        "it": "Il riso è un alimento di base.",
+        "pt": "O arroz é um alimento básico.",
+        "ru": "Рис - это основной продукт питания.",
+        "hi": "चावल एक आधारभूत भोजन है।",
+        "pl": "Ryż jest podstawowym produktem żywności.",
+        "nl": "Rijst is een basisvoeding.",
+        "el": "Το ρύζι είναι βασικό τροφίμιο.",
+        "sv": "Ris är ett grundläggande livsmedel.",
+        "no": "Ris er et grunnnæringsmiddel.",
+        "fi": "Ris on perusruoka.",
+        "cs": "Rýže je základní potravina.",
+        "uk": "Рис - це базовий продукт харчування.",
+        "th": "ข้าวเป็นอาหารพื้นฐาน",
+        "vi": "Gạo là một món ăn cơ bản."
       }
     },
     {
@@ -120,12 +376,44 @@
       "text": {
         "en": "chicken",
         "es": "pollo",
-        "he": "עוף"
+        "he": "עוף",
+        "fr": "poulet",
+        "de": "Huhn",
+        "it": "pollo",
+        "pt": "frango",
+        "ru": "курица",
+        "hi": "चिकन",
+        "pl": "kurczak",
+        "nl": "kip",
+        "el": "κοτόπουλο",
+        "sv": "kyckling",
+        "no": "kylling",
+        "fi": "kana",
+        "cs": "kura",
+        "uk": "курка",
+        "th": "ไก่",
+        "vi": "gà"
       },
       "example": {
         "en": "I prefer chicken to beef.",
         "es": "Prefiero pollo a ternera.",
-        "he": "אני מעדיף עוף על פני בקר."
+        "he": "אני מעדיף עוף על פני בקר.",
+        "fr": "Je préfère le poulet à la viande.",
+        "de": "Ich bevorzuge das Huhn gegen Rindfleisch.",
+        "it": "Preferisco il pollo rispetto al manzo.",
+        "pt": "Prefiro frango à carne.",
+        "ru": "Я предпочитаю курицу перед говядиной.",
+        "hi": "मैं चिकन की तुलना में गाय पसंद करता हूं।",
+        "pl": "Wolię kurczaka zamiast wołowiny.",
+        "nl": "Ik prefere kip boerderij.",
+        "el": "Προτιμώ το κοτόπουλο από το βοδόλακι.",
+        "sv": "Jag föredrar kyckling jämfört med nötkött.",
+        "no": "Jeg foretrekker kylling fremfor biff.",
+        "fi": "Minä suosittelen kanaa verrattuna naudanlihaan.",
+        "cs": "Miluju kura oproti hovězímu masu.",
+        "uk": "Я люблю курку порівняно з бараниною.",
+        "th": "ฉันชอบไก่มากกว่าวัว",
+        "vi": "Tôi thích gà hơn bò."
       }
     },
     {
@@ -134,12 +422,44 @@
       "text": {
         "en": "fish",
         "es": "pescado",
-        "he": "דג"
+        "he": "דג",
+        "fr": "poisson",
+        "de": "Fisch",
+        "it": "pesce",
+        "pt": "peixe",
+        "ru": "рыба",
+        "hi": "मछली",
+        "pl": "ryba",
+        "nl": "vis",
+        "el": "γαλαξίας",
+        "sv": "fisk",
+        "no": "fisk",
+        "fi": "kala",
+        "cs": "ryba",
+        "uk": "риба",
+        "th": "ปลา",
+        "vi": "cá"
       },
       "example": {
         "en": "Fish is healthy food.",
         "es": "El pescado es comida saludable.",
-        "he": "דג הוא מזון בריא."
+        "he": "דג הוא מזון בריא.",
+        "fr": "Le poisson est un aliment sain.",
+        "de": "Fisch ist gesundes Essen.",
+        "it": "Il pesce è comida sana.",
+        "pt": "O peixe é comida saudável.",
+        "ru": "Рыба - это полезное питание.",
+        "hi": "मछली एक स्वस्थ भोजन है।",
+        "pl": "Ryba jest zdrowym jedzeniem.",
+        "nl": "Vis is gezond voedsel.",
+        "el": "Η γαλαξίας είναι υγιεινό τρόφιμο.",
+        "sv": "Fisk är hälsosamt mat.",
+        "no": "Fisk er et sunt næringsmiddel.",
+        "fi": "Kala on terveellinen ruoka.",
+        "cs": "Ryba je zdravá potravina.",
+        "uk": "Риба - це здорове харчування.",
+        "th": "ปลาเป็นอาหารที่ดีสุขภาพ",
+        "vi": "Cá là một món ăn lành mạnh."
       }
     },
     {
@@ -148,12 +468,44 @@
       "text": {
         "en": "vegetables",
         "es": "verduras",
-        "he": "ירקות"
+        "he": "ירקות",
+        "fr": "légumes",
+        "de": "Gemüse",
+        "it": "verdura",
+        "pt": "legumes",
+        "ru": "овощи",
+        "hi": "फल",
+        "pl": "warzywa",
+        "nl": "groenten",
+        "el": "λαχανικά",
+        "sv": "grönsaker",
+        "no": "grønnsaker",
+        "fi": "viljat",
+        "cs": "zelenina",
+        "uk": "зелень",
+        "th": "ผัก",
+        "vi": "rau củ"
       },
       "example": {
         "en": "Eat your vegetables.",
         "es": "Come tus verduras.",
-        "he": "אכל את הירקות שלך."
+        "he": "אכל את הירקות שלך.",
+        "fr": "Mangez vos légumes.",
+        "de": "Essen Sie Ihre Gemüse.",
+        "it": "Mangiate le vostre verdure.",
+        "pt": "Coma suas verduras.",
+        "ru": "Ешьте овощи.",
+        "hi": "फल खाओ।",
+        "pl": "Jedz warzywa.",
+        "nl": "Eet uw groenten.",
+        "el": "Τρώτε τα λαχανικά σας.",
+        "sv": "Ät dina grönsaker.",
+        "no": "Spis grønnsaker.",
+        "fi": "Syö suuret.",
+        "cs": "Jídlo zeleniny.",
+        "uk": "Їжте зелень.",
+        "th": "กินผัก",
+        "vi": "Ăn rau củ."
       }
     },
     {
@@ -162,12 +514,44 @@
       "text": {
         "en": "fruit",
         "es": "fruta",
-        "he": "פירות"
+        "he": "פירות",
+        "fr": "fruit",
+        "de": "Obst",
+        "it": "frutta",
+        "pt": "fruta",
+        "ru": "фрукты",
+        "hi": "फल",
+        "pl": "owoc",
+        "nl": "fruit",
+        "el": "φρούτα",
+        "sv": "frukt",
+        "no": "frukt",
+        "fi": "hedelämä",
+        "cs": "ovocí",
+        "uk": "фрукти",
+        "th": "ผล",
+        "vi": "trái cây"
       },
       "example": {
         "en": "Fruit is good for you.",
         "es": "La fruta es buena para ti.",
-        "he": "פירות טובים בשבילך."
+        "he": "פירות טובים בשבילך.",
+        "fr": "Les fruits sont bons pour vous.",
+        "de": "Obst ist gut für Sie.",
+        "it": "La frutta è buona per te.",
+        "pt": "A fruta é boa para você.",
+        "ru": "Фрукты полезны для вас.",
+        "hi": "फल आपके लिए अच्छा है।",
+        "pl": "Owoc jest dobry dla ciebie.",
+        "nl": "Fruit is goed voor jou.",
+        "el": "Τα φρούτα είναι καλά για εσάς.",
+        "sv": "Frukt är bra för dig.",
+        "no": "Frukt er godt for deg.",
+        "fi": "Hedelämä on hyväksi sinulle.",
+        "cs": "Ovocí je dobré pro vás.",
+        "uk": "Фрукти - це гарні для вас.",
+        "th": "ผล - เป็นสิ่งที่ดีสำหรับคุณ",
+        "vi": "Trái cây - là món tốt cho bạn."
       }
     },
     {
@@ -176,12 +560,44 @@
       "text": {
         "en": "soup",
         "es": "sopa",
-        "he": "מרק"
+        "he": "מרק",
+        "fr": "soupe",
+        "de": "Suppe",
+        "it": "soup",
+        "pt": "sopa",
+        "ru": "суп",
+        "hi": "सूप",
+        "pl": "zupa",
+        "nl": "soep",
+        "el": "σούπα",
+        "sv": "soppa",
+        "no": "suppe",
+        "fi": "soppa",
+        "cs": "polévka",
+        "uk": "суп",
+        "th": "ต้มยำ",
+        "vi": "sup"
       },
       "example": {
         "en": "This soup is hot.",
         "es": "Esta sopa está caliente.",
-        "he": "המרק הזה חם."
+        "he": "המרק הזה חם.",
+        "fr": "Cette soupe est chaude.",
+        "de": "Diese Suppe ist heiß.",
+        "it": "Questa sopa è calda.",
+        "pt": "Esta sopa está quente.",
+        "ru": "Этот суп горячий.",
+        "hi": "यह सूप गर्म है।",
+        "pl": "Ten zupa jest gorąca.",
+        "nl": "Deze soep is heet.",
+        "el": "Αυτή η σούπα είναι ζεστή.",
+        "sv": "Den här soppan är varm.",
+        "no": "Denne suppen er varm.",
+        "fi": "Tämä suppa on kuuma.",
+        "cs": "Tato polévka je teplá.",
+        "uk": "Це суп гарячий.",
+        "th": "ต้มยำอร่อย",
+        "vi": "Sup ngon."
       }
     },
     {
@@ -190,12 +606,44 @@
       "text": {
         "en": "salad",
         "es": "ensalada",
-        "he": "סלט"
+        "he": "סלט",
+        "fr": "salade",
+        "de": "Salat",
+        "it": "insalata",
+        "pt": "salada",
+        "ru": "салат",
+        "hi": "सलाद",
+        "pl": "sałatka",
+        "nl": "salade",
+        "el": "σαλάτα",
+        "sv": "sallad",
+        "no": "salat",
+        "fi": "salat",
+        "cs": "salát",
+        "uk": "салат",
+        "th": "สลาก",
+        "vi": "salad"
       },
       "example": {
         "en": "I'll have a green salad.",
         "es": "Tomaré una ensalada verde.",
-        "he": "אני אקח סלט ירוק."
+        "he": "אני אקח סלט ירוק.",
+        "fr": "Je prendrai une salade verte.",
+        "de": "Ich nehme einen grünen Salat.",
+        "it": "Prendo una insalata verde.",
+        "pt": "Vou ter uma salada verde.",
+        "ru": "Я возьму салат.",
+        "hi": "मैं एक हरी सलाद ले जाता हूं।",
+        "pl": "Biorę sałatkę zieloną.",
+        "nl": "Ik neem een groene salade.",
+        "el": "Θα πάρω μια πράσινη σαλάτα.",
+        "sv": "Jag tar en grön sallad.",
+        "no": "Jeg tar en grønn salat.",
+        "fi": "Minä otan salat.",
+        "cs": "Jám salát.",
+        "uk": "Я бере салат.",
+        "th": "ฉันจะมีสลากสีเขียว",
+        "vi": "Tôi sẽ có một salad xanh."
       }
     },
     {
@@ -204,12 +652,44 @@
       "text": {
         "en": "juice",
         "es": "jugo",
-        "he": "מיץ"
+        "he": "מיץ",
+        "fr": "jus",
+        "de": "Saft",
+        "it": "succo",
+        "pt": "suco",
+        "ru": "сок",
+        "hi": "जूस",
+        "pl": "sok",
+        "nl": "saus",
+        "el": "ρόδι",
+        "sv": "sodavatten",
+        "no": "saus",
+        "fi": "sokeri",
+        "cs": "džus",
+        "uk": "сок",
+        "th": "น้ำส้ม",
+        "vi": "nước é"
       },
       "example": {
         "en": "Orange juice is refreshing.",
         "es": "El jugo de naranja es refrescante.",
-        "he": "מיץ תפוזים מרענן."
+        "he": "מיץ תפוזים מרענן.",
+        "fr": "Le jus d'orange est rafraîchissant.",
+        "de": "Orangensaft ist erfrischend.",
+        "it": "Il succo d'arancia è rinfrescante.",
+        "pt": "O suco de laranja é refrescante.",
+        "ru": "Апельсиновый сок освежает.",
+        "hi": "सजी संतरे का जूस शुद्ध है।",
+        "pl": "Sok z pomarańczy jest odświeżający.",
+        "nl": "Saus van sinaasappel is verfrissend.",
+        "el": "Το ρόδι είναι ανακουφιστικό.",
+        "sv": "Sodavatten är uppvärmande.",
+        "no": "Saus av appelsin er oppvarmende.",
+        "fi": "Sokeri on kuuma.",
+        "cs": "Džus je teplý.",
+        "uk": "Сок - це гаряче.",
+        "th": "น้ำส้ม - เป็นสิ่งที่ระลอก",
+        "vi": "Nước é - là món tốt."
       }
     },
     {
@@ -218,12 +698,44 @@
       "text": {
         "en": "tea",
         "es": "té",
-        "he": "תה"
+        "he": "תה",
+        "fr": "thé",
+        "de": "Tee",
+        "it": "tè",
+        "pt": "chá",
+        "ru": "чай",
+        "hi": "चाय",
+        "pl": "herbata",
+        "nl": "thee",
+        "el": "χαί",
+        "sv": "te",
+        "no": "te",
+        "fi": "tee",
+        "cs": "čaj",
+        "uk": "чай",
+        "th": "ชา",
+        "vi": "trà"
       },
       "example": {
         "en": "Would you like some tea?",
         "es": "¿Te gustaría un poco de té?",
-        "he": "האם תרצה קצת תה?"
+        "he": "האם תרצה קצת תה?",
+        "fr": "Voulez-vous du thé ?",
+        "de": "Möchten Sie Tee?",
+        "it": "Vuoi del tè ?",
+        "pt": "Você gostaria de um chá ?",
+        "ru": "Хотите чай?",
+        "hi": "क्या आप कुछ चाय पीना चाहते हैं?",
+        "pl": "Czy wolisz herbatę ?",
+        "nl": "Wil je thee ?",
+        "el": "Θα ήθελα χαί;",
+        "sv": "Vill du ha te ?",
+        "no": "Vil du ha te ?",
+        "fi": "Haluatko teet ?",
+        "cs": "Chcete čaj ?",
+        "uk": "Бажаєте чай ?",
+        "th": "คุณต้องการชา ?",
+        "vi": "Bạn có muốn uống trà không?"
       }
     },
     {
@@ -232,7 +744,23 @@
       "text": {
         "en": "I am hungry.",
         "es": "Tengo hambre.",
-        "he": "אני רעב."
+        "he": "אני רעב.",
+        "fr": "Je suis affamé.",
+        "de": "Ich bin hungrig.",
+        "it": "Sono affamato.",
+        "pt": "Estou com fome.",
+        "ru": "Я голоден.",
+        "hi": "मैं भूखा हूं।",
+        "pl": "Jestem głodny.",
+        "nl": "Ik ben hongerig.",
+        "el": "Είμαι κωρυφή.",
+        "sv": "Jag är hungrig.",
+        "no": "Jeg er sulten.",
+        "fi": "Olen nälkäinen.",
+        "cs": "Jsem hladový.",
+        "uk": "Я голодний.",
+        "th": "ฉันอิ่ม",
+        "vi": "Tôi đói."
       }
     },
     {
@@ -241,7 +769,23 @@
       "text": {
         "en": "What is for dinner?",
         "es": "¿Qué hay para cenar?",
-        "he": "מה יש לארוחת ערב?"
+        "he": "מה יש לארוחת ערב?",
+        "fr": "Qu'est-ce que vous allez manger ce soir ?",
+        "de": "Was gibt es zum Abendessen?",
+        "it": "Cosa mangierai stasera?",
+        "pt": "O que você vai comer hoje à noite ?",
+        "ru": "Что будет на ужин?",
+        "hi": "शाम का भोजन क्या है?",
+        "pl": "Co zjem na obiad?",
+        "nl": "Wat ga je eten avochtend?",
+        "el": "Τι θα φάτε στο βράδυ?",
+        "sv": "Vad äter du på kvällen?",
+        "no": "Hva spiser du på kvelden?",
+        "fi": "Mitä syötät illalla?",
+        "cs": "Co jíteš na večeři?",
+        "uk": "Що ви їсте на вечерю?",
+        "th": "คุณกินอาหารเย็นอะไร?",
+        "vi": "Bạn ăn cơm tối gì?"
       }
     },
     {
@@ -250,7 +794,23 @@
       "text": {
         "en": "This tastes good.",
         "es": "Esto sabe bien.",
-        "he": "זה טעים."
+        "he": "זה טעים.",
+        "fr": "Cela a un bon goût.",
+        "de": "Das schmeckt gut.",
+        "it": "Questo è buono.",
+        "pt": "Isso é bom.",
+        "ru": "Это вкусно.",
+        "hi": "यह स्वादिष्ट है।",
+        "pl": "To jest dobre.",
+        "nl": "Dit smakt goed.",
+        "el": "Αυτό γευτεί καλά.",
+        "sv": "Detta smakar bra.",
+        "no": "Dette smaker bra.",
+        "fi": "Tämä maistuu hyvin.",
+        "cs": "Toto chutná dobře.",
+        "uk": "Це смачно.",
+        "th": "อาหารอร่อย",
+        "vi": "Thức ăn ngon."
       }
     },
     {
@@ -259,7 +819,23 @@
       "text": {
         "en": "I am thirsty.",
         "es": "Tengo sed.",
-        "he": "אני צמא."
+        "he": "אני צמא.",
+        "fr": "Je suis assailli.",
+        "de": "Ich bin durstig.",
+        "it": "Sono affamato.",
+        "pt": "Estou com sede.",
+        "ru": "Я хочу пить.",
+        "hi": "मैं थूक हूं।",
+        "pl": "Jestem pragnący.",
+        "nl": "Ik ben dorstig.",
+        "el": "Είμαι διψωμένος.",
+        "sv": "Jag är törstig.",
+        "no": "Jeg er tørstig.",
+        "fi": "Olen nälkäinen.",
+        "cs": "Jsem žízeň.",
+        "uk": "Я хочу пити.",
+        "th": "ฉันต้องการดื่ม",
+        "vi": "Tôi thèm uống."
       }
     }
   ]

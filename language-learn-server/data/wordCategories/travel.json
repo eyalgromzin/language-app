@@ -4,12 +4,44 @@
   "name": {
     "en": "Travel",
     "es": "Viajes",
-    "he": "נסיעות"
+    "he": "נסיעות",
+    "fr": "Voyage",
+    "de": "Reisen",
+    "it": "Viaggio",
+    "pt": "Viagem",
+    "ru": "Путешествие",
+    "hi": "यात्रा",
+    "pl": "Podróż",
+    "nl": "Reizen",
+    "el": "Ταξίδι",
+    "sv": "Resa",
+    "no": "Reise",
+    "fi": "Matkustus",
+    "cs": "Cestování",
+    "uk": "Подорож",
+    "th": "การเดินทาง",
+    "vi": "Du lịch"
   },
   "description": {
     "en": "Useful phrases for getting around",
     "es": "Frases útiles para moverse",
-    "he": "ביטויים שימושיים להתמצאות"
+    "he": "ביטויים שימושיים להתמצאות",
+    "fr": "Phrases utiles pour se déplacer",
+    "de": "Nützliche Sätze zum Herumkommen",
+    "it": "Frasi utili per muoversi",
+    "pt": "Frases úteis para se locomover",
+    "ru": "Полезные фразы для передвижения",
+    "hi": "घूमने के लिए उपयोगी वाक्य",
+    "pl": "Przydatne zwroty do poruszania się",
+    "nl": "Handige zinnen om rond te komen",
+    "el": "Χρήσιμες φράσεις για να κινηθείτε",
+    "sv": "Användbara fraser för att komma runt",
+    "no": "Nyttige setninger for å komme rundt",
+    "fi": "Hyödyllisiä lauseita liikkumiseen",
+    "cs": "Užitečné fráze pro pohyb",
+    "uk": "Корисні фрази для пересування",
+    "th": "วลีที่มีประโยชน์สำหรับการเดินทาง",
+    "vi": "Những cụm từ hữu ích để di chuyển"
   },
   "items": [
     {
@@ -18,12 +50,44 @@
       "text": {
         "en": "ticket",
         "es": "boleto",
-        "he": "כרטיס"
+        "he": "כרטיס",
+        "fr": "billet",
+        "de": "Fahrkarte",
+        "it": "biglietto",
+        "pt": "bilhete",
+        "ru": "билет",
+        "hi": "टिकट",
+        "pl": "bilet",
+        "nl": "kaartje",
+        "el": "εισιτήριο",
+        "sv": "biljett",
+        "no": "billett",
+        "fi": "lippu",
+        "cs": "jízdenka",
+        "uk": "квиток",
+        "th": "ตั๋ว",
+        "vi": "vé"
       },
       "example": {
         "en": "Where can I buy a train ticket?",
         "es": "¿Dónde puedo comprar un boleto de tren?",
-        "he": "איפה אפשר לקנות כרטיס רכבת?"
+        "he": "איפה אפשר לקנות כרטיס רכבת?",
+        "fr": "Où puis-je acheter un billet de train ?",
+        "de": "Wo kann ich eine Zugfahrkarte kaufen?",
+        "it": "Dove posso comprare un biglietto del treno?",
+        "pt": "Onde posso comprar um bilhete de trem?",
+        "ru": "Где я могу купить билет на поезд?",
+        "hi": "मैं ट्रेन टिकट कहां से खरीद सकता हूं?",
+        "pl": "Gdzie mogę kupić bilet na pociąg?",
+        "nl": "Waar kan ik een treinkaartje kopen?",
+        "el": "Πού μπορώ να αγοράσω εισιτήριο τρένου;",
+        "sv": "Var kan jag köpa en tågbiljett?",
+        "no": "Hvor kan jeg kjøpe en togbillett?",
+        "fi": "Mistä voin ostaa junalipun?",
+        "cs": "Kde mohu koupit jízdenku na vlak?",
+        "uk": "Де я можу купити квиток на поїзд?",
+        "th": "ฉันสามารถซื้อตั๋วรถไฟได้ที่ไหน?",
+        "vi": "Tôi có thể mua vé tàu ở đâu?"
       }
     },
     {
@@ -32,7 +96,23 @@
       "text": {
         "en": "Where is the station?",
         "es": "¿Dónde está la estación?",
-        "he": "איפה התחנה?"
+        "he": "איפה התחנה?",
+        "fr": "Où est la gare ?",
+        "de": "Wo ist der Bahnhof?",
+        "it": "Dove è la stazione?",
+        "pt": "Onde fica a estação?",
+        "ru": "Где находится станция?",
+        "hi": "स्टेशन कहाँ है?",
+        "pl": "Gdzie jest stacja?",
+        "nl": "Waar is het station?",
+        "el": "Πού είναι ο σταθμός;",
+        "sv": "Var är stationen?",
+        "no": "Hvor er stasjonen?",
+        "fi": "Missä on asema?",
+        "cs": "Kde je stanice?",
+        "uk": "Де знаходиться станція?",
+        "th": "สถานีอยู่ที่ไหน?",
+        "vi": "Nhà ga ở đâu?"
       }
     },
     {
@@ -41,7 +121,23 @@
       "text": {
         "en": "I have a reservation.",
         "es": "Tengo una reserva.",
-        "he": "יש לי הזמנה."
+        "he": "יש לי הזמנה.",
+        "fr": "J'ai une réservation.",
+        "de": "Ich habe eine Reservierung.",
+        "it": "Ho una prenotazione.",
+        "pt": "Tenho uma reserva.",
+        "ru": "У меня есть бронь.",
+        "hi": "मेरे पास आरक्षण है।",
+        "pl": "Mam rezerwację.",
+        "nl": "Ik heb een reservering.",
+        "el": "Έχω κράτηση.",
+        "sv": "Jag har en reservation.",
+        "no": "Jeg har en reservasjon.",
+        "fi": "Minulla on varaus.",
+        "cs": "Mám rezervaci.",
+        "uk": "У мене є бронювання.",
+        "th": "ฉันมีการจอง",
+        "vi": "Tôi có đặt chỗ."
       }
     },
     {
@@ -50,12 +146,44 @@
       "text": {
         "en": "hotel",
         "es": "hotel",
-        "he": "מלון"
+        "he": "מלון",
+        "fr": "hôtel",
+        "de": "Hotel",
+        "it": "hotel",
+        "pt": "hotel",
+        "ru": "отель",
+        "hi": "होटल",
+        "pl": "hotel",
+        "nl": "hotel",
+        "el": "ξενοδοχείο",
+        "sv": "hotell",
+        "no": "hotell",
+        "fi": "hotelli",
+        "cs": "hotel",
+        "uk": "готель",
+        "th": "โรงแรม",
+        "vi": "khách sạn"
       },
       "example": {
         "en": "The hotel is near the beach.",
         "es": "El hotel está cerca de la playa.",
-        "he": "המלון קרוב לחוף."
+        "he": "המלון קרוב לחוף.",
+        "fr": "L'hôtel est près de la plage.",
+        "de": "Das Hotel ist in der Nähe des Strandes.",
+        "it": "L'hotel è vicino alla spiaggia.",
+        "pt": "O hotel fica perto da praia.",
+        "ru": "Отель находится рядом с пляжем.",
+        "hi": "होटल समुद्र तट के पास है।",
+        "pl": "Hotel jest blisko plaży.",
+        "nl": "Het hotel is dicht bij het strand.",
+        "el": "Το ξενοδοχείο είναι κοντά στην παραλία.",
+        "sv": "Hotellet ligger nära stranden.",
+        "no": "Hotellet er nær stranden.",
+        "fi": "Hotelli on lähellä rantaa.",
+        "cs": "Hotel je blízko pláže.",
+        "uk": "Готель знаходиться біля пляжу.",
+        "th": "โรงแรมอยู่ใกล้ชายหาด",
+        "vi": "Khách sạn gần bãi biển."
       }
     },
     {
@@ -64,12 +192,44 @@
       "text": {
         "en": "airport",
         "es": "aeropuerto",
-        "he": "שדה תעופה"
+        "he": "שדה תעופה",
+        "fr": "aéroport",
+        "de": "Flughafen",
+        "it": "aeroporto",
+        "pt": "aeroporto",
+        "ru": "аэропорт",
+        "hi": "हवाई अड्डा",
+        "pl": "lotnisko",
+        "nl": "luchthaven",
+        "el": "αεροδρόμιο",
+        "sv": "flygplats",
+        "no": "flyplass",
+        "fi": "lentokenttä",
+        "cs": "letiště",
+        "uk": "аеропорт",
+        "th": "สนามบิน",
+        "vi": "sân bay"
       },
       "example": {
         "en": "The airport is very busy today.",
         "es": "El aeropuerto está muy ocupado hoy.",
-        "he": "שדה התעופה עמוס מאוד היום."
+        "he": "שדה התעופה עמוס מאוד היום.",
+        "fr": "L'aéroport est très occupé aujourd'hui.",
+        "de": "Der Flughafen ist heute sehr beschäftigt.",
+        "it": "L'aeroporto è molto occupato oggi.",
+        "pt": "O aeroporto está muito ocupado hoje.",
+        "ru": "Аэропорт сегодня очень загружен.",
+        "hi": "आज हवाई अड्डा बहुत व्यस्त है।",
+        "pl": "Lotnisko jest dziś bardzo zajęte.",
+        "nl": "De luchthaven is vandaag erg druk.",
+        "el": "Το αεροδρόμιο είναι πολύ απασχολημένο σήμερα.",
+        "sv": "Flygplatsen är mycket upptagen idag.",
+        "no": "Flyplassen er veldig opptatt i dag.",
+        "fi": "Lentokenttä on tänään erittäin kiireinen.",
+        "cs": "Letiště je dnes velmi zaneprázdněné.",
+        "uk": "Аеропорт сьогодні дуже зайнятий.",
+        "th": "สนามบินวันนี้ค่อนข้างวุ่นวาย",
+        "vi": "Sân bay hôm nay rất bận rộn."
       }
     },
     {
@@ -78,12 +238,44 @@
       "text": {
         "en": "passport",
         "es": "pasaporte",
-        "he": "דרכון"
+        "he": "דרכון",
+        "fr": "passeport",
+        "de": "Reisepass",
+        "it": "passaporto",
+        "pt": "passaporte",
+        "ru": "паспорт",
+        "hi": "पासपोर्ट",
+        "pl": "paszport",
+        "nl": "paspoort",
+        "el": "διαβατήριο",
+        "sv": "pass",
+        "no": "pass",
+        "fi": "passi",
+        "cs": "pas",
+        "uk": "паспорт",
+        "th": "หนังสือเดินทาง",
+        "vi": "hộ chiếu"
       },
       "example": {
         "en": "Don't forget your passport.",
         "es": "No olvides tu pasaporte.",
-        "he": "אל תשכח את הדרכון שלך."
+        "he": "אל תשכח את הדרכון שלך.",
+        "fr": "N'oubliez pas votre passeport.",
+        "de": "Vergessen Sie nicht Ihren Reisepass.",
+        "it": "Non dimenticare il tuo passaporto.",
+        "pt": "Não esqueça seu passaporte.",
+        "ru": "Не забудьте свой паспорт.",
+        "hi": "अपना पासपोर्ट मत भूलें।",
+        "pl": "Nie zapomnij swojego paszportu.",
+        "nl": "Vergeet uw paspoort niet.",
+        "el": "Μην ξεχάσετε το διαβατήριό σας.",
+        "sv": "Glöm inte ditt pass.",
+        "no": "Ikke glem passet ditt.",
+        "fi": "Älä unohda passiasi.",
+        "cs": "Nezapomeňte na svůj pas.",
+        "uk": "Не забудьте свій паспорт.",
+        "th": "อย่าลืมหนังสือเดินทางของคุณ",
+        "vi": "Đừng quên hộ chiếu của bạn."
       }
     },
     {
@@ -92,12 +284,44 @@
       "text": {
         "en": "luggage",
         "es": "equipaje",
-        "he": "מזוודות"
+        "he": "מזוודות",
+        "fr": "bagages",
+        "de": "Gepäck",
+        "it": "bagaglio",
+        "pt": "bagagem",
+        "ru": "багаж",
+        "hi": "सामान",
+        "pl": "bagaż",
+        "nl": "bagage",
+        "el": "αποσκευές",
+        "sv": "bagage",
+        "no": "bagasje",
+        "fi": "matkatavarat",
+        "cs": "zavazadla",
+        "uk": "багаж",
+        "th": "กระเป๋าเดินทาง",
+        "vi": "hành lý"
       },
       "example": {
         "en": "Where is my luggage?",
         "es": "¿Dónde está mi equipaje?",
-        "he": "איפה המזוודות שלי?"
+        "he": "איפה המזוודות שלי?",
+        "fr": "Où sont mes bagages ?",
+        "de": "Wo ist mein Gepäck?",
+        "it": "Dove sono i miei bagagli?",
+        "pt": "Onde está minha bagagem?",
+        "ru": "Где мой багаж?",
+        "hi": "मेरा सामान कहाँ है?",
+        "pl": "Gdzie jest mój bagaż?",
+        "nl": "Waar is mijn bagage?",
+        "el": "Πού είναι οι αποσκευές μου;",
+        "sv": "Var är mitt bagage?",
+        "no": "Hvor er bagasjen min?",
+        "fi": "Missä ovat matkatavarani?",
+        "cs": "Kde jsou moje zavazadla?",
+        "uk": "Де мій багаж?",
+        "th": "กระเป๋าเดินทางของฉันอยู่ที่ไหน?",
+        "vi": "Hành lý của tôi ở đâu?"
       }
     },
     {
@@ -106,12 +330,44 @@
       "text": {
         "en": "train",
         "es": "tren",
-        "he": "רכבת"
+        "he": "רכבת",
+        "fr": "train",
+        "de": "Zug",
+        "it": "treno",
+        "pt": "treno",
+        "ru": "поезд",
+        "hi": "रेल",
+        "pl": "pociąg",
+        "nl": "trein",
+        "el": "τρένο",
+        "sv": "tåg",
+        "no": "tog",
+        "fi": "juna",
+        "cs": "vlak",
+        "uk": "потяг",
+        "th": "รถไฟ",
+        "vi": "tàu"
       },
       "example": {
         "en": "The train leaves at 3 PM.",
         "es": "El tren sale a las 3 de la tarde.",
-        "he": "הרכבת יוצאת בשעה 3 אחר הצהריים."
+        "he": "הרכבת יוצאת בשעה 3 אחר הצהריים.",
+        "fr": "Le train part à 15 heures.",
+        "de": "Der Zug fährt um 15 Uhr ab.",
+        "it": "Il treno parte alle 15.",
+        "pt": "O trem parte às 15 horas.",
+        "ru": "Поезд отправляется в 15 часов.",
+        "hi": "रेल 3 बजे छूटती है।",
+        "pl": "Pociąg odjeżdża o 15.",
+        "nl": "Het trein vertrekt om 15 uur.",
+        "el": "Το τρένο εξέρχεται στις 15.",
+        "sv": "Tåget lämnar kl 15.",
+        "no": "Togget forlater kl 15.",
+        "fi": "Juna lähtee klo 15.",
+        "cs": "Vlak odjíždí v 15.",
+        "uk": "Потяг відправляється о 15.",
+        "th": "รถไฟออกที่ 15 โมง",
+        "vi": "Tàu xuất phát lúc 15 giờ."
       }
     },
     {
@@ -120,12 +376,44 @@
       "text": {
         "en": "bus",
         "es": "autobús",
-        "he": "אוטובוס"
+        "he": "אוטובוס",
+        "fr": "bus",
+        "de": "Bus",
+        "it": "autobus",
+        "pt": "autocarro",
+        "ru": "автобус",
+        "hi": "बस",
+        "pl": "autobus",
+        "nl": "bus",
+        "el": "αυτοκίνητο",
+        "sv": "buss",
+        "no": "buss",
+        "fi": "bussi",
+        "cs": "autobus",
+        "uk": "автобус",
+        "th": "รถไฟราง",
+        "vi": "xe khách"
       },
       "example": {
         "en": "Take the bus to the city center.",
         "es": "Toma el autobús al centro de la ciudad.",
-        "he": "קח את האוטובוס למרכז העיר."
+        "he": "קח את האוטובוס למרכז העיר.",
+        "fr": "Prenez le bus pour aller au centre-ville.",
+        "de": "Nehmen Sie den Bus zum Stadtzentrum.",
+        "it": "Prendi l'autobus per andare al centro.",
+        "pt": "Tome o autocarro para ir ao centro da cidade.",
+        "ru": "Возьмите автобус в центр города.",
+        "hi": "बस शहर के केंद्र में ले जाओ।",
+        "pl": "Weź autobus do centrum miasta.",
+        "nl": "Neem de bus naar het centrum van de stad.",
+        "el": "Πάρτε το αυτοκίνητο για να πάτε στο κέντρο της πόλης.",
+        "sv": "Ta bussen till stadens centrum.",
+        "no": "Ta bussen til byens senter.",
+        "fi": "Ota bussi kaupungin keskelleen.",
+        "cs": "Vezměte autobus do centra města.",
+        "uk": "Взяти автобус у центр міста.",
+        "th": "นำรถไฟรางไปยังศูนย์กลางเมือง",
+        "vi": "Đi xe khách đến trung tâm thành phố."
       }
     },
     {
@@ -134,12 +422,44 @@
       "text": {
         "en": "taxi",
         "es": "taxi",
-        "he": "מונית"
+        "he": "מונית",
+        "fr": "taxi",
+        "de": "Taxi",
+        "it": "taxi",
+        "pt": "taxi",
+        "ru": "такси",
+        "hi": "टैक्सी",
+        "pl": "taksi",
+        "nl": "taxi",
+        "el": "ταξί",
+        "sv": "taxi",
+        "no": "taxi",
+        "fi": "taxi",
+        "cs": "taxi",
+        "uk": "таксі",
+        "th": "แท็กซี่",
+        "vi": "xe taxi"
       },
       "example": {
         "en": "I need a taxi to the hotel.",
         "es": "Necesito un taxi al hotel.",
-        "he": "אני צריך מונית למלון."
+        "he": "אני צריך מונית למלון.",
+        "fr": "J'ai besoin d'un taxi pour aller à l'hôtel.",
+        "de": "Ich brauche einen Taxi zum Hotel.",
+        "it": "Ho bisogno di un taxi per andare all'hotel.",
+        "pt": "Preciso de um taxi para o hotel.",
+        "ru": "Мне нужен такси до отеля.",
+        "hi": "मुझे होटल के लिए टैक्सी चाहिए।",
+        "pl": "Potrzebuję taksówki do hotelu.",
+        "nl": "Ik heb een taxi nodig naar het hotel.",
+        "el": "Χρειάζομαι μια ταξί για να πάω στο ξενοδοχείο.",
+        "sv": "Jag behöver en taxi till hotellet.",
+        "no": "Jeg trenger en taxi til hotellet.",
+        "fi": "Minun täytyy olla taxi.",
+        "cs": "Potřebuji taxi do hotelu.",
+        "uk": "Мені потрібен таксі до готелю.",
+        "th": "ฉันต้องการแท็กซี่ไปยังโรงแรม",
+        "vi": "Tôi cần một xe taxi đến khách sạn."
       }
     },
     {
@@ -148,12 +468,44 @@
       "text": {
         "en": "map",
         "es": "mapa",
-        "he": "מפה"
+        "he": "מפה",
+        "fr": "carte",
+        "de": "Karte",
+        "it": "mappa",
+        "pt": "mapa",
+        "ru": "карта",
+        "hi": "नक्शा",
+        "pl": "mapa",
+        "nl": "kaart",
+        "el": "πλάνη",
+        "sv": "karta",
+        "no": "karte",
+        "fi": "kartta",
+        "cs": "mapa",
+        "uk": "карта",
+        "th": "แผนที่",
+        "vi": "bản đồ"
       },
       "example": {
         "en": "Can you show me on the map?",
         "es": "¿Puedes mostrarme en el mapa?",
-        "he": "אתה יכול להראות לי במפה?"
+        "he": "אתה יכול להראות לי במפה?",
+        "fr": "Pouvez-vous me montrer sur la carte ?",
+        "de": "Können Sie mir auf der Karte zeigen?",
+        "it": "Puoi mostrarmi sulla mappa?",
+        "pt": "Você pode me mostrar no mapa?",
+        "ru": "Вы можете показать мне на карте?",
+        "hi": "क्या आप मुझे बता सकते हैं कि मैं बाजार पर हूं?",
+        "pl": "Czy możesz pokazać mi na mapie?",
+        "nl": "Kunt u mij op de kaart laten zien?",
+        "el": "Μπορείτε να μου δείξετε στο χάρτη;",
+        "sv": "Kan du visa mig på kartan?",
+        "no": "Kan du vise meg på kartet?",
+        "fi": "Voisitko minun kartalle?",
+        "cs": "Můžete mi ukázat na mapě?",
+        "uk": "Ви можете показати мені на карті?",
+        "th": "คุณสามารถแสดงฉันในแผนที่ได้ไหม?",
+        "vi": "Bạn có thể hiển thị cho tôi trên bản đồ không?"
       }
     },
     {
@@ -162,12 +514,44 @@
       "text": {
         "en": "guide",
         "es": "guía",
-        "he": "מדריך"
+        "he": "מדריך",
+        "fr": "guide",
+        "de": "Führer",
+        "it": "guida",
+        "pt": "guia",
+        "ru": "гид",
+        "hi": "गाइड",
+        "pl": "przewodnik",
+        "nl": "gids",
+        "el": "οδηγός",
+        "sv": "guide",
+        "no": "guide",
+        "fi": "ohjaaja",
+        "cs": "pokyny",
+        "uk": "гід",
+        "th": "คู่มือ",
+        "vi": "hướng dẫn"
       },
       "example": {
         "en": "We have a tour guide.",
         "es": "Tenemos un guía turístico.",
-        "he": "יש לנו מדריך טיולים."
+        "he": "יש לנו מדריך טיולים.",
+        "fr": "Nous avons un guide de tour.",
+        "de": "Wir haben einen Führerschein.",
+        "it": "Abbiamo un guida turistica.",
+        "pt": "Temos um guia turístico.",
+        "ru": "У нас есть гид.",
+        "hi": "हमारे पास एक टूर गाइड है।",
+        "pl": "Mamy przewodnika turystycznego.",
+        "nl": "We hebben een toerleider.",
+        "el": "Έχουμε οδηγό τουριστικό.",
+        "sv": "Vi har en turguide.",
+        "no": "Vi har en turguide.",
+        "fi": "Meillä on matkakirja.",
+        "cs": "Máme turistický průvodce.",
+        "uk": "У нас є гід.",
+        "th": "ฉันมีคู่มือท่องเที่ยว",
+        "vi": "Tôi có hướng dẫn du lịch."
       }
     },
     {
@@ -176,12 +560,44 @@
       "text": {
         "en": "suitcase",
         "es": "maleta",
-        "he": "מזוודה"
+        "he": "מזוודה",
+        "fr": "valise",
+        "de": "Koffer",
+        "it": "valigia",
+        "pt": "maleta",
+        "ru": "чемодан",
+        "hi": "बैग",
+        "pl": "kufel",
+        "nl": "koffer",
+        "el": "καλάθι",
+        "sv": "koffer",
+        "no": "koffer",
+        "fi": "kuljetusvali",
+        "cs": "kufřík",
+        "uk": "чемодан",
+        "th": "กระเป๋าเดินทาง",
+        "vi": "túi xách"
       },
       "example": {
         "en": "My suitcase is heavy.",
         "es": "Mi maleta está pesada.",
-        "he": "המזוודה שלי כבדה."
+        "he": "המזוודה שלי כבדה.",
+        "fr": "Ma valise est lourde.",
+        "de": "Meine Koffer ist schwer.",
+        "it": "La mia valigia è pesante.",
+        "pt": "Minha mala está pesada.",
+        "ru": "Мой чемодан тяжелый.",
+        "hi": "मेरा बैग भारी है।",
+        "pl": "Moja kufel jest ciężka.",
+        "nl": "Mijn koffer is zwaar.",
+        "el": "Η καλάθι μου είναι βαριά.",
+        "sv": "Min koffer är tung.",
+        "no": "Min koffer er tung.",
+        "fi": "Minun kuljetusvalini on raskas.",
+        "cs": "Můj kufřík je těžký.",
+        "uk": "Моя чемодан важка.",
+        "th": "กระเป๋าเดินทางของฉันหนัก",
+        "vi": "Túi xách của tôi nặng."
       }
     },
     {
@@ -190,12 +606,44 @@
       "text": {
         "en": "flight",
         "es": "vuelo",
-        "he": "טיסה"
+        "he": "טיסה",
+        "fr": "vol",
+        "de": "Flug",
+        "it": "volo",
+        "pt": "voo",
+        "ru": "рейс",
+        "hi": "उड़ान",
+        "pl": "lot",
+        "nl": "vlucht",
+        "el": "πτήση",
+        "sv": "flyg",
+        "no": "fly",
+        "fi": "lento",
+        "cs": "let",
+        "uk": "рейс",
+        "th": "เที่ยวบิน",
+        "vi": "chuyến bay"
       },
       "example": {
         "en": "What time is your flight?",
         "es": "¿A qué hora es tu vuelo?",
-        "he": "באיזו שעה הטיסה שלך?"
+        "he": "באיזו שעה הטיסה שלך?",
+        "fr": "Quelle heure est votre vol ?",
+        "de": "Wann ist dein Flug?",
+        "it": "A quale ora è il tuo volo?",
+        "pt": "A que horas é o seu voo?",
+        "ru": "В какое время ваш рейс?",
+        "hi": "अपनी उड़ान किस समय है?",
+        "pl": "O której godzinie jest twoja loteria?",
+        "nl": "Wat is de tijd van je vlucht?",
+        "el": "Ποια ώρα είναι η πτήση σας;",
+        "sv": "Vilken tid är din flygning?",
+        "no": "Hvilken tid er din flytur?",
+        "fi": "Mikä on sinun lentosi?",
+        "cs": "Kdy je vaše letadlo?",
+        "uk": "Який час ваш рейс?",
+        "th": "เที่ยวบินของคุณเป็นเวลาไหน?",
+        "vi": "Chuyến bay của bạn là mấy giờ?"
       }
     },
     {
@@ -204,12 +652,44 @@
       "text": {
         "en": "destination",
         "es": "destino",
-        "he": "יעד"
+        "he": "יעד",
+        "fr": "destination",
+        "de": "Ziel",
+        "it": "destinazione",
+        "pt": "destino",
+        "ru": "пункт назначения",
+        "hi": "गंतव्य",
+        "pl": "miejsce docelowe",
+        "nl": "bestemming",
+        "el": "προορισμός",
+        "sv": "mål",
+        "no": "mål",
+        "fi": "tavoite",
+        "cs": "cíl",
+        "uk": "пункт призначення",
+        "th": "จุดหมาย",
+        "vi": "điểm đến"
       },
       "example": {
         "en": "What's your final destination?",
         "es": "¿Cuál es tu destino final?",
-        "he": "מה היעד הסופי שלך?"
+        "he": "מה היעד הסופי שלך?",
+        "fr": "Quel est votre destination finale ?",
+        "de": "Welches ist dein Endziel?",
+        "it": "Qual è il tuo punto di arrivo finale?",
+        "pt": "Qual é o seu destino final?",
+        "ru": "Какой ваш конечный пункт назначения?",
+        "hi": "अपना अंतिम गंतव्य क्या है?",
+        "pl": "Jaki jest twój ostateczny cel?",
+        "nl": "Wat is je eindbestemming?",
+        "el": "Ποιο είναι το τελικό σας στόχος;",
+        "sv": "Vad är din slutdestination?",
+        "no": "Hva er din endestemning?",
+        "fi": "Mikä on sinun lopullinen tavoite?",
+        "cs": "Jaký je vaše konečné cíle?",
+        "uk": "Який ваш кінцевий пункт призначення?",
+        "th": "จุดหมายสุดท้ายของคุณคืออะไร?",
+        "vi": "điểm đến cuối cùng của bạn là gì?"
       }
     },
     {
@@ -218,12 +698,44 @@
       "text": {
         "en": "journey",
         "es": "viaje",
-        "he": "מסע"
+        "he": "מסע",
+        "fr": "voyage",
+        "de": "Reise",
+        "it": "viaggio",
+        "pt": "viagem",
+        "ru": "путешествие",
+        "hi": "यात्रा",
+        "pl": "podróż",
+        "nl": "reis",
+        "el": "περιπέτεια",
+        "sv": "resa",
+        "no": "reise",
+        "fi": "matka",
+        "cs": "cesta",
+        "uk": "подорож",
+        "th": "การเดินทาง",
+        "vi": "chuyến đi"
       },
       "example": {
         "en": "It was a long journey.",
         "es": "Fue un viaje largo.",
-        "he": "זה היה מסע ארוך."
+        "he": "זה היה מסע ארוך.",
+        "fr": "C'était un long voyage.",
+        "de": "Es war eine lange Reise.",
+        "it": "Era una lunga viaggio.",
+        "pt": "Foi um longo viagem.",
+        "ru": "Это была длинная поездка.",
+        "hi": "यह एक लंबी यात्रा थी।",
+        "pl": "To była długa podróż.",
+        "nl": "Het was een lange reis.",
+        "el": "Ήταν μια μακρά περιπέτεια.",
+        "sv": "Det var en lång resa.",
+        "no": "Det var en lang reise.",
+        "fi": "Se oli matka pitkä.",
+        "cs": "Byla to dlouhá cesta.",
+        "uk": "Це була довга подорож.",
+        "th": "การเดินทางนั้นยาวมาก",
+        "vi": "Đó là một chuyến đi dài."
       }
     },
     {
@@ -232,7 +744,23 @@
       "text": {
         "en": "I am lost.",
         "es": "Estoy perdido.",
-        "he": "אני אבוד."
+        "he": "אני אבוד.",
+        "fr": "Je suis perdu.",
+        "de": "Ich bin verloren.",
+        "it": "Sono perso.",
+        "pt": "Estou perdido.",
+        "ru": "Я потерялся.",
+        "hi": "मैं अपना गंदा हूं।",
+        "pl": "Jestem utracony.",
+        "nl": "Ik ben verloren.",
+        "el": "Είμαι έξω από το δρόμο.",
+        "sv": "Jag är förvirrad.",
+        "no": "Jeg er forvirret.",
+        "fi": "Olen mennyt.",
+        "cs": "Jsem ztracen.",
+        "uk": "Я втратився.",
+        "th": "ฉันหาทางไม่ได้",
+        "vi": "Tôi bị mất đường."
       }
     },
     {
@@ -241,7 +769,23 @@
       "text": {
         "en": "Can you help me?",
         "es": "¿Puedes ayudarme?",
-        "he": "אתה יכול לעזור לי?"
+        "he": "אתה יכול לעזור לי?",
+        "fr": "Pouvez-vous m'aider ?",
+        "de": "Können Sie mir helfen ?",
+        "it": "Puoi aiutarmi ?",
+        "pt": "Você pode me ajudar ?",
+        "ru": "Вы можете мне помочь ?",
+        "hi": "क्या आप मुझे मदद कर सकते हैं?",
+        "pl": "Czy możesz mi pomóc?",
+        "nl": "Kunt u mij helpen?",
+        "el": "Μπορείτε να με βοηθήσετε;",
+        "sv": "Kan du hjälpa mig?",
+        "no": "Kan du hjelpe meg?",
+        "fi": "Voisitko auttaa minua?",
+        "cs": "Můžete mi pomoci?",
+        "uk": "Ви можете мені допомогти?",
+        "th": "คุณสามารถช่วยฉันได้ไหม?",
+        "vi": "Bạn có thể giúp tôi không?"
       }
     },
     {
@@ -250,7 +794,23 @@
       "text": {
         "en": "How much does it cost?",
         "es": "¿Cuánto cuesta?",
-        "he": "כמה זה עולה?"
+        "he": "כמה זה עולה?",
+        "fr": "Combien ça coûte ?",
+        "de": "Wie viel kostet es ?",
+        "it": "Quanto costa ?",
+        "pt": "Quanto custa ?",
+        "ru": "Сколько это стоит?",
+        "hi": "यह कितना है?",
+        "pl": "Ile to kosztuje?",
+        "nl": "Hoeveel kost het?",
+        "el": "Πόσο κοστίζει;",
+        "sv": "Hur mycket kostar det?",
+        "no": "Hvor mye koster det?",
+        "fi": "Kuinka paljon se kustaa?",
+        "cs": "Kolik to stojí?",
+        "uk": "Скільки це коштує?",
+        "th": "ราคาเท่าไหร่?",
+        "vi": "Giá bao nhiêu?"
       }
     },
     {
@@ -259,7 +819,23 @@
       "text": {
         "en": "I want to go to...",
         "es": "Quiero ir a...",
-        "he": "אני רוצה ללכת ל..."
+        "he": "אני רוצה ללכת ל...",
+        "fr": "Je veux aller à...",
+        "de": "Ich möchte dorthin gehen.",
+        "it": "Voglio andare a...",
+        "pt": "Quero ir para...",
+        "ru": "Я хочу поехать в...",
+        "hi": "मैं जाना चाहता हूं...",
+        "pl": "Chcę iść do...",
+        "nl": "Ik wil naar toe gaan...",
+        "el": "Θέλω να πάω στο...",
+        "sv": "Jag vill gå till...",
+        "no": "Jeg vil gå til...",
+        "fi": "Haluan mennä kohti...",
+        "cs": "Chci jít do...",
+        "uk": "Я хочу поїхати в...",
+        "th": "ฉันต้องการไปที่...",
+        "vi": "Tôi muốn đi đến..."
       }
     }
   ]

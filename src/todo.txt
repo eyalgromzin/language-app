@@ -1,5 +1,8 @@
 
 1 when word is spoken, it should be with the countries accent 
+    - translation panel 
+    - categories
+    - 
 
 3 in baby steps , if not enough words , just take the words from other steps instead of from my words . 
 

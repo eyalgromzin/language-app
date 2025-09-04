@@ -4,12 +4,44 @@
   "name": { 
     "en": "Numbers", 
     "es": "Números", 
-    "he": "מספרים" 
+    "he": "מספרים",
+    "fr": "Nombres",
+    "de": "Zahlen",
+    "it": "Numeri",
+    "pt": "Números",
+    "ru": "Числа",
+    "hi": "संख्याएं",
+    "pl": "Liczby",
+    "nl": "Getallen",
+    "el": "Αριθμοί",
+    "sv": "Nummer",
+    "no": "Tall",
+    "fi": "Numerot",
+    "cs": "Čísla",
+    "uk": "Числа",
+    "th": "ตัวเลข",
+    "vi": "Số"
   },
   "description": { 
     "en": "Basic counting numbers", 
     "es": "Números básicos", 
-    "he": "מספרים בסיסיים" 
+    "he": "מספרים בסיסיים",
+    "fr": "Nombres de base pour compter",
+    "de": "Grundlegende Zählzahlen",
+    "it": "Numeri di base per contare",
+    "pt": "Números básicos para contar",
+    "ru": "Основные числа для счета",
+    "hi": "गिनती के लिए बुनियादी संख्याएं",
+    "pl": "Podstawowe liczby do liczenia",
+    "nl": "Basis telgetallen",
+    "el": "Βασικοί αριθμοί για μέτρηση",
+    "sv": "Grundläggande räknetal",
+    "no": "Grunnleggende telle tall",
+    "fi": "Peruslaskenta numerot",
+    "cs": "Základní počítací čísla",
+    "uk": "Основні числа для рахунку",
+    "th": "ตัวเลขพื้นฐานสำหรับการนับ",
+    "vi": "Số cơ bản để đếm"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "zero", 
         "es": "cero", 
-        "he": "אפס" 
+        "he": "אפס",
+        "fr": "zéro",
+        "de": "null",
+        "it": "zero",
+        "pt": "zero",
+        "ru": "ноль",
+        "hi": "शून्य",
+        "pl": "zero",
+        "nl": "nul",
+        "el": "μηδέν",
+        "sv": "noll",
+        "no": "null",
+        "fi": "nolla",
+        "cs": "nula",
+        "uk": "нуль",
+        "th": "ศูนย์",
+        "vi": "không"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "one", 
         "es": "uno", 
-        "he": "אחד" 
+        "he": "אחד",
+        "fr": "un",
+        "de": "eins",
+        "it": "uno",
+        "pt": "um",
+        "ru": "один",
+        "hi": "एक",
+        "pl": "jeden",
+        "nl": "één",
+        "el": "ένα",
+        "sv": "ett",
+        "no": "en",
+        "fi": "yksi",
+        "cs": "jeden",
+        "uk": "один",
+        "th": "หนึ่ง",
+        "vi": "một"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "two", 
         "es": "dos", 
-        "he": "שתיים" 
+        "he": "שתיים",
+        "fr": "deux",
+        "de": "zwei",
+        "it": "due",
+        "pt": "dois",
+        "ru": "два",
+        "hi": "दो",
+        "pl": "dwa",
+        "nl": "twee",
+        "el": "δύο",
+        "sv": "två",
+        "no": "to",
+        "fi": "kaksi",
+        "cs": "dva",
+        "uk": "два",
+        "th": "สอง",
+        "vi": "hai"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "three", 
         "es": "tres", 
-        "he": "שלוש" 
+        "he": "שלוש",
+        "fr": "trois",
+        "de": "drei",
+        "it": "tre",
+        "pt": "três",
+        "ru": "три",
+        "hi": "तीन",
+        "pl": "trzy",
+        "nl": "drie",
+        "el": "τρία",
+        "sv": "tre",
+        "no": "tre",
+        "fi": "kolme",
+        "cs": "tři",
+        "uk": "три",
+        "th": "สาม",
+        "vi": "ba"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "ten", 
         "es": "diez", 
-        "he": "עשר" 
+        "he": "עשר",
+        "fr": "dix",
+        "de": "zehn",
+        "it": "dieci",
+        "pt": "dez",
+        "ru": "десять",
+        "hi": "दस",
+        "pl": "dziesięć",
+        "nl": "tien",
+        "el": "δέκα",
+        "sv": "tio",
+        "no": "ti",
+        "fi": "kymmenen",
+        "cs": "deset",
+        "uk": "десять",
+        "th": "สิบ",
+        "vi": "mười"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "hundred", 
         "es": "cien", 
-        "he": "מאה" 
+        "he": "מאה",
+        "fr": "cent",
+        "de": "hundert",
+        "it": "cento",
+        "pt": "cem",
+        "ru": "сто",
+        "hi": "सौ",
+        "pl": "sto",
+        "nl": "honderd",
+        "el": "εκατό",
+        "sv": "hundra",
+        "no": "hundre",
+        "fi": "sata",
+        "cs": "sto",
+        "uk": "сто",
+        "th": "ร้อย",
+        "vi": "trăm"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "four", 
         "es": "cuatro", 
-        "he": "ארבע" 
+        "he": "ארבע",
+        "fr": "quatre",
+        "de": "vier",
+        "it": "quattro",
+        "pt": "quatro",
+        "ru": "четыре",
+        "hi": "चार",
+        "pl": "cztery",
+        "nl": "vier",
+        "el": "τέσσερα",
+        "sv": "fyra",
+        "no": "fire",
+        "fi": "neljä",
+        "cs": "čtyři",
+        "uk": "чотири",
+        "th": "สี่",
+        "vi": "bốn"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "five", 
         "es": "cinco", 
-        "he": "חמש" 
+        "he": "חמש",
+        "fr": "cinq",
+        "de": "fünf",
+        "it": "cinque",
+        "pt": "cinco",
+        "ru": "пять",
+        "hi": "पांच",
+        "pl": "pięć",
+        "nl": "vijf",
+        "el": "πέντε",
+        "sv": "fem",
+        "no": "fem",
+        "fi": "viisi",
+        "cs": "pět",
+        "uk": "п'ять",
+        "th": "ห้า",
+        "vi": "năm"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "six", 
         "es": "seis", 
-        "he": "שש" 
+        "he": "שש",
+        "fr": "six",
+        "de": "sechs",
+        "it": "sei",
+        "pt": "seis",
+        "ru": "шесть",
+        "hi": "छह",
+        "pl": "sześć",
+        "nl": "zes",
+        "el": "έξι",
+        "sv": "sex",
+        "no": "seks",
+        "fi": "kuusi",
+        "cs": "šest",
+        "uk": "шість",
+        "th": "หก",
+        "vi": "sáu"
       } 
     },
     { 
@@ -99,7 +275,23 @@
       "text": { 
         "en": "seven", 
         "es": "siete", 
-        "he": "שבע" 
+        "he": "שבע",
+        "fr": "sept",
+        "de": "sieben",
+        "it": "sette",
+        "pt": "sete",
+        "ru": "семь",
+        "hi": "सात",
+        "pl": "siedem",
+        "nl": "zeven",
+        "el": "επτά",
+        "sv": "sju",
+        "no": "syv",
+        "fi": "seitsemän",
+        "cs": "sedm",
+        "uk": "сім",
+        "th": "เจ็ด",
+        "vi": "bảy"
       } 
     },
     { 
@@ -108,7 +300,23 @@
       "text": { 
         "en": "eight", 
         "es": "ocho", 
-        "he": "שמונה" 
+        "he": "שמונה",
+        "fr": "huit",
+        "de": "acht",
+        "it": "otto",
+        "pt": "oito",
+        "ru": "восемь",
+        "hi": "आठ",
+        "pl": "osiem",
+        "nl": "acht",
+        "el": "οκτώ",
+        "sv": "åtta",
+        "no": "åtte",
+        "fi": "kahdeksan",
+        "cs": "osm",
+        "uk": "вісім",
+        "th": "แปด",
+        "vi": "tám"
       } 
     },
     { 
@@ -117,7 +325,23 @@
       "text": { 
         "en": "nine", 
         "es": "nueve", 
-        "he": "תשע" 
+        "he": "תשע",
+        "fr": "neuf",
+        "de": "neun",
+        "it": "nove",
+        "pt": "nove",
+        "ru": "девять",
+        "hi": "नौ",
+        "pl": "dziewięć",
+        "nl": "negen",
+        "el": "εννέα",
+        "sv": "nio",
+        "no": "ni",
+        "fi": "yhdeksän",
+        "cs": "devět",
+        "uk": "дев'ять",
+        "th": "เก้า",
+        "vi": "chín"
       } 
     },
     { 
@@ -126,7 +350,23 @@
       "text": { 
         "en": "eleven", 
         "es": "once", 
-        "he": "אחת עשרה" 
+        "he": "אחת עשרה",
+        "fr": "onze",
+        "de": "elf",
+        "it": "undici",
+        "pt": "onze",
+        "ru": "одиннадцать",
+        "hi": "ग्यारह",
+        "pl": "jedenaście",
+        "nl": "elf",
+        "el": "έντεκα",
+        "sv": "elva",
+        "no": "elleve",
+        "fi": "yksitoista",
+        "cs": "jedenáct",
+        "uk": "одинадцять",
+        "th": "สิบเอ็ด",
+        "vi": "mười một"
       } 
     },
     { 
@@ -135,7 +375,198 @@
       "text": { 
         "en": "twelve", 
         "es": "doce", 
-        "he": "שתים עשרה" 
+        "he": "שתים עשרה",
+        "fr": "douze",
+        "de": "zwölf",
+        "it": "dodici",
+        "pt": "doze",
+        "ru": "двенадцать",
+        "hi": "बारह",
+        "pl": "dwanaście",
+        "nl": "twaalf",
+        "el": "δώδεκα",
+        "sv": "tolv",
+        "no": "tolv",
+        "fi": "kaksitoista",
+        "cs": "dvanáct",
+        "uk": "дванадцять",
+        "th": "สิบสอง",
+        "vi": "mười hai"
+      } 
+    },
+    { 
+      "id": "thirteen", 
+      "type": "word", 
+      "text": { 
+        "en": "thirteen", 
+        "es": "trece", 
+        "he": "שלוש עשרה",
+        "fr": "treize",
+        "de": "dreizehn",
+        "it": "tredici",
+        "pt": "treze",
+        "ru": "тринадцать",
+        "hi": "तेरह",
+        "pl": "trzynaście",
+        "nl": "dertien",
+        "el": "δεκατρία",
+        "sv": "tretton",
+        "no": "tretten",
+        "fi": "kolmetoista",
+        "cs": "třináct",
+        "uk": "тринадцять",
+        "th": "สิบสาม",
+        "vi": "mười ba"
+      } 
+    },
+    { 
+      "id": "fourteen", 
+      "type": "word", 
+      "text": { 
+        "en": "fourteen", 
+        "es": "catorce", 
+        "he": "ארבע עשרה",
+        "fr": "quatorze",
+        "de": "vierzehn",
+        "it": "quattordici",
+        "pt": "quatorze",
+        "ru": "четырнадцать",
+        "hi": "चौदह",
+        "pl": "czternaście",
+        "nl": "veertien",
+        "el": "δεκατέσσερα",
+        "sv": "fjorton",
+        "no": "fjorten",
+        "fi": "neljätoista",
+        "cs": "čtrnáct",
+        "uk": "чотирнадцять",
+        "th": "สิบสี่",
+        "vi": "mười bốn"
+      } 
+    },
+    { 
+      "id": "fifteen", 
+      "type": "word", 
+      "text": { 
+        "en": "fifteen", 
+        "es": "quince", 
+        "he": "חמש עשרה",
+        "fr": "quinze",
+        "de": "fünfzehn",
+        "it": "quindici",
+        "pt": "quinze",
+        "ru": "пятнадцать",
+        "hi": "पंद्रह",
+        "pl": "piętnaście",
+        "nl": "vijftien",
+        "el": "δεκαπέντε",
+        "sv": "femton",
+        "no": "femten",
+        "fi": "viisitoista",
+        "cs": "patnáct",
+        "uk": "п'ятнадцять",
+        "th": "สิบห้า",
+        "vi": "mười lăm"
+      } 
+    },
+    { 
+      "id": "sixteen", 
+      "type": "word", 
+      "text": { 
+        "en": "sixteen", 
+        "es": "dieciséis", 
+        "he": "שש עשרה",
+        "fr": "seize",
+        "de": "sechzehn",
+        "it": "sedici",
+        "pt": "dezesseis",
+        "ru": "шестнадцать",
+        "hi": "सोलह",
+        "pl": "szesnaście",
+        "nl": "zestien",
+        "el": "δεκαέξι",
+        "sv": "sexton",
+        "no": "seksten",
+        "fi": "kuusitoista",
+        "cs": "šestnáct",
+        "uk": "шістнадцять",
+        "th": "สิบหก",
+        "vi": "mười sáu"
+      } 
+    },
+    { 
+      "id": "seventeen", 
+      "type": "word", 
+      "text": { 
+        "en": "seventeen", 
+        "es": "diecisiete", 
+        "he": "שבע עשרה",
+        "fr": "dix-sept",
+        "de": "siebzehn",
+        "it": "diciassette",
+        "pt": "dezessete",
+        "ru": "семнадцать",
+        "hi": "सत्रह",
+        "pl": "siedemnaście",
+        "nl": "zeventien",
+        "el": "δεκαεπτά",
+        "sv": "sjutton",
+        "no": "sytten",
+        "fi": "seitsemäntoista",
+        "cs": "sedmnáct",
+        "uk": "сімнадцять",
+        "th": "สิบเจ็ด",
+        "vi": "mười bảy"
+      } 
+    },
+    { 
+      "id": "eighteen", 
+      "type": "word", 
+      "text": { 
+        "en": "eighteen", 
+        "es": "dieciocho", 
+        "he": "שמונה עשרה",
+        "fr": "dix-huit",
+        "de": "achtzehn",
+        "it": "diciotto",
+        "pt": "dezoito",
+        "ru": "восемнадцать",
+        "hi": "अठारह",
+        "pl": "osiemnaście",
+        "nl": "achttien",
+        "el": "δεκαοκτώ",
+        "sv": "arton",
+        "no": "atten",
+        "fi": "kahdeksantoista",
+        "cs": "osmnáct",
+        "uk": "вісімнадцять",
+        "th": "สิบแปด",
+        "vi": "mười tám"
+      } 
+    },
+    { 
+      "id": "nineteen", 
+      "type": "word", 
+      "text": { 
+        "en": "nineteen", 
+        "es": "diecinueve", 
+        "he": "תשע עשרה",
+        "fr": "dix-neuf",
+        "de": "neunzehn",
+        "it": "diciannove",
+        "pt": "dezenove",
+        "ru": "девятнадцать",
+        "hi": "उन्नीस",
+        "pl": "dziewiętnaście",
+        "nl": "negentien",
+        "el": "δεκαεννέα",
+        "sv": "nitton",
+        "no": "nitten",
+        "fi": "yhdeksäntoista",
+        "cs": "devatenáct",
+        "uk": "дев'ятнадцять",
+        "th": "สิบเก้า",
+        "vi": "mười chín"
       } 
     },
     { 
@@ -144,52 +575,23 @@
       "text": { 
         "en": "twenty", 
         "es": "veinte", 
-        "he": "עשרים" 
-      } 
-    },
-    { 
-      "id": "thirty", 
-      "type": "word", 
-      "text": { 
-        "en": "thirty", 
-        "es": "treinta", 
-        "he": "שלושים" 
-      } 
-    },
-    { 
-      "id": "forty", 
-      "type": "word", 
-      "text": { 
-        "en": "forty", 
-        "es": "cuarenta", 
-        "he": "ארבעים" 
-      } 
-    },
-    { 
-      "id": "fifty", 
-      "type": "word", 
-      "text": { 
-        "en": "fifty", 
-        "es": "cincuenta", 
-        "he": "חמישים" 
-      } 
-    },
-    { 
-      "id": "thousand", 
-      "type": "word", 
-      "text": { 
-        "en": "thousand", 
-        "es": "mil", 
-        "he": "אלף" 
-      } 
-    },
-    { 
-      "id": "million", 
-      "type": "word", 
-      "text": { 
-        "en": "million", 
-        "es": "millón", 
-        "he": "מיליון" 
+        "he": "עשרים",
+        "fr": "vingt",
+        "de": "zwanzig",
+        "it": "venti",
+        "pt": "vinte",
+        "ru": "двадцать",
+        "hi": "बीस",
+        "pl": "dwadzieścia",
+        "nl": "twintig",
+        "el": "είκοσι",
+        "sv": "tjugo",
+        "no": "tjue",
+        "fi": "kaksikymmentä",
+        "cs": "dvacet",
+        "uk": "двадцять",
+        "th": "ยี่สิบ",
+        "vi": "hai mươi"
       } 
     }
   ]

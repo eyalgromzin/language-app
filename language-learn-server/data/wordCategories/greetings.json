@@ -4,12 +4,44 @@
   "name": {
     "en": "Greetings",
     "es": "Saludos",
-    "he": "ברכות"
+    "he": "ברכות",
+    "fr": "Salutations",
+    "de": "Begrüßungen",
+    "it": "Saluti",
+    "pt": "Saudações",
+    "ru": "Приветствия",
+    "hi": "अभिवादन",
+    "pl": "Pozdrowienia",
+    "nl": "Begroetingen",
+    "el": "Χαιρετισμοί",
+    "sv": "Hälsningar",
+    "no": "Hilsener",
+    "fi": "Tervehdykset",
+    "cs": "Pozdravy",
+    "uk": "Привітання",
+    "th": "การทักทาย",
+    "vi": "Lời chào"
   },
   "description": {
     "en": "Common ways to greet and start conversations",
     "es": "Formas comunes de saludar y comenzar conversaciones",
-    "he": "דרכים נפוצות לברך ולהתחיל שיחות"
+    "he": "דרכים נפוצות לברך ולהתחיל שיחות",
+    "fr": "Façons communes de saluer et commencer des conversations",
+    "de": "Häufige Arten zu grüßen und Gespräche zu beginnen",
+    "it": "Modi comuni per salutare e iniziare conversazioni",
+    "pt": "Formas comuns de cumprimentar e iniciar conversas",
+    "ru": "Общие способы приветствия и начала разговоров",
+    "hi": "अभिवादन करने और बातचीत शुरू करने के सामान्य तरीके",
+    "pl": "Popularne sposoby witania się i rozpoczynania rozmów",
+    "nl": "Veelvoorkomende manieren om te begroeten en gesprekken te beginnen",
+    "el": "Κοινές τρόποι χαιρετισμού και έναρξης συνομιλιών",
+    "sv": "Vanliga sätt att hälsa och starta konversationer",
+    "no": "Vanlige måter å hilse og starte samtaler",
+    "fi": "Yleisiä tapoja tervehtiä ja aloittaa keskusteluja",
+    "cs": "Běžné způsoby pozdravů a zahájení konverzací",
+    "uk": "Звичайні способи привітання та початку розмов",
+    "th": "วิธีทั่วไปในการทักทายและเริ่มการสนทนา",
+    "vi": "Những cách phổ biến để chào hỏi và bắt đầu cuộc trò chuyện"
   },
   "items": [
     {
@@ -18,12 +50,44 @@
       "text": {
         "en": "hello",
         "es": "hola",
-        "he": "שלום"
+        "he": "שלום",
+        "fr": "bonjour",
+        "de": "hallo",
+        "it": "ciao",
+        "pt": "olá",
+        "ru": "привет",
+        "hi": "नमस्ते",
+        "pl": "cześć",
+        "nl": "hallo",
+        "el": "γεια",
+        "sv": "hej",
+        "no": "hei",
+        "fi": "hei",
+        "cs": "ahoj",
+        "uk": "привіт",
+        "th": "สวัสดี",
+        "vi": "xin chào"
       },
       "example": {
         "en": "Hello! How are you?",
         "es": "¡Hola! ¿Cómo estás?",
-        "he": "שלום! מה שלומך?"
+        "he": "שלום! מה שלומך?",
+        "fr": "Bonjour ! Comment allez-vous ?",
+        "de": "Hallo! Wie geht es dir?",
+        "it": "Ciao! Come stai?",
+        "pt": "Olá! Como você está?",
+        "ru": "Привет! Как дела?",
+        "hi": "नमस्ते! कैसे हो आप?",
+        "pl": "Cześć! Jak się masz?",
+        "nl": "Hallo! Hoe gaat het met je?",
+        "el": "Γεια! Πώς είσαι;",
+        "sv": "Hej! Hur mår du?",
+        "no": "Hei! Hvordan går det?",
+        "fi": "Hei! Miten menee?",
+        "cs": "Ahoj! Jak se máš?",
+        "uk": "Привіт! Як справи?",
+        "th": "สวัสดี! คุณเป็นอย่างไรบ้าง?",
+        "vi": "Xin chào! Bạn khỏe không?"
       }
     },
     {
@@ -32,12 +96,44 @@
       "text": {
         "en": "good morning",
         "es": "buenos días",
-        "he": "בוקר טוב"
+        "he": "בוקר טוב",
+        "fr": "bonjour",
+        "de": "guten Morgen",
+        "it": "buongiorno",
+        "pt": "bom dia",
+        "ru": "доброе утро",
+        "hi": "सुप्रभात",
+        "pl": "dzień dobry",
+        "nl": "goedemorgen",
+        "el": "καλημέρα",
+        "sv": "god morgon",
+        "no": "god morgen",
+        "fi": "hyvää huomenta",
+        "cs": "dobré ráno",
+        "uk": "добрий ранок",
+        "th": "สวัสดีตอนเช้า",
+        "vi": "chào buổi sáng"
       },
       "example": {
         "en": "Good morning, everyone!",
         "es": "¡Buenos días a todos!",
-        "he": "בוקר טוב לכולם!"
+        "he": "בוקר טוב לכולם!",
+        "fr": "Bonjour à tous !",
+        "de": "Guten Morgen, alle zusammen!",
+        "it": "Buongiorno a tutti!",
+        "pt": "Bom dia a todos!",
+        "ru": "Доброе утро всем!",
+        "hi": "सभी को सुप्रभात!",
+        "pl": "Dzień dobry wszystkim!",
+        "nl": "Goedemorgen iedereen!",
+        "el": "Καλημέρα σε όλους!",
+        "sv": "God morgon alla!",
+        "no": "God morgen alle sammen!",
+        "fi": "Hyvää huomenta kaikille!",
+        "cs": "Dobré ráno všem!",
+        "uk": "Добрий ранок усім!",
+        "th": "สวัสดีตอนเช้าทุกคน!",
+        "vi": "Chào buổi sáng mọi người!"
       }
     },
     {
@@ -46,7 +142,23 @@
       "text": {
         "en": "How are you?",
         "es": "¿Cómo estás?",
-        "he": "מה שלומך?"
+        "he": "מה שלומך?",
+        "fr": "Comment allez-vous ?",
+        "de": "Wie geht es dir?",
+        "it": "Come stai?",
+        "pt": "Como você está?",
+        "ru": "Как дела?",
+        "hi": "कैसे हो आप?",
+        "pl": "Jak się masz?",
+        "nl": "Hoe gaat het met je?",
+        "el": "Πώς είσαι;",
+        "sv": "Hur mår du?",
+        "no": "Hvordan går det?",
+        "fi": "Miten menee?",
+        "cs": "Jak se máš?",
+        "uk": "Як справи?",
+        "th": "คุณเป็นอย่างไรบ้าง?",
+        "vi": "Bạn khỏe không?"
       }
     },
     {
@@ -55,7 +167,23 @@
       "text": {
         "en": "Nice to meet you.",
         "es": "Mucho gusto.",
-        "he": "נעים להכיר."
+        "he": "נעים להכיר.",
+        "fr": "Enchanté de vous rencontrer.",
+        "de": "Schön, dich kennenzulernen.",
+        "it": "Piacere di conoscerti.",
+        "pt": "Prazer em conhecê-lo.",
+        "ru": "Приятно познакомиться.",
+        "hi": "आपसे मिलकर खुशी हुई।",
+        "pl": "Miło cię poznać.",
+        "nl": "Leuk je te ontmoeten.",
+        "el": "Χαίρομαι που σε γνώρισα.",
+        "sv": "Trevligt att träffas.",
+        "no": "Hyggelig å møte deg.",
+        "fi": "Hauska tavata.",
+        "cs": "Těší mě, že tě poznávám.",
+        "uk": "Приємно познайомитися.",
+        "th": "ยินดีที่ได้รู้จัก",
+        "vi": "Rất vui được gặp bạn."
       }
     },
     {
@@ -64,12 +192,44 @@
       "text": {
         "en": "goodbye",
         "es": "adiós",
-        "he": "להתראות"
+        "he": "להתראות",
+        "fr": "au revoir",
+        "de": "auf Wiedersehen",
+        "it": "arrivederci",
+        "pt": "adeus",
+        "ru": "до свидания",
+        "hi": "अलविदा",
+        "pl": "do widzenia",
+        "nl": "tot ziens",
+        "el": "αντίο",
+        "sv": "hej då",
+        "no": "farvel",
+        "fi": "näkemiin",
+        "cs": "na shledanou",
+        "uk": "до побачення",
+        "th": "ลาก่อน",
+        "vi": "tạm biệt"
       },
       "example": {
         "en": "Goodbye, see you later!",
         "es": "¡Adiós, hasta luego!",
-        "he": "להתראות, נתראה אחר כך!"
+        "he": "להתראות, נתראה אחר כך!",
+        "fr": "Au revoir, à plus tard !",
+        "de": "Auf Wiedersehen, bis später!",
+        "it": "Arrivederci, a più tardi!",
+        "pt": "Adeus, até logo!",
+        "ru": "До свидания, увидимся позже!",
+        "hi": "अलविदा, फिर मिलेंगे!",
+        "pl": "Do widzenia, do zobaczenia!",
+        "nl": "Tot ziens, tot later!",
+        "el": "Αντίο, θα τα πούμε αργότερα!",
+        "sv": "Hej då, vi ses senare!",
+        "no": "Farvel, vi ses senere!",
+        "fi": "Näkemiin, nähdään myöhemmin!",
+        "cs": "Na shledanou, uvidíme se později!",
+        "uk": "До побачення, побачимося пізніше!",
+        "th": "ลาก่อน แล้วพบกันใหม่!",
+        "vi": "Tạm biệt, hẹn gặp lại!"
       }
     },
     {
@@ -78,12 +238,44 @@
       "text": {
         "en": "good night",
         "es": "buenas noches",
-        "he": "לילה טוב"
+        "he": "לילה טוב",
+        "fr": "bonne nuit",
+        "de": "gute Nacht",
+        "it": "buonanotte",
+        "pt": "boa noite",
+        "ru": "спокойной ночи",
+        "hi": "शुभ रात्रि",
+        "pl": "dobranoc",
+        "nl": "goedenacht",
+        "el": "καληνύχτα",
+        "sv": "god natt",
+        "no": "god natt",
+        "fi": "hyvää yötä",
+        "cs": "dobrou noc",
+        "uk": "добраніч",
+        "th": "ราตรีสวัสดิ์",
+        "vi": "chúc ngủ ngon"
       },
       "example": {
         "en": "Good night, sleep well.",
         "es": "Buenas noches, duerme bien.",
-        "he": "לילה טוב, שיהיה לך שינה טובה."
+        "he": "לילה טוב, שיהיה לך שינה טובה.",
+        "fr": "Bonne nuit, dors bien.",
+        "de": "Gute Nacht, schlaf gut.",
+        "it": "Buonanotte, dormi bene.",
+        "pt": "Boa noite, durma bem.",
+        "ru": "Спокойной ночи, спи спокойно.",
+        "hi": "शुभ रात्रि, अच्छी नींद लें।",
+        "pl": "Dobranoc, śpij dobrze.",
+        "nl": "Goedenacht, slaap lekker.",
+        "el": "Καληνύχτα, κοιμήσου καλά.",
+        "sv": "God natt, sov gott.",
+        "no": "God natt, sove godt.",
+        "fi": "Hyvää yötä, nuku hyvin.",
+        "cs": "Dobrou noc, spi dobře.",
+        "uk": "Добраніч, спи спокійно.",
+        "th": "ราตรีสวัสดิ์ นอนหลับฝันดี",
+        "vi": "Chúc ngủ ngon, ngủ ngon giấc."
       }
     },
     {
@@ -92,12 +284,44 @@
       "text": {
         "en": "good afternoon",
         "es": "buenas tardes",
-        "he": "צהריים טובים"
+        "he": "צהריים טובים",
+        "fr": "bon après-midi",
+        "de": "guten Tag",
+        "it": "buon pomeriggio",
+        "pt": "boa tarde",
+        "ru": "добрый день",
+        "hi": "शुभ दोपहर",
+        "pl": "dzień dobry",
+        "nl": "goedemiddag",
+        "el": "καλησπέρα",
+        "sv": "god eftermiddag",
+        "no": "god ettermiddag",
+        "fi": "hyvää iltapäivää",
+        "cs": "dobré odpoledne",
+        "uk": "добрий день",
+        "th": "สวัสดีตอนบ่าย",
+        "vi": "chào buổi chiều"
       },
       "example": {
         "en": "Good afternoon, how was your day?",
         "es": "Buenas tardes, ¿cómo estuvo tu día?",
-        "he": "צהריים טובים, איך היה היום שלך?"
+        "he": "צהריים טובים, איך היה היום שלך?",
+        "fr": "Bon après-midi, comment s'est passée votre journée ?",
+        "de": "Guten Tag, wie war dein Tag?",
+        "it": "Buon pomeriggio, com'è andata la tua giornata?",
+        "pt": "Boa tarde, como foi o seu dia?",
+        "ru": "Добрый день, как прошел ваш день?",
+        "hi": "शुभ दोपहर, आपका दिन कैसा रहा?",
+        "pl": "Dzień dobry, jak minął twój dzień?",
+        "nl": "Goedemiddag, hoe was je dag?",
+        "el": "Καλησπέρα, πώς πήγε η μέρα σου;",
+        "sv": "God eftermiddag, hur var din dag?",
+        "no": "God ettermiddag, hvordan var dagen din?",
+        "fi": "Hyvää iltapäivää, miten päiväsi meni?",
+        "cs": "Dobré odpoledne, jak se ti vedl den?",
+        "uk": "Добрий день, як пройшов твій день?",
+        "th": "สวัสดีตอนบ่าย วันของคุณเป็นอย่างไรบ้าง?",
+        "vi": "Chào buổi chiều, ngày của bạn thế nào?"
       }
     },
     {
@@ -106,12 +330,44 @@
       "text": {
         "en": "good evening",
         "es": "buenas noches",
-        "he": "ערב טוב"
+        "he": "ערב טוב",
+        "fr": "bonne soirée",
+        "de": "gute Abend",
+        "it": "buonasera",
+        "pt": "boa noite",
+        "ru": "добрый вечер",
+        "hi": "शुभ संध्या",
+        "pl": "dobry wieczór",
+        "nl": "goede avond",
+        "el": "καληνύχτα",
+        "sv": "god kväll",
+        "no": "god kveld",
+        "fi": "hyvää iltapäivää",
+        "cs": "dobré odpoledne",
+        "uk": "добрий вечір",
+        "th": "สวัสดีตอนเย็น",
+        "vi": "chào buổi tối"
       },
       "example": {
         "en": "Good evening, welcome home.",
         "es": "Buenas noches, bienvenido a casa.",
-        "he": "ערב טוב, ברוך הבא הביתה."
+        "he": "ערב טוב, ברוך הבא הביתה.",
+        "fr": "Bonne soirée, bienvenue à la maison.",
+        "de": "Gute Abend, willkommen nach Hause.",
+        "it": "Buonasera, benvenuto in casa.",
+        "pt": "Boa noite, bem-vindo a casa.",
+        "ru": "Добрый вечер, добро пожаловать домой.",
+        "hi": "शुभ संध्या, बहुत स्वागत है घर में।",
+        "pl": "Dobry wieczór, witaj w domu.",
+        "nl": "Goede avond, welkom thuis.",
+        "el": "Καληνύχτα, καλως ήρθατε στο σπίτι.",
+        "sv": "God kväll, välkommen hem.",
+        "no": "God kveld, velkommen hjem.",
+        "fi": "Hyvää iltapäivää, tervetuloa kotiin.",
+        "cs": "Dobré odpoledne, vítejte domů.",
+        "uk": "Добрий вечір, вітаємо вдома.",
+        "th": "สวัสดีตอนเย็น ยินดีต้อนรับสู่บ้าน.",
+        "vi": "Chào buổi tối, chào mừng bạn đến nhà."
       }
     },
     {
@@ -120,12 +376,44 @@
       "text": {
         "en": "please",
         "es": "por favor",
-        "he": "בבקשה"
+        "he": "בבקשה",
+        "fr": "s'il vous plaît",
+        "de": "bitte",
+        "it": "per favore",
+        "pt": "por favor",
+        "ru": "пожалуйста",
+        "hi": "कृपया",
+        "pl": "proszę",
+        "nl": "als u wilt",
+        "el": "παρακαλώ",
+        "sv": "vänligen",
+        "no": "vær så snill",
+        "fi": "käytännössä",
+        "cs": "prosím",
+        "uk": "будь ласка",
+        "th": "กรุณา",
+        "vi": "vui lòng"
       },
       "example": {
         "en": "Please help me.",
         "es": "Por favor ayúdame.",
-        "he": "בבקשה עזור לי."
+        "he": "בבקשה עזור לי.",
+        "fr": "S'il vous plaît, aidez-moi.",
+        "de": "Bitte helfe mir.",
+        "it": "Per favore, aiutami.",
+        "pt": "Por favor, me ajude.",
+        "ru": "Пожалуйста, помогите мне.",
+        "hi": "कृपया मेरी मदद करें।",
+        "pl": "Proszę, pomóż mi.",
+        "nl": "Als u wilt, help me.",
+        "el": "Παρακαλώ, βοηθήστε με.",
+        "sv": "Vänligen, hjälp mig.",
+        "no": "Vær så snill, hjelp meg.",
+        "fi": "Käytännössä, auta minua.",
+        "cs": "Prosím, pomozte mi.",
+        "uk": "Будь ласка, допоможіть мені.",
+        "th": "กรุณา ช่วยฉันหน่อย",
+        "vi": "Vui lòng giúp tôi."
       }
     },
     {
@@ -134,12 +422,44 @@
       "text": {
         "en": "thank you",
         "es": "gracias",
-        "he": "תודה"
+        "he": "תודה",
+        "fr": "merci",
+        "de": "danke",
+        "it": "grazie",
+        "pt": "obrigado",
+        "ru": "спасибо",
+        "hi": "धन्यवाद",
+        "pl": "dziękuję",
+        "nl": "dank u wel",
+        "el": "σας ευχαριστώ",
+        "sv": "tack",
+        "no": "takk",
+        "fi": "kiitos",
+        "cs": "díky",
+        "uk": "дякую",
+        "th": "ขอบคุณ",
+        "vi": "cảm ơn"
       },
       "example": {
         "en": "Thank you very much.",
         "es": "Muchas gracias.",
-        "he": "תודה רבה."
+        "he": "תודה רבה.",
+        "fr": "Merci beaucoup.",
+        "de": "Danke schön.",
+        "it": "Grazie molto.",
+        "pt": "Obrigado muito.",
+        "ru": "Спасибо большое.",
+        "hi": "धन्यवाद बहुत बहुत।",
+        "pl": "Dziękuję bardzo.",
+        "nl": "Dank u wel, heel erg bedankt.",
+        "el": "Σας ευχαριστώ πολύ.",
+        "sv": "Tack, mycket tacksam.",
+        "no": "Takk, mye takk.",
+        "fi": "Kiitos, paljon kiitoksia.",
+        "cs": "Díky, moc díky.",
+        "uk": "дякую, дуже дякую.",
+        "th": "ขอบคุณมากครับ",
+        "vi": "Cảm ơn rất nhiều."
       }
     },
     {
@@ -148,7 +468,23 @@
       "text": {
         "en": "You are welcome.",
         "es": "De nada.",
-        "he": "אין בעד מה."
+        "he": "אין בעד מה.",
+        "fr": "De rien.",
+        "de": "Gern geschehen.",
+        "it": "Prego.",
+        "pt": "De nada.",
+        "ru": "Не за что.",
+        "hi": "आपको कोई भी देना नहीं।",
+        "pl": "Nie ma za co.",
+        "nl": "Nee, geen probleem.",
+        "el": "Δεν υπάρχει πρόβλημα.",
+        "sv": "Det är inget problem.",
+        "no": "Nei, ingen problem.",
+        "fi": "Ei, ei ongelma.",
+        "cs": "Ne, není to problém.",
+        "uk": "Ні, це не проблема.",
+        "th": "ไม่มีปัญหา",
+        "vi": "Không có gì đâu."
       }
     },
     {
@@ -157,12 +493,44 @@
       "text": {
         "en": "excuse me",
         "es": "perdón",
-        "he": "סליחה"
+        "he": "סליחה",
+        "fr": "excuse-moi",
+        "de": "entschuldigung",
+        "it": "scusa",
+        "pt": "desculpe",
+        "ru": "извините",
+        "hi": "माफ करें",
+        "pl": "przepraszam",
+        "nl": "excuseer me",
+        "el": "συγχωρέστε",
+        "sv": "excuse me",
+        "no": "excuseer meg",
+        "fi": "anteeksi",
+        "cs": "promiňte",
+        "uk": "пробачте",
+        "th": "ขอโทษ",
+        "vi": "xin lỗi"
       },
       "example": {
         "en": "Excuse me, can you help me?",
         "es": "Perdón, ¿puedes ayudarme?",
-        "he": "סליחה, אתה יכול לעזור לי?"
+        "he": "סליחה, אתה יכול לעזור לי?",
+        "fr": "Excuse-moi, pouvez-vous m'aider ?",
+        "de": "Entschuldigung, können Sie mir helfen?",
+        "it": "Scusa, puoi aiutarmi?",
+        "pt": "Desculpe, pode me ajudar?",
+        "ru": "Извините, вы можете мне помочь?",
+        "hi": "माफ करें, क्या आप मेरी मदद कर सकते हैं?",
+        "pl": "Przepraszam, mogę ci pomóc?",
+        "nl": "Excuseer me, kan u mij helpen?",
+        "el": "Συγχωρέστε, μπορείτε να με βοηθήσετε;",
+        "sv": "Excuse me, kan du hjälpa mig?",
+        "no": "Excuseer meg, kan du hjelpe meg?",
+        "fi": "Anteeksi, voitko auttaa minua?",
+        "cs": "Promiňte, můžete mi pomoci?",
+        "uk": "Пробачте, ви можете мені допомогти?",
+        "th": "ขอโทษ, คุณสามารถช่วยฉันได้ไหม?",
+        "vi": "Xin lỗi, bạn có thể giúp tôi không?"
       }
     },
     {
@@ -171,12 +539,44 @@
       "text": {
         "en": "sorry",
         "es": "lo siento",
-        "he": "מצטער"
+        "he": "מצטער",
+        "fr": "excuse-moi",
+        "de": "entschuldigung",
+        "it": "scusa",
+        "pt": "desculpe",
+        "ru": "извините",
+        "hi": "माफ करें",
+        "pl": "przepraszam",
+        "nl": "excuseer me",
+        "el": "συγχωρέστε",
+        "sv": "excuse me",
+        "no": "excuseer meg",
+        "fi": "anteeksi",
+        "cs": "promiňte",
+        "uk": "пробачте",
+        "th": "ขอโทษ",
+        "vi": "xin lỗi"
       },
       "example": {
         "en": "I'm sorry for being late.",
         "es": "Lo siento por llegar tarde.",
-        "he": "אני מצטער על האיחור."
+        "he": "אני מצטער על האיחור.",
+        "fr": "Je suis désolé d'être en retard.",
+        "de": "Ich entschuldige mich für das Verspäten.",
+        "it": "Mi scuso per essere in ritardo.",
+        "pt": "Desculpe, por chegar atrasado.",
+        "ru": "Извините, я опаздываю.",
+        "hi": "माफ करें, मैं देर से आया।",
+        "pl": "Przepraszam, przyszedłem późno.",
+        "nl": "Excuseer me, ik kwam te laat.",
+        "el": "Συγχωρέστε, ήμουν αργότερα.",
+        "sv": "Excuse me, jag var försenad.",
+        "no": "Excuseer meg, jeg var for sent.",
+        "fi": "Anteeksi, olin yhteydessä.",
+        "cs": "Promiňte, jsem byl později.",
+        "uk": "Пробачте, я був пізніше.",
+        "th": "ขอโทษ, ผมมาช้าแล้ว",
+        "vi": "Xin lỗi, tôi đã đến muộn."
       }
     },
     {
@@ -185,7 +585,23 @@
       "text": {
         "en": "See you later.",
         "es": "Hasta luego.",
-        "he": "נתראה אחר כך."
+        "he": "נתראה אחר כך.",
+        "fr": "À plus tard.",
+        "de": "Bis später.",
+        "it": "A più tardi.",
+        "pt": "Até logo.",
+        "ru": "Увидимся позже.",
+        "hi": "फिर मिलेंगे।",
+        "pl": "Do zobaczenia.",
+        "nl": "Tot later.",
+        "el": "Θα τα πούμε αργότερα.",
+        "sv": "Vi ses senare.",
+        "no": "Vi ses senere.",
+        "fi": "Nähdään myöhemmin.",
+        "cs": "Uvidíme se později.",
+        "uk": "Побачимося пізніше.",
+        "th": "แล้วพบกันใหม่!",
+        "vi": "Hẹn gặp lại!"
       }
     },
     {
@@ -194,7 +610,23 @@
       "text": {
         "en": "See you tomorrow.",
         "es": "Hasta mañana.",
-        "he": "נתראה מחר."
+        "he": "נתראה מחר.",
+        "fr": "À demain.",
+        "de": "Bis morgen.",
+        "it": "A domani.",
+        "pt": "Até amanhã.",
+        "ru": "Увидимся завтра.",
+        "hi": "मैं आपसे मिलकर खुशी हुई।",
+        "pl": "Do zobaczenia.",
+        "nl": "Tot ziens.",
+        "el": "Θα τα πούμε αργότερα.",
+        "sv": "Vi ses senare.",
+        "no": "Vi ses senere.",
+        "fi": "Nähdään myöhemmin.",
+        "cs": "Uvidíme se později.",
+        "uk": "Побачимося пізніше.",
+        "th": "แล้วพบกันใหม่!",
+        "vi": "Hẹn gặp lại!"
       }
     },
     {
@@ -203,7 +635,23 @@
       "text": {
         "en": "Have a nice day.",
         "es": "Que tengas un buen día.",
-        "he": "שיהיה לך יום נעים."
+        "he": "שיהיה לך יום נעים.",
+        "fr": "Que tu journée soit agréable.",
+        "de": "Ich wünsche Ihnen einen angenehmen Tag.",
+        "it": "Che tu giornata sia piacevole.",
+        "pt": "Que seu dia seja agradável.",
+        "ru": "Желаю вам хорошего дня.",
+        "hi": "आपका दिन अच्छा रहे।",
+        "pl": "Że masz przyjemny dzień.",
+        "nl": "Ik wens u een fijn dag.",
+        "el": "Να έχετε μια ωραία μέρα.",
+        "sv": "Jag önskar dig en trevlig dag.",
+        "no": "Jeg ønsker deg en fin dag.",
+        "fi": "Haluan, että päiväsi olisi mukava.",
+        "cs": "Přeji vám, abyste měli krásný den.",
+        "uk": "Бажаю вам гарного дня.",
+        "th": "ต้องการให้วันของคุณเป็นอย่างดี.",
+        "vi": "Tôi mong bạn có một ngày tốt."
       }
     },
     {
@@ -212,7 +660,23 @@
       "text": {
         "en": "Take care.",
         "es": "Cuídate.",
-        "he": "שמור על עצמך."
+        "he": "שמור על עצמך.",
+        "fr": "Prenez soin de vous.",
+        "de": "Vergessen Sie nicht, sich zu kümmern.",
+        "it": "Prenditi cura di te.",
+        "pt": "Cuide-se.",
+        "ru": "Не забудьте ухаживать за собой.",
+        "hi": "अपने आप को ध्यान दें।",
+        "pl": "Dba o siebie.",
+        "nl": "Neem zorg voor jezelf.",
+        "el": "Μην ξεχάσετε να σας προσέχετε.",
+        "sv": "Glöm inte att ta hand om dig själv.",
+        "no": "Ikke glem å ta vare på deg selv.",
+        "fi": "Älä unohda huolehtimaan itsestäsi.",
+        "cs": "Nezapomeňte na sebe.",
+        "uk": "Не забудьте ухаживати за собою.",
+        "th": "อย่าเพิ่งลืมดูแลตัวเอง",
+        "vi": "Đừng quên chăm sóc bản thân"
       }
     },
     {
@@ -221,12 +685,44 @@
       "text": {
         "en": "welcome",
         "es": "bienvenido",
-        "he": "ברוך הבא"
+        "he": "ברוך הבא",
+        "fr": "bienvenue",
+        "de": "willkommen",
+        "it": "benvenuto",
+        "pt": "bem-vindo",
+        "ru": "добро пожаловать",
+        "hi": "आपका स्वागत है",
+        "pl": "dla Ciebie",
+        "nl": "voor uw welkom",
+        "el": "καλως ήρθατε",
+        "sv": "välkommen",
+        "no": "velkommen",
+        "fi": "tervetuloa",
+        "cs": "pro vás",
+        "uk": "для вас",
+        "th": "ยินดีต้อนรับ",
+        "vi": "chào mừng"
       },
       "example": {
         "en": "Welcome to our home.",
         "es": "Bienvenido a nuestra casa.",
-        "he": "ברוך הבא לביתנו."
+        "he": "ברוך הבא לביתנו.",
+        "fr": "Bienvenue à notre maison.",
+        "de": "Willkommen in unserem Haus.",
+        "it": "Benvenuto in casa nostra.",
+        "pt": "Bem-vindo à nossa casa.",
+        "ru": "Добро пожаловать в наш дом.",
+        "hi": "हमारे घर में आपका स्वागत है",
+        "pl": "Dla Ciebie",
+        "nl": "voor uw welkom",
+        "el": "καλως ήρθατε στο σπίτι μας.",
+        "sv": "Välkommen till vårt hem.",
+        "no": "Velkommen til vårt hjem.",
+        "fi": "Tervetuloa kotiimme.",
+        "cs": "Pro vás",
+        "uk": "для вас",
+        "th": "ยินดีต้อนรับ",
+        "vi": "chào mừng"
       }
     },
     {
@@ -235,7 +731,23 @@
       "text": {
         "en": "How are you doing?",
         "es": "¿Cómo te va?",
-        "he": "איך הולך לך?"
+        "he": "איך הולך לך?",
+        "fr": "Comment ça va ?",
+        "de": "Wie geht es dir?",
+        "it": "Come stai?",
+        "pt": "Como você está?",
+        "ru": "Как дела?",
+        "hi": "कैसे हो आप?",
+        "pl": "Jak się masz?",
+        "nl": "Hoe gaat het met je?",
+        "el": "Πώς είσαι;",
+        "sv": "Hur mår du?",
+        "no": "Hvordan går det?",
+        "fi": "Miten menee?",
+        "cs": "Jak se máš?",
+        "uk": "Як справи?",
+        "th": "คุณเป็นอย่างไรบ้าง?",
+        "vi": "Bạn khỏe không?"
       }
     },
     {
@@ -244,7 +756,23 @@
       "text": {
         "en": "Pleasure to meet you.",
         "es": "Un placer conocerte.",
-        "he": "נעים להכיר אותך."
+        "he": "נעים להכיר אותך.",
+        "fr": "Enchanté de vous rencontrer.",
+        "de": "Schön, dich kennenzulernen.",
+        "it": "Piacere di conoscerti.",
+        "pt": "Prazer em conhecê-lo.",
+        "ru": "Приятно познакомиться.",
+        "hi": "आपसे मिलकर खुशी हुई।",
+        "pl": "Miło cię poznać.",
+        "nl": "Leuk je te ontmoeten.",
+        "el": "Χαίρομαι που σε γνώρισα.",
+        "sv": "Trevligt att träffas.",
+        "no": "Hyggelig å møte deg.",
+        "fi": "Hauska tavata.",
+        "cs": "Těší mě, že tě poznávám.",
+        "uk": "Приємно познайомитися.",
+        "th": "ยินดีที่ได้รู้จัก",
+        "vi": "Rất vui được gặp bạn."
       }
     }
   ]

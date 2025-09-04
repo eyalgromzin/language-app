@@ -4,12 +4,44 @@
   "name": { 
     "en": "Transportation", 
     "es": "Transporte", 
-    "he": "תחבורה" 
+    "he": "תחבורה",
+    "fr": "Transport",
+    "de": "Transport",
+    "it": "Trasporto",
+    "pt": "Transporte",
+    "ru": "Транспорт",
+    "hi": "परिवहन",
+    "pl": "Transport",
+    "nl": "Vervoer",
+    "el": "Μεταφορά",
+    "sv": "Transport",
+    "no": "Transport",
+    "fi": "Liikenne",
+    "cs": "Doprava",
+    "uk": "Транспорт",
+    "th": "การขนส่ง",
+    "vi": "Giao thông"
   },
   "description": { 
     "en": "Vehicles and ways to travel", 
     "es": "Vehículos y formas de viajar", 
-    "he": "כלי רכב ודרכי נסיעה" 
+    "he": "כלי רכב ודרכי נסיעה",
+    "fr": "Véhicules et moyens de transport",
+    "de": "Fahrzeuge und Reisemöglichkeiten",
+    "it": "Veicoli e modi di viaggiare",
+    "pt": "Veículos e formas de viajar",
+    "ru": "Транспортные средства и способы передвижения",
+    "hi": "वाहन और यात्रा के तरीके",
+    "pl": "Pojazdy i sposoby podróżowania",
+    "nl": "Voertuigen en manieren om te reizen",
+    "el": "Οχήματα και τρόποι ταξιδιού",
+    "sv": "Fordon och sätt att resa",
+    "no": "Kjøretøy og måter å reise på",
+    "fi": "Ajoneuvot ja matkustamistavat",
+    "cs": "Vozidla a způsoby cestování",
+    "uk": "Транспортні засоби та способи подорожі",
+    "th": "ยานพาหนะและวิธีการเดินทาง",
+    "vi": "Phương tiện và cách thức di chuyển"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "car", 
         "es": "coche", 
-        "he": "מכונית" 
+        "he": "מכונית",
+        "fr": "voiture",
+        "de": "Auto",
+        "it": "macchina",
+        "pt": "carro",
+        "ru": "машина",
+        "hi": "कार",
+        "pl": "samochód",
+        "nl": "auto",
+        "el": "αυτοκίνητο",
+        "sv": "bil",
+        "no": "bil",
+        "fi": "auto",
+        "cs": "auto",
+        "uk": "автомобіль",
+        "th": "รถยนต์",
+        "vi": "xe hơi"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "bus", 
         "es": "autobús", 
-        "he": "אוטובוס" 
+        "he": "אוטובוס",
+        "fr": "bus",
+        "de": "Bus",
+        "it": "autobus",
+        "pt": "ônibus",
+        "ru": "автобус",
+        "hi": "बस",
+        "pl": "autobus",
+        "nl": "bus",
+        "el": "λεωφορείο",
+        "sv": "buss",
+        "no": "buss",
+        "fi": "bussi",
+        "cs": "autobus",
+        "uk": "автобус",
+        "th": "รถบัส",
+        "vi": "xe buýt"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "train", 
         "es": "tren", 
-        "he": "רכבת" 
+        "he": "רכבת",
+        "fr": "train",
+        "de": "Zug",
+        "it": "treno",
+        "pt": "trem",
+        "ru": "поезд",
+        "hi": "ट्रेन",
+        "pl": "pociąg",
+        "nl": "trein",
+        "el": "τρένο",
+        "sv": "tåg",
+        "no": "tog",
+        "fi": "juna",
+        "cs": "vlak",
+        "uk": "поїзд",
+        "th": "รถไฟ",
+        "vi": "tàu hỏa"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "airplane", 
         "es": "avión", 
-        "he": "מטוס" 
+        "he": "מטוס",
+        "fr": "avion",
+        "de": "Flugzeug",
+        "it": "aereo",
+        "pt": "avião",
+        "ru": "самолет",
+        "hi": "हवाई जहाज",
+        "pl": "samolot",
+        "nl": "vliegtuig",
+        "el": "αεροπλάνο",
+        "sv": "flygplan",
+        "no": "fly",
+        "fi": "lentokone",
+        "cs": "letadlo",
+        "uk": "літак",
+        "th": "เครื่องบิน",
+        "vi": "máy bay"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "bicycle", 
         "es": "bicicleta", 
-        "he": "אופניים" 
+        "he": "אופניים",
+        "fr": "vélo",
+        "de": "Fahrrad",
+        "it": "bicicletta",
+        "pt": "bicicleta",
+        "ru": "велосипед",
+        "hi": "साइकिल",
+        "pl": "rower",
+        "nl": "fiets",
+        "el": "ποδήλατο",
+        "sv": "cykel",
+        "no": "sykkel",
+        "fi": "polkupyörä",
+        "cs": "kolo",
+        "uk": "велосипед",
+        "th": "จักรยาน",
+        "vi": "xe đạp"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "motorcycle", 
         "es": "motocicleta", 
-        "he": "אופנוע" 
+        "he": "אופנוע",
+        "fr": "moto",
+        "de": "Motorrad",
+        "it": "motocicletta",
+        "pt": "motocicleta",
+        "ru": "мотоцикл",
+        "hi": "मोटरसाइकिल",
+        "pl": "motocykl",
+        "nl": "motorfiets",
+        "el": "μοτοσυκλέτα",
+        "sv": "motorcykel",
+        "no": "motorsykkel",
+        "fi": "moottoripyörä",
+        "cs": "motorka",
+        "uk": "мотоцикл",
+        "th": "รถจักรยานยนต์",
+        "vi": "xe máy"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "truck", 
         "es": "camión", 
-        "he": "משאית" 
+        "he": "משאית",
+        "fr": "camion",
+        "de": "Lkw",
+        "it": "camion",
+        "pt": "caminhão",
+        "ru": "грузовик",
+        "hi": "ट्रक",
+        "pl": "ciężarówka",
+        "nl": "vrachtwagen",
+        "el": "φορτηγό",
+        "sv": "lastbil",
+        "no": "lastebil",
+        "fi": "kuorma-auto",
+        "cs": "nákladní auto",
+        "uk": "вантажівка",
+        "th": "รถบรรทุก",
+        "vi": "xe tải"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "boat", 
         "es": "barco", 
-        "he": "סירה" 
+        "he": "סירה",
+        "fr": "bateau",
+        "de": "Boot",
+        "it": "barca",
+        "pt": "barco",
+        "ru": "лодка",
+        "hi": "नाव",
+        "pl": "łódka",
+        "nl": "boot",
+        "el": "βάρκα",
+        "sv": "båt",
+        "no": "båt",
+        "fi": "vene",
+        "cs": "člun",
+        "uk": "човен",
+        "th": "เรือ",
+        "vi": "thuyền"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "ship", 
         "es": "barco", 
-        "he": "אנייה" 
+        "he": "אנייה",
+        "fr": "navire",
+        "de": "Schiff",
+        "it": "nave",
+        "pt": "navio",
+        "ru": "корабль",
+        "hi": "जहाज",
+        "pl": "statek",
+        "nl": "schip",
+        "el": "πλοίο",
+        "sv": "fartyg",
+        "no": "skip",
+        "fi": "laiva",
+        "cs": "loď",
+        "uk": "корабель",
+        "th": "เรือ",
+        "vi": "tàu"
       } 
     },
     { 
@@ -99,7 +275,23 @@
       "text": { 
         "en": "subway", 
         "es": "metro", 
-        "he": "רכבת תחתית" 
+        "he": "רכבת תחתית",
+        "fr": "métro",
+        "de": "U-Bahn",
+        "it": "metropolitana",
+        "pt": "metrô",
+        "ru": "метро",
+        "hi": "मेट्रो",
+        "pl": "metro",
+        "nl": "metro",
+        "el": "μετρό",
+        "sv": "tunnelbana",
+        "no": "t-bane",
+        "fi": "metro",
+        "cs": "metro",
+        "uk": "метро",
+        "th": "รถไฟใต้ดิน",
+        "vi": "tàu điện ngầm"
       } 
     },
     { 
@@ -108,7 +300,23 @@
       "text": { 
         "en": "taxi", 
         "es": "taxi", 
-        "he": "מונית" 
+        "he": "מונית",
+        "fr": "taxi",
+        "de": "Taxi",
+        "it": "taxi",
+        "pt": "táxi",
+        "ru": "такси",
+        "hi": "टैक्सी",
+        "pl": "taksówka",
+        "nl": "taxi",
+        "el": "ταξί",
+        "sv": "taxi",
+        "no": "drosje",
+        "fi": "taksi",
+        "cs": "taxi",
+        "uk": "таксі",
+        "th": "แท็กซี่",
+        "vi": "taxi"
       } 
     },
     { 
@@ -117,7 +325,23 @@
       "text": { 
         "en": "helicopter", 
         "es": "helicóptero", 
-        "he": "מסוק" 
+        "he": "מסוק",
+        "fr": "hélicoptère",
+        "de": "Hubschrauber",
+        "it": "elicottero",
+        "pt": "helicóptero",
+        "ru": "вертолет",
+        "hi": "हेलीकॉप्टर",
+        "pl": "helikopter",
+        "nl": "helikopter",
+        "el": "ελικόπτερο",
+        "sv": "helikopter",
+        "no": "helikopter",
+        "fi": "helikopteri",
+        "cs": "vrtulník",
+        "uk": "гелікоптер",
+        "th": "เฮลิคอปเตอร์",
+        "vi": "máy bay trực thăng"
       } 
     },
     { 
@@ -126,7 +350,23 @@
       "text": { 
         "en": "scooter", 
         "es": "patinete", 
-        "he": "קורקינט" 
+        "he": "קורקינט",
+        "fr": "trottinette",
+        "de": "Roller",
+        "it": "monopattino",
+        "pt": "patinete",
+        "ru": "самокат",
+        "hi": "स्कूटर",
+        "pl": "hulajnoga",
+        "nl": "step",
+        "el": "πατίνι",
+        "sv": "sparkcykel",
+        "no": "sparkesykkel",
+        "fi": "potkulauta",
+        "cs": "koloběžka",
+        "uk": "самокат",
+        "th": "สกู๊ตเตอร์",
+        "vi": "xe tay ga"
       } 
     },
     { 
@@ -135,7 +375,23 @@
       "text": { 
         "en": "skateboard", 
         "es": "patineta", 
-        "he": "סקייטבורד" 
+        "he": "סקייטבורד",
+        "fr": "skateboard",
+        "de": "Skateboard",
+        "it": "skateboard",
+        "pt": "skate",
+        "ru": "скейтборд",
+        "hi": "स्केटबोर्ड",
+        "pl": "deskorolka",
+        "nl": "skateboard",
+        "el": "σκέιτμπορντ",
+        "sv": "skateboard",
+        "no": "rullebrett",
+        "fi": "rullalauta",
+        "cs": "skateboard",
+        "uk": "скейтборд",
+        "th": "สเก็ตบอร์ด",
+        "vi": "ván trượt"
       } 
     },
     { 
@@ -144,7 +400,23 @@
       "text": { 
         "en": "rollerblades", 
         "es": "patines", 
-        "he": "גלגיליות" 
+        "he": "גלגיליות",
+        "fr": "patins à roues alignées",
+        "de": "Inline-Skates",
+        "it": "pattini in linea",
+        "pt": "patins inline",
+        "ru": "роликовые коньки",
+        "hi": "रोलर ब्लेड्स",
+        "pl": "rolki",
+        "nl": "inline skates",
+        "el": "πατίνια σε σειρά",
+        "sv": "inlines",
+        "no": "inline skøyter",
+        "fi": "rullaluistimet",
+        "cs": "inline brusle",
+        "uk": "роликові ковзани",
+        "th": "โรลเลอร์เบลด",
+        "vi": "giày trượt inline"
       } 
     },
     { 
@@ -153,7 +425,23 @@
       "text": { 
         "en": "tram", 
         "es": "tranvía", 
-        "he": "חשמלית" 
+        "he": "חשמלית",
+        "fr": "tramway",
+        "de": "Straßenbahn",
+        "it": "tram",
+        "pt": "bonde",
+        "ru": "трамвай",
+        "hi": "ट्राम",
+        "pl": "tramwaj",
+        "nl": "tram",
+        "el": "τραμ",
+        "sv": "spårvagn",
+        "no": "trikk",
+        "fi": "raitiovaunu",
+        "cs": "tramvaj",
+        "uk": "трамвай",
+        "th": "รถราง",
+        "vi": "xe điện"
       } 
     },
     { 
@@ -162,7 +450,23 @@
       "text": { 
         "en": "ferry", 
         "es": "ferry", 
-        "he": "מעבורת" 
+        "he": "מעבורת",
+        "fr": "ferry",
+        "de": "Fähre",
+        "it": "traghetto",
+        "pt": "ferry",
+        "ru": "паром",
+        "hi": "फेरी",
+        "pl": "prom",
+        "nl": "veer",
+        "el": "φέρι μποτ",
+        "sv": "färja",
+        "no": "ferge",
+        "fi": "lautta",
+        "cs": "trajekt",
+        "uk": "пором",
+        "th": "เรือเฟอร์รี่",
+        "vi": "phà"
       } 
     },
     { 
@@ -171,7 +475,23 @@
       "text": { 
         "en": "van", 
         "es": "furgoneta", 
-        "he": "ואן" 
+        "he": "ואן",
+        "fr": "fourgon",
+        "de": "Kleinbus",
+        "it": "furgone",
+        "pt": "van",
+        "ru": "фургон",
+        "hi": "वैन",
+        "pl": "van",
+        "nl": "bestelbus",
+        "el": "φορτηγό",
+        "sv": "skåpbil",
+        "no": "varebil",
+        "fi": "pakettiauto",
+        "cs": "dodávka",
+        "uk": "мікроавтобус",
+        "th": "รถตู้",
+        "vi": "xe tải nhỏ"
       } 
     },
     { 
@@ -180,7 +500,23 @@
       "text": { 
         "en": "ambulance", 
         "es": "ambulancia", 
-        "he": "אמבולנס" 
+        "he": "אמבולנס",
+        "fr": "ambulance",
+        "de": "Krankenwagen",
+        "it": "ambulanza",
+        "pt": "ambulância",
+        "ru": "скорая помощь",
+        "hi": "एम्बुलेंस",
+        "pl": "karetka",
+        "nl": "ambulance",
+        "el": "ασθενοφόρο",
+        "sv": "ambulans",
+        "no": "ambulanse",
+        "fi": "ambulanssi",
+        "cs": "sanitka",
+        "uk": "швидка допомога",
+        "th": "รถพยาบาล",
+        "vi": "xe cứu thương"
       } 
     },
     { 
@@ -189,7 +525,23 @@
       "text": { 
         "en": "police car", 
         "es": "coche de policía", 
-        "he": "מכונית משטרה" 
+        "he": "מכונית משטרה",
+        "fr": "voiture de police",
+        "de": "Polizeiauto",
+        "it": "auto della polizia",
+        "pt": "carro da polícia",
+        "ru": "полицейская машина",
+        "hi": "पुलिस कार",
+        "pl": "radiowóz",
+        "nl": "politieauto",
+        "el": "αστυνομικό αυτοκίνητο",
+        "sv": "polisbil",
+        "no": "politibil",
+        "fi": "poliisiauto",
+        "cs": "policejní auto",
+        "uk": "поліцейська машина",
+        "th": "รถตำรวจ",
+        "vi": "xe cảnh sát"
       } 
     }
   ]

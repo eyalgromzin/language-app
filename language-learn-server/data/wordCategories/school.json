@@ -4,12 +4,44 @@
   "name": { 
     "en": "School", 
     "es": "Escuela", 
-    "he": "בית ספר" 
+    "he": "בית ספר",
+    "fr": "École",
+    "de": "Schule",
+    "it": "Scuola",
+    "pt": "Escola",
+    "ru": "Школа",
+    "hi": "स्कूल",
+    "pl": "Szkoła",
+    "nl": "School",
+    "el": "Σχολείο",
+    "sv": "Skola",
+    "no": "Skole",
+    "fi": "Koulu",
+    "cs": "Škola",
+    "uk": "Школа",
+    "th": "โรงเรียน",
+    "vi": "Trường học"
   },
   "description": { 
     "en": "School subjects and supplies", 
     "es": "Materias escolares y útiles", 
-    "he": "מקצועות לימוד וציוד בית ספר" 
+    "he": "מקצועות לימוד וציוד בית ספר",
+    "fr": "Matières scolaires et fournitures",
+    "de": "Schulfächer und -materialien",
+    "it": "Materie scolastiche e materiali",
+    "pt": "Matérias escolares e materiais",
+    "ru": "Школьные предметы и принадлежности",
+    "hi": "स्कूल के विषय और सामग्री",
+    "pl": "Przedmioty szkolne i przybory",
+    "nl": "Schoolvakken en materialen",
+    "el": "Σχολικά μαθήματα και υλικά",
+    "sv": "Skolämnen och material",
+    "no": "Skolefag og materialer",
+    "fi": "Kouluaineet ja materiaalit",
+    "cs": "Školní předměty a pomůcky",
+    "uk": "Шкільні предмети та приладдя",
+    "th": "วิชาเรียนและอุปกรณ์การเรียน",
+    "vi": "Môn học và dụng cụ học tập"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "math", 
         "es": "matemáticas", 
-        "he": "מתמטיקה" 
+        "he": "מתמטיקה",
+        "fr": "mathématiques",
+        "de": "Mathematik",
+        "it": "matematica",
+        "pt": "matemática",
+        "ru": "математика",
+        "hi": "गणित",
+        "pl": "matematyka",
+        "nl": "wiskunde",
+        "el": "μαθηματικά",
+        "sv": "matematik",
+        "no": "matematikk",
+        "fi": "matematiikka",
+        "cs": "matematika",
+        "uk": "математика",
+        "th": "คณิตศาสตร์",
+        "vi": "toán học"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "science", 
         "es": "ciencia", 
-        "he": "מדע" 
+        "he": "מדע",
+        "fr": "sciences",
+        "de": "Naturwissenschaften",
+        "it": "scienze",
+        "pt": "ciências",
+        "ru": "наука",
+        "hi": "विज्ञान",
+        "pl": "nauka",
+        "nl": "wetenschap",
+        "el": "επιστήμη",
+        "sv": "vetenskap",
+        "no": "vitenskap",
+        "fi": "tiede",
+        "cs": "věda",
+        "uk": "наука",
+        "th": "วิทยาศาสตร์",
+        "vi": "khoa học"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "history", 
         "es": "historia", 
-        "he": "היסטוריה" 
+        "he": "היסטוריה",
+        "fr": "histoire",
+        "de": "Geschichte",
+        "it": "storia",
+        "pt": "história",
+        "ru": "история",
+        "hi": "इतिहास",
+        "pl": "historia",
+        "nl": "geschiedenis",
+        "el": "ιστορία",
+        "sv": "historia",
+        "no": "historie",
+        "fi": "historia",
+        "cs": "dějepis",
+        "uk": "історія",
+        "th": "ประวัติศาสตร์",
+        "vi": "lịch sử"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "geography", 
         "es": "geografía", 
-        "he": "גיאוגרפיה" 
+        "he": "גיאוגרפיה",
+        "fr": "géographie",
+        "de": "Geographie",
+        "it": "geografia",
+        "pt": "geografia",
+        "ru": "география",
+        "hi": "भूगोल",
+        "pl": "geografia",
+        "nl": "aardrijkskunde",
+        "el": "γεωγραφία",
+        "sv": "geografi",
+        "no": "geografi",
+        "fi": "maantiede",
+        "cs": "zeměpis",
+        "uk": "географія",
+        "th": "ภูมิศาสตร์",
+        "vi": "địa lý"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "English", 
         "es": "inglés", 
-        "he": "אנגלית" 
+        "he": "אנגלית",
+        "fr": "anglais",
+        "de": "Englisch",
+        "it": "inglese",
+        "pt": "inglês",
+        "ru": "английский",
+        "hi": "अंग्रेजी",
+        "pl": "angielski",
+        "nl": "Engels",
+        "el": "αγγλικά",
+        "sv": "engelska",
+        "no": "engelsk",
+        "fi": "englanti",
+        "cs": "angličtina",
+        "uk": "англійська",
+        "th": "ภาษาอังกฤษ",
+        "vi": "tiếng Anh"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "Spanish", 
         "es": "español", 
-        "he": "ספרדית" 
+        "he": "ספרדית",
+        "fr": "espagnol",
+        "de": "Spanisch",
+        "it": "spagnolo",
+        "pt": "espanhol",
+        "ru": "испанский",
+        "hi": "स्पेनिश",
+        "pl": "hiszpański",
+        "nl": "Spaans",
+        "el": "ισπανικά",
+        "sv": "spanska",
+        "no": "spansk",
+        "fi": "espanja",
+        "cs": "španělština",
+        "uk": "іспанська",
+        "th": "ภาษาสเปน",
+        "vi": "tiếng Tây Ban Nha"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "Hebrew", 
         "es": "hebreo", 
-        "he": "עברית" 
+        "he": "עברית",
+        "fr": "hébreu",
+        "de": "Hebräisch",
+        "it": "ebraico",
+        "pt": "hebraico",
+        "ru": "иврит",
+        "hi": "हिब्रू",
+        "pl": "hebrajski",
+        "nl": "Hebreeuws",
+        "el": "εβραϊκά",
+        "sv": "hebreiska",
+        "no": "hebraisk",
+        "fi": "heprea",
+        "cs": "hebrejština",
+        "uk": "іврит",
+        "th": "ภาษาฮีบรู",
+        "vi": "tiếng Do Thái"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "art", 
         "es": "arte", 
-        "he": "אמנות" 
+        "he": "אמנות",
+        "fr": "art",
+        "de": "Kunst",
+        "it": "arte",
+        "pt": "arte",
+        "ru": "искусство",
+        "hi": "कला",
+        "pl": "sztuka",
+        "nl": "kunst",
+        "el": "τέχνη",
+        "sv": "konst",
+        "no": "kunst",
+        "fi": "taide",
+        "cs": "výtvarná výchova",
+        "uk": "мистецтво",
+        "th": "ศิลปะ",
+        "vi": "nghệ thuật"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "music", 
         "es": "música", 
-        "he": "מוזיקה" 
+        "he": "מוזיקה",
+        "fr": "musique",
+        "de": "Musik",
+        "it": "musica",
+        "pt": "música",
+        "ru": "музыка",
+        "hi": "संगीत",
+        "pl": "muzyka",
+        "nl": "muziek",
+        "el": "μουσική",
+        "sv": "musik",
+        "no": "musikk",
+        "fi": "musiikki",
+        "cs": "hudební výchova",
+        "uk": "музика",
+        "th": "ดนตรี",
+        "vi": "âm nhạc"
       } 
     },
     { 
@@ -99,34 +275,23 @@
       "text": { 
         "en": "gym", 
         "es": "gimnasia", 
-        "he": "חינוך גופני" 
-      } 
-    },
-    { 
-      "id": "pencil", 
-      "type": "word", 
-      "text": { 
-        "en": "pencil", 
-        "es": "lápiz", 
-        "he": "עיפרון" 
-      } 
-    },
-    { 
-      "id": "pen", 
-      "type": "word", 
-      "text": { 
-        "en": "pen", 
-        "es": "bolígrafo", 
-        "he": "עט" 
-      } 
-    },
-    { 
-      "id": "notebook", 
-      "type": "word", 
-      "text": { 
-        "en": "notebook", 
-        "es": "cuaderno", 
-        "he": "מחברת" 
+        "he": "חינוך גופני",
+        "fr": "éducation physique",
+        "de": "Sport",
+        "it": "educazione fisica",
+        "pt": "educação física",
+        "ru": "физкультура",
+        "hi": "शारीरिक शिक्षा",
+        "pl": "wychowanie fizyczne",
+        "nl": "gymnastiek",
+        "el": "γυμναστική",
+        "sv": "idrott",
+        "no": "kroppsøving",
+        "fi": "liikunta",
+        "cs": "tělesná výchova",
+        "uk": "фізкультура",
+        "th": "พลศึกษา",
+        "vi": "thể dục"
       } 
     },
     { 
@@ -135,61 +300,148 @@
       "text": { 
         "en": "book", 
         "es": "libro", 
-        "he": "ספר" 
+        "he": "ספר",
+        "fr": "livre",
+        "de": "Buch",
+        "it": "libro",
+        "pt": "livro",
+        "ru": "книга",
+        "hi": "किताब",
+        "pl": "książka",
+        "nl": "boek",
+        "el": "βιβλίο",
+        "sv": "bok",
+        "no": "bok",
+        "fi": "kirja",
+        "cs": "kniha",
+        "uk": "книга",
+        "th": "หนังสือ",
+        "vi": "sách"
       } 
     },
     { 
-      "id": "backpack", 
+      "id": "pencil", 
       "type": "word", 
       "text": { 
-        "en": "backpack", 
-        "es": "mochila", 
-        "he": "תיק גב" 
+        "en": "pencil", 
+        "es": "lápiz", 
+        "he": "עיפרון",
+        "fr": "crayon",
+        "de": "Bleistift",
+        "it": "matita",
+        "pt": "lápis",
+        "ru": "карандаш",
+        "hi": "पेंसिल",
+        "pl": "ołówek",
+        "nl": "potlood",
+        "el": "μολύβι",
+        "sv": "penna",
+        "no": "blyant",
+        "fi": "lyijykynä",
+        "cs": "tužka",
+        "uk": "олівець",
+        "th": "ดินสอ",
+        "vi": "bút chì"
       } 
     },
     { 
-      "id": "ruler", 
+      "id": "paper", 
       "type": "word", 
       "text": { 
-        "en": "ruler", 
-        "es": "regla", 
-        "he": "סרגל" 
+        "en": "paper", 
+        "es": "papel", 
+        "he": "נייר",
+        "fr": "papier",
+        "de": "Papier",
+        "it": "carta",
+        "pt": "papel",
+        "ru": "бумага",
+        "hi": "कागज",
+        "pl": "papier",
+        "nl": "papier",
+        "el": "χαρτί",
+        "sv": "papper",
+        "no": "papir",
+        "fi": "paperi",
+        "cs": "papír",
+        "uk": "папір",
+        "th": "กระดาษ",
+        "vi": "giấy"
       } 
     },
     { 
-      "id": "eraser", 
+      "id": "teacher", 
       "type": "word", 
       "text": { 
-        "en": "eraser", 
-        "es": "borrador", 
-        "he": "מחק" 
+        "en": "teacher", 
+        "es": "maestro", 
+        "he": "מורה",
+        "fr": "enseignant",
+        "de": "Lehrer",
+        "it": "insegnante",
+        "pt": "professor",
+        "ru": "учитель",
+        "hi": "शिक्षक",
+        "pl": "nauczyciel",
+        "nl": "leraar",
+        "el": "δάσκαλος",
+        "sv": "lärare",
+        "no": "lærer",
+        "fi": "opettaja",
+        "cs": "učitel",
+        "uk": "учитель",
+        "th": "ครู",
+        "vi": "giáo viên"
       } 
     },
     { 
-      "id": "scissors", 
+      "id": "student", 
       "type": "word", 
       "text": { 
-        "en": "scissors", 
-        "es": "tijeras", 
-        "he": "מספריים" 
+        "en": "student", 
+        "es": "estudiante", 
+        "he": "תלמיד",
+        "fr": "étudiant",
+        "de": "Schüler",
+        "it": "studente",
+        "pt": "estudante",
+        "ru": "ученик",
+        "hi": "छात्र",
+        "pl": "uczeń",
+        "nl": "leerling",
+        "el": "μαθητής",
+        "sv": "elev",
+        "no": "elev",
+        "fi": "oppilas",
+        "cs": "žák",
+        "uk": "учень",
+        "th": "นักเรียน",
+        "vi": "học sinh"
       } 
     },
     { 
-      "id": "glue", 
+      "id": "classroom", 
       "type": "word", 
       "text": { 
-        "en": "glue", 
-        "es": "pegamento", 
-        "he": "דבק" 
-      } 
-    },
-    { 
-      "id": "crayons", 
-      "type": "word", 
-      "text": { 
-        "en": "crayons", 
-        "es": "crayones", 
-        "he": "צבעי עפרון" 
+        "en": "classroom", 
+        "es": "aula", 
+        "he": "כיתה",
+        "fr": "salle de classe",
+        "de": "Klassenzimmer",
+        "it": "aula",
+        "pt": "sala de aula",
+        "ru": "класс",
+        "hi": "कक्षा",
+        "pl": "klasa",
+        "nl": "klaslokaal",
+        "el": "αίθουσα διδασκαλίας",
+        "sv": "klassrum",
+        "no": "klasserom",
+        "fi": "luokkahuone",
+        "cs": "třída",
+        "uk": "клас",
+        "th": "ห้องเรียน",
+        "vi": "lớp học"
       } 
     }
   ]

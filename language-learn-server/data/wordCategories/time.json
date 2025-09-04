@@ -4,12 +4,44 @@
   "name": { 
     "en": "Time", 
     "es": "Tiempo", 
-    "he": "זמן" 
+    "he": "זמן",
+    "fr": "Temps",
+    "de": "Zeit",
+    "it": "Tempo",
+    "pt": "Tempo",
+    "ru": "Время",
+    "hi": "समय",
+    "pl": "Czas",
+    "nl": "Tijd",
+    "el": "Χρόνος",
+    "sv": "Tid",
+    "no": "Tid",
+    "fi": "Aika",
+    "cs": "Čas",
+    "uk": "Час",
+    "th": "เวลา",
+    "vi": "Thời gian"
   },
   "description": { 
     "en": "Days and time words", 
     "es": "Palabras de tiempo", 
-    "he": "מילים של ימים וזמן" 
+    "he": "מילים של ימים וזמן",
+    "fr": "Mots de jours et de temps",
+    "de": "Tage und Zeitwörter",
+    "it": "Parole di giorni e tempo",
+    "pt": "Palavras de dias e tempo",
+    "ru": "Слова о днях и времени",
+    "hi": "दिन और समय के शब्द",
+    "pl": "Słowa dni i czasu",
+    "nl": "Woorden van dagen en tijd",
+    "el": "Λέξεις ημερών και χρόνου",
+    "sv": "Dagar och tidsord",
+    "no": "Dager og tidsord",
+    "fi": "Päivien ja ajan sanat",
+    "cs": "Slova dnů a času",
+    "uk": "Слова днів і часу",
+    "th": "คำของวันและเวลา",
+    "vi": "Từ ngữ về ngày và thời gian"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "today", 
         "es": "hoy", 
-        "he": "היום" 
+        "he": "היום",
+        "fr": "aujourd'hui",
+        "de": "heute",
+        "it": "oggi",
+        "pt": "hoje",
+        "ru": "сегодня",
+        "hi": "आज",
+        "pl": "dziś",
+        "nl": "vandaag",
+        "el": "σήμερα",
+        "sv": "idag",
+        "no": "i dag",
+        "fi": "tänään",
+        "cs": "dnes",
+        "uk": "сьогодні",
+        "th": "วันนี้",
+        "vi": "hôm nay"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "yesterday", 
         "es": "ayer", 
-        "he": "אתמול" 
+        "he": "אתמול",
+        "fr": "hier",
+        "de": "gestern",
+        "it": "ieri",
+        "pt": "ontem",
+        "ru": "вчера",
+        "hi": "कल",
+        "pl": "wczoraj",
+        "nl": "gisteren",
+        "el": "χθες",
+        "sv": "igår",
+        "no": "i går",
+        "fi": "eilen",
+        "cs": "včera",
+        "uk": "вчора",
+        "th": "เมื่อวาน",
+        "vi": "hôm qua"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "tomorrow", 
         "es": "mañana", 
-        "he": "מחר" 
+        "he": "מחר",
+        "fr": "demain",
+        "de": "morgen",
+        "it": "domani",
+        "pt": "amanhã",
+        "ru": "завтра",
+        "hi": "कल",
+        "pl": "jutro",
+        "nl": "morgen",
+        "el": "αύριο",
+        "sv": "imorgon",
+        "no": "i morgen",
+        "fi": "huomenna",
+        "cs": "zítra",
+        "uk": "завтра",
+        "th": "พรุ่งนี้",
+        "vi": "ngày mai"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "week", 
         "es": "semana", 
-        "he": "שבוע" 
+        "he": "שבוע",
+        "fr": "semaine",
+        "de": "Woche",
+        "it": "settimana",
+        "pt": "semana",
+        "ru": "неделя",
+        "hi": "सप्ताह",
+        "pl": "tydzień",
+        "nl": "week",
+        "el": "εβδομάδα",
+        "sv": "vecka",
+        "no": "uke",
+        "fi": "viikko",
+        "cs": "týden",
+        "uk": "тиждень",
+        "th": "สัปดาห์",
+        "vi": "tuần"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "hour", 
         "es": "hora", 
-        "he": "שעה" 
+        "he": "שעה",
+        "fr": "heure",
+        "de": "Stunde",
+        "it": "ora",
+        "pt": "hora",
+        "ru": "час",
+        "hi": "घंटा",
+        "pl": "godzina",
+        "nl": "uur",
+        "el": "ώρα",
+        "sv": "timme",
+        "no": "time",
+        "fi": "tunti",
+        "cs": "hodina",
+        "uk": "година",
+        "th": "ชั่วโมง",
+        "vi": "giờ"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "minute", 
         "es": "minuto", 
-        "he": "דקה" 
+        "he": "דקה",
+        "fr": "minute",
+        "de": "Minute",
+        "it": "minuto",
+        "pt": "minuto",
+        "ru": "минута",
+        "hi": "मिनट",
+        "pl": "minuta",
+        "nl": "minuut",
+        "el": "λεπτό",
+        "sv": "minut",
+        "no": "minutt",
+        "fi": "minuutti",
+        "cs": "minuta",
+        "uk": "хвилина",
+        "th": "นาที",
+        "vi": "phút"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "second", 
         "es": "segundo", 
-        "he": "שנייה" 
+        "he": "שנייה",
+        "fr": "seconde",
+        "de": "Sekunde",
+        "it": "secondo",
+        "pt": "segundo",
+        "ru": "секунда",
+        "hi": "सेकंड",
+        "pl": "sekunda",
+        "nl": "seconde",
+        "el": "δευτερόλεπτο",
+        "sv": "sekund",
+        "no": "sekund",
+        "fi": "sekunti",
+        "cs": "sekunda",
+        "uk": "секунда",
+        "th": "วินาที",
+        "vi": "giây"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "morning", 
         "es": "mañana", 
-        "he": "בוקר" 
+        "he": "בוקר",
+        "fr": "matin",
+        "de": "Morgen",
+        "it": "mattina",
+        "pt": "manhã",
+        "ru": "утро",
+        "hi": "सुबह",
+        "pl": "rano",
+        "nl": "ochtend",
+        "el": "πρωί",
+        "sv": "morgon",
+        "no": "morgen",
+        "fi": "aamu",
+        "cs": "ráno",
+        "uk": "ранок",
+        "th": "เช้า",
+        "vi": "sáng"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "afternoon", 
         "es": "tarde", 
-        "he": "צהריים" 
+        "he": "צהריים",
+        "fr": "après-midi",
+        "de": "Nachmittag",
+        "it": "pomeriggio",
+        "pt": "tarde",
+        "ru": "день",
+        "hi": "दोपहर",
+        "pl": "popołudnie",
+        "nl": "middag",
+        "el": "απόγευμα",
+        "sv": "eftermiddag",
+        "no": "ettermiddag",
+        "fi": "iltapäivä",
+        "cs": "odpoledne",
+        "uk": "день",
+        "th": "บ่าย",
+        "vi": "chiều"
       } 
     },
     { 
@@ -99,7 +275,23 @@
       "text": { 
         "en": "evening", 
         "es": "noche", 
-        "he": "ערב" 
+        "he": "ערב",
+        "fr": "soir",
+        "de": "Abend",
+        "it": "sera",
+        "pt": "noite",
+        "ru": "вечер",
+        "hi": "शाम",
+        "pl": "wieczór",
+        "nl": "avond",
+        "el": "βράδυ",
+        "sv": "kväll",
+        "no": "kveld",
+        "fi": "ilta",
+        "cs": "večer",
+        "uk": "вечір",
+        "th": "เย็น",
+        "vi": "tối"
       } 
     },
     { 
@@ -108,70 +300,48 @@
       "text": { 
         "en": "night", 
         "es": "noche", 
-        "he": "לילה" 
+        "he": "לילה",
+        "fr": "nuit",
+        "de": "Nacht",
+        "it": "notte",
+        "pt": "noite",
+        "ru": "ночь",
+        "hi": "रात",
+        "pl": "noc",
+        "nl": "nacht",
+        "el": "νύχτα",
+        "sv": "natt",
+        "no": "natt",
+        "fi": "yö",
+        "cs": "noc",
+        "uk": "ніч",
+        "th": "กลางคืน",
+        "vi": "đêm"
       } 
     },
     { 
-      "id": "monday", 
+      "id": "day", 
       "type": "word", 
       "text": { 
-        "en": "Monday", 
-        "es": "lunes", 
-        "he": "שני" 
-      } 
-    },
-    { 
-      "id": "tuesday", 
-      "type": "word", 
-      "text": { 
-        "en": "Tuesday", 
-        "es": "martes", 
-        "he": "שלישי" 
-      } 
-    },
-    { 
-      "id": "wednesday", 
-      "type": "word", 
-      "text": { 
-        "en": "Wednesday", 
-        "es": "miércoles", 
-        "he": "רביעי" 
-      } 
-    },
-    { 
-      "id": "thursday", 
-      "type": "word", 
-      "text": { 
-        "en": "Thursday", 
-        "es": "jueves", 
-        "he": "חמישי" 
-      } 
-    },
-    { 
-      "id": "friday", 
-      "type": "word", 
-      "text": { 
-        "en": "Friday", 
-        "es": "viernes", 
-        "he": "שישי" 
-      } 
-    },
-    { 
-      "id": "saturday", 
-      "type": "word", 
-      "text": { 
-        "en": "Saturday", 
-        "es": "sábado", 
-        "he": "שבת" 
-      } 
-    },
-    { 
-      "id": "sunday", 
-      "type": "word", 
-      "text": { 
-        "en": "Sunday", 
-        "es": "domingo", 
-        "he": "ראשון" 
+        "en": "day", 
+        "es": "día", 
+        "he": "יום",
+        "fr": "jour",
+        "de": "Tag",
+        "it": "giorno",
+        "pt": "dia",
+        "ru": "день",
+        "hi": "दिन",
+        "pl": "dzień",
+        "nl": "dag",
+        "el": "ημέρα",
+        "sv": "dag",
+        "no": "dag",
+        "fi": "päivä",
+        "cs": "den",
+        "uk": "день",
+        "th": "วัน",
+        "vi": "ngày"
       } 
     },
     { 
@@ -180,7 +350,23 @@
       "text": { 
         "en": "month", 
         "es": "mes", 
-        "he": "חודש" 
+        "he": "חודש",
+        "fr": "mois",
+        "de": "Monat",
+        "it": "mese",
+        "pt": "mês",
+        "ru": "месяц",
+        "hi": "महीना",
+        "pl": "miesiąc",
+        "nl": "maand",
+        "el": "μήνας",
+        "sv": "månad",
+        "no": "måned",
+        "fi": "kuukausi",
+        "cs": "měsíc",
+        "uk": "місяць",
+        "th": "เดือน",
+        "vi": "tháng"
       } 
     },
     { 
@@ -189,25 +375,148 @@
       "text": { 
         "en": "year", 
         "es": "año", 
-        "he": "שנה" 
+        "he": "שנה",
+        "fr": "année",
+        "de": "Jahr",
+        "it": "anno",
+        "pt": "ano",
+        "ru": "год",
+        "hi": "साल",
+        "pl": "rok",
+        "nl": "jaar",
+        "el": "χρόνος",
+        "sv": "år",
+        "no": "år",
+        "fi": "vuosi",
+        "cs": "rok",
+        "uk": "рік",
+        "th": "ปี",
+        "vi": "năm"
       } 
     },
     { 
-      "id": "season", 
+      "id": "now", 
       "type": "word", 
       "text": { 
-        "en": "season", 
-        "es": "estación", 
-        "he": "עונה" 
+        "en": "now", 
+        "es": "ahora", 
+        "he": "עכשיו",
+        "fr": "maintenant",
+        "de": "jetzt",
+        "it": "ora",
+        "pt": "agora",
+        "ru": "сейчас",
+        "hi": "अब",
+        "pl": "teraz",
+        "nl": "nu",
+        "el": "τώρα",
+        "sv": "nu",
+        "no": "nå",
+        "fi": "nyt",
+        "cs": "teď",
+        "uk": "зараз",
+        "th": "ตอนนี้",
+        "vi": "bây giờ"
       } 
     },
     { 
-      "id": "century", 
+      "id": "later", 
       "type": "word", 
       "text": { 
-        "en": "century", 
-        "es": "siglo", 
-        "he": "מאה" 
+        "en": "later", 
+        "es": "más tarde", 
+        "he": "מאוחר יותר",
+        "fr": "plus tard",
+        "de": "später",
+        "it": "più tardi",
+        "pt": "mais tarde",
+        "ru": "позже",
+        "hi": "बाद में",
+        "pl": "później",
+        "nl": "later",
+        "el": "αργότερα",
+        "sv": "senare",
+        "no": "senere",
+        "fi": "myöhemmin",
+        "cs": "později",
+        "uk": "пізніше",
+        "th": "ภายหลัง",
+        "vi": "sau"
+      } 
+    },
+    { 
+      "id": "soon", 
+      "type": "word", 
+      "text": { 
+        "en": "soon", 
+        "es": "pronto", 
+        "he": "בקרוב",
+        "fr": "bientôt",
+        "de": "bald",
+        "it": "presto",
+        "pt": "logo",
+        "ru": "скоро",
+        "hi": "जल्द",
+        "pl": "wkrótce",
+        "nl": "snel",
+        "el": "σύντομα",
+        "sv": "snart",
+        "no": "snart",
+        "fi": "pian",
+        "cs": "brzy",
+        "uk": "скоро",
+        "th": "เร็วๆ นี้",
+        "vi": "sớm"
+      } 
+    },
+    { 
+      "id": "never", 
+      "type": "word", 
+      "text": { 
+        "en": "never", 
+        "es": "nunca", 
+        "he": "אף פעם",
+        "fr": "jamais",
+        "de": "nie",
+        "it": "mai",
+        "pt": "nunca",
+        "ru": "никогда",
+        "hi": "कभी नहीं",
+        "pl": "nigdy",
+        "nl": "nooit",
+        "el": "ποτέ",
+        "sv": "aldrig",
+        "no": "aldri",
+        "fi": "koskaan",
+        "cs": "nikdy",
+        "uk": "ніколи",
+        "th": "ไม่เคย",
+        "vi": "không bao giờ"
+      } 
+    },
+    { 
+      "id": "always", 
+      "type": "word", 
+      "text": { 
+        "en": "always", 
+        "es": "siempre", 
+        "he": "תמיד",
+        "fr": "toujours",
+        "de": "immer",
+        "it": "sempre",
+        "pt": "sempre",
+        "ru": "всегда",
+        "hi": "हमेशा",
+        "pl": "zawsze",
+        "nl": "altijd",
+        "el": "πάντα",
+        "sv": "alltid",
+        "no": "alltid",
+        "fi": "aina",
+        "cs": "vždy",
+        "uk": "завжди",
+        "th": "เสมอ",
+        "vi": "luôn luôn"
       } 
     }
   ]

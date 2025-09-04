@@ -4,12 +4,44 @@
   "name": { 
     "en": "Family", 
     "es": "Familia", 
-    "he": "משפחה" 
+    "he": "משפחה",
+    "fr": "Famille",
+    "de": "Familie",
+    "it": "Famiglia",
+    "pt": "Família",
+    "ru": "Семья",
+    "hi": "परिवार",
+    "pl": "Rodzina",
+    "nl": "Familie",
+    "el": "Οικογένεια",
+    "sv": "Familj",
+    "no": "Familie",
+    "fi": "Perhe",
+    "cs": "Rodina",
+    "uk": "Сім'я",
+    "th": "ครอบครัว",
+    "vi": "Gia đình"
   },
   "description": { 
     "en": "Family members", 
     "es": "Miembros de la familia", 
-    "he": "בני משפחה" 
+    "he": "בני משפחה",
+    "fr": "Membres de la famille",
+    "de": "Familienmitglieder",
+    "it": "Membri della famiglia",
+    "pt": "Membros da família",
+    "ru": "Члены семьи",
+    "hi": "परिवार के सदस्य",
+    "pl": "Członkowie rodziny",
+    "nl": "Gezinsleden",
+    "el": "Μέλη της οικογένειας",
+    "sv": "Familjemedlemmar",
+    "no": "Familiemedlemmer",
+    "fi": "Perheenjäsenet",
+    "cs": "Členové rodiny",
+    "uk": "Члени сім'ї",
+    "th": "สมาชิกในครอบครัว",
+    "vi": "Thành viên gia đình"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "mother", 
         "es": "madre", 
-        "he": "אמא" 
+        "he": "אמא",
+        "fr": "mère",
+        "de": "Mutter",
+        "it": "madre",
+        "pt": "mãe",
+        "ru": "мать",
+        "hi": "माँ",
+        "pl": "matka",
+        "nl": "moeder",
+        "el": "μητέρα",
+        "sv": "mor",
+        "no": "mor",
+        "fi": "äiti",
+        "cs": "matka",
+        "uk": "мати",
+        "th": "แม่",
+        "vi": "mẹ"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "father", 
         "es": "padre", 
-        "he": "אבא" 
+        "he": "אבא",
+        "fr": "père",
+        "de": "Vater",
+        "it": "padre",
+        "pt": "pai",
+        "ru": "отец",
+        "hi": "पिता",
+        "pl": "ojciec",
+        "nl": "vader",
+        "el": "πατέρας",
+        "sv": "far",
+        "no": "far",
+        "fi": "isä",
+        "cs": "otec",
+        "uk": "батько",
+        "th": "พ่อ",
+        "vi": "cha"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "brother", 
         "es": "hermano", 
-        "he": "אח" 
+        "he": "אח",
+        "fr": "frère",
+        "de": "Bruder",
+        "it": "fratello",
+        "pt": "irmão",
+        "ru": "брат",
+        "hi": "भाई",
+        "pl": "brat",
+        "nl": "broer",
+        "el": "αδελφός",
+        "sv": "bror",
+        "no": "bror",
+        "fi": "veli",
+        "cs": "bratr",
+        "uk": "брат",
+        "th": "พี่ชาย",
+        "vi": "anh trai"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "sister", 
         "es": "hermana", 
-        "he": "אחות" 
+        "he": "אחות",
+        "fr": "sœur",
+        "de": "Schwester",
+        "it": "sorella",
+        "pt": "irmã",
+        "ru": "сестра",
+        "hi": "बहन",
+        "pl": "siostra",
+        "nl": "zus",
+        "el": "αδελφή",
+        "sv": "syster",
+        "no": "søster",
+        "fi": "sisko",
+        "cs": "sestra",
+        "uk": "сестра",
+        "th": "พี่สาว",
+        "vi": "chị gái"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "family", 
         "es": "familia", 
-        "he": "משפחה" 
+        "he": "משפחה",
+        "fr": "famille",
+        "de": "Familie",
+        "it": "famiglia",
+        "pt": "família",
+        "ru": "семья",
+        "hi": "परिवार",
+        "pl": "rodzina",
+        "nl": "familie",
+        "el": "οικογένεια",
+        "sv": "familj",
+        "no": "familie",
+        "fi": "perhe",
+        "cs": "rodina",
+        "uk": "сім'я",
+        "th": "ครอบครัว",
+        "vi": "gia đình"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "grandmother", 
         "es": "abuela", 
-        "he": "סבתא" 
+        "he": "סבתא",
+        "fr": "grand-mère",
+        "de": "Großmutter",
+        "it": "nonna",
+        "pt": "avó",
+        "ru": "бабушка",
+        "hi": "दादी",
+        "pl": "babcia",
+        "nl": "oma",
+        "el": "γιαγιά",
+        "sv": "mormor",
+        "no": "bestemor",
+        "fi": "isoäiti",
+        "cs": "babička",
+        "uk": "бабуся",
+        "th": "ยาย",
+        "vi": "bà"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "grandfather", 
         "es": "abuelo", 
-        "he": "סבא" 
+        "he": "סבא",
+        "fr": "grand-père",
+        "de": "Großvater",
+        "it": "nonno",
+        "pt": "avô",
+        "ru": "дедушка",
+        "hi": "दादा",
+        "pl": "dziadek",
+        "nl": "opa",
+        "el": "παππούς",
+        "sv": "morfar",
+        "no": "bestefar",
+        "fi": "isoisä",
+        "cs": "dědeček",
+        "uk": "дідусь",
+        "th": "ปู่",
+        "vi": "ông"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "aunt", 
         "es": "tía", 
-        "he": "דודה" 
+        "he": "דודה",
+        "fr": "tante",
+        "de": "Tante",
+        "it": "zia",
+        "pt": "tia",
+        "ru": "тётя",
+        "hi": "चाची",
+        "pl": "ciotka",
+        "nl": "tante",
+        "el": "θεία",
+        "sv": "moster",
+        "no": "tante",
+        "fi": "täti",
+        "cs": "teta",
+        "uk": "тітка",
+        "th": "ป้า",
+        "vi": "cô"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "uncle", 
         "es": "tío", 
-        "he": "דוד" 
+        "he": "דוד",
+        "fr": "oncle",
+        "de": "Onkel",
+        "it": "zio",
+        "pt": "tio",
+        "ru": "дядя",
+        "hi": "चाचा",
+        "pl": "wujek",
+        "nl": "oom",
+        "el": "θείος",
+        "sv": "farbror",
+        "no": "onkel",
+        "fi": "setä",
+        "cs": "strýc",
+        "uk": "дядько",
+        "th": "ลุง",
+        "vi": "chú"
       } 
     },
     { 
@@ -99,34 +275,23 @@
       "text": { 
         "en": "cousin", 
         "es": "primo", 
-        "he": "בן דוד" 
-      } 
-    },
-    { 
-      "id": "niece", 
-      "type": "word", 
-      "text": { 
-        "en": "niece", 
-        "es": "sobrina", 
-        "he": "אחיינית" 
-      } 
-    },
-    { 
-      "id": "nephew", 
-      "type": "word", 
-      "text": { 
-        "en": "nephew", 
-        "es": "sobrino", 
-        "he": "אחיין" 
-      } 
-    },
-    { 
-      "id": "daughter", 
-      "type": "word", 
-      "text": { 
-        "en": "daughter", 
-        "es": "hija", 
-        "he": "בת" 
+        "he": "בן דוד",
+        "fr": "cousin",
+        "de": "Cousin",
+        "it": "cugino",
+        "pt": "primo",
+        "ru": "двоюродный брат",
+        "hi": "चचेरा भाई",
+        "pl": "kuzyn",
+        "nl": "neef",
+        "el": "ξάδερφος",
+        "sv": "kusin",
+        "no": "fetter",
+        "fi": "serkku",
+        "cs": "bratranec",
+        "uk": "двоюрідний брат",
+        "th": "ลูกพี่ลูกน้อง",
+        "vi": "anh em họ"
       } 
     },
     { 
@@ -135,25 +300,48 @@
       "text": { 
         "en": "son", 
         "es": "hijo", 
-        "he": "בן" 
+        "he": "בן",
+        "fr": "fils",
+        "de": "Sohn",
+        "it": "figlio",
+        "pt": "filho",
+        "ru": "сын",
+        "hi": "बेटा",
+        "pl": "syn",
+        "nl": "zoon",
+        "el": "γιος",
+        "sv": "son",
+        "no": "sønn",
+        "fi": "poika",
+        "cs": "syn",
+        "uk": "син",
+        "th": "ลูกชาย",
+        "vi": "con trai"
       } 
     },
     { 
-      "id": "wife", 
+      "id": "daughter", 
       "type": "word", 
       "text": { 
-        "en": "wife", 
-        "es": "esposa", 
-        "he": "אישה" 
-      } 
-    },
-    { 
-      "id": "husband", 
-      "type": "word", 
-      "text": { 
-        "en": "husband", 
-        "es": "esposo", 
-        "he": "בעל" 
+        "en": "daughter", 
+        "es": "hija", 
+        "he": "בת",
+        "fr": "fille",
+        "de": "Tochter",
+        "it": "figlia",
+        "pt": "filha",
+        "ru": "дочь",
+        "hi": "बेटी",
+        "pl": "córka",
+        "nl": "dochter",
+        "el": "κόρη",
+        "sv": "dotter",
+        "no": "datter",
+        "fi": "tytär",
+        "cs": "dcera",
+        "uk": "дочка",
+        "th": "ลูกสาว",
+        "vi": "con gái"
       } 
     },
     { 
@@ -162,7 +350,23 @@
       "text": { 
         "en": "baby", 
         "es": "bebé", 
-        "he": "תינוק" 
+        "he": "תינוק",
+        "fr": "bébé",
+        "de": "Baby",
+        "it": "bambino",
+        "pt": "bebê",
+        "ru": "ребёнок",
+        "hi": "बच्चा",
+        "pl": "dziecko",
+        "nl": "baby",
+        "el": "μωρό",
+        "sv": "bebis",
+        "no": "baby",
+        "fi": "vauva",
+        "cs": "miminko",
+        "uk": "дитина",
+        "th": "ทารก",
+        "vi": "em bé"
       } 
     },
     { 
@@ -171,7 +375,23 @@
       "text": { 
         "en": "child", 
         "es": "niño", 
-        "he": "ילד" 
+        "he": "ילד",
+        "fr": "enfant",
+        "de": "Kind",
+        "it": "bambino",
+        "pt": "criança",
+        "ru": "ребёнок",
+        "hi": "बच्चा",
+        "pl": "dziecko",
+        "nl": "kind",
+        "el": "παιδί",
+        "sv": "barn",
+        "no": "barn",
+        "fi": "lapsi",
+        "cs": "dítě",
+        "uk": "дитина",
+        "th": "เด็ก",
+        "vi": "trẻ em"
       } 
     },
     { 
@@ -180,7 +400,23 @@
       "text": { 
         "en": "parents", 
         "es": "padres", 
-        "he": "הורים" 
+        "he": "הורים",
+        "fr": "parents",
+        "de": "Eltern",
+        "it": "genitori",
+        "pt": "pais",
+        "ru": "родители",
+        "hi": "माता-पिता",
+        "pl": "rodzice",
+        "nl": "ouders",
+        "el": "γονείς",
+        "sv": "föräldrar",
+        "no": "foreldre",
+        "fi": "vanhemmat",
+        "cs": "rodiče",
+        "uk": "батьки",
+        "th": "พ่อแม่",
+        "vi": "cha mẹ"
       } 
     },
     { 
@@ -188,35 +424,99 @@
       "type": "word", 
       "text": { 
         "en": "children", 
-        "es": "hijos", 
-        "he": "ילדים" 
+        "es": "niños", 
+        "he": "ילדים",
+        "fr": "enfants",
+        "de": "Kinder",
+        "it": "bambini",
+        "pt": "crianças",
+        "ru": "дети",
+        "hi": "बच्चे",
+        "pl": "dzieci",
+        "nl": "kinderen",
+        "el": "παιδιά",
+        "sv": "barn",
+        "no": "barn",
+        "fi": "lapset",
+        "cs": "děti",
+        "uk": "діти",
+        "th": "เด็ก",
+        "vi": "trẻ em"
       } 
     },
     { 
-      "id": "siblings", 
+      "id": "husband", 
       "type": "word", 
       "text": { 
-        "en": "siblings", 
-        "es": "hermanos", 
-        "he": "אחים" 
+        "en": "husband", 
+        "es": "esposo", 
+        "he": "בעל",
+        "fr": "mari",
+        "de": "Ehemann",
+        "it": "marito",
+        "pt": "marido",
+        "ru": "муж",
+        "hi": "पति",
+        "pl": "mąż",
+        "nl": "echtgenoot",
+        "el": "σύζυγος",
+        "sv": "man",
+        "no": "mann",
+        "fi": "aviomies",
+        "cs": "manžel",
+        "uk": "чоловік",
+        "th": "สามี",
+        "vi": "chồng"
       } 
     },
     { 
-      "id": "stepmother", 
+      "id": "wife", 
       "type": "word", 
       "text": { 
-        "en": "stepmother", 
-        "es": "madrastra", 
-        "he": "אם חורגת" 
+        "en": "wife", 
+        "es": "esposa", 
+        "he": "אישה",
+        "fr": "femme",
+        "de": "Ehefrau",
+        "it": "moglie",
+        "pt": "esposa",
+        "ru": "жена",
+        "hi": "पत्नी",
+        "pl": "żona",
+        "nl": "echtgenote",
+        "el": "σύζυγος",
+        "sv": "fru",
+        "no": "kone",
+        "fi": "vaimo",
+        "cs": "manželka",
+        "uk": "дружина",
+        "th": "ภรรยา",
+        "vi": "vợ"
       } 
     },
     { 
-      "id": "stepfather", 
+      "id": "spouse", 
       "type": "word", 
       "text": { 
-        "en": "stepfather", 
-        "es": "padrastro", 
-        "he": "אב חורג" 
+        "en": "spouse", 
+        "es": "cónyuge", 
+        "he": "בן זוג",
+        "fr": "conjoint",
+        "de": "Ehepartner",
+        "it": "coniuge",
+        "pt": "cônjuge",
+        "ru": "супруг",
+        "hi": "जीवनसाथी",
+        "pl": "małżonek",
+        "nl": "echtgenoot",
+        "el": "σύζυγος",
+        "sv": "make",
+        "no": "ektefelle",
+        "fi": "puoliso",
+        "cs": "manžel",
+        "uk": "чоловік",
+        "th": "คู่สมรส",
+        "vi": "vợ chồng"
       } 
     }
   ]

@@ -4,12 +4,44 @@
   "name": { 
     "en": "Colors", 
     "es": "Colores", 
-    "he": "צבעים" 
+    "he": "צבעים",
+    "fr": "Couleurs",
+    "de": "Farben",
+    "it": "Colori",
+    "pt": "Cores",
+    "ru": "Цвета",
+    "hi": "रंग",
+    "pl": "Kolory",
+    "nl": "Kleuren",
+    "el": "Χρώματα",
+    "sv": "Färger",
+    "no": "Farger",
+    "fi": "Värit",
+    "cs": "Barvy",
+    "uk": "Кольори",
+    "th": "สี",
+    "vi": "Màu sắc"
   },
   "description": { 
     "en": "Basic colors and shades", 
     "es": "Colores básicos y tonos", 
-    "he": "צבעים בסיסיים וגוונים" 
+    "he": "צבעים בסיסיים וגוונים",
+    "fr": "Couleurs de base et nuances",
+    "de": "Grundfarben und Schattierungen",
+    "it": "Colori di base e sfumature",
+    "pt": "Cores básicas e tons",
+    "ru": "Основные цвета и оттенки",
+    "hi": "बुनियादी रंग और शेड",
+    "pl": "Podstawowe kolory i odcienie",
+    "nl": "Basis kleuren en tinten",
+    "el": "Βασικά χρώματα και αποχρώσεις",
+    "sv": "Grundläggande färger och nyanser",
+    "no": "Grunnleggende farger og nyanser",
+    "fi": "Perusvärit ja sävyt",
+    "cs": "Základní barvy a odstíny",
+    "uk": "Основні кольори та відтінки",
+    "th": "สีพื้นฐานและเฉดสี",
+    "vi": "Màu cơ bản và sắc thái"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "red", 
         "es": "rojo", 
-        "he": "אדום" 
+        "he": "אדום",
+        "fr": "rouge",
+        "de": "rot",
+        "it": "rosso",
+        "pt": "vermelho",
+        "ru": "красный",
+        "hi": "लाल",
+        "pl": "czerwony",
+        "nl": "rood",
+        "el": "κόκκινο",
+        "sv": "röd",
+        "no": "rød",
+        "fi": "punainen",
+        "cs": "červená",
+        "uk": "червоний",
+        "th": "แดง",
+        "vi": "đỏ"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "blue", 
         "es": "azul", 
-        "he": "כחול" 
+        "he": "כחול",
+        "fr": "bleu",
+        "de": "blau",
+        "it": "blu",
+        "pt": "azul",
+        "ru": "синий",
+        "hi": "नीला",
+        "pl": "niebieski",
+        "nl": "blauw",
+        "el": "μπλε",
+        "sv": "blå",
+        "no": "blå",
+        "fi": "sininen",
+        "cs": "modrá",
+        "uk": "синій",
+        "th": "น้ำเงิน",
+        "vi": "xanh dương"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "green", 
         "es": "verde", 
-        "he": "ירוק" 
+        "he": "ירוק",
+        "fr": "vert",
+        "de": "grün",
+        "it": "verde",
+        "pt": "verde",
+        "ru": "зеленый",
+        "hi": "हरा",
+        "pl": "zielony",
+        "nl": "groen",
+        "el": "πράσινο",
+        "sv": "grön",
+        "no": "grønn",
+        "fi": "vihreä",
+        "cs": "zelená",
+        "uk": "зелений",
+        "th": "เขียว",
+        "vi": "xanh lá"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "yellow", 
         "es": "amarillo", 
-        "he": "צהוב" 
+        "he": "צהוב",
+        "fr": "jaune",
+        "de": "gelb",
+        "it": "giallo",
+        "pt": "amarelo",
+        "ru": "желтый",
+        "hi": "पीला",
+        "pl": "żółty",
+        "nl": "geel",
+        "el": "κίτρινο",
+        "sv": "gul",
+        "no": "gul",
+        "fi": "keltainen",
+        "cs": "žlutá",
+        "uk": "жовтий",
+        "th": "เหลือง",
+        "vi": "vàng"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "orange", 
         "es": "naranja", 
-        "he": "כתום" 
+        "he": "כתום",
+        "fr": "orange",
+        "de": "orange",
+        "it": "arancione",
+        "pt": "laranja",
+        "ru": "оранжевый",
+        "hi": "नारंगी",
+        "pl": "pomarańczowy",
+        "nl": "oranje",
+        "el": "πορτοκαλί",
+        "sv": "orange",
+        "no": "oransje",
+        "fi": "oranssi",
+        "cs": "oranžová",
+        "uk": "помаранчевий",
+        "th": "ส้ม",
+        "vi": "cam"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "purple", 
         "es": "morado", 
-        "he": "סגול" 
+        "he": "סגול",
+        "fr": "violet",
+        "de": "lila",
+        "it": "viola",
+        "pt": "roxo",
+        "ru": "фиолетовый",
+        "hi": "बैंगनी",
+        "pl": "fioletowy",
+        "nl": "paars",
+        "el": "μωβ",
+        "sv": "lila",
+        "no": "lilla",
+        "fi": "violetti",
+        "cs": "fialová",
+        "uk": "фіолетовий",
+        "th": "ม่วง",
+        "vi": "tím"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "pink", 
         "es": "rosa", 
-        "he": "ורוד" 
+        "he": "ורוד",
+        "fr": "rose",
+        "de": "rosa",
+        "it": "rosa",
+        "pt": "rosa",
+        "ru": "розовый",
+        "hi": "गुलाबी",
+        "pl": "różowy",
+        "nl": "roze",
+        "el": "ροζ",
+        "sv": "rosa",
+        "no": "rosa",
+        "fi": "pinkki",
+        "cs": "růžová",
+        "uk": "рожевий",
+        "th": "ชมพู",
+        "vi": "hồng"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "brown", 
         "es": "marrón", 
-        "he": "חום" 
+        "he": "חום",
+        "fr": "marron",
+        "de": "braun",
+        "it": "marrone",
+        "pt": "marrom",
+        "ru": "коричневый",
+        "hi": "भूरा",
+        "pl": "brązowy",
+        "nl": "bruin",
+        "el": "καφέ",
+        "sv": "brun",
+        "no": "brun",
+        "fi": "ruskea",
+        "cs": "hnědá",
+        "uk": "коричневий",
+        "th": "น้ำตาล",
+        "vi": "nâu"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "black", 
         "es": "negro", 
-        "he": "שחור" 
+        "he": "שחור",
+        "fr": "noir",
+        "de": "schwarz",
+        "it": "nero",
+        "pt": "preto",
+        "ru": "черный",
+        "hi": "काला",
+        "pl": "czarny",
+        "nl": "zwart",
+        "el": "μαύρο",
+        "sv": "svart",
+        "no": "svart",
+        "fi": "musta",
+        "cs": "černá",
+        "uk": "чорний",
+        "th": "ดำ",
+        "vi": "đen"
       } 
     },
     { 
@@ -99,7 +275,23 @@
       "text": { 
         "en": "white", 
         "es": "blanco", 
-        "he": "לבן" 
+        "he": "לבן",
+        "fr": "blanc",
+        "de": "weiß",
+        "it": "bianco",
+        "pt": "branco",
+        "ru": "белый",
+        "hi": "सफेद",
+        "pl": "biały",
+        "nl": "wit",
+        "el": "άσπρο",
+        "sv": "vit",
+        "no": "hvit",
+        "fi": "valkoinen",
+        "cs": "bílá",
+        "uk": "білий",
+        "th": "ขาว",
+        "vi": "trắng"
       } 
     },
     { 
@@ -108,7 +300,23 @@
       "text": { 
         "en": "gray", 
         "es": "gris", 
-        "he": "אפור" 
+        "he": "אפור",
+        "fr": "gris",
+        "de": "grau",
+        "it": "grigio",
+        "pt": "cinza",
+        "ru": "серый",
+        "hi": "ग्रे",
+        "pl": "szary",
+        "nl": "grijs",
+        "el": "γκρι",
+        "sv": "grå",
+        "no": "grå",
+        "fi": "harmaa",
+        "cs": "šedá",
+        "uk": "сірий",
+        "th": "เทา",
+        "vi": "xám"
       } 
     },
     { 
@@ -117,7 +325,23 @@
       "text": { 
         "en": "gold", 
         "es": "dorado", 
-        "he": "זהב" 
+        "he": "זהב",
+        "fr": "or",
+        "de": "gold",
+        "it": "oro",
+        "pt": "dourado",
+        "ru": "золотой",
+        "hi": "सोना",
+        "pl": "złoty",
+        "nl": "goud",
+        "el": "χρυσό",
+        "sv": "guld",
+        "no": "gull",
+        "fi": "kulta",
+        "cs": "zlatá",
+        "uk": "золотий",
+        "th": "ทอง",
+        "vi": "vàng"
       } 
     },
     { 
@@ -126,7 +350,23 @@
       "text": { 
         "en": "silver", 
         "es": "plateado", 
-        "he": "כסף" 
+        "he": "כסף",
+        "fr": "argent",
+        "de": "silber",
+        "it": "argento",
+        "pt": "prateado",
+        "ru": "серебряный",
+        "hi": "चांदी",
+        "pl": "srebrny",
+        "nl": "zilver",
+        "el": "ασημί",
+        "sv": "silver",
+        "no": "sølv",
+        "fi": "hopea",
+        "cs": "stříbrná",
+        "uk": "срібний",
+        "th": "เงิน",
+        "vi": "bạc"
       } 
     },
     { 
@@ -135,7 +375,23 @@
       "text": { 
         "en": "turquoise", 
         "es": "turquesa", 
-        "he": "טורקיז" 
+        "he": "טורקיז",
+        "fr": "turquoise",
+        "de": "türkis",
+        "it": "turchese",
+        "pt": "turquesa",
+        "ru": "туркменский",
+        "hi": "तुर्की",
+        "pl": "turkusowy",
+        "nl": "turquoise",
+        "el": "τουρκουζικό",
+        "sv": "turkos",
+        "no": "turkis",
+        "fi": "turkki",
+        "cs": "turkos",
+        "uk": "туркменський",
+        "th": "ทรงคติน",
+        "vi": "xanh lá cây"
       } 
     },
     { 
@@ -144,7 +400,23 @@
       "text": { 
         "en": "lime", 
         "es": "lima", 
-        "he": "ליים" 
+        "he": "ליים",
+        "fr": "citron vert",
+        "de": "limette",
+        "it": "lime",
+        "pt": "lima",
+        "ru": "лайм",
+        "hi": "लाइम",
+        "pl": "lime",
+        "nl": "limoen",
+        "el": "λεμόνι",
+        "sv": "lime",
+        "no": "lim",
+        "fi": "limu",
+        "cs": "limetová",
+        "uk": "лайм",
+        "th": "มะลิ",
+        "vi": "lê"
       } 
     },
     { 
@@ -153,7 +425,23 @@
       "text": { 
         "en": "navy", 
         "es": "azul marino", 
-        "he": "כחול כהה" 
+        "he": "כחול כהה",
+        "fr": "bleu marine",
+        "de": "marineblau",
+        "it": "blu marino",
+        "pt": "azul marinho",
+        "ru": "темно-синий",
+        "hi": "गहरा नेवी",
+        "pl": "niebieski morski",
+        "nl": "marineblauw",
+        "el": "μαύρο ναυτικό",
+        "sv": "mörkblå",
+        "no": "mørkblå",
+        "fi": "tumman sininen",
+        "cs": "tmavě modrá",
+        "uk": "темно-синій",
+        "th": "น้ำเงินม่วง",
+        "vi": "xanh đen"
       } 
     },
     { 
@@ -162,7 +450,23 @@
       "text": { 
         "en": "coral", 
         "es": "coral", 
-        "he": "אלמוג" 
+        "he": "אלמוג",
+        "fr": "corail",
+        "de": "Koralle",
+        "it": "corallo",
+        "pt": "coral",
+        "ru": "коралловый",
+        "hi": "कोरल",
+        "pl": "koralowy",
+        "nl": "koraal",
+        "el": "κοραλλί",
+        "sv": "korall",
+        "no": "korall",
+        "fi": "koral",
+        "cs": "koral",
+        "uk": "коралловий",
+        "th": "สีคอรัล",
+        "vi": "kết tủa"
       } 
     },
     { 
@@ -171,7 +475,23 @@
       "text": { 
         "en": "lavender", 
         "es": "lavanda", 
-        "he": "לבנדר" 
+        "he": "לבנדר",
+        "fr": "lavande",
+        "de": "lavendel",
+        "it": "lavanda",
+        "pt": "lavanda",
+        "ru": "лавандовый",
+        "hi": "लालवन्दर",
+        "pl": "lavendelowy",
+        "nl": "lavendel",
+        "el": "λαβανδέρ",
+        "sv": "lavendel",
+        "no": "lavendel",
+        "fi": "lavendeli",
+        "cs": "lavanda",
+        "uk": "лавандовий",
+        "th": "สีลาวันเดอร์",
+        "vi": "lavanda"
       } 
     },
     { 
@@ -180,7 +500,23 @@
       "text": { 
         "en": "teal", 
         "es": "verde azulado", 
-        "he": "ירוק כחלחל" 
+        "he": "ירוק כחלחל",
+        "fr": "vert bleu",
+        "de": "türkisgrün",
+        "it": "verde blu",
+        "pt": "verde azulado",
+        "ru": "зелено-синий",
+        "hi": "हरा छाल",
+        "pl": "zielono-niebieski",
+        "nl": "groenblauw",
+        "el": "πράσινο μπλε",
+        "sv": "grönblå",
+        "no": "grønblå",
+        "fi": "vihreä sininen",
+        "cs": "zeleno-modrá",
+        "uk": "зелено-синій",
+        "th": "เขียวฟ้า",
+        "vi": "xanh lá"
       } 
     },
     { 
@@ -189,7 +525,23 @@
       "text": { 
         "en": "maroon", 
         "es": "granate", 
-        "he": "בורדו" 
+        "he": "בורדו",
+        "fr": "marron",
+        "de": "dunkelrot",
+        "it": "marrone scuro",
+        "pt": "granate",
+        "ru": "темно-красный",
+        "hi": "भूरा ग्रेनेट",
+        "pl": "granatowy",
+        "nl": "bruinrood",
+        "el": "καφέ μαύρο",
+        "sv": "mörkröd",
+        "no": "mørkrød",
+        "fi": "tumman punainen",
+        "cs": "tmavomodrá",
+        "uk": "темно-червоний",
+        "th": "น้ำตาลม่วง",
+        "vi": "đen đỏ"
       } 
     }
   ]

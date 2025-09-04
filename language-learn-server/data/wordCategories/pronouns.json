@@ -4,12 +4,44 @@
   "name": { 
     "en": "Pronouns", 
     "es": "Pronombres", 
-    "he": "כינויים" 
+    "he": "כינויים",
+    "fr": "Pronoms",
+    "de": "Pronomen",
+    "it": "Pronomi",
+    "pt": "Pronomes",
+    "ru": "Местоимения",
+    "hi": "सर्वनाम",
+    "pl": "Zaimki",
+    "nl": "Voornaamwoorden",
+    "el": "Αντωνυμίες",
+    "sv": "Pronomen",
+    "no": "Pronomen",
+    "fi": "Pronominit",
+    "cs": "Zájmena",
+    "uk": "Займенники",
+    "th": "สรรพนาม",
+    "vi": "Đại từ"
   },
   "description": { 
     "en": "Personal pronouns", 
     "es": "Pronombres personales", 
-    "he": "כינויים אישיים" 
+    "he": "כינויים אישיים",
+    "fr": "Pronoms personnels",
+    "de": "Personalpronomen",
+    "it": "Pronomi personali",
+    "pt": "Pronomes pessoais",
+    "ru": "Личные местоимения",
+    "hi": "व्यक्तिगत सर्वनाम",
+    "pl": "Zaimki osobowe",
+    "nl": "Persoonlijke voornaamwoorden",
+    "el": "Προσωπικές αντωνυμίες",
+    "sv": "Personliga pronomen",
+    "no": "Personlige pronomen",
+    "fi": "Persoonapronominit",
+    "cs": "Osobní zájmena",
+    "uk": "Особисті займенники",
+    "th": "สรรพนามบุรุษ",
+    "vi": "Đại từ nhân xưng"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "I", 
         "es": "yo", 
-        "he": "אני" 
+        "he": "אני",
+        "fr": "je",
+        "de": "ich",
+        "it": "io",
+        "pt": "eu",
+        "ru": "я",
+        "hi": "मैं",
+        "pl": "ja",
+        "nl": "ik",
+        "el": "εγώ",
+        "sv": "jag",
+        "no": "jeg",
+        "fi": "minä",
+        "cs": "já",
+        "uk": "я",
+        "th": "ฉัน",
+        "vi": "tôi"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "you", 
         "es": "tú", 
-        "he": "אתה" 
+        "he": "אתה",
+        "fr": "tu",
+        "de": "du",
+        "it": "tu",
+        "pt": "tu",
+        "ru": "ты",
+        "hi": "तुम",
+        "pl": "ty",
+        "nl": "jij",
+        "el": "εσύ",
+        "sv": "du",
+        "no": "du",
+        "fi": "sinä",
+        "cs": "ty",
+        "uk": "ти",
+        "th": "คุณ",
+        "vi": "bạn"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "he", 
         "es": "él", 
-        "he": "הוא" 
+        "he": "הוא",
+        "fr": "il",
+        "de": "er",
+        "it": "lui",
+        "pt": "ele",
+        "ru": "он",
+        "hi": "वह",
+        "pl": "on",
+        "nl": "hij",
+        "el": "αυτός",
+        "sv": "han",
+        "no": "han",
+        "fi": "hän",
+        "cs": "on",
+        "uk": "він",
+        "th": "เขา",
+        "vi": "anh ấy"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "she", 
         "es": "ella", 
-        "he": "היא" 
+        "he": "היא",
+        "fr": "elle",
+        "de": "sie",
+        "it": "lei",
+        "pt": "ela",
+        "ru": "она",
+        "hi": "वह",
+        "pl": "ona",
+        "nl": "zij",
+        "el": "αυτή",
+        "sv": "hon",
+        "no": "hun",
+        "fi": "hän",
+        "cs": "ona",
+        "uk": "вона",
+        "th": "เธอ",
+        "vi": "cô ấy"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "it", 
         "es": "ello", 
-        "he": "זה" 
+        "he": "זה",
+        "fr": "il/elle",
+        "de": "es",
+        "it": "esso/essa",
+        "pt": "ele/ela",
+        "ru": "оно",
+        "hi": "यह",
+        "pl": "ono",
+        "nl": "het",
+        "el": "αυτό",
+        "sv": "det",
+        "no": "det",
+        "fi": "se",
+        "cs": "ono",
+        "uk": "воно",
+        "th": "มัน",
+        "vi": "nó"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "we", 
         "es": "nosotros", 
-        "he": "אנחנו" 
+        "he": "אנחנו",
+        "fr": "nous",
+        "de": "wir",
+        "it": "noi",
+        "pt": "nós",
+        "ru": "мы",
+        "hi": "हम",
+        "pl": "my",
+        "nl": "wij",
+        "el": "εμείς",
+        "sv": "vi",
+        "no": "vi",
+        "fi": "me",
+        "cs": "my",
+        "uk": "ми",
+        "th": "เรา",
+        "vi": "chúng tôi"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "they", 
         "es": "ellos", 
-        "he": "הם" 
+        "he": "הם",
+        "fr": "ils/elles",
+        "de": "sie",
+        "it": "loro",
+        "pt": "eles/elas",
+        "ru": "они",
+        "hi": "वे",
+        "pl": "oni",
+        "nl": "zij",
+        "el": "αυτοί",
+        "sv": "de",
+        "no": "de",
+        "fi": "he",
+        "cs": "oni",
+        "uk": "вони",
+        "th": "พวกเขา",
+        "vi": "họ"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "them", 
         "es": "ellos", 
-        "he": "אותם" 
+        "he": "אותם",
+        "fr": "eux/elles",
+        "de": "sie",
+        "it": "loro",
+        "pt": "eles/elas",
+        "ru": "их",
+        "hi": "उन्हें",
+        "pl": "ich",
+        "nl": "hen",
+        "el": "αυτούς",
+        "sv": "dem",
+        "no": "dem",
+        "fi": "heitä",
+        "cs": "je",
+        "uk": "їх",
+        "th": "พวกเขา",
+        "vi": "họ"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "me", 
         "es": "me", 
-        "he": "אותי" 
+        "he": "אותי",
+        "fr": "moi",
+        "de": "mich",
+        "it": "me",
+        "pt": "me",
+        "ru": "меня",
+        "hi": "मुझे",
+        "pl": "mnie",
+        "nl": "mij",
+        "el": "εμένα",
+        "sv": "mig",
+        "no": "meg",
+        "fi": "minua",
+        "cs": "mě",
+        "uk": "мене",
+        "th": "ฉัน",
+        "vi": "tôi"
       } 
     },
     { 
@@ -99,7 +275,23 @@
       "text": { 
         "en": "him", 
         "es": "le", 
-        "he": "אותו" 
+        "he": "אותו",
+        "fr": "lui",
+        "de": "ihn",
+        "it": "lui",
+        "pt": "ele",
+        "ru": "его",
+        "hi": "उसे",
+        "pl": "jego",
+        "nl": "hem",
+        "el": "αυτόν",
+        "sv": "honom",
+        "no": "ham",
+        "fi": "häntä",
+        "cs": "ho",
+        "uk": "його",
+        "th": "เขา",
+        "vi": "anh ấy"
       } 
     },
     { 
@@ -108,7 +300,23 @@
       "text": { 
         "en": "her", 
         "es": "la", 
-        "he": "אותה" 
+        "he": "אותה",
+        "fr": "elle",
+        "de": "sie",
+        "it": "lei",
+        "pt": "ela",
+        "ru": "её",
+        "hi": "उसे",
+        "pl": "ją",
+        "nl": "haar",
+        "el": "αυτήν",
+        "sv": "henne",
+        "no": "henne",
+        "fi": "häntä",
+        "cs": "ji",
+        "uk": "її",
+        "th": "เธอ",
+        "vi": "cô ấy"
       } 
     },
     { 
@@ -117,115 +325,123 @@
       "text": { 
         "en": "us", 
         "es": "nos", 
-        "he": "אותנו" 
+        "he": "אותנו",
+        "fr": "nous",
+        "de": "uns",
+        "it": "noi",
+        "pt": "nós",
+        "ru": "нас",
+        "hi": "हमें",
+        "pl": "nas",
+        "nl": "ons",
+        "el": "εμάς",
+        "sv": "oss",
+        "no": "oss",
+        "fi": "meitä",
+        "cs": "nás",
+        "uk": "нас",
+        "th": "เรา",
+        "vi": "chúng tôi"
       } 
     },
     { 
-      "id": "my", 
+      "id": "this", 
       "type": "word", 
       "text": { 
-        "en": "my", 
-        "es": "mi", 
-        "he": "שלי" 
+        "en": "this", 
+        "es": "este", 
+        "he": "זה",
+        "fr": "ceci",
+        "de": "dieser",
+        "it": "questo",
+        "pt": "este",
+        "ru": "этот",
+        "hi": "यह",
+        "pl": "ten",
+        "nl": "deze",
+        "el": "αυτό",
+        "sv": "denna",
+        "no": "dette",
+        "fi": "tämä",
+        "cs": "tento",
+        "uk": "цей",
+        "th": "นี้",
+        "vi": "cái này"
       } 
     },
     { 
-      "id": "your", 
+      "id": "that", 
       "type": "word", 
       "text": { 
-        "en": "your", 
-        "es": "tu", 
-        "he": "שלך" 
+        "en": "that", 
+        "es": "ese", 
+        "he": "זה",
+        "fr": "cela",
+        "de": "jener",
+        "it": "quello",
+        "pt": "esse",
+        "ru": "тот",
+        "hi": "वह",
+        "pl": "tamten",
+        "nl": "die",
+        "el": "εκείνο",
+        "sv": "den",
+        "no": "det",
+        "fi": "tuo",
+        "cs": "ten",
+        "uk": "той",
+        "th": "นั้น",
+        "vi": "cái đó"
       } 
     },
     { 
-      "id": "his", 
+      "id": "these", 
       "type": "word", 
       "text": { 
-        "en": "his", 
-        "es": "su", 
-        "he": "שלו" 
+        "en": "these", 
+        "es": "estos", 
+        "he": "אלה",
+        "fr": "ceux-ci",
+        "de": "diese",
+        "it": "questi",
+        "pt": "estes",
+        "ru": "эти",
+        "hi": "ये",
+        "pl": "te",
+        "nl": "deze",
+        "el": "αυτά",
+        "sv": "dessa",
+        "no": "disse",
+        "fi": "nämä",
+        "cs": "tyto",
+        "uk": "ці",
+        "th": "เหล่านี้",
+        "vi": "những cái này"
       } 
     },
     { 
-      "id": "her_possessive", 
+      "id": "those", 
       "type": "word", 
       "text": { 
-        "en": "her", 
-        "es": "su", 
-        "he": "שלה" 
-      } 
-    },
-    { 
-      "id": "its", 
-      "type": "word", 
-      "text": { 
-        "en": "its", 
-        "es": "su", 
-        "he": "שלו" 
-      } 
-    },
-    { 
-      "id": "our", 
-      "type": "word", 
-      "text": { 
-        "en": "our", 
-        "es": "nuestro", 
-        "he": "שלנו" 
-      } 
-    },
-    { 
-      "id": "their", 
-      "type": "word", 
-      "text": { 
-        "en": "their", 
-        "es": "su", 
-        "he": "שלהם" 
-      } 
-    },
-    { 
-      "id": "myself", 
-      "type": "word", 
-      "text": { 
-        "en": "myself", 
-        "es": "mí mismo", 
-        "he": "עצמי" 
-      } 
-    },
-    { 
-      "id": "yourself", 
-      "type": "word", 
-      "text": { 
-        "en": "yourself", 
-        "es": "tú mismo", 
-        "he": "עצמך" 
-      } 
-    },
-    { 
-      "id": "himself", 
-      "type": "word", 
-      "text": { 
-        "en": "himself", 
-        "es": "sí mismo", 
-        "he": "עצמו" 
-      } 
-    },
-    { 
-      "id": "herself", 
-      "type": "word", 
-      "text": { 
-        "en": "herself", 
-        "es": "sí misma", 
-        "he": "עצמה" 
-      } 
-    },
-    { 
-      "id": "themselves", 
-      "type": "word", 
-      "text": { 
-        "en": "themselves", 
-        "es": "sí mismos", 
-        "he": "עצמם" 
+        "en": "those", 
+        "es": "esos", 
+        "he": "אלה",
+        "fr": "ceux-là",
+        "de": "jene",
+        "it": "quelli",
+        "pt": "esses",
+        "ru": "те",
+        "hi": "वे",
+        "pl": "tamte",
+        "nl": "die",
+        "el": "εκείνα",
+        "sv": "de",
+        "no": "de",
+        "fi": "nuo",
+        "cs": "ty",
+        "uk": "ті",
+        "th": "เหล่านั้น",
+        "vi": "những cái đó"
       } 
     }
   ]

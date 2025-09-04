@@ -4,12 +4,44 @@
   "name": { 
     "en": "Clothing", 
     "es": "Ropa", 
-    "he": "בגדים" 
+    "he": "בגדים",
+    "fr": "Vêtements",
+    "de": "Kleidung",
+    "it": "Abbigliamento",
+    "pt": "Roupas",
+    "ru": "Одежда",
+    "hi": "कपड़े",
+    "pl": "Odzież",
+    "nl": "Kleding",
+    "el": "Ρούχα",
+    "sv": "Kläder",
+    "no": "Klær",
+    "fi": "Vaatteet",
+    "cs": "Oblečení",
+    "uk": "Одяг",
+    "th": "เสื้อผ้า",
+    "vi": "Quần áo"
   },
   "description": { 
     "en": "Everyday clothes", 
     "es": "Ropa cotidiana", 
-    "he": "בגדים יומיומיים" 
+    "he": "בגדים יומיומיים",
+    "fr": "Vêtements de tous les jours",
+    "de": "Alltagskleidung",
+    "it": "Abbigliamento quotidiano",
+    "pt": "Roupas do dia a dia",
+    "ru": "Повседневная одежда",
+    "hi": "रोजमर्रा के कपड़े",
+    "pl": "Codzienna odzież",
+    "nl": "Dagelijkse kleding",
+    "el": "Καθημερινά ρούχα",
+    "sv": "Vardagskläder",
+    "no": "Hverdagsklær",
+    "fi": "Arkipäiväiset vaatteet",
+    "cs": "Každodenní oblečení",
+    "uk": "Щоденний одяг",
+    "th": "เสื้อผ้าประจำวัน",
+    "vi": "Quần áo hàng ngày"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "shirt", 
         "es": "camisa", 
-        "he": "חולצה" 
+        "he": "חולצה",
+        "fr": "chemise",
+        "de": "Hemd",
+        "it": "camicia",
+        "pt": "camisa",
+        "ru": "рубашка",
+        "hi": "शर्ट",
+        "pl": "koszula",
+        "nl": "shirt",
+        "el": "πουκάμισο",
+        "sv": "skjorta",
+        "no": "skjorte",
+        "fi": "paita",
+        "cs": "košile",
+        "uk": "сорочка",
+        "th": "เสื้อเชิ้ต",
+        "vi": "áo sơ mi"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "pants", 
         "es": "pantalones", 
-        "he": "מכנסיים" 
+        "he": "מכנסיים",
+        "fr": "pantalon",
+        "de": "Hose",
+        "it": "pantaloni",
+        "pt": "calças",
+        "ru": "брюки",
+        "hi": "पैंट",
+        "pl": "spodnie",
+        "nl": "broek",
+        "el": "παντελόνι",
+        "sv": "byxor",
+        "no": "bukser",
+        "fi": "housut",
+        "cs": "kalhoty",
+        "uk": "штани",
+        "th": "กางเกง",
+        "vi": "quần"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "shoes", 
         "es": "zapatos", 
-        "he": "נעליים" 
+        "he": "נעליים",
+        "fr": "chaussures",
+        "de": "Schuhe",
+        "it": "scarpe",
+        "pt": "sapatos",
+        "ru": "туфли",
+        "hi": "जूते",
+        "pl": "buty",
+        "nl": "schoenen",
+        "el": "παπούτσια",
+        "sv": "skor",
+        "no": "sko",
+        "fi": "kengät",
+        "cs": "boty",
+        "uk": "взуття",
+        "th": "รองเท้า",
+        "vi": "giày"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "dress", 
         "es": "vestido", 
-        "he": "שמלה" 
+        "he": "שמלה",
+        "fr": "robe",
+        "de": "Kleid",
+        "it": "vestito",
+        "pt": "vestido",
+        "ru": "платье",
+        "hi": "पोशाक",
+        "pl": "sukienka",
+        "nl": "jurk",
+        "el": "φόρεμα",
+        "sv": "klänning",
+        "no": "kjole",
+        "fi": "mekko",
+        "cs": "šaty",
+        "uk": "плаття",
+        "th": "ชุด",
+        "vi": "váy"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "jacket", 
         "es": "chaqueta", 
-        "he": "מעיל" 
+        "he": "מעיל",
+        "fr": "veste",
+        "de": "Jacke",
+        "it": "giacca",
+        "pt": "jaqueta",
+        "ru": "куртка",
+        "hi": "जैकेट",
+        "pl": "kurtka",
+        "nl": "jas",
+        "el": "σακάκι",
+        "sv": "jacka",
+        "no": "jakke",
+        "fi": "takkia",
+        "cs": "bunda",
+        "uk": "куртка",
+        "th": "แจ็คเก็ต",
+        "vi": "áo khoác"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "sweater", 
         "es": "suéter", 
-        "he": "סוודר" 
+        "he": "סוודר",
+        "fr": "pull",
+        "de": "Pullover",
+        "it": "maglione",
+        "pt": "suéter",
+        "ru": "свитер",
+        "hi": "स्वेटर",
+        "pl": "sweter",
+        "nl": "trui",
+        "el": "πουλόβερ",
+        "sv": "tröja",
+        "no": "genser",
+        "fi": "villapaita",
+        "cs": "svetr",
+        "uk": "светр",
+        "th": "เสื้อถัก",
+        "vi": "áo len"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "coat", 
         "es": "abrigo", 
-        "he": "מעיל" 
+        "he": "מעיל",
+        "fr": "manteau",
+        "de": "Mantel",
+        "it": "cappotto",
+        "pt": "casaco",
+        "ru": "пальто",
+        "hi": "कोट",
+        "pl": "płaszcz",
+        "nl": "jas",
+        "el": "παλτό",
+        "sv": "kappa",
+        "no": "frakk",
+        "fi": "takkia",
+        "cs": "kabát",
+        "uk": "пальто",
+        "th": "เสื้อโค้ท",
+        "vi": "áo khoác"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "hat", 
         "es": "sombrero", 
-        "he": "כובע" 
+        "he": "כובע",
+        "fr": "chapeau",
+        "de": "Hut",
+        "it": "cappello",
+        "pt": "chapéu",
+        "ru": "шляпа",
+        "hi": "टोपी",
+        "pl": "kapelusz",
+        "nl": "hoed",
+        "el": "καπέλο",
+        "sv": "hatt",
+        "no": "hatt",
+        "fi": "hattu",
+        "cs": "klobouk",
+        "uk": "капелюх",
+        "th": "หมวก",
+        "vi": "mũ"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "cap", 
         "es": "gorra", 
-        "he": "כובע בייסבול" 
+        "he": "כובע בייסבול",
+        "fr": "casquette",
+        "de": "Mütze",
+        "it": "cappellino",
+        "pt": "boné",
+        "ru": "кепка",
+        "hi": "टोपी",
+        "pl": "czapka",
+        "nl": "pet",
+        "el": "σκούφος",
+        "sv": "mössa",
+        "no": "lue",
+        "fi": "lippis",
+        "cs": "čepice",
+        "uk": "шапка",
+        "th": "หมวกแก๊ป",
+        "vi": "mũ lưỡi trai"
       } 
     },
     { 
@@ -99,7 +275,23 @@
       "text": { 
         "en": "scarf", 
         "es": "bufanda", 
-        "he": "צעיף" 
+        "he": "צעיף",
+        "fr": "écharpe",
+        "de": "Schal",
+        "it": "sciarpa",
+        "pt": "cachecol",
+        "ru": "шарф",
+        "hi": "दुपट्टा",
+        "pl": "szalik",
+        "nl": "sjaal",
+        "el": "κασκόλ",
+        "sv": "halsduk",
+        "no": "skjerf",
+        "fi": "huivi",
+        "cs": "šála",
+        "uk": "шарф",
+        "th": "ผ้าพันคอ",
+        "vi": "khăn quàng"
       } 
     },
     { 
@@ -108,7 +300,23 @@
       "text": { 
         "en": "gloves", 
         "es": "guantes", 
-        "he": "כפפות" 
+        "he": "כפפות",
+        "fr": "gants",
+        "de": "Handschuhe",
+        "it": "guanti",
+        "pt": "luvas",
+        "ru": "перчатки",
+        "hi": "दस्ताने",
+        "pl": "rękawiczki",
+        "nl": "handschoenen",
+        "el": "γάντια",
+        "sv": "handskar",
+        "no": "hansker",
+        "fi": "käsineet",
+        "cs": "rukavice",
+        "uk": "рукавички",
+        "th": "ถุงมือ",
+        "vi": "găng tay"
       } 
     },
     { 
@@ -117,7 +325,23 @@
       "text": { 
         "en": "socks", 
         "es": "calcetines", 
-        "he": "גרביים" 
+        "he": "גרביים",
+        "fr": "chaussettes",
+        "de": "Socken",
+        "it": "calzini",
+        "pt": "meias",
+        "ru": "носки",
+        "hi": "मोज़े",
+        "pl": "skarpetki",
+        "nl": "sokken",
+        "el": "κάλτσες",
+        "sv": "strumpor",
+        "no": "sokker",
+        "fi": "sukat",
+        "cs": "ponožky",
+        "uk": "шкарпетки",
+        "th": "ถุงเท้า",
+        "vi": "tất"
       } 
     },
     { 
@@ -126,7 +350,23 @@
       "text": { 
         "en": "underwear", 
         "es": "ropa interior", 
-        "he": "תחתונים" 
+        "he": "תחתונים",
+        "fr": "sous-vêtements",
+        "de": "Unterwäsche",
+        "it": "biancheria intima",
+        "pt": "roupa íntima",
+        "ru": "нижнее белье",
+        "hi": "अंडरवियर",
+        "pl": "bielizna",
+        "nl": "ondergoed",
+        "el": "εσώρουχα",
+        "sv": "underkläder",
+        "no": "undertøy",
+        "fi": "alusvaatteet",
+        "cs": "spodní prádlo",
+        "uk": "нижня білизна",
+        "th": "ชุดชั้นใน",
+        "vi": "đồ lót"
       } 
     },
     { 
@@ -135,7 +375,23 @@
       "text": { 
         "en": "bra", 
         "es": "sostén", 
-        "he": "חזייה" 
+        "he": "חזייה",
+        "fr": "soutien-gorge",
+        "de": "Sportsbrust",
+        "it": "sottopelle",
+        "pt": "sutião",
+        "ru": "бюстгальтер",
+        "hi": "ब्रा",
+        "pl": "bródka",
+        "nl": "broek",
+        "el": "μπρόδα",
+        "sv": "tröja",
+        "no": "genser",
+        "fi": "villapaita",
+        "cs": "svetr",
+        "uk": "светр",
+        "th": "เสื้อถัก",
+        "vi": "áo len"
       } 
     },
     { 
@@ -144,7 +400,23 @@
       "text": { 
         "en": "tie", 
         "es": "corbata", 
-        "he": "עניבה" 
+        "he": "עניבה",
+        "fr": "cravate",
+        "de": "Krawatte",
+        "it": "cravatta",
+        "pt": "gravata",
+        "ru": "галстук",
+        "hi": "टाइ",
+        "pl": "krawatka",
+        "nl": "hoed",
+        "el": "καπέλο",
+        "sv": "hatt",
+        "no": "hatt",
+        "fi": "hattu",
+        "cs": "klobouk",
+        "uk": "капелюх",
+        "th": "หมวก",
+        "vi": "mũ"
       } 
     },
     { 
@@ -153,7 +425,23 @@
       "text": { 
         "en": "belt", 
         "es": "cinturón", 
-        "he": "חגורה" 
+        "he": "חגורה",
+        "fr": "ceinture",
+        "de": "Gürtel",
+        "it": "cintura",
+        "pt": "cinto",
+        "ru": "ремень",
+        "hi": "बेल्ट",
+        "pl": "pasek",
+        "nl": "riem",
+        "el": "ζώνη",
+        "sv": "bälte",
+        "no": "belte",
+        "fi": "vyö",
+        "cs": "opasek",
+        "uk": "ремінь",
+        "th": "เข็มขัด",
+        "vi": "thắt lưng"
       } 
     },
     { 
@@ -162,7 +450,23 @@
       "text": { 
         "en": "watch", 
         "es": "reloj", 
-        "he": "שעון" 
+        "he": "שעון",
+        "fr": "montre",
+        "de": "Uhr",
+        "it": "orologio",
+        "pt": "relógio",
+        "ru": "часы",
+        "hi": "घड़ी",
+        "pl": "zegarek",
+        "nl": "horloge",
+        "el": "ρολόι",
+        "sv": "klocka",
+        "no": "klokke",
+        "fi": "kello",
+        "cs": "hodinky",
+        "uk": "годинник",
+        "th": "นาฬิกา",
+        "vi": "đồng hồ"
       } 
     },
     { 
@@ -171,7 +475,23 @@
       "text": { 
         "en": "jewelry", 
         "es": "joyas", 
-        "he": "תכשיטים" 
+        "he": "תכשיטים",
+        "fr": "bijoux",
+        "de": "Schmuck",
+        "it": "gioielli",
+        "pt": "joias",
+        "ru": "украшения",
+        "hi": "आभूषण",
+        "pl": "biżuteria",
+        "nl": "sieraden",
+        "el": "κοσμήματα",
+        "sv": "smycken",
+        "no": "smykker",
+        "fi": "korut",
+        "cs": "šperky",
+        "uk": "прикраси",
+        "th": "เครื่องประดับ",
+        "vi": "trang sức"
       } 
     },
     { 
@@ -180,7 +500,48 @@
       "text": { 
         "en": "bag", 
         "es": "bolsa", 
-        "he": "תיק" 
+        "he": "תיק",
+        "fr": "sac",
+        "de": "Tasche",
+        "it": "borsa",
+        "pt": "bolsa",
+        "ru": "сумка",
+        "hi": "बैग",
+        "pl": "torba",
+        "nl": "tas",
+        "el": "τσάντα",
+        "sv": "väska",
+        "no": "veske",
+        "fi": "laukku",
+        "cs": "taška",
+        "uk": "сумка",
+        "th": "กระเป๋า",
+        "vi": "túi"
+      } 
+    },
+    { 
+      "id": "wallet", 
+      "type": "word", 
+      "text": { 
+        "en": "wallet", 
+        "es": "billetera", 
+        "he": "ארנק",
+        "fr": "portefeuille",
+        "de": "Geldbörse",
+        "it": "portafoglio",
+        "pt": "carteira",
+        "ru": "кошелек",
+        "hi": "बटुआ",
+        "pl": "portfel",
+        "nl": "portemonnee",
+        "el": "πορτοφόλι",
+        "sv": "plånbok",
+        "no": "lommebok",
+        "fi": "lompakko",
+        "cs": "peněženka",
+        "uk": "гаманець",
+        "th": "กระเป๋าสตางค์",
+        "vi": "ví"
       } 
     }
   ]

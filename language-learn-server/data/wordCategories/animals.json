@@ -4,12 +4,44 @@
   "name": { 
     "en": "Animals", 
     "es": "Animales", 
-    "he": "חיות" 
+    "he": "חיות",
+    "fr": "Animaux",
+    "de": "Tiere",
+    "it": "Animali",
+    "pt": "Animais",
+    "ru": "Животные",
+    "hi": "जानवर",
+    "pl": "Zwierzęta",
+    "nl": "Dieren",
+    "el": "Ζώα",
+    "sv": "Djur",
+    "no": "Dyr",
+    "fi": "Eläimet",
+    "cs": "Zvířata",
+    "uk": "Тварини",
+    "th": "สัตว์",
+    "vi": "Động vật"
   },
   "description": { 
     "en": "Common animals and pets", 
     "es": "Animales y mascotas comunes", 
-    "he": "חיות ומחמדים נפוצים" 
+    "he": "חיות ומחמדים נפוצים",
+    "fr": "Animaux et animaux de compagnie communs",
+    "de": "Häufige Tiere und Haustiere",
+    "it": "Animali e animali domestici comuni",
+    "pt": "Animais e animais de estimação comuns",
+    "ru": "Обычные животные и домашние питомцы",
+    "hi": "सामान्य जानवर और पालतू जानवर",
+    "pl": "Popularne zwierzęta i zwierzęta domowe",
+    "nl": "Veelvoorkomende dieren en huisdieren",
+    "el": "Κοινά ζώα και κατοικίδια",
+    "sv": "Vanliga djur och husdjur",
+    "no": "Vanlige dyr og kjæledyr",
+    "fi": "Yleisiä eläimiä ja lemmikkejä",
+    "cs": "Běžná zvířata a domácí mazlíčci",
+    "uk": "Звичайні тварини та домашні улюбленці",
+    "th": "สัตว์ทั่วไปและสัตว์เลี้ยง",
+    "vi": "Động vật phổ biến và thú cưng"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "dog", 
         "es": "perro", 
-        "he": "כלב" 
+        "he": "כלב",
+        "fr": "chien",
+        "de": "Hund",
+        "it": "cane",
+        "pt": "cão",
+        "ru": "собака",
+        "hi": "कुत्ता",
+        "pl": "pies",
+        "nl": "hond",
+        "el": "σκύλος",
+        "sv": "hund",
+        "no": "hund",
+        "fi": "koira",
+        "cs": "pes",
+        "uk": "собака",
+        "th": "สุนัข",
+        "vi": "chó"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "cat", 
         "es": "gato", 
-        "he": "חתול" 
+        "he": "חתול",
+        "fr": "chat",
+        "de": "Katze",
+        "it": "gatto",
+        "pt": "gato",
+        "ru": "кот",
+        "hi": "बिल्ली",
+        "pl": "kot",
+        "nl": "kat",
+        "el": "γάτα",
+        "sv": "katt",
+        "no": "katt",
+        "fi": "kissa",
+        "cs": "kočka",
+        "uk": "кіт",
+        "th": "แมว",
+        "vi": "mèo"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "bird", 
         "es": "pájaro", 
-        "he": "ציפור" 
+        "he": "ציפור",
+        "fr": "oiseau",
+        "de": "Vogel",
+        "it": "uccello",
+        "pt": "pássaro",
+        "ru": "птица",
+        "hi": "पक्षी",
+        "pl": "ptak",
+        "nl": "vogel",
+        "el": "πουλί",
+        "sv": "fågel",
+        "no": "fugl",
+        "fi": "lintu",
+        "cs": "pták",
+        "uk": "птах",
+        "th": "นก",
+        "vi": "chim"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "fish", 
         "es": "pez", 
-        "he": "דג" 
+        "he": "דג",
+        "fr": "poisson",
+        "de": "Fisch",
+        "it": "pesce",
+        "pt": "peixe",
+        "ru": "рыба",
+        "hi": "मछली",
+        "pl": "ryba",
+        "nl": "vis",
+        "el": "ψάρι",
+        "sv": "fisk",
+        "no": "fisk",
+        "fi": "kala",
+        "cs": "ryba",
+        "uk": "риба",
+        "th": "ปลา",
+        "vi": "cá"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "horse", 
         "es": "caballo", 
-        "he": "סוס" 
+        "he": "סוס",
+        "fr": "cheval",
+        "de": "Pferd",
+        "it": "cavallo",
+        "pt": "cavalo",
+        "ru": "лошадь",
+        "hi": "घोड़ा",
+        "pl": "koń",
+        "nl": "paard",
+        "el": "άλογο",
+        "sv": "häst",
+        "no": "hest",
+        "fi": "hevonen",
+        "cs": "kůň",
+        "uk": "кінь",
+        "th": "ม้า",
+        "vi": "ngựa"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "cow", 
         "es": "vaca", 
-        "he": "פרה" 
+        "he": "פרה",
+        "fr": "vache",
+        "de": "Kuh",
+        "it": "mucca",
+        "pt": "vaca",
+        "ru": "корова",
+        "hi": "गाय",
+        "pl": "krowa",
+        "nl": "koe",
+        "el": "αγελάδα",
+        "sv": "ko",
+        "no": "ku",
+        "fi": "lehmä",
+        "cs": "kráva",
+        "uk": "корова",
+        "th": "วัว",
+        "vi": "bò"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "pig", 
         "es": "cerdo", 
-        "he": "חזיר" 
+        "he": "חזיר",
+        "fr": "cochon",
+        "de": "Schwein",
+        "it": "maiale",
+        "pt": "porco",
+        "ru": "свинья",
+        "hi": "सूअर",
+        "pl": "świnia",
+        "nl": "varken",
+        "el": "γουρούνι",
+        "sv": "gris",
+        "no": "gris",
+        "fi": "sika",
+        "cs": "prase",
+        "uk": "свиня",
+        "th": "หมู",
+        "vi": "lợn"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "sheep", 
         "es": "oveja", 
-        "he": "כבשה" 
+        "he": "כבשה",
+        "fr": "mouton",
+        "de": "Schaf",
+        "it": "pecora",
+        "pt": "ovelha",
+        "ru": "овца",
+        "hi": "भेड़",
+        "pl": "owca",
+        "nl": "schaap",
+        "el": "πρόβατο",
+        "sv": "får",
+        "no": "sau",
+        "fi": "lammas",
+        "cs": "ovce",
+        "uk": "вівця",
+        "th": "แกะ",
+        "vi": "cừu"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "chicken", 
         "es": "pollo", 
-        "he": "תרנגולת" 
+        "he": "תרנגולת",
+        "fr": "poule",
+        "de": "Huhn",
+        "it": "gallina",
+        "pt": "galinha",
+        "ru": "курица",
+        "hi": "मुर्गी",
+        "pl": "kura",
+        "nl": "kip",
+        "el": "κότα",
+        "sv": "höna",
+        "no": "høne",
+        "fi": "kana",
+        "cs": "slepice",
+        "uk": "курка",
+        "th": "ไก่",
+        "vi": "gà"
       } 
     },
     { 
@@ -99,7 +275,23 @@
       "text": { 
         "en": "duck", 
         "es": "pato", 
-        "he": "ברווז" 
+        "he": "ברווז",
+        "fr": "canard",
+        "de": "Ente",
+        "it": "anatra",
+        "pt": "pato",
+        "ru": "утка",
+        "hi": "बतख",
+        "pl": "kaczka",
+        "nl": "eend",
+        "el": "πάπια",
+        "sv": "anka",
+        "no": "and",
+        "fi": "ankka",
+        "cs": "kachna",
+        "uk": "качка",
+        "th": "เป็ด",
+        "vi": "vịt"
       } 
     },
     { 
@@ -108,7 +300,23 @@
       "text": { 
         "en": "rabbit", 
         "es": "conejo", 
-        "he": "ארנב" 
+        "he": "ארנב",
+        "fr": "lapin",
+        "de": "Hase",
+        "it": "coniglio",
+        "pt": "coelho",
+        "ru": "кролик",
+        "hi": "खरगोश",
+        "pl": "królik",
+        "nl": "konijn",
+        "el": "κουνέλι",
+        "sv": "kanin",
+        "no": "kanin",
+        "fi": "kani",
+        "cs": "králík",
+        "uk": "кролик",
+        "th": "กระต่าย",
+        "vi": "thỏ"
       } 
     },
     { 
@@ -117,7 +325,23 @@
       "text": { 
         "en": "mouse", 
         "es": "ratón", 
-        "he": "עכבר" 
+        "he": "עכבר",
+        "fr": "souris",
+        "de": "Maus",
+        "it": "topo",
+        "pt": "rato",
+        "ru": "мышь",
+        "hi": "चूहा",
+        "pl": "mysz",
+        "nl": "muis",
+        "el": "ποντίκι",
+        "sv": "mus",
+        "no": "mus",
+        "fi": "hiiri",
+        "cs": "myš",
+        "uk": "миша",
+        "th": "หนู",
+        "vi": "chuột"
       } 
     },
     { 
@@ -126,7 +350,23 @@
       "text": { 
         "en": "elephant", 
         "es": "elefante", 
-        "he": "פיל" 
+        "he": "פיל",
+        "fr": "éléphant",
+        "de": "Elefant",
+        "it": "elefante",
+        "pt": "elefante",
+        "ru": "слон",
+        "hi": "हाथी",
+        "pl": "słoń",
+        "nl": "olifant",
+        "el": "ελέφαντας",
+        "sv": "elefant",
+        "no": "elefant",
+        "fi": "norsu",
+        "cs": "slon",
+        "uk": "слон",
+        "th": "ช้าง",
+        "vi": "voi"
       } 
     },
     { 
@@ -135,7 +375,23 @@
       "text": { 
         "en": "lion", 
         "es": "león", 
-        "he": "אריה" 
+        "he": "אריה",
+        "fr": "lion",
+        "de": "Löwe",
+        "it": "leone",
+        "pt": "leão",
+        "ru": "лев",
+        "hi": "शेर",
+        "pl": "lew",
+        "nl": "leeuw",
+        "el": "λιοντάρι",
+        "sv": "lejon",
+        "no": "løve",
+        "fi": "leijona",
+        "cs": "lev",
+        "uk": "лев",
+        "th": "สิงโต",
+        "vi": "sư tử"
       } 
     },
     { 
@@ -144,7 +400,23 @@
       "text": { 
         "en": "tiger", 
         "es": "tigre", 
-        "he": "נמר" 
+        "he": "נמר",
+        "fr": "tigre",
+        "de": "Tiger",
+        "it": "tigre",
+        "pt": "tigre",
+        "ru": "тигр",
+        "hi": "बाघ",
+        "pl": "tygrys",
+        "nl": "tijger",
+        "el": "τίγρη",
+        "sv": "tiger",
+        "no": "tiger",
+        "fi": "tiikeri",
+        "cs": "tygr",
+        "uk": "тигр",
+        "th": "เสือ",
+        "vi": "hổ"
       } 
     },
     { 
@@ -153,7 +425,23 @@
       "text": { 
         "en": "bear", 
         "es": "oso", 
-        "he": "דוב" 
+        "he": "דוב",
+        "fr": "ours",
+        "de": "Bär",
+        "it": "orso",
+        "pt": "urso",
+        "ru": "медведь",
+        "hi": "भालू",
+        "pl": "niedźwiedź",
+        "nl": "beer",
+        "el": "αρκούδα",
+        "sv": "björn",
+        "no": "bjørn",
+        "fi": "karhu",
+        "cs": "medvěd",
+        "uk": "ведмідь",
+        "th": "หมี",
+        "vi": "gấu"
       } 
     },
     { 
@@ -162,7 +450,23 @@
       "text": { 
         "en": "wolf", 
         "es": "lobo", 
-        "he": "זאב" 
+        "he": "זאב",
+        "fr": "loup",
+        "de": "Wolf",
+        "it": "lupo",
+        "pt": "lobo",
+        "ru": "волк",
+        "hi": "भेड़िया",
+        "pl": "wilk",
+        "nl": "wolf",
+        "el": "λύκος",
+        "sv": "varg",
+        "no": "ulv",
+        "fi": "susi",
+        "cs": "vlk",
+        "uk": "вовк",
+        "th": "หมาป่า",
+        "vi": "sói"
       } 
     },
     { 
@@ -171,7 +475,23 @@
       "text": { 
         "en": "fox", 
         "es": "zorro", 
-        "he": "שועל" 
+        "he": "שועל",
+        "fr": "renard",
+        "de": "Fuchs",
+        "it": "volpe",
+        "pt": "raposa",
+        "ru": "лиса",
+        "hi": "लोमड़ी",
+        "pl": "lis",
+        "nl": "vos",
+        "el": "αλεπού",
+        "sv": "räv",
+        "no": "rev",
+        "fi": "kettu",
+        "cs": "liška",
+        "uk": "лисиця",
+        "th": "สุนัขจิ้งจอก",
+        "vi": "cáo"
       } 
     },
     { 
@@ -180,7 +500,23 @@
       "text": { 
         "en": "deer", 
         "es": "ciervo", 
-        "he": "צבי" 
+        "he": "צבי",
+        "fr": "cerf",
+        "de": "Hirsch",
+        "it": "cervo",
+        "pt": "cervo",
+        "ru": "олень",
+        "hi": "हिरण",
+        "pl": "jeleń",
+        "nl": "hert",
+        "el": "ελάφι",
+        "sv": "hjort",
+        "no": "hjort",
+        "fi": "hirvi",
+        "cs": "jelen",
+        "uk": "олень",
+        "th": "กวาง",
+        "vi": "nai"
       } 
     },
     { 
@@ -189,7 +525,23 @@
       "text": { 
         "en": "monkey", 
         "es": "mono", 
-        "he": "קוף" 
+        "he": "קוף",
+        "fr": "singe",
+        "de": "Affe",
+        "it": "scimmia",
+        "pt": "macaco",
+        "ru": "обезьяна",
+        "hi": "बंदर",
+        "pl": "małpa",
+        "nl": "aap",
+        "el": "μαϊμού",
+        "sv": "apa",
+        "no": "ape",
+        "fi": "apina",
+        "cs": "opice",
+        "uk": "мавпа",
+        "th": "ลิง",
+        "vi": "khỉ"
       } 
     }
   ]

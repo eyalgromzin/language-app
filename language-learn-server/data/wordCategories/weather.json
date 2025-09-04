@@ -4,12 +4,44 @@
   "name": { 
     "en": "Weather", 
     "es": "Clima", 
-    "he": "מזג אוויר" 
+    "he": "מזג אוויר",
+    "fr": "Météo",
+    "de": "Wetter",
+    "it": "Meteo",
+    "pt": "Clima",
+    "ru": "Погода",
+    "hi": "मौसम",
+    "pl": "Pogoda",
+    "nl": "Weer",
+    "el": "Καιρός",
+    "sv": "Väder",
+    "no": "Vær",
+    "fi": "Sää",
+    "cs": "Počasí",
+    "uk": "Погода",
+    "th": "สภาพอากาศ",
+    "vi": "Thời tiết"
   },
   "description": { 
     "en": "Weather conditions and seasons", 
     "es": "Condiciones climáticas y estaciones", 
-    "he": "תנאי מזג אוויר ועונות" 
+    "he": "תנאי מזג אוויר ועונות",
+    "fr": "Conditions météorologiques et saisons",
+    "de": "Wetterbedingungen und Jahreszeiten",
+    "it": "Condizioni meteorologiche e stagioni",
+    "pt": "Condições climáticas e estações",
+    "ru": "Погодные условия и времена года",
+    "hi": "मौसम की स्थिति और मौसम",
+    "pl": "Warunki pogodowe i pory roku",
+    "nl": "Weersomstandigheden en seizoenen",
+    "el": "Καιρικές συνθήκες και εποχές",
+    "sv": "Väderförhållanden och årstider",
+    "no": "Værforhold og årstider",
+    "fi": "Sääolosuhteet ja vuodenajat",
+    "cs": "Povětrnostní podmínky a roční období",
+    "uk": "Погодні умови та пори року",
+    "th": "สภาพอากาศและฤดูกาล",
+    "vi": "Điều kiện thời tiết và các mùa"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "sunny", 
         "es": "soleado", 
-        "he": "שמשי" 
+        "he": "שמשי",
+        "fr": "ensoleillé",
+        "de": "sonnig",
+        "it": "soleggiato",
+        "pt": "ensolarado",
+        "ru": "солнечно",
+        "hi": "धूप",
+        "pl": "słonecznie",
+        "nl": "zonnig",
+        "el": "ηλιόλουστος",
+        "sv": "soligt",
+        "no": "solrikt",
+        "fi": "aurinkoinen",
+        "cs": "slunečno",
+        "uk": "сонячно",
+        "th": "แดดจัด",
+        "vi": "nắng"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "cloudy", 
         "es": "nublado", 
-        "he": "מעונן" 
+        "he": "מעונן",
+        "fr": "nuageux",
+        "de": "bewölkt",
+        "it": "nuvoloso",
+        "pt": "nublado",
+        "ru": "облачно",
+        "hi": "बादल",
+        "pl": "pochmurno",
+        "nl": "bewolkt",
+        "el": "νεφελώδης",
+        "sv": "molnigt",
+        "no": "skyet",
+        "fi": "pilvinen",
+        "cs": "oblačno",
+        "uk": "хмарно",
+        "th": "มีเมฆ",
+        "vi": "nhiều mây"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "rainy", 
         "es": "lluvioso", 
-        "he": "גשום" 
+        "he": "גשום",
+        "fr": "pluvieux",
+        "de": "regnerisch",
+        "it": "piovoso",
+        "pt": "chuvoso",
+        "ru": "дождливо",
+        "hi": "बारिश",
+        "pl": "deszczowo",
+        "nl": "regenachtig",
+        "el": "βροχερός",
+        "sv": "regnigt",
+        "no": "regnfullt",
+        "fi": "sateinen",
+        "cs": "deštivo",
+        "uk": "дощово",
+        "th": "ฝนตก",
+        "vi": "mưa"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "snowy", 
         "es": "nevado", 
-        "he": "מושלג" 
+        "he": "מושלג",
+        "fr": "neigeux",
+        "de": "verschneit",
+        "it": "nevoso",
+        "pt": "nevado",
+        "ru": "снежно",
+        "hi": "बर्फ",
+        "pl": "śnieżnie",
+        "nl": "sneeuwachtig",
+        "el": "χιονισμένος",
+        "sv": "snöigt",
+        "no": "snørikt",
+        "fi": "luminen",
+        "cs": "sněžno",
+        "uk": "сніжно",
+        "th": "หิมะตก",
+        "vi": "tuyết rơi"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "windy", 
         "es": "ventoso", 
-        "he": "רוח" 
+        "he": "רוח",
+        "fr": "venteux",
+        "de": "windig",
+        "it": "ventoso",
+        "pt": "ventoso",
+        "ru": "ветрено",
+        "hi": "हवा",
+        "pl": "wietrznie",
+        "nl": "winderig",
+        "el": "ανεμώδης",
+        "sv": "blåsigt",
+        "no": "vindfullt",
+        "fi": "tuulinen",
+        "cs": "větrno",
+        "uk": "вітряно",
+        "th": "ลมแรง",
+        "vi": "gió"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "hot", 
         "es": "caliente", 
-        "he": "חם" 
+        "he": "חם",
+        "fr": "chaud",
+        "de": "heiß",
+        "it": "caldo",
+        "pt": "quente",
+        "ru": "жарко",
+        "hi": "गर्म",
+        "pl": "gorąco",
+        "nl": "heet",
+        "el": "ζεστά",
+        "sv": "varmt",
+        "no": "varmt",
+        "fi": "kuuma",
+        "cs": "horko",
+        "uk": "жарко",
+        "th": "ร้อน",
+        "vi": "nóng"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "cold", 
         "es": "frío", 
-        "he": "קר" 
+        "he": "קר",
+        "fr": "froid",
+        "de": "kalt",
+        "it": "freddo",
+        "pt": "frio",
+        "ru": "холодно",
+        "hi": "ठंडा",
+        "pl": "zimno",
+        "nl": "koud",
+        "el": "κρύα",
+        "sv": "kallt",
+        "no": "kaldt",
+        "fi": "kylmä",
+        "cs": "chladno",
+        "uk": "холодно",
+        "th": "เย็น",
+        "vi": "lạnh"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "warm", 
         "es": "tibio", 
-        "he": "חמים" 
+        "he": "חמים",
+        "fr": "chaud",
+        "de": "warm",
+        "it": "caldo",
+        "pt": "quente",
+        "ru": "тепло",
+        "hi": "गर्म",
+        "pl": "ciepło",
+        "nl": "warm",
+        "el": "ζεστά",
+        "sv": "varmt",
+        "no": "varmt",
+        "fi": "lämmin",
+        "cs": "teplo",
+        "uk": "тепло",
+        "th": "อบอุ่น",
+        "vi": "ấm"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "cool", 
         "es": "fresco", 
-        "he": "מגניב" 
+        "he": "מגניב",
+        "fr": "frais",
+        "de": "kühl",
+        "it": "fresco",
+        "pt": "fresco",
+        "ru": "прохладно",
+        "hi": "ठंडा",
+        "pl": "chłodno",
+        "nl": "koel",
+        "el": "δροσερό",
+        "sv": "svalt",
+        "no": "kjølig",
+        "fi": "viileä",
+        "cs": "chladno",
+        "uk": "прохолодно",
+        "th": "เย็นสบาย",
+        "vi": "mát"
       } 
     },
     { 
@@ -99,7 +275,23 @@
       "text": { 
         "en": "storm", 
         "es": "tormenta", 
-        "he": "סערה" 
+        "he": "סערה",
+        "fr": "tempête",
+        "de": "Sturm",
+        "it": "tempesta",
+        "pt": "tempestade",
+        "ru": "буря",
+        "hi": "तूफान",
+        "pl": "burza",
+        "nl": "storm",
+        "el": "καταιγίδα",
+        "sv": "storm",
+        "no": "storm",
+        "fi": "myrsky",
+        "cs": "bouře",
+        "uk": "буря",
+        "th": "พายุ",
+        "vi": "bão"
       } 
     },
     { 
@@ -108,7 +300,23 @@
       "text": { 
         "en": "thunder", 
         "es": "trueno", 
-        "he": "רעם" 
+        "he": "רעם",
+        "fr": "tonnerre",
+        "de": "Donner",
+        "it": "tuono",
+        "pt": "trovão",
+        "ru": "гром",
+        "hi": "बिजली",
+        "pl": "grzmot",
+        "nl": "donder",
+        "el": "βροντή",
+        "sv": "åska",
+        "no": "torden",
+        "fi": "ukkonen",
+        "cs": "hrom",
+        "uk": "грім",
+        "th": "ฟ้าร้อง",
+        "vi": "sấm"
       } 
     },
     { 
@@ -117,7 +325,23 @@
       "text": { 
         "en": "lightning", 
         "es": "relámpago", 
-        "he": "ברק" 
+        "he": "ברק",
+        "fr": "éclair",
+        "de": "Blitz",
+        "it": "fulmine",
+        "pt": "raio",
+        "ru": "молния",
+        "hi": "बिजली",
+        "pl": "błyskawica",
+        "nl": "bliksem",
+        "el": "αστραπή",
+        "sv": "blixt",
+        "no": "lyn",
+        "fi": "salama",
+        "cs": "blesk",
+        "uk": "блискавка",
+        "th": "ฟ้าผ่า",
+        "vi": "sét"
       } 
     },
     { 
@@ -126,7 +350,23 @@
       "text": { 
         "en": "fog", 
         "es": "niebla", 
-        "he": "ערפל" 
+        "he": "ערפל",
+        "fr": "brouillard",
+        "de": "Nebel",
+        "it": "nebbia",
+        "pt": "névoa",
+        "ru": "туман",
+        "hi": "कोहरा",
+        "pl": "mgła",
+        "nl": "mist",
+        "el": "ομίχλη",
+        "sv": "dimma",
+        "no": "tåke",
+        "fi": "sumu",
+        "cs": "mlha",
+        "uk": "туман",
+        "th": "หมอก",
+        "vi": "sương mù"
       } 
     },
     { 
@@ -135,7 +375,23 @@
       "text": { 
         "en": "mist", 
         "es": "bruma", 
-        "he": "אד" 
+        "he": "אד",
+        "fr": "brume",
+        "de": "Nebel",
+        "it": "nebbia",
+        "pt": "névoa",
+        "ru": "дымка",
+        "hi": "धुंध",
+        "pl": "mgiełka",
+        "nl": "nevel",
+        "el": "ομίχλη",
+        "sv": "dimma",
+        "no": "dis",
+        "fi": "utu",
+        "cs": "mlha",
+        "uk": "імла",
+        "th": "หมอกบาง",
+        "vi": "sương mù nhẹ"
       } 
     },
     { 
@@ -144,7 +400,23 @@
       "text": { 
         "en": "hail", 
         "es": "granizo", 
-        "he": "ברד" 
+        "he": "ברד",
+        "fr": "grêle",
+        "de": "Hagel",
+        "it": "grandine",
+        "pt": "granizo",
+        "ru": "град",
+        "hi": "ओलावृष्टि",
+        "pl": "grad",
+        "nl": "hagel",
+        "el": "χαλάζι",
+        "sv": "hagel",
+        "no": "hagl",
+        "fi": "rae",
+        "cs": "kroupy",
+        "uk": "град",
+        "th": "ลูกเห็บ",
+        "vi": "mưa đá"
       } 
     },
     { 
@@ -153,7 +425,23 @@
       "text": { 
         "en": "sleet", 
         "es": "aguanieve", 
-        "he": "שלג גשם" 
+        "he": "שלג גשם",
+        "fr": "neige fondue",
+        "de": "Schneeregen",
+        "it": "nevischio",
+        "pt": "granizo",
+        "ru": "мокрый снег",
+        "hi": "बर्फीली बारिश",
+        "pl": "deszcz ze śniegiem",
+        "nl": "natte sneeuw",
+        "el": "χιονόνερο",
+        "sv": "snöblandat regn",
+        "no": "sludd",
+        "fi": "räntä",
+        "cs": "sněhové krupky",
+        "uk": "мокрий сніг",
+        "th": "ฝนหิมะ",
+        "vi": "mưa tuyết"
       } 
     },
     { 
@@ -162,7 +450,23 @@
       "text": { 
         "en": "drizzle", 
         "es": "llovizna", 
-        "he": "טפטוף" 
+        "he": "טפטוף",
+        "fr": "bruine",
+        "de": "Nieselregen",
+        "it": "pioggerella",
+        "pt": "chuvisco",
+        "ru": "морось",
+        "hi": "बूंदाबांदी",
+        "pl": "mżawka",
+        "nl": "motregen",
+        "el": "ψιλόβροχο",
+        "sv": "duggregn",
+        "no": "yr",
+        "fi": "tihku",
+        "cs": "mrholení",
+        "uk": "мжиця",
+        "th": "ฝนปรอย",
+        "vi": "mưa phùn"
       } 
     },
     { 
@@ -171,7 +475,23 @@
       "text": { 
         "en": "shower", 
         "es": "ducha", 
-        "he": "מקלחת" 
+        "he": "מקלחת",
+        "fr": "averse",
+        "de": "Schauer",
+        "it": "acquazzone",
+        "pt": "chuva",
+        "ru": "ливень",
+        "hi": "बौछार",
+        "pl": "ulewa",
+        "nl": "bui",
+        "el": "ντουζ",
+        "sv": "skur",
+        "no": "skur",
+        "fi": "sadekuuro",
+        "cs": "přeháňka",
+        "uk": "злива",
+        "th": "ฝนตกหนัก",
+        "vi": "mưa rào"
       } 
     },
     { 
@@ -180,7 +500,23 @@
       "text": { 
         "en": "breeze", 
         "es": "brisa", 
-        "he": "רוח קלה" 
+        "he": "רוח קלה",
+        "fr": "brise",
+        "de": "Brise",
+        "it": "brezza",
+        "pt": "brisa",
+        "ru": "бриз",
+        "hi": "हल्की हवा",
+        "pl": "bryza",
+        "nl": "bries",
+        "el": "αύρα",
+        "sv": "bris",
+        "no": "bris",
+        "fi": "tuulenvire",
+        "cs": "vánek",
+        "uk": "бриз",
+        "th": "ลมเบา",
+        "vi": "gió nhẹ"
       } 
     },
     { 
@@ -189,7 +525,23 @@
       "text": { 
         "en": "humidity", 
         "es": "humedad", 
-        "he": "לחות" 
+        "he": "לחות",
+        "fr": "humidité",
+        "de": "Luftfeuchtigkeit",
+        "it": "umidità",
+        "pt": "umidade",
+        "ru": "влажность",
+        "hi": "नमी",
+        "pl": "wilgotność",
+        "nl": "vochtigheid",
+        "el": "υγρασία",
+        "sv": "luftfuktighet",
+        "no": "luftfuktighet",
+        "fi": "kosteus",
+        "cs": "vlhkost",
+        "uk": "вологість",
+        "th": "ความชื้น",
+        "vi": "độ ẩm"
       } 
     }
   ]

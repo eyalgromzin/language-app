@@ -4,12 +4,44 @@
   "name": { 
     "en": "Home", 
     "es": "Hogar", 
-    "he": "בית" 
+    "he": "בית",
+    "fr": "Maison",
+    "de": "Zuhause",
+    "it": "Casa",
+    "pt": "Casa",
+    "ru": "Дом",
+    "hi": "घर",
+    "pl": "Dom",
+    "nl": "Huis",
+    "el": "Σπίτι",
+    "sv": "Hem",
+    "no": "Hjem",
+    "fi": "Koti",
+    "cs": "Dům",
+    "uk": "Дім",
+    "th": "บ้าน",
+    "vi": "Nhà"
   },
   "description": { 
     "en": "Household words", 
     "es": "Palabras del hogar", 
-    "he": "מילים של הבית" 
+    "he": "מילים של הבית",
+    "fr": "Mots du foyer",
+    "de": "Haushaltswörter",
+    "it": "Parole della casa",
+    "pt": "Palavras do lar",
+    "ru": "Домашние слова",
+    "hi": "घरेलू शब्द",
+    "pl": "Słowa domowe",
+    "nl": "Huishoudelijke woorden",
+    "el": "Λέξεις του σπιτιού",
+    "sv": "Hushållsord",
+    "no": "Husholdningsord",
+    "fi": "Kotitalouden sanat",
+    "cs": "Domácí slova",
+    "uk": "Домашні слова",
+    "th": "คำในครัวเรือน",
+    "vi": "Từ ngữ trong nhà"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "house", 
         "es": "casa", 
-        "he": "בית" 
+        "he": "בית",
+        "fr": "maison",
+        "de": "Haus",
+        "it": "casa",
+        "pt": "casa",
+        "ru": "дом",
+        "hi": "घर",
+        "pl": "dom",
+        "nl": "huis",
+        "el": "σπίτι",
+        "sv": "hus",
+        "no": "hus",
+        "fi": "talo",
+        "cs": "dům",
+        "uk": "дім",
+        "th": "บ้าน",
+        "vi": "nhà"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "room", 
         "es": "habitación", 
-        "he": "חדר" 
+        "he": "חדר",
+        "fr": "pièce",
+        "de": "Zimmer",
+        "it": "stanza",
+        "pt": "quarto",
+        "ru": "комната",
+        "hi": "कमरा",
+        "pl": "pokój",
+        "nl": "kamer",
+        "el": "δωμάτιο",
+        "sv": "rum",
+        "no": "rom",
+        "fi": "huone",
+        "cs": "místnost",
+        "uk": "кімната",
+        "th": "ห้อง",
+        "vi": "phòng"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "kitchen", 
         "es": "cocina", 
-        "he": "מטבח" 
+        "he": "מטבח",
+        "fr": "cuisine",
+        "de": "Küche",
+        "it": "cucina",
+        "pt": "cozinha",
+        "ru": "кухня",
+        "hi": "रसोई",
+        "pl": "kuchnia",
+        "nl": "keuken",
+        "el": "κουζίνα",
+        "sv": "kök",
+        "no": "kjøkken",
+        "fi": "keittiö",
+        "cs": "kuchyně",
+        "uk": "кухня",
+        "th": "ครัว",
+        "vi": "nhà bếp"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "bathroom", 
         "es": "baño", 
-        "he": "שירותים" 
+        "he": "שירותים",
+        "fr": "salle de bain",
+        "de": "Badezimmer",
+        "it": "bagno",
+        "pt": "banheiro",
+        "ru": "ванная",
+        "hi": "बाथरूम",
+        "pl": "łazienka",
+        "nl": "badkamer",
+        "el": "μπάνιο",
+        "sv": "badrum",
+        "no": "bad",
+        "fi": "kylpyhuone",
+        "cs": "koupelna",
+        "uk": "ванна",
+        "th": "ห้องน้ำ",
+        "vi": "phòng tắm"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "bed", 
         "es": "cama", 
-        "he": "מיטה" 
+        "he": "מיטה",
+        "fr": "lit",
+        "de": "Bett",
+        "it": "letto",
+        "pt": "cama",
+        "ru": "кровать",
+        "hi": "बिस्तर",
+        "pl": "łóżko",
+        "nl": "bed",
+        "el": "κρεβάτι",
+        "sv": "säng",
+        "no": "seng",
+        "fi": "sänky",
+        "cs": "postel",
+        "uk": "ліжко",
+        "th": "เตียง",
+        "vi": "giường"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "table", 
         "es": "mesa", 
-        "he": "שולחן" 
+        "he": "שולחן",
+        "fr": "table",
+        "de": "Tisch",
+        "it": "tavolo",
+        "pt": "mesa",
+        "ru": "стол",
+        "hi": "मेज",
+        "pl": "stół",
+        "nl": "tafel",
+        "el": "τραπέζι",
+        "sv": "bord",
+        "no": "bord",
+        "fi": "pöytä",
+        "cs": "stůl",
+        "uk": "стіл",
+        "th": "โต๊ะ",
+        "vi": "bàn"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "chair", 
         "es": "silla", 
-        "he": "כיסא" 
+        "he": "כיסא",
+        "fr": "chaise",
+        "de": "Stuhl",
+        "it": "sedia",
+        "pt": "cadeira",
+        "ru": "стул",
+        "hi": "कुर्सी",
+        "pl": "krzesło",
+        "nl": "stoel",
+        "el": "καρέκλα",
+        "sv": "stol",
+        "no": "stol",
+        "fi": "tuoli",
+        "cs": "židle",
+        "uk": "стілець",
+        "th": "เก้าอี้",
+        "vi": "ghế"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "sofa", 
         "es": "sofá", 
-        "he": "ספה" 
+        "he": "ספה",
+        "fr": "canapé",
+        "de": "Sofa",
+        "it": "divano",
+        "pt": "sofá",
+        "ru": "диван",
+        "hi": "सोफा",
+        "pl": "sofa",
+        "nl": "bank",
+        "el": "καναπές",
+        "sv": "soffa",
+        "no": "sofa",
+        "fi": "sohva",
+        "cs": "gauč",
+        "uk": "диван",
+        "th": "โซฟา",
+        "vi": "ghế sofa"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "window", 
         "es": "ventana", 
-        "he": "חלון" 
+        "he": "חלון",
+        "fr": "fenêtre",
+        "de": "Fenster",
+        "it": "finestra",
+        "pt": "janela",
+        "ru": "окно",
+        "hi": "खिड़की",
+        "pl": "okno",
+        "nl": "raam",
+        "el": "παράθυρο",
+        "sv": "fönster",
+        "no": "vindu",
+        "fi": "ikkuna",
+        "cs": "okno",
+        "uk": "вікно",
+        "th": "หน้าต่าง",
+        "vi": "cửa sổ"
       } 
     },
     { 
@@ -99,7 +275,48 @@
       "text": { 
         "en": "door", 
         "es": "puerta", 
-        "he": "דלת" 
+        "he": "דלת",
+        "fr": "porte",
+        "de": "Tür",
+        "it": "porta",
+        "pt": "porta",
+        "ru": "дверь",
+        "hi": "दरवाजा",
+        "pl": "drzwi",
+        "nl": "deur",
+        "el": "πόρτα",
+        "sv": "dörr",
+        "no": "dør",
+        "fi": "ovi",
+        "cs": "dveře",
+        "uk": "двері",
+        "th": "ประตู",
+        "vi": "cửa"
+      } 
+    },
+    { 
+      "id": "floor", 
+      "type": "word", 
+      "text": { 
+        "en": "floor", 
+        "es": "piso", 
+        "he": "רצפה",
+        "fr": "sol",
+        "de": "Boden",
+        "it": "pavimento",
+        "pt": "chão",
+        "ru": "пол",
+        "hi": "फर्श",
+        "pl": "podłoga",
+        "nl": "vloer",
+        "el": "πάτωμα",
+        "sv": "golv",
+        "no": "gulv",
+        "fi": "lattia",
+        "cs": "podlaha",
+        "uk": "підлога",
+        "th": "พื้น",
+        "vi": "sàn"
       } 
     },
     { 
@@ -108,16 +325,23 @@
       "text": { 
         "en": "wall", 
         "es": "pared", 
-        "he": "קיר" 
-      } 
-    },
-    { 
-      "id": "floor", 
-      "type": "word", 
-      "text": { 
-        "en": "floor", 
-        "es": "suelo", 
-        "he": "רצפה" 
+        "he": "קיר",
+        "fr": "mur",
+        "de": "Wand",
+        "it": "muro",
+        "pt": "parede",
+        "ru": "стена",
+        "hi": "दीवार",
+        "pl": "ściana",
+        "nl": "muur",
+        "el": "τοίχος",
+        "sv": "vägg",
+        "no": "vegg",
+        "fi": "seinä",
+        "cs": "zeď",
+        "uk": "стіна",
+        "th": "กำแพง",
+        "vi": "tường"
       } 
     },
     { 
@@ -126,7 +350,23 @@
       "text": { 
         "en": "ceiling", 
         "es": "techo", 
-        "he": "תקרה" 
+        "he": "תקרה",
+        "fr": "plafond",
+        "de": "Decke",
+        "it": "soffitto",
+        "pt": "teto",
+        "ru": "потолок",
+        "hi": "छत",
+        "pl": "sufit",
+        "nl": "plafond",
+        "el": "ταβάνι",
+        "sv": "tak",
+        "no": "tak",
+        "fi": "katto",
+        "cs": "strop",
+        "uk": "стеля",
+        "th": "เพดาน",
+        "vi": "trần nhà"
       } 
     },
     { 
@@ -135,97 +375,98 @@
       "text": { 
         "en": "stairs", 
         "es": "escaleras", 
-        "he": "מדרגות" 
+        "he": "מדרגות",
+        "fr": "escalier",
+        "de": "Treppe",
+        "it": "scale",
+        "pt": "escadas",
+        "ru": "лестница",
+        "hi": "सीढ़ियां",
+        "pl": "schody",
+        "nl": "trap",
+        "el": "σκάλες",
+        "sv": "trappor",
+        "no": "trapper",
+        "fi": "portaat",
+        "cs": "schody",
+        "uk": "сходи",
+        "th": "บันได",
+        "vi": "cầu thang"
       } 
     },
     { 
-      "id": "lamp", 
+      "id": "garden", 
       "type": "word", 
       "text": { 
-        "en": "lamp", 
-        "es": "lámpara", 
-        "he": "מנורה" 
+        "en": "garden", 
+        "es": "jardín", 
+        "he": "גן",
+        "fr": "jardin",
+        "de": "Garten",
+        "it": "giardino",
+        "pt": "jardim",
+        "ru": "сад",
+        "hi": "बगीचा",
+        "pl": "ogród",
+        "nl": "tuin",
+        "el": "κήπος",
+        "sv": "trädgård",
+        "no": "hage",
+        "fi": "puutarha",
+        "cs": "zahrada",
+        "uk": "сад",
+        "th": "สวน",
+        "vi": "vườn"
       } 
     },
     { 
-      "id": "mirror", 
+      "id": "garage", 
       "type": "word", 
       "text": { 
-        "en": "mirror", 
-        "es": "espejo", 
-        "he": "מראה" 
+        "en": "garage", 
+        "es": "garaje", 
+        "he": "חניה",
+        "fr": "garage",
+        "de": "Garage",
+        "it": "garage",
+        "pt": "garagem",
+        "ru": "гараж",
+        "hi": "गैरेज",
+        "pl": "garaż",
+        "nl": "garage",
+        "el": "γκαράζ",
+        "sv": "garage",
+        "no": "garasje",
+        "fi": "autotalli",
+        "cs": "garáž",
+        "uk": "гараж",
+        "th": "โรงรถ",
+        "vi": "nhà để xe"
       } 
     },
     { 
-      "id": "curtain", 
+      "id": "balcony", 
       "type": "word", 
       "text": { 
-        "en": "curtain", 
-        "es": "cortina", 
-        "he": "וילון" 
-      } 
-    },
-    { 
-      "id": "carpet", 
-      "type": "word", 
-      "text": { 
-        "en": "carpet", 
-        "es": "alfombra", 
-        "he": "שטיח" 
-      } 
-    },
-    { 
-      "id": "closet", 
-      "type": "word", 
-      "text": { 
-        "en": "closet", 
-        "es": "armario", 
-        "he": "ארון" 
-      } 
-    },
-    { 
-      "id": "refrigerator", 
-      "type": "word", 
-      "text": { 
-        "en": "refrigerator", 
-        "es": "refrigerador", 
-        "he": "מקרר" 
-      } 
-    },
-    { 
-      "id": "stove", 
-      "type": "word", 
-      "text": { 
-        "en": "stove", 
-        "es": "estufa", 
-        "he": "כיריים" 
-      } 
-    },
-    { 
-      "id": "sink", 
-      "type": "word", 
-      "text": { 
-        "en": "sink", 
-        "es": "fregadero", 
-        "he": "כיור" 
-      } 
-    },
-    { 
-      "id": "shower", 
-      "type": "word", 
-      "text": { 
-        "en": "shower", 
-        "es": "ducha", 
-        "he": "מקלחת" 
-      } 
-    },
-    { 
-      "id": "toilet", 
-      "type": "word", 
-      "text": { 
-        "en": "toilet", 
-        "es": "inodoro", 
-        "he": "אסלה" 
+        "en": "balcony", 
+        "es": "balcón", 
+        "he": "מרפסת",
+        "fr": "balcon",
+        "de": "Balkon",
+        "it": "balcone",
+        "pt": "sacada",
+        "ru": "балкон",
+        "hi": "बालकनी",
+        "pl": "balkon",
+        "nl": "balkon",
+        "el": "μπαλκόνι",
+        "sv": "balkong",
+        "no": "balkong",
+        "fi": "parveke",
+        "cs": "balkon",
+        "uk": "балкон",
+        "th": "ระเบียง",
+        "vi": "ban công"
       } 
     }
   ]

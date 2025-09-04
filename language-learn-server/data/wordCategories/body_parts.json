@@ -4,12 +4,44 @@
   "name": { 
     "en": "Body Parts", 
     "es": "Partes del Cuerpo", 
-    "he": "איברי הגוף" 
+    "he": "איברי הגוף",
+    "fr": "Parties du corps",
+    "de": "Körperteile",
+    "it": "Parti del corpo",
+    "pt": "Partes do corpo",
+    "ru": "Части тела",
+    "hi": "शरीर के अंग",
+    "pl": "Części ciała",
+    "nl": "Lichaamsdelen",
+    "el": "Μέρη του σώματος",
+    "sv": "Kroppsdelar",
+    "no": "Kroppsdeler",
+    "fi": "Kehonosat",
+    "cs": "Části těla",
+    "uk": "Частини тіла",
+    "th": "ส่วนต่างๆ ของร่างกาย",
+    "vi": "Các bộ phận cơ thể"
   },
   "description": { 
     "en": "Human body parts and anatomy", 
     "es": "Partes del cuerpo humano y anatomía", 
-    "he": "איברי הגוף האנושי ואנטומיה" 
+    "he": "איברי הגוף האנושי ואנטומיה",
+    "fr": "Parties du corps humain et anatomie",
+    "de": "Menschliche Körperteile und Anatomie",
+    "it": "Parti del corpo umano e anatomia",
+    "pt": "Partes do corpo humano e anatomia",
+    "ru": "Части человеческого тела и анатомия",
+    "hi": "मानव शरीर के अंग और शरीर रचना",
+    "pl": "Części ciała ludzkiego i anatomia",
+    "nl": "Menselijke lichaamsdelen en anatomie",
+    "el": "Μέρη του ανθρώπινου σώματος και ανατομία",
+    "sv": "Mänskliga kroppsdelar och anatomi",
+    "no": "Menneskelige kroppsdeler og anatomi",
+    "fi": "Ihmiskehon osat ja anatomia",
+    "cs": "Části lidského těla a anatomie",
+    "uk": "Частини людського тіла та анатомія",
+    "th": "ส่วนต่างๆ ของร่างกายมนุษย์และกายวิภาคศาสตร์",
+    "vi": "Các bộ phận cơ thể người và giải phẫu"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "head", 
         "es": "cabeza", 
-        "he": "ראש" 
+        "he": "ראש",
+        "fr": "tête",
+        "de": "Kopf",
+        "it": "testa",
+        "pt": "cabeça",
+        "ru": "голова",
+        "hi": "सिर",
+        "pl": "głowa",
+        "nl": "hoofd",
+        "el": "κεφάλι",
+        "sv": "huvud",
+        "no": "hode",
+        "fi": "pää",
+        "cs": "hlava",
+        "uk": "голова",
+        "th": "หัว",
+        "vi": "đầu"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "face", 
         "es": "cara", 
-        "he": "פנים" 
+        "he": "פנים",
+        "fr": "visage",
+        "de": "Gesicht",
+        "it": "viso",
+        "pt": "rosto",
+        "ru": "лицо",
+        "hi": "चेहरा",
+        "pl": "twarz",
+        "nl": "gezicht",
+        "el": "πρόσωπο",
+        "sv": "ansikte",
+        "no": "ansikt",
+        "fi": "kasvot",
+        "cs": "obličej",
+        "uk": "обличчя",
+        "th": "หน้า",
+        "vi": "mặt"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "eyes", 
         "es": "ojos", 
-        "he": "עיניים" 
+        "he": "עיניים",
+        "fr": "yeux",
+        "de": "Augen",
+        "it": "occhi",
+        "pt": "olhos",
+        "ru": "глаза",
+        "hi": "आंखें",
+        "pl": "oczy",
+        "nl": "ogen",
+        "el": "μάτια",
+        "sv": "ögon",
+        "no": "øyne",
+        "fi": "silmät",
+        "cs": "oči",
+        "uk": "очі",
+        "th": "ตา",
+        "vi": "mắt"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "nose", 
         "es": "nariz", 
-        "he": "אף" 
+        "he": "אף",
+        "fr": "nez",
+        "de": "Nase",
+        "it": "naso",
+        "pt": "nariz",
+        "ru": "нос",
+        "hi": "नाक",
+        "pl": "nos",
+        "nl": "neus",
+        "el": "μύτη",
+        "sv": "näsa",
+        "no": "nese",
+        "fi": "nenä",
+        "cs": "nos",
+        "uk": "ніс",
+        "th": "จมูก",
+        "vi": "mũi"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "mouth", 
         "es": "boca", 
-        "he": "פה" 
+        "he": "פה",
+        "fr": "bouche",
+        "de": "Mund",
+        "it": "bocca",
+        "pt": "boca",
+        "ru": "рот",
+        "hi": "मुंह",
+        "pl": "usta",
+        "nl": "mond",
+        "el": "στόμα",
+        "sv": "mun",
+        "no": "munn",
+        "fi": "suu",
+        "cs": "ústa",
+        "uk": "рот",
+        "th": "ปาก",
+        "vi": "miệng"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "ears", 
         "es": "orejas", 
-        "he": "אוזניים" 
+        "he": "אוזניים",
+        "fr": "oreilles",
+        "de": "Ohren",
+        "it": "orecchie",
+        "pt": "orelhas",
+        "ru": "уши",
+        "hi": "कान",
+        "pl": "uszy",
+        "nl": "oren",
+        "el": "αυτιά",
+        "sv": "öron",
+        "no": "ører",
+        "fi": "korvat",
+        "cs": "uši",
+        "uk": "вуха",
+        "th": "หู",
+        "vi": "tai"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "hair", 
         "es": "pelo", 
-        "he": "שיער" 
+        "he": "שיער",
+        "fr": "cheveux",
+        "de": "Haar",
+        "it": "capelli",
+        "pt": "cabelo",
+        "ru": "волосы",
+        "hi": "बाल",
+        "pl": "włosy",
+        "nl": "haar",
+        "el": "μαλλιά",
+        "sv": "hår",
+        "no": "hår",
+        "fi": "hiukset",
+        "cs": "vlasy",
+        "uk": "волосся",
+        "th": "ผม",
+        "vi": "tóc"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "neck", 
         "es": "cuello", 
-        "he": "צוואר" 
+        "he": "צוואר",
+        "fr": "cou",
+        "de": "Hals",
+        "it": "collo",
+        "pt": "pescoço",
+        "ru": "шея",
+        "hi": "गर्दन",
+        "pl": "szyja",
+        "nl": "nek",
+        "el": "λαιμός",
+        "sv": "hals",
+        "no": "hals",
+        "fi": "kaula",
+        "cs": "krk",
+        "uk": "шия",
+        "th": "คอ",
+        "vi": "cổ"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "shoulders", 
         "es": "hombros", 
-        "he": "כתפיים" 
+        "he": "כתפיים",
+        "fr": "épaules",
+        "de": "Schultern",
+        "it": "spalle",
+        "pt": "ombros",
+        "ru": "плечи",
+        "hi": "कंधे",
+        "pl": "ramiona",
+        "nl": "schouders",
+        "el": "ώμοι",
+        "sv": "axlar",
+        "no": "skuldre",
+        "fi": "hartiat",
+        "cs": "ramena",
+        "uk": "плечі",
+        "th": "ไหล่",
+        "vi": "vai"
       } 
     },
     { 
@@ -99,7 +275,23 @@
       "text": { 
         "en": "arms", 
         "es": "brazos", 
-        "he": "זרועות" 
+        "he": "זרועות",
+        "fr": "bras",
+        "de": "Arme",
+        "it": "braccia",
+        "pt": "braços",
+        "ru": "руки",
+        "hi": "बांहें",
+        "pl": "ramiona",
+        "nl": "armen",
+        "el": "χέρια",
+        "sv": "armar",
+        "no": "armer",
+        "fi": "käsivarret",
+        "cs": "paže",
+        "uk": "руки",
+        "th": "แขน",
+        "vi": "cánh tay"
       } 
     },
     { 
@@ -108,7 +300,23 @@
       "text": { 
         "en": "hands", 
         "es": "manos", 
-        "he": "ידיים" 
+        "he": "ידיים",
+        "fr": "mains",
+        "de": "Hände",
+        "it": "mani",
+        "pt": "mãos",
+        "ru": "руки",
+        "hi": "हाथ",
+        "pl": "dłonie",
+        "nl": "handen",
+        "el": "χέρια",
+        "sv": "händer",
+        "no": "hender",
+        "fi": "kädet",
+        "cs": "ruce",
+        "uk": "руки",
+        "th": "มือ",
+        "vi": "bàn tay"
       } 
     },
     { 
@@ -117,7 +325,23 @@
       "text": { 
         "en": "fingers", 
         "es": "dedos", 
-        "he": "אצבעות" 
+        "he": "אצבעות",
+        "fr": "doigts",
+        "de": "Finger",
+        "it": "dita",
+        "pt": "dedos",
+        "ru": "пальцы",
+        "hi": "उंगलियां",
+        "pl": "palce",
+        "nl": "vingers",
+        "el": "δάχτυλα",
+        "sv": "fingrar",
+        "no": "fingre",
+        "fi": "sormet",
+        "cs": "prsty",
+        "uk": "пальці",
+        "th": "นิ้วมือ",
+        "vi": "ngón tay"
       } 
     },
     { 
@@ -126,7 +350,23 @@
       "text": { 
         "en": "chest", 
         "es": "pecho", 
-        "he": "חזה" 
+        "he": "חזה",
+        "fr": "poitrine",
+        "de": "Brust",
+        "it": "petto",
+        "pt": "peito",
+        "ru": "грудь",
+        "hi": "छाती",
+        "pl": "klatka piersiowa",
+        "nl": "borst",
+        "el": "στήθος",
+        "sv": "bröst",
+        "no": "bryst",
+        "fi": "rinta",
+        "cs": "hrudník",
+        "uk": "груди",
+        "th": "หน้าอก",
+        "vi": "ngực"
       } 
     },
     { 
@@ -135,7 +375,23 @@
       "text": { 
         "en": "back", 
         "es": "espalda", 
-        "he": "גב" 
+        "he": "גב",
+        "fr": "dos",
+        "de": "Rücken",
+        "it": "schiena",
+        "pt": "costas",
+        "ru": "спина",
+        "hi": "पीठ",
+        "pl": "plecy",
+        "nl": "rug",
+        "el": "πλάτη",
+        "sv": "rygg",
+        "no": "rygg",
+        "fi": "selkä",
+        "cs": "záda",
+        "uk": "спина",
+        "th": "หลัง",
+        "vi": "lưng"
       } 
     },
     { 
@@ -144,7 +400,23 @@
       "text": { 
         "en": "stomach", 
         "es": "estómago", 
-        "he": "בטן" 
+        "he": "בטן",
+        "fr": "estomac",
+        "de": "Magen",
+        "it": "stomaco",
+        "pt": "estômago",
+        "ru": "желудок",
+        "hi": "पेट",
+        "pl": "żołądek",
+        "nl": "maag",
+        "el": "στομάχι",
+        "sv": "mage",
+        "no": "mage",
+        "fi": "maha",
+        "cs": "žaludek",
+        "uk": "шлунок",
+        "th": "ท้อง",
+        "vi": "dạ dày"
       } 
     },
     { 
@@ -153,7 +425,23 @@
       "text": { 
         "en": "legs", 
         "es": "piernas", 
-        "he": "רגליים" 
+        "he": "רגליים",
+        "fr": "jambes",
+        "de": "Beine",
+        "it": "gambe",
+        "pt": "pernas",
+        "ru": "ноги",
+        "hi": "पैर",
+        "pl": "nogi",
+        "nl": "benen",
+        "el": "πόδια",
+        "sv": "ben",
+        "no": "ben",
+        "fi": "jalat",
+        "cs": "nohy",
+        "uk": "ноги",
+        "th": "ขา",
+        "vi": "chân"
       } 
     },
     { 
@@ -162,7 +450,23 @@
       "text": { 
         "en": "feet", 
         "es": "pies", 
-        "he": "כפות רגליים" 
+        "he": "כפות רגליים",
+        "fr": "pieds",
+        "de": "Füße",
+        "it": "piedi",
+        "pt": "pés",
+        "ru": "стопы",
+        "hi": "पैर",
+        "pl": "stopy",
+        "nl": "voeten",
+        "el": "πόδια",
+        "sv": "fötter",
+        "no": "føtter",
+        "fi": "jalat",
+        "cs": "chodidla",
+        "uk": "стопи",
+        "th": "เท้า",
+        "vi": "bàn chân"
       } 
     },
     { 
@@ -171,7 +475,23 @@
       "text": { 
         "en": "toes", 
         "es": "dedos del pie", 
-        "he": "בהונות" 
+        "he": "בהונות",
+        "fr": "orteils",
+        "de": "Zehen",
+        "it": "dita dei piedi",
+        "pt": "dedos dos pés",
+        "ru": "пальцы ног",
+        "hi": "पैर की उंगलियां",
+        "pl": "palce u stóp",
+        "nl": "tenen",
+        "el": "δάχτυλα ποδιών",
+        "sv": "tår",
+        "no": "tær",
+        "fi": "varpaat",
+        "cs": "prsty na nohou",
+        "uk": "пальці ніг",
+        "th": "นิ้วเท้า",
+        "vi": "ngón chân"
       } 
     },
     { 
@@ -180,7 +500,23 @@
       "text": { 
         "en": "knees", 
         "es": "rodillas", 
-        "he": "ברכיים" 
+        "he": "ברכיים",
+        "fr": "genoux",
+        "de": "Knie",
+        "it": "ginocchia",
+        "pt": "joelhos",
+        "ru": "колени",
+        "hi": "घुटने",
+        "pl": "kolana",
+        "nl": "knieën",
+        "el": "γόνατα",
+        "sv": "knän",
+        "no": "knær",
+        "fi": "polvet",
+        "cs": "kolena",
+        "uk": "коліна",
+        "th": "หัวเข่า",
+        "vi": "đầu gối"
       } 
     },
     { 
@@ -189,7 +525,23 @@
       "text": { 
         "en": "elbows", 
         "es": "codos", 
-        "he": "מרפקים" 
+        "he": "מרפקים",
+        "fr": "coudes",
+        "de": "Ellbogen",
+        "it": "gomiti",
+        "pt": "cotovelos",
+        "ru": "локти",
+        "hi": "कोहनी",
+        "pl": "łokcie",
+        "nl": "ellebogen",
+        "el": "αγκώνες",
+        "sv": "armbågar",
+        "no": "albuer",
+        "fi": "kyynärpäät",
+        "cs": "lokty",
+        "uk": "лікті",
+        "th": "ข้อศอก",
+        "vi": "khuỷu tay"
       } 
     }
   ]

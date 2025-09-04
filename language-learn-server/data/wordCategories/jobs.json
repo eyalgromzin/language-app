@@ -4,12 +4,44 @@
   "name": { 
     "en": "Jobs", 
     "es": "Trabajos", 
-    "he": "עבודות" 
+    "he": "עבודות",
+    "fr": "Métiers",
+    "de": "Berufe",
+    "it": "Lavori",
+    "pt": "Trabalhos",
+    "ru": "Профессии",
+    "hi": "नौकरियां",
+    "pl": "Zawody",
+    "nl": "Beroepen",
+    "el": "Επαγγέλματα",
+    "sv": "Yrken",
+    "no": "Yrker",
+    "fi": "Ammatit",
+    "cs": "Povolání",
+    "uk": "Професії",
+    "th": "อาชีพ",
+    "vi": "Nghề nghiệp"
   },
   "description": { 
     "en": "Common professions and occupations", 
     "es": "Profesiones y ocupaciones comunes", 
-    "he": "מקצועות ועיסוקים נפוצים" 
+    "he": "מקצועות ועיסוקים נפוצים",
+    "fr": "Professions et métiers courants",
+    "de": "Häufige Berufe und Tätigkeiten",
+    "it": "Professioni e occupazioni comuni",
+    "pt": "Profissões e ocupações comuns",
+    "ru": "Распространенные профессии и занятия",
+    "hi": "सामान्य पेशे और व्यवसाय",
+    "pl": "Popularne zawody i zajęcia",
+    "nl": "Veelvoorkomende beroepen en bezigheden",
+    "el": "Κοινά επαγγέλματα και ασχολίες",
+    "sv": "Vanliga yrken och sysselsättningar",
+    "no": "Vanlige yrker og sysselsetninger",
+    "fi": "Yleisiä ammatteja ja toimintoja",
+    "cs": "Běžná povolání a zaměstnání",
+    "uk": "Поширені професії та заняття",
+    "th": "อาชีพและงานที่พบเห็นทั่วไป",
+    "vi": "Nghề nghiệp và công việc phổ biến"
   },
   "items": [
     { 
@@ -18,7 +50,23 @@
       "text": { 
         "en": "teacher", 
         "es": "maestro", 
-        "he": "מורה" 
+        "he": "מורה",
+        "fr": "enseignant",
+        "de": "Lehrer",
+        "it": "insegnante",
+        "pt": "professor",
+        "ru": "учитель",
+        "hi": "शिक्षक",
+        "pl": "nauczyciel",
+        "nl": "leraar",
+        "el": "δάσκαλος",
+        "sv": "lärare",
+        "no": "lærer",
+        "fi": "opettaja",
+        "cs": "učitel",
+        "uk": "вчитель",
+        "th": "ครู",
+        "vi": "giáo viên"
       } 
     },
     { 
@@ -27,7 +75,23 @@
       "text": { 
         "en": "doctor", 
         "es": "médico", 
-        "he": "רופא" 
+        "he": "רופא",
+        "fr": "médecin",
+        "de": "Arzt",
+        "it": "medico",
+        "pt": "médico",
+        "ru": "врач",
+        "hi": "डॉक्टर",
+        "pl": "lekarz",
+        "nl": "arts",
+        "el": "γιατρός",
+        "sv": "läkare",
+        "no": "lege",
+        "fi": "lääkäri",
+        "cs": "lékař",
+        "uk": "лікар",
+        "th": "หมอ",
+        "vi": "bác sĩ"
       } 
     },
     { 
@@ -36,7 +100,23 @@
       "text": { 
         "en": "nurse", 
         "es": "enfermero", 
-        "he": "אחות" 
+        "he": "אחות",
+        "fr": "infirmier",
+        "de": "Krankenschwester",
+        "it": "infermiere",
+        "pt": "enfermeiro",
+        "ru": "медсестра",
+        "hi": "नर्स",
+        "pl": "pielęgniarka",
+        "nl": "verpleegkundige",
+        "el": "νοσοκόμα",
+        "sv": "sjuksköterska",
+        "no": "sykepleier",
+        "fi": "sairaanhoitaja",
+        "cs": "zdravotní sestra",
+        "uk": "медсестра",
+        "th": "พยาบาล",
+        "vi": "y tá"
       } 
     },
     { 
@@ -45,7 +125,23 @@
       "text": { 
         "en": "engineer", 
         "es": "ingeniero", 
-        "he": "מהנדס" 
+        "he": "מהנדס",
+        "fr": "ingénieur",
+        "de": "Ingenieur",
+        "it": "ingegnere",
+        "pt": "engenheiro",
+        "ru": "инженер",
+        "hi": "इंजीनियर",
+        "pl": "inżynier",
+        "nl": "ingenieur",
+        "el": "μηχανικός",
+        "sv": "ingenjör",
+        "no": "ingeniør",
+        "fi": "insinööri",
+        "cs": "inženýr",
+        "uk": "інженер",
+        "th": "วิศวกร",
+        "vi": "kỹ sư"
       } 
     },
     { 
@@ -54,7 +150,23 @@
       "text": { 
         "en": "lawyer", 
         "es": "abogado", 
-        "he": "עורך דין" 
+        "he": "עורך דין",
+        "fr": "avocat",
+        "de": "Anwalt",
+        "it": "avvocato",
+        "pt": "advogado",
+        "ru": "юрист",
+        "hi": "वकील",
+        "pl": "prawnik",
+        "nl": "advocaat",
+        "el": "δικηγόρος",
+        "sv": "advokat",
+        "no": "advokat",
+        "fi": "asianajaja",
+        "cs": "právník",
+        "uk": "юрист",
+        "th": "ทนายความ",
+        "vi": "luật sư"
       } 
     },
     { 
@@ -63,7 +175,23 @@
       "text": { 
         "en": "police officer", 
         "es": "policía", 
-        "he": "שוטר" 
+        "he": "שוטר",
+        "fr": "policier",
+        "de": "Polizist",
+        "it": "poliziotto",
+        "pt": "policial",
+        "ru": "полицейский",
+        "hi": "पुलिस अधिकारी",
+        "pl": "policjant",
+        "nl": "politieagent",
+        "el": "αστυνομικός",
+        "sv": "polis",
+        "no": "politi",
+        "fi": "poliisi",
+        "cs": "policista",
+        "uk": "поліцейський",
+        "th": "ตำรวจ",
+        "vi": "cảnh sát"
       } 
     },
     { 
@@ -72,7 +200,23 @@
       "text": { 
         "en": "firefighter", 
         "es": "bombero", 
-        "he": "כבאי" 
+        "he": "כבאי",
+        "fr": "pompier",
+        "de": "Feuerwehrmann",
+        "it": "vigile del fuoco",
+        "pt": "bombeiro",
+        "ru": "пожарный",
+        "hi": "अग्निशमन",
+        "pl": "strażak",
+        "nl": "brandweerman",
+        "el": "πυροσβέστης",
+        "sv": "brandman",
+        "no": "brannmann",
+        "fi": "palomies",
+        "cs": "hasič",
+        "uk": "пожежний",
+        "th": "นักดับเพลิง",
+        "vi": "lính cứu hỏa"
       } 
     },
     { 
@@ -81,7 +225,23 @@
       "text": { 
         "en": "chef", 
         "es": "chef", 
-        "he": "שף" 
+        "he": "שף",
+        "fr": "chef",
+        "de": "Koch",
+        "it": "chef",
+        "pt": "chef",
+        "ru": "шеф-повар",
+        "hi": "शेफ",
+        "pl": "szef kuchni",
+        "nl": "chef-kok",
+        "el": "σεφ",
+        "sv": "kock",
+        "no": "kokk",
+        "fi": "kokki",
+        "cs": "šéfkuchař",
+        "uk": "шеф-кухар",
+        "th": "เชฟ",
+        "vi": "đầu bếp"
       } 
     },
     { 
@@ -90,7 +250,23 @@
       "text": { 
         "en": "waiter", 
         "es": "camarero", 
-        "he": "מלצר" 
+        "he": "מלצר",
+        "fr": "serveur",
+        "de": "Kellner",
+        "it": "cameriere",
+        "pt": "garçom",
+        "ru": "официант",
+        "hi": "वेटर",
+        "pl": "kelner",
+        "nl": "ober",
+        "el": "σερβιτόρος",
+        "sv": "servitör",
+        "no": "servitør",
+        "fi": "tarjoilija",
+        "cs": "číšník",
+        "uk": "офіціант",
+        "th": "บริกร",
+        "vi": "bồi bàn"
       } 
     },
     { 
@@ -99,7 +275,23 @@
       "text": { 
         "en": "driver", 
         "es": "conductor", 
-        "he": "נהג" 
+        "he": "נהג",
+        "fr": "chauffeur",
+        "de": "Fahrer",
+        "it": "autista",
+        "pt": "motorista",
+        "ru": "водитель",
+        "hi": "चालक",
+        "pl": "kierowca",
+        "nl": "chauffeur",
+        "el": "οδηγός",
+        "sv": "förare",
+        "no": "sjåfør",
+        "fi": "kuljettaja",
+        "cs": "řidič",
+        "uk": "водій",
+        "th": "คนขับ",
+        "vi": "tài xế"
       } 
     },
     { 
@@ -108,7 +300,23 @@
       "text": { 
         "en": "pilot", 
         "es": "piloto", 
-        "he": "טייס" 
+        "he": "טייס",
+        "fr": "pilote",
+        "de": "Pilot",
+        "it": "pilota",
+        "pt": "piloto",
+        "ru": "пилот",
+        "hi": "पायलट",
+        "pl": "pilot",
+        "nl": "piloot",
+        "el": "πιλότος",
+        "sv": "pilot",
+        "no": "pilot",
+        "fi": "pilotti",
+        "cs": "pilot",
+        "uk": "пілот",
+        "th": "นักบิน",
+        "vi": "phi công"
       } 
     },
     { 
@@ -117,7 +325,23 @@
       "text": { 
         "en": "sailor", 
         "es": "marinero", 
-        "he": "מלח" 
+        "he": "מלח",
+        "fr": "marin",
+        "de": "Seemann",
+        "it": "marinaio",
+        "pt": "marinheiro",
+        "ru": "моряк",
+        "hi": "नाविक",
+        "pl": "marynarz",
+        "nl": "zeeman",
+        "el": "ναύτης",
+        "sv": "sjöman",
+        "no": "sjømann",
+        "fi": "merimies",
+        "cs": "námořník",
+        "uk": "моряк",
+        "th": "กะลาสี",
+        "vi": "thủy thủ"
       } 
     },
     { 
@@ -126,7 +350,23 @@
       "text": { 
         "en": "artist", 
         "es": "artista", 
-        "he": "אמן" 
+        "he": "אמן",
+        "fr": "artiste",
+        "de": "Künstler",
+        "it": "artista",
+        "pt": "artista",
+        "ru": "художник",
+        "hi": "कलाकार",
+        "pl": "artysta",
+        "nl": "kunstenaar",
+        "el": "καλλιτέχνης",
+        "sv": "konstnär",
+        "no": "kunstner",
+        "fi": "taiteilija",
+        "cs": "umělec",
+        "uk": "художник",
+        "th": "ศิลปิน",
+        "vi": "nghệ sĩ"
       } 
     },
     { 
@@ -135,7 +375,23 @@
       "text": { 
         "en": "musician", 
         "es": "músico", 
-        "he": "מוזיקאי" 
+        "he": "מוזיקאי",
+        "fr": "musicien",
+        "de": "Musiker",
+        "it": "musicista",
+        "pt": "músico",
+        "ru": "музыкант",
+        "hi": "संगीतकार",
+        "pl": "muzyk",
+        "nl": "muzikant",
+        "el": "μουσικός",
+        "sv": "musiker",
+        "no": "musiker",
+        "fi": "muusikko",
+        "cs": "hudebník",
+        "uk": "музикант",
+        "th": "นักดนตรี",
+        "vi": "nhạc sĩ"
       } 
     },
     { 
@@ -144,7 +400,23 @@
       "text": { 
         "en": "actor", 
         "es": "actor", 
-        "he": "שחקן" 
+        "he": "שחקן",
+        "fr": "acteur",
+        "de": "Schauspieler",
+        "it": "attore",
+        "pt": "ator",
+        "ru": "актер",
+        "hi": "अभिनेता",
+        "pl": "aktor",
+        "nl": "acteur",
+        "el": "ηθοποιός",
+        "sv": "skådespelare",
+        "no": "skuespiller",
+        "fi": "näyttelijä",
+        "cs": "herec",
+        "uk": "актор",
+        "th": "นักแสดง",
+        "vi": "diễn viên"
       } 
     },
     { 
@@ -153,7 +425,23 @@
       "text": { 
         "en": "writer", 
         "es": "escritor", 
-        "he": "סופר" 
+        "he": "סופר",
+        "fr": "écrivain",
+        "de": "Schriftsteller",
+        "it": "scrittore",
+        "pt": "escritor",
+        "ru": "писатель",
+        "hi": "लेखक",
+        "pl": "pisarz",
+        "nl": "schrijver",
+        "el": "συγγραφέας",
+        "sv": "författare",
+        "no": "forfatter",
+        "fi": "kirjailija",
+        "cs": "spisovatel",
+        "uk": "письменник",
+        "th": "นักเขียน",
+        "vi": "nhà văn"
       } 
     },
     { 
@@ -162,7 +450,23 @@
       "text": { 
         "en": "journalist", 
         "es": "periodista", 
-        "he": "עיתונאי" 
+        "he": "עיתונאי",
+        "fr": "journaliste",
+        "de": "Journalist",
+        "it": "giornalista",
+        "pt": "jornalista",
+        "ru": "журналист",
+        "hi": "पत्रकार",
+        "pl": "dziennikarz",
+        "nl": "journalist",
+        "el": "δημοσιογράφος",
+        "sv": "journalist",
+        "no": "journalist",
+        "fi": "toimittaja",
+        "cs": "novinář",
+        "uk": "журналіст",
+        "th": "นักข่าว",
+        "vi": "nhà báo"
       } 
     },
     { 
@@ -171,7 +475,23 @@
       "text": { 
         "en": "dentist", 
         "es": "dentista", 
-        "he": "רופא שיניים" 
+        "he": "רופא שיניים",
+        "fr": "dentiste",
+        "de": "Zahnarzt",
+        "it": "dentista",
+        "pt": "dentista",
+        "ru": "стоматолог",
+        "hi": "दंत चिकित्सक",
+        "pl": "dentysta",
+        "nl": "tandarts",
+        "el": "οδοντίατρος",
+        "sv": "tandläkare",
+        "no": "tannlege",
+        "fi": "hammaslääkäri",
+        "cs": "zubní lékař",
+        "uk": "стоматолог",
+        "th": "ทันตแพทย์",
+        "vi": "nha sĩ"
       } 
     },
     { 
@@ -180,7 +500,23 @@
       "text": { 
         "en": "veterinarian", 
         "es": "veterinario", 
-        "he": "וטרינר" 
+        "he": "וטרינר",
+        "fr": "vétérinaire",
+        "de": "Tierarzt",
+        "it": "veterinario",
+        "pt": "veterinário",
+        "ru": "ветеринар",
+        "hi": "पशु चिकित्सक",
+        "pl": "weterynarz",
+        "nl": "dierenarts",
+        "el": "κτηνίατρος",
+        "sv": "veterinär",
+        "no": "veterinær",
+        "fi": "eläinlääkäri",
+        "cs": "veterinář",
+        "uk": "ветеринар",
+        "th": "สัตวแพทย์",
+        "vi": "bác sĩ thú y"
       } 
     },
     { 
@@ -189,7 +525,23 @@
       "text": { 
         "en": "architect", 
         "es": "arquitecto", 
-        "he": "אדריכל" 
+        "he": "אדריכל",
+        "fr": "architecte",
+        "de": "Architekt",
+        "it": "architetto",
+        "pt": "arquiteto",
+        "ru": "архитектор",
+        "hi": "वास्तुकार",
+        "pl": "architekt",
+        "nl": "architect",
+        "el": "αρχιτέκτονας",
+        "sv": "arkitekt",
+        "no": "arkitekt",
+        "fi": "arkkitehti",
+        "cs": "architekt",
+        "uk": "архітектор",
+        "th": "สถาปนิก",
+        "vi": "kiến trúc sư"
       } 
     }
   ]
