@@ -1,9 +1,205 @@
 import * as React from 'react';
 import { ScrollView, View, Text, TouchableOpacity, StyleProp, ViewStyle, TextStyle, ImageStyle, SafeAreaView, Animated, ActivityIndicator } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import type { WordItem, WordCategoryType, LocalizedText } from '../../types/words';
 import { cachedApiService } from '../../services/cachedApiService';
 import Tts from 'react-native-tts';
 import { getTtsLangCode } from '../practice/common';
+
+// Function to get appropriate icon for category with unique mapping
+const getCategoryIcon = (emoji: string | undefined, categoryId: string): string => {
+  // First, try to get icon based on emoji with unique mappings for actual app emojis
+  if (emoji) {
+    const emojiToIcon: Record<string, string> = {
+      // ACTUAL EMOJIS USED IN THE APP - each unique
+      '👋': 'hand-left',        // greetings
+      '🍽️': 'restaurant',       // food_and_drink
+      '✈️': 'airplane',         // travel
+      '🔢': 'calculator',       // numbers
+      '🧍': 'person',           // pronouns
+      '👕': 'shirt',            // clothing
+      '⏰': 'time',             // time
+      '😊': 'happy',            // emotions
+      '👪': 'people',           // family
+      '🏠': 'home',             // home
+      '🐾': 'paw',              // animals
+      '🎨': 'color-palette',    // colors
+      '👤': 'person-circle',    // body_parts
+      '🌤️': 'partly-sunny',     // weather
+      '🚗': 'car',              // transportation
+      '💼': 'briefcase',        // jobs
+      '🎯': 'target',           // hobbies
+      '🎓': 'school',           // school
+      '🌿': 'leaf',             // nature
+      '🏃': 'walk',             // verbs
+      
+      // Additional common emojis for completeness
+      '🍎': 'nutrition',
+      '🍕': 'pizza',
+      '🍔': 'fast-food',
+      '🥗': 'leaf',
+      '☕': 'cafe',
+      '🍰': 'ice-cream',
+      '🥤': 'wine',
+      '🍞': 'restaurant',
+      '🥕': 'carrot',
+      '🍌': 'banana',
+      '🍇': 'grapes',
+      '🍊': 'orange',
+      '🍓': 'strawberry',
+      
+      // People & Family - each unique
+      '👨': 'man',
+      '👩': 'woman',
+      '👶': 'baby',
+      '👴': 'elderly',
+      '👵': 'elderly-woman',
+      '👦': 'boy',
+      '👧': 'girl',
+      
+      // Animals - each unique
+      '🐕': 'paw',
+      '🐱': 'cat',
+      '🐦': 'bird',
+      '🐰': 'rabbit',
+      '🐸': 'frog',
+      '🐟': 'fish',
+      '🐝': 'bug',
+      '🦋': 'butterfly',
+      '🐴': 'horse',
+      '🐄': 'cow',
+      '🐷': 'pig',
+      '🐑': 'sheep',
+      
+      // Transportation - each unique
+      '🚌': 'bus',
+      '🚲': 'bicycle',
+      '🚢': 'boat',
+      '🚂': 'train',
+      '🏍️': 'bike',
+      '🚁': 'airplane',
+      
+      // Clothing - each unique
+      '👗': 'dress',
+      '👟': 'football',
+      '👠': 'high-heel',
+      '👒': 'hat',
+      '🧥': 'coat',
+      '👖': 'pants',
+      '🧦': 'sock',
+      
+      // Weather & Nature - each unique
+      '🌞': 'sunny',
+      '🌧️': 'rainy',
+      '❄️': 'snow',
+      '⛅': 'cloudy',
+      '🌪️': 'tornado',
+      '🌈': 'rainbow',
+      '🌺': 'flower',
+      '🌳': 'tree',
+      '🌊': 'water',
+      '🏔️': 'mountain',
+      
+      // Activities & Sports - each unique
+      '⚽': 'football',
+      '🏀': 'basketball',
+      '🎮': 'game-controller',
+      '🎵': 'musical-notes',
+      '📚': 'book',
+      '✏️': 'pencil',
+      '🎭': 'theater-masks',
+      '🎪': 'circus',
+      '🏊': 'swimmer',
+      '🚴': 'bicycle',
+      
+      // Technology - each unique
+      '💻': 'laptop',
+      '📱': 'phone-portrait',
+      '📷': 'camera',
+      '📺': 'tv',
+      '🎧': 'headset',
+      '⌚': 'watch',
+      '🔋': 'battery-charging',
+      '💾': 'save',
+      
+      // Objects & Tools - each unique
+      '🌍': 'globe',
+      '🏥': 'medical',
+      '🏫': 'school',
+      '🏪': 'storefront',
+      '🏢': 'business',
+      '🏦': 'card',
+      '🏨': 'bed',
+      '🏰': 'castle',
+      '⛪': 'church',
+      '🕌': 'mosque',
+      '🕍': 'synagogue',
+      
+      // Body Parts - each unique
+      '👁️': 'eye',
+      '👂': 'ear',
+      '👃': 'nose',
+      '👄': 'chatbubble',
+      '👅': 'tongue',
+      '🦷': 'tooth',
+      '🦶': 'footsteps',
+      
+      // Colors & Shapes - each unique
+      '🔴': 'ellipse',
+      '🔵': 'ellipse-outline',
+      '🟢': 'ellipse',
+      '🟡': 'ellipse',
+      '🟣': 'ellipse',
+      '⚫': 'ellipse',
+      '⚪': 'ellipse-outline',
+      '🟤': 'ellipse',
+      
+      // Miscellaneous - each unique
+      '💡': 'bulb',
+      '🔑': 'key',
+      '🎁': 'gift',
+      '🎈': 'balloon',
+      '🎊': 'confetti',
+      '🎉': 'confetti-ball',
+      '⭐': 'star',
+      '❤️': 'heart',
+      '💎': 'diamond',
+      '💰': 'cash',
+      '🔒': 'lock-closed',
+      '🔓': 'lock-open',
+    };
+    
+    if (emojiToIcon[emoji]) {
+      return emojiToIcon[emoji];
+    }
+  }
+  
+  // Fallback: Default icons based on category ID patterns with unique mappings
+  const categoryIdLower = categoryId.toLowerCase();
+  if (categoryIdLower.includes('food') || categoryIdLower.includes('eat') || categoryIdLower.includes('meal')) return 'restaurant';
+  if (categoryIdLower.includes('family') || categoryIdLower.includes('parent')) return 'people';
+  if (categoryIdLower.includes('body') || categoryIdLower.includes('health')) return 'body';
+  if (categoryIdLower.includes('clothes') || categoryIdLower.includes('wear') || categoryIdLower.includes('dress')) return 'shirt';
+  if (categoryIdLower.includes('house') || categoryIdLower.includes('home') || categoryIdLower.includes('room')) return 'home';
+  if (categoryIdLower.includes('animal') || categoryIdLower.includes('pet')) return 'paw';
+  if (categoryIdLower.includes('color') || categoryIdLower.includes('paint')) return 'color-palette';
+  if (categoryIdLower.includes('number') || categoryIdLower.includes('count') || categoryIdLower.includes('math')) return 'calculator';
+  if (categoryIdLower.includes('time') || categoryIdLower.includes('clock') || categoryIdLower.includes('hour')) return 'time';
+  if (categoryIdLower.includes('weather') || categoryIdLower.includes('rain') || categoryIdLower.includes('sun')) return 'partly-sunny';
+  if (categoryIdLower.includes('sport') || categoryIdLower.includes('game') || categoryIdLower.includes('play')) return 'football';
+  if (categoryIdLower.includes('music') || categoryIdLower.includes('song') || categoryIdLower.includes('sound')) return 'musical-notes';
+  if (categoryIdLower.includes('book') || categoryIdLower.includes('read') || categoryIdLower.includes('learn')) return 'book';
+  if (categoryIdLower.includes('car') || categoryIdLower.includes('drive') || categoryIdLower.includes('vehicle')) return 'car';
+  if (categoryIdLower.includes('work') || categoryIdLower.includes('job') || categoryIdLower.includes('office')) return 'briefcase';
+  if (categoryIdLower.includes('school') || categoryIdLower.includes('education') || categoryIdLower.includes('study')) return 'school';
+  if (categoryIdLower.includes('money') || categoryIdLower.includes('buy') || categoryIdLower.includes('shop')) return 'card';
+  if (categoryIdLower.includes('travel') || categoryIdLower.includes('trip') || categoryIdLower.includes('vacation')) return 'airplane';
+  if (categoryIdLower.includes('nature') || categoryIdLower.includes('tree') || categoryIdLower.includes('plant')) return 'leaf';
+  if (categoryIdLower.includes('water') || categoryIdLower.includes('sea') || categoryIdLower.includes('ocean')) return 'water';
+  
+  // Ultimate fallback
+  return 'book';
+};
 
 type Styles = {
   container: StyleProp<ViewStyle>;
@@ -228,7 +424,7 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
   // Show loading state
   if (loading) {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F8FA' }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#F8FAFC' }}>
         <View style={styles.container}>
           <View style={styles.headerRow}>
             <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel="Back" activeOpacity={0.7}>
@@ -240,7 +436,7 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
             <View style={{ width: 56 }} />
           </View>
           <View style={styles.wordCategoryLoadingContainer}>
-            <ActivityIndicator size="large" color="#007AFF" />
+            <ActivityIndicator size="large" color="#3B82F6" />
             <Text style={styles.loadingText}>
               Loading category data...
             </Text>
@@ -253,7 +449,7 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
   // Show error state
   if (error && !categoryData) {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F8FA' }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#F8FAFC' }}>
         <View style={styles.container}>
           <View style={styles.headerRow}>
             <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel="Back" activeOpacity={0.7}>
@@ -283,15 +479,23 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
   if (!displayCategory || !displayCategory.items) return null;
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F8FA' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#F8FAFC' }}>
       <View style={styles.container}>
       <View style={styles.headerRow}>
         <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel="Back" activeOpacity={0.7}>
           <Text style={styles.backText}>‹ Back</Text>
         </TouchableOpacity>
-        <Text numberOfLines={1} style={styles.headerTitle}>
-          {(displayCategory.emoji ? `${displayCategory.emoji} ` : '') + (getTextInLanguage(displayCategory.name, SOURCE_LANGUAGE) || getTextInLanguage(displayCategory.name, TARGET_LANGUAGE) || displayCategory.id)}
-        </Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1, justifyContent: 'center' }}>
+          <Ionicons 
+            name={getCategoryIcon(displayCategory.emoji, displayCategory.id)} 
+            size={20} 
+            color="#3B82F6" 
+            style={{ marginRight: 8 }}
+          />
+          <Text numberOfLines={1} style={styles.headerTitle}>
+            {getTextInLanguage(displayCategory.name, SOURCE_LANGUAGE) || getTextInLanguage(displayCategory.name, TARGET_LANGUAGE) || displayCategory.id}
+          </Text>
+        </View>
         <View style={{ width: 56 }} />
       </View>
       {displayCategory.description ? (
@@ -323,7 +527,7 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
                        accessibilityLabel="Speak source text"
                        activeOpacity={0.7}
                      >
-                       <Text style={styles.speakerIcon}>🔊</Text>
+                       <Ionicons name="volume-medium" size={16} color="#64748B" />
                      </TouchableOpacity>
                      <Text numberOfLines={1} style={styles.itemText}>
                        {source} -
@@ -339,7 +543,7 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
                        accessibilityLabel="Speak source text"
                        activeOpacity={0.7}
                      >
-                       <Text style={styles.speakerIcon}>🔊</Text>
+                       <Ionicons name="volume-medium" size={16} color="#64748B" />
                      </TouchableOpacity>
                      <Text numberOfLines={1} style={styles.itemText}>
                        {source}
