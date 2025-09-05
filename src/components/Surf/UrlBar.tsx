@@ -154,6 +154,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 8,
     gap: 8,
+    backgroundColor: 'white',
   },
   libraryBtn: {
     width: 36,
