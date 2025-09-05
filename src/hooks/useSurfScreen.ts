@@ -2,10 +2,7 @@ import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { Alert, Platform, ToastAndroid, Keyboard, TextInput, ActionSheetIOS } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as RNFS from 'react-native-fs';
-import { WebView, type WebViewMessageEvent } from 'react-native-webview';
-import { fetchTranslation as fetchTranslationCommon } from '../utils/translation';
-import { parseYandexImageUrlsFromHtml, fetchImageUrls as fetchImageUrlsCommon, type ImageScrapeCallbacks } from '../screens/practice/common';
+import { WebView } from 'react-native-webview';
 import harmfulWordsService from '../services/harmfulWordsService';
 import { addLibraryUrl } from '../config/api';
 

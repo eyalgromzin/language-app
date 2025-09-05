@@ -88,7 +88,7 @@ async fetchTranslation (
         const foundTranslation = (dbTranslation as any)[toCode];
         // console.log('fetched db translation: ', foundTranslation);
         await this.wordCacheService.setCachedTranslation(word, fromCode, toCode, foundTranslation);
-        await this.wordCacheService.record(word);
+        // await this.wordCacheService.record(word);
         return foundTranslation;
     }
 
@@ -102,7 +102,7 @@ async fetchTranslation (
         if (typeof txt === 'string' && txt.trim().length > 0) {
             const translated = txt.trim();
             
-            // Save to translations table
+            // Save to translations table only if word was not found in cache or database
             await this.translationService.saveTranslation(word, translated, fromCode, toCode);
             
             // Update cache

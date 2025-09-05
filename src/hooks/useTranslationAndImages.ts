@@ -232,22 +232,10 @@ export const useTranslationAndImages = (
     }
   };
 
-  // Auto-fetch translation and images when word changes
+  // Auto-fetch images when word changes (translation is handled in openPanel)
   React.useEffect(() => {
-    if (translationPanel && translationPanel.word && 
-        (translationPanel.translationLoading || translationPanel.imagesLoading)) {
-      // Fetch translation
-      fetchTranslation(translationPanel.word)
-        .then((t) => {
-          setTranslationPanel(prev => (prev && prev.word === translationPanel.word ? 
-            { ...prev, translation: t || prev.translation, translationLoading: false } : prev));
-        })
-        .catch(() => {
-          setTranslationPanel(prev => (prev && prev.word === translationPanel.word ? 
-            { ...prev, translationLoading: false } : prev));
-        });
-
-      // Fetch images
+    if (translationPanel && translationPanel.word && translationPanel.imagesLoading) {
+      // Only fetch images here, translation is already handled in openPanel
       fetchImageUrls(translationPanel.word)
         .then((imgs) => {
           setTranslationPanel(prev => (prev && prev.word === translationPanel.word ? 
@@ -258,7 +246,7 @@ export const useTranslationAndImages = (
             { ...prev, images: [], imagesLoading: false } : prev));
         });
     }
-  }, [translationPanel?.word, translationPanel?.translationLoading, translationPanel?.imagesLoading, fetchTranslation, fetchImageUrls, setTranslationPanel]);
+  }, [translationPanel?.word, translationPanel?.imagesLoading, fetchImageUrls, setTranslationPanel]);
 
   return {
     translationPanel,

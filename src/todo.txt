@@ -1,4 +1,4 @@
-show login before  the 4th word added / translated 
+- translations are duplicate in translate table 
 
 6 on formulate sentence success, its not clearing the screen and moving to the next item.
 

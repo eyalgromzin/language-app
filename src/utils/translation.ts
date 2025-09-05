@@ -102,6 +102,7 @@ export const fetchTranslation = async (
   toLanguageName: string | null | undefined,
   languageMappings: Record<string, string>
 ): Promise<string> => {
+  console.log('fetchTranslation', word, fromLanguageName, toLanguageName);
   const fromCode = getLangCode(fromLanguageName, languageMappings) || 'en';
   const toCode = getLangCode(toLanguageName, languageMappings) || 'en';
   if (!word || fromCode === toCode) return word;
@@ -109,7 +110,10 @@ export const fetchTranslation = async (
   const normalizedWord = word.trim();
   const cacheKey = makeCacheKey(normalizedWord, fromCode, toCode);
   const cached = getCached(cacheKey);
-  if (cached) return cached;
+  if (cached) {
+    console.log('cached', cached);
+    return cached;
+  }
   
   try {
     // First try local server endpoint
