@@ -8,4 +8,12 @@ adb reverse tcp:3000 tcp:3000
 
 
 - generate sha1 and sha256 command
-keytool -list -v -keystore android/app/release.keystore -alias your-release-alias
+keytool -list -v -keystore android/app/release.keystore -alias keyAlias3
+
+when running "npm run android" it runs with debug keystore and debug settings - but app links are with release keystore  
+
+list keys command: keytool -list -v -keystore release.keystore
+
+delete key command:  keytool -delete -alias your-key-alias -keystore release.keystore
+
+to create apk / aab - run command in powershell with admin rights . 
