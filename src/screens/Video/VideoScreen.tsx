@@ -987,7 +987,7 @@ function VideoScreen(): React.JSX.Element {
 
   return (
     <ScrollView
-      style={{ flex: 1 }}
+      style={{ flex: 1, backgroundColor: 'white' }}
       contentContainerStyle={styles.container}
       keyboardShouldPersistTaps="always"
       keyboardDismissMode={Platform.OS === 'ios' ? 'interactive' : 'none'}
@@ -1116,6 +1116,7 @@ function VideoScreen(): React.JSX.Element {
 const styles = StyleSheet.create({
   container: {
     padding: 16,
+    backgroundColor: 'white',
   },
   label: {
     fontSize: 14,
