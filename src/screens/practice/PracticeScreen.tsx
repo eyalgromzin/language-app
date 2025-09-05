@@ -456,12 +456,12 @@ const styles = StyleSheet.create({
   // Match Game Button Styles
   matchGameButton: {
     width: '48%',
-    backgroundColor: '#1E3A8A', // Deep blue background
+    backgroundColor: '#FFFFFF', // Bright white background
     borderRadius: 16,
     borderWidth: 3,
-    borderColor: '#3B82F6', // Medium blue border
+    borderColor: '#1E3A8A', // Deep blue border
     shadowColor: '#000',
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 4 },
     elevation: 8,
@@ -475,11 +475,11 @@ const styles = StyleSheet.create({
     minHeight: 120,
   },
   matchGameTitle: {
-    color: '#FFFFFF',
+    color: '#1E3A8A', // Deep blue text
     fontSize: 14,
     fontWeight: '800',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowColor: 'rgba(30, 58, 138, 0.2)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
     letterSpacing: 0.5,
@@ -494,10 +494,10 @@ const styles = StyleSheet.create({
   card: {
     width: 24,
     height: 32,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#1E3A8A', // Deep blue background
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: '#E5E7EB',
+    borderColor: '#3B82F6',
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#FCD34D', // Yellow glow
@@ -515,12 +515,12 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   cardSuit: {
-    color: '#DC2626', // Red hearts
+    color: '#FFFFFF', // White hearts
     fontSize: 8,
     fontWeight: 'bold',
   },
   cardRank: {
-    color: '#DC2626', // Red A
+    color: '#FFFFFF', // White A
     fontSize: 10,
     fontWeight: 'bold',
     marginVertical: 2,
@@ -533,19 +533,19 @@ const styles = StyleSheet.create({
   },
   sparkle: {
     fontSize: 12,
-    color: '#FFFFFF',
+    color: '#1E3A8A', // Deep blue sparkle
     textShadowColor: '#FCD34D',
     textShadowRadius: 4,
   },
   // Missing Letters Button Styles
   missingLettersButton: {
     width: '48%',
-    backgroundColor: '#059669', // Green background
+    backgroundColor: '#FFFFFF', // Bright white background
     borderRadius: 16,
     borderWidth: 3,
-    borderColor: '#10B981',
+    borderColor: '#059669', // Green border
     shadowColor: '#000',
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 4 },
     elevation: 8,
@@ -559,11 +559,11 @@ const styles = StyleSheet.create({
     minHeight: 120,
   },
   missingLettersTitle: {
-    color: '#FFFFFF',
+    color: '#059669', // Green text
     fontSize: 12,
     fontWeight: '800',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowColor: 'rgba(5, 150, 105, 0.2)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
     letterSpacing: 0.5,
@@ -576,10 +576,10 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   wordLetter: {
-    color: '#FFFFFF',
+    color: '#059669', // Green text
     fontSize: 16,
     fontWeight: 'bold',
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'rgba(5, 150, 105, 0.1)',
     paddingHorizontal: 6,
     paddingVertical: 4,
     borderRadius: 4,
@@ -600,12 +600,12 @@ const styles = StyleSheet.create({
   // Missing Words Button Styles
   missingWordsButton: {
     width: '48%',
-    backgroundColor: '#7C3AED', // Purple background
+    backgroundColor: '#FFFFFF', // Bright white background
     borderRadius: 16,
     borderWidth: 3,
-    borderColor: '#8B5CF6',
+    borderColor: '#7C3AED', // Purple border
     shadowColor: '#000',
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 4 },
     elevation: 8,
@@ -619,11 +619,11 @@ const styles = StyleSheet.create({
     minHeight: 120,
   },
   missingWordsTitle: {
-    color: '#FFFFFF',
+    color: '#7C3AED', // Purple text
     fontSize: 12,
     fontWeight: '800',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowColor: 'rgba(124, 58, 237, 0.2)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
     letterSpacing: 0.5,
@@ -637,10 +637,10 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   sentenceWord: {
-    color: '#FFFFFF',
+    color: '#7C3AED', // Purple text
     fontSize: 10,
     fontWeight: 'bold',
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'rgba(124, 58, 237, 0.1)',
     paddingHorizontal: 4,
     paddingVertical: 2,
     borderRadius: 3,
@@ -661,12 +661,12 @@ const styles = StyleSheet.create({
   // Choose Word Button Styles
   chooseWordButton: {
     width: '48%',
-    backgroundColor: '#DC2626', // Red background
+    backgroundColor: '#FFFFFF', // Bright white background
     borderRadius: 16,
     borderWidth: 3,
-    borderColor: '#EF4444',
+    borderColor: '#DC2626', // Red border
     shadowColor: '#000',
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 4 },
     elevation: 8,
@@ -680,11 +680,11 @@ const styles = StyleSheet.create({
     minHeight: 120,
   },
   chooseWordTitle: {
-    color: '#FFFFFF',
+    color: '#DC2626', // Red text
     fontSize: 12,
     fontWeight: '800',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowColor: 'rgba(220, 38, 38, 0.2)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
     letterSpacing: 0.5,
@@ -699,31 +699,31 @@ const styles = StyleSheet.create({
   optionBox: {
     width: 24,
     height: 24,
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'rgba(220, 38, 38, 0.1)',
     borderRadius: 4,
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 2,
-    borderColor: 'rgba(255, 255, 255, 0.3)',
+    borderColor: 'rgba(220, 38, 38, 0.3)',
   },
   optionBoxSelected: {
     backgroundColor: '#FEF3C7',
     borderColor: '#F59E0B',
   },
   optionText: {
-    color: '#FFFFFF',
+    color: '#DC2626', // Red text
     fontSize: 12,
     fontWeight: 'bold',
   },
   // Choose Translation Button Styles
   chooseTranslationButton: {
     width: '48%',
-    backgroundColor: '#0891B2', // Cyan background
+    backgroundColor: '#FFFFFF', // Bright white background
     borderRadius: 16,
     borderWidth: 3,
-    borderColor: '#06B6D4',
+    borderColor: '#0891B2', // Cyan border
     shadowColor: '#000',
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 4 },
     elevation: 8,
@@ -737,11 +737,11 @@ const styles = StyleSheet.create({
     minHeight: 120,
   },
   chooseTranslationTitle: {
-    color: '#FFFFFF',
+    color: '#0891B2', // Cyan text
     fontSize: 10,
     fontWeight: '800',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowColor: 'rgba(8, 145, 178, 0.2)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
     letterSpacing: 0.5,
@@ -752,16 +752,16 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   translationWord: {
-    color: '#FFFFFF',
+    color: '#0891B2', // Cyan text
     fontSize: 12,
     fontWeight: 'bold',
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'rgba(8, 145, 178, 0.1)',
     paddingHorizontal: 6,
     paddingVertical: 3,
     borderRadius: 4,
   },
   translationArrow: {
-    color: '#FFFFFF',
+    color: '#0891B2', // Cyan arrow
     fontSize: 16,
     marginVertical: 4,
   },
@@ -770,10 +770,10 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   translationOption: {
-    color: '#FFFFFF',
+    color: '#0891B2', // Cyan text
     fontSize: 10,
     fontWeight: 'bold',
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'rgba(8, 145, 178, 0.1)',
     paddingHorizontal: 4,
     paddingVertical: 2,
     borderRadius: 3,
@@ -781,12 +781,12 @@ const styles = StyleSheet.create({
   // Translation Missing Letters Button Styles
   translationMissingLettersButton: {
     width: '48%',
-    backgroundColor: '#EA580C', // Orange background
+    backgroundColor: '#FFFFFF', // Bright white background
     borderRadius: 16,
     borderWidth: 3,
-    borderColor: '#F97316',
+    borderColor: '#EA580C', // Orange border
     shadowColor: '#000',
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 4 },
     elevation: 8,
@@ -800,11 +800,11 @@ const styles = StyleSheet.create({
     minHeight: 120,
   },
   translationMissingLettersTitle: {
-    color: '#FFFFFF',
+    color: '#EA580C', // Orange text
     fontSize: 10,
     fontWeight: '800',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowColor: 'rgba(234, 88, 12, 0.2)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
     letterSpacing: 0.5,
@@ -819,12 +819,12 @@ const styles = StyleSheet.create({
   // Memory Game Button Styles
   memoryGameButton: {
     width: '48%',
-    backgroundColor: '#BE185D', // Pink background
+    backgroundColor: '#FFFFFF', // Bright white background
     borderRadius: 16,
     borderWidth: 3,
-    borderColor: '#EC4899',
+    borderColor: '#BE185D', // Pink border
     shadowColor: '#000',
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 4 },
     elevation: 8,
@@ -838,11 +838,11 @@ const styles = StyleSheet.create({
     minHeight: 120,
   },
   memoryGameTitle: {
-    color: '#FFFFFF',
+    color: '#BE185D', // Pink text
     fontSize: 12,
     fontWeight: '800',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowColor: 'rgba(190, 24, 93, 0.2)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
     letterSpacing: 0.5,
@@ -859,31 +859,31 @@ const styles = StyleSheet.create({
   memoryCard: {
     width: 24,
     height: 24,
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'rgba(190, 24, 93, 0.1)',
     borderRadius: 4,
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.3)',
+    borderColor: 'rgba(190, 24, 93, 0.3)',
   },
   memoryCardFlipped: {
     backgroundColor: '#FEF3C7',
     borderColor: '#F59E0B',
   },
   memoryCardText: {
-    color: '#FFFFFF',
+    color: '#BE185D', // Pink text
     fontSize: 10,
     fontWeight: 'bold',
   },
   // Hearing Practice Button Styles
   hearingPracticeButton: {
     width: '48%',
-    backgroundColor: '#4338CA', // Indigo background
+    backgroundColor: '#FFFFFF', // Bright white background
     borderRadius: 16,
     borderWidth: 3,
-    borderColor: '#6366F1',
+    borderColor: '#4338CA', // Indigo border
     shadowColor: '#000',
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 4 },
     elevation: 8,
@@ -897,11 +897,11 @@ const styles = StyleSheet.create({
     minHeight: 120,
   },
   hearingPracticeTitle: {
-    color: '#FFFFFF',
+    color: '#4338CA', // Indigo text
     fontSize: 10,
     fontWeight: '800',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowColor: 'rgba(67, 56, 202, 0.2)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
     letterSpacing: 0.5,
@@ -922,7 +922,7 @@ const styles = StyleSheet.create({
     gap: 2,
   },
   wave: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#4338CA', // Indigo waves
     borderRadius: 2,
   },
   wave1: {
@@ -939,12 +939,12 @@ const styles = StyleSheet.create({
   },
   // Surprise Me Button Styles
   surpriseMeButton: {
-    backgroundColor: '#FF6B6B', // Vibrant red-pink background
+    backgroundColor: '#FFFFFF', // Bright white background
     borderRadius: 20,
     borderWidth: 4,
-    borderColor: '#FF8E8E',
+    borderColor: '#FF6B6B', // Vibrant red-pink border
     shadowColor: '#FF6B6B',
-    shadowOpacity: 0.6,
+    shadowOpacity: 0.4,
     shadowRadius: 12,
     shadowOffset: { width: 0, height: 6 },
     elevation: 12,
@@ -967,11 +967,11 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   surpriseMeTitle: {
-    color: '#FFFFFF',
+    color: '#FF6B6B', // Vibrant red-pink text
     fontSize: 18,
     fontWeight: '900',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowColor: 'rgba(255, 107, 107, 0.3)',
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 4,
     letterSpacing: 1,
@@ -989,7 +989,7 @@ const styles = StyleSheet.create({
   confetti: {
     position: 'absolute',
     fontSize: 16,
-    textShadowColor: 'rgba(255, 255, 255, 0.8)',
+    textShadowColor: 'rgba(255, 107, 107, 0.8)',
     textShadowRadius: 3,
   },
   confetti1: {
@@ -1019,19 +1019,19 @@ const styles = StyleSheet.create({
   },
   magicContainer: {
     marginTop: 8,
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'rgba(255, 107, 107, 0.1)',
     paddingHorizontal: 12,
     paddingVertical: 4,
     borderRadius: 12,
     borderWidth: 2,
-    borderColor: 'rgba(255, 255, 255, 0.4)',
+    borderColor: 'rgba(255, 107, 107, 0.3)',
   },
   magicText: {
-    color: '#FFFFFF',
+    color: '#FF6B6B', // Vibrant red-pink text
     fontSize: 12,
     fontWeight: '800',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowColor: 'rgba(255, 107, 107, 0.3)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
     letterSpacing: 0.5,
