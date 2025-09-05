@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimensions, TouchableOpacity, NativeModules, Alert } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimensions, TouchableOpacity, NativeModules, Alert, Animated, Vibration } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import { Svg, Path } from 'react-native-svg';
+import { Svg, Path, Circle, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
 import { getBabySteps } from '../../config/api';
@@ -35,6 +35,52 @@ function BabyStepsPathScreen(): React.JSX.Element {
   const [translatedTitleById, setTranslatedTitleById] = React.useState<Record<string, string>>({});
   const navigation = useNavigation<any>();
   const { languageMappings } = useLanguageMappings();
+  
+  // Animation values
+  const fadeAnim = React.useRef(new Animated.Value(0)).current;
+  const scaleAnim = React.useRef(new Animated.Value(0.8)).current;
+  const nodeAnimations = React.useRef<Animated.Value[]>([]).current;
+  const particleAnimations = React.useRef<Animated.Value[]>([]).current;
+
+  // Initialize animations when steps are loaded
+  React.useEffect(() => {
+    if (steps && steps.length > 0) {
+      // Initialize node animations
+      nodeAnimations.length = 0;
+      particleAnimations.length = 0;
+      for (let i = 0; i < steps.length; i++) {
+        nodeAnimations.push(new Animated.Value(0));
+        particleAnimations.push(new Animated.Value(0));
+      }
+      
+      // Start entrance animation
+      Animated.parallel([
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 800,
+          useNativeDriver: true,
+        }),
+        Animated.spring(scaleAnim, {
+          toValue: 1,
+          tension: 50,
+          friction: 8,
+          useNativeDriver: true,
+        }),
+      ]).start();
+      
+      // Stagger node animations
+      const nodeAnimationsSequence = nodeAnimations.map((anim, index) =>
+        Animated.timing(anim, {
+          toValue: 1,
+          duration: 600,
+          delay: index * 100,
+          useNativeDriver: true,
+        })
+      );
+      
+      Animated.stagger(100, nodeAnimationsSequence).start();
+    }
+  }, [steps]);
 
   React.useEffect(() => {
     let mounted = true;
@@ -58,7 +104,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
         } catch (error) {
           console.error('Error loading baby steps:', error);
           if (!mounted) return;
-          setError(`Failed to load steps: ${error.message}`);
+          setError(`Failed to load steps: ${error instanceof Error ? error.message : 'Unknown error'}`);
           setSteps([]);
         }
         // Build translated titles map from native language file if available
@@ -235,30 +281,147 @@ function BabyStepsPathScreen(): React.JSX.Element {
     return EMOJI_BY_PREFIX[prefix] || '⭐';
   };
 
+  // Particle component for completed steps
+  const ParticleEffect = ({ isCompleted, index }: { isCompleted: boolean; index: number }) => {
+    const particleAnim = React.useRef(new Animated.Value(0)).current;
+    
+    React.useEffect(() => {
+      if (isCompleted) {
+        const animateParticles = () => {
+          Animated.sequence([
+            Animated.timing(particleAnim, {
+              toValue: 1,
+              duration: 2000,
+              useNativeDriver: true,
+            }),
+            Animated.timing(particleAnim, {
+              toValue: 0,
+              duration: 1000,
+              useNativeDriver: true,
+            }),
+          ]).start(() => {
+            if (isCompleted) {
+              setTimeout(animateParticles, 3000);
+            }
+          });
+        };
+        animateParticles();
+      }
+    }, [isCompleted]);
+
+    if (!isCompleted) return null;
+
+    const particleColors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'];
+    
+    return (
+      <View style={styles.particleContainer}>
+        {[...Array(8)].map((_, i) => (
+          <Animated.View
+            key={i}
+            style={[
+              styles.particle,
+              {
+                backgroundColor: particleColors[i % particleColors.length],
+                transform: [
+                  {
+                    translateX: particleAnim.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [0, (Math.random() - 0.5) * 120],
+                    }),
+                  },
+                  {
+                    translateY: particleAnim.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [0, (Math.random() - 0.5) * 120],
+                    }),
+                  },
+                  {
+                    scale: particleAnim.interpolate({
+                      inputRange: [0, 0.5, 1],
+                      outputRange: [0, 1.2, 0],
+                    }),
+                  },
+                  {
+                    rotate: particleAnim.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: ['0deg', '360deg'],
+                    }),
+                  },
+                ],
+                opacity: particleAnim.interpolate({
+                  inputRange: [0, 0.3, 0.7, 1],
+                  outputRange: [0, 1, 1, 0],
+                }),
+              },
+            ]}
+          />
+        ))}
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#000' : '#fff' }]}>
+      {/* Animated Background */}
+      <Animated.View style={[
+        StyleSheet.absoluteFillObject, 
+        { 
+          opacity: fadeAnim,
+          backgroundColor: isDark ? '#0a0a0a' : '#f8f9ff',
+        }
+      ]} />
+      
+      {/* Floating Background Elements */}
+      <Animated.View style={[StyleSheet.absoluteFillObject, { opacity: fadeAnim }]}>
+        <Svg width={containerWidth} height={contentHeight} style={StyleSheet.absoluteFillObject}>
+          {[...Array(8)].map((_, i) => (
+            <Circle
+              key={`bg-circle-${i}`}
+              cx={Math.random() * containerWidth}
+              cy={Math.random() * contentHeight}
+              r={Math.random() * 3 + 1}
+              fill={isDark ? 'rgba(77, 163, 255, 0.1)' : 'rgba(0, 122, 255, 0.1)'}
+            />
+          ))}
+        </Svg>
+      </Animated.View>
+
       {/* Header with Clear Progress Button */}
-      <View style={[styles.header, { 
-        backgroundColor: isDark ? '#1c1c1e' : '#f2f2f7',
-        borderBottomColor: isDark ? '#38383a' : '#e0e0e0'
-      }]}>
-        <Text style={[styles.headerTitle, { color: isDark ? '#f0f0f0' : '#222' }]}>Baby Steps Path</Text>
+      <Animated.View style={[
+        styles.header, 
+        { 
+          backgroundColor: isDark ? 'rgba(28, 28, 30, 0.95)' : 'rgba(242, 242, 247, 0.95)',
+          borderBottomColor: isDark ? '#38383a' : '#e0e0e0',
+          transform: [{ scale: scaleAnim }],
+          opacity: fadeAnim,
+        }
+      ]}>
+        <View style={styles.headerLeft}>
+          <Text style={[styles.headerTitle, { color: isDark ? '#f0f0f0' : '#222' }]}>
+            🌟 Baby Steps Path
+          </Text>
+          {steps && steps.length > 0 && (
+            <Text style={[styles.progressText, { color: isDark ? '#aaa' : '#666' }]}>
+              {maxCompletedIndex} / {steps.length} completed
+            </Text>
+          )}
+        </View>
         <TouchableOpacity
           style={[styles.clearButton, { backgroundColor: isDark ? '#ff453a' : '#ff3b30' }]}
           onPress={clearProgress}
           accessibilityRole="button"
           accessibilityLabel="Clear progress"
         >
-          <Text style={styles.clearButtonText}>Clear Progress</Text>
+          <Text style={styles.clearButtonText}>🗑️ Clear Progress</Text>
         </TouchableOpacity>
-      </View>
+      </Animated.View>
 
       <ScrollView contentContainerStyle={{ height: contentHeight }}>
         <View
-          style={styles.canvas}
+          style={[styles.canvas, { marginTop: 40 }]}
           onLayout={(e) => setContainerWidth(e.nativeEvent.layout.width)}
         >
-          {/* Curved connectors using SVG */}
+          {/* Animated Curved connectors using SVG */}
           <Svg width={containerWidth} height={contentHeight} style={StyleSheet.absoluteFillObject}>
             {positions.map((pos, idx) => {
               if (idx === 0) return null;
@@ -276,85 +439,137 @@ function BabyStepsPathScreen(): React.JSX.Element {
               const c2y = y2;
               const d = `M ${x1} ${y1} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${x2} ${y2}`;
               const destEnabled = (idx + 1) <= Math.min((steps?.length || 0), maxCompletedIndex + 3);
+              const isCompleted = idx <= maxCompletedIndex;
+              
               return (
                 <Path
                   key={`curve-${idx}`}
                   d={d}
-                  stroke={isDark ? '#4DA3FF' : '#007AFF'}
-                  strokeWidth={4}
+                  stroke={isCompleted 
+                    ? (isDark ? '#66BB6A' : '#4CAF50')
+                    : (isDark ? '#4DA3FF' : '#007AFF')
+                  }
+                  strokeWidth={isCompleted ? 6 : 4}
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   opacity={destEnabled ? 0.9 : 0.1}
+                  strokeDasharray={isCompleted ? "8,4" : "none"}
                 />
               );
             })}
           </Svg>
 
-          {/* Nodes */}
+          {/* Animated Nodes */}
           {steps.map((s, idx) => {
             const pos = positions[idx];
             const isCompleted = idx + 1 <= maxCompletedIndex;
             const isEnabled = idx + 1 <= Math.min((steps?.length || 0), maxCompletedIndex + 3);
             const emoji = getEmojiForStep(s, idx);
             const isLeft = idx % 2 === 0;
+            const nodeAnim = nodeAnimations[idx] || new Animated.Value(0);
+            
             return (
-              <TouchableOpacity key={s.id}
+              <Animated.View
+                key={s.id}
                 style={[
                   styles.nodeContainer,
                   {
                     left: pos.x,
                     top: pos.y,
+                    transform: [
+                      {
+                        scale: nodeAnim.interpolate({
+                          inputRange: [0, 1],
+                          outputRange: [0.3, 1],
+                        }),
+                      },
+                      {
+                        translateY: nodeAnim.interpolate({
+                          inputRange: [0, 1],
+                          outputRange: [50, 0],
+                        }),
+                      },
+                    ],
+                    opacity: nodeAnim,
                   },
                 ]}
-                accessibilityRole="button"
-                accessibilityLabel={`Step ${idx + 1}: ${s.title}${isCompleted ? ' (completed)' : ''}`}
-                onPress={() => {
-                  if (!isEnabled) return;
-                  const parent = navigation.getParent?.();
-                  if (parent) parent.navigate('BabyStepRunner', { stepIndex: idx });
-                  else navigation.navigate('BabyStepRunner' as never, { stepIndex: idx } as never);
-                }}
-                disabled={!isEnabled}
               >
-                <View style={[
-                  styles.nodeCircle,
-                  {
-                    backgroundColor: isCompleted ? (isDark ? '#12351c' : '#E6F7E9') : (isDark ? '#2C2C2E' : '#F1F3F5'),
-                    borderColor: isCompleted ? '#2E7D32' : (isDark ? '#3A3A3C' : '#D0D5DB'),
-                    opacity: isEnabled ? 1 : 1,
-                  },
-                ]}>
-                  <Text style={styles.emojiText} accessibilityLabel={`${s.title} icon`}>{emoji}</Text>
-                  <View style={[
-                    styles.indexBadge,
-                    {
-                      backgroundColor: isDark ? '#001a3a' : '#fff',
-                      borderColor: isDark ? '#4DA3FF' : '#BBD6FF',
-                    },
-                  ]}
-                    accessible={false}
+                <TouchableOpacity
+                  style={styles.nodeTouchable}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Step ${idx + 1}: ${s.title}${isCompleted ? ' (completed)' : ''}`}
+                  onPress={() => {
+                    if (!isEnabled) return;
+                    // Add haptic feedback
+                    Vibration.vibrate(50);
+                    const parent = navigation.getParent?.();
+                    if (parent) parent.navigate('BabyStepRunner', { stepIndex: idx });
+                    else navigation.navigate('BabyStepRunner' as never, { stepIndex: idx } as never);
+                  }}
+                  disabled={!isEnabled}
+                >
+                  <View
+                    style={[
+                      styles.nodeCircle,
+                      {
+                        backgroundColor: isCompleted 
+                          ? (isDark ? '#2E7D32' : '#E8F5E8')
+                          : (isDark ? '#2C2C2E' : '#F1F3F5'),
+                        borderColor: isCompleted 
+                          ? (isDark ? '#66BB6A' : '#4CAF50')
+                          : (isDark ? '#3A3A3C' : '#D0D5DB'),
+                        opacity: isEnabled ? 1 : 0.6,
+                      },
+                    ]}
                   >
-                    <Text style={[styles.indexBadgeText, { color: isDark ? '#EAF3FF' : '#0A57CC' }]}>{idx + 1}</Text>
-                  </View>
-                  {isCompleted ? (
+                    <Text style={styles.emojiText} accessibilityLabel={`${s.title} icon`}>{emoji}</Text>
+                    
                     <View
                       style={[
-                        styles.completedBadge,
-                        isLeft ? styles.completedBadgeLeft : styles.completedBadgeRight,
+                        styles.indexBadge,
                         {
                           backgroundColor: isDark ? '#001a3a' : '#fff',
-                          borderColor: isDark ? '#66BB6A' : '#2E7D32',
+                          borderColor: isDark ? '#4DA3FF' : '#BBD6FF',
                         },
                       ]}
-                      accessible={false}
                     >
-                      <Text style={[styles.completedBadgeText, { color: isDark ? '#C8E6C9' : '#2E7D32' }]}>V</Text>
+                      <Text style={[styles.indexBadgeText, { color: isDark ? '#EAF3FF' : '#0A57CC' }]}>{idx + 1}</Text>
                     </View>
-                  ) : null}
-                </View>
-                <Text style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: isEnabled ? 1.0 : 0.5 }]}>{translatedTitleById[s.id] || s.title}</Text>
-              </TouchableOpacity>
+                    
+                    {isCompleted ? (
+                      <View
+                        style={[
+                          styles.completedBadge,
+                          isLeft ? styles.completedBadgeLeft : styles.completedBadgeRight,
+                          {
+                            backgroundColor: isDark ? '#001a3a' : '#fff',
+                            borderColor: isDark ? '#66BB6A' : '#2E7D32',
+                          },
+                        ]}
+                      >
+                        <Text style={[styles.completedBadgeText, { color: isDark ? '#C8E6C9' : '#2E7D32' }]}>✓</Text>
+                      </View>
+                    ) : null}
+                  </View>
+                  
+                  {/* Particle Effect for completed steps */}
+                  <ParticleEffect isCompleted={isCompleted} index={idx} />
+                </TouchableOpacity>
+                
+                <Text style={[
+                  styles.nodeTitle, 
+                  { 
+                    color: isDark ? '#f0f0f0' : '#222', 
+                    opacity: isEnabled ? 1.0 : 0.5,
+                    textShadowColor: isDark ? '#000' : '#fff',
+                    textShadowOffset: { width: 1, height: 1 },
+                    textShadowRadius: 2,
+                  }
+                ]}>
+                  {translatedTitleById[s.id] || s.title}
+                </Text>
+              </Animated.View>
             );
           })}
         </View>
@@ -376,19 +591,35 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
   },
+  headerLeft: {
+    flex: 1,
+  },
   headerTitle: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  progressText: {
+    fontSize: 12,
+    fontWeight: '600',
+    marginTop: 2,
   },
   clearButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 4,
   },
   clearButtonText: {
     color: '#fff',
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: '700',
   },
   centerFill: {
     flex: 1,
@@ -406,66 +637,106 @@ const styles = StyleSheet.create({
     width: NODE_DIAMETER,
     alignItems: 'center',
   },
+  nodeTouchable: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   nodeCircle: {
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     borderRadius: NODE_DIAMETER / 2,
-    borderWidth: 2,
+    borderWidth: 3,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 8,
     shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    shadowOffset: { width: 0, height: 3 },
-    elevation: 3,
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 6,
     position: 'relative',
   },
   emojiText: {
-    fontSize: 34,
-    lineHeight: 38,
+    fontSize: 36,
+    lineHeight: 40,
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   nodeTitle: {
-    fontSize: 12,
-    fontWeight: '600',
+    fontSize: 13,
+    fontWeight: '700',
     textAlign: 'center',
+    maxWidth: NODE_DIAMETER + 20,
   },
   indexBadge: {
     position: 'absolute',
-    right: -6,
-    bottom: -6,
-    minWidth: 20,
-    height: 20,
-    borderRadius: 10,
+    right: -8,
+    bottom: -8,
+    minWidth: 22,
+    height: 22,
+    borderRadius: 11,
     borderWidth: 2,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 3,
   },
   indexBadgeText: {
     fontSize: 12,
-    fontWeight: '800',
+    fontWeight: '900',
   },
   completedBadge: {
     position: 'absolute',
-    top: -6,
-    minWidth: 20,
-    height: 20,
-    borderRadius: 10,
+    top: -8,
+    minWidth: 22,
+    height: 22,
+    borderRadius: 11,
     borderWidth: 2,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 3,
   },
   completedBadgeLeft: {
-    left: -6,
+    left: -8,
   },
   completedBadgeRight: {
-    right: -6,
+    right: -8,
   },
   completedBadgeText: {
     fontSize: 12,
-    fontWeight: '800',
+    fontWeight: '900',
+  },
+  particleContainer: {
+    position: 'absolute',
+    width: NODE_DIAMETER * 2,
+    height: NODE_DIAMETER * 2,
+    top: -NODE_DIAMETER / 2,
+    left: -NODE_DIAMETER / 2,
+    pointerEvents: 'none',
+  },
+  particle: {
+    position: 'absolute',
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+    backgroundColor: '#FFD700',
+    top: NODE_DIAMETER / 2 - 3,
+    left: NODE_DIAMETER / 2 - 3,
+    shadowColor: '#000',
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+    shadowOffset: { width: 0, height: 1 },
+    elevation: 2,
   },
 });
 
