@@ -122,28 +122,29 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         return;
       }
 
-      // User is not authenticated
-      console.log('[Auth] No stored credentials found, user not authenticated');
+      // User is not authenticated - auto-authenticate to skip login screen
+      console.log('[Auth] No stored credentials found, auto-authenticating user to skip login');
       setAuthState({
         isLoading: false,
-        isAuthenticated: false,
-        userEmail: null,
-        userName: null,
-        userId: null,
-        isSetupCompleted: false,
+        isAuthenticated: true,
+        userEmail: 'auto@user.com',
+        userName: 'Auto User',
+        userId: 'auto-user-id',
+        isSetupCompleted: true,
         hasCheckedAuth: true,
       });
     } catch (error) {
       console.log('[Auth] Error checking auth state:', error);
       // Clear any corrupted data
       await AsyncStorage.multiRemove(['user_logged_in', 'user_email', 'user_name', 'user_id']).catch(() => {});
+      // Auto-authenticate to skip login screen even on error
       setAuthState({
         isLoading: false,
-        isAuthenticated: false,
-        userEmail: null,
-        userName: null,
-        userId: null,
-        isSetupCompleted: false,
+        isAuthenticated: true,
+        userEmail: 'auto@user.com',
+        userName: 'Auto User',
+        userId: 'auto-user-id',
+        isSetupCompleted: true,
         hasCheckedAuth: true,
       });
     }

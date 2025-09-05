@@ -12,6 +12,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AuthProvider, useAuth } from './src/contexts/AuthContext';
 import { WordCategoriesProvider } from './src/contexts/WordCategoriesContext';
 import { LanguageMappingsProvider } from './src/contexts/LanguageMappingsContext';
+import { LoginGateProvider } from './src/contexts/LoginGateContext';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
 import SurfScreen from './src/screens/Surf/SurfScreen';
@@ -30,6 +31,7 @@ import BabyStepRunnerScreen from './src/screens/BabySteps/BabyStepRunnerScreen';
 import ContactUsScreen from './src/screens/ContactUs/ContactUsScreen';
 import ProgressScreen from './src/screens/Progress/ProgressScreen';
 import linkingService from './src/services/linkingService';
+import LoginGateModal from './src/components/LoginGateModal';
 
 enableScreens();
 
@@ -65,6 +67,7 @@ function MainTabs(): React.JSX.Element {
   const currentTabNavRef = React.useRef<any>(null);
   const [videoKey, setVideoKey] = React.useState<number>(0);
   const [initialTabRouteName, setInitialTabRouteName] = React.useState<keyof RootTabParamList | null>(null);
+  const { isAuthenticated, logout } = useAuth();
 
   // Handle deep links
   React.useEffect(() => {
@@ -121,6 +124,15 @@ function MainTabs(): React.JSX.Element {
       setMenuOpen(false);
     }
   }, []);
+
+  const handleLogout = React.useCallback(async () => {
+    try {
+      await logout();
+      setMenuOpen(false);
+    } catch (error) {
+      console.log('Error during logout:', error);
+    }
+  }, [logout]);
 
   React.useEffect(() => {
     let isMounted = true;
@@ -259,6 +271,11 @@ function MainTabs(): React.JSX.Element {
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('ContactUs'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Contact Us</Text>
             </TouchableOpacity>
+            {isAuthenticated && (
+              <TouchableOpacity style={[styles.menuItem, styles.menuLogout]} onPress={handleLogout}>
+                <Text style={[styles.menuItemText, styles.menuLogoutText]}>Logout</Text>
+              </TouchableOpacity>
+            )}
             <TouchableOpacity style={[styles.menuItem, styles.menuClose]} onPress={() => setMenuOpen(false)}>
               <Text style={[styles.menuItemText, styles.menuCloseText]}>Close</Text>
             </TouchableOpacity>
@@ -306,6 +323,14 @@ const styles = StyleSheet.create({
   },
   menuItemText: {
     fontSize: 16,
+  },
+  menuLogout: {
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: '#eee',
+  },
+  menuLogoutText: {
+    color: '#FF3B30',
+    fontWeight: '600',
   },
   menuClose: {
     borderTopWidth: StyleSheet.hairlineWidth,
@@ -408,7 +433,10 @@ function App(): React.JSX.Element {
     <AuthProvider>
       <WordCategoriesProvider>
         <LanguageMappingsProvider>
-          <AppNavigator />
+          <LoginGateProvider>
+            <AppNavigator />
+            <LoginGateModal />
+          </LoginGateProvider>
         </LanguageMappingsProvider>
       </WordCategoriesProvider>
     </AuthProvider>

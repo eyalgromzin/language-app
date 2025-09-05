@@ -5,6 +5,9 @@ import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import { fetchTranslation as fetchTranslationCommon } from '../utils/translation';
 import { parseYandexImageUrlsFromHtml, fetchImageUrls as fetchImageUrlsCommon, type ImageScrapeCallbacks } from '../screens/practice/common';
 import TranslationPanel, { type TranslationPanelState } from '../components/TranslationPanel';
+import { useLoginGate } from '../contexts/LoginGateContext';
+import { useAuth } from '../contexts/AuthContext';
+import wordCountService from '../services/wordCountService';
 
 export const useTranslationAndImages = (
   learningLanguage: string | null,
@@ -16,6 +19,8 @@ export const useTranslationAndImages = (
   languageMappings: Record<string, string> = {},
 ) => {
   const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
+  const { showLoginGate } = useLoginGate();
+  const { isAuthenticated } = useAuth();
 
   const extractClauseAroundWord = (sentence: string | undefined, word: string): string | undefined => {
     if (!sentence) return undefined;
@@ -59,6 +64,19 @@ export const useTranslationAndImages = (
 
   const saveCurrentWord = async () => {
     if (!translationPanel) return;
+    
+    // Check if user is authenticated, if not, check word count and show login gate
+    if (!isAuthenticated) {
+      await wordCountService.initialize();
+      const currentCount = wordCountService.getWordCount();
+      
+      // Show login gate if this would be the 3rd word (after saving, count would be 3)
+      if (currentCount.totalWordsAdded >= 2) {
+        showLoginGate();
+        return;
+      }
+    }
+
     const entry = {
       word: translationPanel.word,
       translation: translationPanel.translation,
@@ -105,7 +123,15 @@ export const useTranslationAndImages = (
       const exists = normalized.some(
         (it: any) => it && typeof it === 'object' && it.word === entry.word && it.sentence === entry.sentence
       );
-      if (!exists) normalized.push(entry);
+      
+      if (!exists) {
+        normalized.push(entry);
+        
+        // Increment word count for translations
+        if (!isAuthenticated) {
+          await wordCountService.incrementTranslationsSaved();
+        }
+      }
 
       await RNFS.writeFile(filePath, JSON.stringify(normalized, null, 2), 'utf8');
       if (Platform.OS === 'android') {

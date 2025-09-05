@@ -19,6 +19,9 @@ import {
 } from './videoMethods';
 import Transcript from './Transcript';
 import harmfulWordsService from '../../services/harmfulWordsService';
+import { useLoginGate } from '../../contexts/LoginGateContext';
+import { useAuth } from '../../contexts/AuthContext';
+import wordCountService from '../../services/wordCountService';
 import { 
   upsertVideoNowPlaying, 
   getVideoNowPlaying, 
@@ -151,6 +154,8 @@ function VideoScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const { languageMappings } = useLanguageMappings();
+  const { showLoginGate } = useLoginGate();
+  const { isAuthenticated } = useAuth();
   const [inputUrl, setInputUrl] = React.useState<string>('');
   const [url, setUrl] = React.useState<string>('');
   const videoId = React.useMemo(() => extractYouTubeVideoId(url) ?? '', [url]);
@@ -632,6 +637,19 @@ function VideoScreen(): React.JSX.Element {
 
   const saveCurrentWord = async () => {
     if (!translationPanel) return;
+    
+    // Check if user is authenticated, if not, check word count and show login gate
+    if (!isAuthenticated) {
+      await wordCountService.initialize();
+      const currentCount = wordCountService.getWordCount();
+      
+      // Show login gate if this would be the 3rd word (after saving, count would be 3)
+      if (currentCount.totalWordsAdded >= 2) {
+        showLoginGate();
+        return;
+      }
+    }
+
     const entry = {
       word: translationPanel.word,
       translation: translationPanel.translation,
@@ -678,7 +696,15 @@ function VideoScreen(): React.JSX.Element {
       const exists = normalized.some(
         (it: any) => it && typeof it === 'object' && it.word === entry.word && it.sentence === entry.sentence
       );
-      if (!exists) normalized.push(entry);
+      
+      if (!exists) {
+        normalized.push(entry);
+        
+        // Increment word count for translations
+        if (!isAuthenticated) {
+          await wordCountService.incrementTranslationsSaved();
+        }
+      }
 
       await RNFS.writeFile(filePath, JSON.stringify(normalized, null, 2), 'utf8');
     } catch (e) {

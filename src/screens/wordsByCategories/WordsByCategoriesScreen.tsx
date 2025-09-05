@@ -6,6 +6,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import WordCategory from './WordCategory';
 import type { WordItem, WordCategoryType, LocalizedText } from '../../types/words';
 import { useWordCategories } from '../../contexts/WordCategoriesContext';
+import { useLoginGate } from '../../contexts/LoginGateContext';
+import { useAuth } from '../../contexts/AuthContext';
+import wordCountService from '../../services/wordCountService';
 
 // moved WordCategory component to its own file
 
@@ -43,6 +46,8 @@ function WordsByCategoriesScreen(): React.JSX.Element {
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
   const { categoriesData, loading, error, isFromCache, refreshCategories } = useWordCategories();
+  const { showLoginGate } = useLoginGate();
+  const { isAuthenticated } = useAuth();
 
   useFocusEffect(
     React.useCallback(() => {
@@ -136,6 +141,18 @@ function WordsByCategoriesScreen(): React.JSX.Element {
   };
 
   const saveItemToMyWords = async (item: WordItem) => {
+    // Check if user is authenticated, if not, check word count and show login gate
+    if (!isAuthenticated) {
+      await wordCountService.initialize();
+      const currentCount = wordCountService.getWordCount();
+      
+      // Show login gate if this would be the 3rd word (after saving, count would be 3)
+      if (currentCount.totalWordsAdded >= 2) {
+        showLoginGate();
+        return;
+      }
+    }
+
     // Handle inconsistent language keys in the data
     const getTextInLanguage = (textObj: LocalizedText, languageCode: string): string => {
       // First try the exact language code
@@ -204,7 +221,15 @@ function WordsByCategoriesScreen(): React.JSX.Element {
       const exists = normalized.some(
         (it: any) => it && typeof it === 'object' && it.word === entry.word && (it.sentence || '') === (entry.sentence || '')
       );
-      if (!exists) normalized.push(entry);
+      
+      if (!exists) {
+        normalized.push(entry);
+        
+        // Increment word count for categories
+        if (!isAuthenticated) {
+          await wordCountService.incrementCategoriesWords();
+        }
+      }
 
       await RNFS.writeFile(filePath, JSON.stringify(normalized, null, 2), 'utf8');
       if (Platform.OS === 'android') {
