@@ -353,7 +353,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
                     </View>
                   ) : null}
                 </View>
-                <Text numberOfLines={2} style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: isEnabled ? 1.0 : 0.5 }]}>{translatedTitleById[s.id] || s.title}</Text>
+                <Text style={[styles.nodeTitle, { color: isDark ? '#f0f0f0' : '#222', opacity: isEnabled ? 1.0 : 0.5 }]}>{translatedTitleById[s.id] || s.title}</Text>
               </TouchableOpacity>
             );
           })}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Alert, StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
+import { Alert, StyleSheet, Text, TouchableOpacity, View, ScrollView, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 type PracticeOption = {
@@ -18,6 +18,41 @@ const PRACTICE_OPTIONS: PracticeOption[] = [
   { key: 'memoryGame', label: 'Memory game', emoji: '🧠' },
   { key: 'hearing', label: 'Hearing practice', emoji: '🔊' },
 ];
+
+// Custom Match Game Button Component
+const MatchGameButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
+  return (
+    <TouchableOpacity
+      style={styles.matchGameButton}
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel="Match game"
+    >
+      <View style={styles.matchGameContent}>
+        <Text style={styles.matchGameTitle}>MATCH</Text>
+        <Text style={styles.matchGameTitle}>GAME</Text>
+        
+        <View style={styles.cardsContainer}>
+          <View style={[styles.card, styles.cardLeft]}>
+            <Text style={styles.cardSuit}>♥</Text>
+            <Text style={styles.cardRank}>A</Text>
+            <Text style={styles.cardSuit}>♥</Text>
+          </View>
+          
+          <View style={styles.sparkleContainer}>
+            <Text style={styles.sparkle}>✨</Text>
+          </View>
+          
+          <View style={[styles.card, styles.cardRight]}>
+            <Text style={styles.cardSuit}>♥</Text>
+            <Text style={styles.cardRank}>A</Text>
+            <Text style={styles.cardSuit}>♥</Text>
+          </View>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+};
 
 function PracticeScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
@@ -83,18 +118,29 @@ function PracticeScreen(): React.JSX.Element {
       </TouchableOpacity>
 
       <View style={styles.grid}>
-        {PRACTICE_OPTIONS.map((opt) => (
-          <TouchableOpacity
-            key={opt.key}
-            style={styles.gridItem}
-            onPress={() => onOptionPress(opt)}
-            accessibilityRole="button"
-            accessibilityLabel={opt.label}
-          >
-            <Text style={styles.gridItemEmoji}>{opt.emoji || '•'}</Text>
-            <Text numberOfLines={2} style={styles.gridItemLabel}>{opt.label}</Text>
-          </TouchableOpacity>
-        ))}
+        {PRACTICE_OPTIONS.map((opt) => {
+          if (opt.key === 'matchGame') {
+            return (
+              <MatchGameButton
+                key={opt.key}
+                onPress={() => onOptionPress(opt)}
+              />
+            );
+          }
+          
+          return (
+            <TouchableOpacity
+              key={opt.key}
+              style={styles.gridItem}
+              onPress={() => onOptionPress(opt)}
+              accessibilityRole="button"
+              accessibilityLabel={opt.label}
+            >
+              <Text style={styles.gridItemEmoji}>{opt.emoji || '•'}</Text>
+              <Text numberOfLines={2} style={styles.gridItemLabel}>{opt.label}</Text>
+            </TouchableOpacity>
+          );
+        })}
       </View>
     </View>
   );
@@ -149,6 +195,90 @@ const styles = StyleSheet.create({
   gridItemLabel: {
     textAlign: 'center',
     fontWeight: '600',
+  },
+  // Match Game Button Styles
+  matchGameButton: {
+    width: '48%',
+    backgroundColor: '#1E3A8A', // Deep blue background
+    borderRadius: 16,
+    borderWidth: 3,
+    borderColor: '#3B82F6', // Medium blue border
+    shadowColor: '#000',
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 8,
+    overflow: 'hidden',
+  },
+  matchGameContent: {
+    paddingVertical: 20,
+    paddingHorizontal: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 120,
+  },
+  matchGameTitle: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '800',
+    textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+    letterSpacing: 0.5,
+  },
+  cardsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 8,
+    position: 'relative',
+  },
+  card: {
+    width: 24,
+    height: 32,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#FCD34D', // Yellow glow
+    shadowOpacity: 0.8,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 0 },
+    elevation: 4,
+  },
+  cardLeft: {
+    transform: [{ rotate: '-8deg' }],
+    marginRight: 4,
+  },
+  cardRight: {
+    transform: [{ rotate: '8deg' }],
+    marginLeft: 4,
+  },
+  cardSuit: {
+    color: '#DC2626', // Red hearts
+    fontSize: 8,
+    fontWeight: 'bold',
+  },
+  cardRank: {
+    color: '#DC2626', // Red A
+    fontSize: 10,
+    fontWeight: 'bold',
+    marginVertical: 2,
+  },
+  sparkleContainer: {
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 10,
+  },
+  sparkle: {
+    fontSize: 12,
+    color: '#FFFFFF',
+    textShadowColor: '#FCD34D',
+    textShadowRadius: 4,
   },
 });
 

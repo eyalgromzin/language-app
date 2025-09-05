@@ -1,3 +1,5 @@
+- in baby steps ,  on formulate sentense , if youre correct , its not progressing to the next task 
+
 1 on formulate sentence success, its not clearing the screen and moving to the next item.
 
 2 refactor - move all types into 1 file. 
