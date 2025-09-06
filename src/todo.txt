@@ -13,6 +13,8 @@
 
 6 login with facebook
 
+7 share words - enable to share words - will share word and translation - the user that will click the llink the word will be added to his vocabulary  
+
 
 - payed version - when ill have 1000 users 
     - limit num of words possible to add to learning per day - for example 20 - payed will be limitless.

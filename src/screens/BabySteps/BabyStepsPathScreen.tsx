@@ -502,7 +502,6 @@ function BabyStepsPathScreen(): React.JSX.Element {
                   onPress={() => {
                     if (!isEnabled) return;
                     // Add haptic feedback
-                    Vibration.vibrate(50);
                     const parent = navigation.getParent?.();
                     if (parent) parent.navigate('BabyStepRunner', { stepIndex: idx });
                     else navigation.navigate('BabyStepRunner' as never, { stepIndex: idx } as never);
