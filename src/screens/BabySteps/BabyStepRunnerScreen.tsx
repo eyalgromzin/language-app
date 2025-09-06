@@ -971,6 +971,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         />
       ) : current.kind === 'formulateSentense' ? (
         <FormulateSentenseScreen
+          key={`formulate-${currentIdx}-${current.itemId}`}
           embedded
           sentence={current.sentence}
           translatedSentence={current.translatedSentence}

@@ -1,5 +1,3 @@
-- in baby steps ,  on formulate sentense , if youre correct , its not progressing to the next task 
-
 1 on formulate sentence success, its not clearing the screen and moving to the next item.
 
 2 refactor - move all types into 1 file. 
@@ -14,6 +12,7 @@
 6 login with facebook
 
 7 share words - enable to share words - will share word and translation - the user that will click the llink the word will be added to his vocabulary  
+
 
 
 - payed version - when ill have 1000 users 
