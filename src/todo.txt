@@ -15,3 +15,9 @@ publish app
 - check hebrew support - and rtl 
     - formulate sentense - the words are the opposite order 
 
+- translate all captions to all languages i support 
+
+- create talk with ai screen . 
+    that will just transcribe to text what the person says , and sends it to some ai api . 
+    and shows ai talking when he talks.
+    the talking also will be with transcribing text to audio  
