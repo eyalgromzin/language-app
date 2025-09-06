@@ -1151,7 +1151,7 @@ const styles = StyleSheet.create({
   },
   goButton: {
     marginLeft: 8,
-    backgroundColor: '#007AFF',
+    backgroundColor: '#FF0000',
     paddingHorizontal: 14,
     paddingVertical: 10,
     borderRadius: 8,

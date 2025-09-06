@@ -7,8 +7,9 @@
 
 2 login with facebook
 
-publish app 
+- now playing not working 
 
+publish app 
 
 - payed version - when ill have 1000 users 
     - limit num of words possible to add to learning per day - for example 20 - payed will be limitless.
