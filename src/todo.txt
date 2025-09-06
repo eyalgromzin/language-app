@@ -1,5 +1,3 @@
-4 share words - enable to share words - will share word and translation - the user that will click the llink the word will be added to his vocabulary  
-
 6. make hellolingo.app work with additional parameters . and not show page not found 
 
 1 design app ui better
