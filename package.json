@@ -17,7 +17,9 @@
     "test-aab": "node scripts/testAppBundle.js",
     "icons": "node scripts/generateAppIcons.js",
     "signingReport": "cd android && .\\gradlew.bat signingReport",
-    "server": "cd language-learn-server && npm run start"
+    "server": "cd language-learn-server && npm run start",
+    "install:device": "node scripts/installOnDevice.js",
+    "install:debug": "node scripts/installOnDevice.js --debug"
   },
   "dependencies": {
     "@dr.pogodin/react-native-fs": "^2.34.0",
