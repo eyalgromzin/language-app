@@ -1,17 +1,13 @@
-1 on formulate sentence success, its not clearing the screen and moving to the next item.
+1 design app ui better
+    - design video screen 
 
-2 refactor - move all types into 1 file. 
-    - wordentry 
+2 make video transcript work better - it lags now 
 
-3 design app ui better
+3 add report harmful coontent button for library links / books 
 
-4 make video transcript work better - it lags now 
+4 login with facebook
 
-5 add report harmful coontent button for library links / books 
-
-6 login with facebook
-
-7 share words - enable to share words - will share word and translation - the user that will click the llink the word will be added to his vocabulary  
+5 share words - enable to share words - will share word and translation - the user that will click the llink the word will be added to his vocabulary  
 
 
 
