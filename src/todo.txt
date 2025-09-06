@@ -1,11 +1,11 @@
+4. success toast is not showing in runner 
+
+3 add report harmful content button for library links / books 
+
 1 design app ui better
     - design video screen 
 
 2 login with facebook
-
-3 add report harmful content button for library links / books 
-
-4. success toast is not showing in runner 
 
 publish app 
 
