@@ -31,11 +31,11 @@ export class LinkingService {
         return null;
       }
 
-      const path = urlObj.pathname;
       const searchParams = urlObj.searchParams;
+      const type = searchParams.get('type');
 
-      // Handle video links: https://helloLingo.app/video?url=YOUTUBE_URL&title=VIDEO_TITLE
-      if (path === '/video') {
+      // Handle video links: https://hellolingo.app/?type=video&url=YOUTUBE_URL&title=VIDEO_TITLE
+      if (type === 'video') {
         const videoUrl = searchParams.get('url');
         const title = searchParams.get('title');
         
@@ -48,8 +48,8 @@ export class LinkingService {
         }
       }
 
-      // Handle surf links: https://helloLingo.app/surf?url=WEB_URL
-      if (path === '/surf') {
+      // Handle surf links: https://hellolingo.app/?type=surf&url=WEB_URL
+      if (type === 'surf') {
         const surfUrl = searchParams.get('url');
         
         if (surfUrl) {
@@ -60,16 +60,16 @@ export class LinkingService {
         }
       }
 
-      // Handle library links: https://helloLingo.app/library
-      if (path === '/library') {
+      // Handle library links: https://hellolingo.app/?type=library
+      if (type === 'library') {
         return {
           type: 'library',
-          url: 'https://hellolingo.app/library'
+          url: 'https://hellolingo.app/?type=library'
         };
       }
 
-      // Handle word links: https://helloLingo.app/word?word=WORD&translation=TRANSLATION&sentence=SENTENCE
-      if (path === '/word') {
+      // Handle word links: https://hellolingo.app/?type=word&word=WORD&translation=TRANSLATION&sentence=SENTENCE
+      if (type === 'word') {
         const word = searchParams.get('word');
         const translation = searchParams.get('translation');
         const sentence = searchParams.get('sentence');
@@ -96,8 +96,9 @@ export class LinkingService {
    * Generate a shareable helloLingo.app URL for video content
    */
   public generateVideoShareUrl(videoUrl: string, title?: string): string {
-    const baseUrl = 'https://hellolingo.app/video';
+    const baseUrl = 'https://hellolingo.app';
     const params = new URLSearchParams();
+    params.append('type', 'video');
     params.append('url', encodeURIComponent(videoUrl));
     if (title) {
       params.append('title', encodeURIComponent(title));
@@ -109,8 +110,9 @@ export class LinkingService {
    * Generate a shareable helloLingo.app URL for surf content
    */
   public generateSurfShareUrl(surfUrl: string): string {
-    const baseUrl = 'https://hellolingo.app/surf';
+    const baseUrl = 'https://hellolingo.app';
     const params = new URLSearchParams();
+    params.append('type', 'surf');
     params.append('url', encodeURIComponent(surfUrl));
     return `${baseUrl}?${params.toString()}`;
   }
@@ -119,7 +121,7 @@ export class LinkingService {
    * Generate a shareable helloLingo.app URL for library content
    */
   public generateLibraryShareUrl(): string {
-    return 'https://hellolingo.app/library';
+    return 'https://hellolingo.app/?type=library';
   }
 
   /**
@@ -187,8 +189,9 @@ export class LinkingService {
    * Generate a shareable helloLingo.app URL for word content
    */
   public generateWordShareUrl(word: string, translation: string, sentence?: string): string {
-    const baseUrl = 'https://hellolingo.app/word';
+    const baseUrl = 'https://hellolingo.app';
     const params = new URLSearchParams();
+    params.append('type', 'word');
     params.append('word', encodeURIComponent(word));
     params.append('translation', encodeURIComponent(translation));
     if (sentence) {
