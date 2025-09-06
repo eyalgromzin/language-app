@@ -17,3 +17,5 @@ list keys command: keytool -list -v -keystore release.keystore
 delete key command:  keytool -delete -alias your-key-alias -keystore release.keystore
 
 to create apk / aab - run command in powershell with admin rights . 
+
+- to run app links in debug and not release. uninstall app , copy signingConfigs from release to debug . and run the app 

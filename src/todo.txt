@@ -9,6 +9,8 @@
     youre on fire - when he finishes all lesson without failing .
     ...
 
+- design landing page again for people that the app is not installed for them 
+
 publish app 
 
 - payed version - when ill have 1000 users 
