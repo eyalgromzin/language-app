@@ -4,6 +4,11 @@
 
 2 login with facebook
 
+- add approvals like , well done , doing great ... 
+    5 in a row!!
+    youre on fire - when he finishes all lesson without failing .
+    ...
+
 publish app 
 
 - payed version - when ill have 1000 users 
@@ -21,3 +26,4 @@ publish app
     that will just transcribe to text what the person says , and sends it to some ai api . 
     and shows ai talking when he talks.
     the talking also will be with transcribing text to audio  
+    and for each user , save in db a very short summary of about what the user talked . in a FIFO order 
