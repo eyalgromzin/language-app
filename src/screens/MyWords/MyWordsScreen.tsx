@@ -2,22 +2,7 @@ import React from 'react';
 import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
-
-type WordEntry = {
-  word: string;
-  translation: string;
-  sentence?: string;
-  addedAt?: string;
-  numberOfCorrectAnswers?: {
-    missingLetters: number;
-    missingWords: number;
-    chooseTranslation: number;
-    chooseWord: number;
-    memoryGame: number;
-    writeTranslation: number;
-    writeWord: number;
-  };
-};
+import { WordEntry } from '../../types/words';
 
 function MyWordsScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);

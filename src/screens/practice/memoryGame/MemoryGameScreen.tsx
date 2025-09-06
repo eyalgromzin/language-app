@@ -6,22 +6,7 @@ import * as RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
 import { playCorrectFeedback, playWrongFeedback } from '../common';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
-
-type WordEntry = {
-  word: string;
-  translation: string;
-  sentence?: string;
-  addedAt?: string;
-  numberOfCorrectAnswers?: {
-    missingLetters: number;
-    missingWords: number;
-    chooseTranslation: number;
-    chooseWord: number;
-    memoryGame: number;
-    writeTranslation: number;
-    writeWord: number;
-  };
-};
+import { WordEntry } from '../../../types/words';
 
 type Card = {
   id: string; // unique for each card instance

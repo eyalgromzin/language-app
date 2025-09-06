@@ -10,23 +10,7 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
-type WordEntry = {
-  word: string;
-  translation: string;
-  sentence?: string;
-  addedAt?: string;
-  numberOfCorrectAnswers?: {
-    missingLetters: number;
-    missingWords: number;
-    chooseTranslation: number;
-    chooseWord?: number;
-    memoryGame?: number;
-    writeTranslation: number;
-    writeWord: number;
-    formulateSentence?: number;
-  };
-};
+import { WordEntry } from '../../types/words';
 
 type ProgressStats = {
   totalWords: number;

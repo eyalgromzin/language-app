@@ -15,4 +15,23 @@ export type WordCategoryType = {
   items: WordItem[];
 };
 
+export type WordEntry = {
+  word: string;
+  translation: string;
+  sentence?: string;
+  addedAt?: string;
+  itemId?: string;
+  numberOfCorrectAnswers?: {
+    missingLetters: number;
+    missingWords: number;
+    chooseTranslation: number;
+    chooseWord: number;
+    memoryGame: number;
+    writeTranslation: number;
+    writeWord: number;
+    formulateSentence?: number;
+    hearing?: number;
+  };
+};
+
 

@@ -9,24 +9,8 @@ import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 import { getBabySteps } from '../../../config/api';
-
-type WordEntry = {
-  word: string;
-  translation: string;
-  sentence?: string;
-  addedAt?: string;
-  itemId?: string;
-  numberOfCorrectAnswers?: {
-    missingLetters: number;
-    missingWords: number;
-    chooseTranslation: number;
-    chooseWord: number;
-    memoryGame: number;
-    writeTranslation: number;
-    writeWord: number;
-    formulateSentence?: number;
-  };
-};
+import { WordEntry } from '../../../types/words';
+import { useLanguageMappings } from '../../../contexts/LanguageMappingsContext';
 
 type StepItem = {
   id: string;
@@ -107,6 +91,7 @@ type EmbeddedProps = {
 function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
+  const { languageMappings } = useLanguageMappings();
   const RANDOM_GAME_ROUTES: string[] = [
     'MissingLetters',
     'MissingWords',
@@ -149,8 +134,8 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         AsyncStorage.getItem('language.learning'),
         AsyncStorage.getItem('language.native'),
       ]);
-      const currentCode = getLangCode(learningName) || 'en';
-      const nativeCode = getLangCode(nativeName) || 'en';
+      const currentCode = getLangCode(learningName, languageMappings) || 'en';
+      const nativeCode = getLangCode(nativeName, languageMappings) || 'en';
       const otherCode = nativeCode !== currentCode ? nativeCode : (currentCode === 'en' ? 'es' : 'en');
 
       const stepsFile: StepsFile = await getBabySteps(otherCode);
@@ -181,7 +166,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
       // Prepare fallback tokens from BabySteps steps fetched from server
       try {
         const learningName = await AsyncStorage.getItem('language.learning');
-        const code = getLangCode(learningName) || 'en';
+        const code = getLangCode(learningName, languageMappings) || 'en';
         const stepsFile: StepsFile = await getBabySteps(code);
         const tokensSet = new Set<string>();
         (stepsFile.steps || []).forEach((step) => {

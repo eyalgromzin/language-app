@@ -7,22 +7,7 @@ import { playCorrectFeedback, playWrongFeedback } from '../common';
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
-
-type WordEntry = {
-  word: string;
-  translation: string;
-  sentence?: string;
-  addedAt?: string;
-  numberOfCorrectAnswers?: {
-    missingLetters: number;
-    missingWords: number;
-    chooseTranslation: number;
-    chooseWord: number;
-    memoryGame: number;
-    writeTranslation: number;
-    writeWord: number;
-  };
-};
+import { WordEntry } from '../../../types/words';
 
 type PreparedItem = {
   entry: WordEntry;
