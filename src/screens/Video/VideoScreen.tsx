@@ -403,7 +403,7 @@ function VideoScreen(): React.JSX.Element {
       return;
     }
 
-    const interval = setInterval(async () => {
+    const upsertNowPlayingVideo = async () => {
       try {
         const videoUrl = (url || inputUrl || '').trim();
         if (!videoUrl) return;
@@ -415,10 +415,11 @@ function VideoScreen(): React.JSX.Element {
       } catch (error) {
         console.error('Failed to upsert now playing:', error);
       }
-    }, 60000); // Every minute
+    }; // Every minute
 
-    return () => clearInterval(interval);
-  }, [isPlaying, url, inputUrl, learningLanguage, currentVideoTitle, mapLanguageNameToYoutubeCode, languageMappings]);
+    upsertNowPlayingVideo();
+
+  }, [isPlaying, languageMappings]);
 
   
 

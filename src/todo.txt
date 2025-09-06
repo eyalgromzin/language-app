@@ -3,12 +3,13 @@
 
 2 make video transcript work better - it lags now 
 
-3 add report harmful coontent button for library links / books 
-
 4 login with facebook
+
+3 add report harmful coontent button for library links / books 
 
 5 share words - enable to share words - will share word and translation - the user that will click the llink the word will be added to his vocabulary  
 
+6. success toast is not showing in runner 
 
 
 - payed version - when ill have 1000 users 

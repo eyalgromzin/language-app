@@ -28,7 +28,21 @@ export function normalizeYouTubeUrl(input: string): string {
 
 export function mapLanguageNameToYoutubeCode(name: string | null, languageMappings: Record<string, string>): string {
   if (!name) return 'en';
-  return languageMappings[name] || 'en';
+  
+  // First try exact match (for backward compatibility)
+  if (languageMappings[name]) {
+    return languageMappings[name];
+  }
+  
+  // Then try case-insensitive match
+  const lowerName = name.toLowerCase();
+  for (const [key, value] of Object.entries(languageMappings)) {
+    if (key.toLowerCase() === lowerName) {
+      return value;
+    }
+  }
+  
+  return 'en';
 }
 
 export async function fetchYouTubeTitleById(id: string): Promise<string> {
