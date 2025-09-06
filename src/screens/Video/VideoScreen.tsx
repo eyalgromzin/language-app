@@ -71,7 +71,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
             ref={urlInputRef}
             value={inputUrl}
             onChangeText={onChangeText}
-            placeholder="Paste a YouTube URL (or video ID)"
+            placeholder="Search"
             autoCapitalize="none"
             autoCorrect={false}
             keyboardType={Platform.OS === 'ios' ? 'url' : 'default'}
@@ -1043,7 +1043,7 @@ function VideoScreen(): React.JSX.Element {
           }}
         />
       ) : (
-        <Text style={styles.helper}>Enter a valid YouTube link or 11-character ID to load the video.</Text>
+        <Text style={styles.helper}>Select a video or Enter YouTube link or 11-character ID to load video.</Text>
       )}
 
       {!hidePlayback && (
@@ -1117,82 +1117,138 @@ function VideoScreen(): React.JSX.Element {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
-    backgroundColor: 'white',
+    padding: 20,
+    backgroundColor: '#f8f9fa',
+    minHeight: '100%',
   },
   label: {
-    fontSize: 14,
-    color: '#555',
-    marginBottom: 8,
+    fontSize: 15,
+    color: '#374151',
+    marginBottom: 10,
+    fontWeight: '600',
   },
   input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
+    borderWidth: 2,
+    borderColor: '#e5e7eb',
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
     fontSize: 16,
     marginBottom: 0,
+    backgroundColor: '#ffffff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
   },
   inputRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: 16,
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    padding: 8,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 4,
   },
   libraryBtn: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    borderWidth: 1,
-    borderColor: '#007AFF',
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: '#3b82f6',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: 6,
+    marginLeft: 8,
+    backgroundColor: '#ffffff',
+    shadowColor: '#3b82f6',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
   },
   goButton: {
-    marginLeft: 8,
+    marginLeft: 12,
     backgroundColor: '#FF0000',
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-    borderRadius: 8,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 12,
+    shadowColor: '#FF0000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 6,
   },
   goButtonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '700',
+    textAlign: 'center',
   },
   helper: {
-    color: '#888',
-    fontSize: 14,
+    color: '#6b7280',
+    fontSize: 15,
+    textAlign: 'center',
+    marginVertical: 20,
+    paddingHorizontal: 20,
+    lineHeight: 22,
   },
   transcriptBox: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 8,
-    padding: 12,
+    borderWidth: 2,
+    borderColor: '#e5e7eb',
+    borderRadius: 16,
+    padding: 16,
     maxHeight: 230,
+    backgroundColor: '#ffffff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
   },
   transcriptLine: {
-    fontSize: 15,
-    color: '#222',
-    lineHeight: 22,
-    marginBottom: 6,
+    fontSize: 16,
+    color: '#1f2937',
+    lineHeight: 24,
+    marginBottom: 8,
   },
   transcriptLineActive: {
-    color: '#007AFF',
+    color: '#3b82f6',
     fontWeight: '700',
-    backgroundColor: 'rgba(0,122,255,0.08)',
-    borderRadius: 4,
-    paddingHorizontal: 4,
+    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+    borderRadius: 8,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
   },
   transcriptWordSelected: {
-    backgroundColor: 'rgba(255,235,59,0.9)',
-    borderRadius: 2,
+    backgroundColor: 'rgba(255, 193, 7, 0.9)',
+    borderRadius: 4,
+    paddingHorizontal: 2,
   },
   transcriptTime: {
-    color: '#666',
-    fontSize: 12,
-    marginBottom: 2,
+    color: '#6b7280',
+    fontSize: 13,
+    marginBottom: 4,
+    fontWeight: '500',
   },
 });
 
