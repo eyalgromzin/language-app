@@ -3,6 +3,7 @@ import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View, To
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
 import { WordEntry } from '../../types/words';
+import linkingService from '../../services/linkingService';
 
 function MyWordsScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
@@ -128,6 +129,14 @@ function MyWordsScreen(): React.JSX.Element {
     );
   }, [deleteWord]);
 
+  const shareWord = React.useCallback(async (word: WordEntry) => {
+    try {
+      await linkingService.shareWord(word.word, word.translation, word.sentence);
+    } catch (error) {
+      console.error('Error sharing word:', error);
+    }
+  }, []);
+
   const getItemId = (item: WordEntry, index: number) => `${item.word}|${item.sentence || ''}|${item.addedAt || index}`;
 
   const renderItem = ({ item, index }: { item: WordEntry; index: number }) => {
@@ -138,14 +147,24 @@ function MyWordsScreen(): React.JSX.Element {
       <View style={styles.itemRow}>
         <View style={styles.itemHeader}>
           <Text style={styles.itemWord} numberOfLines={1}>{item.word}</Text>
-          <TouchableOpacity
-            onPress={() => confirmDeleteWord(item)}
-            style={styles.deleteButton}
-            accessibilityRole="button"
-            accessibilityLabel={`Delete ${item.word}`}
-          >
-            <Text style={styles.deleteButtonText}>✕</Text>
-          </TouchableOpacity>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              onPress={() => shareWord(item)}
+              style={styles.shareButton}
+              accessibilityRole="button"
+              accessibilityLabel={`Share ${item.word}`}
+            >
+              <Text style={styles.shareButtonText}>↗</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => confirmDeleteWord(item)}
+              style={styles.deleteButton}
+              accessibilityRole="button"
+              accessibilityLabel={`Delete ${item.word}`}
+            >
+              <Text style={styles.deleteButtonText}>✕</Text>
+            </TouchableOpacity>
+          </View>
         </View>
         {item.translation ? (
           <Text style={styles.itemTranslation} numberOfLines={3}>{item.translation}</Text>
@@ -310,6 +329,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 4,
   },
+  buttonContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
   itemWord: {
     fontSize: 16,
     fontWeight: '700',
@@ -372,6 +396,22 @@ const styles = StyleSheet.create({
   progressValue: {
     fontWeight: '700',
     color: '#111',
+  },
+  shareButton: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
+    backgroundColor: '#f0f9ff',
+    borderWidth: 1,
+    borderColor: '#bae6fd',
+    minWidth: 28,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  shareButtonText: {
+    fontSize: 14,
+    color: '#0284c7',
+    fontWeight: '600',
   },
   deleteButton: {
     paddingHorizontal: 8,

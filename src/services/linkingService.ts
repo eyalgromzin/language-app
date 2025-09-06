@@ -1,9 +1,12 @@
 import { Linking, Share, Platform } from 'react-native';
 
 export interface AppLinkData {
-  type: 'video' | 'surf' | 'library';
+  type: 'video' | 'surf' | 'library' | 'word';
   url: string;
   title?: string;
+  word?: string;
+  translation?: string;
+  sentence?: string;
 }
 
 export class LinkingService {
@@ -63,6 +66,23 @@ export class LinkingService {
           type: 'library',
           url: 'https://hellolingo.app/library'
         };
+      }
+
+      // Handle word links: https://helloLingo.app/word?word=WORD&translation=TRANSLATION&sentence=SENTENCE
+      if (path === '/word') {
+        const word = searchParams.get('word');
+        const translation = searchParams.get('translation');
+        const sentence = searchParams.get('sentence');
+        
+        if (word && translation) {
+          return {
+            type: 'word',
+            url: url,
+            word: decodeURIComponent(word),
+            translation: decodeURIComponent(translation),
+            sentence: sentence ? decodeURIComponent(sentence) : undefined
+          };
+        }
       }
 
       return null;
@@ -159,6 +179,31 @@ export class LinkingService {
     const shareUrl = this.generateLibraryShareUrl();
     const shareTitle = 'HelloLingo Library';
     const shareMessage = `Check out the HelloLingo library for language learning content!`;
+    
+    await this.shareContent(shareUrl, shareTitle, shareMessage);
+  }
+
+  /**
+   * Generate a shareable helloLingo.app URL for word content
+   */
+  public generateWordShareUrl(word: string, translation: string, sentence?: string): string {
+    const baseUrl = 'https://hellolingo.app/word';
+    const params = new URLSearchParams();
+    params.append('word', encodeURIComponent(word));
+    params.append('translation', encodeURIComponent(translation));
+    if (sentence) {
+      params.append('sentence', encodeURIComponent(sentence));
+    }
+    return `${baseUrl}?${params.toString()}`;
+  }
+
+  /**
+   * Share a word with a helloLingo.app link
+   */
+  public async shareWord(word: string, translation: string, sentence?: string): Promise<void> {
+    const shareUrl = this.generateWordShareUrl(word, translation, sentence);
+    const shareTitle = `Learn "${word}"`;
+    const shareMessage = `Learn "${word}" (${translation})${sentence ? ` - "${sentence}"` : ''} with HelloLingo!`;
     
     await this.shareContent(shareUrl, shareTitle, shareMessage);
   }
