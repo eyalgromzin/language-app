@@ -2,12 +2,7 @@
 
 3 add report harmful content button for library links / books 
 
-1 design app ui better
-    - design video screen 
-
 2 login with facebook
-
-- now playing not working 
 
 publish app 
 
