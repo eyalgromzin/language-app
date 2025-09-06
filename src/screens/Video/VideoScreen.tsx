@@ -166,8 +166,8 @@ function VideoScreen(): React.JSX.Element {
   const [transcriptError, setTranscriptError] = React.useState<string | null>(null);
   const playerRef = React.useRef<any>(null);
   const [playerReady, setPlayerReady] = React.useState<boolean>(false);
-  const [currentTime, setCurrentTime] = React.useState<number>(0);
-  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+  const [currentPlayerTime, setCurrentPlayerTime] = React.useState<number>(0);
+  const [activeTranscriptIndex, setActiveTranscriptIndex] = React.useState<number | null>(null);
   const scrollViewRef = React.useRef<any>(null);
   const lineOffsetsRef = React.useRef<Record<number, number>>({});
   const urlInputRef = React.useRef<TextInput>(null);
@@ -514,8 +514,8 @@ function VideoScreen(): React.JSX.Element {
     try { playerRef.current?.pauseVideo?.(); } catch {}
     setIsPlaying(false);
     setPlayerReady(false);
-    setCurrentTime(0);
-    setActiveIndex(null);
+    setCurrentPlayerTime(0);
+    setActiveTranscriptIndex(null);
     lineOffsetsRef.current = {};
     setInputUrl('');
     setUrl('');
@@ -626,13 +626,13 @@ function VideoScreen(): React.JSX.Element {
       });
   };
 
-  const handleTranscriptWordPress = React.useCallback((payload: { key: string; segmentOffset: number; word: string; sentence: string }) => {
+  const handleTranscriptPressOnWord = React.useCallback((payload: { key: string; segmentOffset: number; word: string; sentence: string }) => {
     const { key, segmentOffset, word, sentence } = payload;
     setSelectedWordKey(key);
     try { playerRef.current?.pauseVideo?.(); } catch {}
     try { playerRef.current?.seekTo?.(segmentOffset); } catch {}
     setIsPlaying(false);
-    setCurrentTime(segmentOffset);
+    setCurrentPlayerTime(segmentOffset);
     openPanel(word, sentence);
   }, [openPanel]);
 
@@ -720,10 +720,11 @@ function VideoScreen(): React.JSX.Element {
       try {
         const t = await playerRef.current?.getCurrentTime?.();
         if (!cancelled && typeof t === 'number' && !Number.isNaN(t)) {
-          setCurrentTime(t);
+          setCurrentPlayerTime(t);
         }
       } catch {}
     }, 500);
+
     return () => {
       cancelled = true;
       clearInterval(interval);
@@ -732,30 +733,30 @@ function VideoScreen(): React.JSX.Element {
 
   React.useEffect(() => {
     if (!transcript || transcript.length === 0) {
-      setActiveIndex(null);
+      setActiveTranscriptIndex(null);
       return;
     }
-    const idx = transcript.findIndex((seg) => currentTime >= seg.offset && currentTime < seg.offset + seg.duration);
+    const idx = transcript.findIndex((seg) => currentPlayerTime + 2 >= seg.offset && currentPlayerTime + 2< seg.offset + seg.duration);
     if (idx !== -1) {
-      setActiveIndex(idx);
+      setActiveTranscriptIndex(idx);
       return;
     }
     let lastIdx: number | null = null;
     for (let i = 0; i < transcript.length; i++) {
-      if (currentTime >= transcript[i].offset) lastIdx = i;
+      if (currentPlayerTime >= transcript[i].offset) lastIdx = i;
       else break;
     }
-    setActiveIndex(lastIdx);
-  }, [currentTime, transcript]);
+    setActiveTranscriptIndex(lastIdx);
+  }, [currentPlayerTime, transcript]);
 
   React.useEffect(() => {
-    if (activeIndex == null) return;
-    const y = lineOffsetsRef.current[activeIndex];
+    if (activeTranscriptIndex == null) return;
+    const y = lineOffsetsRef.current[activeTranscriptIndex];
     if (typeof y !== 'number') return;
     try {
       scrollViewRef.current?.scrollTo?.({ y: Math.max(y - 80, 0), animated: true });
     } catch {}
-  }, [activeIndex]);
+  }, [activeTranscriptIndex]);
 
   const runYouTubeSearch = React.useCallback((rawQuery: string) => {
     const q = (rawQuery || '').trim();
@@ -855,14 +856,14 @@ function VideoScreen(): React.JSX.Element {
       return;
     }
 
-    if (isPlaying || (typeof currentTime === 'number' && currentTime > 0.1)) {
+    if (isPlaying || (typeof currentPlayerTime === 'number' && currentPlayerTime > 0.1)) {
       try {
         playerRef.current?.seekTo?.(0);
       } catch {}
       setIsPlaying(false);
       return;
     }
-  }, [inputUrl, videoId, transcript.length, isPlaying, currentTime, learningLanguage, languageMappings]);
+  }, [inputUrl, videoId, transcript.length, isPlaying, currentPlayerTime, learningLanguage, languageMappings]);
 
   
 
@@ -1051,9 +1052,9 @@ function VideoScreen(): React.JSX.Element {
           loading={loadingTranscript}
           error={transcriptError}
           transcript={transcript}
-          activeIndex={activeIndex}
+          activeIndex={activeTranscriptIndex}
           selectedWordKey={selectedWordKey}
-          onWordPress={handleTranscriptWordPress}
+          onWordPress={handleTranscriptPressOnWord}
           scrollViewRef={scrollViewRef}
           lineOffsetsRef={lineOffsetsRef}
         />
