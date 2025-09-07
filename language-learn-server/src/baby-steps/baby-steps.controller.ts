@@ -8,20 +8,20 @@ export class BabyStepsController {
 
   // POST /baby-steps/get
   @Post('get')
-  get(@Body() body: { language: string }): StepsFile {
+  async get(@Body() body: { language: string }): Promise<StepsFile> {
     const lang = (body?.language ?? 'en');
-    return this.babyStepsService.getSteps(lang);
+    return await this.babyStepsService.getSteps(lang);
   }
 
   // POST /baby-steps/get-step
   @Post('get-step')
-  getStep(@Body() body: { language: string; stepId: string }): any {
+  async getStep(@Body() body: { language: string; stepId: string }): Promise<any> {
     const lang = (body?.language ?? 'en');
     const stepId = body?.stepId;
     if (!stepId) {
       throw new Error('stepId is required');
     }
-    return this.babyStepsService.getSpecificStep(lang, stepId);
+    return await this.babyStepsService.getSpecificStep(lang, stepId);
   }
 }
 

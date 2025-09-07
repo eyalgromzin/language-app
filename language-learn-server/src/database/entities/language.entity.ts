@@ -3,6 +3,8 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { LibraryItem } from './library-item.entity';
 // @ts-ignore
 import { NowPlaying } from './now-playing.entity';
+// @ts-ignore
+import { BabyStep } from './baby-step.entity';
 
 @Entity('languages')
 export class Language {
@@ -20,4 +22,7 @@ export class Language {
 
   @OneToMany(() => NowPlaying, (nowPlaying: NowPlaying) => nowPlaying.language)
   nowPlaying: NowPlaying[];
+
+  @OneToMany(() => BabyStep, (babyStep: BabyStep) => babyStep.language)
+  babySteps: BabyStep[];
 }

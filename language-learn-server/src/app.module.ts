@@ -9,8 +9,7 @@ import { TranslateService } from './translate/translate.service';
 import { WordCacheService } from './cache/word-cache.service';
 import { VideoCacheService } from './cache/video-cache.service';
 import { NowPlayingService } from './cache/now-playing.service';
-import { BabyStepsService } from './baby-steps';
-import { BabyStepsController } from './baby-steps';
+import { BabyStepsModule } from './baby-steps/baby-steps.module';
 import { VideoController } from './video/video.controller';
 import { HarmfulWordsModule } from './harmful-words/harmful-words.module';
 import { DatabaseModule } from './database/database.module';
@@ -21,10 +20,11 @@ import { WordCategoriesService } from './word-categories';
   imports: [
     HarmfulWordsModule, 
     DatabaseModule, 
+    BabyStepsModule,
     ScheduleModule.forRoot(),
     TypeOrmModule.forFeature([Language])
   ],
-  controllers: [AppController, LibraryController, BabyStepsController, VideoController],
-  providers: [AppService, YouTubeService, TranslateService, WordCacheService, VideoCacheService, NowPlayingService, BabyStepsService, WordCategoriesService],
+  controllers: [AppController, LibraryController, VideoController],
+  providers: [AppService, YouTubeService, TranslateService, WordCacheService, VideoCacheService, NowPlayingService, WordCategoriesService],
 })
 export class AppModule {}

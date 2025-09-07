@@ -1,8 +1,8 @@
+- move baby steps into db . 
+
 4. success toast is not showing in runner 
 
 3 add report harmful content button for library links / books 
-
-2 login with facebook
 
 - add approvals like , well done , doing great ... 
     5 in a row!!
@@ -11,7 +11,13 @@
 
 - design landing page again for people that the app is not installed for them 
 
-publish app 
+- surprise me buttoon border should have changing colors animation 
+
+- on 5 correct answers  create 5 streak animation 
+
+- on 10 correct answers create animation also
+
+publish app =======================================================================================================================
 
 - payed version - when ill have 1000 users 
     - limit num of words possible to add to learning per day - for example 20 - payed will be limitless.
@@ -29,3 +35,12 @@ publish app
     and shows ai talking when he talks.
     the talking also will be with transcribing text to audio  
     and for each user , save in db a very short summary of about what the user talked . in a FIFO order 
+
+- the ai will sum small pieces of info about the person , ans save it to db , for the conversation to progress. 
+
+- ai will start with a question . about previous topics or just asking how is your day.and did you practice our last topics 
+
+- the ai will lead the conversation with questions like how was your day . 
+    tell me 2 good things that happened today / yesterday / this week .
+    whwat did you read ? 
+    did you see any good videos ? reels ? movies ? 
