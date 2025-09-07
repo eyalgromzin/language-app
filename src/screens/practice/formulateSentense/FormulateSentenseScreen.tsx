@@ -371,7 +371,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
       if (props.embedded && props.onFinished) {
         const t = setTimeout(() => {
           props.onFinished?.(true);
-        }, 600);
+        }, 1500); // Increased from 600 to 1500 to allow success toast to show
         return () => clearTimeout(t as unknown as number);
       }
       writeBackIncrement(current as any as string);
@@ -386,8 +386,8 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
     if (props.embedded && props.onFinished) {
       const t = setTimeout(() => {
         props.onFinished?.(false);
-      }, 1200);
-      return;
+      }, 2000); // Increased from 1200 to 2000 to allow toast to show
+      return () => clearTimeout(t as unknown as number);
     }
   };
 
