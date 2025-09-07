@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Alert, StyleSheet, Text, TouchableOpacity, View, ScrollView, Image } from 'react-native';
+import { Alert, StyleSheet, Text, TouchableOpacity, View, ScrollView, Image, Animated } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 type PracticeOption = {
@@ -248,34 +248,71 @@ const HearingPracticeButton: React.FC<{ onPress: () => void }> = ({ onPress }) =
 
 // Custom Surprise Me Button Component
 const SurpriseMeButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
+  const animatedValue = React.useRef(new Animated.Value(0)).current;
+  
+  React.useEffect(() => {
+    const startAnimation = () => {
+      Animated.loop(
+        Animated.sequence([
+          Animated.timing(animatedValue, {
+            toValue: 1,
+            duration: 2000,
+            useNativeDriver: false,
+          }),
+          Animated.timing(animatedValue, {
+            toValue: 0,
+            duration: 2000,
+            useNativeDriver: false,
+          }),
+        ])
+      ).start();
+    };
+    
+    startAnimation();
+  }, [animatedValue]);
+
+  const borderColor = animatedValue.interpolate({
+    inputRange: [0, 0.2, 0.4, 0.6, 0.8, 1],
+    outputRange: [
+      '#FF6B6B', // Red-pink
+      '#4ECDC4', // Teal
+      '#45B7D1', // Blue
+      '#96CEB4', // Green
+      '#FFEAA7', // Yellow
+      '#DDA0DD', // Plum
+    ],
+  });
+
   return (
-    <TouchableOpacity
-      style={styles.surpriseMeButton}
-      onPress={onPress}
-      accessibilityRole="button"
-      accessibilityLabel="Surprise me"
-    >
-      <View style={styles.surpriseMeContent}>
-        <View style={styles.surpriseMeHeader}>
-          <Text style={styles.surpriseMeTitle}>🎲</Text>
-          <Text style={styles.surpriseMeTitle}>SURPRISE</Text>
-          <Text style={styles.surpriseMeTitle}>ME</Text>
-          <Text style={styles.surpriseMeTitle}>🎲</Text>
+    <Animated.View style={[styles.surpriseMeButton, { borderColor }]}>
+      <TouchableOpacity
+        style={styles.surpriseMeButtonInner}
+        onPress={onPress}
+        accessibilityRole="button"
+        accessibilityLabel="Surprise me"
+      >
+        <View style={styles.surpriseMeContent}>
+          <View style={styles.surpriseMeHeader}>
+            <Text style={styles.surpriseMeTitle}>🎲</Text>
+            <Text style={styles.surpriseMeTitle}>SURPRISE</Text>
+            <Text style={styles.surpriseMeTitle}>ME</Text>
+            <Text style={styles.surpriseMeTitle}>🎲</Text>
+          </View>
+          
+          <View style={styles.confettiContainer}>
+            <Text style={[styles.confetti, styles.confetti1]}>🎉</Text>
+            <Text style={[styles.confetti, styles.confetti2]}>✨</Text>
+            <Text style={[styles.confetti, styles.confetti3]}>⭐</Text>
+            <Text style={[styles.confetti, styles.confetti4]}>🎊</Text>
+            <Text style={[styles.confetti, styles.confetti5]}>💫</Text>
+          </View>
+          
+          <View style={styles.magicContainer}>
+            <Text style={styles.magicText}>✨ MAGIC ✨</Text>
+          </View>
         </View>
-        
-        <View style={styles.confettiContainer}>
-          <Text style={[styles.confetti, styles.confetti1]}>🎉</Text>
-          <Text style={[styles.confetti, styles.confetti2]}>✨</Text>
-          <Text style={[styles.confetti, styles.confetti3]}>⭐</Text>
-          <Text style={[styles.confetti, styles.confetti4]}>🎊</Text>
-          <Text style={[styles.confetti, styles.confetti5]}>💫</Text>
-        </View>
-        
-        <View style={styles.magicContainer}>
-          <Text style={styles.magicText}>✨ MAGIC ✨</Text>
-        </View>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </Animated.View>
   );
 };
 
@@ -939,10 +976,8 @@ const styles = StyleSheet.create({
   },
   // Surprise Me Button Styles
   surpriseMeButton: {
-    backgroundColor: '#FFFFFF', // Bright white background
     borderRadius: 20,
     borderWidth: 4,
-    borderColor: '#FF6B6B', // Vibrant red-pink border
     shadowColor: '#FF6B6B',
     shadowOpacity: 0.4,
     shadowRadius: 12,
@@ -950,6 +985,11 @@ const styles = StyleSheet.create({
     elevation: 12,
     overflow: 'hidden',
     position: 'relative',
+  },
+  surpriseMeButtonInner: {
+    backgroundColor: '#FFFFFF', // Bright white background
+    borderRadius: 16,
+    overflow: 'hidden',
   },
   surpriseMeContent: {
     paddingVertical: 24,
