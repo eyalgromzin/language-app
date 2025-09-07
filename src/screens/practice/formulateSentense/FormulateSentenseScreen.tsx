@@ -461,6 +461,17 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
             );
           })}
         </View>
+        
+        <AnimatedToast
+          visible={showWrongToast}
+          type="fail"
+          message="Not quite, try again"
+        />
+        <AnimatedToast
+          visible={showCorrectToast}
+          type="success"
+          message="Correct!"
+        />
       </View>
     );
   }
