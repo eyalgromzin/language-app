@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimensions, TouchableOpacity, NativeModules, Alert, Animated, Vibration } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimensions, TouchableOpacity, NativeModules, Alert, Animated, Vibration, ActivityIndicator } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { Svg, Path, Circle, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -233,7 +233,15 @@ function BabyStepsPathScreen(): React.JSX.Element {
   if (loading) {
     return (
       <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#000' : '#fff' }]}>
-        <View style={styles.centerFill}><Text style={[styles.infoText, { color: isDark ? '#eee' : '#333' }]}>Loading…</Text></View>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator 
+            size="large" 
+            color={isDark ? '#4DA3FF' : '#007AFF'} 
+          />
+          <Text style={[styles.loadingText, { color: isDark ? '#eee' : '#333' }]}>
+            Loading baby steps...
+          </Text>
+        </View>
       </SafeAreaView>
     );
   }
@@ -624,6 +632,16 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  loadingContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 16,
+  },
+  loadingText: {
+    fontSize: 16,
+    fontWeight: '500',
   },
   infoText: {
     fontSize: 16,

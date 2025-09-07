@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getLangCode } from '../../utils/translation';
@@ -807,8 +807,10 @@ function BabyStepRunnerScreen(): React.JSX.Element {
 
   if (loading) {
     return (
-      <View style={styles.centered}>
-        <Text>Loading…</Text>
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#007AFF" />
+        <Text style={styles.loadingText}>Loading step content...</Text>
+        <Text style={styles.loadingSubtext}>Preparing your practice exercises</Text>
       </View>
     );
   }
@@ -997,6 +999,25 @@ function BabyStepRunnerScreen(): React.JSX.Element {
 
 const styles = StyleSheet.create({
   centered: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  loadingContainer: { 
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center',
+    paddingHorizontal: 32,
+    gap: 16
+  },
+  loadingText: { 
+    fontSize: 18, 
+    fontWeight: '600', 
+    color: '#333',
+    textAlign: 'center'
+  },
+  loadingSubtext: { 
+    fontSize: 14, 
+    color: '#666',
+    textAlign: 'center',
+    marginTop: 4
+  },
   container: { padding: 16, gap: 16 },
   topRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   title: { fontSize: 16, fontWeight: '700' },
