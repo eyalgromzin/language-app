@@ -339,7 +339,7 @@ function MainTabs(): React.JSX.Element {
               <Text style={styles.menuItemText}>Share App</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('BabyStepsPath'); setMenuOpen(false); }}>
-              <Text style={styles.menuItemText}>Baby Steps Path</Text>
+              <Text style={styles.menuItemText}>Baby Steps</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('ContactUs'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Contact Us</Text>
@@ -483,7 +483,7 @@ function AppNavigator(): React.JSX.Element {
               <Stack.Screen name="Settings" component={SettingsScreen} options={{ headerShown: true }} />
               <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
               <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words', headerShown: true }} />
-              <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps Path', headerShown: true }} />
+              <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps', headerShown: true }} />
               <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step', headerShown: true }} />
               <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us', headerShown: true }} />
               <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress', headerShown: true }} />

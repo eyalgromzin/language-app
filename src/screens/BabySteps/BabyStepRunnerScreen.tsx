@@ -11,6 +11,7 @@ import HearingPracticeScreen from '../practice/hearing/HearingPracticeScreen';
 import WordMissingLettersScreen from '../practice/MissingLettersScreen/missingLettersScreen';
 import WriteWordScreen from '../practice/writeWord/WriteWordScreen';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
+import StreakAnimation from '../../components/StreakAnimation';
 
 type StepItem = {
   id: string;
@@ -180,7 +181,33 @@ function BabyStepRunnerScreen(): React.JSX.Element {
   const [currentHadMistake, setCurrentHadMistake] = React.useState<boolean>(false);
   const [resetSeed, setResetSeed] = React.useState<number>(0);
   const [selectedIndices, setSelectedIndices] = React.useState<number[]>([]);
+  const [streak, setStreak] = React.useState<number>(0);
+  const [showStreakAnimation, setShowStreakAnimation] = React.useState<boolean>(false);
   const { languageMappings } = useLanguageMappings();
+
+  // Helper function to handle streak milestones
+  const handleStreakMilestone = (newStreak: number) => {
+    console.log('Checking streak milestone:', newStreak);
+    if (newStreak === 2 || newStreak === 5 || newStreak === 10) {
+      console.log('Triggering streak animation for streak:', newStreak);
+      setShowStreakAnimation(true);
+    }
+  };
+
+  // Helper function to handle correct answer
+  const handleCorrectAnswer = () => {
+    const newStreak = streak + 1;
+    console.log('Correct answer! Current streak:', streak, 'New streak:', newStreak);
+    setStreak(newStreak);
+    setNumCorrect((c) => c + 1);
+    handleStreakMilestone(newStreak);
+  };
+
+  // Helper function to handle wrong answer
+  const handleWrongAnswer = () => {
+    setStreak(0); // Reset streak on wrong answer
+    setNumWrong((c) => c + 1);
+  };
 
   React.useEffect(() => {
     let mounted = true;
@@ -685,6 +712,8 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         setNumWrong(0);
         setCurrentHadMistake(false);
         setSelectedIndices([]);
+        setStreak(0);
+        setShowStreakAnimation(false);
       } catch (e) {
         if (!mounted) return;
         console.error('Failed to load step:', e);
@@ -715,10 +744,10 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     if (!allFilled) return;
     const ok = current.missingIndices.every((i) => (inputs[i] ?? '') === current.tokens[i]);
     if (ok) {
-      setNumCorrect((c) => c + 1);
+      handleCorrectAnswer();
     } else {
       // Requeue failed item to the end of the queue
-      setNumWrong((c) => c + 1);
+      handleWrongAnswer();
       setTasks((prev) => [...prev, prev[currentIdx]]);
     }
     const t = setTimeout(() => {
@@ -754,7 +783,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     if (!done) return;
     const isCorrect = current.tokens.every((tok, i) => tok === current.shuffledTokens[selectedIndices[i]]);
     if (isCorrect) {
-      setNumCorrect((c) => c + 1);
+      handleCorrectAnswer();
       const t = setTimeout(() => {
         setSelectedIndices([]);
         setCurrentIdx((i) => i + 1);
@@ -762,7 +791,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
       return () => clearTimeout(t);
     }
     // Wrong: requeue to end and advance
-    setNumWrong((c) => c + 1);
+    handleWrongAnswer();
     const t = setTimeout(() => {
       setSelectedIndices([]);
       setTasks((prev) => [...prev, prev[currentIdx]]);
@@ -852,12 +881,30 @@ function BabyStepRunnerScreen(): React.JSX.Element {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.topRow}>
-        <Text style={styles.title}>Step {stepIndex + 1} • {numCorrect}/{originalTaskCount} • {numCorrect} correct • {numWrong} wrong</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Step {stepIndex + 1} • {numCorrect}/{originalTaskCount} • {numCorrect} correct • {numWrong} wrong</Text>
+          {streak > 0 && (
+            <View style={styles.streakIndicator}>
+              <Text style={styles.streakEmoji}>🔥</Text>
+              <Text style={styles.streakText}>{streak}</Text>
+            </View>
+          )}
+        </View>
         {numCorrect < originalTaskCount ? (
           <TouchableOpacity style={styles.skipButton} onPress={onSkip} accessibilityRole="button" accessibilityLabel="Skip">
             <Text style={styles.skipText}>Skip</Text>
           </TouchableOpacity>
         ) : null}
+        {/* Debug button - remove this later */}
+        {/* <TouchableOpacity 
+          style={[styles.skipButton, { backgroundColor: '#ff0000', marginLeft: 8 }]} 
+          onPress={() => {
+            console.log('Manual test - triggering animation');
+            setShowStreakAnimation(true);
+          }}
+        >
+          <Text style={[styles.skipText, { color: '#fff' }]}>Test</Text>
+        </TouchableOpacity> */}
       </View>
 
       {current.kind === 'chooseTranslation' ? (
@@ -868,9 +915,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           options={current.options}
           onFinished={(ok) => {
             if (ok) {
-              setNumCorrect((c) => c + 1);
+              handleCorrectAnswer();
             } else {
-              setNumWrong((c) => c + 1);
+              handleWrongAnswer();
               setTasks((prev) => [...prev, prev[currentIdx]]);
             }
             setCurrentIdx((i) => i + 1);
@@ -884,9 +931,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           options={current.options}
           onFinished={(ok) => {
             if (ok) {
-              setNumCorrect((c) => c + 1);
+              handleCorrectAnswer();
             } else {
-              setNumWrong((c) => c + 1);
+              handleWrongAnswer();
               setTasks((prev) => [...prev, prev[currentIdx]]);
             }
             setCurrentIdx((i) => i + 1);
@@ -899,9 +946,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           correctTranslation={current.correctTranslation}
           options={current.options}
           onFinished={(ok) => {
-            if (ok) setNumCorrect((c) => c + 1);
+            if (ok) handleCorrectAnswer();
             else {
-              setNumWrong((c) => c + 1);
+              handleWrongAnswer();
               setTasks((prev) => [...prev, prev[currentIdx]]);
             }
             setCurrentIdx((i) => i + 1);
@@ -915,9 +962,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           translation={current.translation}
           missingIndices={current.inputIndices}
           onFinished={(ok) => {
-            if (ok) setNumCorrect((c) => c + 1);
+            if (ok) handleCorrectAnswer();
             else {
-              setNumWrong((c) => c + 1);
+              handleWrongAnswer();
               setTasks((prev) => [...prev, prev[currentIdx]]);
             }
             setCurrentIdx((i) => i + 1);
@@ -930,9 +977,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           translation={current.translation}
           missingIndices={current.missingIndices}
           onFinished={(ok) => {
-            if (ok) setNumCorrect((c) => c + 1);
+            if (ok) handleCorrectAnswer();
             else {
-              setNumWrong((c) => c + 1);
+              handleWrongAnswer();
               setTasks((prev) => [...prev, prev[currentIdx]]);
             }
             setCurrentIdx((i) => i + 1);
@@ -945,9 +992,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           translation={current.translation}
           missingIndices={current.missingIndices}
           onFinished={(ok) => {
-            if (ok) setNumCorrect((c) => c + 1);
+            if (ok) handleCorrectAnswer();
             else {
-              setNumWrong((c) => c + 1);
+              handleWrongAnswer();
               setTasks((prev) => [...prev, prev[currentIdx]]);
             }
             setCurrentIdx((i) => i + 1);
@@ -963,9 +1010,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           wordBank={current.wordBank}
           onFinished={(ok) => {
             if (ok) {
-              setNumCorrect((c) => c + 1);
+              handleCorrectAnswer();
             } else {
-              setNumWrong((c) => c + 1);
+              handleWrongAnswer();
               setTasks((prev) => [...prev, prev[currentIdx]]);
             }
             setCurrentIdx((i) => i + 1);
@@ -982,9 +1029,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
           itemId={current.itemId}
           onFinished={(ok) => {
             if (ok) {
-              setNumCorrect((c) => c + 1);
+              handleCorrectAnswer();
             } else {
-              setNumWrong((c) => c + 1);
+              handleWrongAnswer();
               setTasks((prev) => [...prev, prev[currentIdx]]);
             }
             setCurrentIdx((i) => i + 1);
@@ -992,6 +1039,12 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         />
       ) : null}
 
+      {/* Streak Animation */}
+      <StreakAnimation
+        streak={streak}
+        visible={showStreakAnimation}
+        onAnimationComplete={() => setShowStreakAnimation(false)}
+      />
       
     </ScrollView>
   );
@@ -1020,7 +1073,20 @@ const styles = StyleSheet.create({
   },
   container: { padding: 16, gap: 16 },
   topRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  title: { fontSize: 16, fontWeight: '700' },
+  titleContainer: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  title: { fontSize: 16, fontWeight: '700', flex: 1 },
+  streakIndicator: { 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    backgroundColor: '#FF6B35', 
+    paddingHorizontal: 8, 
+    paddingVertical: 4, 
+    borderRadius: 12,
+    marginLeft: 8,
+    marginRight: 8
+  },
+  streakEmoji: { fontSize: 14, marginRight: 4 },
+  streakText: { fontSize: 12, fontWeight: '700', color: '#fff' },
   skipButton: { borderWidth: 1, borderColor: '#ddd', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 8, backgroundColor: '#fff' },
   skipText: { color: '#007AFF', fontWeight: '700' },
   wordCard: { borderWidth: 1, borderColor: '#ddd', backgroundColor: '#fff', borderRadius: 12, paddingVertical: 18, paddingHorizontal: 12, alignItems: 'center' },

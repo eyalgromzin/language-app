@@ -1,8 +1,10 @@
+- on 2, 5, 10 correct answers show pretty toast 
+
 3 add report harmful content button for library links / books 
 
 - design landing page again for people that the app is not installed for them 
 
-- on 2, 5, 10 correct answers show pretty toast 
+- baby steps runner show missing words screen for a second 
 
 publish app =======================================================================================================================
 
