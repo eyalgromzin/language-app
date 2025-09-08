@@ -81,6 +81,7 @@ function MemoryGameScreen(): React.JSX.Element {
   const [moves, setMoves] = React.useState<number>(0);
   const [numberOfPairs, setNumberOfPairs] = React.useState<number>(9);
   const [showDropdown, setShowDropdown] = React.useState<boolean>(false);
+  const [isFullScreen, setIsFullScreen] = React.useState<boolean>(false);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -307,70 +308,88 @@ function MemoryGameScreen(): React.JSX.Element {
         <View style={styles.headerTop}>
           <View style={styles.titleContainer}>
             <Text style={styles.title}>Memory Game</Text>
-            <Text style={styles.subtitle}>Find matching word pairs</Text>
+            {!isFullScreen && (
+              <Text style={styles.subtitle}>Find matching word pairs</Text>
+            )}
           </View>
-          {route?.params?.surprise ? (
+          <View style={styles.headerButtons}>
             <TouchableOpacity
-              style={styles.skipButton}
-              onPress={navigateToRandomNext}
+              style={styles.fullScreenButton}
+              onPress={() => setIsFullScreen(!isFullScreen)}
               accessibilityRole="button"
-              accessibilityLabel="Skip to next game"
+              accessibilityLabel={isFullScreen ? "Exit full screen" : "Enter full screen"}
             >
-              <Text style={styles.skipButtonText}>Skip</Text>
+              <Text style={styles.fullScreenButtonText}>
+                {isFullScreen ? '⛶' : '⛶'}
+              </Text>
             </TouchableOpacity>
-          ) : null}
-        </View>
-        
-        {/* Stats Row */}
-        <View style={styles.statsContainer}>
-          <View style={styles.statItem}>
-            <Text style={styles.statValue}>{score}</Text>
-            <Text style={styles.statLabel}>Found</Text>
-          </View>
-          <View style={styles.statItem}>
-            <Text style={styles.statValue}>{moves}</Text>
-            <Text style={styles.statLabel}>Moves</Text>
-          </View>
-          <View style={styles.statItem}>
-            <TouchableOpacity 
-              style={styles.totalContainer}
-              onPress={() => setShowDropdown(!showDropdown)}
-              accessibilityRole="button"
-              accessibilityLabel="Select number of pairs"
-            >
-              <Text style={styles.statValue}>{Math.min(numberOfPairs, allEntries.length)}</Text>
-              <Text style={styles.dropdownArrow}>▼</Text>
-            </TouchableOpacity>
-            <Text style={styles.statLabel}>Total</Text>
-          </View>
-        </View>
-        
-        {/* Dropdown positioned outside stats container */}
-        {showDropdown && (
-          <View style={styles.dropdown}>
-            {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
+            {route?.params?.surprise ? (
               <TouchableOpacity
-                key={num}
-                style={[
-                  styles.dropdownItem,
-                  numberOfPairs === num && styles.dropdownItemSelected
-                ]}
-                onPress={() => {
-                  setNumberOfPairs(num);
-                  setShowDropdown(false);
-                }}
+                style={styles.skipButton}
+                onPress={navigateToRandomNext}
                 accessibilityRole="button"
-                accessibilityLabel={`Select ${num} pairs`}
+                accessibilityLabel="Skip to next game"
               >
-                <Text style={[
-                  styles.dropdownItemText,
-                  numberOfPairs === num && styles.dropdownItemTextSelected
-                ]}>
-                  {num}
-                </Text>
+                <Text style={styles.skipButtonText}>Skip</Text>
               </TouchableOpacity>
-            ))}
+            ) : null}
           </View>
+        </View>
+        
+        {/* Stats Row - Hidden in full screen mode */}
+        {!isFullScreen && (
+          <>
+            <View style={styles.statsContainer}>
+              <View style={styles.statItem}>
+                <Text style={styles.statValue}>{score}</Text>
+                <Text style={styles.statLabel}>Found</Text>
+              </View>
+              <View style={styles.statItem}>
+                <Text style={styles.statValue}>{moves}</Text>
+                <Text style={styles.statLabel}>Moves</Text>
+              </View>
+              <View style={styles.statItem}>
+                <TouchableOpacity 
+                  style={styles.totalContainer}
+                  onPress={() => setShowDropdown(!showDropdown)}
+                  accessibilityRole="button"
+                  accessibilityLabel="Select number of pairs"
+                >
+                  <Text style={styles.statValue}>{Math.min(numberOfPairs, allEntries.length)}</Text>
+                  <Text style={styles.dropdownArrow}>▼</Text>
+                </TouchableOpacity>
+                <Text style={styles.statLabel}>Total</Text>
+              </View>
+            </View>
+            
+            {/* Dropdown positioned outside stats container */}
+            {showDropdown && (
+              <View style={styles.dropdown}>
+                {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
+                  <TouchableOpacity
+                    key={num}
+                    style={[
+                      styles.dropdownItem,
+                      numberOfPairs === num && styles.dropdownItemSelected
+                    ]}
+                    onPress={() => {
+                      setNumberOfPairs(num);
+                      setShowDropdown(false);
+                    }}
+                    accessibilityRole="button"
+                    accessibilityLabel={`Select ${num} pairs`}
+                  >
+                    <Text style={[
+                      styles.dropdownItemText,
+                      numberOfPairs === num && styles.dropdownItemTextSelected
+                    ]}>
+                      {num}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            )}
+          </>
         )}
       </View>
 
@@ -435,6 +454,32 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#64748b',
     fontWeight: '500',
+  },
+  headerButtons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  fullScreenButton: {
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 12,
+    backgroundColor: '#ffffff',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
+    minWidth: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  fullScreenButtonText: {
+    fontSize: 30,
+    fontWeight: '600',
+    color: '#3b82f6',
   },
   skipButton: {
     paddingHorizontal: 16,
