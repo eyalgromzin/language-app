@@ -1,17 +1,8 @@
 3 add report harmful content button for library links / books 
 
-- add approvals like , well done , doing great ... 
-    5 in a row!!
-    youre on fire - when he finishes all lesson without failing .
-    ...
-
 - design landing page again for people that the app is not installed for them 
 
-- surprise me buttoon border should have changing colors animation 
-
-- on 5 correct answers  create 5 streak animation 
-
-- on 10 correct answers create animation also
+- on 2, 5, 10 correct answers show pretty toast 
 
 publish app =======================================================================================================================
 

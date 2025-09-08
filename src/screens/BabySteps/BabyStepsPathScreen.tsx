@@ -406,7 +406,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
       ]}>
         <View style={styles.headerLeft}>
           <Text style={[styles.headerTitle, { color: isDark ? '#f0f0f0' : '#222' }]}>
-            🌟 Baby Steps Path
+            🌟 Baby Steps
           </Text>
           {steps && steps.length > 0 && (
             <Text style={[styles.progressText, { color: isDark ? '#aaa' : '#666' }]}>
@@ -414,14 +414,14 @@ function BabyStepsPathScreen(): React.JSX.Element {
             </Text>
           )}
         </View>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={[styles.clearButton, { backgroundColor: isDark ? '#ff453a' : '#ff3b30' }]}
           onPress={clearProgress}
           accessibilityRole="button"
           accessibilityLabel="Clear progress"
         >
           <Text style={styles.clearButtonText}>🗑️ Clear Progress</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </Animated.View>
 
       <ScrollView contentContainerStyle={{ height: contentHeight }}>
@@ -612,6 +612,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '600',
     marginTop: 2,
+    marginLeft: 5,
   },
   clearButton: {
     paddingVertical: 10,
