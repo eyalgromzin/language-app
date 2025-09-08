@@ -468,7 +468,8 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
   if (!props.embedded && loading) {
     return (
       <View style={styles.centered}>
-        <ActivityIndicator />
+        <ActivityIndicator size="large" color="#3b82f6" />
+        <Text style={styles.loadingText}>Loading practice...</Text>
       </View>
     );
   }
@@ -478,7 +479,8 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
     if (props.embedded) {
       return (
         <View style={styles.centered}>
-          <ActivityIndicator />
+          <ActivityIndicator size="large" color="#3b82f6" />
+          <Text style={styles.loadingText}>Preparing...</Text>
         </View>
       );
     }
@@ -486,8 +488,12 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
   }
 
   return (
-    <View style={{ flex: 1 }}>
-      <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.screenContainer}>
+      <ScrollView 
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}
+        bounces={false}
+      >
         {!props.embedded ? (
           <View style={styles.topRow}>
             <Text style={styles.title}>hearing practice</Text>
@@ -498,7 +504,13 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
         ) : null}
 
         <TouchableOpacity style={styles.speakerCard} onPress={() => speakCurrent(current.word)} accessibilityRole="button" accessibilityLabel="Play word">
-          <Text style={styles.speakerEmoji}>🔊</Text>
+          <View style={styles.speakerIcon}>
+            <View style={styles.speakerWaves}>
+              <View style={[styles.wave, styles.wave1]} />
+              <View style={[styles.wave, styles.wave2]} />
+              <View style={[styles.wave, styles.wave3]} />
+            </View>
+          </View>
           <Text style={styles.speakerText}>Tap to hear</Text>
         </TouchableOpacity>
 
@@ -554,98 +566,202 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
+  screenContainer: {
+    flex: 1,
+    backgroundColor: '#f8fafc',
+  },
   centered: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#f8fafc',
   },
   emptyText: {
-    color: '#666',
+    color: '#64748b',
+    fontSize: 16,
+  },
+  loadingText: {
+    color: '#64748b',
+    fontSize: 16,
+    fontWeight: '500',
+    marginTop: 12,
   },
   container: {
-    padding: 16,
-    gap: 16,
+    padding: 24,
+    gap: 24,
+    backgroundColor: '#f8fafc',
+    minHeight: '100%',
   },
   topRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom: 8,
   },
   title: {
-    fontSize: 18,
-    color: '#666',
-    fontWeight: '600',
-    textTransform: 'lowercase',
+    fontSize: 24,
+    color: '#1e293b',
+    fontWeight: '700',
+    textTransform: 'capitalize',
+    letterSpacing: -0.5,
   },
   skipButton: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: '#e2e8f0',
+    backgroundColor: '#ffffff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
   },
   skipButtonText: {
-    fontWeight: '700',
-    color: '#007AFF',
+    fontWeight: '600',
+    color: '#3b82f6',
+    fontSize: 14,
   },
   speakerCard: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    paddingVertical: 28,
-    paddingHorizontal: 12,
+    borderWidth: 1.5,
+    borderColor: '#e2e8f0',
+    backgroundColor: '#ffffff',
+    borderRadius: 20,
+    paddingVertical: 40,
+    paddingHorizontal: 24,
     alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    elevation: 4,
+    marginVertical: 8,
   },
-  speakerEmoji: {
-    fontSize: 42,
+  speakerIcon: {
+    width: 60,
+    height: 60,
+    marginBottom: 12,
+    position: 'relative',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  speakerBase: {
+    width: 24,
+    height: 18,
+    backgroundColor: '#3b82f6',
+    borderRadius: 2,
+    position: 'absolute',
+    zIndex: 2,
+  },
+  speakerWaves: {
+    position: 'absolute',
+    width: 60,
+    height: 60,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  wave: {
+    position: 'absolute',
+    borderWidth: 2,
+    borderColor: '#3b82f6',
+    borderRadius: 50,
+  },
+  wave1: {
+    width: 30,
+    height: 30,
+    opacity: 0.8,
+  },
+  wave2: {
+    width: 40,
+    height: 40,
+    opacity: 0.6,
+  },
+  wave3: {
+    width: 50,
+    height: 50,
+    opacity: 0.4,
   },
   speakerText: {
-    marginTop: 8,
-    fontSize: 14,
-    color: '#666',
-    fontWeight: '600',
+    fontSize: 16,
+    color: '#64748b',
+    fontWeight: '500',
+    letterSpacing: 0.2,
   },
   optionsWrap: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    rowGap: 10,
+    rowGap: 16,
+    marginTop: 8,
   },
   optionButton: {
     width: '48%',
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
+    borderWidth: 1.5,
+    borderColor: '#e2e8f0',
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    paddingVertical: 16,
+    paddingHorizontal: 16,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.04,
+    shadowRadius: 6,
+    elevation: 2,
   },
   optionButtonCorrect: {
-    backgroundColor: '#e6f7e9',
-    borderColor: '#2e7d32',
+    backgroundColor: '#f0fdf4',
+    borderColor: '#22c55e',
+    shadowColor: '#22c55e',
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 4,
   },
   optionButtonWrong: {
-    backgroundColor: '#ffebee',
-    borderColor: '#e53935',
+    backgroundColor: '#fef2f2',
+    borderColor: '#ef4444',
+    shadowColor: '#ef4444',
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 4,
   },
   optionText: {
     fontSize: 16,
     fontWeight: '600',
+    color: '#1e293b',
+    textAlign: 'center',
+    lineHeight: 22,
   },
   nextButton: {
-    marginTop: 12,
-    backgroundColor: '#007AFF',
-    paddingVertical: 12,
-    borderRadius: 10,
+    marginTop: 20,
+    backgroundColor: '#3b82f6',
+    paddingVertical: 16,
+    borderRadius: 16,
     alignItems: 'center',
+    shadowColor: '#3b82f6',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 4,
   },
   nextButtonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontWeight: '700',
+    fontSize: 16,
+    letterSpacing: 0.3,
   },
-
 });
 
 export default HearingPracticeScreen;
