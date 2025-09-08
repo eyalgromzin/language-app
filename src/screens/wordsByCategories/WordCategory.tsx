@@ -481,30 +481,33 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#F8FAFC' }}>
       <View style={styles.container}>
-      <View style={styles.headerRow}>
-        <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel="Back" activeOpacity={0.7}>
-          <Text style={styles.backText}>‹ Back</Text>
-        </TouchableOpacity>
-        <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1, justifyContent: 'center' }}>
-          <Ionicons 
-            name={getCategoryIcon(displayCategory.emoji, displayCategory.id)} 
-            size={20} 
-            color="#3B82F6" 
-            style={{ marginRight: 8 }}
-          />
-          <Text numberOfLines={1} style={styles.headerTitle}>
-            {getTextInLanguage(displayCategory.name, SOURCE_LANGUAGE) || getTextInLanguage(displayCategory.name, TARGET_LANGUAGE) || displayCategory.id}
-          </Text>
+        <View style={styles.headerRow}>
+          <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel="Back" activeOpacity={0.7}>
+            <View style={styles.backButton}>
+              <Ionicons name="chevron-back" size={20} color="#3B82F6" />
+              <Text style={styles.backText}>Back</Text>
+            </View>
+          </TouchableOpacity>
+          <View style={styles.headerTitleContainer}>
+            <View style={styles.categoryIconContainer}>
+              <Ionicons 
+                name={getCategoryIcon(displayCategory.emoji, displayCategory.id)} 
+                size={24} 
+                color="#3B82F6" 
+              />
+            </View>
+            <Text numberOfLines={1} style={styles.headerTitle}>
+              {getTextInLanguage(displayCategory.name, SOURCE_LANGUAGE) || getTextInLanguage(displayCategory.name, TARGET_LANGUAGE) || displayCategory.id}
+            </Text>
+          </View>
+          <View style={{ width: 80 }} />
         </View>
-        <View style={{ width: 56 }} />
-      </View>
-      {displayCategory.description ? (
-        <Text style={styles.categoryDescription}>
-          {getTextInLanguage(displayCategory.description, TARGET_LANGUAGE) || getTextInLanguage(displayCategory.description, SOURCE_LANGUAGE)}
-        </Text>
-      ) : null}
-
       <ScrollView contentContainerStyle={styles.list}>
+        {displayCategory.description ? (
+          <Text style={styles.categoryDescription}>
+            {getTextInLanguage(displayCategory.description, TARGET_LANGUAGE) || getTextInLanguage(displayCategory.description, SOURCE_LANGUAGE)}
+          </Text>
+        ) : null}
         {displayCategory.items?.map((item) => {
           const source = getTextInLanguage(item.text, SOURCE_LANGUAGE);
           const target = getTextInLanguage(item.text, TARGET_LANGUAGE);

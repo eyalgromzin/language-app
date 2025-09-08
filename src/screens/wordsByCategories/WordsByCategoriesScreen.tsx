@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, BackHandler, SafeAreaView, ActivityIndicator, RefreshControl } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, BackHandler, SafeAreaView, ActivityIndicator, RefreshControl, Animated } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
@@ -244,6 +244,9 @@ function WordsByCategoriesScreen(): React.JSX.Element {
   const { categoriesData, loading, error, isFromCache, refreshCategories } = useWordCategories();
   const { showLoginGate } = useLoginGate();
   const { isAuthenticated } = useAuth();
+  
+  // Animation values for category cards
+  const cardAnimations = React.useRef<Map<string, Animated.Value>>(new Map());
 
   useFocusEffect(
     React.useCallback(() => {
@@ -325,11 +328,38 @@ function WordsByCategoriesScreen(): React.JSX.Element {
     }, [selectedCategory, navigation])
   );
 
+  // Get or create animation value for a category
+  const getCardAnimation = React.useCallback((categoryId: string) => {
+    if (!cardAnimations.current.has(categoryId)) {
+      cardAnimations.current.set(categoryId, new Animated.Value(1));
+    }
+    return cardAnimations.current.get(categoryId)!;
+  }, []);
+
+  // Animate card press
+  const animateCardPress = React.useCallback((categoryId: string, callback: () => void) => {
+    const animValue = getCardAnimation(categoryId);
+    Animated.sequence([
+      Animated.timing(animValue, {
+        toValue: 0.95,
+        duration: 100,
+        useNativeDriver: true,
+      }),
+      Animated.timing(animValue, {
+        toValue: 1,
+        duration: 100,
+        useNativeDriver: true,
+      }),
+    ]).start(callback);
+  }, [getCardAnimation]);
+
   const onOpenCategory = (category: WordCategoryType) => {
     console.log('onOpenCategory called with category:', category);
     console.log('Category items:', category.items);
     console.log('Category items length:', category.items?.length || 0);
-    setSelectedCategory(category);
+    animateCardPress(category.id, () => {
+      setSelectedCategory(category);
+    });
   };
 
   const onBackToCategories = () => {
@@ -461,8 +491,11 @@ function WordsByCategoriesScreen(): React.JSX.Element {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#F8FAFC' }}>
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#3B82F6" />
-          <Text style={styles.loadingText}>Loading categories...</Text>
+          <View style={styles.loadingContent}>
+            <ActivityIndicator size="large" color="#3B82F6" />
+            <Text style={styles.loadingText}>Loading categories...</Text>
+            <Text style={styles.loadingSubtext}>Discovering new vocabulary topics</Text>
+          </View>
         </View>
       </SafeAreaView>
     );
@@ -473,10 +506,17 @@ function WordsByCategoriesScreen(): React.JSX.Element {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#F8FAFC' }}>
         <View style={styles.errorContainer}>
-          <Text style={styles.errorText}>Failed to load categories</Text>
-          <TouchableOpacity style={styles.retryButton} onPress={refreshCategories}>
-            <Text style={styles.retryButtonText}>Retry</Text>
-          </TouchableOpacity>
+          <View style={styles.errorContent}>
+            <Ionicons name="cloud-offline" size={48} color="#94A3B8" style={styles.errorIcon} />
+            <Text style={styles.errorText}>Unable to load categories</Text>
+            <Text style={styles.errorSubtext}>
+              Please check your internet connection and try again
+            </Text>
+            <TouchableOpacity style={styles.retryButton} onPress={refreshCategories}>
+              <Ionicons name="refresh" size={20} color="white" style={{ marginRight: 8 }} />
+              <Text style={styles.retryButtonText}>Try Again</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </SafeAreaView>
     );
@@ -495,7 +535,12 @@ function WordsByCategoriesScreen(): React.JSX.Element {
           />
         }
       >
-        <Text style={styles.screenTitle}>Categories</Text>
+        <View style={styles.headerSection}>
+          <Text style={styles.screenTitle}>Word Categories</Text>
+          <Text style={styles.screenSubtitle}>
+            Explore vocabulary by topic and add words to your personal collection
+          </Text>
+        </View>
         <View style={styles.grid}>
           {categoriesData?.categories && Array.isArray(categoriesData.categories) ? (
             categoriesData.categories.map((cat: WordCategoryType) => {
@@ -523,23 +568,33 @@ function WordsByCategoriesScreen(): React.JSX.Element {
                 ? `${getTextInLanguage(cat.name, SOURCE_LANGUAGE)} • ${getTextInLanguage(cat.name, TARGET_LANGUAGE)}`
                 : undefined;
               return (
-                <TouchableOpacity
+                <Animated.View
                   key={cat.id}
-                  style={styles.gridItem}
-                  onPress={() => onOpenCategory(cat)}
-                  accessibilityRole="button"
-                  accessibilityLabel={title}
-                  activeOpacity={0.7}
+                  style={[
+                    styles.gridItem,
+                    {
+                      transform: [{ scale: getCardAnimation(cat.id) }],
+                    },
+                  ]}
                 >
-                  <Ionicons 
-                    name={getCategoryIcon(cat.emoji, cat.id)} 
-                    size={32} 
-                    color="#3B82F6" 
-                    style={styles.gridIcon}
-                  />
-                  <Text numberOfLines={1} style={styles.gridTitle}>{title}</Text>
-                  {subtitle ? <Text numberOfLines={1} style={styles.gridSubtitle}>{subtitle}</Text> : null}
-                </TouchableOpacity>
+                  <TouchableOpacity
+                    style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
+                    onPress={() => onOpenCategory(cat)}
+                    accessibilityRole="button"
+                    accessibilityLabel={title}
+                    activeOpacity={0.8}
+                  >
+                    <View style={styles.gridIcon}>
+                      <Ionicons 
+                        name={getCategoryIcon(cat.emoji, cat.id)} 
+                        size={28} 
+                        color="#3B82F6" 
+                      />
+                    </View>
+                    <Text numberOfLines={1} style={styles.gridTitle}>{title}</Text>
+                    {subtitle ? <Text numberOfLines={1} style={styles.gridSubtitle}>{subtitle}</Text> : null}
+                  </TouchableOpacity>
+                </Animated.View>
               );
             })
           ) : (
@@ -561,18 +616,29 @@ function WordsByCategoriesScreen(): React.JSX.Element {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
-    gap: 24,
+    padding: 24,
+    // gap: 32,
     backgroundColor: '#F8FAFC',
     minHeight: '100%',
   },
+  headerSection: {
+    marginBottom: 8,
+  },
   screenTitle: {
-    fontSize: 32,
+    fontSize: 36,
     fontWeight: '900',
     color: '#0F172A',
-    letterSpacing: -0.5,
+    letterSpacing: -0.8,
     marginBottom: 8,
     textAlign: 'left',
+    lineHeight: 42,
+  },
+  screenSubtitle: {
+    fontSize: 16,
+    color: '#64748B',
+    fontWeight: '500',
+    lineHeight: 24,
+    letterSpacing: 0.1,
   },
   cacheInfo: {
     fontSize: 14,
@@ -584,97 +650,148 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    rowGap: 16,
+    rowGap: 20,
+    marginTop: 24,
   },
   gridItem: {
     width: '48%',
     backgroundColor: '#FFFFFF',
-    borderRadius: 20,
-    paddingVertical: 24,
-    paddingHorizontal: 16,
+    borderRadius: 24,
+    paddingVertical: 28,
+    paddingHorizontal: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    // Enhanced shadow
+    // Enhanced shadow with more depth
     shadowColor: '#0F172A',
-    shadowOpacity: 0.08,
-    shadowRadius: 16,
-    shadowOffset: { width: 0, height: 4 },
-    elevation: 4,
+    shadowOpacity: 0.12,
+    shadowRadius: 20,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 6,
     // Subtle border for definition
     borderColor: '#F1F5F9',
     borderWidth: 1,
+    // Add subtle gradient effect
+    position: 'relative',
   },
   gridIcon: {
-    marginBottom: 12,
+    marginBottom: 16,
+    // Add subtle background circle for icons
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    backgroundColor: '#F8FAFC',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#3B82F6',
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
   },
   gridTitle: {
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: '800',
     textAlign: 'center',
     color: '#0F172A',
-    letterSpacing: -0.2,
-    lineHeight: 20,
+    letterSpacing: -0.3,
+    lineHeight: 22,
+    marginBottom: 4,
   },
   gridSubtitle: {
-    marginTop: 4,
-    fontSize: 12,
+    fontSize: 13,
     color: '#64748B',
     fontWeight: '500',
     textAlign: 'center',
+    lineHeight: 18,
   },
   headerRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 16,
-    paddingBottom: 16,
+    marginBottom: 20,
+    paddingBottom: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#E2E8F0',
+  },
+  backButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 12,
+    backgroundColor: '#F1F5F9',
   },
   backText: {
     color: '#3B82F6',
     fontWeight: '700',
-    fontSize: 17,
-    width: 60,
+    fontSize: 16,
+    marginLeft: 4,
     letterSpacing: 0.2,
   },
+  headerTitleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
+  },
+  categoryIconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#F8FAFC',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 12,
+    shadowColor: '#3B82F6',
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
+  },
   headerTitle: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: '800',
     color: '#0F172A',
-    letterSpacing: -0.3,
+    letterSpacing: -0.4,
     flex: 1,
     textAlign: 'center',
   },
   categoryDescription: {
     color: '#64748B',
-    marginTop: 8,
-    fontSize: 15,
+    marginTop: 0,
+    marginBottom: 8,
+    fontSize: 16,
     fontWeight: '500',
-    lineHeight: 22,
+    lineHeight: 24,
+    textAlign: 'center',
+    paddingHorizontal: 20,
   },
   list: {
-    gap: 16,
-    paddingTop: 16,
-    paddingBottom: 32,
+    gap: 20,
+    paddingTop: 0,
+    paddingBottom: 100,
+    paddingHorizontal: 4,
   },
   itemCard: {
     backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    paddingVertical: 18,
-    paddingHorizontal: 16,
-    // Enhanced shadow
+    borderRadius: 20,
+    paddingVertical: 20,
+    paddingHorizontal: 24,
+    marginHorizontal: 4,
+    // Enhanced shadow with more depth
     shadowColor: '#0F172A',
-    shadowOpacity: 0.08,
-    shadowRadius: 12,
-    shadowOffset: { width: 0, height: 3 },
-    elevation: 3,
+    shadowOpacity: 0.1,
+    shadowRadius: 16,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 4,
     // Subtle border
     borderColor: '#F1F5F9',
     borderWidth: 1,
+    // Add subtle gradient effect
+    position: 'relative',
   },
   itemHeaderRow: {
-    marginBottom: 8,
+    marginBottom: 12,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -687,30 +804,30 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
   },
   addBtnWrap: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
     backgroundColor: '#3B82F6',
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#3B82F6',
     shadowOpacity: 0.3,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 4 },
-    elevation: 4,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 6,
   },
   addBtnText: {
     color: 'white',
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: '700',
-    lineHeight: 22,
+    lineHeight: 24,
     includeFontPadding: false,
   },
   itemText: {
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: '700',
     color: '#0F172A',
-    lineHeight: 24,
+    lineHeight: 26,
   },
   itemTextFlex: {
     flex: 1,
@@ -754,17 +871,18 @@ const styles = StyleSheet.create({
     fontWeight: '800',
   },
   itemTranslationLine: {
-    marginTop: 6,
+    marginTop: 8,
     color: '#3B82F6',
     fontWeight: '700',
-    fontSize: 16,
+    fontSize: 17,
+    lineHeight: 24,
   },
   itemExample: {
-    marginTop: 8,
+    marginTop: 10,
     color: '#475569',
     fontStyle: 'italic',
-    fontSize: 15,
-    lineHeight: 22,
+    fontSize: 16,
+    lineHeight: 24,
   },
   itemExampleTranslation: {
     color: '#3B82F6',
@@ -776,11 +894,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F8FAFC',
   },
+  loadingContent: {
+    alignItems: 'center',
+    padding: 32,
+  },
   loadingText: {
     marginTop: 20,
-    fontSize: 18,
+    fontSize: 20,
+    color: '#0F172A',
+    fontWeight: '700',
+    textAlign: 'center',
+  },
+  loadingSubtext: {
+    marginTop: 8,
+    fontSize: 16,
     color: '#64748B',
-    fontWeight: '600',
+    fontWeight: '500',
+    textAlign: 'center',
   },
   errorContainer: {
     flex: 1,
@@ -789,35 +919,46 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8FAFC',
     padding: 32,
   },
-  errorText: {
-    fontSize: 18,
-    color: '#475569',
-    textAlign: 'center',
+  errorContent: {
+    alignItems: 'center',
+    maxWidth: 300,
+  },
+  errorIcon: {
     marginBottom: 24,
-    fontWeight: '600',
+  },
+  errorText: {
+    fontSize: 22,
+    color: '#0F172A',
+    textAlign: 'center',
+    marginBottom: 12,
+    fontWeight: '700',
   },
   retryButton: {
     backgroundColor: '#3B82F6',
-    paddingHorizontal: 24,
-    paddingVertical: 14,
-    borderRadius: 12,
+    paddingHorizontal: 28,
+    paddingVertical: 16,
+    borderRadius: 16,
     shadowColor: '#3B82F6',
     shadowOpacity: 0.3,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 4 },
-    elevation: 4,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 6,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 24,
   },
   retryButtonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: '700',
-    letterSpacing: 0.2,
+    letterSpacing: 0.3,
   },
   errorSubtext: {
-    fontSize: 15,
+    fontSize: 16,
     color: '#64748B',
     textAlign: 'center',
-    marginBottom: 24,
+    lineHeight: 24,
     fontWeight: '500',
   },
   // WordCategory specific styles
@@ -851,21 +992,21 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   speakerBtnWrap: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
     backgroundColor: '#F1F5F9',
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 4,
-    shadowOffset: { width: 0, height: 1 },
-    elevation: 1,
+    shadowOpacity: 0.08,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
   },
   itemExampleRow: {
     flexDirection: 'column',
-    gap: 4,
+    gap: 6,
   },
 });
 
