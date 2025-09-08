@@ -1,4 +1,6 @@
-- baby steps runner show missing words screen for a second 
+- baby steps runner shows missing words screen for a second 
+
+- logo 
 
 publish app =======================================================================================================================
 

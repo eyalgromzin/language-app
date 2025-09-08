@@ -385,12 +385,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
     setShowWrongToast(false);
     setShowWrongAnswerDialog(true);
     try { playWrongFeedback(); } catch {}
-    if (props.embedded && props.onFinished) {
-      const t = setTimeout(() => {
-        props.onFinished?.(false);
-      }, 2000); // Increased from 1200 to 2000 to allow toast to show
-      return () => clearTimeout(t as unknown as number);
-    }
+    // Removed automatic timeout - modal will only close when user presses Continue button
   };
 
   const onRemoveWord = (indexToRemove: number) => {
@@ -486,7 +481,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
           visible={showWrongAnswerDialog}
           transparent={true}
           animationType="fade"
-          onRequestClose={() => setShowWrongAnswerDialog(false)}
+          onRequestClose={() => {}} // Prevent closing on back button press
         >
           <View style={styles.modalOverlay}>
             <View style={styles.dialogContainer}>
@@ -595,7 +590,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         visible={showWrongAnswerDialog}
         transparent={true}
         animationType="fade"
-        onRequestClose={() => setShowWrongAnswerDialog(false)}
+        onRequestClose={() => {}} // Prevent closing on back button press
       >
         <View style={styles.modalOverlay}>
           <View style={styles.dialogContainer}>
