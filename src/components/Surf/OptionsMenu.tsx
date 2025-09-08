@@ -8,7 +8,9 @@ interface OptionsMenuProps {
   onSetHomepage: () => void;
   onShowFavourites: () => void;
   onShare: () => void;
+  onReportWebsite: () => void;
   canShare: boolean;
+  canReport: boolean;
   buttonPosition: { x: number; y: number; width: number; height: number } | null;
 }
 
@@ -18,7 +20,9 @@ const OptionsMenu: React.FC<OptionsMenuProps> = ({
   onSetHomepage,
   onShowFavourites,
   onShare,
+  onReportWebsite,
   canShare,
+  canReport,
   buttonPosition,
 }) => {
   if (!visible || !buttonPosition) return null;
@@ -46,6 +50,14 @@ const OptionsMenu: React.FC<OptionsMenuProps> = ({
       onPress: () => {
         onClose();
         onShare();
+      },
+    }] : []),
+    ...(canReport ? [{
+      title: 'Report website',
+      icon: 'flag-outline',
+      onPress: () => {
+        onClose();
+        onReportWebsite();
       },
     }] : []),
   ];

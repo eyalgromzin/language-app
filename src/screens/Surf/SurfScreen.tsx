@@ -194,6 +194,38 @@ function SurfScreen(): React.JSX.Element {
     }
   }, [currentUrl, addressText]);
 
+  const onReportWebsite = React.useCallback(async () => {
+    const targetUrl = currentUrl || addressText;
+    if (!targetUrl || targetUrl === 'about:blank') {
+      if (Platform.OS === 'android') {
+        ToastAndroid.show('No page to report', ToastAndroid.SHORT);
+      } else {
+        Alert.alert('No page to report');
+      }
+      return;
+    }
+
+    try {
+      // Import the API function
+      const { reportWebsite } = await import('../../config/api');
+      await reportWebsite(targetUrl);
+      
+      // Show success dialog with custom message
+      Alert.alert(
+        'Website Reported',
+        "Website reported, we're checking it",
+        [{ text: 'OK', style: 'default' }]
+      );
+    } catch (error) {
+      console.error('Error reporting website:', error);
+      if (Platform.OS === 'android') {
+        ToastAndroid.show('Failed to report website', ToastAndroid.SHORT);
+      } else {
+        Alert.alert('Error', 'Failed to report website');
+      }
+    }
+  }, [currentUrl, addressText]);
+
   return (
     <View style={{ flex: 1 }}>
       <UrlBar
@@ -207,7 +239,9 @@ function SurfScreen(): React.JSX.Element {
         onSetHomepage={promptSetHomepage}
         onShowFavourites={() => setShowFavouritesList(true)}
         onShare={onShareSurfUrl}
+        onReportWebsite={onReportWebsite}
         canShare={!!(currentUrl && currentUrl !== 'about:blank')}
+        canReport={!!(currentUrl && currentUrl !== 'about:blank')}
         canGoBack={canGoBack}
         isFavourite={isFav}
         isAddressFocused={isAddressFocused}

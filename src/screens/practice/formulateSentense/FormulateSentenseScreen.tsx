@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View, NativeModules } from 'react-native';
+import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View, NativeModules, Modal } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
@@ -118,6 +118,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [showFinishedWordAnimation, setShowFinishedWordAnimation] = React.useState<boolean>(false);
+  const [showWrongAnswerDialog, setShowWrongAnswerDialog] = React.useState<boolean>(false);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [fallbackTokens, setFallbackTokens] = React.useState<string[]>([]);
   const [translationsCache, setTranslationsCache] = React.useState<Record<string, string>>({});
@@ -381,7 +382,8 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
       return () => clearTimeout(t as unknown as number);
     }
     setShowCorrectToast(false);
-    setShowWrongToast(true);
+    setShowWrongToast(false);
+    setShowWrongAnswerDialog(true);
     try { playWrongFeedback(); } catch {}
     if (props.embedded && props.onFinished) {
       const t = setTimeout(() => {
@@ -405,6 +407,12 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
     setSelectedIndices([]);
     setShowWrongToast(false);
     setShowCorrectToast(false);
+  };
+
+  const onContinueFromWrongAnswer = () => {
+    setShowWrongAnswerDialog(false);
+    setSelectedIndices([]);
+    prepareRound(entries);
   };
 
   if (!props.embedded && loading) {
@@ -472,6 +480,38 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
           type="success"
           message="Correct!"
         />
+        
+        {/* Wrong Answer Dialog for embedded mode */}
+        <Modal
+          visible={showWrongAnswerDialog}
+          transparent={true}
+          animationType="fade"
+          onRequestClose={() => setShowWrongAnswerDialog(false)}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.dialogContainer}>
+              <Text style={styles.dialogTitle}>Not quite right</Text>
+              <Text style={styles.dialogSubtitle}>The correct answer is:</Text>
+              <View style={styles.correctAnswerContainer}>
+                <Text style={styles.correctAnswerText}>{current?.sentence}</Text>
+              </View>
+              <TouchableOpacity 
+                style={styles.continueButton} 
+                onPress={() => {
+                  setShowWrongAnswerDialog(false);
+                  setSelectedIndices([]);
+                  if (props.onFinished) {
+                    props.onFinished(false);
+                  }
+                }}
+                accessibilityRole="button"
+                accessibilityLabel="Continue"
+              >
+                <Text style={styles.continueButtonText}>Continue</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
       </View>
     );
   }
@@ -549,6 +589,32 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         visible={showFinishedWordAnimation}
         onHide={() => setShowFinishedWordAnimation(false)}
       />
+      
+      {/* Wrong Answer Dialog */}
+      <Modal
+        visible={showWrongAnswerDialog}
+        transparent={true}
+        animationType="fade"
+        onRequestClose={() => setShowWrongAnswerDialog(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.dialogContainer}>
+            <Text style={styles.dialogTitle}>Not quite right</Text>
+            <Text style={styles.dialogSubtitle}>The correct answer is:</Text>
+            <View style={styles.correctAnswerContainer}>
+              <Text style={styles.correctAnswerText}>{current?.sentence}</Text>
+            </View>
+            <TouchableOpacity 
+              style={styles.continueButton} 
+              onPress={onContinueFromWrongAnswer}
+              accessibilityRole="button"
+              accessibilityLabel="Continue to next question"
+            >
+              <Text style={styles.continueButtonText}>Continue</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -668,6 +734,63 @@ const styles = StyleSheet.create({
   resetButtonText: {
     color: '#007AFF',
     fontWeight: '700',
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  dialogContainer: {
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    padding: 24,
+    width: '100%',
+    maxWidth: 400,
+    alignItems: 'center',
+  },
+  dialogTitle: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#d32f2f',
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+  dialogSubtitle: {
+    fontSize: 16,
+    color: '#666',
+    marginBottom: 16,
+    textAlign: 'center',
+  },
+  correctAnswerContainer: {
+    backgroundColor: '#f5f5f5',
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 24,
+    width: '100%',
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+  },
+  correctAnswerText: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#2e7d32',
+    textAlign: 'center',
+    lineHeight: 24,
+  },
+  continueButton: {
+    backgroundColor: '#007AFF',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    minWidth: 120,
+  },
+  continueButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '700',
+    textAlign: 'center',
   },
 
 });

@@ -14,7 +14,9 @@ interface UrlBarProps {
   onSetHomepage: () => void;
   onShowFavourites: () => void;
   onShare: () => void;
+  onReportWebsite: () => void;
   canShare: boolean;
+  canReport: boolean;
   canGoBack: boolean;
   isFavourite: boolean;
   isAddressFocused: boolean;
@@ -35,7 +37,9 @@ const UrlBar: React.FC<UrlBarProps> = ({
   onSetHomepage,
   onShowFavourites,
   onShare,
+  onReportWebsite,
   canShare,
+  canReport,
   canGoBack,
   isFavourite,
   isAddressFocused,
@@ -140,7 +144,9 @@ const UrlBar: React.FC<UrlBarProps> = ({
         onSetHomepage={onSetHomepage}
         onShowFavourites={onShowFavourites}
         onShare={onShare}
+        onReportWebsite={onReportWebsite}
         canShare={canShare}
+        canReport={canReport}
         buttonPosition={optionsButtonPosition}
       />
     </>

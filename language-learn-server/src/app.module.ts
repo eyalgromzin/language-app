@@ -13,6 +13,7 @@ import { BabyStepsModule } from './baby-steps/baby-steps.module';
 import { VideoController } from './video/video.controller';
 import { HarmfulWordsModule } from './harmful-words/harmful-words.module';
 import { DatabaseModule } from './database/database.module';
+import { ReportWebsiteModule } from './report-website/report-website.module';
 import { Language } from './database/entities';
 import { WordCategoriesService } from './word-categories';
 
@@ -21,6 +22,7 @@ import { WordCategoriesService } from './word-categories';
     HarmfulWordsModule, 
     DatabaseModule, 
     BabyStepsModule,
+    ReportWebsiteModule,
     ScheduleModule.forRoot(),
     TypeOrmModule.forFeature([Language])
   ],
