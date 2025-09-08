@@ -349,14 +349,23 @@ function WordsMatchScreen(): React.JSX.Element {
 
   // Additional safety check in case the game somehow ends up with no items
   if (leftItems.length === 0 || rightItems.length === 0) {
+    // Only show NotEnoughWordsMessage if we're not loading and have confirmed there's no data
+    if (!loading && allWords.length === 0) {
+      return (
+        <ScrollView contentContainerStyle={styles.container}>
+          <View style={styles.topRow}>
+            <Text style={styles.title}>match the words to their translations</Text>
+          </View>
+          {renderCountSelector()}
+          <NotEnoughWordsMessage />
+        </ScrollView>
+      );
+    }
+    // Show loading spinner while preparing data
     return (
-      <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.topRow}>
-          <Text style={styles.title}>match the words to their translations</Text>
-        </View>
-        {renderCountSelector()}
-        <NotEnoughWordsMessage />
-      </ScrollView>
+      <View style={styles.centered}>
+        <ActivityIndicator />
+      </View>
     );
   }
 

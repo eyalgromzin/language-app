@@ -523,6 +523,14 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   }
 
   if (!current) {
+    // In embedded mode, show loading spinner while props are being set
+    if (props.embedded) {
+      return (
+        <View style={styles.centered}>
+          <ActivityIndicator />
+        </View>
+      );
+    }
     return <NotEnoughWordsMessage />;
   }
 

@@ -497,7 +497,24 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   }
 
   if (!current || options.length === 0) {
-    return <NotEnoughWordsMessage />;
+    // In embedded mode, show loading spinner while props are being set
+    if (props.embedded) {
+      return (
+        <View style={styles.centered}>
+          <ActivityIndicator />
+        </View>
+      );
+    }
+    // Only show NotEnoughWordsMessage if we're not loading and have confirmed there's no data
+    if (!loading && allEntries.length === 0) {
+      return <NotEnoughWordsMessage />;
+    }
+    // Show loading spinner while preparing data
+    return (
+      <View style={styles.centered}>
+        <ActivityIndicator />
+      </View>
+    );
   }
 
   const correctKey = options.find((o) => o.isCorrect)?.key;
