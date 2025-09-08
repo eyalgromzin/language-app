@@ -223,14 +223,26 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const completeSetup = async () => {
     try {
+      console.log('[Auth] Starting setup completion...');
       await AsyncStorage.setItem('setup.completed', 'true');
-      setAuthState(prev => ({
-        ...prev,
-        isSetupCompleted: true,
-      }));
+      console.log('[Auth] Setup completion flag saved to AsyncStorage');
+      
+      // Clear any existing saved tab and ensure BabySteps is set as the initial tab for new users
+      await AsyncStorage.removeItem('last.active.tab');
+      await AsyncStorage.setItem('last.active.tab', 'BabySteps');
+      console.log('[Auth] Cleared existing tab and set BabySteps as initial tab for new user');
+      
+      setAuthState(prev => {
+        const newState = {
+          ...prev,
+          isSetupCompleted: true,
+        };
+        console.log('[Auth] Auth state updated with setup completed:', newState);
+        return newState;
+      });
       console.log('[Auth] Setup completed successfully');
     } catch (error) {
-      console.log('[Auth] Error completing setup:', error);
+      console.error('[Auth] Error completing setup:', error);
       throw error;
     }
   };

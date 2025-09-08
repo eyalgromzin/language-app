@@ -49,19 +49,49 @@ function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Ele
 
     try {
       setSaving(true);
+      console.log('[OnboardingCompletion] Starting setup completion...');
+      
+      // Show loader for 3 seconds with "Setting up" text
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      
+      console.log('[OnboardingCompletion] Saving languages and settings');
+
+      // Save languages and settings
+      await AsyncStorage.setItem('language.learning', learningLanguage);
+      await AsyncStorage.setItem('language.native', nativeLanguage);
+      await AsyncStorage.setItem('words.removeAfterNCorrect', String(removeAfterCorrect));
+      await AsyncStorage.setItem('words.removeAfterTotalCorrect', String(removeAfterTotalCorrect));
+      
+      // Ensure user is authenticated (auto-authenticate if not already)
       await AsyncStorage.multiSet([
-        ['language.learning', learningLanguage],
-        ['language.native', nativeLanguage],
-        ['words.removeAfterNCorrect', String(removeAfterCorrect)],
-        ['words.removeAfterTotalCorrect', String(removeAfterTotalCorrect)],
+        ['user_logged_in', 'true'],
+        ['user_email', 'auto@user.com'],
+        ['user_name', 'Auto User'],
+        ['user_id', 'auto-user-id'],
       ]);
-      
+
+      console.log('[OnboardingCompletion] Languages and settings saved');
+      console.log('[OnboardingCompletion] Removing temporary items');
+
       // Clean up temporary storage
-      await AsyncStorage.multiRemove(['temp.learningLanguage', 'temp.nativeLanguage']);
+      await AsyncStorage.removeItem('temp.learningLanguage');
+      await AsyncStorage.removeItem('temp.nativeLanguage');
+
+      console.log('[OnboardingCompletion] Temporary storage cleaned up');
       
-      // Use AuthContext to complete setup - this will trigger navigation automatically
+      // Complete setup and navigate directly to MainTabs
+      console.log('[OnboardingCompletion] Calling completeSetup...');
       await completeSetup();
+      console.log('[OnboardingCompletion] Setup completed successfully');
+      
+      // Navigate directly to MainTabs
+      console.log('[OnboardingCompletion] Navigating to MainTabs...');
+      navigation.getParent()?.navigate('Main');
+      
+      // Reset saving state after successful completion
+      setSaving(false);
     } catch (e) {
+      console.error('[OnboardingCompletion] Error during setup completion:', e);
       setSaving(false);
       Alert.alert('Error', 'Failed to save preferences. Please try again.');
     }
@@ -137,7 +167,7 @@ function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Ele
               <Ionicons name="rocket-outline" size={20} color="white" style={styles.buttonIcon} />
             )}
             <Text style={styles.completeButtonText}>
-              {saving ? 'Setting up...' : 'Start Learning'}
+              {saving ? 'Setting up' : 'Start Learning'}
             </Text>
           </Pressable>
         </View>

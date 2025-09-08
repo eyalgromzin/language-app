@@ -35,6 +35,23 @@ function BabyStepsPathScreen(): React.JSX.Element {
   const [translatedTitleById, setTranslatedTitleById] = React.useState<Record<string, string>>({});
   const navigation = useNavigation<any>();
   const { languageMappings } = useLanguageMappings();
+
+  console.log('[BabyStepsPathScreen] Component mounted/rendered with state:', {
+    loading,
+    error,
+    stepsLength: steps?.length || 0,
+    hasSteps: !!steps
+  });
+  
+  // Add useFocusEffect to track when this screen is focused
+  useFocusEffect(
+    React.useCallback(() => {
+      console.log('[BabyStepsPathScreen] Screen focused - user navigated to this tab');
+      return () => {
+        console.log('[BabyStepsPathScreen] Screen unfocused - user navigated away');
+      };
+    }, [])
+  );
   
   // Animation values
   const fadeAnim = React.useRef(new Animated.Value(0)).current;
@@ -86,20 +103,26 @@ function BabyStepsPathScreen(): React.JSX.Element {
     let mounted = true;
     (async () => {
       try {
+        console.log('[BabyStepsPathScreen] Loading baby steps data...');
         const [learningName, nativeName] = await Promise.all([
           AsyncStorage.getItem('language.learning'),
           AsyncStorage.getItem('language.native'),
         ]);
+        console.log('[BabyStepsPathScreen] Languages loaded:', { learningName, nativeName });
         const learningCode = getLangCode(learningName, languageMappings) || 'en';
         const nativeCode = getLangCode(nativeName, languageMappings) || 'en';
+        console.log('[BabyStepsPathScreen] Language codes:', { learningCode, nativeCode });
         // Load steps for current learning language from server only
         try {
           const json: StepsFile = await getBabySteps(learningCode);
           if (!mounted) return;
+          console.log('[BabyStepsPathScreen] Baby steps data loaded:', json);
           if (json && Array.isArray(json.steps) && json.steps.length) {
             setSteps(json.steps);
+            console.log('[BabyStepsPathScreen] Steps set:', json.steps.length, 'steps');
           } else {
             setSteps([]);
+            console.log('[BabyStepsPathScreen] No steps found, setting empty array');
           }
         } catch (error) {
           console.error('Error loading baby steps:', error);
@@ -231,6 +254,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
   };
 
   if (loading) {
+    console.log('[BabyStepsPathScreen] Rendering loading screen');
     return (
       <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#0a0a0a' : '#f8fafc' }]}>
         <View style={styles.loadingContainer}>

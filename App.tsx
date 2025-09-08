@@ -211,16 +211,24 @@ function MainTabs(): React.JSX.Element {
     let isMounted = true;
     (async () => {
       try {
+        // Add a small delay to ensure setup completion has finished
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
         const savedTab = await AsyncStorage.getItem('last.active.tab');
+        console.log('[MainTabs] Saved tab from AsyncStorage:', savedTab);
         if (!isMounted) return;
         const validTabs: Array<keyof RootTabParamList> = ['Surf', 'Video', 'Practice', 'BabySteps', 'Categories', 'Library', 'Books'];
         if (savedTab && validTabs.includes(savedTab as keyof RootTabParamList)) {
+          console.log('[MainTabs] Using saved tab:', savedTab);
           setInitialTabRouteName(savedTab as keyof RootTabParamList);
         } else {
+          console.log('[MainTabs] No valid saved tab, using default: BabySteps');
           setInitialTabRouteName('BabySteps');
         }
-      } catch {
+      } catch (error) {
+        console.error('[MainTabs] Error loading saved tab:', error);
         if (!isMounted) return;
+        console.log('[MainTabs] Error occurred, using default: BabySteps');
         setInitialTabRouteName('BabySteps');
       }
     })();
@@ -229,12 +237,15 @@ function MainTabs(): React.JSX.Element {
     };
   }, []);
 
+  console.log('[MainTabs] Rendering with initialTabRouteName:', initialTabRouteName);
+  
   return (
     <>
       {initialTabRouteName === null ? null : (
       <Tab.Navigator
         initialRouteName={initialTabRouteName}
         screenOptions={({ route, navigation }) => {
+          console.log('[MainTabs] Tab.Navigator screenOptions called for route:', route.name);
           currentTabNavRef.current = navigation;
           return {
             headerShown: true,
@@ -279,6 +290,7 @@ function MainTabs(): React.JSX.Element {
         }}
         screenListeners={({ route }) => ({
           focus: () => {
+            console.log('[MainTabs] Tab focused:', route.name);
             AsyncStorage.setItem('last.active.tab', route.name).catch(() => {});
           },
         })}
@@ -441,8 +453,17 @@ function AppNavigator(): React.JSX.Element {
   const { isLoading, isAuthenticated, isSetupCompleted, hasCheckedAuth } = useAuth();
   const isDarkMode = useColorScheme() === 'dark';
 
+  // Debug logging for navigation state
+  console.log('[AppNavigator] Auth state:', {
+    isLoading,
+    isAuthenticated,
+    isSetupCompleted,
+    hasCheckedAuth
+  });
+
   // Show loading screen while checking authentication or during actual loading
   if (isLoading || !hasCheckedAuth) {
+    console.log('[AppNavigator] Showing loading screen');
     return <LoadingScreen />;
   }
 
@@ -478,24 +499,35 @@ function AppNavigator(): React.JSX.Element {
         {isAuthenticated ? (
           isSetupCompleted ? (
             // Fully authenticated and setup complete - show main app
-            <>
-              <Stack.Screen name="Main" component={MainTabs} />
-              <Stack.Screen name="Settings" component={SettingsScreen} options={{ headerShown: true }} />
-              <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
-              <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words', headerShown: true }} />
-              <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps', headerShown: true }} />
-              <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step', headerShown: true }} />
-              <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us', headerShown: true }} />
-              <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress', headerShown: true }} />
-              <Stack.Screen name="Onboarding" component={OnboardingNavigator} options={{ headerShown: false }} />
-            </>
+            (() => {
+              console.log('[AppNavigator] Showing main app - authenticated and setup complete');
+              return (
+                <>
+                  <Stack.Screen name="Main" component={MainTabs} />
+                  <Stack.Screen name="Settings" component={SettingsScreen} options={{ headerShown: true }} />
+                  <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
+                  <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words', headerShown: true }} />
+                  <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps', headerShown: true }} />
+                  <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step', headerShown: true }} />
+                  <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us', headerShown: true }} />
+                  <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress', headerShown: true }} />
+                  <Stack.Screen name="Onboarding" component={OnboardingNavigator} options={{ headerShown: false }} />
+                </>
+              );
+            })()
           ) : (
             // Authenticated but setup not complete - show onboarding flow
-            <Stack.Screen name="Onboarding" component={OnboardingNavigator} />
+            (() => {
+              console.log('[AppNavigator] Showing onboarding - authenticated but setup not complete');
+              return <Stack.Screen name="Onboarding" component={OnboardingNavigator} />;
+            })()
           )
         ) : (
           // Not authenticated - show login screen only after auth check is complete
-          <Stack.Screen name="Login" component={LoginScreen} />
+          (() => {
+            console.log('[AppNavigator] Showing login screen - not authenticated');
+            return <Stack.Screen name="Login" component={LoginScreen} />;
+          })()
         )}
       </Stack.Navigator>
     </NavigationContainer>

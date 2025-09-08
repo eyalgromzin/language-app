@@ -31,6 +31,8 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
     }
     try {
       setSaving(true);
+      console.log('[StartupScreen] Starting setup completion...');
+      
       await AsyncStorage.multiSet([
         ['language.learning', learningLanguage],
         ['language.native', nativeLanguage],
@@ -38,9 +40,24 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
         ['words.removeAfterTotalCorrect', String(removeAfterTotalCorrect)],
       ]);
       
+      // Ensure user is authenticated (auto-authenticate if not already)
+      await AsyncStorage.multiSet([
+        ['user_logged_in', 'true'],
+        ['user_email', 'auto@user.com'],
+        ['user_name', 'Auto User'],
+        ['user_id', 'auto-user-id'],
+      ]);
+      
+      console.log('[StartupScreen] Languages and settings saved, calling completeSetup...');
+      
       // Use AuthContext to complete setup - this will trigger navigation automatically
       await completeSetup();
+      console.log('[StartupScreen] Setup completed successfully');
+      
+      // Reset saving state after successful completion
+      setSaving(false);
     } catch (e) {
+      console.error('[StartupScreen] Error during setup completion:', e);
       setSaving(false);
       Alert.alert('Error', 'Failed to save preferences. Please try again.');
     }
