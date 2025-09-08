@@ -351,7 +351,7 @@ function MemoryGameScreen(): React.JSX.Element {
           accessibilityRole="button" 
           accessibilityLabel="Restart game"
         >
-          <Text style={styles.resetButtonText}>🔄 New Game</Text>
+           <Text style={styles.resetButtonText}>✨ New Game</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
