@@ -65,13 +65,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
 
   return (
     <>
-      <View id="searchBar">
+      <View style={styles.searchSection}>
         <View style={styles.inputRow}>
           <TextInput
             ref={urlInputRef}
             value={inputUrl}
             onChangeText={onChangeText}
-            placeholder="Search"
+            placeholder="Search..."
+            placeholderTextColor="#94a3b8"
             autoCapitalize="none"
             autoCorrect={false}
             keyboardType={Platform.OS === 'ios' ? 'url' : 'default'}
@@ -110,7 +111,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
             accessibilityLabel={isFavourite ? 'Remove from favourites' : 'Add to favourites'}
             hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
           >
-            <Ionicons name={isFavourite ? 'star' : 'star-outline'} size={20} color={isFavourite ? '#f59e0b' : '#007AFF'} />
+            <Ionicons name={isFavourite ? 'star' : 'star-outline'} size={20} color={isFavourite ? '#f59e0b' : '#64748b'} />
           </TouchableOpacity>
           {showAuxButtons ? (
             <>
@@ -121,7 +122,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
                 accessibilityLabel="Open Library"
                 hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
               >
-                <Ionicons name="albums-outline" size={20} color="#007AFF" />
+                <Ionicons name="albums-outline" size={20} color="#64748b" />
               </TouchableOpacity>
               
               <TouchableOpacity
@@ -138,14 +139,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
                 accessibilityLabel="Open menu"
                 hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
               >
-                <Ionicons name="ellipsis-vertical" size={18} color="#007AFF" />
+                <Ionicons name="ellipsis-vertical" size={18} color="#64748b" />
               </TouchableOpacity>
             </>
           ) : null}
         </View>
       </View>
-      
-
     </>
   );
 };
@@ -989,12 +988,13 @@ function VideoScreen(): React.JSX.Element {
 
   return (
     <ScrollView
-      style={{ flex: 1, backgroundColor: 'white' }}
+      style={styles.scrollView}
       contentContainerStyle={styles.container}
       keyboardShouldPersistTaps="always"
       keyboardDismissMode={Platform.OS === 'ios' ? 'interactive' : 'none'}
+      showsVerticalScrollIndicator={false}
     >
-             <SearchBar
+      <SearchBar
          inputUrl={inputUrl}
          onChangeText={setInputUrl}
          onSubmit={handleSubmit}
@@ -1012,7 +1012,7 @@ function VideoScreen(): React.JSX.Element {
            setOptionsButtonPositionGlobal(position);
            setShowOptionsMenuGlobal(true);
          }}
-       />
+      />
       <SuggestionsDropdown
         showHistory={showHistory}
         showFavourites={showFavouritesList}
@@ -1043,7 +1043,10 @@ function VideoScreen(): React.JSX.Element {
           }}
         />
       ) : (
-        <Text style={styles.helper}>Select a video or Enter YouTube link or 11-character ID to load video.</Text>
+        <View style={styles.helperContainer}>
+          <Text style={styles.helper}>Enter a YouTube URL or ID, or search for videos to get started</Text>
+          <Text style={styles.helperSubtext}>Paste any YouTube link or search for content in your learning language</Text>
+        </View>
       )}
 
       {!hidePlayback && (
@@ -1116,139 +1119,186 @@ function VideoScreen(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
+  scrollView: {
+    flex: 1,
+    backgroundColor: '#f8fafc',
+  },
   container: {
-    padding: 20,
-    backgroundColor: '#f8f9fa',
+    padding: 24,
+    backgroundColor: '#f8fafc',
     minHeight: '100%',
+    paddingBottom: 40,
+  },
+  searchSection: {
+    marginBottom: 24,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#1e293b',
+    marginBottom: 16,
+    letterSpacing: -0.5,
   },
   label: {
-    fontSize: 15,
-    color: '#374151',
-    marginBottom: 10,
+    fontSize: 16,
+    color: '#1a202c',
+    marginBottom: 12,
     fontWeight: '600',
+    letterSpacing: 0.2,
   },
   input: {
-    borderWidth: 2,
-    borderColor: '#e5e7eb',
-    borderRadius: 12,
-    paddingHorizontal: 16,
-    paddingVertical: 14,
+    borderWidth: 1.5,
+    borderColor: '#e2e8f0',
+    borderRadius: 14,
+    paddingHorizontal: 18,
+    paddingVertical: 16,
     fontSize: 16,
     marginBottom: 0,
     backgroundColor: '#ffffff',
+    color: '#2d3748',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 1,
     },
-    shadowOpacity: 0.05,
-    shadowRadius: 4,
-    elevation: 2,
+    shadowOpacity: 0.04,
+    shadowRadius: 3,
+    elevation: 1,
   },
   inputRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: 20,
     backgroundColor: '#ffffff',
-    borderRadius: 16,
-    padding: 8,
+    borderRadius: 18,
+    padding: 6,
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 4,
-  },
-  libraryBtn: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    borderWidth: 2,
-    borderColor: '#3b82f6',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: 8,
-    backgroundColor: '#ffffff',
-    shadowColor: '#3b82f6',
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
+    shadowOpacity: 0.06,
+    shadowRadius: 6,
     elevation: 3,
+    borderWidth: 1,
+    borderColor: '#f1f5f9',
   },
-  goButton: {
-    marginLeft: 12,
-    backgroundColor: '#FF0000',
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    borderRadius: 12,
-    shadowColor: '#FF0000',
+  libraryBtn: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    borderWidth: 1.5,
+    borderColor: '#e2e8f0',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 6,
+    backgroundColor: '#ffffff',
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 1,
     },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 6,
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 2,
+  },
+  libraryBtnPressed: {
+    backgroundColor: '#f8fafc',
+    borderColor: '#cbd5e1',
+    transform: [{ scale: 0.95 }],
+  },
+  goButton: {
+    marginLeft: 8,
+    backgroundColor: '#dc2626',
+    paddingHorizontal: 20,
+    paddingVertical: 14,
+    borderRadius: 14,
+    shadowColor: '#dc2626',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 6,
+    elevation: 4,
+  },
+  goButtonPressed: {
+    backgroundColor: '#b91c1c',
+    transform: [{ scale: 0.98 }],
+    shadowOpacity: 0.15,
   },
   goButtonText: {
     color: '#ffffff',
     fontSize: 16,
-    fontWeight: '700',
+    fontWeight: '600',
     textAlign: 'center',
+    letterSpacing: 0.3,
+  },
+  helperContainer: {
+    alignItems: 'center',
+    marginTop: 0,
+    marginBottom: 32,
+    paddingHorizontal: 24,
   },
   helper: {
-    color: '#6b7280',
-    fontSize: 15,
+    color: '#475569',
+    fontSize: 16,
     textAlign: 'center',
-    marginVertical: 20,
-    paddingHorizontal: 20,
-    lineHeight: 22,
+    lineHeight: 24,
+    fontWeight: '500',
+    marginBottom: 8,
+  },
+  helperSubtext: {
+    color: '#94a3b8',
+    fontSize: 14,
+    textAlign: 'center',
+    lineHeight: 20,
+    fontWeight: '400',
+    maxWidth: 280,
   },
   transcriptBox: {
-    borderWidth: 2,
-    borderColor: '#e5e7eb',
-    borderRadius: 16,
-    padding: 16,
-    maxHeight: 230,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    borderRadius: 18,
+    padding: 20,
+    maxHeight: 240,
     backgroundColor: '#ffffff',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 1,
     },
-    shadowOpacity: 0.05,
-    shadowRadius: 4,
+    shadowOpacity: 0.04,
+    shadowRadius: 3,
     elevation: 2,
   },
   transcriptLine: {
     fontSize: 16,
-    color: '#1f2937',
-    lineHeight: 24,
-    marginBottom: 8,
+    color: '#2d3748',
+    lineHeight: 26,
+    marginBottom: 10,
+    fontWeight: '400',
   },
   transcriptLineActive: {
-    color: '#3b82f6',
-    fontWeight: '700',
-    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-    borderRadius: 8,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
+    color: '#2563eb',
+    fontWeight: '600',
+    backgroundColor: 'rgba(37, 99, 235, 0.08)',
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
   },
   transcriptWordSelected: {
-    backgroundColor: 'rgba(255, 193, 7, 0.9)',
-    borderRadius: 4,
-    paddingHorizontal: 2,
+    backgroundColor: 'rgba(245, 158, 11, 0.15)',
+    borderRadius: 6,
+    paddingHorizontal: 4,
+    paddingVertical: 2,
   },
   transcriptTime: {
-    color: '#6b7280',
+    color: '#64748b',
     fontSize: 13,
-    marginBottom: 4,
+    marginBottom: 6,
     fontWeight: '500',
+    letterSpacing: 0.2,
   },
 });
 
