@@ -1,9 +1,11 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
+import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View, TouchableOpacity, Alert, Dimensions } from 'react-native';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
 import { WordEntry } from '../../types/words';
 import linkingService from '../../services/linkingService';
+
+const { width } = Dimensions.get('window');
 
 function MyWordsScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
@@ -143,110 +145,153 @@ function MyWordsScreen(): React.JSX.Element {
     const id = getItemId(item, index);
     const isExpanded = !!expanded[id];
     const toggleExpanded = () => setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
+    
+    const totalProgress = Object.values(item.numberOfCorrectAnswers || {}).reduce((sum, val) => sum + val, 0);
+    
     return (
-      <View style={styles.itemRow}>
-        <View style={styles.itemHeader}>
-          <Text style={styles.itemWord} numberOfLines={1}>{item.word}</Text>
-          <View style={styles.buttonContainer}>
+      <View style={styles.wordCard}>
+        <View style={styles.cardHeader}>
+          <View style={styles.wordInfo}>
+            <Text style={styles.wordText} numberOfLines={1}>{item.word}</Text>
+            {/* {item.addedAt && (
+              <Text style={styles.addedDate}>
+                {new Date(item.addedAt).toLocaleDateString()}
+              </Text>
+            )} */}
+          </View>
+          <View style={styles.actionButtons}>
             <TouchableOpacity
               onPress={() => shareWord(item)}
-              style={styles.shareButton}
+              style={styles.actionButton}
               accessibilityRole="button"
               accessibilityLabel={`Share ${item.word}`}
             >
-              <Text style={styles.shareButtonText}>↗</Text>
+              <Text style={styles.shareIcon}>↗</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => confirmDeleteWord(item)}
-              style={styles.deleteButton}
+              style={[styles.actionButton, styles.deleteButton]}
               accessibilityRole="button"
               accessibilityLabel={`Delete ${item.word}`}
             >
-              <Text style={styles.deleteButtonText}>✕</Text>
+              <Text style={styles.deleteIcon}>✕</Text>
             </TouchableOpacity>
           </View>
         </View>
-        {item.translation ? (
-          <Text style={styles.itemTranslation} numberOfLines={3}>{item.translation}</Text>
-        ) : null}
-        {item.sentence ? (
-          <Text style={styles.itemSentence} numberOfLines={3}>{item.sentence}</Text>
-        ) : null}
+        
+        <View style={styles.cardContent}>
+          {item.translation ? (
+            <View style={styles.translationContainer}>
+              {/* <Text style={styles.translationLabel}>Translation</Text> */}
+              <Text style={styles.translationText} numberOfLines={3}>{item.translation}</Text>
+            </View>
+          ) : null}
+          
+          {item.sentence ? (
+            <View style={styles.sentenceContainer}>
+              <Text style={styles.sentenceLabel}>Example</Text>
+              <Text style={styles.sentenceText} numberOfLines={3}>{item.sentence}</Text>
+            </View>
+          ) : null}
+        </View>
 
-        <View style={styles.progressTopDivider} />
-        <TouchableOpacity
-          onPress={toggleExpanded}
-          style={styles.progressHeader}
-          accessibilityRole="button"
-          accessibilityLabel={isExpanded ? 'Hide progress' : 'Show progress'}
-        >
-          <Text style={styles.progressHeaderText}>Progress</Text>
-          <Text style={styles.progressCaret}>{isExpanded ? '▾' : '▸'}</Text>
-        </TouchableOpacity>
+        <View style={styles.progressSection}>
+          <TouchableOpacity
+            onPress={toggleExpanded}
+            style={styles.progressToggle}
+            accessibilityRole="button"
+            accessibilityLabel={isExpanded ? 'Hide progress' : 'Show progress'}
+          >
+            <View style={styles.progressHeader}>
+              <Text style={styles.progressTitle}>Learning Progress</Text>
+              <View style={styles.progressSummary}>
+                <Text style={styles.progressTotal}>{totalProgress} total</Text>
+                <Text style={styles.progressCaret}>{isExpanded ? '▼' : '▶'}</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
 
-        {isExpanded ? (
-          <View style={styles.progressPanel}>
-            <View style={styles.progressRow}>
-              <Text style={styles.progressLabel}>Missing letters</Text>
-              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.missingLetters ?? 0}</Text>
+          {isExpanded && (
+            <View style={styles.progressDetails}>
+              <View style={styles.progressGrid}>
+                <View style={styles.progressItem}>
+                  <Text style={styles.progressItemLabel}>Missing Letters</Text>
+                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.missingLetters ?? 0}</Text>
+                </View>
+                <View style={styles.progressItem}>
+                  <Text style={styles.progressItemLabel}>Missing Words</Text>
+                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.missingWords ?? 0}</Text>
+                </View>
+                <View style={styles.progressItem}>
+                  <Text style={styles.progressItemLabel}>Choose Translation</Text>
+                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.chooseTranslation ?? 0}</Text>
+                </View>
+                <View style={styles.progressItem}>
+                  <Text style={styles.progressItemLabel}>Choose Word</Text>
+                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.chooseWord ?? 0}</Text>
+                </View>
+                <View style={styles.progressItem}>
+                  <Text style={styles.progressItemLabel}>Memory Game</Text>
+                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.memoryGame ?? 0}</Text>
+                </View>
+                <View style={styles.progressItem}>
+                  <Text style={styles.progressItemLabel}>Write Translation</Text>
+                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.writeTranslation ?? 0}</Text>
+                </View>
+                <View style={styles.progressItem}>
+                  <Text style={styles.progressItemLabel}>Write Word</Text>
+                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.writeWord ?? 0}</Text>
+                </View>
+              </View>
             </View>
-            <View style={styles.progressRow}>
-              <Text style={styles.progressLabel}>Missing words</Text>
-              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.missingWords ?? 0}</Text>
-            </View>
-            <View style={styles.progressRow}>
-              <Text style={styles.progressLabel}>Choose translation</Text>
-              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.chooseTranslation ?? 0}</Text>
-            </View>
-            <View style={styles.progressRow}>
-              <Text style={styles.progressLabel}>Choose word</Text>
-              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.chooseWord ?? 0}</Text>
-            </View>
-            <View style={styles.progressRow}>
-              <Text style={styles.progressLabel}>Memory game</Text>
-              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.memoryGame ?? 0}</Text>
-            </View>
-            <View style={styles.progressRow}>
-              <Text style={styles.progressLabel}>Write translation</Text>
-              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.writeTranslation ?? 0}</Text>
-            </View>
-            <View style={styles.progressRow}>
-              <Text style={styles.progressLabel}>Write word</Text>
-              <Text style={styles.progressValue}>{item.numberOfCorrectAnswers?.writeWord ?? 0}</Text>
-            </View>
-          </View>
-        ) : null}
+          )}
+        </View>
       </View>
     );
   };
 
   return (
     <View style={styles.container}>
-      <View style={styles.headerRow}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>My words</Text>
-          {!loading && (
-            <Text style={styles.wordCount}>
-              {words.length} {words.length === 1 ? 'word' : 'words'}
-            </Text>
-          )}
+      <View style={styles.headerSection}>
+        <View style={styles.headerContent}>
+          <View style={styles.titleSection}>
+            <Text style={styles.title}>My Words</Text>
+            {!loading && (
+              <View style={styles.statsContainer}>
+                <View style={styles.statBadge}>
+                  <Text style={styles.statNumber}>{words.length}</Text>
+                  <Text style={styles.statLabel}>{words.length === 1 ? 'word' : 'words'}</Text>
+                </View>
+              </View>
+            )}
+          </View>
+          {!loading && words.length > 0 ? (
+            <TouchableOpacity
+              onPress={confirmClearAll}
+              style={styles.clearAllButton}
+              accessibilityRole="button"
+              accessibilityLabel="Clear all words"
+            >
+              <Text style={styles.clearAllButtonText}>Clear All</Text>
+            </TouchableOpacity>
+          ) : null}
         </View>
-        {!loading && words.length > 0 ? (
-          <TouchableOpacity
-            onPress={confirmClearAll}
-            style={styles.clearBtn}
-            accessibilityRole="button"
-            accessibilityLabel="Clear all words"
-          >
-            <Text style={styles.clearBtnText}>Clear all</Text>
-          </TouchableOpacity>
-        ) : null}
       </View>
       {loading ? (
-        <View style={styles.loaderWrap}><ActivityIndicator size="small" color="#555" /></View>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#3B82F6" />
+          <Text style={styles.loadingText}>Loading your words...</Text>
+        </View>
       ) : words.length === 0 ? (
-        <View style={styles.emptyWrap}>
-          <Text style={styles.emptyText}>No words saved yet. Add words from the Surf tab.</Text>
+        <View style={styles.emptyState}>
+          <View style={styles.emptyIcon}>
+            <Text style={styles.emptyIconText}>📚</Text>
+          </View>
+          <Text style={styles.emptyTitle}>No Words Yet</Text>
+          <Text style={styles.emptyDescription}>
+            Start building your vocabulary by adding words from the Surf tab. 
+            Your saved words will appear here with progress tracking.
+          </Text>
         </View>
       ) : (
         <FlatList
@@ -254,7 +299,15 @@ function MyWordsScreen(): React.JSX.Element {
           keyExtractor={(item, index) => getItemId(item, index)}
           renderItem={renderItem}
           contentContainerStyle={styles.listContent}
-          refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+          refreshControl={
+            <RefreshControl 
+              refreshing={refreshing} 
+              onRefresh={onRefresh}
+              tintColor="#3B82F6"
+              colors={['#3B82F6']}
+            />
+          }
+          showsVerticalScrollIndicator={false}
         />
       )}
     </View>
@@ -264,170 +317,290 @@ function MyWordsScreen(): React.JSX.Element {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    backgroundColor: '#F8FAFC',
   },
-  headerRow: {
+  
+  // Header Styles
+  headerSection: {
+    backgroundColor: '#FFFFFF',
+    paddingTop: 20,
+    paddingBottom: 16,
+    paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#E2E8F0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  headerContent: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 8,
   },
-  titleContainer: {
+  titleSection: {
     flex: 1,
   },
   title: {
-    fontSize: 24,
-    fontWeight: '600',
-    marginBottom: 4,
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#1E293B',
+    marginBottom: 8,
   },
-  wordCount: {
+  statsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  statBadge: {
+    backgroundColor: '#3B82F6',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+  statNumber: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#FFFFFF',
+  },
+  statLabel: {
     fontSize: 14,
-    color: '#666',
+    fontWeight: '500',
+    color: '#FFFFFF',
+  },
+  clearAllButton: {
+    backgroundColor: '#FEF2F2',
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#FECACA',
+  },
+  clearAllButtonText: {
+    color: '#DC2626',
+    fontWeight: '600',
+    fontSize: 14,
+  },
+  
+  // Loading State
+  loadingContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 40,
+  },
+  loadingText: {
+    marginTop: 16,
+    fontSize: 16,
+    color: '#64748B',
     fontWeight: '500',
   },
-  clearBtn: {
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 8,
-    backgroundColor: '#f3f4f6',
-    borderWidth: 1,
-    borderColor: '#e5e7eb',
+  
+  // Empty State
+  emptyState: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 40,
   },
-  clearBtnText: {
-    color: '#b91c1c',
+  emptyIcon: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: '#F1F5F9',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 24,
+  },
+  emptyIconText: {
+    fontSize: 32,
+  },
+  emptyTitle: {
+    fontSize: 24,
     fontWeight: '700',
-  },
-  loaderWrap: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  emptyWrap: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 24,
-  },
-  emptyText: {
+    color: '#1E293B',
+    marginBottom: 12,
     textAlign: 'center',
-    color: '#666',
   },
+  emptyDescription: {
+    fontSize: 16,
+    color: '#64748B',
+    textAlign: 'center',
+    lineHeight: 24,
+  },
+  
+  // List Styles
   listContent: {
+    padding: 20,
+    paddingBottom: 40,
+  },
+  
+  // Word Card Styles
+  wordCard: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    marginBottom: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    elevation: 4,
+    borderWidth: 1,
+    borderColor: '#E2E8F0',
+  },
+  cardHeader: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    padding: 20,
     paddingBottom: 16,
   },
-  itemRow: {
-    borderWidth: 1,
-    borderColor: '#e5e5e5',
-    borderRadius: 10,
-    padding: 12,
-    marginBottom: 12,
-    backgroundColor: 'white',
+  wordInfo: {
+    flex: 1,
+    marginRight: 12,
   },
-  itemHeader: {
-    flexDirection: 'row',
-    alignItems: 'baseline',
-    justifyContent: 'space-between',
+  wordText: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#1E293B',
     marginBottom: 4,
   },
-  buttonContainer: {
+  addedDate: {
+    fontSize: 12,
+    color: '#94A3B8',
+    fontWeight: '500',
+  },
+  actionButtons: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  actionButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#F0F9FF',
+    borderWidth: 1,
+    borderColor: '#BAE6FD',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  deleteButton: {
+    backgroundColor: '#FEF2F2',
+    borderColor: '#FECACA',
+  },
+  shareIcon: {
+    fontSize: 16,
+    color: '#0284C7',
+    fontWeight: '600',
+  },
+  deleteIcon: {
+    fontSize: 16,
+    color: '#DC2626',
+    fontWeight: '600',
+  },
+  
+  // Card Content
+  cardContent: {
+    paddingHorizontal: 20,
+    paddingBottom: 16,
+  },
+  translationContainer: {
+    marginBottom: 12,
+  },
+  translationLabel: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: '#64748B',
+    marginBottom: 4,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  translationText: {
+    fontSize: 16,
+    color: '#334155',
+    lineHeight: 22,
+  },
+  sentenceContainer: {
+    marginBottom: 4,
+  },
+  sentenceLabel: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: '#64748B',
+    marginBottom: 4,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  sentenceText: {
+    fontSize: 14,
+    color: '#64748B',
+    lineHeight: 20,
+    fontStyle: 'italic',
+  },
+  
+  // Progress Section
+  progressSection: {
+    borderTopWidth: 1,
+    borderTopColor: '#E2E8F0',
+  },
+  progressToggle: {
+    padding: 20,
+  },
+  progressHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  progressTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#1E293B',
+  },
+  progressSummary: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
   },
-  itemWord: {
-    fontSize: 16,
-    fontWeight: '700',
-    flexShrink: 1,
-    marginRight: 8,
-  },
-  itemDate: {
-    fontSize: 12,
-    color: '#999',
-    marginLeft: 8,
-  },
-  itemTranslation: {
-    fontSize: 14,
-    color: '#333',
-    marginBottom: 6,
-  },
-  itemSentence: {
-    fontSize: 13,
-    color: '#666',
-  },
-  progressHeader: {
-    marginTop: 8,
-    paddingVertical: 8,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  progressHeaderText: {
+  progressTotal: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#222',
+    color: '#3B82F6',
   },
   progressCaret: {
-    fontSize: 16,
-    color: '#666',
-    marginLeft: 8,
+    fontSize: 14,
+    color: '#64748B',
   },
-  progressPanel: {
-    marginTop: 4,
-    borderWidth: 1,
-    borderColor: '#eee',
-    backgroundColor: '#fafafa',
-    borderRadius: 8,
-    padding: 10,
-    gap: 6,
+  progressDetails: {
+    paddingHorizontal: 20,
+    paddingBottom: 20,
   },
-  progressRow: {
+  progressGrid: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    gap: 12,
   },
-  progressTopDivider: {
-    marginTop: 8,
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: '#c4c2c2',
+  progressItem: {
+    backgroundColor: '#F8FAFC',
+    padding: 12,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#E2E8F0',
+    minWidth: (width - 80) / 2,
+    flex: 1,
   },
-  progressLabel: {
-    color: '#555',
+  progressItemLabel: {
+    fontSize: 12,
+    fontWeight: '500',
+    color: '#64748B',
+    marginBottom: 4,
   },
-  progressValue: {
+  progressItemValue: {
+    fontSize: 18,
     fontWeight: '700',
-    color: '#111',
-  },
-  shareButton: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 12,
-    backgroundColor: '#f0f9ff',
-    borderWidth: 1,
-    borderColor: '#bae6fd',
-    minWidth: 28,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  shareButtonText: {
-    fontSize: 14,
-    color: '#0284c7',
-    fontWeight: '600',
-  },
-  deleteButton: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 12,
-    backgroundColor: '#fef2f2',
-    borderWidth: 1,
-    borderColor: '#fecaca',
-    minWidth: 28,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  deleteButtonText: {
-    fontSize: 14,
-    color: '#dc2626',
-    fontWeight: '600',
+    color: '#1E293B',
   },
 });
 
