@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -6,11 +6,15 @@ import {
   ScrollView,
   TouchableOpacity,
   ActivityIndicator,
+  Animated,
+  Dimensions,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { WordEntry } from '../../types/words';
+
+const { width } = Dimensions.get('window');
 
 type ProgressStats = {
   totalWords: number;
@@ -26,6 +30,11 @@ export default function ProgressScreen(): React.JSX.Element {
   const [stats, setStats] = useState<ProgressStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  
+  // Animation values
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const slideAnim = useRef(new Animated.Value(50)).current;
+  const progressAnim = useRef(new Animated.Value(0)).current;
 
   const loadStats = async () => {
     try {
@@ -108,6 +117,15 @@ export default function ProgressScreen(): React.JSX.Element {
         practicesFinished,
         loadTime,
       });
+      
+      // Animate progress bar
+      const learningProgress = totalWords > 0 ? (wordsLearned / totalWords) * 100 : 0;
+      Animated.timing(progressAnim, {
+        toValue: learningProgress,
+        duration: 1000,
+        useNativeDriver: false,
+      }).start();
+      
     } catch (error) {
       console.error('Error loading progress stats:', error);
       setStats({
@@ -130,6 +148,20 @@ export default function ProgressScreen(): React.JSX.Element {
 
   useEffect(() => {
     loadStats();
+    
+    // Animate screen entrance
+    Animated.parallel([
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 800,
+        useNativeDriver: true,
+      }),
+      Animated.timing(slideAnim, {
+        toValue: 0,
+        duration: 800,
+        useNativeDriver: true,
+      }),
+    ]).start();
   }, []);
 
   if (loading) {
@@ -155,159 +187,338 @@ export default function ProgressScreen(): React.JSX.Element {
   const learningProgress = stats.totalWords > 0 ? (stats.wordsLearned / stats.totalWords) * 100 : 0;
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      <View style={styles.header}>
-        <Ionicons name="stats-chart" size={24} color="#007AFF" />
-        <Text style={styles.headerTitle}>Your Progress</Text>
-        <TouchableOpacity onPress={handleRefresh} disabled={refreshing}>
-          <Ionicons 
-            name="refresh" 
-            size={24} 
-            color={refreshing ? "#ccc" : "#007AFF"} 
-          />
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.progressOverview}>
-        <Text style={styles.overviewTitle}>Learning Progress</Text>
-        <View style={styles.progressBar}>
-          <View style={[styles.progressFill, { width: `${learningProgress}%` }]} />
-        </View>
-        <Text style={styles.progressPercentage}>{learningProgress.toFixed(1)}%</Text>
-      </View>
-
-      <View style={styles.statsGrid}>
-        <View style={styles.statCard}>
-          <View style={styles.statIconContainer}>
-            <Ionicons name="library" size={28} color="#FF6B6B" />
+    <Animated.View 
+      style={[
+        styles.container,
+        {
+          opacity: fadeAnim,
+          transform: [{ translateY: slideAnim }],
+        },
+      ]}
+    >
+      <ScrollView 
+        style={styles.scrollView} 
+        contentContainerStyle={styles.contentContainer}
+        showsVerticalScrollIndicator={false}
+      >
+        {/* Header Section */}
+        <View style={styles.header}>
+          <View style={styles.headerLeft}>
+            <View style={styles.headerIconContainer}>
+              <Ionicons name="analytics" size={28} color="#6366F1" />
+            </View>
+            <View>
+              <Text style={styles.headerTitle}>Progress Dashboard</Text>
+              <Text style={styles.headerSubtitle}>Track your learning journey</Text>
+            </View>
           </View>
-          <Text style={styles.statNumber}>{stats.totalWords}</Text>
-          <Text style={styles.statLabel}>Words Added</Text>
+          <TouchableOpacity 
+            style={[styles.refreshButton, refreshing && styles.refreshButtonDisabled]} 
+            onPress={handleRefresh} 
+            disabled={refreshing}
+          >
+            <Ionicons 
+              name="refresh" 
+              size={20} 
+              color={refreshing ? "#9CA3AF" : "#6366F1"} 
+            />
+          </TouchableOpacity>
         </View>
 
-        <View style={styles.statCard}>
-          <View style={styles.statIconContainer}>
-            <Ionicons name="checkmark-circle" size={28} color="#4ECDC4" />
+        {/* Progress Overview Card */}
+        <View style={styles.progressCard}>
+          <View style={styles.progressHeader}>
+            <Text style={styles.progressTitle}>Learning Progress</Text>
+            <Text style={styles.progressSubtitle}>
+              {stats.wordsLearned} of {stats.totalWords} words mastered
+            </Text>
           </View>
-          <Text style={styles.statNumber}>{stats.wordsLearned}</Text>
-          <Text style={styles.statLabel}>Words Mastered</Text>
-        </View>
-
-        <View style={styles.statCard}>
-          <View style={styles.statIconContainer}>
-            <Ionicons name="chatbubble-ellipses" size={28} color="#45B7D1" />
+          
+          <View style={styles.progressContainer}>
+            <View style={styles.progressBarContainer}>
+              <Animated.View 
+                style={[
+                  styles.progressBar,
+                  {
+                    width: progressAnim.interpolate({
+                      inputRange: [0, 100],
+                      outputRange: ['0%', '100%'],
+                      extrapolate: 'clamp',
+                    }),
+                  },
+                ]} 
+              />
+            </View>
+            <Text style={styles.progressPercentage}>{learningProgress.toFixed(1)}%</Text>
           </View>
-          <Text style={styles.statNumber}>{stats.sentencesLearned}</Text>
-          <Text style={styles.statLabel}>Sentences Mastered</Text>
-        </View>
-
-        <View style={styles.statCard}>
-          <View style={styles.statIconContainer}>
-            <Ionicons name="trophy" size={28} color="#FFA726" />
+          
+          <View style={styles.progressStats}>
+            <View style={styles.progressStatItem}>
+              <Text style={styles.progressStatNumber}>{stats.wordsLearned}</Text>
+              <Text style={styles.progressStatLabel}>Mastered</Text>
+            </View>
+            <View style={styles.progressStatDivider} />
+            <View style={styles.progressStatItem}>
+              <Text style={styles.progressStatNumber}>{stats.totalWords - stats.wordsLearned}</Text>
+              <Text style={styles.progressStatLabel}>Remaining</Text>
+            </View>
           </View>
-          <Text style={styles.statNumber}>{stats.practicesFinished}</Text>
-          <Text style={styles.statLabel}>Practices Finished</Text>
         </View>
-      </View>
 
-      <View style={styles.footer}>
-        <Text style={styles.lastUpdated}>Last updated: {stats.loadTime}</Text>
-      </View>
-    </ScrollView>
+        {/* Stats Grid */}
+        <View style={styles.statsSection}>
+          <Text style={styles.sectionTitle}>Learning Statistics</Text>
+          <View style={styles.statsGrid}>
+            <View style={[styles.statCard, styles.statCardPrimary]}>
+              <View style={styles.statCardHeader}>
+                <View style={[styles.statIconContainer, styles.statIconPrimary]}>
+                  <Ionicons name="library-outline" size={24} color="#FFFFFF" />
+                </View>
+                <Text style={styles.statNumber}>{stats.totalWords}</Text>
+              </View>
+              <Text style={styles.statLabel}>Words Added</Text>
+              <Text style={styles.statDescription}>Total vocabulary collected</Text>
+            </View>
+
+            <View style={[styles.statCard, styles.statCardSuccess]}>
+              <View style={styles.statCardHeader}>
+                <View style={[styles.statIconContainer, styles.statIconSuccess]}>
+                  <Ionicons name="checkmark-circle-outline" size={24} color="#FFFFFF" />
+                </View>
+                <Text style={styles.statNumber}>{stats.wordsLearned}</Text>
+              </View>
+              <Text style={styles.statLabel}>Words Mastered</Text>
+              <Text style={styles.statDescription}>Fully learned vocabulary</Text>
+            </View>
+
+            <View style={[styles.statCard, styles.statCardInfo]}>
+              <View style={styles.statCardHeader}>
+                <View style={[styles.statIconContainer, styles.statIconInfo]}>
+                  <Ionicons name="chatbubble-ellipses-outline" size={24} color="#FFFFFF" />
+                </View>
+                <Text style={styles.statNumber}>{stats.sentencesLearned}</Text>
+              </View>
+              <Text style={styles.statLabel}>Sentences Mastered</Text>
+              <Text style={styles.statDescription}>Contextual understanding</Text>
+            </View>
+
+            <View style={[styles.statCard, styles.statCardWarning]}>
+              <View style={styles.statCardHeader}>
+                <View style={[styles.statIconContainer, styles.statIconWarning]}>
+                  <Ionicons name="trophy-outline" size={24} color="#FFFFFF" />
+                </View>
+                <Text style={styles.statNumber}>{stats.practicesFinished}</Text>
+              </View>
+              <Text style={styles.statLabel}>Practices Completed</Text>
+              <Text style={styles.statDescription}>Total exercises finished</Text>
+            </View>
+          </View>
+        </View>
+
+        {/* Footer */}
+        <View style={styles.footer}>
+          <View style={styles.footerContent}>
+            <Ionicons name="time-outline" size={16} color="#9CA3AF" />
+            <Text style={styles.lastUpdated}>Last updated: {stats.loadTime}</Text>
+          </View>
+        </View>
+      </ScrollView>
+    </Animated.View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#F8FAFC',
+  },
+  scrollView: {
+    flex: 1,
   },
   contentContainer: {
-    padding: 16,
-    paddingBottom: 32,
+    padding: 20,
+    paddingBottom: 40,
   },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#F8FAFC',
   },
   loadingText: {
     marginTop: 16,
     fontSize: 16,
-    color: '#666',
+    color: '#64748B',
+    fontWeight: '500',
   },
   errorContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f8f9fa',
-    padding: 16,
+    backgroundColor: '#F8FAFC',
+    padding: 20,
   },
   errorText: {
     fontSize: 16,
-    color: '#666',
+    color: '#64748B',
     textAlign: 'center',
-    marginBottom: 16,
+    marginBottom: 20,
+    fontWeight: '500',
   },
   retryButton: {
-    backgroundColor: '#007AFF',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 8,
+    backgroundColor: '#6366F1',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 12,
+    shadowColor: '#6366F1',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 6,
   },
   retryButtonText: {
-    color: 'white',
+    color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '600',
   },
+  
+  // Header Styles
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 24,
     justifyContent: 'space-between',
+    marginBottom: 32,
+    paddingTop: 10,
+    paddingHorizontal: 4,
+  },
+  headerLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+    marginRight: 16,
+  },
+  headerIconContainer: {
+    width: 48,
+    height: 48,
+    borderRadius: 16,
+    backgroundColor: '#EEF2FF',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 16,
   },
   headerTitle: {
     fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
-    flex: 1,
-    marginLeft: 12,
+    fontWeight: '700',
+    color: '#1E293B',
+    marginBottom: 2,
   },
-  progressOverview: {
-    backgroundColor: 'white',
+  headerSubtitle: {
+    fontSize: 13,
+    color: '#64748B',
+    fontWeight: '500',
+  },
+  refreshButton: {
+    width: 44,
+    height: 44,
     borderRadius: 12,
-    padding: 20,
-    marginBottom: 24,
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'center',
+    alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    shadowRadius: 8,
+    elevation: 4,
   },
-  overviewTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 16,
+  refreshButtonDisabled: {
+    backgroundColor: '#F1F5F9',
+  },
+  
+  // Progress Card Styles
+  progressCard: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    padding: 24,
+    marginBottom: 32,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08,
+    shadowRadius: 16,
+    elevation: 8,
+  },
+  progressHeader: {
+    marginBottom: 24,
+  },
+  progressTitle: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#1E293B',
+    marginBottom: 4,
+  },
+  progressSubtitle: {
+    fontSize: 14,
+    color: '#64748B',
+    fontWeight: '500',
+  },
+  progressContainer: {
+    marginBottom: 24,
+  },
+  progressBarContainer: {
+    height: 12,
+    backgroundColor: '#E2E8F0',
+    borderRadius: 6,
+    overflow: 'hidden',
+    marginBottom: 12,
   },
   progressBar: {
-    height: 8,
-    backgroundColor: '#e0e0e0',
-    borderRadius: 4,
-    marginBottom: 8,
-    overflow: 'hidden',
-  },
-  progressFill: {
     height: '100%',
-    backgroundColor: '#007AFF',
-    borderRadius: 4,
+    backgroundColor: '#6366F1',
+    borderRadius: 6,
   },
   progressPercentage: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#007AFF',
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#6366F1',
     textAlign: 'right',
+  },
+  progressStats: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  progressStatItem: {
+    alignItems: 'center',
+    flex: 1,
+  },
+  progressStatNumber: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#1E293B',
+    marginBottom: 4,
+  },
+  progressStatLabel: {
+    fontSize: 12,
+    color: '#64748B',
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  progressStatDivider: {
+    width: 1,
+    height: 40,
+    backgroundColor: '#E2E8F0',
+    marginHorizontal: 20,
+  },
+  
+  // Stats Section Styles
+  statsSection: {
+    marginBottom: 32,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#1E293B',
+    marginBottom: 20,
   },
   statsGrid: {
     flexDirection: 'row',
@@ -315,38 +526,94 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   statCard: {
-    backgroundColor: 'white',
-    borderRadius: 12,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
     padding: 20,
     marginBottom: 16,
-    width: '48%',
-    alignItems: 'center',
+    width: (width - 60) / 2,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    shadowOpacity: 0.06,
+    shadowRadius: 12,
+    elevation: 4,
+  },
+  statCardHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
   },
   statIconContainer: {
-    marginBottom: 8,
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 12,
+  },
+  statIconPrimary: {
+    backgroundColor: '#3B82F6',
+  },
+  statIconSuccess: {
+    backgroundColor: '#10B981',
+  },
+  statIconInfo: {
+    backgroundColor: '#06B6D4',
+  },
+  statIconWarning: {
+    backgroundColor: '#F59E0B',
   },
   statNumber: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 4,
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#1E293B',
   },
   statLabel: {
     fontSize: 14,
-    color: '#666',
-    textAlign: 'center',
+    fontWeight: '600',
+    color: '#1E293B',
+    marginBottom: 4,
   },
+  statDescription: {
+    fontSize: 12,
+    color: '#64748B',
+    lineHeight: 16,
+  },
+  
+  // Card Variants
+  statCardPrimary: {
+    borderLeftWidth: 4,
+    borderLeftColor: '#3B82F6',
+  },
+  statCardSuccess: {
+    borderLeftWidth: 4,
+    borderLeftColor: '#10B981',
+  },
+  statCardInfo: {
+    borderLeftWidth: 4,
+    borderLeftColor: '#06B6D4',
+  },
+  statCardWarning: {
+    borderLeftWidth: 4,
+    borderLeftColor: '#F59E0B',
+  },
+  
+  // Footer Styles
   footer: {
-    marginTop: 24,
     alignItems: 'center',
+    paddingTop: 20,
+  },
+  footerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F1F5F9',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
   },
   lastUpdated: {
     fontSize: 12,
-    color: '#999',
+    color: '#64748B',
+    marginLeft: 6,
+    fontWeight: '500',
   },
 });
