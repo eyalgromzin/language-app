@@ -79,6 +79,8 @@ function MemoryGameScreen(): React.JSX.Element {
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [score, setScore] = React.useState<number>(0);
   const [moves, setMoves] = React.useState<number>(0);
+  const [numberOfPairs, setNumberOfPairs] = React.useState<number>(9);
+  const [showDropdown, setShowDropdown] = React.useState<boolean>(false);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -131,7 +133,7 @@ function MemoryGameScreen(): React.JSX.Element {
 
   const prepareRound = React.useCallback(() => {
     const available = allEntries;
-    const desiredPairs = Math.min(9, Math.max(1, available.length));
+    const desiredPairs = Math.min(numberOfPairs, Math.max(1, available.length));
     const chosen = sampleN(available, desiredPairs);
     const allCards: Card[] = shuffleArray(
       chosen.flatMap((e, idx) => [
@@ -145,7 +147,7 @@ function MemoryGameScreen(): React.JSX.Element {
     setIsEvaluating(false);
     setScore(0);
     setMoves(0);
-  }, [allEntries]);
+  }, [allEntries, numberOfPairs]);
 
   React.useEffect(() => {
     loadBase();
@@ -330,10 +332,46 @@ function MemoryGameScreen(): React.JSX.Element {
             <Text style={styles.statLabel}>Moves</Text>
           </View>
           <View style={styles.statItem}>
-            <Text style={styles.statValue}>{Math.min(9, allEntries.length)}</Text>
+            <TouchableOpacity 
+              style={styles.totalContainer}
+              onPress={() => setShowDropdown(!showDropdown)}
+              accessibilityRole="button"
+              accessibilityLabel="Select number of pairs"
+            >
+              <Text style={styles.statValue}>{Math.min(numberOfPairs, allEntries.length)}</Text>
+              <Text style={styles.dropdownArrow}>▼</Text>
+            </TouchableOpacity>
             <Text style={styles.statLabel}>Total</Text>
           </View>
         </View>
+        
+        {/* Dropdown positioned outside stats container */}
+        {showDropdown && (
+          <View style={styles.dropdown}>
+            {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
+              <TouchableOpacity
+                key={num}
+                style={[
+                  styles.dropdownItem,
+                  numberOfPairs === num && styles.dropdownItemSelected
+                ]}
+                onPress={() => {
+                  setNumberOfPairs(num);
+                  setShowDropdown(false);
+                }}
+                accessibilityRole="button"
+                accessibilityLabel={`Select ${num} pairs`}
+              >
+                <Text style={[
+                  styles.dropdownItemText,
+                  numberOfPairs === num && styles.dropdownItemTextSelected
+                ]}>
+                  {num}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
       </View>
 
       {/* Game Grid */}
@@ -428,10 +466,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.08,
     shadowRadius: 8,
     elevation: 3,
+    zIndex: 1000,
   },
   statItem: {
     flex: 1,
     alignItems: 'center',
+    position: 'relative',
+    zIndex: 1001,
   },
   statValue: {
     fontSize: 24,
@@ -445,6 +486,54 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     textTransform: 'uppercase',
     letterSpacing: 0.5,
+  },
+  totalContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    paddingHorizontal: 4,
+    paddingVertical: 2,
+  },
+  dropdownArrow: {
+    fontSize: 10,
+    color: '#64748b',
+    fontWeight: '600',
+    marginLeft: 4,
+  },
+  dropdown: {
+    position: 'absolute',
+    top: 200,
+    right: 20,
+    backgroundColor: '#ffffff',
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 20,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    zIndex: 9999,
+    minWidth: 60,
+  },
+  dropdownItem: {
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f1f5f9',
+  },
+  dropdownItemSelected: {
+    backgroundColor: '#3b82f6',
+  },
+  dropdownItemText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#1e293b',
+    textAlign: 'center',
+  },
+  dropdownItemTextSelected: {
+    color: '#ffffff',
   },
   
   // Game Container
