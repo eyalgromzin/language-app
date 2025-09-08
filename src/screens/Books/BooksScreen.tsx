@@ -262,23 +262,30 @@ function BooksScreen(): React.JSX.Element {
   return (
     <View style={styles.container}>
       <View style={styles.headerRow}>
-        <Text style={styles.header}>Recent</Text>
+        <Text style={styles.header}>My Books</Text>
         <View style={styles.actionsRow}>
           {books.length > 0 && (
             <TouchableOpacity style={styles.clearBtn} onPress={clearAllBooks}>
-              <Text style={styles.clearBtnText}>Clear</Text>
+              <Text style={styles.clearBtnText}>Clear All</Text>
             </TouchableOpacity>
           )}
           <TouchableOpacity style={styles.addBtn} onPress={openPicker}>
-            <Text style={styles.addBtnText}>+ Load Book</Text>
+            <Text style={styles.addBtnText}>Add .epub</Text>
           </TouchableOpacity>
         </View>
       </View>
       {loading ? (
-        <View style={styles.center}><ActivityIndicator /></View>
+        <View style={styles.center}><ActivityIndicator size="large" color="#3b82f6" /></View>
       ) : books.length === 0 ? (
-        <View style={[styles.center, { paddingHorizontal: 24 }]}>
-          <Text style={{ color: '#555', textAlign: 'center' }}>No books yet. Tap "Load Book" to add an EPUB.</Text>
+        <View style={styles.emptyStateContainer}>
+          <View style={styles.emptyStateIcon}>
+            <Text style={{ fontSize: 32, color: '#94a3b8' }}>📚</Text>
+          </View>
+          <Text style={styles.emptyStateText}>Your Library is Empty</Text>
+          <Text style={styles.emptyStateSubtext}>
+            Start building your digital library by adding your first EPUB book. 
+            Tap the "Load .epub file" button to get started.
+          </Text>
         </View>
       ) : (
         <FlatList
@@ -287,7 +294,7 @@ function BooksScreen(): React.JSX.Element {
           renderItem={renderItem}
           numColumns={3}
           contentContainerStyle={styles.grid}
-          columnWrapperStyle={{ gap: 12 }}
+          showsVerticalScrollIndicator={false}
         />
       )}
       <Modal
@@ -321,28 +328,196 @@ function hashString(input: string): number {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
-  center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  headerRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 16 },
-  header: { fontSize: 22, fontWeight: '700' },
-    actionsRow: { flexDirection: 'row', gap: 8 },
-  addBtn: { paddingVertical: 8, paddingHorizontal: 12, backgroundColor: '#007AFF', borderRadius: 8 },
-  addBtnText: { color: 'white', fontWeight: '700' },
-    clearBtn: { paddingVertical: 8, paddingHorizontal: 12, backgroundColor: '#f3f4f6', borderRadius: 8 },
-    clearBtnText: { color: '#111827', fontWeight: '700' },
-  grid: { paddingHorizontal: 12, paddingBottom: 16, gap: 12 },
-  bookTile: { flex: 1/3, maxWidth: '32%', alignItems: 'center' },
-  cover: { width: 100, height: 140, borderRadius: 8, backgroundColor: '#eee' },
-  coverPlaceholder: { alignItems: 'center', justifyContent: 'center' },
-  coverPlaceholderText: { fontSize: 18, fontWeight: '700', color: '#666' },
-  bookTitle: { marginTop: 6, fontSize: 13, fontWeight: '600', textAlign: 'center' },
-  bookAuthor: { fontSize: 12, color: '#666' },
-  modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', alignItems: 'center', justifyContent: 'center', padding: 24 },
-  modalCard: { width: '100%', maxWidth: 420, borderRadius: 12, backgroundColor: 'white', padding: 16 },
-  modalTitle: { fontSize: 18, fontWeight: '700', marginBottom: 8, color: '#111827' },
-  modalText: { fontSize: 14, color: '#374151', marginBottom: 16 },
-  modalButton: { alignSelf: 'flex-end', backgroundColor: '#007AFF', paddingVertical: 8, paddingHorizontal: 14, borderRadius: 8 },
-  modalButtonText: { color: 'white', fontWeight: '700' },
+  container: { 
+    flex: 1, 
+    backgroundColor: '#f8fafc' 
+  },
+  center: { 
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center' 
+  },
+  headerRow: { 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    justifyContent: 'space-between', 
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    backgroundColor: 'white',
+    borderBottomWidth: 1,
+    borderBottomColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  header: { 
+    fontSize: 28, 
+    fontWeight: '800', 
+    color: '#1e293b',
+    letterSpacing: -0.5,
+  },
+  actionsRow: { 
+    flexDirection: 'row', 
+    gap: 12 
+  },
+  addBtn: { 
+    paddingVertical: 12, 
+    paddingHorizontal: 20, 
+    backgroundColor: '#3b82f6', 
+    borderRadius: 12,
+    shadowColor: '#3b82f6',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  addBtnText: { 
+    color: 'white', 
+    fontWeight: '700',
+    fontSize: 14,
+    letterSpacing: 0.5,
+  },
+  clearBtn: { 
+    paddingVertical: 12, 
+    paddingHorizontal: 16, 
+    backgroundColor: '#f1f5f9', 
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  clearBtnText: { 
+    color: '#64748b', 
+    fontWeight: '600',
+    fontSize: 14,
+  },
+  grid: { 
+    paddingHorizontal: 16, 
+    paddingTop: 20,
+    paddingBottom: 32, 
+  },
+  bookTile: { 
+    flex: 1, 
+    alignItems: 'flex-start',
+    marginBottom: 40,
+    marginHorizontal: 6,
+  },
+  cover: { 
+    width: 110, 
+    height: 150, 
+    borderRadius: 12, 
+    backgroundColor: '#f1f5f9',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  coverPlaceholder: { 
+    alignItems: 'center', 
+    justifyContent: 'center',
+    backgroundColor: '#e2e8f0',
+  },
+  coverPlaceholderText: { 
+    fontSize: 20, 
+    fontWeight: '800', 
+    color: '#64748b',
+    letterSpacing: 1,
+  },
+  bookTitle: { 
+    marginTop: 12, 
+    fontSize: 14, 
+    fontWeight: '700', 
+    textAlign: 'left',
+    color: '#1e293b',
+    lineHeight: 18,
+    width: 110,
+  },
+  bookAuthor: { 
+    fontSize: 12, 
+    color: '#64748b',
+    marginTop: 4,
+    fontWeight: '500',
+    textAlign: 'left',
+    width: 110,
+  },
+  emptyStateContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 40,
+  },
+  emptyStateIcon: {
+    width: 80,
+    height: 80,
+    backgroundColor: '#e2e8f0',
+    borderRadius: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 24,
+  },
+  emptyStateText: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#475569',
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  emptyStateSubtext: {
+    fontSize: 14,
+    color: '#64748b',
+    textAlign: 'center',
+    lineHeight: 20,
+  },
+  modalBackdrop: { 
+    flex: 1, 
+    backgroundColor: 'rgba(0,0,0,0.6)', 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    padding: 24 
+  },
+  modalCard: { 
+    width: '100%', 
+    maxWidth: 400, 
+    borderRadius: 16, 
+    backgroundColor: 'white', 
+    padding: 24,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.25,
+    shadowRadius: 16,
+    elevation: 8,
+  },
+  modalTitle: { 
+    fontSize: 20, 
+    fontWeight: '800', 
+    marginBottom: 12, 
+    color: '#1e293b' 
+  },
+  modalText: { 
+    fontSize: 15, 
+    color: '#475569', 
+    marginBottom: 24,
+    lineHeight: 22,
+  },
+  modalButton: { 
+    alignSelf: 'flex-end', 
+    backgroundColor: '#3b82f6', 
+    paddingVertical: 12, 
+    paddingHorizontal: 24, 
+    borderRadius: 12,
+    shadowColor: '#3b82f6',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  modalButtonText: { 
+    color: 'white', 
+    fontWeight: '700',
+    fontSize: 15,
+  },
 });
 
 export default BooksScreen;
