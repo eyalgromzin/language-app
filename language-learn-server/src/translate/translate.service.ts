@@ -102,8 +102,10 @@ async fetchTranslation (
         if (typeof txt === 'string' && txt.trim().length > 0) {
             const translated = txt.trim();
             
-            // Save to translations table only if word was not found in cache or database
-            await this.translationService.saveTranslation(word, translated, fromCode, toCode);
+            // Save to translations table only if translation is different from word
+            if (translated !== word) {
+                await this.translationService.saveTranslation(word, translated, fromCode, toCode);
+            }
             
             // Update cache
             await this.wordCacheService.setCachedTranslation(word, fromCode, toCode, translated);
