@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, ActivityIndicator, Platform, NativeModules, Modal, Pressable, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity, ActivityIndicator, Platform, NativeModules, Modal, Pressable, ScrollView, TextInput } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { getLibraryMeta, searchLibraryWithCriterias } from '../../config/api';
@@ -22,6 +22,7 @@ function LibraryScreen(): React.JSX.Element {
   const [metaTypes, setMetaTypes] = React.useState<string[] | null>(null);
   const [metaLevels, setMetaLevels] = React.useState<string[] | null>(null);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = React.useState<string>('');
 
 
 
@@ -95,16 +96,39 @@ function LibraryScreen(): React.JSX.Element {
     return ['All', ...unique];
   }, [metaLevels, urls, allUrls]);
 
+  const getDomainFromUrlString = (input: string): string | null => {
+    try {
+      const str = (input || '').trim();
+      if (!str) return null;
+      const m = /^[a-zA-Z][a-zA-Z\d+\-.]*:\/\/([^/]+)/.exec(str);
+      const host = m ? m[1] : (/^www\./i.test(str) || /[^\s]+\.[^\s]{2,}/.test(str) ? str.split('/')[0] : null);
+      if (!host) return null;
+      const lower = host.toLowerCase();
+      const noWww = lower.startsWith('www.') ? lower.slice(4) : lower;
+      return noWww;
+    } catch { return null; }
+  };
+
+  const getDisplayName = (it: { url: string; name?: string | null }): string => {
+    const n = (it.name || '').trim();
+    if (n) return n;
+    return getDomainFromUrlString(it.url) || it.url;
+  };
+
   const filteredUrls = React.useMemo(() => {
     const res = urls.filter(
-      (u) =>
-        (selectedMedia === 'all' || u.media === selectedMedia) &&
-        (selectedType === 'All' || u.type === selectedType) &&
-        (selectedMedia === 'book' || selectedLevel === 'All' || u.level === selectedLevel),
+      (u) => {
+        const mediaMatch = selectedMedia === 'all' || u.media === selectedMedia;
+        const typeMatch = selectedType === 'All' || u.type === selectedType;
+        const levelMatch = selectedMedia === 'book' || selectedLevel === 'All' || u.level === selectedLevel;
+        const searchMatch = searchQuery === '' || getDisplayName(u).toLowerCase().includes(searchQuery.toLowerCase());
+        
+        return mediaMatch && typeMatch && levelMatch && searchMatch;
+      }
     );
 
     return res
-  }, [urls, selectedType, selectedLevel, selectedMedia]);
+  }, [urls, selectedType, selectedLevel, selectedMedia, searchQuery]);
 
   React.useEffect(() => {
     const run = async () => {
@@ -129,12 +153,8 @@ function LibraryScreen(): React.JSX.Element {
       try {
         setError(null);
         setLoading(true);
-        console.log('[Library] Fetching URLs for language:', toLanguageSymbol(learningLanguage));
-        const json: { urls?: { url: string; name?: string; type: string; level: string; media: string }[] } = await searchLibraryWithCriterias(toLanguageSymbol(learningLanguage));
-        console.log('[Library] Received response:', json);
+        const list: { url: string; name?: string; type: string; level: string; media: string }[] = await searchLibraryWithCriterias(toLanguageSymbol(learningLanguage));
         if (!isCancelled) {
-          const list = json.urls ?? [];
-          console.log('[Library] Setting URLs:', list);
           setUrls(list);
           setAllUrls(list);
         }
@@ -157,37 +177,31 @@ function LibraryScreen(): React.JSX.Element {
     setShowLevelDropdown(false);
   }, [selectedMedia]);
 
-  const getDomainFromUrlString = (input: string): string | null => {
-    try {
-      const str = (input || '').trim();
-      if (!str) return null;
-      const m = /^[a-zA-Z][a-zA-Z\d+\-.]*:\/\/([^/]+)/.exec(str);
-      const host = m ? m[1] : (/^www\./i.test(str) || /[^\s]+\.[^\s]{2,}/.test(str) ? str.split('/')[0] : null);
-      if (!host) return null;
-      const lower = host.toLowerCase();
-      const noWww = lower.startsWith('www.') ? lower.slice(4) : lower;
-      return noWww;
-    } catch { return null; }
-  };
-
-  const getDisplayName = (it: { url: string; name?: string | null }): string => {
-    const n = (it.name || '').trim();
-    if (n) return n;
-    return getDomainFromUrlString(it.url) || it.url;
-  };
-
   const renderItem = ({ item }: { item: { url: string; name?: string; type: string; level: string; media: string } }) => {
     const getMediaIcon = (media: string) => {
       const mediaLower = media.toLowerCase();
       switch (mediaLower) {
         case 'youtube':
-          return <Ionicons name="logo-youtube" size={16} color="#FF0000" />;
+          return <Ionicons name="logo-youtube" size={18} color="#FF0000" />;
         case 'web':
-          return <Ionicons name="globe-outline" size={16} color="#007AFF" />;
+          return <Ionicons name="globe-outline" size={18} color="#007AFF" />;
         case 'book':
-          return <Ionicons name="book-outline" size={16} color="#8B4513" />;
+          return <Ionicons name="book-outline" size={18} color="#8B4513" />;
         default:
-          return <Ionicons name="document-outline" size={16} color="#6B7280" />;
+          return <Ionicons name="document-outline" size={18} color="#6B7280" />;
+      }
+    };
+
+    const getLevelColor = (level: string) => {
+      switch (level.toLowerCase()) {
+        case 'beginner':
+          return '#10B981';
+        case 'intermediate':
+          return '#F59E0B';
+        case 'advanced':
+          return '#EF4444';
+        default:
+          return '#6B7280';
       }
     };
 
@@ -202,19 +216,26 @@ function LibraryScreen(): React.JSX.Element {
           }
         }}
         style={styles.item}
+        activeOpacity={0.7}
       >
-        <Text style={styles.itemName} numberOfLines={2}>{getDisplayName(item)}</Text>
-        <View style={styles.itemMeta}>
-          <View style={styles.metaRow}>
-            <Text style={styles.metaText}>{item.type}</Text>
-            <Text style={styles.metaSeparator}>•</Text>
-            <Text style={styles.metaText}>{item.level}</Text>
-            <Text style={styles.metaSeparator}>•</Text>
-            <View style={styles.mediaContainer}>
-              {getMediaIcon(item.media)}
-              <Text style={styles.metaText}>{item.media}</Text>
+        <View style={styles.itemHeader}>
+          <View style={styles.mediaIconContainer}>
+            {getMediaIcon(item.media)}
+          </View>
+          <View style={styles.itemContent}>
+            <Text style={styles.itemName} numberOfLines={2}>{getDisplayName(item)}</Text>
+            <View style={styles.itemMeta}>
+              <View style={styles.metaRow}>
+                <View style={styles.typeBadge}>
+                  <Text style={styles.typeText}>{item.type}</Text>
+                </View>
+                <View style={[styles.levelBadge, { backgroundColor: getLevelColor(item.level) + '15' }]}>
+                  <Text style={[styles.levelText, { color: getLevelColor(item.level) }]}>{item.level}</Text>
+                </View>
+              </View>
             </View>
           </View>
+          <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
         </View>
       </TouchableOpacity>
     );
@@ -222,29 +243,76 @@ function LibraryScreen(): React.JSX.Element {
 
   if (loading) {
     return (
-      <View style={[styles.container, styles.center]}>
-        <ActivityIndicator />
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <View style={styles.headerContent}>
+            <View style={styles.headerTop}>
+              <Text style={styles.headerTitle}>Library</Text>
+            </View>
+          </View>
+        </View>
+        <View style={[styles.center, styles.loadingContainer]}>
+          <ActivityIndicator size="large" color="#6366F1" />
+          <Text style={styles.loadingText}>Loading your learning resources...</Text>
+        </View>
       </View>
     );
   }
 
   if (error) {
     return (
-      <View style={[styles.container, styles.listContent]}>
-        <Text>{error}</Text>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <View style={styles.headerContent}>
+            <View style={styles.headerTop}>
+              <Text style={styles.headerTitle}>Library</Text>
+            </View>
+          </View>
+        </View>
+        <View style={[styles.center, styles.errorContainer]}>
+          <Ionicons name="alert-circle-outline" size={48} color="#EF4444" />
+          <Text style={styles.errorTitle}>Something went wrong</Text>
+          <Text style={styles.errorText}>{error}</Text>
+          <TouchableOpacity style={styles.retryButton} onPress={() => {
+            setError(null);
+            setLoading(true);
+            // Trigger a reload by changing a dependency
+            setSelectedMedia(prev => prev);
+          }}>
+            <Text style={styles.retryButtonText}>Try Again</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
 
   return (
     <View style={styles.container}>
+      {/* Professional Header */}
+      <View style={styles.header}>
+        <View style={styles.headerContent}>
+          <View style={styles.headerTop}>
+            <Text style={styles.headerTitle}>Library</Text>
+            <TouchableOpacity
+              style={styles.shareButton}
+              onPress={() => LinkingService.shareLibrary()}
+              accessibilityRole="button"
+              accessibilityLabel="Share Library"
+            >
+              <Ionicons name="share-outline" size={22} color="#6366F1" />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+
+      {/* Media Type Tabs */}
       <View style={styles.tabsBar}>
-        <View style={styles.tabsContainer}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.tabsContainer}>
           {([
-            { key: 'all', label: 'All' },
-            { key: 'web', label: 'Web' },
-            { key: 'youtube', label: 'YouTube' },
-            { key: 'book', label: 'Books' },
+            { key: 'all', label: 'All', icon: 'grid-outline' },
+            { key: 'web', label: 'Web', icon: 'globe-outline' },
+            { key: 'youtube', label: 'YouTube', icon: 'logo-youtube' },
+            { key: 'book', label: 'Books', icon: 'book-outline' },
           ] as const).map((tab) => (
             <TouchableOpacity
               key={tab.key}
@@ -253,18 +321,16 @@ function LibraryScreen(): React.JSX.Element {
               accessibilityRole="tab"
               accessibilityState={{ selected: selectedMedia === tab.key }}
             >
+              <Ionicons 
+                name={tab.icon as any} 
+                size={16} 
+                color={selectedMedia === tab.key ? '#FFFFFF' : '#6B7280'} 
+                style={styles.tabIcon}
+              />
               <Text style={[styles.tabText, selectedMedia === tab.key && styles.tabTextActive]}>{tab.label}</Text>
             </TouchableOpacity>
           ))}
-        </View>
-        <TouchableOpacity
-          style={styles.shareButton}
-          onPress={() => LinkingService.shareLibrary()}
-          accessibilityRole="button"
-          accessibilityLabel="Share Library"
-        >
-          <Ionicons name="share-outline" size={20} color="#007AFF" />
-        </TouchableOpacity>
+        </ScrollView>
       </View>
              <FlatList
          data={filteredUrls}
@@ -321,7 +387,24 @@ function LibraryScreen(): React.JSX.Element {
          }
          ListEmptyComponent={
            <View style={styles.emptyContainer}>
-             <Text style={styles.emptyText}>No items</Text>
+             <Ionicons name="library-outline" size={64} color="#9CA3AF" />
+             <Text style={styles.emptyTitle}>
+               {searchQuery ? 'No results found' : 'No learning resources'}
+             </Text>
+             <Text style={styles.emptyText}>
+               {searchQuery 
+                 ? `No resources match "${searchQuery}". Try adjusting your search or filters.`
+                 : 'Start exploring by selecting a category or check back later for new content.'
+               }
+             </Text>
+             {searchQuery && (
+               <TouchableOpacity
+                 style={styles.clearSearchEmptyButton}
+                 onPress={() => setSearchQuery('')}
+               >
+                 <Text style={styles.clearSearchEmptyText}>Clear search</Text>
+               </TouchableOpacity>
+             )}
            </View>
          }
        />
@@ -388,6 +471,7 @@ function LibraryScreen(): React.JSX.Element {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#F8FAFC',
   },
   center: {
     justifyContent: 'center',
@@ -395,45 +479,114 @@ const styles = StyleSheet.create({
   },
   listContent: {
     padding: 16,
+    paddingBottom: 32,
   },
-  tabsBar: {
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    gap: 8,
+  
+  // Header Styles
+  header: {
+    backgroundColor: '#FFFFFF',
+    paddingTop: Platform.OS === 'ios' ? 44 : 24,
+    paddingBottom: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#e5e7eb',
+    borderBottomColor: '#E2E8F0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  headerContent: {
+    paddingHorizontal: 20,
+  },
+  headerTop: {
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginBottom: 16,
   },
-  tabsContainer: {
-    flexDirection: 'row',
-    gap: 8,
+  headerTitle: {
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#1E293B',
+    letterSpacing: -0.5,
   },
   shareButton: {
-    padding: 8,
-    borderRadius: 8,
-    backgroundColor: '#f3f4f6',
+    padding: 10,
+    borderRadius: 12,
+    backgroundColor: '#F1F5F9',
+  },
+  
+  // Search Styles
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F8FAFC',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#E2E8F0',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+  },
+  searchIcon: {
+    marginRight: 12,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 16,
+    color: '#1E293B',
+    padding: 0,
+  },
+  clearSearchButton: {
+    marginLeft: 8,
+    padding: 4,
+  },
+  
+  // Tab Styles
+  tabsBar: {
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#E2E8F0',
+  },
+  tabsContainer: {
+    paddingHorizontal: 20,
+    gap: 8,
   },
   tabButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 999,
-    backgroundColor: '#f3f4f6',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 20,
+    backgroundColor: '#F1F5F9',
+    marginRight: 8,
   },
   tabButtonActive: {
-    backgroundColor: '#111827',
+    backgroundColor: '#6366F1',
+  },
+  tabIcon: {
+    marginRight: 6,
   },
   tabText: {
-    color: '#111827',
+    fontSize: 14,
     fontWeight: '600',
+    color: '#64748B',
   },
   tabTextActive: {
-    color: 'white',
+    color: '#FFFFFF',
   },
+  
+  // Filter Styles
   filtersBar: {
-    marginBottom: 12,
+    marginBottom: 16,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    padding: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
   },
   filtersRow: {
     flexDirection: 'row',
@@ -443,124 +596,227 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   dropdownButton: {
-    backgroundColor: 'white',
+    backgroundColor: '#F8FAFC',
     borderRadius: 10,
     paddingVertical: 12,
-    paddingHorizontal: 14,
+    paddingHorizontal: 16,
     borderWidth: 1,
-    borderColor: '#e5e7eb',
+    borderColor: '#E2E8F0',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   dropdownButtonText: {
     fontSize: 14,
     fontWeight: '600',
-  },
-  dropdownMenu: {
-    marginTop: 8,
-    backgroundColor: 'white',
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#e5e7eb',
-    overflow: 'hidden',
-  },
-  dropdownOption: {
-    paddingVertical: 10,
-    paddingHorizontal: 14,
-  },
-  dropdownOptionSelected: {
-    backgroundColor: '#f3f4f6',
-  },
-  dropdownOptionText: {
-    fontSize: 14,
+    color: '#374151',
   },
   clearFiltersButton: {
-    marginTop: 10,
+    marginTop: 12,
     alignSelf: 'flex-start',
     paddingVertical: 8,
-    paddingHorizontal: 12,
-    backgroundColor: '#f3f4f6',
+    paddingHorizontal: 16,
+    backgroundColor: '#F1F5F9',
     borderRadius: 8,
   },
   clearFiltersText: {
-    fontSize: 12,
-    color: '#374151',
+    fontSize: 14,
+    color: '#6366F1',
+    fontWeight: '600',
   },
+  
+  // Modal Styles
   modalBackdrop: {
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.35)',
+    backgroundColor: 'rgba(0,0,0,0.4)',
   },
   modalCard: {
     position: 'absolute',
-    left: 16,
-    right: 16,
-    top: 100,
+    left: 20,
+    right: 20,
+    top: 120,
     maxHeight: '60%',
     backgroundColor: 'white',
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#e5e7eb',
+    borderRadius: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.15,
+    shadowRadius: 16,
+    elevation: 8,
     paddingVertical: 8,
   },
   modalTitle: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '700',
-    paddingHorizontal: 14,
-    paddingVertical: 8,
+    paddingHorizontal: 20,
+    paddingVertical: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#f3f4f6',
+    borderBottomColor: '#F1F5F9',
+    color: '#1E293B',
   },
+  dropdownOption: {
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#F8FAFC',
+  },
+  dropdownOptionSelected: {
+    backgroundColor: '#F1F5F9',
+  },
+  dropdownOptionText: {
+    fontSize: 16,
+    color: '#374151',
+  },
+  
+  // Item Styles
   item: {
-    backgroundColor: 'white',
-    borderRadius: 12,
-    padding: 16,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    padding: 20,
     shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 6,
     shadowOffset: { width: 0, height: 2 },
-    elevation: 2,
+    shadowOpacity: 0.08,
+    shadowRadius: 8,
+    elevation: 3,
+    borderWidth: 1,
+    borderColor: '#F1F5F9',
+  },
+  itemHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  mediaIconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    backgroundColor: '#F8FAFC',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 16,
+  },
+  itemContent: {
+    flex: 1,
   },
   itemName: {
     fontSize: 16,
     fontWeight: '600',
+    color: '#1E293B',
+    lineHeight: 22,
     marginBottom: 8,
   },
   itemMeta: {
-    marginTop: 8,
+    marginTop: 4,
   },
   metaRow: {
     flexDirection: 'row',
     alignItems: 'center',
+    gap: 8,
   },
-  metaText: {
-    fontSize: 14,
-    color: '#6B7280',
+  typeBadge: {
+    backgroundColor: '#F1F5F9',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
   },
-  metaSeparator: {
-    marginHorizontal: 4,
-    color: '#6B7280',
-    fontSize: 14,
+  typeText: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: '#64748B',
   },
-  mediaContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
+  levelBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
   },
+  levelText: {
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  
+  // Separator
   separator: {
-    height: 12,
+    height: 16,
   },
+  
+  // Loading States
+  loadingContainer: {
+    flex: 1,
+    paddingHorizontal: 20,
+  },
+  loadingText: {
+    marginTop: 16,
+    fontSize: 16,
+    color: '#64748B',
+    textAlign: 'center',
+  },
+  
+  // Error States
+  errorContainer: {
+    flex: 1,
+    paddingHorizontal: 20,
+  },
+  errorTitle: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#1E293B',
+    marginTop: 16,
+    marginBottom: 8,
+  },
+  errorText: {
+    fontSize: 16,
+    color: '#64748B',
+    textAlign: 'center',
+    marginBottom: 24,
+  },
+  retryButton: {
+    backgroundColor: '#6366F1',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 10,
+  },
+  retryButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  
+  // Empty States
   emptyContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 40,
+    paddingVertical: 60,
+    paddingHorizontal: 20,
+  },
+  emptyTitle: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#1E293B',
+    marginTop: 16,
+    marginBottom: 8,
+    textAlign: 'center',
   },
   emptyText: {
     fontSize: 16,
-    color: '#6b7280',
+    color: '#64748B',
     textAlign: 'center',
+    lineHeight: 24,
+    marginBottom: 24,
+  },
+  clearSearchEmptyButton: {
+    backgroundColor: '#F1F5F9',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 8,
+  },
+  clearSearchEmptyText: {
+    color: '#6366F1',
+    fontSize: 14,
+    fontWeight: '600',
   },
 });
 
