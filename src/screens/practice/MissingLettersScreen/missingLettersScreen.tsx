@@ -83,32 +83,6 @@ function isAlphabeticChar(ch: string): boolean {
   return /[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(ch);
 }
 
-function splitSentenceByWord(sentence: string, targetWord: string): { text: string; highlight: boolean }[] {
-  if (!sentence || !targetWord) return [{ text: sentence, highlight: false }];
-  const lowerSentence = sentence.toLowerCase();
-  const lowerTarget = targetWord.toLowerCase();
-  const parts: { text: string; highlight: boolean }[] = [];
-  let cursor = 0;
-  while (cursor < sentence.length) {
-    const idx = lowerSentence.indexOf(lowerTarget, cursor);
-    if (idx === -1) {
-      parts.push({ text: sentence.slice(cursor), highlight: false });
-      break;
-    }
-    const beforeChar = idx > 0 ? sentence[idx - 1] : '';
-    const afterChar = idx + targetWord.length < sentence.length ? sentence[idx + targetWord.length] : '';
-    const touchesLetters = isAlphabeticChar(beforeChar) || isAlphabeticChar(afterChar);
-    if (touchesLetters) {
-      // Not a standalone match; skip this position
-      cursor = idx + 1;
-      continue;
-    }
-    if (idx > cursor) parts.push({ text: sentence.slice(cursor, idx), highlight: false });
-    parts.push({ text: sentence.slice(idx, idx + targetWord.length), highlight: true });
-    cursor = idx + targetWord.length;
-  }
-  return parts.length > 0 ? parts : [{ text: sentence, highlight: false }];
-}
 
 function pickRandomIndex(length: number, previous?: number): number {
   if (length <= 0) return 0;
@@ -517,7 +491,10 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   if (!props.embedded && loading) {
     return (
       <View style={styles.centered}> 
-        <ActivityIndicator />
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#3b82f6" />
+          <Text style={styles.loadingText}>Loading words...</Text>
+        </View>
       </View>
     );
   }
@@ -536,14 +513,14 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
 
   const renderLetterCell = (ch: string, idx: number) => {
     const lettersCount = current.letters.length;
-    const defaultCellWidth = 40;
-    const gap = 8; // matches styles.wordRow gap
+    const defaultCellWidth = 48;
+    const gap = 12; // matches styles.wordRow gap
     const available = rowWidth ?? 0;
     const maxWidthPerCell = lettersCount > 0 && available > 0
       ? Math.floor((available - gap * Math.max(0, lettersCount - 1)) / lettersCount)
       : defaultCellWidth;
-    const cellWidth = Math.max(12, Math.min(defaultCellWidth, maxWidthPerCell));
-    const dynamicFontSize = Math.min(18, Math.max(12, Math.floor(cellWidth * 0.6)));
+    const cellWidth = Math.max(20, Math.min(defaultCellWidth, maxWidthPerCell));
+    const dynamicFontSize = Math.min(20, Math.max(14, Math.floor(cellWidth * 0.5)));
 
     const isMissing = current.missingIndices.includes(idx);
     const isWrongSpot = wrongHighlightIndex === idx;
@@ -580,23 +557,38 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
     <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding', android: undefined })} style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         {!props.embedded ? (
-          <View style={styles.topRow}>
-            <View style={styles.translationRow}>
-              <Text style={styles.translation} numberOfLines={1}>{topTextTrimmed}</Text>
-              <TouchableOpacity
-                style={styles.micInlineButton}
-                onPress={() => speakCurrent(topTextTrimmed)}
-                accessibilityRole="button"
-                accessibilityLabel={mode === 'translation' ? 'Speak word' : 'Speak translation'}
-                hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
-              >
-                <Ionicons name="volume-high" size={18} color="#007AFF" />
+          <>
+            <View style={styles.progressContainer}>
+              <Text style={styles.progressText}>
+                {items.length > 0 ? `${currentIndex + 1} of ${items.length}` : '0 of 0'}
+              </Text>
+              <View style={styles.progressBar}>
+                <View 
+                  style={[
+                    styles.progressFill, 
+                    { width: items.length > 0 ? `${((currentIndex + 1) / items.length) * 100}%` : '0%' }
+                  ]} 
+                />
+              </View>
+            </View>
+            <View style={styles.topRow}>
+              <View style={styles.translationRow}>
+                <Text style={styles.translation} numberOfLines={1}>{topTextTrimmed}</Text>
+                <TouchableOpacity
+                  style={styles.micInlineButton}
+                  onPress={() => speakCurrent(topTextTrimmed)}
+                  accessibilityRole="button"
+                  accessibilityLabel={mode === 'translation' ? 'Speak word' : 'Speak translation'}
+                  hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+                >
+                  <Ionicons name="volume-high" size={20} color="#3b82f6" />
+                </TouchableOpacity>
+              </View>
+              <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
+                <Text style={styles.skipButtonText}>Skip</Text>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
-              <Text style={styles.skipButtonText}>Skip</Text>
-            </TouchableOpacity>
-          </View>
+          </>
         ) : null}
         {props.embedded ? (
           <View style={styles.topRow}>
@@ -609,21 +601,10 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
                 accessibilityLabel={mode === 'translation' ? 'Speak word' : 'Speak translation'}
                 hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
               >
-                <Ionicons name="volume-high" size={18} color="#007AFF" />
+                <Ionicons name="volume-high" size={20} color="#3b82f6" />
               </TouchableOpacity>
             </View>
           </View>
-        ) : null}
-        {current.entry.sentence ? (
-          <Text style={styles.sentence} numberOfLines={3}>
-            {splitSentenceByWord(current.entry.sentence, current.entry.word).map((p, i) =>
-              p.highlight ? (
-                <Text key={i} style={styles.sentenceHighlight}>{p.text}</Text>
-              ) : (
-                <React.Fragment key={i}>{p.text}</React.Fragment>
-              )
-            )}
-          </Text>
         ) : null}
 
         <View
@@ -663,104 +644,183 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#f8fafc',
   },
   emptyText: {
-    color: '#666',
+    color: '#64748b',
+    fontSize: 16,
   },
   container: {
-    padding: 16,
-    gap: 16,
+    padding: 24,
+    gap: 24,
+    backgroundColor: '#f8fafc',
+    minHeight: '100%',
   },
   topRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom: 8,
   },
   translationRow: {
     flexDirection: 'row',
     alignItems: 'center',
     flexShrink: 1,
-    gap: 8,
+    gap: 12,
+    backgroundColor: '#ffffff',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
+    flex: 1,
+    marginRight: 12,
   },
   translation: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: '700',
-    maxWidth: '80%',
+    color: '#1e293b',
+    flex: 1,
+    letterSpacing: 0.5,
   },
   skipButton: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 12,
+    backgroundColor: '#ffffff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
     borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
+    borderColor: '#e2e8f0',
   },
   skipButtonText: {
-    fontWeight: '700',
-    color: '#007AFF',
-  },
-  sentence: {
-    color: '#666',
-  },
-  sentenceHighlight: {
-    fontWeight: '700',
-    backgroundColor: '#fff3cd',
+    fontWeight: '600',
+    color: '#64748b',
+    fontSize: 14,
   },
   wordRow: {
-    flex: 1,
     flexDirection: 'row',
     flexWrap: 'nowrap',
-    gap: 8,
-    paddingVertical: 12,
+    gap: 12,
+    paddingVertical: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   cell: {
-    width: 40,
-    height: 48,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#ddd',
+    width: 48,
+    height: 56,
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: '#e2e8f0',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#ffffff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 3,
   },
   cellFixed: {
-    backgroundColor: '#f8f8f8',
+    backgroundColor: '#f1f5f9',
+    borderColor: '#cbd5e1',
   },
   cellWrong: {
-    borderColor: '#e53935',
-    backgroundColor: '#ffebee',
+    borderColor: '#ef4444',
+    backgroundColor: '#fef2f2',
+    shadowColor: '#ef4444',
+    shadowOpacity: 0.2,
   },
   cellText: {
-    fontSize: 18,
-    fontWeight: '600',
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#1e293b',
+    letterSpacing: 0.5,
   },
   input: {
     width: '100%',
     height: '100%',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#1e293b',
     padding: 0,
   },
   nextButton: {
-    marginTop: 12,
-    backgroundColor: '#007AFF',
-    paddingVertical: 12,
-    borderRadius: 10,
+    marginTop: 20,
+    backgroundColor: '#3b82f6',
+    paddingVertical: 16,
+    borderRadius: 12,
     alignItems: 'center',
+    shadowColor: '#3b82f6',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
   },
   nextButtonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontWeight: '700',
+    fontSize: 16,
+    letterSpacing: 0.5,
   },
   micInlineButton: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
-    width: 28,
-    height: 28,
-    borderRadius: 14,
+    backgroundColor: '#f1f5f9',
+    width: 36,
+    height: 36,
+    borderRadius: 18,
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  loadingContainer: {
+    alignItems: 'center',
+    gap: 16,
+  },
+  loadingText: {
+    fontSize: 16,
+    color: '#64748b',
+    fontWeight: '500',
+  },
+  progressContainer: {
+    marginBottom: 8,
+  },
+  progressText: {
+    fontSize: 14,
+    color: '#64748b',
+    fontWeight: '600',
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  progressBar: {
+    height: 6,
+    backgroundColor: '#e2e8f0',
+    borderRadius: 3,
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    backgroundColor: '#3b82f6',
+    borderRadius: 3,
   },
 
 });
