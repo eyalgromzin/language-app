@@ -1,0 +1,68 @@
+{
+  "id": "26_health_and_medical_2",
+  "title": "Здоров'я та медицина (Part 2)",
+  "emoji": "🏥",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "26_health_and_medical_sick",
+      "type": "word",
+      "text": "хворий",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_fever",
+      "type": "word",
+      "text": "температура",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_appointment",
+      "type": "word",
+      "text": "прийом",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_emergency",
+      "type": "word",
+      "text": "надзвичайна ситуація",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_treatment",
+      "type": "word",
+      "text": "лікування",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_i_am_feeling_sick",
+      "type": "sentence",
+      "text": "Я почуваюся погано.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_do_you_have_any_medicine",
+      "type": "sentence",
+      "text": "У вас є якісь ліки?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_this_is_an_emergency",
+      "type": "sentence",
+      "text": "Це надзвичайна ситуація.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_what_treatment_do_i_need",
+      "type": "sentence",
+      "text": "Яке лікування мені потрібно?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_my_fever_is_very_high",
+      "type": "sentence",
+      "text": "У мене дуже висока температура.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

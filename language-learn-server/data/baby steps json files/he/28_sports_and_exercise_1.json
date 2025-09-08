@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_1",
+  "title": "ספורט ופעילות גופנית (Part 1)",
+  "emoji": "⚽",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_sport",
+      "type": "word",
+      "text": "ספורט",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_game",
+      "type": "word",
+      "text": "משחק",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_team",
+      "type": "word",
+      "text": "קבוצה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_player",
+      "type": "word",
+      "text": "שחקן",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_coach",
+      "type": "word",
+      "text": "מאמן",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_what_sport_do_you_like",
+      "type": "sentence",
+      "text": "איזה ספורט אתה אוהב?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_love_playing_soccer",
+      "type": "sentence",
+      "text": "אני אוהב לשחק כדורגל.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
+      "type": "sentence",
+      "text": "האם אתה רוצה להצטרף לקבוצה שלנו?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_who_is_your_favorite_player",
+      "type": "sentence",
+      "text": "מי השחקן האהוב עליך?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_our_coach_is_very_good",
+      "type": "sentence",
+      "text": "המאמן שלנו מאוד טוב.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

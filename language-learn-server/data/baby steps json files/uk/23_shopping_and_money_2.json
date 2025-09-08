@@ -1,0 +1,68 @@
+{
+  "id": "23_shopping_and_money_2",
+  "title": "Покупки та гроші (Part 2)",
+  "emoji": "🛒",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "23_shopping_and_money_sale",
+      "type": "word",
+      "text": "розпродаж",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_discount",
+      "type": "word",
+      "text": "знижка",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_receipt",
+      "type": "word",
+      "text": "чека",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_change",
+      "type": "word",
+      "text": "решта",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_bill",
+      "type": "word",
+      "text": "рахунок",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_where_is_the_nearest_store",
+      "type": "sentence",
+      "text": "Де найближчий магазин?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_can_i_have_a_receipt",
+      "type": "sentence",
+      "text": "Можу я отримати чек?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_the_price_is_too_high",
+      "type": "sentence",
+      "text": "Ціна занадто висока.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_i_need_change_for_a_bill",
+      "type": "sentence",
+      "text": "Мені потрібна решта для купюри.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_this_store_has_good_prices",
+      "type": "sentence",
+      "text": "У цьому магазині гарні ціни.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

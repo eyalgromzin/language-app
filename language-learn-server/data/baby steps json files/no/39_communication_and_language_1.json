@@ -1,0 +1,68 @@
+{
+  "id": "39_communication_and_language_1",
+  "title": "Kommunikasjon og språk (Part 1)",
+  "emoji": "💬",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "39_communication_and_language_speak",
+      "type": "word",
+      "text": "snakke",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_talk",
+      "type": "word",
+      "text": "snakke",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_listen",
+      "type": "word",
+      "text": "lytte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_understand",
+      "type": "word",
+      "text": "forstå",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_explain",
+      "type": "word",
+      "text": "forklare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_do_you_speak_english",
+      "type": "sentence",
+      "text": "Snakker du engelsk?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_can_we_talk_about_it",
+      "type": "sentence",
+      "text": "Kan vi snakke om det?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_please_listen_to_me",
+      "type": "sentence",
+      "text": "Vennligst lytt til meg.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_do_you_understand_what_i_mean",
+      "type": "sentence",
+      "text": "Forstår du hva jeg mener?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_can_you_explain_this_to_me",
+      "type": "sentence",
+      "text": "Kan du forklare dette til meg?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

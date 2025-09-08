@@ -1,0 +1,68 @@
+{
+  "id": "13_work_study_2",
+  "title": "Cơ bản về công việc và học tập (Part 2)",
+  "emoji": "💼",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "13_work_study_work",
+      "type": "word",
+      "text": "làm việc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_study",
+      "type": "word",
+      "text": "học",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_class",
+      "type": "word",
+      "text": "lớp học",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_boss",
+      "type": "word",
+      "text": "sếp",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_colleague",
+      "type": "word",
+      "text": "đồng nghiệp",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Bạn có thích công việc của mình không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_am_busy_with_work",
+      "type": "sentence",
+      "text": "Tôi bận với công việc.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_what_are_you_studying",
+      "type": "sentence",
+      "text": "Bạn đang học gì?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_have_a_lot_of_homework",
+      "type": "sentence",
+      "text": "Tôi có nhiều bài tập về nhà.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_where_do_you_work",
+      "type": "sentence",
+      "text": "Bạn làm việc ở đâu?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

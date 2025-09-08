@@ -1,0 +1,68 @@
+{
+  "id": "05_getting_around_2",
+  "title": "ทิศทางและการเดินทาง (Part 2)",
+  "emoji": "🧭",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "05_getting_around_here",
+      "type": "word",
+      "text": "ที่นี่",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_there",
+      "type": "word",
+      "text": "ที่นั่น",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_up",
+      "type": "word",
+      "text": "ขึ้น",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_down",
+      "type": "word",
+      "text": "ลง",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_around",
+      "type": "word",
+      "text": "รอบ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_turn_left",
+      "type": "sentence",
+      "text": "เลี้ยวซ้าย.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_go_straight",
+      "type": "sentence",
+      "text": "ไปตรง.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_it_is_over_there",
+      "type": "sentence",
+      "text": "มันอยู่ตรงนั้น.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_can_you_help_me",
+      "type": "sentence",
+      "text": "คุณช่วยฉันได้ไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_how_far_is_it",
+      "type": "sentence",
+      "text": "ไกลเท่าไหร่?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

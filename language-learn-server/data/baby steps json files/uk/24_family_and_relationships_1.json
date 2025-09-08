@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_1",
+  "title": "Сім'я та стосунки (Part 1)",
+  "emoji": "👨‍👩‍👧‍👦",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "24_family_and_relationships_family",
+      "type": "word",
+      "text": "сім'я",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_mother",
+      "type": "word",
+      "text": "мати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_father",
+      "type": "word",
+      "text": "батько",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_sister",
+      "type": "word",
+      "text": "сестра",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_brother",
+      "type": "word",
+      "text": "брат",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_how_is_your_family",
+      "type": "sentence",
+      "text": "Як ваша сім'я?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_mother_is_a_teacher",
+      "type": "sentence",
+      "text": "Моя мати - вчителька.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_have_two_sisters",
+      "type": "sentence",
+      "text": "У мене дві сестри.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_where_does_your_father_work",
+      "type": "sentence",
+      "text": "Де працює ваш батько?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_brother_is_older_than_me",
+      "type": "sentence",
+      "text": "Мій брат старший за мене.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

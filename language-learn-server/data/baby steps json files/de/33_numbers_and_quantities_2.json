@@ -1,0 +1,68 @@
+{
+  "id": "33_numbers_and_quantities_2",
+  "title": "Numbers & Quantities (Part 2)",
+  "emoji": "🔢",
+  "language": "German",
+  "items": [
+    {
+      "id": "33_numbers_and_quantities_all",
+      "type": "word",
+      "text": "alle",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_none",
+      "type": "word",
+      "text": "keine",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_half",
+      "type": "word",
+      "text": "Hälfte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_double",
+      "type": "word",
+      "text": "doppelt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_triple",
+      "type": "word",
+      "text": "dreifach",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_none_of_them_speak_german",
+      "type": "sentence",
+      "text": "Keiner von ihnen spricht Deutsch.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_half_of_the_people_left",
+      "type": "sentence",
+      "text": "Die Hälfte der Menschen ist gegangen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_the_price_doubled",
+      "type": "sentence",
+      "text": "Der Preis hat sich verdoppelt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_numbers_are_important",
+      "type": "sentence",
+      "text": "Zahlen sind wichtig.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_quantities_matter",
+      "type": "sentence",
+      "text": "Mengen sind wichtig.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

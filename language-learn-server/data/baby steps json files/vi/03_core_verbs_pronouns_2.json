@@ -1,0 +1,68 @@
+{
+  "id": "03_core_verbs_pronouns_2",
+  "title": "Đại từ cơ bản và động từ trợ giúp (Part 2)",
+  "emoji": "🔤",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_they",
+      "type": "word",
+      "text": "họ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_it",
+      "type": "word",
+      "text": "nó",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_me",
+      "type": "word",
+      "text": "tôi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_him",
+      "type": "word",
+      "text": "anh ấy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_her",
+      "type": "word",
+      "text": "cô ấy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he_is",
+      "type": "sentence",
+      "text": "Anh ấy là …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she_is",
+      "type": "sentence",
+      "text": "Cô ấy là …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_we_are",
+      "type": "sentence",
+      "text": "Chúng tôi là …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_they_are",
+      "type": "sentence",
+      "text": "Họ là …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_it_is",
+      "type": "sentence",
+      "text": "Nó là …",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

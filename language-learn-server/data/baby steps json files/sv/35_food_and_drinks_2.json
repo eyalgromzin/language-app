@@ -1,0 +1,68 @@
+{
+  "id": "35_food_and_drinks_2",
+  "title": "Mat och drycker (Part 2)",
+  "emoji": "🍕",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "35_food_and_drinks_restaurant",
+      "type": "word",
+      "text": "restaurang",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_menu",
+      "type": "word",
+      "text": "meny",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_order",
+      "type": "word",
+      "text": "beställning",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_hungry",
+      "type": "word",
+      "text": "hungrig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_thirsty",
+      "type": "word",
+      "text": "törstig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_can_i_see_the_menu",
+      "type": "sentence",
+      "text": "Kan jag se menyn?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_want_to_order_pizza",
+      "type": "sentence",
+      "text": "Jag vill beställa pizza.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_are_you_hungry",
+      "type": "sentence",
+      "text": "Är du hungrig?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_am_thirsty_can_i_have_water",
+      "type": "sentence",
+      "text": "Jag är törstig, kan jag få vatten?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_this_food_tastes_delicious",
+      "type": "sentence",
+      "text": "Denna mat smakar utsökt.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

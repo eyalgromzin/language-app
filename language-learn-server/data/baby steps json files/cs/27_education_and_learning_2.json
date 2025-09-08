@@ -1,0 +1,68 @@
+{
+  "id": "27_education_and_learning_2",
+  "title": "Vzdělávání a učení (Part 2)",
+  "emoji": "📚",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "27_education_and_learning_homework",
+      "type": "word",
+      "text": "domácí úkol",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_exam",
+      "type": "word",
+      "text": "zkouška",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_grade",
+      "type": "word",
+      "text": "známka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_study",
+      "type": "word",
+      "text": "studium",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_learn",
+      "type": "word",
+      "text": "učit se",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_when_is_your_next_exam",
+      "type": "sentence",
+      "text": "Kdy je vaše příští zkouška?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_what_grade_did_you_get",
+      "type": "sentence",
+      "text": "Jakou známku jste dostali?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_need_to_study_for_the_test",
+      "type": "sentence",
+      "text": "Musím se učit na test.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_this_lesson_is_very_interesting",
+      "type": "sentence",
+      "text": "Tato hodina je velmi zajímavá.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_want_to_learn_english",
+      "type": "sentence",
+      "text": "Chci se učit anglicky.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

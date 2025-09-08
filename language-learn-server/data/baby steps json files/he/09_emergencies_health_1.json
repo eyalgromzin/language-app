@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_1",
+  "title": "מצבי חירום ובריאות (Part 1)",
+  "emoji": "⛑️",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "09_emergencies_health_help",
+      "type": "word",
+      "text": "עזרה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_doctor",
+      "type": "word",
+      "text": "רופא",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_pharmacy",
+      "type": "word",
+      "text": "בית מרקחת",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_emergency",
+      "type": "word",
+      "text": "חירום",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_hospital",
+      "type": "word",
+      "text": "בית חולים",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_call_an_ambulance",
+      "type": "sentence",
+      "text": "תקרא אמבולנס!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_need_a_doctor",
+      "type": "sentence",
+      "text": "אני צריך רופא.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_feel_sick",
+      "type": "sentence",
+      "text": "אני מרגיש חולה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_lost_my_passport",
+      "type": "sentence",
+      "text": "איבדתי את הדרכון שלי.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_where_is_the_nearest_hospital",
+      "type": "sentence",
+      "text": "איפה בית החולים הקרוב ביותר?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

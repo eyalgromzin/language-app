@@ -1,0 +1,68 @@
+{
+  "id": "26_health_and_medical_2",
+  "title": "Zdraví a lékařství (Part 2)",
+  "emoji": "🏥",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "26_health_and_medical_sick",
+      "type": "word",
+      "text": "nemocný",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_fever",
+      "type": "word",
+      "text": "horečka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_appointment",
+      "type": "word",
+      "text": "schůzka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_emergency",
+      "type": "word",
+      "text": "nouze",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_treatment",
+      "type": "word",
+      "text": "léčba",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_i_am_feeling_sick",
+      "type": "sentence",
+      "text": "Necítím se dobře.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_do_you_have_any_medicine",
+      "type": "sentence",
+      "text": "Máte nějaké léky?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_this_is_an_emergency",
+      "type": "sentence",
+      "text": "To je nouzová situace.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_what_treatment_do_i_need",
+      "type": "sentence",
+      "text": "Jakou léčbu potřebuji?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_my_fever_is_very_high",
+      "type": "sentence",
+      "text": "Má horečka je velmi vysoká.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

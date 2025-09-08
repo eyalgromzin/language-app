@@ -1,0 +1,68 @@
+{
+  "id": "37_home_and_furniture_1",
+  "title": "Дім та меблі (Part 1)",
+  "emoji": "🏠",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "37_home_and_furniture_home",
+      "type": "word",
+      "text": "дім",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_house",
+      "type": "word",
+      "text": "будинок",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_room",
+      "type": "word",
+      "text": "кімната",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_kitchen",
+      "type": "word",
+      "text": "кухня",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_bedroom",
+      "type": "word",
+      "text": "спальня",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_welcome_to_my_home",
+      "type": "sentence",
+      "text": "Ласкаво просимо до мого дому.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_how_many_rooms_does_your_house_have",
+      "type": "sentence",
+      "text": "Скільки кімнат у вашому будинку?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_the_kitchen_is_very_modern",
+      "type": "sentence",
+      "text": "Кухня дуже сучасна.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_my_bedroom_is_on_the_second_floor",
+      "type": "sentence",
+      "text": "Моя спальня на другому поверсі.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_please_sit_at_the_table",
+      "type": "sentence",
+      "text": "Будь ласка, сядьте за стіл.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "13_work_study_2",
+  "title": "работа и учеба (Part 2)",
+  "emoji": "💼",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "13_work_study_teacher",
+      "type": "word",
+      "text": "учитель",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_office",
+      "type": "word",
+      "text": "офис",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_meeting",
+      "type": "word",
+      "text": "встреча",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_project",
+      "type": "word",
+      "text": "проект",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_learning_is_lifelong",
+      "type": "sentence",
+      "text": "Обучение на всю жизнь.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_work_hard_study_hard",
+      "type": "sentence",
+      "text": "Работай усердно, учись усердно.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_knowledge_is_power",
+      "type": "sentence",
+      "text": "Знание - сила.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "31_emotions_and_feelings_2",
+  "title": "emoções e sentimentos (Part 2)",
+  "emoji": "😊",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_calm",
+      "type": "word",
+      "text": "calmo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_tired",
+      "type": "word",
+      "text": "cansado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_surprised",
+      "type": "word",
+      "text": "surpreso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_scared",
+      "type": "word",
+      "text": "assustado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_love",
+      "type": "word",
+      "text": "amor",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_love_this_song",
+      "type": "sentence",
+      "text": "Eu amo esta música.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_are_you_okay",
+      "type": "sentence",
+      "text": "Você está bem?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
+      "type": "sentence",
+      "text": "Eu estou surpreso com a notícia.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_feelings_are_important",
+      "type": "sentence",
+      "text": "Sentimentos são importantes.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

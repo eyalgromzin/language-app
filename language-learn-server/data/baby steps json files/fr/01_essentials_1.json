@@ -1,0 +1,68 @@
+{
+  "id": "01_essentials_1",
+  "title": "salutations et politesse (Part 1)",
+  "emoji": "👋",
+  "language": "French",
+  "items": [
+    {
+      "id": "01_essentials_hello",
+      "type": "word",
+      "text": "bonjour",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_hi",
+      "type": "word",
+      "text": "salut",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_please",
+      "type": "word",
+      "text": "s'il vous plaît",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thank_you",
+      "type": "word",
+      "text": "merci",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_thanks",
+      "type": "word",
+      "text": "merci",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_excuse_me",
+      "type": "sentence",
+      "text": "Excusez-moi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_sorry",
+      "type": "sentence",
+      "text": "Désolé.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_morning",
+      "type": "sentence",
+      "text": "Bonjour.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_evening",
+      "type": "sentence",
+      "text": "Bonsoir.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_good_night",
+      "type": "sentence",
+      "text": "Bonne nuit.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

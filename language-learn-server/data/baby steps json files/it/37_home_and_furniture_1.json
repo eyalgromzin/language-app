@@ -1,0 +1,68 @@
+{
+  "id": "37_home_and_furniture_1",
+  "title": "casa e mobili (Part 1)",
+  "emoji": "🏠",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "37_home_and_furniture_home",
+      "type": "word",
+      "text": "casa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_room",
+      "type": "word",
+      "text": "stanza",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_kitchen",
+      "type": "word",
+      "text": "cucina",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_bathroom",
+      "type": "word",
+      "text": "bagno",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_bedroom",
+      "type": "word",
+      "text": "camera da letto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_welcome_to_my_home",
+      "type": "sentence",
+      "text": "Benvenuto a casa mia.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_this_is_my_living_room",
+      "type": "sentence",
+      "text": "Questo è il mio soggiorno.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_do_you_like_my_furniture",
+      "type": "sentence",
+      "text": "Le piacciono i miei mobili?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_where_is_the_bathroom",
+      "type": "sentence",
+      "text": "Dove è il bagno?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_this_table_is_very_old",
+      "type": "sentence",
+      "text": "Questo tavolo è molto vecchio.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

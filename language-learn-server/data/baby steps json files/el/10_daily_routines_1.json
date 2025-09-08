@@ -1,0 +1,68 @@
+{
+  "id": "10_daily_routines_1",
+  "title": "Καθημερινές ρουτίνες και κοινά ρήματα (Part 1)",
+  "emoji": "☀️",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "10_daily_routines_to_go",
+      "type": "word",
+      "text": "πάω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_come",
+      "type": "word",
+      "text": "έρχομαι",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_do",
+      "type": "word",
+      "text": "κάνω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_make",
+      "type": "word",
+      "text": "φτιάχνω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_like",
+      "type": "word",
+      "text": "μου αρέσει",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_i_go_to_work",
+      "type": "sentence",
+      "text": "Πάω στη δουλειά.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_like_this",
+      "type": "sentence",
+      "text": "Μου αρέσει αυτό.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_do_not_understand",
+      "type": "sentence",
+      "text": "Δεν καταλαβαίνω.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_wake_up_early",
+      "type": "sentence",
+      "text": "Ξυπνάω νωρίς.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_eat_breakfast",
+      "type": "sentence",
+      "text": "Τρώω πρωινό.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

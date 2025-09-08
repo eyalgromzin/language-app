@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_2",
+  "title": "Emergencies & Health (Part 2)",
+  "emoji": "⛑️",
+  "language": "German",
+  "items": [
+    {
+      "id": "09_emergencies_health_sick",
+      "type": "word",
+      "text": "krank",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_medicine",
+      "type": "word",
+      "text": "Medizin",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_ambulance",
+      "type": "word",
+      "text": "Krankenwagen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_police",
+      "type": "word",
+      "text": "Polizei",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_fire",
+      "type": "word",
+      "text": "Feuer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_i_am_sick",
+      "type": "sentence",
+      "text": "Ich bin krank.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_the_police",
+      "type": "sentence",
+      "text": "Rufen Sie die Polizei.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_there_is_a_fire",
+      "type": "sentence",
+      "text": "Es brennt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_lost_my_passport",
+      "type": "sentence",
+      "text": "Ich habe meinen Pass verloren.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_this_is_an_emergency",
+      "type": "sentence",
+      "text": "Das ist ein Notfall.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

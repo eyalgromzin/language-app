@@ -1,0 +1,68 @@
+{
+  "id": "31_emotions_and_feelings_2",
+  "title": "Emotions & Feelings (Part 2)",
+  "emoji": "😊",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_tired",
+      "type": "word",
+      "text": "cansado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_surprised",
+      "type": "word",
+      "text": "sorprendido",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_worried",
+      "type": "word",
+      "text": "preocupado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_confused",
+      "type": "word",
+      "text": "confundido",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_proud",
+      "type": "word",
+      "text": "orgulloso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_feel_nervous_before_exams",
+      "type": "sentence",
+      "text": "Me siento nervioso antes de los exámenes.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_are_you_tired",
+      "type": "sentence",
+      "text": "¿Estás cansado?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
+      "type": "sentence",
+      "text": "Estoy sorprendido por las noticias.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_don_t_worry_about_it",
+      "type": "sentence",
+      "text": "No te preocupes por eso.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_proud_of_my_achievement",
+      "type": "sentence",
+      "text": "Estoy orgulloso de mi logro.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

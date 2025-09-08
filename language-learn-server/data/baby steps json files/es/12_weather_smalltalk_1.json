@@ -1,0 +1,68 @@
+{
+  "id": "12_weather_smalltalk_1",
+  "title": "Weather & small talk (Part 1)",
+  "emoji": "��️",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_hot",
+      "type": "word",
+      "text": "caliente",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_cold",
+      "type": "word",
+      "text": "frío",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_rain",
+      "type": "word",
+      "text": "lluvia",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_sunny",
+      "type": "word",
+      "text": "soleado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_warm",
+      "type": "word",
+      "text": "cálido",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_very_hot_today",
+      "type": "sentence",
+      "text": "Hoy hace mucho calor.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_might_rain_tomorrow",
+      "type": "sentence",
+      "text": "Puede que llueva mañana.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_have_a_nice_day",
+      "type": "sentence",
+      "text": "¡Que tengas un buen día!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_is_the_weather",
+      "type": "sentence",
+      "text": "¿Cómo está el clima?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_nice_weather",
+      "type": "sentence",
+      "text": "El clima está agradable.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

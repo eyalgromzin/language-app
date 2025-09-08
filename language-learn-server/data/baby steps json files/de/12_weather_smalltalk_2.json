@@ -1,0 +1,68 @@
+{
+  "id": "12_weather_smalltalk_2",
+  "title": "Weather & Small Talk (Part 2)",
+  "emoji": "🌦️",
+  "language": "German",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_rainy",
+      "type": "word",
+      "text": "regnerisch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_cloudy",
+      "type": "word",
+      "text": "bewölkt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_windy",
+      "type": "word",
+      "text": "windig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_snow",
+      "type": "word",
+      "text": "Schnee",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_rain",
+      "type": "word",
+      "text": "Regen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_do_you_like_this_weather",
+      "type": "sentence",
+      "text": "Gefällt Ihnen dieses Wetter?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_what_is_your_name",
+      "type": "sentence",
+      "text": "Wie heißen Sie?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_nice_to_meet_you",
+      "type": "sentence",
+      "text": "Freut mich, Sie kennenzulernen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_are_you",
+      "type": "sentence",
+      "text": "Wie geht es Ihnen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_have_a_nice_day",
+      "type": "sentence",
+      "text": "Einen schönen Tag noch.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

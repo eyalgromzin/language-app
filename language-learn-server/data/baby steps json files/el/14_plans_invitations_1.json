@@ -1,0 +1,68 @@
+{
+  "id": "14_plans_invitations_1",
+  "title": "Κάνοντας σχέδια και προσκλήσεις (Part 1)",
+  "emoji": "📅",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "14_plans_invitations_today",
+      "type": "word",
+      "text": "σήμερα",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_tomorrow",
+      "type": "word",
+      "text": "αύριο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_weekend",
+      "type": "word",
+      "text": "σαββατοκύριακο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_plan",
+      "type": "word",
+      "text": "σχέδιο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_meet",
+      "type": "word",
+      "text": "συναντώ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_what_are_you_doing_tomorrow",
+      "type": "sentence",
+      "text": "Τι κάνεις αύριο;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_would_you_like_to",
+      "type": "sentence",
+      "text": "Θα ήθελες να …;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_let_us_meet_at",
+      "type": "sentence",
+      "text": "Ας συναντηθούμε στις …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_see_you_soon",
+      "type": "sentence",
+      "text": "Τα λέμε σύντομα!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_are_you_free_this_weekend",
+      "type": "sentence",
+      "text": "Είσαι ελεύθερος αυτό το σαββατοκύριακο;",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

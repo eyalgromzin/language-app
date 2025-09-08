@@ -1,0 +1,68 @@
+{
+  "id": "18_transportation_details_2",
+  "title": "Transport details (Part 2)",
+  "emoji": "🚌",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "18_transportation_details_station",
+      "type": "word",
+      "text": "station",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_platform",
+      "type": "word",
+      "text": "perron",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_departure",
+      "type": "word",
+      "text": "vertrek",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_arrival",
+      "type": "word",
+      "text": "aankomst",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_delay",
+      "type": "word",
+      "text": "vertraging",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_how_much_is_a_ticket",
+      "type": "sentence",
+      "text": "Hoeveel kost een kaartje?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_does_this_bus_go_to",
+      "type": "sentence",
+      "text": "Gaat deze bus naar …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_where_is_the_nearest_station",
+      "type": "sentence",
+      "text": "Waar is het dichtstbijzijnde station?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_what_time_does_it_arrive",
+      "type": "sentence",
+      "text": "Hoe laat komt het aan?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_can_i_get_a_refund",
+      "type": "sentence",
+      "text": "Kan ik mijn geld terugkrijgen?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

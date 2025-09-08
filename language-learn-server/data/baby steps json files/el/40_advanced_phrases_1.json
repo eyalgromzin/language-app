@@ -1,0 +1,68 @@
+{
+  "id": "40_advanced_phrases_1",
+  "title": "Προχωρημένες φράσεις (Part 1)",
+  "emoji": "🚀",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "40_advanced_phrases_nevertheless",
+      "type": "word",
+      "text": "παρόλα αυτά",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore",
+      "type": "word",
+      "text": "επιπλέον",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_otherwise",
+      "type": "word",
+      "text": "αλλιώς",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_meanwhile",
+      "type": "word",
+      "text": "εν τω μεταξύ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_consequently",
+      "type": "word",
+      "text": "κατά συνέπεια",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
+      "type": "sentence",
+      "text": "Παρόλα αυτά, ακόμα θέλω να δοκιμάσω.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
+      "type": "sentence",
+      "text": "Επιπλέον, πιστεύω ότι αυτό είναι σωστό.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
+      "type": "sentence",
+      "text": "Πρέπει να φύγουμε τώρα, αλλιώς θα αργήσουμε.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
+      "type": "sentence",
+      "text": "Εν τω μεταξύ, θα ετοιμάσω το βραδινό.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
+      "type": "sentence",
+      "text": "Κατά συνέπεια, η συνάντηση ακυρώθηκε.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

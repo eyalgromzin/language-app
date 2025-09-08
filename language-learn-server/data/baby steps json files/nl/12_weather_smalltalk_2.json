@@ -1,0 +1,68 @@
+{
+  "id": "12_weather_smalltalk_2",
+  "title": "Weer en kleine praat (Part 2)",
+  "emoji": "🌦️",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_windy",
+      "type": "word",
+      "text": "winderig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_cloudy",
+      "type": "word",
+      "text": "bewolkt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_snow",
+      "type": "word",
+      "text": "sneeuw",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_nice",
+      "type": "word",
+      "text": "leuk",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_bad",
+      "type": "word",
+      "text": "slecht",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_what_a_beautiful_day",
+      "type": "sentence",
+      "text": "Wat een mooie dag!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_the_weather_is_bad",
+      "type": "sentence",
+      "text": "Het weer is slecht.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_do_you_like_this_weather",
+      "type": "sentence",
+      "text": "Vind je dit weer leuk?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_windy_today",
+      "type": "sentence",
+      "text": "Het is vandaag winderig.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_are_you_today",
+      "type": "sentence",
+      "text": "Hoe gaat het vandaag met je?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

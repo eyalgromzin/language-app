@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_2",
+  "title": "richieste e chiedere aiuto (Part 2)",
+  "emoji": "🙋",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "15_requests_help_want",
+      "type": "word",
+      "text": "volere",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_need",
+      "type": "word",
+      "text": "avere bisogno",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_show",
+      "type": "word",
+      "text": "mostrare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_tell",
+      "type": "word",
+      "text": "dire",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_explain",
+      "type": "word",
+      "text": "spiegare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_would_you_mind",
+      "type": "sentence",
+      "text": "Le dispiacerebbe",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_i_want_to",
+      "type": "sentence",
+      "text": "Voglio",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_please_tell_me",
+      "type": "sentence",
+      "text": "Per favore mi dica",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_is_it_possible",
+      "type": "sentence",
+      "text": "È possibile",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_thank_you_for_helping",
+      "type": "sentence",
+      "text": "Grazie per l'aiuto.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

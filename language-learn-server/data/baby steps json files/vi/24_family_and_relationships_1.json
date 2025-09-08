@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_1",
+  "title": "Gia đình và mối quan hệ (Part 1)",
+  "emoji": "👨‍👩‍👧‍👦",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "24_family_and_relationships_family",
+      "type": "word",
+      "text": "gia đình",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_mother",
+      "type": "word",
+      "text": "mẹ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_father",
+      "type": "word",
+      "text": "bố",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_sister",
+      "type": "word",
+      "text": "chị gái",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_brother",
+      "type": "word",
+      "text": "anh trai",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_how_is_your_family",
+      "type": "sentence",
+      "text": "Gia đình bạn thế nào?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_mother_is_a_teacher",
+      "type": "sentence",
+      "text": "Mẹ tôi là giáo viên.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_have_two_sisters",
+      "type": "sentence",
+      "text": "Tôi có hai chị gái.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_where_does_your_father_work",
+      "type": "sentence",
+      "text": "Bố bạn làm việc ở đâu?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_brother_is_older_than_me",
+      "type": "sentence",
+      "text": "Anh trai tôi lớn hơn tôi.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

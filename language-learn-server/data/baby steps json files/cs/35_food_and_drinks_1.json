@@ -1,0 +1,68 @@
+{
+  "id": "35_food_and_drinks_1",
+  "title": "Jídlo a nápoje (Part 1)",
+  "emoji": "🍕",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "35_food_and_drinks_food",
+      "type": "word",
+      "text": "jídlo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_drink",
+      "type": "word",
+      "text": "nápoj",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_breakfast",
+      "type": "word",
+      "text": "snídaně",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_lunch",
+      "type": "word",
+      "text": "oběd",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_dinner",
+      "type": "word",
+      "text": "večeře",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_what_would_you_like_to_eat",
+      "type": "sentence",
+      "text": "Co byste chtěli jíst?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_can_i_have_something_to_drink",
+      "type": "sentence",
+      "text": "Můžu dostat něco k pití?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_did_you_have_for_breakfast",
+      "type": "sentence",
+      "text": "Co jste měli k snídani?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_let_s_go_to_a_restaurant_for_lunch",
+      "type": "sentence",
+      "text": "Pojďme do restaurace na oběd.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_time_is_dinner",
+      "type": "sentence",
+      "text": "V kolik je večeře?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

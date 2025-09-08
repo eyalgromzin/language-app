@@ -1,0 +1,68 @@
+{
+  "id": "07_shopping_money_2",
+  "title": "shopping e denaro (Part 2)",
+  "emoji": "🛍️",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "07_shopping_money_buy",
+      "type": "word",
+      "text": "comprare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_sell",
+      "type": "word",
+      "text": "vendere",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_card",
+      "type": "word",
+      "text": "carta",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cash",
+      "type": "word",
+      "text": "contanti",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_change",
+      "type": "word",
+      "text": "resto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_i_want_to_buy",
+      "type": "sentence",
+      "text": "Voglio comprare",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_where_can_i_buy",
+      "type": "sentence",
+      "text": "Dove posso comprare",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_sell",
+      "type": "sentence",
+      "text": "Vende",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_this_is_too_expensive",
+      "type": "sentence",
+      "text": "Questo è troppo costoso.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_thank_you_for_your_help",
+      "type": "sentence",
+      "text": "Grazie per il suo aiuto.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

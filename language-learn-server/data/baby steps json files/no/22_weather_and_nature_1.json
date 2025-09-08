@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_1",
+  "title": "Vær og natur (Part 1)",
+  "emoji": "🌤️",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "22_weather_and_nature_sunny",
+      "type": "word",
+      "text": "solrikt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_rainy",
+      "type": "word",
+      "text": "regnfullt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_cloudy",
+      "type": "word",
+      "text": "skyet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_windy",
+      "type": "word",
+      "text": "vindfullt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_snow",
+      "type": "word",
+      "text": "snø",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_it_is_sunny_today",
+      "type": "sentence",
+      "text": "Det er solrikt i dag.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_weather_is_nice",
+      "type": "sentence",
+      "text": "Været er fint.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_it_might_rain_later",
+      "type": "sentence",
+      "text": "Det kan regne senere.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_wind_is_very_strong",
+      "type": "sentence",
+      "text": "Vinden er veldig sterk.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_i_love_walking_in_the_forest",
+      "type": "sentence",
+      "text": "Jeg elsker å gå i skogen.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

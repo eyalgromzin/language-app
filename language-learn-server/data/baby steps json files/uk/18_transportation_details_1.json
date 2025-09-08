@@ -1,0 +1,68 @@
+{
+  "id": "18_transportation_details_1",
+  "title": "Деталі транспортування (Part 1)",
+  "emoji": "🚌",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "18_transportation_details_bus",
+      "type": "word",
+      "text": "автобус",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_train",
+      "type": "word",
+      "text": "потяг",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_metro",
+      "type": "word",
+      "text": "метро",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_schedule",
+      "type": "word",
+      "text": "розклад",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_ticket",
+      "type": "word",
+      "text": "квиток",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_what_time_does_the_bus_leave",
+      "type": "sentence",
+      "text": "О котрій відправляється автобус?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_where_can_i_buy_a_ticket",
+      "type": "sentence",
+      "text": "Де я можу купити квиток?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_there_a_discount",
+      "type": "sentence",
+      "text": "Є знижка?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_which_platform_is_it",
+      "type": "sentence",
+      "text": "Яка це платформа?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_the_train_delayed",
+      "type": "sentence",
+      "text": "Потяг затримується?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

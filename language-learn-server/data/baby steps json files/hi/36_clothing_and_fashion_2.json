@@ -1,0 +1,68 @@
+{
+  "id": "36_clothing_and_fashion_2",
+  "title": "कपड़े और फैशन (Part 2)",
+  "emoji": "👕",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_hat",
+      "type": "word",
+      "text": "टोपी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_bag",
+      "type": "word",
+      "text": "बैग",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_jewelry",
+      "type": "word",
+      "text": "गहने",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_style",
+      "type": "word",
+      "text": "स्टाइल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_fashion",
+      "type": "word",
+      "text": "फैशन",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_need_new_clothes",
+      "type": "sentence",
+      "text": "मुझे नए कपड़े चाहिए।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_this_dress_is_beautiful",
+      "type": "sentence",
+      "text": "यह ड्रेस बहुत सुंदर है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_like_this_style",
+      "type": "sentence",
+      "text": "क्या आपको यह स्टाइल पसंद है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_fashion_is_very_important",
+      "type": "sentence",
+      "text": "फैशन बहुत महत्वपूर्ण है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_want_to_buy_a_new_bag",
+      "type": "sentence",
+      "text": "मैं एक नया बैग खरीदना चाहता हूं।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

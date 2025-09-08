@@ -1,0 +1,68 @@
+{
+  "id": "19_housing_utilities_1",
+  "title": "жилье и коммунальные услуги (Part 1)",
+  "emoji": "🏠",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "19_housing_utilities_house",
+      "type": "word",
+      "text": "дом",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_apartment",
+      "type": "word",
+      "text": "квартира",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_room",
+      "type": "word",
+      "text": "комната",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_kitchen",
+      "type": "word",
+      "text": "кухня",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_bathroom",
+      "type": "word",
+      "text": "ванная",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_do_you_live_in_a_house",
+      "type": "sentence",
+      "text": "Вы живете в доме?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_how_many_rooms_do_you_have",
+      "type": "sentence",
+      "text": "Сколько у вас комнат?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_where_is_the_bathroom",
+      "type": "sentence",
+      "text": "Где ванная?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_housing_is_expensive",
+      "type": "sentence",
+      "text": "Жилье дорогое.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_utilities_are_necessary",
+      "type": "sentence",
+      "text": "Коммунальные услуги необходимы.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

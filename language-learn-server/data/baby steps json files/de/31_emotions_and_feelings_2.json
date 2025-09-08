@@ -1,0 +1,68 @@
+{
+  "id": "31_emotions_and_feelings_2",
+  "title": "Emotions & Feelings (Part 2)",
+  "emoji": "😊",
+  "language": "German",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_excited",
+      "type": "word",
+      "text": "aufgeregt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_nervous",
+      "type": "word",
+      "text": "nervös",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_calm",
+      "type": "word",
+      "text": "ruhig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_tired",
+      "type": "word",
+      "text": "müde",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_energetic",
+      "type": "word",
+      "text": "energisch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_are_you_angry_with_me",
+      "type": "sentence",
+      "text": "Sind Sie wütend auf mich?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_calm_now",
+      "type": "sentence",
+      "text": "Ich bin jetzt ruhig.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_emotions_are_important",
+      "type": "sentence",
+      "text": "Emotionen sind wichtig.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_how_do_you_feel_about",
+      "type": "sentence",
+      "text": "Wie fühlen Sie sich über?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_feelings_matter",
+      "type": "sentence",
+      "text": "Gefühle sind wichtig.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

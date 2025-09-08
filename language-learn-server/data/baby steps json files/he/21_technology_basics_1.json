@@ -1,0 +1,68 @@
+{
+  "id": "21_technology_basics_1",
+  "title": "יסודות טכנולוגיה (Part 1)",
+  "emoji": "💻",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "21_technology_basics_computer",
+      "type": "word",
+      "text": "מחשב",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_phone",
+      "type": "word",
+      "text": "טלפון",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_internet",
+      "type": "word",
+      "text": "אינטרנט",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_app",
+      "type": "word",
+      "text": "אפליקציה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_password",
+      "type": "word",
+      "text": "סיסמה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_can_you_help_me_with_my_computer",
+      "type": "sentence",
+      "text": "האם אתה יכול לעזור לי עם המחשב שלי?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_need_to_connect_to_wifi",
+      "type": "sentence",
+      "text": "אני צריך להתחבר לוויי-פיי.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_what_is_your_email_address",
+      "type": "sentence",
+      "text": "מה כתובת האימייל שלך?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_want_to_download_this_app",
+      "type": "sentence",
+      "text": "אני רוצה להוריד את האפליקציה הזו.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_do_you_have_a_website",
+      "type": "sentence",
+      "text": "האם יש לך אתר אינטרנט?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_2",
+  "title": "Ruoka ja juoma perusteet (Part 2)",
+  "emoji": "🍎",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "06_food_drink_basics_milk",
+      "type": "word",
+      "text": "maito",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_juice",
+      "type": "word",
+      "text": "mehu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_rice",
+      "type": "word",
+      "text": "riisi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_chicken",
+      "type": "word",
+      "text": "kana",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_fish",
+      "type": "word",
+      "text": "kala",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_how_much_is_it",
+      "type": "sentence",
+      "text": "Paljonko se maksaa?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_hungry",
+      "type": "sentence",
+      "text": "Minulla on nälkä.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_thirsty",
+      "type": "sentence",
+      "text": "Minulla on jano.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_what_do_you_recommend",
+      "type": "sentence",
+      "text": "Mitä suosittelette?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_the_bill_please",
+      "type": "sentence",
+      "text": "Lasku, kiitos.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

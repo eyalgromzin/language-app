@@ -1,0 +1,68 @@
+{
+  "id": "26_health_and_medical_2",
+  "title": "salute e medicina (Part 2)",
+  "emoji": "🏥",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "26_health_and_medical_sick",
+      "type": "word",
+      "text": "malato",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_fever",
+      "type": "word",
+      "text": "febbre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_cold",
+      "type": "word",
+      "text": "raffreddore",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_headache",
+      "type": "word",
+      "text": "mal di testa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_emergency",
+      "type": "word",
+      "text": "emergenza",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_i_am_allergic_to",
+      "type": "sentence",
+      "text": "Sono allergico a",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_please_call_an_ambulance",
+      "type": "sentence",
+      "text": "Per favore chiami un'ambulanza.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_my_temperature_is_high",
+      "type": "sentence",
+      "text": "La mia temperatura è alta.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_have_an_appointment_with",
+      "type": "sentence",
+      "text": "Ho un appuntamento con",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_health_is_very_important",
+      "type": "sentence",
+      "text": "La salute è molto importante.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

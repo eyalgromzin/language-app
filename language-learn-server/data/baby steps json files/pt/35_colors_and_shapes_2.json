@@ -1,0 +1,50 @@
+{
+  "id": "35_colors_and_shapes_2",
+  "title": "cores e formas (Part 2)",
+  "emoji": "🎨",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "35_colors_and_shapes_white",
+      "type": "word",
+      "text": "branco",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_circle",
+      "type": "word",
+      "text": "círculo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_square",
+      "type": "word",
+      "text": "quadrado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_triangle",
+      "type": "word",
+      "text": "triângulo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_colors_and_shapes_this_is_a_red_circle",
+      "type": "sentence",
+      "text": "Este é um círculo vermelho.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_blue_is_my_favorite_color",
+      "type": "sentence",
+      "text": "Azul é minha cor favorita.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_colors_and_shapes_learning_colors_is_fun",
+      "type": "sentence",
+      "text": "Aprender cores é divertido.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

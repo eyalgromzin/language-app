@@ -1,0 +1,68 @@
+{
+  "id": "08_travel_hotel_2",
+  "title": "viaggi e hotel (Part 2)",
+  "emoji": "🧳",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "08_travel_hotel_ticket",
+      "type": "word",
+      "text": "biglietto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_luggage",
+      "type": "word",
+      "text": "bagaglio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_airport",
+      "type": "word",
+      "text": "aeroporto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_station",
+      "type": "word",
+      "text": "stazione",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_map",
+      "type": "word",
+      "text": "mappa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_what_time_is_my_flight",
+      "type": "sentence",
+      "text": "A che ora è il mio volo?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_i_lost_my_passport",
+      "type": "sentence",
+      "text": "Ho perso il mio passaporto.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_can_you_help_me",
+      "type": "sentence",
+      "text": "Può aiutarmi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_where_can_i_buy_a_ticket",
+      "type": "sentence",
+      "text": "Dove posso comprare un biglietto?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_thank_you_for_your_help",
+      "type": "sentence",
+      "text": "Grazie per il suo aiuto.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

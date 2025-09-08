@@ -1,0 +1,68 @@
+{
+  "id": "05_getting_around_2",
+  "title": "Κατευθύνσεις και πλοήγηση (Part 2)",
+  "emoji": "🧭",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "05_getting_around_here",
+      "type": "word",
+      "text": "εδώ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_there",
+      "type": "word",
+      "text": "εκεί",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_up",
+      "type": "word",
+      "text": "πάνω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_down",
+      "type": "word",
+      "text": "κάτω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_around",
+      "type": "word",
+      "text": "γύρω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_turn_left",
+      "type": "sentence",
+      "text": "Στρίψε αριστερά.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_go_straight",
+      "type": "sentence",
+      "text": "Πήγαινε ευθεία.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_it_is_over_there",
+      "type": "sentence",
+      "text": "Είναι εκεί πέρα.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_can_you_help_me",
+      "type": "sentence",
+      "text": "Μπορείτε να με βοηθήσετε;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_how_far_is_it",
+      "type": "sentence",
+      "text": "Πόσο μακριά είναι;",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

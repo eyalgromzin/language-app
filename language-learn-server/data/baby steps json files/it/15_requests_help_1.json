@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_1",
+  "title": "richieste e chiedere aiuto (Part 1)",
+  "emoji": "🙋",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "15_requests_help_help",
+      "type": "word",
+      "text": "aiuto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_please",
+      "type": "word",
+      "text": "per favore",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_can",
+      "type": "word",
+      "text": "può",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could",
+      "type": "word",
+      "text": "potrebbe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_would",
+      "type": "word",
+      "text": "vorrebbe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_can_you_help_me",
+      "type": "sentence",
+      "text": "Può aiutarmi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_could_you_please",
+      "type": "sentence",
+      "text": "Potrebbe per favore",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_i_need_help",
+      "type": "sentence",
+      "text": "Ho bisogno di aiuto.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_you_show_me",
+      "type": "sentence",
+      "text": "Può mostrarmi",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_could_you_explain",
+      "type": "sentence",
+      "text": "Potrebbe spiegare",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

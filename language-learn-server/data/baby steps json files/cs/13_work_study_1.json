@@ -1,0 +1,68 @@
+{
+  "id": "13_work_study_1",
+  "title": "Základy práce a studia (Part 1)",
+  "emoji": "💼",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "13_work_study_office",
+      "type": "word",
+      "text": "kancelář",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_school",
+      "type": "word",
+      "text": "škola",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_meeting",
+      "type": "word",
+      "text": "schůzka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_project",
+      "type": "word",
+      "text": "projekt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_job",
+      "type": "word",
+      "text": "práce",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_i_have_a_meeting",
+      "type": "sentence",
+      "text": "Mám schůzku.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_work_from_home",
+      "type": "sentence",
+      "text": "Pracuji z domova.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_am_studying",
+      "type": "sentence",
+      "text": "Studuji …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_what_do_you_do_for_work",
+      "type": "sentence",
+      "text": "Co děláte v práci?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_work_in_an_office",
+      "type": "sentence",
+      "text": "Pracuji v kanceláři.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

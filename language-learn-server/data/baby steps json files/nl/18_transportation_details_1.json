@@ -1,0 +1,68 @@
+{
+  "id": "18_transportation_details_1",
+  "title": "Transport details (Part 1)",
+  "emoji": "🚌",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "18_transportation_details_bus",
+      "type": "word",
+      "text": "bus",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_train",
+      "type": "word",
+      "text": "trein",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_metro",
+      "type": "word",
+      "text": "metro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_schedule",
+      "type": "word",
+      "text": "schema",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_ticket",
+      "type": "word",
+      "text": "kaartje",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_what_time_does_the_bus_leave",
+      "type": "sentence",
+      "text": "Hoe laat vertrekt de bus?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_where_can_i_buy_a_ticket",
+      "type": "sentence",
+      "text": "Waar kan ik een kaartje kopen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_there_a_discount",
+      "type": "sentence",
+      "text": "Is er korting?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_which_platform_is_it",
+      "type": "sentence",
+      "text": "Welk perron is het?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_the_train_delayed",
+      "type": "sentence",
+      "text": "Heeft de trein vertraging?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

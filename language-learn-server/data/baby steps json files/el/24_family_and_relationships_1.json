@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_1",
+  "title": "Οικογένεια και σχέσεις (Part 1)",
+  "emoji": "👨‍👩‍👧‍👦",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "24_family_and_relationships_family",
+      "type": "word",
+      "text": "οικογένεια",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_mother",
+      "type": "word",
+      "text": "μητέρα",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_father",
+      "type": "word",
+      "text": "πατέρας",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_sister",
+      "type": "word",
+      "text": "αδερφή",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_brother",
+      "type": "word",
+      "text": "αδερφός",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_how_is_your_family",
+      "type": "sentence",
+      "text": "Πώς είναι η οικογένειά σου;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_mother_is_a_teacher",
+      "type": "sentence",
+      "text": "Η μητέρα μου είναι δασκάλα.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_have_two_sisters",
+      "type": "sentence",
+      "text": "Έχω δύο αδερφές.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_where_does_your_father_work",
+      "type": "sentence",
+      "text": "Πού δουλεύει ο πατέρας σου;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_brother_is_older_than_me",
+      "type": "sentence",
+      "text": "Ο αδερφός μου είναι μεγαλύτερος από εμένα.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

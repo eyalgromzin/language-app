@@ -1,0 +1,68 @@
+{
+  "id": "03_core_verbs_pronouns_1",
+  "title": "pronomes principais e verbos auxiliares (Part 1)",
+  "emoji": "🔤",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_i",
+      "type": "word",
+      "text": "eu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you",
+      "type": "word",
+      "text": "você",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he",
+      "type": "word",
+      "text": "ele",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she",
+      "type": "word",
+      "text": "ela",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_we",
+      "type": "word",
+      "text": "nós",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_am",
+      "type": "sentence",
+      "text": "Eu sou",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you_are",
+      "type": "sentence",
+      "text": "Você é",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he_is",
+      "type": "sentence",
+      "text": "Ele é",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she_is",
+      "type": "sentence",
+      "text": "Ela é",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_we_are",
+      "type": "sentence",
+      "text": "Nós somos",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

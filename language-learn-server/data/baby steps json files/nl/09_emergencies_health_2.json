@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_2",
+  "title": "Noodgevallen en gezondheid (Part 2)",
+  "emoji": "⛑️",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "09_emergencies_health_pain",
+      "type": "word",
+      "text": "pijn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_medicine",
+      "type": "word",
+      "text": "medicijn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_ambulance",
+      "type": "word",
+      "text": "ambulance",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_police",
+      "type": "word",
+      "text": "politie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_fire",
+      "type": "word",
+      "text": "brand",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_i_have_a_headache",
+      "type": "sentence",
+      "text": "Ik heb hoofdpijn.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_the_police",
+      "type": "sentence",
+      "text": "Bel de politie!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_this_is_an_emergency",
+      "type": "sentence",
+      "text": "Dit is een noodgeval.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_need_help",
+      "type": "sentence",
+      "text": "Ik heb hulp nodig.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_are_you_okay",
+      "type": "sentence",
+      "text": "Gaat het goed met je?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

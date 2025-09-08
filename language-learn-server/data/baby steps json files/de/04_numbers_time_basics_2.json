@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_2",
+  "title": "Numbers & Time Basics (Part 2)",
+  "emoji": "🔢",
+  "language": "German",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_six",
+      "type": "word",
+      "text": "sechs",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_seven",
+      "type": "word",
+      "text": "sieben",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_eight",
+      "type": "word",
+      "text": "acht",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_nine",
+      "type": "word",
+      "text": "neun",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_ten",
+      "type": "word",
+      "text": "zehn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is",
+      "type": "sentence",
+      "text": "Es ist",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_how_many",
+      "type": "sentence",
+      "text": "Wie viele",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_i_have",
+      "type": "sentence",
+      "text": "Ich habe",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_how_much",
+      "type": "sentence",
+      "text": "Wie viel",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_costs",
+      "type": "sentence",
+      "text": "Es kostet",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_2",
+  "title": "Siffror och tid grunderna (Part 2)",
+  "emoji": "🔢",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_five",
+      "type": "word",
+      "text": "fem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_six",
+      "type": "word",
+      "text": "sex",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_seven",
+      "type": "word",
+      "text": "sju",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_eight",
+      "type": "word",
+      "text": "åtta",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_nine",
+      "type": "word",
+      "text": "nio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_see_you_tomorrow",
+      "type": "sentence",
+      "text": "Vi ses imorgon.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_i_am_late",
+      "type": "sentence",
+      "text": "Jag är sen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_time_do_you_start",
+      "type": "sentence",
+      "text": "Vilken tid börjar du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_time_to_go",
+      "type": "sentence",
+      "text": "Det är dags att gå.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_how_long_does_it_take",
+      "type": "sentence",
+      "text": "Hur lång tid tar det?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "05_getting_around_2",
+  "title": "direzioni e orientamento (Part 2)",
+  "emoji": "🧭",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "05_getting_around_east",
+      "type": "word",
+      "text": "est",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_west",
+      "type": "word",
+      "text": "ovest",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_near",
+      "type": "word",
+      "text": "vicino",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_far",
+      "type": "word",
+      "text": "lontano",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_here",
+      "type": "word",
+      "text": "qui",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_it_is_near",
+      "type": "sentence",
+      "text": "È vicino.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_it_is_far",
+      "type": "sentence",
+      "text": "È lontano.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_can_you_help_me",
+      "type": "sentence",
+      "text": "Può aiutarmi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_i_am_lost",
+      "type": "sentence",
+      "text": "Mi sono perso.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_where_am_i",
+      "type": "sentence",
+      "text": "Dove sono?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

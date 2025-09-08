@@ -1,0 +1,68 @@
+{
+  "id": "40_advanced_phrases_2",
+  "title": "Advanced Phrases (Part 2)",
+  "emoji": "🚀",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "40_advanced_phrases_approximately",
+      "type": "word",
+      "text": "aproximadamente",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_occasionally",
+      "type": "word",
+      "text": "ocasionalmente",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_gradually",
+      "type": "word",
+      "text": "gradualmente",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_ultimately",
+      "type": "word",
+      "text": "finalmente",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_essentially",
+      "type": "word",
+      "text": "esencialmente",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_it_will_cost_approximately_fifty_dollars",
+      "type": "sentence",
+      "text": "Costará aproximadamente cincuenta dólares.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_i_occasionally_visit_my_grandparents",
+      "type": "sentence",
+      "text": "Ocasionalmente visito a mis abuelos.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_the_weather_gradually_improved",
+      "type": "sentence",
+      "text": "El clima mejoró gradualmente.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_ultimately_we_reached_our_goal",
+      "type": "sentence",
+      "text": "Finalmente, alcanzamos nuestra meta.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_essentially_this_is_the_same_thing",
+      "type": "sentence",
+      "text": "Esencialmente, esto es lo mismo.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

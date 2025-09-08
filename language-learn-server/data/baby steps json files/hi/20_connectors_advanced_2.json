@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_2",
+  "title": "जोड़ने वाले शब्द और उन्नत वाक्य (Part 2)",
+  "emoji": "🔗",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "20_connectors_advanced_but",
+      "type": "word",
+      "text": "लेकिन",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_and",
+      "type": "word",
+      "text": "और",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_or",
+      "type": "word",
+      "text": "या",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_if",
+      "type": "word",
+      "text": "अगर",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_when",
+      "type": "word",
+      "text": "जब",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_i_would_like_to_order_but_i_am_not_sure_what",
+      "type": "sentence",
+      "text": "मैं ऑर्डर करना चाहता हूं, लेकिन मुझे यकीन नहीं है कि क्या।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_if_you_have_time_can_you_help_me",
+      "type": "sentence",
+      "text": "अगर आपके पास समय है, तो क्या आप मेरी मदद कर सकते हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_when_you_arrive_please_call_me",
+      "type": "sentence",
+      "text": "जब आप पहुंचें, तो कृपया मुझे कॉल करें।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_also_want_to_visit_the_museum",
+      "type": "sentence",
+      "text": "मैं भी संग्रहालय जाना चाहता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_therefore_i_need_to_leave_early",
+      "type": "sentence",
+      "text": "इसलिए, मुझे जल्दी जाना होगा।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

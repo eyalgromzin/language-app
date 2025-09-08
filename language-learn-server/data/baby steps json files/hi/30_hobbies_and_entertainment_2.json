@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_2",
+  "title": "शौक और मनोरंजन (Part 2)",
+  "emoji": "🎨",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_cooking",
+      "type": "word",
+      "text": "खाना बनाना",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_garden",
+      "type": "word",
+      "text": "बगीचा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_photography",
+      "type": "word",
+      "text": "फोटोग्राफी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_dancing",
+      "type": "word",
+      "text": "नृत्य",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_singing",
+      "type": "word",
+      "text": "गायन",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_want_to_learn_to_paint",
+      "type": "sentence",
+      "text": "मैं चित्रकला सीखना चाहता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_cooking_is_my_favorite_hobby",
+      "type": "sentence",
+      "text": "खाना बनाना मेरा पसंदीदा शौक है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_my_garden_is_very_beautiful",
+      "type": "sentence",
+      "text": "मेरा बगीचा बहुत सुंदर है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_dancing",
+      "type": "sentence",
+      "text": "क्या आपको नृत्य करना पसंद है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_love_taking_photographs",
+      "type": "sentence",
+      "text": "मुझे फोटो खींचना बहुत पसंद है।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

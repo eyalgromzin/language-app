@@ -1,0 +1,68 @@
+{
+  "id": "14_plans_invitations_1",
+  "title": "Making Plans & Invitations (Part 1)",
+  "emoji": "📅",
+  "language": "German",
+  "items": [
+    {
+      "id": "14_plans_invitations_plan",
+      "type": "word",
+      "text": "Plan",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_today",
+      "type": "word",
+      "text": "heute",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_tomorrow",
+      "type": "word",
+      "text": "morgen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_weekend",
+      "type": "word",
+      "text": "Wochenende",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_free",
+      "type": "word",
+      "text": "frei",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_are_you_free_this_weekend",
+      "type": "sentence",
+      "text": "Sind Sie dieses Wochenende frei?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_what_are_you_doing_tomorrow",
+      "type": "sentence",
+      "text": "Was machen Sie morgen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_would_you_like_to_meet",
+      "type": "sentence",
+      "text": "Möchten Sie sich treffen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_i_am_busy_today",
+      "type": "sentence",
+      "text": "Ich bin heute beschäftigt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_let_us_meet_at",
+      "type": "sentence",
+      "text": "Lassen Sie uns um treffen.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

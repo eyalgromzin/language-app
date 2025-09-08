@@ -1,0 +1,50 @@
+{
+  "id": "03_core_verbs_pronouns_2",
+  "title": "основные глаголы и местоимения (Part 2)",
+  "emoji": "🔤",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_they",
+      "type": "word",
+      "text": "они",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_am",
+      "type": "word",
+      "text": "есть",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_is",
+      "type": "word",
+      "text": "есть",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_are",
+      "type": "word",
+      "text": "есть",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_they_are",
+      "type": "sentence",
+      "text": "Они есть",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_pronouns_are_important",
+      "type": "sentence",
+      "text": "Местоимения важны.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_verbs_connect_words",
+      "type": "sentence",
+      "text": "Глаголы соединяют слова.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

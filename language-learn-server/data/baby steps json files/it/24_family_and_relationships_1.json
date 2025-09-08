@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_1",
+  "title": "famiglia e relazioni (Part 1)",
+  "emoji": "👪",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "24_family_and_relationships_family",
+      "type": "word",
+      "text": "famiglia",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_mother",
+      "type": "word",
+      "text": "madre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_father",
+      "type": "word",
+      "text": "padre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_sister",
+      "type": "word",
+      "text": "sorella",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_brother",
+      "type": "word",
+      "text": "fratello",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_how_many_people_are_in_your_family",
+      "type": "sentence",
+      "text": "Quante persone ci sono nella sua famiglia?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_do_you_have_brothers_and_sisters",
+      "type": "sentence",
+      "text": "Ha fratelli e sorelle?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_family_is_very_large",
+      "type": "sentence",
+      "text": "La mia famiglia è molto numerosa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_love_my_family",
+      "type": "sentence",
+      "text": "Amo la mia famiglia.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_where_does_your_family_live",
+      "type": "sentence",
+      "text": "Dove vive la sua famiglia?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

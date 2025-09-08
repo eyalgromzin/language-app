@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_1",
+  "title": "concepts de base de nourriture et boissons (Part 1)",
+  "emoji": "🍎",
+  "language": "French",
+  "items": [
+    {
+      "id": "06_food_drink_basics_food",
+      "type": "word",
+      "text": "nourriture",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_drink",
+      "type": "word",
+      "text": "boisson",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_water",
+      "type": "word",
+      "text": "eau",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_bread",
+      "type": "word",
+      "text": "pain",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_milk",
+      "type": "word",
+      "text": "lait",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_hungry",
+      "type": "sentence",
+      "text": "J'ai faim.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_thirsty",
+      "type": "sentence",
+      "text": "J'ai soif.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_want_to_eat",
+      "type": "sentence",
+      "text": "Je veux manger.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_want_to_drink",
+      "type": "sentence",
+      "text": "Je veux boire.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_what_do_you_want_to_eat",
+      "type": "sentence",
+      "text": "Que voulez-vous manger ?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "32_time_and_dates_2",
+  "title": "זמן ותאריכים (Part 2)",
+  "emoji": "⏰",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "32_time_and_dates_week",
+      "type": "word",
+      "text": "שבוע",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_month",
+      "type": "word",
+      "text": "חודש",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_year",
+      "type": "word",
+      "text": "שנה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_today",
+      "type": "word",
+      "text": "היום",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_tomorrow",
+      "type": "word",
+      "text": "מחר",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_what_day_of_the_week_is_it",
+      "type": "sentence",
+      "text": "איזה יום בשבוע היום?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_next_month_i_am_going_on_vacation",
+      "type": "sentence",
+      "text": "בחודש הבא אני יוצא לחופשה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_year_were_you_born",
+      "type": "sentence",
+      "text": "באיזו שנה נולדת?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_today_is_a_beautiful_day",
+      "type": "sentence",
+      "text": "היום יום יפה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_see_you_tomorrow",
+      "type": "sentence",
+      "text": "נתראה מחר.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

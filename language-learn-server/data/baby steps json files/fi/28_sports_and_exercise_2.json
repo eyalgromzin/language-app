@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_2",
+  "title": "Urheilu ja harjoittelu (Part 2)",
+  "emoji": "⚽",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_win",
+      "type": "word",
+      "text": "voittaa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_lose",
+      "type": "word",
+      "text": "hävitä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_score",
+      "type": "word",
+      "text": "tulos",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_exercise",
+      "type": "word",
+      "text": "harjoittelu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_fitness",
+      "type": "word",
+      "text": "kunto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_did_you_win_the_game",
+      "type": "sentence",
+      "text": "Voititko pelin?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_what_is_the_score",
+      "type": "sentence",
+      "text": "Mikä on tulos?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_exercise_every_morning",
+      "type": "sentence",
+      "text": "Harjoittelen joka aamu.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_go_to_the_gym",
+      "type": "sentence",
+      "text": "Käytkö salilla?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_fitness_is_important_for_health",
+      "type": "sentence",
+      "text": "Kunto on tärkeää terveydelle.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

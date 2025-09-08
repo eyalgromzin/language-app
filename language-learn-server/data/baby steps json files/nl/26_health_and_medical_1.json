@@ -1,0 +1,68 @@
+{
+  "id": "26_health_and_medical_1",
+  "title": "Health & Medical (Part 1)",
+  "emoji": "🏥",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "26_health_and_medical_health",
+      "type": "word",
+      "text": "gezondheid",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_doctor",
+      "type": "word",
+      "text": "arts",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_hospital",
+      "type": "word",
+      "text": "ziekenhuis",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_medicine",
+      "type": "word",
+      "text": "medicijn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_pain",
+      "type": "word",
+      "text": "pijn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_how_are_you_feeling_today",
+      "type": "sentence",
+      "text": "Hoe voel je je vandaag?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_need_to_see_a_doctor",
+      "type": "sentence",
+      "text": "Ik moet een arts zien.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_where_is_the_nearest_hospital",
+      "type": "sentence",
+      "text": "Waar is het dichtstbijzijnde ziekenhuis?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_have_a_headache",
+      "type": "sentence",
+      "text": "Ik heb hoofdpijn.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_can_i_make_an_appointment",
+      "type": "sentence",
+      "text": "Kan ik een afspraak maken?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

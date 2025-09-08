@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_1",
+  "title": "Žádosti a prosby o pomoc (Part 1)",
+  "emoji": "🙋",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "15_requests_help_help",
+      "type": "word",
+      "text": "pomoc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_please",
+      "type": "word",
+      "text": "prosím",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could",
+      "type": "word",
+      "text": "mohl by",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_would",
+      "type": "word",
+      "text": "chtěl by",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_repeat",
+      "type": "word",
+      "text": "opakovat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could_you_help_me_please",
+      "type": "sentence",
+      "text": "Můžete mi prosím pomoci?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_you_repeat_that_please",
+      "type": "sentence",
+      "text": "Můžete to prosím zopakovat?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_please_speak_more_slowly",
+      "type": "sentence",
+      "text": "Prosím mluvte pomaleji.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_how_do_you_say_this_in_english",
+      "type": "sentence",
+      "text": "Jak se to řekne anglicky?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_what_does_this_mean",
+      "type": "sentence",
+      "text": "Co to znamená?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

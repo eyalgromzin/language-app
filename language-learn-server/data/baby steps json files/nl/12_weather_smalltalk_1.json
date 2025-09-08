@@ -1,0 +1,68 @@
+{
+  "id": "12_weather_smalltalk_1",
+  "title": "Weer en kleine praat (Part 1)",
+  "emoji": "🌦️",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_hot",
+      "type": "word",
+      "text": "heet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_cold",
+      "type": "word",
+      "text": "koud",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_rain",
+      "type": "word",
+      "text": "regen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_sunny",
+      "type": "word",
+      "text": "zonnig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_warm",
+      "type": "word",
+      "text": "warm",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_very_hot_today",
+      "type": "sentence",
+      "text": "Het is vandaag heel heet.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_might_rain_tomorrow",
+      "type": "sentence",
+      "text": "Het kan morgen regenen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_have_a_nice_day",
+      "type": "sentence",
+      "text": "Fijne dag!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_is_the_weather",
+      "type": "sentence",
+      "text": "Hoe is het weer?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_nice_weather",
+      "type": "sentence",
+      "text": "Het is leuk weer.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

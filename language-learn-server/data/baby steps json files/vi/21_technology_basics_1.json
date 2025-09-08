@@ -1,0 +1,68 @@
+{
+  "id": "21_technology_basics_1",
+  "title": "Cơ bản về công nghệ (Part 1)",
+  "emoji": "💻",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "21_technology_basics_computer",
+      "type": "word",
+      "text": "máy tính",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_phone",
+      "type": "word",
+      "text": "điện thoại",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_internet",
+      "type": "word",
+      "text": "internet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_app",
+      "type": "word",
+      "text": "ứng dụng",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_password",
+      "type": "word",
+      "text": "mật khẩu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_can_you_help_me_with_my_computer",
+      "type": "sentence",
+      "text": "Bạn có thể giúp tôi với máy tính không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_need_to_connect_to_wifi",
+      "type": "sentence",
+      "text": "Tôi cần kết nối wifi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_what_is_your_email_address",
+      "type": "sentence",
+      "text": "Địa chỉ email của bạn là gì?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_want_to_download_this_app",
+      "type": "sentence",
+      "text": "Tôi muốn tải xuống ứng dụng này.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_do_you_have_a_website",
+      "type": "sentence",
+      "text": "Bạn có trang web không?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

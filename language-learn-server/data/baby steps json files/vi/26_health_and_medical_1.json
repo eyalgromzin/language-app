@@ -1,0 +1,68 @@
+{
+  "id": "26_health_and_medical_1",
+  "title": "Sức khỏe và y tế (Part 1)",
+  "emoji": "🏥",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "26_health_and_medical_health",
+      "type": "word",
+      "text": "sức khỏe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_doctor",
+      "type": "word",
+      "text": "bác sĩ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_hospital",
+      "type": "word",
+      "text": "bệnh viện",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_medicine",
+      "type": "word",
+      "text": "thuốc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_pain",
+      "type": "word",
+      "text": "đau",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_how_are_you_feeling_today",
+      "type": "sentence",
+      "text": "Hôm nay bạn cảm thấy thế nào?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_need_to_see_a_doctor",
+      "type": "sentence",
+      "text": "Tôi cần gặp bác sĩ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_where_is_the_nearest_hospital",
+      "type": "sentence",
+      "text": "Bệnh viện gần nhất ở đâu?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_have_a_headache",
+      "type": "sentence",
+      "text": "Tôi bị đau đầu.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_can_i_make_an_appointment",
+      "type": "sentence",
+      "text": "Tôi có thể đặt lịch hẹn không?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

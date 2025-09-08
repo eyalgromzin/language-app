@@ -1,0 +1,68 @@
+{
+  "id": "25_work_and_profession_2",
+  "title": "Робота та професія (Part 2)",
+  "emoji": "💼",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "25_work_and_profession_colleague",
+      "type": "word",
+      "text": "колега",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_salary",
+      "type": "word",
+      "text": "зарплата",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_project",
+      "type": "word",
+      "text": "проект",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_deadline",
+      "type": "word",
+      "text": "дедлайн",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_career",
+      "type": "word",
+      "text": "кар'єра",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_i_work_with_great_colleagues",
+      "type": "sentence",
+      "text": "Я працюю з чудовими колегами.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_what_is_your_salary",
+      "type": "sentence",
+      "text": "Яка ваша зарплата?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_this_project_is_very_important",
+      "type": "sentence",
+      "text": "Цей проект дуже важливий.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_the_deadline_is_next_week",
+      "type": "sentence",
+      "text": "Дедлайн наступного тижня.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_want_to_advance_my_career",
+      "type": "sentence",
+      "text": "Я хочу просуватися по кар'єрі.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

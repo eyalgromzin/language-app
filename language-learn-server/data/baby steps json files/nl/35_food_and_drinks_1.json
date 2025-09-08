@@ -1,0 +1,68 @@
+{
+  "id": "35_food_and_drinks_1",
+  "title": "Eten en drinken (Part 1)",
+  "emoji": "🍕",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "35_food_and_drinks_food",
+      "type": "word",
+      "text": "eten",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_drink",
+      "type": "word",
+      "text": "drinken",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_breakfast",
+      "type": "word",
+      "text": "ontbijt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_lunch",
+      "type": "word",
+      "text": "lunch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_dinner",
+      "type": "word",
+      "text": "avondeten",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_what_would_you_like_to_eat",
+      "type": "sentence",
+      "text": "Wat zou je willen eten?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_can_i_have_something_to_drink",
+      "type": "sentence",
+      "text": "Kan ik wat te drinken hebben?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_did_you_have_for_breakfast",
+      "type": "sentence",
+      "text": "Wat heb je gegeten voor ontbijt?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_let_s_go_to_a_restaurant_for_lunch",
+      "type": "sentence",
+      "text": "Laten we naar een restaurant gaan voor lunch.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_what_time_is_dinner",
+      "type": "sentence",
+      "text": "Hoe laat is het avondeten?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

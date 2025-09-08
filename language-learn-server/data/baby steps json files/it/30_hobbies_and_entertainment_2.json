@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_2",
+  "title": "hobby e intrattenimento (Part 2)",
+  "emoji": "🎮",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_dance",
+      "type": "word",
+      "text": "ballo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_paint",
+      "type": "word",
+      "text": "dipingere",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_cook",
+      "type": "word",
+      "text": "cucinare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_garden",
+      "type": "word",
+      "text": "giardinaggio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_photography",
+      "type": "word",
+      "text": "fotografia",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_dancing_is_fun",
+      "type": "sentence",
+      "text": "Ballare è divertente.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_love_cooking_italian_food",
+      "type": "sentence",
+      "text": "Amo cucinare cibo italiano.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_photography_is_my_passion",
+      "type": "sentence",
+      "text": "La fotografia è la mia passione.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_gardening_is_relaxing",
+      "type": "sentence",
+      "text": "Il giardinaggio è rilassante.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_entertainment_is_important",
+      "type": "sentence",
+      "text": "L'intrattenimento è importante.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

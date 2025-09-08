@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_2",
+  "title": "खेल और व्यायाम (Part 2)",
+  "emoji": "⚽",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_running",
+      "type": "word",
+      "text": "दौड़ना",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_exercise",
+      "type": "word",
+      "text": "व्यायाम",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_team",
+      "type": "word",
+      "text": "टीम",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_player",
+      "type": "word",
+      "text": "खिलाड़ी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_game",
+      "type": "word",
+      "text": "खेल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_i_run_every_morning",
+      "type": "sentence",
+      "text": "मैं हर सुबह दौड़ता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_are_you_good_at_tennis",
+      "type": "sentence",
+      "text": "क्या आप टेनिस में अच्छे हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_want_to_join_a_sports_team",
+      "type": "sentence",
+      "text": "मैं एक खेल टीम में शामिल होना चाहता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_sports_are_good_for_health",
+      "type": "sentence",
+      "text": "खेल स्वास्थ्य के लिए अच्छे हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_play_basketball_with_friends",
+      "type": "sentence",
+      "text": "मैं दोस्तों के साथ बास्केटबॉल खेलता हूं।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

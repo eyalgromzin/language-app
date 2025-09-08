@@ -1,0 +1,68 @@
+{
+  "id": "19_housing_utilities_2",
+  "title": "Bostad och allmännyttiga tjänster (Part 2)",
+  "emoji": "🏠",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "19_housing_utilities_house",
+      "type": "word",
+      "text": "hus",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_kitchen",
+      "type": "word",
+      "text": "kök",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_bathroom",
+      "type": "word",
+      "text": "badrum",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_heating",
+      "type": "word",
+      "text": "värme",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_rent",
+      "type": "word",
+      "text": "hyra",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_the_heating_is_broken",
+      "type": "sentence",
+      "text": "Värmen är trasig.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_where_is_the_bathroom",
+      "type": "sentence",
+      "text": "Var är badrummet?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_is_electricity_included",
+      "type": "sentence",
+      "text": "Ingår el?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_can_i_see_the_house",
+      "type": "sentence",
+      "text": "Kan jag se huset?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_do_you_have_parking",
+      "type": "sentence",
+      "text": "Har du parkering?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

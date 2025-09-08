@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_2",
+  "title": "З'єднувачі та розширені фрази (Part 2)",
+  "emoji": "🔗",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "20_connectors_advanced_but",
+      "type": "word",
+      "text": "але",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_and",
+      "type": "word",
+      "text": "і",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_or",
+      "type": "word",
+      "text": "або",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_if",
+      "type": "word",
+      "text": "якщо",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_when",
+      "type": "word",
+      "text": "коли",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_i_would_like_to_order_but_i_am_not_sure_what",
+      "type": "sentence",
+      "text": "Я хотів би зробити замовлення, але я не впевнений що.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_if_you_have_time_can_you_help_me",
+      "type": "sentence",
+      "text": "Якщо у вас є час, чи можете ви мені допомогти?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_when_you_arrive_please_call_me",
+      "type": "sentence",
+      "text": "Коли ви прибудете, будь ласка, подзвоніть мені.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_also_want_to_visit_the_museum",
+      "type": "sentence",
+      "text": "Я також хочу відвідати музей.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_therefore_i_need_to_leave_early",
+      "type": "sentence",
+      "text": "Тому мені потрібно піти рано.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

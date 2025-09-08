@@ -1,0 +1,68 @@
+{
+  "id": "16_phone_internet_2",
+  "title": "Puhelin ja internet (Part 2)",
+  "emoji": "📱",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "16_phone_internet_text",
+      "type": "word",
+      "text": "teksti",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_message",
+      "type": "word",
+      "text": "viesti",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_password",
+      "type": "word",
+      "text": "salasana",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_internet",
+      "type": "word",
+      "text": "internet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_online",
+      "type": "word",
+      "text": "verkossa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_do_you_have_internet",
+      "type": "sentence",
+      "text": "Onko sinulla internettiä?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_email",
+      "type": "sentence",
+      "text": "Mikä on sähköpostiosoitteesi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_i_am_online",
+      "type": "sentence",
+      "text": "Olen verkossa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_send_me_a_message",
+      "type": "sentence",
+      "text": "Voisitko lähettää minulle viestin?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_the_wifi_is_slow",
+      "type": "sentence",
+      "text": "Wifi on hidas.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

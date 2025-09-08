@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_2",
+  "title": "Žádosti a prosby o pomoc (Part 2)",
+  "emoji": "🙋",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "15_requests_help_slowly",
+      "type": "word",
+      "text": "pomalu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_mean",
+      "type": "word",
+      "text": "znamenat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_say",
+      "type": "word",
+      "text": "říct",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_understand",
+      "type": "word",
+      "text": "rozumět",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_explain",
+      "type": "word",
+      "text": "vysvětlit",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_can_you_explain_this",
+      "type": "sentence",
+      "text": "Můžete to vysvětlit?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_i_dont_understand",
+      "type": "sentence",
+      "text": "Nerozumím.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_would_you_mind",
+      "type": "sentence",
+      "text": "Vadilo by vám …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_i_ask_you_something",
+      "type": "sentence",
+      "text": "Můžu se vás na něco zeptat?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_thank_you_for_helping",
+      "type": "sentence",
+      "text": "Děkuji za pomoc.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

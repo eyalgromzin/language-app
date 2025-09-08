@@ -1,0 +1,68 @@
+{
+  "id": "38_animals_and_pets_2",
+  "title": "Animals & Pets (Part 2)",
+  "emoji": "🐕",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "38_animals_and_pets_fish",
+      "type": "word",
+      "text": "pez",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_horse",
+      "type": "word",
+      "text": "caballo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_cow",
+      "type": "word",
+      "text": "vaca",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_chicken",
+      "type": "word",
+      "text": "pollo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_pig",
+      "type": "word",
+      "text": "cerdo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_horses_are_beautiful_animals",
+      "type": "sentence",
+      "text": "Los caballos son animales hermosos.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_cows_give_us_milk",
+      "type": "sentence",
+      "text": "Las vacas nos dan leche.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_like_chicken",
+      "type": "sentence",
+      "text": "¿Te gusta el pollo?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_pigs_are_very_intelligent",
+      "type": "sentence",
+      "text": "Los cerdos son muy inteligentes.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_what_is_your_favorite_animal",
+      "type": "sentence",
+      "text": "¿Cuál es tu animal favorito?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

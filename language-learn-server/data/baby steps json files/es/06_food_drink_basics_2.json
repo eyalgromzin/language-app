@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_2",
+  "title": "Food & drink basics (Part 2)",
+  "emoji": "🍎",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "06_food_drink_basics_milk",
+      "type": "word",
+      "text": "leche",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_juice",
+      "type": "word",
+      "text": "jugo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_rice",
+      "type": "word",
+      "text": "arroz",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_chicken",
+      "type": "word",
+      "text": "pollo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_fish",
+      "type": "word",
+      "text": "pescado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_how_much_is_it",
+      "type": "sentence",
+      "text": "¿Cuánto cuesta?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_hungry",
+      "type": "sentence",
+      "text": "Tengo hambre.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_thirsty",
+      "type": "sentence",
+      "text": "Tengo sed.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_what_do_you_recommend",
+      "type": "sentence",
+      "text": "¿Qué recomiendas?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_the_bill_please",
+      "type": "sentence",
+      "text": "La cuenta, por favor.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

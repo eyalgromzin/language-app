@@ -1,0 +1,68 @@
+{
+  "id": "34_colors_and_appearance_1",
+  "title": "Farger og utseende (Part 1)",
+  "emoji": "🎨",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "34_colors_and_appearance_color",
+      "type": "word",
+      "text": "farge",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_red",
+      "type": "word",
+      "text": "rød",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_blue",
+      "type": "word",
+      "text": "blå",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_green",
+      "type": "word",
+      "text": "grønn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_yellow",
+      "type": "word",
+      "text": "gul",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_what_color_is_your_car",
+      "type": "sentence",
+      "text": "Hvilken farge har bilen din?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_i_like_red_flowers",
+      "type": "sentence",
+      "text": "Jeg liker røde blomster.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_the_sky_is_very_blue_today",
+      "type": "sentence",
+      "text": "Himmelen er veldig blå i dag.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_this_green_shirt_looks_nice",
+      "type": "sentence",
+      "text": "Denne grønne skjorten ser fin ut.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_the_yellow_banana_is_ripe",
+      "type": "sentence",
+      "text": "Den gule bananen er moden.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

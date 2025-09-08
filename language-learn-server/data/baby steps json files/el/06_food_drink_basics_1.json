@@ -1,0 +1,68 @@
+{
+  "id": "06_food_drink_basics_1",
+  "title": "Βασικά τροφίμων και ποτών (Part 1)",
+  "emoji": "🍎",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "06_food_drink_basics_water",
+      "type": "word",
+      "text": "νερό",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_coffee",
+      "type": "word",
+      "text": "καφές",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_tea",
+      "type": "word",
+      "text": "τσάι",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_bread",
+      "type": "word",
+      "text": "ψωμί",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_apple",
+      "type": "word",
+      "text": "μήλο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "06_food_drink_basics_i_would_like_water_please",
+      "type": "sentence",
+      "text": "Θα ήθελα νερό, παρακαλώ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_the_food_is_delicious",
+      "type": "sentence",
+      "text": "Το φαγητό είναι νόστιμο.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_i_am_allergic_to",
+      "type": "sentence",
+      "text": "Είμαι αλλεργικός στο …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_no_sugar_please",
+      "type": "sentence",
+      "text": "Χωρίς ζάχαρη, παρακαλώ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "06_food_drink_basics_do_you_have_vegetarian_food",
+      "type": "sentence",
+      "text": "Έχετε χορτοφαγικό φαγητό;",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

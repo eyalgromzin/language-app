@@ -1,0 +1,68 @@
+{
+  "id": "21_technology_basics_2",
+  "title": "Βασικά τεχνολογίας (Part 2)",
+  "emoji": "💻",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "21_technology_basics_email",
+      "type": "word",
+      "text": "email",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_website",
+      "type": "word",
+      "text": "ιστοσελίδα",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_download",
+      "type": "word",
+      "text": "κατέβασμα",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_upload",
+      "type": "word",
+      "text": "ανέβασμα",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_wifi",
+      "type": "word",
+      "text": "wifi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_my_phone_is_not_working",
+      "type": "sentence",
+      "text": "Το τηλέφωνό μου δεν δουλεύει.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_forgot_my_password",
+      "type": "sentence",
+      "text": "Ξέχασα τον κωδικό μου.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_the_internet_is_slow_today",
+      "type": "sentence",
+      "text": "Το διαδίκτυο είναι αργό σήμερα.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_can_you_upload_the_file",
+      "type": "sentence",
+      "text": "Μπορείτε να ανεβάσετε το αρχείο;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_this_app_is_very_useful",
+      "type": "sentence",
+      "text": "Αυτή η εφαρμογή είναι πολύ χρήσιμη.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "18_transportation_details_2",
+  "title": "פרטי תחבורה (Part 2)",
+  "emoji": "🚌",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "18_transportation_details_station",
+      "type": "word",
+      "text": "תחנה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_platform",
+      "type": "word",
+      "text": "רציף",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_departure",
+      "type": "word",
+      "text": "יציאה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_arrival",
+      "type": "word",
+      "text": "הגעה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_delay",
+      "type": "word",
+      "text": "עיכוב",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_how_much_is_a_ticket",
+      "type": "sentence",
+      "text": "כמה עולה כרטיס?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_does_this_bus_go_to",
+      "type": "sentence",
+      "text": "האם האוטובוס הזה הולך ל …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_where_is_the_nearest_station",
+      "type": "sentence",
+      "text": "איפה התחנה הקרובה ביותר?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_what_time_does_it_arrive",
+      "type": "sentence",
+      "text": "באיזו שעה זה מגיע?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_can_i_get_a_refund",
+      "type": "sentence",
+      "text": "האם אני יכול לקבל החזר כספי?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

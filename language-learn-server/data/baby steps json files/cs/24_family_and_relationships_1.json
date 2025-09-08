@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_1",
+  "title": "Rodina a vztahy (Part 1)",
+  "emoji": "👨‍👩‍👧‍👦",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "24_family_and_relationships_family",
+      "type": "word",
+      "text": "rodina",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_mother",
+      "type": "word",
+      "text": "matka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_father",
+      "type": "word",
+      "text": "otec",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_sister",
+      "type": "word",
+      "text": "sestra",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_brother",
+      "type": "word",
+      "text": "bratr",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_how_is_your_family",
+      "type": "sentence",
+      "text": "Jak se má vaše rodina?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_mother_is_a_teacher",
+      "type": "sentence",
+      "text": "Moje matka je učitelka.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_have_two_sisters",
+      "type": "sentence",
+      "text": "Mám dvě sestry.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_where_does_your_father_work",
+      "type": "sentence",
+      "text": "Kde pracuje váš otec?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_brother_is_older_than_me",
+      "type": "sentence",
+      "text": "Můj bratr je starší než já.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

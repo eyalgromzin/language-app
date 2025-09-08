@@ -1,0 +1,68 @@
+{
+  "id": "07_shopping_money_1",
+  "title": "Zakupy i pieniądze (Part 1)",
+  "emoji": "🛍️",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "07_shopping_money_price",
+      "type": "word",
+      "text": "cena",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cash",
+      "type": "word",
+      "text": "gotówka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_card",
+      "type": "word",
+      "text": "karta",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_receipt",
+      "type": "word",
+      "text": "paragon",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_money",
+      "type": "word",
+      "text": "pieniądze",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_how_much_is_this",
+      "type": "sentence",
+      "text": "Ile to kosztuje?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_take_cards",
+      "type": "sentence",
+      "text": "Czy przyjmujecie karty?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_i_am_just_looking",
+      "type": "sentence",
+      "text": "Tylko oglądam.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_can_i_try_it_on",
+      "type": "sentence",
+      "text": "Czy mogę to przymierzyć?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_is_there_a_discount",
+      "type": "sentence",
+      "text": "Czy jest zniżka?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

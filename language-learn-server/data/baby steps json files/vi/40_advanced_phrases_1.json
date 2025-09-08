@@ -1,0 +1,68 @@
+{
+  "id": "40_advanced_phrases_1",
+  "title": "Cụm từ nâng cao (Part 1)",
+  "emoji": "🚀",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "40_advanced_phrases_nevertheless",
+      "type": "word",
+      "text": "tuy nhiên",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore",
+      "type": "word",
+      "text": "hơn nữa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_otherwise",
+      "type": "word",
+      "text": "nếu không",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_meanwhile",
+      "type": "word",
+      "text": "trong khi đó",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_consequently",
+      "type": "word",
+      "text": "do đó",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
+      "type": "sentence",
+      "text": "Tuy nhiên, tôi vẫn muốn thử.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
+      "type": "sentence",
+      "text": "Hơn nữa, tôi tin rằng điều này là đúng.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
+      "type": "sentence",
+      "text": "Chúng ta phải đi ngay, nếu không chúng ta sẽ muộn.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
+      "type": "sentence",
+      "text": "Trong khi đó, tôi sẽ chuẩn bị bữa tối.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
+      "type": "sentence",
+      "text": "Do đó, cuộc họp đã bị hủy.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

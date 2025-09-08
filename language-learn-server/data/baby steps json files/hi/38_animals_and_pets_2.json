@@ -1,0 +1,68 @@
+{
+  "id": "38_animals_and_pets_2",
+  "title": "जानवर और पालतू (Part 2)",
+  "emoji": "🐾",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "38_animals_and_pets_fish",
+      "type": "word",
+      "text": "मछली",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_horse",
+      "type": "word",
+      "text": "घोड़ा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_cow",
+      "type": "word",
+      "text": "गाय",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_chicken",
+      "type": "word",
+      "text": "मुर्गी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_rabbit",
+      "type": "word",
+      "text": "खरगोश",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_like_dogs",
+      "type": "sentence",
+      "text": "क्या आपको कुत्ते पसंद हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_pets_are_good_companions",
+      "type": "sentence",
+      "text": "पालतू जानवर अच्छे साथी होते हैं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_i_want_to_get_a_pet",
+      "type": "sentence",
+      "text": "मैं एक पालतू जानवर लेना चाहता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_what_animals_do_you_see",
+      "type": "sentence",
+      "text": "आप कौन से जानवर देखते हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_animals_are_important_for_nature",
+      "type": "sentence",
+      "text": "जानवर प्रकृति के लिए महत्वपूर्ण हैं।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

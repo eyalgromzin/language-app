@@ -1,0 +1,68 @@
+{
+  "id": "12_weather_smalltalk_1",
+  "title": "tempo e conversazione (Part 1)",
+  "emoji": "🌦️",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_weather",
+      "type": "word",
+      "text": "tempo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_hot",
+      "type": "word",
+      "text": "caldo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_cold",
+      "type": "word",
+      "text": "freddo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_sunny",
+      "type": "word",
+      "text": "soleggiato",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_rainy",
+      "type": "word",
+      "text": "piovoso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_how_is_the_weather",
+      "type": "sentence",
+      "text": "Com'è il tempo?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_sunny_today",
+      "type": "sentence",
+      "text": "Oggi è soleggiato.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_very_hot",
+      "type": "sentence",
+      "text": "Fa molto caldo.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_cold_today",
+      "type": "sentence",
+      "text": "Oggi fa freddo.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_raining",
+      "type": "sentence",
+      "text": "Piove.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

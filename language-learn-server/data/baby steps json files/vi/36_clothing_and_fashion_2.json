@@ -1,0 +1,68 @@
+{
+  "id": "36_clothing_and_fashion_2",
+  "title": "Quần áo và thời trang (Part 2)",
+  "emoji": "👕",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_hat",
+      "type": "word",
+      "text": "mũ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_jacket",
+      "type": "word",
+      "text": "áo khoác",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_size",
+      "type": "word",
+      "text": "kích thước",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_style",
+      "type": "word",
+      "text": "phong cách",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_fashion",
+      "type": "word",
+      "text": "thời trang",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_size_do_you_wear",
+      "type": "sentence",
+      "text": "Bạn mặc kích thước gì?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_need_a_warm_jacket_for_winter",
+      "type": "sentence",
+      "text": "Tôi cần một chiếc áo khoác ấm cho mùa đông.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_is_your_fashion_style",
+      "type": "sentence",
+      "text": "Phong cách thời trang của bạn là gì?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_this_hat_protects_me_from_the_sun",
+      "type": "sentence",
+      "text": "Mũ này bảo vệ tôi khỏi ánh nắng.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_follow_fashion_trends",
+      "type": "sentence",
+      "text": "Bạn có theo xu hướng thời trang không?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_1",
+  "title": "At the Restaurant (Part 1)",
+  "emoji": "🍽️",
+  "language": "German",
+  "items": [
+    {
+      "id": "17_restaurant_restaurant",
+      "type": "word",
+      "text": "Restaurant",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_menu",
+      "type": "word",
+      "text": "Menü",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_table",
+      "type": "word",
+      "text": "Tisch",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_waiter",
+      "type": "word",
+      "text": "Kellner",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_order",
+      "type": "word",
+      "text": "Bestellung",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_a_table_for_two_please",
+      "type": "sentence",
+      "text": "Ein Tisch für zwei, bitte.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_can_i_see_the_menu",
+      "type": "sentence",
+      "text": "Kann ich die Speisekarte sehen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_what_do_you_recommend",
+      "type": "sentence",
+      "text": "Was empfehlen Sie?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_i_would_like_to_order",
+      "type": "sentence",
+      "text": "Ich möchte bestellen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_the_food_is_delicious",
+      "type": "sentence",
+      "text": "Das Essen ist köstlich.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

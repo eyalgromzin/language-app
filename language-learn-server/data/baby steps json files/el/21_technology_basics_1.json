@@ -1,0 +1,68 @@
+{
+  "id": "21_technology_basics_1",
+  "title": "Βασικά τεχνολογίας (Part 1)",
+  "emoji": "💻",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "21_technology_basics_computer",
+      "type": "word",
+      "text": "υπολογιστής",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_phone",
+      "type": "word",
+      "text": "τηλέφωνο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_internet",
+      "type": "word",
+      "text": "διαδίκτυο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_app",
+      "type": "word",
+      "text": "εφαρμογή",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_password",
+      "type": "word",
+      "text": "κωδικός",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_can_you_help_me_with_my_computer",
+      "type": "sentence",
+      "text": "Μπορείτε να με βοηθήσετε με τον υπολογιστή μου;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_need_to_connect_to_wifi",
+      "type": "sentence",
+      "text": "Χρειάζομαι να συνδεθώ στο wifi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_what_is_your_email_address",
+      "type": "sentence",
+      "text": "Ποια είναι η διεύθυνση email σας;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_want_to_download_this_app",
+      "type": "sentence",
+      "text": "Θέλω να κατεβάσω αυτή την εφαρμογή.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_do_you_have_a_website",
+      "type": "sentence",
+      "text": "Έχετε ιστοσελίδα;",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

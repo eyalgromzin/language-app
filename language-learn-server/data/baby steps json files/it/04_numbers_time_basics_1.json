@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_1",
+  "title": "numeri e concetti di base del tempo (Part 1)",
+  "emoji": "🔢",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_one",
+      "type": "word",
+      "text": "uno",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_two",
+      "type": "word",
+      "text": "due",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_three",
+      "type": "word",
+      "text": "tre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_four",
+      "type": "word",
+      "text": "quattro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_five",
+      "type": "word",
+      "text": "cinque",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_what_time_is_it",
+      "type": "sentence",
+      "text": "Che ore sono?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_oclock",
+      "type": "sentence",
+      "text": "Sono le ore.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_day_is_it",
+      "type": "sentence",
+      "text": "Che giorno è oggi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_today_is",
+      "type": "sentence",
+      "text": "Oggi è",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_date_is_it",
+      "type": "sentence",
+      "text": "Che data è oggi?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

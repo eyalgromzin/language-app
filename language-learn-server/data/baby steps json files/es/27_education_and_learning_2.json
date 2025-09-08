@@ -1,0 +1,68 @@
+{
+  "id": "27_education_and_learning_2",
+  "title": "Education & Learning (Part 2)",
+  "emoji": "📚",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "27_education_and_learning_homework",
+      "type": "word",
+      "text": "tarea",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_exam",
+      "type": "word",
+      "text": "examen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_grade",
+      "type": "word",
+      "text": "nota",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_study",
+      "type": "word",
+      "text": "estudiar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_learn",
+      "type": "word",
+      "text": "aprender",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_when_is_your_next_exam",
+      "type": "sentence",
+      "text": "¿Cuándo es tu próximo examen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_what_grade_did_you_get",
+      "type": "sentence",
+      "text": "¿Qué nota obtuviste?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_need_to_study_for_the_test",
+      "type": "sentence",
+      "text": "Necesito estudiar para la prueba.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_this_lesson_is_very_interesting",
+      "type": "sentence",
+      "text": "Esta lección es muy interesante.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_want_to_learn_english",
+      "type": "sentence",
+      "text": "Quiero aprender inglés.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

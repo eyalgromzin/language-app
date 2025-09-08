@@ -1,0 +1,68 @@
+{
+  "id": "35_food_and_drinks_2",
+  "title": "อาหารและเครื่องดื่ม (Part 2)",
+  "emoji": "🍕",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "35_food_and_drinks_restaurant",
+      "type": "word",
+      "text": "ร้านอาหาร",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_menu",
+      "type": "word",
+      "text": "เมนู",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_order",
+      "type": "word",
+      "text": "สั่ง",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_hungry",
+      "type": "word",
+      "text": "หิว",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_thirsty",
+      "type": "word",
+      "text": "กระหาย",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_can_i_see_the_menu",
+      "type": "sentence",
+      "text": "ฉันดูเมนูได้ไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_want_to_order_pizza",
+      "type": "sentence",
+      "text": "ฉันต้องการสั่งพิซซ่า.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_are_you_hungry",
+      "type": "sentence",
+      "text": "คุณหิวไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_am_thirsty_can_i_have_water",
+      "type": "sentence",
+      "text": "ฉันกระหาย ฉันขอน้ำได้ไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_this_food_tastes_delicious",
+      "type": "sentence",
+      "text": "อาหารนี้อร่อย.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "19_housing_utilities_1",
+  "title": "Housing & utilities (Part 1)",
+  "emoji": "🏠",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "19_housing_utilities_apartment",
+      "type": "word",
+      "text": "apartment",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_room",
+      "type": "word",
+      "text": "कमरा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_key",
+      "type": "word",
+      "text": "key",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_electricity",
+      "type": "word",
+      "text": "electricity",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_water",
+      "type": "word",
+      "text": "पानी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_i_am_looking_for_an_apartment",
+      "type": "sentence",
+      "text": "I am looking for an apartment.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_the_key_does_not_work",
+      "type": "sentence",
+      "text": "The key does not work.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_there_is_no_hot_water",
+      "type": "sentence",
+      "text": "There is no hot water.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_how_much_is_the_rent",
+      "type": "sentence",
+      "text": "How much is the rent?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_do_you_have_a_kitchen",
+      "type": "sentence",
+      "text": "Do you have a kitchen?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

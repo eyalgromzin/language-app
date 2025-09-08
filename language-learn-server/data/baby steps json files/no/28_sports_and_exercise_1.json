@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_1",
+  "title": "Sport og trening (Part 1)",
+  "emoji": "⚽",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_sport",
+      "type": "word",
+      "text": "sport",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_game",
+      "type": "word",
+      "text": "spill",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_team",
+      "type": "word",
+      "text": "lag",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_player",
+      "type": "word",
+      "text": "spiller",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_coach",
+      "type": "word",
+      "text": "trener",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_what_sport_do_you_like",
+      "type": "sentence",
+      "text": "Hvilken sport liker du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_love_playing_soccer",
+      "type": "sentence",
+      "text": "Jeg elsker å spille fotball.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
+      "type": "sentence",
+      "text": "Vil du bli med i laget vårt?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_who_is_your_favorite_player",
+      "type": "sentence",
+      "text": "Hvem er din favorittspiller?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_our_coach_is_very_good",
+      "type": "sentence",
+      "text": "Treneren vår er veldig god.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

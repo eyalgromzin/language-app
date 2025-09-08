@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_1",
+  "title": "Погода та природа (Part 1)",
+  "emoji": "🌤️",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "22_weather_and_nature_sunny",
+      "type": "word",
+      "text": "сонячний",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_rainy",
+      "type": "word",
+      "text": "дощовий",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_cloudy",
+      "type": "word",
+      "text": "хмарний",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_windy",
+      "type": "word",
+      "text": "вітряний",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_snow",
+      "type": "word",
+      "text": "сніг",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_it_is_sunny_today",
+      "type": "sentence",
+      "text": "Сьогодні сонячно.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_weather_is_nice",
+      "type": "sentence",
+      "text": "Погода гарна.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_it_might_rain_later",
+      "type": "sentence",
+      "text": "Пізніше може піти дощ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_wind_is_very_strong",
+      "type": "sentence",
+      "text": "Вітер дуже сильний.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_i_love_walking_in_the_forest",
+      "type": "sentence",
+      "text": "Я люблю гуляти в лісі.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "10_daily_routines_1",
+  "title": "Dagliga rutiner och vanliga verb (Part 1)",
+  "emoji": "☀️",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "10_daily_routines_to_go",
+      "type": "word",
+      "text": "att gå",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_come",
+      "type": "word",
+      "text": "att komma",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_do",
+      "type": "word",
+      "text": "att göra",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_make",
+      "type": "word",
+      "text": "att göra",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_like",
+      "type": "word",
+      "text": "att tycka om",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_i_go_to_work",
+      "type": "sentence",
+      "text": "Jag går till jobbet.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_like_this",
+      "type": "sentence",
+      "text": "Jag tycker om detta.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_do_not_understand",
+      "type": "sentence",
+      "text": "Jag förstår inte.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_wake_up_early",
+      "type": "sentence",
+      "text": "Jag vaknar tidigt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_eat_breakfast",
+      "type": "sentence",
+      "text": "Jag äter frukost.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

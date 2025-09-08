@@ -1,0 +1,62 @@
+{
+  "id": "16_phone_internet_2",
+  "title": "telefone e internet (Part 2)",
+  "emoji": "📱",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "16_phone_internet_website",
+      "type": "word",
+      "text": "site",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_email",
+      "type": "word",
+      "text": "email",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_wifi",
+      "type": "word",
+      "text": "wifi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_download",
+      "type": "word",
+      "text": "baixar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_upload",
+      "type": "word",
+      "text": "enviar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_email_address",
+      "type": "sentence",
+      "text": "Qual é o seu endereço de email?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_do_you_use_social_media",
+      "type": "sentence",
+      "text": "Você usa redes sociais?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_help_me_with_my_phone",
+      "type": "sentence",
+      "text": "Você pode me ajudar com o meu telefone?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_my_phone_is_broken",
+      "type": "sentence",
+      "text": "O meu telefone está quebrado.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

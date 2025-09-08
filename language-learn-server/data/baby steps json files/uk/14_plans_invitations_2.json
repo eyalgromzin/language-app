@@ -1,0 +1,68 @@
+{
+  "id": "14_plans_invitations_2",
+  "title": "Планування та запрошення (Part 2)",
+  "emoji": "📅",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "14_plans_invitations_invite",
+      "type": "word",
+      "text": "запрошувати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_free",
+      "type": "word",
+      "text": "вільний",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_busy",
+      "type": "word",
+      "text": "зайнятий",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_time",
+      "type": "word",
+      "text": "час",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_place",
+      "type": "word",
+      "text": "місце",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_what_time_should_we_meet",
+      "type": "sentence",
+      "text": "О котрій нам зустрітися?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_i_am_busy_today",
+      "type": "sentence",
+      "text": "Я зайнятий сьогодні.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_do_you_want_to_have_coffee",
+      "type": "sentence",
+      "text": "Хочете випити каву?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_let_us_make_plans",
+      "type": "sentence",
+      "text": "Давайте складати плани.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_where_should_we_go",
+      "type": "sentence",
+      "text": "Куди нам піти?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

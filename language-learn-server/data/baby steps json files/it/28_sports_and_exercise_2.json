@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_2",
+  "title": "sport ed esercizio (Part 2)",
+  "emoji": "⚽",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_running",
+      "type": "word",
+      "text": "corsa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_exercise",
+      "type": "word",
+      "text": "esercizio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_team",
+      "type": "word",
+      "text": "squadra",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_game",
+      "type": "word",
+      "text": "partita",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_win",
+      "type": "word",
+      "text": "vincere",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_my_team_won_the_game",
+      "type": "sentence",
+      "text": "La mia squadra ha vinto la partita.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_am_very_tired_after_exercise",
+      "type": "sentence",
+      "text": "Sono molto stanco dopo l'esercizio.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_want_to_play_tennis",
+      "type": "sentence",
+      "text": "Vuole giocare a tennis?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_sports_are_fun",
+      "type": "sentence",
+      "text": "Gli sport sono divertenti.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_need_to_exercise_more",
+      "type": "sentence",
+      "text": "Devo fare più esercizio.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "05_getting_around_1",
+  "title": "ориентация (Part 1)",
+  "emoji": "🧭",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "05_getting_around_left",
+      "type": "word",
+      "text": "лево",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_right",
+      "type": "word",
+      "text": "право",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_straight",
+      "type": "word",
+      "text": "прямо",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_back",
+      "type": "word",
+      "text": "назад",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_here",
+      "type": "word",
+      "text": "здесь",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_where_is",
+      "type": "sentence",
+      "text": "Где",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_go_left",
+      "type": "sentence",
+      "text": "Идите налево.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_go_right",
+      "type": "sentence",
+      "text": "Идите направо.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_go_straight",
+      "type": "sentence",
+      "text": "Идите прямо.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_turn_around",
+      "type": "sentence",
+      "text": "Повернитесь.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

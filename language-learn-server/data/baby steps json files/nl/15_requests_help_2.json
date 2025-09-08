@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_2",
+  "title": "Verzoeken en om hulp vragen (Part 2)",
+  "emoji": "🙋",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "15_requests_help_slowly",
+      "type": "word",
+      "text": "langzaam",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_mean",
+      "type": "word",
+      "text": "betekenen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_say",
+      "type": "word",
+      "text": "zeggen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_understand",
+      "type": "word",
+      "text": "begrijpen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_explain",
+      "type": "word",
+      "text": "uitleggen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_can_you_explain_this",
+      "type": "sentence",
+      "text": "Kun je dit uitleggen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_i_dont_understand",
+      "type": "sentence",
+      "text": "Ik begrijp het niet.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_would_you_mind",
+      "type": "sentence",
+      "text": "Zou je het erg vinden …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_i_ask_you_something",
+      "type": "sentence",
+      "text": "Mag ik je iets vragen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_thank_you_for_helping",
+      "type": "sentence",
+      "text": "Bedankt voor je hulp.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

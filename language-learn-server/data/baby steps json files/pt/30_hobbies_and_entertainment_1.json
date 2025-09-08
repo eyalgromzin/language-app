@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_1",
+  "title": "hobbys e entretenimento (Part 1)",
+  "emoji": "🎮",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_hobby",
+      "type": "word",
+      "text": "hobby",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_music",
+      "type": "word",
+      "text": "música",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_movie",
+      "type": "word",
+      "text": "filme",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_book",
+      "type": "word",
+      "text": "livro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_game",
+      "type": "word",
+      "text": "jogo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_are_your_hobbies",
+      "type": "sentence",
+      "text": "Quais são os seus hobbys?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_music",
+      "type": "sentence",
+      "text": "Você gosta de música?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_kind_of_movies_do_you_like",
+      "type": "sentence",
+      "text": "Que tipo de filmes você gosta?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_cooking",
+      "type": "sentence",
+      "text": "Você gosta de cozinhar?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_love_reading_books",
+      "type": "sentence",
+      "text": "Eu amo ler livros.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

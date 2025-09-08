@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_2",
+  "title": "संख्याएं और समय के मूल (Part 2)",
+  "emoji": "🔢",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_five",
+      "type": "word",
+      "text": "पांच",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_six",
+      "type": "word",
+      "text": "छह",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_seven",
+      "type": "word",
+      "text": "सात",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_eight",
+      "type": "word",
+      "text": "आठ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_nine",
+      "type": "word",
+      "text": "नौ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_see_you_tomorrow",
+      "type": "sentence",
+      "text": "कल मिलेंगे।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_i_am_late",
+      "type": "sentence",
+      "text": "मैं देर से हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_time_do_you_start",
+      "type": "sentence",
+      "text": "आप कब शुरू करते हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_time_to_go",
+      "type": "sentence",
+      "text": "जाने का समय हो गया है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_how_long_does_it_take",
+      "type": "sentence",
+      "text": "इसमें कितना समय लगेगा?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

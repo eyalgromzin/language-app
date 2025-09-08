@@ -1,0 +1,68 @@
+{
+  "id": "32_time_and_dates_1",
+  "title": "Time & Dates (Part 1)",
+  "emoji": "🕐",
+  "language": "German",
+  "items": [
+    {
+      "id": "32_time_and_dates_time",
+      "type": "word",
+      "text": "Zeit",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_date",
+      "type": "word",
+      "text": "Datum",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_hour",
+      "type": "word",
+      "text": "Stunde",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_minute",
+      "type": "word",
+      "text": "Minute",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_second",
+      "type": "word",
+      "text": "Sekunde",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_what_time_is_it",
+      "type": "sentence",
+      "text": "Wie spät ist es?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_date_is_it_today",
+      "type": "sentence",
+      "text": "Welches Datum ist heute?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_day_of_the_week_is_it",
+      "type": "sentence",
+      "text": "Welcher Wochentag ist es?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_month_is_it",
+      "type": "sentence",
+      "text": "Welcher Monat ist es?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_year_is_it",
+      "type": "sentence",
+      "text": "Welches Jahr ist es?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

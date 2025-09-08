@@ -1,0 +1,62 @@
+{
+  "id": "21_technology_basics_2",
+  "title": "tecnologia e computadores (Part 2)",
+  "emoji": "💻",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "21_technology_basics_download",
+      "type": "word",
+      "text": "baixar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_upload",
+      "type": "word",
+      "text": "enviar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_search",
+      "type": "word",
+      "text": "pesquisar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_save",
+      "type": "word",
+      "text": "salvar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_delete",
+      "type": "word",
+      "text": "deletar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_do_you_use_social_media",
+      "type": "sentence",
+      "text": "Você usa redes sociais?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_my_computer_is_not_working",
+      "type": "sentence",
+      "text": "O meu computador não está funcionando.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_can_you_help_me_download_this_file",
+      "type": "sentence",
+      "text": "Você pode me ajudar a baixar este arquivo?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_what_is_the_wifi_password",
+      "type": "sentence",
+      "text": "Qual é a senha do wifi?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

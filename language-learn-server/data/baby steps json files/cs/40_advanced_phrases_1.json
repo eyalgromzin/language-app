@@ -1,0 +1,68 @@
+{
+  "id": "40_advanced_phrases_1",
+  "title": "Pokročilé fráze (Part 1)",
+  "emoji": "🚀",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "40_advanced_phrases_nevertheless",
+      "type": "word",
+      "text": "přesto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore",
+      "type": "word",
+      "text": "navíc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_otherwise",
+      "type": "word",
+      "text": "jinak",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_meanwhile",
+      "type": "word",
+      "text": "mezitím",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_consequently",
+      "type": "word",
+      "text": "v důsledku toho",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
+      "type": "sentence",
+      "text": "Přesto to chci zkusit.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
+      "type": "sentence",
+      "text": "Navíc věřím, že toto je správné.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
+      "type": "sentence",
+      "text": "Musíme odejít nyní, jinak budeme pozdě.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
+      "type": "sentence",
+      "text": "Mezitím připravím večeři.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
+      "type": "sentence",
+      "text": "V důsledku toho byla schůzka zrušena.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

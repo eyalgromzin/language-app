@@ -1,0 +1,68 @@
+{
+  "id": "03_core_verbs_pronouns_1",
+  "title": "pronoms principaux et verbes auxiliaires (Part 1)",
+  "emoji": "🔤",
+  "language": "French",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_i",
+      "type": "word",
+      "text": "je",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you",
+      "type": "word",
+      "text": "vous",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he",
+      "type": "word",
+      "text": "il",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she",
+      "type": "word",
+      "text": "elle",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_we",
+      "type": "word",
+      "text": "nous",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_am",
+      "type": "sentence",
+      "text": "Je suis",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you_are",
+      "type": "sentence",
+      "text": "Vous êtes",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he_is",
+      "type": "sentence",
+      "text": "Il est",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she_is",
+      "type": "sentence",
+      "text": "Elle est",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_we_are",
+      "type": "sentence",
+      "text": "Nous sommes",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

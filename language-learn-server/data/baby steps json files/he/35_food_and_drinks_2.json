@@ -1,0 +1,68 @@
+{
+  "id": "35_food_and_drinks_2",
+  "title": "מזון ומשקאות (Part 2)",
+  "emoji": "🍕",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "35_food_and_drinks_restaurant",
+      "type": "word",
+      "text": "מסעדה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_menu",
+      "type": "word",
+      "text": "תפריט",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_order",
+      "type": "word",
+      "text": "להזמין",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_hungry",
+      "type": "word",
+      "text": "רעב",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_thirsty",
+      "type": "word",
+      "text": "צמא",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "35_food_and_drinks_can_i_see_the_menu",
+      "type": "sentence",
+      "text": "האם אני יכול לראות את התפריט?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_want_to_order_pizza",
+      "type": "sentence",
+      "text": "אני רוצה להזמין פיצה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_are_you_hungry",
+      "type": "sentence",
+      "text": "האם אתה רעב?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_i_am_thirsty_can_i_have_water",
+      "type": "sentence",
+      "text": "אני צמא, האם אני יכול לקבל מים?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "35_food_and_drinks_this_food_tastes_delicious",
+      "type": "sentence",
+      "text": "המזון הזה טעים מאוד.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

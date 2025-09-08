@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_2",
+  "title": "คำเชื่อมและวลีขั้นสูง (Part 2)",
+  "emoji": "🔗",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "20_connectors_advanced_but",
+      "type": "word",
+      "text": "แต่",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_and",
+      "type": "word",
+      "text": "และ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_or",
+      "type": "word",
+      "text": "หรือ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_if",
+      "type": "word",
+      "text": "ถ้า",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_when",
+      "type": "word",
+      "text": "เมื่อ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_i_would_like_to_order_but_i_am_not_sure_what",
+      "type": "sentence",
+      "text": "ฉันต้องการสั่ง แต่มั่นใจไม่แน่.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_if_you_have_time_can_you_help_me",
+      "type": "sentence",
+      "text": "ถ้าคุณมีเวลา คุณช่วยฉันได้ไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_when_you_arrive_please_call_me",
+      "type": "sentence",
+      "text": "เมื่อคุณมาถึง กรุณาโทรหาฉัน.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_also_want_to_visit_the_museum",
+      "type": "sentence",
+      "text": "ฉันก็ต้องการไปพิพิธภัณฑ์ด้วย.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_therefore_i_need_to_leave_early",
+      "type": "sentence",
+      "text": "ดังนั้น ฉันต้องออกไปเร็ว.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

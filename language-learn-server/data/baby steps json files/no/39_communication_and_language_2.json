@@ -1,0 +1,68 @@
+{
+  "id": "39_communication_and_language_2",
+  "title": "Kommunikasjon og språk (Part 2)",
+  "emoji": "💬",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "39_communication_and_language_question",
+      "type": "word",
+      "text": "spørsmål",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_answer",
+      "type": "word",
+      "text": "svar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_conversation",
+      "type": "word",
+      "text": "samtale",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_message",
+      "type": "word",
+      "text": "melding",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_translate",
+      "type": "word",
+      "text": "oversette",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "39_communication_and_language_i_have_a_question_for_you",
+      "type": "sentence",
+      "text": "Jeg har et spørsmål til deg.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_what_is_your_answer",
+      "type": "sentence",
+      "text": "Hva er svaret ditt?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_this_is_an_interesting_conversation",
+      "type": "sentence",
+      "text": "Dette er en interessant samtale.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_did_you_get_my_message",
+      "type": "sentence",
+      "text": "Fikk du meldingen min?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "39_communication_and_language_can_you_translate_this_word",
+      "type": "sentence",
+      "text": "Kan du oversette dette ordet?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

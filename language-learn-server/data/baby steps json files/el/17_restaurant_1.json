@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_1",
+  "title": "Στο εστιατόριο (Part 1)",
+  "emoji": "🍽️",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "17_restaurant_menu",
+      "type": "word",
+      "text": "μενού",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_table",
+      "type": "word",
+      "text": "τραπέζι",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_bill",
+      "type": "word",
+      "text": "λογαριασμός",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_waiter",
+      "type": "word",
+      "text": "σερβιτόρος",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_food",
+      "type": "word",
+      "text": "φαγητό",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_a_table_for_two_please",
+      "type": "sentence",
+      "text": "Ένα τραπέζι για δύο, παρακαλώ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_could_we_have_the_menu",
+      "type": "sentence",
+      "text": "Θα μπορούσαμε να έχουμε το μενού;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_the_bill_please",
+      "type": "sentence",
+      "text": "Τον λογαριασμό, παρακαλώ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_do_you_have_vegetarian_options",
+      "type": "sentence",
+      "text": "Έχετε χορτοφαγικές επιλογές;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_what_do_you_recommend",
+      "type": "sentence",
+      "text": "Τι προτείνετε;",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

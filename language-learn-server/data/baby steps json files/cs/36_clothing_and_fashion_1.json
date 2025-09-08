@@ -1,0 +1,68 @@
+{
+  "id": "36_clothing_and_fashion_1",
+  "title": "Oblečení a móda (Part 1)",
+  "emoji": "👕",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_clothes",
+      "type": "word",
+      "text": "oblečení",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shirt",
+      "type": "word",
+      "text": "košile",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_pants",
+      "type": "word",
+      "text": "kalhoty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_dress",
+      "type": "word",
+      "text": "šaty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shoes",
+      "type": "word",
+      "text": "boty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_are_you_wearing_today",
+      "type": "sentence",
+      "text": "Co máte dnes na sobě?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_like_your_new_shirt",
+      "type": "sentence",
+      "text": "Líbí se mi vaše nová košile.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
+      "type": "sentence",
+      "text": "Kde jste koupili ty kalhoty?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
+      "type": "sentence",
+      "text": "Ty šaty vám sluší.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
+      "type": "sentence",
+      "text": "Líbí se vám mé nové boty?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

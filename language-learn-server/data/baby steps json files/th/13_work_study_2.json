@@ -1,0 +1,68 @@
+{
+  "id": "13_work_study_2",
+  "title": "พื้นฐานการทำงานและการศึกษา (Part 2)",
+  "emoji": "💼",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "13_work_study_work",
+      "type": "word",
+      "text": "งาน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_study",
+      "type": "word",
+      "text": "เรียน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_class",
+      "type": "word",
+      "text": "ชั้นเรียน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_boss",
+      "type": "word",
+      "text": "เจ้านาย",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_colleague",
+      "type": "word",
+      "text": "เพื่อนร่วมงาน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_do_you_like_your_job",
+      "type": "sentence",
+      "text": "คุณชอบงานของคุณไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_am_busy_with_work",
+      "type": "sentence",
+      "text": "ฉันยุ่งกับงาน.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_what_are_you_studying",
+      "type": "sentence",
+      "text": "คุณเรียนอะไร?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_have_a_lot_of_homework",
+      "type": "sentence",
+      "text": "ฉันมีการบ้านเยอะ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_where_do_you_work",
+      "type": "sentence",
+      "text": "คุณทำงานที่ไหน?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

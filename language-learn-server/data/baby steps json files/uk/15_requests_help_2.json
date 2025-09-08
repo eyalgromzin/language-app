@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_2",
+  "title": "Прохання та звернення за допомогою (Part 2)",
+  "emoji": "🙋",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "15_requests_help_slowly",
+      "type": "word",
+      "text": "повільно",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_mean",
+      "type": "word",
+      "text": "означати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_say",
+      "type": "word",
+      "text": "говорити",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_understand",
+      "type": "word",
+      "text": "розуміти",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_explain",
+      "type": "word",
+      "text": "пояснювати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_can_you_explain_this",
+      "type": "sentence",
+      "text": "Чи можете ви пояснити це?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_i_dont_understand",
+      "type": "sentence",
+      "text": "Я не розумію.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_would_you_mind",
+      "type": "sentence",
+      "text": "Чи не заперечуєте ви …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_i_ask_you_something",
+      "type": "sentence",
+      "text": "Можу я запитати вас про щось?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_thank_you_for_helping",
+      "type": "sentence",
+      "text": "Дякую за допомогу.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "14_plans_invitations_2",
+  "title": "планы и приглашения (Part 2)",
+  "emoji": "📅",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "14_plans_invitations_time",
+      "type": "word",
+      "text": "время",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_date",
+      "type": "word",
+      "text": "дата",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_weekend",
+      "type": "word",
+      "text": "выходные",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_party",
+      "type": "word",
+      "text": "вечеринка",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "14_plans_invitations_planning_is_important",
+      "type": "sentence",
+      "text": "Планирование важно.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_invitations_are_nice",
+      "type": "sentence",
+      "text": "Приглашения приятны.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "14_plans_invitations_time_management_matters",
+      "type": "sentence",
+      "text": "Управление временем важно.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

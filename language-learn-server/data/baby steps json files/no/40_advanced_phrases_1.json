@@ -1,0 +1,68 @@
+{
+  "id": "40_advanced_phrases_1",
+  "title": "Avanserte fraser (Part 1)",
+  "emoji": "🚀",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "40_advanced_phrases_nevertheless",
+      "type": "word",
+      "text": "likevel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore",
+      "type": "word",
+      "text": "dessuten",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_otherwise",
+      "type": "word",
+      "text": "ellers",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_meanwhile",
+      "type": "word",
+      "text": "i mellomtiden",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_consequently",
+      "type": "word",
+      "text": "følgelig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
+      "type": "sentence",
+      "text": "Likevel vil jeg fortsatt prøve.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
+      "type": "sentence",
+      "text": "Dessuten tror jeg dette er riktig.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
+      "type": "sentence",
+      "text": "Vi må gå nå, ellers kommer vi for sent.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
+      "type": "sentence",
+      "text": "I mellomtiden skal jeg lage middag.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
+      "type": "sentence",
+      "text": "Følgelig ble møtet avlyst.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

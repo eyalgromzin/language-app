@@ -1,0 +1,68 @@
+{
+  "id": "12_weather_smalltalk_1",
+  "title": "Počasí a malé rozhovory (Part 1)",
+  "emoji": "🌦️",
+  "language": "Czech",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_hot",
+      "type": "word",
+      "text": "horko",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_cold",
+      "type": "word",
+      "text": "zima",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_rain",
+      "type": "word",
+      "text": "déšť",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_sunny",
+      "type": "word",
+      "text": "slunečno",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_warm",
+      "type": "word",
+      "text": "teplo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_very_hot_today",
+      "type": "sentence",
+      "text": "Dnes je velmi horko.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_might_rain_tomorrow",
+      "type": "sentence",
+      "text": "Zítra může pršet.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_have_a_nice_day",
+      "type": "sentence",
+      "text": "Hezký den!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_is_the_weather",
+      "type": "sentence",
+      "text": "Jaké je počasí?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_nice_weather",
+      "type": "sentence",
+      "text": "Je hezké počasí.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

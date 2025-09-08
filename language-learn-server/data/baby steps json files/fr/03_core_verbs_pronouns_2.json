@@ -1,0 +1,68 @@
+{
+  "id": "03_core_verbs_pronouns_2",
+  "title": "pronoms principaux et verbes auxiliaires (Part 2)",
+  "emoji": "🔤",
+  "language": "French",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_they",
+      "type": "word",
+      "text": "ils",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_am",
+      "type": "word",
+      "text": "suis",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_are",
+      "type": "word",
+      "text": "êtes",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_is",
+      "type": "word",
+      "text": "est",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_have",
+      "type": "word",
+      "text": "ai",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_they_are",
+      "type": "sentence",
+      "text": "Ils sont",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_have",
+      "type": "sentence",
+      "text": "J'ai",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you_have",
+      "type": "sentence",
+      "text": "Vous avez",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he_has",
+      "type": "sentence",
+      "text": "Il a",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she_has",
+      "type": "sentence",
+      "text": "Elle a",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

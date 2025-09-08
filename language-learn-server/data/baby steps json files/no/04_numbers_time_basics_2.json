@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_2",
+  "title": "Tall og tidsgrunnlag (Part 2)",
+  "emoji": "🔢",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_five",
+      "type": "word",
+      "text": "fem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_six",
+      "type": "word",
+      "text": "seks",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_seven",
+      "type": "word",
+      "text": "syv",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_eight",
+      "type": "word",
+      "text": "åtte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_nine",
+      "type": "word",
+      "text": "ni",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_see_you_tomorrow",
+      "type": "sentence",
+      "text": "Ser deg i morgen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_i_am_late",
+      "type": "sentence",
+      "text": "Jeg er sen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_time_do_you_start",
+      "type": "sentence",
+      "text": "Når starter du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_time_to_go",
+      "type": "sentence",
+      "text": "Det er tid for å gå.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_how_long_does_it_take",
+      "type": "sentence",
+      "text": "Hvor lang tid tar det?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

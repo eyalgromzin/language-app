@@ -1,0 +1,68 @@
+{
+  "id": "36_clothing_and_fashion_1",
+  "title": "vestiti e moda (Part 1)",
+  "emoji": "👗",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_shirt",
+      "type": "word",
+      "text": "camicia",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_pants",
+      "type": "word",
+      "text": "pantaloni",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_dress",
+      "type": "word",
+      "text": "vestito",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shoes",
+      "type": "word",
+      "text": "scarpe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_hat",
+      "type": "word",
+      "text": "cappello",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_size_are_you",
+      "type": "sentence",
+      "text": "Che taglia ha?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_like_this_shirt",
+      "type": "sentence",
+      "text": "Le piace questa camicia?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_where_can_i_buy_clothes",
+      "type": "sentence",
+      "text": "Dove posso comprare vestiti?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_this_dress_is_beautiful",
+      "type": "sentence",
+      "text": "Questo vestito è bello.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_have_this_in_my_size",
+      "type": "sentence",
+      "text": "Ha questo nella mia taglia?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

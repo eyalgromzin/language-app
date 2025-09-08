@@ -1,0 +1,68 @@
+{
+  "id": "11_family_people_2",
+  "title": "Family & people (Part 2)",
+  "emoji": "👪",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "11_family_people_son",
+      "type": "word",
+      "text": "hijo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_daughter",
+      "type": "word",
+      "text": "hija",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_baby",
+      "type": "word",
+      "text": "bebé",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_man",
+      "type": "word",
+      "text": "hombre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_woman",
+      "type": "word",
+      "text": "mujer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_do_you_have_brothers_and_sisters",
+      "type": "sentence",
+      "text": "¿Tienes hermanos y hermanas?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_my_family_lives_in",
+      "type": "sentence",
+      "text": "Mi familia vive en …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_how_old_is_your_son",
+      "type": "sentence",
+      "text": "¿Cuántos años tiene tu hijo?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_this_is_my_baby",
+      "type": "sentence",
+      "text": "Este es mi bebé.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_are_you_married",
+      "type": "sentence",
+      "text": "¿Estás casado?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

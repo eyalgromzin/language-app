@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_1",
+  "title": "आपातकाल और स्वास्थ्य (Part 1)",
+  "emoji": "⛑️",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "09_emergencies_health_help",
+      "type": "word",
+      "text": "मदद",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_doctor",
+      "type": "word",
+      "text": "डॉक्टर",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_pharmacy",
+      "type": "word",
+      "text": "फार्मेसी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_emergency",
+      "type": "word",
+      "text": "आपातकाल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_hospital",
+      "type": "word",
+      "text": "अस्पताल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_call_an_ambulance",
+      "type": "sentence",
+      "text": "एम्बुलेंस बुलाएं!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_need_a_doctor",
+      "type": "sentence",
+      "text": "मुझे डॉक्टर की जरूरत है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_feel_sick",
+      "type": "sentence",
+      "text": "मैं बीमार महसूस कर रहा हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_lost_my_passport",
+      "type": "sentence",
+      "text": "मैंने अपना पासपोर्ट खो दिया है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_where_is_the_nearest_hospital",
+      "type": "sentence",
+      "text": "निकटतम अस्पताल कहाँ है?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

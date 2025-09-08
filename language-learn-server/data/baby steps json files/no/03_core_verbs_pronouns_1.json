@@ -1,0 +1,68 @@
+{
+  "id": "03_core_verbs_pronouns_1",
+  "title": "Kjernepronomen og hjelpeverb (Part 1)",
+  "emoji": "🔤",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_i",
+      "type": "word",
+      "text": "jeg",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you",
+      "type": "word",
+      "text": "du",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he",
+      "type": "word",
+      "text": "han",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she",
+      "type": "word",
+      "text": "hun",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_we",
+      "type": "word",
+      "text": "vi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_am",
+      "type": "sentence",
+      "text": "Jeg er …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_have",
+      "type": "sentence",
+      "text": "Jeg har …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_want",
+      "type": "sentence",
+      "text": "Jeg vil …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_need",
+      "type": "sentence",
+      "text": "Jeg trenger …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you_are",
+      "type": "sentence",
+      "text": "Du er …",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

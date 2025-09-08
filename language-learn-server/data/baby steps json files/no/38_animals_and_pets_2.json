@@ -1,0 +1,68 @@
+{
+  "id": "38_animals_and_pets_2",
+  "title": "Dyr og kjæledyr (Part 2)",
+  "emoji": "🐕",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "38_animals_and_pets_fish",
+      "type": "word",
+      "text": "fisk",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_horse",
+      "type": "word",
+      "text": "hest",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_cow",
+      "type": "word",
+      "text": "ku",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_chicken",
+      "type": "word",
+      "text": "kylling",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_pig",
+      "type": "word",
+      "text": "gris",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_horses_are_beautiful_animals",
+      "type": "sentence",
+      "text": "Hester er vakre dyr.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_cows_give_us_milk",
+      "type": "sentence",
+      "text": "Kuer gir oss melk.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_like_chicken",
+      "type": "sentence",
+      "text": "Liker du kylling?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_pigs_are_very_intelligent",
+      "type": "sentence",
+      "text": "Griser er veldig intelligente.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_what_is_your_favorite_animal",
+      "type": "sentence",
+      "text": "Hva er ditt favorittdyr?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

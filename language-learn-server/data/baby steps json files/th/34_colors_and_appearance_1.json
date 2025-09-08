@@ -1,0 +1,68 @@
+{
+  "id": "34_colors_and_appearance_1",
+  "title": "สีและลักษณะ (Part 1)",
+  "emoji": "🎨",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "34_colors_and_appearance_color",
+      "type": "word",
+      "text": "สี",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_red",
+      "type": "word",
+      "text": "แดง",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_blue",
+      "type": "word",
+      "text": "น้ำเงิน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_green",
+      "type": "word",
+      "text": "เขียว",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_yellow",
+      "type": "word",
+      "text": "เหลือง",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_what_color_is_your_car",
+      "type": "sentence",
+      "text": "รถของคุณสีอะไร?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_i_like_red_flowers",
+      "type": "sentence",
+      "text": "ฉันชอบดอกไม้สีแดง.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_the_sky_is_very_blue_today",
+      "type": "sentence",
+      "text": "ท้องฟ้าสีน้ำเงินมากวันนี้.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_this_green_shirt_looks_nice",
+      "type": "sentence",
+      "text": "เสื้อเขียวตัวนี้ดูดี.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_the_yellow_banana_is_ripe",
+      "type": "sentence",
+      "text": "กล้วยเหลืองสุกแล้ว.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

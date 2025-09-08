@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_2",
+  "title": "tempo e natura (Part 2)",
+  "emoji": "🌤️",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "22_weather_and_nature_cold",
+      "type": "word",
+      "text": "freddo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_tree",
+      "type": "word",
+      "text": "albero",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_flower",
+      "type": "word",
+      "text": "fiore",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_mountain",
+      "type": "word",
+      "text": "montagna",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_ocean",
+      "type": "word",
+      "text": "oceano",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_look_at_those_beautiful_flowers",
+      "type": "sentence",
+      "text": "Guardi quei bei fiori.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_mountains_are_beautiful",
+      "type": "sentence",
+      "text": "Le montagne sono belle.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_i_love_nature",
+      "type": "sentence",
+      "text": "Amo la natura.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_ocean_is_so_blue",
+      "type": "sentence",
+      "text": "L'oceano è così blu.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_what_a_beautiful_day",
+      "type": "sentence",
+      "text": "Che bella giornata!",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

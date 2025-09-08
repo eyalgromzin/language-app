@@ -1,0 +1,68 @@
+{
+  "id": "03_core_verbs_pronouns_2",
+  "title": "pronomes principais e verbos auxiliares (Part 2)",
+  "emoji": "🔤",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_they",
+      "type": "word",
+      "text": "eles",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_am",
+      "type": "word",
+      "text": "sou",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_are",
+      "type": "word",
+      "text": "é",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_is",
+      "type": "word",
+      "text": "é",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_have",
+      "type": "word",
+      "text": "tenho",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_they_are",
+      "type": "sentence",
+      "text": "Eles são",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_have",
+      "type": "sentence",
+      "text": "Eu tenho",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you_have",
+      "type": "sentence",
+      "text": "Você tem",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he_has",
+      "type": "sentence",
+      "text": "Ele tem",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she_has",
+      "type": "sentence",
+      "text": "Ela tem",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

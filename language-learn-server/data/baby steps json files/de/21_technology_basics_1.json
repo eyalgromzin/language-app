@@ -1,0 +1,68 @@
+{
+  "id": "21_technology_basics_1",
+  "title": "Technology & Computers (Part 1)",
+  "emoji": "💻",
+  "language": "German",
+  "items": [
+    {
+      "id": "21_technology_basics_computer",
+      "type": "word",
+      "text": "Computer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_phone",
+      "type": "word",
+      "text": "Telefon",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_internet",
+      "type": "word",
+      "text": "Internet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_wifi",
+      "type": "word",
+      "text": "WLAN",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_password",
+      "type": "word",
+      "text": "Passwort",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_can_you_help_me_with_my_computer",
+      "type": "sentence",
+      "text": "Können Sie mir mit meinem Computer helfen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_how_do_i_connect_to_wifi",
+      "type": "sentence",
+      "text": "Wie verbinde ich mich mit dem WLAN?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_forgot_my_password",
+      "type": "sentence",
+      "text": "Ich habe mein Passwort vergessen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_do_you_have_a_charger",
+      "type": "sentence",
+      "text": "Haben Sie ein Ladegerät?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_my_phone_is_broken",
+      "type": "sentence",
+      "text": "Mein Telefon ist kaputt.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

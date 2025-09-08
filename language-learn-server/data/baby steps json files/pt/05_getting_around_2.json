@@ -1,0 +1,62 @@
+{
+  "id": "05_getting_around_2",
+  "title": "direções e orientação (Part 2)",
+  "emoji": "🧭",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "05_getting_around_east",
+      "type": "word",
+      "text": "leste",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_west",
+      "type": "word",
+      "text": "oeste",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_near",
+      "type": "word",
+      "text": "perto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_far",
+      "type": "word",
+      "text": "longe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_here",
+      "type": "word",
+      "text": "aqui",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_it_is_near",
+      "type": "sentence",
+      "text": "Fica perto.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_it_is_far",
+      "type": "sentence",
+      "text": "Fica longe.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_can_you_help_me",
+      "type": "sentence",
+      "text": "Você pode me ajudar?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_i_am_lost",
+      "type": "sentence",
+      "text": "Estou perdido.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

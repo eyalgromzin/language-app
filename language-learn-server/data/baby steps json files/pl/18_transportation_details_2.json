@@ -1,0 +1,68 @@
+{
+  "id": "18_transportation_details_2",
+  "title": "Szczegóły transportu (Part 2)",
+  "emoji": "🚌",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "18_transportation_details_station",
+      "type": "word",
+      "text": "stacja",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_platform",
+      "type": "word",
+      "text": "peron",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_departure",
+      "type": "word",
+      "text": "odjazd",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_arrival",
+      "type": "word",
+      "text": "przyjazd",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_delay",
+      "type": "word",
+      "text": "opóźnienie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_how_much_is_a_ticket",
+      "type": "sentence",
+      "text": "Ile kosztuje bilet?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_does_this_bus_go_to",
+      "type": "sentence",
+      "text": "Czy ten autobus jeździ do …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_where_is_the_nearest_station",
+      "type": "sentence",
+      "text": "Gdzie jest najbliższa stacja?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_what_time_does_it_arrive",
+      "type": "sentence",
+      "text": "O której przyjeżdża?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_can_i_get_a_refund",
+      "type": "sentence",
+      "text": "Czy mogę otrzymać zwrot pieniędzy?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

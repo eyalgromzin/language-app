@@ -1,0 +1,68 @@
+{
+  "id": "05_getting_around_2",
+  "title": "directions et orientation (Part 2)",
+  "emoji": "🧭",
+  "language": "French",
+  "items": [
+    {
+      "id": "05_getting_around_east",
+      "type": "word",
+      "text": "est",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_west",
+      "type": "word",
+      "text": "ouest",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_near",
+      "type": "word",
+      "text": "près",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_far",
+      "type": "word",
+      "text": "loin",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_here",
+      "type": "word",
+      "text": "ici",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_it_is_near",
+      "type": "sentence",
+      "text": "C'est près.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_it_is_far",
+      "type": "sentence",
+      "text": "C'est loin.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_can_you_help_me",
+      "type": "sentence",
+      "text": "Pouvez-vous m'aider ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_i_am_lost",
+      "type": "sentence",
+      "text": "Je suis perdu.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_where_am_i",
+      "type": "sentence",
+      "text": "Où suis-je ?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

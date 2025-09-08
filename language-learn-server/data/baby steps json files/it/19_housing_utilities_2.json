@@ -1,0 +1,68 @@
+{
+  "id": "19_housing_utilities_2",
+  "title": "alloggio e servizi pubblici (Part 2)",
+  "emoji": "🏠",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "19_housing_utilities_bedroom",
+      "type": "word",
+      "text": "camera da letto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_living_room",
+      "type": "word",
+      "text": "soggiorno",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_electricity",
+      "type": "word",
+      "text": "elettricità",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_water",
+      "type": "word",
+      "text": "acqua",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_heating",
+      "type": "word",
+      "text": "riscaldamento",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_can_you_fix_the_electricity",
+      "type": "sentence",
+      "text": "Può riparare l'elettricità?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_i_need_to_report_a_problem",
+      "type": "sentence",
+      "text": "Devo segnalare un problema.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_when_will_the_repair_be_done",
+      "type": "sentence",
+      "text": "Quando sarà fatta la riparazione?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_the_apartment_is_very_nice",
+      "type": "sentence",
+      "text": "L'appartamento è molto bello.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_do_you_accept_pets",
+      "type": "sentence",
+      "text": "Accetta animali domestici?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

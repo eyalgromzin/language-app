@@ -1,0 +1,68 @@
+{
+  "id": "02_introductions_2",
+  "title": "Introduktioner och grundläggande info (Part 2)",
+  "emoji": "💬",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "02_introductions_country",
+      "type": "word",
+      "text": "land",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_city",
+      "type": "word",
+      "text": "stad",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_job",
+      "type": "word",
+      "text": "jobb",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_student",
+      "type": "word",
+      "text": "student",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_teacher",
+      "type": "word",
+      "text": "lärare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_where_are_you_from",
+      "type": "sentence",
+      "text": "Var kommer du ifrån?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_from",
+      "type": "sentence",
+      "text": "Jag kommer från …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_do_you_speak_english",
+      "type": "sentence",
+      "text": "Talar du engelska?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_speak_a_little",
+      "type": "sentence",
+      "text": "Jag talar lite.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_do_you_do",
+      "type": "sentence",
+      "text": "Vad gör du?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

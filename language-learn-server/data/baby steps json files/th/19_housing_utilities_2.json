@@ -1,0 +1,68 @@
+{
+  "id": "19_housing_utilities_2",
+  "title": "ที่อยู่อาศัยและสาธารณูปโภค (Part 2)",
+  "emoji": "🏠",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "19_housing_utilities_house",
+      "type": "word",
+      "text": "บ้าน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_kitchen",
+      "type": "word",
+      "text": "ครัว",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_bathroom",
+      "type": "word",
+      "text": "ห้องน้ำ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_heating",
+      "type": "word",
+      "text": "เครื่องทำความร้อน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_rent",
+      "type": "word",
+      "text": "ค่าเช่า",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_the_heating_is_broken",
+      "type": "sentence",
+      "text": "เครื่องทำความร้อนเสีย.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_where_is_the_bathroom",
+      "type": "sentence",
+      "text": "ห้องน้ำอยู่ไหน?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_is_electricity_included",
+      "type": "sentence",
+      "text": "ไฟฟ้ารวมอยู่ด้วยไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_can_i_see_the_house",
+      "type": "sentence",
+      "text": "ฉันดูบ้านได้ไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_do_you_have_parking",
+      "type": "sentence",
+      "text": "คุณมีที่จอดรถไหม?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

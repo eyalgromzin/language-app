@@ -1,0 +1,68 @@
+{
+  "id": "32_time_and_dates_2",
+  "title": "Time & Dates (Part 2)",
+  "emoji": "⏰",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "32_time_and_dates_week",
+      "type": "word",
+      "text": "semana",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_month",
+      "type": "word",
+      "text": "mes",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_year",
+      "type": "word",
+      "text": "año",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_today",
+      "type": "word",
+      "text": "hoy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_tomorrow",
+      "type": "word",
+      "text": "mañana",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_what_day_of_the_week_is_it",
+      "type": "sentence",
+      "text": "¿Qué día de la semana es?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_next_month_i_am_going_on_vacation",
+      "type": "sentence",
+      "text": "El próximo mes voy de vacaciones.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_year_were_you_born",
+      "type": "sentence",
+      "text": "¿En qué año naciste?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_today_is_a_beautiful_day",
+      "type": "sentence",
+      "text": "Hoy es un día hermoso.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_see_you_tomorrow",
+      "type": "sentence",
+      "text": "Nos vemos mañana.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

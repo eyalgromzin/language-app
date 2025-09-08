@@ -1,0 +1,68 @@
+{
+  "id": "27_education_and_learning_1",
+  "title": "Education & Learning (Part 1)",
+  "emoji": "📚",
+  "language": "English",
+  "items": [
+    {
+      "id": "27_education_and_learning_school",
+      "type": "word",
+      "text": "school",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_student",
+      "type": "word",
+      "text": "student",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_teacher",
+      "type": "word",
+      "text": "teacher",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_class",
+      "type": "word",
+      "text": "class",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_lesson",
+      "type": "word",
+      "text": "lesson",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_what_subject_do_you_study",
+      "type": "sentence",
+      "text": "What subject do you study?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_am_a_student_at_university",
+      "type": "sentence",
+      "text": "I am a student at university.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_my_teacher_is_very_good",
+      "type": "sentence",
+      "text": "My teacher is very good.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_what_time_does_class_start",
+      "type": "sentence",
+      "text": "What time does class start?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_have_a_lot_of_homework",
+      "type": "sentence",
+      "text": "I have a lot of homework.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

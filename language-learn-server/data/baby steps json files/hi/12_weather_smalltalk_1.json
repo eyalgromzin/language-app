@@ -1,0 +1,68 @@
+{
+  "id": "12_weather_smalltalk_1",
+  "title": "मौसम और छोटी बातचीत (Part 1)",
+  "emoji": "🌦️",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_hot",
+      "type": "word",
+      "text": "गर्म",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_cold",
+      "type": "word",
+      "text": "ठंडा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_rain",
+      "type": "word",
+      "text": "बारिश",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_sunny",
+      "type": "word",
+      "text": "धूप",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_warm",
+      "type": "word",
+      "text": "गरम",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_very_hot_today",
+      "type": "sentence",
+      "text": "आज बहुत गर्मी है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_might_rain_tomorrow",
+      "type": "sentence",
+      "text": "कल बारिश हो सकती है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_have_a_nice_day",
+      "type": "sentence",
+      "text": "आपका दिन शुभ हो!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_is_the_weather",
+      "type": "sentence",
+      "text": "मौसम कैसा है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_nice_weather",
+      "type": "sentence",
+      "text": "मौसम अच्छा है।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

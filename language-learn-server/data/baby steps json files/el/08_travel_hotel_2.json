@@ -1,0 +1,68 @@
+{
+  "id": "08_travel_hotel_2",
+  "title": "Ταξίδια και ξενοδοχείο (Part 2)",
+  "emoji": "🧳",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "08_travel_hotel_airport",
+      "type": "word",
+      "text": "αεροδρόμιο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_station",
+      "type": "word",
+      "text": "σταθμός",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_room",
+      "type": "word",
+      "text": "δωμάτιο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_key",
+      "type": "word",
+      "text": "κλειδί",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_map",
+      "type": "word",
+      "text": "χάρτης",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_where_is_my_room",
+      "type": "sentence",
+      "text": "Πού είναι το δωμάτιό μου;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_do_you_have_wifi",
+      "type": "sentence",
+      "text": "Έχετε WiFi;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_how_do_i_get_to_the_airport",
+      "type": "sentence",
+      "text": "Πώς πάω στο αεροδρόμιο;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_is_breakfast_included",
+      "type": "sentence",
+      "text": "Συμπεριλαμβάνεται το πρωινό;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_can_you_call_me_a_taxi",
+      "type": "sentence",
+      "text": "Μπορείτε να μου καλέσετε ταξί;",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "19_housing_utilities_1",
+  "title": "alloggio e servizi pubblici (Part 1)",
+  "emoji": "🏠",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "19_housing_utilities_house",
+      "type": "word",
+      "text": "casa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_apartment",
+      "type": "word",
+      "text": "appartamento",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_room",
+      "type": "word",
+      "text": "stanza",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_kitchen",
+      "type": "word",
+      "text": "cucina",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_bathroom",
+      "type": "word",
+      "text": "bagno",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_do_you_have_a_room_available",
+      "type": "sentence",
+      "text": "Ha una stanza disponibile?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_how_much_is_the_rent",
+      "type": "sentence",
+      "text": "Quanto è l'affitto?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_are_utilities_included",
+      "type": "sentence",
+      "text": "Le utenze sono incluse?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_the_heating_is_not_working",
+      "type": "sentence",
+      "text": "Il riscaldamento non funziona.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_there_is_no_hot_water",
+      "type": "sentence",
+      "text": "Non c'è acqua calda.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

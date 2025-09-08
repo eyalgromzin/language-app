@@ -1,0 +1,68 @@
+{
+  "id": "02_introductions_1",
+  "title": "présentations et informations de base (Part 1)",
+  "emoji": "💬",
+  "language": "French",
+  "items": [
+    {
+      "id": "02_introductions_name",
+      "type": "word",
+      "text": "nom",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_age",
+      "type": "word",
+      "text": "âge",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_country",
+      "type": "word",
+      "text": "pays",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_city",
+      "type": "word",
+      "text": "ville",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_job",
+      "type": "word",
+      "text": "travail",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_what_is_your_name",
+      "type": "sentence",
+      "text": "Comment vous appelez-vous ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_my_name_is",
+      "type": "sentence",
+      "text": "Je m'appelle",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_how_old_are_you",
+      "type": "sentence",
+      "text": "Quel âge avez-vous ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_years_old",
+      "type": "sentence",
+      "text": "J'ai ans.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_where_are_you_from",
+      "type": "sentence",
+      "text": "D'où venez-vous ?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

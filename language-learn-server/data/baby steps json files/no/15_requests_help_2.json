@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_2",
+  "title": "Forespørsler og å be om hjelp (Part 2)",
+  "emoji": "🙋",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "15_requests_help_slowly",
+      "type": "word",
+      "text": "sakte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_mean",
+      "type": "word",
+      "text": "bety",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_say",
+      "type": "word",
+      "text": "si",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_understand",
+      "type": "word",
+      "text": "forstå",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_explain",
+      "type": "word",
+      "text": "forklare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_can_you_explain_this",
+      "type": "sentence",
+      "text": "Kan du forklare dette?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_i_dont_understand",
+      "type": "sentence",
+      "text": "Jeg forstår ikke.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_would_you_mind",
+      "type": "sentence",
+      "text": "Har du noe imot …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_i_ask_you_something",
+      "type": "sentence",
+      "text": "Kan jeg spørre deg om noe?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_thank_you_for_helping",
+      "type": "sentence",
+      "text": "Takk for hjelpen.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

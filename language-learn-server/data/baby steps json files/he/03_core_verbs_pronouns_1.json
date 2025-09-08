@@ -1,0 +1,68 @@
+{
+  "id": "03_core_verbs_pronouns_1",
+  "title": "Core pronouns & helper verbs (Part 1)",
+  "emoji": "🔤",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_i",
+      "type": "word",
+      "text": "אני",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you",
+      "type": "word",
+      "text": "אתה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he",
+      "type": "word",
+      "text": "הוא",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she",
+      "type": "word",
+      "text": "היא",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_we",
+      "type": "word",
+      "text": "אנחנו",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_am",
+      "type": "sentence",
+      "text": "אני …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_have",
+      "type": "sentence",
+      "text": "יש לי …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_want",
+      "type": "sentence",
+      "text": "אני רוצה …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_need",
+      "type": "sentence",
+      "text": "אני צריך …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you_are",
+      "type": "sentence",
+      "text": "אתה …",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

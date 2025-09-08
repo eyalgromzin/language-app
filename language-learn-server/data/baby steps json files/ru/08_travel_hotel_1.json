@@ -1,0 +1,68 @@
+{
+  "id": "08_travel_hotel_1",
+  "title": "путешествия и отель (Part 1)",
+  "emoji": "🧳",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "08_travel_hotel_travel",
+      "type": "word",
+      "text": "путешествие",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_hotel",
+      "type": "word",
+      "text": "отель",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_room",
+      "type": "word",
+      "text": "номер",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_passport",
+      "type": "word",
+      "text": "паспорт",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_ticket",
+      "type": "word",
+      "text": "билет",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_do_you_have_a_room",
+      "type": "sentence",
+      "text": "У вас есть номер?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_i_need_a_room",
+      "type": "sentence",
+      "text": "Мне нужен номер.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_where_is_the_airport",
+      "type": "sentence",
+      "text": "Где аэропорт?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_show_me_your_passport",
+      "type": "sentence",
+      "text": "Покажите ваш паспорт.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_travel_is_exciting",
+      "type": "sentence",
+      "text": "Путешествия захватывающие.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

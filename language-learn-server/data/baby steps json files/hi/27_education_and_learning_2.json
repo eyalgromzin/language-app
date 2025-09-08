@@ -1,0 +1,68 @@
+{
+  "id": "27_education_and_learning_2",
+  "title": "शिक्षा और सीखना (Part 2)",
+  "emoji": "📚",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "27_education_and_learning_homework",
+      "type": "word",
+      "text": "होमवर्क",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_exam",
+      "type": "word",
+      "text": "परीक्षा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_grade",
+      "type": "word",
+      "text": "ग्रेड",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_study",
+      "type": "word",
+      "text": "पढ़ाई",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_learn",
+      "type": "word",
+      "text": "सीखना",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "27_education_and_learning_when_is_your_next_exam",
+      "type": "sentence",
+      "text": "आपकी अगली परीक्षा कब है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_what_grade_did_you_get",
+      "type": "sentence",
+      "text": "आपको क्या ग्रेड मिला?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_need_to_study_for_the_test",
+      "type": "sentence",
+      "text": "मुझे टेस्ट के लिए पढ़ाई करनी है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_this_lesson_is_very_interesting",
+      "type": "sentence",
+      "text": "यह पाठ बहुत दिलचस्प है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "27_education_and_learning_i_want_to_learn_english",
+      "type": "sentence",
+      "text": "मैं अंग्रेजी सीखना चाहता हूं।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

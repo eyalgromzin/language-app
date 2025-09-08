@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_1",
+  "title": "At the restaurant (Part 1)",
+  "emoji": "🍽️",
+  "language": "English",
+  "items": [
+    {
+      "id": "17_restaurant_menu",
+      "type": "word",
+      "text": "menu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_table",
+      "type": "word",
+      "text": "table",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_bill",
+      "type": "word",
+      "text": "bill",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_waiter",
+      "type": "word",
+      "text": "waiter",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_food",
+      "type": "word",
+      "text": "food",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_a_table_for_two_please",
+      "type": "sentence",
+      "text": "A table for two, please.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_could_we_have_the_menu",
+      "type": "sentence",
+      "text": "Could we have the menu?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_the_bill_please",
+      "type": "sentence",
+      "text": "The bill, please.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_do_you_have_vegetarian_options",
+      "type": "sentence",
+      "text": "Do you have vegetarian options?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_what_do_you_recommend",
+      "type": "sentence",
+      "text": "What do you recommend?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

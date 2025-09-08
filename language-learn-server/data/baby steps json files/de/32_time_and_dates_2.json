@@ -1,0 +1,68 @@
+{
+  "id": "32_time_and_dates_2",
+  "title": "Time & Dates (Part 2)",
+  "emoji": "🕐",
+  "language": "German",
+  "items": [
+    {
+      "id": "32_time_and_dates_day",
+      "type": "word",
+      "text": "Tag",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_week",
+      "type": "word",
+      "text": "Woche",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_month",
+      "type": "word",
+      "text": "Monat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_year",
+      "type": "word",
+      "text": "Jahr",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_century",
+      "type": "word",
+      "text": "Jahrhundert",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_it_is_time_to_go",
+      "type": "sentence",
+      "text": "Es ist Zeit zu gehen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_how_long_does_it_take",
+      "type": "sentence",
+      "text": "Wie lange dauert es?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_time_is_money",
+      "type": "sentence",
+      "text": "Zeit ist Geld.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_time_do_you_start",
+      "type": "sentence",
+      "text": "Um wie viel Uhr fangen Sie an?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_time_flies",
+      "type": "sentence",
+      "text": "Die Zeit vergeht schnell.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

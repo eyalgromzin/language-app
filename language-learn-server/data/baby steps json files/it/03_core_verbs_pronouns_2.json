@@ -1,0 +1,68 @@
+{
+  "id": "03_core_verbs_pronouns_2",
+  "title": "pronomi principali e verbi ausiliari (Part 2)",
+  "emoji": "🔤",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_they",
+      "type": "word",
+      "text": "loro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_am",
+      "type": "word",
+      "text": "sono",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_are",
+      "type": "word",
+      "text": "è",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_is",
+      "type": "word",
+      "text": "è",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_have",
+      "type": "word",
+      "text": "ho",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_they_are",
+      "type": "sentence",
+      "text": "Loro sono",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_have",
+      "type": "sentence",
+      "text": "Io ho",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you_have",
+      "type": "sentence",
+      "text": "Lei ha",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he_has",
+      "type": "sentence",
+      "text": "Lui ha",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she_has",
+      "type": "sentence",
+      "text": "Lei ha",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

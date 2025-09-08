@@ -1,0 +1,68 @@
+{
+  "id": "03_core_verbs_pronouns_2",
+  "title": "Core pronouns & helper verbs (Part 2)",
+  "emoji": "🔤",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_they",
+      "type": "word",
+      "text": "वे",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_it",
+      "type": "word",
+      "text": "यह",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_me",
+      "type": "word",
+      "text": "मुझे",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_him",
+      "type": "word",
+      "text": "उसे",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_her",
+      "type": "word",
+      "text": "उसे",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he_is",
+      "type": "sentence",
+      "text": "वह … है",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she_is",
+      "type": "sentence",
+      "text": "वह … है",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_we_are",
+      "type": "sentence",
+      "text": "हम … हैं",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_they_are",
+      "type": "sentence",
+      "text": "वे … हैं",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_it_is",
+      "type": "sentence",
+      "text": "यह … है",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

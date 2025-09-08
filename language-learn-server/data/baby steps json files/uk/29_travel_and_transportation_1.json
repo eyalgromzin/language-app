@@ -1,0 +1,68 @@
+{
+  "id": "29_travel_and_transportation_1",
+  "title": "Подорожі та транспорт (Part 1)",
+  "emoji": "✈️",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "29_travel_and_transportation_travel",
+      "type": "word",
+      "text": "подорож",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_trip",
+      "type": "word",
+      "text": "поїздка",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_airport",
+      "type": "word",
+      "text": "аеропорт",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_hotel",
+      "type": "word",
+      "text": "готель",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_passport",
+      "type": "word",
+      "text": "паспорт",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "29_travel_and_transportation_where_are_you_traveling_to",
+      "type": "sentence",
+      "text": "Куди ви подорожуєте?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_i_am_going_on_a_trip",
+      "type": "sentence",
+      "text": "Я їду в поїздку.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_how_do_i_get_to_the_airport",
+      "type": "sentence",
+      "text": "Як мені дістатися до аеропорту?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_do_you_have_a_hotel_reservation",
+      "type": "sentence",
+      "text": "У вас є бронювання готелю?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "29_travel_and_transportation_where_is_my_passport",
+      "type": "sentence",
+      "text": "Де мій паспорт?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

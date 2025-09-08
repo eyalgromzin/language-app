@@ -1,0 +1,68 @@
+{
+  "id": "34_colors_and_appearance_1",
+  "title": "Χρώματα και εμφάνιση (Part 1)",
+  "emoji": "🎨",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "34_colors_and_appearance_color",
+      "type": "word",
+      "text": "χρώμα",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_red",
+      "type": "word",
+      "text": "κόκκινο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_blue",
+      "type": "word",
+      "text": "μπλε",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_green",
+      "type": "word",
+      "text": "πράσινο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_yellow",
+      "type": "word",
+      "text": "κίτρινο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_what_color_is_your_car",
+      "type": "sentence",
+      "text": "Τι χρώμα έχει το αυτοκίνητό σου;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_i_like_red_flowers",
+      "type": "sentence",
+      "text": "Μου αρέσουν τα κόκκινα λουλούδια.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_the_sky_is_very_blue_today",
+      "type": "sentence",
+      "text": "Ο ουρανός είναι πολύ μπλε σήμερα.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_this_green_shirt_looks_nice",
+      "type": "sentence",
+      "text": "Αυτή η πράσινη μπλούζα φαίνεται ωραία.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_the_yellow_banana_is_ripe",
+      "type": "sentence",
+      "text": "Η κίτρινη μπανάνα είναι ώριμη.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "16_phone_internet_1",
+  "title": "Phone & internet (Part 1)",
+  "emoji": "📱",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "16_phone_internet_phone",
+      "type": "word",
+      "text": "teléfono",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_number",
+      "type": "word",
+      "text": "número",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_email",
+      "type": "word",
+      "text": "correo electrónico",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_wifi",
+      "type": "word",
+      "text": "wifi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_call",
+      "type": "word",
+      "text": "llamar",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_phone_number",
+      "type": "sentence",
+      "text": "¿Cuál es tu número de teléfono?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_what_is_the_wifi_password",
+      "type": "sentence",
+      "text": "¿Cuál es la contraseña del wifi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_i_use_your_phone",
+      "type": "sentence",
+      "text": "¿Puedo usar tu teléfono?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_call_me",
+      "type": "sentence",
+      "text": "¿Puedes llamarme?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_i_will_text_you",
+      "type": "sentence",
+      "text": "Te enviaré un mensaje.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

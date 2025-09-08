@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_1",
+  "title": "Tại nhà hàng (Part 1)",
+  "emoji": "🍽️",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "17_restaurant_menu",
+      "type": "word",
+      "text": "thực đơn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_table",
+      "type": "word",
+      "text": "bàn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_bill",
+      "type": "word",
+      "text": "hóa đơn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_waiter",
+      "type": "word",
+      "text": "phục vụ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_food",
+      "type": "word",
+      "text": "thức ăn",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_a_table_for_two_please",
+      "type": "sentence",
+      "text": "Một bàn cho hai người, xin vui lòng.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_could_we_have_the_menu",
+      "type": "sentence",
+      "text": "Chúng tôi có thể xem thực đơn không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_the_bill_please",
+      "type": "sentence",
+      "text": "Hóa đơn, xin vui lòng.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_do_you_have_vegetarian_options",
+      "type": "sentence",
+      "text": "Bạn có món chay không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_what_do_you_recommend",
+      "type": "sentence",
+      "text": "Bạn gợi ý gì?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

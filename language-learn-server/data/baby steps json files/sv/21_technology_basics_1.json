@@ -1,0 +1,68 @@
+{
+  "id": "21_technology_basics_1",
+  "title": "Teknologi grunderna (Part 1)",
+  "emoji": "💻",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "21_technology_basics_computer",
+      "type": "word",
+      "text": "dator",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_phone",
+      "type": "word",
+      "text": "telefon",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_internet",
+      "type": "word",
+      "text": "internet",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_app",
+      "type": "word",
+      "text": "app",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_password",
+      "type": "word",
+      "text": "lösenord",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_can_you_help_me_with_my_computer",
+      "type": "sentence",
+      "text": "Kan du hjälpa mig med min dator?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_need_to_connect_to_wifi",
+      "type": "sentence",
+      "text": "Jag behöver ansluta till wifi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_what_is_your_email_address",
+      "type": "sentence",
+      "text": "Vad är din e-postadress?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_want_to_download_this_app",
+      "type": "sentence",
+      "text": "Jag vill ladda ner denna app.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_do_you_have_a_website",
+      "type": "sentence",
+      "text": "Har du en hemsida?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

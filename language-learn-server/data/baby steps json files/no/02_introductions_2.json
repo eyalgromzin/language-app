@@ -1,0 +1,68 @@
+{
+  "id": "02_introductions_2",
+  "title": "Introduksjoner og grunnleggende info (Part 2)",
+  "emoji": "💬",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "02_introductions_country",
+      "type": "word",
+      "text": "land",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_city",
+      "type": "word",
+      "text": "by",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_job",
+      "type": "word",
+      "text": "jobb",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_student",
+      "type": "word",
+      "text": "student",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_teacher",
+      "type": "word",
+      "text": "lærer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_where_are_you_from",
+      "type": "sentence",
+      "text": "Hvor kommer du fra?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_from",
+      "type": "sentence",
+      "text": "Jeg kommer fra …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_do_you_speak_english",
+      "type": "sentence",
+      "text": "Snakker du engelsk?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_speak_a_little",
+      "type": "sentence",
+      "text": "Jeg snakker litt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_do_you_do",
+      "type": "sentence",
+      "text": "Hva gjør du?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

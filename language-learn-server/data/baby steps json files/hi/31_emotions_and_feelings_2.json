@@ -1,0 +1,68 @@
+{
+  "id": "31_emotions_and_feelings_2",
+  "title": "भावनाएं और एहसास (Part 2)",
+  "emoji": "😊",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_tired",
+      "type": "word",
+      "text": "थका हुआ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_scared",
+      "type": "word",
+      "text": "डरा हुआ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_surprised",
+      "type": "word",
+      "text": "आश्चर्यचकित",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_confused",
+      "type": "word",
+      "text": "उलझन में",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_proud",
+      "type": "word",
+      "text": "गर्वित",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_nervous_about_the_exam",
+      "type": "sentence",
+      "text": "मैं परीक्षा के बारे में घबरा रहा हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_what_makes_you_happy",
+      "type": "sentence",
+      "text": "आपको क्या खुश करता है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_feel_tired_after_work",
+      "type": "sentence",
+      "text": "काम के बाद मुझे थकान महसूस होती है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_don_t_be_scared",
+      "type": "sentence",
+      "text": "डरो मत।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
+      "type": "sentence",
+      "text": "मैं खबर से आश्चर्यचकित हूं।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

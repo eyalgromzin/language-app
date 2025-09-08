@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_1",
+  "title": "Прохання та звернення за допомогою (Part 1)",
+  "emoji": "🙋",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "15_requests_help_help",
+      "type": "word",
+      "text": "допомога",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_please",
+      "type": "word",
+      "text": "будь ласка",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could",
+      "type": "word",
+      "text": "могти",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_would",
+      "type": "word",
+      "text": "хотіти",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_repeat",
+      "type": "word",
+      "text": "повторювати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could_you_help_me_please",
+      "type": "sentence",
+      "text": "Чи могли б ви мені допомогти, будь ласка?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_you_repeat_that_please",
+      "type": "sentence",
+      "text": "Чи можете ви повторити це, будь ласка?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_please_speak_more_slowly",
+      "type": "sentence",
+      "text": "Будь ласка, говоріть повільніше.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_how_do_you_say_this_in_english",
+      "type": "sentence",
+      "text": "Як це сказати англійською?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_what_does_this_mean",
+      "type": "sentence",
+      "text": "Що це означає?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

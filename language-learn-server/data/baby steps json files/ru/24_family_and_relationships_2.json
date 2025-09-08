@@ -1,0 +1,50 @@
+{
+  "id": "24_family_and_relationships_2",
+  "title": "семья и отношения (Part 2)",
+  "emoji": "👪",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "24_family_and_relationships_marriage",
+      "type": "word",
+      "text": "брак",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_relationship",
+      "type": "word",
+      "text": "отношения",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_family",
+      "type": "word",
+      "text": "семья",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_friend",
+      "type": "word",
+      "text": "друг",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_communication_is_key",
+      "type": "sentence",
+      "text": "Общение - ключ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_trust_is_essential",
+      "type": "sentence",
+      "text": "Доверие необходимо.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_family_love_is_unconditional",
+      "type": "sentence",
+      "text": "Семейная любовь безусловна.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

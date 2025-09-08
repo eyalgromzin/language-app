@@ -1,0 +1,68 @@
+{
+  "id": "01_essentials_2",
+  "title": "अभिवादन और शिष्टाचार (Part 2)",
+  "emoji": "👋",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "01_essentials_yes",
+      "type": "word",
+      "text": "हाँ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_no",
+      "type": "word",
+      "text": "नहीं",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_goodbye",
+      "type": "word",
+      "text": "अलविदा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_welcome",
+      "type": "word",
+      "text": "स्वागत है",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_okay",
+      "type": "word",
+      "text": "ठीक है",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_see_you_later",
+      "type": "sentence",
+      "text": "फिर मिलेंगे।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_have_a_nice_day",
+      "type": "sentence",
+      "text": "आपका दिन शुभ हो।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_you_are_welcome",
+      "type": "sentence",
+      "text": "आपका स्वागत है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_no_problem",
+      "type": "sentence",
+      "text": "कोई बात नहीं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_take_care",
+      "type": "sentence",
+      "text": "ध्यान रखना।",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

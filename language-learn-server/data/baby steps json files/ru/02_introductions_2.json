@@ -1,0 +1,56 @@
+{
+  "id": "02_introductions_2",
+  "title": "представления (Part 2)",
+  "emoji": "💬",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "02_introductions_from",
+      "type": "word",
+      "text": "из",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_country",
+      "type": "word",
+      "text": "страна",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_city",
+      "type": "word",
+      "text": "город",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_nice",
+      "type": "word",
+      "text": "приятно",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_what_language_do_you_speak",
+      "type": "sentence",
+      "text": "На каком языке вы говорите?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_speak",
+      "type": "sentence",
+      "text": "Я говорю",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_introductions_are_important",
+      "type": "sentence",
+      "text": "Представления важны.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_learning_names_is_polite",
+      "type": "sentence",
+      "text": "Запоминать имена вежливо.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

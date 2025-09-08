@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_2",
+  "title": "Connectors & advanced phrases (Part 2)",
+  "emoji": "🔗",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "20_connectors_advanced_but",
+      "type": "word",
+      "text": "pero",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_and",
+      "type": "word",
+      "text": "y",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_or",
+      "type": "word",
+      "text": "o",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_if",
+      "type": "word",
+      "text": "si",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_when",
+      "type": "word",
+      "text": "cuando",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_i_would_like_to_order_but_i_am_not_sure_what",
+      "type": "sentence",
+      "text": "Me gustaría ordenar, pero no estoy seguro de qué.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_if_you_have_time_can_you_help_me",
+      "type": "sentence",
+      "text": "Si tienes tiempo, ¿puedes ayudarme?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_when_you_arrive_please_call_me",
+      "type": "sentence",
+      "text": "Cuando llegues, por favor llámame.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_also_want_to_visit_the_museum",
+      "type": "sentence",
+      "text": "También quiero visitar el museo.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_therefore_i_need_to_leave_early",
+      "type": "sentence",
+      "text": "Por lo tanto, necesito salir temprano.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

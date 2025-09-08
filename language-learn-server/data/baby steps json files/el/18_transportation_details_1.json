@@ -1,0 +1,68 @@
+{
+  "id": "18_transportation_details_1",
+  "title": "Λεπτομέρειες μεταφοράς (Part 1)",
+  "emoji": "🚌",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "18_transportation_details_bus",
+      "type": "word",
+      "text": "λεωφορείο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_train",
+      "type": "word",
+      "text": "τρένο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_metro",
+      "type": "word",
+      "text": "μετρό",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_schedule",
+      "type": "word",
+      "text": "πρόγραμμα",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_ticket",
+      "type": "word",
+      "text": "εισιτήριο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_what_time_does_the_bus_leave",
+      "type": "sentence",
+      "text": "Τι ώρα φεύγει το λεωφορείο;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_where_can_i_buy_a_ticket",
+      "type": "sentence",
+      "text": "Πού μπορώ να αγοράσω εισιτήριο;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_there_a_discount",
+      "type": "sentence",
+      "text": "Υπάρχει έκπτωση;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_which_platform_is_it",
+      "type": "sentence",
+      "text": "Ποια πλατφόρμα είναι;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_the_train_delayed",
+      "type": "sentence",
+      "text": "Το τρένο έχει καθυστέρηση;",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

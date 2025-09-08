@@ -1,0 +1,68 @@
+{
+  "id": "02_introductions_2",
+  "title": "presentazioni e informazioni di base (Part 2)",
+  "emoji": "💬",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "02_introductions_student",
+      "type": "word",
+      "text": "studente",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_teacher",
+      "type": "word",
+      "text": "insegnante",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_engineer",
+      "type": "word",
+      "text": "ingegnere",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_doctor",
+      "type": "word",
+      "text": "medico",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_language",
+      "type": "word",
+      "text": "lingua",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_i_am_from",
+      "type": "sentence",
+      "text": "Sono di",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_do_you_do",
+      "type": "sentence",
+      "text": "Che lavoro fa?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_am_a",
+      "type": "sentence",
+      "text": "Sono",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_do_you_speak_english",
+      "type": "sentence",
+      "text": "Parla inglese?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_speak_a_little",
+      "type": "sentence",
+      "text": "Parlo un po'.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

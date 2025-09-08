@@ -1,0 +1,68 @@
+{
+  "id": "05_getting_around_1",
+  "title": "כיוונים וניווט (Part 1)",
+  "emoji": "🧭",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "05_getting_around_left",
+      "type": "word",
+      "text": "שמאל",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_right",
+      "type": "word",
+      "text": "ימין",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_straight",
+      "type": "word",
+      "text": "ישר",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_near",
+      "type": "word",
+      "text": "קרוב",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_far",
+      "type": "word",
+      "text": "רחוק",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_where_is_the_bathroom",
+      "type": "sentence",
+      "text": "איפה השירותים?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_where_is_the_station",
+      "type": "sentence",
+      "text": "איפה התחנה?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_how_do_i_get_to",
+      "type": "sentence",
+      "text": "איך אני מגיע ל …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_is_it_close",
+      "type": "sentence",
+      "text": "האם זה קרוב?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_i_am_lost",
+      "type": "sentence",
+      "text": "אני הלכתי לאיבוד.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

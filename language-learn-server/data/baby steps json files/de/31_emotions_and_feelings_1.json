@@ -1,0 +1,68 @@
+{
+  "id": "31_emotions_and_feelings_1",
+  "title": "Emotions & Feelings (Part 1)",
+  "emoji": "😊",
+  "language": "German",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_emotion",
+      "type": "word",
+      "text": "Emotion",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_feeling",
+      "type": "word",
+      "text": "Gefühl",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_happy",
+      "type": "word",
+      "text": "glücklich",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_sad",
+      "type": "word",
+      "text": "traurig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_angry",
+      "type": "word",
+      "text": "wütend",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_very_happy_today",
+      "type": "sentence",
+      "text": "Ich bin heute sehr glücklich.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_how_are_you_feeling",
+      "type": "sentence",
+      "text": "Wie fühlen Sie sich?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_excited_about",
+      "type": "sentence",
+      "text": "Ich bin aufgeregt wegen",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_why_are_you_sad",
+      "type": "sentence",
+      "text": "Warum sind Sie traurig?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_feel_nervous",
+      "type": "sentence",
+      "text": "Ich fühle mich nervös.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

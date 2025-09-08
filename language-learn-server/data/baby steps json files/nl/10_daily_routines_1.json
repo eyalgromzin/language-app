@@ -1,0 +1,68 @@
+{
+  "id": "10_daily_routines_1",
+  "title": "Dagelijkse routines en veelgebruikte werkwoorden (Part 1)",
+  "emoji": "☀️",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "10_daily_routines_to_go",
+      "type": "word",
+      "text": "gaan",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_come",
+      "type": "word",
+      "text": "komen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_do",
+      "type": "word",
+      "text": "doen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_make",
+      "type": "word",
+      "text": "maken",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_like",
+      "type": "word",
+      "text": "leuk vinden",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_i_go_to_work",
+      "type": "sentence",
+      "text": "Ik ga naar werk.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_like_this",
+      "type": "sentence",
+      "text": "Ik vind dit leuk.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_do_not_understand",
+      "type": "sentence",
+      "text": "Ik begrijp het niet.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_wake_up_early",
+      "type": "sentence",
+      "text": "Ik word vroeg wakker.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_eat_breakfast",
+      "type": "sentence",
+      "text": "Ik eet ontbijt.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

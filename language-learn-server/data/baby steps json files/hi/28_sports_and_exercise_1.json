@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_1",
+  "title": "खेल और व्यायाम (Part 1)",
+  "emoji": "⚽",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_sport",
+      "type": "word",
+      "text": "खेल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_football",
+      "type": "word",
+      "text": "फुटबॉल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_basketball",
+      "type": "word",
+      "text": "बास्केटबॉल",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_tennis",
+      "type": "word",
+      "text": "टेनिस",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_swimming",
+      "type": "word",
+      "text": "तैराकी",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_like_sports",
+      "type": "sentence",
+      "text": "क्या आपको खेल पसंद हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_love_playing_football",
+      "type": "sentence",
+      "text": "मुझे फुटबॉल खेलना बहुत पसंद है।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_what_sport_do_you_play",
+      "type": "sentence",
+      "text": "आप कौन सा खेल खेलते हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_go_swimming_every_week",
+      "type": "sentence",
+      "text": "मैं हर हफ्ते तैराकी करने जाता हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_exercise_regularly",
+      "type": "sentence",
+      "text": "क्या आप नियमित रूप से व्यायाम करते हैं?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

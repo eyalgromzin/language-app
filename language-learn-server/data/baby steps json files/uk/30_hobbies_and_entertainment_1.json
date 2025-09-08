@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_1",
+  "title": "Хобі та розваги (Part 1)",
+  "emoji": "🎬",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_hobby",
+      "type": "word",
+      "text": "хобі",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_music",
+      "type": "word",
+      "text": "музика",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_movie",
+      "type": "word",
+      "text": "фільм",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_book",
+      "type": "word",
+      "text": "книга",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_dance",
+      "type": "word",
+      "text": "танцювати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_is_your_favorite_hobby",
+      "type": "sentence",
+      "text": "Яке ваше улюблене хобі?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_love_listening_to_music",
+      "type": "sentence",
+      "text": "Я люблю слухати музику.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_movie_did_you_watch",
+      "type": "sentence",
+      "text": "Який фільм ви дивилися?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_reading_books",
+      "type": "sentence",
+      "text": "Вам подобається читати книги?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_can_you_dance",
+      "type": "sentence",
+      "text": "Ви вмієте танцювати?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

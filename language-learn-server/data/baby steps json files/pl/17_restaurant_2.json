@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_2",
+  "title": "W restauracji (Part 2)",
+  "emoji": "🍽️",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "17_restaurant_drink",
+      "type": "word",
+      "text": "pić",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_order",
+      "type": "word",
+      "text": "zamówienie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_reservation",
+      "type": "word",
+      "text": "rezerwacja",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_service",
+      "type": "word",
+      "text": "obsługa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_tip",
+      "type": "word",
+      "text": "napiwek",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_i_would_like_to_order",
+      "type": "sentence",
+      "text": "Chciałbym zamówić.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_how_long_will_it_take",
+      "type": "sentence",
+      "text": "How long will it take?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_can_we_have_some_water",
+      "type": "sentence",
+      "text": "Can we have some water?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_the_food_is_delicious",
+      "type": "sentence",
+      "text": "The food is delicious.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_do_you_accept_credit_cards",
+      "type": "sentence",
+      "text": "Do you accept credit cards?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

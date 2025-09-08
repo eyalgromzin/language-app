@@ -1,0 +1,68 @@
+{
+  "id": "18_transportation_details_2",
+  "title": "Transportation details (Part 2)",
+  "emoji": "🚌",
+  "language": "Spanish",
+  "items": [
+    {
+      "id": "18_transportation_details_station",
+      "type": "word",
+      "text": "estación",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_platform",
+      "type": "word",
+      "text": "andén",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_departure",
+      "type": "word",
+      "text": "salida",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_arrival",
+      "type": "word",
+      "text": "llegada",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_delay",
+      "type": "word",
+      "text": "retraso",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_how_much_is_a_ticket",
+      "type": "sentence",
+      "text": "¿Cuánto cuesta un boleto?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_does_this_bus_go_to",
+      "type": "sentence",
+      "text": "¿Este autobús va a …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_where_is_the_nearest_station",
+      "type": "sentence",
+      "text": "¿Dónde está la estación más cercana?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_what_time_does_it_arrive",
+      "type": "sentence",
+      "text": "¿A qué hora llega?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_can_i_get_a_refund",
+      "type": "sentence",
+      "text": "¿Puedo obtener un reembolso?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

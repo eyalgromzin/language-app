@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_1",
+  "title": "Tình huống khẩn cấp và sức khỏe (Part 1)",
+  "emoji": "⛑️",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "09_emergencies_health_help",
+      "type": "word",
+      "text": "giúp đỡ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_doctor",
+      "type": "word",
+      "text": "bác sĩ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_pharmacy",
+      "type": "word",
+      "text": "nhà thuốc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_emergency",
+      "type": "word",
+      "text": "khẩn cấp",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_hospital",
+      "type": "word",
+      "text": "bệnh viện",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_call_an_ambulance",
+      "type": "sentence",
+      "text": "Gọi xe cứu thương!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_need_a_doctor",
+      "type": "sentence",
+      "text": "Tôi cần bác sĩ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_feel_sick",
+      "type": "sentence",
+      "text": "Tôi cảm thấy ốm.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_lost_my_passport",
+      "type": "sentence",
+      "text": "Tôi mất hộ chiếu.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_where_is_the_nearest_hospital",
+      "type": "sentence",
+      "text": "Bệnh viện gần nhất ở đâu?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

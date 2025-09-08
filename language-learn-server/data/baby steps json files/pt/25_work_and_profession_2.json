@@ -1,0 +1,62 @@
+{
+  "id": "25_work_and_profession_2",
+  "title": "trabalho e profissão (Part 2)",
+  "emoji": "💼",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "25_work_and_profession_project",
+      "type": "word",
+      "text": "projeto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_boss",
+      "type": "word",
+      "text": "chefe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_colleague",
+      "type": "word",
+      "text": "colega",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_salary",
+      "type": "word",
+      "text": "salário",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_career",
+      "type": "word",
+      "text": "carreira",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_my_boss_is_very_nice",
+      "type": "sentence",
+      "text": "O meu chefe é muito legal.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_work_from_home",
+      "type": "sentence",
+      "text": "Eu trabalho de casa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_what_time_do_you_start_work",
+      "type": "sentence",
+      "text": "A que horas você começa a trabalhar?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_good_luck_with_your_career",
+      "type": "sentence",
+      "text": "Boa sorte com a sua carreira!",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

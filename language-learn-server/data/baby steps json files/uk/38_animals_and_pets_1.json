@@ -1,0 +1,68 @@
+{
+  "id": "38_animals_and_pets_1",
+  "title": "Тварини та домашні тварини (Part 1)",
+  "emoji": "🐕",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "38_animals_and_pets_animal",
+      "type": "word",
+      "text": "тварина",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_pet",
+      "type": "word",
+      "text": "домашня тварина",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_dog",
+      "type": "word",
+      "text": "пес",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_cat",
+      "type": "word",
+      "text": "кіт",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_bird",
+      "type": "word",
+      "text": "птах",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_have_any_pets",
+      "type": "sentence",
+      "text": "У вас є домашні тварини?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_my_dog_is_very_friendly",
+      "type": "sentence",
+      "text": "Мій пес дуже дружній.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_cats_are_independent_animals",
+      "type": "sentence",
+      "text": "Коти - незалежні тварини.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_i_love_watching_birds_fly",
+      "type": "sentence",
+      "text": "Я люблю спостерігати, як літають птахи.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_how_many_fish_do_you_have",
+      "type": "sentence",
+      "text": "Скільки у вас риб?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

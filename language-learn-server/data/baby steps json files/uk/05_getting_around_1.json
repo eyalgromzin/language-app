@@ -1,0 +1,68 @@
+{
+  "id": "05_getting_around_1",
+  "title": "Напрямки та орієнтування (Part 1)",
+  "emoji": "🧭",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "05_getting_around_left",
+      "type": "word",
+      "text": "ліво",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_right",
+      "type": "word",
+      "text": "право",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_straight",
+      "type": "word",
+      "text": "прямо",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_near",
+      "type": "word",
+      "text": "близько",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_far",
+      "type": "word",
+      "text": "далеко",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "05_getting_around_where_is_the_bathroom",
+      "type": "sentence",
+      "text": "Де знаходиться ванна кімната?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_where_is_the_station",
+      "type": "sentence",
+      "text": "Де знаходиться станція?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_how_do_i_get_to",
+      "type": "sentence",
+      "text": "Як мені дістатися до …?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_is_it_close",
+      "type": "sentence",
+      "text": "Це близько?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "05_getting_around_i_am_lost",
+      "type": "sentence",
+      "text": "Я заблукав.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

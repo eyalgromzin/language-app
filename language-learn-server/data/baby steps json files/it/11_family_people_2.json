@@ -1,0 +1,68 @@
+{
+  "id": "11_family_people_2",
+  "title": "famiglia e persone (Part 2)",
+  "emoji": "👪",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "11_family_people_son",
+      "type": "word",
+      "text": "figlio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_daughter",
+      "type": "word",
+      "text": "figlia",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_grandmother",
+      "type": "word",
+      "text": "nonna",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_grandfather",
+      "type": "word",
+      "text": "nonno",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_friend",
+      "type": "word",
+      "text": "amico",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_this_is_my_friend",
+      "type": "sentence",
+      "text": "Questo è il mio amico.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_how_many_people_are_in_your_family",
+      "type": "sentence",
+      "text": "Quante persone ci sono nella sua famiglia?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_where_does_your_family_live",
+      "type": "sentence",
+      "text": "Dove vive la sua famiglia?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_do_you_have_any_siblings",
+      "type": "sentence",
+      "text": "Ha fratelli o sorelle?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_what_does_your_father_do",
+      "type": "sentence",
+      "text": "Cosa fa suo padre?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

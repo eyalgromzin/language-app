@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_2",
+  "title": "Từ nối và cụm từ nâng cao (Part 2)",
+  "emoji": "🔗",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "20_connectors_advanced_but",
+      "type": "word",
+      "text": "nhưng",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_and",
+      "type": "word",
+      "text": "và",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_or",
+      "type": "word",
+      "text": "hoặc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_if",
+      "type": "word",
+      "text": "nếu",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_when",
+      "type": "word",
+      "text": "khi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_i_would_like_to_order_but_i_am_not_sure_what",
+      "type": "sentence",
+      "text": "Tôi muốn đặt món, nhưng tôi không chắc chắn gì.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_if_you_have_time_can_you_help_me",
+      "type": "sentence",
+      "text": "Nếu bạn có thời gian, bạn có thể giúp tôi không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_when_you_arrive_please_call_me",
+      "type": "sentence",
+      "text": "Khi bạn đến, xin vui lòng gọi tôi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_also_want_to_visit_the_museum",
+      "type": "sentence",
+      "text": "Tôi cũng muốn thăm bảo tàng.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_therefore_i_need_to_leave_early",
+      "type": "sentence",
+      "text": "Vì vậy, tôi cần phải đi sớm.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

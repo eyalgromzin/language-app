@@ -1,0 +1,68 @@
+{
+  "id": "12_weather_smalltalk_2",
+  "title": "Погода та невеликі розмови (Part 2)",
+  "emoji": "🌦️",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_windy",
+      "type": "word",
+      "text": "вітряний",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_cloudy",
+      "type": "word",
+      "text": "хмарний",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_snow",
+      "type": "word",
+      "text": "сніг",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_nice",
+      "type": "word",
+      "text": "гарний",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_bad",
+      "type": "word",
+      "text": "поганий",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_what_a_beautiful_day",
+      "type": "sentence",
+      "text": "Який прекрасний день!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_the_weather_is_bad",
+      "type": "sentence",
+      "text": "Погода погана.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_do_you_like_this_weather",
+      "type": "sentence",
+      "text": "Вам подобається ця погода?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_it_is_windy_today",
+      "type": "sentence",
+      "text": "Сьогодні вітряно.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_how_are_you_today",
+      "type": "sentence",
+      "text": "Як справи сьогодні?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

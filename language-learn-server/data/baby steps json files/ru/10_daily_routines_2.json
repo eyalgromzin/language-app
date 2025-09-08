@@ -1,0 +1,50 @@
+{
+  "id": "10_daily_routines_2",
+  "title": "ежедневные рутины (Part 2)",
+  "emoji": "☀️",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "10_daily_routines_work",
+      "type": "word",
+      "text": "работа",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_lunch",
+      "type": "word",
+      "text": "обед",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_dinner",
+      "type": "word",
+      "text": "ужин",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_sleep",
+      "type": "word",
+      "text": "спать",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_routines_are_important",
+      "type": "sentence",
+      "text": "Рутины важны.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_good_habits_help",
+      "type": "sentence",
+      "text": "Хорошие привычки помогают.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_consistency_is_key",
+      "type": "sentence",
+      "text": "Последовательность - ключ.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

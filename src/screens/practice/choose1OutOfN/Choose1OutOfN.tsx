@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import TTS from 'react-native-tts';
@@ -95,6 +95,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [isShowingSuccessToast, setIsShowingSuccessToast] = React.useState<boolean>(false);
+  const [showWrongAnswerPopup, setShowWrongAnswerPopup] = React.useState<boolean>(false);
   const successToastTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
   const lastWordKeyRef = React.useRef<string | null>(null);
@@ -142,6 +143,8 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         }
         // Hide finished word animation when leaving the screen
         setShowFinishedWordAnimation(false);
+        // Hide wrong answer popup when leaving the screen
+        setShowWrongAnswerPopup(false);
       };
     }, [])
   );
@@ -268,6 +271,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       setShowCorrectToast(false);
     }
     setRevealCorrect(false);
+    setShowWrongAnswerPopup(false);
     // Auto play the translation on load
     const toSpeak = isChooseTranslationMode ? entries[idx]?.word : entries[idx]?.translation;
     if (toSpeak) {
@@ -341,6 +345,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
     setShowWrongToast(false);
     setShowCorrectToast(false);
     setRevealCorrect(false);
+    setShowWrongAnswerPopup(false);
     // Autoplay in embedded mode as well
     const toSpeak = props.translation || '';
     if (toSpeak) {
@@ -353,6 +358,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
     setShowWrongToast(false);
     setIsShowingSuccessToast(false);
     setShowFinishedWordAnimation(false);
+    setShowWrongAnswerPopup(false);
     // Clear success toast timeout
     if (successToastTimeoutRef.current) {
       clearTimeout(successToastTimeoutRef.current);
@@ -425,8 +431,12 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       setWrongKey(opt.key);
       setShowWrongToast(true);
       try { playWrongFeedback(); } catch {}
-      const t = setTimeout(() => props.onFinished?.(false), 1200);
-      return () => clearTimeout(t as unknown as number);
+      // Show popup for wrong answer in embedded mode
+      setTimeout(() => {
+        setShowWrongToast(false);
+        setShowWrongAnswerPopup(true);
+      }, 1000);
+      return;
     }
     if (opt.isCorrect) {
       setSelectedKey(opt.key);
@@ -461,8 +471,12 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       setRevealCorrect(true);
       setShowWrongToast(true);
       try { playWrongFeedback(); } catch {}
-      const hide = setTimeout(() => setShowWrongToast(false), 3000);
-      return () => clearTimeout(hide as unknown as number);
+      // Show popup after second wrong attempt
+      setTimeout(() => {
+        setShowWrongToast(false);
+        setShowWrongAnswerPopup(true);
+      }, 1000);
+      return;
     }
     setWrongKey(opt.key);
     setWrongAttempts(1);
@@ -562,6 +576,54 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
           // This prevents the animation from showing twice for the same word
         }}
       />
+      
+      {/* Wrong Answer Popup */}
+      <Modal
+        visible={showWrongAnswerPopup}
+        transparent={true}
+        animationType="fade"
+        onRequestClose={() => setShowWrongAnswerPopup(false)}
+      >
+        <View style={styles.popupOverlay}>
+          <View style={styles.popupContainer}>
+            <Text style={styles.popupTitle}>Wrong Answer</Text>
+            <Text style={styles.popupMessage}>The correct answer is:</Text>
+            <View style={styles.correctAnswerContainer}>
+              {props.embedded ? (
+                <View style={styles.embeddedAnswerContainer}>
+                  <Text style={styles.correctAnswerText}>{props.correctWord}</Text>
+                  {props.translation && (
+                    <Text style={styles.correctAnswerTranslation}>{props.translation}</Text>
+                  )}
+                </View>
+              ) : (
+                <View style={styles.embeddedAnswerContainer}>
+                  <Text style={styles.correctAnswerText}>
+                    {current && (isChooseTranslationMode ? current.translation : current.word)}
+                  </Text>
+                  <Text style={styles.correctAnswerTranslation}>
+                    {current && (isChooseTranslationMode ? current.word : current.translation)}
+                  </Text>
+                </View>
+              )}
+            </View>
+            <TouchableOpacity
+              style={styles.popupOkButton}
+              onPress={() => {
+                setShowWrongAnswerPopup(false);
+                setShowFinishedWordAnimation(false);
+                if (props.embedded) {
+                  props.onFinished?.(false);
+                } else {
+                  prepareRound(allEntries, false);
+                }
+              }}
+            >
+              <Text style={styles.popupOkButtonText}>OK</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -700,6 +762,79 @@ const styles = StyleSheet.create({
   nextButtonText: {
     color: '#fff',
     fontWeight: '700',
+  },
+  popupOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  popupContainer: {
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    padding: 24,
+    alignItems: 'center',
+    minWidth: 280,
+    maxWidth: 320,
+    elevation: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+  },
+  popupTitle: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#e53935',
+    marginBottom: 12,
+    textAlign: 'center',
+  },
+  popupMessage: {
+    fontSize: 16,
+    color: '#666',
+    marginBottom: 16,
+    textAlign: 'center',
+  },
+  correctAnswerContainer: {
+    backgroundColor: '#e6f7e9',
+    borderWidth: 2,
+    borderColor: '#2e7d32',
+    borderRadius: 12,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    marginBottom: 20,
+    minWidth: 200,
+  },
+  embeddedAnswerContainer: {
+    alignItems: 'center',
+    gap: 8,
+  },
+  correctAnswerText: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#2e7d32',
+    textAlign: 'center',
+  },
+  correctAnswerTranslation: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#666',
+    textAlign: 'center',
+    fontStyle: 'italic',
+  },
+  popupOkButton: {
+    backgroundColor: '#007AFF',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 12,
+    minWidth: 100,
+  },
+  popupOkButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '700',
+    textAlign: 'center',
   },
 
 });

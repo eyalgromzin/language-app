@@ -1,0 +1,62 @@
+{
+  "id": "24_family_and_relationships_2",
+  "title": "família e relacionamentos (Part 2)",
+  "emoji": "👪",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "24_family_and_relationships_boyfriend",
+      "type": "word",
+      "text": "namorado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_girlfriend",
+      "type": "word",
+      "text": "namorada",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_friend",
+      "type": "word",
+      "text": "amigo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_love",
+      "type": "word",
+      "text": "amor",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_marriage",
+      "type": "word",
+      "text": "casamento",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_my_family_is_very_important_to_me",
+      "type": "sentence",
+      "text": "A minha família é muito importante para mim.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_love_my_family",
+      "type": "sentence",
+      "text": "Eu amo a minha família.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_how_old_are_your_children",
+      "type": "sentence",
+      "text": "Quantos anos têm os seus filhos?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_family_is_everything",
+      "type": "sentence",
+      "text": "Família é tudo.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

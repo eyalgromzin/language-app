@@ -1,0 +1,68 @@
+{
+  "id": "28_sports_and_exercise_1",
+  "title": "Sport och träning (Part 1)",
+  "emoji": "⚽",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "28_sports_and_exercise_sport",
+      "type": "word",
+      "text": "sport",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_game",
+      "type": "word",
+      "text": "spel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_team",
+      "type": "word",
+      "text": "lag",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_player",
+      "type": "word",
+      "text": "spelare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_coach",
+      "type": "word",
+      "text": "tränare",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "28_sports_and_exercise_what_sport_do_you_like",
+      "type": "sentence",
+      "text": "Vilken sport tycker du om?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_i_love_playing_soccer",
+      "type": "sentence",
+      "text": "Jag älskar att spela fotboll.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_do_you_want_to_join_our_team",
+      "type": "sentence",
+      "text": "Vill du gå med i vårt lag?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_who_is_your_favorite_player",
+      "type": "sentence",
+      "text": "Vem är din favoritspelare?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "28_sports_and_exercise_our_coach_is_very_good",
+      "type": "sentence",
+      "text": "Vår tränare är mycket bra.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

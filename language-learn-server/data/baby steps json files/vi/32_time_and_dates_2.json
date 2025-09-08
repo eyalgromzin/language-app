@@ -1,0 +1,68 @@
+{
+  "id": "32_time_and_dates_2",
+  "title": "Thời gian và ngày tháng (Part 2)",
+  "emoji": "⏰",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "32_time_and_dates_week",
+      "type": "word",
+      "text": "tuần",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_month",
+      "type": "word",
+      "text": "tháng",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_year",
+      "type": "word",
+      "text": "năm",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_today",
+      "type": "word",
+      "text": "hôm nay",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_tomorrow",
+      "type": "word",
+      "text": "ngày mai",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_what_day_of_the_week_is_it",
+      "type": "sentence",
+      "text": "Hôm nay là thứ mấy?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_next_month_i_am_going_on_vacation",
+      "type": "sentence",
+      "text": "Tháng tới tôi sẽ đi nghỉ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_year_were_you_born",
+      "type": "sentence",
+      "text": "Bạn sinh năm nào?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_today_is_a_beautiful_day",
+      "type": "sentence",
+      "text": "Hôm nay là một ngày đẹp.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_see_you_tomorrow",
+      "type": "sentence",
+      "text": "Hẹn gặp lại ngày mai.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

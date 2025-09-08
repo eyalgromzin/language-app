@@ -1,0 +1,68 @@
+{
+  "id": "16_phone_internet_1",
+  "title": "Điện thoại và internet (Part 1)",
+  "emoji": "📱",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "16_phone_internet_phone",
+      "type": "word",
+      "text": "điện thoại",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_number",
+      "type": "word",
+      "text": "số",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_email",
+      "type": "word",
+      "text": "email",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_wifi",
+      "type": "word",
+      "text": "wifi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_call",
+      "type": "word",
+      "text": "gọi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "16_phone_internet_what_is_your_phone_number",
+      "type": "sentence",
+      "text": "Số điện thoại của bạn là gì?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_what_is_the_wifi_password",
+      "type": "sentence",
+      "text": "Mật khẩu wifi là gì?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_i_use_your_phone",
+      "type": "sentence",
+      "text": "Tôi có thể dùng điện thoại của bạn không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_can_you_call_me",
+      "type": "sentence",
+      "text": "Bạn có thể gọi tôi không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "16_phone_internet_i_will_text_you",
+      "type": "sentence",
+      "text": "Tôi sẽ nhắn tin cho bạn.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

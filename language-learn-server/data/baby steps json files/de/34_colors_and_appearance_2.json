@@ -1,0 +1,68 @@
+{
+  "id": "34_colors_and_appearance_2",
+  "title": "Colors & Appearance (Part 2)",
+  "emoji": "🎨",
+  "language": "German",
+  "items": [
+    {
+      "id": "34_colors_and_appearance_yellow",
+      "type": "word",
+      "text": "gelb",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_black",
+      "type": "word",
+      "text": "schwarz",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_white",
+      "type": "word",
+      "text": "weiß",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_big",
+      "type": "word",
+      "text": "groß",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_small",
+      "type": "word",
+      "text": "klein",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_what_does_it_look_like",
+      "type": "sentence",
+      "text": "Wie sieht es aus?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_colors_are_beautiful",
+      "type": "sentence",
+      "text": "Farben sind schön.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_appearance_is_not_everything",
+      "type": "sentence",
+      "text": "Aussehen ist nicht alles.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_what_is_your_favorite_color",
+      "type": "sentence",
+      "text": "Was ist Ihre Lieblingsfarbe?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_beauty_is_in_the_eye_of_the_beholder",
+      "type": "sentence",
+      "text": "Schönheit liegt im Auge des Betrachters.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

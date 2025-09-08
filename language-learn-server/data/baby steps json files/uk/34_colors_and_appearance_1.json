@@ -1,0 +1,68 @@
+{
+  "id": "34_colors_and_appearance_1",
+  "title": "Кольори та зовнішність (Part 1)",
+  "emoji": "🎨",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "34_colors_and_appearance_color",
+      "type": "word",
+      "text": "колір",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_red",
+      "type": "word",
+      "text": "червоний",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_blue",
+      "type": "word",
+      "text": "синій",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_green",
+      "type": "word",
+      "text": "зелений",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_yellow",
+      "type": "word",
+      "text": "жовтий",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_what_color_is_your_car",
+      "type": "sentence",
+      "text": "Якого кольору ваш автомобіль?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_i_like_red_flowers",
+      "type": "sentence",
+      "text": "Мені подобаються червоні квіти.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_the_sky_is_very_blue_today",
+      "type": "sentence",
+      "text": "Небо сьогодні дуже синє.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_this_green_shirt_looks_nice",
+      "type": "sentence",
+      "text": "Ця зелена сорочка виглядає гарно.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_the_yellow_banana_is_ripe",
+      "type": "sentence",
+      "text": "Жовтий банан дозрів.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

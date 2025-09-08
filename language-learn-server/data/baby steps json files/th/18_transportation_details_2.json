@@ -1,0 +1,68 @@
+{
+  "id": "18_transportation_details_2",
+  "title": "รายละเอียดการขนส่ง (Part 2)",
+  "emoji": "🚌",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "18_transportation_details_station",
+      "type": "word",
+      "text": "สถานี",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_platform",
+      "type": "word",
+      "text": "ชานชาลา",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_departure",
+      "type": "word",
+      "text": "การออกเดินทาง",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_arrival",
+      "type": "word",
+      "text": "การมาถึง",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_delay",
+      "type": "word",
+      "text": "การล่าช้า",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_how_much_is_a_ticket",
+      "type": "sentence",
+      "text": "ตั๋วราคาเท่าไหร่?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_does_this_bus_go_to",
+      "type": "sentence",
+      "text": "รถบัสคันนี้ไป … ไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_where_is_the_nearest_station",
+      "type": "sentence",
+      "text": "สถานีที่ใกล้ที่สุดอยู่ไหน?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_what_time_does_it_arrive",
+      "type": "sentence",
+      "text": "มันมาถึงกี่โมง?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_can_i_get_a_refund",
+      "type": "sentence",
+      "text": "ฉันขอคืนเงินได้ไหม?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

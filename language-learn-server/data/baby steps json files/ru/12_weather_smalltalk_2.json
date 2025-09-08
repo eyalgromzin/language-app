@@ -1,0 +1,50 @@
+{
+  "id": "12_weather_smalltalk_2",
+  "title": "погода и светская беседа (Part 2)",
+  "emoji": "🌦️",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "12_weather_smalltalk_nice",
+      "type": "word",
+      "text": "хорошо",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_bad",
+      "type": "word",
+      "text": "плохо",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_talk",
+      "type": "word",
+      "text": "говорить",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_conversation",
+      "type": "word",
+      "text": "разговор",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "12_weather_smalltalk_weather_affects_mood",
+      "type": "sentence",
+      "text": "Погода влияет на настроение.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_small_talk_is_polite",
+      "type": "sentence",
+      "text": "Светская беседа вежлива.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "12_weather_smalltalk_weather_is_a_common_topic",
+      "type": "sentence",
+      "text": "Погода - общая тема.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

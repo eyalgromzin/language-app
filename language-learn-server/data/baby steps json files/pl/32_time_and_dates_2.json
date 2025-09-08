@@ -1,0 +1,68 @@
+{
+  "id": "32_time_and_dates_2",
+  "title": "Czas i daty (Part 2)",
+  "emoji": "⏰",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "32_time_and_dates_week",
+      "type": "word",
+      "text": "tydzień",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_month",
+      "type": "word",
+      "text": "miesiąc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_year",
+      "type": "word",
+      "text": "rok",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_today",
+      "type": "word",
+      "text": "dziś",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_tomorrow",
+      "type": "word",
+      "text": "jutro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_what_day_of_the_week_is_it",
+      "type": "sentence",
+      "text": "Jaki jest dzisiaj dzień tygodnia?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_next_month_i_am_going_on_vacation",
+      "type": "sentence",
+      "text": "W następnym miesiącu iść na wakacje.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_year_were_you_born",
+      "type": "sentence",
+      "text": "W jakim roku się urodziłeś?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_today_is_a_beautiful_day",
+      "type": "sentence",
+      "text": "Dzisiaj jest piękna pogoda.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_see_you_tomorrow",
+      "type": "sentence",
+      "text": "Do zobaczenia jutro.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "32_time_and_dates_2",
+  "title": "tempo e date (Part 2)",
+  "emoji": "🕐",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "32_time_and_dates_morning",
+      "type": "word",
+      "text": "mattina",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_afternoon",
+      "type": "word",
+      "text": "pomeriggio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_evening",
+      "type": "word",
+      "text": "sera",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_night",
+      "type": "word",
+      "text": "notte",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_week",
+      "type": "word",
+      "text": "settimana",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_i_have_an_appointment_at",
+      "type": "sentence",
+      "text": "Ho un appuntamento alle",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_time_do_you_start_work",
+      "type": "sentence",
+      "text": "A che ora inizia a lavorare?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_the_meeting_is_at_four",
+      "type": "sentence",
+      "text": "La riunione è alle quattro.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_i_am_late_for",
+      "type": "sentence",
+      "text": "Sono in ritardo per",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_time_is_very_important",
+      "type": "sentence",
+      "text": "Il tempo è molto importante.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

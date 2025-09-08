@@ -1,0 +1,68 @@
+{
+  "id": "31_emotions_and_feelings_1",
+  "title": "Känslor och känslor (Part 1)",
+  "emoji": "😊",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_happy",
+      "type": "word",
+      "text": "glad",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_sad",
+      "type": "word",
+      "text": "ledsen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_angry",
+      "type": "word",
+      "text": "arg",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_excited",
+      "type": "word",
+      "text": "exalterad",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_nervous",
+      "type": "word",
+      "text": "nervös",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_how_are_you_feeling_today",
+      "type": "sentence",
+      "text": "Hur mår du idag?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_very_happy_today",
+      "type": "sentence",
+      "text": "Jag är mycket glad idag.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_why_are_you_sad",
+      "type": "sentence",
+      "text": "Varför är du ledsen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_don_t_be_angry_with_me",
+      "type": "sentence",
+      "text": "Var inte arg på mig.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_excited_about_the_trip",
+      "type": "sentence",
+      "text": "Jag är exalterad över resan.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

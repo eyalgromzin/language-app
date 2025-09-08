@@ -1,0 +1,68 @@
+{
+  "id": "31_emotions_and_feelings_2",
+  "title": "רגשות ותחושות (Part 2)",
+  "emoji": "😊",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_tired",
+      "type": "word",
+      "text": "עייף",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_surprised",
+      "type": "word",
+      "text": "מופתע",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_worried",
+      "type": "word",
+      "text": "מודאג",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_confused",
+      "type": "word",
+      "text": "מבולבל",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_proud",
+      "type": "word",
+      "text": "גאה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_feel_nervous_before_exams",
+      "type": "sentence",
+      "text": "אני מרגיש עצבני לפני בחינות.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_are_you_tired",
+      "type": "sentence",
+      "text": "האם אתה עייף?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_surprised_by_the_news",
+      "type": "sentence",
+      "text": "אני מופתע מהחדשות.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_don_t_worry_about_it",
+      "type": "sentence",
+      "text": "אל תדאג לגבי זה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_proud_of_my_achievement",
+      "type": "sentence",
+      "text": "אני גאה בהישג שלי.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

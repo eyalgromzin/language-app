@@ -1,0 +1,68 @@
+{
+  "id": "07_shopping_money_1",
+  "title": "खरीदारी और पैसा (Part 1)",
+  "emoji": "🛍️",
+  "language": "Hindi",
+  "items": [
+    {
+      "id": "07_shopping_money_price",
+      "type": "word",
+      "text": "कीमत",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cash",
+      "type": "word",
+      "text": "नकद",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_card",
+      "type": "word",
+      "text": "कार्ड",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_receipt",
+      "type": "word",
+      "text": "रसीद",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_money",
+      "type": "word",
+      "text": "पैसा",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_how_much_is_this",
+      "type": "sentence",
+      "text": "इसकी कीमत कितनी है?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_take_cards",
+      "type": "sentence",
+      "text": "क्या आप कार्ड लेते हैं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_i_am_just_looking",
+      "type": "sentence",
+      "text": "मैं सिर्फ देख रहा हूं।",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_can_i_try_it_on",
+      "type": "sentence",
+      "text": "क्या मैं इसे पहन कर देख सकता हूं?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_is_there_a_discount",
+      "type": "sentence",
+      "text": "Is there a discount?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

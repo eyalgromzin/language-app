@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_1",
+  "title": "สภาพอากาศและธรรมชาติ (Part 1)",
+  "emoji": "🌤️",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "22_weather_and_nature_sunny",
+      "type": "word",
+      "text": "แดด",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_rainy",
+      "type": "word",
+      "text": "ฝน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_cloudy",
+      "type": "word",
+      "text": "เมฆ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_windy",
+      "type": "word",
+      "text": "ลมแรง",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_snow",
+      "type": "word",
+      "text": "หิมะ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_it_is_sunny_today",
+      "type": "sentence",
+      "text": "วันนี้แดด.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_weather_is_nice",
+      "type": "sentence",
+      "text": "อากาศดี.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_it_might_rain_later",
+      "type": "sentence",
+      "text": "อาจจะฝนทีหลัง.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_wind_is_very_strong",
+      "type": "sentence",
+      "text": "ลมแรงมาก.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_i_love_walking_in_the_forest",
+      "type": "sentence",
+      "text": "ฉันชอบเดินในป่า.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

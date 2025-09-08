@@ -1,0 +1,68 @@
+{
+  "id": "37_home_and_furniture_1",
+  "title": "בית ורהיטים (Part 1)",
+  "emoji": "🏠",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "37_home_and_furniture_home",
+      "type": "word",
+      "text": "בית",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_house",
+      "type": "word",
+      "text": "בית",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_room",
+      "type": "word",
+      "text": "חדר",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_kitchen",
+      "type": "word",
+      "text": "מטבח",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_bedroom",
+      "type": "word",
+      "text": "חדר שינה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "37_home_and_furniture_welcome_to_my_home",
+      "type": "sentence",
+      "text": "ברוך הבא לבית שלי.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_how_many_rooms_does_your_house_have",
+      "type": "sentence",
+      "text": "כמה חדרים יש בבית שלך?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_the_kitchen_is_very_modern",
+      "type": "sentence",
+      "text": "המטבח מאוד מודרני.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_my_bedroom_is_on_the_second_floor",
+      "type": "sentence",
+      "text": "חדר השינה שלי בקומה השנייה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "37_home_and_furniture_please_sit_at_the_table",
+      "type": "sentence",
+      "text": "בבקשה שב בשולחן.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

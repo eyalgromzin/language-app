@@ -1,0 +1,68 @@
+{
+  "id": "03_core_verbs_pronouns_2",
+  "title": "Podstawowe zaimki i czasowniki pomocnicze (Part 2)",
+  "emoji": "🔤",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_they",
+      "type": "word",
+      "text": "oni",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_it",
+      "type": "word",
+      "text": "to",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_me",
+      "type": "word",
+      "text": "mnie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_him",
+      "type": "word",
+      "text": "jego",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_her",
+      "type": "word",
+      "text": "ją",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he_is",
+      "type": "sentence",
+      "text": "On jest …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she_is",
+      "type": "sentence",
+      "text": "Ona jest …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_we_are",
+      "type": "sentence",
+      "text": "My jesteśmy …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_they_are",
+      "type": "sentence",
+      "text": "Oni są …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_it_is",
+      "type": "sentence",
+      "text": "To jest …",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

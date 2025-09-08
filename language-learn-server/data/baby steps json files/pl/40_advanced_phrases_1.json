@@ -1,0 +1,68 @@
+{
+  "id": "40_advanced_phrases_1",
+  "title": "Zaawansowane frazy (Part 1)",
+  "emoji": "🚀",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "40_advanced_phrases_nevertheless",
+      "type": "word",
+      "text": "niemniej jednak",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore",
+      "type": "word",
+      "text": "ponadto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_otherwise",
+      "type": "word",
+      "text": "w przeciwnym razie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_meanwhile",
+      "type": "word",
+      "text": "tymczasem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_consequently",
+      "type": "word",
+      "text": "w konsekwencji",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "40_advanced_phrases_nevertheless_i_still_want_to_try",
+      "type": "sentence",
+      "text": "Niemniej jednak, nadal chcę spróbować.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_furthermore_i_believe_this_is_correct",
+      "type": "sentence",
+      "text": "Ponadto, wierzę że to jest poprawne.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_we_must_leave_now_otherwise_we_will_be_late",
+      "type": "sentence",
+      "text": "Musimy wyjść teraz, w przeciwnym razie będziemy spóźnieni.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_meanwhile_i_will_prepare_dinner",
+      "type": "sentence",
+      "text": "Tymczasem, przygotuję obiad.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "40_advanced_phrases_consequently_the_meeting_was_cancelled",
+      "type": "sentence",
+      "text": "W konsekwencji, spotkanie zostało odwołane.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

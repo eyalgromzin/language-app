@@ -1,0 +1,68 @@
+{
+  "id": "07_shopping_money_1",
+  "title": "compras e dinheiro (Part 1)",
+  "emoji": "🛍️",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "07_shopping_money_money",
+      "type": "word",
+      "text": "dinheiro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_price",
+      "type": "word",
+      "text": "preço",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cheap",
+      "type": "word",
+      "text": "barato",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_expensive",
+      "type": "word",
+      "text": "caro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_sale",
+      "type": "word",
+      "text": "promoção",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_how_much_does_it_cost",
+      "type": "sentence",
+      "text": "Quanto custa?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_it_is_too_expensive",
+      "type": "sentence",
+      "text": "É muito caro.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_have_this_in",
+      "type": "sentence",
+      "text": "Você tem isso em",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_can_i_try_it_on",
+      "type": "sentence",
+      "text": "Posso experimentar?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_i_will_take_it",
+      "type": "sentence",
+      "text": "Vou levar.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

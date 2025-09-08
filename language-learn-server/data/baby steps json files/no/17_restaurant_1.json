@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_1",
+  "title": "På restauranten (Part 1)",
+  "emoji": "🍽️",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "17_restaurant_menu",
+      "type": "word",
+      "text": "meny",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_table",
+      "type": "word",
+      "text": "bord",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_bill",
+      "type": "word",
+      "text": "regning",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_waiter",
+      "type": "word",
+      "text": "servitør",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_food",
+      "type": "word",
+      "text": "mat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_a_table_for_two_please",
+      "type": "sentence",
+      "text": "Et bord for to, vær så snill.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_could_we_have_the_menu",
+      "type": "sentence",
+      "text": "Kan vi få menyen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_the_bill_please",
+      "type": "sentence",
+      "text": "Regningen, vær så snill.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_do_you_have_vegetarian_options",
+      "type": "sentence",
+      "text": "Har dere vegetariske alternativer?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_what_do_you_recommend",
+      "type": "sentence",
+      "text": "Hva anbefaler du?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

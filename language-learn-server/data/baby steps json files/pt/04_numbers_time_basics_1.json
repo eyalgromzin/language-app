@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_1",
+  "title": "números e conceitos básicos de tempo (Part 1)",
+  "emoji": "🔢",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_one",
+      "type": "word",
+      "text": "um",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_two",
+      "type": "word",
+      "text": "dois",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_three",
+      "type": "word",
+      "text": "três",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_four",
+      "type": "word",
+      "text": "quatro",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_five",
+      "type": "word",
+      "text": "cinco",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_what_time_is_it",
+      "type": "sentence",
+      "text": "Que horas são?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_oclock",
+      "type": "sentence",
+      "text": "São horas.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_day_is_it",
+      "type": "sentence",
+      "text": "Que dia é hoje?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_today_is",
+      "type": "sentence",
+      "text": "Hoje é",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_date_is_it",
+      "type": "sentence",
+      "text": "Que data é hoje?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

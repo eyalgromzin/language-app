@@ -1,0 +1,68 @@
+{
+  "id": "10_daily_routines_1",
+  "title": "שגרות יומיות ופעלים נפוצים (Part 1)",
+  "emoji": "☀️",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "10_daily_routines_to_go",
+      "type": "word",
+      "text": "ללכת",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_come",
+      "type": "word",
+      "text": "לבוא",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_do",
+      "type": "word",
+      "text": "לעשות",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_make",
+      "type": "word",
+      "text": "להכין",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_like",
+      "type": "word",
+      "text": "לאהוב",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_i_go_to_work",
+      "type": "sentence",
+      "text": "אני הולך לעבודה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_like_this",
+      "type": "sentence",
+      "text": "אני אוהב את זה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_do_not_understand",
+      "type": "sentence",
+      "text": "אני לא מבין.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_wake_up_early",
+      "type": "sentence",
+      "text": "אני מתעורר מוקדם.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_eat_breakfast",
+      "type": "sentence",
+      "text": "אני אוכל ארוחת בוקר.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

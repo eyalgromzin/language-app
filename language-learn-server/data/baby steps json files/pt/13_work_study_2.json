@@ -1,0 +1,62 @@
+{
+  "id": "13_work_study_2",
+  "title": "conceitos básicos de trabalho e estudos (Part 2)",
+  "emoji": "💼",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "13_work_study_university",
+      "type": "word",
+      "text": "universidade",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_meeting",
+      "type": "word",
+      "text": "reunião",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_project",
+      "type": "word",
+      "text": "projeto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_busy",
+      "type": "word",
+      "text": "ocupado",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_free",
+      "type": "word",
+      "text": "livre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "13_work_study_what_time_do_you_start_work",
+      "type": "sentence",
+      "text": "A que horas você começa a trabalhar?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Você gosta do seu trabalho?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_i_need_to_study",
+      "type": "sentence",
+      "text": "Eu preciso estudar.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "13_work_study_good_luck_with_your_studies",
+      "type": "sentence",
+      "text": "Boa sorte com os seus estudos!",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

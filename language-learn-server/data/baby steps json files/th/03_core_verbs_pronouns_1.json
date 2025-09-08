@@ -1,0 +1,68 @@
+{
+  "id": "03_core_verbs_pronouns_1",
+  "title": "คำสรรพนามหลักและคำกริยาช่วย (Part 1)",
+  "emoji": "🔤",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "03_core_verbs_pronouns_i",
+      "type": "word",
+      "text": "ฉัน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you",
+      "type": "word",
+      "text": "คุณ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_he",
+      "type": "word",
+      "text": "เขา",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_she",
+      "type": "word",
+      "text": "เธอ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_we",
+      "type": "word",
+      "text": "เรา",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_am",
+      "type": "sentence",
+      "text": "ฉันเป็น …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_have",
+      "type": "sentence",
+      "text": "ฉันมี …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_want",
+      "type": "sentence",
+      "text": "ฉันต้องการ …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_i_need",
+      "type": "sentence",
+      "text": "ฉันต้องการ …",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "03_core_verbs_pronouns_you_are",
+      "type": "sentence",
+      "text": "คุณเป็น …",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

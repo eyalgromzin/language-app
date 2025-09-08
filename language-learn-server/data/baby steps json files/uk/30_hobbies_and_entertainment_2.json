@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_2",
+  "title": "Хобі та розваги (Part 2)",
+  "emoji": "🎬",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_paint",
+      "type": "word",
+      "text": "малювати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_cook",
+      "type": "word",
+      "text": "готувати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_garden",
+      "type": "word",
+      "text": "сад",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_photography",
+      "type": "word",
+      "text": "фотографія",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_collect",
+      "type": "word",
+      "text": "збирати",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_want_to_learn_to_paint",
+      "type": "sentence",
+      "text": "Я хочу навчитися малювати.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_cooking",
+      "type": "sentence",
+      "text": "Вам подобається готувати?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_my_garden_is_very_beautiful",
+      "type": "sentence",
+      "text": "Мій сад дуже красивий.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_take_photos_as_a_hobby",
+      "type": "sentence",
+      "text": "Я фотографую як хобі.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_do_you_collect",
+      "type": "sentence",
+      "text": "Що ви збираєте?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_2",
+  "title": "At the Restaurant (Part 2)",
+  "emoji": "🍽️",
+  "language": "German",
+  "items": [
+    {
+      "id": "17_restaurant_food",
+      "type": "word",
+      "text": "Essen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_drink",
+      "type": "word",
+      "text": "Getränk",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_bill",
+      "type": "word",
+      "text": "Rechnung",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_tip",
+      "type": "word",
+      "text": "Trinkgeld",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_delicious",
+      "type": "word",
+      "text": "köstlich",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_can_i_have_the_bill",
+      "type": "sentence",
+      "text": "Kann ich die Rechnung haben?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_how_much_is_the_tip",
+      "type": "sentence",
+      "text": "Wie viel ist das Trinkgeld?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_do_you_have_vegetarian_options",
+      "type": "sentence",
+      "text": "Haben Sie vegetarische Optionen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_i_am_allergic_to",
+      "type": "sentence",
+      "text": "Ich bin allergisch gegen",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_thank_you_for_the_meal",
+      "type": "sentence",
+      "text": "Vielen Dank für das Essen.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

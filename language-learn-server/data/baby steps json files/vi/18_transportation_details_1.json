@@ -1,0 +1,68 @@
+{
+  "id": "18_transportation_details_1",
+  "title": "Chi tiết giao thông (Part 1)",
+  "emoji": "🚌",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "18_transportation_details_bus",
+      "type": "word",
+      "text": "xe buýt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_train",
+      "type": "word",
+      "text": "tàu hỏa",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_metro",
+      "type": "word",
+      "text": "tàu điện ngầm",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_schedule",
+      "type": "word",
+      "text": "lịch trình",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_ticket",
+      "type": "word",
+      "text": "vé",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "18_transportation_details_what_time_does_the_bus_leave",
+      "type": "sentence",
+      "text": "Xe buýt khởi hành lúc mấy giờ?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_where_can_i_buy_a_ticket",
+      "type": "sentence",
+      "text": "Tôi có thể mua vé ở đâu?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_there_a_discount",
+      "type": "sentence",
+      "text": "Có giảm giá không?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_which_platform_is_it",
+      "type": "sentence",
+      "text": "Sân ga nào?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "18_transportation_details_is_the_train_delayed",
+      "type": "sentence",
+      "text": "Tàu có bị trễ không?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

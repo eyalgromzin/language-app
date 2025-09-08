@@ -1,0 +1,68 @@
+{
+  "id": "25_work_and_profession_2",
+  "title": "lavoro e professione (Part 2)",
+  "emoji": "💼",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "25_work_and_profession_boss",
+      "type": "word",
+      "text": "capo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_colleague",
+      "type": "word",
+      "text": "collega",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_client",
+      "type": "word",
+      "text": "cliente",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_salary",
+      "type": "word",
+      "text": "stipendio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_career",
+      "type": "word",
+      "text": "carriera",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_i_work_with_great_colleagues",
+      "type": "sentence",
+      "text": "Lavoro con grandi colleghi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_this_project_is_very_important",
+      "type": "sentence",
+      "text": "Questo progetto è molto importante.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_need_to_finish_this_work",
+      "type": "sentence",
+      "text": "Devo finire questo lavoro.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_work_is_very_busy_this_week",
+      "type": "sentence",
+      "text": "Il lavoro è molto impegnativo questa settimana.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_hope_to_get_a_promotion",
+      "type": "sentence",
+      "text": "Spero di ottenere una promozione.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

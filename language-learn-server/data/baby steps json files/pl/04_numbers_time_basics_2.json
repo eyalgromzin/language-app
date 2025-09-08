@@ -1,0 +1,68 @@
+{
+  "id": "04_numbers_time_basics_2",
+  "title": "Liczby i podstawy czasu (Part 2)",
+  "emoji": "🔢",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "04_numbers_time_basics_five",
+      "type": "word",
+      "text": "pięć",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_six",
+      "type": "word",
+      "text": "sześć",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_seven",
+      "type": "word",
+      "text": "siedem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_eight",
+      "type": "word",
+      "text": "osiem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_nine",
+      "type": "word",
+      "text": "dziewięć",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "04_numbers_time_basics_see_you_tomorrow",
+      "type": "sentence",
+      "text": "Do zobaczenia jutro.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_i_am_late",
+      "type": "sentence",
+      "text": "Spóźniam się.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_what_time_do_you_start",
+      "type": "sentence",
+      "text": "O której zaczynasz?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_it_is_time_to_go",
+      "type": "sentence",
+      "text": "Czas iść.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "04_numbers_time_basics_how_long_does_it_take",
+      "type": "sentence",
+      "text": "Ile to zajmuje?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

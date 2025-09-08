@@ -1,0 +1,68 @@
+{
+  "id": "17_restaurant_2",
+  "title": "In het restaurant (Part 2)",
+  "emoji": "🍽️",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "17_restaurant_drink",
+      "type": "word",
+      "text": "drinken",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_order",
+      "type": "word",
+      "text": "bestellen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_reservation",
+      "type": "word",
+      "text": "reservering",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_service",
+      "type": "word",
+      "text": "bediening",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_tip",
+      "type": "word",
+      "text": "fooi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "17_restaurant_i_would_like_to_order",
+      "type": "sentence",
+      "text": "Ik zou graag willen bestellen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_how_long_will_it_take",
+      "type": "sentence",
+      "text": "Hoe lang duurt het?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_can_we_have_some_water",
+      "type": "sentence",
+      "text": "Kunnen we wat water hebben?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_the_food_is_delicious",
+      "type": "sentence",
+      "text": "Het eten is heerlijk.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "17_restaurant_do_you_accept_credit_cards",
+      "type": "sentence",
+      "text": "Aanvaard je creditcards?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

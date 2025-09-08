@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_2",
+  "title": "מזג אוויר וטבע (Part 2)",
+  "emoji": "🌤️",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "22_weather_and_nature_tree",
+      "type": "word",
+      "text": "עץ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_flower",
+      "type": "word",
+      "text": "פרח",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_mountain",
+      "type": "word",
+      "text": "הר",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_ocean",
+      "type": "word",
+      "text": "אוקיינוס",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_forest",
+      "type": "word",
+      "text": "יער",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_the_mountain_view_is_beautiful",
+      "type": "sentence",
+      "text": "נוף ההר יפה.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_these_flowers_are_lovely",
+      "type": "sentence",
+      "text": "הפרחים האלה מקסימים.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_ocean_is_very_blue",
+      "type": "sentence",
+      "text": "האוקיינוס מאוד כחול.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_what_is_the_weather_like",
+      "type": "sentence",
+      "text": "איך מזג האוויר?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_i_hope_it_does_not_snow",
+      "type": "sentence",
+      "text": "אני מקווה שלא ירד שלג.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_1",
+  "title": "clima e natureza (Part 1)",
+  "emoji": "🌤️",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "22_weather_and_nature_weather",
+      "type": "word",
+      "text": "clima",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_sun",
+      "type": "word",
+      "text": "sol",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_rain",
+      "type": "word",
+      "text": "chuva",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_cloud",
+      "type": "word",
+      "text": "nuvem",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_wind",
+      "type": "word",
+      "text": "vento",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_how_is_the_weather_today",
+      "type": "sentence",
+      "text": "Como está o clima hoje?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_it_is_sunny_and_warm",
+      "type": "sentence",
+      "text": "Está ensolarado e quente.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_there_are_many_clouds_today",
+      "type": "sentence",
+      "text": "Há muitas nuvens hoje.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_wind_is_strong",
+      "type": "sentence",
+      "text": "O vento está forte.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_look_at_those_beautiful_flowers",
+      "type": "sentence",
+      "text": "Olhe essas flores bonitas.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

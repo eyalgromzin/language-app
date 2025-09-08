@@ -1,0 +1,68 @@
+{
+  "id": "33_numbers_and_quantities_2",
+  "title": "Siffror och kvantiteter (Part 2)",
+  "emoji": "🔢",
+  "language": "Swedish",
+  "items": [
+    {
+      "id": "33_numbers_and_quantities_all",
+      "type": "word",
+      "text": "alla",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_none",
+      "type": "word",
+      "text": "ingen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_half",
+      "type": "word",
+      "text": "halv",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_double",
+      "type": "word",
+      "text": "dubbel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_total",
+      "type": "word",
+      "text": "total",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_all_students_are_present",
+      "type": "sentence",
+      "text": "Alla studenter är närvarande.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_none_of_them_came",
+      "type": "sentence",
+      "text": "Ingen av dem kom.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_ate_half_of_the_pizza",
+      "type": "sentence",
+      "text": "Jag åt hälften av pizzan.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_the_price_doubled_last_year",
+      "type": "sentence",
+      "text": "Priset fördubblades förra året.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_what_is_the_total_cost",
+      "type": "sentence",
+      "text": "Vad är den totala kostnaden?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

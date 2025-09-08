@@ -1,0 +1,68 @@
+{
+  "id": "38_animals_and_pets_2",
+  "title": "animali e animali domestici (Part 2)",
+  "emoji": "🐕",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "38_animals_and_pets_horse",
+      "type": "word",
+      "text": "cavallo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_cow",
+      "type": "word",
+      "text": "mucca",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_chicken",
+      "type": "word",
+      "text": "pollo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_pet",
+      "type": "word",
+      "text": "animale domestico",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_wild",
+      "type": "word",
+      "text": "selvaggio",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_birds_can_fly",
+      "type": "sentence",
+      "text": "Gli uccelli possono volare.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_horses_are_beautiful",
+      "type": "sentence",
+      "text": "I cavalli sono belli.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_like_farm_animals",
+      "type": "sentence",
+      "text": "Le piacciono gli animali da fattoria?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_animals_are_amazing",
+      "type": "sentence",
+      "text": "Gli animali sono fantastici.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_pets_are_good_companions",
+      "type": "sentence",
+      "text": "Gli animali domestici sono buoni compagni.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

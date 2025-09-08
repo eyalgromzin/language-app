@@ -1,0 +1,68 @@
+{
+  "id": "36_clothing_and_fashion_1",
+  "title": "Ubrania i moda (Part 1)",
+  "emoji": "👕",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_clothes",
+      "type": "word",
+      "text": "ubrania",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shirt",
+      "type": "word",
+      "text": "koszula",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_pants",
+      "type": "word",
+      "text": "spodnie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_dress",
+      "type": "word",
+      "text": "sukienka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shoes",
+      "type": "word",
+      "text": "buty",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_are_you_wearing_today",
+      "type": "sentence",
+      "text": "Co dzisiaj nosisz?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_like_your_new_shirt",
+      "type": "sentence",
+      "text": "Lubię twoją nową koszulę.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
+      "type": "sentence",
+      "text": "Gdzie kupiłeś te spodnie?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
+      "type": "sentence",
+      "text": "Ta sukienka wygląda na tobie pięknie.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
+      "type": "sentence",
+      "text": "Czy lubisz moje nowe buty?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

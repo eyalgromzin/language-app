@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_1",
+  "title": "เหตุฉุกเฉินและสุขภาพ (Part 1)",
+  "emoji": "⛑️",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "09_emergencies_health_help",
+      "type": "word",
+      "text": "ช่วย",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_doctor",
+      "type": "word",
+      "text": "หมอ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_pharmacy",
+      "type": "word",
+      "text": "ร้านขายยา",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_emergency",
+      "type": "word",
+      "text": "ฉุกเฉิน",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_hospital",
+      "type": "word",
+      "text": "โรงพยาบาล",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_call_an_ambulance",
+      "type": "sentence",
+      "text": "เรียกรถพยาบาล!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_need_a_doctor",
+      "type": "sentence",
+      "text": "ฉันต้องการหมอ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_feel_sick",
+      "type": "sentence",
+      "text": "ฉันรู้สึกไม่สบาย.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_lost_my_passport",
+      "type": "sentence",
+      "text": "ฉันทำหนังสือเดินทางหาย.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_where_is_the_nearest_hospital",
+      "type": "sentence",
+      "text": "โรงพยาบาลที่ใกล้ที่สุดอยู่ไหน?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

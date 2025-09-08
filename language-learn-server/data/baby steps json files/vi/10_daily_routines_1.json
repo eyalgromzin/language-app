@@ -1,0 +1,68 @@
+{
+  "id": "10_daily_routines_1",
+  "title": "Thói quen hàng ngày và động từ thông dụng (Part 1)",
+  "emoji": "☀️",
+  "language": "Vietnamese",
+  "items": [
+    {
+      "id": "10_daily_routines_to_go",
+      "type": "word",
+      "text": "đi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_come",
+      "type": "word",
+      "text": "đến",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_do",
+      "type": "word",
+      "text": "làm",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_make",
+      "type": "word",
+      "text": "tạo ra",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_like",
+      "type": "word",
+      "text": "thích",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_i_go_to_work",
+      "type": "sentence",
+      "text": "Tôi đi làm.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_like_this",
+      "type": "sentence",
+      "text": "Tôi thích cái này.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_do_not_understand",
+      "type": "sentence",
+      "text": "Tôi không hiểu.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_wake_up_early",
+      "type": "sentence",
+      "text": "Tôi thức dậy sớm.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_eat_breakfast",
+      "type": "sentence",
+      "text": "Tôi ăn sáng.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

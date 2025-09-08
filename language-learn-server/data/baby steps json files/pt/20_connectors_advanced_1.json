@@ -1,0 +1,68 @@
+{
+  "id": "20_connectors_advanced_1",
+  "title": "conectores e frases avançadas (Part 1)",
+  "emoji": "🔗",
+  "language": "Portuguese",
+  "items": [
+    {
+      "id": "20_connectors_advanced_and",
+      "type": "word",
+      "text": "e",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_or",
+      "type": "word",
+      "text": "ou",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_but",
+      "type": "word",
+      "text": "mas",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_because",
+      "type": "word",
+      "text": "porque",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_if",
+      "type": "word",
+      "text": "se",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "20_connectors_advanced_i_think_that",
+      "type": "sentence",
+      "text": "Eu acho que",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_in_my_opinion",
+      "type": "sentence",
+      "text": "Na minha opinião",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_that_is_interesting",
+      "type": "sentence",
+      "text": "Isso é interessante.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_agree_with_you",
+      "type": "sentence",
+      "text": "Eu concordo com você.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "20_connectors_advanced_i_disagree",
+      "type": "sentence",
+      "text": "Eu discordo.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

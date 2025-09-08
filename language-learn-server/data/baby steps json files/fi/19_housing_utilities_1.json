@@ -1,0 +1,68 @@
+{
+  "id": "19_housing_utilities_1",
+  "title": "Asuminen ja yleishyödylliset palvelut (Part 1)",
+  "emoji": "🏠",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "19_housing_utilities_apartment",
+      "type": "word",
+      "text": "asunto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_room",
+      "type": "word",
+      "text": "huone",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_key",
+      "type": "word",
+      "text": "avain",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_electricity",
+      "type": "word",
+      "text": "sähkö",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_water",
+      "type": "word",
+      "text": "vesi",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_i_am_looking_for_an_apartment",
+      "type": "sentence",
+      "text": "Etsin asuntoa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_the_key_does_not_work",
+      "type": "sentence",
+      "text": "Avain ei toimi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_there_is_no_hot_water",
+      "type": "sentence",
+      "text": "Lämmin vesi ei toimi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_how_much_is_the_rent",
+      "type": "sentence",
+      "text": "Paljonko vuokra on?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_do_you_have_a_kitchen",
+      "type": "sentence",
+      "text": "Onko teillä keittiö?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

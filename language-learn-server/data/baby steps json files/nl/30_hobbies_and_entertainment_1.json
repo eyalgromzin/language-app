@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_1",
+  "title": "Hobby's en vermaak (Part 1)",
+  "emoji": "🎬",
+  "language": "Dutch",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_hobby",
+      "type": "word",
+      "text": "hobby",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_music",
+      "type": "word",
+      "text": "muziek",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_movie",
+      "type": "word",
+      "text": "film",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_book",
+      "type": "word",
+      "text": "boek",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_dance",
+      "type": "word",
+      "text": "dansen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_is_your_favorite_hobby",
+      "type": "sentence",
+      "text": "Wat is je favoriete hobby?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_love_listening_to_music",
+      "type": "sentence",
+      "text": "Ik hou van naar muziek luisteren.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_movie_did_you_watch",
+      "type": "sentence",
+      "text": "Welke film heb je gekeken?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_reading_books",
+      "type": "sentence",
+      "text": "Hou je van boeken lezen?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_can_you_dance",
+      "type": "sentence",
+      "text": "Kun je dansen?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

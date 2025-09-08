@@ -1,0 +1,68 @@
+{
+  "id": "22_weather_and_nature_1",
+  "title": "Καιρός και φύση (Part 1)",
+  "emoji": "🌤️",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "22_weather_and_nature_sunny",
+      "type": "word",
+      "text": "ηλιόλουστο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_rainy",
+      "type": "word",
+      "text": "βροχερό",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_cloudy",
+      "type": "word",
+      "text": "συννεφιασμένο",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_windy",
+      "type": "word",
+      "text": "ανεμώδες",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_snow",
+      "type": "word",
+      "text": "χιόνι",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "22_weather_and_nature_it_is_sunny_today",
+      "type": "sentence",
+      "text": "Είναι ηλιόλουστο σήμερα.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_weather_is_nice",
+      "type": "sentence",
+      "text": "Ο καιρός είναι ωραίος.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_it_might_rain_later",
+      "type": "sentence",
+      "text": "Μπορεί να βρέξει αργότερα.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_the_wind_is_very_strong",
+      "type": "sentence",
+      "text": "Ο άνεμος είναι πολύ δυνατός.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "22_weather_and_nature_i_love_walking_in_the_forest",
+      "type": "sentence",
+      "text": "Λατρεύω να περπατάω στο δάσος.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

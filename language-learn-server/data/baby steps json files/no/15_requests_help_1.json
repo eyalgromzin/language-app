@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_1",
+  "title": "Forespørsler og å be om hjelp (Part 1)",
+  "emoji": "🙋",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "15_requests_help_help",
+      "type": "word",
+      "text": "hjelp",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_please",
+      "type": "word",
+      "text": "vær så snill",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could",
+      "type": "word",
+      "text": "kunne",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_would",
+      "type": "word",
+      "text": "ville",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_repeat",
+      "type": "word",
+      "text": "gjenta",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could_you_help_me_please",
+      "type": "sentence",
+      "text": "Kan du hjelpe meg, vær så snill?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_you_repeat_that_please",
+      "type": "sentence",
+      "text": "Kan du gjenta det, vær så snill?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_please_speak_more_slowly",
+      "type": "sentence",
+      "text": "Vær så snill å snakke saktere.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_how_do_you_say_this_in_english",
+      "type": "sentence",
+      "text": "Hvordan sier du dette på engelsk?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_what_does_this_mean",
+      "type": "sentence",
+      "text": "Hva betyr dette?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_2",
+  "title": "Hobbies & Entertainment (Part 2)",
+  "emoji": "🎮",
+  "language": "German",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_game",
+      "type": "word",
+      "text": "Spiel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_art",
+      "type": "word",
+      "text": "Kunst",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_dance",
+      "type": "word",
+      "text": "Tanz",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_cook",
+      "type": "word",
+      "text": "kochen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_read",
+      "type": "word",
+      "text": "lesen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_play_any_games",
+      "type": "sentence",
+      "text": "Spielen Sie Spiele?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_love_cooking",
+      "type": "sentence",
+      "text": "Ich liebe es zu kochen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_do_you_do_for_fun",
+      "type": "sentence",
+      "text": "Was machen Sie zum Spaß?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_entertainment_is_important",
+      "type": "sentence",
+      "text": "Unterhaltung ist wichtig.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_hobbies_are_great",
+      "type": "sentence",
+      "text": "Hobbys sind toll.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

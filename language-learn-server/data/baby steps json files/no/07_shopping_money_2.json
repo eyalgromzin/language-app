@@ -1,0 +1,68 @@
+{
+  "id": "07_shopping_money_2",
+  "title": "Shopping og penger (Part 2)",
+  "emoji": "🛍️",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "07_shopping_money_change",
+      "type": "word",
+      "text": "veksel",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_expensive",
+      "type": "word",
+      "text": "dyr",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_cheap",
+      "type": "word",
+      "text": "billig",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_sale",
+      "type": "word",
+      "text": "salg",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_discount",
+      "type": "word",
+      "text": "rabatt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "07_shopping_money_do_you_have_this_in_blue",
+      "type": "sentence",
+      "text": "Har dere dette i blått?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_where_is_the_changing_room",
+      "type": "sentence",
+      "text": "Hvor er prøverommet?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_can_i_get_a_receipt",
+      "type": "sentence",
+      "text": "Kan jeg få en kvittering?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_this_is_too_expensive",
+      "type": "sentence",
+      "text": "Dette er for dyrt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "07_shopping_money_do_you_accept_returns",
+      "type": "sentence",
+      "text": "Tar dere imot returer?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

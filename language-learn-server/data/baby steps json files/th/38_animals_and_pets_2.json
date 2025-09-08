@@ -1,0 +1,68 @@
+{
+  "id": "38_animals_and_pets_2",
+  "title": "สัตว์และสัตว์เลี้ยง (Part 2)",
+  "emoji": "🐕",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "38_animals_and_pets_fish",
+      "type": "word",
+      "text": "ปลา",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_horse",
+      "type": "word",
+      "text": "ม้า",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_cow",
+      "type": "word",
+      "text": "วัว",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_chicken",
+      "type": "word",
+      "text": "ไก่",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_pig",
+      "type": "word",
+      "text": "หมู",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "38_animals_and_pets_horses_are_beautiful_animals",
+      "type": "sentence",
+      "text": "ม้าเป็นสัตว์ที่สวยงาม.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_cows_give_us_milk",
+      "type": "sentence",
+      "text": "วัวให้นมเรา.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_do_you_like_chicken",
+      "type": "sentence",
+      "text": "คุณชอบไก่ไหม?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_pigs_are_very_intelligent",
+      "type": "sentence",
+      "text": "หมูฉลาดมาก.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "38_animals_and_pets_what_is_your_favorite_animal",
+      "type": "sentence",
+      "text": "สัตว์ที่คุณชอบคืออะไร?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "36_clothing_and_fashion_1",
+  "title": "เสื้อผ้าและแฟชั่น (Part 1)",
+  "emoji": "👕",
+  "language": "Thai",
+  "items": [
+    {
+      "id": "36_clothing_and_fashion_clothes",
+      "type": "word",
+      "text": "เสื้อผ้า",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shirt",
+      "type": "word",
+      "text": "เสื้อ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_pants",
+      "type": "word",
+      "text": "กางเกง",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_dress",
+      "type": "word",
+      "text": "ชุด",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_shoes",
+      "type": "word",
+      "text": "รองเท้า",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "36_clothing_and_fashion_what_are_you_wearing_today",
+      "type": "sentence",
+      "text": "วันนี้คุณใส่เสื้อผ้าอะไร?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_i_like_your_new_shirt",
+      "type": "sentence",
+      "text": "ฉันชอบเสื้อใหม่ของคุณ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_where_did_you_buy_those_pants",
+      "type": "sentence",
+      "text": "คุณซื้อกางเกงนั้นมาจากไหน?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_that_dress_looks_beautiful_on_you",
+      "type": "sentence",
+      "text": "ชุดนั้นดูสวยกับคุณ.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "36_clothing_and_fashion_do_you_like_my_new_shoes",
+      "type": "sentence",
+      "text": "คุณชอบรองเท้าใหม่ของฉันไหม?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

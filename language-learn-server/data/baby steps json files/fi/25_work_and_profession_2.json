@@ -1,0 +1,68 @@
+{
+  "id": "25_work_and_profession_2",
+  "title": "Work & Profession (Part 2)",
+  "emoji": "💼",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "25_work_and_profession_colleague",
+      "type": "word",
+      "text": "kollega",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_salary",
+      "type": "word",
+      "text": "palkka",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_project",
+      "type": "word",
+      "text": "projekti",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_deadline",
+      "type": "word",
+      "text": "määräaika",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_career",
+      "type": "word",
+      "text": "ura",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "25_work_and_profession_i_work_with_great_colleagues",
+      "type": "sentence",
+      "text": "Työskentelen upeiden kollegoiden kanssa.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_what_is_your_salary",
+      "type": "sentence",
+      "text": "Mikä on palkkasi?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_this_project_is_very_important",
+      "type": "sentence",
+      "text": "Tämä projekti on erittäin tärkeä.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_the_deadline_is_next_week",
+      "type": "sentence",
+      "text": "Määräaika on ensi viikolla.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "25_work_and_profession_i_want_to_advance_my_career",
+      "type": "sentence",
+      "text": "Haluan edistää uraani.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

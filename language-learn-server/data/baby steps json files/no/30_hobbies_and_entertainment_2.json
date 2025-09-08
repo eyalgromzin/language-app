@@ -1,0 +1,68 @@
+{
+  "id": "30_hobbies_and_entertainment_2",
+  "title": "Hobbyer og underholdning (Part 2)",
+  "emoji": "🎬",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "30_hobbies_and_entertainment_paint",
+      "type": "word",
+      "text": "male",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_cook",
+      "type": "word",
+      "text": "lage mat",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_garden",
+      "type": "word",
+      "text": "hage",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_photography",
+      "type": "word",
+      "text": "fotografering",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_collect",
+      "type": "word",
+      "text": "samle",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_want_to_learn_to_paint",
+      "type": "sentence",
+      "text": "Jeg vil lære å male.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_do_you_like_cooking",
+      "type": "sentence",
+      "text": "Liker du å lage mat?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_my_garden_is_very_beautiful",
+      "type": "sentence",
+      "text": "Hagen min er veldig vakker.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_i_take_photos_as_a_hobby",
+      "type": "sentence",
+      "text": "Jeg tar bilder som hobby.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "30_hobbies_and_entertainment_what_do_you_collect",
+      "type": "sentence",
+      "text": "Hva samler du?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

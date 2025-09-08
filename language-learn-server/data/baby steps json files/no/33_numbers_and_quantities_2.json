@@ -1,0 +1,68 @@
+{
+  "id": "33_numbers_and_quantities_2",
+  "title": "Tall og mengder (Part 2)",
+  "emoji": "🔢",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "33_numbers_and_quantities_all",
+      "type": "word",
+      "text": "alle",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_none",
+      "type": "word",
+      "text": "ingen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_half",
+      "type": "word",
+      "text": "halv",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_double",
+      "type": "word",
+      "text": "dobbelt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_total",
+      "type": "word",
+      "text": "total",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_all_students_are_present",
+      "type": "sentence",
+      "text": "Alle studenter er til stede.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_none_of_them_came",
+      "type": "sentence",
+      "text": "Ingen av dem kom.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_ate_half_of_the_pizza",
+      "type": "sentence",
+      "text": "Jeg spiste halvparten av pizzaen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_the_price_doubled_last_year",
+      "type": "sentence",
+      "text": "Prisen doblet seg i fjor.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_what_is_the_total_cost",
+      "type": "sentence",
+      "text": "Hva er den totale kostnaden?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

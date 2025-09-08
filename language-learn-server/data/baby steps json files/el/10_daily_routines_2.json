@@ -1,0 +1,68 @@
+{
+  "id": "10_daily_routines_2",
+  "title": "Καθημερινές ρουτίνες και κοινά ρήματα (Part 2)",
+  "emoji": "☀️",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "10_daily_routines_to_work",
+      "type": "word",
+      "text": "δουλεύω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_study",
+      "type": "word",
+      "text": "μελετώ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_eat",
+      "type": "word",
+      "text": "τρώω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_sleep",
+      "type": "word",
+      "text": "κοιμάμαι",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_to_wake",
+      "type": "word",
+      "text": "ξυπνάω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "10_daily_routines_i_study_english",
+      "type": "sentence",
+      "text": "Μελετώ αγγλικά.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_go_to_bed",
+      "type": "sentence",
+      "text": "Πάω για ύπνο.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_what_do_you_do",
+      "type": "sentence",
+      "text": "Τι κάνεις;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_i_make_dinner",
+      "type": "sentence",
+      "text": "Φτιάχνω βραδινό.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "10_daily_routines_do_you_like_your_job",
+      "type": "sentence",
+      "text": "Σου αρέσει η δουλειά σου;",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

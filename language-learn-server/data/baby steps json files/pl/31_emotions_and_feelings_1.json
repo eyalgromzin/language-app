@@ -1,0 +1,68 @@
+{
+  "id": "31_emotions_and_feelings_1",
+  "title": "Emocje i uczucia (Part 1)",
+  "emoji": "😊",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "31_emotions_and_feelings_happy",
+      "type": "word",
+      "text": "szczęśliwy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_sad",
+      "type": "word",
+      "text": "smutny",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_angry",
+      "type": "word",
+      "text": "zły",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_excited",
+      "type": "word",
+      "text": "podekscytowany",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_nervous",
+      "type": "word",
+      "text": "nerwowy",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "31_emotions_and_feelings_how_are_you_feeling_today",
+      "type": "sentence",
+      "text": "Jak się dzisiaj czujesz?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_very_happy_today",
+      "type": "sentence",
+      "text": "Dzisiaj jestem bardzo szczęśliwy.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_why_are_you_sad",
+      "type": "sentence",
+      "text": "Dlaczego jesteś smutny?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_don_t_be_angry_with_me",
+      "type": "sentence",
+      "text": "Nie gniewaj się na mnie.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "31_emotions_and_feelings_i_am_excited_about_the_trip",
+      "type": "sentence",
+      "text": "Jestem podekscytowany wycieczką.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

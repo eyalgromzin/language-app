@@ -1,0 +1,68 @@
+{
+  "id": "11_family_people_1",
+  "title": "famiglia e persone (Part 1)",
+  "emoji": "👪",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "11_family_people_family",
+      "type": "word",
+      "text": "famiglia",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_mother",
+      "type": "word",
+      "text": "madre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_father",
+      "type": "word",
+      "text": "padre",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_brother",
+      "type": "word",
+      "text": "fratello",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_sister",
+      "type": "word",
+      "text": "sorella",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "11_family_people_this_is_my_family",
+      "type": "sentence",
+      "text": "Questa è la mia famiglia.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_my_mother_is_a_teacher",
+      "type": "sentence",
+      "text": "Mia madre è insegnante.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_my_father_works_in_an_office",
+      "type": "sentence",
+      "text": "Mio padre lavora in un ufficio.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_i_have_two_sisters",
+      "type": "sentence",
+      "text": "Ho due sorelle.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "11_family_people_my_brother_is_older_than_me",
+      "type": "sentence",
+      "text": "Mio fratello è più vecchio di me.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

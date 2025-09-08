@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_2",
+  "title": "Αιτήματα και ζητώντας βοήθεια (Part 2)",
+  "emoji": "🙋",
+  "language": "Greek",
+  "items": [
+    {
+      "id": "15_requests_help_slowly",
+      "type": "word",
+      "text": "αργά",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_mean",
+      "type": "word",
+      "text": "σημαίνω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_say",
+      "type": "word",
+      "text": "λέω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_understand",
+      "type": "word",
+      "text": "καταλαβαίνω",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_explain",
+      "type": "word",
+      "text": "εξηγώ",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_can_you_explain_this",
+      "type": "sentence",
+      "text": "Μπορείτε να το εξηγήσετε;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_i_dont_understand",
+      "type": "sentence",
+      "text": "Δεν καταλαβαίνω.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_would_you_mind",
+      "type": "sentence",
+      "text": "Θα σας πείραζε …;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_i_ask_you_something",
+      "type": "sentence",
+      "text": "Μπορώ να σας ρωτήσω κάτι;",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_thank_you_for_helping",
+      "type": "sentence",
+      "text": "Ευχαριστώ που βοηθάτε.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

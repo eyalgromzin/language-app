@@ -1,0 +1,68 @@
+{
+  "id": "34_colors_and_appearance_1",
+  "title": "Colors & Appearance (Part 1)",
+  "emoji": "🎨",
+  "language": "German",
+  "items": [
+    {
+      "id": "34_colors_and_appearance_color",
+      "type": "word",
+      "text": "Farbe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_appearance",
+      "type": "word",
+      "text": "Aussehen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_red",
+      "type": "word",
+      "text": "rot",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_blue",
+      "type": "word",
+      "text": "blau",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_green",
+      "type": "word",
+      "text": "grün",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "34_colors_and_appearance_what_color_is_your_car",
+      "type": "sentence",
+      "text": "Welche Farbe hat Ihr Auto?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_i_like_blue",
+      "type": "sentence",
+      "text": "Ich mag Blau.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_this_is_a_big_house",
+      "type": "sentence",
+      "text": "Das ist ein großes Haus.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_do_you_like_this_color",
+      "type": "sentence",
+      "text": "Gefällt Ihnen diese Farbe?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "34_colors_and_appearance_she_is_very_beautiful",
+      "type": "sentence",
+      "text": "Sie ist sehr schön.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

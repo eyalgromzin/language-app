@@ -1,0 +1,68 @@
+{
+  "id": "02_introductions_2",
+  "title": "Introductions & Basic Info (Part 2)",
+  "emoji": "💬",
+  "language": "German",
+  "items": [
+    {
+      "id": "02_introductions_student",
+      "type": "word",
+      "text": "Student",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_teacher",
+      "type": "word",
+      "text": "Lehrer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_engineer",
+      "type": "word",
+      "text": "Ingenieur",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_doctor",
+      "type": "word",
+      "text": "Arzt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_language",
+      "type": "word",
+      "text": "Sprache",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "02_introductions_i_am_from",
+      "type": "sentence",
+      "text": "Ich komme aus",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_where_do_you_live",
+      "type": "sentence",
+      "text": "Wo wohnst du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_i_live_in",
+      "type": "sentence",
+      "text": "Ich wohne in",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_what_do_you_do",
+      "type": "sentence",
+      "text": "Was machst du?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "02_introductions_nice_to_meet_you",
+      "type": "sentence",
+      "text": "Freut mich, dich kennenzulernen.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "32_time_and_dates_2",
+  "title": "Tid og datoer (Part 2)",
+  "emoji": "⏰",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "32_time_and_dates_week",
+      "type": "word",
+      "text": "uke",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_month",
+      "type": "word",
+      "text": "måned",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_year",
+      "type": "word",
+      "text": "år",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_today",
+      "type": "word",
+      "text": "i dag",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_tomorrow",
+      "type": "word",
+      "text": "i morgen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "32_time_and_dates_what_day_of_the_week_is_it",
+      "type": "sentence",
+      "text": "Hvilken ukedag er det?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_next_month_i_am_going_on_vacation",
+      "type": "sentence",
+      "text": "Neste måned skal jeg på ferie.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_what_year_were_you_born",
+      "type": "sentence",
+      "text": "Hvilket år ble du født?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_today_is_a_beautiful_day",
+      "type": "sentence",
+      "text": "I dag er en vakker dag.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "32_time_and_dates_see_you_tomorrow",
+      "type": "sentence",
+      "text": "Ser deg i morgen.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

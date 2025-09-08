@@ -1,0 +1,68 @@
+{
+  "id": "15_requests_help_1",
+  "title": "Prośby i prośby o pomoc (Part 1)",
+  "emoji": "🙋",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "15_requests_help_help",
+      "type": "word",
+      "text": "pomoc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_please",
+      "type": "word",
+      "text": "proszę",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could",
+      "type": "word",
+      "text": "móc",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_would",
+      "type": "word",
+      "text": "chcieć",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_repeat",
+      "type": "word",
+      "text": "powtórzyć",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_could_you_help_me_please",
+      "type": "sentence",
+      "text": "Czy mógłbyś mi pomóc, proszę?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_can_you_repeat_that_please",
+      "type": "sentence",
+      "text": "Czy możesz to powtórzyć, proszę?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_please_speak_more_slowly",
+      "type": "sentence",
+      "text": "Proszę mówić wolniej.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_how_do_you_say_this_in_english",
+      "type": "sentence",
+      "text": "Jak się to mówi po angielsku?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_what_does_this_mean",
+      "type": "sentence",
+      "text": "Co to znaczy?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

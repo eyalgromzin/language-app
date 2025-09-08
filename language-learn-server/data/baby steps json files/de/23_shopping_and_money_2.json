@@ -1,0 +1,68 @@
+{
+  "id": "23_shopping_and_money_2",
+  "title": "Shopping & Money (Part 2)",
+  "emoji": "🛍️",
+  "language": "German",
+  "items": [
+    {
+      "id": "23_shopping_and_money_buy",
+      "type": "word",
+      "text": "kaufen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_sell",
+      "type": "word",
+      "text": "verkaufen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_shop",
+      "type": "word",
+      "text": "Geschäft",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_market",
+      "type": "word",
+      "text": "Markt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_discount",
+      "type": "word",
+      "text": "Rabatt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "23_shopping_and_money_where_is_the_cashier",
+      "type": "sentence",
+      "text": "Wo ist die Kasse?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_do_you_accept_credit_cards",
+      "type": "sentence",
+      "text": "Akzeptieren Sie Kreditkarten?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_i_need_a_receipt",
+      "type": "sentence",
+      "text": "Ich brauche eine Quittung.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_this_is_a_good_price",
+      "type": "sentence",
+      "text": "Das ist ein guter Preis.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "23_shopping_and_money_thank_you_for_shopping",
+      "type": "sentence",
+      "text": "Vielen Dank für den Einkauf.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

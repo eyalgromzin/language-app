@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_2",
+  "title": "Сім'я та стосунки (Part 2)",
+  "emoji": "👨‍👩‍👧‍👦",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "24_family_and_relationships_friend",
+      "type": "word",
+      "text": "друг",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_husband",
+      "type": "word",
+      "text": "чоловік",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_wife",
+      "type": "word",
+      "text": "дружина",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_child",
+      "type": "word",
+      "text": "дитина",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_parent",
+      "type": "word",
+      "text": "батько",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_we_are_good_friends",
+      "type": "sentence",
+      "text": "Ми хороші друзі.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_husband_likes_cooking",
+      "type": "sentence",
+      "text": "Мій чоловік любить готувати.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_do_you_have_children",
+      "type": "sentence",
+      "text": "У вас є діти?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_my_parents_live_in_the_city",
+      "type": "sentence",
+      "text": "Мої батьки живуть у місті.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_i_love_my_family_very_much",
+      "type": "sentence",
+      "text": "Я дуже люблю свою сім'ю.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

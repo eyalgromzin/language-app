@@ -1,0 +1,68 @@
+{
+  "id": "21_technology_basics_1",
+  "title": "технологии и компьютеры (Part 1)",
+  "emoji": "💻",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "21_technology_basics_computer",
+      "type": "word",
+      "text": "компьютер",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_phone",
+      "type": "word",
+      "text": "телефон",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_app",
+      "type": "word",
+      "text": "приложение",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_password",
+      "type": "word",
+      "text": "пароль",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_website",
+      "type": "word",
+      "text": "веб-сайт",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_do_you_have_wifi",
+      "type": "sentence",
+      "text": "У вас есть вай-фай?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_what_is_the_password",
+      "type": "sentence",
+      "text": "Какой пароль?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_technology_is_important",
+      "type": "sentence",
+      "text": "Технологии важны.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_computers_make_life_easier",
+      "type": "sentence",
+      "text": "Компьютеры делают жизнь проще.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_learning_technology_is_essential",
+      "type": "sentence",
+      "text": "Изучение технологий необходимо.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

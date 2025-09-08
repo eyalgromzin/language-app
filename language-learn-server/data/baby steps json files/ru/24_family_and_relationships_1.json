@@ -1,0 +1,68 @@
+{
+  "id": "24_family_and_relationships_1",
+  "title": "семья и отношения (Part 1)",
+  "emoji": "👪",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "24_family_and_relationships_parents",
+      "type": "word",
+      "text": "родители",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_children",
+      "type": "word",
+      "text": "дети",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_boyfriend",
+      "type": "word",
+      "text": "парень",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_girlfriend",
+      "type": "word",
+      "text": "девушка",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_love",
+      "type": "word",
+      "text": "любовь",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "24_family_and_relationships_how_is_your_family",
+      "type": "sentence",
+      "text": "Как ваша семья?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_family_is_important",
+      "type": "sentence",
+      "text": "Семья важна.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_love_is_beautiful",
+      "type": "sentence",
+      "text": "Любовь прекрасна.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_relationships_require_work",
+      "type": "sentence",
+      "text": "Отношения требуют работы.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "24_family_and_relationships_friends_are_family",
+      "type": "sentence",
+      "text": "Друзья - это семья.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

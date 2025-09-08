@@ -1,0 +1,68 @@
+{
+  "id": "33_numbers_and_quantities_2",
+  "title": "Numerot ja määrät (Part 2)",
+  "emoji": "🔢",
+  "language": "Finnish",
+  "items": [
+    {
+      "id": "33_numbers_and_quantities_all",
+      "type": "word",
+      "text": "kaikki",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_none",
+      "type": "word",
+      "text": "ei mitään",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_half",
+      "type": "word",
+      "text": "puoli",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_double",
+      "type": "word",
+      "text": "kaksinkertainen",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_total",
+      "type": "word",
+      "text": "yhteensä",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "33_numbers_and_quantities_all_students_are_present",
+      "type": "sentence",
+      "text": "Kaikki opiskelijat ovat paikalla.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_none_of_them_came",
+      "type": "sentence",
+      "text": "Kukaan heistä ei tullut.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_i_ate_half_of_the_pizza",
+      "type": "sentence",
+      "text": "Söin puolet pizzasta.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_the_price_doubled_last_year",
+      "type": "sentence",
+      "text": "Hinta kaksinkertaistui viime vuonna.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "33_numbers_and_quantities_what_is_the_total_cost",
+      "type": "sentence",
+      "text": "Mikä on kokonaiskustannus?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

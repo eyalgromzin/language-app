@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_2",
+  "title": "Emergencies & health (Part 2)",
+  "emoji": "⛑️",
+  "language": "English",
+  "items": [
+    {
+      "id": "09_emergencies_health_pain",
+      "type": "word",
+      "text": "pain",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_medicine",
+      "type": "word",
+      "text": "medicine",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_ambulance",
+      "type": "word",
+      "text": "ambulance",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_police",
+      "type": "word",
+      "text": "police",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_fire",
+      "type": "word",
+      "text": "fire",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_i_have_a_headache",
+      "type": "sentence",
+      "text": "I have a headache.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_the_police",
+      "type": "sentence",
+      "text": "Call the police!",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_this_is_an_emergency",
+      "type": "sentence",
+      "text": "This is an emergency.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_need_help",
+      "type": "sentence",
+      "text": "I need help.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_are_you_okay",
+      "type": "sentence",
+      "text": "Are you okay?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

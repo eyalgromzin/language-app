@@ -1,0 +1,68 @@
+{
+  "id": "08_travel_hotel_1",
+  "title": "Подорожі та готелі (Part 1)",
+  "emoji": "🧳",
+  "language": "Ukrainian",
+  "items": [
+    {
+      "id": "08_travel_hotel_ticket",
+      "type": "word",
+      "text": "квиток",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_reservation",
+      "type": "word",
+      "text": "бронювання",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_passport",
+      "type": "word",
+      "text": "паспорт",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_luggage",
+      "type": "word",
+      "text": "багаж",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_hotel",
+      "type": "word",
+      "text": "готель",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_i_have_a_reservation",
+      "type": "sentence",
+      "text": "У мене є бронювання.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_what_time_is_check_in",
+      "type": "sentence",
+      "text": "О котрій заселення?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_where_is_the_platform",
+      "type": "sentence",
+      "text": "Де платформа?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_i_need_a_taxi",
+      "type": "sentence",
+      "text": "Мені потрібне таксі.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_what_time_is_check_out",
+      "type": "sentence",
+      "text": "О котрій виселення?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

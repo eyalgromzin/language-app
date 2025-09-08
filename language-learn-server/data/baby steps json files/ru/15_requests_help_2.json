@@ -1,0 +1,50 @@
+{
+  "id": "15_requests_help_2",
+  "title": "просьбы и просьбы о помощи (Part 2)",
+  "emoji": "🙋",
+  "language": "Russian",
+  "items": [
+    {
+      "id": "15_requests_help_show",
+      "type": "word",
+      "text": "показывать",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_tell",
+      "type": "word",
+      "text": "говорить",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_help",
+      "type": "word",
+      "text": "помощь",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_please",
+      "type": "word",
+      "text": "пожалуйста",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "15_requests_help_requests_should_be_polite",
+      "type": "sentence",
+      "text": "Просьбы должны быть вежливыми.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_asking_for_help_is_brave",
+      "type": "sentence",
+      "text": "Просить о помощи смело.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "15_requests_help_we_all_need_help_sometimes",
+      "type": "sentence",
+      "text": "Мы все иногда нуждаемся в помощи.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

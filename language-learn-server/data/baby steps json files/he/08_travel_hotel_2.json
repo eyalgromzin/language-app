@@ -1,0 +1,68 @@
+{
+  "id": "08_travel_hotel_2",
+  "title": "נסיעות ומלון (Part 2)",
+  "emoji": "🧳",
+  "language": "Hebrew",
+  "items": [
+    {
+      "id": "08_travel_hotel_airport",
+      "type": "word",
+      "text": "שדה תעופה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_station",
+      "type": "word",
+      "text": "תחנה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_room",
+      "type": "word",
+      "text": "חדר",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_key",
+      "type": "word",
+      "text": "מפתח",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_map",
+      "type": "word",
+      "text": "מפה",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "08_travel_hotel_where_is_my_room",
+      "type": "sentence",
+      "text": "איפה החדר שלי?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_do_you_have_wifi",
+      "type": "sentence",
+      "text": "האם יש לכם וויי-פיי?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_how_do_i_get_to_the_airport",
+      "type": "sentence",
+      "text": "איך אני מגיע לשדה התעופה?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_is_breakfast_included",
+      "type": "sentence",
+      "text": "האם ארוחת בוקר כלולה?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "08_travel_hotel_can_you_call_me_a_taxi",
+      "type": "sentence",
+      "text": "האם אתה יכול להזמין לי מונית?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "19_housing_utilities_2",
+  "title": "Housing & Utilities (Part 2)",
+  "emoji": "🏠",
+  "language": "German",
+  "items": [
+    {
+      "id": "19_housing_utilities_bedroom",
+      "type": "word",
+      "text": "Schlafzimmer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_living_room",
+      "type": "word",
+      "text": "Wohnzimmer",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_electricity",
+      "type": "word",
+      "text": "Strom",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_water",
+      "type": "word",
+      "text": "Wasser",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_heating",
+      "type": "word",
+      "text": "Heizung",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "19_housing_utilities_i_need_to_call_a_plumber",
+      "type": "sentence",
+      "text": "Ich muss einen Klempner rufen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_do_you_have_parking",
+      "type": "sentence",
+      "text": "Haben Sie Parkplätze?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_is_there_a_garden",
+      "type": "sentence",
+      "text": "Gibt es einen Garten?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_the_electricity_bill_is_high",
+      "type": "sentence",
+      "text": "Die Stromrechnung ist hoch.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "19_housing_utilities_welcome_to_my_home",
+      "type": "sentence",
+      "text": "Willkommen in meinem Zuhause.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

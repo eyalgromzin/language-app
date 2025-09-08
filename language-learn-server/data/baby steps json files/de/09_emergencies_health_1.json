@@ -1,0 +1,68 @@
+{
+  "id": "09_emergencies_health_1",
+  "title": "Emergencies & Health (Part 1)",
+  "emoji": "⛑️",
+  "language": "German",
+  "items": [
+    {
+      "id": "09_emergencies_health_help",
+      "type": "word",
+      "text": "Hilfe",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_emergency",
+      "type": "word",
+      "text": "Notfall",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_doctor",
+      "type": "word",
+      "text": "Arzt",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_hospital",
+      "type": "word",
+      "text": "Krankenhaus",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_pain",
+      "type": "word",
+      "text": "Schmerz",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "09_emergencies_health_help_me",
+      "type": "sentence",
+      "text": "Helfen Sie mir.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_call_an_ambulance",
+      "type": "sentence",
+      "text": "Rufen Sie einen Krankenwagen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_need_a_doctor",
+      "type": "sentence",
+      "text": "Ich brauche einen Arzt.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_where_is_the_hospital",
+      "type": "sentence",
+      "text": "Wo ist das Krankenhaus?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "09_emergencies_health_i_have_pain",
+      "type": "sentence",
+      "text": "Ich habe Schmerzen.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

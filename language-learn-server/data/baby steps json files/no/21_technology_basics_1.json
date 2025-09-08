@@ -1,0 +1,68 @@
+{
+  "id": "21_technology_basics_1",
+  "title": "Teknologi grunnleggende (Part 1)",
+  "emoji": "💻",
+  "language": "Norwegian",
+  "items": [
+    {
+      "id": "21_technology_basics_computer",
+      "type": "word",
+      "text": "datamaskin",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_phone",
+      "type": "word",
+      "text": "telefon",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_internet",
+      "type": "word",
+      "text": "internett",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_app",
+      "type": "word",
+      "text": "app",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_password",
+      "type": "word",
+      "text": "passord",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "21_technology_basics_can_you_help_me_with_my_computer",
+      "type": "sentence",
+      "text": "Kan du hjelpe meg med datamaskinen min?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_need_to_connect_to_wifi",
+      "type": "sentence",
+      "text": "Jeg må koble til wifi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_what_is_your_email_address",
+      "type": "sentence",
+      "text": "Hva er e-postadressen din?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_i_want_to_download_this_app",
+      "type": "sentence",
+      "text": "Jeg vil laste ned denne appen.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "21_technology_basics_do_you_have_a_website",
+      "type": "sentence",
+      "text": "Har du en nettside?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

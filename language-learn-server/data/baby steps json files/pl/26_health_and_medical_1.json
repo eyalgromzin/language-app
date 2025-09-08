@@ -1,0 +1,68 @@
+{
+  "id": "26_health_and_medical_1",
+  "title": "Zdrowie i Medycyna (Part 1)",
+  "emoji": "🏥",
+  "language": "Polish",
+  "items": [
+    {
+      "id": "26_health_and_medical_health",
+      "type": "word",
+      "text": "zdrowie",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_doctor",
+      "type": "word",
+      "text": "lekarz",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_hospital",
+      "type": "word",
+      "text": "szpital",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_medicine",
+      "type": "word",
+      "text": "lekarstwo",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_pain",
+      "type": "word",
+      "text": "ból",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "26_health_and_medical_i_am_sick",
+      "type": "sentence",
+      "text": "Jestem chory.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_need_a_doctor",
+      "type": "sentence",
+      "text": "Potrzebuję lekarza.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_where_is_the_hospital",
+      "type": "sentence",
+      "text": "Gdzie jest szpital?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_i_have_pain",
+      "type": "sentence",
+      "text": "Mam ból.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "26_health_and_medical_do_you_have_medicine",
+      "type": "sentence",
+      "text": "Czy masz lekarstwo?",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}

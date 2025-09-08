@@ -1,0 +1,68 @@
+{
+  "id": "01_essentials_2",
+  "title": "saluti e cortesia (Part 2)",
+  "emoji": "👋",
+  "language": "Italian",
+  "items": [
+    {
+      "id": "01_essentials_yes",
+      "type": "word",
+      "text": "sì",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_no",
+      "type": "word",
+      "text": "no",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_goodbye",
+      "type": "word",
+      "text": "arrivederci",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_welcome",
+      "type": "word",
+      "text": "benvenuto",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_okay",
+      "type": "word",
+      "text": "va bene",
+      "practiceType": "chooseTranslation"
+    },
+    {
+      "id": "01_essentials_see_you_later",
+      "type": "sentence",
+      "text": "A più tardi.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_nice_to_meet_you",
+      "type": "sentence",
+      "text": "Piacere di conoscerla.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_how_are_you",
+      "type": "sentence",
+      "text": "Come sta?",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_i_am_fine",
+      "type": "sentence",
+      "text": "Sto bene.",
+      "practiceType": "formulateSentense"
+    },
+    {
+      "id": "01_essentials_you_are_welcome",
+      "type": "sentence",
+      "text": "Prego.",
+      "practiceType": "formulateSentense"
+    }
+  ]
+}
