@@ -176,7 +176,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
     const rightX = CONTENT_PADDING + columnWidth + H_SPACING + (columnWidth - NODE_DIAMETER) / 2;
 
     const result: { x: number; y: number }[] = [];
-    let currentY = CONTENT_PADDING;
+    let currentY = CONTENT_PADDING + 40; // Add extra top spacing
     for (let i = 0; i < steps.length; i++) {
       const isLeft = i % 2 === 0;
       const x = isLeft ? leftX : rightX;
@@ -188,8 +188,8 @@ function BabyStepsPathScreen(): React.JSX.Element {
   }, [steps, containerWidth]);
 
   const contentHeight = React.useMemo(() => {
-    if (!steps || steps.length === 0) return 0;
-    return CONTENT_PADDING + steps.length * (NODE_DIAMETER + V_SPACING);
+    if (!steps || steps.length === 0) return 80; // Header height
+    return 80 + CONTENT_PADDING + 40 + steps.length * (NODE_DIAMETER + V_SPACING); // Header height + top spacing + content
   }, [steps]);
 
   const clearProgress = async () => {
@@ -232,14 +232,14 @@ function BabyStepsPathScreen(): React.JSX.Element {
 
   if (loading) {
     return (
-      <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#000' : '#fff' }]}>
+      <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#0a0a0a' : '#f8fafc' }]}>
         <View style={styles.loadingContainer}>
           <ActivityIndicator 
             size="large" 
-            color={isDark ? '#4DA3FF' : '#007AFF'} 
+            color={isDark ? '#3b82f6' : '#3b82f6'} 
           />
-          <Text style={[styles.loadingText, { color: isDark ? '#eee' : '#333' }]}>
-            Loading baby steps...
+          <Text style={[styles.loadingText, { color: isDark ? '#f1f5f9' : '#1e293b' }]}>
+            Loading your learning journey...
           </Text>
         </View>
       </SafeAreaView>
@@ -247,15 +247,21 @@ function BabyStepsPathScreen(): React.JSX.Element {
   }
   if (error) {
     return (
-      <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#000' : '#fff' }]}>
-        <View style={styles.centerFill}><Text style={[styles.infoText, { color: '#d00' }]}>{error}</Text></View>
+      <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#0a0a0a' : '#f8fafc' }]}>
+        <View style={styles.centerFill}>
+          <Text style={[styles.errorText, { color: isDark ? '#ef4444' : '#dc2626' }]}>{error}</Text>
+        </View>
       </SafeAreaView>
     );
   }
   if (!steps || steps.length === 0) {
     return (
-      <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#000' : '#fff' }]}>
-        <View style={styles.centerFill}><Text style={[styles.infoText, { color: isDark ? '#eee' : '#333' }]}>No steps found.</Text></View>
+      <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#0a0a0a' : '#f8fafc' }]}>
+        <View style={styles.centerFill}>
+          <Text style={[styles.infoText, { color: isDark ? '#94a3b8' : '#64748b' }]}>
+            No learning steps available at the moment.
+          </Text>
+        </View>
       </SafeAreaView>
     );
   }
@@ -369,68 +375,96 @@ function BabyStepsPathScreen(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#000' : '#fff' }]}>
-      {/* Animated Background */}
+    <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#0a0a0a' : '#f8fafc' }]}>
+      {/* Professional Gradient Background */}
       <Animated.View style={[
         StyleSheet.absoluteFillObject, 
         { 
           opacity: fadeAnim,
-          backgroundColor: isDark ? '#0a0a0a' : '#f8f9ff',
+          backgroundColor: isDark ? '#0a0a0a' : '#f8fafc',
         }
       ]} />
       
-      {/* Floating Background Elements */}
-      <Animated.View style={[StyleSheet.absoluteFillObject, { opacity: fadeAnim }]}>
-        <Svg width={containerWidth} height={contentHeight} style={StyleSheet.absoluteFillObject}>
-          {[...Array(8)].map((_, i) => (
+      {/* Subtle Background Pattern */}
+      <Animated.View style={[StyleSheet.absoluteFillObject, { opacity: 0.3 }]}>
+        <Svg width={containerWidth} height={contentHeight - 40} style={StyleSheet.absoluteFillObject}>
+          <Defs>
+            <SvgLinearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <Stop offset="0%" stopColor={isDark ? 'rgba(77, 163, 255, 0.05)' : 'rgba(99, 102, 241, 0.05)'} />
+              <Stop offset="100%" stopColor={isDark ? 'rgba(139, 92, 246, 0.05)' : 'rgba(168, 85, 247, 0.05)'} />
+            </SvgLinearGradient>
+          </Defs>
+          {[...Array(12)].map((_, i) => (
             <Circle
               key={`bg-circle-${i}`}
               cx={Math.random() * containerWidth}
-              cy={Math.random() * contentHeight}
-              r={Math.random() * 3 + 1}
-              fill={isDark ? 'rgba(77, 163, 255, 0.1)' : 'rgba(0, 122, 255, 0.1)'}
+              cy={Math.random() * Math.max(1, contentHeight - 80)}
+              r={Math.random() * 2 + 1}
+              fill="url(#bgGradient)"
             />
           ))}
         </Svg>
       </Animated.View>
 
-      {/* Header with Clear Progress Button */}
-      <Animated.View style={[
-        styles.header, 
-        { 
-          // backgroundColor: '#f2fbff',
-          borderBottomColor: isDark ? '#38383a' : '#e0e0e0',
-          transform: [{ scale: scaleAnim }],
-          opacity: fadeAnim,
-        }
-      ]}>
-        <View style={styles.headerLeft}>
-          <Text style={[styles.headerTitle, { color: isDark ? '#f0f0f0' : '#222' }]}>
-            🌟 Baby Steps
-          </Text>
-          {steps && steps.length > 0 && (
-            <Text style={[styles.progressText, { color: isDark ? '#aaa' : '#666' }]}>
-              {maxCompletedIndex} / {steps.length} completed
-            </Text>
-          )}
-        </View>
-        {/* <TouchableOpacity
-          style={[styles.clearButton, { backgroundColor: isDark ? '#ff453a' : '#ff3b30' }]}
-          onPress={clearProgress}
-          accessibilityRole="button"
-          accessibilityLabel="Clear progress"
-        >
-          <Text style={styles.clearButtonText}>🗑️ Clear Progress</Text>
-        </TouchableOpacity> */}
-      </Animated.View>
-
-      <ScrollView contentContainerStyle={{ height: contentHeight }}>
+      <ScrollView contentContainerStyle={{ minHeight: contentHeight }}>
+        {/* Professional Header */}
+        <Animated.View style={[
+          styles.header, 
+          { 
+            backgroundColor: isDark ? 'rgba(15, 15, 15, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+            borderBottomColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.08)',
+            transform: [{ scale: scaleAnim }],
+            opacity: fadeAnim,
+            shadowColor: isDark ? '#000' : '#000',
+            shadowOpacity: isDark ? 0.3 : 0.1,
+            shadowRadius: 8,
+            shadowOffset: { width: 0, height: 2 },
+            elevation: 8,
+          }
+        ]}>
+          <View style={styles.headerContent}>
+            <View style={styles.headerLeft}>
+              <View style={styles.titleContainer}>
+                <Text style={[styles.headerTitle, { color: isDark ? '#f8fafc' : '#1e293b' }]}>
+                  Learning Journey
+                </Text>
+                <Text style={[styles.headerSubtitle, { color: isDark ? '#94a3b8' : '#64748b' }]}>
+                  Master your language step by step
+                </Text>
+              </View>
+              {steps && steps.length > 0 && (
+                <View style={styles.progressContainer}>
+                  <View style={styles.progressHeader}>
+                    <Text style={[styles.progressLabel, { color: isDark ? '#cbd5e1' : '#475569' }]}>
+                      Progress
+                    </Text>
+                    <Text style={[styles.progressText, { color: isDark ? '#94a3b8' : '#64748b' }]}>
+                      {maxCompletedIndex} of {steps.length} completed
+                    </Text>
+                  </View>
+                  <View style={[
+                    styles.progressBarBackground,
+                    { backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.08)' }
+                  ]}>
+                    <Animated.View style={[
+                      styles.progressBarFill,
+                      {
+                        width: `${(maxCompletedIndex / steps.length) * 100}%`,
+                        backgroundColor: isDark ? '#10b981' : '#059669'
+                      }
+                    ]} />
+                  </View>
+                </View>
+              )}
+            </View>
+          </View>
+        </Animated.View>
         <View
-          style={[styles.canvas, { marginTop: 40 }]}
+          style={styles.canvas}
           onLayout={(e) => setContainerWidth(e.nativeEvent.layout.width)}
         >
           {/* Animated Curved connectors using SVG */}
-          <Svg width={containerWidth} height={contentHeight} style={StyleSheet.absoluteFillObject}>
+          <Svg width={containerWidth} height={contentHeight - 40} style={StyleSheet.absoluteFillObject}>
             {positions.map((pos, idx) => {
               if (idx === 0) return null;
               const prev = positions[idx - 1];
@@ -454,15 +488,15 @@ function BabyStepsPathScreen(): React.JSX.Element {
                   key={`curve-${idx}`}
                   d={d}
                   stroke={isCompleted 
-                    ? (isDark ? '#66BB6A' : '#4CAF50')
-                    : (isDark ? '#4DA3FF' : '#007AFF')
+                    ? (isDark ? '#10b981' : '#059669')
+                    : (isDark ? '#3b82f6' : '#3b82f6')
                   }
-                  strokeWidth={isCompleted ? 6 : 4}
+                  strokeWidth={isCompleted ? 5 : 3}
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  opacity={destEnabled ? 0.9 : 0.1}
-                  strokeDasharray={isCompleted ? "8,4" : "none"}
+                  opacity={destEnabled ? 0.8 : 0.2}
+                  strokeDasharray={isCompleted ? "6,3" : "none"}
                 />
               );
             })}
@@ -521,12 +555,19 @@ function BabyStepsPathScreen(): React.JSX.Element {
                       styles.nodeCircle,
                       {
                         backgroundColor: isCompleted 
-                          ? (isDark ? '#2E7D32' : '#E8F5E8')
-                          : (isDark ? '#2C2C2E' : '#F1F3F5'),
+                          ? (isDark ? '#065f46' : '#ecfdf5')
+                          : (isDark ? '#1e293b' : '#ffffff'),
                         borderColor: isCompleted 
-                          ? (isDark ? '#66BB6A' : '#4CAF50')
-                          : (isDark ? '#3A3A3C' : '#D0D5DB'),
-                        opacity: isEnabled ? 1 : 0.6,
+                          ? (isDark ? '#10b981' : '#059669')
+                          : (isDark ? '#334155' : '#e2e8f0'),
+                        opacity: isEnabled ? 1 : 0.5,
+                        shadowColor: isCompleted 
+                          ? (isDark ? '#10b981' : '#059669')
+                          : (isDark ? '#3b82f6' : '#3b82f6'),
+                        shadowOpacity: isEnabled ? 0.3 : 0.1,
+                        shadowRadius: isEnabled ? 12 : 6,
+                        shadowOffset: { width: 0, height: isEnabled ? 6 : 3 },
+                        elevation: isEnabled ? 8 : 4,
                       },
                     ]}
                   >
@@ -536,12 +577,17 @@ function BabyStepsPathScreen(): React.JSX.Element {
                       style={[
                         styles.indexBadge,
                         {
-                          backgroundColor: isDark ? '#001a3a' : '#fff',
-                          borderColor: isDark ? '#4DA3FF' : '#BBD6FF',
+                          backgroundColor: isDark ? '#1e293b' : '#f1f5f9',
+                          borderColor: isDark ? '#3b82f6' : '#3b82f6',
+                          shadowColor: isDark ? '#3b82f6' : '#3b82f6',
+                          shadowOpacity: 0.2,
+                          shadowRadius: 4,
+                          shadowOffset: { width: 0, height: 2 },
+                          elevation: 3,
                         },
                       ]}
                     >
-                      <Text style={[styles.indexBadgeText, { color: isDark ? '#EAF3FF' : '#0A57CC' }]}>{idx + 1}</Text>
+                      <Text style={[styles.indexBadgeText, { color: isDark ? '#dbeafe' : '#1e40af' }]}>{idx + 1}</Text>
                     </View>
                     
                     {isCompleted ? (
@@ -550,12 +596,17 @@ function BabyStepsPathScreen(): React.JSX.Element {
                           styles.completedBadge,
                           isLeft ? styles.completedBadgeLeft : styles.completedBadgeRight,
                           {
-                            backgroundColor: isDark ? '#001a3a' : '#fff',
-                            borderColor: isDark ? '#66BB6A' : '#2E7D32',
+                            backgroundColor: isDark ? '#065f46' : '#ecfdf5',
+                            borderColor: isDark ? '#10b981' : '#059669',
+                            shadowColor: isDark ? '#10b981' : '#059669',
+                            shadowOpacity: 0.3,
+                            shadowRadius: 4,
+                            shadowOffset: { width: 0, height: 2 },
+                            elevation: 3,
                           },
                         ]}
                       >
-                        <Text style={[styles.completedBadgeText, { color: isDark ? '#C8E6C9' : '#2E7D32' }]}>✓</Text>
+                        <Text style={[styles.completedBadgeText, { color: isDark ? '#6ee7b7' : '#047857' }]}>✓</Text>
                       </View>
                     ) : null}
                   </View>
@@ -567,11 +618,11 @@ function BabyStepsPathScreen(): React.JSX.Element {
                 <Text style={[
                   styles.nodeTitle, 
                   { 
-                    color: isDark ? '#f0f0f0' : '#222', 
-                    opacity: isEnabled ? 1.0 : 0.5,
-                    textShadowColor: isDark ? '#000' : '#fff',
-                    textShadowOffset: { width: 1, height: 1 },
-                    textShadowRadius: 2,
+                    color: isDark ? '#f1f5f9' : '#1e293b', 
+                    opacity: isEnabled ? 1.0 : 0.4,
+                    textShadowColor: isDark ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)',
+                    textShadowOffset: { width: 0, height: 1 },
+                    textShadowRadius: 3,
                   }
                 ]}>
                   {translatedTitleById[s.id] || s.title}
@@ -590,29 +641,62 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: 20,
+    paddingVertical: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
+  },
+  headerContent: {
+    width: '100%',
   },
   headerLeft: {
     flex: 1,
   },
+  titleContainer: {
+    marginBottom: 12,
+  },
   headerTitle: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
-    textShadowOffset: { width: 1, height: 1 },
-    textShadowRadius: 2,
+    fontSize: 24,
+    fontWeight: '700',
+    letterSpacing: -0.5,
+    marginBottom: 2,
+  },
+  headerSubtitle: {
+    fontSize: 14,
+    fontWeight: '500',
+    opacity: 0.8,
+  },
+  progressContainer: {
+    width: '100%',
+  },
+  progressHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  progressLabel: {
+    fontSize: 13,
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  progressBarBackground: {
+    height: 8,
+    borderRadius: 4,
+    overflow: 'hidden',
+  },
+  progressBarFill: {
+    height: '100%',
+    borderRadius: 4,
+    shadowColor: '#10b981',
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 3,
   },
   progressText: {
     fontSize: 12,
     fontWeight: '600',
-    marginTop: 2,
-    marginLeft: 5,
   },
   clearButton: {
     paddingVertical: 10,
@@ -643,9 +727,17 @@ const styles = StyleSheet.create({
   loadingText: {
     fontSize: 16,
     fontWeight: '500',
+    textAlign: 'center',
   },
   infoText: {
     fontSize: 16,
+    fontWeight: '500',
+    textAlign: 'center',
+  },
+  errorText: {
+    fontSize: 16,
+    fontWeight: '500',
+    textAlign: 'center',
   },
   canvas: {
     flex: 1,
@@ -663,76 +755,63 @@ const styles = StyleSheet.create({
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     borderRadius: NODE_DIAMETER / 2,
-    borderWidth: 3,
+    borderWidth: 2.5,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 8,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 4 },
-    elevation: 6,
+    marginBottom: 10,
     position: 'relative',
   },
   emojiText: {
-    fontSize: 36,
-    lineHeight: 40,
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
-    textShadowOffset: { width: 1, height: 1 },
+    fontSize: 32,
+    lineHeight: 36,
+    textShadowColor: 'rgba(0, 0, 0, 0.2)',
+    textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 2,
   },
   nodeTitle: {
-    fontSize: 13,
-    fontWeight: '700',
+    fontSize: 12,
+    fontWeight: '600',
     textAlign: 'center',
-    maxWidth: NODE_DIAMETER + 20,
+    maxWidth: NODE_DIAMETER + 24,
+    lineHeight: 16,
+    letterSpacing: 0.2,
   },
   indexBadge: {
     position: 'absolute',
-    right: -8,
-    bottom: -8,
-    minWidth: 22,
-    height: 22,
-    borderRadius: 11,
-    borderWidth: 2,
+    right: -6,
+    bottom: -6,
+    minWidth: 20,
+    height: 20,
+    borderRadius: 10,
+    borderWidth: 1.5,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 4,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 3,
+    paddingHorizontal: 3,
   },
   indexBadgeText: {
-    fontSize: 12,
-    fontWeight: '900',
+    fontSize: 10,
+    fontWeight: '700',
   },
   completedBadge: {
     position: 'absolute',
-    top: -8,
-    minWidth: 22,
-    height: 22,
-    borderRadius: 11,
-    borderWidth: 2,
+    top: -6,
+    minWidth: 20,
+    height: 20,
+    borderRadius: 10,
+    borderWidth: 1.5,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 4,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 3,
+    paddingHorizontal: 3,
   },
   completedBadgeLeft: {
-    left: -8,
+    left: -6,
   },
   completedBadgeRight: {
-    right: -8,
+    right: -6,
   },
   completedBadgeText: {
-    fontSize: 12,
-    fontWeight: '900',
+    fontSize: 10,
+    fontWeight: '700',
   },
   particleContainer: {
     position: 'absolute',
