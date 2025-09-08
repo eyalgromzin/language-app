@@ -184,7 +184,11 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
             accessibilityLabel="Translate word again"
             disabled={!hasWordChanged}
           >
-            <Ionicons name="language-outline" size={16} color="white" />
+            <Ionicons 
+              name="language-outline" 
+              size={16} 
+              color={!hasWordChanged ? "#94a3b8" : "white"} 
+            />
           </TouchableOpacity>
           
           {isBookScreen && !isEditing && (
@@ -219,7 +223,11 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
                 accessibilityLabel="Translate word"
                 disabled={!editedWord.trim()}
               >
-                <Ionicons name="language-outline" size={16} color="white" />
+                <Ionicons 
+                  name="language-outline" 
+                  size={16} 
+                  color={!editedWord.trim() ? "#94a3b8" : "white"} 
+                />
               </TouchableOpacity>
             </>
           ) : (
@@ -390,7 +398,9 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   translateBtnDisabled: {
-    backgroundColor: '#cbd5e1',
+    backgroundColor: '#f1f5f9',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
     shadowOpacity: 0,
     elevation: 0,
   },
