@@ -441,8 +441,8 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
         {showAsCorrected ? (
           <Text style={styles.tokenText}>{tok}</Text>
         ) : (
-          <Text style={[styles.tokenInput, { width: approxWidth, color: value ? '#000' : '#bbb' }]}>
-            {value}
+          <Text style={[styles.tokenInput, { width: approxWidth, color: value ? '#334155' : '#94a3b8' }]}>
+            {value || '___'}
           </Text>
         )}
       </View>
@@ -469,10 +469,14 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
             </React.Fragment>
           ))}
         </View>
-        <View style={styles.sectionDivider} />
         <View style={styles.choicesWrap}>
           {wordChoices.map((w, i) => (
-            <TouchableOpacity key={`${w}-${i}`} style={styles.choiceButton} onPress={() => fillNextBlankWith(w)}>
+            <TouchableOpacity 
+              key={`${w}-${i}`} 
+              style={styles.choiceButton} 
+              onPress={() => fillNextBlankWith(w)}
+              activeOpacity={0.7}
+            >
               <Text style={styles.choiceText}>{w}</Text>
             </TouchableOpacity>
           ))}
@@ -485,7 +489,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
     <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding', android: undefined })} style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         <View style={styles.topRow}>
-          <Text style={styles.instructionTitle}>Click the words below to complete the sentense: </Text>
+          <Text style={styles.instructionTitle}>Tap the words below to complete the sentence:</Text>
           <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
             <Text style={styles.skipButtonText}>Skip</Text>
           </TouchableOpacity>
@@ -499,12 +503,16 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
           ))}
         </View>
 
-        <View style={styles.sectionDivider} />
 
         {/* Word bank */}
         <View style={styles.choicesWrap}>
           {wordChoices.map((w, i) => (
-            <TouchableOpacity key={`${w}-${i}`} style={styles.choiceButton} onPress={() => fillNextBlankWith(w)}>
+            <TouchableOpacity 
+              key={`${w}-${i}`} 
+              style={styles.choiceButton} 
+              onPress={() => fillNextBlankWith(w)}
+              activeOpacity={0.7}
+            >
               <Text style={styles.choiceText}>{w}</Text>
             </TouchableOpacity>
           ))}
@@ -540,112 +548,189 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#f8fafc',
   },
   emptyText: {
-    color: '#666',
+    color: '#64748b',
+    fontSize: 16,
+    fontWeight: '500',
   },
   container: {
-    padding: 16,
-    gap: 16,
+    padding: 24,
+    gap: 24,
+    backgroundColor: '#f8fafc',
+    minHeight: '100%',
   },
   topRow: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
+    marginBottom: 8,
   },
   instructionTitle: {
-    fontSize: 18,
-    color: '#666',
-    fontWeight: '600',
-    maxWidth: '80%',
+    fontSize: 20,
+    color: '#1e293b',
+    fontWeight: '700',
+    maxWidth: '75%',
+    lineHeight: 28,
+    letterSpacing: -0.3,
   },
   translation: {
-    fontSize: 20,
-    fontWeight: '700',
+    fontSize: 22,
+    fontWeight: '800',
+    color: '#1e293b',
   },
   sentenceWrap: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
-    gap: 0,
-    paddingVertical: 8,
+    gap: 8,
+    paddingVertical: 20,
+    paddingHorizontal: 16,
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
+    elevation: 3,
   },
   tokenFixed: {
-    paddingHorizontal: 6,
-    paddingVertical: 6,
-    borderRadius: 6,
-    backgroundColor: '#f8f8f8',
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    borderRadius: 12,
+    backgroundColor: '#f1f5f9',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
   },
   tokenText: {
-    fontSize: 16,
+    fontSize: 17,
+    fontWeight: '600',
+    color: '#334155',
+    letterSpacing: -0.2,
   },
   tokenInputWrapper: {
-    paddingHorizontal: 4,
-    paddingVertical: 4,
-    borderRadius: 6,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: 'white',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: '#cbd5e1',
+    backgroundColor: '#ffffff',
+    minWidth: 80,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 1,
   },
   tokenInput: {
-    paddingVertical: 6,
-    paddingHorizontal: 8,
-    fontSize: 16,
+    fontSize: 17,
+    fontWeight: '600',
+    textAlign: 'center',
+    minHeight: 24,
   },
   choicesWrap: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 8,
-    paddingTop: 8,
+    gap: 12,
+    paddingTop: 16,
+    paddingHorizontal: 4,
   },
   skipButton: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: '#e2e8f0',
+    backgroundColor: '#ffffff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    elevation: 2,
   },
   skipButtonText: {
     fontWeight: '700',
-    color: '#007AFF',
+    color: '#6366f1',
+    fontSize: 15,
+    letterSpacing: -0.2,
   },
   choiceButton: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
-    borderRadius: 16,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
+    borderWidth: 1.5,
+    borderColor: '#e2e8f0',
+    backgroundColor: '#ffffff',
+    borderRadius: 20,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    elevation: 2,
   },
   choiceText: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '600',
+    color: '#475569',
+    letterSpacing: -0.2,
   },
   tokenCorrected: {
-    backgroundColor: '#fffbf0',
+    backgroundColor: '#fef3c7',
+    borderColor: '#f59e0b',
   },
   tokenWrong: {
-    borderColor: '#e53935',
-    backgroundColor: '#ffebee',
+    borderColor: '#ef4444',
+    backgroundColor: '#fef2f2',
+    shadowColor: '#ef4444',
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
   },
   nextButton: {
-    marginTop: 12,
-    backgroundColor: '#007AFF',
-    paddingVertical: 12,
-    borderRadius: 10,
+    marginTop: 20,
+    backgroundColor: '#6366f1',
+    paddingVertical: 16,
+    borderRadius: 16,
     alignItems: 'center',
+    shadowColor: '#6366f1',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 6,
   },
   nextButtonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontWeight: '700',
+    fontSize: 16,
+    letterSpacing: -0.3,
   },
-
   sectionDivider: {
-    height: 2,
-    backgroundColor: '#c4c2c2',
+    height: 1,
+    backgroundColor: '#e2e8f0',
     width: '100%',
-    marginVertical: 8,
+    marginVertical: 16,
+    borderRadius: 1,
   },
 });
 
