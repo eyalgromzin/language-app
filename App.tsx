@@ -337,7 +337,6 @@ function MainTabs(): React.JSX.Element {
         <View style={styles.menuOverlay}>
           <TouchableOpacity style={styles.menuBackdrop} activeOpacity={1} onPress={() => setMenuOpen(false)} />
           <View style={styles.menuPanel}>
-            <Text style={styles.menuTitle}>Menu</Text>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('MyWords'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>My Words</Text>
             </TouchableOpacity>
@@ -353,17 +352,11 @@ function MainTabs(): React.JSX.Element {
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('ContactUs'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Contact Us</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Onboarding'); setMenuOpen(false); }}>
-              <Text style={styles.menuItemText}>Onboarding</Text>
-            </TouchableOpacity>
             {isAuthenticated && (
               <TouchableOpacity style={[styles.menuItem, styles.menuLogout]} onPress={handleLogout}>
                 <Text style={[styles.menuItemText, styles.menuLogoutText]}>Logout</Text>
               </TouchableOpacity>
             )}
-            <TouchableOpacity style={[styles.menuItem, styles.menuClose]} onPress={() => setMenuOpen(false)}>
-              <Text style={[styles.menuItemText, styles.menuCloseText]}>Close</Text>
-            </TouchableOpacity>
           </View>
         </View>
       </Modal>
