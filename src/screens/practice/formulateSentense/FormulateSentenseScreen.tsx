@@ -78,6 +78,11 @@ function tokenizeSentence(sentence: string): string[] {
     .filter(Boolean);
 }
 
+function isHebrewText(text: string): boolean {
+  // Check if text contains Hebrew characters (Unicode range U+0590-U+05FF)
+  return /[\u0590-\u05FF]/.test(text);
+}
+
 type EmbeddedProps = {
   embedded?: boolean;
   sentence?: string;
@@ -447,22 +452,24 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
             </View>
           )}
         </View>
-        <View style={styles.tokensWrap}>
-          {shuffledTokens.map((tok, i) => {
-            const used = selectedIndices.includes(i);
-            return (
-              <TouchableOpacity
-                key={`tok-${i}-${tok}`}
-                style={[styles.tokenChip, used && styles.tokenChipUsed]}
-                onPress={() => onPickIndex(i)}
-                disabled={used}
-                accessibilityRole="button"
-                accessibilityLabel={tok}
-              >
-                <Text style={styles.tokenText}>{tok}</Text>
-              </TouchableOpacity>
-            );
-          })}
+        <View style={styles.wordsBankSection}>
+          <View style={[styles.tokensWrap, { justifyContent: isHebrewText(current?.sentence || '') ? 'flex-end' : 'flex-start' }]}>
+            {shuffledTokens.map((tok, i) => {
+              const used = selectedIndices.includes(i);
+              return (
+                <TouchableOpacity
+                  key={`tok-${i}-${tok}`}
+                  style={[styles.tokenChip, used && styles.tokenChipUsed]}
+                  onPress={() => onPickIndex(i)}
+                  disabled={used}
+                  accessibilityRole="button"
+                  accessibilityLabel={tok}
+                >
+                  <Text style={styles.tokenText}>{tok}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
         </View>
         
         <AnimatedToast
@@ -545,22 +552,25 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
           )}
         </View>
 
-        <View style={styles.tokensWrap}>
-          {shuffledTokens.map((tok, i) => {
-            const used = selectedIndices.includes(i);
-            return (
-              <TouchableOpacity
-                key={`tok-${i}-${tok}`}
-                style={[styles.tokenChip, used && styles.tokenChipUsed]}
-                onPress={() => onPickIndex(i)}
-                disabled={used}
-                accessibilityRole="button"
-                accessibilityLabel={tok}
-              >
-                <Text style={styles.tokenText}>{tok}</Text>
-              </TouchableOpacity>
-            );
-          })}
+        <View style={styles.wordsBankSection}>
+          <Text style={styles.wordsBankTitle}>Words Bank</Text>
+          <View style={[styles.tokensWrap, { justifyContent: isHebrewText(current?.sentence || '') ? 'flex-end' : 'flex-start' }]}>
+            {shuffledTokens.map((tok, i) => {
+              const used = selectedIndices.includes(i);
+              return (
+                <TouchableOpacity
+                  key={`tok-${i}-${tok}`}
+                  style={[styles.tokenChip, used && styles.tokenChipUsed]}
+                  onPress={() => onPickIndex(i)}
+                  disabled={used}
+                  accessibilityRole="button"
+                  accessibilityLabel={tok}
+                >
+                  <Text style={styles.tokenText}>{tok}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
         </View>
 
         <View style={styles.actionsRow}>
@@ -619,170 +629,265 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#f8fafc',
   },
   emptyText: {
-    color: '#666',
+    color: '#64748b',
+    fontSize: 16,
   },
   container: {
-    padding: 16,
-    gap: 16,
+    padding: 20,
+    gap: 24,
+    backgroundColor: '#f8fafc',
+    flex: 1,
   },
   topRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom: 8,
   },
   title: {
-    fontSize: 18,
-    color: '#666',
-    fontWeight: '600',
-    textTransform: 'lowercase',
+    fontSize: 24,
+    color: '#1e293b',
+    fontWeight: '700',
+    textTransform: 'capitalize',
+    letterSpacing: -0.5,
   },
   skipButton: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: '#e2e8f0',
+    backgroundColor: '#ffffff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
   },
   skipButtonText: {
-    fontWeight: '700',
-    color: '#007AFF',
+    fontWeight: '600',
+    color: '#3b82f6',
+    fontSize: 14,
   },
   wordCard: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    paddingVertical: 18,
-    paddingHorizontal: 12,
+    borderWidth: 0,
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    paddingVertical: 24,
+    paddingHorizontal: 20,
     alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    elevation: 4,
+    marginBottom: 8,
   },
   wordText: {
-    fontSize: 22,
+    fontSize: 26,
     fontWeight: '700',
+    color: '#1e293b',
+    textAlign: 'center',
+    lineHeight: 32,
   },
   assembledBox: {
-    minHeight: 72,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
+    minHeight: 88,
+    borderWidth: 2,
+    borderColor: '#e2e8f0',
+    borderStyle: 'dashed',
+    backgroundColor: '#f8fafc',
+    borderRadius: 16,
+    paddingVertical: 16,
+    paddingHorizontal: 16,
     justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.04,
+    shadowRadius: 8,
+    elevation: 2,
   },
   placeholder: {
-    color: '#999',
+    color: '#94a3b8',
     fontStyle: 'italic',
+    fontSize: 16,
+    textAlign: 'center',
+    fontWeight: '500',
   },
   tokenRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 8,
+    gap: 10,
+    justifyContent: 'center',
+  },
+  wordsBankSection: {
+    marginTop: 16,
+  },
+  wordsBankTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#475569',
+    marginBottom: 12,
+    textAlign: 'left',
   },
   tokensWrap: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
-    rowGap: 10,
+    rowGap: 12,
+    columnGap: 12,
+    paddingHorizontal: 4,
   },
   tokenChip: {
-    paddingVertical: 10,
-    paddingHorizontal: 12,
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
-    marginBottom: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 24,
+    borderWidth: 1.5,
+    borderColor: '#e2e8f0',
+    backgroundColor: '#ffffff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.06,
+    shadowRadius: 6,
+    elevation: 3,
   },
   tokenChipUsed: {
-    backgroundColor: '#eee',
-    borderColor: '#ddd',
+    backgroundColor: '#f1f5f9',
+    borderColor: '#cbd5e1',
+    opacity: 0.6,
   },
   tokenChipSelected: {
-    paddingVertical: 8,
-    paddingHorizontal: 10,
-    borderRadius: 16,
-    backgroundColor: '#e6f7e9',
-    borderWidth: 1,
-    borderColor: '#2e7d32',
+    paddingVertical: 10,
+    paddingHorizontal: 14,
+    borderRadius: 20,
+    backgroundColor: '#dcfce7',
+    borderWidth: 1.5,
+    borderColor: '#22c55e',
+    shadowColor: '#22c55e',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
+    elevation: 3,
   },
   tokenText: {
     fontSize: 16,
     fontWeight: '600',
+    color: '#1e293b',
   },
   actionsRow: {
     flexDirection: 'row',
-    justifyContent: 'flex-end',
-    gap: 12,
+    justifyContent: 'center',
+    gap: 16,
+    marginTop: 8,
   },
   resetButton: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#ddd',
-    paddingVertical: 10,
-    paddingHorizontal: 12,
-    borderRadius: 10,
+    backgroundColor: '#ffffff',
+    borderWidth: 1.5,
+    borderColor: '#e2e8f0',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
   },
   resetButtonText: {
-    color: '#007AFF',
-    fontWeight: '700',
+    color: '#64748b',
+    fontWeight: '600',
+    fontSize: 15,
   },
   modalOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    padding: 24,
   },
   dialogContainer: {
-    backgroundColor: '#fff',
-    borderRadius: 16,
-    padding: 24,
+    backgroundColor: '#ffffff',
+    borderRadius: 20,
+    padding: 28,
     width: '100%',
-    maxWidth: 400,
+    maxWidth: 420,
     alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 20,
+    elevation: 8,
   },
   dialogTitle: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: '700',
-    color: '#d32f2f',
-    marginBottom: 8,
+    color: '#dc2626',
+    marginBottom: 12,
     textAlign: 'center',
   },
   dialogSubtitle: {
     fontSize: 16,
-    color: '#666',
-    marginBottom: 16,
+    color: '#64748b',
+    marginBottom: 20,
     textAlign: 'center',
+    fontWeight: '500',
   },
   correctAnswerContainer: {
-    backgroundColor: '#f5f5f5',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 24,
+    backgroundColor: '#f0fdf4',
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 28,
     width: '100%',
-    borderWidth: 1,
-    borderColor: '#e0e0e0',
+    borderWidth: 1.5,
+    borderColor: '#bbf7d0',
   },
   correctAnswerText: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#2e7d32',
+    color: '#166534',
     textAlign: 'center',
-    lineHeight: 24,
+    lineHeight: 26,
   },
   continueButton: {
-    backgroundColor: '#007AFF',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-    minWidth: 120,
+    backgroundColor: '#3b82f6',
+    paddingVertical: 14,
+    paddingHorizontal: 28,
+    borderRadius: 12,
+    minWidth: 140,
+    shadowColor: '#3b82f6',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 4,
   },
   continueButtonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 16,
     fontWeight: '700',
     textAlign: 'center',
