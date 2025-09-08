@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View, Animated } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import TTS from 'react-native-tts';
@@ -97,6 +97,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   const [isShowingSuccessToast, setIsShowingSuccessToast] = React.useState<boolean>(false);
   const [showWrongAnswerPopup, setShowWrongAnswerPopup] = React.useState<boolean>(false);
   const successToastTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+  const [pressedOption, setPressedOption] = React.useState<string | null>(null);
 
   const lastWordKeyRef = React.useRef<string | null>(null);
   const animationTriggeredRef = React.useRef<Set<string>>(new Set());
@@ -533,7 +534,13 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         <View style={styles.wordCard}>
           <View style={styles.wordRow}>
             <Text style={styles.wordText}>{isChooseTranslationMode ? current.word : current.translation}</Text>
-            <TouchableOpacity onPress={() => speakCurrent(isChooseTranslationMode ? current.word : current.translation)} accessibilityRole="button" accessibilityLabel="Play">
+            <TouchableOpacity 
+              style={styles.speakerButton}
+              onPress={() => speakCurrent(isChooseTranslationMode ? current.word : current.translation)} 
+              accessibilityRole="button" 
+              accessibilityLabel="Play"
+              activeOpacity={0.7}
+            >
               <Text style={styles.speakerIcon}>🔊</Text>
             </TouchableOpacity>
           </View>
@@ -545,6 +552,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
             const isWrong = wrongKey === opt.key;
             const isRevealedCorrect = revealCorrect && opt.key === correctKey;
             const disabled = !!selectedKey || revealCorrect;
+            const isPressed = pressedOption === opt.key;
             return (
               <TouchableOpacity
                 key={opt.key}
@@ -553,13 +561,24 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
                   isSelectedCorrect && styles.optionButtonCorrect,
                   isWrong && styles.optionButtonWrong,
                   isRevealedCorrect && styles.optionButtonCorrect,
+                  isPressed && styles.optionButtonPressed,
                 ]}
                 onPress={() => onPick(opt)}
+                onPressIn={() => setPressedOption(opt.key)}
+                onPressOut={() => setPressedOption(null)}
                 disabled={disabled}
                 accessibilityRole="button"
                 accessibilityLabel={opt.label}
+                activeOpacity={0.8}
               >
-                <Text style={styles.optionText}>{opt.label}</Text>
+                <Text style={[
+                  styles.optionText,
+                  isSelectedCorrect && styles.optionTextCorrect,
+                  isWrong && styles.optionTextWrong,
+                  isRevealedCorrect && styles.optionTextCorrect,
+                ]}>
+                  {opt.label}
+                </Text>
               </TouchableOpacity>
             );
           })}
@@ -650,9 +669,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#f8fafc',
   },
   emptyText: {
-    color: '#666',
+    color: '#64748b',
   },
   emptyStateContainer: {
     alignItems: 'center',
@@ -667,27 +687,27 @@ const styles = StyleSheet.create({
   emptyStateTitle: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#333',
+    color: '#1e293b',
     textAlign: 'center',
     marginBottom: 12,
   },
   emptyStateMessage: {
     fontSize: 16,
-    color: '#666',
+    color: '#64748b',
     textAlign: 'center',
     lineHeight: 22,
     marginBottom: 24,
   },
   backToPracticeButton: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#3b82f6',
     paddingHorizontal: 24,
     paddingVertical: 12,
     borderRadius: 12,
-    elevation: 2,
+    elevation: 3,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
   },
   backToPracticeButtonText: {
     color: '#fff',
@@ -695,165 +715,245 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   container: {
-    padding: 16,
-    gap: 16,
+    padding: 20,
+    gap: 24,
+    backgroundColor: '#f8fafc',
+    minHeight: '100%',
   },
   topRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom: 8,
   },
   title: {
-    fontSize: 18,
-    color: '#666',
-    fontWeight: '600',
-    textTransform: 'lowercase',
+    fontSize: 20,
+    color: '#1e293b',
+    fontWeight: '700',
+    textTransform: 'capitalize',
+    letterSpacing: 0.5,
   },
   skipButton: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 10,
+    borderWidth: 1.5,
+    borderColor: '#e2e8f0',
+    backgroundColor: '#ffffff',
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
   },
   skipButtonText: {
-    fontWeight: '700',
-    color: '#007AFF',
+    fontWeight: '600',
+    color: '#3b82f6',
+    fontSize: 14,
   },
   wordCard: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    paddingVertical: 18,
-    paddingHorizontal: 12,
+    borderWidth: 0,
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    paddingVertical: 32,
+    paddingHorizontal: 24,
     alignItems: 'center',
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    marginVertical: 8,
   },
   wordText: {
-    fontSize: 22,
-    fontWeight: '700',
+    fontSize: 28,
+    fontWeight: '800',
+    color: '#1e293b',
+    textAlign: 'center',
+    letterSpacing: 0.5,
   },
   wordRow: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+  speakerButton: {
+    marginLeft: 12,
+    padding: 8,
+    borderRadius: 20,
+    backgroundColor: '#f1f5f9',
+    elevation: 1,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
   },
   speakerIcon: {
-    marginLeft: 8,
-    fontSize: 22,
+    fontSize: 20,
+    opacity: 0.8,
   },
   optionsWrap: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    rowGap: 10,
+    rowGap: 12,
+    columnGap: 12,
   },
   optionButton: {
     width: '48%',
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
+    borderWidth: 0,
+    backgroundColor: '#ffffff',
+    borderRadius: 14,
+    paddingVertical: 16,
+    paddingHorizontal: 12,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    minHeight: 56,
+    justifyContent: 'center',
   },
   optionButtonCorrect: {
-    backgroundColor: '#e6f7e9',
-    borderColor: '#2e7d32',
+    backgroundColor: '#dcfce7',
+    borderWidth: 2,
+    borderColor: '#16a34a',
+    elevation: 3,
+    shadowOpacity: 0.15,
   },
   optionButtonWrong: {
-    backgroundColor: '#ffebee',
-    borderColor: '#e53935',
+    backgroundColor: '#fef2f2',
+    borderWidth: 2,
+    borderColor: '#dc2626',
+    elevation: 3,
+    shadowOpacity: 0.15,
+  },
+  optionButtonPressed: {
+    transform: [{ scale: 0.98 }],
+    elevation: 1,
+    shadowOpacity: 0.05,
   },
   optionText: {
     fontSize: 16,
     fontWeight: '600',
+    color: '#1e293b',
+    textAlign: 'center',
+    lineHeight: 20,
+  },
+  optionTextCorrect: {
+    color: '#16a34a',
+    fontWeight: '700',
+  },
+  optionTextWrong: {
+    color: '#dc2626',
+    fontWeight: '700',
   },
   nextButton: {
-    marginTop: 12,
-    backgroundColor: '#007AFF',
-    paddingVertical: 12,
-    borderRadius: 10,
+    marginTop: 16,
+    backgroundColor: '#3b82f6',
+    paddingVertical: 16,
+    paddingHorizontal: 32,
+    borderRadius: 12,
     alignItems: 'center',
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
   },
   nextButtonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontWeight: '700',
+    fontSize: 16,
+    letterSpacing: 0.5,
   },
   popupOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
   },
   popupContainer: {
-    backgroundColor: '#fff',
-    borderRadius: 16,
-    padding: 24,
+    backgroundColor: '#ffffff',
+    borderRadius: 20,
+    padding: 28,
     alignItems: 'center',
-    minWidth: 280,
-    maxWidth: 320,
-    elevation: 8,
+    minWidth: 300,
+    maxWidth: 340,
+    elevation: 12,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.25,
+    shadowRadius: 12,
   },
   popupTitle: {
-    fontSize: 20,
-    fontWeight: '700',
-    color: '#e53935',
-    marginBottom: 12,
+    fontSize: 22,
+    fontWeight: '800',
+    color: '#dc2626',
+    marginBottom: 16,
     textAlign: 'center',
+    letterSpacing: 0.5,
   },
   popupMessage: {
     fontSize: 16,
-    color: '#666',
-    marginBottom: 16,
+    color: '#64748b',
+    marginBottom: 20,
     textAlign: 'center',
+    lineHeight: 22,
   },
   correctAnswerContainer: {
-    backgroundColor: '#e6f7e9',
+    backgroundColor: '#dcfce7',
     borderWidth: 2,
-    borderColor: '#2e7d32',
-    borderRadius: 12,
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    marginBottom: 20,
-    minWidth: 200,
+    borderColor: '#16a34a',
+    borderRadius: 16,
+    paddingVertical: 20,
+    paddingHorizontal: 24,
+    marginBottom: 24,
+    minWidth: 220,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
   },
   embeddedAnswerContainer: {
     alignItems: 'center',
     gap: 8,
   },
   correctAnswerText: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: '#2e7d32',
+    fontSize: 20,
+    fontWeight: '800',
+    color: '#16a34a',
     textAlign: 'center',
+    letterSpacing: 0.5,
   },
   correctAnswerTranslation: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#666',
+    color: '#64748b',
     textAlign: 'center',
     fontStyle: 'italic',
   },
   popupOkButton: {
-    backgroundColor: '#007AFF',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
+    backgroundColor: '#3b82f6',
+    paddingVertical: 14,
+    paddingHorizontal: 36,
     borderRadius: 12,
-    minWidth: 100,
+    minWidth: 120,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
   },
   popupOkButtonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 16,
     fontWeight: '700',
     textAlign: 'center',
+    letterSpacing: 0.5,
   },
-
 });
 
 export default Choose1OutOfN;

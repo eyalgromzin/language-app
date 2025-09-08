@@ -1051,13 +1051,19 @@ function BabyStepRunnerScreen(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  centered: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  centered: { 
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center',
+    backgroundColor: '#f8fafc'
+  },
   loadingContainer: { 
     flex: 1, 
     alignItems: 'center', 
     justifyContent: 'center',
     paddingHorizontal: 32,
-    gap: 16
+    gap: 16,
+    backgroundColor: '#f8fafc'
   },
   loadingText: { 
     fontSize: 18, 
@@ -1071,7 +1077,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 4
   },
-  container: { padding: 16, gap: 16 },
+  container: { 
+    padding: 16, 
+    gap: 16,
+    backgroundColor: '#f8fafc',
+    minHeight: '100%'
+  },
   topRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   titleContainer: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   title: { fontSize: 16, fontWeight: '700', flex: 1 },
