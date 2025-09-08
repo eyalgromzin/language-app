@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 interface AddFavouriteModalProps {
   visible: boolean;
@@ -61,87 +62,116 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
     >
       <View style={styles.modalBackdrop}>
         <View style={styles.modalCard}>
-          <Text style={styles.modalTitle}>Add to favourites</Text>
-          {learningLanguage && (
-            <Text style={[styles.inputLabel, { marginTop: 0 }]}>
-              Learning language: {toLanguageSymbol(learningLanguage)}
-            </Text>
-          )}
-          <Text style={styles.inputLabel}>Type</Text>
-          <TouchableOpacity
-            onPress={() => setShowTypeOptions(!showTypeOptions)}
-            style={[styles.modalInput, favTypeError && !newFavTypeId ? { borderColor: '#ef4444' } : null]}
-            activeOpacity={0.7}
-          >
-            <Text style={{ color: newFavTypeId ? '#111827' : '#9ca3af' }}>
-              {newFavTypeId ? (FAVOURITE_TYPES.find(t => t.id === newFavTypeId)?.name || '') : 'Select type'}
-            </Text>
-          </TouchableOpacity>
-          {showTypeOptions && (
-            <View style={[styles.modalInput, { paddingVertical: 0, marginTop: 8 }]}> 
-              {FAVOURITE_TYPES.map((t) => (
-                <TouchableOpacity
-                  key={t.id}
-                  onPress={() => { setNewFavTypeId(t.id); setShowTypeOptions(false); setFavTypeError(false); }}
-                  style={{ paddingVertical: 10 }}
-                >
-                  <Text style={{ color: '#111827' }}>{t.name}</Text>
-                </TouchableOpacity>
-              ))}
+          <View style={styles.modalHeader}>
+            <Text style={styles.modalTitle}>Add to Favourites</Text>
+            <TouchableOpacity onPress={onClose} style={styles.closeButton}>
+              <Ionicons name="close" size={24} color="#6b7280" />
+            </TouchableOpacity>
+          </View>
+          
+          <View style={styles.modalContent}>
+            {learningLanguage && (
+              <View style={styles.languageInfo}>
+                <Ionicons name="language-outline" size={16} color="#3b82f6" />
+                <Text style={styles.languageText}>
+                  Learning: {toLanguageSymbol(learningLanguage)}
+                </Text>
+              </View>
+            )}
+            
+            <View style={styles.inputGroup}>
+              <Text style={styles.inputLabel}>Content Type</Text>
+              <TouchableOpacity
+                onPress={() => setShowTypeOptions(!showTypeOptions)}
+                style={[styles.selectInput, favTypeError && !newFavTypeId ? styles.selectInputError : null]}
+                activeOpacity={0.7}
+              >
+                <Text style={[styles.selectInputText, { color: newFavTypeId ? '#1e293b' : '#94a3b8' }]}>
+                  {newFavTypeId ? (FAVOURITE_TYPES.find(t => t.id === newFavTypeId)?.name || '') : 'Select content type'}
+                </Text>
+                <Ionicons name="chevron-down" size={20} color="#94a3b8" />
+              </TouchableOpacity>
+              {showTypeOptions && (
+                <View style={styles.optionsContainer}> 
+                  {FAVOURITE_TYPES.map((t) => (
+                    <TouchableOpacity
+                      key={t.id}
+                      onPress={() => { setNewFavTypeId(t.id); setShowTypeOptions(false); setFavTypeError(false); }}
+                      style={styles.optionItem}
+                    >
+                      <Text style={styles.optionText}>{t.name}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+              )}
+              {favTypeError && !newFavTypeId && (
+                <Text style={styles.errorText}>Please select a content type</Text>
+              )}
             </View>
-          )}
-          {favTypeError && !newFavTypeId && (
-            <Text style={styles.errorText}>Type is required</Text>
-          )}
-          <Text style={styles.inputLabel}>Level</Text>
-          <TouchableOpacity
-            onPress={() => setShowLevelOptions(!showLevelOptions)}
-            style={styles.modalInput}
-            activeOpacity={0.7}
-          >
-            <Text style={{ color: newFavLevelName ? '#111827' : '#9ca3af' }}>
-              {newFavLevelName || 'Select level'}
-            </Text>
-          </TouchableOpacity>
-          {showLevelOptions && (
-            <View style={[styles.modalInput, { paddingVertical: 0, marginTop: 8 }]}> 
-              {['easy','easy-medium','medium','medium-hard','hard'].map((lv) => (
-                <TouchableOpacity
-                  key={lv}
-                  onPress={() => { setNewFavLevelName(lv); setShowLevelOptions(false); }}
-                  style={{ paddingVertical: 10 }}
-                >
-                  <Text style={{ color: '#111827' }}>{lv}</Text>
-                </TouchableOpacity>
-              ))}
+
+            <View style={styles.inputGroup}>
+              <Text style={styles.inputLabel}>Difficulty Level</Text>
+              <TouchableOpacity
+                onPress={() => setShowLevelOptions(!showLevelOptions)}
+                style={styles.selectInput}
+                activeOpacity={0.7}
+              >
+                <Text style={[styles.selectInputText, { color: newFavLevelName ? '#1e293b' : '#94a3b8' }]}>
+                  {newFavLevelName || 'Select difficulty level'}
+                </Text>
+                <Ionicons name="chevron-down" size={20} color="#94a3b8" />
+              </TouchableOpacity>
+              {showLevelOptions && (
+                <View style={styles.optionsContainer}> 
+                  {['easy','easy-medium','medium','medium-hard','hard'].map((lv) => (
+                    <TouchableOpacity
+                      key={lv}
+                      onPress={() => { setNewFavLevelName(lv); setShowLevelOptions(false); }}
+                      style={styles.optionItem}
+                    >
+                      <Text style={styles.optionText}>{lv}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+              )}
             </View>
-          )}
-          <Text style={styles.inputLabel}>Name</Text>
-          <TextInput
-            style={styles.modalInput}
-            value={newFavName}
-            onChangeText={setNewFavName}
-            placeholder="Enter a name"
-          />
-          <Text style={styles.inputLabel}>URL</Text>
-          <TextInput
-            style={styles.modalInput}
-            value={newFavUrl}
-            onChangeText={setNewFavUrl}
-            autoCapitalize="none"
-            autoCorrect={false}
-            keyboardType="url"
-          />
+
+            <View style={styles.inputGroup}>
+              <Text style={styles.inputLabel}>Name</Text>
+              <TextInput
+                style={styles.textInput}
+                value={newFavName}
+                onChangeText={setNewFavName}
+                placeholder="Enter a descriptive name"
+                placeholderTextColor="#94a3b8"
+              />
+            </View>
+
+            <View style={styles.inputGroup}>
+              <Text style={styles.inputLabel}>URL</Text>
+              <TextInput
+                style={styles.textInput}
+                value={newFavUrl}
+                onChangeText={setNewFavUrl}
+                placeholder="https://example.com"
+                placeholderTextColor="#94a3b8"
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="url"
+              />
+            </View>
+          </View>
          
-          <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 12, gap: 8 }}>
-            <TouchableOpacity onPress={onClose} style={styles.modalCloseBtn}>
-              <Text style={styles.modalCloseText}>Cancel</Text>
+          <View style={styles.modalFooter}>
+            <TouchableOpacity onPress={onClose} style={styles.cancelButton}>
+              <Text style={styles.cancelButtonText}>Cancel</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={onAdd}
-              style={[styles.modalCloseBtn, { backgroundColor: '#007AFF' }]}
+              style={styles.addButton}
             >
-              <Text style={[styles.modalCloseText, { color: 'white' }]}>Add</Text>
+              <Ionicons name="star" size={18} color="#ffffff" style={{ marginRight: 6 }} />
+              <Text style={styles.addButtonText}>Add to Favourites</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -153,47 +183,178 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
 const styles = StyleSheet.create({
   modalBackdrop: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.3)',
+    backgroundColor: 'rgba(0,0,0,0.5)',
     justifyContent: 'center',
-    padding: 16,
+    padding: 20,
   },
   modalCard: {
-    backgroundColor: 'white',
-    borderRadius: 12,
-    padding: 14,
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    maxHeight: '90%',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 20,
+    elevation: 20,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f1f5f9',
   },
   modalTitle: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: '700',
-    marginBottom: 10,
+    color: '#1e293b',
+  },
+  closeButton: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: '#f8fafc',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalContent: {
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+  },
+  languageInfo: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#eff6ff',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  languageText: {
+    fontSize: 14,
+    color: '#1e40af',
+    fontWeight: '600',
+    marginLeft: 6,
+  },
+  inputGroup: {
+    marginBottom: 16,
   },
   inputLabel: {
-    fontSize: 12,
+    fontSize: 14,
+    fontWeight: '600',
     color: '#374151',
-    marginTop: 8,
-    marginBottom: 6,
+    marginBottom: 8,
   },
-  modalInput: {
+  selectInput: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     borderWidth: 1,
-    borderColor: '#e5e7eb',
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
+    borderColor: '#e2e8f0',
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+    backgroundColor: '#f8fafc',
+  },
+  selectInputError: {
+    borderColor: '#ef4444',
+    backgroundColor: '#fef2f2',
+  },
+  selectInputText: {
+    fontSize: 16,
+    flex: 1,
+  },
+  optionsContainer: {
+    backgroundColor: '#ffffff',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    marginTop: 4,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  optionItem: {
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f1f5f9',
+  },
+  optionText: {
+    fontSize: 16,
+    color: '#1e293b',
+  },
+  textInput: {
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+    fontSize: 16,
+    color: '#1e293b',
+    backgroundColor: '#f8fafc',
   },
   errorText: {
     color: '#ef4444',
     fontSize: 12,
     marginTop: 6,
+    fontWeight: '500',
   },
-  modalCloseBtn: {
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    backgroundColor: '#f3f4f6',
-    borderRadius: 8,
+  modalFooter: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    borderTopWidth: 1,
+    borderTopColor: '#f1f5f9',
+    gap: 12,
   },
-  modalCloseText: {
-    fontSize: 13,
-    color: '#374151',
+  cancelButton: {
+    flex: 1,
+    paddingVertical: 12,
+    backgroundColor: '#f8fafc',
+    borderRadius: 10,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  cancelButtonText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#64748b',
+  },
+  addButton: {
+    flex: 2,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    backgroundColor: '#3b82f6',
+    borderRadius: 10,
+    shadowColor: '#3b82f6',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  addButtonText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#ffffff',
   },
 });
 

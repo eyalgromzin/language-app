@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View, StyleSheet, Platform, Alert, ToastAndroid } from 'react-native';
+import { View, StyleSheet, Platform, Alert, ToastAndroid, StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import UrlBar from '../../components/Surf/UrlBar';
 import FavouritesModal from '../../components/Surf/FavouritesModal';
@@ -227,7 +228,8 @@ function SurfScreen(): React.JSX.Element {
   }, [currentUrl, addressText]);
 
   return (
-    <View style={{ flex: 1 }}>
+    <SafeAreaView style={styles.container} edges={[]}>
+      <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
       <UrlBar
         addressText={addressText}
         setAddressText={setAddressText}
@@ -328,12 +330,15 @@ function SurfScreen(): React.JSX.Element {
         onScrapeMessage={onScrapeMessage}
         imageScrapeInjection={imageScrapeInjection}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  // Styles are now handled by individual components
+  container: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+  },
 });
 
 export default SurfScreen;

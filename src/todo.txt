@@ -2,6 +2,8 @@
 
 - upload server 
 
+- when going to library screen from surf screen , show back button instead of hamburger 
+
 publish app =======================================================================================================================
 
 - payed version - when ill have 1000 users 
@@ -26,6 +28,6 @@ publish app ====================================================================
 - ai will start with a question . about previous topics or just asking how is your day.and did you practice our last topics 
 
 - the ai will lead the conversation with questions like how was your day . 
-    tell me 2 good things that happened today / yesterday / this week .
+    tell me 2 good things that happened today / yesterday / this week.
     whwat did you read ? 
     did you see any good videos ? reels ? movies ? 

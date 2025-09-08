@@ -34,34 +34,49 @@ const FavouritesModal: React.FC<FavouritesModalProps> = ({
     >
       <View style={styles.modalBackdrop}>
         <View style={styles.modalCard}>
-          <Text style={styles.modalTitle}>Favourites</Text>
-          <ScrollView style={{ maxHeight: 320 }}>
+          <View style={styles.modalHeader}>
+            <Text style={styles.modalTitle}>Favourites</Text>
+            <TouchableOpacity onPress={onClose} style={styles.closeButton}>
+              <Ionicons name="close" size={24} color="#6b7280" />
+            </TouchableOpacity>
+          </View>
+          
+          <ScrollView style={styles.favouritesList} showsVerticalScrollIndicator={false}>
             {favourites.length === 0 && (
-              <Text style={styles.emptyText}>No favourites yet</Text>
+              <View style={styles.emptyState}>
+                <Ionicons name="star-outline" size={48} color="#cbd5e1" />
+                <Text style={styles.emptyText}>No favourites yet</Text>
+                <Text style={styles.emptySubtext}>Add websites to your favourites for quick access</Text>
+              </View>
             )}
             {favourites.map((f) => (
               <TouchableOpacity
                 key={f.url}
                 style={styles.favItem}
                 onPress={() => onFavouritePress(f.url)}
+                activeOpacity={0.7}
               >
-                <Ionicons name="star" size={16} color="#f59e0b" style={{ marginRight: 8 }} />
-                <Text numberOfLines={1} style={styles.favText}>{f.name}</Text>
+                <View style={styles.favItemContent}>
+                  <View style={styles.favIconContainer}>
+                    <Ionicons name="star" size={18} color="#f59e0b" />
+                  </View>
+                  <View style={styles.favTextContainer}>
+                    <Text numberOfLines={1} style={styles.favText}>{f.name}</Text>
+                    {f.typeName && (
+                      <Text numberOfLines={1} style={styles.favTypeText}>{f.typeName}</Text>
+                    )}
+                  </View>
+                </View>
                 <TouchableOpacity
                   onPress={() => onRemoveFavourite(f.url)}
                   style={styles.favRemoveBtn}
-                  hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+                  hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }}
                 >
-                  <Ionicons name="close" size={18} color="#6b7280" />
+                  <Ionicons name="trash-outline" size={18} color="#ef4444" />
                 </TouchableOpacity>
               </TouchableOpacity>
             ))}
           </ScrollView>
-          <View style={{ alignItems: 'flex-end', marginTop: 10 }}>
-            <TouchableOpacity onPress={onClose} style={styles.modalCloseBtn}>
-              <Text style={styles.modalCloseText}>Close</Text>
-            </TouchableOpacity>
-          </View>
         </View>
       </View>
     </Modal>
@@ -71,51 +86,109 @@ const FavouritesModal: React.FC<FavouritesModalProps> = ({
 const styles = StyleSheet.create({
   modalBackdrop: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.3)',
+    backgroundColor: 'rgba(0,0,0,0.5)',
     justifyContent: 'center',
-    padding: 16,
+    padding: 20,
   },
   modalCard: {
-    backgroundColor: 'white',
-    borderRadius: 12,
-    padding: 14,
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    maxHeight: '80%',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 20,
+    elevation: 20,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f1f5f9',
   },
   modalTitle: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: '700',
-    marginBottom: 10,
+    color: '#1e293b',
+  },
+  closeButton: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: '#f8fafc',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  favouritesList: {
+    maxHeight: 400,
+    paddingHorizontal: 20,
+  },
+  emptyState: {
+    alignItems: 'center',
+    paddingVertical: 40,
   },
   emptyText: {
-    color: '#6b7280',
-    marginVertical: 8,
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#64748b',
+    marginTop: 12,
+    marginBottom: 4,
+  },
+  emptySubtext: {
+    fontSize: 14,
+    color: '#94a3b8',
+    textAlign: 'center',
+    lineHeight: 20,
   },
   favItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 10,
+    justifyContent: 'space-between',
+    paddingVertical: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#f3f4f6',
+    borderBottomColor: '#f1f5f9',
   },
-  favText: {
+  favItemContent: {
     flex: 1,
-    color: '#111827',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  favRemoveBtn: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
+  favIconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#fef3c7',
     alignItems: 'center',
     justifyContent: 'center',
+    marginRight: 12,
   },
-  modalCloseBtn: {
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    backgroundColor: '#f3f4f6',
-    borderRadius: 8,
+  favTextContainer: {
+    flex: 1,
   },
-  modalCloseText: {
+  favText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#1e293b',
+    marginBottom: 2,
+  },
+  favTypeText: {
     fontSize: 13,
-    color: '#374151',
+    color: '#64748b',
+  },
+  favRemoveBtn: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#fef2f2',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
