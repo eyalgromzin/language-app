@@ -94,7 +94,7 @@ function LoginScreen({ navigation }: LoginScreenProps): React.JSX.Element {
         </Pressable>
         
         <Text style={styles.privacyText}>
-          By signing in, you agree to our Terms of Service and Privacy Policy
+          By signing in, you agree to our To terms or service to learn every day and have fun while learning ;)
         </Text>
       </View>
     </View>
