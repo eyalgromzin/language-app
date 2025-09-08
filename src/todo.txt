@@ -1,8 +1,12 @@
+startup screen look pro 
+
+login screen look pro
+
 - logo 
 
-- upload server 
-
 - when going to library screen from surf screen , show back button instead of hamburger 
+
+- upload server 
 
 publish app =======================================================================================================================
 

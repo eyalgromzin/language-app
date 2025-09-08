@@ -1,7 +1,8 @@
-import React from 'react';
-import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Alert, Pressable, StyleSheet, Text, View, ActivityIndicator, Dimensions } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useAuth } from '../../contexts/AuthContext';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 type RootStackParamList = {
   Login: undefined;
@@ -10,10 +11,16 @@ type RootStackParamList = {
 
 type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
+const { width } = Dimensions.get('window');
+
 function LoginScreen({ navigation }: LoginScreenProps): React.JSX.Element {
   const { login } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
 
   const onGoogleLogin = async () => {
+    if (isLoading) return;
+    
+    setIsLoading(true);
     try {
       const mod = await import('@react-native-google-signin/google-signin');
       const GoogleSignin: any = (mod as any).GoogleSignin;
@@ -46,6 +53,8 @@ function LoginScreen({ navigation }: LoginScreenProps): React.JSX.Element {
       const message = e?.message || String(e);
       console.log('[Google] sign-in error:', message);
       Alert.alert('Google sign-in failed');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -54,17 +63,39 @@ function LoginScreen({ navigation }: LoginScreenProps): React.JSX.Element {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.title}>Welcome</Text>
-        <Text style={styles.subtitle}>Sign in to continue</Text>
+        {/* App Logo/Branding */}
+        <View style={styles.logoContainer}>
+          <Ionicons name="school" size={48} color="#6366F1" />
+          <Text style={styles.appName}>Hello Lingo</Text>
+        </View>
+        
+        <Text style={styles.title}>Welcome Back</Text>
+        <Text style={styles.subtitle}>Sign in to continue your language learning journey</Text>
         
         <Pressable
           accessibilityRole="button"
           accessibilityLabel="Login with Google"
           onPress={onGoogleLogin}
-          style={({ pressed }) => [styles.googleButton, pressed && styles.buttonPressed]}
+          style={({ pressed }) => [
+            styles.googleButton, 
+            pressed && styles.buttonPressed,
+            isLoading && styles.buttonDisabled
+          ]}
+          disabled={isLoading}
         >
-          <Text style={styles.googleButtonText}>Continue with Google</Text>
+          {isLoading ? (
+            <ActivityIndicator color="#fff" size="small" />
+          ) : (
+            <>
+              <Ionicons name="logo-google" size={20} color="#fff" style={styles.googleIcon} />
+              <Text style={styles.googleButtonText}>Continue with Google</Text>
+            </>
+          )}
         </Pressable>
+        
+        <Text style={styles.privacyText}>
+          By signing in, you agree to our Terms of Service and Privacy Policy
+        </Text>
       </View>
     </View>
   );
@@ -76,63 +107,92 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 24,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#F8FAFC',
   },
   card: {
     width: '100%',
     maxWidth: 400,
-    padding: 32,
-    borderRadius: 16,
-    backgroundColor: '#fff',
+    padding: 40,
+    borderRadius: 20,
+    backgroundColor: '#ffffff',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 4,
     },
     shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 4,
+    shadowRadius: 12,
+    elevation: 8,
     alignItems: 'center',
   },
+  logoContainer: {
+    alignItems: 'center',
+    marginBottom: 32,
+  },
+  appName: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#1E293B',
+    marginTop: 12,
+    letterSpacing: 0.5,
+  },
   title: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: '700',
     marginBottom: 8,
     textAlign: 'center',
-    color: '#1a1a1a',
+    color: '#1E293B',
+    letterSpacing: -0.5,
   },
   subtitle: {
     fontSize: 16,
-    color: '#666',
+    color: '#64748B',
     textAlign: 'center',
-    marginBottom: 32,
+    marginBottom: 40,
+    lineHeight: 24,
+    paddingHorizontal: 8,
   },
   googleButton: {
-    backgroundColor: '#dc3545',
+    backgroundColor: '#4285F4',
     borderRadius: 12,
     paddingVertical: 16,
     paddingHorizontal: 24,
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#dc3545',
+    justifyContent: 'center',
+    flexDirection: 'row',
     minWidth: 280,
-    shadowColor: '#000',
+    shadowColor: '#4285F4',
     shadowOffset: {
       width: 0,
-      height: 1,
+      height: 4,
     },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 2,
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 6,
+    marginBottom: 24,
   },
   buttonPressed: {
     opacity: 0.9,
     transform: [{ scale: 0.98 }],
   },
+  buttonDisabled: {
+    opacity: 0.7,
+  },
+  googleIcon: {
+    marginRight: 12,
+  },
   googleButtonText: {
     color: '#fff',
     fontWeight: '600',
     fontSize: 16,
+    letterSpacing: 0.3,
+  },
+  privacyText: {
+    fontSize: 12,
+    color: '#94A3B8',
+    textAlign: 'center',
+    lineHeight: 18,
+    paddingHorizontal: 16,
   },
 });
 
