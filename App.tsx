@@ -338,9 +338,6 @@ function MainTabs(): React.JSX.Element {
             <TouchableOpacity style={styles.menuItem} onPress={handleShare}>
               <Text style={styles.menuItemText}>Share App</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('BabyStepsPath'); setMenuOpen(false); }}>
-              <Text style={styles.menuItemText}>Baby Steps</Text>
-            </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('ContactUs'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Contact Us</Text>
             </TouchableOpacity>
