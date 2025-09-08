@@ -1,10 +1,11 @@
 import React from 'react';
-import { Alert, Button, StyleSheet, Text, View, Pressable } from 'react-native';
+import { Alert, Button, StyleSheet, Text, View, Pressable, ActivityIndicator, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import { useAuth } from '../../contexts/AuthContext';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 type RootStackParamList = {
   Startup: undefined;
@@ -47,148 +48,279 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
 
   if (languagesLoading) {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Loading...</Text>
-        <Text style={styles.subtitle}>Please wait while we load available languages.</Text>
+      <View style={styles.loadingContainer}>
+        <View style={styles.loadingContent}>
+          <View style={styles.logoContainer}>
+            <Ionicons name="language" size={48} color="#007AFF" />
+          </View>
+          <Text style={styles.loadingTitle}>HelloLingo</Text>
+          <ActivityIndicator size="large" color="#007AFF" style={styles.loadingSpinner} />
+          <Text style={styles.loadingSubtitle}>Loading available languages...</Text>
+        </View>
       </View>
     );
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome!</Text>
-      <Text style={styles.subtitle}>Let’s personalize your learning.</Text>
+    <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
+      {/* Header Section */}
+      <View style={styles.headerSection}>
+        <View style={styles.logoContainer}>
+          <Ionicons name="language" size={40} color="#007AFF" />
+        </View>
+        <Text style={styles.title}>Welcome to HelloLingo!</Text>
+        <Text style={styles.subtitle}>Let's personalize your language learning journey</Text>
+      </View>
 
-      <View style={styles.pickerBlock}>
-        <Text style={styles.label}>Which language do you want to learn?</Text>
-        <View style={styles.pickerWrapper}>
-          <Picker
-            selectedValue={learningLanguage}
-            onValueChange={(value) => setLearningLanguage(value)}
-          >
-            <Picker.Item label="Select a language..." value="" />
-            {Object.keys(languageMappings).map((lang) => (
-              <Picker.Item key={lang} label={lang} value={lang} />
-            ))}
-          </Picker>
+      {/* Language Selection Section */}
+      <View style={styles.section}>
+        <View style={styles.sectionHeader}>
+          <Ionicons name="globe-outline" size={20} color="#007AFF" />
+          <Text style={styles.sectionTitle}>Language Setup</Text>
+        </View>
+        
+        <View style={styles.pickerBlock}>
+          <Text style={styles.label}>Which language do you want to learn?</Text>
+          <View style={styles.pickerWrapper}>
+            <Picker
+              selectedValue={learningLanguage}
+              onValueChange={(value) => setLearningLanguage(value)}
+            >
+              <Picker.Item label="Select a language..." value="" />
+              {Object.keys(languageMappings).map((lang) => (
+                <Picker.Item key={lang} label={lang} value={lang} />
+              ))}
+            </Picker>
+          </View>
+        </View>
+
+        <View style={styles.pickerBlock}>
+          <Text style={styles.label}>Your native language</Text>
+          <View style={styles.pickerWrapper}>
+            <Picker
+              selectedValue={nativeLanguage}
+              onValueChange={(value) => setNativeLanguage(value)}
+            >
+              <Picker.Item label="Select your native language..." value="" />
+              {Object.keys(languageMappings).map((lang) => (
+                <Picker.Item key={lang} label={lang} value={lang} />
+              ))}
+            </Picker>
+          </View>
         </View>
       </View>
 
-      <View style={styles.pickerBlock}>
-        <Text style={styles.label}>Your native language</Text>
-        <View style={styles.pickerWrapper}>
-          <Picker
-            selectedValue={nativeLanguage}
-            onValueChange={(value) => setNativeLanguage(value)}
-          >
-            <Picker.Item label="Select your native language..." value="" />
-            {Object.keys(languageMappings).map((lang) => (
-              <Picker.Item key={lang} label={lang} value={lang} />
-            ))}
-          </Picker>
+      {/* Practice Settings Section */}
+      <View style={styles.section}>
+        <View style={styles.sectionHeader}>
+          <Ionicons name="settings-outline" size={20} color="#007AFF" />
+          <Text style={styles.sectionTitle}>Practice Settings</Text>
+        </View>
+        
+        <View style={styles.pickerBlock}>
+          <Text style={styles.infoLabel}>Correct answers needed to complete a practice type</Text>
+          <View style={styles.optionCirclesContainer}>
+            {[1, 2, 3].map((n) => {
+              const selected = removeAfterCorrect === n;
+              return (
+                <Pressable
+                  key={`num-${n}`}
+                  onPress={() => setRemoveAfterCorrect(n)}
+                  style={[styles.optionCircle, selected && styles.optionCircleSelected]}
+                  accessibilityRole="button"
+                  accessibilityState={{ selected }}
+                  accessibilityLabel={`Set number of correct answers to ${n}`}
+                >
+                  <Text style={[styles.optionCircleText, selected && styles.optionCircleTextSelected]}>{n}</Text>
+                </Pressable>
+              );
+            })}
+          </View>
+        </View>
+
+        <View style={styles.pickerBlock}>
+          <Text style={styles.infoLabel}>Total correct answers before word is mastered</Text>
+          <View style={[styles.optionCirclesContainer, { flexWrap: 'wrap' }]}>
+            {[6, 10, 14, 18].map((n) => {
+              const selected = removeAfterTotalCorrect === n;
+              return (
+                <Pressable
+                  key={`tot-${n}`}
+                  onPress={() => setRemoveAfterTotalCorrect(n)}
+                  style={[styles.optionCircle, selected && styles.optionCircleSelected]}
+                  accessibilityRole="button"
+                  accessibilityState={{ selected }}
+                  accessibilityLabel={`Set total correct answers to ${n}`}
+                >
+                  <Text style={[styles.optionCircleText, selected && styles.optionCircleTextSelected]}>{n}</Text>
+                </Pressable>
+              );
+            })}
+          </View>
         </View>
       </View>
 
-      <View style={styles.pickerBlock}>
-        <Text style={styles.infoLabel}>Num of correct answers to finish practice type</Text>
-        <View style={styles.optionCirclesContainer}>
-          {[1, 2, 3].map((n) => {
-            const selected = removeAfterCorrect === n;
-            return (
-              <Pressable
-                key={`num-${n}`}
-                onPress={() => setRemoveAfterCorrect(n)}
-                style={[styles.optionCircle, selected && styles.optionCircleSelected]}
-                accessibilityRole="button"
-                accessibilityState={{ selected }}
-                accessibilityLabel={`Set number of correct answers to ${n}`}
-              >
-                <Text style={[styles.optionCircleText, selected && styles.optionCircleTextSelected]}>{n}</Text>
-              </Pressable>
-            );
-          })}
-        </View>
+      {/* Continue Button */}
+      <View style={styles.buttonSection}>
+        <Pressable
+          style={[styles.continueButton, saving && styles.continueButtonDisabled]}
+          onPress={onContinue}
+          disabled={saving}
+          accessibilityRole="button"
+          accessibilityLabel={saving ? 'Saving your preferences' : 'Continue to app'}
+        >
+          {saving ? (
+            <ActivityIndicator size="small" color="white" style={styles.buttonSpinner} />
+          ) : (
+            <Ionicons name="arrow-forward" size={20} color="white" style={styles.buttonIcon} />
+          )}
+          <Text style={styles.continueButtonText}>
+            {saving ? 'Setting up your account...' : 'Start Learning'}
+          </Text>
+        </Pressable>
       </View>
-
-      <View style={styles.pickerBlock}>
-        <Text style={styles.infoLabel}>Total correct answers till word removal</Text>
-        <View style={[styles.optionCirclesContainer, { flexWrap: 'wrap' }]}>
-          {[6, 10, 14, 18].map((n) => {
-            const selected = removeAfterTotalCorrect === n;
-            return (
-              <Pressable
-                key={`tot-${n}`}
-                onPress={() => setRemoveAfterTotalCorrect(n)}
-                style={[styles.optionCircle, selected && styles.optionCircleSelected]}
-                accessibilityRole="button"
-                accessibilityState={{ selected }}
-                accessibilityLabel={`Set total correct answers to ${n}`}
-              >
-                <Text style={[styles.optionCircleText, selected && styles.optionCircleTextSelected]}>{n}</Text>
-              </Pressable>
-            );
-          })}
-        </View>
-      </View>
-
-      <View style={styles.buttonRow}>
-        <Button title={saving ? 'Saving...' : 'Continue'} onPress={onContinue} disabled={saving} />
-      </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  // Loading screen styles
+  loadingContainer: {
+    flex: 1,
+    backgroundColor: '#f8f9fa',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loadingContent: {
+    alignItems: 'center',
+    paddingHorizontal: 40,
+  },
+  loadingTitle: {
+    fontSize: 32,
+    fontWeight: '700',
+    color: '#007AFF',
+    marginTop: 16,
+    marginBottom: 24,
+  },
+  loadingSpinner: {
+    marginBottom: 16,
+  },
+  loadingSubtitle: {
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+  },
+
+  // Main container styles
   container: {
     flex: 1,
-    padding: 20,
-    paddingTop: 48,
+    backgroundColor: '#f8f9fa',
+  },
+  scrollContent: {
+    paddingBottom: 100, // Increased padding to avoid overlap with bottom navigation
+  },
+
+  // Header section
+  headerSection: {
+    alignItems: 'center',
+    paddingTop: 60,
+    paddingBottom: 40,
+    paddingHorizontal: 24,
+    backgroundColor: 'white',
+    marginBottom: 20,
+  },
+  logoContainer: {
+    width: 80,
+    height: 80,
+    borderRadius: 20,
+    backgroundColor: '#E6F0FF',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+    shadowColor: '#007AFF',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 4,
   },
   title: {
     fontSize: 28,
     fontWeight: '700',
-    marginBottom: 6,
+    color: '#1a1a1a',
+    marginBottom: 8,
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#555',
-    marginBottom: 24,
-  },
-  infoLabel: {
-    fontSize: 14,
     color: '#666',
+    textAlign: 'center',
+    lineHeight: 22,
   },
+
+  // Section styles
+  section: {
+    backgroundColor: 'white',
+    marginHorizontal: 20,
+    marginBottom: 20,
+    borderRadius: 16,
+    padding: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
+    elevation: 2,
+  },
+  sectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#1a1a1a',
+    marginLeft: 8,
+  },
+
+  // Picker styles
   pickerBlock: {
-    marginBottom: 24,
+    marginBottom: 20,
   },
   label: {
     fontSize: 16,
     fontWeight: '600',
-    marginBottom: 8,
+    color: '#1a1a1a',
+    marginBottom: 12,
+  },
+  infoLabel: {
+    fontSize: 14,
+    color: '#666',
+    marginBottom: 12,
+    lineHeight: 20,
   },
   pickerWrapper: {
     borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
+    borderColor: '#e1e5e9',
+    borderRadius: 12,
     overflow: 'hidden',
+    backgroundColor: '#f8f9fa',
   },
-  buttonRow: {
-    marginTop: 'auto',
-  },
+
+  // Option circles
   optionCirclesContainer: {
     flexDirection: 'row',
     marginTop: 8,
+    gap: 12,
   },
   optionCircle: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: '#ccc',
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    borderWidth: 2,
+    borderColor: '#e1e5e9',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: 12,
   },
   optionCircleSelected: {
     borderColor: '#007AFF',
@@ -196,12 +328,49 @@ const styles = StyleSheet.create({
   },
   optionCircleText: {
     fontSize: 16,
-    color: '#333',
-    fontWeight: '500',
+    color: '#666',
+    fontWeight: '600',
   },
   optionCircleTextSelected: {
     color: '#007AFF',
     fontWeight: '700',
+  },
+
+  // Button section
+  buttonSection: {
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 20, // Added bottom padding for extra spacing
+  },
+  continueButton: {
+    backgroundColor: '#007AFF',
+    borderRadius: 16,
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#007AFF',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 6,
+  },
+  continueButtonDisabled: {
+    backgroundColor: '#a0a0a0',
+    shadowOpacity: 0.1,
+  },
+  continueButtonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: '600',
+    marginLeft: 8,
+  },
+  buttonIcon: {
+    marginRight: 8,
+  },
+  buttonSpinner: {
+    marginRight: 8,
   },
 });
 

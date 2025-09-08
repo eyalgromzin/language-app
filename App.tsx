@@ -23,7 +23,7 @@ import BooksNavigator from './src/screens/Books/BooksNavigator';
 import LoginScreen from './src/screens/Auth/LoginScreen';
 import { enableScreens } from 'react-native-screens';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import StartupScreen from './src/screens/Startup/StartupScreen';
+import OnboardingNavigator from './src/screens/Startup/OnboardingNavigator';
 import WordsByCategoriesScreen from './src/screens/wordsByCategories/WordsByCategoriesScreen';
 import VideoScreen from './src/screens/Video/VideoScreen';
 import BabyStepsPathScreen from './src/screens/BabySteps/BabyStepsPathScreen';
@@ -50,7 +50,7 @@ type RootTabParamList = {
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 type RootStackParamList = {
-  Startup: undefined;
+  Onboarding: undefined;
   Login: undefined;
   Main: undefined;
   Settings: undefined;
@@ -341,6 +341,9 @@ function MainTabs(): React.JSX.Element {
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('ContactUs'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>Contact Us</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Onboarding'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>Onboarding</Text>
+            </TouchableOpacity>
             {isAuthenticated && (
               <TouchableOpacity style={[styles.menuItem, styles.menuLogout]} onPress={handleLogout}>
                 <Text style={[styles.menuItemText, styles.menuLogoutText]}>Logout</Text>
@@ -484,10 +487,11 @@ function AppNavigator(): React.JSX.Element {
               <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step', headerShown: true }} />
               <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us', headerShown: true }} />
               <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress', headerShown: true }} />
+              <Stack.Screen name="Onboarding" component={OnboardingNavigator} options={{ headerShown: false }} />
             </>
           ) : (
-            // Authenticated but setup not complete - show startup screen
-            <Stack.Screen name="Startup" component={StartupScreen} />
+            // Authenticated but setup not complete - show onboarding flow
+            <Stack.Screen name="Onboarding" component={OnboardingNavigator} />
           )
         ) : (
           // Not authenticated - show login screen only after auth check is complete
