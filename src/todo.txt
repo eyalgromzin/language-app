@@ -1,8 +1,3 @@
-3 add report harmful content button for library links / books 
-    - website - will add to db . reported urls - and count . 
-
-- design landing page again for people that the app is not installed for them 
-
 - baby steps runner show missing words screen for a second 
 
 publish app =======================================================================================================================
