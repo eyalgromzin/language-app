@@ -398,7 +398,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
       <Animated.View style={[
         styles.header, 
         { 
-          backgroundColor: isDark ? 'rgba(28, 28, 30, 0.95)' : 'rgba(242, 242, 247, 0.95)',
+          // backgroundColor: '#f2fbff',
           borderBottomColor: isDark ? '#38383a' : '#e0e0e0',
           transform: [{ scale: scaleAnim }],
           opacity: fadeAnim,
