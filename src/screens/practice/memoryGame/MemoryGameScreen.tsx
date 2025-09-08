@@ -1,10 +1,10 @@
 import React from 'react';
-import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View, Animated } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
-import { playCorrectFeedback, playWrongFeedback } from '../common';
+import { playCorrectFeedback, } from '../common';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 import { WordEntry } from '../../../types/words';
 
@@ -77,6 +77,8 @@ function MemoryGameScreen(): React.JSX.Element {
   const [isEvaluating, setIsEvaluating] = React.useState<boolean>(false);
   const [threshold, setThreshold] = React.useState<number>(3);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
+  const [score, setScore] = React.useState<number>(0);
+  const [moves, setMoves] = React.useState<number>(0);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -141,6 +143,8 @@ function MemoryGameScreen(): React.JSX.Element {
     setMatchedKeys(new Set());
     setRevealedIds([]);
     setIsEvaluating(false);
+    setScore(0);
+    setMoves(0);
   }, [allEntries]);
 
   React.useEffect(() => {
@@ -207,6 +211,7 @@ function MemoryGameScreen(): React.JSX.Element {
     setRevealedIds(nextRevealed);
 
     if (nextRevealed.length === 2) {
+      setMoves(prev => prev + 1);
       const [aId, bId] = nextRevealed;
       const a = cards.find((c) => c.id === aId);
       const b = cards.find((c) => c.id === bId);
@@ -214,6 +219,7 @@ function MemoryGameScreen(): React.JSX.Element {
       const isMatch = a.key === b.key && a.kind !== b.kind;
       if (isMatch) {
         setIsEvaluating(true);
+        setScore(prev => prev + 1);
         setTimeout(() => {
           setMatchedKeys((prev) => {
             const next = new Set(prev);
@@ -230,7 +236,7 @@ function MemoryGameScreen(): React.JSX.Element {
         setTimeout(() => {
           setRevealedIds([]);
           setIsEvaluating(false);
-        }, 1000);
+        }, 2000);
       }
     }
   };
@@ -248,16 +254,34 @@ function MemoryGameScreen(): React.JSX.Element {
   const renderCard = (card: Card) => {
     const isMatched = matchedKeys.has(card.key);
     const isRevealed = isMatched || revealedIds.includes(card.id);
+    const isWrong = revealedIds.length === 2 && revealedIds.includes(card.id) && !isMatched;
+    
     return (
       <TouchableOpacity
         key={card.id}
-        style={[styles.card, isRevealed && styles.cardRevealed]}
+        style={[
+          styles.card, 
+          isRevealed && styles.cardRevealed,
+          isMatched && styles.cardMatched,
+          isWrong && styles.cardWrong
+        ]}
         onPress={() => onPickCard(card)}
         disabled={isEvaluating || isMatched}
         accessibilityRole="button"
         accessibilityLabel={isRevealed ? card.label : 'hidden card'}
+        activeOpacity={0.7}
       >
-        <Text style={[styles.cardText, isMatched && styles.cardTextMatched]}>{isRevealed ? card.label : '❓'}</Text>
+        <View style={styles.cardContent}>
+          {isRevealed ? (
+            <Text style={[styles.cardText, isMatched && styles.cardTextMatched]}>
+              {card.label}
+            </Text>
+          ) : (
+            <View style={styles.cardBack}>
+              <Text style={styles.cardBackText}>?</Text>
+            </View>
+          )}
+        </View>
       </TouchableOpacity>
     );
   };
@@ -275,29 +299,61 @@ function MemoryGameScreen(): React.JSX.Element {
   }
 
   return (
-      <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.topRow}>
-        <Text style={styles.title}>find all matching pairs</Text>
-        {route?.params?.surprise ? (
-          <TouchableOpacity
-            style={styles.skipButton}
-            onPress={navigateToRandomNext}
-            accessibilityRole="button"
-            accessibilityLabel="Skip"
-          >
-            <Text style={styles.skipButtonText}>Skip</Text>
-          </TouchableOpacity>
-        ) : null}
+    <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
+      {/* Header Section */}
+      <View style={styles.header}>
+        <View style={styles.headerTop}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>Memory Game</Text>
+            <Text style={styles.subtitle}>Find matching word pairs</Text>
+          </View>
+          {route?.params?.surprise ? (
+            <TouchableOpacity
+              style={styles.skipButton}
+              onPress={navigateToRandomNext}
+              accessibilityRole="button"
+              accessibilityLabel="Skip to next game"
+            >
+              <Text style={styles.skipButtonText}>Skip</Text>
+            </TouchableOpacity>
+          ) : null}
+        </View>
+        
+        {/* Stats Row */}
+        <View style={styles.statsContainer}>
+          <View style={styles.statItem}>
+            <Text style={styles.statValue}>{score}</Text>
+            <Text style={styles.statLabel}>Found</Text>
+          </View>
+          <View style={styles.statItem}>
+            <Text style={styles.statValue}>{moves}</Text>
+            <Text style={styles.statLabel}>Moves</Text>
+          </View>
+          <View style={styles.statItem}>
+            <Text style={styles.statValue}>{Math.min(9, allEntries.length)}</Text>
+            <Text style={styles.statLabel}>Total</Text>
+          </View>
+        </View>
       </View>
-      <View style={styles.grid}>
-        {cards.map((c) => renderCard(c))}
+
+      {/* Game Grid */}
+      <View style={styles.gameContainer}>
+        <View style={styles.grid}>
+          {cards.map((c) => renderCard(c))}
+        </View>
       </View>
-      <TouchableOpacity style={styles.resetButton} onPress={() => prepareRound()} accessibilityRole="button" accessibilityLabel="Restart round">
-        <Text style={styles.resetButtonText}>Restart</Text>
-      </TouchableOpacity>
-      <Text style={styles.metaText}>matched {matchedKeys.size} words</Text>
-      
-      {/* <Text style={styles.metaText}>pairs: {Math.min(9, allEntries.length)} • below {threshold} correct answers</Text> */}
+
+      {/* Action Buttons */}
+      <View style={styles.actionsContainer}>
+        <TouchableOpacity 
+          style={styles.resetButton} 
+          onPress={() => prepareRound()} 
+          accessibilityRole="button" 
+          accessibilityLabel="Restart game"
+        >
+          <Text style={styles.resetButtonText}>🔄 New Game</Text>
+        </TouchableOpacity>
+      </View>
     </ScrollView>
   );
 }
@@ -307,78 +363,184 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  emptyText: {
-    color: '#666',
+    backgroundColor: '#f8fafc',
   },
   container: {
-    padding: 16,
-    gap: 16,
+    flexGrow: 1,
+    backgroundColor: '#f8fafc',
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 40,
   },
-  topRow: {
+  
+  // Header Styles
+  header: {
+    marginBottom: 24,
+  },
+  headerTop: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  titleContainer: {
+    flex: 1,
   },
   title: {
-    fontSize: 18,
-    color: '#666',
-    fontWeight: '600',
-    textTransform: 'lowercase',
+    fontSize: 28,
+    fontWeight: '800',
+    color: '#1e293b',
+    marginBottom: 4,
+    letterSpacing: -0.5,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#64748b',
+    fontWeight: '500',
   },
   skipButton: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 12,
+    backgroundColor: '#ffffff',
     borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   skipButtonText: {
-    fontWeight: '700',
-    color: '#007AFF',
+    fontWeight: '600',
+    color: '#3b82f6',
+    fontSize: 14,
+  },
+  
+  // Stats Styles
+  statsContainer: {
+    flexDirection: 'row',
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    padding: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  statItem: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  statValue: {
+    fontSize: 24,
+    fontWeight: '800',
+    color: '#1e293b',
+    marginBottom: 4,
+  },
+  statLabel: {
+    fontSize: 12,
+    color: '#64748b',
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  
+  // Game Container
+  gameContainer: {
+    marginBottom: 24,
   },
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    rowGap: 10,
+    gap: 12,
   },
+  
+  // Card Styles
   card: {
     width: '31%',
-    borderWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    paddingVertical: 18,
-    paddingHorizontal: 10,
+    aspectRatio: 1,
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 4,
+    borderWidth: 2,
+    borderColor: '#f1f5f9',
+  },
+  cardContent: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 8,
   },
   cardRevealed: {
-    borderColor: '#007AFF',
+    borderColor: '#3b82f6',
+    shadowColor: '#3b82f6',
+    shadowOpacity: 0.2,
+    transform: [{ scale: 1.02 }],
+  },
+  cardMatched: {
+    borderColor: '#10b981',
+    backgroundColor: '#f0fdf4',
+    shadowColor: '#10b981',
+    shadowOpacity: 0.2,
+  },
+  cardWrong: {
+    borderColor: '#ef4444',
+    backgroundColor: '#fef2f2',
+    shadowColor: '#ef4444',
+    shadowOpacity: 0.2,
   },
   cardText: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '700',
     textAlign: 'center',
+    color: '#1e293b',
+    lineHeight: 18,
   },
   cardTextMatched: {
-    opacity: 0.2,
+    color: '#10b981',
+    opacity: 0.8,
   },
-  resetButton: {
-    marginTop: 6,
-    backgroundColor: '#007AFF',
-    paddingVertical: 12,
-    borderRadius: 10,
+  cardBack: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#f1f5f9',
+    borderRadius: 12,
+    width: '100%',
+  },
+  cardBackText: {
+    fontSize: 24,
+    fontWeight: '800',
+    color: '#94a3b8',
+  },
+  
+  // Actions
+  actionsContainer: {
     alignItems: 'center',
   },
-  resetButtonText: {
-    color: '#fff',
-    fontWeight: '700',
+  resetButton: {
+    backgroundColor: '#3b82f6',
+    paddingVertical: 16,
+    paddingHorizontal: 32,
+    borderRadius: 16,
+    shadowColor: '#3b82f6',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 12,
+    elevation: 6,
+    minWidth: 160,
   },
-  metaText: {
-    color: '#666',
+  resetButtonText: {
+    color: '#ffffff',
+    fontWeight: '700',
+    fontSize: 16,
     textAlign: 'center',
   },
 });
