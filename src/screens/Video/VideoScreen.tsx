@@ -191,6 +191,7 @@ function VideoScreen(): React.JSX.Element {
   const [hidePlayback, setHidePlayback] = React.useState<boolean>(false);
   const [showOptionsMenuGlobal, setShowOptionsMenuGlobal] = React.useState<boolean>(false);
   const [optionsButtonPositionGlobal, setOptionsButtonPositionGlobal] = React.useState<{ x: number; y: number; width: number; height: number } | null>(null);
+  const [isFullScreen, setIsFullScreen] = React.useState<boolean>(false);
 
   
   type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
@@ -994,34 +995,38 @@ function VideoScreen(): React.JSX.Element {
       keyboardDismissMode={Platform.OS === 'ios' ? 'interactive' : 'none'}
       showsVerticalScrollIndicator={false}
     >
-      <SearchBar
-         inputUrl={inputUrl}
-         onChangeText={setInputUrl}
-         onSubmit={handleSubmit}
-         onOpenPress={handleOpenPress}
-         urlInputRef={urlInputRef}
-         onFocus={() => { setIsInputFocused(true); setShowHistory(false); setShowFavouritesList(false); }}
-         onBlur={() => { setIsInputFocused(false); }}
-         onOpenLibrary={() => navigation.navigate('Library')}
-         onToggleHistory={() => { setShowHistory(prev => !prev); setShowFavouritesList(false); }}
-         onToggleFavouritesList={() => { setShowFavouritesList(prev => !prev); setShowHistory(false); }}
-         showAuxButtons={true}
-         isFavourite={isFavourite}
-         onToggleFavourite={onToggleFavourite}
-         onOptionsButtonPress={(position) => {
-           setOptionsButtonPositionGlobal(position);
-           setShowOptionsMenuGlobal(true);
-         }}
-      />
-      <SuggestionsDropdown
-        showHistory={showHistory}
-        showFavourites={showFavouritesList}
-        isInputFocused={isInputFocused}
-        savedHistory={savedHistory}
-        favourites={favourites}
-        onSelectHistory={onSelectHistory}
-        onSelectFavourite={onSelectFavourite}
-      />
+      {!isFullScreen && (
+        <SearchBar
+           inputUrl={inputUrl}
+           onChangeText={setInputUrl}
+           onSubmit={handleSubmit}
+           onOpenPress={handleOpenPress}
+           urlInputRef={urlInputRef}
+           onFocus={() => { setIsInputFocused(true); setShowHistory(false); setShowFavouritesList(false); }}
+           onBlur={() => { setIsInputFocused(false); }}
+           onOpenLibrary={() => navigation.navigate('Library')}
+           onToggleHistory={() => { setShowHistory(prev => !prev); setShowFavouritesList(false); }}
+           onToggleFavouritesList={() => { setShowFavouritesList(prev => !prev); setShowHistory(false); }}
+           showAuxButtons={true}
+           isFavourite={isFavourite}
+           onToggleFavourite={onToggleFavourite}
+           onOptionsButtonPress={(position) => {
+             setOptionsButtonPositionGlobal(position);
+             setShowOptionsMenuGlobal(true);
+           }}
+        />
+      )}
+      {!isFullScreen && (
+        <SuggestionsDropdown
+          showHistory={showHistory}
+          showFavourites={showFavouritesList}
+          isInputFocused={isInputFocused}
+          savedHistory={savedHistory}
+          favourites={favourites}
+          onSelectHistory={onSelectHistory}
+          onSelectFavourite={onSelectFavourite}
+        />
+      )}
       {videoId && !hidePlayback ? (
         <VideoPlayer
           videoId={videoId}
@@ -1041,6 +1046,8 @@ function VideoScreen(): React.JSX.Element {
             }
             if (state === 'paused' || state === 'ended') setIsPlaying(false);
           }}
+          isFullScreen={isFullScreen}
+          onToggleFullScreen={() => setIsFullScreen(prev => !prev)}
         />
       ) : (
         <View style={styles.helperContainer}>
@@ -1060,10 +1067,12 @@ function VideoScreen(): React.JSX.Element {
           onWordPress={handleTranscriptPressOnWord}
           scrollViewRef={scrollViewRef}
           lineOffsetsRef={lineOffsetsRef}
+          isFullScreen={isFullScreen}
+          onToggleFullScreen={() => setIsFullScreen(prev => !prev)}
         />
       )}
 
-      {!searchLoading && !searchError && searchResults.length === 0 ? <NowPlaying /> : null}
+      {!isFullScreen && !searchLoading && !searchError && searchResults.length === 0 ? <NowPlaying /> : null}
 
       <ImageScrapeComponent />
 

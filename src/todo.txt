@@ -1,6 +1,6 @@
-- when going to library screen from surf screen , show back button instead of hamburger 
-
 - upload server 
+
+- translate app captions to all languages
 
 publish app =======================================================================================================================
 
