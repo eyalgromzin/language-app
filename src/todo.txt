@@ -1,5 +1,3 @@
-- logo 
-
 - when going to library screen from surf screen , show back button instead of hamburger 
 
 - upload server 
