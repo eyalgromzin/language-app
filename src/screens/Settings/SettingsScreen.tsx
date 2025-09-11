@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Pressable, Alert, ScrollView, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Alert, ScrollView, SafeAreaView, ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
 import { useAuth } from '../../contexts/AuthContext';
@@ -202,50 +202,56 @@ function SettingsScreen(): React.JSX.Element {
             <Text style={styles.settingLabel}>{t('screens.settings.learningLanguage')}</Text>
             <Text style={styles.settingDescription}>{t('screens.settings.learningLanguageDescription')}</Text>
             <View style={styles.pickerWrapper}>
-              <Picker
-                selectedValue={learningLanguage || ''}
-                onValueChange={onChangeLearning}
-                enabled={!isLoadingLanguages}
-                style={styles.picker}
-              >
-                <Picker.Item label={isLoadingLanguages ? t('screens.startup.loadingLanguageOptions') : t('screens.startup.selectLanguage')} value="" />
-                {languageOptions.length > 0 ? (
-                  languageOptions.map((lang: string) => (
-                    <Picker.Item key={lang} label={lang} value={lang} />
-                  ))
-                ) : (
-                  <Picker.Item label={t('screens.startup.noLanguagesAvailable')} value="" />
-                )}
-              </Picker>
+              {isLoadingLanguages ? (
+                <View style={styles.loadingContainer}>
+                  <ActivityIndicator size="small" color="#007AFF" />
+                  <Text style={styles.loadingText}>{t('screens.startup.loadingLanguageOptions')}</Text>
+                </View>
+              ) : (
+                <Picker
+                  selectedValue={learningLanguage || ''}
+                  onValueChange={onChangeLearning}
+                  style={styles.picker}
+                >
+                  <Picker.Item label={t('screens.startup.selectLanguage')} value="" />
+                  {languageOptions.length > 0 ? (
+                    languageOptions.map((lang: string) => (
+                      <Picker.Item key={lang} label={lang} value={lang} />
+                    ))
+                  ) : (
+                    <Picker.Item label={t('screens.startup.noLanguagesAvailable')} value="" />
+                  )}
+                </Picker>
+              )}
             </View>
-            {isLoadingLanguages && (
-              <Text style={styles.loadingText}>{t('screens.startup.loadingLanguageOptions')}</Text>
-            )}
           </View>
 
           <View style={styles.settingItem}>
             <Text style={styles.settingLabel}>{t('screens.settings.nativeLanguage')}</Text>
             <Text style={styles.settingDescription}>{t('screens.settings.nativeLanguageDescription')}</Text>
             <View style={styles.pickerWrapper}>
-              <Picker
-                selectedValue={nativeLanguage || ''}
-                onValueChange={onChangeNative}
-                enabled={!isLoadingLanguages}
-                style={styles.picker}
-              >
-                <Picker.Item label={isLoadingLanguages ? t('screens.startup.loadingLanguageOptions') : t('screens.startup.selectNativeLanguage')} value="" />
-                {languageOptions.length > 0 ? (
-                  languageOptions.map((lang: string) => (
-                    <Picker.Item key={lang} label={lang} value={lang} />
-                  ))
-                ) : (
-                  <Picker.Item label={t('screens.startup.noLanguagesAvailable')} value="" />
-                )}
-              </Picker>
+              {isLoadingLanguages ? (
+                <View style={styles.loadingContainer}>
+                  <ActivityIndicator size="small" color="#007AFF" />
+                  <Text style={styles.loadingText}>{t('screens.startup.loadingLanguageOptions')}</Text>
+                </View>
+              ) : (
+                <Picker
+                  selectedValue={nativeLanguage || ''}
+                  onValueChange={onChangeNative}
+                  style={styles.picker}
+                >
+                  <Picker.Item label={t('screens.startup.selectNativeLanguage')} value="" />
+                  {languageOptions.length > 0 ? (
+                    languageOptions.map((lang: string) => (
+                      <Picker.Item key={lang} label={lang} value={lang} />
+                    ))
+                  ) : (
+                    <Picker.Item label={t('screens.startup.noLanguagesAvailable')} value="" />
+                  )}
+                </Picker>
+              )}
             </View>
-            {isLoadingLanguages && (
-              <Text style={styles.loadingText}>{t('screens.startup.loadingLanguageOptions')}</Text>
-            )}
           </View>
 
           <View style={styles.settingItem}>
@@ -450,11 +456,18 @@ const styles = StyleSheet.create({
   picker: {
     height: 50,
   },
+  loadingContainer: {
+    height: 50,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#F8FAFC',
+  },
   loadingText: {
     fontSize: 12,
     color: '#94A3B8',
     fontStyle: 'italic',
-    marginTop: 8,
+    marginLeft: 8,
     textAlign: 'center',
   },
   optionCirclesContainer: {
