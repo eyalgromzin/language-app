@@ -165,7 +165,7 @@
       "visitOurWebsite": "Visita il Nostro Sito Web",
       "websiteDescription": "Scopri di più su HelloLingo e risorse aggiuntive",
       "unableToOpenEmail": "Impossibile aprire il client email. Contattaci direttamente a support@HelloLingo.app",
-      "unableToOpenWebsite": "Impossibile aprire il sito web"
+      "unableToOpenWebsite": "Impossibile aprire il sito web",
       "responseTime": "Tempo di Risposta",
       "responseTimeDescription": "Rispondiamo tipicamente alle email entro 24 ore durante i giorni lavorativi. Per problemi urgenti, includi \"URGENTE\" nella tua riga dell'oggetto.",
       "footerText": "Grazie per aver usato HelloLingo! Il tuo feedback ci aiuta a migliorare l'app per tutti.",
@@ -239,5 +239,20 @@
     "watchVideos": "Guarda video",
     "readBooks": "Leggi libri",
     "wordCategories": "Categorie di parole"
+  },
+  "addFavouriteModal": {
+    "title": "Aggiungi ai Preferiti",
+    "learning": "Imparando:",
+    "contentType": "Tipo di Contenuto",
+    "selectContentType": "Seleziona tipo di contenuto",
+    "pleaseSelectContentType": "Seleziona un tipo di contenuto",
+    "difficultyLevel": "Livello di Difficoltà",
+    "selectDifficultyLevel": "Seleziona livello di difficoltà",
+    "name": "Nome",
+    "enterDescriptiveName": "Inserisci un nome descrittivo",
+    "url": "URL",
+    "urlPlaceholder": "https://esempio.com",
+    "cancel": "Annulla",
+    "addToFavourites": "Aggiungi ai Preferiti"
   }
 }

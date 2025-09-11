@@ -243,5 +243,20 @@
     "watchVideos": "Watch videos",
     "readBooks": "Read books",
     "wordCategories": "Word categories"
+  },
+  "addFavouriteModal": {
+    "title": "Add to Favourites",
+    "learning": "Learning:",
+    "contentType": "Content Type",
+    "selectContentType": "Select content type",
+    "pleaseSelectContentType": "Please select a content type",
+    "difficultyLevel": "Difficulty Level",
+    "selectDifficultyLevel": "Select difficulty level",
+    "name": "Name",
+    "enterDescriptiveName": "Enter a descriptive name",
+    "url": "URL",
+    "urlPlaceholder": "https://example.com",
+    "cancel": "Cancel",
+    "addToFavourites": "Add to Favourites"
   }
 }

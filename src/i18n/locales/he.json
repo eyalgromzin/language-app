@@ -268,5 +268,20 @@
     "watchVideos": "צפו בסרטונים",
     "readBooks": "קראו ספרים",
     "wordCategories": "קטגוריות מילים"
+  },
+  "addFavouriteModal": {
+    "title": "הוסף למועדפים",
+    "learning": "לומד:",
+    "contentType": "סוג תוכן",
+    "selectContentType": "בחר סוג תוכן",
+    "pleaseSelectContentType": "אנא בחרו סוג תוכן",
+    "difficultyLevel": "רמת קושי",
+    "selectDifficultyLevel": "בחר רמת קושי",
+    "name": "שם",
+    "enterDescriptiveName": "הזינו שם תיאורי",
+    "url": "כתובת אתר",
+    "urlPlaceholder": "https://דוגמה.com",
+    "cancel": "ביטול",
+    "addToFavourites": "הוסף למועדפים"
   }
 }

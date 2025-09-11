@@ -239,5 +239,20 @@
     "watchVideos": "Assistir vídeos",
     "readBooks": "Ler livros",
     "wordCategories": "Categorias de palavras"
+  },
+  "addFavouriteModal": {
+    "title": "Adicionar aos Favoritos",
+    "learning": "Aprendendo:",
+    "contentType": "Tipo de Conteúdo",
+    "selectContentType": "Selecionar tipo de conteúdo",
+    "pleaseSelectContentType": "Por favor selecione um tipo de conteúdo",
+    "difficultyLevel": "Nível de Dificuldade",
+    "selectDifficultyLevel": "Selecionar nível de dificuldade",
+    "name": "Nome",
+    "enterDescriptiveName": "Digite um nome descritivo",
+    "url": "URL",
+    "urlPlaceholder": "https://exemplo.com",
+    "cancel": "Cancelar",
+    "addToFavourites": "Adicionar aos Favoritos"
   }
 }

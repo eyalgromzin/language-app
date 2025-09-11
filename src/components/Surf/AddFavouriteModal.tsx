@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from '../../hooks/useTranslation';
 
 interface AddFavouriteModalProps {
   visible: boolean;
@@ -45,6 +46,7 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
   learningLanguage,
   FAVOURITE_TYPES,
 }) => {
+  const { t } = useTranslation();
   const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
     const v = (input || '').toLowerCase().trim();
     if (v === 'es' || v === 'spanish') return 'es';
@@ -63,7 +65,7 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
       <View style={styles.modalBackdrop}>
         <View style={styles.modalCard}>
           <View style={styles.modalHeader}>
-            <Text style={styles.modalTitle}>Add to Favourites</Text>
+            <Text style={styles.modalTitle}>{t('addFavouriteModal.title')}</Text>
             <TouchableOpacity onPress={onClose} style={styles.closeButton}>
               <Ionicons name="close" size={24} color="#6b7280" />
             </TouchableOpacity>
@@ -74,20 +76,20 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
               <View style={styles.languageInfo}>
                 <Ionicons name="language-outline" size={16} color="#3b82f6" />
                 <Text style={styles.languageText}>
-                  Learning: {toLanguageSymbol(learningLanguage)}
+                  {t('addFavouriteModal.learning')} {toLanguageSymbol(learningLanguage)}
                 </Text>
               </View>
             )}
             
             <View style={styles.inputGroup}>
-              <Text style={styles.inputLabel}>Content Type</Text>
+              <Text style={styles.inputLabel}>{t('addFavouriteModal.contentType')}</Text>
               <TouchableOpacity
                 onPress={() => setShowTypeOptions(!showTypeOptions)}
                 style={[styles.selectInput, favTypeError && !newFavTypeId ? styles.selectInputError : null]}
                 activeOpacity={0.7}
               >
                 <Text style={[styles.selectInputText, { color: newFavTypeId ? '#1e293b' : '#94a3b8' }]}>
-                  {newFavTypeId ? (FAVOURITE_TYPES.find(t => t.id === newFavTypeId)?.name || '') : 'Select content type'}
+                  {newFavTypeId ? (FAVOURITE_TYPES.find(type => type.id === newFavTypeId)?.name || '') : t('addFavouriteModal.selectContentType')}
                 </Text>
                 <Ionicons name="chevron-down" size={20} color="#94a3b8" />
               </TouchableOpacity>
@@ -105,19 +107,19 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
                 </View>
               )}
               {favTypeError && !newFavTypeId && (
-                <Text style={styles.errorText}>Please select a content type</Text>
+                <Text style={styles.errorText}>{t('addFavouriteModal.pleaseSelectContentType')}</Text>
               )}
             </View>
 
             <View style={styles.inputGroup}>
-              <Text style={styles.inputLabel}>Difficulty Level</Text>
+              <Text style={styles.inputLabel}>{t('addFavouriteModal.difficultyLevel')}</Text>
               <TouchableOpacity
                 onPress={() => setShowLevelOptions(!showLevelOptions)}
                 style={styles.selectInput}
                 activeOpacity={0.7}
               >
                 <Text style={[styles.selectInputText, { color: newFavLevelName ? '#1e293b' : '#94a3b8' }]}>
-                  {newFavLevelName || 'Select difficulty level'}
+                  {newFavLevelName || t('addFavouriteModal.selectDifficultyLevel')}
                 </Text>
                 <Ionicons name="chevron-down" size={20} color="#94a3b8" />
               </TouchableOpacity>
@@ -137,23 +139,23 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
             </View>
 
             <View style={styles.inputGroup}>
-              <Text style={styles.inputLabel}>Name</Text>
+              <Text style={styles.inputLabel}>{t('addFavouriteModal.name')}</Text>
               <TextInput
                 style={styles.textInput}
                 value={newFavName}
                 onChangeText={setNewFavName}
-                placeholder="Enter a descriptive name"
+                placeholder={t('addFavouriteModal.enterDescriptiveName')}
                 placeholderTextColor="#94a3b8"
               />
             </View>
 
             <View style={styles.inputGroup}>
-              <Text style={styles.inputLabel}>URL</Text>
+              <Text style={styles.inputLabel}>{t('addFavouriteModal.url')}</Text>
               <TextInput
                 style={styles.textInput}
                 value={newFavUrl}
                 onChangeText={setNewFavUrl}
-                placeholder="https://example.com"
+                placeholder={t('addFavouriteModal.urlPlaceholder')}
                 placeholderTextColor="#94a3b8"
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -164,14 +166,14 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
          
           <View style={styles.modalFooter}>
             <TouchableOpacity onPress={onClose} style={styles.cancelButton}>
-              <Text style={styles.cancelButtonText}>Cancel</Text>
+              <Text style={styles.cancelButtonText}>{t('addFavouriteModal.cancel')}</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={onAdd}
               style={styles.addButton}
             >
               <Ionicons name="star" size={18} color="#ffffff" style={{ marginRight: 6 }} />
-              <Text style={styles.addButtonText}>Add to Favourites</Text>
+              <Text style={styles.addButtonText}>{t('addFavouriteModal.addToFavourites')}</Text>
             </TouchableOpacity>
           </View>
         </View>

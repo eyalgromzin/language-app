@@ -270,5 +270,20 @@
     "watchVideos": "Regarder des vidéos",
     "readBooks": "Lire des livres",
     "wordCategories": "Catégories de mots"
+  },
+  "addFavouriteModal": {
+    "title": "Ajouter aux Favoris",
+    "learning": "Apprentissage :",
+    "contentType": "Type de Contenu",
+    "selectContentType": "Sélectionner le type de contenu",
+    "pleaseSelectContentType": "Veuillez sélectionner un type de contenu",
+    "difficultyLevel": "Niveau de Difficulté",
+    "selectDifficultyLevel": "Sélectionner le niveau de difficulté",
+    "name": "Nom",
+    "enterDescriptiveName": "Entrez un nom descriptif",
+    "url": "URL",
+    "urlPlaceholder": "https://exemple.com",
+    "cancel": "Annuler",
+    "addToFavourites": "Ajouter aux Favoris"
   }
 }
