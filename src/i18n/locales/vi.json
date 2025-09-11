@@ -84,7 +84,18 @@
         "openMenu": "Mở menu",
         "addToFavourites": "Thêm vào yêu thích",
         "removeFromFavourites": "Xóa khỏi yêu thích"
-      }
+      },
+      "optionsMenu": {
+        "history": "Lịch sử",
+        "favouritesList": "Danh sách yêu thích",
+        "shareVideo": "Chia sẻ video"
+      },
+      "favourites": "Yêu thích",
+      "alreadyInFavouritesRemove": "đã có trong yêu thích, xóa?",
+      "no": "Không",
+      "yes": "Có",
+      "removed": "Đã xóa",
+      "added": "Đã thêm"
     },
     "practice": {
       "title": "Luyện Tập",

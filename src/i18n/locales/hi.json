@@ -84,7 +84,18 @@
         "openMenu": "मेनू खोलें",
         "addToFavourites": "पसंदीदा में जोड़ें",
         "removeFromFavourites": "पसंदीदा से हटाएं"
-      }
+      },
+      "optionsMenu": {
+        "history": "इतिहास",
+        "favouritesList": "पसंदीदा सूची",
+        "shareVideo": "वीडियो साझा करें"
+      },
+      "favourites": "पसंदीदा",
+      "alreadyInFavouritesRemove": "पहले से पसंदीदा में है, हटाएं?",
+      "no": "नहीं",
+      "yes": "हाँ",
+      "removed": "हटाया गया",
+      "added": "जोड़ा गया"
     },
     "practice": {
       "title": "अभ्यास",

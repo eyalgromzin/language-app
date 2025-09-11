@@ -84,7 +84,18 @@
         "openMenu": "เปิดเมนู",
         "addToFavourites": "เพิ่มในรายการโปรด",
         "removeFromFavourites": "ลบออกจากรายการโปรด"
-      }
+      },
+      "optionsMenu": {
+        "history": "ประวัติศาสตร์",
+        "favouritesList": "รายการโปรด",
+        "shareVideo": "แชร์วิดีโอ"
+      },
+      "favourites": "รายการโปรด",
+      "alreadyInFavouritesRemove": "อยู่ในรายการโปรดแล้ว ลบออก?",
+      "no": "ไม่",
+      "yes": "ใช่",
+      "removed": "ลบออกแล้ว",
+      "added": "เพิ่มแล้ว"
     },
     "practice": {
       "title": "ฝึกฝน",
