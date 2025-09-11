@@ -269,5 +269,22 @@
       "medium-hard": "ปานกลาง-ยาก",
       "hard": "ยาก"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "เพิ่มในรายการโปรด",
+    "level": "ระดับ",
+    "selectLevel": "เลือกระดับ",
+    "name": "ชื่อ",
+    "enterName": "ใส่ชื่อ",
+    "url": "URL",
+    "cancel": "ยกเลิก",
+    "ok": "ตกลง",
+    "difficultyLevels": {
+      "easy": "ง่าย",
+      "easy-medium": "ง่าย-ปานกลาง",
+      "medium": "ปานกลาง",
+      "medium-hard": "ปานกลาง-ยาก",
+      "hard": "ยาก"
+    }
   }
 }

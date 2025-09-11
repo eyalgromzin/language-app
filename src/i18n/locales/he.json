@@ -298,5 +298,22 @@
       "medium-hard": "בינוני-קשה",
       "hard": "קשה"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "הוסף למועדפים",
+    "level": "רמה",
+    "selectLevel": "בחר רמה",
+    "name": "שם",
+    "enterName": "הזינו שם",
+    "url": "כתובת אתר",
+    "cancel": "ביטול",
+    "ok": "אישור",
+    "difficultyLevels": {
+      "easy": "קל",
+      "easy-medium": "קל-בינוני",
+      "medium": "בינוני",
+      "medium-hard": "בינוני-קשה",
+      "hard": "קשה"
+    }
   }
 }

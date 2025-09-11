@@ -269,5 +269,22 @@
       "medium-hard": "Средне-сложный",
       "hard": "Сложный"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "Добавить в избранное",
+    "level": "Уровень",
+    "selectLevel": "Выберите уровень",
+    "name": "Имя",
+    "enterName": "Введите имя",
+    "url": "URL",
+    "cancel": "Отмена",
+    "ok": "ОК",
+    "difficultyLevels": {
+      "easy": "Легкий",
+      "easy-medium": "Легкий-Средний",
+      "medium": "Средний",
+      "medium-hard": "Средний-Сложный",
+      "hard": "Сложный"
+    }
   }
 }

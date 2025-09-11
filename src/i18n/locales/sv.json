@@ -269,5 +269,22 @@
       "medium-hard": "Medium-svår",
       "hard": "Svår"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "Lägg till i favoriter",
+    "level": "Nivå",
+    "selectLevel": "Välj nivå",
+    "name": "Namn",
+    "enterName": "Ange namn",
+    "url": "URL",
+    "cancel": "Avbryt",
+    "ok": "OK",
+    "difficultyLevels": {
+      "easy": "Lätt",
+      "easy-medium": "Lätt-medium",
+      "medium": "Medium",
+      "medium-hard": "Medium-svår",
+      "hard": "Svår"
+    }
   }
 }

@@ -269,5 +269,22 @@
       "medium-hard": "Μεσαίο-δύσκολο",
       "hard": "Δύσκολο"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "Προσθήκη στα αγαπημένα",
+    "level": "Επίπεδο",
+    "selectLevel": "Επιλέξτε επίπεδο",
+    "name": "Όνομα",
+    "enterName": "Εισάγετε όνομα",
+    "url": "URL",
+    "cancel": "Ακύρωση",
+    "ok": "OK",
+    "difficultyLevels": {
+      "easy": "Εύκολο",
+      "easy-medium": "Εύκολο-μεσαίο",
+      "medium": "Μεσαίο",
+      "medium-hard": "Μεσαίο-δύσκολο",
+      "hard": "Δύσκολο"
+    }
   }
 }

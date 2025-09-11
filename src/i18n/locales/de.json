@@ -298,5 +298,22 @@
       "medium-hard": "Mittel-Schwer",
       "hard": "Schwer"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "Zu Favoriten hinzufügen",
+    "level": "Stufe",
+    "selectLevel": "Stufe auswählen",
+    "name": "Name",
+    "enterName": "Namen eingeben",
+    "url": "URL",
+    "cancel": "Abbrechen",
+    "ok": "OK",
+    "difficultyLevels": {
+      "easy": "Einfach",
+      "easy-medium": "Einfach-Mittel",
+      "medium": "Mittel",
+      "medium-hard": "Mittel-Schwer",
+      "hard": "Schwer"
+    }
   }
 }

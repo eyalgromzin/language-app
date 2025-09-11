@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { useTranslation } from '../../hooks/useTranslation';
 
 type FavouritesModalProps = {
   visible: boolean;
@@ -28,6 +29,7 @@ const FavouritesModal: React.FC<FavouritesModalProps> = ({
   onLevelChange,
   onToggleLevelOptions,
 }) => {
+  const { t } = useTranslation();
   const levels = ['easy', 'easy-medium', 'medium', 'medium-hard', 'hard'];
 
   return (
@@ -39,16 +41,16 @@ const FavouritesModal: React.FC<FavouritesModalProps> = ({
     >
       <View style={styles.modalBackdrop}>
         <View style={styles.modalCard}>
-          <Text style={styles.modalTitle}>Add to favourites</Text>
+          <Text style={styles.modalTitle}>{t('videoFavouriteModal.title')}</Text>
           
-          <Text style={styles.inputLabel}>Level</Text>
+          <Text style={styles.inputLabel}>{t('videoFavouriteModal.level')}</Text>
           <TouchableOpacity
             onPress={onToggleLevelOptions}
             style={styles.modalInput}
             activeOpacity={0.7}
           >
             <Text style={{ color: newFavLevelName ? '#111827' : '#9ca3af' }}>
-              {newFavLevelName || 'Select level'}
+              {newFavLevelName ? t(`videoFavouriteModal.difficultyLevels.${newFavLevelName}`) : t('videoFavouriteModal.selectLevel')}
             </Text>
           </TouchableOpacity>
           
@@ -63,21 +65,21 @@ const FavouritesModal: React.FC<FavouritesModalProps> = ({
                   }}
                   style={{ paddingVertical: 10 }}
                 >
-                  <Text style={{ color: '#111827' }}>{level}</Text>
+                  <Text style={{ color: '#111827' }}>{t(`videoFavouriteModal.difficultyLevels.${level}`)}</Text>
                 </TouchableOpacity>
               ))}
             </View>
           )}
           
-          <Text style={styles.inputLabel}>Name</Text>
+          <Text style={styles.inputLabel}>{t('videoFavouriteModal.name')}</Text>
           <TextInput
             style={styles.modalInput}
             value={newFavName}
             onChangeText={onNameChange}
-            placeholder="Enter a name"
+            placeholder={t('videoFavouriteModal.enterName')}
           />
           
-          <Text style={styles.inputLabel}>URL</Text>
+          <Text style={styles.inputLabel}>{t('videoFavouriteModal.url')}</Text>
           <TextInput
             style={styles.modalInput}
             value={newFavUrl}
@@ -89,10 +91,10 @@ const FavouritesModal: React.FC<FavouritesModalProps> = ({
           
           <View style={styles.modalButtons}>
             <TouchableOpacity onPress={onClose} style={styles.modalCloseBtn}>
-              <Text style={styles.modalCloseText}>Cancel</Text>
+              <Text style={styles.modalCloseText}>{t('videoFavouriteModal.cancel')}</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={onSave} style={[styles.modalCloseBtn, { backgroundColor: '#007AFF' }]}>
-              <Text style={[styles.modalCloseText, { color: 'white' }]}>OK</Text>
+              <Text style={[styles.modalCloseText, { color: 'white' }]}>{t('videoFavouriteModal.ok')}</Text>
             </TouchableOpacity>
           </View>
         </View>

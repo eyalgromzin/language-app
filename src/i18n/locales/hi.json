@@ -269,5 +269,22 @@
       "medium-hard": "मध्यम-कठिन",
       "hard": "कठिन"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "पसंदीदा में जोड़ें",
+    "level": "स्तर",
+    "selectLevel": "स्तर चुनें",
+    "name": "नाम",
+    "enterName": "नाम दर्ज करें",
+    "url": "URL",
+    "cancel": "रद्द करें",
+    "ok": "ठीक है",
+    "difficultyLevels": {
+      "easy": "आसान",
+      "easy-medium": "आसान-मध्यम",
+      "medium": "मध्यम",
+      "medium-hard": "मध्यम-कठिन",
+      "hard": "कठिन"
+    }
   }
 }

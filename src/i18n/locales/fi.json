@@ -269,5 +269,22 @@
       "medium-hard": "Keskitaso-vaikea",
       "hard": "Vaikea"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "Lisää suosikkeihin",
+    "level": "Taso",
+    "selectLevel": "Valitse taso",
+    "name": "Nimi",
+    "enterName": "Syötä nimi",
+    "url": "URL",
+    "cancel": "Peruuta",
+    "ok": "OK",
+    "difficultyLevels": {
+      "easy": "Helppo",
+      "easy-medium": "Helppo-keskitaso",
+      "medium": "Keskitaso",
+      "medium-hard": "Keskitaso-vaikea",
+      "hard": "Vaikea"
+    }
   }
 }

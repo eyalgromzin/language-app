@@ -269,5 +269,22 @@
       "medium-hard": "Trung bình-khó",
       "hard": "Khó"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "Thêm vào yêu thích",
+    "level": "Cấp độ",
+    "selectLevel": "Chọn cấp độ",
+    "name": "Tên",
+    "enterName": "Nhập tên",
+    "url": "URL",
+    "cancel": "Hủy",
+    "ok": "OK",
+    "difficultyLevels": {
+      "easy": "Dễ",
+      "easy-medium": "Dễ-trung bình",
+      "medium": "Trung bình",
+      "medium-hard": "Trung bình-khó",
+      "hard": "Khó"
+    }
   }
 }

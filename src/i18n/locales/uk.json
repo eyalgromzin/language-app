@@ -269,5 +269,22 @@
       "medium-hard": "Середньо-складний",
       "hard": "Складний"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "Додати до обраного",
+    "level": "Рівень",
+    "selectLevel": "Виберіть рівень",
+    "name": "Назва",
+    "enterName": "Введіть назву",
+    "url": "URL",
+    "cancel": "Скасувати",
+    "ok": "OK",
+    "difficultyLevels": {
+      "easy": "Легкий",
+      "easy-medium": "Легко-середній",
+      "medium": "Середній",
+      "medium-hard": "Середньо-складний",
+      "hard": "Складний"
+    }
   }
 }

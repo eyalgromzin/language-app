@@ -269,5 +269,22 @@
       "medium-hard": "Střední-těžké",
       "hard": "Těžké"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "Přidat do oblíbených",
+    "level": "Úroveň",
+    "selectLevel": "Vyberte úroveň",
+    "name": "Název",
+    "enterName": "Zadejte název",
+    "url": "URL",
+    "cancel": "Zrušit",
+    "ok": "OK",
+    "difficultyLevels": {
+      "easy": "Snadné",
+      "easy-medium": "Snadné-střední",
+      "medium": "Střední",
+      "medium-hard": "Střední-těžké",
+      "hard": "Těžké"
+    }
   }
 }

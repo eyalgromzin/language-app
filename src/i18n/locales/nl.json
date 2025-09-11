@@ -269,5 +269,22 @@
       "medium-hard": "Gemiddeld-moeilijk",
       "hard": "Moeilijk"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "Toevoegen aan favorieten",
+    "level": "Niveau",
+    "selectLevel": "Selecteer niveau",
+    "name": "Naam",
+    "enterName": "Voer een naam in",
+    "url": "URL",
+    "cancel": "Annuleren",
+    "ok": "OK",
+    "difficultyLevels": {
+      "easy": "Gemakkelijk",
+      "easy-medium": "Gemakkelijk-Gemiddeld",
+      "medium": "Gemiddeld",
+      "medium-hard": "Gemiddeld-Moeilijk",
+      "hard": "Moeilijk"
+    }
   }
 }

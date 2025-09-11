@@ -269,5 +269,22 @@
       "medium-hard": "Médio-Difícil",
       "hard": "Difícil"
     }
+  },
+  "videoFavouriteModal": {
+    "title": "Adicionar aos favoritos",
+    "level": "Nível",
+    "selectLevel": "Selecionar nível",
+    "name": "Nome",
+    "enterName": "Digite um nome",
+    "url": "URL",
+    "cancel": "Cancelar",
+    "ok": "OK",
+    "difficultyLevels": {
+      "easy": "Fácil",
+      "easy-medium": "Fácil-Médio",
+      "medium": "Médio",
+      "medium-hard": "Médio-Difícil",
+      "hard": "Difícil"
+    }
   }
 }
