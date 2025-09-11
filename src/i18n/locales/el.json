@@ -85,13 +85,64 @@
       "title": "Categories"
     },
     "myWords": {
-      "title": "My Words"
+      "title": "Οι Λέξεις Μου",
+      "loadingWords": "Φόρτωση των λέξεών σας...",
+      "noWordsYet": "Κανένας Λέξεις Ακόμα",
+      "emptyDescription": "Αρχίστε να δημιουργείτε το λεξιλόγιό σας προσθέτοντας λέξεις από την καρτέλα Surf. Οι αποθηκευμένες λέξεις σας θα εμφανίζονται εδώ με παρακολούθηση προόδου.",
+      "clearAll": "Εκκαθάριση Όλων",
+      "clearAllWords": "Εκκαθάριση όλων των λέξεων",
+      "word": "λέξη",
+      "words": "λέξεις",
+      "example": "Παράδειγμα",
+      "learningProgress": "Πρόοδος Μάθησης",
+      "hideProgress": "Απόκρυψη προόδου",
+      "showProgress": "Εμφάνιση προόδου",
+      "total": "σύνολο",
+      "missingLetters": "Λείπουσες Γράμματα",
+      "missingWords": "Λείπουσες Λέξεις",
+      "chooseTranslation": "Επιλογή Μετάφρασης",
+      "chooseWord": "Επιλογή Λέξης",
+      "memoryGame": "Παιχνίδι Μνήμης",
+      "writeTranslation": "Γράψτε Μετάφραση",
+      "writeWord": "Γράψτε Λέξη",
+      "clearAllConfirm": "Είστε σίγουροι ότι θέλετε να εκκαθαρίσετε όλες τις λέξεις;",
+      "clearAllSuccess": "Όλες οι λέξεις εκκαθαρίστηκαν επιτυχώς",
+      "clearAllError": "Αποτυχία εκκαθάρισης λέξεων. Παρακαλώ δοκιμάστε ξανά."
     },
     "progress": {
-      "title": "Progress"
+      "title": "Πρόοδος",
+      "loadingProgress": "Φόρτωση προόδου...",
+      "unableToLoadData": "Αδυναμία φόρτωσης δεδομένων προόδου",
+      "retry": "Επανάληψη",
+      "wordsMasteredCount": "λέξεις που κυριαρχούνται",
+      "learningStatistics": "Στατιστικά Μάθησης",
+      "wordsAdded": "Λέξεις Προστεθέντες",
+      "totalVocabularyCollected": "Συνολικό λεξιλόγιο που συλλέχθηκε",
+      "wordsMastered": "Λέξεις που Κυριαρχούνται",
+      "fullyLearnedVocabulary": "Πλήρως μαθημένο λεξιλόγιο",
+      "sentencesMastered": "Προτάσεις που Κυριαρχούνται",
+      "contextualUnderstanding": "Κατανόηση πλαισίου",
+      "practicesCompleted": "Ολοκληρωμένες Πρακτικές",
+      "totalExercisesFinished": "Συνολικές ασκήσεις που ολοκληρώθηκαν",
+      "lastUpdated": "Τελευταία ενημέρωση:",
+      "mastered": "Κυριαρχείται",
+      "remaining": "Απομένει"
     },
     "contactUs": {
-      "title": "Contact Us"
+      "title": "Επικοινωνήστε Μαζί Μας",
+      "getInTouch": "Επικοινωνήστε",
+      "subtitle": "Είμαστε εδώ για να βοηθήσουμε! Επικοινωνήστε μαζί μας για υποστήριξη, ανατροφοδότηση ή οποιεσδήποτε ερωτήσεις μπορεί να έχετε.",
+      "emailSupport": "Υποστήριξη Email",
+      "emailDescription": "Λάβετε βοήθεια με τον λογαριασμό σας, τεχνικά προβλήματα ή γενικές ερωτήσεις",
+      "sendEmail": "Αποστολή Email",
+      "visitWebsite": "Επίσκεψη Ιστοσελίδας",
+      "visitOurWebsite": "Επισκεφθείτε την Ιστοσελίδα Μας",
+      "websiteDescription": "Μάθετε περισσότερα για το HelloLingo και ανακαλύψτε επιπλέον πόρους",
+      "unableToOpenEmail": "Αδυναμία ανοίγματος email client. Παρακαλώ επικοινωνήστε μαζί μας απευθείας στο support@HelloLingo.app",
+      "unableToOpenWebsite": "Αδυναμία ανοίγματος ιστοσελίδας",
+      "responseTime": "Χρόνος Απόκρισης",
+      "responseTimeDescription": "Συνήθως απαντάμε στα email εντός 24 ωρών κατά τις εργάσιμες ημέρες. Για επείγοντα θέματα, παρακαλώ συμπεριλάβετε \"ΕΠΕΙΓΟΝ\" στην γραμμή θέματος.",
+      "footerText": "Σας ευχαριστούμε που χρησιμοποιείτε το HelloLingo! Η ανατροφοδότησή σας μας βοηθά να βελτιώσουμε την εφαρμογή για όλους."
     }
   },
   "common": {

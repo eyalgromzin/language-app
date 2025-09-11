@@ -85,13 +85,64 @@
       "title": "Categories"
     },
     "myWords": {
-      "title": "My Words"
+      "title": "My Words",
+      "loadingWords": "Načítání vašich slov...",
+      "noWordsYet": "Zatím Žádná Slova",
+      "emptyDescription": "Začněte budovat svou slovní zásobu přidáváním slov z karty Surf. Vaše uložená slova se zde zobrazí se sledováním pokroku.",
+      "clearAll": "Vymazat Vše",
+      "clearAllWords": "Vymazat všechna slova",
+      "word": "slovo",
+      "words": "slova",
+      "example": "Příklad",
+      "learningProgress": "Pokrok v Učení",
+      "hideProgress": "Skrýt pokrok",
+      "showProgress": "Zobrazit pokrok",
+      "total": "celkem",
+      "missingLetters": "Chybějící Písmena",
+      "missingWords": "Chybějící Slova",
+      "chooseTranslation": "Vybrat Překlad",
+      "chooseWord": "Vybrat Slovo",
+      "memoryGame": "Paměťová Hra",
+      "writeTranslation": "Napsat Překlad",
+      "writeWord": "Napsat Slovo",
+      "clearAllConfirm": "Jste si jisti, že chcete vymazat všechna slova?",
+      "clearAllSuccess": "Všechna slova byla úspěšně vymazána",
+      "clearAllError": "Nepodařilo se vymazat slova. Zkuste to prosím znovu."
     },
     "progress": {
-      "title": "Progress"
+      "title": "Progress",
+      "loadingProgress": "Načítání pokroku...",
+      "unableToLoadData": "Nelze načíst data pokroku",
+      "retry": "Zkusit znovu",
+      "wordsMasteredCount": "slov zvládnuto",
+      "learningStatistics": "Statistiky Učení",
+      "wordsAdded": "Přidaná Slova",
+      "totalVocabularyCollected": "Celková sebraná slovní zásoba",
+      "wordsMastered": "Zvládnutá Slova",
+      "fullyLearnedVocabulary": "Plně naučená slovní zásoba",
+      "sentencesMastered": "Zvládnuté Věty",
+      "contextualUnderstanding": "Kontextové porozumění",
+      "practicesCompleted": "Dokončené Praktiky",
+      "totalExercisesFinished": "Celkem dokončených cvičení",
+      "lastUpdated": "Naposledy aktualizováno:",
+      "mastered": "Zvládnuto",
+      "remaining": "Zbývající"
     },
     "contactUs": {
-      "title": "Contact Us"
+      "title": "Contact Us",
+      "getInTouch": "Kontaktujte Nás",
+      "subtitle": "Jsme tu, abychom pomohli! Kontaktujte nás pro podporu, zpětnou vazbu nebo jakékoli otázky, které můžete mít.",
+      "emailSupport": "E-mailová Podpora",
+      "emailDescription": "Získejte pomoc s vaším účtem, technickými problémy nebo obecnými otázkami",
+      "sendEmail": "Odeslat E-mail",
+      "visitWebsite": "Navštívit Web",
+      "visitOurWebsite": "Navštivte Náš Web",
+      "websiteDescription": "Dozvězte se více o HelloLingo a objevte další zdroje",
+      "unableToOpenEmail": "Nelze otevřít e-mailového klienta. Kontaktujte nás prosím přímo na support@HelloLingo.app",
+      "unableToOpenWebsite": "Nelze otevřít web",
+      "responseTime": "Doba Odezvy",
+      "responseTimeDescription": "Obvykle odpovídáme na e-maily do 24 hodin během pracovních dnů. Pro naléhavé problémy prosím uveďte \"NALÉHAVÉ\" do předmětu.",
+      "footerText": "Děkujeme za používání HelloLingo! Vaše zpětná vazba nám pomáhá zlepšovat aplikaci pro všechny."
     }
   },
   "common": {

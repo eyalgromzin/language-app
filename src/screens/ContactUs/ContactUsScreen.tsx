@@ -1,24 +1,26 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Linking, SafeAreaView, ScrollView, Alert } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from 'react-i18next';
 
 const SUPPORT_EMAIL = 'support@HelloLingo.app';
 
 function ContactUsScreen(): React.JSX.Element {
+  const { t } = useTranslation();
   const handleEmailPress = React.useCallback(() => {
-    const subject = encodeURIComponent('HelloLingo Support');
-    const body = encodeURIComponent('Hi HelloLingo team,\n\n');
+    const subject = encodeURIComponent(t('screens.contactUs.emailSubject'));
+    const body = encodeURIComponent(t('screens.contactUs.emailBody'));
     const mailtoUrl = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
     Linking.openURL(mailtoUrl).catch(() => {
-      Alert.alert('Error', 'Unable to open email client. Please contact us directly at support@HelloLingo.app');
+      Alert.alert(t('common.error'), t('screens.contactUs.unableToOpenEmail'));
     });
-  }, []);
+  }, [t]);
 
   const handleWebsitePress = React.useCallback(() => {
     Linking.openURL('https://HelloLingo.app').catch(() => {
-      Alert.alert('Error', 'Unable to open website');
+      Alert.alert(t('common.error'), t('screens.contactUs.unableToOpenWebsite'));
     });
-  }, []);
+  }, [t]);
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -27,9 +29,9 @@ function ContactUsScreen(): React.JSX.Element {
           <View style={styles.iconContainer}>
             <Ionicons name="mail" size={32} color="#007AFF" />
           </View>
-          <Text style={styles.title}>Get in Touch</Text>
+          <Text style={styles.title}>{t('screens.contactUs.getInTouch')}</Text>
           <Text style={styles.subtitle}>
-            We're here to help! Reach out to us for support, feedback, or any questions you might have.
+            {t('screens.contactUs.subtitle')}
           </Text>
         </View>
 
@@ -39,9 +41,9 @@ function ContactUsScreen(): React.JSX.Element {
               <Ionicons name="mail-outline" size={24} color="#007AFF" />
             </View>
             <View style={styles.contactInfo}>
-              <Text style={styles.contactTitle}>Email Support</Text>
+              <Text style={styles.contactTitle}>{t('screens.contactUs.emailSupport')}</Text>
               <Text style={styles.contactDescription}>
-                Get help with your account, technical issues, or general questions
+                {t('screens.contactUs.emailDescription')}
               </Text>
               <Text style={styles.contactValue}>{SUPPORT_EMAIL}</Text>
             </View>
@@ -51,10 +53,10 @@ function ContactUsScreen(): React.JSX.Element {
             style={styles.primaryButton} 
             onPress={handleEmailPress} 
             accessibilityRole="button" 
-            accessibilityLabel="Send email to support"
+             accessibilityLabel={t('screens.contactUs.sendEmailAccessibility')}
           >
             <Ionicons name="send" size={20} color="white" style={styles.buttonIcon} />
-            <Text style={styles.primaryButtonText}>Send Email</Text>
+            <Text style={styles.primaryButtonText}>{t('screens.contactUs.sendEmail')}</Text>
           </TouchableOpacity>
         </View>
 
@@ -64,11 +66,11 @@ function ContactUsScreen(): React.JSX.Element {
               <Ionicons name="globe-outline" size={24} color="#007AFF" />
             </View>
             <View style={styles.contactInfo}>
-              <Text style={styles.contactTitle}>Visit Our Website</Text>
+              <Text style={styles.contactTitle}>{t('screens.contactUs.visitOurWebsite')}</Text>
               <Text style={styles.contactDescription}>
-                Learn more about HelloLingo and discover additional resources
+                {t('screens.contactUs.websiteDescription')}
               </Text>
-              <Text style={styles.contactValue}>HelloLingo.app</Text>
+               <Text style={styles.contactValue}>{t('screens.contactUs.websiteUrl')}</Text>
             </View>
           </View>
           
@@ -76,27 +78,26 @@ function ContactUsScreen(): React.JSX.Element {
             style={styles.secondaryButton} 
             onPress={handleWebsitePress} 
             accessibilityRole="button" 
-            accessibilityLabel="Visit HelloLingo website"
+             accessibilityLabel={t('screens.contactUs.visitWebsiteAccessibility')}
           >
             <Ionicons name="open-outline" size={20} color="#007AFF" style={styles.buttonIcon} />
-            <Text style={styles.secondaryButtonText}>Visit Website</Text>
+            <Text style={styles.secondaryButtonText}>{t('screens.contactUs.visitWebsite')}</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.infoCard}>
           <View style={styles.infoHeader}>
             <Ionicons name="information-circle-outline" size={24} color="#059669" />
-            <Text style={styles.infoTitle}>Response Time</Text>
+            <Text style={styles.infoTitle}>{t('screens.contactUs.responseTime')}</Text>
           </View>
           <Text style={styles.infoText}>
-            We typically respond to emails within 24 hours during business days. 
-            For urgent issues, please include "URGENT" in your subject line.
+            {t('screens.contactUs.responseTimeDescription')}
           </Text>
         </View>
 
         <View style={styles.footer}>
           <Text style={styles.footerText}>
-            Thank you for using HelloLingo! Your feedback helps us improve the app for everyone.
+            {t('screens.contactUs.footerText')}
           </Text>
         </View>
       </ScrollView>

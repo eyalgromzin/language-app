@@ -85,13 +85,64 @@
       "title": "Categories"
     },
     "myWords": {
-      "title": "My Words"
+      "title": "Sanani",
+      "loadingWords": "Ladataan sanojasi...",
+      "noWordsYet": "Ei Sanoja Vielä",
+      "emptyDescription": "Aloita sanavarastosi rakentaminen lisäämällä sanoja Surf-välilehdeltä. Tallennetut sanasi näkyvät täällä edistymisen seurannan kanssa.",
+      "clearAll": "Tyhjennä Kaikki",
+      "clearAllWords": "Tyhjennä kaikki sanat",
+      "word": "sana",
+      "words": "sanaa",
+      "example": "Esimerkki",
+      "learningProgress": "Oppimisen Edistyminen",
+      "hideProgress": "Piilota edistyminen",
+      "showProgress": "Näytä edistyminen",
+      "total": "yhteensä",
+      "missingLetters": "Puuttuvat Kirjaimet",
+      "missingWords": "Puuttuvat Sanat",
+      "chooseTranslation": "Valitse Käännös",
+      "chooseWord": "Valitse Sana",
+      "memoryGame": "Muistipeli",
+      "writeTranslation": "Kirjoita Käännös",
+      "writeWord": "Kirjoita Sana",
+      "clearAllConfirm": "Oletko varma, että haluat tyhjentää kaikki sanat?",
+      "clearAllSuccess": "Kaikki sanat tyhjennettiin onnistuneesti",
+      "clearAllError": "Sanojen tyhjentäminen epäonnistui. Yritä uudelleen."
     },
     "progress": {
-      "title": "Progress"
+      "title": "Edistyminen",
+      "loadingProgress": "Ladataan edistymistä...",
+      "unableToLoadData": "Edistymistietojen lataaminen epäonnistui",
+      "retry": "Yritä uudelleen",
+      "wordsMasteredCount": "hallittua sanaa",
+      "learningStatistics": "Oppimistilastot",
+      "wordsAdded": "Lisätyt Sanat",
+      "totalVocabularyCollected": "Kokonaisuudessaan kerätty sanavarasto",
+      "wordsMastered": "Hallitut Sanat",
+      "fullyLearnedVocabulary": "Täysin opittu sanavarasto",
+      "sentencesMastered": "Hallitut Lauseet",
+      "contextualUnderstanding": "Kontekstuaalinen ymmärtäminen",
+      "practicesCompleted": "Valmiit Harjoitukset",
+      "totalExercisesFinished": "Kokonaisuudessaan valmiit harjoitukset",
+      "lastUpdated": "Viimeksi päivitetty:",
+      "mastered": "Hallittu",
+      "remaining": "Jäljellä"
     },
     "contactUs": {
-      "title": "Contact Us"
+      "title": "Ota Yhteyttä",
+      "getInTouch": "Ota Yhteyttä",
+      "subtitle": "Olemme täällä auttamassa! Ota yhteyttä saadaksesi tukea, antaaksesi palautetta tai esittääksesi kysymyksiä.",
+      "emailSupport": "Sähköpostituki",
+      "emailDescription": "Saa apua tilillesi, teknisiin ongelmiin tai yleisiin kysymyksiin",
+      "sendEmail": "Lähetä Sähköposti",
+      "visitWebsite": "Vieraile Verkkosivustolla",
+      "visitOurWebsite": "Vieraile Verkkosivustollamme",
+      "websiteDescription": "Lue lisää HelloLingosta ja löydä lisäresursseja",
+      "unableToOpenEmail": "Sähköpostiohjelman avaaminen epäonnistui. Ota yhteyttä suoraan osoitteeseen support@HelloLingo.app",
+      "unableToOpenWebsite": "Verkkosivuston avaaminen epäonnistui",
+      "responseTime": "Vastausaika",
+      "responseTimeDescription": "Vastaamme tyypillisesti sähköposteihin 24 tunnin kuluessa arkipäivinä. Kiireellisissä asioissa lisää \"KIREELLINEN\" otsikkoriviin.",
+      "footerText": "Kiitos HelloLingon käytöstä! Palautteesi auttaa meitä parantamaan sovellusta kaikille."
     }
   },
   "common": {

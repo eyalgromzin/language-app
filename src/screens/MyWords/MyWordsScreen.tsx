@@ -2,12 +2,14 @@ import React from 'react';
 import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View, TouchableOpacity, Alert, Dimensions } from 'react-native';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 import { WordEntry } from '../../types/words';
 import linkingService from '../../services/linkingService';
 
 const { width } = Dimensions.get('window');
 
 function MyWordsScreen(): React.JSX.Element {
+  const { t } = useTranslation();
   const [loading, setLoading] = React.useState<boolean>(true);
   const [refreshing, setRefreshing] = React.useState<boolean>(false);
   const [words, setWords] = React.useState<WordEntry[]>([]);
@@ -189,7 +191,7 @@ function MyWordsScreen(): React.JSX.Element {
           
           {item.sentence ? (
             <View style={styles.sentenceContainer}>
-              <Text style={styles.sentenceLabel}>Example</Text>
+              <Text style={styles.sentenceLabel}>{t('screens.myWords.example')}</Text>
               <Text style={styles.sentenceText} numberOfLines={3}>{item.sentence}</Text>
             </View>
           ) : null}
@@ -200,12 +202,12 @@ function MyWordsScreen(): React.JSX.Element {
             onPress={toggleExpanded}
             style={styles.progressToggle}
             accessibilityRole="button"
-            accessibilityLabel={isExpanded ? 'Hide progress' : 'Show progress'}
+            accessibilityLabel={isExpanded ? t('screens.myWords.hideProgress') : t('screens.myWords.showProgress')}
           >
             <View style={styles.progressHeader}>
-              <Text style={styles.progressTitle}>Learning Progress</Text>
+              <Text style={styles.progressTitle}>{t('screens.myWords.learningProgress')}</Text>
               <View style={styles.progressSummary}>
-                <Text style={styles.progressTotal}>{totalProgress} total</Text>
+                <Text style={styles.progressTotal}>{totalProgress} {t('screens.myWords.total')}</Text>
                 <Text style={styles.progressCaret}>{isExpanded ? '▼' : '▶'}</Text>
               </View>
             </View>
@@ -215,31 +217,31 @@ function MyWordsScreen(): React.JSX.Element {
             <View style={styles.progressDetails}>
               <View style={styles.progressGrid}>
                 <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>Missing Letters</Text>
+                  <Text style={styles.progressItemLabel}>{t('screens.myWords.missingLetters')}</Text>
                   <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.missingLetters ?? 0}</Text>
                 </View>
                 <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>Missing Words</Text>
+                  <Text style={styles.progressItemLabel}>{t('screens.myWords.missingWords')}</Text>
                   <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.missingWords ?? 0}</Text>
                 </View>
                 <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>Choose Translation</Text>
+                  <Text style={styles.progressItemLabel}>{t('screens.myWords.chooseTranslation')}</Text>
                   <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.chooseTranslation ?? 0}</Text>
                 </View>
                 <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>Choose Word</Text>
+                  <Text style={styles.progressItemLabel}>{t('screens.myWords.chooseWord')}</Text>
                   <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.chooseWord ?? 0}</Text>
                 </View>
                 <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>Memory Game</Text>
+                  <Text style={styles.progressItemLabel}>{t('screens.myWords.memoryGame')}</Text>
                   <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.memoryGame ?? 0}</Text>
                 </View>
                 <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>Write Translation</Text>
+                  <Text style={styles.progressItemLabel}>{t('screens.myWords.writeTranslation')}</Text>
                   <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.writeTranslation ?? 0}</Text>
                 </View>
                 <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>Write Word</Text>
+                  <Text style={styles.progressItemLabel}>{t('screens.myWords.writeWord')}</Text>
                   <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.writeWord ?? 0}</Text>
                 </View>
               </View>
@@ -255,12 +257,12 @@ function MyWordsScreen(): React.JSX.Element {
       <View style={styles.headerSection}>
         <View style={styles.headerContent}>
           <View style={styles.titleSection}>
-            <Text style={styles.title}>My Words</Text>
+            <Text style={styles.title}>{t('screens.myWords.title')}</Text>
             {!loading && (
               <View style={styles.statsContainer}>
                 <View style={styles.statBadge}>
                   <Text style={styles.statNumber}>{words.length}</Text>
-                  <Text style={styles.statLabel}>{words.length === 1 ? 'word' : 'words'}</Text>
+                  <Text style={styles.statLabel}>{words.length === 1 ? t('screens.myWords.word') : t('screens.myWords.words')}</Text>
                 </View>
               </View>
             )}
@@ -270,9 +272,9 @@ function MyWordsScreen(): React.JSX.Element {
               onPress={confirmClearAll}
               style={styles.clearAllButton}
               accessibilityRole="button"
-              accessibilityLabel="Clear all words"
+              accessibilityLabel={t('screens.myWords.clearAllWords')}
             >
-              <Text style={styles.clearAllButtonText}>Clear All</Text>
+              <Text style={styles.clearAllButtonText}>{t('screens.myWords.clearAll')}</Text>
             </TouchableOpacity>
           ) : null}
         </View>
@@ -280,17 +282,16 @@ function MyWordsScreen(): React.JSX.Element {
       {loading ? (
         <View style={styles.loadingContainer}>
           <ActivityIndicator size="large" color="#3B82F6" />
-          <Text style={styles.loadingText}>Loading your words...</Text>
+          <Text style={styles.loadingText}>{t('screens.myWords.loadingWords')}</Text>
         </View>
       ) : words.length === 0 ? (
         <View style={styles.emptyState}>
           <View style={styles.emptyIcon}>
             <Text style={styles.emptyIconText}>📚</Text>
           </View>
-          <Text style={styles.emptyTitle}>No Words Yet</Text>
+          <Text style={styles.emptyTitle}>{t('screens.myWords.noWordsYet')}</Text>
           <Text style={styles.emptyDescription}>
-            Start building your vocabulary by adding words from the Surf tab. 
-            Your saved words will appear here with progress tracking.
+            {t('screens.myWords.emptyDescription')}
           </Text>
         </View>
       ) : (

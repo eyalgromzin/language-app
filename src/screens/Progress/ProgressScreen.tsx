@@ -12,6 +12,7 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from 'react-i18next';
 import { WordEntry } from '../../types/words';
 
 const { width } = Dimensions.get('window');
@@ -27,6 +28,7 @@ type ProgressStats = {
 const WORDS_FILE_PATH = `${RNFS.DocumentDirectoryPath}/words.json`;
 
 export default function ProgressScreen(): React.JSX.Element {
+  const { t } = useTranslation();
   const [stats, setStats] = useState<ProgressStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
@@ -168,7 +170,7 @@ export default function ProgressScreen(): React.JSX.Element {
     return (
       <View style={styles.loadingContainer}>
         <ActivityIndicator size="large" color="#007AFF" />
-        <Text style={styles.loadingText}>Loading progress...</Text>
+        <Text style={styles.loadingText}>{t('screens.progress.loadingProgress')}</Text>
       </View>
     );
   }
@@ -176,9 +178,9 @@ export default function ProgressScreen(): React.JSX.Element {
   if (!stats) {
     return (
       <View style={styles.errorContainer}>
-        <Text style={styles.errorText}>Unable to load progress data</Text>
+        <Text style={styles.errorText}>{t('screens.progress.unableToLoadData')}</Text>
         <TouchableOpacity style={styles.retryButton} onPress={loadStats}>
-          <Text style={styles.retryButtonText}>Retry</Text>
+          <Text style={styles.retryButtonText}>{t('screens.progress.retry')}</Text>
         </TouchableOpacity>
       </View>
     );
@@ -228,9 +230,9 @@ export default function ProgressScreen(): React.JSX.Element {
         {/* Progress Overview Card */}
         <View style={styles.progressCard}>
           <View style={styles.progressHeader}>
-            <Text style={styles.progressTitle}>Learning Progress</Text>
+            <Text style={styles.progressTitle}>{t('screens.progress.learningStatistics')}</Text>
             <Text style={styles.progressSubtitle}>
-              {stats.wordsLearned} of {stats.totalWords} words mastered
+              {stats.wordsLearned} of {stats.totalWords} {t('screens.progress.wordsMasteredCount')}
             </Text>
           </View>
           
@@ -255,19 +257,19 @@ export default function ProgressScreen(): React.JSX.Element {
           <View style={styles.progressStats}>
             <View style={styles.progressStatItem}>
               <Text style={styles.progressStatNumber}>{stats.wordsLearned}</Text>
-              <Text style={styles.progressStatLabel}>Mastered</Text>
+              <Text style={styles.progressStatLabel}>{t('screens.progress.mastered')}</Text>
             </View>
             <View style={styles.progressStatDivider} />
             <View style={styles.progressStatItem}>
               <Text style={styles.progressStatNumber}>{stats.totalWords - stats.wordsLearned}</Text>
-              <Text style={styles.progressStatLabel}>Remaining</Text>
+              <Text style={styles.progressStatLabel}>{t('screens.progress.remaining')}</Text>
             </View>
           </View>
         </View>
 
         {/* Stats Grid */}
         <View style={styles.statsSection}>
-          <Text style={styles.sectionTitle}>Learning Statistics</Text>
+          <Text style={styles.sectionTitle}>{t('screens.progress.learningStatistics')}</Text>
           <View style={styles.statsGrid}>
             <View style={[styles.statCard, styles.statCardPrimary]}>
               <View style={styles.statCardHeader}>
@@ -276,8 +278,8 @@ export default function ProgressScreen(): React.JSX.Element {
                 </View>
                 <Text style={styles.statNumber}>{stats.totalWords}</Text>
               </View>
-              <Text style={styles.statLabel}>Words Added</Text>
-              <Text style={styles.statDescription}>Total vocabulary collected</Text>
+              <Text style={styles.statLabel}>{t('screens.progress.wordsAdded')}</Text>
+              <Text style={styles.statDescription}>{t('screens.progress.totalVocabularyCollected')}</Text>
             </View>
 
             <View style={[styles.statCard, styles.statCardSuccess]}>
@@ -287,8 +289,8 @@ export default function ProgressScreen(): React.JSX.Element {
                 </View>
                 <Text style={styles.statNumber}>{stats.wordsLearned}</Text>
               </View>
-              <Text style={styles.statLabel}>Words Mastered</Text>
-              <Text style={styles.statDescription}>Fully learned vocabulary</Text>
+              <Text style={styles.statLabel}>{t('screens.progress.wordsMastered')}</Text>
+              <Text style={styles.statDescription}>{t('screens.progress.fullyLearnedVocabulary')}</Text>
             </View>
 
             <View style={[styles.statCard, styles.statCardInfo]}>
@@ -298,8 +300,8 @@ export default function ProgressScreen(): React.JSX.Element {
                 </View>
                 <Text style={styles.statNumber}>{stats.sentencesLearned}</Text>
               </View>
-              <Text style={styles.statLabel}>Sentences Mastered</Text>
-              <Text style={styles.statDescription}>Contextual understanding</Text>
+              <Text style={styles.statLabel}>{t('screens.progress.sentencesMastered')}</Text>
+              <Text style={styles.statDescription}>{t('screens.progress.contextualUnderstanding')}</Text>
             </View>
 
             <View style={[styles.statCard, styles.statCardWarning]}>
@@ -309,8 +311,8 @@ export default function ProgressScreen(): React.JSX.Element {
                 </View>
                 <Text style={styles.statNumber}>{stats.practicesFinished}</Text>
               </View>
-              <Text style={styles.statLabel}>Practices Completed</Text>
-              <Text style={styles.statDescription}>Total exercises finished</Text>
+              <Text style={styles.statLabel}>{t('screens.progress.practicesCompleted')}</Text>
+              <Text style={styles.statDescription}>{t('screens.progress.totalExercisesFinished')}</Text>
             </View>
           </View>
         </View>
@@ -319,7 +321,7 @@ export default function ProgressScreen(): React.JSX.Element {
         <View style={styles.footer}>
           <View style={styles.footerContent}>
             <Ionicons name="time-outline" size={16} color="#9CA3AF" />
-            <Text style={styles.lastUpdated}>Last updated: {stats.loadTime}</Text>
+            <Text style={styles.lastUpdated}>{t('screens.progress.lastUpdated')} {stats.loadTime}</Text>
           </View>
         </View>
       </ScrollView>

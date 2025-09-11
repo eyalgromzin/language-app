@@ -85,13 +85,69 @@
       "title": "Categorie"
     },
     "myWords": {
-      "title": "Le Mie Parole"
+      "title": "Le Mie Parole",
+      "loadingWords": "Caricamento delle tue parole...",
+      "noWordsYet": "Nessuna Parola Ancora",
+      "emptyDescription": "Inizia a costruire il tuo vocabolario aggiungendo parole dalla scheda Surf. Le tue parole salvate appariranno qui con il tracciamento dei progressi.",
+      "clearAll": "Cancella Tutto",
+      "clearAllWords": "Cancella tutte le parole",
+      "word": "parola",
+      "words": "parole",
+      "example": "Esempio",
+      "learningProgress": "Progressi di Apprendimento",
+      "hideProgress": "Nascondi progressi",
+      "showProgress": "Mostra progressi",
+      "total": "totale",
+      "missingLetters": "Lettere Mancanti",
+      "missingWords": "Parole Mancanti",
+      "chooseTranslation": "Scegli Traduzione",
+      "chooseWord": "Scegli Parola",
+      "memoryGame": "Gioco di Memoria",
+      "writeTranslation": "Scrivi Traduzione",
+      "writeWord": "Scrivi Parola",
+      "clearAllConfirm": "Sei sicuro di voler cancellare tutte le parole?",
+      "clearAllSuccess": "Tutte le parole sono state cancellate con successo",
+      "clearAllError": "Impossibile cancellare le parole. Riprova."
     },
     "progress": {
-      "title": "Progresso"
+      "title": "Progresso",
+      "loadingProgress": "Caricamento progresso...",
+      "unableToLoadData": "Impossibile caricare i dati di progresso",
+      "retry": "Riprova",
+      "wordsMasteredCount": "parole padroneggiate",
+      "learningStatistics": "Statistiche di Apprendimento",
+      "wordsAdded": "Parole Aggiunte",
+      "totalVocabularyCollected": "Vocabolario totale raccolto",
+      "wordsMastered": "Parole Padroneggiate",
+      "fullyLearnedVocabulary": "Vocabolario completamente appreso",
+      "sentencesMastered": "Frasi Padroneggiate",
+      "contextualUnderstanding": "Comprensione contestuale",
+      "practicesCompleted": "Pratiche Completate",
+      "totalExercisesFinished": "Esercizi totali completati",
+      "lastUpdated": "Ultimo aggiornamento:",
+      "mastered": "Padroneggiato",
+      "remaining": "Rimanenti"
     },
     "contactUs": {
-      "title": "Contattaci"
+      "title": "Contattaci",
+      "getInTouch": "Mettiti in Contatto",
+      "subtitle": "Siamo qui per aiutarti! Contattaci per supporto, feedback o qualsiasi domanda tu possa avere.",
+      "emailSupport": "Supporto Email",
+      "emailDescription": "Ottieni aiuto con il tuo account, problemi tecnici o domande generali"
+      "sendEmail": "Invia Email"
+      "visitWebsite": "Visita Sito Web"
+      "visitOurWebsite": "Visita il Nostro Sito Web"
+      "websiteDescription": "Scopri di più su HelloLingo e risorse aggiuntive"
+      "unableToOpenEmail": "Impossibile aprire il client email. Contattaci direttamente a support@HelloLingo.app"
+      "unableToOpenWebsite": "Impossibile aprire il sito web"
+      "responseTime": "Tempo di Risposta",
+      "responseTimeDescription": "Rispondiamo tipicamente alle email entro 24 ore durante i giorni lavorativi. Per problemi urgenti, includi \"URGENTE\" nella tua riga dell'oggetto.",
+      "footerText": "Grazie per aver usato HelloLingo! Il tuo feedback ci aiuta a migliorare l'app per tutti.",
+      "emailSubject": "Supporto HelloLingo",
+      "emailBody": "Ciao team HelloLingo,\n\n",
+      "sendEmailAccessibility": "Invia email di supporto",
+      "visitWebsiteAccessibility": "Visita il sito web HelloLingo",
+      "websiteUrl": "HelloLingo.app"
     }
   },
   "common": {
