@@ -2,8 +2,8 @@
 // API Configuration
 export const API_CONFIG = {
   // Production server URL with fallback to localhost
-  SERVER_URL: 'https://language-learn-server.onrender.com',
-  // SERVER_URL: 'http://localhost:3000',
+  // SERVER_URL: 'https://language-learn-server.onrender.com',
+  SERVER_URL: 'http://localhost:3000',
   
   // API endpoints
   ENDPOINTS: {
