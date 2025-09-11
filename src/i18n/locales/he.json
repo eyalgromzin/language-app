@@ -176,6 +176,33 @@
       "sendEmailAccessibility": "שלח דואל לתמיכה",
       "visitWebsiteAccessibility": "בקר באתר HelloLingo",
       "websiteUrl": "HelloLingo.app"
+    },
+    "surf": {
+      "searchPlaceholder": "חפש או הכנס כתובת אתר",
+      "moreOptions": "אפשרויות נוספות",
+      "setHomepage": "הגדר דף בית",
+      "setHomepageSubtitle": "הגדר את הדף הנוכחי כדף בית",
+      "favouritesList": "רשימת מועדפים",
+      "favouritesListSubtitle": "צפה באתרים שמורים",
+      "sharePage": "שתף דף",
+      "sharePageSubtitle": "שתף את האתר הזה",
+      "reportWebsite": "דווח על אתר",
+      "reportWebsiteSubtitle": "דווח על תוכן לא הולם",
+      "noPageToShare": "אין דף לשיתוף",
+      "failedToSharePage": "שיתוף הדף נכשל",
+      "noPageToReport": "אין דף לדיווח",
+      "websiteReported": "אתר דווח",
+      "websiteReportedMessage": "האתר דווח, אנחנו בודקים אותו",
+      "failedToReportWebsite": "דיווח על האתר נכשל",
+      "invalidUrl": "כתובת לא תקינה",
+      "addedToFavourites": "נוסף למועדפים",
+      "accessibilityLabels": {
+        "goBack": "חזור",
+        "addToFavourites": "הוסף למועדפים",
+        "removeFromFavourites": "הסר מהמועדפים",
+        "openLibrary": "פתח ספרייה",
+        "moreOptions": "אפשרויות נוספות"
+      }
     }
   },
   "common": {

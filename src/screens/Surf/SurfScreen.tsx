@@ -14,9 +14,11 @@ import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import { baseInjection, imageScrapeInjection } from '../../constants/webViewInjections';
 import harmfulWordsService from '../../services/harmfulWordsService';
 import linkingService from '../../services/linkingService';
+import { useTranslation } from '../../hooks/useTranslation';
 
 function SurfScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
+  const { t } = useTranslation();
   
   // Get language mappings for translation
   const { languageMappings } = useLanguageMappings();
@@ -176,9 +178,9 @@ function SurfScreen(): React.JSX.Element {
     const targetUrl = currentUrl || addressText;
     if (!targetUrl || targetUrl === 'about:blank') {
       if (Platform.OS === 'android') {
-        ToastAndroid.show('No page to share', ToastAndroid.SHORT);
+        ToastAndroid.show(t('screens.surf.noPageToShare'), ToastAndroid.SHORT);
       } else {
-        Alert.alert('No page to share');
+        Alert.alert(t('screens.surf.noPageToShare'));
       }
       return;
     }
@@ -188,20 +190,20 @@ function SurfScreen(): React.JSX.Element {
     } catch (error) {
       console.error('Error sharing surf URL:', error);
       if (Platform.OS === 'android') {
-        ToastAndroid.show('Failed to share page', ToastAndroid.SHORT);
+        ToastAndroid.show(t('screens.surf.failedToSharePage'), ToastAndroid.SHORT);
       } else {
-        Alert.alert('Failed to share page');
+        Alert.alert(t('screens.surf.failedToSharePage'));
       }
     }
-  }, [currentUrl, addressText]);
+  }, [currentUrl, addressText, t]);
 
   const onReportWebsite = React.useCallback(async () => {
     const targetUrl = currentUrl || addressText;
     if (!targetUrl || targetUrl === 'about:blank') {
       if (Platform.OS === 'android') {
-        ToastAndroid.show('No page to report', ToastAndroid.SHORT);
+        ToastAndroid.show(t('screens.surf.noPageToReport'), ToastAndroid.SHORT);
       } else {
-        Alert.alert('No page to report');
+        Alert.alert(t('screens.surf.noPageToReport'));
       }
       return;
     }
@@ -213,19 +215,19 @@ function SurfScreen(): React.JSX.Element {
       
       // Show success dialog with custom message
       Alert.alert(
-        'Website Reported',
-        "Website reported, we're checking it",
-        [{ text: 'OK', style: 'default' }]
+        t('screens.surf.websiteReported'),
+        t('screens.surf.websiteReportedMessage'),
+        [{ text: t('common.ok'), style: 'default' }]
       );
     } catch (error) {
       console.error('Error reporting website:', error);
       if (Platform.OS === 'android') {
-        ToastAndroid.show('Failed to report website', ToastAndroid.SHORT);
+        ToastAndroid.show(t('screens.surf.failedToReportWebsite'), ToastAndroid.SHORT);
       } else {
-        Alert.alert('Error', 'Failed to report website');
+        Alert.alert(t('common.error'), t('screens.surf.failedToReportWebsite'));
       }
     }
-  }, [currentUrl, addressText]);
+  }, [currentUrl, addressText, t]);
 
   return (
     <SafeAreaView style={styles.container} edges={[]}>
@@ -272,14 +274,14 @@ function SurfScreen(): React.JSX.Element {
           const u = normalizeUrl(newFavUrl || currentUrl || addressText);
           const nm = (newFavName || '').trim();
           if (!u || u === 'about:blank') {
-            if (Platform.OS === 'android') ToastAndroid.show('Invalid URL', ToastAndroid.SHORT); else Alert.alert('Invalid URL');
+            if (Platform.OS === 'android') ToastAndroid.show(t('screens.surf.invalidUrl'), ToastAndroid.SHORT); else Alert.alert(t('screens.surf.invalidUrl'));
             return;
           }
           const selected = FAVOURITE_TYPES.find(t => t.id === newFavTypeId);
           if (!selected) { setFavTypeError(true); return; }
           await addToFavourites(u, nm, selected.id, selected.name, newFavLevelName);
           setShowAddFavouriteModal(false);
-          if (Platform.OS === 'android') ToastAndroid.show('Added to favourites', ToastAndroid.SHORT); else Alert.alert('Added');
+          if (Platform.OS === 'android') ToastAndroid.show(t('screens.surf.addedToFavourites'), ToastAndroid.SHORT); else Alert.alert(t('screens.surf.addedToFavourites'));
           postAddUrlToLibrary(u, selected.name, nm, newFavLevelName || undefined).catch(() => {});
         }}
         newFavName={newFavName}

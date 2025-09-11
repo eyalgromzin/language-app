@@ -2,6 +2,7 @@ import React from 'react';
 import { TextInput, TouchableOpacity, View, StyleSheet, ScrollView, Keyboard, Text, StatusBar } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import OptionsMenu from './OptionsMenu';
+import { useTranslation } from '../../hooks/useTranslation';
 
 interface UrlBarProps {
   addressText: string;
@@ -48,6 +49,7 @@ const UrlBar: React.FC<UrlBarProps> = ({
   onSelectSuggestion,
   addressInputRef,
 }) => {
+  const { t } = useTranslation();
   const [showOptionsMenu, setShowOptionsMenu] = React.useState(false);
   const [optionsButtonPosition, setOptionsButtonPosition] = React.useState<{ x: number; y: number; width: number; height: number } | null>(null);
   const optionsButtonRef = React.useRef<any>(null);
@@ -63,7 +65,7 @@ const UrlBar: React.FC<UrlBarProps> = ({
             value={addressText}
             onChangeText={setAddressText}
             onSubmitEditing={onSubmit}
-            placeholder="Search or enter website URL"
+            placeholder={t('screens.surf.searchPlaceholder')}
             placeholderTextColor="#9ca3af"
             autoCapitalize="none"
             autoCorrect={false}
@@ -91,7 +93,7 @@ const UrlBar: React.FC<UrlBarProps> = ({
             disabled={!canGoBack}
             style={[styles.actionBtn, !canGoBack && styles.actionBtnDisabled]}
             accessibilityRole="button"
-            accessibilityLabel="Go back"
+            accessibilityLabel={t('screens.surf.accessibilityLabels.goBack')}
             hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }}
           >
             <Ionicons name="chevron-back" size={20} color={canGoBack ? '#000000' : '#9ca3af'} />
@@ -101,7 +103,7 @@ const UrlBar: React.FC<UrlBarProps> = ({
             onPress={onFavouritePress}
             style={[styles.actionBtn, isFavourite && styles.actionBtnActive]}
             accessibilityRole="button"
-            accessibilityLabel={isFavourite ? 'Remove from favourites' : 'Add to favourites'}
+            accessibilityLabel={isFavourite ? t('screens.surf.accessibilityLabels.removeFromFavourites') : t('screens.surf.accessibilityLabels.addToFavourites')}
             hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }}
           >
             <Ionicons name={isFavourite ? 'star' : 'star-outline'} size={20} color={isFavourite ? '#ffffff' : '#6b7280'} />
@@ -111,7 +113,7 @@ const UrlBar: React.FC<UrlBarProps> = ({
             onPress={onLibraryPress}
             style={styles.actionBtn}
             accessibilityRole="button"
-            accessibilityLabel="Open Library"
+            accessibilityLabel={t('screens.surf.accessibilityLabels.openLibrary')}
             hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }}
           >
             <Ionicons name="albums-outline" size={20} color="#6b7280" />
@@ -129,7 +131,7 @@ const UrlBar: React.FC<UrlBarProps> = ({
             }}
             style={styles.actionBtn}
             accessibilityRole="button"
-            accessibilityLabel="More options"
+            accessibilityLabel={t('screens.surf.accessibilityLabels.moreOptions')}
             hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }}
           >
             <Ionicons name="ellipsis-vertical" size={20} color="#6b7280" />

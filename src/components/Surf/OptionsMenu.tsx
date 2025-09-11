@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Modal } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from '../../hooks/useTranslation';
 
 interface OptionsMenuProps {
   visible: boolean;
@@ -25,12 +26,14 @@ const OptionsMenu: React.FC<OptionsMenuProps> = ({
   canReport,
   buttonPosition,
 }) => {
+  const { t } = useTranslation();
+  
   if (!visible || !buttonPosition) return null;
 
   const menuItems = [
     {
-      title: 'Set Homepage',
-      subtitle: 'Set current page as homepage',
+      title: t('screens.surf.setHomepage'),
+      subtitle: t('screens.surf.setHomepageSubtitle'),
       icon: 'home-outline',
       iconColor: '#3b82f6',
       onPress: () => {
@@ -39,8 +42,8 @@ const OptionsMenu: React.FC<OptionsMenuProps> = ({
       },
     },
     {
-      title: 'Favourites List',
-      subtitle: 'View saved websites',
+      title: t('screens.surf.favouritesList'),
+      subtitle: t('screens.surf.favouritesListSubtitle'),
       icon: 'star-outline',
       iconColor: '#f59e0b',
       onPress: () => {
@@ -49,8 +52,8 @@ const OptionsMenu: React.FC<OptionsMenuProps> = ({
       },
     },
     ...(canShare ? [{
-      title: 'Share Page',
-      subtitle: 'Share this website',
+      title: t('screens.surf.sharePage'),
+      subtitle: t('screens.surf.sharePageSubtitle'),
       icon: 'share-outline',
       iconColor: '#10b981',
       onPress: () => {
@@ -59,8 +62,8 @@ const OptionsMenu: React.FC<OptionsMenuProps> = ({
       },
     }] : []),
     ...(canReport ? [{
-      title: 'Report Website',
-      subtitle: 'Report inappropriate content',
+      title: t('screens.surf.reportWebsite'),
+      subtitle: t('screens.surf.reportWebsiteSubtitle'),
       icon: 'flag-outline',
       iconColor: '#ef4444',
       onPress: () => {

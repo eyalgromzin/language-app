@@ -161,6 +161,33 @@ const baseTranslations = {
     "watchVideos": "Watch videos",
     "readBooks": "Read books",
     "wordCategories": "Word categories"
+  },
+  "surf": {
+    "searchPlaceholder": "Search or enter website URL",
+    "moreOptions": "More options",
+    "setHomepage": "Set Homepage",
+    "setHomepageSubtitle": "Set current page as homepage",
+    "favouritesList": "Favourites List",
+    "favouritesListSubtitle": "View saved websites",
+    "sharePage": "Share Page",
+    "sharePageSubtitle": "Share this website",
+    "reportWebsite": "Report Website",
+    "reportWebsiteSubtitle": "Report inappropriate content",
+    "noPageToShare": "No page to share",
+    "failedToSharePage": "Failed to share page",
+    "noPageToReport": "No page to report",
+    "websiteReported": "Website Reported",
+    "websiteReportedMessage": "Website reported, we're checking it",
+    "failedToReportWebsite": "Failed to report website",
+    "invalidUrl": "Invalid URL",
+    "addedToFavourites": "Added to favourites",
+    "accessibilityLabels": {
+      "goBack": "Go back",
+      "addToFavourites": "Add to favourites",
+      "removeFromFavourites": "Remove from favourites",
+      "openLibrary": "Open Library",
+      "moreOptions": "More options"
+    }
   }
 };
 
