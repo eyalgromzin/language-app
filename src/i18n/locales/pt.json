@@ -84,7 +84,18 @@
         "openMenu": "Abrir menu",
         "addToFavourites": "Adicionar aos favoritos",
         "removeFromFavourites": "Remover dos favoritos"
-      }
+      },
+      "optionsMenu": {
+        "history": "Histórico",
+        "favouritesList": "Lista de favoritos",
+        "shareVideo": "Compartilhar vídeo"
+      },
+      "favourites": "Favoritos",
+      "alreadyInFavouritesRemove": "já nos favoritos, remover?",
+      "no": "Não",
+      "yes": "Sim",
+      "removed": "Removido",
+      "added": "Adicionado"
     },
     "practice": {
       "title": "Prática",

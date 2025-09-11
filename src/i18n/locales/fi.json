@@ -84,7 +84,18 @@
         "openMenu": "Avaa valikko",
         "addToFavourites": "Lisää suosikkeihin",
         "removeFromFavourites": "Poista suosikeista"
-      }
+      },
+      "optionsMenu": {
+        "history": "Historia",
+        "favouritesList": "Suosikkilista",
+        "shareVideo": "Jaa video"
+      },
+      "favourites": "Suosikit",
+      "alreadyInFavouritesRemove": "jo suosikeissa, poista?",
+      "no": "Ei",
+      "yes": "Kyllä",
+      "removed": "Poistettu",
+      "added": "Lisätty"
     },
     "practice": {
       "title": "Harjoitus",

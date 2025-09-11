@@ -84,7 +84,18 @@
         "openMenu": "Άνοιγμα μενού",
         "addToFavourites": "Προσθήκη στα αγαπημένα",
         "removeFromFavourites": "Αφαίρεση από τα αγαπημένα"
-      }
+      },
+      "optionsMenu": {
+        "history": "Ιστορικό",
+        "favouritesList": "Λίστα αγαπημένων",
+        "shareVideo": "Κοινοποίηση βίντεο"
+      },
+      "favourites": "Αγαπημένα",
+      "alreadyInFavouritesRemove": "ήδη στα αγαπημένα, αφαίρεση?",
+      "no": "Όχι",
+      "yes": "Ναι",
+      "removed": "Αφαιρέθηκε",
+      "added": "Προστέθηκε"
     },
     "practice": {
       "title": "Πρακτική",

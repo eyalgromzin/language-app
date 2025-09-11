@@ -84,7 +84,18 @@
         "openMenu": "Otevřít menu",
         "addToFavourites": "Přidat do oblíbených",
         "removeFromFavourites": "Odebrat z oblíbených"
-      }
+      },
+      "optionsMenu": {
+        "history": "Historie",
+        "favouritesList": "Seznam oblíbených",
+        "shareVideo": "Sdílet video"
+      },
+      "favourites": "Oblíbené",
+      "alreadyInFavouritesRemove": "již v oblíbených, odebrat?",
+      "no": "Ne",
+      "yes": "Ano",
+      "removed": "Odebráno",
+      "added": "Přidáno"
     },
     "practice": {
       "title": "Cvičení",

@@ -84,7 +84,18 @@
         "openMenu": "Öppna meny",
         "addToFavourites": "Lägg till i favoriter",
         "removeFromFavourites": "Ta bort från favoriter"
-      }
+      },
+      "optionsMenu": {
+        "history": "Historik",
+        "favouritesList": "Favoritlista",
+        "shareVideo": "Dela video"
+      },
+      "favourites": "Favoriter",
+      "alreadyInFavouritesRemove": "redan i favoriter, ta bort?",
+      "no": "Nej",
+      "yes": "Ja",
+      "removed": "Borttagen",
+      "added": "Tillagd"
     },
     "practice": {
       "title": "Övning",

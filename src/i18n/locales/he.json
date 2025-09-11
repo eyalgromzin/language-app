@@ -84,7 +84,18 @@
         "openMenu": "פתח תפריט",
         "addToFavourites": "הוסף למועדפים",
         "removeFromFavourites": "הסר מהמועדפים"
-      }
+      },
+      "optionsMenu": {
+        "history": "היסטוריה",
+        "favouritesList": "רשימת מועדפים",
+        "shareVideo": "שתף סרטון"
+      },
+      "favourites": "מועדפים",
+      "alreadyInFavouritesRemove": "כבר במועדפים, להסיר?",
+      "no": "לא",
+      "yes": "כן",
+      "removed": "הוסר",
+      "added": "נוסף"
     },
     "practice": {
       "title": "תרגול",

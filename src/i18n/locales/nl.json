@@ -84,7 +84,18 @@
         "openMenu": "Menu openen",
         "addToFavourites": "Toevoegen aan favorieten",
         "removeFromFavourites": "Verwijderen uit favorieten"
-      }
+      },
+      "optionsMenu": {
+        "history": "Geschiedenis",
+        "favouritesList": "Favorieten lijst",
+        "shareVideo": "Video delen"
+      },
+      "favourites": "Favorieten",
+      "alreadyInFavouritesRemove": "al in favorieten, verwijderen?",
+      "no": "Nee",
+      "yes": "Ja",
+      "removed": "Verwijderd",
+      "added": "Toegevoegd"
     },
     "practice": {
       "title": "Oefenen",

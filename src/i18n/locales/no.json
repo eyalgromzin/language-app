@@ -84,7 +84,18 @@
         "openMenu": "Åpne meny",
         "addToFavourites": "Legg til i favoritter",
         "removeFromFavourites": "Fjern fra favoritter"
-      }
+      },
+      "optionsMenu": {
+        "history": "Historikk",
+        "favouritesList": "Favorittliste",
+        "shareVideo": "Del video"
+      },
+      "favourites": "Favoritter",
+      "alreadyInFavouritesRemove": "allerede i favoritter, fjerne?",
+      "no": "Nei",
+      "yes": "Ja",
+      "removed": "Fjernet",
+      "added": "Lagt til"
     },
     "practice": {
       "title": "Øvelse",

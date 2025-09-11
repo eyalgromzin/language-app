@@ -84,7 +84,18 @@
         "openMenu": "Otwórz menu",
         "addToFavourites": "Dodaj do ulubionych",
         "removeFromFavourites": "Usuń z ulubionych"
-      }
+      },
+      "optionsMenu": {
+        "history": "Historia",
+        "favouritesList": "Lista ulubionych",
+        "shareVideo": "Udostępnij film"
+      },
+      "favourites": "Ulubione",
+      "alreadyInFavouritesRemove": "już w ulubionych, usunąć?",
+      "no": "Nie",
+      "yes": "Tak",
+      "removed": "Usunięto",
+      "added": "Dodano"
     },
     "practice": {
       "title": "Ćwiczenia",

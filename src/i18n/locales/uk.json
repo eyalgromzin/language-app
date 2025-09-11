@@ -84,7 +84,18 @@
         "openMenu": "Відкрити меню",
         "addToFavourites": "Додати до улюблених",
         "removeFromFavourites": "Видалити з улюблених"
-      }
+      },
+      "optionsMenu": {
+        "history": "Історія",
+        "favouritesList": "Список улюблених",
+        "shareVideo": "Поділитися відео"
+      },
+      "favourites": "Улюблені",
+      "alreadyInFavouritesRemove": "вже в улюблених, видалити?",
+      "no": "Ні",
+      "yes": "Так",
+      "removed": "Видалено",
+      "added": "Додано"
     },
     "practice": {
       "title": "Практика",

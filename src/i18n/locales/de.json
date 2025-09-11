@@ -84,7 +84,18 @@
         "openMenu": "Menü öffnen",
         "addToFavourites": "Zu Favoriten hinzufügen",
         "removeFromFavourites": "Aus Favoriten entfernen"
-      }
+      },
+      "optionsMenu": {
+        "history": "Verlauf",
+        "favouritesList": "Favoritenliste",
+        "shareVideo": "Video teilen"
+      },
+      "favourites": "Favoriten",
+      "alreadyInFavouritesRemove": "bereits in Favoriten, entfernen?",
+      "no": "Nein",
+      "yes": "Ja",
+      "removed": "Entfernt",
+      "added": "Hinzugefügt"
     },
     "practice": {
       "title": "Übung",

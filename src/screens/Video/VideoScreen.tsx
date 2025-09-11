@@ -104,13 +104,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
             accessibilityRole="button"
             accessibilityLabel={t('screens.video.accessibilityLabels.openVideo')}
           >
-            <Text style={styles.goButtonText}>Go</Text>
+            <Text style={styles.goButtonText}>{t('screens.video.goButton')}</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={onToggleFavourite}
             style={styles.libraryBtn}
             accessibilityRole="button"
-            accessibilityLabel={isFavourite ? 'Remove from favourites' : 'Add to favourites'}
+            accessibilityLabel={isFavourite ? t('screens.video.removeFromFavourites') : t('screens.video.addToFavourites')}
             hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
           >
             <Ionicons name={isFavourite ? 'star' : 'star-outline'} size={20} color={isFavourite ? '#f59e0b' : '#64748b'} />
@@ -311,21 +311,21 @@ function VideoScreen(): React.JSX.Element {
   const onToggleFavourite = React.useCallback(() => {
     const targetUrl = currentCanonicalUrl;
     if (!targetUrl) {
-      try { if (Platform.OS === 'android') ToastAndroid.show('Invalid URL', ToastAndroid.SHORT); else Alert.alert('Invalid URL'); } catch {}
+      try { if (Platform.OS === 'android') ToastAndroid.show(t('screens.video.invalidUrl'), ToastAndroid.SHORT); else Alert.alert(t('screens.video.invalidUrl')); } catch {}
       return;
     }
     if (isFavourite) {
       const onYes = async () => {
         await removeFromFavourites(targetUrl);
-        try { if (Platform.OS === 'android') ToastAndroid.show('Removed from favourites', ToastAndroid.SHORT); else Alert.alert('Removed'); } catch {}
+        try { if (Platform.OS === 'android') ToastAndroid.show(t('screens.video.removedFromFavourites'), ToastAndroid.SHORT); else Alert.alert(t('screens.video.removed')); } catch {}
       };
       try {
         Alert.alert(
-          'Favourites',
-          'already in favourites, remove it ?',
+          t('screens.video.favourites'),
+          t('screens.video.alreadyInFavouritesRemove'),
           [
-            { text: 'No', style: 'cancel' },
-            { text: 'Yes', onPress: onYes },
+            { text: t('screens.video.no'), style: 'cancel' },
+            { text: t('screens.video.yes'), onPress: onYes },
           ],
           { cancelable: true },
         );
@@ -344,7 +344,7 @@ function VideoScreen(): React.JSX.Element {
   const onShareVideo = React.useCallback(async () => {
     const targetUrl = currentCanonicalUrl;
     if (!targetUrl) {
-      try { if (Platform.OS === 'android') ToastAndroid.show('No video to share', ToastAndroid.SHORT); else Alert.alert('No video to share'); } catch {}
+      try { if (Platform.OS === 'android') ToastAndroid.show(t('screens.video.noVideoToShare'), ToastAndroid.SHORT); else Alert.alert(t('screens.video.noVideoToShare')); } catch {}
       return;
     }
     
@@ -352,7 +352,7 @@ function VideoScreen(): React.JSX.Element {
       await linkingService.shareVideo(targetUrl, currentVideoTitle);
     } catch (error) {
       console.error('Error sharing video:', error);
-      try { if (Platform.OS === 'android') ToastAndroid.show('Failed to share video', ToastAndroid.SHORT); else Alert.alert('Failed to share video'); } catch {}
+      try { if (Platform.OS === 'android') ToastAndroid.show(t('screens.video.failedToShareVideo'), ToastAndroid.SHORT); else Alert.alert(t('screens.video.failedToShareVideo')); } catch {}
     }
   }, [currentCanonicalUrl, currentVideoTitle]);
 
@@ -935,7 +935,7 @@ function VideoScreen(): React.JSX.Element {
   const NewestVideos = () => {
     return (
       <VideoList
-        title="newest videos"
+        title={t('screens.video.newestVideos')}
         videos={startupVideos}
         loading={startupVideosLoading}
         error={startupVideosError}
@@ -962,7 +962,7 @@ function VideoScreen(): React.JSX.Element {
     if (!searchLoading && !searchError && searchResults.length === 0) return null;
     return (
       <VideoList
-        title="search results"
+        title={t('screens.video.searchResults')}
         videos={searchResults}
         loading={searchLoading}
         error={searchError}
@@ -1104,12 +1104,12 @@ function VideoScreen(): React.JSX.Element {
           const u = normalizeYouTubeUrl(newFavUrl || currentCanonicalUrl);
           const nm = (newFavName || '').trim();
           if (!u) {
-            try { if (Platform.OS === 'android') ToastAndroid.show('Invalid URL', ToastAndroid.SHORT); else Alert.alert('Invalid URL'); } catch {}
+            try { if (Platform.OS === 'android') ToastAndroid.show(t('screens.video.invalidUrl'), ToastAndroid.SHORT); else Alert.alert(t('screens.video.invalidUrl')); } catch {}
             return;
           }
           await addToFavourites(u, nm, newFavLevelName);
           setShowAddFavouriteModal(false);
-          try { if (Platform.OS === 'android') ToastAndroid.show('Added to favourites', ToastAndroid.SHORT); else Alert.alert('Added'); } catch {}
+          try { if (Platform.OS === 'android') ToastAndroid.show(t('screens.video.addedToFavourites'), ToastAndroid.SHORT); else Alert.alert(t('screens.video.added')); } catch {}
         }}
         onNameChange={setNewFavName}
         onUrlChange={setNewFavUrl}

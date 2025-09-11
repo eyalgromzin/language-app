@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Modal } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from '../../hooks/useTranslation';
 
 interface VideoOptionsMenuProps {
   visible: boolean;
@@ -21,11 +22,13 @@ const VideoOptionsMenu: React.FC<VideoOptionsMenuProps> = ({
   canShare = false,
   buttonPosition,
 }) => {
+  const { t } = useTranslation();
+  
   if (!visible || !buttonPosition) return null;
 
   const menuItems = [
     {
-      title: 'History',
+      title: t('screens.video.optionsMenu.history'),
       icon: 'time-outline',
       onPress: () => {
         onClose();
@@ -33,7 +36,7 @@ const VideoOptionsMenu: React.FC<VideoOptionsMenuProps> = ({
       },
     },
     {
-      title: 'Favourites list',
+      title: t('screens.video.optionsMenu.favouritesList'),
       icon: 'star-outline',
       onPress: () => {
         onClose();
@@ -41,7 +44,7 @@ const VideoOptionsMenu: React.FC<VideoOptionsMenuProps> = ({
       },
     },
     ...(canShare && onShare ? [{
-      title: 'Share video',
+      title: t('screens.video.optionsMenu.shareVideo'),
       icon: 'share-outline',
       onPress: () => {
         onClose();
