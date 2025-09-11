@@ -4,12 +4,16 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
 import { useAuth } from '../../contexts/AuthContext';
 import { languagesService } from '../../services/languages';
+import { useTranslation } from '../../hooks/useTranslation';
+import { getLanguageCodeFromName, getLanguageNameFromCode } from '../../i18n';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 function SettingsScreen(): React.JSX.Element {
   const { logout } = useAuth();
+  const { t, changeLanguage, getCurrentLanguage } = useTranslation();
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
+  const [uiLanguage, setUILanguage] = React.useState<string>('en');
   const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [languageOptions, setLanguageOptions] = React.useState<string[]>([]);
@@ -43,6 +47,7 @@ function SettingsScreen(): React.JSX.Element {
         const entries = await AsyncStorage.multiGet([
           'language.learning',
           'language.native',
+          'ui.language',
           'words.removeAfterNCorrect',
           'words.removeAfterTotalCorrect',
         ]);
@@ -50,6 +55,7 @@ function SettingsScreen(): React.JSX.Element {
         const map = Object.fromEntries(entries);
         const learningRaw = map['language.learning'];
         const nativeRaw = map['language.native'];
+        const uiLanguageRaw = map['ui.language'];
         
         // Convert stored symbols to display names
         let learningVal = null;
@@ -67,6 +73,14 @@ function SettingsScreen(): React.JSX.Element {
         
         setLearningLanguage(learningVal);
         setNativeLanguage(nativeVal);
+        
+        // Set UI language
+        if (typeof uiLanguageRaw === 'string' && uiLanguageRaw.trim().length > 0) {
+          setUILanguage(uiLanguageRaw);
+        } else {
+          setUILanguage(getCurrentLanguage());
+        }
+        
         const raw = map['words.removeAfterNCorrect'];
         const parsed = Number.parseInt(typeof raw === 'string' ? raw : '', 10);
         const valid = parsed >= 1 && parsed <= 4 ? parsed : 3;
@@ -79,6 +93,7 @@ function SettingsScreen(): React.JSX.Element {
         if (!mounted) return;
         setLearningLanguage(null);
         setNativeLanguage(null);
+        setUILanguage('en');
         setRemoveAfterCorrect(3);
         setRemoveAfterTotalCorrect(6);
       }
@@ -86,7 +101,7 @@ function SettingsScreen(): React.JSX.Element {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [getCurrentLanguage]);
 
   const onChangeLearning = async (value: string) => {
     const v = typeof value === 'string' && value.trim().length > 0 ? value : null;
@@ -118,6 +133,14 @@ function SettingsScreen(): React.JSX.Element {
     } catch {}
   };
 
+  const onChangeUILanguage = async (value: string) => {
+    const v = typeof value === 'string' && value.trim().length > 0 ? value : null;
+    if (v) {
+      setUILanguage(v);
+      await changeLanguage(v);
+    }
+  };
+
   const onChangeRemoveAfter = async (value: number) => {
     setRemoveAfterCorrect(value);
     try {
@@ -134,15 +157,15 @@ function SettingsScreen(): React.JSX.Element {
 
   const onLogout = async () => {
     Alert.alert(
-      'Logout',
-      'Are you sure you want to logout?',
+      t('screens.settings.logout'),
+      t('screens.settings.logoutConfirm'),
       [
         {
-          text: 'Cancel',
+          text: t('screens.settings.cancel'),
           style: 'cancel',
         },
         {
-          text: 'Logout',
+          text: t('screens.settings.logout'),
           style: 'destructive',
           onPress: async () => {
             try {
@@ -151,7 +174,7 @@ function SettingsScreen(): React.JSX.Element {
               // Navigation will be handled automatically by AuthContext
             } catch (error) {
               console.log('[Logout] Error during logout:', error);
-              Alert.alert('Logout Error', 'There was an error logging out. Please try again.');
+              Alert.alert(t('screens.settings.logoutError'), t('screens.settings.logoutError'));
             }
           },
         },
@@ -163,21 +186,21 @@ function SettingsScreen(): React.JSX.Element {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView style={styles.screenContainer} showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
       <View style={styles.header}>
-        <Text style={styles.screenTitle}>Settings</Text>
-        <Text style={styles.screenSubtitle}>Customize your learning experience</Text>
+        <Text style={styles.screenTitle}>{t('screens.settings.title')}</Text>
+        <Text style={styles.screenSubtitle}>{t('screens.settings.subtitle')}</Text>
       </View>
 
       {/* Language Settings Section */}
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Ionicons name="language-outline" size={20} color="#007AFF" />
-          <Text style={styles.sectionTitle}>Language Settings</Text>
+          <Text style={styles.sectionTitle}>{t('screens.settings.languageSettings')}</Text>
         </View>
         
         <View style={styles.settingsCard}>
           <View style={styles.settingItem}>
-            <Text style={styles.settingLabel}>Learning Language</Text>
-            <Text style={styles.settingDescription}>The language you want to learn</Text>
+            <Text style={styles.settingLabel}>{t('screens.settings.learningLanguage')}</Text>
+            <Text style={styles.settingDescription}>{t('screens.settings.learningLanguageDescription')}</Text>
             <View style={styles.pickerWrapper}>
               <Picker
                 selectedValue={learningLanguage || ''}
@@ -185,24 +208,24 @@ function SettingsScreen(): React.JSX.Element {
                 enabled={!isLoadingLanguages}
                 style={styles.picker}
               >
-                <Picker.Item label={isLoadingLanguages ? "Loading languages..." : "Select a language..."} value="" />
+                <Picker.Item label={isLoadingLanguages ? t('screens.startup.loadingLanguageOptions') : t('screens.startup.selectLanguage')} value="" />
                 {languageOptions.length > 0 ? (
                   languageOptions.map((lang: string) => (
                     <Picker.Item key={lang} label={lang} value={lang} />
                   ))
                 ) : (
-                  <Picker.Item label="No languages available" value="" />
+                  <Picker.Item label={t('screens.startup.noLanguagesAvailable')} value="" />
                 )}
               </Picker>
             </View>
             {isLoadingLanguages && (
-              <Text style={styles.loadingText}>Loading language options...</Text>
+              <Text style={styles.loadingText}>{t('screens.startup.loadingLanguageOptions')}</Text>
             )}
           </View>
 
           <View style={styles.settingItem}>
-            <Text style={styles.settingLabel}>Native Language</Text>
-            <Text style={styles.settingDescription}>Your primary language</Text>
+            <Text style={styles.settingLabel}>{t('screens.settings.nativeLanguage')}</Text>
+            <Text style={styles.settingDescription}>{t('screens.settings.nativeLanguageDescription')}</Text>
             <View style={styles.pickerWrapper}>
               <Picker
                 selectedValue={nativeLanguage || ''}
@@ -210,19 +233,51 @@ function SettingsScreen(): React.JSX.Element {
                 enabled={!isLoadingLanguages}
                 style={styles.picker}
               >
-                <Picker.Item label={isLoadingLanguages ? "Loading languages..." : "Select your native language..."} value="" />
+                <Picker.Item label={isLoadingLanguages ? t('screens.startup.loadingLanguageOptions') : t('screens.startup.selectNativeLanguage')} value="" />
                 {languageOptions.length > 0 ? (
                   languageOptions.map((lang: string) => (
                     <Picker.Item key={lang} label={lang} value={lang} />
                   ))
                 ) : (
-                  <Picker.Item label="No languages available" value="" />
+                  <Picker.Item label={t('screens.startup.noLanguagesAvailable')} value="" />
                 )}
               </Picker>
             </View>
             {isLoadingLanguages && (
-              <Text style={styles.loadingText}>Loading language options...</Text>
+              <Text style={styles.loadingText}>{t('screens.startup.loadingLanguageOptions')}</Text>
             )}
+          </View>
+
+          <View style={styles.settingItem}>
+            <Text style={styles.settingLabel}>{t('common.language')}</Text>
+            <Text style={styles.settingDescription}>App interface language</Text>
+            <View style={styles.pickerWrapper}>
+              <Picker
+                selectedValue={uiLanguage}
+                onValueChange={onChangeUILanguage}
+                style={styles.picker}
+              >
+                <Picker.Item label="English" value="en" />
+                <Picker.Item label="Español" value="es" />
+                <Picker.Item label="Français" value="fr" />
+                <Picker.Item label="Deutsch" value="de" />
+                <Picker.Item label="עברית" value="he" />
+                <Picker.Item label="Italiano" value="it" />
+                <Picker.Item label="Português" value="pt" />
+                <Picker.Item label="Русский" value="ru" />
+                <Picker.Item label="हिन्दी" value="hi" />
+                <Picker.Item label="Polski" value="pl" />
+                <Picker.Item label="Nederlands" value="nl" />
+                <Picker.Item label="Ελληνικά" value="el" />
+                <Picker.Item label="Svenska" value="sv" />
+                <Picker.Item label="Norsk" value="no" />
+                <Picker.Item label="Suomi" value="fi" />
+                <Picker.Item label="Čeština" value="cs" />
+                <Picker.Item label="Українська" value="uk" />
+                <Picker.Item label="ไทย" value="th" />
+                <Picker.Item label="Tiếng Việt" value="vi" />
+              </Picker>
+            </View>
           </View>
         </View>
       </View>
@@ -231,13 +286,13 @@ function SettingsScreen(): React.JSX.Element {
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Ionicons name="settings-outline" size={20} color="#007AFF" />
-          <Text style={styles.sectionTitle}>Practice Settings</Text>
+          <Text style={styles.sectionTitle}>{t('screens.settings.practiceSettings')}</Text>
         </View>
         
         <View style={styles.settingsCard}>
           <View style={styles.settingItem}>
-            <Text style={styles.settingLabel}>Practice Completion</Text>
-            <Text style={styles.settingDescription}>Number of correct answers needed to complete a practice type</Text>
+            <Text style={styles.settingLabel}>{t('screens.settings.practiceCompletion')}</Text>
+            <Text style={styles.settingDescription}>{t('screens.settings.practiceCompletionDescription')}</Text>
             <View style={styles.optionCirclesContainer}>
               {[1, 2, 3].map((n) => {
                 const selected = removeAfterCorrect === n;
@@ -258,8 +313,8 @@ function SettingsScreen(): React.JSX.Element {
           </View>
 
           <View style={styles.settingItem}>
-            <Text style={styles.settingLabel}>Word Mastery</Text>
-            <Text style={styles.settingDescription}>Total correct answers before a word is considered mastered</Text>
+            <Text style={styles.settingLabel}>{t('screens.settings.wordMastery')}</Text>
+            <Text style={styles.settingDescription}>{t('screens.settings.wordMasteryDescription')}</Text>
             <View style={[styles.optionCirclesContainer, { flexWrap: 'wrap' }]}>
               {[6, 10, 14, 18].map((n) => {
                 const selected = removeAfterTotalCorrect === n;
@@ -285,7 +340,7 @@ function SettingsScreen(): React.JSX.Element {
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Ionicons name="person-outline" size={20} color="#007AFF" />
-          <Text style={styles.sectionTitle}>Account</Text>
+          <Text style={styles.sectionTitle}>{t('screens.settings.account')}</Text>
         </View>
         
         <View style={styles.settingsCard}>
@@ -296,10 +351,10 @@ function SettingsScreen(): React.JSX.Element {
               pressed && styles.logoutButtonPressed
             ]}
             accessibilityRole="button"
-            accessibilityLabel="Logout"
+            accessibilityLabel={t('screens.settings.logout')}
           >
             <Ionicons name="log-out-outline" size={20} color="#fff" style={styles.logoutIcon} />
-            <Text style={styles.logoutButtonText}>Sign Out</Text>
+            <Text style={styles.logoutButtonText}>{t('screens.settings.signOut')}</Text>
           </Pressable>
         </View>
       </View>

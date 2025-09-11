@@ -945,7 +945,7 @@ function VideoScreen(): React.JSX.Element {
   const NowPlaying = () => {
     return (
       <VideoList
-        title="now playing by other people"
+        title="Now playing by other people"
         videos={nowPlayingVideos}
         loading={nowPlayingLoading}
         error={nowPlayingError}

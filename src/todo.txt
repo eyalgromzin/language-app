@@ -1,8 +1,15 @@
-- for baby steps, use json files in the server instead of the db 
-
-- upload server 
-
 - translate app captions to all languages
+    - top bar names of screens 
+    - bottom navigation bar
+    - video screen:
+        - "now playing by other people' ...
+        - 'enter a youtube url or id ...'
+        - 'Go button'
+        - more options list:
+            - 'history' 
+            - favourites list' 
+    ...
+    
 
 publish app =======================================================================================================================
 

@@ -1,0 +1,161 @@
+{
+  "navigation": {
+    "surf": "Surfen",
+    "video": "Video",
+    "practice": "Übung",
+    "babySteps": "Erste Schritte",
+    "categories": "Kategorien",
+    "library": "Bibliothek",
+    "books": "Bücher"
+  },
+  "screens": {
+    "home": {
+      "title": "HelloLingo",
+      "subtitle": "Lassen Sie uns Ihre Sprachlernreise personalisieren"
+    },
+    "settings": {
+      "title": "Einstellungen",
+      "subtitle": "Passen Sie Ihr Lernerlebnis an",
+      "languageSettings": "Spracheinstellungen",
+      "learningLanguage": "Lernsprache",
+      "learningLanguageDescription": "Die Sprache, die Sie lernen möchten",
+      "nativeLanguage": "Muttersprache",
+      "nativeLanguageDescription": "Ihre Hauptsprache",
+      "practiceSettings": "Übungseinstellungen",
+      "practiceCompletion": "Übungsabschluss",
+      "practiceCompletionDescription": "Anzahl der richtigen Antworten, die benötigt werden, um einen Übungstyp abzuschließen",
+      "wordMastery": "Wortbeherrschung",
+      "wordMasteryDescription": "Gesamte richtige Antworten, bevor ein Wort als gemeistert gilt",
+      "account": "Konto",
+      "signOut": "Abmelden",
+      "logout": "Abmeldung",
+      "logoutConfirm": "Sind Sie sicher, dass Sie sich abmelden möchten?",
+      "cancel": "Abbrechen",
+      "logoutError": "Beim Abmelden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+    },
+    "startup": {
+      "welcome": "Willkommen bei HelloLingo!",
+      "personalize": "Lassen Sie uns Ihre Sprachlernreise personalisieren",
+      "languageSetup": "Spracheinstellung",
+      "whichLanguageToLearn": "Welche Sprache möchten Sie lernen?",
+      "yourNativeLanguage": "Ihre Muttersprache",
+      "selectLanguage": "Sprache auswählen...",
+      "selectNativeLanguage": "Wählen Sie Ihre Muttersprache...",
+      "selectLanguages": "Sprachen auswählen",
+      "chooseBothLanguages": "Bitte wählen Sie beide Sprachen aus, um fortzufahren.",
+      "startLearning": "Lernen Beginnen",
+      "settingUpAccount": "Ihr Konto wird eingerichtet...",
+      "error": "Fehler",
+      "failedToSavePreferences": "Fehler beim Speichern der Einstellungen. Bitte versuchen Sie es erneut.",
+      "loadingLanguages": "Verfügbare Sprachen werden geladen...",
+      "loadingLanguageOptions": "Sprachoptionen werden geladen...",
+      "noLanguagesAvailable": "Keine Sprachen verfügbar"
+    },
+    "video": {
+      "searchPlaceholder": "Suchen...",
+      "goButton": "Los",
+      "nowPlayingByOthers": "Wird von anderen abgespielt",
+      "enterYouTubeUrl": "YouTube-URL oder ID eingeben...",
+      "history": "Verlauf",
+      "favouritesList": "Favoritenliste",
+      "moreOptions": "Weitere Optionen"
+    },
+    "practice": {
+      "title": "Übung",
+      "missingLetters": "Fehlende Buchstaben",
+      "missingWords": "Fehlende Wörter",
+      "matchGame": "Zuordnungsspiel",
+      "chooseWord": "Wort wählen",
+      "chooseTranslation": "Übersetzung wählen",
+      "translate": "Übersetzen",
+      "memoryGame": "Gedächtnisspiel",
+      "hearingPractice": "Hörübung",
+      "formulateSentence": "Satz formulieren",
+      "surpriseMe": "Überraschen Sie mich"
+    },
+    "library": {
+      "title": "Bibliothek",
+      "loadingResources": "Ihre Lernressourcen werden geladen..."
+    },
+    "books": {
+      "title": "Bücher",
+      "reader": "Leser"
+    },
+    "categories": {
+      "title": "Kategorien"
+    },
+    "myWords": {
+      "title": "Meine Wörter"
+    },
+    "progress": {
+      "title": "Fortschritt"
+    },
+    "contactUs": {
+      "title": "Kontakt"
+    }
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "cancel": "Abbrechen",
+    "ok": "OK",
+    "yes": "Ja",
+    "no": "Nein",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "add": "Hinzufügen",
+    "remove": "Entfernen",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Vorherige",
+    "continue": "Fortfahren",
+    "finish": "Beenden",
+    "retry": "Wiederholen",
+    "refresh": "Aktualisieren",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "sort": "Sortieren",
+    "select": "Auswählen",
+    "choose": "Wählen",
+    "confirm": "Bestätigen",
+    "warning": "Warnung",
+    "info": "Information",
+    "help": "Hilfe",
+    "about": "Über",
+    "version": "Version",
+    "settings": "Einstellungen",
+    "preferences": "Einstellungen",
+    "language": "Sprache",
+    "languages": "Sprachen"
+  },
+  "menu": {
+    "openMenu": "Menü öffnen",
+    "myWords": "Meine Wörter",
+    "progress": "Fortschritt",
+    "settings": "Einstellungen",
+    "shareApp": "App teilen",
+    "contactUs": "Kontakt",
+    "logout": "Abmelden",
+    "shareMessage": "Ich lerne Sprachen mit HelloLingo! Probieren Sie es aus und sehen Sie, ob es Ihnen auch hilft."
+  },
+  "alerts": {
+    "wordAlreadyExists": "Wort existiert bereits",
+    "wordAlreadyInList": "ist bereits in Ihrer Wortliste.",
+    "wordAdded": "Wort hinzugefügt!",
+    "wordAddedToList": "wurde zu Ihrer Wortliste hinzugefügt.",
+    "errorAddingWord": "Fehler beim Hinzufügen des Wortes zu Ihrer Liste.",
+    "errorOccurred": "Ein Fehler ist aufgetreten",
+    "tryAgain": "Bitte versuchen Sie es erneut"
+  },
+  "notEnoughWords": {
+    "readyToLearn": "Bereit zum Lernen?",
+    "notEnoughWordsMessage": "Noch nicht genug Wörter zum Üben. Fügen Sie mehr Wörter in einer der Lernoptionen hinzu",
+    "browseContent": "Inhalt durchsuchen",
+    "watchVideos": "Videos ansehen",
+    "readBooks": "Bücher lesen",
+    "wordCategories": "Wortkategorien"
+  }
+}

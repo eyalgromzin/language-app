@@ -5,6 +5,7 @@ import { Picker } from '@react-native-picker/picker';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import { useAuth } from '../../contexts/AuthContext';
+import { useTranslation } from '../../hooks/useTranslation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 type RootStackParamList = {
@@ -18,6 +19,7 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Startup'>;
 function StartupScreen({ navigation }: Props): React.JSX.Element {
   const { completeSetup } = useAuth();
   const { languageMappings, isLoading: languagesLoading } = useLanguageMappings();
+  const { t } = useTranslation();
   const [learningLanguage, setLearningLanguage] = React.useState<string>('');
   const [nativeLanguage, setNativeLanguage] = React.useState<string>('');
   const [saving, setSaving] = React.useState<boolean>(false);
@@ -26,7 +28,7 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
 
   const onContinue = async () => {
     if (!learningLanguage || !nativeLanguage) {
-      Alert.alert('Select languages', 'Please choose both languages to continue.');
+      Alert.alert(t('screens.startup.selectLanguages'), t('screens.startup.chooseBothLanguages'));
       return;
     }
     try {
@@ -59,7 +61,7 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
     } catch (e) {
       console.error('[StartupScreen] Error during setup completion:', e);
       setSaving(false);
-      Alert.alert('Error', 'Failed to save preferences. Please try again.');
+      Alert.alert(t('screens.startup.error'), t('screens.startup.failedToSavePreferences'));
     }
   };
 
@@ -72,7 +74,7 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
           </View>
           <Text style={styles.loadingTitle}>HelloLingo</Text>
           <ActivityIndicator size="large" color="#007AFF" style={styles.loadingSpinner} />
-          <Text style={styles.loadingSubtitle}>Loading available languages...</Text>
+          <Text style={styles.loadingSubtitle}>{t('screens.startup.loadingLanguages')}</Text>
         </View>
       </View>
     );
@@ -85,25 +87,25 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
         <View style={styles.logoContainer}>
           <Ionicons name="language" size={40} color="#007AFF" />
         </View>
-        <Text style={styles.title}>Welcome to HelloLingo!</Text>
-        <Text style={styles.subtitle}>Let's personalize your language learning journey</Text>
+        <Text style={styles.title}>{t('screens.startup.welcome')}</Text>
+        <Text style={styles.subtitle}>{t('screens.startup.personalize')}</Text>
       </View>
 
       {/* Language Selection Section */}
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Ionicons name="globe-outline" size={20} color="#007AFF" />
-          <Text style={styles.sectionTitle}>Language Setup</Text>
+          <Text style={styles.sectionTitle}>{t('screens.startup.languageSetup')}</Text>
         </View>
         
         <View style={styles.pickerBlock}>
-          <Text style={styles.label}>Which language do you want to learn?</Text>
+          <Text style={styles.label}>{t('screens.startup.whichLanguageToLearn')}</Text>
           <View style={styles.pickerWrapper}>
             <Picker
               selectedValue={learningLanguage}
               onValueChange={(value) => setLearningLanguage(value)}
             >
-              <Picker.Item label="Select a language..." value="" />
+              <Picker.Item label={t('screens.startup.selectLanguage')} value="" />
               {Object.keys(languageMappings).map((lang) => (
                 <Picker.Item key={lang} label={lang} value={lang} />
               ))}
@@ -112,13 +114,13 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
         </View>
 
         <View style={styles.pickerBlock}>
-          <Text style={styles.label}>Your native language</Text>
+          <Text style={styles.label}>{t('screens.startup.yourNativeLanguage')}</Text>
           <View style={styles.pickerWrapper}>
             <Picker
               selectedValue={nativeLanguage}
               onValueChange={(value) => setNativeLanguage(value)}
             >
-              <Picker.Item label="Select your native language..." value="" />
+              <Picker.Item label={t('screens.startup.selectNativeLanguage')} value="" />
               {Object.keys(languageMappings).map((lang) => (
                 <Picker.Item key={lang} label={lang} value={lang} />
               ))}
@@ -131,11 +133,11 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Ionicons name="settings-outline" size={20} color="#007AFF" />
-          <Text style={styles.sectionTitle}>Practice Settings</Text>
+          <Text style={styles.sectionTitle}>{t('screens.settings.practiceSettings')}</Text>
         </View>
         
         <View style={styles.pickerBlock}>
-          <Text style={styles.infoLabel}>Correct answers needed to complete a practice type</Text>
+          <Text style={styles.infoLabel}>{t('screens.settings.practiceCompletionDescription')}</Text>
           <View style={styles.optionCirclesContainer}>
             {[1, 2, 3].map((n) => {
               const selected = removeAfterCorrect === n;
@@ -156,7 +158,7 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
         </View>
 
         <View style={styles.pickerBlock}>
-          <Text style={styles.infoLabel}>Total correct answers before word is mastered</Text>
+          <Text style={styles.infoLabel}>{t('screens.settings.wordMasteryDescription')}</Text>
           <View style={[styles.optionCirclesContainer, { flexWrap: 'wrap' }]}>
             {[6, 10, 14, 18].map((n) => {
               const selected = removeAfterTotalCorrect === n;
@@ -192,7 +194,7 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
             <Ionicons name="arrow-forward" size={20} color="white" style={styles.buttonIcon} />
           )}
           <Text style={styles.continueButtonText}>
-            {saving ? 'Setting up your account...' : 'Start Learning'}
+            {saving ? t('screens.startup.settingUpAccount') : t('screens.startup.startLearning')}
           </Text>
         </Pressable>
       </View>

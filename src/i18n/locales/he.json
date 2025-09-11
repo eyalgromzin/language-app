@@ -1,0 +1,161 @@
+{
+  "navigation": {
+    "surf": "גלישה",
+    "video": "וידאו",
+    "practice": "תרגול",
+    "babySteps": "צעדים ראשונים",
+    "categories": "קטגוריות",
+    "library": "ספרייה",
+    "books": "ספרים"
+  },
+  "screens": {
+    "home": {
+      "title": "HelloLingo",
+      "subtitle": "בואו נתאים אישית את מסע הלמידה שלכם"
+    },
+    "settings": {
+      "title": "הגדרות",
+      "subtitle": "התאמו את חוויית הלמידה שלכם",
+      "languageSettings": "הגדרות שפה",
+      "learningLanguage": "שפת למידה",
+      "learningLanguageDescription": "השפה שאתם רוצים ללמוד",
+      "nativeLanguage": "שפת אם",
+      "nativeLanguageDescription": "השפה הראשית שלכם",
+      "practiceSettings": "הגדרות תרגול",
+      "practiceCompletion": "השלמת תרגול",
+      "practiceCompletionDescription": "מספר תשובות נכונות הנדרשות להשלמת סוג תרגול",
+      "wordMastery": "שליטה במילים",
+      "wordMasteryDescription": "סה\"כ תשובות נכונות לפני שמילה נחשבת למושלטת",
+      "account": "חשבון",
+      "signOut": "התנתקות",
+      "logout": "התנתקות",
+      "logoutConfirm": "האם אתם בטוחים שאתם רוצים להתנתק?",
+      "cancel": "ביטול",
+      "logoutError": "אירעה שגיאה בהתנתקות. אנא נסו שוב."
+    },
+    "startup": {
+      "welcome": "ברוכים הבאים ל-HelloLingo!",
+      "personalize": "בואו נתאים אישית את מסע הלמידה שלכם",
+      "languageSetup": "הגדרת שפה",
+      "whichLanguageToLearn": "איזו שפה אתם רוצים ללמוד?",
+      "yourNativeLanguage": "שפת האם שלכם",
+      "selectLanguage": "בחרו שפה...",
+      "selectNativeLanguage": "בחרו את שפת האם שלכם...",
+      "selectLanguages": "בחרו שפות",
+      "chooseBothLanguages": "אנא בחרו את שתי השפות כדי להמשיך.",
+      "startLearning": "התחילו ללמוד",
+      "settingUpAccount": "מגדירים את החשבון שלכם...",
+      "error": "שגיאה",
+      "failedToSavePreferences": "נכשל בשמירת ההעדפות. אנא נסו שוב.",
+      "loadingLanguages": "טוען שפות זמינות...",
+      "loadingLanguageOptions": "טוען אפשרויות שפה...",
+      "noLanguagesAvailable": "אין שפות זמינות"
+    },
+    "video": {
+      "searchPlaceholder": "חיפוש...",
+      "goButton": "לך",
+      "nowPlayingByOthers": "מתנגן על ידי אחרים",
+      "enterYouTubeUrl": "הכניסו כתובת או מזהה של YouTube...",
+      "history": "היסטוריה",
+      "favouritesList": "רשימת מועדפים",
+      "moreOptions": "אפשרויות נוספות"
+    },
+    "practice": {
+      "title": "תרגול",
+      "missingLetters": "אותיות חסרות",
+      "missingWords": "מילים חסרות",
+      "matchGame": "משחק התאמה",
+      "chooseWord": "בחרו מילה",
+      "chooseTranslation": "בחרו תרגום",
+      "translate": "תרגום",
+      "memoryGame": "משחק זיכרון",
+      "hearingPractice": "תרגול שמיעה",
+      "formulateSentence": "ניסוח משפט",
+      "surpriseMe": "הפתיעו אותי"
+    },
+    "library": {
+      "title": "ספרייה",
+      "loadingResources": "טוען את משאבי הלמידה שלכם..."
+    },
+    "books": {
+      "title": "ספרים",
+      "reader": "קורא"
+    },
+    "categories": {
+      "title": "קטגוריות"
+    },
+    "myWords": {
+      "title": "המילים שלי"
+    },
+    "progress": {
+      "title": "התקדמות"
+    },
+    "contactUs": {
+      "title": "צרו קשר"
+    }
+  },
+  "common": {
+    "loading": "טוען...",
+    "error": "שגיאה",
+    "success": "הצלחה",
+    "cancel": "ביטול",
+    "ok": "אישור",
+    "yes": "כן",
+    "no": "לא",
+    "save": "שמור",
+    "delete": "מחק",
+    "edit": "ערוך",
+    "add": "הוסף",
+    "remove": "הסר",
+    "close": "סגור",
+    "back": "חזור",
+    "next": "הבא",
+    "previous": "הקודם",
+    "continue": "המשך",
+    "finish": "סיים",
+    "retry": "נסה שוב",
+    "refresh": "רענן",
+    "search": "חיפוש",
+    "filter": "סנן",
+    "sort": "מיין",
+    "select": "בחר",
+    "choose": "בחר",
+    "confirm": "אשר",
+    "warning": "אזהרה",
+    "info": "מידע",
+    "help": "עזרה",
+    "about": "אודות",
+    "version": "גרסה",
+    "settings": "הגדרות",
+    "preferences": "העדפות",
+    "language": "שפה",
+    "languages": "שפות"
+  },
+  "menu": {
+    "openMenu": "פתח תפריט",
+    "myWords": "המילים שלי",
+    "progress": "התקדמות",
+    "settings": "הגדרות",
+    "shareApp": "שתף אפליקציה",
+    "contactUs": "צרו קשר",
+    "logout": "התנתקות",
+    "shareMessage": "אני לומד שפות עם HelloLingo! נסו את זה ותראו אם זה עוזר גם לכם."
+  },
+  "alerts": {
+    "wordAlreadyExists": "המילה כבר קיימת",
+    "wordAlreadyInList": "כבר נמצאת ברשימת המילים שלכם.",
+    "wordAdded": "מילה נוספה!",
+    "wordAddedToList": "נוספה לרשימת המילים שלכם.",
+    "errorAddingWord": "שגיאה בהוספת המילה לרשימה שלכם.",
+    "errorOccurred": "אירעה שגיאה",
+    "tryAgain": "אנא נסו שוב"
+  },
+  "notEnoughWords": {
+    "readyToLearn": "מוכנים ללמוד?",
+    "notEnoughWordsMessage": "אין מספיק מילים לתרגול עדיין. הוסיפו עוד מילים באחת מאפשרויות הלמידה",
+    "browseContent": "עיינו בתוכן",
+    "watchVideos": "צפו בסרטונים",
+    "readBooks": "קראו ספרים",
+    "wordCategories": "קטגוריות מילים"
+  }
+}

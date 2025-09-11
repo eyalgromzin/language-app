@@ -13,6 +13,8 @@ import { AuthProvider, useAuth } from './src/contexts/AuthContext';
 import { WordCategoriesProvider } from './src/contexts/WordCategoriesContext';
 import { LanguageMappingsProvider } from './src/contexts/LanguageMappingsContext';
 import { LoginGateProvider } from './src/contexts/LoginGateContext';
+import { initializeLanguage } from './src/i18n';
+import { useTranslation } from './src/hooks/useTranslation';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
 import SurfScreen from './src/screens/Surf/SurfScreen';
@@ -70,6 +72,7 @@ function MainTabs(): React.JSX.Element {
   const [videoKey, setVideoKey] = React.useState<number>(0);
   const [initialTabRouteName, setInitialTabRouteName] = React.useState<keyof RootTabParamList | null>(null);
   const { isAuthenticated, logout } = useAuth();
+  const { t } = useTranslation();
 
   // Function to add word from deep link
   const addWordFromDeepLink = React.useCallback(async (word: string, translation: string, sentence?: string) => {
@@ -188,15 +191,14 @@ function MainTabs(): React.JSX.Element {
   const handleShare = React.useCallback(async () => {
     try {
       await Share.share({
-        message:
-          'I am learning languages with HelloLingo! Give it a try and see if it helps you too.',
+        message: t('menu.shareMessage'),
       });
     } catch {
       // no-op
     } finally {
       setMenuOpen(false);
     }
-  }, []);
+  }, [t]);
 
   const handleLogout = React.useCallback(async () => {
     try {
@@ -295,11 +297,12 @@ function MainTabs(): React.JSX.Element {
           },
         })}
       >
-        <Tab.Screen name="Surf" component={SurfScreen} />
+        <Tab.Screen name="Surf" component={SurfScreen} options={{ title: t('navigation.surf') }} />
         <Tab.Screen
           key={`Video-${videoKey}`}
           name="Video"
           component={VideoScreen}
+          options={{ title: t('navigation.video') }}
           listeners={({ navigation, route }) => ({
             tabPress: (e) => {
               e.preventDefault();
@@ -316,15 +319,16 @@ function MainTabs(): React.JSX.Element {
             const routeName = getFocusedRouteNameFromRoute(route) ?? 'PracticeHome';
             const isNestedDetail = routeName !== 'PracticeHome';
             return {
+              title: t('navigation.practice'),
               // Hide parent header for nested detail screens to avoid double headers
               headerShown: !isNestedDetail,
             };
           }}
         />
-        <Tab.Screen name="BabySteps" component={BabyStepsPathScreen} options={{ title: 'Baby Steps' }} />
-        <Tab.Screen name="Categories" component={WordsByCategoriesScreen} options={{ title: 'Categories' }} />
-        <Tab.Screen name="Books" component={BooksNavigator} options={{ title: 'Books' }} />
-        <Tab.Screen name="Library" component={LibraryScreen} options={{ title: 'Library' }} />
+        <Tab.Screen name="BabySteps" component={BabyStepsPathScreen} options={{ title: t('navigation.babySteps') }} />
+        <Tab.Screen name="Categories" component={WordsByCategoriesScreen} options={{ title: t('navigation.categories') }} />
+        <Tab.Screen name="Books" component={BooksNavigator} options={{ title: t('navigation.books') }} />
+        <Tab.Screen name="Library" component={LibraryScreen} options={{ title: t('navigation.library') }} />
       </Tab.Navigator>
       )}
 
@@ -338,23 +342,23 @@ function MainTabs(): React.JSX.Element {
           <TouchableOpacity style={styles.menuBackdrop} activeOpacity={1} onPress={() => setMenuOpen(false)} />
           <View style={styles.menuPanel}>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('MyWords'); setMenuOpen(false); }}>
-              <Text style={styles.menuItemText}>My Words</Text>
+              <Text style={styles.menuItemText}>{t('menu.myWords')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Progress'); setMenuOpen(false); }}>
-              <Text style={styles.menuItemText}>Progress</Text>
+              <Text style={styles.menuItemText}>{t('menu.progress')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Settings'); setMenuOpen(false); }}>
-              <Text style={styles.menuItemText}>Settings</Text>
+              <Text style={styles.menuItemText}>{t('menu.settings')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={handleShare}>
-              <Text style={styles.menuItemText}>Share App</Text>
+              <Text style={styles.menuItemText}>{t('menu.shareApp')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('ContactUs'); setMenuOpen(false); }}>
-              <Text style={styles.menuItemText}>Contact Us</Text>
+              <Text style={styles.menuItemText}>{t('menu.contactUs')}</Text>
             </TouchableOpacity>
             {isAuthenticated && (
               <TouchableOpacity style={[styles.menuItem, styles.menuLogout]} onPress={handleLogout}>
-                <Text style={[styles.menuItemText, styles.menuLogoutText]}>Logout</Text>
+                <Text style={[styles.menuItemText, styles.menuLogoutText]}>{t('menu.logout')}</Text>
               </TouchableOpacity>
             )}
           </View>
@@ -528,6 +532,11 @@ function AppNavigator(): React.JSX.Element {
 }
 
 function App(): React.JSX.Element {
+  // Initialize i18n when the app starts
+  React.useEffect(() => {
+    initializeLanguage().catch(console.error);
+  }, []);
+
   return (
     <AuthProvider>
       <WordCategoriesProvider>

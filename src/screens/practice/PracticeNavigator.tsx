@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, Pressable } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useTranslation } from '../../hooks/useTranslation';
 import PracticeHomeScreen from './PracticeScreen.tsx';
 import WordMissingLettersScreen from './MissingLettersScreen/missingLettersScreen.tsx';
 import MissingWordsScreen from './missingWords/MissingWordsScreen.tsx';
@@ -54,6 +55,8 @@ function navigateToRandomGame(
 }
 
 function PracticeNavigator(): React.JSX.Element {
+  const { t } = useTranslation();
+  
   return (
     <Stack.Navigator
       screenOptions={({ route, navigation }) => ({
@@ -71,7 +74,7 @@ function PracticeNavigator(): React.JSX.Element {
                 )
               }
               accessibilityRole="button"
-              accessibilityLabel="Surprise me"
+              accessibilityLabel={t('screens.practice.surpriseMe')}
             >
               <Text style={{ fontSize: 18 }}>🎲</Text>
             </Pressable>
@@ -81,13 +84,13 @@ function PracticeNavigator(): React.JSX.Element {
       <Stack.Screen
         name="PracticeHome"
         component={PracticeHomeScreen}
-        options={{ title: 'Practice' }}
+        options={{ title: t('screens.practice.title') }}
       />
       <Stack.Screen
         name="MissingLetters"
         component={WordMissingLettersScreen}
         options={{
-          title: 'Missing letters',
+          title: t('screens.practice.missingLetters'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
@@ -103,7 +106,7 @@ function PracticeNavigator(): React.JSX.Element {
         name="MissingWords"
         component={MissingWordsScreen}
         options={{
-          title: 'Missing words',
+          title: t('screens.practice.missingWords'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
@@ -118,7 +121,7 @@ function PracticeNavigator(): React.JSX.Element {
         name="WordsMatch"
         component={WordsMatchScreen}
         options={{
-          title: 'Match game',
+          title: t('screens.practice.matchGame'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
@@ -133,7 +136,7 @@ function PracticeNavigator(): React.JSX.Element {
         name="Translate"
         component={WordMissingLettersScreen}
         options={{
-          title: 'Translate',
+          title: t('screens.practice.translate'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
@@ -149,7 +152,7 @@ function PracticeNavigator(): React.JSX.Element {
         name="ChooseWord"
         component={Choose1OutOfN}
         options={{
-          title: 'Choose word',
+          title: t('screens.practice.chooseWord'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
@@ -164,7 +167,7 @@ function PracticeNavigator(): React.JSX.Element {
         name="ChooseTranslation"
         component={Choose1OutOfN}
         options={{
-          title: 'Choose translation',
+          title: t('screens.practice.chooseTranslation'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
@@ -179,7 +182,7 @@ function PracticeNavigator(): React.JSX.Element {
         name="MemoryGame"
         component={MemoryGameScreen}
         options={{
-          title: 'Memory game',
+          title: t('screens.practice.memoryGame'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
@@ -194,7 +197,7 @@ function PracticeNavigator(): React.JSX.Element {
         name="HearingPractice"
         component={HearingPracticeScreen}
         options={{
-          title: 'Hearing practice',
+          title: t('screens.practice.hearingPractice'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
@@ -209,7 +212,7 @@ function PracticeNavigator(): React.JSX.Element {
         name="FormulateSentense"
         component={FormulateSentenseScreen}
         options={{
-          title: 'Formulate sentence',
+          title: t('screens.practice.formulateSentence'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',

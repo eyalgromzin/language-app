@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from '../hooks/useTranslation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 interface NotEnoughWordsMessageProps {
@@ -10,19 +11,20 @@ interface NotEnoughWordsMessageProps {
 const { width } = Dimensions.get('window');
 
 const NotEnoughWordsMessage: React.FC<NotEnoughWordsMessageProps> = ({ 
-  message = "Not enough words to practice yet. Add more words in one of the learning options" 
+  message 
 }) => {
   const navigation = useNavigation<any>();
+  const { t } = useTranslation();
 
   const navigateToScreen = (screenName: string) => {
     navigation.navigate(screenName as never);
   };
 
   const learningOptions = [
-    { name: 'Surf', icon: 'globe-outline', description: 'Browse content' },
-    { name: 'Video', icon: 'play-circle-outline', description: 'Watch videos' },
-    { name: 'Books', icon: 'book-outline', description: 'Read books' },
-    { name: 'Categories', icon: 'grid-outline', description: 'Word categories' },
+    { name: t('navigation.surf'), icon: 'globe-outline', description: t('notEnoughWords.browseContent') },
+    { name: t('navigation.video'), icon: 'play-circle-outline', description: t('notEnoughWords.watchVideos') },
+    { name: t('navigation.books'), icon: 'book-outline', description: t('notEnoughWords.readBooks') },
+    { name: t('navigation.categories'), icon: 'grid-outline', description: t('notEnoughWords.wordCategories') },
   ];
 
   return (
@@ -32,8 +34,8 @@ const NotEnoughWordsMessage: React.FC<NotEnoughWordsMessageProps> = ({
           <Ionicons name="school-outline" size={48} color="#6366F1" />
         </View>
         
-        <Text style={styles.title}>Ready to Learn?</Text>
-        <Text style={styles.message}>{message}</Text>
+        <Text style={styles.title}>{t('notEnoughWords.readyToLearn')}</Text>
+        <Text style={styles.message}>{message || t('notEnoughWords.notEnoughWordsMessage')}</Text>
         
         <View style={styles.buttonContainer}>
           {learningOptions.map((option, index) => (

@@ -1,0 +1,161 @@
+{
+  "navigation": {
+    "surf": "Naviga",
+    "video": "Video",
+    "practice": "Pratica",
+    "babySteps": "Primi Passi",
+    "categories": "Categorie",
+    "library": "Biblioteca",
+    "books": "Libri"
+  },
+  "screens": {
+    "home": {
+      "title": "HelloLingo",
+      "subtitle": "Personalizziamo il tuo percorso di apprendimento delle lingue"
+    },
+    "settings": {
+      "title": "Impostazioni",
+      "subtitle": "Personalizza la tua esperienza di apprendimento",
+      "languageSettings": "Impostazioni Lingua",
+      "learningLanguage": "Lingua di Apprendimento",
+      "learningLanguageDescription": "La lingua che vuoi imparare",
+      "nativeLanguage": "Lingua Madre",
+      "nativeLanguageDescription": "La tua lingua principale",
+      "practiceSettings": "Impostazioni Pratica",
+      "practiceCompletion": "Completamento Pratica",
+      "practiceCompletionDescription": "Numero di risposte corrette necessarie per completare un tipo di pratica",
+      "wordMastery": "Padronanza delle Parole",
+      "wordMasteryDescription": "Totale risposte corrette prima che una parola sia considerata padroneggiata",
+      "account": "Account",
+      "signOut": "Disconnetti",
+      "logout": "Disconnessione",
+      "logoutConfirm": "Sei sicuro di volerti disconnettere?",
+      "cancel": "Annulla",
+      "logoutError": "Si è verificato un errore durante la disconnessione. Riprova."
+    },
+    "startup": {
+      "welcome": "Benvenuto in HelloLingo!",
+      "personalize": "Personalizziamo il tuo percorso di apprendimento delle lingue",
+      "languageSetup": "Configurazione Lingua",
+      "whichLanguageToLearn": "Quale lingua vuoi imparare?",
+      "yourNativeLanguage": "La tua lingua madre",
+      "selectLanguage": "Seleziona una lingua...",
+      "selectNativeLanguage": "Seleziona la tua lingua madre...",
+      "selectLanguages": "Seleziona lingue",
+      "chooseBothLanguages": "Scegli entrambe le lingue per continuare.",
+      "startLearning": "Inizia ad Imparare",
+      "settingUpAccount": "Configurazione del tuo account...",
+      "error": "Errore",
+      "failedToSavePreferences": "Impossibile salvare le preferenze. Riprova.",
+      "loadingLanguages": "Caricamento lingue disponibili...",
+      "loadingLanguageOptions": "Caricamento opzioni lingua...",
+      "noLanguagesAvailable": "Nessuna lingua disponibile"
+    },
+    "video": {
+      "searchPlaceholder": "Cerca...",
+      "goButton": "Vai",
+      "nowPlayingByOthers": "In riproduzione da altri",
+      "enterYouTubeUrl": "Inserisci URL o ID YouTube...",
+      "history": "Cronologia",
+      "favouritesList": "Lista preferiti",
+      "moreOptions": "Altre opzioni"
+    },
+    "practice": {
+      "title": "Pratica",
+      "missingLetters": "Lettere mancanti",
+      "missingWords": "Parole mancanti",
+      "matchGame": "Gioco di abbinamento",
+      "chooseWord": "Scegli parola",
+      "chooseTranslation": "Scegli traduzione",
+      "translate": "Traduci",
+      "memoryGame": "Gioco di memoria",
+      "hearingPractice": "Pratica di ascolto",
+      "formulateSentence": "Formula frase",
+      "surpriseMe": "Sorprendimi"
+    },
+    "library": {
+      "title": "Biblioteca",
+      "loadingResources": "Caricamento delle tue risorse di apprendimento..."
+    },
+    "books": {
+      "title": "Libri",
+      "reader": "Lettore"
+    },
+    "categories": {
+      "title": "Categorie"
+    },
+    "myWords": {
+      "title": "Le Mie Parole"
+    },
+    "progress": {
+      "title": "Progresso"
+    },
+    "contactUs": {
+      "title": "Contattaci"
+    }
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo",
+    "cancel": "Annulla",
+    "ok": "OK",
+    "yes": "Sì",
+    "no": "No",
+    "save": "Salva",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "add": "Aggiungi",
+    "remove": "Rimuovi",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "next": "Avanti",
+    "previous": "Precedente",
+    "continue": "Continua",
+    "finish": "Termina",
+    "retry": "Riprova",
+    "refresh": "Aggiorna",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "sort": "Ordina",
+    "select": "Seleziona",
+    "choose": "Scegli",
+    "confirm": "Conferma",
+    "warning": "Avviso",
+    "info": "Informazioni",
+    "help": "Aiuto",
+    "about": "Informazioni",
+    "version": "Versione",
+    "settings": "Impostazioni",
+    "preferences": "Preferenze",
+    "language": "Lingua",
+    "languages": "Lingue"
+  },
+  "menu": {
+    "openMenu": "Apri menu",
+    "myWords": "Le Mie Parole",
+    "progress": "Progresso",
+    "settings": "Impostazioni",
+    "shareApp": "Condividi App",
+    "contactUs": "Contattaci",
+    "logout": "Disconnetti",
+    "shareMessage": "Sto imparando le lingue con HelloLingo! Provatelo e vedete se vi aiuta anche voi."
+  },
+  "alerts": {
+    "wordAlreadyExists": "La parola esiste già",
+    "wordAlreadyInList": "è già nella tua lista di parole.",
+    "wordAdded": "Parola aggiunta!",
+    "wordAddedToList": "è stata aggiunta alla tua lista di parole.",
+    "errorAddingWord": "Errore nell'aggiungere la parola alla tua lista.",
+    "errorOccurred": "Si è verificato un errore",
+    "tryAgain": "Riprova"
+  },
+  "notEnoughWords": {
+    "readyToLearn": "Pronto ad Imparare?",
+    "notEnoughWordsMessage": "Non ci sono abbastanza parole per praticare ancora. Aggiungi più parole in una delle opzioni di apprendimento",
+    "browseContent": "Sfoglia contenuti",
+    "watchVideos": "Guarda video",
+    "readBooks": "Leggi libri",
+    "wordCategories": "Categorie di parole"
+  }
+}
