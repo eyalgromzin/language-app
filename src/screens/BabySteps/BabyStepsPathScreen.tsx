@@ -449,9 +449,12 @@ function BabyStepsPathScreen(): React.JSX.Element {
           <View style={styles.headerContent}>
             <View style={styles.headerLeft}>
               <View style={styles.titleContainer}>
-                <Text style={[styles.headerTitle, { color: isDark ? '#f8fafc' : '#1e293b' }]}>
-                  Learning Journey
-                </Text>
+                <View style={styles.titleRow}>
+                  <Text style={styles.stepsIcon}>👣</Text>
+                  <Text style={[styles.headerTitle, { color: isDark ? '#f8fafc' : '#1e293b' }]}>
+                    Learning Journey
+                  </Text>
+                </View>
                 <Text style={[styles.headerSubtitle, { color: isDark ? '#94a3b8' : '#64748b' }]}>
                   Master your language step by step
                 </Text>
@@ -678,11 +681,20 @@ const styles = StyleSheet.create({
   titleContainer: {
     marginBottom: 12,
   },
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 2,
+  },
   headerTitle: {
     fontSize: 24,
     fontWeight: '700',
     letterSpacing: -0.5,
-    marginBottom: 2,
+  },
+  stepsIcon: {
+    fontSize: 20,
+    marginRight: 8,
+    opacity: 0.8,
   },
   headerSubtitle: {
     fontSize: 14,
