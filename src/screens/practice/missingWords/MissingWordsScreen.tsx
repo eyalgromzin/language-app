@@ -17,6 +17,7 @@ import { playCorrectFeedback, playWrongFeedback } from '../common';
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
+import { useTranslation } from '../../../hooks/useTranslation';
 import { WordEntry } from '../../../types/words';
 
 type PreparedItem = {
@@ -103,6 +104,7 @@ function pickMissingWordIndices(tokens: string[], desiredCount: number): number[
 function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
+  const { t } = useTranslation();
   const RANDOM_GAME_ROUTES: string[] = [
     'MissingLetters',
     'MissingWords',
@@ -420,7 +422,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
   }
 
   if (!props.embedded && !current) {
-    return <NotEnoughWordsMessage message="No sentences to practice yet. Add more words in one of the learning options" />;
+    return <NotEnoughWordsMessage message={t('notEnoughWords.noSentencesMessage')} />;
   }
 
   const renderToken = (tok: string, idx: number) => {
