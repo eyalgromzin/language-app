@@ -62,6 +62,7 @@
     },
     "practice": {
       "title": "Übung",
+      "choosePreference": "Wählen Sie Ihre Präferenz",
       "missingLetters": "Fehlende Buchstaben",
       "missingWords": "Fehlende Wörter",
       "matchGame": "Zuordnungsspiel",
@@ -71,7 +72,8 @@
       "memoryGame": "Gedächtnisspiel",
       "hearingPractice": "Hörübung",
       "formulateSentence": "Satz formulieren",
-      "surpriseMe": "Überraschen Sie mich"
+      "surpriseMe": "Überraschen Sie mich",
+      "magic": "Magie"
     },
     "library": {
       "title": "Bibliothek",

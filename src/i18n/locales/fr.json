@@ -62,6 +62,7 @@
     },
     "practice": {
       "title": "Pratique",
+      "choosePreference": "Choisissez votre préférence",
       "missingLetters": "Lettres manquantes",
       "missingWords": "Mots manquants",
       "matchGame": "Jeu d'association",
@@ -71,7 +72,8 @@
       "memoryGame": "Jeu de mémoire",
       "hearingPractice": "Pratique auditive",
       "formulateSentence": "Formuler une phrase",
-      "surpriseMe": "Surprenez-moi"
+      "surpriseMe": "Surprenez-moi",
+      "magic": "Magie"
     },
     "library": {
       "title": "Bibliothèque",
@@ -167,6 +169,8 @@
     "back": "Retour",
     "next": "Suivant",
     "previous": "Précédent",
+    "correct": "Correct !",
+    "incorrect": "Incorrect",
     "continue": "Continuer",
     "finish": "Terminer",
     "retry": "Réessayer",

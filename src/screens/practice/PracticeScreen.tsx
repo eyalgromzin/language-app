@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View, ScrollView, Image, Animated, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from '../../hooks/useTranslation';
 
 type PracticeOption = {
   key: string;
@@ -9,28 +10,28 @@ type PracticeOption = {
 };
 
 const PRACTICE_OPTIONS: PracticeOption[] = [
-  { key: 'missingLetters', label: 'Word Missing letters', emoji: '🔤' },
-  { key: 'missingWords', label: 'Missing words', emoji: '🔡' },
-  { key: 'matchGame', label: 'Match game', emoji: '🧩' },
-  { key: 'chooseWord', label: 'Choose word', emoji: '📝' },
-  { key: 'chooseTranslation', label: 'Choose translation', emoji: '🔎' },
-  { key: 'translate', label: 'Translation Missing Letters', emoji: 'ðŸŒ' },
-  { key: 'memoryGame', label: 'Memory game', emoji: '🧠' },
-  { key: 'hearing', label: 'Hearing practice', emoji: '🔊' },
+  { key: 'missingLetters', label: 'missingLetters', emoji: '🔤' },
+  { key: 'missingWords', label: 'missingWords', emoji: '🔡' },
+  { key: 'matchGame', label: 'matchGame', emoji: '🧩' },
+  { key: 'chooseWord', label: 'chooseWord', emoji: '📝' },
+  { key: 'chooseTranslation', label: 'chooseTranslation', emoji: '🔎' },
+  { key: 'translate', label: 'translate', emoji: 'ðŸŒ' },
+  { key: 'memoryGame', label: 'memoryGame', emoji: '🧠' },
+  { key: 'hearing', label: 'hearingPractice', emoji: '🔊' },
 ];
 
 // Custom Match Game Button Component
 const MatchGameButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
+  const { t } = useTranslation();
   return (
     <TouchableOpacity
       style={styles.matchGameButton}
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel="Match game"
+      accessibilityLabel={t('screens.practice.matchGame')}
     >
       <View style={styles.matchGameContent}>
-        <Text style={styles.matchGameTitle}>MATCH</Text>
-        <Text style={styles.matchGameTitle}>GAME</Text>
+        <Text style={styles.matchGameTitle}>{t('screens.practice.matchGame').toUpperCase()}</Text>
         
         <View style={styles.cardsContainer}>
           <View style={[styles.card, styles.cardLeft]}>
@@ -56,16 +57,16 @@ const MatchGameButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
 
 // Custom Missing Letters Button Component
 const MissingLettersButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
+  const { t } = useTranslation();
   return (
     <TouchableOpacity
       style={styles.missingLettersButton}
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel="Missing letters"
+      accessibilityLabel={t('screens.practice.missingLetters')}
     >
       <View style={styles.missingLettersContent}>
-        <Text style={styles.missingLettersTitle}>MISSING</Text>
-        <Text style={styles.missingLettersTitle}>LETTERS</Text>
+        <Text style={styles.missingLettersTitle}>{t('screens.practice.missingLetters').toUpperCase()}</Text>
         
         <View style={styles.wordContainer}>
           <Text style={styles.wordLetter}>H</Text>
@@ -83,16 +84,16 @@ const MissingLettersButton: React.FC<{ onPress: () => void }> = ({ onPress }) =>
 
 // Custom Missing Words Button Component
 const MissingWordsButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
+  const { t } = useTranslation();
   return (
     <TouchableOpacity
       style={styles.missingWordsButton}
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel="Missing words"
+      accessibilityLabel={t('screens.practice.missingWords')}
     >
       <View style={styles.missingWordsContent}>
-        <Text style={styles.missingWordsTitle}>MISSING</Text>
-        <Text style={styles.missingWordsTitle}>WORDS</Text>
+        <Text style={styles.missingWordsTitle}>{t('screens.practice.missingWords').toUpperCase()}</Text>
         
         <View style={styles.sentenceContainer}>
           <Text style={styles.sentenceWord}>The</Text>
@@ -109,16 +110,16 @@ const MissingWordsButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
 
 // Custom Choose Word Button Component
 const ChooseWordButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
+  const { t } = useTranslation();
   return (
     <TouchableOpacity
       style={styles.chooseWordButton}
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel="Choose word"
+      accessibilityLabel={t('screens.practice.chooseWord')}
     >
       <View style={styles.chooseWordContent}>
-        <Text style={styles.chooseWordTitle}>CHOOSE</Text>
-        <Text style={styles.chooseWordTitle}>WORD</Text>
+        <Text style={styles.chooseWordTitle}>{t('screens.practice.chooseWord').toUpperCase()}</Text>
         
         <View style={styles.optionsContainer}>
           <View style={styles.optionBox}>
@@ -138,16 +139,16 @@ const ChooseWordButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
 
 // Custom Choose Translation Button Component
 const ChooseTranslationButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
+  const { t } = useTranslation();
   return (
     <TouchableOpacity
       style={styles.chooseTranslationButton}
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel="Choose translation"
+      accessibilityLabel={t('screens.practice.chooseTranslation')}
     >
       <View style={styles.chooseTranslationContent}>
-        <Text style={styles.chooseTranslationTitle}>CHOOSE</Text>
-        <Text style={styles.chooseTranslationTitle}>TRANSLATION</Text>
+        <Text style={styles.chooseTranslationTitle}>{t('screens.practice.chooseTranslation').toUpperCase()}</Text>
         
         <View style={styles.translationContainer}>
           <Text style={styles.translationWord}>Hello</Text>
@@ -164,16 +165,16 @@ const ChooseTranslationButton: React.FC<{ onPress: () => void }> = ({ onPress })
 
 // Custom Translation Missing Letters Button Component
 const TranslationMissingLettersButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
+  const { t } = useTranslation();
   return (
     <TouchableOpacity
       style={styles.translationMissingLettersButton}
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel="Translation missing letters"
+      accessibilityLabel={t('screens.practice.translate')}
     >
       <View style={styles.translationMissingLettersContent}>
-        <Text style={styles.translationMissingLettersTitle}>TRANSLATION</Text>
-        <Text style={styles.translationMissingLettersTitle}>MISSING</Text>
+        <Text style={styles.translationMissingLettersTitle}>{t('screens.practice.translate').toUpperCase()}</Text>
         
         <View style={styles.translationWordContainer}>
           <Text style={styles.translationWord}>H</Text>
@@ -190,16 +191,16 @@ const TranslationMissingLettersButton: React.FC<{ onPress: () => void }> = ({ on
 
 // Custom Memory Game Button Component
 const MemoryGameButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
+  const { t } = useTranslation();
   return (
     <TouchableOpacity
       style={styles.memoryGameButton}
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel="Memory game"
+      accessibilityLabel={t('screens.practice.memoryGame')}
     >
       <View style={styles.memoryGameContent}>
-        <Text style={styles.memoryGameTitle}>MEMORY</Text>
-        <Text style={styles.memoryGameTitle}>GAME</Text>
+        <Text style={styles.memoryGameTitle}>{t('screens.practice.memoryGame').toUpperCase()}</Text>
         
         <View style={styles.memoryGrid}>
           <View style={[styles.memoryCard, styles.memoryCardFlipped]}>
@@ -222,16 +223,16 @@ const MemoryGameButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
 
 // Custom Hearing Practice Button Component
 const HearingPracticeButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
+  const { t } = useTranslation();
   return (
     <TouchableOpacity
       style={styles.hearingPracticeButton}
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel="Hearing practice"
+      accessibilityLabel={t('screens.practice.hearingPractice')}
     >
       <View style={styles.hearingPracticeContent}>
-        <Text style={styles.hearingPracticeTitle}>HEARING</Text>
-        <Text style={styles.hearingPracticeTitle}>PRACTICE</Text>
+        <Text style={styles.hearingPracticeTitle}>{t('screens.practice.hearingPractice').toUpperCase()}</Text>
         
         <View style={styles.soundContainer}>
           <Text style={styles.soundWave}>🔊</Text>
@@ -248,6 +249,7 @@ const HearingPracticeButton: React.FC<{ onPress: () => void }> = ({ onPress }) =
 
 // Custom Surprise Me Button Component
 const SurpriseMeButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
+  const { t } = useTranslation();
   const animatedValue = React.useRef(new Animated.Value(0)).current;
   
   React.useEffect(() => {
@@ -289,13 +291,12 @@ const SurpriseMeButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
         style={styles.surpriseMeButtonInner}
         onPress={onPress}
         accessibilityRole="button"
-        accessibilityLabel="Surprise me"
+        accessibilityLabel={t('screens.practice.surpriseMe')}
       >
         <View style={styles.surpriseMeContent}>
           <View style={styles.surpriseMeHeader}>
             <Text style={styles.surpriseMeTitle}>🎲</Text>
-            <Text style={styles.surpriseMeTitle}>SURPRISE</Text>
-            <Text style={styles.surpriseMeTitle}>ME</Text>
+            <Text style={styles.surpriseMeTitle}>{t('screens.practice.surpriseMe').toUpperCase()}</Text>
             <Text style={styles.surpriseMeTitle}>🎲</Text>
           </View>
           
@@ -308,7 +309,7 @@ const SurpriseMeButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
           </View>
           
           <View style={styles.magicContainer}>
-            <Text style={styles.magicText}>✨ MAGIC ✨</Text>
+            <Text style={styles.magicText}>✨ {t('screens.practice.magic').toUpperCase()} ✨</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -318,6 +319,7 @@ const SurpriseMeButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
 
 function PracticeScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
+  const { t } = useTranslation();
   const onOptionPress = (opt: PracticeOption) => {
     if (opt.key === 'missingLetters') {
       navigation.navigate('MissingLetters', { mode: 'word' });
@@ -373,7 +375,7 @@ function PracticeScreen(): React.JSX.Element {
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         {/* Header Section */}
         <View style={styles.header}>
-          <Text style={styles.headerSubtitle}>Choose your preference</Text>
+          <Text style={styles.headerSubtitle}>{t('screens.practice.choosePreference')}</Text>
         </View>
 
         {/* Surprise Me Button */}
@@ -458,7 +460,7 @@ function PracticeScreen(): React.JSX.Element {
               accessibilityLabel={opt.label}
             >
               <Text style={styles.gridItemEmoji}>{opt.emoji || '•'}</Text>
-              <Text numberOfLines={2} style={styles.gridItemLabel}>{opt.label}</Text>
+              <Text numberOfLines={2} style={styles.gridItemLabel}>{t(`screens.practice.${opt.label}`)}</Text>
             </TouchableOpacity>
           );
         })}

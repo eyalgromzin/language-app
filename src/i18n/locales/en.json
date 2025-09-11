@@ -62,6 +62,7 @@
     },
     "practice": {
       "title": "Practice",
+      "choosePreference": "Choose your preference",
       "missingLetters": "Missing letters",
       "missingWords": "Missing words",
       "matchGame": "Match game",
@@ -71,7 +72,8 @@
       "memoryGame": "Memory game",
       "hearingPractice": "Hearing practice",
       "formulateSentence": "Formulate sentence",
-      "surpriseMe": "Surprise me"
+      "surpriseMe": "Surprise me",
+      "magic": "Magic"
     },
     "library": {
       "title": "Library",
@@ -167,6 +169,8 @@
     "back": "Back",
     "next": "Next",
     "previous": "Previous",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
     "continue": "Continue",
     "finish": "Finish",
     "retry": "Retry",
