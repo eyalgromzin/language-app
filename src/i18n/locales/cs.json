@@ -247,6 +247,7 @@
     "readyToLearn": "Připraveni k Učení?",
     "notEnoughWordsMessage": "Zatím není dost slov na cvičení. Přidejte více slov v jedné z učebních možností",
     "noSentencesMessage": "Zatím nejsou věty na cvičení. Přidejte více slov v jedné z učebních možností",
+    "wordsMatchMessage": "Není dost slov na hru Words Match. Potřebujete alespoň {minRequiredWords} slov, ale máte jen {currentWords}. Přidejte více slov v jedné z učebních možností níže.",
     "browseContent": "Procházet obsah",
     "watchVideos": "Sledovat videa",
     "readBooks": "Číst knihy",

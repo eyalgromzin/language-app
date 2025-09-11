@@ -276,6 +276,7 @@
     "readyToLearn": "מוכנים ללמוד?",
     "notEnoughWordsMessage": "אין מספיק מילים לתרגול עדיין. הוסיפו עוד מילים באחת מאפשרויות הלמידה",
     "noSentencesMessage": "אין משפטים לתרגול עדיין. הוסיפו עוד מילים באחת מאפשרויות הלמידה",
+    "wordsMatchMessage": "אין מספיק מילים לשחק Words Match. אתם צריכים לפחות {minRequiredWords} מילים, אבל יש לכם רק {currentWords}. הוסיפו עוד מילים באחת מאפשרויות הלמידה למטה.",
     "browseContent": "עיינו בתוכן",
     "watchVideos": "צפו בסרטונים",
     "readBooks": "קראו ספרים",

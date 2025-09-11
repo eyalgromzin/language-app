@@ -247,6 +247,7 @@
     "readyToLearn": "Gotowy do Nauki?",
     "notEnoughWordsMessage": "Jeszcze za mało słów do ćwiczenia. Dodaj więcej słów w jednej z opcji nauki",
     "noSentencesMessage": "Jeszcze nie ma zdań do ćwiczenia. Dodaj więcej słów w jednej z opcji nauki",
+    "wordsMatchMessage": "Za mało słów do gry Words Match. Potrzebujesz co najmniej {minRequiredWords} słów, ale masz tylko {currentWords}. Dodaj więcej słów w jednej z opcji nauki poniżej.",
     "browseContent": "Przeglądaj treści",
     "watchVideos": "Oglądaj filmy",
     "readBooks": "Czytaj książki",

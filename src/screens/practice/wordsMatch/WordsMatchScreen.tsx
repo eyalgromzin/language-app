@@ -342,7 +342,7 @@ function WordsMatchScreen(): React.JSX.Element {
           <Text style={styles.title}>match the words to their translations</Text>
         </View>
         {renderCountSelector()}
-        <NotEnoughWordsMessage message={`Not enough words to play Words Match. You need at least ${minRequiredWords} words, but you only have ${allWords.length}. Add more words in one of the learning options below.`}
+        <NotEnoughWordsMessage message={t('notEnoughWords.wordsMatchMessage', { minRequiredWords, currentWords: allWords.length })}
         />
       </ScrollView>
     );

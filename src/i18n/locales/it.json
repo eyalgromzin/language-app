@@ -247,6 +247,7 @@
     "readyToLearn": "Pronto ad Imparare?",
     "notEnoughWordsMessage": "Non ci sono abbastanza parole per praticare ancora. Aggiungi più parole in una delle opzioni di apprendimento",
     "noSentencesMessage": "Non ci sono ancora frasi da praticare. Aggiungi più parole in una delle opzioni di apprendimento",
+    "wordsMatchMessage": "Non ci sono abbastanza parole per giocare a Words Match. Hai bisogno di almeno {minRequiredWords} parole, ma ne hai solo {currentWords}. Aggiungi più parole in una delle opzioni di apprendimento qui sotto.",
     "browseContent": "Sfoglia contenuti",
     "watchVideos": "Guarda video",
     "readBooks": "Leggi libri",

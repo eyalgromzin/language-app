@@ -278,6 +278,7 @@
     "readyToLearn": "Prêt à Apprendre ?",
     "notEnoughWordsMessage": "Pas assez de mots pour pratiquer encore. Ajoutez plus de mots dans l'une des options d'apprentissage",
     "noSentencesMessage": "Pas encore de phrases à pratiquer. Ajoutez plus de mots dans l'une des options d'apprentissage",
+    "wordsMatchMessage": "Pas assez de mots pour jouer à Words Match. Vous avez besoin d'au moins {minRequiredWords} mots, mais vous n'en avez que {currentWords}. Ajoutez plus de mots dans l'une des options d'apprentissage ci-dessous.",
     "browseContent": "Parcourir le contenu",
     "watchVideos": "Regarder des vidéos",
     "readBooks": "Lire des livres",

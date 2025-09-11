@@ -247,6 +247,7 @@
     "readyToLearn": "Klar til å Lære?",
     "notEnoughWordsMessage": "Ikke nok ord å øve på ennå. Legg til flere ord i en av læringsalternativene",
     "noSentencesMessage": "Ingen setninger å øve på ennå. Legg til flere ord i en av læringsalternativene",
+    "wordsMatchMessage": "Ikke nok ord til å spille Words Match. Du trenger minst {minRequiredWords} ord, men du har bare {currentWords}. Legg til flere ord i en av læringsalternativene nedenfor.",
     "browseContent": "Bla gjennom innhold",
     "watchVideos": "Se videoer",
     "readBooks": "Les bøker",

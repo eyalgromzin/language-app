@@ -247,6 +247,7 @@
     "readyToLearn": "Klaar om te Leren?",
     "notEnoughWordsMessage": "Nog niet genoeg woorden om te oefenen. Voeg meer woorden toe in een van de leeropties",
     "noSentencesMessage": "Nog geen zinnen om te oefenen. Voeg meer woorden toe in een van de leeropties",
+    "wordsMatchMessage": "Niet genoeg woorden om Words Match te spelen. Je hebt minstens {minRequiredWords} woorden nodig, maar je hebt er maar {currentWords}. Voeg meer woorden toe in een van de leeropties hieronder.",
     "browseContent": "Blader door inhoud",
     "watchVideos": "Bekijk video's",
     "readBooks": "Lees boeken",

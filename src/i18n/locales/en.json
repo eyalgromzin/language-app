@@ -251,6 +251,7 @@
     "readyToLearn": "Ready to Learn?",
     "notEnoughWordsMessage": "Not enough words to practice yet. Add more words in one of the learning options",
     "noSentencesMessage": "No sentences to practice yet. Add more words in one of the learning options",
+    "wordsMatchMessage": "Not enough words to play Words Match. You need at least {minRequiredWords} words, but you only have {currentWords}. Add more words in one of the learning options below.",
     "browseContent": "Browse content",
     "watchVideos": "Watch videos",
     "readBooks": "Read books",

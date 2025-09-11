@@ -276,6 +276,7 @@
     "readyToLearn": "Bereit zum Lernen?",
     "notEnoughWordsMessage": "Noch nicht genug Wörter zum Üben. Fügen Sie mehr Wörter in einer der Lernoptionen hinzu",
     "noSentencesMessage": "Noch keine Sätze zum Üben. Fügen Sie mehr Wörter in einer der Lernoptionen hinzu",
+    "wordsMatchMessage": "Nicht genug Wörter für Words Match. Sie benötigen mindestens {minRequiredWords} Wörter, haben aber nur {currentWords}. Fügen Sie mehr Wörter in einer der Lernoptionen unten hinzu.",
     "browseContent": "Inhalt durchsuchen",
     "watchVideos": "Videos ansehen",
     "readBooks": "Bücher lesen",

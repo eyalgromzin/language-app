@@ -247,6 +247,7 @@
     "readyToLearn": "Valmis Oppimaan?",
     "notEnoughWordsMessage": "Ei vielä tarpeeksi sanoja harjoittelemiseen. Lisää sanoja jossakin oppimisvaihtoehdoista",
     "noSentencesMessage": "Ei vielä lauseita harjoittelemiseen. Lisää sanoja jossakin oppimisvaihtoehdoista",
+    "wordsMatchMessage": "Ei tarpeeksi sanoja Words Match -peliin. Tarvitset vähintään {minRequiredWords} sanaa, mutta sinulla on vain {currentWords}. Lisää sanoja jossakin oppimisvaihtoehdoista alla.",
     "browseContent": "Selaa sisältöä",
     "watchVideos": "Katso videoita",
     "readBooks": "Lue kirjoja",
