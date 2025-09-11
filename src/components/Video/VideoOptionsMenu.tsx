@@ -43,14 +43,15 @@ const VideoOptionsMenu: React.FC<VideoOptionsMenuProps> = ({
         onToggleFavouritesList();
       },
     },
-    ...(canShare && onShare ? [{
+    {
       title: t('screens.video.optionsMenu.shareVideo'),
       icon: 'share-outline',
-      onPress: () => {
+      onPress: canShare && onShare ? () => {
         onClose();
         onShare();
-      },
-    }] : []),
+      } : undefined,
+      disabled: !canShare || !onShare,
+    },
   ];
 
   return (
@@ -77,12 +78,19 @@ const VideoOptionsMenu: React.FC<VideoOptionsMenuProps> = ({
           {menuItems.map((item, index) => (
             <TouchableOpacity
               key={index}
-              style={styles.menuItem}
+              style={[styles.menuItem, item.disabled && styles.menuItemDisabled]}
               onPress={item.onPress}
-              activeOpacity={0.7}
+              activeOpacity={item.disabled ? 1 : 0.7}
+              disabled={item.disabled}
             >
-              <Ionicons name={item.icon as any} size={16} color="#007AFF" />
-              <Text style={styles.menuItemText}>{item.title}</Text>
+              <Ionicons 
+                name={item.icon as any} 
+                size={16} 
+                color={item.disabled ? "#9CA3AF" : "#007AFF"} 
+              />
+              <Text style={[styles.menuItemText, item.disabled && styles.menuItemTextDisabled]}>
+                {item.title}
+              </Text>
             </TouchableOpacity>
           ))}
         </View>
@@ -121,10 +129,16 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#f3f4f6',
   },
+  menuItemDisabled: {
+    opacity: 0.5,
+  },
   menuItemText: {
     fontSize: 14,
     color: '#111827',
     marginLeft: 8,
+  },
+  menuItemTextDisabled: {
+    color: '#9CA3AF',
   },
 });
 
