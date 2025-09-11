@@ -506,8 +506,11 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         </View>
       );
     }
-    // Only show NotEnoughWordsMessage if we're not loading and have confirmed there's no data
-    if (!loading && allEntries.length === 0) {
+    // Show NotEnoughWordsMessage if we're not loading and either:
+    // 1. No entries at all, or
+    // 2. Not enough entries for the game (less than 2), or
+    // 3. Not enough unique words in the global pool (less than 8)
+    if (!loading && (allEntries.length === 0 || allEntries.length < 2 || (isChooseTranslationMode ? allTranslationsPool.length < 8 : allWordsPool.length < 8))) {
       return <NotEnoughWordsMessage />;
     }
     // Show loading spinner while preparing data
