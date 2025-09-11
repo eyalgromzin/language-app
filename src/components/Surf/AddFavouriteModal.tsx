@@ -89,19 +89,19 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
                 activeOpacity={0.7}
               >
                 <Text style={[styles.selectInputText, { color: newFavTypeId ? '#1e293b' : '#94a3b8' }]}>
-                  {newFavTypeId ? (FAVOURITE_TYPES.find(type => type.id === newFavTypeId)?.name || '') : t('addFavouriteModal.selectContentType')}
+                  {newFavTypeId ? t(`addFavouriteModal.favouriteTypes.${FAVOURITE_TYPES.find(type => type.id === newFavTypeId)?.name}`) : t('addFavouriteModal.selectContentType')}
                 </Text>
                 <Ionicons name="chevron-down" size={20} color="#94a3b8" />
               </TouchableOpacity>
               {showTypeOptions && (
                 <View style={styles.optionsContainer}> 
-                  {FAVOURITE_TYPES.map((t) => (
+                  {FAVOURITE_TYPES.map((type) => (
                     <TouchableOpacity
-                      key={t.id}
-                      onPress={() => { setNewFavTypeId(t.id); setShowTypeOptions(false); setFavTypeError(false); }}
+                      key={type.id}
+                      onPress={() => { setNewFavTypeId(type.id); setShowTypeOptions(false); setFavTypeError(false); }}
                       style={styles.optionItem}
                     >
-                      <Text style={styles.optionText}>{t.name}</Text>
+                      <Text style={styles.optionText}>{t(`addFavouriteModal.favouriteTypes.${type.name}`)}</Text>
                     </TouchableOpacity>
                   ))}
                 </View>
@@ -119,7 +119,7 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
                 activeOpacity={0.7}
               >
                 <Text style={[styles.selectInputText, { color: newFavLevelName ? '#1e293b' : '#94a3b8' }]}>
-                  {newFavLevelName || t('addFavouriteModal.selectDifficultyLevel')}
+                  {newFavLevelName ? t(`addFavouriteModal.difficultyLevels.${newFavLevelName}`) : t('addFavouriteModal.selectDifficultyLevel')}
                 </Text>
                 <Ionicons name="chevron-down" size={20} color="#94a3b8" />
               </TouchableOpacity>
@@ -131,7 +131,7 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
                       onPress={() => { setNewFavLevelName(lv); setShowLevelOptions(false); }}
                       style={styles.optionItem}
                     >
-                      <Text style={styles.optionText}>{lv}</Text>
+                      <Text style={styles.optionText}>{t(`addFavouriteModal.difficultyLevels.${lv}`)}</Text>
                     </TouchableOpacity>
                   ))}
                 </View>

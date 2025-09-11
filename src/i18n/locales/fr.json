@@ -284,6 +284,20 @@
     "url": "URL",
     "urlPlaceholder": "https://exemple.com",
     "cancel": "Annuler",
-    "addToFavourites": "Ajouter aux Favoris"
+    "addToFavourites": "Ajouter aux Favoris",
+    "favouriteTypes": {
+      "article": "Article",
+      "story": "Histoire",
+      "conversation": "Conversation",
+      "lyrics": "Paroles",
+      "any": "N'importe"
+    },
+    "difficultyLevels": {
+      "easy": "Facile",
+      "easy-medium": "Facile-Moyen",
+      "medium": "Moyen",
+      "medium-hard": "Moyen-Difficile",
+      "hard": "Difficile"
+    }
   }
 }

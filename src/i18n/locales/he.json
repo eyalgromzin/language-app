@@ -282,6 +282,20 @@
     "url": "כתובת אתר",
     "urlPlaceholder": "https://דוגמה.com",
     "cancel": "ביטול",
-    "addToFavourites": "הוסף למועדפים"
+    "addToFavourites": "הוסף למועדפים",
+    "favouriteTypes": {
+      "article": "מאמר",
+      "story": "סיפור",
+      "conversation": "שיחה",
+      "lyrics": "מילים",
+      "any": "כל דבר"
+    },
+    "difficultyLevels": {
+      "easy": "קל",
+      "easy-medium": "קל-בינוני",
+      "medium": "בינוני",
+      "medium-hard": "בינוני-קשה",
+      "hard": "קשה"
+    }
   }
 }
