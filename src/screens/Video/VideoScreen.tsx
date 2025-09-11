@@ -21,6 +21,7 @@ import Transcript from './Transcript';
 import harmfulWordsService from '../../services/harmfulWordsService';
 import { useLoginGate } from '../../contexts/LoginGateContext';
 import { useAuth } from '../../contexts/AuthContext';
+import { useTranslation } from '../../hooks/useTranslation';
 import wordCountService from '../../services/wordCountService';
 import { 
   upsertVideoNowPlaying, 
@@ -56,9 +57,10 @@ type SearchBarProps = {
   isFavourite: boolean;
   onToggleFavourite: () => void;
   onOptionsButtonPress: (position: { x: number; y: number; width: number; height: number }) => void;
+  t: (key: string) => string;
 };
 
-const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, onToggleFavouritesList, showAuxButtons, isFavourite, onToggleFavourite, onOptionsButtonPress }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, onToggleFavouritesList, showAuxButtons, isFavourite, onToggleFavourite, onOptionsButtonPress, t }) => {
   const [showOptionsMenu, setShowOptionsMenu] = React.useState(false);
   const [optionsButtonPosition, setOptionsButtonPosition] = React.useState<{ x: number; y: number; width: number; height: number } | null>(null);
   const optionsButtonRef = React.useRef<any>(null);
@@ -71,13 +73,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
             ref={urlInputRef}
             value={inputUrl}
             onChangeText={onChangeText}
-            placeholder="Search..."
+            placeholder={t('screens.video.searchPlaceholder')}
             placeholderTextColor="#94a3b8"
             autoCapitalize="none"
             autoCorrect={false}
             keyboardType={Platform.OS === 'ios' ? 'url' : 'default'}
             style={[styles.input, { flex: 1 }]}
-            accessibilityLabel="YouTube URL input"
+            accessibilityLabel={t('screens.video.accessibilityLabels.youtubeUrlInput')}
             onSubmitEditing={onSubmit}
             returnKeyType="go"
             blurOnSubmit={false}
@@ -100,7 +102,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
             style={styles.goButton}
             onPress={onOpenPress}
             accessibilityRole="button"
-            accessibilityLabel="Open video"
+            accessibilityLabel={t('screens.video.accessibilityLabels.openVideo')}
           >
             <Text style={styles.goButtonText}>Go</Text>
           </TouchableOpacity>
@@ -119,7 +121,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
                 onPress={onOpenLibrary}
                 style={styles.libraryBtn}
                 accessibilityRole="button"
-                accessibilityLabel="Open Library"
+                accessibilityLabel={t('screens.video.accessibilityLabels.openLibrary')}
                 hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
               >
                 <Ionicons name="albums-outline" size={20} color="#64748b" />
@@ -136,7 +138,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
                 }}
                 style={styles.libraryBtn}
                 accessibilityRole="button"
-                accessibilityLabel="Open menu"
+                accessibilityLabel={t('screens.video.accessibilityLabels.openMenu')}
                 hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
               >
                 <Ionicons name="ellipsis-vertical" size={18} color="#64748b" />
@@ -155,6 +157,7 @@ function VideoScreen(): React.JSX.Element {
   const { languageMappings } = useLanguageMappings();
   const { showLoginGate } = useLoginGate();
   const { isAuthenticated } = useAuth();
+  const { t } = useTranslation();
   const [inputUrl, setInputUrl] = React.useState<string>('');
   const [url, setUrl] = React.useState<string>('');
   const videoId = React.useMemo(() => extractYouTubeVideoId(url) ?? '', [url]);
@@ -937,7 +940,7 @@ function VideoScreen(): React.JSX.Element {
         loading={startupVideosLoading}
         error={startupVideosError}
         onVideoPress={openStartupVideo}
-        emptyMessage="No videos yet."
+        emptyMessage={t('screens.video.noVideosYet')}
       />
     );
   };
@@ -945,12 +948,12 @@ function VideoScreen(): React.JSX.Element {
   const NowPlaying = () => {
     return (
       <VideoList
-        title="Now playing by other people"
+        title={t('screens.video.nowPlayingByOthers')}
         videos={nowPlayingVideos}
         loading={nowPlayingLoading}
         error={nowPlayingError}
         onVideoPress={openStartupVideo}
-        emptyMessage="app just started, you're the first to watch a video!"
+        emptyMessage={t('screens.video.appJustStarted')}
       />
     );
   };
@@ -964,7 +967,7 @@ function VideoScreen(): React.JSX.Element {
         loading={searchLoading}
         error={searchError}
         onVideoPress={openStartupVideo}
-        emptyMessage="No results."
+        emptyMessage={t('screens.video.noResults')}
       />
     );
   };
@@ -1014,6 +1017,7 @@ function VideoScreen(): React.JSX.Element {
              setOptionsButtonPositionGlobal(position);
              setShowOptionsMenuGlobal(true);
            }}
+           t={t}
         />
       )}
       {!isFullScreen && (
@@ -1051,8 +1055,8 @@ function VideoScreen(): React.JSX.Element {
         />
       ) : (
         <View style={styles.helperContainer}>
-          <Text style={styles.helper}>Enter a YouTube URL or ID, or search for videos to get started</Text>
-          <Text style={styles.helperSubtext}>Paste any YouTube link or search for content in your learning language</Text>
+          <Text style={styles.helper}>{t('screens.video.enterYouTubeUrlOrSearch')}</Text>
+          <Text style={styles.helperSubtext}>{t('screens.video.pasteYouTubeLink')}</Text>
         </View>
       )}
 
