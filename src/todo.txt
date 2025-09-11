@@ -1,3 +1,5 @@
+- for baby steps, use json files in the server instead of the db 
+
 - upload server 
 
 - translate app captions to all languages

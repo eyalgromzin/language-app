@@ -70,24 +70,24 @@ export class BabyStepsService {
     
     try {
       // Try to get from database first
-      const dbSteps = await this.databaseBabyStepsService.getSteps(symbol);
+      // const dbSteps = await this.databaseBabyStepsService.getSteps(symbol);
       
-      if (dbSteps && dbSteps.length > 0) {
-        // Convert database format to StepsFile format
-        return {
-          language: symbol,
-          overview: dbSteps[0]?.overview || '',
-          steps: dbSteps.map(step => ({
-            id: step.stepId,
-            title: step.title,
-            emoji: step.emoji,
-            file: `${step.stepId}.json` // Keep file reference for compatibility
-          }))
-        };
-      }
+      // if (dbSteps && dbSteps.length > 0) {
+      //   // Convert database format to StepsFile format
+      //   return {
+      //     language: symbol,
+      //     overview: dbSteps[0]?.overview || '',
+      //     steps: dbSteps.map(step => ({
+      //       id: step.stepId,
+      //       title: step.title,
+      //       emoji: step.emoji,
+      //       file: `${step.stepId}.json` // Keep file reference for compatibility
+      //     }))
+      //   };
+      // }
       
       // Fallback to file system if no database data
-      const indexFilePath = path.join(process.cwd(), 'src', 'baby-steps', symbol, 'index.json');
+      const indexFilePath = path.join(process.cwd(), 'src', 'data', 'baby-steps-json-files', symbol, 'index.json');
       if (!fs.existsSync(indexFilePath)) {
         throw new BadRequestException(`No data found for language: ${languageOrSymbol}`);
       }
@@ -106,26 +106,26 @@ export class BabyStepsService {
     
     try {
       // Try to get from database first
-      const dbStep = await this.databaseBabyStepsService.getSpecificStep(symbol, stepId);
+      // const dbStep = await this.databaseBabyStepsService.getSpecificStep(symbol, stepId);
       
-      if (dbStep) {
-        // Convert database format to expected format
-        return {
-          id: dbStep.stepId,
-          title: dbStep.title,
-          emoji: dbStep.emoji,
-          language: symbol,
-          items: dbStep.items?.map(item => ({
-            id: item.itemId,
-            type: item.type,
-            text: item.text,
-            practiceType: item.practiceType
-          })) || []
-        };
-      }
+      // if (dbStep) {
+      //   // Convert database format to expected format
+      //   return {
+      //     id: dbStep.stepId,
+      //     title: dbStep.title,
+      //     emoji: dbStep.emoji,
+      //     language: symbol,
+      //     items: dbStep.items?.map(item => ({
+      //       id: item.itemId,
+      //       type: item.type,
+      //       text: item.text,
+      //       practiceType: item.practiceType
+      //     })) || []
+      //   };
+      // }
       
       // Fallback to file system if no database data
-      const indexFilePath = path.join(process.cwd(), 'src', 'baby-steps', symbol, 'index.json');
+      const indexFilePath = path.join(process.cwd(), 'src', 'data', 'baby-steps-json-files', symbol, 'index.json');
       if (!fs.existsSync(indexFilePath)) {
         throw new BadRequestException(`Index file not found for language: ${languageOrSymbol}`);
       }
@@ -141,7 +141,7 @@ export class BabyStepsService {
       
       // Read the specific step file
       if (stepMeta.file) {
-        const stepFilePath = path.join(process.cwd(), 'src', 'baby-steps', symbol, stepMeta.file);
+        const stepFilePath = path.join(process.cwd(), 'src', 'data', 'baby-steps-json-files', symbol, stepMeta.file);
         const stepFile = this.loadStepsFile(stepFilePath);
         if (stepFile && stepFile.items && stepFile.items.length > 0) {
           // Return the step with metadata merged
