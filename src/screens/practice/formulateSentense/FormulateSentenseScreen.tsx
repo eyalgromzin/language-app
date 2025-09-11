@@ -424,7 +424,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
   }
 
   if (!props.embedded && (!current || expectedTokens.length === 0)) {
-    return <NotEnoughWordsMessage message="No sentences to practice yet. Add more words in one of the learning options" />;
+    return <NotEnoughWordsMessage message={t('notEnoughWords.noSentencesMessage')} />;
   }
 
   if (props.embedded) {

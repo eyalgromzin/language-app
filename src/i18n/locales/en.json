@@ -250,6 +250,7 @@
   "notEnoughWords": {
     "readyToLearn": "Ready to Learn?",
     "notEnoughWordsMessage": "Not enough words to practice yet. Add more words in one of the learning options",
+    "noSentencesMessage": "No sentences to practice yet. Add more words in one of the learning options",
     "browseContent": "Browse content",
     "watchVideos": "Watch videos",
     "readBooks": "Read books",

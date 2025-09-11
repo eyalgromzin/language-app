@@ -246,6 +246,7 @@
   "notEnoughWords": {
     "readyToLearn": "Redo att Lära?",
     "notEnoughWordsMessage": "Inte tillräckligt med ord att öva på än. Lägg till fler ord i ett av inlärningsalternativen",
+    "noSentencesMessage": "Inga meningar att öva på än. Lägg till fler ord i ett av inlärningsalternativen",
     "browseContent": "Bläddra genom innehåll",
     "watchVideos": "Titta på videor",
     "readBooks": "Läs böcker",

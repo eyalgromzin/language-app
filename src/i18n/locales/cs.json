@@ -246,6 +246,7 @@
   "notEnoughWords": {
     "readyToLearn": "Připraveni k Učení?",
     "notEnoughWordsMessage": "Zatím není dost slov na cvičení. Přidejte více slov v jedné z učebních možností",
+    "noSentencesMessage": "Zatím nejsou věty na cvičení. Přidejte více slov v jedné z učebních možností",
     "browseContent": "Procházet obsah",
     "watchVideos": "Sledovat videa",
     "readBooks": "Číst knihy",

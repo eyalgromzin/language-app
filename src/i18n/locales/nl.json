@@ -246,6 +246,7 @@
   "notEnoughWords": {
     "readyToLearn": "Klaar om te Leren?",
     "notEnoughWordsMessage": "Nog niet genoeg woorden om te oefenen. Voeg meer woorden toe in een van de leeropties",
+    "noSentencesMessage": "Nog geen zinnen om te oefenen. Voeg meer woorden toe in een van de leeropties",
     "browseContent": "Blader door inhoud",
     "watchVideos": "Bekijk video's",
     "readBooks": "Lees boeken",

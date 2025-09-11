@@ -246,6 +246,7 @@
   "notEnoughWords": {
     "readyToLearn": "Sẵn Sàng Học?",
     "notEnoughWordsMessage": "Chưa đủ từ để luyện tập. Thêm nhiều từ hơn trong một trong các tùy chọn học tập",
+    "noSentencesMessage": "Chưa có câu nào để luyện tập. Thêm nhiều từ hơn trong một trong các tùy chọn học tập",
     "browseContent": "Duyệt nội dung",
     "watchVideos": "Xem video",
     "readBooks": "Đọc sách",

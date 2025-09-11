@@ -246,6 +246,7 @@
   "notEnoughWords": {
     "readyToLearn": "Valmis Oppimaan?",
     "notEnoughWordsMessage": "Ei vielä tarpeeksi sanoja harjoittelemiseen. Lisää sanoja jossakin oppimisvaihtoehdoista",
+    "noSentencesMessage": "Ei vielä lauseita harjoittelemiseen. Lisää sanoja jossakin oppimisvaihtoehdoista",
     "browseContent": "Selaa sisältöä",
     "watchVideos": "Katso videoita",
     "readBooks": "Lue kirjoja",

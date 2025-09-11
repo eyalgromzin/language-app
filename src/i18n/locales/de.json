@@ -275,6 +275,7 @@
   "notEnoughWords": {
     "readyToLearn": "Bereit zum Lernen?",
     "notEnoughWordsMessage": "Noch nicht genug Wörter zum Üben. Fügen Sie mehr Wörter in einer der Lernoptionen hinzu",
+    "noSentencesMessage": "Noch keine Sätze zum Üben. Fügen Sie mehr Wörter in einer der Lernoptionen hinzu",
     "browseContent": "Inhalt durchsuchen",
     "watchVideos": "Videos ansehen",
     "readBooks": "Bücher lesen",

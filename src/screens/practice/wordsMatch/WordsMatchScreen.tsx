@@ -6,6 +6,7 @@ import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/nativ
 import { playCorrectFeedback, playWrongFeedback } from '../common';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 import { WordEntry } from '../../../types/words';
+import { useTranslation } from '../../../hooks/useTranslation';
 
 type MatchItem = {
   key: string; // stable key, use entry.word
@@ -51,6 +52,7 @@ function sampleN<T>(arr: T[], n: number): T[] {
 function WordsMatchScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
+  const { t } = useTranslation();
   const RANDOM_GAME_ROUTES: string[] = [
     'MissingLetters',
     'MissingWords',
@@ -340,8 +342,7 @@ function WordsMatchScreen(): React.JSX.Element {
           <Text style={styles.title}>match the words to their translations</Text>
         </View>
         {renderCountSelector()}
-        <NotEnoughWordsMessage 
-          message={`Not enough words to play Words Match. You need at least ${minRequiredWords} words, but you only have ${allWords.length}. Add more words in one of the learning options below.`}
+        <NotEnoughWordsMessage message={`Not enough words to play Words Match. You need at least ${minRequiredWords} words, but you only have ${allWords.length}. Add more words in one of the learning options below.`}
         />
       </ScrollView>
     );

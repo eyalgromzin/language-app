@@ -275,6 +275,7 @@
   "notEnoughWords": {
     "readyToLearn": "מוכנים ללמוד?",
     "notEnoughWordsMessage": "אין מספיק מילים לתרגול עדיין. הוסיפו עוד מילים באחת מאפשרויות הלמידה",
+    "noSentencesMessage": "אין משפטים לתרגול עדיין. הוסיפו עוד מילים באחת מאפשרויות הלמידה",
     "browseContent": "עיינו בתוכן",
     "watchVideos": "צפו בסרטונים",
     "readBooks": "קראו ספרים",

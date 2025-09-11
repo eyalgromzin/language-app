@@ -246,6 +246,7 @@
   "notEnoughWords": {
     "readyToLearn": "Gotowy do Nauki?",
     "notEnoughWordsMessage": "Jeszcze za mało słów do ćwiczenia. Dodaj więcej słów w jednej z opcji nauki",
+    "noSentencesMessage": "Jeszcze nie ma zdań do ćwiczenia. Dodaj więcej słów w jednej z opcji nauki",
     "browseContent": "Przeglądaj treści",
     "watchVideos": "Oglądaj filmy",
     "readBooks": "Czytaj książki",

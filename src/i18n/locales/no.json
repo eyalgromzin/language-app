@@ -246,6 +246,7 @@
   "notEnoughWords": {
     "readyToLearn": "Klar til å Lære?",
     "notEnoughWordsMessage": "Ikke nok ord å øve på ennå. Legg til flere ord i en av læringsalternativene",
+    "noSentencesMessage": "Ingen setninger å øve på ennå. Legg til flere ord i en av læringsalternativene",
     "browseContent": "Bla gjennom innhold",
     "watchVideos": "Se videoer",
     "readBooks": "Les bøker",
