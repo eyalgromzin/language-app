@@ -239,5 +239,35 @@
     "watchVideos": "वीडियो देखें",
     "readBooks": "पुस्तकें पढ़ें",
     "wordCategories": "शब्द श्रेणियां"
+  },
+  "addFavouriteModal": {
+    "title": "पसंदीदा में जोड़ें",
+    "learning": "सीखना:",
+    "contentType": "सामग्री प्रकार",
+    "selectContentType": "सामग्री प्रकार चुनें",
+    "pleaseSelectContentType": "कृपया सामग्री प्रकार चुनें",
+    "difficultyLevel": "कठिनाई स्तर",
+    "selectDifficultyLevel": "कठिनाई स्तर चुनें",
+    "pleaseSelectDifficultyLevel": "कृपया कठिनाई स्तर चुनें",
+    "name": "नाम",
+    "enterDescriptiveName": "वर्णनात्मक नाम दर्ज करें",
+    "url": "URL",
+    "urlPlaceholder": "https://उदाहरण.com",
+    "cancel": "रद्द करें",
+    "addToFavourites": "पसंदीदा में जोड़ें",
+    "favouriteTypes": {
+      "article": "लेख",
+      "story": "कहानी",
+      "conversation": "बातचीत",
+      "lyrics": "गीत के बोल",
+      "any": "कोई भी"
+    },
+    "difficultyLevels": {
+      "easy": "आसान",
+      "easy-medium": "आसान-मध्यम",
+      "medium": "मध्यम",
+      "medium-hard": "मध्यम-कठिन",
+      "hard": "कठिन"
+    }
   }
 }

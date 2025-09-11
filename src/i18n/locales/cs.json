@@ -239,5 +239,35 @@
     "watchVideos": "Sledovat videa",
     "readBooks": "Číst knihy",
     "wordCategories": "Kategorie slov"
+  },
+  "addFavouriteModal": {
+    "title": "Přidat do oblíbených",
+    "learning": "Učení:",
+    "contentType": "Typ obsahu",
+    "selectContentType": "Vybrat typ obsahu",
+    "pleaseSelectContentType": "Prosím vyberte typ obsahu",
+    "difficultyLevel": "Úroveň obtížnosti",
+    "selectDifficultyLevel": "Vybrat úroveň obtížnosti",
+    "pleaseSelectDifficultyLevel": "Prosím vyberte úroveň obtížnosti",
+    "name": "Název",
+    "enterDescriptiveName": "Zadejte popisný název",
+    "url": "URL",
+    "urlPlaceholder": "https://priklad.com",
+    "cancel": "Zrušit",
+    "addToFavourites": "Přidat do oblíbených",
+    "favouriteTypes": {
+      "article": "Článek",
+      "story": "Příběh",
+      "conversation": "Konverzace",
+      "lyrics": "Text písně",
+      "any": "Jakýkoli"
+    },
+    "difficultyLevels": {
+      "easy": "Snadné",
+      "easy-medium": "Snadné-střední",
+      "medium": "Střední",
+      "medium-hard": "Střední-těžké",
+      "hard": "Těžké"
+    }
   }
 }

@@ -239,5 +239,35 @@
     "watchVideos": "Смотреть видео",
     "readBooks": "Читать книги",
     "wordCategories": "Категории слов"
+  },
+  "addFavouriteModal": {
+    "title": "Добавить в избранное",
+    "learning": "Изучение:",
+    "contentType": "Тип контента",
+    "selectContentType": "Выбрать тип контента",
+    "pleaseSelectContentType": "Пожалуйста, выберите тип контента",
+    "difficultyLevel": "Уровень сложности",
+    "selectDifficultyLevel": "Выбрать уровень сложности",
+    "pleaseSelectDifficultyLevel": "Пожалуйста, выберите уровень сложности",
+    "name": "Название",
+    "enterDescriptiveName": "Введите описательное название",
+    "url": "URL",
+    "urlPlaceholder": "https://пример.com",
+    "cancel": "Отмена",
+    "addToFavourites": "Добавить в избранное",
+    "favouriteTypes": {
+      "article": "Статья",
+      "story": "История",
+      "conversation": "Разговор",
+      "lyrics": "Текст песни",
+      "any": "Любой"
+    },
+    "difficultyLevels": {
+      "easy": "Легкий",
+      "easy-medium": "Легко-средний",
+      "medium": "Средний",
+      "medium-hard": "Средне-сложный",
+      "hard": "Сложный"
+    }
   }
 }

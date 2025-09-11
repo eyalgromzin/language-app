@@ -52,6 +52,8 @@ function SurfScreen(): React.JSX.Element {
     setNewFavLevelName,
     showLevelOptions,
     setShowLevelOptions,
+    favLevelError,
+    setFavLevelError,
     imageScrape,
     setImageScrape,
     isAddressFocused,
@@ -279,6 +281,7 @@ function SurfScreen(): React.JSX.Element {
           }
           const selected = FAVOURITE_TYPES.find(t => t.id === newFavTypeId);
           if (!selected) { setFavTypeError(true); return; }
+          if (!newFavLevelName) { setFavLevelError(true); return; }
           await addToFavourites(u, nm, selected.id, selected.name, newFavLevelName);
           setShowAddFavouriteModal(false);
           if (Platform.OS === 'android') ToastAndroid.show(t('screens.surf.addedToFavourites'), ToastAndroid.SHORT); else Alert.alert(t('screens.surf.addedToFavourites'));
@@ -298,6 +301,8 @@ function SurfScreen(): React.JSX.Element {
         setShowLevelOptions={setShowLevelOptions}
         favTypeError={favTypeError}
         setFavTypeError={setFavTypeError}
+        favLevelError={favLevelError}
+        setFavLevelError={setFavLevelError}
         learningLanguage={learningLanguage}
         FAVOURITE_TYPES={FAVOURITE_TYPES}
       />

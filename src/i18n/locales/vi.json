@@ -239,5 +239,35 @@
     "watchVideos": "Xem video",
     "readBooks": "Đọc sách",
     "wordCategories": "Danh mục từ"
+  },
+  "addFavouriteModal": {
+    "title": "Thêm vào yêu thích",
+    "learning": "Học:",
+    "contentType": "Loại nội dung",
+    "selectContentType": "Chọn loại nội dung",
+    "pleaseSelectContentType": "Vui lòng chọn loại nội dung",
+    "difficultyLevel": "Mức độ khó",
+    "selectDifficultyLevel": "Chọn mức độ khó",
+    "pleaseSelectDifficultyLevel": "Vui lòng chọn mức độ khó",
+    "name": "Tên",
+    "enterDescriptiveName": "Nhập tên mô tả",
+    "url": "URL",
+    "urlPlaceholder": "https://vídụ.com",
+    "cancel": "Hủy",
+    "addToFavourites": "Thêm vào yêu thích",
+    "favouriteTypes": {
+      "article": "Bài viết",
+      "story": "Câu chuyện",
+      "conversation": "Cuộc trò chuyện",
+      "lyrics": "Lời bài hát",
+      "any": "Bất kỳ"
+    },
+    "difficultyLevels": {
+      "easy": "Dễ",
+      "easy-medium": "Dễ-trung bình",
+      "medium": "Trung bình",
+      "medium-hard": "Trung bình-khó",
+      "hard": "Khó"
+    }
   }
 }

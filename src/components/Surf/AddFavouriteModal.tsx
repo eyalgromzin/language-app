@@ -21,6 +21,8 @@ interface AddFavouriteModalProps {
   setShowLevelOptions: (show: boolean) => void;
   favTypeError: boolean;
   setFavTypeError: (error: boolean) => void;
+  favLevelError: boolean;
+  setFavLevelError: (error: boolean) => void;
   learningLanguage: string | null;
   FAVOURITE_TYPES: ReadonlyArray<{ id: number; name: string }>;
 }
@@ -43,6 +45,8 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
   setShowLevelOptions,
   favTypeError,
   setFavTypeError,
+  favLevelError,
+  setFavLevelError,
   learningLanguage,
   FAVOURITE_TYPES,
 }) => {
@@ -115,7 +119,7 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
               <Text style={styles.inputLabel}>{t('addFavouriteModal.difficultyLevel')}</Text>
               <TouchableOpacity
                 onPress={() => setShowLevelOptions(!showLevelOptions)}
-                style={styles.selectInput}
+                style={[styles.selectInput, favLevelError && !newFavLevelName ? styles.selectInputError : null]}
                 activeOpacity={0.7}
               >
                 <Text style={[styles.selectInputText, { color: newFavLevelName ? '#1e293b' : '#94a3b8' }]}>
@@ -128,13 +132,16 @@ const AddFavouriteModal: React.FC<AddFavouriteModalProps> = ({
                   {['easy','easy-medium','medium','medium-hard','hard'].map((lv) => (
                     <TouchableOpacity
                       key={lv}
-                      onPress={() => { setNewFavLevelName(lv); setShowLevelOptions(false); }}
+                      onPress={() => { setNewFavLevelName(lv); setShowLevelOptions(false); setFavLevelError(false); }}
                       style={styles.optionItem}
                     >
                       <Text style={styles.optionText}>{t(`addFavouriteModal.difficultyLevels.${lv}`)}</Text>
                     </TouchableOpacity>
                   ))}
                 </View>
+              )}
+              {favLevelError && !newFavLevelName && (
+                <Text style={styles.errorText}>{t('addFavouriteModal.pleaseSelectDifficultyLevel')}</Text>
               )}
             </View>
 

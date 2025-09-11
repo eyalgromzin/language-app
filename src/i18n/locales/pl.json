@@ -239,5 +239,35 @@
     "watchVideos": "Oglądaj filmy",
     "readBooks": "Czytaj książki",
     "wordCategories": "Kategorie słów"
+  },
+  "addFavouriteModal": {
+    "title": "Dodaj do ulubionych",
+    "learning": "Nauka:",
+    "contentType": "Typ treści",
+    "selectContentType": "Wybierz typ treści",
+    "pleaseSelectContentType": "Proszę wybrać typ treści",
+    "difficultyLevel": "Poziom trudności",
+    "selectDifficultyLevel": "Wybierz poziom trudności",
+    "pleaseSelectDifficultyLevel": "Proszę wybrać poziom trudności",
+    "name": "Nazwa",
+    "enterDescriptiveName": "Wprowadź opisową nazwę",
+    "url": "URL",
+    "urlPlaceholder": "https://przyklad.com",
+    "cancel": "Anuluj",
+    "addToFavourites": "Dodaj do ulubionych",
+    "favouriteTypes": {
+      "article": "Artykuł",
+      "story": "Historia",
+      "conversation": "Rozmowa",
+      "lyrics": "Tekst piosenki",
+      "any": "Dowolny"
+    },
+    "difficultyLevels": {
+      "easy": "Łatwy",
+      "easy-medium": "Łatwo-średni",
+      "medium": "Średni",
+      "medium-hard": "Średnio-trudny",
+      "hard": "Trudny"
+    }
   }
 }

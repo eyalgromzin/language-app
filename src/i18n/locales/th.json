@@ -239,5 +239,35 @@
     "watchVideos": "ดูวิดีโอ",
     "readBooks": "อ่านหนังสือ",
     "wordCategories": "หมวดหมู่คำ"
+  },
+  "addFavouriteModal": {
+    "title": "เพิ่มในรายการโปรด",
+    "learning": "การเรียนรู้:",
+    "contentType": "ประเภทเนื้อหา",
+    "selectContentType": "เลือกประเภทเนื้อหา",
+    "pleaseSelectContentType": "กรุณาเลือกประเภทเนื้อหา",
+    "difficultyLevel": "ระดับความยาก",
+    "selectDifficultyLevel": "เลือกระดับความยาก",
+    "pleaseSelectDifficultyLevel": "กรุณาเลือกระดับความยาก",
+    "name": "ชื่อ",
+    "enterDescriptiveName": "ใส่ชื่อที่อธิบายได้",
+    "url": "URL",
+    "urlPlaceholder": "https://ตัวอย่าง.com",
+    "cancel": "ยกเลิก",
+    "addToFavourites": "เพิ่มในรายการโปรด",
+    "favouriteTypes": {
+      "article": "บทความ",
+      "story": "เรื่องราว",
+      "conversation": "การสนทนา",
+      "lyrics": "เนื้อเพลง",
+      "any": "ใดๆ"
+    },
+    "difficultyLevels": {
+      "easy": "ง่าย",
+      "easy-medium": "ง่าย-ปานกลาง",
+      "medium": "ปานกลาง",
+      "medium-hard": "ปานกลาง-ยาก",
+      "hard": "ยาก"
+    }
   }
 }

@@ -252,6 +252,7 @@
     "pleaseSelectContentType": "Please select a content type",
     "difficultyLevel": "Difficulty Level",
     "selectDifficultyLevel": "Select difficulty level",
+    "pleaseSelectDifficultyLevel": "Please select a difficulty level",
     "name": "Name",
     "enterDescriptiveName": "Enter a descriptive name",
     "url": "URL",

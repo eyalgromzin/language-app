@@ -239,5 +239,35 @@
     "watchVideos": "Дивитися відео",
     "readBooks": "Читати книги",
     "wordCategories": "Категорії слів"
+  },
+  "addFavouriteModal": {
+    "title": "Додати до улюблених",
+    "learning": "Вивчення:",
+    "contentType": "Тип контенту",
+    "selectContentType": "Вибрати тип контенту",
+    "pleaseSelectContentType": "Будь ласка, виберіть тип контенту",
+    "difficultyLevel": "Рівень складності",
+    "selectDifficultyLevel": "Вибрати рівень складності",
+    "pleaseSelectDifficultyLevel": "Будь ласка, виберіть рівень складності",
+    "name": "Назва",
+    "enterDescriptiveName": "Введіть описову назву",
+    "url": "URL",
+    "urlPlaceholder": "https://приклад.com",
+    "cancel": "Скасувати",
+    "addToFavourites": "Додати до улюблених",
+    "favouriteTypes": {
+      "article": "Стаття",
+      "story": "Історія",
+      "conversation": "Розмова",
+      "lyrics": "Текст пісні",
+      "any": "Будь-який"
+    },
+    "difficultyLevels": {
+      "easy": "Легкий",
+      "easy-medium": "Легко-середній",
+      "medium": "Середній",
+      "medium-hard": "Середньо-складний",
+      "hard": "Складний"
+    }
   }
 }

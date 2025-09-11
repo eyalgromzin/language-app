@@ -239,5 +239,35 @@
     "watchVideos": "Katso videoita",
     "readBooks": "Lue kirjoja",
     "wordCategories": "Sanakategoriat"
+  },
+  "addFavouriteModal": {
+    "title": "Lisää suosikkeihin",
+    "learning": "Oppiminen:",
+    "contentType": "Sisältötyyppi",
+    "selectContentType": "Valitse sisältötyyppi",
+    "pleaseSelectContentType": "Valitse sisältötyyppi",
+    "difficultyLevel": "Vaikeustaso",
+    "selectDifficultyLevel": "Valitse vaikeustaso",
+    "pleaseSelectDifficultyLevel": "Valitse vaikeustaso",
+    "name": "Nimi",
+    "enterDescriptiveName": "Anna kuvaava nimi",
+    "url": "URL",
+    "urlPlaceholder": "https://esimerkki.com",
+    "cancel": "Peruuta",
+    "addToFavourites": "Lisää suosikkeihin",
+    "favouriteTypes": {
+      "article": "Artikkeli",
+      "story": "Tarina",
+      "conversation": "Keskustelu",
+      "lyrics": "Sanoitukset",
+      "any": "Mikä tahansa"
+    },
+    "difficultyLevels": {
+      "easy": "Helppo",
+      "easy-medium": "Helppo-keskitaso",
+      "medium": "Keskitaso",
+      "medium-hard": "Keskitaso-vaikea",
+      "hard": "Vaikea"
+    }
   }
 }

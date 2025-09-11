@@ -239,5 +239,35 @@
     "watchVideos": "Se videoer",
     "readBooks": "Les bøker",
     "wordCategories": "Ord kategorier"
+  },
+  "addFavouriteModal": {
+    "title": "Legg til i favoritter",
+    "learning": "Læring:",
+    "contentType": "Innholdstype",
+    "selectContentType": "Velg innholdstype",
+    "pleaseSelectContentType": "Velg en innholdstype",
+    "difficultyLevel": "Vanskelighetsgrad",
+    "selectDifficultyLevel": "Velg vanskelighetsgrad",
+    "pleaseSelectDifficultyLevel": "Velg en vanskelighetsgrad",
+    "name": "Navn",
+    "enterDescriptiveName": "Skriv inn et beskrivende navn",
+    "url": "URL",
+    "urlPlaceholder": "https://eksempel.com",
+    "cancel": "Avbryt",
+    "addToFavourites": "Legg til i favoritter",
+    "favouriteTypes": {
+      "article": "Artikkel",
+      "story": "Historie",
+      "conversation": "Samtale",
+      "lyrics": "Sangtekst",
+      "any": "Hvilken som helst"
+    },
+    "difficultyLevels": {
+      "easy": "Lett",
+      "easy-medium": "Lett-medium",
+      "medium": "Medium",
+      "medium-hard": "Medium-vanskelig",
+      "hard": "Vanskelig"
+    }
   }
 }

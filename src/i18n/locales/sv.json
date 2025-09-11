@@ -239,5 +239,35 @@
     "watchVideos": "Titta på videor",
     "readBooks": "Läs böcker",
     "wordCategories": "Ord kategorier"
+  },
+  "addFavouriteModal": {
+    "title": "Lägg till i favoriter",
+    "learning": "Lärande:",
+    "contentType": "Innehållstyp",
+    "selectContentType": "Välj innehållstyp",
+    "pleaseSelectContentType": "Välj en innehållstyp",
+    "difficultyLevel": "Svårighetsgrad",
+    "selectDifficultyLevel": "Välj svårighetsgrad",
+    "pleaseSelectDifficultyLevel": "Välj en svårighetsgrad",
+    "name": "Namn",
+    "enterDescriptiveName": "Ange ett beskrivande namn",
+    "url": "URL",
+    "urlPlaceholder": "https://exempel.com",
+    "cancel": "Avbryt",
+    "addToFavourites": "Lägg till i favoriter",
+    "favouriteTypes": {
+      "article": "Artikel",
+      "story": "Berättelse",
+      "conversation": "Konversation",
+      "lyrics": "Sångtext",
+      "any": "Vilken som helst"
+    },
+    "difficultyLevels": {
+      "easy": "Lätt",
+      "easy-medium": "Lätt-medium",
+      "medium": "Medium",
+      "medium-hard": "Medium-svår",
+      "hard": "Svår"
+    }
   }
 }

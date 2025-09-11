@@ -239,5 +239,35 @@
     "watchVideos": "Bekijk video's",
     "readBooks": "Lees boeken",
     "wordCategories": "Woord categorieën"
+  },
+  "addFavouriteModal": {
+    "title": "Toevoegen aan favorieten",
+    "learning": "Leren:",
+    "contentType": "Inhoudstype",
+    "selectContentType": "Selecteer inhoudstype",
+    "pleaseSelectContentType": "Selecteer een inhoudstype",
+    "difficultyLevel": "Moeilijkheidsgraad",
+    "selectDifficultyLevel": "Selecteer moeilijkheidsgraad",
+    "pleaseSelectDifficultyLevel": "Selecteer een moeilijkheidsgraad",
+    "name": "Naam",
+    "enterDescriptiveName": "Voer een beschrijvende naam in",
+    "url": "URL",
+    "urlPlaceholder": "https://voorbeeld.com",
+    "cancel": "Annuleren",
+    "addToFavourites": "Toevoegen aan favorieten",
+    "favouriteTypes": {
+      "article": "Artikel",
+      "story": "Verhaal",
+      "conversation": "Gesprek",
+      "lyrics": "Songtekst",
+      "any": "Elke"
+    },
+    "difficultyLevels": {
+      "easy": "Makkelijk",
+      "easy-medium": "Makkelijk-gemiddeld",
+      "medium": "Gemiddeld",
+      "medium-hard": "Gemiddeld-moeilijk",
+      "hard": "Moeilijk"
+    }
   }
 }

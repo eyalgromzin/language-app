@@ -39,6 +39,7 @@ export const useSurfScreen = () => {
   const [favTypeError, setFavTypeError] = React.useState<boolean>(false);
   const [newFavLevelName, setNewFavLevelName] = React.useState<string | null>(null);
   const [showLevelOptions, setShowLevelOptions] = React.useState<boolean>(false);
+  const [favLevelError, setFavLevelError] = React.useState<boolean>(false);
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
   const [savedDomains, setSavedDomains] = React.useState<string[]>([]);
   const [isAddressFocused, setIsAddressFocused] = React.useState<boolean>(false);
@@ -311,8 +312,9 @@ export const useSurfScreen = () => {
     setNewFavTypeId(null);
     setFavTypeError(false);
     setShowTypeOptions(false);
-    setNewFavLevelName('easy');
+    setNewFavLevelName(null);
     setShowLevelOptions(false);
+    setFavLevelError(false);
     setShowAddFavouriteModal(true);
   };
 
@@ -440,6 +442,8 @@ export const useSurfScreen = () => {
     setNewFavLevelName,
     showLevelOptions,
     setShowLevelOptions,
+    favLevelError,
+    setFavLevelError,
     imageScrape,
     setImageScrape,
     isAddressFocused,

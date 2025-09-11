@@ -239,5 +239,35 @@
     "watchVideos": "Παρακολούθηση βίντεο",
     "readBooks": "Ανάγνωση βιβλίων",
     "wordCategories": "Κατηγορίες λέξεων"
+  },
+  "addFavouriteModal": {
+    "title": "Προσθήκη στα αγαπημένα",
+    "learning": "Μάθηση:",
+    "contentType": "Τύπος περιεχομένου",
+    "selectContentType": "Επιλέξτε τύπο περιεχομένου",
+    "pleaseSelectContentType": "Επιλέξτε τύπο περιεχομένου",
+    "difficultyLevel": "Επίπεδο δυσκολίας",
+    "selectDifficultyLevel": "Επιλέξτε επίπεδο δυσκολίας",
+    "pleaseSelectDifficultyLevel": "Επιλέξτε επίπεδο δυσκολίας",
+    "name": "Όνομα",
+    "enterDescriptiveName": "Εισάγετε περιγραφικό όνομα",
+    "url": "URL",
+    "urlPlaceholder": "https://παράδειγμα.com",
+    "cancel": "Ακύρωση",
+    "addToFavourites": "Προσθήκη στα αγαπημένα",
+    "favouriteTypes": {
+      "article": "Άρθρο",
+      "story": "Ιστορία",
+      "conversation": "Συζήτηση",
+      "lyrics": "Στίχοι",
+      "any": "Οποιοδήποτε"
+    },
+    "difficultyLevels": {
+      "easy": "Εύκολο",
+      "easy-medium": "Εύκολο-μεσαίο",
+      "medium": "Μεσαίο",
+      "medium-hard": "Μεσαίο-δύσκολο",
+      "hard": "Δύσκολο"
+    }
   }
 }
