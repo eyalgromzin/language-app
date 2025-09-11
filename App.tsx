@@ -36,6 +36,7 @@ import linkingService from './src/services/linkingService';
 import LoginGateModal from './src/components/LoginGateModal';
 import * as RNFS from 'react-native-fs';
 import { WordEntry } from './src/types/words';
+import { t } from 'i18next';
 
 enableScreens();
 
@@ -501,13 +502,13 @@ function AppNavigator(): React.JSX.Element {
               return (
                 <>
                   <Stack.Screen name="Main" component={MainTabs} />
-                  <Stack.Screen name="Settings" component={SettingsScreen} options={{ headerShown: true }} />
+                  <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: t('screens.settings.title'), headerShown: true }} />
                   <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
-                  <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: 'My Words', headerShown: true }} />
+                  <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: t('screens.myWords.title'), headerShown: true }} />
                   <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps', headerShown: true }} />
                   <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step', headerShown: true }} />
-                  <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: 'Contact Us', headerShown: true }} />
-                  <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress', headerShown: true }} />
+                  <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: t('screens.contactUs.title'), headerShown: true }} />
+                  <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: t('screens.progress.title'), headerShown: true }} />
                   <Stack.Screen name="Onboarding" component={OnboardingNavigator} options={{ headerShown: false }} />
                 </>
               );
