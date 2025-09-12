@@ -398,6 +398,8 @@
       "story": "Verhaal",
       "conversation": "Gesprek",
       "lyrics": "Songtekst",
+      "video": "Video",
+      "book": "Boek",
       "any": "Elke"
     },
     "difficultyLevels": {

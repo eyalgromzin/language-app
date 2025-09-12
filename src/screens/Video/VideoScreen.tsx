@@ -32,10 +32,10 @@ import {
 import {
   VideoPlayer,
   VideoList,
-  FavouritesModal,
   SuggestionsDropdown,
   ImageScrape,
 } from '../../components/Video';
+import AddToFavouritesDialog from '../../components/AddToFavouritesDialog';
 import VideoOptionsMenu from '../../components/Video/VideoOptionsMenu';
 import linkingService from '../../services/linkingService';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
@@ -57,10 +57,11 @@ type SearchBarProps = {
   isFavourite: boolean;
   onToggleFavourite: () => void;
   onOptionsButtonPress: (position: { x: number; y: number; width: number; height: number }) => void;
+  currentCanonicalUrl: string;
   t: (key: string) => string;
 };
 
-const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, onToggleFavouritesList, showAuxButtons, isFavourite, onToggleFavourite, onOptionsButtonPress, t }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit, onOpenPress, urlInputRef, onFocus, onBlur, onOpenLibrary, onToggleHistory, onToggleFavouritesList, showAuxButtons, isFavourite, onToggleFavourite, onOptionsButtonPress, currentCanonicalUrl, t }) => {
   const [showOptionsMenu, setShowOptionsMenu] = React.useState(false);
   const [optionsButtonPosition, setOptionsButtonPosition] = React.useState<{ x: number; y: number; width: number; height: number } | null>(null);
   const optionsButtonRef = React.useRef<any>(null);
@@ -108,12 +109,17 @@ const SearchBar: React.FC<SearchBarProps> = ({ inputUrl, onChangeText, onSubmit,
           </TouchableOpacity>
           <TouchableOpacity
             onPress={onToggleFavourite}
-            style={styles.libraryBtn}
+            style={[styles.libraryBtn, !currentCanonicalUrl && styles.libraryBtnDisabled]}
             accessibilityRole="button"
             accessibilityLabel={isFavourite ? t('screens.video.removeFromFavourites') : t('screens.video.addToFavourites')}
             hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
+            disabled={!currentCanonicalUrl}
           >
-            <Ionicons name={isFavourite ? 'star' : 'star-outline'} size={20} color={isFavourite ? '#f59e0b' : '#64748b'} />
+            <Ionicons 
+              name={isFavourite ? 'star' : 'star-outline'} 
+              size={20} 
+              color={!currentCanonicalUrl ? '#cbd5e1' : (isFavourite ? '#f59e0b' : '#64748b')} 
+            />
           </TouchableOpacity>
           {showAuxButtons ? (
             <>
@@ -201,10 +207,6 @@ function VideoScreen(): React.JSX.Element {
   const FAVOURITES_KEY = 'video.favourites';
   const [favourites, setFavourites] = React.useState<FavouriteItem[]>([]);
   const [showAddFavouriteModal, setShowAddFavouriteModal] = React.useState<boolean>(false);
-  const [newFavName, setNewFavName] = React.useState<string>('');
-  const [newFavUrl, setNewFavUrl] = React.useState<string>('');
-  const [newFavLevelName, setNewFavLevelName] = React.useState<string | null>('easy');
-  const [showLevelOptions, setShowLevelOptions] = React.useState<boolean>(false);
 
   const normalizeYouTubeUrl = React.useCallback(normalizeYouTubeUrlUtil, []);
 
@@ -269,7 +271,7 @@ function VideoScreen(): React.JSX.Element {
     try { await AsyncStorage.setItem(FAVOURITES_KEY, JSON.stringify(next)); } catch {}
   }, []);
 
-  const addToFavourites = React.useCallback(async (favUrl: string, name?: string, levelName?: string | null) => {
+  const addToFavourites = React.useCallback(async (favUrl: string, name: string, typeId: number, typeName: string, levelName?: string) => {
     if (!favUrl) return;
     
     // Check for harmful words in the URL
@@ -292,7 +294,7 @@ function VideoScreen(): React.JSX.Element {
     const normalized = normalizeYouTubeUrl(favUrl);
     const safeName = (name || currentVideoTitle || '').trim() || normalized;
     const next: FavouriteItem[] = [
-      { url: normalized, name: safeName, typeName: 'video', levelName: levelName || undefined },
+      { url: normalized, name: safeName, typeId, typeName, levelName: levelName || undefined },
       ...favourites.filter((f) => f.url !== normalized),
     ].slice(0, 200);
     await saveFavourites(next);
@@ -334,10 +336,6 @@ function VideoScreen(): React.JSX.Element {
       }
       return;
     }
-    setNewFavUrl(targetUrl);
-    setNewFavName((currentVideoTitle || '').trim() || targetUrl);
-    setNewFavLevelName('easy');
-    setShowLevelOptions(false);
     setShowAddFavouriteModal(true);
   }, [currentCanonicalUrl, isFavourite, removeFromFavourites, addToFavourites, currentVideoTitle]);
 
@@ -1017,6 +1015,7 @@ function VideoScreen(): React.JSX.Element {
              setOptionsButtonPositionGlobal(position);
              setShowOptionsMenuGlobal(true);
            }}
+           currentCanonicalUrl={currentCanonicalUrl}
            t={t}
         />
       )}
@@ -1093,28 +1092,22 @@ function VideoScreen(): React.JSX.Element {
           }}
         />
 
-      <FavouritesModal
+      <AddToFavouritesDialog
         visible={showAddFavouriteModal}
-        newFavName={newFavName}
-        newFavUrl={newFavUrl}
-        newFavLevelName={newFavLevelName}
-        showLevelOptions={showLevelOptions}
         onClose={() => setShowAddFavouriteModal(false)}
-        onSave={async () => {
-          const u = normalizeYouTubeUrl(newFavUrl || currentCanonicalUrl);
-          const nm = (newFavName || '').trim();
-          if (!u) {
-            try { if (Platform.OS === 'android') ToastAndroid.show(t('screens.video.invalidUrl'), ToastAndroid.SHORT); else Alert.alert(t('screens.video.invalidUrl')); } catch {}
-            return;
+        onAdd={async (url, name, typeId, typeName, levelName) => {
+          await addToFavourites(url, name, typeId, typeName, levelName);
+          if (Platform.OS === 'android') {
+            ToastAndroid.show(t('screens.video.addedToFavourites'), ToastAndroid.SHORT);
+          } else {
+            Alert.alert(t('screens.video.added'));
           }
-          await addToFavourites(u, nm, newFavLevelName);
-          setShowAddFavouriteModal(false);
-          try { if (Platform.OS === 'android') ToastAndroid.show(t('screens.video.addedToFavourites'), ToastAndroid.SHORT); else Alert.alert(t('screens.video.added')); } catch {}
         }}
-        onNameChange={setNewFavName}
-        onUrlChange={setNewFavUrl}
-        onLevelChange={setNewFavLevelName}
-        onToggleLevelOptions={() => setShowLevelOptions(prev => !prev)}
+        defaultUrl={currentCanonicalUrl}
+        defaultName={currentVideoTitle || ''}
+        defaultType="video"
+        defaultLevel="easy"
+        learningLanguage={learningLanguage}
       />
 
       <VideoOptionsMenu
@@ -1219,6 +1212,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#f8fafc',
     borderColor: '#cbd5e1',
     transform: [{ scale: 0.95 }],
+  },
+  libraryBtnDisabled: {
+    backgroundColor: '#f8fafc',
+    borderColor: '#e2e8f0',
+    opacity: 0.6,
   },
   goButton: {
     marginLeft: 8,

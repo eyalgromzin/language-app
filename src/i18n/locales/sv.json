@@ -398,6 +398,8 @@
       "story": "Berättelse",
       "conversation": "Konversation",
       "lyrics": "Sångtext",
+      "video": "Video",
+      "book": "Bok",
       "any": "Vilken som helst"
     },
     "difficultyLevels": {

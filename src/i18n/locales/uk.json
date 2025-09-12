@@ -398,6 +398,8 @@
       "story": "Історія",
       "conversation": "Розмова",
       "lyrics": "Текст пісні",
+      "video": "Відео",
+      "book": "Книга",
       "any": "Будь-який"
     },
     "difficultyLevels": {

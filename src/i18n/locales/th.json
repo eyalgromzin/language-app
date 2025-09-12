@@ -398,6 +398,8 @@
       "story": "เรื่องราว",
       "conversation": "การสนทนา",
       "lyrics": "เนื้อเพลง",
+      "video": "วิดีโอ",
+      "book": "หนังสือ",
       "any": "ใดๆ"
     },
     "difficultyLevels": {

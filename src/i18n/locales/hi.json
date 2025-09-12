@@ -398,6 +398,8 @@
       "story": "कहानी",
       "conversation": "बातचीत",
       "lyrics": "गीत के बोल",
+      "video": "वीडियो",
+      "book": "पुस्तक",
       "any": "कोई भी"
     },
     "difficultyLevels": {

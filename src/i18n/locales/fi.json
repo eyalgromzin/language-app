@@ -398,6 +398,8 @@
       "story": "Tarina",
       "conversation": "Keskustelu",
       "lyrics": "Sanoitukset",
+      "video": "Video",
+      "book": "Kirja",
       "any": "Mikä tahansa"
     },
     "difficultyLevels": {

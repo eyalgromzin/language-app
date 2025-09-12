@@ -325,6 +325,7 @@
     "delete": "Delete",
     "edit": "Edit",
     "add": "Add",
+    "adding": "Adding...",
     "remove": "Remove",
     "close": "Close",
     "back": "Back",
@@ -410,6 +411,8 @@
       "story": "Story",
       "conversation": "Conversation",
       "lyrics": "Lyrics",
+      "video": "Video",
+      "book": "Book",
       "any": "Any"
     },
     "difficultyLevels": {

@@ -13,9 +13,11 @@ interface LibraryItemProps {
   };
   translateOption: (option: string, type: 'type' | 'level') => string;
   getDisplayName: (item: { url: string; name?: string | null }) => string;
+  onAddToFavourites?: (item: { url: string; name?: string; type: string; level: string; media: string }) => void;
+  isFavourite?: boolean;
 }
 
-const LibraryItem: React.FC<LibraryItemProps> = ({ item, translateOption, getDisplayName }) => {
+const LibraryItem: React.FC<LibraryItemProps> = ({ item, translateOption, getDisplayName, onAddToFavourites, isFavourite = false }) => {
   const navigation = useNavigation<any>();
 
   const getMediaIcon = (media: string) => {
@@ -52,6 +54,13 @@ const LibraryItem: React.FC<LibraryItemProps> = ({ item, translateOption, getDis
     }
   };
 
+  const handleAddToFavourites = (e: any) => {
+    e.stopPropagation();
+    if (onAddToFavourites) {
+      onAddToFavourites(item);
+    }
+  };
+
   return (
     <TouchableOpacity
       accessibilityRole="link"
@@ -80,7 +89,22 @@ const LibraryItem: React.FC<LibraryItemProps> = ({ item, translateOption, getDis
             </View>
           </View>
         </View>
-        <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
+        <View style={styles.itemActions}>
+          {onAddToFavourites && (
+            <TouchableOpacity
+              onPress={handleAddToFavourites}
+              style={styles.favouriteButton}
+              activeOpacity={0.7}
+            >
+              <Ionicons 
+                name={isFavourite ? "star" : "star-outline"} 
+                size={20} 
+                color={isFavourite ? "#f59e0b" : "#9CA3AF"} 
+              />
+            </TouchableOpacity>
+          )}
+          <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -149,6 +173,15 @@ const styles = StyleSheet.create({
   levelText: {
     fontSize: 12,
     fontWeight: '600',
+  },
+  itemActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  favouriteButton: {
+    padding: 4,
+    borderRadius: 6,
   },
 });
 

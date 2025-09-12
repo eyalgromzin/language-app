@@ -398,6 +398,8 @@
       "story": "История",
       "conversation": "Разговор",
       "lyrics": "Текст песни",
+      "video": "Видео",
+      "book": "Книга",
       "any": "Любой"
     },
     "difficultyLevels": {

@@ -428,6 +428,8 @@
       "story": "Histoire",
       "conversation": "Conversation",
       "lyrics": "Paroles",
+      "video": "Vidéo",
+      "book": "Livre",
       "any": "N'importe"
     },
     "difficultyLevels": {

@@ -398,6 +398,8 @@
       "story": "Historie",
       "conversation": "Samtale",
       "lyrics": "Sangtekst",
+      "video": "Video",
+      "book": "Bok",
       "any": "Hvilken som helst"
     },
     "difficultyLevels": {

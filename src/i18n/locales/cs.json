@@ -398,6 +398,8 @@
       "story": "Příběh",
       "conversation": "Konverzace",
       "lyrics": "Text písně",
+      "video": "Video",
+      "book": "Kniha",
       "any": "Jakýkoli"
     },
     "difficultyLevels": {

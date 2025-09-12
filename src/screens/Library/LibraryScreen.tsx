@@ -1,9 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList, Platform, Alert, ToastAndroid } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTranslation } from 'react-i18next';
 import { getLibraryMeta, searchLibraryWithCriterias } from '../../config/api';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
+import AddToFavouritesDialog, { FavouriteItem } from '../../components/AddToFavouritesDialog';
+import harmfulWordsService from '../../services/harmfulWordsService';
 import {
   LibraryHeader,
   MediaTypeTabs,
@@ -31,6 +33,9 @@ function LibraryScreen(): React.JSX.Element {
   const [metaLevels, setMetaLevels] = React.useState<string[] | null>(null);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
   const [searchQuery, setSearchQuery] = React.useState<string>('');
+  const [showAddToFavouritesDialog, setShowAddToFavouritesDialog] = React.useState<boolean>(false);
+  const [selectedItemForFavourites, setSelectedItemForFavourites] = React.useState<{ url: string; name?: string; type: string; level: string; media: string } | null>(null);
+  const [favourites, setFavourites] = React.useState<FavouriteItem[]>([]);
 
 
 
@@ -45,6 +50,25 @@ function LibraryScreen(): React.JSX.Element {
       } catch (error) {
         if (!mounted) return;
         setLearningLanguage(null);
+      }
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  // Load favourites
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const raw = await AsyncStorage.getItem('surf.favourites');
+        if (!mounted) return;
+        const parsed = raw ? JSON.parse(raw) : [];
+        setFavourites(Array.isArray(parsed) ? parsed : []);
+      } catch (error) {
+        if (!mounted) return;
+        setFavourites([]);
       }
     })();
     return () => {
@@ -141,6 +165,66 @@ function LibraryScreen(): React.JSX.Element {
     return getDomainFromUrlString(it.url) || it.url;
   };
 
+  const normalizeUrl = (input: string): string => {
+    if (!input) return '';
+    const trimmed = input.trim();
+    if (!trimmed) return '';
+    const hasScheme = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(trimmed);
+    const startsWithWww = /^www\./i.test(trimmed);
+    const looksLikeDomain = /^[^\s]+\.[^\s]{2,}$/.test(trimmed);
+    const looksLikeIp = /^\d{1,3}(\.\d{1,3}){3}(:\d+)?(\/|$)/.test(trimmed);
+    if (!hasScheme && (startsWithWww || looksLikeDomain || looksLikeIp)) {
+      return `https://${trimmed}`;
+    }
+    return hasScheme ? trimmed : '';
+  };
+
+  const saveFavourites = async (next: FavouriteItem[]) => {
+    setFavourites(next);
+    try { 
+      await AsyncStorage.setItem('surf.favourites', JSON.stringify(next)); 
+    } catch (error) {
+      console.error('Failed to save favourites:', error);
+    }
+  };
+
+  const addToFavourites = async (url: string, name: string, typeId: number, typeName: string, levelName?: string) => {
+    if (!url) return;
+    
+    try {
+      const checkResult = await harmfulWordsService.checkUrl(url);
+      if (checkResult.isHarmful) {
+        const message = `This URL contains inappropriate content and cannot be added to favorites. Matched words: ${checkResult.matchedWords.join(', ')}`;
+        if (Platform.OS === 'android') {
+          ToastAndroid.show(message, ToastAndroid.LONG);
+        } else {
+          Alert.alert('Content Blocked', message);
+        }
+        return;
+      }
+    } catch (error) {
+      console.error('Failed to check URL for harmful content:', error);
+    }
+    
+    const normalized = normalizeUrl(url);
+    const safeName = (name || '').trim() || (getDomainFromUrlString(normalized) || normalized);
+    const next: FavouriteItem[] = [
+      { url: normalized, name: safeName, typeId, typeName, levelName: levelName || undefined },
+      ...favourites.filter((f) => f.url !== normalized),
+    ].slice(0, 200);
+    await saveFavourites(next);
+  };
+
+  const isItemFavourite = (url: string): boolean => {
+    const normalized = normalizeUrl(url);
+    return favourites.some(f => f.url === normalized);
+  };
+
+  const handleAddToFavourites = (item: { url: string; name?: string; type: string; level: string; media: string }) => {
+    setSelectedItemForFavourites(item);
+    setShowAddToFavouritesDialog(true);
+  };
+
   const filteredUrls = React.useMemo(() => {
     const res = urls.filter(
       (u) => {
@@ -234,6 +318,8 @@ function LibraryScreen(): React.JSX.Element {
             item={item}
             translateOption={translateOption}
             getDisplayName={getDisplayName}
+            onAddToFavourites={handleAddToFavourites}
+            isFavourite={isItemFavourite(item.url)}
           />
         )}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
@@ -291,6 +377,27 @@ function LibraryScreen(): React.JSX.Element {
           type="level"
         />
       )}
+
+      <AddToFavouritesDialog
+        visible={showAddToFavouritesDialog}
+        onClose={() => {
+          setShowAddToFavouritesDialog(false);
+          setSelectedItemForFavourites(null);
+        }}
+        onAdd={async (url, name, typeId, typeName, levelName) => {
+          await addToFavourites(url, name, typeId, typeName, levelName);
+          if (Platform.OS === 'android') {
+            ToastAndroid.show(t('screens.surf.addedToFavourites'), ToastAndroid.SHORT);
+          } else {
+            Alert.alert(t('screens.surf.addedToFavourites'));
+          }
+        }}
+        defaultUrl={selectedItemForFavourites?.url || ''}
+        defaultName={selectedItemForFavourites?.name || ''}
+        defaultType={selectedItemForFavourites?.type || ''}
+        defaultLevel={selectedItemForFavourites?.level || ''}
+        learningLanguage={learningLanguage}
+      />
     </View>
   );
 }

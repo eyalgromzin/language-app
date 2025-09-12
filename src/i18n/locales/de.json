@@ -426,6 +426,8 @@
       "story": "Geschichte",
       "conversation": "Gespräch",
       "lyrics": "Liedtext",
+      "video": "Video",
+      "book": "Buch",
       "any": "Beliebig"
     },
     "difficultyLevels": {
