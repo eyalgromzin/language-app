@@ -1,5 +1,4 @@
-- make 1 add to favourites dialog. 
-    make surf , book , and video open it .     
+  
 
 publish app =======================================================================================================================
 

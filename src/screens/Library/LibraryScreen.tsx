@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { getLibraryMeta, searchLibraryWithCriterias } from '../../config/api';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import AddToFavouritesDialog, { FavouriteItem } from '../../components/AddToFavouritesDialog';
+import { FAVOURITE_TYPES } from '../../common';
 import harmfulWordsService from '../../services/harmfulWordsService';
 import {
   LibraryHeader,
@@ -115,11 +116,8 @@ function LibraryScreen(): React.JSX.Element {
   }, []);
 
   const typeOptions = React.useMemo(() => {
-    if (metaTypes && metaTypes.length) return ['All', ...metaTypes];
-    const source = allUrls.length ? allUrls : urls;
-    const unique = Array.from(new Set(source.map((u) => u.type)));
-    return ['All', ...unique];
-  }, [metaTypes, urls, allUrls]);
+    return ['All', ...FAVOURITE_TYPES.map(type => type.name)];
+  }, []);
 
   const levelOptions = React.useMemo(() => {
     if (metaLevels && metaLevels.length) return ['All', ...metaLevels];

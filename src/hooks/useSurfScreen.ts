@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { WebView } from 'react-native-webview';
 import harmfulWordsService from '../services/harmfulWordsService';
 import { addLibraryUrl } from '../config/api';
-import { FAVOURITE_TYPES } from '../components/AddToFavouritesDialog';
+import { FAVOURITE_TYPES } from '../common';
 
 export type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
 

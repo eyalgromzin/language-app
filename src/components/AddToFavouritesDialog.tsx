@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useTranslation } from '../hooks/useTranslation';
+import { FAVOURITE_TYPES } from '../common';
 
 export interface FavouriteItem {
   url: string;
@@ -11,14 +12,6 @@ export interface FavouriteItem {
   levelName?: string;
 }
 
-export const FAVOURITE_TYPES = [
-  { id: 1, name: 'article' },
-  { id: 2, name: 'story' },
-  { id: 3, name: 'conversation' },
-  { id: 4, name: 'video' },
-  { id: 5, name: 'book' },
-  { id: 6, name: 'website' },
-] as const;
 
 interface AddToFavouritesDialogProps {
   visible: boolean;
