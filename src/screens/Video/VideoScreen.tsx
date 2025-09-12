@@ -373,7 +373,7 @@ function VideoScreen(): React.JSX.Element {
         const lang = toLanguageSymbol(learningLanguage);
         const safeLevel = levelName ? validateLevel(levelName) : 'easy';
         
-        await addUrlToLibrary(normalized, typeName, safeLevel, safeName, lang, 'video');
+        await addUrlToLibrary(normalized, typeName, safeLevel, safeName, lang, 'youtube');
       } catch (libraryError) {
         console.error('Failed to add URL to library:', libraryError);
         // Don't fail the entire operation if library addition fails

@@ -168,7 +168,7 @@ const AddToFavouritesDialog: React.FC<AddToFavouritesDialogProps> = ({
         try {
           const lang = toLanguageSymbol(learningLanguage);
           const safeLevel = levelName ? validateLevel(levelName) : 'easy';
-          const media = storageKey === 'video.favourites' ? 'video' : 'web';
+          const media = storageKey === 'video.favourites' ? 'youtube' : 'web';
           
           await addUrlToLibrary(normalized, typeName, safeLevel, safeName, lang, media);
         } catch (libraryError) {
