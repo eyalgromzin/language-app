@@ -4,7 +4,7 @@ import { Alert, Platform, ToastAndroid, Keyboard, TextInput, ActionSheetIOS } fr
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { WebView } from 'react-native-webview';
 import harmfulWordsService from '../services/harmfulWordsService';
-import { addLibraryUrl } from '../config/api';
+import { addUrlToLibrary } from '../config/api';
 import { FAVOURITE_TYPES } from '../common';
 
 export type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
@@ -314,7 +314,7 @@ export const useSurfScreen = () => {
         const lang = toLanguageSymbol(learningLanguage);
         const safeLevel = levelName ? validateLevel(levelName) : 'easy';
         
-        await addLibraryUrl(normalized, typeName, safeLevel, safeName, lang, 'web');
+        await addUrlToLibrary(normalized, typeName, safeLevel, safeName, lang, 'web');
       } catch (libraryError) {
         console.error('Failed to add URL to library:', libraryError);
         // Don't fail the entire operation if library addition fails
@@ -445,7 +445,7 @@ export const useSurfScreen = () => {
         return;
       }
       
-      await addLibraryUrl(
+      await addUrlToLibrary(
         url, 
         typeName || 'any', 
         level || 'easy', 

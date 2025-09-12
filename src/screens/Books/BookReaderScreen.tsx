@@ -9,7 +9,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
 import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import { parseYandexImageUrlsFromHtml, fetchImageUrls as fetchImageUrlsCommon, type ImageScrapeCallbacks } from '../practice/common';
-import { getLibraryMeta, searchLibraryWithCriterias, addLibraryUrl } from '../../config/api';
+import { getLibraryMeta, searchLibraryWithCriterias, addUrlToLibrary } from '../../config/api';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import { useLoginGate } from '../../contexts/LoginGateContext';
 import { useAuth } from '../../contexts/AuthContext';
@@ -386,7 +386,7 @@ function BookReaderScreen(): React.JSX.Element {
         name: safeName,
         media: 'book',
       } as const;
-      await addLibraryUrl(normalizedUrl, safeType, 'easy', safeName, lang, 'book');
+      await addUrlToLibrary(normalizedUrl, safeType, 'easy', safeName, lang, 'book');
       
       // Cache that this URL is now in the library
       try {

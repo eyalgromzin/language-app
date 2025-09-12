@@ -56,6 +56,12 @@ class HarmfulWordsService {
   }
 
   async checkUrl(url: string): Promise<{ isHarmful: boolean; matchedWords: string[] }> {
+    if(!url) {
+      return {
+        isHarmful: false,
+        matchedWords: []
+      };
+    }
     try {
       const words = await this.getHarmfulWords();
       const lowerUrl = url.toLowerCase();

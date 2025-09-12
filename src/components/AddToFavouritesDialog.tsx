@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTranslation } from '../hooks/useTranslation';
 import { FAVOURITE_TYPES } from '../common';
 import harmfulWordsService from '../services/harmfulWordsService';
-import { addLibraryUrl as addUrlToLibrary } from '../config/api';
+import { addUrlToLibrary } from '../config/api';
 
 export interface FavouriteItem {
   url: string;

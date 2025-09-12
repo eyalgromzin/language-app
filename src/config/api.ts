@@ -130,7 +130,7 @@ export const searchLibraryWithCriterias = async (
   });
 };
 
-export const addLibraryUrl = async (
+export const addUrlToLibrary = async (
   url: string,
   type: string,
   level: string,
