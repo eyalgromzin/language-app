@@ -14,6 +14,7 @@ import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import { useLoginGate } from '../../contexts/LoginGateContext';
 import { useAuth } from '../../contexts/AuthContext';
 import wordCountService from '../../services/wordCountService';
+import AddToFavouritesDialog from '../../components/AddToFavouritesDialog';
 
 type StoredBook = {
   id: string;
@@ -100,6 +101,9 @@ function BookReaderScreen(): React.JSX.Element {
   const [selectedTypeName, setSelectedTypeName] = React.useState<string | null>(null);
   const [showTypeOptions, setShowTypeOptions] = React.useState<boolean>(false);
   const [typeError, setTypeError] = React.useState<boolean>(false);
+
+  // Add-to-favourites modal state
+  const [showFavouriteModal, setShowFavouriteModal] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -1203,6 +1207,29 @@ function BookReaderScreen(): React.JSX.Element {
     }
   };
 
+  const handleAddToFavourites = async (url: string, name: string, typeId: number, typeName: string, levelName?: string) => {
+    try {
+      const lang = toLanguageSymbol(learningLanguage);
+      const safeName = (name || bookTitle || 'Book').trim() || 'Book';
+      const safeLevel = levelName || 'easy';
+      
+      await addLibraryUrl(url, typeName, safeLevel, safeName, lang, 'book');
+      
+      if (Platform.OS === 'android') {
+        ToastAndroid.show('Added to favourites', ToastAndroid.SHORT);
+      } else {
+        Alert.alert('Success', 'Book added to favourites');
+      }
+    } catch (error) {
+      console.error('Error adding to favourites:', error);
+      if (Platform.OS === 'android') {
+        ToastAndroid.show('Failed to add to favourites', ToastAndroid.SHORT);
+      } else {
+        Alert.alert('Error', 'Failed to add book to favourites');
+      }
+    }
+  };
+
   return (
     <View style={[styles.container, { backgroundColor: themeColors.bg }]}>
       <View style={[styles.header, { backgroundColor: themeColors.headerBg, borderBottomColor: themeColors.border }]}>
@@ -1211,6 +1238,9 @@ function BookReaderScreen(): React.JSX.Element {
         </TouchableOpacity>
         <Text style={[styles.title, { color: themeColors.headerText }]} numberOfLines={1}>{bookTitle || 'Reader'}</Text>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <TouchableOpacity onPress={() => setShowFavouriteModal(true)} style={styles.favouriteBtn}>
+            <Text style={[styles.favouriteBtnText, { color: themeColors.headerText }]}>★</Text>
+          </TouchableOpacity>
           <TouchableOpacity onPress={() => setShowThemeMenu((v) => !v)} style={styles.themeBtn}>
             <Text style={[styles.themeBtnText, { color: themeColors.headerText }]}>Aa</Text>
           </TouchableOpacity>
@@ -1394,6 +1424,17 @@ function BookReaderScreen(): React.JSX.Element {
             </View>
           </View>
         </Modal>
+        
+        {/* Add to favourites modal */}
+        <AddToFavouritesDialog
+          visible={showFavouriteModal}
+          onClose={() => setShowFavouriteModal(false)}
+          onAdd={handleAddToFavourites}
+          defaultName={bookTitle || ''}
+          defaultType="book"
+          defaultLevel="easy"
+          learningLanguage={learningLanguage}
+        />
       </View>
     </View>
   );
@@ -1416,6 +1457,8 @@ const styles = StyleSheet.create({
   backBtn: { paddingVertical: 8, paddingHorizontal: 8 },
   backText: { color: '#007AFF', fontWeight: '700' },
   title: { flex: 1, textAlign: 'center', fontWeight: '700' },
+  favouriteBtn: { paddingHorizontal: 10, paddingVertical: 6, borderRadius: 6, marginRight: 8 },
+  favouriteBtnText: { fontWeight: '700', fontSize: 18 },
   themeBtn: { paddingHorizontal: 10, paddingVertical: 6, borderRadius: 6 },
   themeBtnText: { fontWeight: '700', 
     fontSize: 16,

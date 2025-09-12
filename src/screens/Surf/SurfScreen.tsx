@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import UrlBar from '../../components/Surf/UrlBar';
 import FavouritesModal from '../../components/Surf/FavouritesModal';
-import AddFavouriteModal from '../../components/Surf/AddFavouriteModal';
+import AddToFavouritesDialog from '../../components/AddToFavouritesDialog';
 import SurfWebView from '../../components/Surf/SurfWebView';
 import ImageScrapeWebView from '../../components/Surf/ImageScrapeWebView';
 import { useSurfScreen } from '../../hooks/useSurfScreen';
@@ -269,42 +269,24 @@ function SurfScreen(): React.JSX.Element {
         onRemoveFavourite={removeFromFavourites}
       />
       
-      <AddFavouriteModal
+      <AddToFavouritesDialog
         visible={showAddFavouriteModal}
         onClose={() => setShowAddFavouriteModal(false)}
-        onAdd={async () => {
-          const u = normalizeUrl(newFavUrl || currentUrl || addressText);
-          const nm = (newFavName || '').trim();
+        onAdd={async (url, name, typeId, typeName, levelName) => {
+          const u = normalizeUrl(url || currentUrl || addressText);
+          const nm = (name || '').trim();
           if (!u || u === 'about:blank') {
             if (Platform.OS === 'android') ToastAndroid.show(t('screens.surf.invalidUrl'), ToastAndroid.SHORT); else Alert.alert(t('screens.surf.invalidUrl'));
             return;
           }
-          const selected = FAVOURITE_TYPES.find(t => t.id === newFavTypeId);
-          if (!selected) { setFavTypeError(true); return; }
-          if (!newFavLevelName) { setFavLevelError(true); return; }
-          await addToFavourites(u, nm, selected.id, selected.name, newFavLevelName);
+          await addToFavourites(u, nm, typeId, typeName, levelName);
           setShowAddFavouriteModal(false);
           if (Platform.OS === 'android') ToastAndroid.show(t('screens.surf.addedToFavourites'), ToastAndroid.SHORT); else Alert.alert(t('screens.surf.addedToFavourites'));
-          postAddUrlToLibrary(u, selected.name, nm, newFavLevelName || undefined).catch(() => {});
+          postAddUrlToLibrary(u, typeName, nm, levelName || undefined).catch(() => {});
         }}
-        newFavName={newFavName}
-        setNewFavName={setNewFavName}
-        newFavUrl={newFavUrl}
-        setNewFavUrl={setNewFavUrl}
-        newFavTypeId={newFavTypeId}
-        setNewFavTypeId={setNewFavTypeId}
-        newFavLevelName={newFavLevelName}
-        setNewFavLevelName={setNewFavLevelName}
-        showTypeOptions={showTypeOptions}
-        setShowTypeOptions={setShowTypeOptions}
-        showLevelOptions={showLevelOptions}
-        setShowLevelOptions={setShowLevelOptions}
-        favTypeError={favTypeError}
-        setFavTypeError={setFavTypeError}
-        favLevelError={favLevelError}
-        setFavLevelError={setFavLevelError}
+        defaultUrl={newFavUrl || currentUrl || addressText}
+        defaultName={newFavName}
         learningLanguage={learningLanguage}
-        FAVOURITE_TYPES={FAVOURITE_TYPES}
       />
       
       <SurfWebView
