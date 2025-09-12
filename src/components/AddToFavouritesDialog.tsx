@@ -1,8 +1,10 @@
 import React from 'react';
-import { Modal, View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
+import { Modal, View, Text, TouchableOpacity, TextInput, StyleSheet, Platform, Alert, ToastAndroid } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTranslation } from '../hooks/useTranslation';
 import { FAVOURITE_TYPES } from '../common';
+import harmfulWordsService from '../services/harmfulWordsService';
 
 export interface FavouriteItem {
   url: string;
@@ -16,23 +18,25 @@ export interface FavouriteItem {
 interface AddToFavouritesDialogProps {
   visible: boolean;
   onClose: () => void;
-  onAdd: (url: string, name: string, typeId: number, typeName: string, levelName?: string) => Promise<void>;
+  onSuccess?: (url: string, typeName: string, name: string, levelName?: string) => void;
   defaultUrl?: string;
   defaultName?: string;
   defaultType?: string;
   defaultLevel?: string;
   learningLanguage?: string | null;
+  storageKey?: string; // Storage key for favourites (e.g., 'surf.favourites', 'video.favourites')
 }
 
 const AddToFavouritesDialog: React.FC<AddToFavouritesDialogProps> = ({
   visible,
   onClose,
-  onAdd,
+  onSuccess,
   defaultUrl = '',
   defaultName = '',
   defaultType = '',
   defaultLevel = '',
   learningLanguage,
+  storageKey = 'surf.favourites',
 }) => {
   const { t } = useTranslation();
   
@@ -76,6 +80,92 @@ const AddToFavouritesDialog: React.FC<AddToFavouritesDialogProps> = ({
     return 'en';
   };
 
+  const normalizeUrl = (input: string): string => {
+    if (!input) return 'about:blank';
+    const trimmed = input.trim();
+    const hasScheme = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(trimmed);
+    const hasSpaces = /\s/.test(trimmed);
+    const startsWithWww = /^www\./i.test(trimmed);
+    const looksLikeDomain = /^[^\s]+\.[^\s]{2,}$/.test(trimmed);
+    const looksLikeIp = /^\d{1,3}(\.\d{1,3}){3}(?::\d+)?(\/|$)/.test(trimmed);
+
+    if (hasSpaces || (!hasScheme && !startsWithWww && !looksLikeDomain && !looksLikeIp)) {
+      return `https://www.google.com/search?q=${encodeURIComponent(trimmed)}`;
+    }
+
+    if (!hasScheme && (startsWithWww || looksLikeDomain || looksLikeIp)) {
+      return `https://${trimmed}`;
+    }
+
+    return hasScheme ? trimmed : 'about:blank';
+  };
+
+  const getDomainFromUrlString = (input: string): string | null => {
+    try {
+      const str = (input || '').trim();
+      if (!str) return null;
+      const m = /^[a-zA-Z][a-zA-Z\d+\-.]*:\/\/([^/]+)/.exec(str);
+      const host = m ? m[1] : (/^www\./i.test(str) || /[^\s]+\.[^\s]{2,}/.test(str) ? str.split('/')[0] : null);
+      if (!host) return null;
+      const lower = host.toLowerCase();
+      const noWww = lower.startsWith('www.') ? lower.slice(4) : lower;
+      return noWww;
+    } catch { return null; }
+  };
+
+  const validateLevel = (level: string): string => {
+    const validLevels = ['easy', 'easy-medium', 'medium', 'medium-hard', 'hard'];
+    return validLevels.includes(level) ? level : 'easy';
+  };
+
+  const addToFavourites = async (url: string, name: string, typeId: number, typeName: string, levelName?: string) => {
+    if (!url) return;
+    
+    try {
+      const checkResult = await harmfulWordsService.checkUrl(url);
+      if (checkResult.isHarmful) {
+        const message = `This URL contains inappropriate content and cannot be added to favorites. Matched words: ${checkResult.matchedWords.join(', ')}`;
+        if (Platform.OS === 'android') {
+          ToastAndroid.show(message, ToastAndroid.LONG);
+        } else {
+          Alert.alert('Content Blocked', message);
+        }
+        return;
+      }
+    } catch (error) {
+      console.error('Failed to check URL for harmful content:', error);
+    }
+    
+    const normalized = normalizeUrl(url);
+    const safeName = (name || '').trim() || (getDomainFromUrlString(normalized) || normalized);
+    
+    try {
+      // Load existing favourites
+      const raw = await AsyncStorage.getItem(storageKey);
+      const existing: FavouriteItem[] = raw ? JSON.parse(raw) : [];
+      
+      // Create new favourite item
+      const newFavourite: FavouriteItem = {
+        url: normalized,
+        name: safeName,
+        typeId,
+        typeName,
+        levelName: levelName ? validateLevel(levelName) : undefined
+      };
+      
+      // Add to beginning and remove duplicates, limit to 200 items
+      const next: FavouriteItem[] = [
+        newFavourite,
+        ...existing.filter((f) => f.url !== normalized),
+      ].slice(0, 200);
+      
+      // Save back to storage
+      await AsyncStorage.setItem(storageKey, JSON.stringify(next));
+    } catch (error) {
+      console.error('Failed to save favourites:', error);
+    }
+  };
+
   const handleAdd = async () => {
     if (!newFavUrl.trim()) {
       return;
@@ -92,16 +182,23 @@ const AddToFavouritesDialog: React.FC<AddToFavouritesDialogProps> = ({
       return; 
     }
 
+    // URL validation logic moved from SurfScreen
+    const u = normalizeUrl(newFavUrl.trim());
+    const nm = (newFavName.trim() || '').trim();
+    if (!u || u === 'about:blank') {
+      if (Platform.OS === 'android') {
+        ToastAndroid.show(t('screens.surf.invalidUrl'), ToastAndroid.SHORT);
+      } else {
+        Alert.alert(t('screens.surf.invalidUrl'));
+      }
+      return;
+    }
+
     setIsAdding(true);
     try {
-      await onAdd(
-        newFavUrl.trim(),
-        newFavName.trim() || newFavUrl.trim(),
-        selected.id,
-        selected.name,
-        newFavLevelName
-      );
+      await addToFavourites(u, nm || u, selected.id, selected.name, newFavLevelName);
       onClose();
+      onSuccess?.(u, selected.name, nm || u, newFavLevelName);
     } catch (error) {
       console.error('Error adding to favourites:', error);
     } finally {

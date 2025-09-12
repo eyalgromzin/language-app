@@ -271,6 +271,56 @@ function VideoScreen(): React.JSX.Element {
     try { await AsyncStorage.setItem(FAVOURITES_KEY, JSON.stringify(next)); } catch {}
   }, []);
 
+  const refreshFavourites = React.useCallback(async () => {
+    try {
+      const entries = await AsyncStorage.multiGet([FAVOURITES_KEY, 'surf.favourites']);
+      const map = Object.fromEntries(entries);
+      const rawVideo = map[FAVOURITES_KEY];
+      const rawSurf = map['surf.favourites'];
+      const parseList = (raw: string | null | undefined): FavouriteItem[] => {
+        try {
+          const arr = JSON.parse(raw || '[]');
+          if (!Array.isArray(arr)) return [];
+          const mapped: FavouriteItem[] = arr
+            .map((it: any) => {
+              if (typeof it === 'string') {
+                const u = normalizeYouTubeUrl(it);
+                const nm = u;
+                return { url: u, name: nm, typeName: 'video' } as FavouriteItem;
+              }
+              if (it && typeof it === 'object' && typeof it.url === 'string') {
+                const u = normalizeYouTubeUrl(it.url);
+                const nm = typeof it.name === 'string' && it.name.trim().length > 0 ? it.name : u;
+                const tid = typeof it.typeId === 'number' ? it.typeId : undefined;
+                const tn = typeof it.typeName === 'string' ? it.typeName : undefined;
+                const ln = typeof it.levelName === 'string' ? it.levelName : (typeof it.level === 'string' ? it.level : undefined);
+                return { url: u, name: nm, typeId: tid, typeName: tn, levelName: ln } as FavouriteItem;
+              }
+              return null;
+            })
+            .filter((x): x is FavouriteItem => !!x);
+          return mapped;
+        } catch { return []; }
+      };
+
+      let videoFavs = parseList(rawVideo);
+      if (videoFavs.length === 0) {
+        const surfFavs = parseList(rawSurf);
+        const isYouTube = (u: string) => /youtube\.com|youtu\.be/.test(u);
+        const migrated = surfFavs
+          .filter(item => (item.typeName === 'video') || isYouTube(item.url))
+          .map(item => ({ ...item, typeName: 'video' as const }));
+        if (migrated.length > 0) {
+          videoFavs = migrated;
+          try { await AsyncStorage.setItem(FAVOURITES_KEY, JSON.stringify(videoFavs)); } catch {}
+        }
+      }
+      setFavourites(videoFavs);
+    } catch (error) {
+      console.error('Failed to refresh favourites:', error);
+    }
+  }, [normalizeYouTubeUrl]);
+
   const addToFavourites = React.useCallback(async (favUrl: string, name: string, typeId: number, typeName: string, levelName?: string) => {
     if (!favUrl) return;
     
@@ -1095,8 +1145,8 @@ function VideoScreen(): React.JSX.Element {
       <AddToFavouritesDialog
         visible={showAddFavouriteModal}
         onClose={() => setShowAddFavouriteModal(false)}
-        onAdd={async (url, name, typeId, typeName, levelName) => {
-          await addToFavourites(url, name, typeId, typeName, levelName);
+        onSuccess={async () => {
+          await refreshFavourites();
           if (Platform.OS === 'android') {
             ToastAndroid.show(t('screens.video.addedToFavourites'), ToastAndroid.SHORT);
           } else {
@@ -1108,6 +1158,7 @@ function VideoScreen(): React.JSX.Element {
         defaultType="video"
         defaultLevel="easy"
         learningLanguage={learningLanguage}
+        storageKey="video.favourites"
       />
 
       <VideoOptionsMenu

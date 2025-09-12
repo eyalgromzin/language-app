@@ -1,4 +1,4 @@
-  
+save to favourites should not check only domain - should normalize url , decode it , and check it doesnt exist    
 
 publish app =======================================================================================================================
 

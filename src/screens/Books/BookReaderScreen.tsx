@@ -1207,28 +1207,7 @@ function BookReaderScreen(): React.JSX.Element {
     }
   };
 
-  const handleAddToFavourites = async (url: string, name: string, typeId: number, typeName: string, levelName?: string) => {
-    try {
-      const lang = toLanguageSymbol(learningLanguage);
-      const safeName = (name || bookTitle || 'Book').trim() || 'Book';
-      const safeLevel = levelName || 'easy';
-      
-      await addLibraryUrl(url, typeName, safeLevel, safeName, lang, 'book');
-      
-      if (Platform.OS === 'android') {
-        ToastAndroid.show('Added to favourites', ToastAndroid.SHORT);
-      } else {
-        Alert.alert('Success', 'Book added to favourites');
-      }
-    } catch (error) {
-      console.error('Error adding to favourites:', error);
-      if (Platform.OS === 'android') {
-        ToastAndroid.show('Failed to add to favourites', ToastAndroid.SHORT);
-      } else {
-        Alert.alert('Error', 'Failed to add book to favourites');
-      }
-    }
-  };
+
 
   return (
     <View style={[styles.container, { backgroundColor: themeColors.bg }]}>
@@ -1429,11 +1408,18 @@ function BookReaderScreen(): React.JSX.Element {
         <AddToFavouritesDialog
           visible={showFavouriteModal}
           onClose={() => setShowFavouriteModal(false)}
-          onAdd={handleAddToFavourites}
+          onSuccess={() => {
+            if (Platform.OS === 'android') {
+              ToastAndroid.show('Added to favourites', ToastAndroid.SHORT);
+            } else {
+              Alert.alert('Success', 'Book added to favourites');
+            }
+          }}
           defaultName={bookTitle || ''}
           defaultType="book"
           defaultLevel="easy"
           learningLanguage={learningLanguage}
+          storageKey="surf.favourites"
         />
       </View>
     </View>

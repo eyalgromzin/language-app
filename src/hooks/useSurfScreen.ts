@@ -242,6 +242,38 @@ export const useSurfScreen = () => {
     try { await AsyncStorage.setItem(FAVOURITES_KEY, JSON.stringify(next)); } catch {}
   };
 
+  const refreshFavourites = async () => {
+    try {
+      const raw = await AsyncStorage.getItem(FAVOURITES_KEY);
+      const arr = JSON.parse(raw || '[]');
+      if (Array.isArray(arr)) {
+        const mapped: FavouriteItem[] = arr
+          .map((it: any) => {
+            if (typeof it === 'string') {
+              const u = normalizeUrl(it);
+              const nm = getDomainFromUrlString(u) || u;
+              return { url: u, name: nm } as FavouriteItem;
+            }
+            if (it && typeof it === 'object' && typeof it.url === 'string') {
+              const u = normalizeUrl(it.url);
+              const nm = typeof it.name === 'string' && it.name.trim().length > 0 ? it.name : (getDomainFromUrlString(u) || u);
+              const tid = typeof it.typeId === 'number' ? it.typeId : undefined;
+              const tn = typeof it.typeName === 'string' ? it.typeName : (typeof tid === 'number' ? (FAVOURITE_TYPES.find(t => t.id === tid)?.name) : undefined);
+              const ln = typeof it.levelName === 'string' ? validateLevel(it.levelName) : (typeof it.level === 'string' ? validateLevel(it.level) : undefined);
+              return { url: u, name: nm, typeId: tid, typeName: tn, levelName: ln } as FavouriteItem;
+            }
+            return null;
+          })
+          .filter((x): x is FavouriteItem => !!x);
+        setFavourites(mapped);
+      } else {
+        setFavourites([]);
+      }
+    } catch {
+      setFavourites([]);
+    }
+  };
+
   const addToFavourites = async (url: string, name: string, typeId: number, typeName: string, levelName?: string | null) => {
     if (!url) return;
     
@@ -456,6 +488,7 @@ export const useSurfScreen = () => {
     goBack,
     addToFavourites,
     removeFromFavourites,
+    refreshFavourites,
     promptFavourite,
     openOptionsMenu,
     promptSetHomepage,

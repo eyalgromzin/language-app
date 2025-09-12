@@ -69,6 +69,7 @@ function SurfScreen(): React.JSX.Element {
     goBack,
     addToFavourites,
     removeFromFavourites,
+    refreshFavourites,
     promptFavourite,
     openOptionsMenu,
     promptSetHomepage,
@@ -272,21 +273,16 @@ function SurfScreen(): React.JSX.Element {
       <AddToFavouritesDialog
         visible={showAddFavouriteModal}
         onClose={() => setShowAddFavouriteModal(false)}
-        onAdd={async (url, name, typeId, typeName, levelName) => {
-          const u = normalizeUrl(url || currentUrl || addressText);
-          const nm = (name || '').trim();
-          if (!u || u === 'about:blank') {
-            if (Platform.OS === 'android') ToastAndroid.show(t('screens.surf.invalidUrl'), ToastAndroid.SHORT); else Alert.alert(t('screens.surf.invalidUrl'));
-            return;
-          }
-          await addToFavourites(u, nm, typeId, typeName, levelName);
+        onSuccess={async (url, typeName, name, levelName) => {
           setShowAddFavouriteModal(false);
+          await refreshFavourites();
           if (Platform.OS === 'android') ToastAndroid.show(t('screens.surf.addedToFavourites'), ToastAndroid.SHORT); else Alert.alert(t('screens.surf.addedToFavourites'));
-          postAddUrlToLibrary(u, typeName, nm, levelName || undefined).catch(() => {});
+          postAddUrlToLibrary(url, typeName, name, levelName || undefined).catch(() => {});
         }}
         defaultUrl={newFavUrl || currentUrl || addressText}
         defaultName={newFavName}
         learningLanguage={learningLanguage}
+        storageKey="surf.favourites"
       />
       
       <SurfWebView

@@ -186,6 +186,17 @@ function LibraryScreen(): React.JSX.Element {
     }
   };
 
+  const refreshFavourites = async () => {
+    try {
+      const raw = await AsyncStorage.getItem('surf.favourites');
+      const parsed = raw ? JSON.parse(raw) : [];
+      setFavourites(Array.isArray(parsed) ? parsed : []);
+    } catch (error) {
+      console.error('Failed to refresh favourites:', error);
+      setFavourites([]);
+    }
+  };
+
   const addToFavourites = async (url: string, name: string, typeId: number, typeName: string, levelName?: string) => {
     if (!url) return;
     
@@ -382,8 +393,8 @@ function LibraryScreen(): React.JSX.Element {
           setShowAddToFavouritesDialog(false);
           setSelectedItemForFavourites(null);
         }}
-        onAdd={async (url, name, typeId, typeName, levelName) => {
-          await addToFavourites(url, name, typeId, typeName, levelName);
+        onSuccess={async () => {
+          await refreshFavourites();
           if (Platform.OS === 'android') {
             ToastAndroid.show(t('screens.surf.addedToFavourites'), ToastAndroid.SHORT);
           } else {
@@ -395,6 +406,7 @@ function LibraryScreen(): React.JSX.Element {
         defaultType={selectedItemForFavourites?.type || ''}
         defaultLevel={selectedItemForFavourites?.level || ''}
         learningLanguage={learningLanguage}
+        storageKey="surf.favourites"
       />
     </View>
   );
