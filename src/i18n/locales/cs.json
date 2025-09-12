@@ -145,7 +145,40 @@
     },
     "library": {
       "title": "Knihovna",
-      "loadingResources": "Načítání vašich učebních zdrojů..."
+      "loadingResources": "Načítání vašich učebních zdrojů...",
+      "shareLibrary": "Sdílet Knihovnu",
+      "tabs": {
+        "all": "Vše",
+        "web": "Web",
+        "youtube": "YouTube",
+        "books": "Knihy"
+      },
+      "filters": {
+        "type": "Typ",
+        "level": "Úroveň",
+        "clearFilters": "Vymazat filtry",
+        "selectType": "Vybrat Typ",
+        "selectLevel": "Vybrat Úroveň"
+      },
+      "states": {
+        "loading": "Načítání vašich učebních zdrojů...",
+        "error": "Něco se pokazilo",
+        "failedToLoad": "Chyba při načítání URL",
+        "tryAgain": "Zkusit znovu",
+        "noResults": "Nebyly nalezeny žádné výsledky",
+        "noResources": "Žádné učební zdroje",
+        "noResultsMessage": "Žádné zdroje neodpovídají \"{{query}}\". Zkuste upravit vyhledávání nebo filtry.",
+        "noResourcesMessage": "Začněte prozkoumáváním výběrem kategorie nebo se vraťte později pro nový obsah.",
+        "clearSearch": "Vymazat vyhledávání"
+      },
+      "accessibility": {
+        "shareLibrary": "Sdílet Knihovnu",
+        "selectTab": "Vybrat záložku {{tab}}",
+        "selectType": "Vybrat filtr typu",
+        "selectLevel": "Vybrat filtr úrovně",
+        "clearFilters": "Vymazat všechny filtry",
+        "openResource": "Otevřít zdroj {{name}}"
+      }
     },
     "books": {
       "title": "Knihy",

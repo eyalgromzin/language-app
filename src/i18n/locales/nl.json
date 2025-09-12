@@ -145,7 +145,40 @@
     },
     "library": {
       "title": "Bibliotheek",
-      "loadingResources": "Je leerbronnen laden..."
+      "loadingResources": "Je leerbronnen laden...",
+      "shareLibrary": "Deel Bibliotheek",
+      "tabs": {
+        "all": "Alle",
+        "web": "Web",
+        "youtube": "YouTube",
+        "books": "Boeken"
+      },
+      "filters": {
+        "type": "Type",
+        "level": "Niveau",
+        "clearFilters": "Filters wissen",
+        "selectType": "Selecteer Type",
+        "selectLevel": "Selecteer Niveau"
+      },
+      "states": {
+        "loading": "Je leerbronnen laden...",
+        "error": "Er ging iets mis",
+        "failedToLoad": "Fout bij het laden van URL's",
+        "tryAgain": "Probeer opnieuw",
+        "noResults": "Geen resultaten gevonden",
+        "noResources": "Geen leermiddelen",
+        "noResultsMessage": "Geen bronnen komen overeen met \"{{query}}\". Probeer je zoekopdracht of filters aan te passen.",
+        "noResourcesMessage": "Begin met verkennen door een categorie te selecteren of kom later terug voor nieuwe inhoud.",
+        "clearSearch": "Zoekopdracht wissen"
+      },
+      "accessibility": {
+        "shareLibrary": "Deel Bibliotheek",
+        "selectTab": "Selecteer {{tab}} tab",
+        "selectType": "Selecteer type filter",
+        "selectLevel": "Selecteer niveau filter",
+        "clearFilters": "Alle filters wissen",
+        "openResource": "Open {{name}} bron"
+      }
     },
     "books": {
       "title": "Boeken",

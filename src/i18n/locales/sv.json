@@ -145,7 +145,40 @@
     },
     "library": {
       "title": "Bibliotek",
-      "loadingResources": "Laddar dina inlärningsresurser..."
+      "loadingResources": "Laddar dina inlärningsresurser...",
+      "shareLibrary": "Dela Bibliotek",
+      "tabs": {
+        "all": "Alla",
+        "web": "Webb",
+        "youtube": "YouTube",
+        "books": "Böcker"
+      },
+      "filters": {
+        "type": "Typ",
+        "level": "Nivå",
+        "clearFilters": "Rensa filter",
+        "selectType": "Välj Typ",
+        "selectLevel": "Välj Nivå"
+      },
+      "states": {
+        "loading": "Laddar dina inlärningsresurser...",
+        "error": "Något gick fel",
+        "failedToLoad": "Misslyckades att ladda URL:er",
+        "tryAgain": "Försök igen",
+        "noResults": "Inga resultat hittades",
+        "noResources": "Inga inlärningsresurser",
+        "noResultsMessage": "Inga resurser matchar \"{{query}}\". Försök att justera din sökning eller filter.",
+        "noResourcesMessage": "Börja utforska genom att välja en kategori eller kom tillbaka senare för nytt innehåll.",
+        "clearSearch": "Rensa sökning"
+      },
+      "accessibility": {
+        "shareLibrary": "Dela Bibliotek",
+        "selectTab": "Välj {{tab}} flik",
+        "selectType": "Välj typfilter",
+        "selectLevel": "Välj nivåfilter",
+        "clearFilters": "Rensa alla filter",
+        "openResource": "Öppna {{name}} resurs"
+      }
     },
     "books": {
       "title": "Böcker",

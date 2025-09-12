@@ -145,7 +145,40 @@
     },
     "library": {
       "title": "पुस्तकालय",
-      "loadingResources": "आपके सीखने के संसाधन लोड हो रहे हैं..."
+      "loadingResources": "आपके सीखने के संसाधन लोड हो रहे हैं...",
+      "shareLibrary": "पुस्तकालय साझा करें",
+      "tabs": {
+        "all": "सभी",
+        "web": "वेब",
+        "youtube": "YouTube",
+        "books": "पुस्तकें"
+      },
+      "filters": {
+        "type": "प्रकार",
+        "level": "स्तर",
+        "clearFilters": "फ़िल्टर साफ़ करें",
+        "selectType": "प्रकार चुनें",
+        "selectLevel": "स्तर चुनें"
+      },
+      "states": {
+        "loading": "आपके सीखने के संसाधन लोड हो रहे हैं...",
+        "error": "कुछ गलत हुआ",
+        "failedToLoad": "URL लोड करने में विफल",
+        "tryAgain": "फिर से कोशिश करें",
+        "noResults": "कोई परिणाम नहीं मिला",
+        "noResources": "कोई सीखने के संसाधन नहीं",
+        "noResultsMessage": "\"{{query}}\" से मेल खाने वाले कोई संसाधन नहीं। अपनी खोज या फ़िल्टर को समायोजित करने का प्रयास करें।",
+        "noResourcesMessage": "एक श्रेणी का चयन करके अन्वेषण शुरू करें या नई सामग्री के लिए बाद में वापस आएं।",
+        "clearSearch": "खोज साफ़ करें"
+      },
+      "accessibility": {
+        "shareLibrary": "पुस्तकालय साझा करें",
+        "selectTab": "{{tab}} टैब चुनें",
+        "selectType": "प्रकार फ़िल्टर चुनें",
+        "selectLevel": "स्तर फ़िल्टर चुनें",
+        "clearFilters": "सभी फ़िल्टर साफ़ करें",
+        "openResource": "{{name}} संसाधन खोलें"
+      }
     },
     "books": {
       "title": "पुस्तकें",

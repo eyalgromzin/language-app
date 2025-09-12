@@ -145,7 +145,40 @@
     },
     "library": {
       "title": "Biblioteka",
-      "loadingResources": "Ładowanie Twoich zasobów nauki..."
+      "loadingResources": "Ładowanie Twoich zasobów nauki...",
+      "shareLibrary": "Udostępnij Bibliotekę",
+      "tabs": {
+        "all": "Wszystkie",
+        "web": "Web",
+        "youtube": "YouTube",
+        "books": "Książki"
+      },
+      "filters": {
+        "type": "Typ",
+        "level": "Poziom",
+        "clearFilters": "Wyczyść filtry",
+        "selectType": "Wybierz Typ",
+        "selectLevel": "Wybierz Poziom"
+      },
+      "states": {
+        "loading": "Ładowanie Twoich zasobów nauki...",
+        "error": "Coś poszło nie tak",
+        "failedToLoad": "Błąd ładowania URL",
+        "tryAgain": "Spróbuj ponownie",
+        "noResults": "Nie znaleziono wyników",
+        "noResources": "Brak zasobów nauki",
+        "noResultsMessage": "Brak zasobów pasujących do \"{{query}}\". Spróbuj dostosować wyszukiwanie lub filtry.",
+        "noResourcesMessage": "Zacznij eksplorację, wybierając kategorię lub wróć później po nową zawartość.",
+        "clearSearch": "Wyczyść wyszukiwanie"
+      },
+      "accessibility": {
+        "shareLibrary": "Udostępnij Bibliotekę",
+        "selectTab": "Wybierz zakładkę {{tab}}",
+        "selectType": "Wybierz filtr typu",
+        "selectLevel": "Wybierz filtr poziomu",
+        "clearFilters": "Wyczyść wszystkie filtry",
+        "openResource": "Otwórz zasób {{name}}"
+      }
     },
     "books": {
       "title": "Książki",

@@ -145,7 +145,40 @@
     },
     "library": {
       "title": "Bibliotek",
-      "loadingResources": "Laster dine læringsressurser..."
+      "loadingResources": "Laster dine læringsressurser...",
+      "shareLibrary": "Del Bibliotek",
+      "tabs": {
+        "all": "Alle",
+        "web": "Web",
+        "youtube": "YouTube",
+        "books": "Bøker"
+      },
+      "filters": {
+        "type": "Type",
+        "level": "Nivå",
+        "clearFilters": "Fjern filtre",
+        "selectType": "Velg Type",
+        "selectLevel": "Velg Nivå"
+      },
+      "states": {
+        "loading": "Laster dine læringsressurser...",
+        "error": "Noe gikk galt",
+        "failedToLoad": "Kunne ikke laste URL-er",
+        "tryAgain": "Prøv igjen",
+        "noResults": "Ingen resultater funnet",
+        "noResources": "Ingen læringsressurser",
+        "noResultsMessage": "Ingen ressurser matcher \"{{query}}\". Prøv å justere søket eller filtrene dine.",
+        "noResourcesMessage": "Begynn å utforske ved å velge en kategori eller kom tilbake senere for nytt innhold.",
+        "clearSearch": "Fjern søk"
+      },
+      "accessibility": {
+        "shareLibrary": "Del Bibliotek",
+        "selectTab": "Velg {{tab}} fane",
+        "selectType": "Velg typefilter",
+        "selectLevel": "Velg nivåfilter",
+        "clearFilters": "Fjern alle filtre",
+        "openResource": "Åpne {{name}} ressurs"
+      }
     },
     "books": {
       "title": "Bøker",

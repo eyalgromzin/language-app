@@ -146,7 +146,40 @@
     },
     "library": {
       "title": "ספרייה",
-      "loadingResources": "טוען את משאבי הלמידה שלכם..."
+      "loadingResources": "טוען את משאבי הלמידה שלכם...",
+      "shareLibrary": "שתף ספרייה",
+      "tabs": {
+        "all": "הכל",
+        "web": "אינטרנט",
+        "youtube": "YouTube",
+        "books": "ספרים"
+      },
+      "filters": {
+        "type": "סוג",
+        "level": "רמה",
+        "clearFilters": "נקה מסננים",
+        "selectType": "בחר סוג",
+        "selectLevel": "בחר רמה"
+      },
+      "states": {
+        "loading": "טוען את משאבי הלמידה שלכם...",
+        "error": "משהו השתבש",
+        "failedToLoad": "שגיאה בטעינת כתובות",
+        "tryAgain": "נסה שוב",
+        "noResults": "לא נמצאו תוצאות",
+        "noResources": "אין משאבי למידה",
+        "noResultsMessage": "אין משאבים התואמים ל\"{{query}}\". נסה להתאים את החיפוש או המסננים שלך.",
+        "noResourcesMessage": "התחל לחקור על ידי בחירת קטגוריה או חזור מאוחר יותר לתוכן חדש.",
+        "clearSearch": "נקה חיפוש"
+      },
+      "accessibility": {
+        "shareLibrary": "שתף ספרייה",
+        "selectTab": "בחר כרטיסייה {{tab}}",
+        "selectType": "בחר מסנן סוג",
+        "selectLevel": "בחר מסנן רמה",
+        "clearFilters": "נקה את כל המסננים",
+        "openResource": "פתח משאב {{name}}"
+      }
     },
     "books": {
       "title": "ספרים",

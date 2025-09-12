@@ -145,7 +145,40 @@
     },
     "library": {
       "title": "ห้องสมุด",
-      "loadingResources": "กำลังโหลดทรัพยากรการเรียนรู้ของคุณ..."
+      "loadingResources": "กำลังโหลดทรัพยากรการเรียนรู้ของคุณ...",
+      "shareLibrary": "แชร์ห้องสมุด",
+      "tabs": {
+        "all": "ทั้งหมด",
+        "web": "เว็บ",
+        "youtube": "YouTube",
+        "books": "หนังสือ"
+      },
+      "filters": {
+        "type": "ประเภท",
+        "level": "ระดับ",
+        "clearFilters": "ล้างตัวกรอง",
+        "selectType": "เลือกประเภท",
+        "selectLevel": "เลือกระดับ"
+      },
+      "states": {
+        "loading": "กำลังโหลดทรัพยากรการเรียนรู้ของคุณ...",
+        "error": "มีบางอย่างผิดพลาด",
+        "failedToLoad": "ไม่สามารถโหลด URL ได้",
+        "tryAgain": "ลองอีกครั้ง",
+        "noResults": "ไม่พบผลลัพธ์",
+        "noResources": "ไม่มีทรัพยากรการเรียนรู้",
+        "noResultsMessage": "ไม่มีทรัพยากรที่ตรงกับ \"{{query}}\" ลองปรับการค้นหาหรือตัวกรองของคุณ",
+        "noResourcesMessage": "เริ่มสำรวจโดยเลือกหมวดหมู่หรือกลับมาทีหลังเพื่อเนื้อหาใหม่",
+        "clearSearch": "ล้างการค้นหา"
+      },
+      "accessibility": {
+        "shareLibrary": "แชร์ห้องสมุด",
+        "selectTab": "เลือกแท็บ {{tab}}",
+        "selectType": "เลือกตัวกรองประเภท",
+        "selectLevel": "เลือกตัวกรองระดับ",
+        "clearFilters": "ล้างตัวกรองทั้งหมด",
+        "openResource": "เปิดทรัพยากร {{name}}"
+      }
     },
     "books": {
       "title": "หนังสือ",

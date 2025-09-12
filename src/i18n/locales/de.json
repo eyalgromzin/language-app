@@ -146,7 +146,40 @@
     },
     "library": {
       "title": "Bibliothek",
-      "loadingResources": "Ihre Lernressourcen werden geladen..."
+      "loadingResources": "Ihre Lernressourcen werden geladen...",
+      "shareLibrary": "Bibliothek teilen",
+      "tabs": {
+        "all": "Alle",
+        "web": "Web",
+        "youtube": "YouTube",
+        "books": "Bücher"
+      },
+      "filters": {
+        "type": "Typ",
+        "level": "Niveau",
+        "clearFilters": "Filter löschen",
+        "selectType": "Typ auswählen",
+        "selectLevel": "Niveau auswählen"
+      },
+      "states": {
+        "loading": "Ihre Lernressourcen werden geladen...",
+        "error": "Etwas ist schiefgelaufen",
+        "failedToLoad": "Fehler beim Laden der URLs",
+        "tryAgain": "Erneut versuchen",
+        "noResults": "Keine Ergebnisse gefunden",
+        "noResources": "Keine Lernressourcen",
+        "noResultsMessage": "Keine Ressourcen entsprechen \"{{query}}\". Versuchen Sie, Ihre Suche oder Filter anzupassen.",
+        "noResourcesMessage": "Beginnen Sie mit der Erkundung, indem Sie eine Kategorie auswählen oder schauen Sie später für neue Inhalte vorbei.",
+        "clearSearch": "Suche löschen"
+      },
+      "accessibility": {
+        "shareLibrary": "Bibliothek teilen",
+        "selectTab": "{{tab}} Tab auswählen",
+        "selectType": "Typ-Filter auswählen",
+        "selectLevel": "Niveau-Filter auswählen",
+        "clearFilters": "Alle Filter löschen",
+        "openResource": "{{name}} Ressource öffnen"
+      }
     },
     "books": {
       "title": "Bücher",

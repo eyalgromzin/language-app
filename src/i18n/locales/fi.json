@@ -145,7 +145,40 @@
     },
     "library": {
       "title": "Kirjasto",
-      "loadingResources": "Ladataan oppimisresurssejasi..."
+      "loadingResources": "Ladataan oppimisresurssejasi...",
+      "shareLibrary": "Jaa Kirjasto",
+      "tabs": {
+        "all": "Kaikki",
+        "web": "Web",
+        "youtube": "YouTube",
+        "books": "Kirjat"
+      },
+      "filters": {
+        "type": "Tyyppi",
+        "level": "Taso",
+        "clearFilters": "Tyhjennä suodattimet",
+        "selectType": "Valitse Tyyppi",
+        "selectLevel": "Valitse Taso"
+      },
+      "states": {
+        "loading": "Ladataan oppimisresurssejasi...",
+        "error": "Jotain meni pieleen",
+        "failedToLoad": "URL-osoitteiden lataaminen epäonnistui",
+        "tryAgain": "Yritä uudelleen",
+        "noResults": "Tuloksia ei löytynyt",
+        "noResources": "Ei oppimisresursseja",
+        "noResultsMessage": "Yhtään resurssia ei vastaa \"{{query}}\". Yritä säätää hakua tai suodattimia.",
+        "noResourcesMessage": "Aloita tutkiminen valitsemalla kategoria tai tule takaisin myöhemmin uutta sisältöä varten.",
+        "clearSearch": "Tyhjennä haku"
+      },
+      "accessibility": {
+        "shareLibrary": "Jaa Kirjasto",
+        "selectTab": "Valitse {{tab}} välilehti",
+        "selectType": "Valitse tyyppisuodatin",
+        "selectLevel": "Valitse tasosuodatin",
+        "clearFilters": "Tyhjennä kaikki suodattimet",
+        "openResource": "Avaa {{name}} resurssi"
+      }
     },
     "books": {
       "title": "Kirjat",

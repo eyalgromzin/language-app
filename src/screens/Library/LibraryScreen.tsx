@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList, TouchableOpacity, ActivityIndicator, Platform, NativeModules, Modal, Pressable, ScrollView, TextInput } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 import { getLibraryMeta, searchLibraryWithCriterias } from '../../config/api';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import LinkingService from '../../services/linkingService';
@@ -10,6 +11,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 function LibraryScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
   const { languageMappings } = useLanguageMappings();
+  const { t } = useTranslation();
   const [urls, setUrls] = React.useState<{ url: string; name?: string; type: string; level: string; media: string }[]>([]);
   const [allUrls, setAllUrls] = React.useState<{ url: string; name?: string; type: string; level: string; media: string }[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
@@ -138,7 +140,7 @@ function LibraryScreen(): React.JSX.Element {
         const json: { url: string; name?: string; thumbnailUrl?: string; type: string; level: string; media: string }[] = await searchLibraryWithCriterias(toLanguageSymbol(learningLanguage), selectedType, selectedLevel);
         setUrls(json ?? []);
       } catch (e) {
-        setError('Failed to load URLs');
+        setError(t('screens.library.states.failedToLoad'));
       } finally {
         setLoading(false);
       }
@@ -160,7 +162,7 @@ function LibraryScreen(): React.JSX.Element {
         }
       } catch (e) {
         console.error('[Library] Error fetching URLs:', e);
-        if (!isCancelled) setError('Failed to load URLs');
+        if (!isCancelled) setError(t('screens.library.states.failedToLoad'));
       } finally {
         if (!isCancelled) setLoading(false);
       }
@@ -247,13 +249,13 @@ function LibraryScreen(): React.JSX.Element {
         <View style={styles.header}>
           <View style={styles.headerContent}>
             <View style={styles.headerTop}>
-              <Text style={styles.headerTitle}>Library</Text>
+              <Text style={styles.headerTitle}>{t('screens.library.title')}</Text>
             </View>
           </View>
         </View>
         <View style={[styles.center, styles.loadingContainer]}>
           <ActivityIndicator size="large" color="#6366F1" />
-          <Text style={styles.loadingText}>Loading your learning resources...</Text>
+          <Text style={styles.loadingText}>{t('screens.library.states.loading')}</Text>
         </View>
       </View>
     );
@@ -265,13 +267,13 @@ function LibraryScreen(): React.JSX.Element {
         <View style={styles.header}>
           <View style={styles.headerContent}>
             <View style={styles.headerTop}>
-              <Text style={styles.headerTitle}>Library</Text>
+              <Text style={styles.headerTitle}>{t('screens.library.title')}</Text>
             </View>
           </View>
         </View>
         <View style={[styles.center, styles.errorContainer]}>
           <Ionicons name="alert-circle-outline" size={48} color="#EF4444" />
-          <Text style={styles.errorTitle}>Something went wrong</Text>
+          <Text style={styles.errorTitle}>{t('screens.library.states.error')}</Text>
           <Text style={styles.errorText}>{error}</Text>
           <TouchableOpacity style={styles.retryButton} onPress={() => {
             setError(null);
@@ -279,7 +281,7 @@ function LibraryScreen(): React.JSX.Element {
             // Trigger a reload by changing a dependency
             setSelectedMedia(prev => prev);
           }}>
-            <Text style={styles.retryButtonText}>Try Again</Text>
+            <Text style={styles.retryButtonText}>{t('screens.library.states.tryAgain')}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -289,16 +291,16 @@ function LibraryScreen(): React.JSX.Element {
   return (
     <View style={styles.container}>
       {/* Professional Header */}
-      <View style={styles.header}>
-        <View style={styles.headerContent}>
-          <View style={styles.headerTop}>
-            <Text style={styles.headerTitle}>Library</Text>
-            <TouchableOpacity
-              style={styles.shareButton}
-              onPress={() => LinkingService.shareLibrary()}
-              accessibilityRole="button"
-              accessibilityLabel="Share Library"
-            >
+        <View style={styles.header}>
+          <View style={styles.headerContent}>
+            <View style={styles.headerTop}>
+              <Text style={styles.headerTitle}>{t('screens.library.title')}</Text>
+              <TouchableOpacity
+                style={styles.shareButton}
+                onPress={() => LinkingService.shareLibrary()}
+                accessibilityRole="button"
+                accessibilityLabel={t('screens.library.accessibility.shareLibrary')}
+              >
               <Ionicons name="share-outline" size={22} color="#6366F1" />
             </TouchableOpacity>
           </View>
@@ -309,10 +311,10 @@ function LibraryScreen(): React.JSX.Element {
       <View style={styles.tabsBar}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.tabsContainer}>
           {([
-            { key: 'all', label: 'All', icon: 'grid-outline' },
-            { key: 'web', label: 'Web', icon: 'globe-outline' },
-            { key: 'youtube', label: 'YouTube', icon: 'logo-youtube' },
-            { key: 'book', label: 'Books', icon: 'book-outline' },
+            { key: 'all', label: t('screens.library.tabs.all'), icon: 'grid-outline' },
+            { key: 'web', label: t('screens.library.tabs.web'), icon: 'globe-outline' },
+            { key: 'youtube', label: t('screens.library.tabs.youtube'), icon: 'logo-youtube' },
+            { key: 'book', label: t('screens.library.tabs.books'), icon: 'book-outline' },
           ] as const).map((tab) => (
             <TouchableOpacity
               key={tab.key}
@@ -320,6 +322,7 @@ function LibraryScreen(): React.JSX.Element {
               onPress={() => setSelectedMedia(tab.key)}
               accessibilityRole="tab"
               accessibilityState={{ selected: selectedMedia === tab.key }}
+              accessibilityLabel={t('screens.library.accessibility.selectTab', { tab: tab.label })}
             >
               <Ionicons 
                 name={tab.icon as any} 
@@ -349,7 +352,7 @@ function LibraryScreen(): React.JSX.Element {
                      setShowLevelDropdown(false);
                    }}
                  >
-                   <Text style={styles.dropdownButtonText}>Type: {selectedType}</Text>
+                   <Text style={styles.dropdownButtonText}>{t('screens.library.filters.type')}: {selectedType}</Text>
                  </TouchableOpacity>
                  {/* options rendered in modal overlay */}
                </View>
@@ -363,7 +366,7 @@ function LibraryScreen(): React.JSX.Element {
                        setShowTypeDropdown(false);
                      }}
                    >
-                     <Text style={styles.dropdownButtonText}>Level: {selectedLevel}</Text>
+                     <Text style={styles.dropdownButtonText}>{t('screens.library.filters.level')}: {selectedLevel}</Text>
                    </TouchableOpacity>
                    {/* options rendered in modal overlay */}
                  </View>
@@ -380,7 +383,7 @@ function LibraryScreen(): React.JSX.Element {
                    setShowLevelDropdown(false);
                  }}
                >
-                 <Text style={styles.clearFiltersText}>Clear filters</Text>
+                 <Text style={styles.clearFiltersText}>{t('screens.library.filters.clearFilters')}</Text>
                </TouchableOpacity>
              )}
            </View>
@@ -389,12 +392,12 @@ function LibraryScreen(): React.JSX.Element {
            <View style={styles.emptyContainer}>
              <Ionicons name="library-outline" size={64} color="#9CA3AF" />
              <Text style={styles.emptyTitle}>
-               {searchQuery ? 'No results found' : 'No learning resources'}
+               {searchQuery ? t('screens.library.states.noResults') : t('screens.library.states.noResources')}
              </Text>
              <Text style={styles.emptyText}>
                {searchQuery 
-                 ? `No resources match "${searchQuery}". Try adjusting your search or filters.`
-                 : 'Start exploring by selecting a category or check back later for new content.'
+                 ? t('screens.library.states.noResultsMessage', { query: searchQuery })
+                 : t('screens.library.states.noResourcesMessage')
                }
              </Text>
              {searchQuery && (
@@ -402,7 +405,7 @@ function LibraryScreen(): React.JSX.Element {
                  style={styles.clearSearchEmptyButton}
                  onPress={() => setSearchQuery('')}
                >
-                 <Text style={styles.clearSearchEmptyText}>Clear search</Text>
+                 <Text style={styles.clearSearchEmptyText}>{t('screens.library.states.clearSearch')}</Text>
                </TouchableOpacity>
              )}
            </View>
@@ -418,7 +421,7 @@ function LibraryScreen(): React.JSX.Element {
       >
         <Pressable style={styles.modalBackdrop} onPress={() => setShowTypeDropdown(false)} />
         <View style={styles.modalCard}>
-          <Text style={styles.modalTitle}>Select Type</Text>
+          <Text style={styles.modalTitle}>{t('screens.library.filters.selectType')}</Text>
           <ScrollView>
             {typeOptions.map((opt) => (
               <TouchableOpacity
@@ -446,7 +449,7 @@ function LibraryScreen(): React.JSX.Element {
         >
           <Pressable style={styles.modalBackdrop} onPress={() => setShowLevelDropdown(false)} />
           <View style={styles.modalCard}>
-            <Text style={styles.modalTitle}>Select Level</Text>
+            <Text style={styles.modalTitle}>{t('screens.library.filters.selectLevel')}</Text>
             <ScrollView>
               {levelOptions.map((opt) => (
                 <TouchableOpacity

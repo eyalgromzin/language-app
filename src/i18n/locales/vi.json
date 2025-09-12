@@ -145,7 +145,40 @@
     },
     "library": {
       "title": "Thư Viện",
-      "loadingResources": "Đang tải tài nguyên học tập của bạn..."
+      "loadingResources": "Đang tải tài nguyên học tập của bạn...",
+      "shareLibrary": "Chia Sẻ Thư Viện",
+      "tabs": {
+        "all": "Tất Cả",
+        "web": "Web",
+        "youtube": "YouTube",
+        "books": "Sách"
+      },
+      "filters": {
+        "type": "Loại",
+        "level": "Cấp Độ",
+        "clearFilters": "Xóa bộ lọc",
+        "selectType": "Chọn Loại",
+        "selectLevel": "Chọn Cấp Độ"
+      },
+      "states": {
+        "loading": "Đang tải tài nguyên học tập của bạn...",
+        "error": "Có gì đó đã xảy ra sai",
+        "failedToLoad": "Không thể tải URL",
+        "tryAgain": "Thử lại",
+        "noResults": "Không tìm thấy kết quả",
+        "noResources": "Không có tài nguyên học tập",
+        "noResultsMessage": "Không có tài nguyên nào khớp với \"{{query}}\". Hãy thử điều chỉnh tìm kiếm hoặc bộ lọc của bạn.",
+        "noResourcesMessage": "Bắt đầu khám phá bằng cách chọn một danh mục hoặc quay lại sau để có nội dung mới.",
+        "clearSearch": "Xóa tìm kiếm"
+      },
+      "accessibility": {
+        "shareLibrary": "Chia Sẻ Thư Viện",
+        "selectTab": "Chọn tab {{tab}}",
+        "selectType": "Chọn bộ lọc loại",
+        "selectLevel": "Chọn bộ lọc cấp độ",
+        "clearFilters": "Xóa tất cả bộ lọc",
+        "openResource": "Mở tài nguyên {{name}}"
+      }
     },
     "books": {
       "title": "Sách",

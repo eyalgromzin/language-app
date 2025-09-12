@@ -145,7 +145,40 @@
     },
     "library": {
       "title": "Biblioteca",
-      "loadingResources": "Carregando seus recursos de aprendizado..."
+      "loadingResources": "Carregando seus recursos de aprendizado...",
+      "shareLibrary": "Compartilhar Biblioteca",
+      "tabs": {
+        "all": "Todos",
+        "web": "Web",
+        "youtube": "YouTube",
+        "books": "Livros"
+      },
+      "filters": {
+        "type": "Tipo",
+        "level": "Nível",
+        "clearFilters": "Limpar filtros",
+        "selectType": "Selecionar Tipo",
+        "selectLevel": "Selecionar Nível"
+      },
+      "states": {
+        "loading": "Carregando seus recursos de aprendizado...",
+        "error": "Algo deu errado",
+        "failedToLoad": "Falha ao carregar URLs",
+        "tryAgain": "Tentar novamente",
+        "noResults": "Nenhum resultado encontrado",
+        "noResources": "Nenhum recurso de aprendizado",
+        "noResultsMessage": "Nenhum recurso corresponde a \"{{query}}\". Tente ajustar sua pesquisa ou filtros.",
+        "noResourcesMessage": "Comece explorando selecionando uma categoria ou volte mais tarde para novo conteúdo.",
+        "clearSearch": "Limpar pesquisa"
+      },
+      "accessibility": {
+        "shareLibrary": "Compartilhar Biblioteca",
+        "selectTab": "Selecionar aba {{tab}}",
+        "selectType": "Selecionar filtro de tipo",
+        "selectLevel": "Selecionar filtro de nível",
+        "clearFilters": "Limpar todos os filtros",
+        "openResource": "Abrir recurso {{name}}"
+      }
     },
     "books": {
       "title": "Livros",

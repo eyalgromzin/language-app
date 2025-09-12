@@ -145,7 +145,40 @@
     },
     "library": {
       "title": "Библиотека",
-      "loadingResources": "Загрузка ваших учебных ресурсов..."
+      "loadingResources": "Загрузка ваших учебных ресурсов...",
+      "shareLibrary": "Поделиться Библиотекой",
+      "tabs": {
+        "all": "Все",
+        "web": "Веб",
+        "youtube": "YouTube",
+        "books": "Книги"
+      },
+      "filters": {
+        "type": "Тип",
+        "level": "Уровень",
+        "clearFilters": "Очистить фильтры",
+        "selectType": "Выбрать Тип",
+        "selectLevel": "Выбрать Уровень"
+      },
+      "states": {
+        "loading": "Загрузка ваших учебных ресурсов...",
+        "error": "Что-то пошло не так",
+        "failedToLoad": "Ошибка загрузки URL",
+        "tryAgain": "Попробовать снова",
+        "noResults": "Результаты не найдены",
+        "noResources": "Нет учебных ресурсов",
+        "noResultsMessage": "Нет ресурсов, соответствующих \"{{query}}\". Попробуйте изменить поиск или фильтры.",
+        "noResourcesMessage": "Начните изучение, выбрав категорию, или вернитесь позже за новым контентом.",
+        "clearSearch": "Очистить поиск"
+      },
+      "accessibility": {
+        "shareLibrary": "Поделиться Библиотекой",
+        "selectTab": "Выбрать вкладку {{tab}}",
+        "selectType": "Выбрать фильтр типа",
+        "selectLevel": "Выбрать фильтр уровня",
+        "clearFilters": "Очистить все фильтры",
+        "openResource": "Открыть ресурс {{name}}"
+      }
     },
     "books": {
       "title": "Книги",
