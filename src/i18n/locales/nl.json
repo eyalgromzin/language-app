@@ -168,12 +168,12 @@
           "any": "Elke"
         },
         "levels": {
-          "easy / a1": "Makkelijk / A1",
-          "easy-medium / a2": "Makkelijk-Gemiddeld / A2",
-          "medium / b1": "Gemiddeld / B1",
-          "medium-hard / b2": "Gemiddeld-Moeilijk / B2",
-          "hard / c1": "Moeilijk / C1",
-          "native / c2": "Moedertaal / C2"
+          "easy": "Makkelijk / A1",
+          "easy-medium": "Makkelijk-Gemiddeld / A2",
+          "medium": "Gemiddeld / B1",
+          "medium-hard": "Gemiddeld-Moeilijk / B2",
+          "hard": "Moeilijk / C1",
+          "native": "Moedertaal / C2"
         }
       },
       "states": {

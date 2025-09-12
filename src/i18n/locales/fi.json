@@ -168,12 +168,12 @@
           "any": "Mikä tahansa"
         },
         "levels": {
-          "easy / a1": "Helppo / A1",
-          "easy-medium / a2": "Helppo-Keskitaso / A2",
-          "medium / b1": "Keskitaso / B1",
-          "medium-hard / b2": "Keskitaso-Vaikea / B2",
-          "hard / c1": "Vaikea / C1",
-          "native / c2": "Äidinkieli / C2"
+          "easy": "Helppo / A1",
+          "easy-medium": "Helppo-Keskitaso / A2",
+          "medium": "Keskitaso / B1",
+          "medium-hard": "Keskitaso-Vaikea / B2",
+          "hard": "Vaikea / C1",
+          "native": "Äidinkieli / C2"
         }
       },
       "states": {

@@ -168,12 +168,12 @@
           "any": "Hvilken som helst"
         },
         "levels": {
-          "easy / a1": "Lett / A1",
-          "easy-medium / a2": "Lett-Middels / A2",
-          "medium / b1": "Middels / B1",
-          "medium-hard / b2": "Middels-Vanskelig / B2",
-          "hard / c1": "Vanskelig / C1",
-          "native / c2": "Morsmål / C2"
+          "easy": "Lett / A1",
+          "easy-medium": "Lett-Middels / A2",
+          "medium": "Middels / B1",
+          "medium-hard": "Middels-Vanskelig / B2",
+          "hard": "Vanskelig / C1",
+          "native": "Morsmål / C2"
         }
       },
       "states": {

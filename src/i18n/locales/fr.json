@@ -169,12 +169,12 @@
           "any": "Tout"
         },
         "levels": {
-          "easy / a1": "Facile / A1",
-          "easy-medium / a2": "Facile-Moyen / A2",
-          "medium / b1": "Moyen / B1",
-          "medium-hard / b2": "Moyen-Difficile / B2",
-          "hard / c1": "Difficile / C1",
-          "native / c2": "Natif / C2"
+          "easy": "Facile / A1",
+          "easy-medium": "Facile-Moyen / A2",
+          "medium": "Moyen / B1",
+          "medium-hard": "Moyen-Difficile / B2",
+          "hard": "Difficile / C1",
+          "native": "Natif / C2"
         }
       },
       "states": {

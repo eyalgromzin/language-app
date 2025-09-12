@@ -169,12 +169,12 @@
           "any": "כל"
         },
         "levels": {
-          "easy / a1": "קל / A1",
-          "easy-medium / a2": "קל-בינוני / A2",
-          "medium / b1": "בינוני / B1",
-          "medium-hard / b2": "בינוני-קשה / B2",
-          "hard / c1": "קשה / C1",
-          "native / c2": "שפת אם / C2"
+          "easy": "קל / A1",
+          "easy-medium": "קל-בינוני / A2",
+          "medium": "בינוני / B1",
+          "medium-hard": "בינוני-קשה / B2",
+          "hard": "קשה / C1",
+          "native": "שפת אם / C2"
         }
       },
       "states": {

@@ -168,12 +168,12 @@
           "any": "Bất kỳ"
         },
         "levels": {
-          "easy / a1": "Dễ / A1",
-          "easy-medium / a2": "Dễ-Trung bình / A2",
-          "medium / b1": "Trung bình / B1",
-          "medium-hard / b2": "Trung bình-Khó / B2",
-          "hard / c1": "Khó / C1",
-          "native / c2": "Bản ngữ / C2"
+          "easy": "Dễ / A1",
+          "easy-medium": "Dễ-Trung bình / A2",
+          "medium": "Trung bình / B1",
+          "medium-hard": "Trung bình-Khó / B2",
+          "hard": "Khó / C1",
+          "native": "Bản ngữ / C2"
         }
       },
       "states": {

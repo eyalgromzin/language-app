@@ -168,12 +168,12 @@
           "any": "ใดๆ"
         },
         "levels": {
-          "easy / a1": "ง่าย / A1",
-          "easy-medium / a2": "ง่าย-ปานกลาง / A2",
-          "medium / b1": "ปานกลาง / B1",
-          "medium-hard / b2": "ปานกลาง-ยาก / B2",
-          "hard / c1": "ยาก / C1",
-          "native / c2": "เจ้าของภาษา / C2"
+          "easy": "ง่าย / A1",
+          "easy-medium": "ง่าย-ปานกลาง / A2",
+          "medium": "ปานกลาง / B1",
+          "medium-hard": "ปานกลาง-ยาก / B2",
+          "hard": "ยาก / C1",
+          "native": "เจ้าของภาษา / C2"
         }
       },
       "states": {
