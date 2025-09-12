@@ -158,7 +158,23 @@
         "level": "Уровень",
         "clearFilters": "Очистить фильтры",
         "selectType": "Выбрать Тип",
-        "selectLevel": "Выбрать Уровень"
+        "selectLevel": "Выбрать Уровень",
+        "all": "Все",
+        "types": {
+          "article": "Статья",
+          "story": "История",
+          "conversation": "Разговор",
+          "lyrics": "Тексты песен",
+          "any": "Любой"
+        },
+        "levels": {
+          "easy / a1": "Легкий / A1",
+          "easy-medium / a2": "Легкий-Средний / A2",
+          "medium / b1": "Средний / B1",
+          "medium-hard / b2": "Средний-Сложный / B2",
+          "hard / c1": "Сложный / C1",
+          "native / c2": "Носитель / C2"
+        }
       },
       "states": {
         "loading": "Загрузка ваших учебных ресурсов...",

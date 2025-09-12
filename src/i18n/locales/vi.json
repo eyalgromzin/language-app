@@ -158,7 +158,23 @@
         "level": "Cấp Độ",
         "clearFilters": "Xóa bộ lọc",
         "selectType": "Chọn Loại",
-        "selectLevel": "Chọn Cấp Độ"
+        "selectLevel": "Chọn Cấp Độ",
+        "all": "Tất cả",
+        "types": {
+          "article": "Bài viết",
+          "story": "Câu chuyện",
+          "conversation": "Cuộc trò chuyện",
+          "lyrics": "Lời bài hát",
+          "any": "Bất kỳ"
+        },
+        "levels": {
+          "easy / a1": "Dễ / A1",
+          "easy-medium / a2": "Dễ-Trung bình / A2",
+          "medium / b1": "Trung bình / B1",
+          "medium-hard / b2": "Trung bình-Khó / B2",
+          "hard / c1": "Khó / C1",
+          "native / c2": "Bản ngữ / C2"
+        }
       },
       "states": {
         "loading": "Đang tải tài nguyên học tập của bạn...",

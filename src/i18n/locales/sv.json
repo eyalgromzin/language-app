@@ -158,7 +158,23 @@
         "level": "Nivå",
         "clearFilters": "Rensa filter",
         "selectType": "Välj Typ",
-        "selectLevel": "Välj Nivå"
+        "selectLevel": "Välj Nivå",
+        "all": "Alla",
+        "types": {
+          "article": "Artikel",
+          "story": "Berättelse",
+          "conversation": "Konversation",
+          "lyrics": "Sångtexter",
+          "any": "Vilken som helst"
+        },
+        "levels": {
+          "easy / a1": "Lätt / A1",
+          "easy-medium / a2": "Lätt-Medel / A2",
+          "medium / b1": "Medel / B1",
+          "medium-hard / b2": "Medel-Svår / B2",
+          "hard / c1": "Svår / C1",
+          "native / c2": "Modersmål / C2"
+        }
       },
       "states": {
         "loading": "Laddar dina inlärningsresurser...",

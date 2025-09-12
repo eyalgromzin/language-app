@@ -158,7 +158,23 @@
         "level": "Nível",
         "clearFilters": "Limpar filtros",
         "selectType": "Selecionar Tipo",
-        "selectLevel": "Selecionar Nível"
+        "selectLevel": "Selecionar Nível",
+        "all": "Todos",
+        "types": {
+          "article": "Artigo",
+          "story": "História",
+          "conversation": "Conversa",
+          "lyrics": "Letras",
+          "any": "Qualquer"
+        },
+        "levels": {
+          "easy / a1": "Fácil / A1",
+          "easy-medium / a2": "Fácil-Médio / A2",
+          "medium / b1": "Médio / B1",
+          "medium-hard / b2": "Médio-Difícil / B2",
+          "hard / c1": "Difícil / C1",
+          "native / c2": "Nativo / C2"
+        }
       },
       "states": {
         "loading": "Carregando seus recursos de aprendizado...",

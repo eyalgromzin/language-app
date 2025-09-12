@@ -158,7 +158,23 @@
         "level": "Úroveň",
         "clearFilters": "Vymazat filtry",
         "selectType": "Vybrat Typ",
-        "selectLevel": "Vybrat Úroveň"
+        "selectLevel": "Vybrat Úroveň",
+        "all": "Všechny",
+        "types": {
+          "article": "Článek",
+          "story": "Příběh",
+          "conversation": "Rozhovor",
+          "lyrics": "Texty písní",
+          "any": "Jakýkoli"
+        },
+        "levels": {
+          "easy / a1": "Snadný / A1",
+          "easy-medium / a2": "Snadný-Střední / A2",
+          "medium / b1": "Střední / B1",
+          "medium-hard / b2": "Střední-Těžký / B2",
+          "hard / c1": "Těžký / C1",
+          "native / c2": "Rodný / C2"
+        }
       },
       "states": {
         "loading": "Načítání vašich učebních zdrojů...",

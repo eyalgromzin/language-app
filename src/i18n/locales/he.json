@@ -159,7 +159,23 @@
         "level": "רמה",
         "clearFilters": "נקה מסננים",
         "selectType": "בחר סוג",
-        "selectLevel": "בחר רמה"
+        "selectLevel": "בחר רמה",
+        "all": "הכל",
+        "types": {
+          "article": "מאמר",
+          "story": "סיפור",
+          "conversation": "שיחה",
+          "lyrics": "מילים",
+          "any": "כל"
+        },
+        "levels": {
+          "easy / a1": "קל / A1",
+          "easy-medium / a2": "קל-בינוני / A2",
+          "medium / b1": "בינוני / B1",
+          "medium-hard / b2": "בינוני-קשה / B2",
+          "hard / c1": "קשה / C1",
+          "native / c2": "שפת אם / C2"
+        }
       },
       "states": {
         "loading": "טוען את משאבי הלמידה שלכם...",
@@ -287,7 +303,7 @@
       "websiteDescription": "למדו עוד על HelloLingo וגלו משאבים נוספים",
       "unableToOpenEmail": "לא ניתן לפתוח לקוח דואל. אנא צרו איתנו קשר ישירות ב-support@HelloLingo.app",
       "unableToOpenWebsite": "לא ניתן לפתוח את האתר",
-      "responseTime": "זמן תגובה",      
+      "responseTime": "זמן תגובה",
       "responseTimeDescription": "אנחנו בדרך כלל עונים לדואל תוך 24 שעות בימי עבודה. לבעיות דחופות, אנא כללו \"דחוף\" בשורת הנושא.",
       "footerText": "תודה על השימוש ב-HelloLingo! המשוב שלכם עוזר לנו לשפר את האפליקציה עבור כולם.",
       "emailSubject": "תמיכה HelloLingo",

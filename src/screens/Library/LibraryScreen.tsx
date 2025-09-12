@@ -98,6 +98,24 @@ function LibraryScreen(): React.JSX.Element {
     return ['All', ...unique];
   }, [metaLevels, urls, allUrls]);
 
+  // Helper function to translate dropdown options
+  const translateOption = (option: string, type: 'type' | 'level'): string => {
+    if (option === 'All') {
+      return t('screens.library.filters.all');
+    }
+    
+    if (type === 'type') {
+      return t(`screens.library.filters.types.${option}`, { defaultValue: option });
+    } else if (type === 'level') {
+      const translationKey = `screens.library.filters.levels.${option}`;
+      const translated = t(translationKey, { defaultValue: option });
+      console.log(`[Library] Translating level: "${option}" -> key: "${translationKey}" -> result: "${translated}"`);
+      return translated;
+    }
+    
+    return option;
+  };
+
   const getDomainFromUrlString = (input: string): string | null => {
     try {
       const str = (input || '').trim();
@@ -195,16 +213,16 @@ function LibraryScreen(): React.JSX.Element {
     };
 
     const getLevelColor = (level: string) => {
-      switch (level.toLowerCase()) {
-        case 'beginner':
-          return '#10B981';
-        case 'intermediate':
-          return '#F59E0B';
-        case 'advanced':
-          return '#EF4444';
-        default:
-          return '#6B7280';
+      // Map level values to colors based on the original level names
+      const levelLower = level.toLowerCase();
+      if (levelLower.includes('easy') || levelLower.includes('a1') || levelLower.includes('a2')) {
+        return '#10B981'; // Green for easy levels
+      } else if (levelLower.includes('medium') || levelLower.includes('b1') || levelLower.includes('b2')) {
+        return '#F59E0B'; // Orange for medium levels
+      } else if (levelLower.includes('hard') || levelLower.includes('c1') || levelLower.includes('c2') || levelLower.includes('native')) {
+        return '#EF4444'; // Red for hard/native levels
       }
+      return '#6B7280'; // Default gray
     };
 
     return (
@@ -229,10 +247,10 @@ function LibraryScreen(): React.JSX.Element {
             <View style={styles.itemMeta}>
               <View style={styles.metaRow}>
                 <View style={styles.typeBadge}>
-                  <Text style={styles.typeText}>{item.type}</Text>
+                  <Text style={styles.typeText}>{translateOption(item.type, 'type')}</Text>
                 </View>
                 <View style={[styles.levelBadge, { backgroundColor: getLevelColor(item.level) + '15' }]}>
-                  <Text style={[styles.levelText, { color: getLevelColor(item.level) }]}>{item.level}</Text>
+                  <Text style={[styles.levelText, { color: getLevelColor(item.level) }]}>{translateOption(item.level, 'level')}</Text>
                 </View>
               </View>
             </View>
@@ -352,7 +370,7 @@ function LibraryScreen(): React.JSX.Element {
                      setShowLevelDropdown(false);
                    }}
                  >
-                   <Text style={styles.dropdownButtonText}>{t('screens.library.filters.type')}: {selectedType}</Text>
+                   <Text style={styles.dropdownButtonText}>{t('screens.library.filters.type')}: {translateOption(selectedType, 'type')}</Text>
                  </TouchableOpacity>
                  {/* options rendered in modal overlay */}
                </View>
@@ -366,7 +384,7 @@ function LibraryScreen(): React.JSX.Element {
                        setShowTypeDropdown(false);
                      }}
                    >
-                     <Text style={styles.dropdownButtonText}>{t('screens.library.filters.level')}: {selectedLevel}</Text>
+                     <Text style={styles.dropdownButtonText}>{t('screens.library.filters.level')}: {translateOption(selectedLevel, 'level')}</Text>
                    </TouchableOpacity>
                    {/* options rendered in modal overlay */}
                  </View>
@@ -432,7 +450,7 @@ function LibraryScreen(): React.JSX.Element {
                   setShowTypeDropdown(false);
                 }}
               >
-                <Text style={styles.dropdownOptionText}>{opt}</Text>
+                <Text style={styles.dropdownOptionText}>{translateOption(opt, 'type')}</Text>
               </TouchableOpacity>
             ))}
           </ScrollView>
@@ -460,7 +478,7 @@ function LibraryScreen(): React.JSX.Element {
                     setShowLevelDropdown(false);
                   }}
                 >
-                  <Text style={styles.dropdownOptionText}>{opt}</Text>
+                  <Text style={styles.dropdownOptionText}>{translateOption(opt, 'level')}</Text>
                 </TouchableOpacity>
               ))}
             </ScrollView>

@@ -158,7 +158,23 @@
         "level": "स्तर",
         "clearFilters": "फ़िल्टर साफ़ करें",
         "selectType": "प्रकार चुनें",
-        "selectLevel": "स्तर चुनें"
+        "selectLevel": "स्तर चुनें",
+        "all": "सभी",
+        "types": {
+          "article": "लेख",
+          "story": "कहानी",
+          "conversation": "बातचीत",
+          "lyrics": "गीत",
+          "any": "कोई भी"
+        },
+        "levels": {
+          "easy / a1": "आसान / A1",
+          "easy-medium / a2": "आसान-मध्यम / A2",
+          "medium / b1": "मध्यम / B1",
+          "medium-hard / b2": "मध्यम-कठिन / B2",
+          "hard / c1": "कठिन / C1",
+          "native / c2": "मूल / C2"
+        }
       },
       "states": {
         "loading": "आपके सीखने के संसाधन लोड हो रहे हैं...",

@@ -158,7 +158,23 @@
         "level": "Poziom",
         "clearFilters": "Wyczyść filtry",
         "selectType": "Wybierz Typ",
-        "selectLevel": "Wybierz Poziom"
+        "selectLevel": "Wybierz Poziom",
+        "all": "Wszystkie",
+        "types": {
+          "article": "Artykuł",
+          "story": "Historia",
+          "conversation": "Rozmowa",
+          "lyrics": "Teksty piosenek",
+          "any": "Dowolny"
+        },
+        "levels": {
+          "easy / a1": "Łatwy / A1",
+          "easy-medium / a2": "Łatwy-Średni / A2",
+          "medium / b1": "Średni / B1",
+          "medium-hard / b2": "Średni-Trudny / B2",
+          "hard / c1": "Trudny / C1",
+          "native / c2": "Natywny / C2"
+        }
       },
       "states": {
         "loading": "Ładowanie Twoich zasobów nauki...",

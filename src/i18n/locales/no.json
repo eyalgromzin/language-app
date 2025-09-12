@@ -158,7 +158,23 @@
         "level": "Nivå",
         "clearFilters": "Fjern filtre",
         "selectType": "Velg Type",
-        "selectLevel": "Velg Nivå"
+        "selectLevel": "Velg Nivå",
+        "all": "Alle",
+        "types": {
+          "article": "Artikkel",
+          "story": "Historie",
+          "conversation": "Samtale",
+          "lyrics": "Sangtekster",
+          "any": "Hvilken som helst"
+        },
+        "levels": {
+          "easy / a1": "Lett / A1",
+          "easy-medium / a2": "Lett-Middels / A2",
+          "medium / b1": "Middels / B1",
+          "medium-hard / b2": "Middels-Vanskelig / B2",
+          "hard / c1": "Vanskelig / C1",
+          "native / c2": "Morsmål / C2"
+        }
       },
       "states": {
         "loading": "Laster dine læringsressurser...",

@@ -158,7 +158,23 @@
         "level": "ระดับ",
         "clearFilters": "ล้างตัวกรอง",
         "selectType": "เลือกประเภท",
-        "selectLevel": "เลือกระดับ"
+        "selectLevel": "เลือกระดับ",
+        "all": "ทั้งหมด",
+        "types": {
+          "article": "บทความ",
+          "story": "เรื่องราว",
+          "conversation": "การสนทนา",
+          "lyrics": "เนื้อเพลง",
+          "any": "ใดๆ"
+        },
+        "levels": {
+          "easy / a1": "ง่าย / A1",
+          "easy-medium / a2": "ง่าย-ปานกลาง / A2",
+          "medium / b1": "ปานกลาง / B1",
+          "medium-hard / b2": "ปานกลาง-ยาก / B2",
+          "hard / c1": "ยาก / C1",
+          "native / c2": "เจ้าของภาษา / C2"
+        }
       },
       "states": {
         "loading": "กำลังโหลดทรัพยากรการเรียนรู้ของคุณ...",

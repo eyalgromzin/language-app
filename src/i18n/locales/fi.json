@@ -158,7 +158,23 @@
         "level": "Taso",
         "clearFilters": "Tyhjennä suodattimet",
         "selectType": "Valitse Tyyppi",
-        "selectLevel": "Valitse Taso"
+        "selectLevel": "Valitse Taso",
+        "all": "Kaikki",
+        "types": {
+          "article": "Artikkeli",
+          "story": "Tarina",
+          "conversation": "Keskustelu",
+          "lyrics": "Sanoitukset",
+          "any": "Mikä tahansa"
+        },
+        "levels": {
+          "easy / a1": "Helppo / A1",
+          "easy-medium / a2": "Helppo-Keskitaso / A2",
+          "medium / b1": "Keskitaso / B1",
+          "medium-hard / b2": "Keskitaso-Vaikea / B2",
+          "hard / c1": "Vaikea / C1",
+          "native / c2": "Äidinkieli / C2"
+        }
       },
       "states": {
         "loading": "Ladataan oppimisresurssejasi...",

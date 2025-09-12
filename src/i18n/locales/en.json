@@ -159,7 +159,23 @@
         "level": "Level",
         "clearFilters": "Clear filters",
         "selectType": "Select Type",
-        "selectLevel": "Select Level"
+        "selectLevel": "Select Level",
+        "all": "All",
+        "types": {
+          "article": "Article",
+          "story": "Story",
+          "conversation": "Conversation",
+          "lyrics": "Lyrics",
+          "any": "Any"
+        },
+        "levels": {
+          "easy / a1": "Easy / A1",
+          "easy-medium / a2": "Easy-Medium / A2",
+          "medium / b1": "Medium / B1",
+          "medium-hard / b2": "Medium-Hard / B2",
+          "hard / c1": "Hard / C1",
+          "native / c2": "Native / C2"
+        }
       },
       "states": {
         "loading": "Loading your learning resources...",
