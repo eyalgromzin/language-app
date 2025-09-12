@@ -110,7 +110,14 @@
       "hearingPractice": "Hearing practice",
       "formulateSentence": "Formulate sentence",
       "surpriseMe": "Surprise me",
-      "magic": "Magic"
+      "magic": "Magic",
+      "tapWordsToComplete": "Tap the words below to complete the sentence:",
+      "matchWordsToTranslations": "match the words to their translations",
+      "hideEligibleWords": "Hide eligible words",
+      "showEligibleWords": "Show eligible words",
+      "eligibleWords": "eligible words",
+      "createSentence": "create the sentence",
+      "continueToNextQuestion": "Continue to next question"
     },
     "library": {
       "title": "Library",
@@ -226,7 +233,16 @@
     "settings": "Settings",
     "preferences": "Preferences",
     "language": "Language",
-    "languages": "Languages"
+    "languages": "Languages",
+    "skip": "Skip",
+    "tryAgain": "Try again!",
+    "wrongAnswer": "Wrong Answer",
+    "correctAnswerIs": "The correct answer is:",
+    "comingSoon": "Coming soon",
+    "notImplementedYet": "is not implemented yet.",
+    "hide": "Hide",
+    "show": "Show",
+    "reset": "Reset"
   },
   "menu": {
     "openMenu": "Open menu",

@@ -108,7 +108,15 @@
       "memoryGame": "Gra pamięciowa",
       "hearingPractice": "Ćwiczenie słuchowe",
       "formulateSentence": "Sformułuj zdanie",
-      "surpriseMe": "Zaskocz mnie"
+      "surpriseMe": "Zaskocz mnie",
+      "magic": "Magia",
+      "tapWordsToComplete": "Dotknij słów poniżej, aby uzupełnić zdanie:",
+      "matchWordsToTranslations": "dopasuj słowa do ich tłumaczeń",
+      "hideEligibleWords": "Ukryj odpowiednie słowa",
+      "showEligibleWords": "Pokaż odpowiednie słowa",
+      "eligibleWords": "odpowiednie słowa",
+      "createSentence": "stwórz zdanie",
+      "continueToNextQuestion": "Przejdź do następnego pytania"
     },
     "library": {
       "title": "Biblioteka",

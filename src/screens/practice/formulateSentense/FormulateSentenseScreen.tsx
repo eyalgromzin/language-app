@@ -8,6 +8,7 @@ import { playCorrectFeedback, playWrongFeedback } from '../common';
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
+import { useTranslation } from '../../../hooks/useTranslation';
 import { getBabySteps } from '../../../config/api';
 import { WordEntry } from '../../../types/words';
 import { useLanguageMappings } from '../../../contexts/LanguageMappingsContext';
@@ -94,6 +95,7 @@ type EmbeddedProps = {
 };
 
 function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
+  const { t } = useTranslation();
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const { languageMappings } = useLanguageMappings();
@@ -507,9 +509,9 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
                   }
                 }}
                 accessibilityRole="button"
-                accessibilityLabel="Continue"
+                accessibilityLabel={t('common.continue')}
               >
-                <Text style={styles.continueButtonText}>Continue</Text>
+                <Text style={styles.continueButtonText}>{t('common.continue')}</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -522,9 +524,9 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.topRow}>
-          <Text style={styles.title}>create the sentence</Text>
-          <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
-            <Text style={styles.skipButtonText}>Skip</Text>
+          <Text style={styles.title}>{t('screens.practice.createSentence')}</Text>
+          <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel={t('common.skip')}>
+            <Text style={styles.skipButtonText}>{t('common.skip')}</Text>
           </TouchableOpacity>
         </View>
 
@@ -574,8 +576,8 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         </View>
 
         <View style={styles.actionsRow}>
-          <TouchableOpacity style={styles.resetButton} onPress={onReset} accessibilityRole="button" accessibilityLabel="Reset">
-            <Text style={styles.resetButtonText}>Reset</Text>
+          <TouchableOpacity style={styles.resetButton} onPress={onReset} accessibilityRole="button" accessibilityLabel={t('common.reset')}>
+            <Text style={styles.resetButtonText}>{t('common.reset')}</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -613,9 +615,9 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
               style={styles.continueButton} 
               onPress={onContinueFromWrongAnswer}
               accessibilityRole="button"
-              accessibilityLabel="Continue to next question"
+              accessibilityLabel={t('screens.practice.continueToNextQuestion')}
             >
-              <Text style={styles.continueButtonText}>Continue</Text>
+              <Text style={styles.continueButtonText}>{t('common.continue')}</Text>
             </TouchableOpacity>
           </View>
         </View>

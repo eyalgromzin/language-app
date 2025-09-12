@@ -108,7 +108,15 @@
       "memoryGame": "Minnes spel",
       "hearingPractice": "Hörövning",
       "formulateSentence": "Formulera mening",
-      "surpriseMe": "Överraska mig"
+      "surpriseMe": "Överraska mig",
+      "magic": "Magi",
+      "tapWordsToComplete": "Tryck på orden nedan för att slutföra meningen:",
+      "matchWordsToTranslations": "matcha orden med deras översättningar",
+      "hideEligibleWords": "Dölj berättigade ord",
+      "showEligibleWords": "Visa berättigade ord",
+      "eligibleWords": "berättigade ord",
+      "createSentence": "skapa meningen",
+      "continueToNextQuestion": "Fortsätt till nästa fråga"
     },
     "library": {
       "title": "Bibliotek",

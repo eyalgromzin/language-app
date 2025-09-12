@@ -108,7 +108,15 @@
       "memoryGame": "Muistipeli",
       "hearingPractice": "Kuuloharjoitus",
       "formulateSentence": "Muodosta lause",
-      "surpriseMe": "Yllätä minut"
+      "surpriseMe": "Yllätä minut",
+      "magic": "Taika",
+      "tapWordsToComplete": "Napauta alla olevia sanoja lauseen viimeistelyä varten:",
+      "matchWordsToTranslations": "yhdistä sanat niiden käännöksiin",
+      "hideEligibleWords": "Piilota kelvolliset sanat",
+      "showEligibleWords": "Näytä kelvolliset sanat",
+      "eligibleWords": "kelvolliset sanat",
+      "createSentence": "luoda lause",
+      "continueToNextQuestion": "Jatka seuraavaan kysymykseen"
     },
     "library": {
       "title": "Kirjasto",

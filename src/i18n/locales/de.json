@@ -110,7 +110,14 @@
       "hearingPractice": "Hörübung",
       "formulateSentence": "Satz formulieren",
       "surpriseMe": "Überraschen Sie mich",
-      "magic": "Magie"
+      "magic": "Magie",
+      "tapWordsToComplete": "Tippen Sie auf die Wörter unten, um den Satz zu vervollständigen:",
+      "matchWordsToTranslations": "Wörter mit ihren Übersetzungen abgleichen",
+      "hideEligibleWords": "Eligible Wörter ausblenden",
+      "showEligibleWords": "Eligible Wörter anzeigen",
+      "eligibleWords": "eligible Wörter",
+      "createSentence": "den Satz erstellen",
+      "continueToNextQuestion": "Zur nächsten Frage fortfahren"
     },
     "library": {
       "title": "Bibliothek",

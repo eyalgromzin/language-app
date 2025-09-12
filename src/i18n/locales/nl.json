@@ -108,7 +108,15 @@
       "memoryGame": "Geheugenspel",
       "hearingPractice": "Luister oefening",
       "formulateSentence": "Formuleer zin",
-      "surpriseMe": "Verras me"
+      "surpriseMe": "Verras me",
+      "magic": "Magie",
+      "tapWordsToComplete": "Tik op de woorden hieronder om de zin te voltooien:",
+      "matchWordsToTranslations": "woorden matchen met hun vertalingen",
+      "hideEligibleWords": "Geschikte woorden verbergen",
+      "showEligibleWords": "Geschikte woorden tonen",
+      "eligibleWords": "geschikte woorden",
+      "createSentence": "de zin maken",
+      "continueToNextQuestion": "Doorgaan naar de volgende vraag"
     },
     "library": {
       "title": "Bibliotheek",

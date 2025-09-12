@@ -353,7 +353,7 @@ function PracticeScreen(): React.JSX.Element {
       navigation.navigate('ChooseTranslation');
       return;
     }
-    Alert.alert('Coming soon', `${opt.label} is not implemented yet.`);
+    Alert.alert(t('common.comingSoon'), `${opt.label} ${t('common.notImplementedYet')}`);
   };
 
   const onSurprise = () => {

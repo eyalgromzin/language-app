@@ -108,7 +108,15 @@
       "memoryGame": "Παιχνίδι μνήμης",
       "hearingPractice": "Πρακτική ακοής",
       "formulateSentence": "Διατυπώστε πρόταση",
-      "surpriseMe": "Εκπλήξτε με"
+      "surpriseMe": "Εκπλήξτε με",
+      "magic": "Μαγεία",
+      "tapWordsToComplete": "Πατήστε τις λέξεις παρακάτω για να ολοκληρώσετε την πρόταση:",
+      "matchWordsToTranslations": "ταιριάξτε τις λέξεις με τις μεταφράσεις τους",
+      "hideEligibleWords": "Απόκρυψη επιλέξιμων λέξεων",
+      "showEligibleWords": "Εμφάνιση επιλέξιμων λέξεων",
+      "eligibleWords": "επιλέξιμες λέξεις",
+      "createSentence": "δημιουργήστε την πρόταση",
+      "continueToNextQuestion": "Συνέχεια στην επόμενη ερώτηση"
     },
     "library": {
       "title": "Βιβλιοθήκη",

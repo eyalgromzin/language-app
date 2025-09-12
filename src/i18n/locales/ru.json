@@ -108,7 +108,15 @@
       "memoryGame": "Игра на память",
       "hearingPractice": "Практика слушания",
       "formulateSentence": "Составьте предложение",
-      "surpriseMe": "Удивите меня"
+      "surpriseMe": "Удивите меня",
+      "magic": "Магия",
+      "tapWordsToComplete": "Нажмите на слова ниже, чтобы завершить предложение:",
+      "matchWordsToTranslations": "сопоставить слова с их переводами",
+      "hideEligibleWords": "Скрыть подходящие слова",
+      "showEligibleWords": "Показать подходящие слова",
+      "eligibleWords": "подходящие слова",
+      "createSentence": "создать предложение",
+      "continueToNextQuestion": "Перейти к следующему вопросу"
     },
     "library": {
       "title": "Библиотека",

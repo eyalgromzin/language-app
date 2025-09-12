@@ -1,15 +1,5 @@
-- translate app captions to all languages
-    - top bar names of screens 
-    - bottom navigation bar
-    - video screen:
-        - "now playing by other people' ...
-        - 'enter a youtube url or id ...'
-        - 'Go button'
-        - more options list:
-            - 'history' 
-            - favourites list' 
-    ...
-    
+- make 1 add to favourites dialog. 
+    make surf , book , and video open it .     
 
 publish app =======================================================================================================================
 

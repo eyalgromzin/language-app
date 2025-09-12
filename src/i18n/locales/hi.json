@@ -108,7 +108,15 @@
       "memoryGame": "मेमोरी गेम",
       "hearingPractice": "सुनने का अभ्यास",
       "formulateSentence": "वाक्य बनाएं",
-      "surpriseMe": "मुझे आश्चर्यचकित करें"
+      "surpriseMe": "मुझे आश्चर्यचकित करें",
+      "magic": "जादू",
+      "tapWordsToComplete": "वाक्य को पूरा करने के लिए नीचे दिए गए शब्दों पर टैप करें:",
+      "matchWordsToTranslations": "शब्दों को उनके अनुवादों से मिलाएं",
+      "hideEligibleWords": "योग्य शब्द छुपाएं",
+      "showEligibleWords": "योग्य शब्द दिखाएं",
+      "eligibleWords": "योग्य शब्द",
+      "createSentence": "वाक्य बनाएं",
+      "continueToNextQuestion": "अगले प्रश्न पर जारी रखें"
     },
     "library": {
       "title": "पुस्तकालय",

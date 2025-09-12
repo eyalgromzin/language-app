@@ -108,7 +108,15 @@
       "memoryGame": "Minne spill",
       "hearingPractice": "Høre øvelse",
       "formulateSentence": "Formuler setning",
-      "surpriseMe": "Overrask meg"
+      "surpriseMe": "Overrask meg",
+      "magic": "Magi",
+      "tapWordsToComplete": "Trykk på ordene nedenfor for å fullføre setningen:",
+      "matchWordsToTranslations": "matche ordene med deres oversettelser",
+      "hideEligibleWords": "Skjul kvalifiserte ord",
+      "showEligibleWords": "Vis kvalifiserte ord",
+      "eligibleWords": "kvalifiserte ord",
+      "createSentence": "lage setningen",
+      "continueToNextQuestion": "Fortsett til neste spørsmål"
     },
     "library": {
       "title": "Bibliotek",

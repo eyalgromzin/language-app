@@ -110,7 +110,14 @@
       "hearingPractice": "Pratique auditive",
       "formulateSentence": "Formuler une phrase",
       "surpriseMe": "Surprenez-moi",
-      "magic": "Magie"
+      "magic": "Magie",
+      "tapWordsToComplete": "Appuyez sur les mots ci-dessous pour compléter la phrase :",
+      "matchWordsToTranslations": "faire correspondre les mots à leurs traductions",
+      "hideEligibleWords": "Masquer les mots éligibles",
+      "showEligibleWords": "Afficher les mots éligibles",
+      "eligibleWords": "mots éligibles",
+      "createSentence": "créer la phrase",
+      "continueToNextQuestion": "Continuer à la question suivante"
     },
     "library": {
       "title": "Bibliothèque",

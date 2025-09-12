@@ -105,6 +105,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const { t } = useTranslation();
+  
   const RANDOM_GAME_ROUTES: string[] = [
     'MissingLetters',
     'MissingWords',
@@ -491,9 +492,9 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
     <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding', android: undefined })} style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         <View style={styles.topRow}>
-          <Text style={styles.instructionTitle}>Tap the words below to complete the sentence:</Text>
-          <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
-            <Text style={styles.skipButtonText}>Skip</Text>
+          <Text style={styles.instructionTitle}>{t('screens.practice.tapWordsToComplete')}</Text>
+          <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel={t('common.skip')}>
+            <Text style={styles.skipButtonText}>{t('common.skip')}</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.sentenceWrap}>
@@ -530,12 +531,12 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
       <AnimatedToast
         visible={showCorrectToast}
         type="success"
-        message="Correct!"
+        message={t('common.correct')}
       />
       <AnimatedToast
         visible={showWrongToast}
         type="fail"
-        message="Incorrect"
+        message={t('common.incorrect')}
       />
       <FinishedWordAnimation
         visible={showFinishedWordAnimation}

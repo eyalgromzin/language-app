@@ -8,6 +8,7 @@ import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/nativ
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
+import { useTranslation } from '../../../hooks/useTranslation';
 import { getTtsLangCode, playCorrectFeedback, playWrongFeedback } from '../common';
 import { WordEntry } from '../../../types/words';
 
@@ -95,6 +96,7 @@ function pickRandomIndex(length: number, previous?: number): number {
 }
 
 function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
+  const { t } = useTranslation();
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const mode: Mode = (route?.params?.mode as Mode) || props.mode || 'word';
@@ -584,8 +586,8 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
                   <Ionicons name="volume-high" size={20} color="#3b82f6" />
                 </TouchableOpacity>
               </View>
-              <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
-                <Text style={styles.skipButtonText}>Skip</Text>
+              <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel={t('common.skip')}>
+                <Text style={styles.skipButtonText}>{t('common.skip')}</Text>
               </TouchableOpacity>
             </View>
           </>
@@ -624,12 +626,12 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       <AnimatedToast
         visible={showCorrectToast}
         type="success"
-        message="Correct!"
+        message={t('common.correct')}
       />
       <AnimatedToast
         visible={showWrongToast}
         type="fail"
-        message="Incorrect"
+        message={t('common.incorrect')}
       />
       <FinishedWordAnimation
         visible={showFinishedWordAnimation}

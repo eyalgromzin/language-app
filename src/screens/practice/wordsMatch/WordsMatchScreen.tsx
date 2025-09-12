@@ -373,14 +373,14 @@ function WordsMatchScreen(): React.JSX.Element {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.topRow}>
-        <Text style={styles.title}>match the words to their translations</Text>
+        <Text style={styles.title}>{t('screens.practice.matchWordsToTranslations')}</Text>
         <TouchableOpacity
           style={styles.skipButton}
           onPress={route?.params?.surprise ? navigateToRandomNext : prepareRound}
           accessibilityRole="button"
-          accessibilityLabel="Skip"
+          accessibilityLabel={t('common.skip')}
         >
-          <Text style={styles.skipButtonText}>Skip</Text>
+          <Text style={styles.skipButtonText}>{t('common.skip')}</Text>
         </TouchableOpacity>
       </View>
       {renderCountSelector()}
@@ -390,10 +390,10 @@ function WordsMatchScreen(): React.JSX.Element {
           style={[styles.countButton, showEligible && styles.countButtonActive]}
           onPress={() => setShowEligible((prev) => !prev)}
           accessibilityRole="button"
-          accessibilityLabel={showEligible ? 'Hide eligible words' : 'Show eligible words'}
+          accessibilityLabel={showEligible ? t('screens.practice.hideEligibleWords') : t('screens.practice.showEligibleWords')}
         >
           <Text style={[styles.countButtonText, showEligible && styles.countButtonTextActive]}>
-            {showEligible ? 'Hide' : 'Show'} eligible words ({allEntries.length})
+            {showEligible ? t('common.hide') : t('common.show')} {t('screens.practice.eligibleWords')} ({allEntries.length})
           </Text>
         </TouchableOpacity> */}
         {/* <Text style={styles.eligibleMetaText}>below {threshold} correct answers</Text> */}

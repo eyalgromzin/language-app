@@ -108,7 +108,15 @@
       "memoryGame": "Trò chơi trí nhớ",
       "hearingPractice": "Luyện nghe",
       "formulateSentence": "Tạo câu",
-      "surpriseMe": "Làm tôi bất ngờ"
+      "surpriseMe": "Làm tôi bất ngờ",
+      "magic": "Phép thuật",
+      "tapWordsToComplete": "Chạm vào các từ bên dưới để hoàn thành câu:",
+      "matchWordsToTranslations": "ghép các từ với bản dịch của chúng",
+      "hideEligibleWords": "Ẩn từ phù hợp",
+      "showEligibleWords": "Hiển thị từ phù hợp",
+      "eligibleWords": "từ phù hợp",
+      "createSentence": "tạo câu",
+      "continueToNextQuestion": "Tiếp tục đến câu hỏi tiếp theo"
     },
     "library": {
       "title": "Thư Viện",

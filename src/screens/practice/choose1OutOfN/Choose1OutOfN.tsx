@@ -8,6 +8,7 @@ import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/nativ
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
+import { useTranslation } from '../../../hooks/useTranslation';
 import { WordEntry } from '../../../types/words';
 
 type OptionItem = {
@@ -61,6 +62,7 @@ function sampleN<T>(arr: T[], n: number): T[] {
 }
 
 function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
+  const { t } = useTranslation();
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const isChooseTranslationMode = ((route as any)?.name as string) === 'ChooseTranslation';
@@ -528,9 +530,9 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       <ScrollView contentContainerStyle={styles.container}>
         {!props.embedded ? (
           <View style={styles.topRow}>
-            <Text style={styles.title}>{isChooseTranslationMode ? 'pick the correct translation' : 'pick the correct word'}</Text>
-            <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
-              <Text style={styles.skipButtonText}>Skip</Text>
+            <Text style={styles.title}>{isChooseTranslationMode ? t('screens.practice.chooseTranslation') : t('screens.practice.chooseWord')}</Text>
+            <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel={t('common.skip')}>
+              <Text style={styles.skipButtonText}>{t('common.skip')}</Text>
             </TouchableOpacity>
           </View>
         ) : null}
@@ -592,7 +594,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
             setShowFinishedWordAnimation(false);
             prepareRound(allEntries, false);
           }}>
-            <Text style={styles.nextButtonText}>Next</Text>
+            <Text style={styles.nextButtonText}>{t('common.next')}</Text>
           </TouchableOpacity>
         ) : null}
       </ScrollView>
@@ -600,12 +602,12 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       <AnimatedToast
         visible={showWrongToast}
         type="fail"
-        message="Try again!"
+        message={t('common.tryAgain')}
       />
       <AnimatedToast
         visible={showCorrectToast}
         type="success"
-        message="Correct!"
+        message={t('common.correct')}
       />
       <FinishedWordAnimation
         visible={showFinishedWordAnimation}
@@ -625,8 +627,8 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
       >
         <View style={styles.popupOverlay}>
           <View style={styles.popupContainer}>
-            <Text style={styles.popupTitle}>Wrong Answer</Text>
-            <Text style={styles.popupMessage}>The correct answer is:</Text>
+            <Text style={styles.popupTitle}>{t('common.wrongAnswer')}</Text>
+            <Text style={styles.popupMessage}>{t('common.correctAnswerIs')}</Text>
             <View style={styles.correctAnswerContainer}>
               {props.embedded ? (
                 <View style={styles.embeddedAnswerContainer}>
@@ -658,7 +660,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
                 }
               }}
             >
-              <Text style={styles.popupOkButtonText}>OK</Text>
+              <Text style={styles.popupOkButtonText}>{t('common.ok')}</Text>
             </TouchableOpacity>
           </View>
         </View>

@@ -110,7 +110,14 @@
       "hearingPractice": "תרגול שמיעה",
       "formulateSentence": "ניסוח משפט",
       "surpriseMe": "הפתיעו אותי",
-      "magic": "קסם"
+      "magic": "קסם",
+      "tapWordsToComplete": "הקישו על המילים למטה כדי להשלים את המשפט:",
+      "matchWordsToTranslations": "התאימו את המילים לתרגומים שלהן",
+      "hideEligibleWords": "הסתר מילים זכאיות",
+      "showEligibleWords": "הצג מילים זכאיות",
+      "eligibleWords": "מילים זכאיות",
+      "createSentence": "צור את המשפט",
+      "continueToNextQuestion": "המשך לשאלה הבאה"
     },
     "library": {
       "title": "ספרייה",

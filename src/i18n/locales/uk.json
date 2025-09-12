@@ -108,7 +108,15 @@
       "memoryGame": "Гра на пам'ять",
       "hearingPractice": "Практика слухання",
       "formulateSentence": "Сформулюйте речення",
-      "surpriseMe": "Здивуйте мене"
+      "surpriseMe": "Здивуйте мене",
+      "magic": "Магія",
+      "tapWordsToComplete": "Натисніть на слова нижче, щоб завершити речення:",
+      "matchWordsToTranslations": "зіставити слова з їх перекладами",
+      "hideEligibleWords": "Приховати придатні слова",
+      "showEligibleWords": "Показати придатні слова",
+      "eligibleWords": "придатні слова",
+      "createSentence": "створити речення",
+      "continueToNextQuestion": "Перейти до наступного питання"
     },
     "library": {
       "title": "Бібліотека",

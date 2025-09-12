@@ -108,7 +108,15 @@
       "memoryGame": "เกมความจำ",
       "hearingPractice": "ฝึกฟัง",
       "formulateSentence": "สร้างประโยค",
-      "surpriseMe": "ทำให้ฉันประหลาดใจ"
+      "surpriseMe": "ทำให้ฉันประหลาดใจ",
+      "magic": "เวทมนตร์",
+      "tapWordsToComplete": "แตะคำด้านล่างเพื่อเติมประโยคให้สมบูรณ์:",
+      "matchWordsToTranslations": "จับคู่คำกับคำแปล",
+      "hideEligibleWords": "ซ่อนคำที่เหมาะสม",
+      "showEligibleWords": "แสดงคำที่เหมาะสม",
+      "eligibleWords": "คำที่เหมาะสม",
+      "createSentence": "สร้างประโยค",
+      "continueToNextQuestion": "ดำเนินการต่อกับคำถามถัดไป"
     },
     "library": {
       "title": "ห้องสมุด",
