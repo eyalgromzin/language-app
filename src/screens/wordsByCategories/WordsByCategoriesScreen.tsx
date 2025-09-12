@@ -279,6 +279,13 @@ function WordsByCategoriesScreen(): React.JSX.Element {
   // Convert language names to API language codes
   const getLanguageCode = (languageName: string | null): string => {
     if (!languageName) return 'en'; // Default to English
+    
+    // If it's already a language code, return it directly
+    const languageCodes = Object.values(LANGUAGE_NAME_TO_CODE);
+    if (languageCodes.includes(languageName)) {
+      return languageName;
+    }
+    
     return LANGUAGE_NAME_TO_CODE[languageName] || 'en';
   };
 
