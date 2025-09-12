@@ -150,7 +150,26 @@
     },
     "books": {
       "title": "Libros",
-      "reader": "Lector"
+      "reader": "Lector",
+      "myBooks": "Mis Libros",
+      "addEpub": "Añadir .epub",
+      "clearAll": "Limpiar Todo",
+      "yourLibraryIsEmpty": "Tu Biblioteca Está Vacía",
+      "startBuildingLibrary": "Comienza a construir tu biblioteca digital añadiendo tu primer libro EPUB. Toca el botón \"Cargar archivo .epub\" para comenzar.",
+      "notice": "Aviso",
+      "fileSystemUnavailable": "Sistema de archivos no disponible",
+      "fileSystemUnavailableMessage": "El módulo nativo del sistema de archivos no está cargado. Por favor, reconstruye completamente la app (compilación limpia de Android) después de instalar las dependencias.",
+      "unsupportedFile": "Archivo no soportado",
+      "pleaseChooseEpub": "Por favor elige un archivo .epub.",
+      "pdfNotSupported": "Los PDF aún no están soportados. Por favor convierte el PDF a EPUB usando uno de los sitios web gratuitos en Google y cárgalo",
+      "importFailed": "Error de importación",
+      "couldNotCopyFile": "No se pudo copiar el archivo seleccionado.",
+      "couldNotAccessFile": "No se pudo acceder al archivo seleccionado (URI de contenido).",
+      "unsupportedSource": "Fuente no soportada",
+      "unsupportedUriScheme": "Esquema URI no soportado para el archivo seleccionado.",
+      "error": "Error",
+      "unknownErrorImporting": "Error desconocido al importar el archivo",
+      "untitled": "Sin título"
     },
     "categories": {
       "title": "Categorías",

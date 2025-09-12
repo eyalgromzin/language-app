@@ -149,7 +149,26 @@
     },
     "books": {
       "title": "Sách",
-      "reader": "Người đọc"
+      "reader": "Người đọc",
+      "myBooks": "Sách Của Tôi",
+      "addEpub": "Thêm .epub",
+      "clearAll": "Xóa Tất Cả",
+      "yourLibraryIsEmpty": "Thư Viện Của Bạn Trống",
+      "startBuildingLibrary": "Bắt đầu xây dựng thư viện kỹ thuật số của bạn bằng cách thêm cuốn sách EPUB đầu tiên. Nhấn nút \"Tải tệp .epub\" để bắt đầu.",
+      "notice": "Thông báo",
+      "fileSystemUnavailable": "Hệ thống tệp không khả dụng",
+      "fileSystemUnavailableMessage": "Mô-đun hệ thống tệp gốc chưa được tải. Vui lòng xây dựng lại ứng dụng hoàn toàn (bản dựng Android sạch) sau khi cài đặt các phụ thuộc.",
+      "unsupportedFile": "Tệp không được hỗ trợ",
+      "pleaseChooseEpub": "Vui lòng chọn tệp .epub.",
+      "pdfNotSupported": "Tệp PDF chưa được hỗ trợ. Vui lòng chuyển đổi PDF sang EPUB bằng cách sử dụng một trong các trang web miễn phí trên Google và tải nó",
+      "importFailed": "Nhập khẩu thất bại",
+      "couldNotCopyFile": "Không thể sao chép tệp đã chọn.",
+      "couldNotAccessFile": "Không thể truy cập tệp đã chọn (URI nội dung).",
+      "unsupportedSource": "Nguồn không được hỗ trợ",
+      "unsupportedUriScheme": "Lược đồ URI không được hỗ trợ cho tệp đã chọn.",
+      "error": "Lỗi",
+      "unknownErrorImporting": "Lỗi không xác định khi nhập tệp",
+      "untitled": "Không có tiêu đề"
     },
     "categories": {
       "title": "Danh Mục",

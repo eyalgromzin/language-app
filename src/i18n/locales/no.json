@@ -149,7 +149,26 @@
     },
     "books": {
       "title": "Bøker",
-      "reader": "Leser"
+      "reader": "Leser",
+      "myBooks": "Mine Bøker",
+      "addEpub": "Legg til .epub",
+      "clearAll": "Tøm Alt",
+      "yourLibraryIsEmpty": "Ditt Bibliotek Er Tomt",
+      "startBuildingLibrary": "Begynn å bygge ditt digitale bibliotek ved å legge til din første EPUB-bok. Trykk på \"Last .epub fil\"-knappen for å komme i gang.",
+      "notice": "Merknad",
+      "fileSystemUnavailable": "Filsystem ikke tilgjengelig",
+      "fileSystemUnavailableMessage": "Native filsystem modul er ikke lastet. Bygg appen helt på nytt (ren Android build) etter å ha installert avhengigheter.",
+      "unsupportedFile": "Ikke-støttet fil",
+      "pleaseChooseEpub": "Vennligst velg en .epub fil.",
+      "pdfNotSupported": "PDF-filer støttes ikke ennå. Vennligst konverter PDF til EPUB ved å bruke en av de gratis nettsidene på Google og last den",
+      "importFailed": "Import mislyktes",
+      "couldNotCopyFile": "Kunne ikke kopiere den valgte filen.",
+      "couldNotAccessFile": "Kunne ikke få tilgang til den valgte filen (innhold URI).",
+      "unsupportedSource": "Ikke-støttet kilde",
+      "unsupportedUriScheme": "Ikke-støttet URI-skjema for den valgte filen.",
+      "error": "Feil",
+      "unknownErrorImporting": "Ukjent feil ved import av fil",
+      "untitled": "Uten tittel"
     },
     "categories": {
       "title": "Kategorier",

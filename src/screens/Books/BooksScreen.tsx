@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { pick } from '@react-native-documents/picker';
 import * as RNFS from 'react-native-fs'; // @dr.pogodin/react-native-fs
 import JSZip from 'jszip';
+import { useTranslation } from 'react-i18next';
 
 type StoredBook = {
   id: string;            // stable id (hash of file path)
@@ -60,6 +61,7 @@ async function extractCoverImageFromEpub(epubFilePath: string, bookId: string): 
 
 function BooksScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
+  const { t } = useTranslation();
   const [loading, setLoading] = React.useState<boolean>(true);
   const [books, setBooks] = React.useState<StoredBook[]>([]);
   const [infoModalVisible, setInfoModalVisible] = React.useState<boolean>(false);
@@ -97,8 +99,8 @@ function BooksScreen(): React.JSX.Element {
     try {
       if (!(RNFS as any)?.DocumentDirectoryPath) {
         Alert.alert(
-          'File system unavailable',
-          'Native file system module is not loaded. Please fully rebuild the app (clean Android build) after installing dependencies.'
+          t('screens.books.fileSystemUnavailable'),
+          t('screens.books.fileSystemUnavailableMessage')
         );
         return;
       }
@@ -116,11 +118,11 @@ function BooksScreen(): React.JSX.Element {
       const isEpub = !!(res.name && /\.epub$/i.test(res.name));
       const isPdf = !!(res.name && /\.pdf$/i.test(res.name));
       if (isPdf) {
-        showInfoModal('pdf are not supported yet. plz convert pdf to epub using 1 of the free websites on google and load it');
+        showInfoModal(t('screens.books.pdfNotSupported'));
         return;
       }
       if (!isEpub) {
-        Alert.alert('Unsupported file', 'Please choose an .epub file.');
+        Alert.alert(t('screens.books.unsupportedFile'), t('screens.books.pleaseChooseEpub'));
         return;
       }
       const pickedUri: string = ((res as any).fileCopyUri || res.uri || '').toString();
@@ -157,7 +159,7 @@ function BooksScreen(): React.JSX.Element {
       const isPdf = /\.pdf$/i.test(filenameFallback);
       const isEpub = /\.epub$/i.test(filenameFallback);
       if (isPdf) {
-        showInfoModal('pdf are not supported yet. plz convert pdf to epub using 1 of the free websites on google and load it');
+        showInfoModal(t('screens.books.pdfNotSupported'));
         return;
       }
       const fileName = (isPdf || isEpub) ? filenameFallback : (filenameFallback + '.epub');
@@ -177,7 +179,7 @@ function BooksScreen(): React.JSX.Element {
             await RNFS.writeFile(destPath, data, 'base64' as any);
             filePath = destPath;
           } catch {
-            Alert.alert('Import failed', 'Could not copy the selected file.');
+            Alert.alert(t('screens.books.importFailed'), t('screens.books.couldNotCopyFile'));
             return;
           }
         }
@@ -193,12 +195,12 @@ function BooksScreen(): React.JSX.Element {
             await RNFS.writeFile(destPath, data, 'base64' as any);
             filePath = destPath;
           } catch {
-            Alert.alert('Import failed', 'Could not access the selected file (content URI).');
+            Alert.alert(t('screens.books.importFailed'), t('screens.books.couldNotAccessFile'));
             return;
           }
         }
       } else {
-        Alert.alert('Unsupported source', 'Unsupported URI scheme for selected file.');
+        Alert.alert(t('screens.books.unsupportedSource'), t('screens.books.unsupportedUriScheme'));
         return;
       }
       const titleGuess = fileName.replace(/\.(epub|pdf)$/i, '').replace(/[_\-]+/g, ' ');
@@ -206,7 +208,7 @@ function BooksScreen(): React.JSX.Element {
       const coverUri = /\.epub$/i.test(fileName) ? (await extractCoverImageFromEpub(filePath, id)) : undefined;
       const newBook: StoredBook = {
         id,
-        title: titleGuess || 'Untitled',
+        title: titleGuess || t('screens.books.untitled'),
         author: undefined,
         coverUri: coverUri,
         filePath,
@@ -220,7 +222,7 @@ function BooksScreen(): React.JSX.Element {
       // Open the newly added book immediately
       navigation.navigate('BookReader', { id: newBook.id });
     } catch (e: any) {
-      Alert.alert('Error', e?.message || 'Unknown error while importing file');
+      Alert.alert(t('screens.books.error'), e?.message || t('screens.books.unknownErrorImporting'));
     }
   };
 
@@ -262,15 +264,15 @@ function BooksScreen(): React.JSX.Element {
   return (
     <View style={styles.container}>
       <View style={styles.headerRow}>
-        <Text style={styles.header}>My Books</Text>
+        <Text style={styles.header}>{t('screens.books.myBooks')}</Text>
         <View style={styles.actionsRow}>
           {books.length > 0 && (
             <TouchableOpacity style={styles.clearBtn} onPress={clearAllBooks}>
-              <Text style={styles.clearBtnText}>Clear All</Text>
+              <Text style={styles.clearBtnText}>{t('screens.books.clearAll')}</Text>
             </TouchableOpacity>
           )}
           <TouchableOpacity style={styles.addBtn} onPress={openPicker}>
-            <Text style={styles.addBtnText}>Add .epub</Text>
+            <Text style={styles.addBtnText}>{t('screens.books.addEpub')}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -281,10 +283,9 @@ function BooksScreen(): React.JSX.Element {
           <View style={styles.emptyStateIcon}>
             <Text style={{ fontSize: 32, color: '#94a3b8' }}>📚</Text>
           </View>
-          <Text style={styles.emptyStateText}>Your Library is Empty</Text>
+          <Text style={styles.emptyStateText}>{t('screens.books.yourLibraryIsEmpty')}</Text>
           <Text style={styles.emptyStateSubtext}>
-            Start building your digital library by adding your first EPUB book. 
-            Tap the "Load .epub file" button to get started.
+            {t('screens.books.startBuildingLibrary')}
           </Text>
         </View>
       ) : (
@@ -305,10 +306,10 @@ function BooksScreen(): React.JSX.Element {
       >
         <View style={styles.modalBackdrop}>
           <View style={styles.modalCard}>
-            <Text style={styles.modalTitle}>Notice</Text>
+            <Text style={styles.modalTitle}>{t('screens.books.notice')}</Text>
             <Text style={styles.modalText}>{infoModalText}</Text>
             <TouchableOpacity style={styles.modalButton} onPress={() => setInfoModalVisible(false)}>
-              <Text style={styles.modalButtonText}>OK</Text>
+              <Text style={styles.modalButtonText}>{t('common.ok')}</Text>
             </TouchableOpacity>
           </View>
         </View>

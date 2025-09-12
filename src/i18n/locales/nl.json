@@ -149,7 +149,26 @@
     },
     "books": {
       "title": "Boeken",
-      "reader": "Lezer"
+      "reader": "Lezer",
+      "myBooks": "Mijn Boeken",
+      "addEpub": "Voeg .epub toe",
+      "clearAll": "Alles Wissen",
+      "yourLibraryIsEmpty": "Je Bibliotheek Is Leeg",
+      "startBuildingLibrary": "Begin met het bouwen van je digitale bibliotheek door je eerste EPUB-boek toe te voegen. Tik op de knop \"Laad .epub bestand\" om te beginnen.",
+      "notice": "Kennisgeving",
+      "fileSystemUnavailable": "Bestandssysteem niet beschikbaar",
+      "fileSystemUnavailableMessage": "Native bestandssysteem module is niet geladen. Bouw de app volledig opnieuw (schone Android build) na het installeren van afhankelijkheden.",
+      "unsupportedFile": "Niet-ondersteund bestand",
+      "pleaseChooseEpub": "Kies een .epub bestand.",
+      "pdfNotSupported": "PDF's worden nog niet ondersteund. Converteer de PDF naar EPUB met behulp van een van de gratis websites op Google en laad het",
+      "importFailed": "Importeren mislukt",
+      "couldNotCopyFile": "Kon het geselecteerde bestand niet kopiëren.",
+      "couldNotAccessFile": "Kon geen toegang krijgen tot het geselecteerde bestand (inhoud URI).",
+      "unsupportedSource": "Niet-ondersteunde bron",
+      "unsupportedUriScheme": "Niet-ondersteund URI-schema voor het geselecteerde bestand.",
+      "error": "Fout",
+      "unknownErrorImporting": "Onbekende fout bij het importeren van het bestand",
+      "untitled": "Zonder titel"
     },
     "categories": {
       "title": "Categorieën",

@@ -149,7 +149,26 @@
     },
     "books": {
       "title": "पुस्तकें",
-      "reader": "पाठक"
+      "reader": "पाठक",
+      "myBooks": "मेरी पुस्तकें",
+      "addEpub": "जोड़ें .epub",
+      "clearAll": "सब साफ़ करें",
+      "yourLibraryIsEmpty": "आपकी लाइब्रेरी खाली है",
+      "startBuildingLibrary": "अपनी पहली EPUB पुस्तक जोड़कर अपनी डिजिटल लाइब्रेरी बनाना शुरू करें। शुरू करने के लिए \"लोड .epub फ़ाइल\" बटन पर टैप करें।",
+      "notice": "सूचना",
+      "fileSystemUnavailable": "फ़ाइल सिस्टम उपलब्ध नहीं",
+      "fileSystemUnavailableMessage": "नेटिव फ़ाइल सिस्टम मॉड्यूल लोड नहीं है। निर्भरताएं स्थापित करने के बाद ऐप को पूरी तरह से पुनर्निर्मित करें (साफ़ Android बिल्ड)।",
+      "unsupportedFile": "असमर्थित फ़ाइल",
+      "pleaseChooseEpub": "कृपया एक .epub फ़ाइल चुनें।",
+      "pdfNotSupported": "PDF अभी तक समर्थित नहीं हैं। कृपया Google पर मुफ्त वेबसाइटों में से एक का उपयोग करके PDF को EPUB में कनवर्ट करें और इसे लोड करें",
+      "importFailed": "आयात विफल",
+      "couldNotCopyFile": "चयनित फ़ाइल को कॉपी नहीं किया जा सका।",
+      "couldNotAccessFile": "चयनित फ़ाइल (सामग्री URI) तक पहुंच नहीं बनाई जा सकी।",
+      "unsupportedSource": "असमर्थित स्रोत",
+      "unsupportedUriScheme": "चयनित फ़ाइल के लिए असमर्थित URI योजना।",
+      "error": "त्रुटि",
+      "unknownErrorImporting": "फ़ाइल आयात करते समय अज्ञात त्रुटि",
+      "untitled": "बिना शीर्षक"
     },
     "categories": {
       "title": "श्रेणियां",

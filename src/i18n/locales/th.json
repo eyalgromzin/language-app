@@ -149,7 +149,26 @@
     },
     "books": {
       "title": "หนังสือ",
-      "reader": "ผู้อ่าน"
+      "reader": "ผู้อ่าน",
+      "myBooks": "หนังสือของฉัน",
+      "addEpub": "เพิ่ม .epub",
+      "clearAll": "ล้างทั้งหมด",
+      "yourLibraryIsEmpty": "ห้องสมุดของคุณว่างเปล่า",
+      "startBuildingLibrary": "เริ่มสร้างห้องสมุดดิจิทัลของคุณโดยเพิ่มหนังสือ EPUB เล่มแรกของคุณ แตะปุ่ม \"โหลดไฟล์ .epub\" เพื่อเริ่มต้น",
+      "notice": "แจ้งให้ทราบ",
+      "fileSystemUnavailable": "ระบบไฟล์ไม่พร้อมใช้งาน",
+      "fileSystemUnavailableMessage": "โมดูลระบบไฟล์เนทีฟไม่ได้โหลด กรุณาสร้างแอปใหม่ทั้งหมด (Android build สะอาด) หลังจากติดตั้งการพึ่งพา",
+      "unsupportedFile": "ไฟล์ที่ไม่รองรับ",
+      "pleaseChooseEpub": "กรุณาเลือกไฟล์ .epub",
+      "pdfNotSupported": "ไฟล์ PDF ยังไม่ได้รับการรองรับ กรุณาแปลง PDF เป็น EPUB โดยใช้เว็บไซต์ฟรีหนึ่งใน Google และโหลดมัน",
+      "importFailed": "การนำเข้าล้มเหลว",
+      "couldNotCopyFile": "ไม่สามารถคัดลอกไฟล์ที่เลือกได้",
+      "couldNotAccessFile": "ไม่สามารถเข้าถึงไฟล์ที่เลือกได้ (URI เนื้อหา)",
+      "unsupportedSource": "แหล่งที่ไม่รองรับ",
+      "unsupportedUriScheme": "โครงร่าง URI ที่ไม่รองรับสำหรับไฟล์ที่เลือก",
+      "error": "ข้อผิดพลาด",
+      "unknownErrorImporting": "ข้อผิดพลาดที่ไม่ทราบสาเหตุขณะนำเข้าไฟล์",
+      "untitled": "ไม่มีชื่อ"
     },
     "categories": {
       "title": "หมวดหมู่",

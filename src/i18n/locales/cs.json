@@ -149,7 +149,26 @@
     },
     "books": {
       "title": "Knihy",
-      "reader": "Čtečka"
+      "reader": "Čtečka",
+      "myBooks": "Moje Knihy",
+      "addEpub": "Přidat .epub",
+      "clearAll": "Vymazat Vše",
+      "yourLibraryIsEmpty": "Vaše Knihovna Je Prázdná",
+      "startBuildingLibrary": "Začněte budovat svou digitální knihovnu přidáním své první EPUB knihy. Klepněte na tlačítko \"Načíst .epub soubor\" pro začátek.",
+      "notice": "Upozornění",
+      "fileSystemUnavailable": "Souborový systém není dostupný",
+      "fileSystemUnavailableMessage": "Nativní modul souborového systému není načten. Prosím kompletně přestavte aplikaci (čisté Android sestavení) po instalaci závislostí.",
+      "unsupportedFile": "Nepodporovaný soubor",
+      "pleaseChooseEpub": "Prosím vyberte .epub soubor.",
+      "pdfNotSupported": "PDF soubory zatím nejsou podporovány. Prosím převeďte PDF na EPUB pomocí jedné z bezplatných webových stránek na Google a načtěte ho",
+      "importFailed": "Import se nezdařil",
+      "couldNotCopyFile": "Nelze zkopírovat vybraný soubor.",
+      "couldNotAccessFile": "Nelze získat přístup k vybranému souboru (URI obsahu).",
+      "unsupportedSource": "Nepodporovaný zdroj",
+      "unsupportedUriScheme": "Nepodporované URI schéma pro vybraný soubor.",
+      "error": "Chyba",
+      "unknownErrorImporting": "Neznámá chyba při importu souboru",
+      "untitled": "Bez názvu"
     },
     "categories": {
       "title": "Kategorie",

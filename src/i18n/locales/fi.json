@@ -149,7 +149,26 @@
     },
     "books": {
       "title": "Kirjat",
-      "reader": "Lukija"
+      "reader": "Lukija",
+      "myBooks": "Omat Kirjat",
+      "addEpub": "Lisää .epub",
+      "clearAll": "Tyhjennä Kaikki",
+      "yourLibraryIsEmpty": "Kirjastosi On Tyhjä",
+      "startBuildingLibrary": "Aloita digitaalisen kirjastosi rakentaminen lisäämällä ensimmäinen EPUB-kirjasi. Napauta \"Lataa .epub-tiedosto\" -painiketta aloittaaksesi.",
+      "notice": "Huomautus",
+      "fileSystemUnavailable": "Tiedostojärjestelmä ei ole saatavilla",
+      "fileSystemUnavailableMessage": "Natiivi tiedostojärjestelmämoduuli ei ole ladattu. Rakentakaa sovellus kokonaan uudelleen (puhdas Android build) riippuvuuksien asentamisen jälkeen.",
+      "unsupportedFile": "Ei-tuettu tiedosto",
+      "pleaseChooseEpub": "Valitse .epub-tiedosto.",
+      "pdfNotSupported": "PDF-tiedostoja ei vielä tueta. Muunna PDF EPUB-muotoon käyttämällä yhtä Google:n ilmaisista verkkosivustoista ja lataa se",
+      "importFailed": "Tuonti epäonnistui",
+      "couldNotCopyFile": "Valittua tiedostoa ei voitu kopioida.",
+      "couldNotAccessFile": "Valittuun tiedostoon ei voitu päästä käsiksi (sisältö URI).",
+      "unsupportedSource": "Ei-tuettu lähde",
+      "unsupportedUriScheme": "Ei-tuettu URI-skeema valitulle tiedostolle.",
+      "error": "Virhe",
+      "unknownErrorImporting": "Tuntematon virhe tiedoston tuonnissa",
+      "untitled": "Nimetön"
     },
     "categories": {
       "title": "Kategoriat",

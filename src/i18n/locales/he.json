@@ -150,7 +150,26 @@
     },
     "books": {
       "title": "ספרים",
-      "reader": "קורא"
+      "reader": "קורא",
+      "myBooks": "הספרים שלי",
+      "addEpub": "הוסף .epub",
+      "clearAll": "נקה הכל",
+      "yourLibraryIsEmpty": "הספרייה שלך ריקה",
+      "startBuildingLibrary": "התחל לבנות את הספרייה הדיגיטלית שלך על ידי הוספת הספר הראשון שלך ב-EPUB. הקש על כפתור \"טען קובץ .epub\" כדי להתחיל.",
+      "notice": "הודעה",
+      "fileSystemUnavailable": "מערכת הקבצים לא זמינה",
+      "fileSystemUnavailableMessage": "מודול מערכת הקבצים המקורי לא נטען. אנא בנה מחדש את האפליקציה לחלוטין (בניית Android נקייה) לאחר התקנת התלויות.",
+      "unsupportedFile": "קובץ לא נתמך",
+      "pleaseChooseEpub": "אנא בחר קובץ .epub.",
+      "pdfNotSupported": "קבצי PDF עדיין לא נתמכים. אנא המר את ה-PDF ל-EPUB באמצעות אחד מהאתרים החינמיים ב-Google וטען אותו",
+      "importFailed": "ייבוא נכשל",
+      "couldNotCopyFile": "לא ניתן להעתיק את הקובץ שנבחר.",
+      "couldNotAccessFile": "לא ניתן לגשת לקובץ שנבחר (URI תוכן).",
+      "unsupportedSource": "מקור לא נתמך",
+      "unsupportedUriScheme": "סכמת URI לא נתמכת עבור הקובץ שנבחר.",
+      "error": "שגיאה",
+      "unknownErrorImporting": "שגיאה לא ידועה בעת ייבוא הקובץ",
+      "untitled": "ללא כותרת"
     },
     "categories": {
       "title": "קטגוריות",
