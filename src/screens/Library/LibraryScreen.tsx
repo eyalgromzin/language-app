@@ -1,15 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, ActivityIndicator, Platform, NativeModules, Modal, Pressable, ScrollView, TextInput } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import { getLibraryMeta, searchLibraryWithCriterias } from '../../config/api';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
-import LinkingService from '../../services/linkingService';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import {
+  LibraryHeader,
+  MediaTypeTabs,
+  LibraryFilters,
+  LibraryItem,
+  DropdownModal,
+  LoadingState,
+  ErrorState,
+  EmptyState,
+} from './components';
 
 function LibraryScreen(): React.JSX.Element {
-  const navigation = useNavigation<any>();
   const { languageMappings } = useLanguageMappings();
   const { t } = useTranslation();
   const [urls, setUrls] = React.useState<{ url: string; name?: string; type: string; level: string; media: string }[]>([]);
@@ -197,293 +203,93 @@ function LibraryScreen(): React.JSX.Element {
     setShowLevelDropdown(false);
   }, [selectedMedia]);
 
-  const renderItem = ({ item }: { item: { url: string; name?: string; type: string; level: string; media: string } }) => {
-    const getMediaIcon = (media: string) => {
-      const mediaLower = media.toLowerCase();
-      switch (mediaLower) {
-        case 'youtube':
-          return <Ionicons name="logo-youtube" size={18} color="#FF0000" />;
-        case 'web':
-          return <Ionicons name="globe-outline" size={18} color="#007AFF" />;
-        case 'book':
-          return <Ionicons name="book-outline" size={18} color="#8B4513" />;
-        default:
-          return <Ionicons name="document-outline" size={18} color="#6B7280" />;
-      }
-    };
-
-    const getLevelColor = (level: string) => {
-      // Map level values to colors based on the original level names
-      const levelLower = level.toLowerCase();
-      if (levelLower.includes('easy') || levelLower.includes('a1') || levelLower.includes('a2')) {
-        return '#10B981'; // Green for easy levels
-      } else if (levelLower.includes('medium') || levelLower.includes('b1') || levelLower.includes('b2')) {
-        return '#F59E0B'; // Orange for medium levels
-      } else if (levelLower.includes('hard') || levelLower.includes('c1') || levelLower.includes('c2') || levelLower.includes('native')) {
-        return '#EF4444'; // Red for hard/native levels
-      }
-      return '#6B7280'; // Default gray
-    };
-
-    return (
-      <TouchableOpacity
-        accessibilityRole="link"
-        onPress={() => {
-          if ((item.media || '').toLowerCase() === 'youtube') {
-            navigation.navigate('Video', { youtubeUrl: item.url, youtubeTitle: item.name });
-          } else {
-            navigation.navigate('Surf', { url: item.url });
-          }
-        }}
-        style={styles.item}
-        activeOpacity={0.7}
-      >
-        <View style={styles.itemHeader}>
-          <View style={styles.mediaIconContainer}>
-            {getMediaIcon(item.media)}
-          </View>
-          <View style={styles.itemContent}>
-            <Text style={styles.itemName} numberOfLines={2}>{getDisplayName(item)}</Text>
-            <View style={styles.itemMeta}>
-              <View style={styles.metaRow}>
-                <View style={styles.typeBadge}>
-                  <Text style={styles.typeText}>{translateOption(item.type, 'type')}</Text>
-                </View>
-                <View style={[styles.levelBadge, { backgroundColor: getLevelColor(item.level) + '15' }]}>
-                  <Text style={[styles.levelText, { color: getLevelColor(item.level) }]}>{translateOption(item.level, 'level')}</Text>
-                </View>
-              </View>
-            </View>
-          </View>
-          <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
-        </View>
-      </TouchableOpacity>
-    );
-  };
 
   if (loading) {
-    return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <View style={styles.headerContent}>
-            <View style={styles.headerTop}>
-              <Text style={styles.headerTitle}>{t('screens.library.title')}</Text>
-            </View>
-          </View>
-        </View>
-        <View style={[styles.center, styles.loadingContainer]}>
-          <ActivityIndicator size="large" color="#6366F1" />
-          <Text style={styles.loadingText}>{t('screens.library.states.loading')}</Text>
-        </View>
-      </View>
-    );
+    return <LoadingState />;
   }
 
   if (error) {
     return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <View style={styles.headerContent}>
-            <View style={styles.headerTop}>
-              <Text style={styles.headerTitle}>{t('screens.library.title')}</Text>
-            </View>
-          </View>
-        </View>
-        <View style={[styles.center, styles.errorContainer]}>
-          <Ionicons name="alert-circle-outline" size={48} color="#EF4444" />
-          <Text style={styles.errorTitle}>{t('screens.library.states.error')}</Text>
-          <Text style={styles.errorText}>{error}</Text>
-          <TouchableOpacity style={styles.retryButton} onPress={() => {
-            setError(null);
-            setLoading(true);
-            // Trigger a reload by changing a dependency
-            setSelectedMedia(prev => prev);
-          }}>
-            <Text style={styles.retryButtonText}>{t('screens.library.states.tryAgain')}</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      <ErrorState
+        error={error}
+        onRetry={() => {
+          setError(null);
+          setLoading(true);
+          // Trigger a reload by changing a dependency
+          setSelectedMedia(prev => prev);
+        }}
+      />
     );
   }
 
   return (
     <View style={styles.container}>
-      {/* Professional Header */}
-        <View style={styles.header}>
-          <View style={styles.headerContent}>
-            <View style={styles.headerTop}>
-              <Text style={styles.headerTitle}>{t('screens.library.title')}</Text>
-              <TouchableOpacity
-                style={styles.shareButton}
-                onPress={() => LinkingService.shareLibrary()}
-                accessibilityRole="button"
-                accessibilityLabel={t('screens.library.accessibility.shareLibrary')}
-              >
-              <Ionicons name="share-outline" size={22} color="#6366F1" />
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
+      <LibraryHeader />
+      <MediaTypeTabs selectedMedia={selectedMedia} onMediaChange={setSelectedMedia} />
+      <FlatList
+        data={filteredUrls}
+        keyExtractor={(item) => item.url}
+        renderItem={({ item }) => (
+          <LibraryItem
+            item={item}
+            translateOption={translateOption}
+            getDisplayName={getDisplayName}
+          />
+        )}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
+        contentContainerStyle={styles.listContent}
+        ListHeaderComponent={
+          <LibraryFilters
+            selectedType={selectedType}
+            selectedLevel={selectedLevel}
+            selectedMedia={selectedMedia}
+            onTypeDropdownToggle={() => {
+              setShowTypeDropdown((prev) => !prev);
+              setShowLevelDropdown(false);
+            }}
+            onLevelDropdownToggle={() => {
+              setShowLevelDropdown((prev) => !prev);
+              setShowTypeDropdown(false);
+            }}
+            onClearFilters={() => {
+              setSelectedType('All');
+              setSelectedLevel('All');
+              setShowTypeDropdown(false);
+              setShowLevelDropdown(false);
+            }}
+            translateOption={translateOption}
+          />
+        }
+        ListEmptyComponent={
+          <EmptyState
+            searchQuery={searchQuery}
+            onClearSearch={() => setSearchQuery('')}
+          />
+        }
+      />
 
-      {/* Media Type Tabs */}
-      <View style={styles.tabsBar}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.tabsContainer}>
-          {([
-            { key: 'all', label: t('screens.library.tabs.all'), icon: 'grid-outline' },
-            { key: 'web', label: t('screens.library.tabs.web'), icon: 'globe-outline' },
-            { key: 'youtube', label: t('screens.library.tabs.youtube'), icon: 'logo-youtube' },
-            { key: 'book', label: t('screens.library.tabs.books'), icon: 'book-outline' },
-          ] as const).map((tab) => (
-            <TouchableOpacity
-              key={tab.key}
-              style={[styles.tabButton, selectedMedia === tab.key && styles.tabButtonActive]}
-              onPress={() => setSelectedMedia(tab.key)}
-              accessibilityRole="tab"
-              accessibilityState={{ selected: selectedMedia === tab.key }}
-              accessibilityLabel={t('screens.library.accessibility.selectTab', { tab: tab.label })}
-            >
-              <Ionicons 
-                name={tab.icon as any} 
-                size={16} 
-                color={selectedMedia === tab.key ? '#FFFFFF' : '#6B7280'} 
-                style={styles.tabIcon}
-              />
-              <Text style={[styles.tabText, selectedMedia === tab.key && styles.tabTextActive]}>{tab.label}</Text>
-            </TouchableOpacity>
-          ))}
-        </ScrollView>
-      </View>
-             <FlatList
-         data={filteredUrls}
-         keyExtractor={(item) => item.url}
-         renderItem={renderItem}
-         ItemSeparatorComponent={() => <View style={styles.separator} />}
-         contentContainerStyle={styles.listContent}
-         ListHeaderComponent={
-           <View style={styles.filtersBar}>
-             <View style={styles.filtersRow}>
-               <View style={styles.dropdownContainer}>
-                 <TouchableOpacity
-                   style={styles.dropdownButton}
-                   onPress={() => {
-                     setShowTypeDropdown((prev) => !prev);
-                     setShowLevelDropdown(false);
-                   }}
-                 >
-                   <Text style={styles.dropdownButtonText}>{t('screens.library.filters.type')}: {translateOption(selectedType, 'type')}</Text>
-                 </TouchableOpacity>
-                 {/* options rendered in modal overlay */}
-               </View>
-
-               {selectedMedia !== 'book' && (
-                 <View style={styles.dropdownContainer}>
-                   <TouchableOpacity
-                     style={styles.dropdownButton}
-                     onPress={() => {
-                       setShowLevelDropdown((prev) => !prev);
-                       setShowTypeDropdown(false);
-                     }}
-                   >
-                     <Text style={styles.dropdownButtonText}>{t('screens.library.filters.level')}: {translateOption(selectedLevel, 'level')}</Text>
-                   </TouchableOpacity>
-                   {/* options rendered in modal overlay */}
-                 </View>
-               )}
-             </View>
-
-             {(selectedType !== 'All' || selectedLevel !== 'All') && (
-               <TouchableOpacity
-                 style={styles.clearFiltersButton}
-                 onPress={() => {
-                   setSelectedType('All');
-                   setSelectedLevel('All');
-                   setShowTypeDropdown(false);
-                   setShowLevelDropdown(false);
-                 }}
-               >
-                 <Text style={styles.clearFiltersText}>{t('screens.library.filters.clearFilters')}</Text>
-               </TouchableOpacity>
-             )}
-           </View>
-         }
-         ListEmptyComponent={
-           <View style={styles.emptyContainer}>
-             <Ionicons name="library-outline" size={64} color="#9CA3AF" />
-             <Text style={styles.emptyTitle}>
-               {searchQuery ? t('screens.library.states.noResults') : t('screens.library.states.noResources')}
-             </Text>
-             <Text style={styles.emptyText}>
-               {searchQuery 
-                 ? t('screens.library.states.noResultsMessage', { query: searchQuery })
-                 : t('screens.library.states.noResourcesMessage')
-               }
-             </Text>
-             {searchQuery && (
-               <TouchableOpacity
-                 style={styles.clearSearchEmptyButton}
-                 onPress={() => setSearchQuery('')}
-               >
-                 <Text style={styles.clearSearchEmptyText}>{t('screens.library.states.clearSearch')}</Text>
-               </TouchableOpacity>
-             )}
-           </View>
-         }
-       />
-
-      {/* Type modal */}
-      <Modal
+      <DropdownModal
         visible={showTypeDropdown}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setShowTypeDropdown(false)}
-      >
-        <Pressable style={styles.modalBackdrop} onPress={() => setShowTypeDropdown(false)} />
-        <View style={styles.modalCard}>
-          <Text style={styles.modalTitle}>{t('screens.library.filters.selectType')}</Text>
-          <ScrollView>
-            {typeOptions.map((opt) => (
-              <TouchableOpacity
-                key={opt}
-                style={[styles.dropdownOption, selectedType === opt && styles.dropdownOptionSelected]}
-                onPress={() => {
-                  setSelectedType(opt);
-                  setShowTypeDropdown(false);
-                }}
-              >
-                <Text style={styles.dropdownOptionText}>{translateOption(opt, 'type')}</Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-        </View>
-      </Modal>
+        title={t('screens.library.filters.selectType')}
+        options={typeOptions}
+        selectedOption={selectedType}
+        onOptionSelect={setSelectedType}
+        onClose={() => setShowTypeDropdown(false)}
+        translateOption={translateOption}
+        type="type"
+      />
 
-      {/* Level modal */}
       {selectedMedia !== 'book' && (
-        <Modal
+        <DropdownModal
           visible={showLevelDropdown}
-          transparent
-          animationType="fade"
-          onRequestClose={() => setShowLevelDropdown(false)}
-        >
-          <Pressable style={styles.modalBackdrop} onPress={() => setShowLevelDropdown(false)} />
-          <View style={styles.modalCard}>
-            <Text style={styles.modalTitle}>{t('screens.library.filters.selectLevel')}</Text>
-            <ScrollView>
-              {levelOptions.map((opt) => (
-                <TouchableOpacity
-                  key={opt}
-                  style={[styles.dropdownOption, selectedLevel === opt && styles.dropdownOptionSelected]}
-                  onPress={() => {
-                    setSelectedLevel(opt);
-                    setShowLevelDropdown(false);
-                  }}
-                >
-                  <Text style={styles.dropdownOptionText}>{translateOption(opt, 'level')}</Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-          </View>
-        </Modal>
+          title={t('screens.library.filters.selectLevel')}
+          options={levelOptions}
+          selectedOption={selectedLevel}
+          onOptionSelect={setSelectedLevel}
+          onClose={() => setShowLevelDropdown(false)}
+          translateOption={translateOption}
+          type="level"
+        />
       )}
     </View>
   );
@@ -494,350 +300,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F8FAFC',
   },
-  center: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   listContent: {
     padding: 16,
     paddingBottom: 32,
   },
-  
-  // Header Styles
-  header: {
-    backgroundColor: '#FFFFFF',
-    paddingTop: Platform.OS === 'ios' ? 44 : 24,
-    paddingBottom: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#E2E8F0',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 3,
-  },
-  headerContent: {
-    paddingHorizontal: 20,
-  },
-  headerTop: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  headerTitle: {
-    fontSize: 28,
-    fontWeight: '700',
-    color: '#1E293B',
-    letterSpacing: -0.5,
-  },
-  shareButton: {
-    padding: 10,
-    borderRadius: 12,
-    backgroundColor: '#F1F5F9',
-  },
-  
-  // Search Styles
-  searchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#F8FAFC',
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#E2E8F0',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
-  searchIcon: {
-    marginRight: 12,
-  },
-  searchInput: {
-    flex: 1,
-    fontSize: 16,
-    color: '#1E293B',
-    padding: 0,
-  },
-  clearSearchButton: {
-    marginLeft: 8,
-    padding: 4,
-  },
-  
-  // Tab Styles
-  tabsBar: {
-    backgroundColor: '#FFFFFF',
-    paddingVertical: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: '#E2E8F0',
-  },
-  tabsContainer: {
-    paddingHorizontal: 20,
-    gap: 8,
-  },
-  tabButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderRadius: 20,
-    backgroundColor: '#F1F5F9',
-    marginRight: 8,
-  },
-  tabButtonActive: {
-    backgroundColor: '#6366F1',
-  },
-  tabIcon: {
-    marginRight: 6,
-  },
-  tabText: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#64748B',
-  },
-  tabTextActive: {
-    color: '#FFFFFF',
-  },
-  
-  // Filter Styles
-  filtersBar: {
-    marginBottom: 16,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    padding: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.05,
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  filtersRow: {
-    flexDirection: 'row',
-    gap: 12,
-  },
-  dropdownContainer: {
-    flex: 1,
-  },
-  dropdownButton: {
-    backgroundColor: '#F8FAFC',
-    borderRadius: 10,
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    borderWidth: 1,
-    borderColor: '#E2E8F0',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  dropdownButtonText: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#374151',
-  },
-  clearFiltersButton: {
-    marginTop: 12,
-    alignSelf: 'flex-start',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    backgroundColor: '#F1F5F9',
-    borderRadius: 8,
-  },
-  clearFiltersText: {
-    fontSize: 14,
-    color: '#6366F1',
-    fontWeight: '600',
-  },
-  
-  // Modal Styles
-  modalBackdrop: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.4)',
-  },
-  modalCard: {
-    position: 'absolute',
-    left: 20,
-    right: 20,
-    top: 120,
-    maxHeight: '60%',
-    backgroundColor: 'white',
-    borderRadius: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.15,
-    shadowRadius: 16,
-    elevation: 8,
-    paddingVertical: 8,
-  },
-  modalTitle: {
-    fontSize: 18,
-    fontWeight: '700',
-    paddingHorizontal: 20,
-    paddingVertical: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#F1F5F9',
-    color: '#1E293B',
-  },
-  dropdownOption: {
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: '#F8FAFC',
-  },
-  dropdownOptionSelected: {
-    backgroundColor: '#F1F5F9',
-  },
-  dropdownOptionText: {
-    fontSize: 16,
-    color: '#374151',
-  },
-  
-  // Item Styles
-  item: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    padding: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 8,
-    elevation: 3,
-    borderWidth: 1,
-    borderColor: '#F1F5F9',
-  },
-  itemHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  mediaIconContainer: {
-    width: 40,
-    height: 40,
-    borderRadius: 12,
-    backgroundColor: '#F8FAFC',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 16,
-  },
-  itemContent: {
-    flex: 1,
-  },
-  itemName: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#1E293B',
-    lineHeight: 22,
-    marginBottom: 8,
-  },
-  itemMeta: {
-    marginTop: 4,
-  },
-  metaRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  typeBadge: {
-    backgroundColor: '#F1F5F9',
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 6,
-  },
-  typeText: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: '#64748B',
-  },
-  levelBadge: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 6,
-  },
-  levelText: {
-    fontSize: 12,
-    fontWeight: '600',
-  },
-  
-  // Separator
   separator: {
     height: 16,
-  },
-  
-  // Loading States
-  loadingContainer: {
-    flex: 1,
-    paddingHorizontal: 20,
-  },
-  loadingText: {
-    marginTop: 16,
-    fontSize: 16,
-    color: '#64748B',
-    textAlign: 'center',
-  },
-  
-  // Error States
-  errorContainer: {
-    flex: 1,
-    paddingHorizontal: 20,
-  },
-  errorTitle: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: '#1E293B',
-    marginTop: 16,
-    marginBottom: 8,
-  },
-  errorText: {
-    fontSize: 16,
-    color: '#64748B',
-    textAlign: 'center',
-    marginBottom: 24,
-  },
-  retryButton: {
-    backgroundColor: '#6366F1',
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-    borderRadius: 10,
-  },
-  retryButtonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  
-  // Empty States
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 60,
-    paddingHorizontal: 20,
-  },
-  emptyTitle: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: '#1E293B',
-    marginTop: 16,
-    marginBottom: 8,
-    textAlign: 'center',
-  },
-  emptyText: {
-    fontSize: 16,
-    color: '#64748B',
-    textAlign: 'center',
-    lineHeight: 24,
-    marginBottom: 24,
-  },
-  clearSearchEmptyButton: {
-    backgroundColor: '#F1F5F9',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 8,
-  },
-  clearSearchEmptyText: {
-    color: '#6366F1',
-    fontSize: 14,
-    fontWeight: '600',
   },
 });
 
