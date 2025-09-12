@@ -152,7 +152,31 @@
       "reader": "Читач"
     },
     "categories": {
-      "title": "Категорії"
+      "title": "Категорії",
+      "wordCategories": {
+        "title": "Категорії Слів",
+        "subtitle": "Досліджуйте словник за темами та додавайте слова до своєї особистої колекції",
+        "loadingCategories": "Завантаження категорій...",
+        "discoveringVocabulary": "Відкриття нових тем словника",
+        "unableToLoadCategories": "Не вдається завантажити категорії",
+        "checkConnection": "Перевірте підключення до інтернету та спробуйте знову",
+        "tryAgain": "Спробувати знову",
+        "noCategoriesAvailable": "Немає доступних категорій",
+        "categoriesDataMalformed": "Дані категорій пошкоджені",
+        "categoriesDataMissing": "Дані категорій відсутні",
+        "retry": "Повторити",
+        "back": "Назад",
+        "loadingCategoryData": "Завантаження даних категорії...",
+        "error": "Помилка",
+        "alreadySaved": "Вже збережено",
+        "saved": "Збережено",
+        "alreadyInList": "Цей елемент вже у вашому списку.",
+        "itemAddedToList": "Елемент додано до вашого списку.",
+        "failedToSave": "Помилка збереження",
+        "failedToSaveItem": "Не вдалося зберегти елемент.",
+        "speakSourceText": "Прочитати вихідний текст",
+        "addToMyWords": "Додати до Моїх Слів"
+      }
     },
     "myWords": {
       "title": "Мої Слова",

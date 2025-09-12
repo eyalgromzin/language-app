@@ -152,7 +152,31 @@
       "reader": "Lukija"
     },
     "categories": {
-      "title": "Kategoriat"
+      "title": "Kategoriat",
+      "wordCategories": {
+        "title": "Sanakategoriat",
+        "subtitle": "Tutki sanastoa aiheittain ja lisää sanoja henkilökohtaiseen kokoelmaasi",
+        "loadingCategories": "Ladataan kategorioita...",
+        "discoveringVocabulary": "Löydetään uusia sanastoaiheita",
+        "unableToLoadCategories": "Kategorioita ei voi ladata",
+        "checkConnection": "Tarkista internetyhteytesi ja yritä uudelleen",
+        "tryAgain": "Yritä uudelleen",
+        "noCategoriesAvailable": "Ei kategorioita saatavilla",
+        "categoriesDataMalformed": "Kategoriatiedot ovat vaurioituneet",
+        "categoriesDataMissing": "Kategoriatiedot puuttuvat",
+        "retry": "Yritä uudelleen",
+        "back": "Takaisin",
+        "loadingCategoryData": "Ladataan kategoriatietoja...",
+        "error": "Virhe",
+        "alreadySaved": "Jo tallennettu",
+        "saved": "Tallennettu",
+        "alreadyInList": "Tämä kohde on jo listallasi.",
+        "itemAddedToList": "Kohde lisätty listallesi.",
+        "failedToSave": "Tallennus epäonnistui",
+        "failedToSaveItem": "Kohdetta ei voitu tallentaa.",
+        "speakSourceText": "Lausu lähdeteksti",
+        "addToMyWords": "Lisää Sanoihini"
+      }
     },
     "myWords": {
       "title": "Sanani",

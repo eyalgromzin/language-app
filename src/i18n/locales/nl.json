@@ -152,7 +152,31 @@
       "reader": "Lezer"
     },
     "categories": {
-      "title": "Categorieën"
+      "title": "Categorieën",
+      "wordCategories": {
+        "title": "Woordcategorieën",
+        "subtitle": "Verken vocabulaire per onderwerp en voeg woorden toe aan je persoonlijke collectie",
+        "loadingCategories": "Categorieën laden...",
+        "discoveringVocabulary": "Nieuwe vocabulaire onderwerpen ontdekken",
+        "unableToLoadCategories": "Kan categorieën niet laden",
+        "checkConnection": "Controleer je internetverbinding en probeer opnieuw",
+        "tryAgain": "Probeer opnieuw",
+        "noCategoriesAvailable": "Geen categorieën beschikbaar",
+        "categoriesDataMalformed": "Categoriegegevens zijn beschadigd",
+        "categoriesDataMissing": "Categoriegegevens ontbreken",
+        "retry": "Opnieuw proberen",
+        "back": "Terug",
+        "loadingCategoryData": "Categoriegegevens laden...",
+        "error": "Fout",
+        "alreadySaved": "Al opgeslagen",
+        "saved": "Opgeslagen",
+        "alreadyInList": "Dit item staat al in je lijst.",
+        "itemAddedToList": "Item toegevoegd aan je lijst.",
+        "failedToSave": "Opslaan mislukt",
+        "failedToSaveItem": "Kan item niet opslaan.",
+        "speakSourceText": "Spreek brontekst uit",
+        "addToMyWords": "Toevoegen aan Mijn Woorden"
+      }
     },
     "myWords": {
       "title": "Mijn Woorden",

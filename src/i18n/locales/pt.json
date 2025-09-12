@@ -152,7 +152,31 @@
       "reader": "Leitor"
     },
     "categories": {
-      "title": "Categorias"
+      "title": "Categorias",
+      "wordCategories": {
+        "title": "Categorias de Palavras",
+        "subtitle": "Explore vocabulário por tópico e adicione palavras à sua coleção pessoal",
+        "loadingCategories": "Carregando categorias...",
+        "discoveringVocabulary": "Descobrindo novos tópicos de vocabulário",
+        "unableToLoadCategories": "Não foi possível carregar as categorias",
+        "checkConnection": "Verifique sua conexão com a internet e tente novamente",
+        "tryAgain": "Tentar Novamente",
+        "noCategoriesAvailable": "Nenhuma categoria disponível",
+        "categoriesDataMalformed": "Os dados das categorias estão malformados",
+        "categoriesDataMissing": "Os dados das categorias estão faltando",
+        "retry": "Tentar Novamente",
+        "back": "Voltar",
+        "loadingCategoryData": "Carregando dados da categoria...",
+        "error": "Erro",
+        "alreadySaved": "Já salvo",
+        "saved": "Salvo",
+        "alreadyInList": "Este item já está na sua lista.",
+        "itemAddedToList": "Item adicionado à sua lista.",
+        "failedToSave": "Falha ao salvar",
+        "failedToSaveItem": "Falha ao salvar o item.",
+        "speakSourceText": "Falar texto fonte",
+        "addToMyWords": "Adicionar às Minhas Palavras"
+      }
     },
     "myWords": {
       "title": "Minhas Palavras",

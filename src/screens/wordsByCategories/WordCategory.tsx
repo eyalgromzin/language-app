@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ScrollView, View, Text, TouchableOpacity, StyleProp, ViewStyle, TextStyle, ImageStyle, SafeAreaView, Animated, ActivityIndicator } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from 'react-i18next';
 import type { WordItem, WordCategoryType, LocalizedText } from '../../types/words';
 import { cachedApiService } from '../../services/cachedApiService';
 import Tts from 'react-native-tts';
@@ -204,7 +205,10 @@ const getCategoryIcon = (emoji: string | undefined, categoryId: string): string 
 type Styles = {
   container: StyleProp<ViewStyle>;
   headerRow: StyleProp<ViewStyle>;
+  backButton: StyleProp<ViewStyle>;
   backText: StyleProp<TextStyle>;
+  headerTitleContainer: StyleProp<ViewStyle>;
+  categoryIconContainer: StyleProp<ViewStyle>;
   headerTitle: StyleProp<TextStyle>;
   categoryDescription: StyleProp<TextStyle>;
   list: StyleProp<ViewStyle>;
@@ -243,6 +247,7 @@ type Props = {
 };
 
 export default function WordCategory(props: Props): React.JSX.Element | null {
+  const { t } = useTranslation();
   const {
     selectedCategory,
     styles,
@@ -427,18 +432,18 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
       <SafeAreaView style={{ flex: 1, backgroundColor: '#F8FAFC' }}>
         <View style={styles.container}>
           <View style={styles.headerRow}>
-            <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel="Back" activeOpacity={0.7}>
-              <Text style={styles.backText}>‹ Back</Text>
+            <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel={t('screens.categories.wordCategories.back')} activeOpacity={0.7}>
+              <Text style={styles.backText}>‹ {t('screens.categories.wordCategories.back')}</Text>
             </TouchableOpacity>
             <Text numberOfLines={1} style={styles.headerTitle}>
-              Loading...
+              {t('common.loading')}
             </Text>
             <View style={{ width: 56 }} />
           </View>
           <View style={styles.wordCategoryLoadingContainer}>
             <ActivityIndicator size="large" color="#3B82F6" />
             <Text style={styles.loadingText}>
-              Loading category data...
+              {t('screens.categories.wordCategories.loadingCategoryData')}
             </Text>
           </View>
         </View>
@@ -452,11 +457,11 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
       <SafeAreaView style={{ flex: 1, backgroundColor: '#F8FAFC' }}>
         <View style={styles.container}>
           <View style={styles.headerRow}>
-            <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel="Back" activeOpacity={0.7}>
-              <Text style={styles.backText}>‹ Back</Text>
+            <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel={t('screens.categories.wordCategories.back')} activeOpacity={0.7}>
+              <Text style={styles.backText}>‹ {t('screens.categories.wordCategories.back')}</Text>
             </TouchableOpacity>
             <Text numberOfLines={1} style={styles.headerTitle}>
-              Error
+              {t('screens.categories.wordCategories.error')}
             </Text>
             <View style={{ width: 56 }} />
           </View>
@@ -465,7 +470,7 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
               {error}
             </Text>
             <TouchableOpacity style={styles.wordCategoryRetryButton} onPress={handleRetry}>
-              <Text style={styles.wordCategoryRetryButtonText}>Retry</Text>
+              <Text style={styles.wordCategoryRetryButtonText}>{t('screens.categories.wordCategories.retry')}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -482,10 +487,10 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
     <SafeAreaView style={{ flex: 1, backgroundColor: '#F8FAFC' }}>
       <View style={styles.container}>
         <View style={styles.headerRow}>
-          <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel="Back" activeOpacity={0.7}>
+          <TouchableOpacity onPress={onBackToCategories} accessibilityRole="button" accessibilityLabel={t('screens.categories.wordCategories.back')} activeOpacity={0.7}>
             <View style={styles.backButton}>
               <Ionicons name="chevron-back" size={20} color="#3B82F6" />
-              <Text style={styles.backText}>Back</Text>
+              <Text style={styles.backText}>{t('screens.categories.wordCategories.back')}</Text>
             </View>
           </TouchableOpacity>
           <View style={styles.headerTitleContainer}>
@@ -527,7 +532,7 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
                        style={[styles.speakerBtnWrap, { marginRight: 12 }]}
                        hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
                        accessibilityRole="button"
-                       accessibilityLabel="Speak source text"
+                       accessibilityLabel={t('screens.categories.wordCategories.speakSourceText')}
                        activeOpacity={0.7}
                      >
                        <Ionicons name="volume-medium" size={16} color="#64748B" />
@@ -543,7 +548,7 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
                        style={[styles.speakerBtnWrap, { marginRight: 8 }]}
                        hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
                        accessibilityRole="button"
-                       accessibilityLabel="Speak source text"
+                       accessibilityLabel={t('screens.categories.wordCategories.speakSourceText')}
                        activeOpacity={0.7}
                      >
                        <Ionicons name="volume-medium" size={16} color="#64748B" />
@@ -559,7 +564,7 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
                   onPress={() => handlePlusPress(item)}
                   style={styles.addBtnWrap}
                   accessibilityRole="button"
-                  accessibilityLabel="Add to My Words"
+                  accessibilityLabel={t('screens.categories.wordCategories.addToMyWords')}
                   hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
                   activeOpacity={0.85}
                 >

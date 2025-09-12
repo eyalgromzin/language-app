@@ -153,7 +153,31 @@
       "reader": "Leser"
     },
     "categories": {
-      "title": "Kategorien"
+      "title": "Kategorien",
+      "wordCategories": {
+        "title": "Wortkategorien",
+        "subtitle": "Erkunden Sie Vokabular nach Themen und fügen Sie Wörter zu Ihrer persönlichen Sammlung hinzu",
+        "loadingCategories": "Kategorien werden geladen...",
+        "discoveringVocabulary": "Neue Vokabelthemen entdecken",
+        "unableToLoadCategories": "Kategorien können nicht geladen werden",
+        "checkConnection": "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut",
+        "tryAgain": "Erneut versuchen",
+        "noCategoriesAvailable": "Keine Kategorien verfügbar",
+        "categoriesDataMalformed": "Kategoriendaten sind fehlerhaft",
+        "categoriesDataMissing": "Kategoriendaten fehlen",
+        "retry": "Wiederholen",
+        "back": "Zurück",
+        "loadingCategoryData": "Kategoriedaten werden geladen...",
+        "error": "Fehler",
+        "alreadySaved": "Bereits gespeichert",
+        "saved": "Gespeichert",
+        "alreadyInList": "Dieses Element ist bereits in Ihrer Liste.",
+        "itemAddedToList": "Element zu Ihrer Liste hinzugefügt.",
+        "failedToSave": "Speichern fehlgeschlagen",
+        "failedToSaveItem": "Element konnte nicht gespeichert werden.",
+        "speakSourceText": "Quelltext sprechen",
+        "addToMyWords": "Zu Meinen Wörtern hinzufügen"
+      }
     },
     "myWords": {
       "title": "Meine Wörter",

@@ -153,7 +153,31 @@
       "reader": "קורא"
     },
     "categories": {
-      "title": "קטגוריות"
+      "title": "קטגוריות",
+      "wordCategories": {
+        "title": "קטגוריות מילים",
+        "subtitle": "חקור אוצר מילים לפי נושא והוסף מילים לאוסף האישי שלך",
+        "loadingCategories": "טוען קטגוריות...",
+        "discoveringVocabulary": "גילוי נושאי אוצר מילים חדשים",
+        "unableToLoadCategories": "לא ניתן לטעון קטגוריות",
+        "checkConnection": "אנא בדוק את החיבור לאינטרנט ונסה שוב",
+        "tryAgain": "נסה שוב",
+        "noCategoriesAvailable": "אין קטגוריות זמינות",
+        "categoriesDataMalformed": "נתוני הקטגוריות פגומים",
+        "categoriesDataMissing": "נתוני הקטגוריות חסרים",
+        "retry": "נסה שוב",
+        "back": "חזור",
+        "loadingCategoryData": "טוען נתוני קטגוריה...",
+        "error": "שגיאה",
+        "alreadySaved": "כבר נשמר",
+        "saved": "נשמר",
+        "alreadyInList": "הפריט הזה כבר ברשימה שלך.",
+        "itemAddedToList": "פריט נוסף לרשימה שלך.",
+        "failedToSave": "שמירה נכשלה",
+        "failedToSaveItem": "לא ניתן לשמור את הפריט.",
+        "speakSourceText": "הקרא טקסט מקור",
+        "addToMyWords": "הוסף למילים שלי"
+      }
     },
     "myWords": {
       "title": "המילים שלי",

@@ -152,7 +152,31 @@
       "reader": "Läsare"
     },
     "categories": {
-      "title": "Kategorier"
+      "title": "Kategorier",
+      "wordCategories": {
+        "title": "Ordkategorier",
+        "subtitle": "Utforska ordförråd efter ämne och lägg till ord i din personliga samling",
+        "loadingCategories": "Laddar kategorier...",
+        "discoveringVocabulary": "Upptäcker nya ordförrådsämnen",
+        "unableToLoadCategories": "Kan inte ladda kategorier",
+        "checkConnection": "Kontrollera din internetanslutning och försök igen",
+        "tryAgain": "Försök igen",
+        "noCategoriesAvailable": "Inga kategorier tillgängliga",
+        "categoriesDataMalformed": "Kategoridata är skadade",
+        "categoriesDataMissing": "Kategoridata saknas",
+        "retry": "Försök igen",
+        "back": "Tillbaka",
+        "loadingCategoryData": "Laddar kategoridata...",
+        "error": "Fel",
+        "alreadySaved": "Redan sparad",
+        "saved": "Sparad",
+        "alreadyInList": "Detta objekt finns redan i din lista.",
+        "itemAddedToList": "Objekt tillagt till din lista.",
+        "failedToSave": "Sparning misslyckades",
+        "failedToSaveItem": "Kunde inte spara objektet.",
+        "speakSourceText": "Tala källtext",
+        "addToMyWords": "Lägg till i Mina Ord"
+      }
     },
     "myWords": {
       "title": "Mina Ord",

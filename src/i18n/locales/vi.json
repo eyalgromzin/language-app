@@ -152,7 +152,31 @@
       "reader": "Người đọc"
     },
     "categories": {
-      "title": "Danh Mục"
+      "title": "Danh Mục",
+      "wordCategories": {
+        "title": "Danh Mục Từ Vựng",
+        "subtitle": "Khám phá từ vựng theo chủ đề và thêm từ vào bộ sưu tập cá nhân của bạn",
+        "loadingCategories": "Đang tải danh mục...",
+        "discoveringVocabulary": "Khám phá các chủ đề từ vựng mới",
+        "unableToLoadCategories": "Không thể tải danh mục",
+        "checkConnection": "Vui lòng kiểm tra kết nối internet và thử lại",
+        "tryAgain": "Thử lại",
+        "noCategoriesAvailable": "Không có danh mục nào khả dụng",
+        "categoriesDataMalformed": "Dữ liệu danh mục bị hỏng",
+        "categoriesDataMissing": "Dữ liệu danh mục bị thiếu",
+        "retry": "Thử lại",
+        "back": "Quay lại",
+        "loadingCategoryData": "Đang tải dữ liệu danh mục...",
+        "error": "Lỗi",
+        "alreadySaved": "Đã lưu",
+        "saved": "Đã lưu",
+        "alreadyInList": "Mục này đã có trong danh sách của bạn.",
+        "itemAddedToList": "Đã thêm mục vào danh sách của bạn.",
+        "failedToSave": "Lưu thất bại",
+        "failedToSaveItem": "Không thể lưu mục.",
+        "speakSourceText": "Đọc văn bản nguồn",
+        "addToMyWords": "Thêm vào Từ của Tôi"
+      }
     },
     "myWords": {
       "title": "Từ Của Tôi",

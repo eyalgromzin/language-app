@@ -152,7 +152,31 @@
       "reader": "Čtečka"
     },
     "categories": {
-      "title": "Kategorie"
+      "title": "Kategorie",
+      "wordCategories": {
+        "title": "Kategorie Slov",
+        "subtitle": "Prozkoumejte slovní zásobu podle témat a přidejte slova do své osobní sbírky",
+        "loadingCategories": "Načítání kategorií...",
+        "discoveringVocabulary": "Objevování nových témat slovní zásoby",
+        "unableToLoadCategories": "Nelze načíst kategorie",
+        "checkConnection": "Zkontrolujte připojení k internetu a zkuste to znovu",
+        "tryAgain": "Zkusit znovu",
+        "noCategoriesAvailable": "Žádné kategorie nejsou k dispozici",
+        "categoriesDataMalformed": "Data kategorií jsou poškozená",
+        "categoriesDataMissing": "Data kategorií chybí",
+        "retry": "Zkusit znovu",
+        "back": "Zpět",
+        "loadingCategoryData": "Načítání dat kategorie...",
+        "error": "Chyba",
+        "alreadySaved": "Již uloženo",
+        "saved": "Uloženo",
+        "alreadyInList": "Tato položka je již ve vašem seznamu.",
+        "itemAddedToList": "Položka přidána do vašeho seznamu.",
+        "failedToSave": "Uložení se nezdařilo",
+        "failedToSaveItem": "Nelze uložit položku.",
+        "speakSourceText": "Přečíst zdrojový text",
+        "addToMyWords": "Přidat do Mých Slov"
+      }
     },
     "myWords": {
       "title": "My Words",

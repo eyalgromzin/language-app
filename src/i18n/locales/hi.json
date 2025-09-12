@@ -152,7 +152,31 @@
       "reader": "पाठक"
     },
     "categories": {
-      "title": "श्रेणियां"
+      "title": "श्रेणियां",
+      "wordCategories": {
+        "title": "शब्द श्रेणियां",
+        "subtitle": "विषय के अनुसार शब्दावली का अन्वेषण करें और शब्दों को अपने व्यक्तिगत संग्रह में जोड़ें",
+        "loadingCategories": "श्रेणियां लोड हो रही हैं...",
+        "discoveringVocabulary": "नए शब्दावली विषयों की खोज",
+        "unableToLoadCategories": "श्रेणियां लोड नहीं हो सकीं",
+        "checkConnection": "कृपया अपना इंटरनेट कनेक्शन जांचें और फिर से कोशिश करें",
+        "tryAgain": "फिर से कोशिश करें",
+        "noCategoriesAvailable": "कोई श्रेणी उपलब्ध नहीं",
+        "categoriesDataMalformed": "श्रेणी डेटा खराब है",
+        "categoriesDataMissing": "श्रेणी डेटा गुम है",
+        "retry": "फिर से कोशिश करें",
+        "back": "वापस",
+        "loadingCategoryData": "श्रेणी डेटा लोड हो रहा है...",
+        "error": "त्रुटि",
+        "alreadySaved": "पहले से सहेजा गया",
+        "saved": "सहेजा गया",
+        "alreadyInList": "यह आइटम पहले से आपकी सूची में है।",
+        "itemAddedToList": "आइटम आपकी सूची में जोड़ा गया।",
+        "failedToSave": "सहेजने में विफल",
+        "failedToSaveItem": "आइटम सहेजने में विफल।",
+        "speakSourceText": "स्रोत पाठ बोलें",
+        "addToMyWords": "मेरे शब्दों में जोड़ें"
+      }
     },
     "myWords": {
       "title": "मेरे शब्द",

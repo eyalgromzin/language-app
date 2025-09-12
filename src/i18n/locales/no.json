@@ -152,7 +152,31 @@
       "reader": "Leser"
     },
     "categories": {
-      "title": "Kategorier"
+      "title": "Kategorier",
+      "wordCategories": {
+        "title": "Ordkategorier",
+        "subtitle": "Utforsk ordforråd etter emne og legg til ord i din personlige samling",
+        "loadingCategories": "Laster kategorier...",
+        "discoveringVocabulary": "Oppdager nye ordforrådsemner",
+        "unableToLoadCategories": "Kan ikke laste kategorier",
+        "checkConnection": "Sjekk internettforbindelsen din og prøv igjen",
+        "tryAgain": "Prøv igjen",
+        "noCategoriesAvailable": "Ingen kategorier tilgjengelig",
+        "categoriesDataMalformed": "Kategoridata er ødelagt",
+        "categoriesDataMissing": "Kategoridata mangler",
+        "retry": "Prøv igjen",
+        "back": "Tilbake",
+        "loadingCategoryData": "Laster kategoridata...",
+        "error": "Feil",
+        "alreadySaved": "Allerede lagret",
+        "saved": "Lagret",
+        "alreadyInList": "Dette elementet er allerede i listen din.",
+        "itemAddedToList": "Element lagt til i listen din.",
+        "failedToSave": "Lagring mislyktes",
+        "failedToSaveItem": "Kunne ikke lagre elementet.",
+        "speakSourceText": "Snakk kildetekst",
+        "addToMyWords": "Legg til i Mine Ord"
+      }
     },
     "myWords": {
       "title": "Mine Ord",

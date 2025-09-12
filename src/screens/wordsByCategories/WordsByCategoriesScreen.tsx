@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ToastAndroid, BackHandler, SafeAreaView, ActivityIndicator, RefreshControl, Animated } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 import * as RNFS from 'react-native-fs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import WordCategory from './WordCategory';
@@ -237,6 +238,7 @@ const getCategoryIcon = (emoji: string | undefined, categoryId: string): string 
 };
 
 function WordsByCategoriesScreen(): React.JSX.Element {
+  const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = React.useState<WordCategoryType | null>(null);
   const navigation = useNavigation<any>();
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
@@ -459,15 +461,15 @@ function WordsByCategoriesScreen(): React.JSX.Element {
 
       await RNFS.writeFile(filePath, JSON.stringify(normalized, null, 2), 'utf8');
       if (Platform.OS === 'android') {
-        ToastAndroid.show(exists ? 'Already saved' : 'Saved', ToastAndroid.SHORT);
+        ToastAndroid.show(exists ? t('screens.categories.wordCategories.alreadySaved') : t('screens.categories.wordCategories.saved'), ToastAndroid.SHORT);
       } else {
-        Alert.alert(exists ? 'Already saved' : 'Saved', exists ? 'This item is already in your list.' : 'Item added to your list.');
+        Alert.alert(exists ? t('screens.categories.wordCategories.alreadySaved') : t('screens.categories.wordCategories.saved'), exists ? t('screens.categories.wordCategories.alreadyInList') : t('screens.categories.wordCategories.itemAddedToList'));
       }
     } catch {
       if (Platform.OS === 'android') {
-        ToastAndroid.show('Failed to save', ToastAndroid.SHORT);
+        ToastAndroid.show(t('screens.categories.wordCategories.failedToSave'), ToastAndroid.SHORT);
       } else {
-        Alert.alert('Error', 'Failed to save the item.');
+        Alert.alert(t('screens.categories.wordCategories.error'), t('screens.categories.wordCategories.failedToSaveItem'));
       }
     }
   };
@@ -493,8 +495,8 @@ function WordsByCategoriesScreen(): React.JSX.Element {
         <View style={styles.loadingContainer}>
           <View style={styles.loadingContent}>
             <ActivityIndicator size="large" color="#3B82F6" />
-            <Text style={styles.loadingText}>Loading categories...</Text>
-            <Text style={styles.loadingSubtext}>Discovering new vocabulary topics</Text>
+            <Text style={styles.loadingText}>{t('screens.categories.wordCategories.loadingCategories')}</Text>
+            <Text style={styles.loadingSubtext}>{t('screens.categories.wordCategories.discoveringVocabulary')}</Text>
           </View>
         </View>
       </SafeAreaView>
@@ -508,13 +510,13 @@ function WordsByCategoriesScreen(): React.JSX.Element {
         <View style={styles.errorContainer}>
           <View style={styles.errorContent}>
             <Ionicons name="cloud-offline" size={48} color="#94A3B8" style={styles.errorIcon} />
-            <Text style={styles.errorText}>Unable to load categories</Text>
+            <Text style={styles.errorText}>{t('screens.categories.wordCategories.unableToLoadCategories')}</Text>
             <Text style={styles.errorSubtext}>
-              Please check your internet connection and try again
+              {t('screens.categories.wordCategories.checkConnection')}
             </Text>
             <TouchableOpacity style={styles.retryButton} onPress={refreshCategories}>
               <Ionicons name="refresh" size={20} color="white" style={{ marginRight: 8 }} />
-              <Text style={styles.retryButtonText}>Try Again</Text>
+              <Text style={styles.retryButtonText}>{t('screens.categories.wordCategories.tryAgain')}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -536,9 +538,9 @@ function WordsByCategoriesScreen(): React.JSX.Element {
         }
       >
         <View style={styles.headerSection}>
-          <Text style={styles.screenTitle}>Word Categories</Text>
+          <Text style={styles.screenTitle}>{t('screens.categories.wordCategories.title')}</Text>
           <Text style={styles.screenSubtitle}>
-            Explore vocabulary by topic and add words to your personal collection
+            {t('screens.categories.wordCategories.subtitle')}
           </Text>
         </View>
         <View style={styles.grid}>
@@ -599,12 +601,12 @@ function WordsByCategoriesScreen(): React.JSX.Element {
             })
           ) : (
             <View style={styles.errorContainer}>
-              <Text style={styles.errorText}>No categories available</Text>
+              <Text style={styles.errorText}>{t('screens.categories.wordCategories.noCategoriesAvailable')}</Text>
               <Text style={styles.errorSubtext}>
-                {categoriesData ? 'Categories data is malformed' : 'Categories data is missing'}
+                {categoriesData ? t('screens.categories.wordCategories.categoriesDataMalformed') : t('screens.categories.wordCategories.categoriesDataMissing')}
               </Text>
               <TouchableOpacity style={styles.retryButton} onPress={refreshCategories}>
-                <Text style={styles.retryButtonText}>Retry</Text>
+                <Text style={styles.retryButtonText}>{t('screens.categories.wordCategories.retry')}</Text>
               </TouchableOpacity>
             </View>
           )}

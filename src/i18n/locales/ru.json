@@ -152,7 +152,31 @@
       "reader": "Читатель"
     },
     "categories": {
-      "title": "Категории"
+      "title": "Категории",
+      "wordCategories": {
+        "title": "Категории Слов",
+        "subtitle": "Изучайте словарь по темам и добавляйте слова в свою личную коллекцию",
+        "loadingCategories": "Загрузка категорий...",
+        "discoveringVocabulary": "Открытие новых тем словаря",
+        "unableToLoadCategories": "Не удается загрузить категории",
+        "checkConnection": "Проверьте подключение к интернету и попробуйте снова",
+        "tryAgain": "Попробовать снова",
+        "noCategoriesAvailable": "Нет доступных категорий",
+        "categoriesDataMalformed": "Данные категорий повреждены",
+        "categoriesDataMissing": "Данные категорий отсутствуют",
+        "retry": "Повторить",
+        "back": "Назад",
+        "loadingCategoryData": "Загрузка данных категории...",
+        "error": "Ошибка",
+        "alreadySaved": "Уже сохранено",
+        "saved": "Сохранено",
+        "alreadyInList": "Этот элемент уже в вашем списке.",
+        "itemAddedToList": "Элемент добавлен в ваш список.",
+        "failedToSave": "Ошибка сохранения",
+        "failedToSaveItem": "Не удалось сохранить элемент.",
+        "speakSourceText": "Произнести исходный текст",
+        "addToMyWords": "Добавить в Мои Слова"
+      }
     },
     "myWords": {
       "title": "Мои Слова",

@@ -152,7 +152,31 @@
       "reader": "ผู้อ่าน"
     },
     "categories": {
-      "title": "หมวดหมู่"
+      "title": "หมวดหมู่",
+      "wordCategories": {
+        "title": "หมวดหมู่คำศัพท์",
+        "subtitle": "สำรวจคำศัพท์ตามหัวข้อและเพิ่มคำลงในคอลเลกชันส่วนตัวของคุณ",
+        "loadingCategories": "กำลังโหลดหมวดหมู่...",
+        "discoveringVocabulary": "ค้นพบหัวข้อคำศัพท์ใหม่",
+        "unableToLoadCategories": "ไม่สามารถโหลดหมวดหมู่ได้",
+        "checkConnection": "กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ตและลองอีกครั้ง",
+        "tryAgain": "ลองอีกครั้ง",
+        "noCategoriesAvailable": "ไม่มีหมวดหมู่ที่พร้อมใช้งาน",
+        "categoriesDataMalformed": "ข้อมูลหมวดหมู่เสียหาย",
+        "categoriesDataMissing": "ข้อมูลหมวดหมู่หายไป",
+        "retry": "ลองอีกครั้ง",
+        "back": "กลับ",
+        "loadingCategoryData": "กำลังโหลดข้อมูลหมวดหมู่...",
+        "error": "ข้อผิดพลาด",
+        "alreadySaved": "บันทึกแล้ว",
+        "saved": "บันทึกแล้ว",
+        "alreadyInList": "รายการนี้อยู่ในรายการของคุณแล้ว",
+        "itemAddedToList": "เพิ่มรายการลงในรายการของคุณแล้ว",
+        "failedToSave": "บันทึกไม่สำเร็จ",
+        "failedToSaveItem": "ไม่สามารถบันทึกรายการได้",
+        "speakSourceText": "อ่านข้อความต้นฉบับ",
+        "addToMyWords": "เพิ่มในคำของฉัน"
+      }
     },
     "myWords": {
       "title": "คำของฉัน",
