@@ -17,6 +17,7 @@ export const FAVOURITE_TYPES = [
   { id: 3, name: 'conversation' },
   { id: 4, name: 'video' },
   { id: 5, name: 'book' },
+  { id: 6, name: 'website' },
 ] as const;
 
 interface AddToFavouritesDialogProps {

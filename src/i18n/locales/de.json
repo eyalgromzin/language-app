@@ -428,6 +428,7 @@
       "lyrics": "Liedtext",
       "video": "Video",
       "book": "Buch",
+      "website": "Website",
       "any": "Beliebig"
     },
     "difficultyLevels": {

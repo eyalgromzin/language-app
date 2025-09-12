@@ -5,16 +5,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { WebView } from 'react-native-webview';
 import harmfulWordsService from '../services/harmfulWordsService';
 import { addLibraryUrl } from '../config/api';
+import { FAVOURITE_TYPES } from '../components/AddToFavouritesDialog';
 
 export type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
-
-export const FAVOURITE_TYPES = [
-  { id: 1, name: 'article' },
-  { id: 2, name: 'story' },
-  { id: 3, name: 'conversation' },
-  { id: 4, name: 'lyrics' },
-  { id: 5, name: 'any' },
-] as const;
 
 export const useSurfScreen = () => {
   const navigation = useNavigation<any>();
