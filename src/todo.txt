@@ -1,4 +1,7 @@
 save to favourites should just save url and not just domain 
+    - surf
+    - books 
+    
 publish app =======================================================================================================================
 
 - on save favourite , disable the option to add javascript to make it secure 

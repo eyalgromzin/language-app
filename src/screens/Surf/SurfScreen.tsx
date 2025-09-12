@@ -39,21 +39,7 @@ function SurfScreen(): React.JSX.Element {
     showAddFavouriteModal,
     setShowAddFavouriteModal,
     newFavName,
-    setNewFavName,
     newFavUrl,
-    setNewFavUrl,
-    newFavTypeId,
-    setNewFavTypeId,
-    showTypeOptions,
-    setShowTypeOptions,
-    favTypeError,
-    setFavTypeError,
-    newFavLevelName,
-    setNewFavLevelName,
-    showLevelOptions,
-    setShowLevelOptions,
-    favLevelError,
-    setFavLevelError,
     imageScrape,
     setImageScrape,
     isAddressFocused,
@@ -67,34 +53,16 @@ function SurfScreen(): React.JSX.Element {
     selectSuggestion,
     submit,
     goBack,
-    addToFavourites,
     removeFromFavourites,
     refreshFavourites,
     promptFavourite,
-    openOptionsMenu,
     promptSetHomepage,
     postAddUrlToLibrary,
     urlForStar,
     isFav,
-    FAVOURITE_TYPES,
   } = useSurfScreen();
 
   // Add missing utility functions
-  const normalizeUrl = (input: string): string => {
-    if (!input) return 'about:blank';
-    const trimmed = input.trim();
-    const hasScheme = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(trimmed);
-    const hasSpaces = /\s/.test(trimmed);
-    const startsWithWww = /^www\./i.test(trimmed);
-    const looksLikeDomain = /^[^\s]+\.[^\s]{2,}$/.test(trimmed);
-    const looksLikeIp = /^\d{1,3}(\.\d{1,3}){3}(?::\d+)?(\/|$)/.test(trimmed);
-
-    if (hasSpaces || (!hasScheme && !startsWithWww && !looksLikeDomain && !looksLikeIp)) {
-      return `https://www.google.com/search?q=${encodeURIComponent(trimmed)}`;
-    }
-
-    return hasScheme ? trimmed : `https://${trimmed}`;
-  };
 
   const getDomainFromUrlString = (input: string): string | null => {
     try {
@@ -293,6 +261,7 @@ function SurfScreen(): React.JSX.Element {
             setCanGoBack(!!navState.canGoBack);
             if (typeof navState.url === 'string') {
               setAddressText(navState.url);
+              setCurrentUrl(navState.url);
               const d = getDomainFromUrlString(navState.url);
               if (d) saveDomain(d);
             }
