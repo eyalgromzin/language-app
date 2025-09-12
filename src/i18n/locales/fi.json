@@ -116,7 +116,32 @@
       "showEligibleWords": "Näytä kelvolliset sanat",
       "eligibleWords": "kelvolliset sanat",
       "createSentence": "luoda lause",
-      "continueToNextQuestion": "Jatka seuraavaan kysymykseen"
+      "continueToNextQuestion": "Jatka seuraavaan kysymykseen",
+      "memoryGameScreen": {
+        "title": "Muistipeli",
+        "subtitle": "Löydä vastaavat sanaparit",
+        "found": "Löydetty",
+        "moves": "Siirrot",
+        "total": "Yhteensä",
+        "newGame": "✨ Uusi Peli",
+        "skip": "Ohita",
+        "skipToNextGame": "Ohita seuraavaan peliin",
+        "restartGame": "Käynnistä peli uudelleen",
+        "selectNumberOfPairs": "Valitse parien määrä",
+        "selectPairs": "Valitse {{count}} paria",
+        "enterFullScreen": "Siirry koko näyttöön",
+        "exitFullScreen": "Poistu koko näytöstä",
+        "hiddenCard": "piilotettu kortti"
+      },
+      "hearingPracticeScreen": {
+        "title": "Kuuloharjoitus",
+        "skip": "Ohita",
+        "playWord": "Toista sana",
+        "tapToHear": "Napauta kuullaksesi",
+        "next": "Seuraava",
+        "loadingPractice": "Ladataan harjoitusta...",
+        "preparing": "Valmistellaan..."
+      }
     },
     "library": {
       "title": "Kirjasto",

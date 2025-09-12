@@ -117,7 +117,32 @@
       "showEligibleWords": "הצג מילים זכאיות",
       "eligibleWords": "מילים זכאיות",
       "createSentence": "צור את המשפט",
-      "continueToNextQuestion": "המשך לשאלה הבאה"
+      "continueToNextQuestion": "המשך לשאלה הבאה",
+      "memoryGameScreen": {
+        "title": "משחק זיכרון",
+        "subtitle": "מצאו זוגות מילים תואמים",
+        "found": "נמצאו",
+        "moves": "מהלכים",
+        "total": "סה\"כ",
+        "newGame": "✨ משחק חדש",
+        "skip": "דלג",
+        "skipToNextGame": "דלג למשחק הבא",
+        "restartGame": "הפעל מחדש את המשחק",
+        "selectNumberOfPairs": "בחרו מספר זוגות",
+        "selectPairs": "בחרו {{count}} זוגות",
+        "enterFullScreen": "היכנסו למסך מלא",
+        "exitFullScreen": "צאו ממסך מלא",
+        "hiddenCard": "כרטיס מוסתר"
+      },
+      "hearingPracticeScreen": {
+        "title": "תרגול שמיעה",
+        "skip": "דלג",
+        "playWord": "נגן מילה",
+        "tapToHear": "הקישו כדי לשמוע",
+        "next": "הבא",
+        "loadingPractice": "טוען תרגול...",
+        "preparing": "מכין..."
+      }
     },
     "library": {
       "title": "ספרייה",

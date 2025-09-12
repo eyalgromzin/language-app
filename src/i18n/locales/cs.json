@@ -116,7 +116,32 @@
       "showEligibleWords": "Zobrazit způsobilá slova",
       "eligibleWords": "způsobilá slova",
       "createSentence": "vytvořit větu",
-      "continueToNextQuestion": "Pokračovat k další otázce"
+      "continueToNextQuestion": "Pokračovat k další otázce",
+      "memoryGameScreen": {
+        "title": "Paměťová Hra",
+        "subtitle": "Najděte odpovídající páry slov",
+        "found": "Nalezeno",
+        "moves": "Tahy",
+        "total": "Celkem",
+        "newGame": "✨ Nová Hra",
+        "skip": "Přeskočit",
+        "skipToNextGame": "Přeskočit na další hru",
+        "restartGame": "Restartovat hru",
+        "selectNumberOfPairs": "Vybrat počet párů",
+        "selectPairs": "Vybrat {{count}} párů",
+        "enterFullScreen": "Vstoupit do celé obrazovky",
+        "exitFullScreen": "Opustit celou obrazovku",
+        "hiddenCard": "skrytá karta"
+      },
+      "hearingPracticeScreen": {
+        "title": "Cvičení Poslechu",
+        "skip": "Přeskočit",
+        "playWord": "Přehrát slovo",
+        "tapToHear": "Klepněte pro poslech",
+        "next": "Další",
+        "loadingPractice": "Načítání cvičení...",
+        "preparing": "Příprava..."
+      }
     },
     "library": {
       "title": "Knihovna",

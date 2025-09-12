@@ -117,7 +117,32 @@
       "showEligibleWords": "Mostrar palabras elegibles",
       "eligibleWords": "palabras elegibles",
       "createSentence": "crear la oración",
-      "continueToNextQuestion": "Continuar a la siguiente pregunta"
+      "continueToNextQuestion": "Continuar a la siguiente pregunta",
+      "memoryGameScreen": {
+        "title": "Juego de Memoria",
+        "subtitle": "Encuentra pares de palabras que coincidan",
+        "found": "Encontrados",
+        "moves": "Movimientos",
+        "total": "Total",
+        "newGame": "✨ Nuevo Juego",
+        "skip": "Omitir",
+        "skipToNextGame": "Omitir al siguiente juego",
+        "restartGame": "Reiniciar juego",
+        "selectNumberOfPairs": "Seleccionar número de pares",
+        "selectPairs": "Seleccionar {{count}} pares",
+        "enterFullScreen": "Entrar en pantalla completa",
+        "exitFullScreen": "Salir de pantalla completa",
+        "hiddenCard": "carta oculta"
+      },
+      "hearingPracticeScreen": {
+        "title": "Práctica Auditiva",
+        "skip": "Omitir",
+        "playWord": "Reproducir palabra",
+        "tapToHear": "Toca para escuchar",
+        "next": "Siguiente",
+        "loadingPractice": "Cargando práctica...",
+        "preparing": "Preparando..."
+      }
     },
     "library": {
       "title": "Biblioteca",

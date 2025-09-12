@@ -116,7 +116,32 @@
       "showEligibleWords": "Показать подходящие слова",
       "eligibleWords": "подходящие слова",
       "createSentence": "создать предложение",
-      "continueToNextQuestion": "Перейти к следующему вопросу"
+      "continueToNextQuestion": "Перейти к следующему вопросу",
+      "memoryGameScreen": {
+        "title": "Игра на Память",
+        "subtitle": "Найдите соответствующие пары слов",
+        "found": "Найдено",
+        "moves": "Ходы",
+        "total": "Всего",
+        "newGame": "✨ Новая Игра",
+        "skip": "Пропустить",
+        "skipToNextGame": "Пропустить к следующей игре",
+        "restartGame": "Перезапустить игру",
+        "selectNumberOfPairs": "Выбрать количество пар",
+        "selectPairs": "Выбрать {{count}} пар",
+        "enterFullScreen": "Войти в полноэкранный режим",
+        "exitFullScreen": "Выйти из полноэкранного режима",
+        "hiddenCard": "скрытая карта"
+      },
+      "hearingPracticeScreen": {
+        "title": "Практика Слушания",
+        "skip": "Пропустить",
+        "playWord": "Воспроизвести слово",
+        "tapToHear": "Нажмите, чтобы услышать",
+        "next": "Далее",
+        "loadingPractice": "Загрузка практики...",
+        "preparing": "Подготовка..."
+      }
     },
     "library": {
       "title": "Библиотека",

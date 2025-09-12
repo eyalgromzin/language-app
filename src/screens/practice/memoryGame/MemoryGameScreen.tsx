@@ -4,6 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 import { playCorrectFeedback, } from '../common';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 import { WordEntry } from '../../../types/words';
@@ -52,6 +53,7 @@ function sampleN<T>(arr: T[], n: number): T[] {
 }
 
 function MemoryGameScreen(): React.JSX.Element {
+  const { t } = useTranslation();
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const RANDOM_GAME_ROUTES: string[] = [
@@ -271,7 +273,7 @@ function MemoryGameScreen(): React.JSX.Element {
         onPress={() => onPickCard(card)}
         disabled={isEvaluating || isMatched}
         accessibilityRole="button"
-        accessibilityLabel={isRevealed ? card.label : 'hidden card'}
+        accessibilityLabel={isRevealed ? card.label : t('screens.practice.memoryGameScreen.hiddenCard')}
         activeOpacity={0.7}
       >
         <View style={styles.cardContent}>
@@ -307,9 +309,9 @@ function MemoryGameScreen(): React.JSX.Element {
       <View style={styles.header}>
         <View style={styles.headerTop}>
           <View style={styles.titleContainer}>
-            <Text style={styles.title}>Memory Game</Text>
+            <Text style={styles.title}>{t('screens.practice.memoryGameScreen.title')}</Text>
             {!isFullScreen && (
-              <Text style={styles.subtitle}>Find matching word pairs</Text>
+              <Text style={styles.subtitle}>{t('screens.practice.memoryGameScreen.subtitle')}</Text>
             )}
           </View>
           <View style={styles.headerButtons}>
@@ -317,7 +319,7 @@ function MemoryGameScreen(): React.JSX.Element {
               style={styles.fullScreenButton}
               onPress={() => setIsFullScreen(!isFullScreen)}
               accessibilityRole="button"
-              accessibilityLabel={isFullScreen ? "Exit full screen" : "Enter full screen"}
+              accessibilityLabel={isFullScreen ? t('screens.practice.memoryGameScreen.exitFullScreen') : t('screens.practice.memoryGameScreen.enterFullScreen')}
             >
               <Text style={styles.fullScreenButtonText}>
                 {isFullScreen ? '⛶' : '⛶'}
@@ -328,9 +330,9 @@ function MemoryGameScreen(): React.JSX.Element {
                 style={styles.skipButton}
                 onPress={navigateToRandomNext}
                 accessibilityRole="button"
-                accessibilityLabel="Skip to next game"
+                accessibilityLabel={t('screens.practice.memoryGameScreen.skipToNextGame')}
               >
-                <Text style={styles.skipButtonText}>Skip</Text>
+                <Text style={styles.skipButtonText}>{t('screens.practice.memoryGameScreen.skip')}</Text>
               </TouchableOpacity>
             ) : null}
           </View>
@@ -342,23 +344,23 @@ function MemoryGameScreen(): React.JSX.Element {
             <View style={styles.statsContainer}>
               <View style={styles.statItem}>
                 <Text style={styles.statValue}>{score}</Text>
-                <Text style={styles.statLabel}>Found</Text>
+                <Text style={styles.statLabel}>{t('screens.practice.memoryGameScreen.found')}</Text>
               </View>
               <View style={styles.statItem}>
                 <Text style={styles.statValue}>{moves}</Text>
-                <Text style={styles.statLabel}>Moves</Text>
+                <Text style={styles.statLabel}>{t('screens.practice.memoryGameScreen.moves')}</Text>
               </View>
               <View style={styles.statItem}>
                 <TouchableOpacity 
                   style={styles.totalContainer}
                   onPress={() => setShowDropdown(!showDropdown)}
                   accessibilityRole="button"
-                  accessibilityLabel="Select number of pairs"
+                  accessibilityLabel={t('screens.practice.memoryGameScreen.selectNumberOfPairs')}
                 >
                   <Text style={styles.statValue}>{Math.min(numberOfPairs, allEntries.length)}</Text>
                   <Text style={styles.dropdownArrow}>▼</Text>
                 </TouchableOpacity>
-                <Text style={styles.statLabel}>Total</Text>
+                <Text style={styles.statLabel}>{t('screens.practice.memoryGameScreen.total')}</Text>
               </View>
             </View>
             
@@ -377,7 +379,7 @@ function MemoryGameScreen(): React.JSX.Element {
                       setShowDropdown(false);
                     }}
                     accessibilityRole="button"
-                    accessibilityLabel={`Select ${num} pairs`}
+                    accessibilityLabel={t('screens.practice.memoryGameScreen.selectPairs', { count: num })}
                   >
                     <Text style={[
                       styles.dropdownItemText,
@@ -406,9 +408,9 @@ function MemoryGameScreen(): React.JSX.Element {
           style={styles.resetButton} 
           onPress={() => prepareRound()} 
           accessibilityRole="button" 
-          accessibilityLabel="Restart game"
+          accessibilityLabel={t('screens.practice.memoryGameScreen.restartGame')}
         >
-           <Text style={styles.resetButtonText}>✨ New Game</Text>
+           <Text style={styles.resetButtonText}>{t('screens.practice.memoryGameScreen.newGame')}</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>

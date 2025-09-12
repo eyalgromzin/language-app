@@ -3,6 +3,7 @@ import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View, ScrollView
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import TTS from 'react-native-tts';
+import { useTranslation } from 'react-i18next';
 import { getTtsLangCode, playCorrectFeedback, playWrongFeedback } from '../common';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import AnimatedToast from '../../../components/AnimatedToast';
@@ -65,6 +66,7 @@ function sampleN<T>(arr: T[], n: number): T[] {
 }
 
 function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
+  const { t } = useTranslation();
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const RANDOM_GAME_ROUTES: string[] = [
@@ -469,7 +471,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
     return (
       <View style={styles.centered}>
         <ActivityIndicator size="large" color="#3b82f6" />
-        <Text style={styles.loadingText}>Loading practice...</Text>
+          <Text style={styles.loadingText}>{t('screens.practice.hearingPracticeScreen.loadingPractice')}</Text>
       </View>
     );
   }
@@ -480,7 +482,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
       return (
         <View style={styles.centered}>
           <ActivityIndicator size="large" color="#3b82f6" />
-          <Text style={styles.loadingText}>Preparing...</Text>
+          <Text style={styles.loadingText}>{t('screens.practice.hearingPracticeScreen.preparing')}</Text>
         </View>
       );
     }
@@ -496,14 +498,14 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
       >
         {!props.embedded ? (
           <View style={styles.topRow}>
-            <Text style={styles.title}>hearing practice</Text>
-            <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel="Skip">
-              <Text style={styles.skipButtonText}>Skip</Text>
+            <Text style={styles.title}>{t('screens.practice.hearingPracticeScreen.title')}</Text>
+            <TouchableOpacity style={styles.skipButton} onPress={route?.params?.surprise ? navigateToRandomNext : moveToNext} accessibilityRole="button" accessibilityLabel={t('screens.practice.hearingPracticeScreen.skip')}>
+              <Text style={styles.skipButtonText}>{t('screens.practice.hearingPracticeScreen.skip')}</Text>
             </TouchableOpacity>
           </View>
         ) : null}
 
-        <TouchableOpacity style={styles.speakerCard} onPress={() => speakCurrent(current.word)} accessibilityRole="button" accessibilityLabel="Play word">
+        <TouchableOpacity style={styles.speakerCard} onPress={() => speakCurrent(current.word)} accessibilityRole="button" accessibilityLabel={t('screens.practice.hearingPracticeScreen.playWord')}>
           <View style={styles.speakerIcon}>
             <View style={styles.speakerWaves}>
               <View style={[styles.wave, styles.wave1]} />
@@ -511,7 +513,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
               <View style={[styles.wave, styles.wave3]} />
             </View>
           </View>
-          <Text style={styles.speakerText}>Tap to hear</Text>
+          <Text style={styles.speakerText}>{t('screens.practice.hearingPracticeScreen.tapToHear')}</Text>
         </TouchableOpacity>
 
         <View style={styles.optionsWrap}>
@@ -542,7 +544,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
 
         {!props.embedded && revealCorrect ? (
           <TouchableOpacity style={styles.nextButton} onPress={() => prepareRound(allEntries)}>
-            <Text style={styles.nextButtonText}>Next</Text>
+            <Text style={styles.nextButtonText}>{t('screens.practice.hearingPracticeScreen.next')}</Text>
           </TouchableOpacity>
         ) : null}
       </ScrollView>

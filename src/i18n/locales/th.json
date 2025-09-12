@@ -116,7 +116,32 @@
       "showEligibleWords": "แสดงคำที่เหมาะสม",
       "eligibleWords": "คำที่เหมาะสม",
       "createSentence": "สร้างประโยค",
-      "continueToNextQuestion": "ดำเนินการต่อกับคำถามถัดไป"
+      "continueToNextQuestion": "ดำเนินการต่อกับคำถามถัดไป",
+      "memoryGameScreen": {
+        "title": "เกมความจำ",
+        "subtitle": "หาคู่คำที่ตรงกัน",
+        "found": "พบแล้ว",
+        "moves": "การเคลื่อนไหว",
+        "total": "รวม",
+        "newGame": "✨ เกมใหม่",
+        "skip": "ข้าม",
+        "skipToNextGame": "ข้ามไปเกมถัดไป",
+        "restartGame": "เริ่มเกมใหม่",
+        "selectNumberOfPairs": "เลือกจำนวนคู่",
+        "selectPairs": "เลือก {{count}} คู่",
+        "enterFullScreen": "เข้าสู่โหมดเต็มหน้าจอ",
+        "exitFullScreen": "ออกจากโหมดเต็มหน้าจอ",
+        "hiddenCard": "การ์ดที่ซ่อนอยู่"
+      },
+      "hearingPracticeScreen": {
+        "title": "ฝึกฟัง",
+        "skip": "ข้าม",
+        "playWord": "เล่นคำ",
+        "tapToHear": "แตะเพื่อฟัง",
+        "next": "ถัดไป",
+        "loadingPractice": "กำลังโหลดการฝึก...",
+        "preparing": "กำลังเตรียม..."
+      }
     },
     "library": {
       "title": "ห้องสมุด",

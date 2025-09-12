@@ -117,7 +117,32 @@
       "showEligibleWords": "Afficher les mots éligibles",
       "eligibleWords": "mots éligibles",
       "createSentence": "créer la phrase",
-      "continueToNextQuestion": "Continuer à la question suivante"
+      "continueToNextQuestion": "Continuer à la question suivante",
+      "memoryGameScreen": {
+        "title": "Jeu de Mémoire",
+        "subtitle": "Trouvez les paires de mots correspondantes",
+        "found": "Trouvés",
+        "moves": "Mouvements",
+        "total": "Total",
+        "newGame": "✨ Nouveau Jeu",
+        "skip": "Passer",
+        "skipToNextGame": "Passer au jeu suivant",
+        "restartGame": "Redémarrer le jeu",
+        "selectNumberOfPairs": "Sélectionner le nombre de paires",
+        "selectPairs": "Sélectionner {{count}} paires",
+        "enterFullScreen": "Entrer en plein écran",
+        "exitFullScreen": "Quitter le plein écran",
+        "hiddenCard": "carte cachée"
+      },
+      "hearingPracticeScreen": {
+        "title": "Pratique Auditive",
+        "skip": "Passer",
+        "playWord": "Jouer le mot",
+        "tapToHear": "Appuyez pour entendre",
+        "next": "Suivant",
+        "loadingPractice": "Chargement de la pratique...",
+        "preparing": "Préparation..."
+      }
     },
     "library": {
       "title": "Bibliothèque",

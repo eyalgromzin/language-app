@@ -116,7 +116,32 @@
       "showEligibleWords": "Hiển thị từ phù hợp",
       "eligibleWords": "từ phù hợp",
       "createSentence": "tạo câu",
-      "continueToNextQuestion": "Tiếp tục đến câu hỏi tiếp theo"
+      "continueToNextQuestion": "Tiếp tục đến câu hỏi tiếp theo",
+      "memoryGameScreen": {
+        "title": "Trò Chơi Trí Nhớ",
+        "subtitle": "Tìm các cặp từ khớp nhau",
+        "found": "Đã tìm",
+        "moves": "Lượt đi",
+        "total": "Tổng",
+        "newGame": "✨ Trò Chơi Mới",
+        "skip": "Bỏ qua",
+        "skipToNextGame": "Bỏ qua đến trò chơi tiếp theo",
+        "restartGame": "Khởi động lại trò chơi",
+        "selectNumberOfPairs": "Chọn số cặp",
+        "selectPairs": "Chọn {{count}} cặp",
+        "enterFullScreen": "Vào chế độ toàn màn hình",
+        "exitFullScreen": "Thoát chế độ toàn màn hình",
+        "hiddenCard": "thẻ ẩn"
+      },
+      "hearingPracticeScreen": {
+        "title": "Luyện Nghe",
+        "skip": "Bỏ qua",
+        "playWord": "Phát từ",
+        "tapToHear": "Chạm để nghe",
+        "next": "Tiếp theo",
+        "loadingPractice": "Đang tải luyện tập...",
+        "preparing": "Đang chuẩn bị..."
+      }
     },
     "library": {
       "title": "Thư Viện",

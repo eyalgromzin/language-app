@@ -116,7 +116,32 @@
       "showEligibleWords": "Показати придатні слова",
       "eligibleWords": "придатні слова",
       "createSentence": "створити речення",
-      "continueToNextQuestion": "Перейти до наступного питання"
+      "continueToNextQuestion": "Перейти до наступного питання",
+      "memoryGameScreen": {
+        "title": "Гра на Пам'ять",
+        "subtitle": "Знайдіть відповідні пари слів",
+        "found": "Знайдено",
+        "moves": "Ходи",
+        "total": "Всього",
+        "newGame": "✨ Нова Гра",
+        "skip": "Пропустити",
+        "skipToNextGame": "Пропустити до наступної гри",
+        "restartGame": "Перезапустити гру",
+        "selectNumberOfPairs": "Вибрати кількість пар",
+        "selectPairs": "Вибрати {{count}} пар",
+        "enterFullScreen": "Увійти в повноекранний режим",
+        "exitFullScreen": "Вийти з повноекранного режиму",
+        "hiddenCard": "прихована карта"
+      },
+      "hearingPracticeScreen": {
+        "title": "Практика Слухання",
+        "skip": "Пропустити",
+        "playWord": "Відтворити слово",
+        "tapToHear": "Натисніть, щоб почути",
+        "next": "Далі",
+        "loadingPractice": "Завантаження практики...",
+        "preparing": "Підготовка..."
+      }
     },
     "library": {
       "title": "Бібліотека",

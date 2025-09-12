@@ -116,7 +116,32 @@
       "showEligibleWords": "Pokaż odpowiednie słowa",
       "eligibleWords": "odpowiednie słowa",
       "createSentence": "stwórz zdanie",
-      "continueToNextQuestion": "Przejdź do następnego pytania"
+      "continueToNextQuestion": "Przejdź do następnego pytania",
+      "memoryGameScreen": {
+        "title": "Gra Pamięciowa",
+        "subtitle": "Znajdź pasujące pary słów",
+        "found": "Znalezione",
+        "moves": "Ruchy",
+        "total": "Razem",
+        "newGame": "✨ Nowa Gra",
+        "skip": "Pomiń",
+        "skipToNextGame": "Pomiń do następnej gry",
+        "restartGame": "Uruchom ponownie grę",
+        "selectNumberOfPairs": "Wybierz liczbę par",
+        "selectPairs": "Wybierz {{count}} par",
+        "enterFullScreen": "Wejdź w tryb pełnoekranowy",
+        "exitFullScreen": "Wyjdź z trybu pełnoekranowego",
+        "hiddenCard": "ukryta karta"
+      },
+      "hearingPracticeScreen": {
+        "title": "Ćwiczenie Słuchowe",
+        "skip": "Pomiń",
+        "playWord": "Odtwórz słowo",
+        "tapToHear": "Dotknij, aby usłyszeć",
+        "next": "Dalej",
+        "loadingPractice": "Ładowanie ćwiczenia...",
+        "preparing": "Przygotowywanie..."
+      }
     },
     "library": {
       "title": "Biblioteka",

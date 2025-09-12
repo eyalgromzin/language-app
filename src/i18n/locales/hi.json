@@ -116,7 +116,32 @@
       "showEligibleWords": "योग्य शब्द दिखाएं",
       "eligibleWords": "योग्य शब्द",
       "createSentence": "वाक्य बनाएं",
-      "continueToNextQuestion": "अगले प्रश्न पर जारी रखें"
+      "continueToNextQuestion": "अगले प्रश्न पर जारी रखें",
+      "memoryGameScreen": {
+        "title": "मेमोरी गेम",
+        "subtitle": "मिलान करने वाले शब्द जोड़े खोजें",
+        "found": "मिले",
+        "moves": "चालें",
+        "total": "कुल",
+        "newGame": "✨ नया गेम",
+        "skip": "छोड़ें",
+        "skipToNextGame": "अगले गेम पर जाएं",
+        "restartGame": "गेम पुनः आरंभ करें",
+        "selectNumberOfPairs": "जोड़ों की संख्या चुनें",
+        "selectPairs": "{{count}} जोड़े चुनें",
+        "enterFullScreen": "पूर्ण स्क्रीन में जाएं",
+        "exitFullScreen": "पूर्ण स्क्रीन से बाहर निकलें",
+        "hiddenCard": "छुपा हुआ कार्ड"
+      },
+      "hearingPracticeScreen": {
+        "title": "सुनने का अभ्यास",
+        "skip": "छोड़ें",
+        "playWord": "शब्द बजाएं",
+        "tapToHear": "सुनने के लिए टैप करें",
+        "next": "अगला",
+        "loadingPractice": "अभ्यास लोड हो रहा है...",
+        "preparing": "तैयारी हो रही है..."
+      }
     },
     "library": {
       "title": "पुस्तकालय",

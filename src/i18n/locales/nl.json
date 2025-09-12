@@ -116,7 +116,32 @@
       "showEligibleWords": "Geschikte woorden tonen",
       "eligibleWords": "geschikte woorden",
       "createSentence": "de zin maken",
-      "continueToNextQuestion": "Doorgaan naar de volgende vraag"
+      "continueToNextQuestion": "Doorgaan naar de volgende vraag",
+      "memoryGameScreen": {
+        "title": "Geheugenspel",
+        "subtitle": "Vind bijpassende woordparen",
+        "found": "Gevonden",
+        "moves": "Zetten",
+        "total": "Totaal",
+        "newGame": "✨ Nieuw Spel",
+        "skip": "Overslaan",
+        "skipToNextGame": "Overslaan naar volgend spel",
+        "restartGame": "Spel herstarten",
+        "selectNumberOfPairs": "Selecteer aantal paren",
+        "selectPairs": "Selecteer {{count}} paren",
+        "enterFullScreen": "Volledig scherm ingaan",
+        "exitFullScreen": "Volledig scherm verlaten",
+        "hiddenCard": "verborgen kaart"
+      },
+      "hearingPracticeScreen": {
+        "title": "Luister Oefening",
+        "skip": "Overslaan",
+        "playWord": "Speel woord af",
+        "tapToHear": "Tik om te horen",
+        "next": "Volgende",
+        "loadingPractice": "Oefening laden...",
+        "preparing": "Voorbereiden..."
+      }
     },
     "library": {
       "title": "Bibliotheek",

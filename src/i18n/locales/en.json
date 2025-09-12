@@ -117,7 +117,32 @@
       "showEligibleWords": "Show eligible words",
       "eligibleWords": "eligible words",
       "createSentence": "create the sentence",
-      "continueToNextQuestion": "Continue to next question"
+      "continueToNextQuestion": "Continue to next question",
+      "memoryGameScreen": {
+        "title": "Memory Game",
+        "subtitle": "Find matching word pairs",
+        "found": "Found",
+        "moves": "Moves",
+        "total": "Total",
+        "newGame": "✨ New Game",
+        "skip": "Skip",
+        "skipToNextGame": "Skip to next game",
+        "restartGame": "Restart game",
+        "selectNumberOfPairs": "Select number of pairs",
+        "selectPairs": "Select {{count}} pairs",
+        "enterFullScreen": "Enter full screen",
+        "exitFullScreen": "Exit full screen",
+        "hiddenCard": "hidden card"
+      },
+      "hearingPracticeScreen": {
+        "title": "Hearing Practice",
+        "skip": "Skip",
+        "playWord": "Play word",
+        "tapToHear": "Tap to hear",
+        "next": "Next",
+        "loadingPractice": "Loading practice...",
+        "preparing": "Preparing..."
+      }
     },
     "library": {
       "title": "Library",

@@ -116,7 +116,32 @@
       "showEligibleWords": "Visa berättigade ord",
       "eligibleWords": "berättigade ord",
       "createSentence": "skapa meningen",
-      "continueToNextQuestion": "Fortsätt till nästa fråga"
+      "continueToNextQuestion": "Fortsätt till nästa fråga",
+      "memoryGameScreen": {
+        "title": "Minnes Spel",
+        "subtitle": "Hitta matchande ordpar",
+        "found": "Hittade",
+        "moves": "Drag",
+        "total": "Totalt",
+        "newGame": "✨ Nytt Spel",
+        "skip": "Hoppa över",
+        "skipToNextGame": "Hoppa över till nästa spel",
+        "restartGame": "Starta om spelet",
+        "selectNumberOfPairs": "Välj antal par",
+        "selectPairs": "Välj {{count}} par",
+        "enterFullScreen": "Gå till helskärm",
+        "exitFullScreen": "Avsluta helskärm",
+        "hiddenCard": "dold kort"
+      },
+      "hearingPracticeScreen": {
+        "title": "Hörövning",
+        "skip": "Hoppa över",
+        "playWord": "Spela upp ord",
+        "tapToHear": "Tryck för att höra",
+        "next": "Nästa",
+        "loadingPractice": "Laddar övning...",
+        "preparing": "Förbereder..."
+      }
     },
     "library": {
       "title": "Bibliotek",

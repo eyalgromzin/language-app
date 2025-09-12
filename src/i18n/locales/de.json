@@ -117,7 +117,32 @@
       "showEligibleWords": "Eligible Wörter anzeigen",
       "eligibleWords": "eligible Wörter",
       "createSentence": "den Satz erstellen",
-      "continueToNextQuestion": "Zur nächsten Frage fortfahren"
+      "continueToNextQuestion": "Zur nächsten Frage fortfahren",
+      "memoryGameScreen": {
+        "title": "Gedächtnisspiel",
+        "subtitle": "Finden Sie passende Wortpaare",
+        "found": "Gefunden",
+        "moves": "Züge",
+        "total": "Gesamt",
+        "newGame": "✨ Neues Spiel",
+        "skip": "Überspringen",
+        "skipToNextGame": "Zum nächsten Spiel springen",
+        "restartGame": "Spiel neu starten",
+        "selectNumberOfPairs": "Anzahl der Paare auswählen",
+        "selectPairs": "{{count}} Paare auswählen",
+        "enterFullScreen": "Vollbild eingeben",
+        "exitFullScreen": "Vollbild verlassen",
+        "hiddenCard": "versteckte Karte"
+      },
+      "hearingPracticeScreen": {
+        "title": "Hörübung",
+        "skip": "Überspringen",
+        "playWord": "Wort abspielen",
+        "tapToHear": "Tippen zum Hören",
+        "next": "Weiter",
+        "loadingPractice": "Übung wird geladen...",
+        "preparing": "Vorbereitung..."
+      }
     },
     "library": {
       "title": "Bibliothek",

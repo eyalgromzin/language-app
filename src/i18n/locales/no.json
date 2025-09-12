@@ -116,7 +116,32 @@
       "showEligibleWords": "Vis kvalifiserte ord",
       "eligibleWords": "kvalifiserte ord",
       "createSentence": "lage setningen",
-      "continueToNextQuestion": "Fortsett til neste spørsmål"
+      "continueToNextQuestion": "Fortsett til neste spørsmål",
+      "memoryGameScreen": {
+        "title": "Minne Spill",
+        "subtitle": "Finn matchende ordpar",
+        "found": "Funnet",
+        "moves": "Trekk",
+        "total": "Totalt",
+        "newGame": "✨ Nytt Spill",
+        "skip": "Hopp over",
+        "skipToNextGame": "Hopp over til neste spill",
+        "restartGame": "Start spillet på nytt",
+        "selectNumberOfPairs": "Velg antall par",
+        "selectPairs": "Velg {{count}} par",
+        "enterFullScreen": "Gå til fullskjerm",
+        "exitFullScreen": "Avslutt fullskjerm",
+        "hiddenCard": "skjult kort"
+      },
+      "hearingPracticeScreen": {
+        "title": "Høre Øvelse",
+        "skip": "Hopp over",
+        "playWord": "Spill av ord",
+        "tapToHear": "Trykk for å høre",
+        "next": "Neste",
+        "loadingPractice": "Laster øvelse...",
+        "preparing": "Forbereder..."
+      }
     },
     "library": {
       "title": "Bibliotek",

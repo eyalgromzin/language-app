@@ -116,7 +116,32 @@
       "showEligibleWords": "Εμφάνιση επιλέξιμων λέξεων",
       "eligibleWords": "επιλέξιμες λέξεις",
       "createSentence": "δημιουργήστε την πρόταση",
-      "continueToNextQuestion": "Συνέχεια στην επόμενη ερώτηση"
+      "continueToNextQuestion": "Συνέχεια στην επόμενη ερώτηση",
+      "memoryGameScreen": {
+        "title": "Παιχνίδι Μνήμης",
+        "subtitle": "Βρείτε ταιριαστά ζεύγη λέξεων",
+        "found": "Βρέθηκαν",
+        "moves": "Κινήσεις",
+        "total": "Σύνολο",
+        "newGame": "✨ Νέο Παιχνίδι",
+        "skip": "Παράλειψη",
+        "skipToNextGame": "Παράλειψη στο επόμενο παιχνίδι",
+        "restartGame": "Επανεκκίνηση παιχνιδιού",
+        "selectNumberOfPairs": "Επιλέξτε αριθμό ζευγών",
+        "selectPairs": "Επιλέξτε {{count}} ζεύγη",
+        "enterFullScreen": "Είσοδος σε πλήρη οθόνη",
+        "exitFullScreen": "Έξοδος από πλήρη οθόνη",
+        "hiddenCard": "κρυφή κάρτα"
+      },
+      "hearingPracticeScreen": {
+        "title": "Πρακτική Ακοής",
+        "skip": "Παράλειψη",
+        "playWord": "Αναπαραγωγή λέξης",
+        "tapToHear": "Πατήστε για να ακούσετε",
+        "next": "Επόμενο",
+        "loadingPractice": "Φόρτωση πρακτικής...",
+        "preparing": "Προετοιμασία..."
+      }
     },
     "library": {
       "title": "Βιβλιοθήκη",
