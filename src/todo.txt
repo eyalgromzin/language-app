@@ -1,5 +1,7 @@
 save to favourites should not check only domain - should normalize url , decode it , and check it doesnt exist    
 
+- on save favourite , disable the option to add javascript to make it secure 
+
 publish app =======================================================================================================================
 
 - payed version - when ill have 1000 users 

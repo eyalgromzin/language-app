@@ -210,6 +210,24 @@ function VideoScreen(): React.JSX.Element {
 
   const normalizeYouTubeUrl = React.useCallback(normalizeYouTubeUrlUtil, []);
 
+  const validateLevel = (l?: string | number | null): string => {
+    const LEVELS = ['easy','easy-medium','medium','medium-hard','hard'] as const;
+    if (typeof l === 'number') {
+      const byIndex = LEVELS[Math.max(0, Math.min(LEVELS.length - 1, l - 1))];
+      return byIndex || 'easy';
+    }
+    const v = (l || '').toLowerCase().trim();
+    return (LEVELS as readonly string[]).includes(v) ? v : 'easy';
+  };
+
+  const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
+    const v = (input || '').toLowerCase().trim();
+    if (v === 'es' || v === 'spanish') return 'es';
+    if (v === 'en' || v === 'english') return 'en';
+    if (v === 'español') return 'es';
+    return 'en';
+  };
+
   React.useEffect(() => {
     let mounted = true;
     (async () => {
@@ -348,7 +366,20 @@ function VideoScreen(): React.JSX.Element {
       ...favourites.filter((f) => f.url !== normalized),
     ].slice(0, 200);
     await saveFavourites(next);
-  }, [normalizeYouTubeUrl, currentVideoTitle, favourites, saveFavourites]);
+    
+    // Also add to library if learning language is available
+    if (learningLanguage) {
+      try {
+        const lang = toLanguageSymbol(learningLanguage);
+        const safeLevel = levelName ? validateLevel(levelName) : 'easy';
+        
+        await addLibraryUrl(normalized, typeName, safeLevel, safeName, lang, 'video');
+      } catch (libraryError) {
+        console.error('Failed to add URL to library:', libraryError);
+        // Don't fail the entire operation if library addition fails
+      }
+    }
+  }, [normalizeYouTubeUrl, currentVideoTitle, favourites, saveFavourites, learningLanguage]);
 
   const removeFromFavourites = React.useCallback(async (favUrl: string) => {
     if (!favUrl) return;

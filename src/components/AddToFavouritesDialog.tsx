@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTranslation } from '../hooks/useTranslation';
 import { FAVOURITE_TYPES } from '../common';
 import harmfulWordsService from '../services/harmfulWordsService';
+import { addLibraryUrl as addUrlToLibrary } from '../config/api';
 
 export interface FavouriteItem {
   url: string;
@@ -161,6 +162,20 @@ const AddToFavouritesDialog: React.FC<AddToFavouritesDialogProps> = ({
       
       // Save back to storage
       await AsyncStorage.setItem(storageKey, JSON.stringify(next));
+      
+      // Also add to library if learning language is available
+      if (learningLanguage) {
+        try {
+          const lang = toLanguageSymbol(learningLanguage);
+          const safeLevel = levelName ? validateLevel(levelName) : 'easy';
+          const media = storageKey === 'video.favourites' ? 'video' : 'web';
+          
+          await addUrlToLibrary(normalized, typeName, safeLevel, safeName, lang, media);
+        } catch (libraryError) {
+          console.error('Failed to add URL to library:', libraryError);
+          // Don't fail the entire operation if library addition fails
+        }
+      }
     } catch (error) {
       console.error('Failed to save favourites:', error);
     }

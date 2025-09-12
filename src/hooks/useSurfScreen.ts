@@ -192,6 +192,14 @@ export const useSurfScreen = () => {
     return (LEVELS as readonly string[]).includes(v) ? v : 'easy';
   };
 
+  const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
+    const v = (input || '').toLowerCase().trim();
+    if (v === 'es' || v === 'spanish') return 'es';
+    if (v === 'en' || v === 'english') return 'en';
+    if (v === 'español') return 'es';
+    return 'en';
+  };
+
   const saveDomain = async (domain: string) => {
     const normalized = (domain || '').toLowerCase().replace(/^www\./, '');
     if (!normalized) return;
@@ -299,6 +307,19 @@ export const useSurfScreen = () => {
       ...favourites.filter((f) => f.url !== normalized),
     ].slice(0, 200);
     await saveFavourites(next);
+    
+    // Also add to library if learning language is available
+    if (learningLanguage) {
+      try {
+        const lang = toLanguageSymbol(learningLanguage);
+        const safeLevel = levelName ? validateLevel(levelName) : 'easy';
+        
+        await addLibraryUrl(normalized, typeName, safeLevel, safeName, lang, 'web');
+      } catch (libraryError) {
+        console.error('Failed to add URL to library:', libraryError);
+        // Don't fail the entire operation if library addition fails
+      }
+    }
   };
 
   const removeFromFavourites = async (url: string) => {
