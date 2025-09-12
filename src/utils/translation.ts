@@ -81,7 +81,13 @@ const schedulePersist = (): void => {
 export const getLangCode = (nameOrNull: string | null | undefined, languageMappings: Record<string, string>): string | null => {
   if (!nameOrNull) return null;
   
-  // First try exact match
+  // First check if nameOrNull is already a language code
+  const values = Object.values(languageMappings);
+  if (values.includes(nameOrNull)) {
+    return nameOrNull;
+  }
+  
+  // Then try exact match as a language name
   let code = languageMappings[nameOrNull];
   if (typeof code === 'string') return code;
   
