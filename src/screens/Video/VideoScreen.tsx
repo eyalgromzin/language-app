@@ -22,6 +22,7 @@ import harmfulWordsService from '../../services/harmfulWordsService';
 import { useLoginGate } from '../../contexts/LoginGateContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTranslation } from '../../hooks/useTranslation';
+import { useLanguage } from '../../contexts/LanguageContext';
 import wordCountService from '../../services/wordCountService';
 import { 
   upsertVideoNowPlaying, 
@@ -164,11 +165,10 @@ function VideoScreen(): React.JSX.Element {
   const { showLoginGate } = useLoginGate();
   const { isAuthenticated } = useAuth();
   const { t } = useTranslation();
+  const { learningLanguage, nativeLanguage } = useLanguage();
   const [inputUrl, setInputUrl] = React.useState<string>('');
   const [url, setUrl] = React.useState<string>('');
   const videoId = React.useMemo(() => extractYouTubeVideoId(url) ?? '', [url]);
-  const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
-  const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
   const [transcript, setTranscript] = React.useState<Array<{ text: string; duration: number; offset: number }>>([]);
   const [loadingTranscript, setLoadingTranscript] = React.useState<boolean>(false);
   const [transcriptError, setTranscriptError] = React.useState<string | null>(null);
@@ -443,25 +443,6 @@ function VideoScreen(): React.JSX.Element {
 
   const lastUpsertedUrlRef = React.useRef<string | null>(null);
 
-  React.useEffect(() => {
-    let mounted = true;
-    (async () => {
-      try {
-        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
-        if (!mounted) return;
-        const map = Object.fromEntries(entries);
-        setLearningLanguage(map['language.learning'] ?? null);
-        setNativeLanguage(map['language.native'] ?? null);
-      } catch {
-        if (!mounted) return;
-        setLearningLanguage(null);
-        setNativeLanguage(null);
-      }
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, []);
 
   const mapLanguageNameToYoutubeCode = React.useCallback(mapLanguageNameToYoutubeCodeUtil, []);
 

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Pressable, Alert, ScrollView, SafeAreaView, Act
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
 import { useAuth } from '../../contexts/AuthContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { languagesService } from '../../services/languages';
 import { useTranslation } from '../../hooks/useTranslation';
 import { getLanguageCodeFromName, getLanguageNameFromCode } from '../../i18n';
@@ -11,13 +12,17 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 function SettingsScreen(): React.JSX.Element {
   const { logout } = useAuth();
   const { t, changeLanguage, getCurrentLanguage } = useTranslation();
-  const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
-  const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
+  const { 
+    learningLanguage, 
+    nativeLanguage, 
+    setLearningLanguage, 
+    setNativeLanguage,
+    isLoading: isLoadingLanguages 
+  } = useLanguage();
   const [uiLanguage, setUILanguage] = React.useState<string>('en');
   const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [languageOptions, setLanguageOptions] = React.useState<string[]>([]);
-  const [isLoadingLanguages, setIsLoadingLanguages] = React.useState(true);
 
   React.useEffect(() => {
     let mounted = true;
@@ -27,12 +32,10 @@ function SettingsScreen(): React.JSX.Element {
         const languages = await languagesService.getLanguageNames();
         if (!mounted) return;
         setLanguageOptions(languages);
-        setIsLoadingLanguages(false);
       } catch (error) {
         if (!mounted) return;
         console.error('Error fetching languages:', error);
         setLanguageOptions([]);
-        setIsLoadingLanguages(false);
       }
     })();
     return () => {
@@ -45,34 +48,13 @@ function SettingsScreen(): React.JSX.Element {
     (async () => {
       try {
         const entries = await AsyncStorage.multiGet([
-          'language.learning',
-          'language.native',
           'ui.language',
           'words.removeAfterNCorrect',
           'words.removeAfterTotalCorrect',
         ]);
         if (!mounted) return;
         const map = Object.fromEntries(entries);
-        const learningRaw = map['language.learning'];
-        const nativeRaw = map['language.native'];
         const uiLanguageRaw = map['ui.language'];
-        
-        // Convert stored symbols to display names
-        let learningVal = null;
-        let nativeVal = null;
-        
-        if (typeof learningRaw === 'string' && learningRaw.trim().length > 0) {
-          const language = await languagesService.getLanguageBySymbol(learningRaw);
-          learningVal = language?.name ? language.name.charAt(0).toUpperCase() + language.name.slice(1) : learningRaw;
-        }
-        
-        if (typeof nativeRaw === 'string' && nativeRaw.trim().length > 0) {
-          const language = await languagesService.getLanguageBySymbol(nativeRaw);
-          nativeVal = language?.name ? language.name.charAt(0).toUpperCase() + language.name.slice(1) : nativeRaw;
-        }
-        
-        setLearningLanguage(learningVal);
-        setNativeLanguage(nativeVal);
         
         // Set UI language
         if (typeof uiLanguageRaw === 'string' && uiLanguageRaw.trim().length > 0) {
@@ -91,8 +73,6 @@ function SettingsScreen(): React.JSX.Element {
         setRemoveAfterTotalCorrect(validTotal);
       } catch {
         if (!mounted) return;
-        setLearningLanguage(null);
-        setNativeLanguage(null);
         setUILanguage('en');
         setRemoveAfterCorrect(3);
         setRemoveAfterTotalCorrect(6);
@@ -105,32 +85,12 @@ function SettingsScreen(): React.JSX.Element {
 
   const onChangeLearning = async (value: string) => {
     const v = typeof value === 'string' && value.trim().length > 0 ? value : null;
-    setLearningLanguage(v);
-    try {
-      if (v) {
-        // Find the language by display name and store the symbol
-        const language = await languagesService.getLanguageByName(v);
-        const symbolToStore = language?.symbol || v;
-        await AsyncStorage.setItem('language.learning', symbolToStore);
-      } else {
-        await AsyncStorage.removeItem('language.learning');
-      }
-    } catch {}
+    await setLearningLanguage(v);
   };
 
   const onChangeNative = async (value: string) => {
     const v = typeof value === 'string' && value.trim().length > 0 ? value : null;
-    setNativeLanguage(v);
-    try {
-      if (v) {
-        // Find the language by display name and store the symbol
-        const language = await languagesService.getLanguageByName(v);
-        const symbolToStore = language?.symbol || v;
-        await AsyncStorage.setItem('language.native', symbolToStore);
-      } else {
-        await AsyncStorage.removeItem('language.native');
-      }
-    } catch {}
+    await setNativeLanguage(v);
   };
 
   const onChangeUILanguage = async (value: string) => {

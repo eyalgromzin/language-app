@@ -11,6 +11,7 @@ import ImageScrapeWebView from '../../components/Surf/ImageScrapeWebView';
 import { useSurfScreen } from '../../hooks/useSurfScreen';
 import { useTranslationAndImages } from '../../hooks/useTranslationAndImages';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { baseInjection, imageScrapeInjection } from '../../constants/webViewInjections';
 import harmfulWordsService from '../../services/harmfulWordsService';
 import linkingService from '../../services/linkingService';
@@ -23,6 +24,9 @@ function SurfScreen(): React.JSX.Element {
   // Get language mappings for translation
   const { languageMappings } = useLanguageMappings();
   
+  // Get languages from context
+  const { learningLanguage, nativeLanguage } = useLanguage();
+  
   // Use custom hooks for business logic
   const {
     addressText,
@@ -31,8 +35,6 @@ function SurfScreen(): React.JSX.Element {
     setCurrentUrl,
     canGoBack,
     setCanGoBack,
-    learningLanguage,
-    nativeLanguage,
     favourites,
     showFavouritesList,
     setShowFavouritesList,

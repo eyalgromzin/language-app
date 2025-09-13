@@ -13,6 +13,7 @@ import { AuthProvider, useAuth } from './src/contexts/AuthContext';
 import { WordCategoriesProvider } from './src/contexts/WordCategoriesContext';
 import { LanguageMappingsProvider } from './src/contexts/LanguageMappingsContext';
 import { LoginGateProvider } from './src/contexts/LoginGateContext';
+import { LanguageProvider } from './src/contexts/LanguageContext';
 import { initializeLanguage } from './src/i18n';
 import { useTranslation } from './src/hooks/useTranslation';
 import HomeScreen from './src/screens/Home/HomeScreen';
@@ -540,14 +541,16 @@ function App(): React.JSX.Element {
 
   return (
     <AuthProvider>
-      <WordCategoriesProvider>
-        <LanguageMappingsProvider>
-          <LoginGateProvider>
-            <AppNavigator />
-            <LoginGateModal />
-          </LoginGateProvider>
-        </LanguageMappingsProvider>
-      </WordCategoriesProvider>
+      <LanguageProvider>
+        <WordCategoriesProvider>
+          <LanguageMappingsProvider>
+            <LoginGateProvider>
+              <AppNavigator />
+              <LoginGateModal />
+            </LoginGateProvider>
+          </LanguageMappingsProvider>
+        </WordCategoriesProvider>
+      </LanguageProvider>
     </AuthProvider>
   );
 }

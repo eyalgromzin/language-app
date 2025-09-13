@@ -6,6 +6,7 @@ import { WebView } from 'react-native-webview';
 import harmfulWordsService from '../services/harmfulWordsService';
 import { addUrlToLibrary } from '../config/api';
 import { FAVOURITE_TYPES } from '../common';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
 
@@ -16,12 +17,13 @@ export const useSurfScreen = () => {
   const initialUrlFromParams: string | undefined = typeof route?.params?.url === 'string' ? route.params.url : undefined;
   const defaultHomepage = 'https://cnnespanol.cnn.com/';
   
+  // Get languages from context
+  const { learningLanguage, nativeLanguage } = useLanguage();
+  
   // State
   const [addressText, setAddressText] = React.useState<string>(initialUrlFromParams || defaultHomepage);
   const [currentUrl, setCurrentUrl] = React.useState<string>(initialUrlFromParams || defaultHomepage);
   const [canGoBack, setCanGoBack] = React.useState<boolean>(false);
-  const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
-  const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
   const [favourites, setFavourites] = React.useState<FavouriteItem[]>([]);
   const [showFavouritesList, setShowFavouritesList] = React.useState<boolean>(false);
   const [showAddFavouriteModal, setShowAddFavouriteModal] = React.useState<boolean>(false);
@@ -48,26 +50,6 @@ export const useSurfScreen = () => {
   const FAVOURITES_KEY = 'surf.favourites';
   const HOMEPAGE_KEY = 'surf.homepage';
 
-  // Load languages on mount
-  React.useEffect(() => {
-    let mounted = true;
-    (async () => {
-      try {
-        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
-        if (!mounted) return;
-        const map = Object.fromEntries(entries);
-        setLearningLanguage(map['language.learning'] ?? null);
-        setNativeLanguage(map['language.native'] ?? null);
-      } catch {
-        if (!mounted) return;
-        setLearningLanguage(null);
-        setNativeLanguage(null);
-      }
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, []);
 
   // Load saved domains
   React.useEffect(() => {
@@ -467,8 +449,6 @@ export const useSurfScreen = () => {
     setCurrentUrl,
     canGoBack,
     setCanGoBack,
-    learningLanguage,
-    nativeLanguage,
     favourites,
     showFavouritesList,
     setShowFavouritesList,

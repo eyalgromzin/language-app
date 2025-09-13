@@ -13,6 +13,7 @@ import { getLibraryMeta, searchLibraryWithCriterias, addUrlToLibrary } from '../
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import { useLoginGate } from '../../contexts/LoginGateContext';
 import { useAuth } from '../../contexts/AuthContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import wordCountService from '../../services/wordCountService';
 import AddToFavouritesDialog from '../../components/AddToFavouritesDialog';
 
@@ -53,8 +54,7 @@ function BookReaderScreen(): React.JSX.Element {
 
   const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
 
-  const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
-  const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
+  const { learningLanguage, nativeLanguage } = useLanguage();
   const { languageMappings } = useLanguageMappings();
 
   const [imageScrape, setImageScrape] = React.useState<null | { url: string; word: string }>(null);
@@ -178,26 +178,6 @@ function BookReaderScreen(): React.JSX.Element {
     };
   }, [bookId]);
 
-  // Resolve languages into state for consistency with other screens
-  React.useEffect(() => {
-    let mounted = true;
-    (async () => {
-      try {
-        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
-        if (!mounted) return;
-        const map = Object.fromEntries(entries);
-        setLearningLanguage(map['language.learning'] ?? null);
-        setNativeLanguage(map['language.native'] ?? null);
-      } catch {
-        if (!mounted) return;
-        setLearningLanguage(null);
-        setNativeLanguage(null);
-      }
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, []);
 
   // Fetch library metadata for item types
   React.useEffect(() => {
