@@ -32,4 +32,11 @@ export class AppService {
     });
     return language?.name;
   }
+
+  // Startup data
+  async getStartupData(): Promise<{ support_email: string }> {
+    return {
+      support_email: 'eyalgromzin@gmail.com'
+    };
+  }
 }

@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import harmfulWordsService from '../services/harmfulWordsService';
+import { getStartupData } from '../config/api';
 
 interface AuthState {
   isLoading: boolean;
@@ -10,6 +11,7 @@ interface AuthState {
   userId: string | null;
   isSetupCompleted: boolean;
   hasCheckedAuth: boolean;
+  supportEmail: string | null;
 }
 
 interface AuthContextType extends AuthState {
@@ -38,6 +40,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     userId: null,
     isSetupCompleted: false,
     hasCheckedAuth: false,
+    supportEmail: null,
   });
 
   const checkAuthState = async () => {
@@ -53,6 +56,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       } catch (error) {
         console.log('[Auth] Failed to initialize harmful words service:', error);
         // Don't fail the auth check if harmful words service fails
+      }
+
+      // Fetch startup data (support email, etc.)
+      try {
+        console.log('[Auth] Fetching startup data...');
+        const startupData = await getStartupData();
+        console.log('[Auth] Startup data fetched successfully:', startupData);
+        setAuthState(prev => ({ ...prev, supportEmail: startupData.support_email }));
+      } catch (error) {
+        console.log('[Auth] Failed to fetch startup data:', error);
+        // Don't fail the auth check if startup data fetch fails
+        // Set a default support email as fallback
+        setAuthState(prev => ({ ...prev, supportEmail: 'support@hellolingo.app' }));
       }
       
       // Check AsyncStorage for stored login state and setup completion
@@ -110,7 +126,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
         // Auto login the user regardless of Google verification result
         console.log('[Auth] Auto login successful, setting auth state');
-        setAuthState({
+        setAuthState(prev => ({
+          ...prev,
           isLoading: false,
           isAuthenticated: true,
           userEmail: emailValue,
@@ -118,13 +135,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           userId: idValue || '',
           isSetupCompleted: isSetupCompletedValue,
           hasCheckedAuth: true,
-        });
+        }));
         return;
       }
 
       // User is not authenticated - auto-authenticate to skip login screen
       console.log('[Auth] No stored credentials found, auto-authenticating user to skip login');
-      setAuthState({
+      setAuthState(prev => ({
+        ...prev,
         isLoading: false,
         isAuthenticated: true,
         userEmail: 'auto@user.com',
@@ -132,13 +150,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         userId: 'auto-user-id',
         isSetupCompleted: true,
         hasCheckedAuth: true,
-      });
+      }));
     } catch (error) {
       console.log('[Auth] Error checking auth state:', error);
       // Clear any corrupted data
       await AsyncStorage.multiRemove(['user_logged_in', 'user_email', 'user_name', 'user_id']).catch(() => {});
       // Auto-authenticate to skip login screen even on error
-      setAuthState({
+      setAuthState(prev => ({
+        ...prev,
         isLoading: false,
         isAuthenticated: true,
         userEmail: 'auto@user.com',
@@ -146,7 +165,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         userId: 'auto-user-id',
         isSetupCompleted: true,
         hasCheckedAuth: true,
-      });
+      }));
     }
   };
 
@@ -163,7 +182,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         ['user_id', userId],
       ]);
 
-      setAuthState({
+      setAuthState(prev => ({
+        ...prev,
         isLoading: false,
         isAuthenticated: true,
         userEmail: email,
@@ -171,7 +191,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         userId: userId,
         isSetupCompleted: isSetupCompletedValue,
         hasCheckedAuth: true,
-      });
+      }));
 
       console.log('[Auth] Login state saved successfully');
     } catch (error) {
@@ -204,7 +224,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         'user_id'
       ]);
 
-      setAuthState({
+      setAuthState(prev => ({
+        ...prev,
         isLoading: false,
         isAuthenticated: false,
         userEmail: null,
@@ -212,7 +233,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         userId: null,
         isSetupCompleted: false,
         hasCheckedAuth: true,
-      });
+      }));
 
       console.log('[Auth] User signed out successfully');
     } catch (error) {

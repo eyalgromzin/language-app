@@ -22,6 +22,7 @@ export const API_CONFIG = {
     TRANSCRIPT: '/transcript',
     WORD_CATEGORY_BY_ID: '/word-categories', // Added for word categories
     REPORT_WEBSITE: '/report-website', // Added for reporting websites
+    STARTUP_DATA: '/startup-data', // Added for startup data
   }
 };
 
@@ -215,6 +216,11 @@ export const reportWebsite = async (url: string): Promise<any> => {
     method: 'POST',
     body: JSON.stringify({ url }),
   });
+};
+
+// Startup Data API
+export const getStartupData = async (): Promise<{ support_email: string }> => {
+  return apiRequest(API_CONFIG.ENDPOINTS.STARTUP_DATA);
 };
 
 // External APIs (not our server)

@@ -2,19 +2,21 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Linking, SafeAreaView, ScrollView, Alert } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useTranslation } from 'react-i18next';
-
-const SUPPORT_EMAIL = 'support@HelloLingo.app';
+import { useAuth } from '../../contexts/AuthContext';
 
 function ContactUsScreen(): React.JSX.Element {
   const { t } = useTranslation();
+  const { supportEmail } = useAuth();
+  
   const handleEmailPress = React.useCallback(() => {
+    const email = supportEmail || 'support@hellolingo.app';
     const subject = encodeURIComponent(t('screens.contactUs.emailSubject'));
     const body = encodeURIComponent(t('screens.contactUs.emailBody'));
-    const mailtoUrl = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}`;
     Linking.openURL(mailtoUrl).catch(() => {
       Alert.alert(t('common.error'), t('screens.contactUs.unableToOpenEmail'));
     });
-  }, [t]);
+  }, [t, supportEmail]);
 
   const handleWebsitePress = React.useCallback(() => {
     Linking.openURL('https://HelloLingo.app').catch(() => {
@@ -45,7 +47,7 @@ function ContactUsScreen(): React.JSX.Element {
               <Text style={styles.contactDescription}>
                 {t('screens.contactUs.emailDescription')}
               </Text>
-              <Text style={styles.contactValue}>{SUPPORT_EMAIL}</Text>
+              <Text style={styles.contactValue}>{supportEmail || 'support@hellolingo.app'}</Text>
             </View>
           </View>
           

@@ -88,5 +88,10 @@ export class AppController {
     return this.appService.createLanguage(languageData);
   }
 
+  @Get('startup-data')
+  async getStartupData(): Promise<{ support_email: string }> {
+    return this.appService.getStartupData();
+  }
+
   
 }
