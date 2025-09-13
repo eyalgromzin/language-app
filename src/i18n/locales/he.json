@@ -331,6 +331,7 @@
       "failedToReportWebsite": "דיווח על האתר נכשל",
       "invalidUrl": "כתובת לא תקינה",
       "addedToFavourites": "נוסף למועדפים",
+      "longPressToSelectWord": "לחץ לחיצה ארוכה כדי לבחור מילה בקישור",
       "accessibilityLabels": {
         "goBack": "חזור",
         "addToFavourites": "הוסף למועדפים",

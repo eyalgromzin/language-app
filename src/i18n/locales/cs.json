@@ -310,6 +310,34 @@
       "sendEmailAccessibility": "Odeslat e-mail podpory",
       "visitWebsiteAccessibility": "Navštívit web HelloLingo",
       "websiteUrl": "HelloLingo.app"
+    },
+    "surf": {
+      "searchPlaceholder": "Hledat nebo zadat URL webu",
+      "moreOptions": "Další možnosti",
+      "setHomepage": "Nastavit Domovskou Stránku",
+      "setHomepageSubtitle": "Nastavit aktuální stránku jako domovskou",
+      "favouritesList": "Seznam Oblíbených",
+      "favouritesListSubtitle": "Zobrazit uložené weby",
+      "sharePage": "Sdílet Stránku",
+      "sharePageSubtitle": "Sdílet tento web",
+      "reportWebsite": "Nahlásit Web",
+      "reportWebsiteSubtitle": "Nahlásit nevhodný obsah",
+      "noPageToShare": "Žádná stránka ke sdílení",
+      "failedToSharePage": "Sdílení stránky se nezdařilo",
+      "noPageToReport": "Žádná stránka k nahlášení",
+      "websiteReported": "Web Nahlášen",
+      "websiteReportedMessage": "Web byl nahlášen, kontrolujeme ho",
+      "failedToReportWebsite": "Nahlášení webu se nezdařilo",
+      "invalidUrl": "Neplatná URL",
+      "addedToFavourites": "Přidáno do oblíbených",
+      "longPressToSelectWord": "Dlouhým stiskem vyberte slovo v odkazu",
+      "accessibilityLabels": {
+        "goBack": "Zpět",
+        "addToFavourites": "Přidat do oblíbených",
+        "removeFromFavourites": "Odebrat z oblíbených",
+        "openLibrary": "Otevřít Knihovnu",
+        "moreOptions": "Další možnosti"
+      }
     }
   },
   "common": {

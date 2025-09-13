@@ -310,6 +310,34 @@
       "sendEmailAccessibility": "Skicka e-post för support",
       "visitWebsiteAccessibility": "Besök HelloLingo webbplats",
       "websiteUrl": "HelloLingo.app"
+    },
+    "surf": {
+      "searchPlaceholder": "Sök eller ange webbplats URL",
+      "moreOptions": "Fler alternativ",
+      "setHomepage": "Ställ in Startsida",
+      "setHomepageSubtitle": "Ställ in aktuell sida som startsida",
+      "favouritesList": "Favoritlista",
+      "favouritesListSubtitle": "Visa sparade webbplatser",
+      "sharePage": "Dela Sida",
+      "sharePageSubtitle": "Dela denna webbplats",
+      "reportWebsite": "Rapportera Webbplats",
+      "reportWebsiteSubtitle": "Rapportera olämpligt innehåll",
+      "noPageToShare": "Ingen sida att dela",
+      "failedToSharePage": "Misslyckades att dela sida",
+      "noPageToReport": "Ingen sida att rapportera",
+      "websiteReported": "Webbplats Rapporterad",
+      "websiteReportedMessage": "Webbplats rapporterad, vi kontrollerar den",
+      "failedToReportWebsite": "Misslyckades att rapportera webbplats",
+      "invalidUrl": "Ogiltig URL",
+      "addedToFavourites": "Tillagd i favoriter",
+      "longPressToSelectWord": "Håll ned för att välja ord i en länk",
+      "accessibilityLabels": {
+        "goBack": "Gå tillbaka",
+        "addToFavourites": "Lägg till i favoriter",
+        "removeFromFavourites": "Ta bort från favoriter",
+        "openLibrary": "Öppna Bibliotek",
+        "moreOptions": "Fler alternativ"
+      }
     }
   },
   "common": {

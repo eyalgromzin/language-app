@@ -310,6 +310,34 @@
       "sendEmailAccessibility": "Lähetä tukisähköposti",
       "visitWebsiteAccessibility": "Vieraile HelloLingo-verkkosivustolla",
       "websiteUrl": "HelloLingo.app"
+    },
+    "surf": {
+      "searchPlaceholder": "Hae tai syötä verkkosivun URL",
+      "moreOptions": "Lisää vaihtoehtoja",
+      "setHomepage": "Aseta Kotisivu",
+      "setHomepageSubtitle": "Aseta nykyinen sivu kotisivuksi",
+      "favouritesList": "Suosikkilista",
+      "favouritesListSubtitle": "Näytä tallennetut verkkosivut",
+      "sharePage": "Jaa Sivu",
+      "sharePageSubtitle": "Jaa tämä verkkosivu",
+      "reportWebsite": "Ilmoita Verkkosivu",
+      "reportWebsiteSubtitle": "Ilmoita sopimattomasta sisällöstä",
+      "noPageToShare": "Ei sivua jaettavaksi",
+      "failedToSharePage": "Sivun jakaminen epäonnistui",
+      "noPageToReport": "Ei sivua ilmoitettavaksi",
+      "websiteReported": "Verkkosivu Ilmoitettu",
+      "websiteReportedMessage": "Verkkosivu ilmoitettu, tarkistamme sitä",
+      "failedToReportWebsite": "Verkkosivun ilmoittaminen epäonnistui",
+      "invalidUrl": "Virheellinen URL",
+      "addedToFavourites": "Lisätty suosikkeihin",
+      "longPressToSelectWord": "Pidä painettuna valitaksesi sana linkissä",
+      "accessibilityLabels": {
+        "goBack": "Takaisin",
+        "addToFavourites": "Lisää suosikkeihin",
+        "removeFromFavourites": "Poista suosikeista",
+        "openLibrary": "Avaa Kirjasto",
+        "moreOptions": "Lisää vaihtoehtoja"
+      }
     }
   },
   "common": {

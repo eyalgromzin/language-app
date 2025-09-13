@@ -7,6 +7,7 @@ import { parseYandexImageUrlsFromHtml, fetchImageUrls as fetchImageUrlsCommon, t
 import TranslationPanel, { type TranslationPanelState } from '../components/TranslationPanel';
 import { useLoginGate } from '../contexts/LoginGateContext';
 import { useAuth } from '../contexts/AuthContext';
+import { useTranslation } from './useTranslation';
 import wordCountService from '../services/wordCountService';
 
 export const useTranslationAndImages = (
@@ -21,6 +22,7 @@ export const useTranslationAndImages = (
   const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
   const { showLoginGate } = useLoginGate();
   const { isAuthenticated } = useAuth();
+  const { t } = useTranslation();
 
   const extractClauseAroundWord = (sentence: string | undefined, word: string): string | undefined => {
     if (!sentence) return undefined;
@@ -195,7 +197,7 @@ export const useTranslationAndImages = (
       }
       if (data?.type === 'linkClick') {
         if (Platform.OS === 'android') {
-          try { ToastAndroid.show('long press to select word', ToastAndroid.SHORT); } catch (e) {}
+          try { ToastAndroid.show(t('screens.surf.longPressToSelectWord'), ToastAndroid.SHORT); } catch (e) {}
         }
       }
     } catch {

@@ -310,6 +310,34 @@
       "sendEmailAccessibility": "ส่งอีเมลเพื่อขอการสนับสนุน",
       "visitWebsiteAccessibility": "เยี่ยมชมเว็บไซต์ HelloLingo",
       "websiteUrl": "HelloLingo.app"
+    },
+    "surf": {
+      "searchPlaceholder": "ค้นหาหรือป้อน URL เว็บไซต์",
+      "moreOptions": "ตัวเลือกเพิ่มเติม",
+      "setHomepage": "ตั้งหน้าแรก",
+      "setHomepageSubtitle": "ตั้งหน้าปัจจุบันเป็นหน้าแรก",
+      "favouritesList": "รายการโปรด",
+      "favouritesListSubtitle": "ดูเว็บไซต์ที่บันทึกไว้",
+      "sharePage": "แชร์หน้า",
+      "sharePageSubtitle": "แชร์เว็บไซต์นี้",
+      "reportWebsite": "รายงานเว็บไซต์",
+      "reportWebsiteSubtitle": "รายงานเนื้อหาที่ไม่เหมาะสม",
+      "noPageToShare": "ไม่มีหน้าให้แชร์",
+      "failedToSharePage": "ไม่สามารถแชร์หน้าได้",
+      "noPageToReport": "ไม่มีหน้าให้รายงาน",
+      "websiteReported": "เว็บไซต์ถูกรายงาน",
+      "websiteReportedMessage": "เว็บไซต์ถูกรายงาน เรากำลังตรวจสอบ",
+      "failedToReportWebsite": "ไม่สามารถรายงานเว็บไซต์ได้",
+      "invalidUrl": "URL ไม่ถูกต้อง",
+      "addedToFavourites": "เพิ่มในรายการโปรดแล้ว",
+      "longPressToSelectWord": "กดค้างเพื่อเลือกคำในลิงก์",
+      "accessibilityLabels": {
+        "goBack": "กลับ",
+        "addToFavourites": "เพิ่มในรายการโปรด",
+        "removeFromFavourites": "ลบออกจากรายการโปรด",
+        "openLibrary": "เปิดไลบรารี",
+        "moreOptions": "ตัวเลือกเพิ่มเติม"
+      }
     }
   },
   "common": {

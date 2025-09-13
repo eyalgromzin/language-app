@@ -310,6 +310,34 @@
       "sendEmailAccessibility": "Gửi email hỗ trợ",
       "visitWebsiteAccessibility": "Truy cập trang web HelloLingo",
       "websiteUrl": "HelloLingo.app"
+    },
+    "surf": {
+      "searchPlaceholder": "Tìm kiếm hoặc nhập URL trang web",
+      "moreOptions": "Thêm tùy chọn",
+      "setHomepage": "Đặt Trang Chủ",
+      "setHomepageSubtitle": "Đặt trang hiện tại làm trang chủ",
+      "favouritesList": "Danh Sách Yêu Thích",
+      "favouritesListSubtitle": "Xem các trang web đã lưu",
+      "sharePage": "Chia Sẻ Trang",
+      "sharePageSubtitle": "Chia sẻ trang web này",
+      "reportWebsite": "Báo Cáo Trang Web",
+      "reportWebsiteSubtitle": "Báo cáo nội dung không phù hợp",
+      "noPageToShare": "Không có trang để chia sẻ",
+      "failedToSharePage": "Không thể chia sẻ trang",
+      "noPageToReport": "Không có trang để báo cáo",
+      "websiteReported": "Trang Web Đã Báo Cáo",
+      "websiteReportedMessage": "Trang web đã được báo cáo, chúng tôi đang kiểm tra",
+      "failedToReportWebsite": "Không thể báo cáo trang web",
+      "invalidUrl": "URL không hợp lệ",
+      "addedToFavourites": "Đã thêm vào yêu thích",
+      "longPressToSelectWord": "Nhấn và giữ để chọn từ trong liên kết",
+      "accessibilityLabels": {
+        "goBack": "Quay lại",
+        "addToFavourites": "Thêm vào yêu thích",
+        "removeFromFavourites": "Xóa khỏi yêu thích",
+        "openLibrary": "Mở Thư Viện",
+        "moreOptions": "Thêm tùy chọn"
+      }
     }
   },
   "common": {

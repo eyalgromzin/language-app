@@ -331,6 +331,7 @@
       "failedToReportWebsite": "Website konnte nicht gemeldet werden",
       "invalidUrl": "Ungültige URL",
       "addedToFavourites": "Zu Favoriten hinzugefügt",
+      "longPressToSelectWord": "Lange drücken, um ein Wort in einem Link auszuwählen",
       "accessibilityLabels": {
         "goBack": "Zurück",
         "addToFavourites": "Zu Favoriten hinzufügen",

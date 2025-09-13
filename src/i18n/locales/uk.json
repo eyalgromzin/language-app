@@ -310,6 +310,34 @@
       "sendEmailAccessibility": "Надіслати email підтримки",
       "visitWebsiteAccessibility": "Відвідати сайт HelloLingo",
       "websiteUrl": "HelloLingo.app"
+    },
+    "surf": {
+      "searchPlaceholder": "Пошук або введення URL сайту",
+      "moreOptions": "Більше опцій",
+      "setHomepage": "Встановити Головну Сторінку",
+      "setHomepageSubtitle": "Встановити поточну сторінку як головну",
+      "favouritesList": "Список Обраного",
+      "favouritesListSubtitle": "Перегляд збережених сайтів",
+      "sharePage": "Поділитися Сторінкою",
+      "sharePageSubtitle": "Поділитися цим сайтом",
+      "reportWebsite": "Повідомити про Сайт",
+      "reportWebsiteSubtitle": "Повідомити про неприйнятний контент",
+      "noPageToShare": "Немає сторінки для обміну",
+      "failedToSharePage": "Не вдалося поділитися сторінкою",
+      "noPageToReport": "Немає сторінки для повідомлення",
+      "websiteReported": "Сайт Повідомлено",
+      "websiteReportedMessage": "Сайт повідомлено, ми перевіряємо його",
+      "failedToReportWebsite": "Не вдалося повідомити про сайт",
+      "invalidUrl": "Невірний URL",
+      "addedToFavourites": "Додано до обраного",
+      "longPressToSelectWord": "Довге натискання для вибору слова в посиланні",
+      "accessibilityLabels": {
+        "goBack": "Назад",
+        "addToFavourites": "Додати до обраного",
+        "removeFromFavourites": "Видалити з обраного",
+        "openLibrary": "Відкрити Бібліотеку",
+        "moreOptions": "Більше опцій"
+      }
     }
   },
   "common": {

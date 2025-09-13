@@ -310,6 +310,34 @@
       "sendEmailAccessibility": "Stuur e-mail voor ondersteuning",
       "visitWebsiteAccessibility": "Bezoek HelloLingo website",
       "websiteUrl": "HelloLingo.app"
+    },
+    "surf": {
+      "searchPlaceholder": "Zoeken of website URL invoeren",
+      "moreOptions": "Meer opties",
+      "setHomepage": "Startpagina Instellen",
+      "setHomepageSubtitle": "Huidige pagina instellen als startpagina",
+      "favouritesList": "Favorietenlijst",
+      "favouritesListSubtitle": "Bekijk opgeslagen websites",
+      "sharePage": "Pagina Delen",
+      "sharePageSubtitle": "Deel deze website",
+      "reportWebsite": "Website Rapporteren",
+      "reportWebsiteSubtitle": "Rapporteer ongepaste inhoud",
+      "noPageToShare": "Geen pagina om te delen",
+      "failedToSharePage": "Pagina delen mislukt",
+      "noPageToReport": "Geen pagina om te rapporteren",
+      "websiteReported": "Website Gerapporteerd",
+      "websiteReportedMessage": "Website gerapporteerd, we controleren het",
+      "failedToReportWebsite": "Website rapporteren mislukt",
+      "invalidUrl": "Ongeldige URL",
+      "addedToFavourites": "Toegevoegd aan favorieten",
+      "longPressToSelectWord": "Houd ingedrukt om een woord in een link te selecteren",
+      "accessibilityLabels": {
+        "goBack": "Ga terug",
+        "addToFavourites": "Toevoegen aan favorieten",
+        "removeFromFavourites": "Verwijderen uit favorieten",
+        "openLibrary": "Bibliotheek Openen",
+        "moreOptions": "Meer opties"
+      }
     }
   },
   "common": {

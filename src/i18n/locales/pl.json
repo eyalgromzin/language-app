@@ -310,6 +310,34 @@
       "sendEmailAccessibility": "Wyślij e-mail wsparcia",
       "visitWebsiteAccessibility": "Odwiedź stronę HelloLingo",
       "websiteUrl": "HelloLingo.app"
+    },
+    "surf": {
+      "searchPlaceholder": "Szukaj lub wprowadź URL strony",
+      "moreOptions": "Więcej opcji",
+      "setHomepage": "Ustaw Stronę Główną",
+      "setHomepageSubtitle": "Ustaw bieżącą stronę jako stronę główną",
+      "favouritesList": "Lista Ulubionych",
+      "favouritesListSubtitle": "Zobacz zapisane strony",
+      "sharePage": "Udostępnij Stronę",
+      "sharePageSubtitle": "Udostępnij tę stronę",
+      "reportWebsite": "Zgłoś Stronę",
+      "reportWebsiteSubtitle": "Zgłoś nieodpowiednią treść",
+      "noPageToShare": "Brak strony do udostępnienia",
+      "failedToSharePage": "Nie udało się udostępnić strony",
+      "noPageToReport": "Brak strony do zgłoszenia",
+      "websiteReported": "Strona Zgłoszona",
+      "websiteReportedMessage": "Strona zgłoszona, sprawdzamy ją",
+      "failedToReportWebsite": "Nie udało się zgłosić strony",
+      "invalidUrl": "Nieprawidłowy URL",
+      "addedToFavourites": "Dodano do ulubionych",
+      "longPressToSelectWord": "Przytrzymaj, aby wybrać słowo w linku",
+      "accessibilityLabels": {
+        "goBack": "Wróć",
+        "addToFavourites": "Dodaj do ulubionych",
+        "removeFromFavourites": "Usuń z ulubionych",
+        "openLibrary": "Otwórz Bibliotekę",
+        "moreOptions": "Więcej opcji"
+      }
     }
   },
   "common": {

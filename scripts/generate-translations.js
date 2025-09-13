@@ -181,6 +181,7 @@ const baseTranslations = {
     "failedToReportWebsite": "Failed to report website",
     "invalidUrl": "Invalid URL",
     "addedToFavourites": "Added to favourites",
+    "longPressToSelectWord": "Long press to select word in a link",
     "accessibilityLabels": {
       "goBack": "Go back",
       "addToFavourites": "Add to favourites",

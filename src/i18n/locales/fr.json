@@ -331,6 +331,7 @@
       "failedToReportWebsite": "Échec du signalement du site web",
       "invalidUrl": "URL invalide",
       "addedToFavourites": "Ajouté aux favoris",
+      "longPressToSelectWord": "Appuyez longuement pour sélectionner un mot dans un lien",
       "accessibilityLabels": {
         "goBack": "Retour",
         "addToFavourites": "Ajouter aux favoris",

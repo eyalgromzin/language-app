@@ -310,6 +310,34 @@
       "sendEmailAccessibility": "Send e-post for støtte",
       "visitWebsiteAccessibility": "Besøk HelloLingo nettside",
       "websiteUrl": "HelloLingo.app"
+    },
+    "surf": {
+      "searchPlaceholder": "Søk eller skriv inn nettside URL",
+      "moreOptions": "Flere alternativer",
+      "setHomepage": "Sett Hjemmeside",
+      "setHomepageSubtitle": "Sett gjeldende side som hjemmeside",
+      "favouritesList": "Favorittliste",
+      "favouritesListSubtitle": "Vis lagrede nettsider",
+      "sharePage": "Del Side",
+      "sharePageSubtitle": "Del denne nettsiden",
+      "reportWebsite": "Rapporter Nettside",
+      "reportWebsiteSubtitle": "Rapporter upassende innhold",
+      "noPageToShare": "Ingen side å dele",
+      "failedToSharePage": "Kunne ikke dele side",
+      "noPageToReport": "Ingen side å rapportere",
+      "websiteReported": "Nettside Rapportert",
+      "websiteReportedMessage": "Nettside rapportert, vi sjekker den",
+      "failedToReportWebsite": "Kunne ikke rapportere nettside",
+      "invalidUrl": "Ugyldig URL",
+      "addedToFavourites": "Lagt til i favoritter",
+      "longPressToSelectWord": "Hold inne for å velge ord i en lenke",
+      "accessibilityLabels": {
+        "goBack": "Gå tilbake",
+        "addToFavourites": "Legg til i favoritter",
+        "removeFromFavourites": "Fjern fra favoritter",
+        "openLibrary": "Åpne Bibliotek",
+        "moreOptions": "Flere alternativer"
+      }
     }
   },
   "common": {

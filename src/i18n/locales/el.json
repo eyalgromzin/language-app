@@ -310,6 +310,34 @@
       "sendEmailAccessibility": "Αποστολή email υποστήριξης",
       "visitWebsiteAccessibility": "Επίσκεψη ιστοσελίδας HelloLingo",
       "websiteUrl": "HelloLingo.app"
+    },
+    "surf": {
+      "searchPlaceholder": "Αναζήτηση ή εισαγωγή URL ιστοσελίδας",
+      "moreOptions": "Περισσότερες επιλογές",
+      "setHomepage": "Ορισμός Αρχικής Σελίδας",
+      "setHomepageSubtitle": "Ορισμός τρέχουσας σελίδας ως αρχική",
+      "favouritesList": "Λίστα Αγαπημένων",
+      "favouritesListSubtitle": "Προβολή αποθηκευμένων ιστοσελίδων",
+      "sharePage": "Κοινοποίηση Σελίδας",
+      "sharePageSubtitle": "Κοινοποίηση αυτής της ιστοσελίδας",
+      "reportWebsite": "Αναφορά Ιστοσελίδας",
+      "reportWebsiteSubtitle": "Αναφορά ακατάλληλου περιεχομένου",
+      "noPageToShare": "Δεν υπάρχει σελίδα για κοινοποίηση",
+      "failedToSharePage": "Αποτυχία κοινοποίησης σελίδας",
+      "noPageToReport": "Δεν υπάρχει σελίδα για αναφορά",
+      "websiteReported": "Ιστοσελίδα Αναφέρθηκε",
+      "websiteReportedMessage": "Η ιστοσελίδα αναφέρθηκε, την ελέγχουμε",
+      "failedToReportWebsite": "Αποτυχία αναφοράς ιστοσελίδας",
+      "invalidUrl": "Μη έγκυρη URL",
+      "addedToFavourites": "Προστέθηκε στα αγαπημένα",
+      "longPressToSelectWord": "Πατήστε παρατεταμένα για να επιλέξετε λέξη σε σύνδεσμο",
+      "accessibilityLabels": {
+        "goBack": "Επιστροφή",
+        "addToFavourites": "Προσθήκη στα αγαπημένα",
+        "removeFromFavourites": "Αφαίρεση από τα αγαπημένα",
+        "openLibrary": "Άνοιγμα Βιβλιοθήκης",
+        "moreOptions": "Περισσότερες επιλογές"
+      }
     }
   },
   "common": {
