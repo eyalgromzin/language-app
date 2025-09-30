@@ -102,7 +102,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           const GoogleSignin: any = (mod as any).GoogleSignin;
           
           // Configure GoogleSignin first
-          GoogleSignin.configure({});
+          GoogleSignin.configure({
+            webClientId: '991572944669-ht962460cmp9t2fa8mgofg3sn7bmb1je.apps.googleusercontent.com',
+          });
           
           const isSignedIn = await GoogleSignin.isSignedIn();
           
@@ -208,7 +210,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const GoogleSignin: any = (mod as any).GoogleSignin;
         
         // Configure GoogleSignin first
-        GoogleSignin.configure({});
+        GoogleSignin.configure({
+          webClientId: '991572944669-ht962460cmp9t2fa8mgofg3sn7bmb1je.apps.googleusercontent.com',
+        });
         
         await GoogleSignin.signOut();
         console.log('[Auth] Google Sign-Out successful');

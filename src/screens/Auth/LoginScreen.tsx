@@ -25,7 +25,9 @@ function LoginScreen({ navigation }: LoginScreenProps): React.JSX.Element {
       const mod = await import('@react-native-google-signin/google-signin');
       const GoogleSignin: any = (mod as any).GoogleSignin;
       await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
-      GoogleSignin.configure({});
+      GoogleSignin.configure({
+        webClientId: '991572944669-ht962460cmp9t2fa8mgofg3sn7bmb1je.apps.googleusercontent.com',
+      });
       const userInfo = await GoogleSignin.signIn();
       const email: string | undefined = userInfo?.data?.user?.email;
       const userId: string | undefined = userInfo?.data?.user?.id;

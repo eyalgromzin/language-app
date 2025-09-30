@@ -14,6 +14,7 @@
     "bundle:release": "rimraf \"C:\\proj\\ll\\android\\app\\.cxx\" && node scripts/createReleaseBundle.js",
     "apk:release": "rimraf \"C:\\proj\\ll\\android\\app\\.cxx\" && node scripts/generateApk.js",
     "setup-keystore": "node scripts/setupReleaseKeystore.js",
+    "get-fingerprint": "node scripts/getReleaseKeystoreFingerprint.js",
     "test-aab": "node scripts/testAppBundle.js",
     "icons": "node scripts/generateAppIcons.js",
     "signingReport": "cd android && .\\gradlew.bat signingReport",
