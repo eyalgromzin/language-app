@@ -23,3 +23,6 @@ to create apk / aab - run command in powershell with admin rights .
 - to create release apk , set values of storePassword '...', keyAlias '...', keyPassword '...' in build.gradle 
 
 - to make ui make all the screen look good , tell it to make it look "professional"
+
+- privacy policy 
+https://www.freeprivacypolicy.com/live/7aead7ce-d39f-4404-b896-0fed0126b600

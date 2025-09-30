@@ -21,14 +21,12 @@ function resolveIconPath() {
   const candidates = [
     path.resolve(process.cwd(), 'src/assets/logo_512.png'),
     path.resolve(process.cwd(), 'src/assets/logo.png'),
-    path.resolve(process.cwd(), 'src/images/logo10.png'),
     path.resolve(process.cwd(), 'arc/images/appIcon.png'),
-    path.resolve(process.cwd(), 'src/images/appIcon.png'),
   ];
   for (const candidate of candidates) {
     if (fs.existsSync(candidate)) return candidate;
   }
-  throw new Error('Icon not found. Expected at `src/assets/logo_512.png`, `src/assets/logo.png`, `src/images/logo10.png`, `arc/images/appIcon.png` or `src/images/appIcon.png`.');
+  throw new Error('Icon not found. Expected at `src/assets/logo_512.png`, `src/assets/logo.png` or `src/images/appIcon.png`.');
 }
 
 function run(command) {
