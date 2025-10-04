@@ -20,10 +20,52 @@ export const useSurfScreen = () => {
   // Get languages from context
   const { learningLanguage, nativeLanguage } = useLanguage();
   
+  // Helper function to convert language name to symbol
+  const toLanguageSymbol = (input: string | null): string => {
+    const v = (input || '').toLowerCase().trim();
+    
+    // If it's already a symbol, return it
+    if (v === 'en' || v === 'es' || v === 'fr' || v === 'de' || v === 'it' || v === 'pt' || v === 'ru' || v === 'zh' || v === 'ja' || v === 'ko' || v === 'ar' || v === 'hi' || v === 'tr' || v === 'pl' || v === 'nl' || v === 'el' || v === 'sv' || v === 'no' || v === 'fi' || v === 'cs' || v === 'uk' || v === 'he' || v === 'th' || v === 'vi') {
+      return v;
+    }
+    
+    // Map from common language names to symbols
+    const languageMap: Record<string, string> = {
+      'Czech': 'cs',
+      'German': 'de',
+      'Greek': 'el',
+      'Finnish': 'fi',
+      'French': 'fr',
+      'Hebrew': 'he',
+      'Hindi': 'hi',
+      'Italian': 'it',
+      'Dutch': 'nl',
+      'Norwegian': 'no',
+      'Polish': 'pl',
+      'Portuguese': 'pt',
+      'Russian': 'ru',
+      'Swedish': 'sv',
+      'Thai': 'th',
+      'Ukrainian': 'uk',
+      'Vietnamese': 'vi',
+      'English': 'en',
+      'Spanish': 'es',
+    };
+    
+    const symbol = languageMap[v];
+    if (symbol) {
+      return symbol;
+    }
+    
+    // Default to English if not found
+    return 'en';
+  };
+  
   // Get default homepage - use children's stories website if learning language is set, otherwise Google
   const getDefaultHomepage = (): string => {
     if (learningLanguage) {
-      const storiesWebsite = getChildrenStoriesWebsite(learningLanguage);
+      const languageSymbol = toLanguageSymbol(learningLanguage);
+      const storiesWebsite = getChildrenStoriesWebsite(languageSymbol);
       if (storiesWebsite) {
         return storiesWebsite;
       }
@@ -190,14 +232,6 @@ export const useSurfScreen = () => {
     }
     const v = (l || '').toLowerCase().trim();
     return (LEVELS as readonly string[]).includes(v) ? v : 'easy';
-  };
-
-  const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
-    const v = (input || '').toLowerCase().trim();
-    if (v === 'es' || v === 'spanish') return 'es';
-    if (v === 'en' || v === 'english') return 'en';
-    if (v === 'español') return 'es';
-    return 'en';
   };
 
   const saveDomain = async (domain: string) => {
