@@ -1,8 +1,11 @@
+- spanish and english are not updated in settings after onboarding
+
 - publish app =======================================================================================================================
 
 - on save favourite , disable the option to add javascript to make it secure 
 
-- payed version - when ill have 1000 users 
+- payed version + login - when ill have 1000 users 
+    - add login 
     - limit num of words possible to add to learning per day - for example 20 - payed will be limitless.
     - save progress in db for each person by email - step by step progress ??? 
     will save all words of a person on the cloud 
