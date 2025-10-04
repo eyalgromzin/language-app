@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Pressable, ScrollView, ActivityIndicator, Alert
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useAuth } from '../../contexts/AuthContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 type OnboardingStackParamList = {
@@ -19,27 +20,11 @@ type Props = NativeStackScreenProps<OnboardingStackParamList, 'Completion'>;
 
 function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Element {
   const { completeSetup } = useAuth();
+  const { learningLanguage, nativeLanguage } = useLanguage();
   const [saving, setSaving] = React.useState<boolean>(false);
-  const [learningLanguage, setLearningLanguage] = React.useState<string>('');
-  const [nativeLanguage, setNativeLanguage] = React.useState<string>('');
 
   // Get the settings from the previous screens
   const { removeAfterCorrect, removeAfterTotalCorrect } = route.params;
-
-  React.useEffect(() => {
-    // Get the selected languages from AsyncStorage (they should be set by previous screens)
-    const getSelectedLanguages = async () => {
-      try {
-        const learning = await AsyncStorage.getItem('temp.learningLanguage');
-        const native = await AsyncStorage.getItem('temp.nativeLanguage');
-        if (learning) setLearningLanguage(learning);
-        if (native) setNativeLanguage(native);
-      } catch (error) {
-        console.error('Error getting selected languages:', error);
-      }
-    };
-    getSelectedLanguages();
-  }, []);
 
   const onComplete = async () => {
     if (!learningLanguage || !nativeLanguage) {
@@ -54,11 +39,9 @@ function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Ele
       // Show loader for 3 seconds with "Setting up" text
       await new Promise(resolve => setTimeout(resolve, 3000));
       
-      console.log('[OnboardingCompletion] Saving languages and settings');
+      console.log('[OnboardingCompletion] Languages are already saved in LanguageContext, saving practice settings');
 
-      // Save languages and settings
-      await AsyncStorage.setItem('language.learning', learningLanguage);
-      await AsyncStorage.setItem('language.native', nativeLanguage);
+      // Save practice settings (languages are already saved by LanguageContext)
       await AsyncStorage.setItem('words.removeAfterNCorrect', String(removeAfterCorrect));
       await AsyncStorage.setItem('words.removeAfterTotalCorrect', String(removeAfterTotalCorrect));
       
@@ -70,8 +53,8 @@ function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Ele
         ['user_id', 'auto-user-id'],
       ]);
 
-      console.log('[OnboardingCompletion] Languages and settings saved');
-      console.log('[OnboardingCompletion] Removing temporary items');
+      console.log('[OnboardingCompletion] Practice settings saved');
+      console.log('[OnboardingCompletion] Cleaning up temporary storage');
 
       // Clean up temporary storage
       await AsyncStorage.removeItem('temp.learningLanguage');

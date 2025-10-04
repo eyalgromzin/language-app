@@ -149,13 +149,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const autoEmail = `user-${Date.now()}@auto.local`;
       const autoUserName = 'User';
       
-      // Store the auto-generated credentials
+      // Store the auto-generated credentials but DON'T mark setup as completed
+      // This allows the onboarding flow to be shown on first app open
       await AsyncStorage.multiSet([
         ['user_logged_in', 'true'],
         ['user_email', autoEmail],
         ['user_name', autoUserName],
         ['user_id', autoUserId],
-        ['setup.completed', 'true'],
+        // Don't set setup.completed to true - let onboarding flow handle this
       ]);
       
       setAuthState(prev => ({
@@ -165,7 +166,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         userEmail: autoEmail,
         userName: autoUserName,
         userId: autoUserId,
-        isSetupCompleted: true,
+        isSetupCompleted: false, // Keep setup as incomplete to show onboarding
         hasCheckedAuth: true,
       }));
     } catch (error) {
@@ -178,13 +179,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const autoEmail = `user-${Date.now()}@auto.local`;
       const autoUserName = 'User';
       
-      // Store the auto-generated credentials
+      // Store the auto-generated credentials but DON'T mark setup as completed
+      // This allows the onboarding flow to be shown on first app open
       await AsyncStorage.multiSet([
         ['user_logged_in', 'true'],
         ['user_email', autoEmail],
         ['user_name', autoUserName],
         ['user_id', autoUserId],
-        ['setup.completed', 'true'],
+        // Don't set setup.completed to true - let onboarding flow handle this
       ]).catch(() => {}); // Don't fail if storage fails
       
       setAuthState(prev => ({
@@ -194,7 +196,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         userEmail: autoEmail,
         userName: autoUserName,
         userId: autoUserId,
-        isSetupCompleted: true,
+        isSetupCompleted: false, // Keep setup as incomplete to show onboarding
         hasCheckedAuth: true,
       }));
     }

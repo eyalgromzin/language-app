@@ -1,10 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Pressable, ScrollView } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type OnboardingStackParamList = {
   LearningLanguage: undefined;
@@ -17,21 +18,30 @@ type Props = NativeStackScreenProps<OnboardingStackParamList, 'NativeLanguage'>;
 
 function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
   const { languageMappings, isLoading: languagesLoading } = useLanguageMappings();
-  const [nativeLanguage, setNativeLanguage] = React.useState<string>('');
+  const { nativeLanguage, setNativeLanguage } = useLanguage();
+  const [selectedLanguage, setSelectedLanguage] = React.useState<string>('');
 
   const onContinue = async () => {
-    if (!nativeLanguage) {
+    if (!selectedLanguage) {
       return; // Button will be disabled if no language selected
     }
     
-    // Store the selected language temporarily
+    // Save the native language temporarily and in context
     try {
-      await AsyncStorage.setItem('temp.nativeLanguage', nativeLanguage);
+      await AsyncStorage.setItem('temp.nativeLanguage', selectedLanguage);
+      await setNativeLanguage(selectedLanguage);
     } catch (error) {
       console.error('Error saving native language:', error);
     }
     
     navigation.navigate('PracticeSettings');
+  };
+
+  const handleLanguageChange = async (value: string) => {
+    setSelectedLanguage(value);
+    if (value) {
+      await setNativeLanguage(value);
+    }
   };
 
   const onBack = () => {
@@ -74,8 +84,8 @@ function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
           <Text style={styles.label}>Select your native language</Text>
           <View style={styles.pickerWrapper}>
             <Picker
-              selectedValue={nativeLanguage}
-              onValueChange={(value) => setNativeLanguage(value)}
+              selectedValue={selectedLanguage}
+              onValueChange={handleLanguageChange}
             >
               <Picker.Item label="Choose your native language..." value="" />
               {Object.keys(languageMappings).map((lang) => (
@@ -100,9 +110,9 @@ function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
           </Pressable>
           
           <Pressable
-            style={[styles.continueButton, !nativeLanguage && styles.continueButtonDisabled]}
+            style={[styles.continueButton, !selectedLanguage && styles.continueButtonDisabled]}
             onPress={onContinue}
-            disabled={!nativeLanguage}
+            disabled={!selectedLanguage}
             accessibilityRole="button"
             accessibilityLabel="Continue to practice settings"
           >

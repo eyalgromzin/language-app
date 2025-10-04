@@ -342,6 +342,9 @@ function MainTabs(): React.JSX.Element {
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Settings'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>{t('menu.settings')}</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('Onboarding'); setMenuOpen(false); }}>
+              <Text style={styles.menuItemText}>{t('menu.onboarding')}</Text>
+            </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={handleShare}>
               <Text style={styles.menuItemText}>{t('menu.shareApp')}</Text>
             </TouchableOpacity>

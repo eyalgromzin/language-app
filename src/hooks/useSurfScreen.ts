@@ -7,6 +7,7 @@ import harmfulWordsService from '../services/harmfulWordsService';
 import { addUrlToLibrary } from '../config/api';
 import { FAVOURITE_TYPES } from '../common';
 import { useLanguage } from '../contexts/LanguageContext';
+import { getChildrenStoriesWebsite } from '../constants/childrenStoriesWebsites';
 
 export type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
 
@@ -15,10 +16,22 @@ export const useSurfScreen = () => {
   const webViewRef = React.useRef<WebView>(null);
   const route = useRoute<any>();
   const initialUrlFromParams: string | undefined = typeof route?.params?.url === 'string' ? route.params.url : undefined;
-  const defaultHomepage = 'https://cnnespanol.cnn.com/';
   
   // Get languages from context
   const { learningLanguage, nativeLanguage } = useLanguage();
+  
+  // Get default homepage - use children's stories website if learning language is set, otherwise Google
+  const getDefaultHomepage = (): string => {
+    if (learningLanguage) {
+      const storiesWebsite = getChildrenStoriesWebsite(learningLanguage);
+      if (storiesWebsite) {
+        return storiesWebsite;
+      }
+    }
+    return 'https://www.google.com';
+  };
+  
+  const defaultHomepage = getDefaultHomepage();
   
   // State
   const [addressText, setAddressText] = React.useState<string>(initialUrlFromParams || defaultHomepage);
@@ -117,13 +130,18 @@ export const useSurfScreen = () => {
         if (!initialUrlFromParams && typeof saved === 'string' && saved.trim().length > 0) {
           setAddressText(saved);
           setCurrentUrl(saved);
+        } else if (!initialUrlFromParams && (!saved || saved.trim().length === 0)) {
+          // No saved homepage, use children's stories website based on learning language
+          const storiesHomepage = getDefaultHomepage();
+          setAddressText(storiesHomepage);
+          setCurrentUrl(storiesHomepage);
         }
       } catch {}
     })();
     return () => {
       mounted = false;
     };
-  }, [initialUrlFromParams]);
+  }, [initialUrlFromParams, learningLanguage]);
 
   // Handle initial URL from params
   React.useEffect(() => {
