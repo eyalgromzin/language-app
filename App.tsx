@@ -23,7 +23,6 @@ import MyWordsScreen from './src/screens/MyWords/MyWordsScreen';
 import LibraryScreen from './src/screens/Library/LibraryScreen';
 import PracticeNavigator from './src/screens/practice/PracticeNavigator';
 import BooksNavigator from './src/screens/Books/BooksNavigator';
-import LoginScreen from './src/screens/Auth/LoginScreen';
 import { enableScreens } from 'react-native-screens';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import OnboardingNavigator from './src/screens/Startup/OnboardingNavigator';
@@ -55,7 +54,6 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 
 type RootStackParamList = {
   Onboarding: undefined;
-  Login: undefined;
   Main: undefined;
   Settings: undefined;
   Home: undefined;
@@ -73,7 +71,7 @@ function MainTabs(): React.JSX.Element {
   const currentTabNavRef = React.useRef<any>(null);
   const [videoKey, setVideoKey] = React.useState<number>(0);
   const [initialTabRouteName, setInitialTabRouteName] = React.useState<keyof RootTabParamList | null>(null);
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated } = useAuth();
   const { t } = useTranslation();
 
   // Function to add word from deep link
@@ -202,14 +200,6 @@ function MainTabs(): React.JSX.Element {
     }
   }, [t]);
 
-  const handleLogout = React.useCallback(async () => {
-    try {
-      await logout();
-      setMenuOpen(false);
-    } catch (error) {
-      console.log('Error during logout:', error);
-    }
-  }, [logout]);
 
   React.useEffect(() => {
     let isMounted = true;
@@ -358,11 +348,6 @@ function MainTabs(): React.JSX.Element {
             <TouchableOpacity style={styles.menuItem} onPress={() => { currentTabNavRef.current?.getParent()?.navigate('ContactUs'); setMenuOpen(false); }}>
               <Text style={styles.menuItemText}>{t('menu.contactUs')}</Text>
             </TouchableOpacity>
-            {isAuthenticated && (
-              <TouchableOpacity style={[styles.menuItem, styles.menuLogout]} onPress={handleLogout}>
-                <Text style={[styles.menuItemText, styles.menuLogoutText]}>{t('menu.logout')}</Text>
-              </TouchableOpacity>
-            )}
           </View>
         </View>
       </Modal>
@@ -449,13 +434,12 @@ function LoadingScreen(): React.JSX.Element {
 
 // Main navigation component that uses auth context
 function AppNavigator(): React.JSX.Element {
-  const { isLoading, isAuthenticated, isSetupCompleted, hasCheckedAuth } = useAuth();
+  const { isLoading, isSetupCompleted, hasCheckedAuth } = useAuth();
   const isDarkMode = useColorScheme() === 'dark';
 
   // Debug logging for navigation state
   console.log('[AppNavigator] Auth state:', {
     isLoading,
-    isAuthenticated,
     isSetupCompleted,
     hasCheckedAuth
   });
@@ -495,37 +479,29 @@ function AppNavigator(): React.JSX.Element {
     <NavigationContainer linking={linking} theme={isDarkMode ? DarkTheme : DefaultTheme}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {isAuthenticated ? (
-          isSetupCompleted ? (
-            // Fully authenticated and setup complete - show main app
-            (() => {
-              console.log('[AppNavigator] Showing main app - authenticated and setup complete');
-              return (
-                <>
-                  <Stack.Screen name="Main" component={MainTabs} />
-                  <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: t('screens.settings.title'), headerShown: true }} />
-                  <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
-                  <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: t('screens.myWords.title'), headerShown: true }} />
-                  <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps', headerShown: true }} />
-                  <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step', headerShown: true }} />
-                  <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: t('screens.contactUs.title'), headerShown: true }} />
-                  <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: t('screens.progress.title'), headerShown: true }} />
-                  <Stack.Screen name="Onboarding" component={OnboardingNavigator} options={{ headerShown: false }} />
-                </>
-              );
-            })()
-          ) : (
-            // Authenticated but setup not complete - show onboarding flow
-            (() => {
-              console.log('[AppNavigator] Showing onboarding - authenticated but setup not complete');
-              return <Stack.Screen name="Onboarding" component={OnboardingNavigator} />;
-            })()
-          )
-        ) : (
-          // Not authenticated - show login screen only after auth check is complete
+        {isSetupCompleted ? (
+          // Setup complete - show main app (user is always auto-authenticated)
           (() => {
-            console.log('[AppNavigator] Showing login screen - not authenticated');
-            return <Stack.Screen name="Login" component={LoginScreen} />;
+            console.log('[AppNavigator] Showing main app - setup complete');
+            return (
+              <>
+                <Stack.Screen name="Main" component={MainTabs} />
+                <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: t('screens.settings.title'), headerShown: true }} />
+                <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
+                <Stack.Screen name="MyWords" component={MyWordsScreen} options={{ title: t('screens.myWords.title'), headerShown: true }} />
+                <Stack.Screen name="BabyStepsPath" component={BabyStepsPathScreen} options={{ title: 'Baby Steps', headerShown: true }} />
+                <Stack.Screen name="BabyStepRunner" component={BabyStepRunnerScreen} options={{ title: 'Baby Step', headerShown: true }} />
+                <Stack.Screen name="ContactUs" component={ContactUsScreen} options={{ title: t('screens.contactUs.title'), headerShown: true }} />
+                <Stack.Screen name="Progress" component={ProgressScreen} options={{ title: t('screens.progress.title'), headerShown: true }} />
+                <Stack.Screen name="Onboarding" component={OnboardingNavigator} options={{ headerShown: false }} />
+              </>
+            );
+          })()
+        ) : (
+          // Setup not complete - show onboarding flow
+          (() => {
+            console.log('[AppNavigator] Showing onboarding - setup not complete');
+            return <Stack.Screen name="Onboarding" component={OnboardingNavigator} />;
           })()
         )}
       </Stack.Navigator>

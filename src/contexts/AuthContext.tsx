@@ -143,13 +143,28 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
       // User is not authenticated - auto-authenticate to skip login screen
       console.log('[Auth] No stored credentials found, auto-authenticating user to skip login');
+      
+      // Generate a unique user ID
+      const autoUserId = `auto-user-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+      const autoEmail = `user-${Date.now()}@auto.local`;
+      const autoUserName = 'User';
+      
+      // Store the auto-generated credentials
+      await AsyncStorage.multiSet([
+        ['user_logged_in', 'true'],
+        ['user_email', autoEmail],
+        ['user_name', autoUserName],
+        ['user_id', autoUserId],
+        ['setup.completed', 'true'],
+      ]);
+      
       setAuthState(prev => ({
         ...prev,
         isLoading: false,
         isAuthenticated: true,
-        userEmail: 'auto@user.com',
-        userName: 'Auto User',
-        userId: 'auto-user-id',
+        userEmail: autoEmail,
+        userName: autoUserName,
+        userId: autoUserId,
         isSetupCompleted: true,
         hasCheckedAuth: true,
       }));
@@ -157,14 +172,28 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       console.log('[Auth] Error checking auth state:', error);
       // Clear any corrupted data
       await AsyncStorage.multiRemove(['user_logged_in', 'user_email', 'user_name', 'user_id']).catch(() => {});
+      
       // Auto-authenticate to skip login screen even on error
+      const autoUserId = `auto-user-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+      const autoEmail = `user-${Date.now()}@auto.local`;
+      const autoUserName = 'User';
+      
+      // Store the auto-generated credentials
+      await AsyncStorage.multiSet([
+        ['user_logged_in', 'true'],
+        ['user_email', autoEmail],
+        ['user_name', autoUserName],
+        ['user_id', autoUserId],
+        ['setup.completed', 'true'],
+      ]).catch(() => {}); // Don't fail if storage fails
+      
       setAuthState(prev => ({
         ...prev,
         isLoading: false,
         isAuthenticated: true,
-        userEmail: 'auto@user.com',
-        userName: 'Auto User',
-        userId: 'auto-user-id',
+        userEmail: autoEmail,
+        userName: autoUserName,
+        userId: autoUserId,
         isSetupCompleted: true,
         hasCheckedAuth: true,
       }));
