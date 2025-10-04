@@ -64,6 +64,14 @@ function SurfScreen(): React.JSX.Element {
     isFav,
   } = useSurfScreen();
 
+  // Ref to track the last processed URL to prevent infinite loops
+  const lastProcessedUrlRef = React.useRef<string>('');
+
+  // Keep the ref in sync with currentUrl changes from other sources
+  React.useEffect(() => {
+    lastProcessedUrlRef.current = currentUrl;
+  }, [currentUrl]);
+
   // Add missing utility functions
 
   const getDomainFromUrlString = (input: string): string | null => {
@@ -262,10 +270,15 @@ function SurfScreen(): React.JSX.Element {
           try {
             setCanGoBack(!!navState.canGoBack);
             if (typeof navState.url === 'string') {
-              setAddressText(navState.url);
-              setCurrentUrl(navState.url);
-              const d = getDomainFromUrlString(navState.url);
-              if (d) saveDomain(d);
+              // Only update state if the URL has actually changed to prevent infinite loops
+              if (navState.url !== lastProcessedUrlRef.current) {
+                lastProcessedUrlRef.current = navState.url;
+                setAddressText(navState.url);
+                console.log('savedHomepage333', navState.url);
+                setCurrentUrl(navState.url);
+                const d = getDomainFromUrlString(navState.url);
+                if (d) saveDomain(d);
+              }
             }
           } catch (e) {}
         }}

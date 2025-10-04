@@ -73,11 +73,9 @@ export const useSurfScreen = () => {
     return 'https://www.google.com';
   };
   
-  const defaultHomepage = getDefaultHomepage();
-  
   // State
-  const [addressText, setAddressText] = React.useState<string>(initialUrlFromParams || defaultHomepage);
-  const [currentUrl, setCurrentUrl] = React.useState<string>(initialUrlFromParams || defaultHomepage);
+  const [addressText, setAddressText] = React.useState<string>(initialUrlFromParams || '');
+  const [currentUrl, setCurrentUrl] = React.useState<string>(initialUrlFromParams || '');
   const [canGoBack, setCanGoBack] = React.useState<boolean>(false);
   const [favourites, setFavourites] = React.useState<FavouriteItem[]>([]);
   const [showFavouritesList, setShowFavouritesList] = React.useState<boolean>(false);
@@ -167,17 +165,22 @@ export const useSurfScreen = () => {
     let mounted = true;
     (async () => {
       try {
-        const saved = await AsyncStorage.getItem(HOMEPAGE_KEY);
-        if (!mounted) return;
-        if (!initialUrlFromParams && typeof saved === 'string' && saved.trim().length > 0) {
-          setAddressText(saved);
-          setCurrentUrl(saved);
-        } else if (!initialUrlFromParams && (!saved || saved.trim().length === 0)) {
-          // No saved homepage, use children's stories website based on learning language
-          const storiesHomepage = getDefaultHomepage();
-          setAddressText(storiesHomepage);
-          setCurrentUrl(storiesHomepage);
-        }
+        AsyncStorage.getAllKeys().then(async (keys) => {
+          if(keys.includes(HOMEPAGE_KEY)) {
+            const savedHomepage = await AsyncStorage.getItem(HOMEPAGE_KEY);
+            if (!mounted) return;
+            if (!initialUrlFromParams && typeof savedHomepage === 'string' && savedHomepage.trim().length > 0) {
+              setAddressText(savedHomepage);
+              setCurrentUrl(savedHomepage);
+            } 
+          } else {
+            // No saved homepage, use children's stories website based on learning language
+            const storiesHomepage = getDefaultHomepage();
+            setAddressText(storiesHomepage);
+            setCurrentUrl(storiesHomepage);
+          }
+        });
+        
       } catch {}
     })();
     return () => {
