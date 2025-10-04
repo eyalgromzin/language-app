@@ -69,7 +69,9 @@ function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Ele
       
       // Navigate directly to MainTabs
       console.log('[OnboardingCompletion] Navigating to MainTabs...');
-      navigation.getParent()?.navigate('Main');
+      setTimeout(() => {
+        navigation.getParent()?.navigate('Main');
+      }, 500);  //1000 works 
       
       // Reset saving state after successful completion
       setSaving(false);
