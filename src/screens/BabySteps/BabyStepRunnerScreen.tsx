@@ -190,6 +190,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
   const [resetSeed, setResetSeed] = React.useState<number>(0);
   const [selectedIndices, setSelectedIndices] = React.useState<number[]>([]);
   const [streak, setStreak] = React.useState<number>(0);
+  const [persistedStreak, setPersistedStreak] = React.useState<number>(0);
   const [showStreakAnimation, setShowStreakAnimation] = React.useState<boolean>(false);
   const { languageMappings } = useLanguageMappings();
 
@@ -238,6 +239,45 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     }
   }, [originalTaskCount, numCorrect, fadeAnim, scaleAnim, slideAnim, confettiAnim]);
 
+  // Helper function to load persisted streak
+  const loadPersistedStreak = async () => {
+    try {
+      const learningName = await AsyncStorage.getItem('language.learning');
+      const currentCode = getLangCode(learningName, languageMappings) || 'en';
+      const stored = await AsyncStorage.getItem(`babySteps.winningStreak.${currentCode}`);
+      const streakValue = Number.parseInt(stored ?? '0', 10);
+      setPersistedStreak(streakValue);
+      return streakValue;
+    } catch (e) {
+      console.error('Failed to load persisted streak:', e);
+      return 0;
+    }
+  };
+
+  // Helper function to save streak to AsyncStorage
+  const saveStreak = async (streakValue: number) => {
+    try {
+      const learningName = await AsyncStorage.getItem('language.learning');
+      const currentCode = getLangCode(learningName, languageMappings) || 'en';
+      await AsyncStorage.setItem(`babySteps.winningStreak.${currentCode}`, String(streakValue));
+      setPersistedStreak(streakValue);
+    } catch (e) {
+      console.error('Failed to save streak:', e);
+    }
+  };
+
+  // Helper function to reset streak in AsyncStorage
+  const resetStreak = async () => {
+    try {
+      const learningName = await AsyncStorage.getItem('language.learning');
+      const currentCode = getLangCode(learningName, languageMappings) || 'en';
+      await AsyncStorage.setItem(`babySteps.winningStreak.${currentCode}`, '0');
+      setPersistedStreak(0);
+    } catch (e) {
+      console.error('Failed to reset streak:', e);
+    }
+  };
+
   // Helper function to handle streak milestones
   const handleStreakMilestone = (newStreak: number) => {
     console.log('Checking streak milestone:', newStreak);
@@ -274,6 +314,12 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         ]);
         const currentCode = getLangCode(learningName, languageMappings) || 'en';
         const nativeCode = getLangCode(nativeName, languageMappings) || 'en';
+
+        // Load persisted streak
+        const loadedStreak = await loadPersistedStreak();
+        if (mounted) {
+          setStreak(loadedStreak);
+        }
 
         // First, get the steps list to find the stepId for the given stepIndex
         const stepsFile = await getBabySteps(currentCode);
@@ -766,7 +812,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         setNumWrong(0);
         setCurrentHadMistake(false);
         setSelectedIndices([]);
-        setStreak(0);
+        setStreak(loadedStreak); // Keep persisted streak when restarting
         setShowStreakAnimation(false);
       } catch (e) {
         if (!mounted) return;
@@ -779,6 +825,17 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     })();
     return () => { mounted = false; };
   }, [route, stepIndex, resetSeed]);
+
+  // Reset streak when user quits mid-step (component unmounts without completion)
+  React.useEffect(() => {
+    return () => {
+      // Only reset if the step wasn't completed (numCorrect < originalTaskCount)
+      // and we're not in the middle of a restart
+      if (originalTaskCount > 0 && numCorrect < originalTaskCount) {
+        resetStreak();
+      }
+    };
+  }, [originalTaskCount, numCorrect]);
 
   const current = tasks[currentIdx];
 
@@ -865,6 +922,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
       const finishedNodeNumber = stepIndex + 1;
       const next = Number.isNaN(prev) ? finishedNodeNumber : Math.max(prev, finishedNodeNumber);
       await AsyncStorage.setItem(`babySteps.maxCompletedIndex.${currentCode}`, String(next));
+      
+      // Save the current streak only when baby step is completed successfully
+      await saveStreak(streak);
     } catch {}
     navigation.goBack();
   };
@@ -879,6 +939,9 @@ function BabyStepRunnerScreen(): React.JSX.Element {
       const finishedNodeNumber = stepIndex + 1;
       const next = Number.isNaN(prev) ? finishedNodeNumber : Math.max(prev, finishedNodeNumber);
       await AsyncStorage.setItem(`babySteps.maxCompletedIndex.${currentCode}`, String(next));
+      
+      // Save the current streak when restarting (step was completed)
+      await saveStreak(streak);
     } catch {}
     // Always rebuild tasks within the same screen instance
     setResetSeed((s) => s + 1);

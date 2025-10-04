@@ -1,4 +1,7 @@
-on finish baby step , finish screen is ugly 
+streak should not be elapsed after each step . it should continue count on the next step 
+
+baby steps path , if you finish a step ahead , the path should be green , 
+    but the steps should have a 'v' sign only next to those steps that you finished.
 
 - publish app =======================================================================================================================
 
