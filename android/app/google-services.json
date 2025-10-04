@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "991572944669",
+    "project_id": "hellolingo-app",
+    "storage_bucket": "hellolingo-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991572944669:android:language-app-468712",
+        "android_client_info": {
+          "package_name": "com.hellolingo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991572944669-ht962460cmp9t2fa8mgofg3sn7bmb1je.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "991572944669-ht962460cmp9t2fa8mgofg3sn7bmb1je.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hellolingo",
+            "certificate_hash": "5E:8F:16:06:2E:A3:CD:2C:4A:0D:54:78:76:BA:A6:F3:8C:AB:F6:25"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key" : "your_api_key"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991572944669-ht962460cmp9t2fa8mgofg3sn7bmb1je.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -17,39 +17,6 @@ function checkFileExists(filePath) {
   return fs.existsSync(filePath);
 }
 
-function removePreviousReleaseFiles() {
-  const distDir = path.join(process.cwd(), 'dist');
-  
-  if (!fs.existsSync(distDir)) {
-    console.log('📁 Dist directory does not exist, nothing to clean');
-    return;
-  }
-
-  console.log('🧹 Removing previous release files...');
-  
-  try {
-    const files = fs.readdirSync(distDir);
-    let removedCount = 0;
-    
-    files.forEach(file => {
-      if (file.endsWith('.aab')) {
-        const filePath = path.join(distDir, file);
-        fs.unlinkSync(filePath);
-        console.log(`🗑️  Removed: ${file}`);
-        removedCount++;
-      }
-    });
-    
-    if (removedCount > 0) {
-      console.log(`✅ Removed ${removedCount} previous release file(s)`);
-    } else {
-      console.log('📁 No previous release files found to remove');
-    }
-  } catch (error) {
-    console.error('❌ Error removing previous release files:', error.message);
-  }
-}
-
 function checkReleaseKeystore() {
   const androidDir = path.join(process.cwd(), 'android', 'app');
   const keystorePath = path.join(androidDir, 'release.keystore');
