@@ -164,6 +164,14 @@ function sampleN<T>(arr: T[], n: number): T[] {
   return out;
 }
 
+const cleanSentense = (sentence: string) => {
+  return sentence
+    .replace(/\.\.\./g, '') // Remove three dots
+    .replace(/…/g, '') // Remove ellipsis character (U+2026)
+    .replace(/\.\.\./g, '') // Remove any remaining three dots
+    .trim();
+};
+
 function BabyStepRunnerScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
@@ -413,10 +421,11 @@ function BabyStepRunnerScreen(): React.JSX.Element {
             
             // Build formulate sentence task (assemble full sentence in current language)
             if (practiceType === 'formulateSentense') {
-              const tokens = splitToTokens(it.text);
+              const tokens = splitToTokens(cleanSentense(it.text));
               
               // Ensure we have at least 6 words in the shuffled tokens
               let shuffledTokens = [...tokens];
+
               if (tokens.length < 6) {
                 // Add filler words from the current step to reach at least 6 words
                 const fillerWords: string[] = [];
@@ -427,7 +436,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
                     if (o.type === 'word' && o.text && !tokens.includes(o.text)) {
                       fillerWords.push(o.text);
                     } else if (o.type === 'sentence') {
-                      const sentenceWords = splitToTokens(o.text);
+                      const sentenceWords = splitToTokens(cleanSentense(o.text));
                       sentenceWords.forEach((word: string) => {
                         if (word && !tokens.includes(word) && !fillerWords.includes(word)) {
                           fillerWords.push(word);
@@ -1211,8 +1220,8 @@ function BabyStepRunnerScreen(): React.JSX.Element {
         <FormulateSentenseScreen
           key={`formulate-${currentIdx}-${current.itemId}`}
           embedded
-          sentence={current.sentence}
-          translatedSentence={current.translatedSentence}
+          sentence={cleanSentense(current.sentence)}
+          translatedSentence={cleanSentense(current.translatedSentence)}
           tokens={current.tokens}
           shuffledTokens={current.shuffledTokens}
           itemId={current.itemId}
