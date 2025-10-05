@@ -1,5 +1,15 @@
-baby steps path , if you finish a step ahead , the path should be green , 
-    but the steps should have a 'v' sign only next to those steps that you finished.
+- in books , add at the bottom a page number that you can type and change, 
+    and next and previous buttons  
+
+- in choose word , accent should be in the native language and not learning language. 
+
+- add in settings the option to choose which practices will be in surprise me 
+
+- make memory game default cards number to be 6 
+
+- in memory game , after finish, show congradulations popup with a continue button
+
+- make app work in shirs phone 
 
 - publish app =======================================================================================================================
 
