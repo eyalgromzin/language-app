@@ -67,10 +67,10 @@ const FinishedWordAnimation: React.FC<FinishedWordAnimationProps> = ({
           }),
         ]).start();
 
-        // Auto hide after 2.5 seconds
+        // Auto hide after 4 seconds
         setTimeout(() => {
           if (onHide) onHide();
-        }, 2500);
+        }, 4000);
       });
     } else {
       // Shrink to center animation

@@ -428,7 +428,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         setShowWrongToast(false);
         setShowCorrectToast(true);
         try { playCorrectFeedback(); } catch {}
-        const t = setTimeout(() => props.onFinished?.(true), 600);
+        const t = setTimeout(() => props.onFinished?.(true), 2000);
         return () => clearTimeout(t as unknown as number);
       }
       setWrongKey(opt.key);
@@ -458,7 +458,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         writeBackIncrement(current.word);
       }, 1000);
       
-      // Keep success toast visible for 4 seconds before moving to next round
+      // Keep success toast visible for 6 seconds before moving to next round
       successToastTimeoutRef.current = setTimeout(() => {
         setShowCorrectToast(false);
         setIsShowingSuccessToast(false);
@@ -466,7 +466,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
         setShowFinishedWordAnimation(false);
         // Reload base data after toast is hidden - the useEffect will handle preparing the next round
         loadBase();
-      }, 4000);
+      }, 6000);
       return; // Add return to prevent wrong answer logic from executing
     }
     if (wrongAttempts >= 1) {
