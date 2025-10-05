@@ -916,12 +916,19 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     try {
       const learningName = await AsyncStorage.getItem('language.learning');
       const currentCode = getLangCode(learningName, languageMappings) || 'en';
-      const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${currentCode}`);
-      const prev = Number.parseInt(stored ?? '0', 10);
-      // We store the highest finished node number (1-based). 0 means none.
-      const finishedNodeNumber = stepIndex + 1;
-      const next = Number.isNaN(prev) ? finishedNodeNumber : Math.max(prev, finishedNodeNumber);
-      await AsyncStorage.setItem(`babySteps.maxCompletedIndex.${currentCode}`, String(next));
+      
+      // Save individual step completion
+      const completedStepsKey = `babySteps.completedSteps.${currentCode}`;
+      const completedStepsData = await AsyncStorage.getItem(completedStepsKey);
+      const completedSteps: Set<number> = completedStepsData 
+        ? new Set(JSON.parse(completedStepsData))
+        : new Set();
+      
+      // Add current step to completed steps
+      completedSteps.add(stepIndex);
+      
+      // Save updated completed steps
+      await AsyncStorage.setItem(completedStepsKey, JSON.stringify([...completedSteps]));
       
       // Save the current streak only when baby step is completed successfully
       await saveStreak(streak);
@@ -934,11 +941,19 @@ function BabyStepRunnerScreen(): React.JSX.Element {
     try {
       const learningName = await AsyncStorage.getItem('language.learning');
       const currentCode = getLangCode(learningName, languageMappings) || 'en';
-      const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${currentCode}`);
-      const prev = Number.parseInt(stored ?? '0', 10);
-      const finishedNodeNumber = stepIndex + 1;
-      const next = Number.isNaN(prev) ? finishedNodeNumber : Math.max(prev, finishedNodeNumber);
-      await AsyncStorage.setItem(`babySteps.maxCompletedIndex.${currentCode}`, String(next));
+      
+      // Save individual step completion
+      const completedStepsKey = `babySteps.completedSteps.${currentCode}`;
+      const completedStepsData = await AsyncStorage.getItem(completedStepsKey);
+      const completedSteps: Set<number> = completedStepsData 
+        ? new Set(JSON.parse(completedStepsData))
+        : new Set();
+      
+      // Add current step to completed steps
+      completedSteps.add(stepIndex);
+      
+      // Save updated completed steps
+      await AsyncStorage.setItem(completedStepsKey, JSON.stringify([...completedSteps]));
       
       // Save the current streak when restarting (step was completed)
       await saveStreak(streak);

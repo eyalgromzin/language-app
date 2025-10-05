@@ -31,7 +31,13 @@ function BabyStepsPathScreen(): React.JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string | null>(null);
   const [containerWidth, setContainerWidth] = React.useState<number>(Dimensions.get('window').width);
-  const [maxCompletedIndex, setMaxCompletedIndex] = React.useState<number>(0); // 0 means none finished
+  const [completedSteps, setCompletedSteps] = React.useState<Set<number>>(new Set()); // Individual completed step indices
+  
+  // Calculate maxCompletedIndex from completedSteps
+  const maxCompletedIndex = React.useMemo(() => {
+    if (completedSteps.size === 0) return 0;
+    return Math.max(...completedSteps) + 1; // Convert 0-based index to 1-based count
+  }, [completedSteps]);
   const [translatedTitleById, setTranslatedTitleById] = React.useState<Record<string, string>>({});
   const navigation = useNavigation<any>();
   const { languageMappings } = useLanguageMappings();
@@ -139,13 +145,13 @@ function BabyStepsPathScreen(): React.JSX.Element {
         } catch {
           setTranslatedTitleById({});
         }
-        // load progress (highest finished node index; 0 if none)
+        // load individual completed steps
         try {
-          const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${learningCode}`);
-          const parsed = Number.parseInt(stored ?? '0', 10);
-          if (!Number.isNaN(parsed) && parsed >= 0) {
-            setMaxCompletedIndex(parsed);
-          }
+          const completedStepsData = await AsyncStorage.getItem(`babySteps.completedSteps.${learningCode}`);
+          const completedStepsSet = completedStepsData 
+            ? new Set(JSON.parse(completedStepsData) as number[])
+            : new Set<number>();
+          setCompletedSteps(completedStepsSet);
         } catch {}
       } catch (e) {
         if (!mounted) return;
@@ -160,7 +166,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
     };
   }, []);
 
-  // Refresh maxCompletedIndex when screen gains focus
+  // Refresh completed steps when screen gains focus
   useFocusEffect(
     React.useCallback(() => {
       let active = true;
@@ -168,11 +174,16 @@ function BabyStepsPathScreen(): React.JSX.Element {
         try {
           const learningName = await AsyncStorage.getItem('language.learning');
           const code = getLangCode(learningName, languageMappings) || 'en';
-          const stored = await AsyncStorage.getItem(`babySteps.maxCompletedIndex.${code}`);
-          const parsed = Number.parseInt(stored ?? '0', 10);
-          if (active && !Number.isNaN(parsed) && parsed >= 0) {
-            setMaxCompletedIndex(parsed);
+          
+          // Refresh individual completed steps
+          const completedStepsData = await AsyncStorage.getItem(`babySteps.completedSteps.${code}`);
+          const completedStepsSet = completedStepsData 
+            ? new Set(JSON.parse(completedStepsData) as number[])
+            : new Set<number>();
+          if (active) {
+            setCompletedSteps(completedStepsSet);
           }
+          
           // Also refresh translated titles in case native language changed
           const nativeName = await AsyncStorage.getItem('language.native');
           const nativeCode = getLangCode(nativeName, languageMappings) || 'en';
@@ -180,9 +191,13 @@ function BabyStepsPathScreen(): React.JSX.Element {
             const nativeJson: StepsFile = await getBabySteps(nativeCode);
             const map: Record<string, string> = {};
             (nativeJson.steps || []).forEach((st) => { map[st.id] = st.title; });
-            setTranslatedTitleById(map);
+            if (active) {
+              setTranslatedTitleById(map);
+            }
           } catch {
-            setTranslatedTitleById({});
+            if (active) {
+              setTranslatedTitleById({});
+            }
           }
         } catch {}
       })();
@@ -234,8 +249,8 @@ function BabyStepsPathScreen(): React.JSX.Element {
             onPress: async () => {
               try {
                 // Clear the progress for the current learning language
-                await AsyncStorage.removeItem(`babySteps.maxCompletedIndex.${code}`);
-                setMaxCompletedIndex(0);
+                await AsyncStorage.removeItem(`babySteps.completedSteps.${code}`);
+                setCompletedSteps(new Set());
                 
                 // Show success message
                 Alert.alert('Progress Cleared', 'Your baby steps progress has been cleared successfully.');
@@ -466,7 +481,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
                       Progress
                     </Text>
                     <Text style={[styles.progressText, { color: isDark ? '#94a3b8' : '#64748b' }]}>
-                      {maxCompletedIndex} of {steps.length} completed
+                      {completedSteps.size} of {steps.length} completed
                     </Text>
                   </View>
                   <View style={[
@@ -476,7 +491,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
                     <Animated.View style={[
                       styles.progressBarFill,
                       {
-                        width: `${(maxCompletedIndex / steps.length) * 100}%`,
+                        width: `${(completedSteps.size / steps.length) * 100}%`,
                         backgroundColor: isDark ? '#10b981' : '#059669'
                       }
                     ]} />
@@ -508,7 +523,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
               const c2y = y2;
               const d = `M ${x1} ${y1} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${x2} ${y2}`;
               const destEnabled = (idx + 1) <= Math.min((steps?.length || 0), maxCompletedIndex + 3);
-              const isCompleted = idx <= maxCompletedIndex;
+              const isCompleted = completedSteps.has(idx);
               
               return (
                 <Path
@@ -532,7 +547,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
           {/* Animated Nodes */}
           {steps.map((s, idx) => {
             const pos = positions[idx];
-            const isCompleted = idx + 1 <= maxCompletedIndex;
+            const isCompleted = completedSteps.has(idx);
             const isEnabled = idx + 1 <= Math.min((steps?.length || 0), maxCompletedIndex + 3);
             const emoji = getEmojiForStep(s, idx);
             const isLeft = idx % 2 === 0;
