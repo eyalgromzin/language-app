@@ -2,7 +2,7 @@ import React from 'react';
 import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View, useWindowDimensions, Keyboard, Modal, TextInput, NativeModules } from 'react-native';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
 import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
-import { Reader, ReaderProvider } from '@epubjs-react-native/core';
+import { Reader, ReaderProvider, useReader } from '@epubjs-react-native/core';
 import { useFileSystem } from '@epubjs-react-native/file-system';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -49,8 +49,7 @@ function BookReaderScreen(): React.JSX.Element {
   const [src, setSrc] = React.useState<string | null>(null);
   const [initialCfi, setInitialCfi] = React.useState<string | undefined>(undefined);
   const [bookFormat, setBookFormat] = React.useState<'epub' | 'pdf'>('epub');
-  const [currentPage, setCurrentPage] = React.useState<number>(1);
-  const [totalPages, setTotalPages] = React.useState<number>(1);
+  // Page state is handled inside the ReaderProvider-wrapped child
 
   const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
 
@@ -62,6 +61,8 @@ function BookReaderScreen(): React.JSX.Element {
   const imageScrapeRejectRef = React.useRef<((err?: unknown) => void) | null>(null);
   const hiddenWebViewRef = React.useRef<WebView>(null);
 
+  // NOTE: useReader must be called within a ReaderProvider. We will call it
+  // inside a child component that is wrapped by ReaderProvider.
   const bookId: string | undefined = (route?.params as RouteParams | undefined)?.id;
 
   type ReaderTheme = 'white' | 'beige';
@@ -154,8 +155,6 @@ function BookReaderScreen(): React.JSX.Element {
           if (detectedFormat === 'epub') {
             setSrc(localPath);
             setInitialCfi(book.lastPositionCfi);
-            setCurrentPage(1);
-            setTotalPages(1); // Will be updated when reader loads
           }
         }
       } catch {
@@ -404,43 +403,7 @@ function BookReaderScreen(): React.JSX.Element {
 
   const goBack = () => navigation.goBack();
 
-  const goToNextPage = () => {
-    try {
-      const script = `
-        try {
-          if (window.rendition && typeof window.rendition.next === 'function') {
-            window.rendition.next();
-          }
-        } catch (e) {
-          console.log('Error navigating to next page:', e);
-        }
-      `;
-      // We'll need to inject this through the WebView message system
-      // For now, just update the page counter optimistically
-      setCurrentPage(prev => Math.min(prev + 1, totalPages));
-    } catch (e) {
-      console.log('Error navigating to next page:', e);
-    }
-  };
-
-  const goToPreviousPage = () => {
-    try {
-      const script = `
-        try {
-          if (window.rendition && typeof window.rendition.prev === 'function') {
-            window.rendition.prev();
-          }
-        } catch (e) {
-          console.log('Error navigating to previous page:', e);
-        }
-      `;
-      // We'll need to inject this through the WebView message system
-      // For now, just update the page counter optimistically
-      setCurrentPage(prev => Math.max(prev - 1, 1));
-    } catch (e) {
-      console.log('Error navigating to previous page:', e);
-    }
-  };
+  // Navigation handlers are implemented inside the child wrapped by ReaderProvider
 
   const handleLocationChange = React.useCallback((totalLocations: number, currentLocation: any) => {
     const cfi: string | null = currentLocation?.start?.cfi ?? currentLocation?.end?.cfi ?? null;
@@ -1038,27 +1001,17 @@ function BookReaderScreen(): React.JSX.Element {
           bookFormat === 'epub' && (
             !!src && (
               <ReaderProvider>
-                <Reader
-                  key={`reader-${readerTheme}`}
+                <ReaderWithNavigation
                   src={src}
                   width={width}
                   height={height - 56 - 60 - 300}
-                  fileSystem={useFileSystem}
-                  initialLocation={initialCfi}
-                  onLocationChange={(totalLocations: number, currentLocation: any) => {
-                    handleLocationChange(totalLocations, currentLocation);
-                    // Update current page for EPUB
-                    if (totalLocations > 0) {
-                      const currentPageNum = Math.floor((currentLocation?.start?.location || 0) / totalLocations * totalLocations) + 1;
-                      setCurrentPage(Math.max(1, currentPageNum));
-                      setTotalPages(totalLocations);
-                    }
-                  }}
-                  onDisplayError={(reason: string) => setError(reason || 'Failed to display book')}
-                  onReady={() => setError(null)}
-                  allowScriptedContent
+                  initialCfi={initialCfi}
                   injectedJavascript={injectedJavascript}
                   onWebViewMessage={handleWebViewMessage}
+                  onDisplayError={(reason: string) => setError(reason || 'Failed to display book')}
+                  onReady={() => setError(null)}
+                  onLocationChangePersist={handleLocationChange}
+                  themeColors={{ headerBg: themeColors.headerBg, headerText: themeColors.headerText, border: themeColors.border }}
                 />
               </ReaderProvider>
             )
@@ -1200,42 +1153,7 @@ function BookReaderScreen(): React.JSX.Element {
           storageKey="surf.favourites"
         />
         
-        {/* Navigation Bar */}
-        <View style={[styles.navigationBar, { backgroundColor: themeColors.headerBg, borderTopColor: themeColors.border }]}>
-          <TouchableOpacity 
-            style={[
-              styles.navButton, 
-              { 
-                borderColor: themeColors.border,
-                opacity: currentPage <= 1 ? 0.5 : 1
-              }
-            ]}
-            onPress={goToPreviousPage}
-            disabled={currentPage <= 1}
-          >
-            <Text style={[styles.navButtonText, { color: themeColors.headerText }]}>‹</Text>
-          </TouchableOpacity>
-          
-          <View style={styles.pageInfo}>
-            <Text style={[styles.pageNumber, { color: themeColors.headerText }]}>
-              Page {currentPage} of {totalPages}
-            </Text>
-          </View>
-          
-          <TouchableOpacity 
-            style={[
-              styles.navButton, 
-              { 
-                borderColor: themeColors.border,
-                opacity: currentPage >= totalPages ? 0.5 : 1
-              }
-            ]}
-            onPress={goToNextPage}
-            disabled={currentPage >= totalPages}
-          >
-            <Text style={[styles.navButtonText, { color: themeColors.headerText }]}>›</Text>
-          </TouchableOpacity>
-        </View>
+        {/* Navigation Bar moved inside ReaderWithNavigation */}
       </View>
     </View>
   );
@@ -1243,6 +1161,126 @@ function BookReaderScreen(): React.JSX.Element {
 
 
 export default BookReaderScreen;
+
+type ReaderWithNavigationProps = {
+  src: string;
+  width: number;
+  height: number;
+  initialCfi?: string;
+  injectedJavascript: string;
+  onWebViewMessage: (payload: any) => void;
+  onDisplayError: (reason: string) => void;
+  onReady: () => void;
+  onLocationChangePersist: (totalLocations: number, currentLocation: any) => void;
+  themeColors: { headerBg: string; headerText: string; border: string };
+};
+
+function ReaderWithNavigation(props: ReaderWithNavigationProps): React.JSX.Element {
+  const { goPrevious, goNext, goToLocation, getCurrentLocation, getLocations } = useReader();
+  const [currentPage, setCurrentPage] = React.useState<number>(1);
+  const [totalPages, setTotalPages] = React.useState<number>(1);
+
+  const handleLocationChangeInner = React.useCallback((totalLocations: number, currentLocation: any) => {
+    props.onLocationChangePersist(totalLocations, currentLocation);
+    if (totalLocations > 0) {
+      const startLocation = Number(currentLocation?.start?.location || 0);
+      const currentPageNum = Math.floor(startLocation) + 1;
+      setCurrentPage(Math.max(1, currentPageNum));
+      setTotalPages(totalLocations);
+    }
+  }, [props]);
+
+  const goToNextPage = React.useCallback(() => {
+    try {
+      console.log('goToNextPage');
+      if (typeof goNext === 'function') {
+        goNext({ keepScrollOffset: true });
+        return;
+      }
+      const currentLoc = getCurrentLocation();
+      const locations = getLocations();
+      if (currentLoc && Array.isArray(locations) && locations.length > 0) {
+        const currentIndex = locations.findIndex((loc: any) =>
+          loc === currentLoc.start?.cfi || loc === currentLoc.end?.cfi
+        );
+        if (currentIndex >= 0 && currentIndex < locations.length - 1) {
+          const nextLocation = locations[currentIndex + 1];
+          goToLocation(nextLocation);
+        }
+      }
+    } catch {}
+  }, [goNext, getCurrentLocation, getLocations, goToLocation]);
+
+  const goToPreviousPage = React.useCallback(() => {
+    try {
+      if (typeof goPrevious === 'function') {
+        goPrevious({ keepScrollOffset: true });
+        return;
+      }
+      const currentLoc = getCurrentLocation();
+      const locations = getLocations();
+      if (currentLoc && Array.isArray(locations) && locations.length > 0) {
+        const currentIndex = locations.findIndex((loc: any) =>
+          loc === currentLoc.start?.cfi || loc === currentLoc.end?.cfi
+        );
+        if (currentIndex > 0) {
+          const prevLocation = locations[currentIndex - 1];
+          goToLocation(prevLocation);
+        }
+      }
+    } catch {}
+  }, [goPrevious, getCurrentLocation, getLocations, goToLocation]);
+
+  return (
+    <>
+      <Reader
+        key={`reader-inner`}
+        src={props.src}
+        width={props.width}
+        height={props.height}
+        fileSystem={useFileSystem}
+        initialLocation={props.initialCfi}
+        onLocationChange={handleLocationChangeInner}
+        onDisplayError={props.onDisplayError}
+        onReady={props.onReady}
+        allowScriptedContent
+        injectedJavascript={props.injectedJavascript}
+        onWebViewMessage={props.onWebViewMessage}
+      />
+      <View style={[styles.navigationBar, { backgroundColor: props.themeColors.headerBg, borderTopColor: props.themeColors.border }]}>
+        <TouchableOpacity 
+          style={[
+            styles.navButton, 
+            { 
+              borderColor: props.themeColors.border,
+              opacity: currentPage <= 1 ? 0.5 : 1
+            }
+          ]}
+          onPress={goToPreviousPage}
+          disabled={currentPage <= 1}
+        >
+          <Text style={[styles.navButtonText, { color: props.themeColors.headerText }]}>‹</Text>
+        </TouchableOpacity>
+        <View style={styles.pageInfo}>
+          <Text style={[styles.pageNumber, { color: props.themeColors.headerText }]}>Page {currentPage} of {totalPages}</Text>
+        </View>
+        <TouchableOpacity 
+          style={[
+            styles.navButton, 
+            { 
+              borderColor: props.themeColors.border,
+              opacity: currentPage >= totalPages ? 0.5 : 1
+            }
+          ]}
+          onPress={goToNextPage}
+          disabled={currentPage >= totalPages}
+        >
+          <Text style={[styles.navButtonText, { color: props.themeColors.headerText }]}>›</Text>
+        </TouchableOpacity>
+      </View>
+    </>
+  );
+}
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'white' },
