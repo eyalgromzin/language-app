@@ -49,8 +49,6 @@ function BookReaderScreen(): React.JSX.Element {
   const [src, setSrc] = React.useState<string | null>(null);
   const [initialCfi, setInitialCfi] = React.useState<string | undefined>(undefined);
   const [bookFormat, setBookFormat] = React.useState<'epub' | 'pdf'>('epub');
-  const [pdfBase64, setPdfBase64] = React.useState<string | null>(null);
-  const [initialPdfPage, setInitialPdfPage] = React.useState<number>(1);
   const [currentPage, setCurrentPage] = React.useState<number>(1);
   const [totalPages, setTotalPages] = React.useState<number>(1);
 
@@ -63,8 +61,6 @@ function BookReaderScreen(): React.JSX.Element {
   const imageScrapeResolveRef = React.useRef<((urls: string[]) => void) | null>(null);
   const imageScrapeRejectRef = React.useRef<((err?: unknown) => void) | null>(null);
   const hiddenWebViewRef = React.useRef<WebView>(null);
-  const readerRef = React.useRef<any>(null);
-  const pdfWebViewRef = React.useRef<WebView>(null);
 
   const bookId: string | undefined = (route?.params as RouteParams | undefined)?.id;
 
@@ -160,20 +156,6 @@ function BookReaderScreen(): React.JSX.Element {
             setInitialCfi(book.lastPositionCfi);
             setCurrentPage(1);
             setTotalPages(1); // Will be updated when reader loads
-          } else {
-            // Load PDF as base64 for pdf.js in WebView
-            try {
-              const data = await RNFS.readFile(localPath.replace(/^file:\/\//, ''), 'base64' as any);
-              if (!cancelled) {
-                setPdfBase64(data);
-                const initialPage = Math.max(1, Number(book.lastPdfPage) || 1);
-                setInitialPdfPage(initialPage);
-                setCurrentPage(initialPage);
-                setTotalPages(1); // Will be updated when PDF loads
-              }
-            } catch {
-              if (!cancelled) setError('Failed to load PDF');
-            }
           }
         }
       } catch {
@@ -442,25 +424,7 @@ function BookReaderScreen(): React.JSX.Element {
         } catch (e) {
           console.log('Error navigating to next page:', e);
         }
-      } else {
-        // For PDF, scroll to next page
-        try {
-          if (pdfWebViewRef.current) {
-            const nextPage = currentPage + 1;
-            const script = `
-              const target = document.querySelector('.page[data-page-number="${nextPage}"]');
-              if (target) {
-                target.scrollIntoView({ block: 'start', behavior: 'smooth' });
-              }
-            `;
-            pdfWebViewRef.current.injectJavaScript(script);
-            setCurrentPage(nextPage);
-            persistPdfPage(nextPage);
-          }
-        } catch (e) {
-          console.log('Error navigating to next PDF page:', e);
-        }
-      }
+      } 
     }
   };
 
@@ -484,25 +448,7 @@ function BookReaderScreen(): React.JSX.Element {
         } catch (e) {
           console.log('Error navigating to previous page:', e);
         }
-      } else {
-        // For PDF, scroll to previous page
-        try {
-          if (pdfWebViewRef.current) {
-            const prevPage = currentPage - 1;
-            const script = `
-              const target = document.querySelector('.page[data-page-number="${prevPage}"]');
-              if (target) {
-                target.scrollIntoView({ block: 'start', behavior: 'smooth' });
-              }
-            `;
-            pdfWebViewRef.current.injectJavaScript(script);
-            setCurrentPage(prevPage);
-            persistPdfPage(prevPage);
-          }
-        } catch (e) {
-          console.log('Error navigating to previous PDF page:', e);
-        }
-      }
+      } 
     }
   };
 
