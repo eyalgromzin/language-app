@@ -1,6 +1,3 @@
-- in books , add at the bottom a page number that you can type and change, 
-    and next and previous buttons  
-
 - in choose word , accent should be in the native language and not learning language. 
 
 - add in settings the option to choose which practices will be in surprise me 
@@ -22,6 +19,8 @@
     on word click it should pause the video 
 
 - make app work in shirs phone 
+
+- in book reader , only after a few swipes the total number of pages is updated and then the next and previous page are working - fix it 
 
 - publish app =======================================================================================================================
 
