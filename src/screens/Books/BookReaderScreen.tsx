@@ -2,8 +2,7 @@ import React from 'react';
 import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View, useWindowDimensions, Keyboard, Modal, TextInput, NativeModules } from 'react-native';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
 import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
-import { Reader, ReaderProvider, useReader } from '@epubjs-react-native/core';
-import { useFileSystem } from '@epubjs-react-native/file-system';
+import { ReaderProvider } from '@epubjs-react-native/core';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import * as RNFS from 'react-native-fs';
@@ -16,6 +15,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import wordCountService from '../../services/wordCountService';
 import AddToFavouritesDialog from '../../components/AddToFavouritesDialog';
+import { ThemeSelector, AddBookModal, ReaderWithNavigation, type ReaderTheme } from './components';
 
 type StoredBook = {
   id: string;
@@ -65,7 +65,6 @@ function BookReaderScreen(): React.JSX.Element {
   // inside a child component that is wrapped by ReaderProvider.
   const bookId: string | undefined = (route?.params as RouteParams | undefined)?.id;
 
-  type ReaderTheme = 'white' | 'beige';
   const [readerTheme, setReaderTheme] = React.useState<ReaderTheme>('white');
   const [showThemeMenu, setShowThemeMenu] = React.useState<boolean>(false);
 
@@ -96,12 +95,7 @@ function BookReaderScreen(): React.JSX.Element {
 
   // Add-to-library modal state
   const [showAddBookModal, setShowAddBookModal] = React.useState<boolean>(false);
-  const [newBookName, setNewBookName] = React.useState<string>('');
-  const [newBookUrl, setNewBookUrl] = React.useState<string>('');
   const [itemTypes, setItemTypes] = React.useState<string[]>([]);
-  const [selectedTypeName, setSelectedTypeName] = React.useState<string | null>(null);
-  const [showTypeOptions, setShowTypeOptions] = React.useState<boolean>(false);
-  const [typeError, setTypeError] = React.useState<boolean>(false);
 
   // Add-to-favourites modal state
   const [showFavouriteModal, setShowFavouriteModal] = React.useState<boolean>(false);
@@ -255,11 +249,6 @@ function BookReaderScreen(): React.JSX.Element {
         if (cancelled) return;
 
         const openAddDialog = async () => {
-          setTypeError(false);
-          setSelectedTypeName(null);
-          setNewBookName(bookTitle || '');
-          setNewBookUrl('');
-          setShowTypeOptions(false);
           setShowAddBookModal(true);
           await markPromptShownNow();
         };
@@ -272,11 +261,6 @@ function BookReaderScreen(): React.JSX.Element {
 
         const onYes = async () => {
           await markPromptShownNow();
-          setTypeError(false);
-          setSelectedTypeName(null);
-          setNewBookName(bookTitle || '');
-          setNewBookUrl('');
-          setShowTypeOptions(false);
           setShowAddBookModal(true);
         };
         const onNo = async () => { await markPromptShownNow(); };
@@ -972,18 +956,18 @@ function BookReaderScreen(): React.JSX.Element {
         </View>
       </View>
       {showThemeMenu && (
-        <View style={[styles.themeMenu, { backgroundColor: themeColors.menuBg, borderColor: themeColors.border }]}>
-          {(['white','beige'] as ReaderTheme[]).map((opt) => (
-            <TouchableOpacity
-              key={opt}
-              onPress={() => { setReaderTheme(opt); setShowThemeMenu(false); }}
-              style={[styles.themeMenuItem, readerTheme === opt ? styles.themeMenuItemActive : null]}
-            >
-              <View style={[styles.themeSwatch, opt === 'white' ? { backgroundColor: '#ffffff', borderColor: '#e5e7eb' } : { backgroundColor: '#f5f1e8', borderColor: '#e5dfcf' }]} />
-              <Text style={[styles.themeMenuItemText, { color: themeColors.menuText }]}>{opt === 'white' ? 'White' : 'Beige'}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+        <ThemeSelector
+          currentTheme={readerTheme}
+          onThemeChange={(theme) => {
+            setReaderTheme(theme);
+            setShowThemeMenu(false);
+          }}
+          themeColors={{
+            menuBg: themeColors.menuBg,
+            menuText: themeColors.menuText,
+            border: themeColors.border
+          }}
+        />
       )}
 
       <View style={styles.readerContainer}>
@@ -1060,79 +1044,21 @@ function BookReaderScreen(): React.JSX.Element {
           animationType="fade"
           onRequestClose={() => setShowAddBookModal(false)}
         >
-          <View style={styles.modalBackdrop}>
-            <View style={styles.modalCard}>
-              <Text style={styles.modalTitle}>Add book to library</Text>
-              {learningLanguage && (
-                <Text style={[styles.inputLabel, { marginTop: 0 }]}>Learning language: {toLanguageSymbol(learningLanguage)}</Text>
-              )}
-              <Text style={styles.inputLabel}>Book type</Text>
-              <TouchableOpacity
-                onPress={() => setShowTypeOptions((prev) => !prev)}
-                style={[styles.modalInput, typeError && !selectedTypeName ? { borderColor: '#ef4444' } : null]}
-                activeOpacity={0.7}
-              >
-                <Text style={{ color: selectedTypeName ? '#111827' : '#9ca3af' }}>
-                  {selectedTypeName || 'Select type'}
-                </Text>
-              </TouchableOpacity>
-              {showTypeOptions && (
-                <View style={[styles.modalInput, { paddingVertical: 0, marginTop: 8 }]}> 
-                  {itemTypes.map((t) => (
-                    <TouchableOpacity
-                      key={t}
-                      onPress={() => { setSelectedTypeName(t); setShowTypeOptions(false); setTypeError(false); }}
-                      style={{ paddingVertical: 10 }}
-                    >
-                      <Text style={{ color: '#111827' }}>{t}</Text>
-                    </TouchableOpacity>
-                  ))}
-                </View>
-              )}
-              {typeError && !selectedTypeName && (
-                <Text style={styles.errorText}>Type is required</Text>
-              )}
-              <Text style={styles.inputLabel}>Name</Text>
-              <TextInput
-                style={styles.modalInput}
-                value={newBookName}
-                onChangeText={setNewBookName}
-                placeholder="Enter a name"
-              />
-              <Text style={styles.inputLabel}>Download URL</Text>
-              <TextInput
-                style={styles.modalInput}
-                value={newBookUrl}
-                onChangeText={setNewBookUrl}
-                autoCapitalize="none"
-                autoCorrect={false}
-                keyboardType="url"
-                placeholder="https://example.com/my-book.epub"
-              />
-              <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 12, gap: 8 }}>
-                <TouchableOpacity onPress={() => setShowAddBookModal(false)} style={styles.modalCloseBtn}>
-                  <Text style={styles.modalCloseText}>Cancel</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={async () => {
-                    const u = normalizeUrl(newBookUrl);
-                    if (!u) {
-                      if (Platform.OS === 'android') ToastAndroid.show('Invalid URL', ToastAndroid.SHORT); else Alert.alert('Invalid URL');
-                      return;
-                    }
-                    if (!selectedTypeName) { setTypeError(true); return; }
-                    const nm = (newBookName || bookTitle || 'Book').trim();
-                    await postAddBookUrlToLibrary(u, selectedTypeName, nm);
-                    setShowAddBookModal(false);
-                    if (Platform.OS === 'android') ToastAndroid.show('Added to library', ToastAndroid.SHORT); else Alert.alert('Added');
-                  }}
-                  style={[styles.modalCloseBtn, { backgroundColor: '#007AFF' }]}
-                >
-                  <Text style={[styles.modalCloseText, { color: 'white' }]}>Add</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
+          <AddBookModal
+            visible={showAddBookModal}
+            onClose={() => setShowAddBookModal(false)}
+            onAdd={async (url, typeName, displayName) => {
+              await postAddBookUrlToLibrary(url, typeName, displayName);
+              if (Platform.OS === 'android') {
+                ToastAndroid.show('Added to library', ToastAndroid.SHORT);
+              } else {
+                Alert.alert('Added');
+              }
+            }}
+            bookTitle={bookTitle}
+            learningLanguage={learningLanguage}
+            itemTypes={itemTypes}
+          />
         </Modal>
         
         {/* Add to favourites modal */}
@@ -1162,125 +1088,6 @@ function BookReaderScreen(): React.JSX.Element {
 
 export default BookReaderScreen;
 
-type ReaderWithNavigationProps = {
-  src: string;
-  width: number;
-  height: number;
-  initialCfi?: string;
-  injectedJavascript: string;
-  onWebViewMessage: (payload: any) => void;
-  onDisplayError: (reason: string) => void;
-  onReady: () => void;
-  onLocationChangePersist: (totalLocations: number, currentLocation: any) => void;
-  themeColors: { headerBg: string; headerText: string; border: string };
-};
-
-function ReaderWithNavigation(props: ReaderWithNavigationProps): React.JSX.Element {
-  const { goPrevious, goNext, goToLocation, getCurrentLocation, getLocations } = useReader();
-  const [currentPage, setCurrentPage] = React.useState<number>(1);
-  const [totalPages, setTotalPages] = React.useState<number>(1);
-
-  const handleLocationChangeInner = React.useCallback((totalLocations: number, currentLocation: any) => {
-    props.onLocationChangePersist(totalLocations, currentLocation);
-    if (totalLocations > 0) {
-      const startLocation = Number(currentLocation?.start?.location || 0);
-      const currentPageNum = Math.floor(startLocation) + 1;
-      setCurrentPage(Math.max(1, currentPageNum));
-      setTotalPages(totalLocations);
-    }
-  }, [props]);
-
-  const goToNextPage = React.useCallback(() => {
-    try {
-      console.log('goToNextPage');
-      if (typeof goNext === 'function') {
-        goNext({ keepScrollOffset: true });
-        return;
-      }
-      const currentLoc = getCurrentLocation();
-      const locations = getLocations();
-      if (currentLoc && Array.isArray(locations) && locations.length > 0) {
-        const currentIndex = locations.findIndex((loc: any) =>
-          loc === currentLoc.start?.cfi || loc === currentLoc.end?.cfi
-        );
-        if (currentIndex >= 0 && currentIndex < locations.length - 1) {
-          const nextLocation = locations[currentIndex + 1];
-          goToLocation(nextLocation);
-        }
-      }
-    } catch {}
-  }, [goNext, getCurrentLocation, getLocations, goToLocation]);
-
-  const goToPreviousPage = React.useCallback(() => {
-    try {
-      if (typeof goPrevious === 'function') {
-        goPrevious({ keepScrollOffset: true });
-        return;
-      }
-      const currentLoc = getCurrentLocation();
-      const locations = getLocations();
-      if (currentLoc && Array.isArray(locations) && locations.length > 0) {
-        const currentIndex = locations.findIndex((loc: any) =>
-          loc === currentLoc.start?.cfi || loc === currentLoc.end?.cfi
-        );
-        if (currentIndex > 0) {
-          const prevLocation = locations[currentIndex - 1];
-          goToLocation(prevLocation);
-        }
-      }
-    } catch {}
-  }, [goPrevious, getCurrentLocation, getLocations, goToLocation]);
-
-  return (
-    <>
-      <Reader
-        key={`reader-inner`}
-        src={props.src}
-        width={props.width}
-        height={props.height}
-        fileSystem={useFileSystem}
-        initialLocation={props.initialCfi}
-        onLocationChange={handleLocationChangeInner}
-        onDisplayError={props.onDisplayError}
-        onReady={props.onReady}
-        allowScriptedContent
-        injectedJavascript={props.injectedJavascript}
-        onWebViewMessage={props.onWebViewMessage}
-      />
-      <View style={[styles.navigationBar, { backgroundColor: props.themeColors.headerBg, borderTopColor: props.themeColors.border }]}>
-        <TouchableOpacity 
-          style={[
-            styles.navButton, 
-            { 
-              borderColor: props.themeColors.border,
-              opacity: currentPage <= 1 ? 0.5 : 1
-            }
-          ]}
-          onPress={goToPreviousPage}
-          disabled={currentPage <= 1}
-        >
-          <Text style={[styles.navButtonText, { color: props.themeColors.headerText }]}>‹</Text>
-        </TouchableOpacity>
-        <View style={styles.pageInfo}>
-          <Text style={[styles.pageNumber, { color: props.themeColors.headerText }]}>Page {currentPage} of {totalPages}</Text>
-        </View>
-        <TouchableOpacity 
-          style={[
-            styles.navButton, 
-            { 
-              borderColor: props.themeColors.border,
-              opacity: currentPage >= totalPages ? 0.5 : 1
-            }
-          ]}
-          onPress={goToNextPage}
-          disabled={currentPage >= totalPages}
-        >
-          <Text style={[styles.navButtonText, { color: props.themeColors.headerText }]}>›</Text>
-        </TouchableOpacity>
-      </View>
-    </>
-  );
-}
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'white' },
@@ -1306,25 +1113,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
     paddingVertical: 2,
   },
-  themeMenu: {
-    position: 'absolute',
-    right: 12,
-    top: 56,
-    borderRadius: 10,
-    borderWidth: StyleSheet.hairlineWidth,
-    paddingVertical: 6,
-    width: 180,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 4 },
-    elevation: 10,
-    zIndex: 1000,
-  },
-  themeMenuItem: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10, paddingHorizontal: 12 },
-  themeMenuItemActive: {},
-  themeMenuItemText: { marginLeft: 10, fontSize: 14 },
-  themeSwatch: { width: 20, height: 20, borderRadius: 4, borderWidth: StyleSheet.hairlineWidth },
   readerContainer: { flex: 1 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   bottomPanel: {
@@ -1415,86 +1203,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginRight: 8,
     backgroundColor: '#eee',
-  },
-  modalBackdrop: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.3)',
-    justifyContent: 'center',
-    padding: 16,
-  },
-  modalCard: {
-    backgroundColor: 'white',
-    borderRadius: 12,
-    padding: 14,
-  },
-  modalTitle: {
-    fontSize: 16,
-    fontWeight: '700',
-    marginBottom: 10,
-  },
-  modalCloseBtn: {
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    backgroundColor: '#f3f4f6',
-    borderRadius: 8,
-  },
-  modalCloseText: {
-    fontSize: 13,
-    color: '#374151',
-  },
-  inputLabel: {
-    fontSize: 12,
-    color: '#374151',
-    marginTop: 8,
-    marginBottom: 6,
-  },
-  modalInput: {
-    borderWidth: 1,
-    borderColor: '#e5e7eb',
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-  },
-  errorText: {
-    color: '#ef4444',
-    fontSize: 12,
-    marginTop: 6,
-  },
-  navigationBar: {
-    height: 60,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    shadowOffset: { width: 0, height: -2 },
-    elevation: 8,
-  },
-  navButton: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    borderWidth: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  },
-  navButtonText: {
-    fontSize: 24,
-    fontWeight: '600',
-    lineHeight: 24,
-  },
-  pageInfo: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  pageNumber: {
-    fontSize: 14,
-    fontWeight: '500',
   },
 });
 
