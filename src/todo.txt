@@ -9,6 +9,18 @@
 
 - in memory game , after finish, show congradulations popup with a continue button
 
+- show special congratulations every 5 correct answers 
+
+- unable to load categories 
+
+- remove favourites star from book reading 
+
+- video screen - when opening fullscreen and minimizing the app , and then opening it from minimize,
+    there is no url bar and you cant do anything 
+
+- its not convenient to click on a word when a video is running. 
+    on word click it should pause the video 
+
 - make app work in shirs phone 
 
 - publish app =======================================================================================================================

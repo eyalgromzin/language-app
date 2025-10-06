@@ -51,6 +51,8 @@ function BookReaderScreen(): React.JSX.Element {
   const [bookFormat, setBookFormat] = React.useState<'epub' | 'pdf'>('epub');
   const [pdfBase64, setPdfBase64] = React.useState<string | null>(null);
   const [initialPdfPage, setInitialPdfPage] = React.useState<number>(1);
+  const [currentPage, setCurrentPage] = React.useState<number>(1);
+  const [totalPages, setTotalPages] = React.useState<number>(1);
 
   const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
 
@@ -61,6 +63,8 @@ function BookReaderScreen(): React.JSX.Element {
   const imageScrapeResolveRef = React.useRef<((urls: string[]) => void) | null>(null);
   const imageScrapeRejectRef = React.useRef<((err?: unknown) => void) | null>(null);
   const hiddenWebViewRef = React.useRef<WebView>(null);
+  const readerRef = React.useRef<any>(null);
+  const pdfWebViewRef = React.useRef<WebView>(null);
 
   const bookId: string | undefined = (route?.params as RouteParams | undefined)?.id;
 
@@ -154,13 +158,18 @@ function BookReaderScreen(): React.JSX.Element {
           if (detectedFormat === 'epub') {
             setSrc(localPath);
             setInitialCfi(book.lastPositionCfi);
+            setCurrentPage(1);
+            setTotalPages(1); // Will be updated when reader loads
           } else {
             // Load PDF as base64 for pdf.js in WebView
             try {
               const data = await RNFS.readFile(localPath.replace(/^file:\/\//, ''), 'base64' as any);
               if (!cancelled) {
                 setPdfBase64(data);
-                setInitialPdfPage(Math.max(1, Number(book.lastPdfPage) || 1));
+                const initialPage = Math.max(1, Number(book.lastPdfPage) || 1);
+                setInitialPdfPage(initialPage);
+                setCurrentPage(initialPage);
+                setTotalPages(1); // Will be updated when PDF loads
               }
             } catch {
               if (!cancelled) setError('Failed to load PDF');
@@ -412,6 +421,90 @@ function BookReaderScreen(): React.JSX.Element {
   }, [bookId]);
 
   const goBack = () => navigation.goBack();
+
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      if (bookFormat === 'epub') {
+        // For EPUB, use injected JavaScript to navigate
+        try {
+          const script = `
+            try {
+              if (window.rendition && typeof window.rendition.next === 'function') {
+                window.rendition.next();
+              }
+            } catch (e) {
+              console.log('Error navigating to next page:', e);
+            }
+          `;
+          // We'll need to inject this through the WebView message system
+          // For now, just update the page counter optimistically
+          setCurrentPage(prev => Math.min(prev + 1, totalPages));
+        } catch (e) {
+          console.log('Error navigating to next page:', e);
+        }
+      } else {
+        // For PDF, scroll to next page
+        try {
+          if (pdfWebViewRef.current) {
+            const nextPage = currentPage + 1;
+            const script = `
+              const target = document.querySelector('.page[data-page-number="${nextPage}"]');
+              if (target) {
+                target.scrollIntoView({ block: 'start', behavior: 'smooth' });
+              }
+            `;
+            pdfWebViewRef.current.injectJavaScript(script);
+            setCurrentPage(nextPage);
+            persistPdfPage(nextPage);
+          }
+        } catch (e) {
+          console.log('Error navigating to next PDF page:', e);
+        }
+      }
+    }
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage > 1) {
+      if (bookFormat === 'epub') {
+        // For EPUB, use injected JavaScript to navigate
+        try {
+          const script = `
+            try {
+              if (window.rendition && typeof window.rendition.prev === 'function') {
+                window.rendition.prev();
+              }
+            } catch (e) {
+              console.log('Error navigating to previous page:', e);
+            }
+          `;
+          // We'll need to inject this through the WebView message system
+          // For now, just update the page counter optimistically
+          setCurrentPage(prev => Math.max(prev - 1, 1));
+        } catch (e) {
+          console.log('Error navigating to previous page:', e);
+        }
+      } else {
+        // For PDF, scroll to previous page
+        try {
+          if (pdfWebViewRef.current) {
+            const prevPage = currentPage - 1;
+            const script = `
+              const target = document.querySelector('.page[data-page-number="${prevPage}"]');
+              if (target) {
+                target.scrollIntoView({ block: 'start', behavior: 'smooth' });
+              }
+            `;
+            pdfWebViewRef.current.injectJavaScript(script);
+            setCurrentPage(prevPage);
+            persistPdfPage(prevPage);
+          }
+        } catch (e) {
+          console.log('Error navigating to previous PDF page:', e);
+        }
+      }
+    }
+  };
 
   const handleLocationChange = React.useCallback((totalLocations: number, currentLocation: any) => {
     const cfi: string | null = currentLocation?.start?.cfi ?? currentLocation?.end?.cfi ?? null;
@@ -711,245 +804,19 @@ function BookReaderScreen(): React.JSX.Element {
         return;
       }
       if (data && data.type === 'pdfPage' && typeof data.page === 'number') {
-        void persistPdfPage(Number(data.page));
+        const pageNum = Number(data.page);
+        setCurrentPage(pageNum);
+        void persistPdfPage(pageNum);
+        return;
+      }
+      if (data && data.type === 'pdfTotalPages' && typeof data.totalPages === 'number') {
+        setTotalPages(Number(data.totalPages));
         return;
       }
     } catch {}
   }, []);
 
-  const pdfHtml = React.useMemo(() => {
-    if (!pdfBase64) return null as string | null;
-    const bg = themeColors.bg;
-    const text = themeColors.text;
-    const initialPageSafe = Math.max(1, Number(initialPdfPage) || 1);
-    const base64Literal = JSON.stringify(pdfBase64);
-    return `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <style>
-    html, body { margin: 0; padding: 0; background: ${bg}; color: ${text}; }
-    #viewer { width: 100vw; }
-    .page { position: relative; margin: 8px auto; background: ${bg}; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
-    .textLayer { position: absolute; left: 0; top: 0; right: 0; bottom: 0; color: transparent; }
-    .ll-selected-word { background: rgba(255, 235, 59, 0.9); border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }
-    canvas { display: block; }
-  </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-  <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';</script>
-  </head>
-<body>
-  <div id="viewer"></div>
-  <script>
-    const PDF_BASE64 = ${base64Literal};
-    const INITIAL_PAGE = ${initialPageSafe};
-    function base64ToUint8Array(base64) {
-      try {
-        const raw = atob(base64);
-        const arr = new Uint8Array(raw.length);
-        for (let i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
-        return arr;
-      } catch (e) { return new Uint8Array(); }
-    }
-
-    function ensureHighlightStyle(doc) {
-      try {
-        if (!doc || !doc.head) return;
-        if (doc.getElementById('ll-highlight-style')) return;
-        const style = doc.createElement('style');
-        style.id = 'll-highlight-style';
-        style.type = 'text/css';
-        style.appendChild(doc.createTextNode('.ll-selected-word { background: rgba(255, 235, 59, 0.9); border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }'));
-        doc.head.appendChild(style);
-      } catch (e) {}
-    }
-
-    function clearHighlights(doc) {
-      try {
-        const nodes = Array.from(doc.querySelectorAll('.ll-selected-word'));
-        nodes.forEach((node) => {
-          try {
-            const parent = node.parentNode;
-            while (node.firstChild) parent.insertBefore(node.firstChild, node);
-            parent.removeChild(node);
-          } catch (e) {}
-        });
-      } catch (e) {}
-    }
-
-    function computeSentenceFromText(text, startIndex, endIndex) {
-      try {
-        var punct = /[\\.!?。！？]/;
-        var s = startIndex; while (s > 0 && !punct.test(text[s - 1])) s--;
-        var e = endIndex; while (e < text.length && !punct.test(text[e])) e++;
-        return (text.slice(s, Math.min(e + 1, text.length)) || '').replace(/\\s+/g, ' ').trim();
-      } catch (e) { return ''; }
-    }
-
-    function highlightWordAtPoint(doc, x, y) {
-      try {
-        const range = (doc.caretRangeFromPoint && doc.caretRangeFromPoint(x, y))
-          || (doc.caretPositionFromPoint && (function(){
-                const pos = doc.caretPositionFromPoint(x, y);
-                if (!pos) return null;
-                const r = doc.createRange();
-                r.setStart(pos.offsetNode, Math.min(pos.offset, pos.offsetNode?.length || 0));
-                r.setEnd(pos.offsetNode, Math.min(pos.offset, pos.offsetNode?.length || 0));
-                return r;
-             })());
-        if (!range) return null;
-        let node = range.startContainer;
-        if (!node) return null;
-        if (node.nodeType !== 3) {
-          (function findTextNode(n){
-            if (!n) return null;
-            if (n.nodeType === 3) { node = n; return n; }
-            for (let i = 0; i < n.childNodes.length; i++) {
-              const res = findTextNode(n.childNodes[i]);
-              if (res) return res;
-            }
-            return null;
-          })(node);
-          if (!node || node.nodeType !== 3) return null;
-        }
-        const text = node.textContent || '';
-        let index = range.startOffset;
-        if (index < 0) index = 0;
-        if (index > text.length) index = text.length;
-        const isWordChar = (ch) => /[A-Za-z0-9_'’\-]/.test(ch);
-        let start = index;
-        while (start > 0 && isWordChar(text[start - 1])) start--;
-        let end = index;
-        while (end < text.length && isWordChar(text[end])) end++;
-        const word = (text.slice(start, end) || '').trim();
-        if (!word) return null;
-        clearHighlights(doc);
-        const highlightRange = doc.createRange();
-        highlightRange.setStart(node, start);
-        highlightRange.setEnd(node, end);
-        const span = doc.createElement('span');
-        span.className = 'll-selected-word';
-        try { highlightRange.surroundContents(span); } catch (e) {
-          const frag = highlightRange.extractContents();
-          span.appendChild(frag);
-          highlightRange.insertNode(span);
-        }
-        var sentence = computeSentenceFromText(text, start, end);
-        return { word: word, sentence: sentence };
-      } catch (e) { return null; }
-    }
-
-    function attachWordHandlers(doc) {
-      if (!doc || doc.__llWordHandlersAttached) return;
-      doc.__llWordHandlersAttached = true;
-      ensureHighlightStyle(doc);
-      try {
-        const sendTouchStart = function(){
-          try {
-            window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
-              JSON.stringify({ type: 'readerTouchStart' })
-            );
-          } catch (e) {}
-        };
-        doc.body.addEventListener('mousedown', sendTouchStart, true);
-        doc.body.addEventListener('touchstart', sendTouchStart, true);
-      } catch (e) {}
-      const onTap = function(ev) {
-        try {
-          const res = highlightWordAtPoint(doc, ev.clientX, ev.clientY);
-          if (res && res.word) {
-            window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
-              JSON.stringify({ type: 'wordTap', word: res.word, sentence: res.sentence || '' })
-            );
-          }
-        } catch (e) {}
-      };
-      doc.body.addEventListener('click', onTap, true);
-      doc.body.addEventListener('touchend', function(e){
-        try {
-          const t = e.changedTouches && e.changedTouches[0];
-          if (!t) return;
-          const res = highlightWordAtPoint(doc, t.clientX, t.clientY);
-          if (res && res.word) {
-            window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
-              JSON.stringify({ type: 'wordTap', word: res.word, sentence: res.sentence || '' })
-            );
-          }
-        } catch (e) {}
-      }, true);
-    }
-
-    function observePages(container) {
-      try {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const pageNum = Number(entry.target.getAttribute('data-page-number')) || 1;
-              window.ReactNativeWebView && window.ReactNativeWebView.postMessage(
-                JSON.stringify({ type: 'pdfPage', page: pageNum })
-              );
-            }
-          });
-        }, { root: null, threshold: 0.6 });
-        const pages = container.querySelectorAll('.page');
-        pages.forEach(p => observer.observe(p));
-      } catch (e) {}
-    }
-
-    (async function() {
-      try {
-        const container = document.getElementById('viewer');
-        attachWordHandlers(document);
-        const loadingTask = pdfjsLib.getDocument({ data: base64ToUint8Array(PDF_BASE64) });
-        const pdf = await loadingTask.promise;
-        const availWidth = Math.max(320, container.clientWidth || window.innerWidth || 360) - 16;
-        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-          const page = await pdf.getPage(pageNum);
-          const unscaledViewport = page.getViewport({ scale: 1.0 });
-          const scale = availWidth / unscaledViewport.width;
-          const viewport = page.getViewport({ scale });
-          const wrapper = document.createElement('div');
-          wrapper.className = 'page';
-          wrapper.style.width = viewport.width + 'px';
-          wrapper.style.height = viewport.height + 'px';
-          wrapper.setAttribute('data-page-number', String(pageNum));
-          const canvas = document.createElement('canvas');
-          const ctx = canvas.getContext('2d');
-          canvas.width = Math.floor(viewport.width);
-          canvas.height = Math.floor(viewport.height);
-          canvas.style.width = viewport.width + 'px';
-          canvas.style.height = viewport.height + 'px';
-          const textLayerDiv = document.createElement('div');
-          textLayerDiv.className = 'textLayer';
-          wrapper.appendChild(canvas);
-          wrapper.appendChild(textLayerDiv);
-          container.appendChild(wrapper);
-          await page.render({ canvasContext: ctx, viewport }).promise;
-          const textContent = await page.getTextContent();
-          await pdfjsLib.renderTextLayer({
-            textContentSource: textContent,
-            container: textLayerDiv,
-            viewport: viewport,
-            textDivs: [],
-            enhanceTextSelection: true
-          }).promise;
-        }
-        // Scroll to initial page
-        try {
-          const target = document.querySelector('.page[data-page-number="' + INITIAL_PAGE + '"]');
-          if (target && target.scrollIntoView) target.scrollIntoView({ block: 'start', behavior: 'instant' });
-        } catch (e) {}
-        observePages(container);
-      } catch (e) {
-        // no-op
-      }
-    })();
-  </script>
-</body>
-</html>`;
-  }, [pdfBase64, initialPdfPage, themeColors.bg, themeColors.text]);
-
+  
   const fetchTranslation = async (word: string): Promise<string> => {
     const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);        
     const map = Object.fromEntries(entries);
@@ -1232,17 +1099,25 @@ function BookReaderScreen(): React.JSX.Element {
           </View>
         )}
         {!!(!loading && !error) && (
-          bookFormat === 'epub' ? (
+          bookFormat === 'epub' && (
             !!src && (
               <ReaderProvider>
                 <Reader
                   key={`reader-${readerTheme}`}
                   src={src}
                   width={width}
-                  height={height - 56 - 300}
+                  height={height - 56 - 60 - 300}
                   fileSystem={useFileSystem}
                   initialLocation={initialCfi}
-                  onLocationChange={handleLocationChange}
+                  onLocationChange={(totalLocations: number, currentLocation: any) => {
+                    handleLocationChange(totalLocations, currentLocation);
+                    // Update current page for EPUB
+                    if (totalLocations > 0) {
+                      const currentPageNum = Math.floor((currentLocation?.start?.location || 0) / totalLocations * totalLocations) + 1;
+                      setCurrentPage(Math.max(1, currentPageNum));
+                      setTotalPages(totalLocations);
+                    }
+                  }}
                   onDisplayError={(reason: string) => setError(reason || 'Failed to display book')}
                   onReady={() => setError(null)}
                   allowScriptedContent
@@ -1251,20 +1126,7 @@ function BookReaderScreen(): React.JSX.Element {
                 />
               </ReaderProvider>
             )
-          ) : (
-            !!pdfHtml && (
-              <WebView
-                source={{ html: pdfHtml }}
-                style={{ width: width, height: height - 56 - 300, backgroundColor: themeColors.bg }}
-                onMessage={handleWebViewMessage}
-                javaScriptEnabled
-                domStorageEnabled
-                originWhitelist={["*"]}
-                allowUniversalAccessFromFileURLs
-                allowFileAccess
-              />
-            )
-          )
+          ) 
         )}
         {imageScrape && (
           <View style={{ position: 'absolute', left: -10000, top: 0, width: 360, height: 1200, opacity: 0 }}>
@@ -1401,6 +1263,43 @@ function BookReaderScreen(): React.JSX.Element {
           learningLanguage={learningLanguage}
           storageKey="surf.favourites"
         />
+        
+        {/* Navigation Bar */}
+        <View style={[styles.navigationBar, { backgroundColor: themeColors.headerBg, borderTopColor: themeColors.border }]}>
+          <TouchableOpacity 
+            style={[
+              styles.navButton, 
+              { 
+                borderColor: themeColors.border,
+                opacity: currentPage <= 1 ? 0.5 : 1
+              }
+            ]}
+            onPress={goToPreviousPage}
+            disabled={currentPage <= 1}
+          >
+            <Text style={[styles.navButtonText, { color: themeColors.headerText }]}>‹</Text>
+          </TouchableOpacity>
+          
+          <View style={styles.pageInfo}>
+            <Text style={[styles.pageNumber, { color: themeColors.headerText }]}>
+              Page {currentPage} of {totalPages}
+            </Text>
+          </View>
+          
+          <TouchableOpacity 
+            style={[
+              styles.navButton, 
+              { 
+                borderColor: themeColors.border,
+                opacity: currentPage >= totalPages ? 0.5 : 1
+              }
+            ]}
+            onPress={goToNextPage}
+            disabled={currentPage >= totalPages}
+          >
+            <Text style={[styles.navButtonText, { color: themeColors.headerText }]}>›</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -1586,6 +1485,42 @@ const styles = StyleSheet.create({
     color: '#ef4444',
     fontSize: 12,
     marginTop: 6,
+  },
+  navigationBar: {
+    height: 60,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: -2 },
+    elevation: 8,
+  },
+  navButton: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+  },
+  navButtonText: {
+    fontSize: 24,
+    fontWeight: '600',
+    lineHeight: 24,
+  },
+  pageInfo: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  pageNumber: {
+    fontSize: 14,
+    fontWeight: '500',
   },
 });
 
