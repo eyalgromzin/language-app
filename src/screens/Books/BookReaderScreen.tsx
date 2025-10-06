@@ -405,50 +405,40 @@ function BookReaderScreen(): React.JSX.Element {
   const goBack = () => navigation.goBack();
 
   const goToNextPage = () => {
-    if (currentPage < totalPages) {
-      if (bookFormat === 'epub') {
-        // For EPUB, use injected JavaScript to navigate
+    try {
+      const script = `
         try {
-          const script = `
-            try {
-              if (window.rendition && typeof window.rendition.next === 'function') {
-                window.rendition.next();
-              }
-            } catch (e) {
-              console.log('Error navigating to next page:', e);
-            }
-          `;
-          // We'll need to inject this through the WebView message system
-          // For now, just update the page counter optimistically
-          setCurrentPage(prev => Math.min(prev + 1, totalPages));
+          if (window.rendition && typeof window.rendition.next === 'function') {
+            window.rendition.next();
+          }
         } catch (e) {
           console.log('Error navigating to next page:', e);
         }
-      } 
+      `;
+      // We'll need to inject this through the WebView message system
+      // For now, just update the page counter optimistically
+      setCurrentPage(prev => Math.min(prev + 1, totalPages));
+    } catch (e) {
+      console.log('Error navigating to next page:', e);
     }
   };
 
   const goToPreviousPage = () => {
-    if (currentPage > 1) {
-      if (bookFormat === 'epub') {
-        // For EPUB, use injected JavaScript to navigate
+    try {
+      const script = `
         try {
-          const script = `
-            try {
-              if (window.rendition && typeof window.rendition.prev === 'function') {
-                window.rendition.prev();
-              }
-            } catch (e) {
-              console.log('Error navigating to previous page:', e);
-            }
-          `;
-          // We'll need to inject this through the WebView message system
-          // For now, just update the page counter optimistically
-          setCurrentPage(prev => Math.max(prev - 1, 1));
+          if (window.rendition && typeof window.rendition.prev === 'function') {
+            window.rendition.prev();
+          }
         } catch (e) {
           console.log('Error navigating to previous page:', e);
         }
-      } 
+      `;
+      // We'll need to inject this through the WebView message system
+      // For now, just update the page counter optimistically
+      setCurrentPage(prev => Math.max(prev - 1, 1));
+    } catch (e) {
+      console.log('Error navigating to previous page:', e);
     }
   };
 
@@ -457,18 +447,18 @@ function BookReaderScreen(): React.JSX.Element {
     void persistCfi(cfi);
   }, [persistCfi]);
 
-  const persistPdfPage = React.useCallback(async (page: number) => {
-    try {
-      if (!bookId) return;
-      const json = await AsyncStorage.getItem(STORAGE_KEY);
-      const parsed = json ? JSON.parse(json) : [];
-      const books: StoredBook[] = Array.isArray(parsed) ? parsed : [];
-      const next = books.map((b) => (b.id === bookId ? { ...b, lastPdfPage: Math.max(1, Number(page) || 1) } : b));
-      await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next, null, 2));
-    } catch {
-      // ignore
-    }
-  }, [bookId]);
+  // const persistPdfPage = React.useCallback(async (page: number) => {
+  //   try {
+  //     if (!bookId) return;
+  //     const json = await AsyncStorage.getItem(STORAGE_KEY);
+  //     const parsed = json ? JSON.parse(json) : [];
+  //     const books: StoredBook[] = Array.isArray(parsed) ? parsed : [];
+  //     const next = books.map((b) => (b.id === bookId ? { ...b, lastPdfPage: Math.max(1, Number(page) || 1) } : b));
+  //     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next, null, 2));
+  //   } catch {
+  //     // ignore
+  //   }
+  // }, [bookId]);
 
   const injectedJavascript = React.useMemo(() => {
     const bg = themeColors.bg;
@@ -749,16 +739,16 @@ function BookReaderScreen(): React.JSX.Element {
         openPanel(w, s);
         return;
       }
-      if (data && data.type === 'pdfPage' && typeof data.page === 'number') {
-        const pageNum = Number(data.page);
-        setCurrentPage(pageNum);
-        void persistPdfPage(pageNum);
-        return;
-      }
-      if (data && data.type === 'pdfTotalPages' && typeof data.totalPages === 'number') {
-        setTotalPages(Number(data.totalPages));
-        return;
-      }
+      // if (data && data.type === 'pdfPage' && typeof data.page === 'number') {
+      //   const pageNum = Number(data.page);
+      //   setCurrentPage(pageNum);
+      //   void persistPdfPage(pageNum);
+      //   return;
+      // }
+      // if (data && data.type === 'pdfTotalPages' && typeof data.totalPages === 'number') {
+      //   setTotalPages(Number(data.totalPages));
+      //   return;
+      // }
     } catch {}
   }, []);
 
