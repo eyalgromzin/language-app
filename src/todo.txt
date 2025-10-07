@@ -1,10 +1,8 @@
 - video screen: on word click it should pause the video 
 
-- make app work in shirs phone 
-
-- in book reader , only after a few swipes the total number of pages is updated and then the next and previous page are working - fix it 
-
 - try to add the same url twice to books , it shouldnt add it to db twice 
+
+- make app work in shirs phone 
 
 - publish app =======================================================================================================================
 
