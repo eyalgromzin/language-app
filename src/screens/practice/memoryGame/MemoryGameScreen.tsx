@@ -81,7 +81,7 @@ function MemoryGameScreen(): React.JSX.Element {
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [score, setScore] = React.useState<number>(0);
   const [moves, setMoves] = React.useState<number>(0);
-  const [numberOfPairs, setNumberOfPairs] = React.useState<number>(9);
+  const [numberOfPairs, setNumberOfPairs] = React.useState<number>(6);
   const [showDropdown, setShowDropdown] = React.useState<boolean>(false);
   const [isFullScreen, setIsFullScreen] = React.useState<boolean>(false);
 
