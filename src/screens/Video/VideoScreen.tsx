@@ -588,6 +588,7 @@ function VideoScreen(): React.JSX.Element {
     setTranslationPanel(null);
     setImageScrape(null);
     setCurrentVideoTitle('');
+    setIsFullScreen(false);
     try { scrollViewRef.current?.scrollTo?.({ y: 0, animated: false }); } catch {}
   }, []);
 
