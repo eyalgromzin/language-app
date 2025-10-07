@@ -1,5 +1,4 @@
-- video screen its not convenient to click on a word when a video is running. 
-    on word click it should pause the video 
+- video screen: on word click it should pause the video 
 
 - make app work in shirs phone 
 
