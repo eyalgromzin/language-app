@@ -7,6 +7,7 @@ import WriteWordScreen from '../../practice/writeWord/WriteWordScreen';
 import MissingWordsScreen from '../../practice/missingWords/MissingWordsScreen';
 import FormulateSentenseScreen from '../../practice/formulateSentense/FormulateSentenseScreen';
 import { cleanSentense } from '../utils';
+import { useLanguage } from '../../../contexts/LanguageContext';
 
 interface TaskRendererProps {
   current: RunnerTask;
@@ -35,6 +36,8 @@ const TaskRenderer: React.FC<TaskRendererProps> = ({
     onAdvance();
   };
 
+  const { learningLanguage, nativeLanguage } = useLanguage();
+
   if (current.kind === 'chooseTranslation') {
     return (
       <Choose1OutOfN
@@ -43,6 +46,7 @@ const TaskRenderer: React.FC<TaskRendererProps> = ({
         correctWord={current.correctTranslation}
         options={current.options}
         onFinished={handleTaskComplete}
+        accent={learningLanguage || 'en'}
       />
     );
   }
@@ -55,6 +59,7 @@ const TaskRenderer: React.FC<TaskRendererProps> = ({
         correctWord={current.correctWord}
         options={current.options}
         onFinished={handleTaskComplete}
+        accent={nativeLanguage || 'en'}
       />
     );
   }

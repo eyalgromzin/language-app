@@ -22,6 +22,7 @@ type EmbeddedProps = {
   translation?: string;
   correctWord?: string;
   options?: string[];
+  accent: string;
   onFinished?: (isCorrect: boolean) => void;
 };
 
@@ -61,7 +62,7 @@ function sampleN<T>(arr: T[], n: number): T[] {
   return result;
 }
 
-function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
+function Choose1OutOfN(props: EmbeddedProps): React.JSX.Element {
   const { t } = useTranslation();
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
@@ -137,8 +138,8 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   React.useEffect(() => {
     // For choose word practice, use native language accent for the word being spoken
     // For choose translation practice, use learning language accent for the translation being spoken
-    const languageToUse = isChooseTranslationMode ? learningLanguage : nativeLanguage;
-    const code = getTtsLangCode(languageToUse) || 'en-US';
+    // const languageToUse = isChooseTranslationMode ? learningLanguage : nativeLanguage;
+    const code = getTtsLangCode(props.accent) || 'en-US';
     try { TTS.setDefaultLanguage(code); } catch {}
   }, [learningLanguage, nativeLanguage, isChooseTranslationMode]);
 
