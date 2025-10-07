@@ -1171,16 +1171,6 @@ function BabyStepRunnerScreen(): React.JSX.Element {
             <Text style={styles.skipText}>Skip</Text>
           </TouchableOpacity>
         ) : null}
-        {/* Debug button - remove this later */}
-        {/* <TouchableOpacity 
-          style={[styles.skipButton, { backgroundColor: '#ff0000', marginLeft: 8 }]} 
-          onPress={() => {
-            console.log('Manual test - triggering animation');
-            setShowStreakAnimation(true);
-          }}
-        >
-          <Text style={[styles.skipText, { color: '#fff' }]}>Test</Text>
-        </TouchableOpacity> */}
       </View>
 
       {current.kind === 'chooseTranslation' ? (
