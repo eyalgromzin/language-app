@@ -1,9 +1,3 @@
-- ✅ in memory game , after finish, show congradulations popup with a continue button
-
-- show special congratulations every 5 correct answers 
-
-- unable to load categories 
-
 - remove favourites star from book reading 
 
 - video screen - when opening fullscreen and minimizing the app , and then opening it from minimize,

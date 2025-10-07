@@ -387,6 +387,18 @@ function BookReaderScreen(): React.JSX.Element {
 
   const goBack = () => navigation.goBack();
 
+  const handleFavouriteClick = () => {
+    Alert.alert(
+      'Add to Favourites',
+      'Would you like to add a download URL for all to use also?',
+      [
+        { text: 'No', style: 'cancel', onPress: () => setShowFavouriteModal(true) },
+        { text: 'Yes', onPress: () => setShowAddBookModal(true) },
+      ],
+      { cancelable: true }
+    );
+  };
+
   // Navigation handlers are implemented inside the child wrapped by ReaderProvider
 
   const handleLocationChange = React.useCallback((totalLocations: number, currentLocation: any) => {
@@ -947,7 +959,7 @@ function BookReaderScreen(): React.JSX.Element {
         </TouchableOpacity>
         <Text style={[styles.title, { color: themeColors.headerText }]} numberOfLines={1}>{bookTitle || 'Reader'}</Text>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <TouchableOpacity onPress={() => setShowFavouriteModal(true)} style={styles.favouriteBtn}>
+          <TouchableOpacity onPress={handleFavouriteClick} style={styles.favouriteBtn}>
             <Text style={[styles.favouriteBtnText, { color: themeColors.headerText }]}>★</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => setShowThemeMenu((v) => !v)} style={styles.themeBtn}>
