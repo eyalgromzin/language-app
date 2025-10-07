@@ -281,7 +281,7 @@ function BabyStepRunnerScreen(): React.JSX.Element {
   // Helper function to handle streak milestones
   const handleStreakMilestone = (newStreak: number) => {
     console.log('Checking streak milestone:', newStreak);
-    if (newStreak === 2 || newStreak === 5 || newStreak === 10) {
+    if (newStreak % 4 == 0) {
       console.log('Triggering streak animation for streak:', newStreak);
       setShowStreakAnimation(true);
     }
