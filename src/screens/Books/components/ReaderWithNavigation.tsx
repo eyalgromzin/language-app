@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { View, Text } from 'react-native';
 import { Reader, useReader } from '@epubjs-react-native/core';
 import { useFileSystem } from '@epubjs-react-native/file-system';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import ReaderNavigation from './ReaderNavigation';
 
 type ReaderWithNavigationProps = {
@@ -14,12 +16,60 @@ type ReaderWithNavigationProps = {
   onReady: () => void;
   onLocationChangePersist: (totalLocations: number, currentLocation: any) => void;
   themeColors: { headerBg: string; headerText: string; border: string };
+  bookId?: string;
 };
 
 export default function ReaderWithNavigation(props: ReaderWithNavigationProps): React.JSX.Element {
   const { goPrevious, goNext, goToLocation, getCurrentLocation, getLocations } = useReader();
   const [currentPage, setCurrentPage] = React.useState<number>(1);
   const [totalPages, setTotalPages] = React.useState<number>(1);
+
+  // Load saved total pages and current page on component mount
+  React.useEffect(() => {
+    if (props.bookId) {
+      const loadSavedData = async () => {
+        try {
+          const [savedTotalPages, savedCurrentPage] = await AsyncStorage.multiGet([
+            `book_total_pages_${props.bookId}`,
+            `book_current_page_${props.bookId}`
+          ]);
+          
+          if (savedTotalPages[1] && parseInt(savedTotalPages[1]) > 1) {
+            setTotalPages(parseInt(savedTotalPages[1]));
+          }
+          
+          if (savedCurrentPage[1] && parseInt(savedCurrentPage[1]) > 0) {
+            setCurrentPage(parseInt(savedCurrentPage[1]));
+          }
+        } catch (error) {
+          console.log('Failed to load saved book data:', error);
+        }
+      };
+      loadSavedData();
+    }
+  }, [props.bookId]);
+
+  // Save total pages to local storage when it changes and is > 1
+  const saveTotalPagesToStorage = React.useCallback(async (pages: number) => {
+    if (props.bookId && pages > 1) {
+      try {
+        await AsyncStorage.setItem(`book_total_pages_${props.bookId}`, pages.toString());
+      } catch (error) {
+        console.log('Failed to save total pages:', error);
+      }
+    }
+  }, [props.bookId]);
+
+  // Save current page to local storage
+  const saveCurrentPageToStorage = React.useCallback(async (page: number) => {
+    if (props.bookId && page > 0) {
+      try {
+        await AsyncStorage.setItem(`book_current_page_${props.bookId}`, page.toString());
+      } catch (error) {
+        console.log('Failed to save current page:', error);
+      }
+    }
+  }, [props.bookId]);
 
   const handleLocationChangeInner = React.useCallback((totalLocations: number, currentLocation: any) => {
     props.onLocationChangePersist(totalLocations, currentLocation);
@@ -28,12 +78,19 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
       const currentPageNum = Math.floor(startLocation) + 1;
       setCurrentPage(Math.max(1, currentPageNum));
       setTotalPages(totalLocations);
+      
+      // Save total pages to storage if > 1
+      if (totalLocations > 1) {
+        saveTotalPagesToStorage(totalLocations);
+      }
+      
+      // Save current page to storage
+      saveCurrentPageToStorage(Math.max(1, currentPageNum));
     }
-  }, [props]);
+  }, [props, saveTotalPagesToStorage, saveCurrentPageToStorage]);
 
   const goToNextPage = React.useCallback(() => {
     try {
-      console.log('goToNextPage');
       if (typeof goNext === 'function') {
         goNext({ keepScrollOffset: true });
         return;
@@ -49,7 +106,9 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
           goToLocation(nextLocation);
         }
       }
-    } catch {}
+    } catch (error) {
+      console.log('Error in goToNextPage:', error);
+    }
   }, [goNext, getCurrentLocation, getLocations, goToLocation]);
 
   const goToPreviousPage = React.useCallback(() => {
@@ -69,7 +128,9 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
           goToLocation(prevLocation);
         }
       }
-    } catch {}
+    } catch (error) {
+      console.log('Error in goToPreviousPage:', error);
+    }
   }, [goPrevious, getCurrentLocation, getLocations, goToLocation]);
 
   return (
@@ -98,3 +159,4 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
     </>
   );
 }
+

@@ -985,6 +985,7 @@ function BookReaderScreen(): React.JSX.Element {
                   onReady={() => setError(null)}
                   onLocationChangePersist={handleLocationChange}
                   themeColors={{ headerBg: themeColors.headerBg, headerText: themeColors.headerText, border: themeColors.border }}
+                  bookId={bookId}
                 />
               </ReaderProvider>
             )
