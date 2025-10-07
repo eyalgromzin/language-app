@@ -1,14 +1,11 @@
-- remove favourites star from book reading 
-
-- video screen - when opening fullscreen and minimizing the app , and then opening it from minimize,
-    there is no url bar and you cant do anything 
-
-- its not convenient to click on a word when a video is running. 
+- video screen its not convenient to click on a word when a video is running. 
     on word click it should pause the video 
 
 - make app work in shirs phone 
 
 - in book reader , only after a few swipes the total number of pages is updated and then the next and previous page are working - fix it 
+
+- try to add the same url twice to books , it shouldnt add it to db twice 
 
 - publish app =======================================================================================================================
 

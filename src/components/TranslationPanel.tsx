@@ -158,8 +158,6 @@ function TranslationPanel(props: Props): React.JSX.Element | null {
             style={styles.wordInput}
             value={editedWord}
             onChangeText={setEditedWord}
-            autoFocus
-            selectTextOnFocus
           />
       
           <TouchableOpacity
