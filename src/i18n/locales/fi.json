@@ -131,7 +131,10 @@
         "selectPairs": "Valitse {{count}} paria",
         "enterFullScreen": "Siirry koko näyttöön",
         "exitFullScreen": "Poistu koko näytöstä",
-        "hiddenCard": "piilotettu kortti"
+        "hiddenCard": "piilotettu kortti",
+        "congratulations": "Onnittelut!",
+        "gameCompleted": "Lopetit pelin {{moves}} siirrolla {{score}} löydetyllä parilla!",
+        "continue": "Jatka"
       },
       "hearingPracticeScreen": {
         "title": "Kuuloharjoitus",

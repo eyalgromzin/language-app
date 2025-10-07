@@ -131,7 +131,10 @@
         "selectPairs": "Wybierz {{count}} par",
         "enterFullScreen": "Wejdź w tryb pełnoekranowy",
         "exitFullScreen": "Wyjdź z trybu pełnoekranowego",
-        "hiddenCard": "ukryta karta"
+        "hiddenCard": "ukryta karta",
+        "congratulations": "Gratulacje!",
+        "gameCompleted": "Ukończyłeś grę w {{moves}} ruchach z {{score}} znalezionymi parami!",
+        "continue": "Kontynuuj"
       },
       "hearingPracticeScreen": {
         "title": "Ćwiczenie Słuchowe",

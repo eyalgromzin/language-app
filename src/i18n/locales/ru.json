@@ -131,7 +131,10 @@
         "selectPairs": "Выбрать {{count}} пар",
         "enterFullScreen": "Войти в полноэкранный режим",
         "exitFullScreen": "Выйти из полноэкранного режима",
-        "hiddenCard": "скрытая карта"
+        "hiddenCard": "скрытая карта",
+        "congratulations": "Поздравляем!",
+        "gameCompleted": "Вы завершили игру за {{moves}} ходов с {{score}} найденными парами!",
+        "continue": "Продолжить"
       },
       "hearingPracticeScreen": {
         "title": "Практика Слушания",

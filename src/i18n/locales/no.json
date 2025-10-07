@@ -131,7 +131,10 @@
         "selectPairs": "Velg {{count}} par",
         "enterFullScreen": "Gå til fullskjerm",
         "exitFullScreen": "Avslutt fullskjerm",
-        "hiddenCard": "skjult kort"
+        "hiddenCard": "skjult kort",
+        "congratulations": "Gratulerer!",
+        "gameCompleted": "Du fullførte spillet på {{moves}} trekk med {{score}} funnet par!",
+        "continue": "Fortsett"
       },
       "hearingPracticeScreen": {
         "title": "Høre Øvelse",

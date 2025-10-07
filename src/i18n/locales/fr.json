@@ -132,7 +132,10 @@
         "selectPairs": "Sélectionner {{count}} paires",
         "enterFullScreen": "Entrer en plein écran",
         "exitFullScreen": "Quitter le plein écran",
-        "hiddenCard": "carte cachée"
+        "hiddenCard": "carte cachée",
+        "congratulations": "Félicitations !",
+        "gameCompleted": "Vous avez terminé le jeu en {{moves}} mouvements avec {{score}} paires trouvées !",
+        "continue": "Continuer"
       },
       "hearingPracticeScreen": {
         "title": "Pratique Auditive",

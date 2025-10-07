@@ -131,7 +131,10 @@
         "selectPairs": "Επιλέξτε {{count}} ζεύγη",
         "enterFullScreen": "Είσοδος σε πλήρη οθόνη",
         "exitFullScreen": "Έξοδος από πλήρη οθόνη",
-        "hiddenCard": "κρυφή κάρτα"
+        "hiddenCard": "κρυφή κάρτα",
+        "congratulations": "Συγχαρητήρια!",
+        "gameCompleted": "Ολοκληρώσατε το παιχνίδι σε {{moves}} κινήσεις με {{score}} ζεύγη που βρέθηκαν!",
+        "continue": "Συνέχεια"
       },
       "hearingPracticeScreen": {
         "title": "Πρακτική Ακοής",

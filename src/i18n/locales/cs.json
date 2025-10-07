@@ -131,7 +131,10 @@
         "selectPairs": "Vybrat {{count}} párů",
         "enterFullScreen": "Vstoupit do celé obrazovky",
         "exitFullScreen": "Opustit celou obrazovku",
-        "hiddenCard": "skrytá karta"
+        "hiddenCard": "skrytá karta",
+        "congratulations": "Gratulujeme!",
+        "gameCompleted": "Dokončili jste hru za {{moves}} tahů s {{score}} nalezenými páry!",
+        "continue": "Pokračovat"
       },
       "hearingPracticeScreen": {
         "title": "Cvičení Poslechu",

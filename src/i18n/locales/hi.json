@@ -131,7 +131,10 @@
         "selectPairs": "{{count}} जोड़े चुनें",
         "enterFullScreen": "पूर्ण स्क्रीन में जाएं",
         "exitFullScreen": "पूर्ण स्क्रीन से बाहर निकलें",
-        "hiddenCard": "छुपा हुआ कार्ड"
+        "hiddenCard": "छुपा हुआ कार्ड",
+        "congratulations": "बधाई हो!",
+        "gameCompleted": "आपने {{moves}} चालों में {{score}} जोड़े खोजकर गेम पूरा किया!",
+        "continue": "जारी रखें"
       },
       "hearingPracticeScreen": {
         "title": "सुनने का अभ्यास",

@@ -1,4 +1,4 @@
-- in memory game , after finish, show congradulations popup with a continue button
+- ✅ in memory game , after finish, show congradulations popup with a continue button
 
 - show special congratulations every 5 correct answers 
 

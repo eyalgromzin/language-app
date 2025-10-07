@@ -131,7 +131,10 @@
         "selectPairs": "Selecteer {{count}} paren",
         "enterFullScreen": "Volledig scherm ingaan",
         "exitFullScreen": "Volledig scherm verlaten",
-        "hiddenCard": "verborgen kaart"
+        "hiddenCard": "verborgen kaart",
+        "congratulations": "Gefeliciteerd!",
+        "gameCompleted": "Je hebt het spel voltooid in {{moves}} zetten met {{score}} gevonden paren!",
+        "continue": "Doorgaan"
       },
       "hearingPracticeScreen": {
         "title": "Luister Oefening",

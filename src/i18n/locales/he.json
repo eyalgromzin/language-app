@@ -132,7 +132,10 @@
         "selectPairs": "בחרו {{count}} זוגות",
         "enterFullScreen": "היכנסו למסך מלא",
         "exitFullScreen": "צאו ממסך מלא",
-        "hiddenCard": "כרטיס מוסתר"
+        "hiddenCard": "כרטיס מוסתר",
+        "congratulations": "מזל טוב!",
+        "gameCompleted": "סיימתם את המשחק ב-{{moves}} מהלכים עם {{score}} זוגות שנמצאו!",
+        "continue": "המשך"
       },
       "hearingPracticeScreen": {
         "title": "תרגול שמיעה",

@@ -131,7 +131,10 @@
         "selectPairs": "Välj {{count}} par",
         "enterFullScreen": "Gå till helskärm",
         "exitFullScreen": "Avsluta helskärm",
-        "hiddenCard": "dold kort"
+        "hiddenCard": "dold kort",
+        "congratulations": "Grattis!",
+        "gameCompleted": "Du slutförde spelet på {{moves}} drag med {{score}} hittade par!",
+        "continue": "Fortsätt"
       },
       "hearingPracticeScreen": {
         "title": "Hörövning",

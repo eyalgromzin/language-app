@@ -131,7 +131,10 @@
         "selectPairs": "Вибрати {{count}} пар",
         "enterFullScreen": "Увійти в повноекранний режим",
         "exitFullScreen": "Вийти з повноекранного режиму",
-        "hiddenCard": "прихована карта"
+        "hiddenCard": "прихована карта",
+        "congratulations": "Вітаємо!",
+        "gameCompleted": "Ви завершили гру за {{moves}} ходів з {{score}} знайденими парами!",
+        "continue": "Продовжити"
       },
       "hearingPracticeScreen": {
         "title": "Практика Слухання",

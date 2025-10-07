@@ -131,7 +131,10 @@
         "selectPairs": "Seleziona {{count}} coppie",
         "enterFullScreen": "Entra a schermo intero",
         "exitFullScreen": "Esci da schermo intero",
-        "hiddenCard": "carta nascosta"
+        "hiddenCard": "carta nascosta",
+        "congratulations": "Congratulazioni!",
+        "gameCompleted": "Hai completato il gioco in {{moves}} mosse con {{score}} coppie trovate!",
+        "continue": "Continua"
       },
       "hearingPracticeScreen": {
         "title": "Pratica di Ascolto",

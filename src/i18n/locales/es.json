@@ -132,7 +132,10 @@
         "selectPairs": "Seleccionar {{count}} pares",
         "enterFullScreen": "Entrar en pantalla completa",
         "exitFullScreen": "Salir de pantalla completa",
-        "hiddenCard": "carta oculta"
+        "hiddenCard": "carta oculta",
+        "congratulations": "¡Felicidades!",
+        "gameCompleted": "¡Completaste el juego en {{moves}} movimientos con {{score}} pares encontrados!",
+        "continue": "Continuar"
       },
       "hearingPracticeScreen": {
         "title": "Práctica Auditiva",

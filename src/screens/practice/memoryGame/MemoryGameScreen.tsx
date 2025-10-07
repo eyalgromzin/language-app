@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View, Animated } from 'react-native';
+import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View, Animated, Modal } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
@@ -84,6 +84,7 @@ function MemoryGameScreen(): React.JSX.Element {
   const [numberOfPairs, setNumberOfPairs] = React.useState<number>(6);
   const [showDropdown, setShowDropdown] = React.useState<boolean>(false);
   const [isFullScreen, setIsFullScreen] = React.useState<boolean>(false);
+  const [showCongratulations, setShowCongratulations] = React.useState<boolean>(false);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
 
@@ -251,10 +252,15 @@ function MemoryGameScreen(): React.JSX.Element {
     const uniqueKeys = new Set(cards.map((c) => c.key));
     if (matchedKeys.size > 0 && matchedKeys.size >= uniqueKeys.size) {
       setTimeout(() => {
-        loadBase().then(() => prepareRound());
+        setShowCongratulations(true);
       }, 600);
     }
-  }, [matchedKeys, cards, prepareRound, loadBase]);
+  }, [matchedKeys, cards]);
+
+  const handleContinue = React.useCallback(() => {
+    setShowCongratulations(false);
+    loadBase().then(() => prepareRound());
+  }, [loadBase, prepareRound]);
 
   const renderCard = (card: Card) => {
     const isMatched = matchedKeys.has(card.key);
@@ -413,6 +419,41 @@ function MemoryGameScreen(): React.JSX.Element {
            <Text style={styles.resetButtonText}>{t('screens.practice.memoryGameScreen.newGame')}</Text>
         </TouchableOpacity>
       </View>
+
+      {/* Congratulations Modal */}
+      <Modal
+        visible={showCongratulations}
+        transparent={true}
+        animationType="fade"
+        onRequestClose={() => setShowCongratulations(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.congratulationsContainer}>
+            <View style={styles.congratulationsContent}>
+              <Text style={styles.congratulationsEmoji}>🎉</Text>
+              <Text style={styles.congratulationsTitle}>
+                {t('screens.practice.memoryGameScreen.congratulations')}
+              </Text>
+              <Text style={styles.congratulationsMessage}>
+                {t('screens.practice.memoryGameScreen.gameCompleted', { 
+                  score: score, 
+                  moves: moves 
+                })}
+              </Text>
+              <TouchableOpacity
+                style={styles.continueButton}
+                onPress={handleContinue}
+                accessibilityRole="button"
+                accessibilityLabel={t('screens.practice.memoryGameScreen.continue')}
+              >
+                <Text style={styles.continueButtonText}>
+                  {t('screens.practice.memoryGameScreen.continue')}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 }
@@ -674,6 +715,68 @@ const styles = StyleSheet.create({
     minWidth: 160,
   },
   resetButtonText: {
+    color: '#ffffff',
+    fontWeight: '700',
+    fontSize: 16,
+    textAlign: 'center',
+  },
+  
+  // Congratulations Modal Styles
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  congratulationsContainer: {
+    backgroundColor: '#ffffff',
+    borderRadius: 20,
+    padding: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.25,
+    shadowRadius: 20,
+    elevation: 10,
+    maxWidth: 320,
+    width: '100%',
+  },
+  congratulationsContent: {
+    alignItems: 'center',
+    padding: 32,
+  },
+  congratulationsEmoji: {
+    fontSize: 48,
+    marginBottom: 16,
+  },
+  congratulationsTitle: {
+    fontSize: 24,
+    fontWeight: '800',
+    color: '#1e293b',
+    textAlign: 'center',
+    marginBottom: 12,
+    letterSpacing: -0.5,
+  },
+  congratulationsMessage: {
+    fontSize: 16,
+    color: '#64748b',
+    textAlign: 'center',
+    lineHeight: 22,
+    marginBottom: 24,
+  },
+  continueButton: {
+    backgroundColor: '#10b981',
+    paddingVertical: 16,
+    paddingHorizontal: 32,
+    borderRadius: 16,
+    shadowColor: '#10b981',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 12,
+    elevation: 6,
+    minWidth: 160,
+  },
+  continueButtonText: {
     color: '#ffffff',
     fontWeight: '700',
     fontSize: 16,

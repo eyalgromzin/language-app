@@ -132,7 +132,10 @@
         "selectPairs": "Select {{count}} pairs",
         "enterFullScreen": "Enter full screen",
         "exitFullScreen": "Exit full screen",
-        "hiddenCard": "hidden card"
+        "hiddenCard": "hidden card",
+        "congratulations": "Congratulations!",
+        "gameCompleted": "You completed the game in {{moves}} moves with {{score}} pairs found!",
+        "continue": "Continue"
       },
       "hearingPracticeScreen": {
         "title": "Hearing Practice",

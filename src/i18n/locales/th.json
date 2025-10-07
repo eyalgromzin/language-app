@@ -131,7 +131,10 @@
         "selectPairs": "เลือก {{count}} คู่",
         "enterFullScreen": "เข้าสู่โหมดเต็มหน้าจอ",
         "exitFullScreen": "ออกจากโหมดเต็มหน้าจอ",
-        "hiddenCard": "การ์ดที่ซ่อนอยู่"
+        "hiddenCard": "การ์ดที่ซ่อนอยู่",
+        "congratulations": "ยินดีด้วย!",
+        "gameCompleted": "คุณเสร็จสิ้นเกมใน {{moves}} การเคลื่อนไหวด้วย {{score}} คู่ที่พบ!",
+        "continue": "ดำเนินการต่อ"
       },
       "hearingPracticeScreen": {
         "title": "ฝึกฟัง",

@@ -132,7 +132,10 @@
         "selectPairs": "{{count}} Paare auswählen",
         "enterFullScreen": "Vollbild eingeben",
         "exitFullScreen": "Vollbild verlassen",
-        "hiddenCard": "versteckte Karte"
+        "hiddenCard": "versteckte Karte",
+        "congratulations": "Herzlichen Glückwunsch!",
+        "gameCompleted": "Sie haben das Spiel in {{moves}} Zügen mit {{score}} gefundenen Paaren abgeschlossen!",
+        "continue": "Weiter"
       },
       "hearingPracticeScreen": {
         "title": "Hörübung",

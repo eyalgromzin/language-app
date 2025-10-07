@@ -131,7 +131,10 @@
         "selectPairs": "Chọn {{count}} cặp",
         "enterFullScreen": "Vào chế độ toàn màn hình",
         "exitFullScreen": "Thoát chế độ toàn màn hình",
-        "hiddenCard": "thẻ ẩn"
+        "hiddenCard": "thẻ ẩn",
+        "congratulations": "Chúc mừng!",
+        "gameCompleted": "Bạn đã hoàn thành trò chơi trong {{moves}} lượt đi với {{score}} cặp đã tìm thấy!",
+        "continue": "Tiếp tục"
       },
       "hearingPracticeScreen": {
         "title": "Luyện Nghe",
