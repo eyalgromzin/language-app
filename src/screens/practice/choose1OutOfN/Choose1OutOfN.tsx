@@ -22,7 +22,7 @@ type EmbeddedProps = {
   translation?: string;
   correctWord?: string;
   options?: string[];
-  accent: string;
+  accent?: string;
   onFinished?: (isCorrect: boolean) => void;
 };
 
@@ -136,12 +136,20 @@ function Choose1OutOfN(props: EmbeddedProps): React.JSX.Element {
   }, []);
 
   React.useEffect(() => {
+    // For embedded mode, use the accent prop if provided
+    if (props.embedded && props.accent) {
+      const code = getTtsLangCode(props.accent) || 'en-US';
+      try { TTS.setDefaultLanguage(code); } catch {}
+      return;
+    }
+    
+    // For non-embedded mode, use language settings like other practice screens
     // For choose word practice, use native language accent for the word being spoken
     // For choose translation practice, use learning language accent for the translation being spoken
-    // const languageToUse = isChooseTranslationMode ? learningLanguage : nativeLanguage;
-    const code = getTtsLangCode(props.accent) || 'en-US';
+    const languageToUse = isChooseTranslationMode ? learningLanguage : nativeLanguage;
+    const code = getTtsLangCode(languageToUse) || 'en-US';
     try { TTS.setDefaultLanguage(code); } catch {}
-  }, [learningLanguage, nativeLanguage, isChooseTranslationMode]);
+  }, [props.embedded, props.accent, learningLanguage, nativeLanguage, isChooseTranslationMode]);
 
   useFocusEffect(
     React.useCallback(() => {
