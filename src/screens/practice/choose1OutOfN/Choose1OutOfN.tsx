@@ -96,6 +96,7 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   const [revealCorrect, setRevealCorrect] = React.useState<boolean>(false);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
+  const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
   const [isShowingSuccessToast, setIsShowingSuccessToast] = React.useState<boolean>(false);
   const [showWrongAnswerPopup, setShowWrongAnswerPopup] = React.useState<boolean>(false);
   const successToastTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
@@ -117,12 +118,15 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
     let mounted = true;
     (async () => {
       try {
-        const val = await AsyncStorage.getItem('language.learning');
+        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
         if (!mounted) return;
-        setLearningLanguage(val ?? null);
+        const map = Object.fromEntries(entries);
+        setLearningLanguage(map['language.learning'] ?? null);
+        setNativeLanguage(map['language.native'] ?? null);
       } catch {
         if (!mounted) return;
         setLearningLanguage(null);
+        setNativeLanguage(null);
       }
     })();
     return () => {
@@ -131,9 +135,12 @@ function Choose1OutOfN(props: EmbeddedProps = {}): React.JSX.Element {
   }, []);
 
   React.useEffect(() => {
-    const code = getTtsLangCode(learningLanguage) || 'en-US';
+    // For choose word practice, use native language accent for the word being spoken
+    // For choose translation practice, use learning language accent for the translation being spoken
+    const languageToUse = isChooseTranslationMode ? learningLanguage : nativeLanguage;
+    const code = getTtsLangCode(languageToUse) || 'en-US';
     try { TTS.setDefaultLanguage(code); } catch {}
-  }, [learningLanguage]);
+  }, [learningLanguage, nativeLanguage, isChooseTranslationMode]);
 
   useFocusEffect(
     React.useCallback(() => {

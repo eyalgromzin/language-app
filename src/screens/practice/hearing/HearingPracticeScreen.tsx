@@ -99,6 +99,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [allTranslationsPool, setAllTranslationsPool] = React.useState<string[]>([]);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
+  const [nativeLanguage, setNativeLanguage] = React.useState<string | null>(null);
 
   const lastWordKeyRef = React.useRef<string | null>(null);
   const animationTriggeredRef = React.useRef<Set<string>>(new Set());
@@ -114,17 +115,20 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
     } catch {}
   }, []);
 
-  // Load selected learning language and set TTS voice accordingly
+  // Load selected learning and native languages and set TTS voice accordingly
   React.useEffect(() => {
     let mounted = true;
     (async () => {
       try {
-        const val = await AsyncStorage.getItem('language.learning');
+        const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
         if (!mounted) return;
-        setLearningLanguage(val ?? null);
+        const map = Object.fromEntries(entries);
+        setLearningLanguage(map['language.learning'] ?? null);
+        setNativeLanguage(map['language.native'] ?? null);
       } catch {
         if (!mounted) return;
         setLearningLanguage(null);
+        setNativeLanguage(null);
       }
     })();
     return () => {
@@ -133,6 +137,8 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
   }, []);
 
   React.useEffect(() => {
+    // For hearing practice, use learning language accent for the word being spoken
+    // since the user is hearing the word they're learning
     const code = getTtsLangCode(learningLanguage) || 'en-US';
     try { TTS.setDefaultLanguage(code); } catch {}
   }, [learningLanguage]);
@@ -142,10 +148,12 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
       let cancelled = false;
       (async () => {
         try {
-          const val = await AsyncStorage.getItem('language.learning');
+          const entries = await AsyncStorage.multiGet(['language.learning', 'language.native']);
           if (cancelled) return;
-          setLearningLanguage(val ?? null);
-          const code = getTtsLangCode(val) || 'en-US';
+          const map = Object.fromEntries(entries);
+          setLearningLanguage(map['language.learning'] ?? null);
+          setNativeLanguage(map['language.native'] ?? null);
+          const code = getTtsLangCode(map['language.learning']) || 'en-US';
           try { TTS.setDefaultLanguage(code); } catch {}
         } catch {}
       })();
