@@ -1,0 +1,4 @@
+- try to add the same url twice to books , it shouldnt add it to db twice 
+    - book url - V
+    - youtube url - V
+    - website url - V
