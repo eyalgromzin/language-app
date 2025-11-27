@@ -1,8 +1,24 @@
-- video screen: on word click it should pause the video 
+- video screen: on word click it should pause the video:
+    copy from side project youtube iframe 
+    add to youtubeIframe js:
+      playVideo: () => {
+      if (!webViewRef.current) {
+        return;
+      }
+      webViewRef.current.injectJavaScript(_PlayerScripts.PLAYER_FUNCTIONS.playVideo);
+    },
+    pauseVideo: () => {
+      if (!webViewRef.current) {
+        return;
+      }
+      webViewRef.current.injectJavaScript(_PlayerScripts.PLAYER_FUNCTIONS.pauseVideo);
+    }
 
-- make app work in shirs phone 
+    and use it
 
 - sort learning and native language asc - on startup and in settings 
+
+- make app work in shirs phone 
 
 - publish app =======================================================================================================================
 
