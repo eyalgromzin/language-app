@@ -596,159 +596,165 @@ function VideoScreen(): React.JSX.Element {
   };
 
   return (
-    <ScrollView
-      style={styles.scrollView}
-      contentContainerStyle={styles.container}
-      keyboardShouldPersistTaps="always"
-      keyboardDismissMode={Platform.OS === 'ios' ? 'interactive' : 'none'}
-      showsVerticalScrollIndicator={false}
-    >
-      {!isFullScreen && (
-        <SearchBar
-           inputUrl={inputUrl}
-           onChangeText={setInputUrl}
-           onSubmit={handleSubmit}
-           onOpenPress={handleOpenPress}
-           urlInputRef={urlInputRef}
-           onFocus={() => { setIsInputFocused(true); setShowHistory(false); setShowFavouritesList(false); }}
-           onBlur={() => { setIsInputFocused(false); }}
-           onOpenLibrary={() => navigation.navigate('Library')}
-           onToggleHistory={() => { setShowHistory(prev => !prev); setShowFavouritesList(false); }}
-           onToggleFavouritesList={() => { setShowFavouritesList(prev => !prev); setShowHistory(false); }}
-           showAuxButtons={true}
-           isFavourite={isFavourite}
-           onToggleFavourite={onToggleFavourite}
-           onOptionsButtonPress={(position) => {
-             setOptionsButtonPositionGlobal(position);
-             setShowOptionsMenuGlobal(true);
-           }}
-           currentCanonicalUrl={currentCanonicalUrl}
-           t={t}
-        />
-      )}
-      {!isFullScreen && (
-        <SuggestionsDropdown
-          showHistory={showHistory}
-          showFavourites={showFavouritesList}
-          isInputFocused={isInputFocused}
-          savedHistory={savedHistory}
-          favourites={favourites}
-          onSelectHistory={onSelectHistory}
-          onSelectFavourite={onSelectFavourite}
-        />
-      )}
-      {videoId && !hidePlayback ? (
-        <VideoPlayer
-          videoId={videoId}
-          isPlaying={isPlaying}
-          currentVideoTitle={currentVideoTitle}
-          playerRef={playerRef}
-          onReady={() => setPlayerReady(true)}
-          onChangeState={(state: string) => {
-            if (state === 'playing') {
-              setIsPlaying(true);
-              setHidePlayback(false);
-              // Ensure we record history whenever playback starts
-              (async () => {
-                try { await saveHistory(url || inputUrl, currentVideoTitle); } catch {}
-              })();
-              (async () => { try { await upsertNowPlayingForCurrent(); } catch {} })();
-            }
-            if (state === 'paused' || state === 'ended') setIsPlaying(false);
-          }}
-          isFullScreen={isFullScreen}
-          onToggleFullScreen={() => setIsFullScreen(prev => !prev)}
-        />
-      ) : (
-        <HelperMessage t={t} />
-      )}
+    <View style={styles.wrapper}>
+      <ScrollView
+        style={styles.scrollView}
+        contentContainerStyle={styles.container}
+        keyboardShouldPersistTaps="always"
+        keyboardDismissMode={Platform.OS === 'ios' ? 'interactive' : 'none'}
+        showsVerticalScrollIndicator={false}
+      >
+        {!isFullScreen && (
+          <SearchBar
+             inputUrl={inputUrl}
+             onChangeText={setInputUrl}
+             onSubmit={handleSubmit}
+             onOpenPress={handleOpenPress}
+             urlInputRef={urlInputRef}
+             onFocus={() => { setIsInputFocused(true); setShowHistory(false); setShowFavouritesList(false); }}
+             onBlur={() => { setIsInputFocused(false); }}
+             onOpenLibrary={() => navigation.navigate('Library')}
+             onToggleHistory={() => { setShowHistory(prev => !prev); setShowFavouritesList(false); }}
+             onToggleFavouritesList={() => { setShowFavouritesList(prev => !prev); setShowHistory(false); }}
+             showAuxButtons={true}
+             isFavourite={isFavourite}
+             onToggleFavourite={onToggleFavourite}
+             onOptionsButtonPress={(position) => {
+               setOptionsButtonPositionGlobal(position);
+               setShowOptionsMenuGlobal(true);
+             }}
+             currentCanonicalUrl={currentCanonicalUrl}
+             t={t}
+          />
+        )}
+        {!isFullScreen && (
+          <SuggestionsDropdown
+            showHistory={showHistory}
+            showFavourites={showFavouritesList}
+            isInputFocused={isInputFocused}
+            savedHistory={savedHistory}
+            favourites={favourites}
+            onSelectHistory={onSelectHistory}
+            onSelectFavourite={onSelectFavourite}
+          />
+        )}
+        {videoId && !hidePlayback ? (
+          <VideoPlayer
+            videoId={videoId}
+            isPlaying={isPlaying}
+            currentVideoTitle={currentVideoTitle}
+            playerRef={playerRef}
+            onReady={() => setPlayerReady(true)}
+            onChangeState={(state: string) => {
+              if (state === 'playing') {
+                setIsPlaying(true);
+                setHidePlayback(false);
+                // Ensure we record history whenever playback starts
+                (async () => {
+                  try { await saveHistory(url || inputUrl, currentVideoTitle); } catch {}
+                })();
+                (async () => { try { await upsertNowPlayingForCurrent(); } catch {} })();
+              }
+              if (state === 'paused' || state === 'ended') setIsPlaying(false);
+            }}
+            isFullScreen={isFullScreen}
+            onToggleFullScreen={() => setIsFullScreen(prev => !prev)}
+          />
+        ) : (
+          <HelperMessage t={t} />
+        )}
 
-      {!hidePlayback && (
-        <Transcript
-          videoId={videoId}
-          loading={loadingTranscript}
-          error={transcriptError}
-          transcript={transcript}
-          activeIndex={activeTranscriptIndex}
-          selectedWordKey={selectedWordKey}
-          onWordPress={handleTranscriptPressOnWord}
-          scrollViewRef={scrollViewRef}
-          lineOffsetsRef={lineOffsetsRef}
-          isFullScreen={isFullScreen}
-          onToggleFullScreen={() => setIsFullScreen(prev => !prev)}
-        />
-      )}
+        {!hidePlayback && (
+          <Transcript
+            videoId={videoId}
+            loading={loadingTranscript}
+            error={transcriptError}
+            transcript={transcript}
+            activeIndex={activeTranscriptIndex}
+            selectedWordKey={selectedWordKey}
+            onWordPress={handleTranscriptPressOnWord}
+            scrollViewRef={scrollViewRef}
+            lineOffsetsRef={lineOffsetsRef}
+            isFullScreen={isFullScreen}
+            onToggleFullScreen={() => setIsFullScreen(prev => !prev)}
+          />
+        )}
 
-      {!isFullScreen && !searchLoading && !searchError && searchResults.length === 0 ? (
-        <NowPlaying
-          videos={nowPlayingVideos}
-          loading={nowPlayingLoading}
-          error={nowPlayingError}
+        {!isFullScreen && !searchLoading && !searchError && searchResults.length === 0 ? (
+          <NowPlaying
+            videos={nowPlayingVideos}
+            loading={nowPlayingLoading}
+            error={nowPlayingError}
+            onVideoPress={openStartupVideo}
+            t={t}
+          />
+        ) : null}
+
+        <ImageScrapeComponent
+          imageScrape={imageScrape}
+          hiddenWebViewRef={hiddenWebViewRef}
+          onScrapeMessage={onScrapeMessage}
+          onImageScrapeError={onImageScrapeError}
+        />
+
+        <SearchResults
+          videos={searchResults}
+          loading={searchLoading}
+          error={searchError}
           onVideoPress={openStartupVideo}
           t={t}
         />
-      ) : null}
 
-      <ImageScrapeComponent
-        imageScrape={imageScrape}
-        hiddenWebViewRef={hiddenWebViewRef}
-        onScrapeMessage={onScrapeMessage}
-        onImageScrapeError={onImageScrapeError}
-      />
+        {/* {!isPlaying && !hidePlayback && !nowPlayingLoading && !nowPlayingError && nowPlayingVideos.length === 0 && <NewestVideos />} */}
 
-      <SearchResults
-        videos={searchResults}
-        loading={searchLoading}
-        error={searchError}
-        onVideoPress={openStartupVideo}
-        t={t}
-      />
-
-      {/* {!isPlaying && !hidePlayback && !nowPlayingLoading && !nowPlayingError && nowPlayingVideos.length === 0 && <NewestVideos />} */}
-
-              <TranslationPanel
-          panel={translationPanel}
-          onSave={saveCurrentWord}
-          onClose={() => setTranslationPanel(null)}
-          onRetranslate={(word: string) => {
-            openPanel(word, translationPanel?.sentence);
+        <AddToFavouritesDialog
+          visible={showAddFavouriteModal}
+          onClose={() => setShowAddFavouriteModal(false)}
+          onSuccess={async () => {
+            await refreshFavourites();
+            if (Platform.OS === 'android') {
+              ToastAndroid.show(t('screens.video.addedToFavourites'), ToastAndroid.SHORT);
+            } else {
+              Alert.alert(t('screens.video.added'));
+            }
           }}
+          defaultUrl={currentCanonicalUrl}
+          defaultName={currentVideoTitle || ''}
+          defaultType="video"
+          defaultLevel="easy"
+          learningLanguage={learningLanguage}
+          storageKey="video.favourites"
         />
 
-      <AddToFavouritesDialog
-        visible={showAddFavouriteModal}
-        onClose={() => setShowAddFavouriteModal(false)}
-        onSuccess={async () => {
-          await refreshFavourites();
-          if (Platform.OS === 'android') {
-            ToastAndroid.show(t('screens.video.addedToFavourites'), ToastAndroid.SHORT);
-          } else {
-            Alert.alert(t('screens.video.added'));
-          }
+        <VideoOptionsMenu
+          visible={showOptionsMenuGlobal}
+          onClose={() => setShowOptionsMenuGlobal(false)}
+          onToggleHistory={() => { setShowHistory(prev => !prev); setShowFavouritesList(false); }}
+          onToggleFavouritesList={() => { setShowFavouritesList(prev => !prev); setShowHistory(false); }}
+          onShare={onShareVideo}
+          canShare={!!currentCanonicalUrl}
+          buttonPosition={optionsButtonPositionGlobal}
+        />
+
+      </ScrollView>
+      
+      <TranslationPanel
+        panel={translationPanel}
+        onSave={saveCurrentWord}
+        onClose={() => setTranslationPanel(null)}
+        onRetranslate={(word: string) => {
+          openPanel(word, translationPanel?.sentence);
         }}
-        defaultUrl={currentCanonicalUrl}
-        defaultName={currentVideoTitle || ''}
-        defaultType="video"
-        defaultLevel="easy"
-        learningLanguage={learningLanguage}
-        storageKey="video.favourites"
       />
-
-      <VideoOptionsMenu
-        visible={showOptionsMenuGlobal}
-        onClose={() => setShowOptionsMenuGlobal(false)}
-        onToggleHistory={() => { setShowHistory(prev => !prev); setShowFavouritesList(false); }}
-        onToggleFavouritesList={() => { setShowFavouritesList(prev => !prev); setShowHistory(false); }}
-        onShare={onShareVideo}
-        canShare={!!currentCanonicalUrl}
-        buttonPosition={optionsButtonPositionGlobal}
-      />
-
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    backgroundColor: '#f8fafc',
+  },
   scrollView: {
     flex: 1,
     backgroundColor: '#f8fafc',
