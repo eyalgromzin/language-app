@@ -137,10 +137,10 @@ export const useSurfScreen = () => {
               setCurrentUrl(savedHomepage);
             } 
           } else {
-            // No saved homepage, use children's stories website based on learning language
-            const storiesHomepage = getDefaultHomepage();
-            setAddressText(storiesHomepage);
-            setCurrentUrl(storiesHomepage);
+            if(initialUrlFromParams && initialUrlFromParams != currentUrl) {
+              setAddressText(initialUrlFromParams);
+              setCurrentUrl(initialUrlFromParams);
+            } 
           }
         });
         

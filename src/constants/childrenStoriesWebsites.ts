@@ -69,20 +69,3 @@ export const CHILDREN_STORIES_WEBSITES: Record<string, string> = {
 export const getChildrenStoriesWebsite = (languageCode: string): string | undefined => {
   return CHILDREN_STORIES_WEBSITES[languageCode.toLowerCase()];
 };
-
-/**
- * Get all supported language codes for children's stories
- * @returns Array of supported language codes
- */
-export const getSupportedLanguages = (): string[] => {
-  return Object.keys(CHILDREN_STORIES_WEBSITES);
-};
-
-/**
- * Check if a language code is supported for children's stories
- * @param languageCode - ISO 639-1 language code
- * @returns true if language is supported, false otherwise
- */
-export const isLanguageSupported = (languageCode: string): boolean => {
-  return languageCode.toLowerCase() in CHILDREN_STORIES_WEBSITES;
-};

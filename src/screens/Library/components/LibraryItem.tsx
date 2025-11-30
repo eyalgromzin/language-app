@@ -50,6 +50,7 @@ const LibraryItem: React.FC<LibraryItemProps> = ({ item, translateOption, getDis
     if ((item.media || '').toLowerCase() === 'youtube') {
       navigation.navigate('Video', { youtubeUrl: item.url, youtubeTitle: item.name });
     } else {
+      // Open SurfScreen with the passed URL for all non-youtube media types
       navigation.navigate('Surf', { url: item.url });
     }
   };
