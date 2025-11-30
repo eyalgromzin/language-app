@@ -1,5 +1,8 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { BabyStepsService as DatabaseBabyStepsService } from '../database/services/baby-steps.service';
+import { Language } from '../database/entities/language.entity';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -31,25 +34,79 @@ type IndividualStepFile = {
 
 @Injectable()
 export class BabyStepsService {
+  private languageMap: Record<string, string> | null = null;
+  private languageMapPromise: Promise<void> | null = null;
+
   constructor(
-    private databaseBabyStepsService: DatabaseBabyStepsService,
+    @InjectRepository(Language)
+    private languageRepository: Repository<Language>,
   ) {}
-  private resolveSymbol(languageOrSymbol: string): string {
-    const v = (languageOrSymbol || '').trim().toLowerCase();
-    if (!v) return 'en';
-    // Accept common names or symbols
-    if (v === 'en' || v === 'english') return 'en';
-    if (v === 'es' || v === 'spanish' || v === 'español' || v === 'espanol') return 'es';
-    return v;
+
+  private async loadLanguageMap(): Promise<void> {
+    if (this.languageMap) {
+      return;
+    }
+
+    if (this.languageMapPromise) {
+      await this.languageMapPromise;
+      return;
+    }
+
+    this.languageMapPromise = (async () => {
+      try {
+        const languages = await this.languageRepository.find();
+        const map: Record<string, string> = {};
+        
+        languages.forEach(lang => {
+          // Map both name (case-insensitive) and symbol to symbol
+          const nameLower = lang.name.toLowerCase();
+          const symbolLower = lang.symbol.toLowerCase();
+          
+          map[nameLower] = lang.symbol;
+          map[symbolLower] = lang.symbol;
+          
+          // Also map capitalized name
+          const nameCapitalized = lang.name.charAt(0).toUpperCase() + lang.name.slice(1).toLowerCase();
+          map[nameCapitalized] = lang.symbol;
+        });
+        
+        this.languageMap = map;
+      } catch (error) {
+        console.error('Failed to load language map:', error);
+        // Fallback to empty map
+        this.languageMap = {};
+      }
+    })();
+
+    await this.languageMapPromise;
   }
 
-  private shuffleArray<T>(array: T[]): T[] {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  private async resolveSymbol(languageOrSymbol: string): Promise<string> {
+    await this.loadLanguageMap();
+    
+    const v = (languageOrSymbol || '').trim();
+    if (!v) return 'en';
+    
+    const vLower = v.toLowerCase();
+    
+    // Check if it's already a symbol in the map
+    if (this.languageMap && this.languageMap[vLower]) {
+      return this.languageMap[vLower];
     }
-    return shuffled;
+    
+    // Check capitalized version
+    const vCapitalized = v.charAt(0).toUpperCase() + v.slice(1).toLowerCase();
+    if (this.languageMap && this.languageMap[vCapitalized]) {
+      return this.languageMap[vCapitalized];
+    }
+    
+    // If it looks like a valid 2-letter code, return it as-is
+    if (/^[a-z]{2}$/i.test(v)) {
+      return vLower;
+    }
+    
+    // Default to English if not found
+    return 'en';
   }
 
   private loadStepsFile(filePath: string): IndividualStepFile | null {
@@ -66,7 +123,7 @@ export class BabyStepsService {
   }
 
   async getSteps(languageOrSymbol: string): Promise<StepsFile> {
-    const symbol = this.resolveSymbol(languageOrSymbol);
+    const symbol = await this.resolveSymbol(languageOrSymbol);
     
     try {
       // Try to get from database first
@@ -102,7 +159,7 @@ export class BabyStepsService {
   }
 
   async getSpecificStep(languageOrSymbol: string, stepId: string): Promise<any> {
-    const symbol = this.resolveSymbol(languageOrSymbol);
+    const symbol = await this.resolveSymbol(languageOrSymbol);
     
     try {
       // Try to get from database first

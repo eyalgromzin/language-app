@@ -31,7 +31,8 @@ function SettingsScreen(): React.JSX.Element {
         // Fetch language options from server
         const languages = await languagesService.getLanguageNames();
         if (!mounted) return;
-        setLanguageOptions(languages);
+        // Sort languages alphabetically
+        setLanguageOptions(languages.sort());
       } catch (error) {
         if (!mounted) return;
         console.error('Error fetching languages:', error);

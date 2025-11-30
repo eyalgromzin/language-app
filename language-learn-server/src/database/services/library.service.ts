@@ -99,11 +99,6 @@ export class LibraryService {
     return this.mediaRepository.save(media);
   }
 
-  // Languages
-  async getAllLanguages() {
-    return this.languageRepository.find();
-  }
-
   async createLanguage(languageData: Partial<Language>) {
     const language = this.languageRepository.create(languageData);
     return this.languageRepository.save(language);

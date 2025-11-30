@@ -106,7 +106,7 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
               onValueChange={(value) => setLearningLanguage(value)}
             >
               <Picker.Item label={t('screens.startup.selectLanguage')} value="" />
-              {Object.keys(languageMappings).map((lang) => (
+              {Object.keys(languageMappings).sort().map((lang) => (
                 <Picker.Item key={lang} label={lang} value={lang} />
               ))}
             </Picker>
@@ -121,7 +121,7 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
               onValueChange={(value) => setNativeLanguage(value)}
             >
               <Picker.Item label={t('screens.startup.selectNativeLanguage')} value="" />
-              {Object.keys(languageMappings).map((lang) => (
+              {Object.keys(languageMappings).sort().map((lang) => (
                 <Picker.Item key={lang} label={lang} value={lang} />
               ))}
             </Picker>

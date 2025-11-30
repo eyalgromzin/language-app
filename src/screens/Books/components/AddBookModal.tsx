@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert, Platform, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
-import { normalizeUrl } from '../../../common';
+import { normalizeUrl, toLanguageSymbol } from '../../../common';
 
 type AddBookModalProps = {
   visible: boolean;
@@ -34,12 +34,6 @@ export default function AddBookModal({
       setTypeError(false);
     }
   }, [visible, bookTitle]);
-
-  const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
-    const v = (input || '').toLowerCase().trim();
-    if (v === 'es' || v === 'spanish' || v === 'español') return 'es';
-    return 'en';
-  };
 
   const handleAdd = async () => {
     const url = normalizeUrl(newBookUrl);

@@ -1,4 +1,4 @@
-import { API_CONFIG } from '../config/api';
+import { cachedApiService } from './cachedApiService';
 
 export interface Language {
   id: number;
@@ -11,7 +11,7 @@ export class LanguagesService {
   private languages: Language[] = [];
   private isLoading = false;
   private lastFetchTime = 0;
-  private readonly CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+  private readonly CACHE_DURATION = 60 * 60 * 1000; // 5 minutes
 
   private constructor() {}
 
@@ -23,9 +23,9 @@ export class LanguagesService {
   }
 
   async getLanguages(): Promise<Language[]> {
-    // Return cached data if it's still valid
+    // Return in-memory cached data if it's still valid
     if (this.languages.length > 0 && Date.now() - this.lastFetchTime < this.CACHE_DURATION) {
-      return this.languages;
+      return [...this.languages].sort((a, b) => a.name.localeCompare(b.name));
     }
 
     // Prevent multiple simultaneous requests
@@ -34,19 +34,14 @@ export class LanguagesService {
       while (this.isLoading) {
         await new Promise(resolve => setTimeout(resolve, 100));
       }
-      return this.languages;
+      return [...this.languages].sort((a, b) => a.name.localeCompare(b.name));
     }
 
     this.isLoading = true;
 
     try {
-      const response = await fetch(`${API_CONFIG.SERVER_URL}${API_CONFIG.ENDPOINTS.GET_LANGUAGES}`);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const languages = await response.json();
+      // Use cachedApiService which handles local cache checking and API fetching
+      const languages = await cachedApiService.getLanguages();
       
       // Validate the response structure
       if (Array.isArray(languages) && languages.every(lang => 
@@ -55,21 +50,25 @@ export class LanguagesService {
         typeof lang.name === 'string' && 
         typeof lang.symbol === 'string'
       )) {
-        this.languages = languages;
+        const sortedLanguages = languages.sort((a, b) => a.name.localeCompare(b.name));
+        
+        // Update in-memory cache for backward compatibility
+        this.languages = sortedLanguages;
         this.lastFetchTime = Date.now();
-        return languages;
+        
+        return [...this.languages];
       } else {
         throw new Error('Invalid language data structure received from server');
       }
     } catch (error) {
-      console.error('Error fetching languages from server:', error);
+      console.error('Error fetching languages:', error);
       
       // Return empty array on error, but don't clear existing cache
       if (this.languages.length === 0) {
         return [];
       }
       
-      return this.languages;
+      return [...this.languages].sort((a, b) => a.name.localeCompare(b.name));
     } finally {
       this.isLoading = false;
     }
@@ -78,11 +77,12 @@ export class LanguagesService {
   // Get language names for display (used in pickers)
   async getLanguageNames(): Promise<string[]> {
     const languages = await this.getLanguages();
-    return languages.map(lang => {
+    const names = languages.map(lang => {
       // Capitalize first letter and ensure proper formatting
       const name = lang.name.toLowerCase();
       return name.charAt(0).toUpperCase() + name.slice(1);
     });
+    return names.sort();
   }
 
   // Get language by name

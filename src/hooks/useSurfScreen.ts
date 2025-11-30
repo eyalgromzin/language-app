@@ -5,18 +5,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { WebView } from 'react-native-webview';
 import harmfulWordsService from '../services/harmfulWordsService';
 import { addUrlToLibrary } from '../config/api';
-import { FAVOURITE_TYPES } from '../common';
+import { FAVOURITE_TYPES, toLanguageSymbol } from '../common';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getChildrenStoriesWebsite } from '../constants/childrenStoriesWebsites';
 
 export type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
 
-function capitalizeFirstLetter(str: string): string {
-  if (typeof str !== 'string' || str.length === 0) {
-    return str; // Handle empty strings or non-string inputs
-  }
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
 
 export const useSurfScreen = () => {
   const navigation = useNavigation<any>();
@@ -28,45 +22,7 @@ export const useSurfScreen = () => {
   const { learningLanguage, nativeLanguage } = useLanguage();
   
   // Helper function to convert language name to symbol
-  const toLanguageSymbol = (input: string | null): string => {
-    const v = capitalizeFirstLetter((input || '')).trim();
-    
-    // If it's already a symbol, return it
-    if (v === 'en' || v === 'es' || v === 'fr' || v === 'de' || v === 'it' || v === 'pt' || v === 'ru' || v === 'zh' || v === 'ja' || v === 'ko' || v === 'ar' || v === 'hi' || v === 'tr' || v === 'pl' || v === 'nl' || v === 'el' || v === 'sv' || v === 'no' || v === 'fi' || v === 'cs' || v === 'uk' || v === 'he' || v === 'th' || v === 'vi') {
-      return v;
-    }
-    
-    // Map from common language names to symbols
-    const languageMap: Record<string, string> = {
-      'Czech': 'cs',
-      'German': 'de',
-      'Greek': 'el',
-      'Finnish': 'fi',
-      'French': 'fr',
-      'Hebrew': 'he',
-      'Hindi': 'hi',
-      'Italian': 'it',
-      'Dutch': 'nl',
-      'Norwegian': 'no',
-      'Polish': 'pl',
-      'Portuguese': 'pt',
-      'Russian': 'ru',
-      'Swedish': 'sv',
-      'Thai': 'th',
-      'Ukrainian': 'uk',
-      'Vietnamese': 'vi',
-      'English': 'en',
-      'Spanish': 'es',
-    };
-    
-    const symbol = languageMap[v];
-    if (symbol) {
-      return symbol;
-    }
-    
-    // Default to English if not found
-    return 'en';
-  };
+ 
   
   // Get default homepage - use children's stories website if learning language is set, otherwise Google
   const getDefaultHomepage = (): string => {

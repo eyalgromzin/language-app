@@ -39,9 +39,12 @@ export const LanguageMappingsProvider: React.FC<LanguageMappingsProviderProps> =
       setError(null);
       const languages = await getLanguages();
       
+      // Sort languages by name
+      const sortedLanguages = languages.sort((a, b) => a.name.localeCompare(b.name));
+      
       // Convert array to name -> symbol mapping
       const mappings: Record<string, string> = {};
-      languages.forEach(lang => {
+      sortedLanguages.forEach(lang => {
         mappings[lang.name] = lang.symbol;
       });
       

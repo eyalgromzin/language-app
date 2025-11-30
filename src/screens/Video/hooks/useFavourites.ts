@@ -3,6 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform, Alert, ToastAndroid } from 'react-native';
 import harmfulWordsService from '../../../services/harmfulWordsService';
 import { addUrlToLibrary } from '../../../config/api';
+import { toLanguageSymbol } from '../../../common';
 
 export type FavouriteItem = { 
   url: string; 
@@ -30,13 +31,13 @@ const validateLevel = (l?: string | number | null): string => {
   return (LEVELS as readonly string[]).includes(v) ? v : 'easy';
 };
 
-const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
-  const v = (input || '').toLowerCase().trim();
-  if (v === 'es' || v === 'spanish') return 'es';
-  if (v === 'en' || v === 'english') return 'en';
-  if (v === 'español') return 'es';
-  return 'en';
-};
+// const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
+//   const v = (input || '').toLowerCase().trim();
+//   if (v === 'es' || v === 'spanish') return 'es';
+//   if (v === 'en' || v === 'english') return 'en';
+//   if (v === 'español') return 'es';
+//   return 'en';
+// };
 
 export const useFavourites = ({ 
   normalizeYouTubeUrl, 

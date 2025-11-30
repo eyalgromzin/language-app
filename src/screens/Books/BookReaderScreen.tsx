@@ -16,7 +16,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import wordCountService from '../../services/wordCountService';
 import AddToFavouritesDialog from '../../components/AddToFavouritesDialog';
 import { ThemeSelector, AddBookModal, ReaderWithNavigation, type ReaderTheme } from './components';
-import { normalizeUrl } from '../../common';
+import { normalizeUrl, toLanguageSymbol } from '../../common';
 
 type StoredBook = {
   id: string;
@@ -300,11 +300,11 @@ function BookReaderScreen(): React.JSX.Element {
     };
   }, [bookId]);
 
-  const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
-    const v = (input || '').toLowerCase().trim();
-    if (v === 'es' || v === 'spanish' || v === 'español') return 'es';
-    return 'en';
-  };
+  // const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
+  //   const v = (input || '').toLowerCase().trim();
+  //   if (v === 'es' || v === 'spanish' || v === 'español') return 'es';
+  //   return 'en';
+  // };
 
 
   const validateType = (t?: string | null): string => {

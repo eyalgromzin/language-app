@@ -3,7 +3,7 @@ import { Modal, View, Text, TouchableOpacity, TextInput, StyleSheet, Platform, A
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTranslation } from '../hooks/useTranslation';
-import { FAVOURITE_TYPES } from '../common';
+import { FAVOURITE_TYPES, toLanguageSymbol } from '../common';
 import harmfulWordsService from '../services/harmfulWordsService';
 import { addUrlToLibrary } from '../config/api';
 
@@ -73,13 +73,13 @@ const AddToFavouritesDialog: React.FC<AddToFavouritesDialogProps> = ({
     }
   }, [visible, defaultName, defaultUrl, defaultType, defaultLevel]);
 
-  const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
-    const v = (input || '').toLowerCase().trim();
-    if (v === 'es' || v === 'spanish') return 'es';
-    if (v === 'en' || v === 'english') return 'en';
-    if (v === 'español') return 'es';
-    return 'en';
-  };
+  // const toLanguageSymbol = (input: string | null): 'en' | 'es' => {
+  //   const v = (input || '').toLowerCase().trim();
+  //   if (v === 'es' || v === 'spanish') return 'es';
+  //   if (v === 'en' || v === 'english') return 'en';
+  //   if (v === 'español') return 'es';
+  //   return 'en';
+  // };
 
   const normalizeFavouritesUrl = (input: string): string => {
     if (!input) return 'about:blank';
