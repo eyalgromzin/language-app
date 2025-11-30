@@ -124,18 +124,6 @@ function SurfScreen(): React.JSX.Element {
     }
   }, [translationPanel, setTranslationPanel]);
 
-  // Print first 3 harmful words to console on screen load
-  React.useEffect(() => {
-    (async () => {
-      try {
-        const harmfulWords = await harmfulWordsService.getHarmfulWords();
-        const firstThree = harmfulWords.slice(0, 3);
-        console.log('First 3 harmful words:', firstThree);
-      } catch (error) {
-        console.error('Failed to get harmful words:', error);
-      }
-    })();
-  }, []);
 
   // Handle deep link URL if present
   React.useEffect(() => {
@@ -153,6 +141,17 @@ function SurfScreen(): React.JSX.Element {
     };
     
     checkDeepLinkUrl();
+
+    // Print first 3 harmful words to console on screen load
+    (async () => {
+      try {
+        const harmfulWords = await harmfulWordsService.getHarmfulWords();
+        const firstThree = harmfulWords.slice(0, 3);
+        console.log('First 3 harmful words:', firstThree);
+      } catch (error) {
+        console.error('Failed to get harmful words:', error);
+      }
+    })();
   }, []);
 
   const onShareSurfUrl = React.useCallback(async () => {
@@ -271,7 +270,7 @@ function SurfScreen(): React.JSX.Element {
             setCanGoBack(!!navState.canGoBack);
             if (typeof navState.url === 'string') {
               // Only update state if the URL has actually changed to prevent infinite loops
-              if (navState.url !== lastProcessedUrlRef.current) {
+              if (navState.url !== lastProcessedUrlRef.current && navState.url !== 'about:blank') {
                 lastProcessedUrlRef.current = navState.url;
                 setAddressText(navState.url);
                 console.log('savedHomepage333', navState.url);

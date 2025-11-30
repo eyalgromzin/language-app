@@ -11,6 +11,13 @@ import { getChildrenStoriesWebsite } from '../constants/childrenStoriesWebsites'
 
 export type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
 
+function capitalizeFirstLetter(str: string): string {
+  if (typeof str !== 'string' || str.length === 0) {
+    return str; // Handle empty strings or non-string inputs
+  }
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 export const useSurfScreen = () => {
   const navigation = useNavigation<any>();
   const webViewRef = React.useRef<WebView>(null);
@@ -22,7 +29,7 @@ export const useSurfScreen = () => {
   
   // Helper function to convert language name to symbol
   const toLanguageSymbol = (input: string | null): string => {
-    const v = (input || '').toLowerCase().trim();
+    const v = capitalizeFirstLetter((input || '')).trim();
     
     // If it's already a symbol, return it
     if (v === 'en' || v === 'es' || v === 'fr' || v === 'de' || v === 'it' || v === 'pt' || v === 'ru' || v === 'zh' || v === 'ja' || v === 'ko' || v === 'ar' || v === 'hi' || v === 'tr' || v === 'pl' || v === 'nl' || v === 'el' || v === 'sv' || v === 'no' || v === 'fi' || v === 'cs' || v === 'uk' || v === 'he' || v === 'th' || v === 'vi') {
