@@ -1,20 +1,6 @@
-- video screen: on word click it should pause the video:
-    copy from side project youtube iframe 
-    add to youtubeIframe js:
-      playVideo: () => {
-      if (!webViewRef.current) {
-        return;
-      }
-      webViewRef.current.injectJavaScript(_PlayerScripts.PLAYER_FUNCTIONS.playVideo);
-    },
-    pauseVideo: () => {
-      if (!webViewRef.current) {
-        return;
-      }
-      webViewRef.current.injectJavaScript(_PlayerScripts.PLAYER_FUNCTIONS.pauseVideo);
-    }
+- stop video on word click in video screen
 
-    and use it
+- make play work with local youtube iframe
 
 - sort learning and native language asc - on startup and in settings 
 
