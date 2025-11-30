@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { getLibraryMeta, searchLibraryWithCriterias } from '../../config/api';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import AddToFavouritesDialog, { FavouriteItem } from '../../components/AddToFavouritesDialog';
-import { FAVOURITE_TYPES, normalizeUrl, toLanguageSymbol } from '../../common';
+import { FAVOURITE_TYPES } from '../../common';
 import harmfulWordsService from '../../services/harmfulWordsService';
 import {
   LibraryHeader,
@@ -77,23 +77,23 @@ function LibraryScreen(): React.JSX.Element {
     };
   }, []);
 
-  // const toLanguageSymbol = React.useCallback((input: string | null): string => {
-  //   const v = (input || '').trim().toLowerCase();
+  const toLanguageSymbol = React.useCallback((input: string | null): string => {
+    const v = (input || '').trim().toLowerCase();
     
-  //   // If it's already a symbol, return it
-  //   if (v === 'en' || v === 'es' || v === 'fr' || v === 'de' || v === 'it' || v === 'pt' || v === 'ru' || v === 'zh' || v === 'ja' || v === 'ko' || v === 'ar' || v === 'hi' || v === 'tr' || v === 'pl' || v === 'nl' || v === 'el' || v === 'sv' || v === 'no' || v === 'fi' || v === 'cs' || v === 'uk' || v === 'he' || v === 'th' || v === 'vi') {
-  //     return v;
-  //   }
+    // If it's already a symbol, return it
+    if (v === 'en' || v === 'es' || v === 'fr' || v === 'de' || v === 'it' || v === 'pt' || v === 'ru' || v === 'zh' || v === 'ja' || v === 'ko' || v === 'ar' || v === 'hi' || v === 'tr' || v === 'pl' || v === 'nl' || v === 'el' || v === 'sv' || v === 'no' || v === 'fi' || v === 'cs' || v === 'uk' || v === 'he' || v === 'th' || v === 'vi') {
+      return v;
+    }
     
-  //   // Map from language name to symbol using context
-  //   const symbol = languageMappings[v];
-  //   if (symbol) {
-  //     return symbol;
-  //   }
+    // Map from language name to symbol using context
+    const symbol = languageMappings[v];
+    if (symbol) {
+      return symbol;
+    }
     
-  //   // Default to English if not found
-  //   return 'en';
-  // }, [languageMappings]);
+    // Default to English if not found
+    return 'en';
+  }, [languageMappings]);
 
   // Initial load relies on selected media effect that queries searchWithCriterias
   // with only language parameter to populate the list.
@@ -163,6 +163,19 @@ function LibraryScreen(): React.JSX.Element {
     return getDomainFromUrlString(it.url) || it.url;
   };
 
+  const normalizeUrl = (input: string): string => {
+    if (!input) return '';
+    const trimmed = input.trim();
+    if (!trimmed) return '';
+    const hasScheme = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(trimmed);
+    const startsWithWww = /^www\./i.test(trimmed);
+    const looksLikeDomain = /^[^\s]+\.[^\s]{2,}$/.test(trimmed);
+    const looksLikeIp = /^\d{1,3}(\.\d{1,3}){3}(:\d+)?(\/|$)/.test(trimmed);
+    if (!hasScheme && (startsWithWww || looksLikeDomain || looksLikeIp)) {
+      return `https://${trimmed}`;
+    }
+    return hasScheme ? trimmed : '';
+  };
 
   const saveFavourites = async (next: FavouriteItem[]) => {
     setFavourites(next);
