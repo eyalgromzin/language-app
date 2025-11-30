@@ -140,7 +140,12 @@ export const useSurfScreen = () => {
             if(initialUrlFromParams && initialUrlFromParams != currentUrl) {
               setAddressText(initialUrlFromParams);
               setCurrentUrl(initialUrlFromParams);
-            } 
+            } else if (!initialUrlFromParams) {
+              const defaultUrl = getDefaultHomepage();
+              const normalizedDefaultUrl = normalizeSurfUrl(defaultUrl);
+              setAddressText(normalizedDefaultUrl);
+              setCurrentUrl(normalizedDefaultUrl);
+            }
           }
         });
         
