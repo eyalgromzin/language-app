@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import YoutubePlayer from 'react-native-youtube-iframe';
+import YoutubeIframe, { YoutubeIframeRef } from '../react-native-youtube-iframe-local';
+
 
 type VideoPlayerProps = {
   videoId: string;
