@@ -2,8 +2,7 @@ things to refactor:
 High priority (8 items)
   Duplicate server configuration in server.ts and api.ts
   Excessive use of any types (35+ instances)
-  Word entry creation logic duplicated across 10+ files
-  Large components: VideoScreen (753 lines), BookReaderScreen (1064 lines)
+  Large components: BookReaderScreen (1064 lines)
   Missing error boundaries and unit tests
 Medium priority (12 items)
   Inconsistent API patterns, missing type definitions

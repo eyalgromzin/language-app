@@ -1,28 +1,17 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { View, TextInput, StyleSheet, Text, Platform, ScrollView, Alert, ToastAndroid } from 'react-native';
-import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
-import { fetchTranslation as fetchTranslationCommon } from '../../utils/translation';
-import * as RNFS from 'react-native-fs';
+import { View, StyleSheet, Platform, ScrollView, Alert, ToastAndroid } from 'react-native';
+import TranslationPanel from '../../components/TranslationPanel';
 import {
   extractYouTubeVideoId,
   normalizeYouTubeUrl as normalizeYouTubeUrlUtil,
   mapLanguageNameToYoutubeCode as mapLanguageNameToYoutubeCodeUtil,
-  enrichWithLengths,
-  fetchYouTubeTitleById,
-  getVideoTranscript,
 } from './videoMethods';
 import Transcript from './Transcript';
 import { useLoginGate } from '../../contexts/LoginGateContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTranslation } from '../../hooks/useTranslation';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { createAndSaveWord } from '../../services/wordService';
-import { 
-  upsertVideoNowPlaying, 
-  getVideoNowPlaying, 
-  searchYouTube, 
-} from '../../config/api';
 import {
   VideoPlayer,
   SuggestionsDropdown,
@@ -31,10 +20,19 @@ import AddToFavouritesDialog from '../../components/AddToFavouritesDialog';
 import VideoOptionsMenu from '../../components/Video/VideoOptionsMenu';
 import linkingService from '../../services/linkingService';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
-import { SearchBar, HelperMessage, ImageScrapeComponent, NewestVideos, NowPlaying, SearchResults } from './components';
-import { useFavourites, useHistory, useVideoTranscript, useImageScraper } from './hooks';
+import { SearchBar, HelperMessage, ImageScrapeComponent, NowPlaying, SearchResults } from './components';
+import {
+  useFavourites,
+  useHistory,
+  useVideoTranscript,
+  useImageScraper,
+  useVideoState,
+  useVideoSearch,
+  useNowPlaying,
+  useTranslationPanel,
+  useVideoActions,
+} from './hooks';
 import type { FavouriteItem, HistoryEntry } from './hooks';
-import type { YoutubeIframeRef } from '../../components/react-native-youtube-iframe-local';
 
 function VideoScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
@@ -44,40 +42,49 @@ function VideoScreen(): React.JSX.Element {
   const { isAuthenticated } = useAuth();
   const { t } = useTranslation();
   const { learningLanguage, nativeLanguage } = useLanguage();
-  const [inputUrl, setInputUrl] = React.useState<string>('');
-  const [url, setUrl] = React.useState<string>('');
-  const videoId = React.useMemo(() => extractYouTubeVideoId(url) ?? '', [url]);
-  const playerRef = useRef<YoutubeIframeRef | null>(null);
-  const [playerReady, setPlayerReady] = React.useState<boolean>(false);
-  const [currentPlayerTime, setCurrentPlayerTime] = React.useState<number>(0);
-  const [activeTranscriptIndex, setActiveTranscriptIndex] = React.useState<number | null>(null);
-  const scrollViewRef = React.useRef<any>(null);
-  const lineOffsetsRef = React.useRef<Record<number, number>>({});
-  const urlInputRef = React.useRef<TextInput>(null);
-  const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
-  const [translationPanel, setTranslationPanel] = React.useState<TranslationPanelState | null>(null);
-  const [selectedWordKey, setSelectedWordKey] = React.useState<string | null>(null);
-  const [startupVideos, setStartupVideos] = React.useState<Array<{ url: string; thumbnail: string; title: string; description: string; length?: string }>>([]);
-  const [startupVideosLoading, setStartupVideosLoading] = React.useState<boolean>(false);
-  const [startupVideosError, setStartupVideosError] = React.useState<string | null>(null);
-  const [currentVideoTitle, setCurrentVideoTitle] = React.useState<string>('');
-  const [searchResults, setSearchResults] = React.useState<Array<{ url: string; thumbnail: string | null; title: string; description?: string; length?: string }>>([]);
-  const [searchLoading, setSearchLoading] = React.useState<boolean>(false);
-  const [searchError, setSearchError] = React.useState<string | null>(null);
-  const [isInputFocused, setIsInputFocused] = React.useState<boolean>(false);
-  const [showHistory, setShowHistory] = React.useState<boolean>(false);
-  const [showFavouritesList, setShowFavouritesList] = React.useState<boolean>(false);
-  const [nowPlayingVideos, setNowPlayingVideos] = React.useState<Array<{ url: string; thumbnail: string; title: string; description?: string; length?: string }>>([]);
-  const [nowPlayingLoading, setNowPlayingLoading] = React.useState<boolean>(false);
-  const [nowPlayingError, setNowPlayingError] = React.useState<string | null>(null);
-  const [hidePlayback, setHidePlayback] = React.useState<boolean>(false);
-  const [showOptionsMenuGlobal, setShowOptionsMenuGlobal] = React.useState<boolean>(false);
-  const [optionsButtonPositionGlobal, setOptionsButtonPositionGlobal] = React.useState<{ x: number; y: number; width: number; height: number } | null>(null);
-  const [isFullScreen, setIsFullScreen] = React.useState<boolean>(false);
-  const [showAddFavouriteModal, setShowAddFavouriteModal] = React.useState<boolean>(false);
 
   const normalizeYouTubeUrl = React.useCallback(normalizeYouTubeUrlUtil, []);
   const mapLanguageNameToYoutubeCode = React.useCallback(mapLanguageNameToYoutubeCodeUtil, []);
+
+  // Video state management
+  const videoState = useVideoState();
+  const {
+    inputUrl,
+    setInputUrl,
+    url,
+    setUrl,
+    videoId,
+    playerRef,
+    playerReady,
+    setPlayerReady,
+    currentPlayerTime,
+    setCurrentPlayerTime,
+    activeTranscriptIndex,
+    setActiveTranscriptIndex,
+    scrollViewRef,
+    lineOffsetsRef,
+    urlInputRef,
+    isPlaying,
+    setIsPlaying,
+    currentVideoTitle,
+    setCurrentVideoTitle,
+    hidePlayback,
+    setHidePlayback,
+    isFullScreen,
+    setIsFullScreen,
+    isInputFocused,
+    setIsInputFocused,
+    showHistory,
+    setShowHistory,
+    showFavouritesList,
+    setShowFavouritesList,
+    showOptionsMenuGlobal,
+    setShowOptionsMenuGlobal,
+    optionsButtonPositionGlobal,
+    setOptionsButtonPositionGlobal,
+    showAddFavouriteModal,
+    setShowAddFavouriteModal,
+  } = videoState;
 
   // Custom hooks
   const { favourites, addToFavourites, removeFromFavourites, refreshFavourites } = useFavourites({ 
@@ -110,7 +117,57 @@ function VideoScreen(): React.JSX.Element {
     onImageScrapeError 
   } = useImageScraper();
 
-  const lastUpsertedUrlRef = React.useRef<string | null>(null);
+  const { searchResults, searchLoading, searchError, runYouTubeSearch } = useVideoSearch();
+
+  const { nowPlayingVideos, nowPlayingLoading, nowPlayingError } = useNowPlaying({
+    learningLanguage,
+    mapLanguageNameToYoutubeCode,
+    languageMappings,
+  });
+
+  const {
+    translationPanel,
+    selectedWordKey,
+    setSelectedWordKey,
+    openPanel,
+    saveCurrentWord,
+    closePanel,
+  } = useTranslationPanel({
+    learningLanguage,
+    nativeLanguage,
+    languageMappings,
+    showLoginGate,
+    isAuthenticated,
+    fetchImageUrls,
+  });
+
+  const {
+    openStartupVideo,
+    upsertNowPlayingForCurrent,
+    handleSubmit,
+    handleOpenPress,
+  } = useVideoActions({
+    url,
+    inputUrl,
+    setUrl,
+    setInputUrl,
+    setCurrentVideoTitle,
+    setHidePlayback,
+    setIsPlaying,
+    playerRef,
+    setTranscript,
+    setTranscriptError,
+    setLoadingTranscript,
+    learningLanguage,
+    mapLanguageNameToYoutubeCode,
+    languageMappings,
+    currentVideoTitle,
+    saveHistory,
+    transcript,
+    isPlaying,
+    currentPlayerTime,
+    runYouTubeSearch,
+  });
 
   const currentCanonicalUrl = React.useMemo(() => normalizeYouTubeUrl((url || inputUrl || '').trim()), [url, inputUrl, normalizeYouTubeUrl]);
   const isFavourite = favourites.some((f) => f.url === currentCanonicalUrl && !!currentCanonicalUrl);
@@ -142,7 +199,7 @@ function VideoScreen(): React.JSX.Element {
       return;
     }
     setShowAddFavouriteModal(true);
-  }, [currentCanonicalUrl, isFavourite, removeFromFavourites, t]);
+  }, [currentCanonicalUrl, isFavourite, removeFromFavourites, t, setShowAddFavouriteModal]);
 
   const onShareVideo = React.useCallback(async () => {
     const targetUrl = currentCanonicalUrl;
@@ -159,130 +216,28 @@ function VideoScreen(): React.JSX.Element {
     }
   }, [currentCanonicalUrl, currentVideoTitle, t]);
 
-  const upsertNowPlayingForCurrent = React.useCallback(async () => {
-    try {
-      const videoUrl = (url || inputUrl || '').trim();
-      if (!videoUrl) return;
-      if (lastUpsertedUrlRef.current === videoUrl) return;
-      lastUpsertedUrlRef.current = videoUrl;
-
-      const symbol = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
-      const title = (currentVideoTitle && currentVideoTitle.trim()) ? currentVideoTitle : videoUrl;
-
-      await upsertVideoNowPlaying(videoUrl, title, symbol);
-    } catch {}
-  }, [url, inputUrl, learningLanguage, currentVideoTitle, videoId, mapLanguageNameToYoutubeCode, languageMappings]);
-
   // Set up minute-based upsert timer
   React.useEffect(() => {
     if (!isPlaying || !url || !learningLanguage) {
       return;
     }
-
-    const upsertNowPlayingVideo = async () => {
-      try {
-        const videoUrl = (url || inputUrl || '').trim();
-        if (!videoUrl) return;
-
-        const symbol = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
-        const title = (currentVideoTitle && currentVideoTitle.trim()) ? currentVideoTitle : videoUrl;
-
-        await upsertVideoNowPlaying(videoUrl, title, symbol);
-      } catch (error) {
-        console.error('Failed to upsert now playing:', error);
-      }
-    }; // Every minute
-
-    upsertNowPlayingVideo();
-
-  }, [isPlaying, languageMappings]);
+    upsertNowPlayingForCurrent();
+  }, [isPlaying, url, learningLanguage, upsertNowPlayingForCurrent]);
 
   
 
 
 
   React.useEffect(() => {
-    let cancelled = false;
-    async function run() {
-      if (!videoId) {
-        setTranscript([]);
-        setTranscriptError(null);
-        setLoadingTranscript(false);
-        return;
-      }
-      // Intentionally do not auto-fetch here to avoid duplicate/conflicting requests.
-      // Fetch is performed explicitly via sendGetTranscript when user presses Go.
-    }
-    run();
-    return () => {
-      cancelled = true;
-    };
-  }, [videoId, learningLanguage, mapLanguageNameToYoutubeCode, languageMappings]);
-
-  React.useEffect(() => {
-    let cancelled = false;
-    const fetchNowPlaying = async (langSymbol: string) => {
-      setNowPlayingLoading(true);
-      setNowPlayingError(null);
-      try {
-        const data = await getVideoNowPlaying(langSymbol);
-        const results = Array.isArray(data?.results) ? data.results : Array.isArray(data) ? data : [];
-        const normalized = (results as any[]).map(r => ({
-          url: r.url,
-          thumbnail: (r.thumbnail ?? r.thumbnailUrl ?? '') as string,
-          title: r.title,
-          description: r.description,
-          length: r.length,
-        }));
-        // getting time for each video takes a long time - should save it in the server with video length already 
-        if (!cancelled) setNowPlayingVideos(normalized);
-      } catch (e) {
-        console.error('Failed to load now-playing videos:', e);
-        if (!cancelled) {
-          setNowPlayingVideos([]);
-          setNowPlayingError('Failed to load now-playing videos.');
-        }
-      } finally {
-        if (!cancelled) setNowPlayingLoading(false);
-      }
-    };
-
-    if(!learningLanguage) return;
-    
-    const symbol = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
-    fetchNowPlaying(symbol);
-    return () => { cancelled = true; };
-  }, [learningLanguage, mapLanguageNameToYoutubeCode, enrichWithLengths, languageMappings]);
-
-  const fetchTranslation = async (word: string): Promise<string> => fetchTranslationCommon(word, learningLanguage, nativeLanguage, languageMappings);
-
-  const openStartupVideo = async (urlString: string, title?: string) => {
-    const id = extractYouTubeVideoId(urlString);
-    if (!id) {
+    if (!videoId) {
       setTranscript([]);
-      setTranscriptError('Unable to open this video. Invalid URL or ID.');
-      setIsPlaying(false);
+      setTranscriptError(null);
+      setLoadingTranscript(false);
       return;
     }
-    setCurrentVideoTitle(title || '');
-    setInputUrl(urlString);
-    setUrl(urlString);
-    setHidePlayback(false);
-    setTranscript([]);
-    setTranscriptError(null);
-    setLoadingTranscript(true);
-    try {
-      const langCode = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
-      const segments = await getVideoTranscript(id, langCode);
-      setTranscript(segments);
-    } catch (err) {
-      setTranscript([]);
-      setTranscriptError('Unable to fetch transcript for this video.');
-    } finally {
-      setLoadingTranscript(false);
-    }
-    try { await saveHistory(urlString, title); } catch {}
-  };
+    // Intentionally do not auto-fetch here to avoid duplicate/conflicting requests.
+    // Fetch is performed explicitly via sendGetTranscript when user presses Go.
+  }, [videoId, setTranscript, setTranscriptError, setLoadingTranscript]);
 
   const resetVideoScreenState = React.useCallback(() => {
     try { playerRef.current?.seekTo?.(0, true); } catch {}
@@ -297,11 +252,27 @@ function VideoScreen(): React.JSX.Element {
     setTranscript([]);
     setTranscriptError(null);
     setSelectedWordKey(null);
-    setTranslationPanel(null);
+    closePanel();
     setCurrentVideoTitle('');
     setIsFullScreen(false);
     try { scrollViewRef.current?.scrollTo?.({ y: 0, animated: false }); } catch {}
-  }, [setTranscript, setTranscriptError]);
+  }, [
+    playerRef,
+    setIsPlaying,
+    setPlayerReady,
+    setCurrentPlayerTime,
+    setActiveTranscriptIndex,
+    lineOffsetsRef,
+    setInputUrl,
+    setUrl,
+    setTranscript,
+    setTranscriptError,
+    setSelectedWordKey,
+    closePanel,
+    setCurrentVideoTitle,
+    setIsFullScreen,
+    scrollViewRef,
+  ]);
 
   React.useEffect(() => {
     const ts = (route as any)?.params?.resetAt;
@@ -324,24 +295,6 @@ function VideoScreen(): React.JSX.Element {
   
 
 
-  const openPanel = (word: string, sentence?: string) => {
-    setTranslationPanel({ word, translation: '', sentence, images: [], imagesLoading: true, translationLoading: true });
-    fetchTranslation(word)
-      .then((t) => {
-        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translation: t || prev.translation, translationLoading: false } : prev));
-      })
-      .catch(() => {
-        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, translationLoading: false } : prev));
-      });
-    fetchImageUrls(word)
-      .then((imgs) => {
-        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, images: imgs, imagesLoading: false } : prev));
-      })
-      .catch(() => {
-        setTranslationPanel(prev => (prev && prev.word === word ? { ...prev, images: [], imagesLoading: false } : prev));
-      });
-  };
-
   const handleTranscriptPressOnWord = React.useCallback((payload: { key: string; segmentOffset: number; word: string; sentence: string }) => {
     const { key, segmentOffset, word, sentence } = payload;
     setSelectedWordKey(key);
@@ -353,25 +306,7 @@ function VideoScreen(): React.JSX.Element {
     setIsPlaying(false);
     setCurrentPlayerTime(segmentOffset);
     openPanel(word, sentence);
-  }, [openPanel, isPlaying]);
-
-  const saveCurrentWord = async () => {
-    if (!translationPanel) return;
-    
-    await createAndSaveWord(
-      translationPanel.word,
-      translationPanel.translation,
-      translationPanel.sentence || '',
-      {
-        checkAuthentication: true,
-        showLoginGate,
-        isAuthenticated,
-        incrementWordCount: 'incrementTranslationsSaved',
-        duplicateCheckMode: 'wordAndSentence',
-        showMessages: false, // VideoScreen doesn't show messages
-      }
-    );
-  };
+  }, [openPanel, isPlaying, setSelectedWordKey, setIsPlaying, setCurrentPlayerTime, playerRef]);
 
   React.useEffect(() => {
     if (!playerReady || !playerRef.current) return;
@@ -418,112 +353,6 @@ function VideoScreen(): React.JSX.Element {
     } catch {}
   }, [activeTranscriptIndex]);
 
-  const runYouTubeSearch = React.useCallback((rawQuery: string) => {
-    const q = (rawQuery || '').trim();
-    if (!q) return;
-    setSearchLoading(true);
-    setSearchError(null);
-    (async () => {
-      try {
-        const data = await searchYouTube(q);
-        const results = Array.isArray(data) ? data : Array.isArray((data || {}).results) ? (data.results as any[]) : [];
-        const typed = (results as Array<{ url: string; thumbnail: string | null; title: string; description?: string }>)
-          .map((r) => ({ ...r }));
-        const enriched = await enrichWithLengths(typed);
-        setSearchResults(enriched as Array<{ url: string; thumbnail: string | null; title: string; description?: string; length?: string }>);
-      } catch (e) {
-        setSearchResults([]);
-        setSearchError('Failed to search YouTube.');
-      } finally {
-        setSearchLoading(false);
-      }
-    })();
-  }, []);
-
-  const handleSubmit = React.useCallback(() => {
-    const id = extractYouTubeVideoId(inputUrl);
-    if (!id) {
-      setHidePlayback(true);
-      return runYouTubeSearch(inputUrl);
-    }
-    // If a valid video id/URL was provided, show playback
-    setHidePlayback(false);
-    setUrl(inputUrl);
-  }, [inputUrl, runYouTubeSearch]);
-
-  const handleOpenPress = React.useCallback(() => {
-    const id = extractYouTubeVideoId(inputUrl);
-    if (!id) {
-      setHidePlayback(true);
-      runYouTubeSearch(inputUrl);
-      return;
-    }
-
-    if (!videoId) {
-      setHidePlayback(false);
-      setUrl(inputUrl);
-      setCurrentVideoTitle('');
-      (async () => {
-        const t = await fetchYouTubeTitleById(id);
-        if (t) setCurrentVideoTitle(t);
-      })();
-      if (transcript.length === 0) {
-        (async () => {
-          setLoadingTranscript(true);
-          setTranscriptError(null);
-          try {
-            const langCode = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
-            const segments = await getVideoTranscript(id, langCode);
-            setTranscript(segments);
-          } catch (err) {
-            setTranscript([]);
-            setTranscriptError('Unable to fetch transcript for this video.');
-          } finally {
-            setLoadingTranscript(false);
-          }
-        })();
-      }
-      setIsPlaying(true);
-      (async () => { try { await saveHistory(inputUrl, currentVideoTitle); } catch {} })();
-      return;
-    }
-
-    if (id && id !== videoId) {
-      setHidePlayback(false);
-      setUrl(inputUrl);
-      setCurrentVideoTitle('');
-      (async () => {
-        const t = await fetchYouTubeTitleById(id);
-        if (t) setCurrentVideoTitle(t);
-      })();
-      setTranscript([]);
-      setTranscriptError(null);
-      (async () => {
-        setLoadingTranscript(true);
-        try {
-          const langCode = mapLanguageNameToYoutubeCode(learningLanguage, languageMappings);
-          const segments = await getVideoTranscript(id, langCode);
-          setTranscript(segments);
-        } catch (err) {
-          setTranscript([]);
-          setTranscriptError('Unable to fetch transcript for this video.');
-        } finally {
-          setLoadingTranscript(false);
-        }
-      })();
-      setIsPlaying(true);
-      (async () => { try { await saveHistory(inputUrl, currentVideoTitle); } catch {} })();
-      return;
-    }
-
-    if (isPlaying || (typeof currentPlayerTime === 'number' && currentPlayerTime > 0.1)) {
-      try {
-        playerRef.current?.seekTo?.(0, true);
-      } catch {}
-      setIsPlaying(false);
-      return;
-    }
-  }, [inputUrl, videoId, transcript.length, isPlaying, currentPlayerTime, learningLanguage, languageMappings]);
 
   
 
@@ -640,13 +469,15 @@ function VideoScreen(): React.JSX.Element {
           onImageScrapeError={onImageScrapeError}
         />
 
-        <SearchResults
-          videos={searchResults}
-          loading={searchLoading}
-          error={searchError}
-          onVideoPress={openStartupVideo}
-          t={t}
-        />
+        {!isFullScreen && (
+          <SearchResults
+            videos={searchResults}
+            loading={searchLoading}
+            error={searchError}
+            onVideoPress={openStartupVideo}
+            t={t}
+          />
+        )}
 
         {/* {!isPlaying && !hidePlayback && !nowPlayingLoading && !nowPlayingError && nowPlayingVideos.length === 0 && <NewestVideos />} */}
 
@@ -684,7 +515,7 @@ function VideoScreen(): React.JSX.Element {
       <TranslationPanel
         panel={translationPanel}
         onSave={saveCurrentWord}
-        onClose={() => setTranslationPanel(null)}
+        onClose={closePanel}
         onRetranslate={(word: string) => {
           openPanel(word, translationPanel?.sentence);
         }}
