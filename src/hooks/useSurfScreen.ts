@@ -133,12 +133,12 @@ export const useSurfScreen = () => {
           const mapped: FavouriteItem[] = arr
             .map((it: any) => {
               if (typeof it === 'string') {
-                const u = normalizeUrl(it);
+                const u = normalizeSurfUrl(it);
                 const nm = getDomainFromUrlString(u) || u;
                 return { url: u, name: nm } as FavouriteItem;
               }
               if (it && typeof it === 'object' && typeof it.url === 'string') {
-                const u = normalizeUrl(it.url);
+                const u = normalizeSurfUrl(it.url);
                 const nm = typeof it.name === 'string' && it.name.trim().length > 0 ? it.name : (getDomainFromUrlString(u) || u);
                 const tid = typeof it.typeId === 'number' ? it.typeId : undefined;
                 const tn = typeof it.typeName === 'string' ? it.typeName : (typeof tid === 'number' ? (FAVOURITE_TYPES.find(t => t.id === tid)?.name) : undefined);
@@ -191,7 +191,7 @@ export const useSurfScreen = () => {
   // Handle initial URL from params
   React.useEffect(() => {
     if (initialUrlFromParams) {
-      const normalized = normalizeUrl(initialUrlFromParams);
+      const normalized = normalizeSurfUrl(initialUrlFromParams);
       setAddressText(normalized);
       setCurrentUrl(normalized);
     }
@@ -211,7 +211,7 @@ export const useSurfScreen = () => {
     } catch { return null; }
   };
 
-  const normalizeUrl = (input: string): string => {
+  const normalizeSurfUrl = (input: string): string => {
     if (!input) return 'about:blank';
     const trimmed = input.trim();
     const hasScheme = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(trimmed);
@@ -259,7 +259,7 @@ export const useSurfScreen = () => {
 
   // Action handlers
   const selectSuggestion = (domain: string) => {
-    const url = normalizeUrl(domain);
+    const url = normalizeSurfUrl(domain);
     setAddressText(url);
     setCurrentUrl(url);
     saveDomain(domain);
@@ -269,7 +269,7 @@ export const useSurfScreen = () => {
   };
 
   const submit = () => {
-    const normalized = normalizeUrl(addressText.trim());
+    const normalized = normalizeSurfUrl(addressText.trim());
     setCurrentUrl(normalized);
     const domain = getDomainFromUrlString(normalized);
     if (domain) saveDomain(domain);
@@ -295,12 +295,12 @@ export const useSurfScreen = () => {
         const mapped: FavouriteItem[] = arr
           .map((it: any) => {
             if (typeof it === 'string') {
-              const u = normalizeUrl(it);
+              const u = normalizeSurfUrl(it);
               const nm = getDomainFromUrlString(u) || u;
               return { url: u, name: nm } as FavouriteItem;
             }
             if (it && typeof it === 'object' && typeof it.url === 'string') {
-              const u = normalizeUrl(it.url);
+              const u = normalizeSurfUrl(it.url);
               const nm = typeof it.name === 'string' && it.name.trim().length > 0 ? it.name : (getDomainFromUrlString(u) || u);
               const tid = typeof it.typeId === 'number' ? it.typeId : undefined;
               const tn = typeof it.typeName === 'string' ? it.typeName : (typeof tid === 'number' ? (FAVOURITE_TYPES.find(t => t.id === tid)?.name) : undefined);
@@ -337,7 +337,7 @@ export const useSurfScreen = () => {
       console.error('Failed to check URL for harmful content:', error);
     }
     
-    const normalized = normalizeUrl(url);
+    const normalized = normalizeSurfUrl(url);
     const safeName = (name || '').trim() || (getDomainFromUrlString(normalized) || normalized);
     const next: FavouriteItem[] = [
       { url: normalized, name: safeName, typeId, typeName, levelName: levelName ? validateLevel(levelName) : undefined },
@@ -361,13 +361,13 @@ export const useSurfScreen = () => {
 
   const removeFromFavourites = async (url: string) => {
     if (!url) return;
-    const normalized = normalizeUrl(url);
+    const normalized = normalizeSurfUrl(url);
     const next = favourites.filter((f) => f.url !== normalized);
     await saveFavourites(next);
   };
 
   const promptFavourite = (url: string, alreadyFav: boolean) => {
-    const normalized = normalizeUrl(url);
+    const normalized = normalizeSurfUrl(url);
     if (!normalized || normalized === 'about:blank') return;
     if (alreadyFav) {
       const onYes = async () => {
@@ -435,7 +435,7 @@ export const useSurfScreen = () => {
   };
 
   const promptSetHomepage = () => {
-    const urlToSave = normalizeUrl(addressText.trim() || currentUrl);
+    const urlToSave = normalizeSurfUrl(addressText.trim() || currentUrl);
     const confirmAndSave = async () => {
       try {
         await AsyncStorage.setItem(HOMEPAGE_KEY, urlToSave);
@@ -469,7 +469,7 @@ export const useSurfScreen = () => {
 
   const postAddUrlToLibrary = async (url: string, typeName?: string, displayName?: string, level?: string) => {
     try {
-      const normalizedUrl = normalizeUrl(url);
+      const normalizedUrl = normalizeSurfUrl(url);
       
       const harmfulCheck = await harmfulWordsService.checkUrl(normalizedUrl);
       if (harmfulCheck.isHarmful) {
@@ -493,7 +493,7 @@ export const useSurfScreen = () => {
     } catch {}
   };
 
-  const urlForStar = normalizeUrl((currentUrl || addressText || '').trim());
+  const urlForStar = normalizeSurfUrl((currentUrl || addressText || '').trim());
   const isFav = favourites.some((f) => f.url === urlForStar);
 
   return {

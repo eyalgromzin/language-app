@@ -81,7 +81,7 @@ const AddToFavouritesDialog: React.FC<AddToFavouritesDialogProps> = ({
     return 'en';
   };
 
-  const normalizeUrl = (input: string): string => {
+  const normalizeFavouritesUrl = (input: string): string => {
     if (!input) return 'about:blank';
     const trimmed = input.trim();
     const hasScheme = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(trimmed);
@@ -137,7 +137,7 @@ const AddToFavouritesDialog: React.FC<AddToFavouritesDialogProps> = ({
       console.error('Failed to check URL for harmful content:', error);
     }
     
-    const normalized = normalizeUrl(url);
+    const normalized = normalizeFavouritesUrl(url);
     const safeName = (name || '').trim() || (getDomainFromUrlString(normalized) || normalized);
     
     try {
@@ -198,7 +198,7 @@ const AddToFavouritesDialog: React.FC<AddToFavouritesDialogProps> = ({
     }
 
     // URL validation logic moved from SurfScreen
-    const u = normalizeUrl(newFavUrl.trim());
+    const u = normalizeFavouritesUrl(newFavUrl.trim());
     const nm = (newFavName.trim() || '').trim();
     if (!u || u === 'about:blank') {
       if (Platform.OS === 'android') {

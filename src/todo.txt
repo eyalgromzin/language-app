@@ -1,7 +1,5 @@
 - surf screen - homepage is not working on load 
 
-- 
-
 - sort learning and native language asc - on startup and in settings 
 
 - make app work in shirs phone 

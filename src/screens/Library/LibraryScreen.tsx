@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { getLibraryMeta, searchLibraryWithCriterias } from '../../config/api';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import AddToFavouritesDialog, { FavouriteItem } from '../../components/AddToFavouritesDialog';
-import { FAVOURITE_TYPES } from '../../common';
+import { FAVOURITE_TYPES, normalizeUrl } from '../../common';
 import harmfulWordsService from '../../services/harmfulWordsService';
 import {
   LibraryHeader,
@@ -163,19 +163,6 @@ function LibraryScreen(): React.JSX.Element {
     return getDomainFromUrlString(it.url) || it.url;
   };
 
-  const normalizeUrl = (input: string): string => {
-    if (!input) return '';
-    const trimmed = input.trim();
-    if (!trimmed) return '';
-    const hasScheme = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(trimmed);
-    const startsWithWww = /^www\./i.test(trimmed);
-    const looksLikeDomain = /^[^\s]+\.[^\s]{2,}$/.test(trimmed);
-    const looksLikeIp = /^\d{1,3}(\.\d{1,3}){3}(:\d+)?(\/|$)/.test(trimmed);
-    if (!hasScheme && (startsWithWww || looksLikeDomain || looksLikeIp)) {
-      return `https://${trimmed}`;
-    }
-    return hasScheme ? trimmed : '';
-  };
 
   const saveFavourites = async (next: FavouriteItem[]) => {
     setFavourites(next);

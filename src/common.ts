@@ -7,3 +7,17 @@ export const FAVOURITE_TYPES = [
   { id: 6, name: 'book' },
   { id: 7, name: 'website' },
 ] as const;
+
+export const normalizeUrl = (input: string): string => {
+  if (!input) return '';
+  const trimmed = input.trim();
+  if (!trimmed) return '';
+  const hasScheme = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(trimmed);
+  const startsWithWww = /^www\./i.test(trimmed);
+  const looksLikeDomain = /^[^\s]+\.[^\s]{2,}$/.test(trimmed);
+  const looksLikeIp = /^\d{1,3}(\.\d{1,3}){3}(:\d+)?(\/|$)/.test(trimmed);
+  if (!hasScheme && (startsWithWww || looksLikeDomain || looksLikeIp)) {
+    return `https://${trimmed}`;
+  }
+  return hasScheme ? trimmed : '';
+};
