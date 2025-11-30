@@ -34,8 +34,7 @@ import ContactUsScreen from './src/screens/ContactUs/ContactUsScreen';
 import ProgressScreen from './src/screens/Progress/ProgressScreen';
 import linkingService from './src/services/linkingService';
 import LoginGateModal from './src/components/LoginGateModal';
-import * as RNFS from 'react-native-fs';
-import { WordEntry } from './src/types/words';
+import { createAndSaveWord } from './src/services/wordService';
 import { t } from 'i18next';
 
 enableScreens();
@@ -76,68 +75,18 @@ function MainTabs(): React.JSX.Element {
 
   // Function to add word from deep link
   const addWordFromDeepLink = React.useCallback(async (word: string, translation: string, sentence?: string) => {
-    try {
-      const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
-      
-      // Check if file exists and read current words
-      let existingWords: WordEntry[] = [];
-      const exists = await RNFS.exists(filePath);
-      if (exists) {
-        const content = await RNFS.readFile(filePath, 'utf8');
-        const parsed = JSON.parse(content);
-        existingWords = Array.isArray(parsed) ? parsed : [];
+    await createAndSaveWord(
+      word,
+      translation,
+      sentence,
+      {
+        checkAuthentication: false,
+        duplicateCheckMode: 'wordAndTranslation',
+        showMessages: true,
+        successMessage: `"${word}" has been added to your word list.`,
+        addToBeginning: true,
       }
-
-      // Check if word already exists (same word and translation)
-      const wordExists = existingWords.some(w => 
-        w.word === word && w.translation === translation
-      );
-
-      if (wordExists) {
-        Alert.alert(
-          'Word already exists',
-          `"${word}" is already in your word list.`,
-          [{ text: 'OK' }]
-        );
-        return;
-      }
-
-      // Create new word entry
-      const newWord: WordEntry = {
-        word,
-        translation,
-        sentence,
-        addedAt: new Date().toISOString(),
-        numberOfCorrectAnswers: {
-          missingLetters: 0,
-          missingWords: 0,
-          chooseTranslation: 0,
-          chooseWord: 0,
-          memoryGame: 0,
-          writeTranslation: 0,
-          writeWord: 0,
-        },
-      };
-
-      // Add to beginning of array (most recent first)
-      const updatedWords = [newWord, ...existingWords];
-      
-      // Save to file
-      await RNFS.writeFile(filePath, JSON.stringify(updatedWords, null, 2), 'utf8');
-      
-      Alert.alert(
-        'Word added!',
-        `"${word}" has been added to your word list.`,
-        [{ text: 'OK' }]
-      );
-    } catch (error) {
-      console.error('Error adding word from deep link:', error);
-      Alert.alert(
-        'Error',
-        'Failed to add word to your list.',
-        [{ text: 'OK' }]
-      );
-    }
+    );
   }, []);
 
   // Handle deep links

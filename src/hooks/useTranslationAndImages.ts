@@ -8,7 +8,7 @@ import TranslationPanel, { type TranslationPanelState } from '../components/Tran
 import { useLoginGate } from '../contexts/LoginGateContext';
 import { useAuth } from '../contexts/AuthContext';
 import { useTranslation } from './useTranslation';
-import wordCountService from '../services/wordCountService';
+import { createAndSaveWord } from '../services/wordService';
 
 export const useTranslationAndImages = (
   learningLanguage: string | null,
@@ -67,87 +67,19 @@ export const useTranslationAndImages = (
   const saveCurrentWord = async () => {
     if (!translationPanel) return;
     
-    // Check if user is authenticated, if not, check word count and show login gate
-    if (!isAuthenticated) {
-      await wordCountService.initialize();
-      const currentCount = wordCountService.getWordCount();
-      
-      // Show login gate if this would be the 3rd word (after saving, count would be 3)
-      if (currentCount.totalWordsAdded >= 2) {
-        showLoginGate();
-        return;
+    await createAndSaveWord(
+      translationPanel.word,
+      translationPanel.translation,
+      translationPanel.sentence || '',
+      {
+        checkAuthentication: true,
+        showLoginGate,
+        isAuthenticated,
+        incrementWordCount: 'incrementTranslationsSaved',
+        duplicateCheckMode: 'wordAndSentence',
+        showMessages: true,
       }
-    }
-
-    const entry = {
-      word: translationPanel.word,
-      translation: translationPanel.translation,
-      sentence: translationPanel.sentence || '',
-      addedAt: new Date().toISOString(),
-      numberOfCorrectAnswers: {
-        missingLetters: 0,
-        missingWords: 0,
-        chooseTranslation: 0,
-        chooseWord: 0,
-        memoryGame: 0,
-        writeTranslation: 0,
-        writeWord: 0,
-      },
-    } as const;
-
-    const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
-    try {
-      let current: unknown = [];
-      try {
-        const content = await RNFS.readFile(filePath, 'utf8');
-        current = JSON.parse(content);
-      } catch {
-        current = [];
-      }
-      const arr = Array.isArray(current) ? current : [];
-
-      const normalize = (it: any) => {
-        const base = it && typeof it === 'object' ? it : {};
-        const noa = (base as any).numberOfCorrectAnswers || {};
-        const safeNoa = {
-          missingLetters: Math.max(0, Number(noa.missingLetters) || 0),
-          missingWords: Math.max(0, Number(noa.missingWords) || 0),
-          chooseTranslation: Math.max(0, Number(noa.chooseTranslation) || 0),
-          chooseWord: Math.max(0, Number(noa.chooseWord) || 0),
-          memoryGame: Math.max(0, Number(noa.memoryGame) || 0),
-          writeTranslation: Math.max(0, Number(noa.writeTranslation) || 0),
-          writeWord: Math.max(0, Number(noa.writeWord) || 0),
-        };
-        return { ...base, numberOfCorrectAnswers: safeNoa };
-      };
-      const normalized = arr.map(normalize);
-
-      const exists = normalized.some(
-        (it: any) => it && typeof it === 'object' && it.word === entry.word && it.sentence === entry.sentence
-      );
-      
-      if (!exists) {
-        normalized.push(entry);
-        
-        // Increment word count for translations
-        if (!isAuthenticated) {
-          await wordCountService.incrementTranslationsSaved();
-        }
-      }
-
-      await RNFS.writeFile(filePath, JSON.stringify(normalized, null, 2), 'utf8');
-      if (Platform.OS === 'android') {
-        ToastAndroid.show('Saved', ToastAndroid.SHORT);
-      } else {
-        Alert.alert('Saved', 'Word added to your list.');
-      }
-    } catch (e) {
-      if (Platform.OS === 'android') {
-        ToastAndroid.show('Failed to save', ToastAndroid.SHORT);
-      } else {
-        Alert.alert('Error', 'Failed to save the word.');
-      }
-    }
+    );
   };
 
   const fetchTranslation = async (word: string): Promise<string> => 

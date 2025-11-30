@@ -10,7 +10,7 @@ import type { WordItem, WordCategoryType, LocalizedText } from '../../types/word
 import { useWordCategories } from '../../contexts/WordCategoriesContext';
 import { useLoginGate } from '../../contexts/LoginGateContext';
 import { useAuth } from '../../contexts/AuthContext';
-import wordCountService from '../../services/wordCountService';
+import { createWordEntry, saveWordEntry, readWordEntries } from '../../services/wordService';
 
 // moved WordCategory component to its own file
 
@@ -376,18 +376,6 @@ function WordsByCategoriesScreen(): React.JSX.Element {
   };
 
   const saveItemToMyWords = async (item: WordItem) => {
-    // Check if user is authenticated, if not, check word count and show login gate
-    if (!isAuthenticated) {
-      await wordCountService.initialize();
-      const currentCount = wordCountService.getWordCount();
-      
-      // Show login gate if this would be the 3rd word (after saving, count would be 3)
-      if (currentCount.totalWordsAdded >= 2) {
-        showLoginGate();
-        return;
-      }
-    }
-
     // Handle inconsistent language keys in the data
     const getTextInLanguage = (textObj: LocalizedText, languageCode: string): string => {
       // First try the exact language code
@@ -410,73 +398,60 @@ function WordsByCategoriesScreen(): React.JSX.Element {
     const source = getTextInLanguage(item.text, SOURCE_LANGUAGE);
     const target = getTextInLanguage(item.text, TARGET_LANGUAGE);
     const sentenceSource = item.type === 'sentence' ? source : (item.example ? getTextInLanguage(item.example, SOURCE_LANGUAGE) : '');
-    const entry = {
-      word: source,
-      translation: target,
-      sentence: sentenceSource,
-      addedAt: new Date().toISOString(),
-      numberOfCorrectAnswers: {
-        missingLetters: 0,
-        missingWords: 0,
-        chooseTranslation: 0,
-        chooseWord: 0,
-        memoryGame: 0,
-        writeTranslation: 0,
-        writeWord: 0,
-      },
-    } as const;
-
-    const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
+    
     try {
-      let current: unknown = [];
-      try {
-        const content = await RNFS.readFile(filePath, 'utf8');
-        current = JSON.parse(content);
-      } catch {
-        current = [];
-      }
-      const arr = Array.isArray(current) ? current : [];
-
-      const normalize = (it: any) => {
-        const base = it && typeof it === 'object' ? it : {};
-        const noa = (base as any).numberOfCorrectAnswers || {};
-        const safeNoa = {
-          missingLetters: Math.max(0, Number(noa.missingLetters) || 0),
-          missingWords: Math.max(0, Number(noa.missingWords) || 0),
-          chooseTranslation: Math.max(0, Number(noa.chooseTranslation) || 0),
-          chooseWord: Math.max(0, Number(noa.chooseWord) || 0),
-          memoryGame: Math.max(0, Number(noa.memoryGame) || 0),
-          writeTranslation: Math.max(0, Number(noa.writeTranslation) || 0),
-          writeWord: Math.max(0, Number(noa.writeWord) || 0),
-        };
-        return { ...base, numberOfCorrectAnswers: safeNoa };
-      };
-      const normalized = arr.map(normalize);
-
-      const exists = normalized.some(
-        (it: any) => it && typeof it === 'object' && it.word === entry.word && (it.sentence || '') === (entry.sentence || '')
+      // Check if word already exists
+      const existingEntries = await readWordEntries();
+      const alreadyExists = existingEntries.some(
+        (it) => it && typeof it === 'object' && it.word === source && (it.sentence || '') === (sentenceSource || '')
       );
       
-      if (!exists) {
-        normalized.push(entry);
-        
-        // Increment word count for categories
-        if (!isAuthenticated) {
-          await wordCountService.incrementCategoriesWords();
+      if (alreadyExists) {
+        // Show message for existing word
+        if (Platform.OS === 'android') {
+          ToastAndroid.show(t('screens.categories.wordCategories.alreadySaved'), ToastAndroid.SHORT);
+        } else {
+          Alert.alert(
+            t('screens.categories.wordCategories.alreadySaved'),
+            t('screens.categories.wordCategories.alreadyInList')
+          );
+        }
+        return;
+      }
+      
+      // Save the word
+      const saved = await saveWordEntry(
+        createWordEntry(source, target, sentenceSource),
+        {
+          checkAuthentication: true,
+          showLoginGate,
+          isAuthenticated,
+          incrementWordCount: 'incrementCategoriesWords',
+          duplicateCheckMode: 'wordAndSentence',
+          showMessages: false, // We'll handle messages ourselves with translations
+        }
+      );
+      
+      // Show success message
+      if (saved) {
+        if (Platform.OS === 'android') {
+          ToastAndroid.show(t('screens.categories.wordCategories.saved'), ToastAndroid.SHORT);
+        } else {
+          Alert.alert(
+            t('screens.categories.wordCategories.saved'),
+            t('screens.categories.wordCategories.itemAddedToList')
+          );
         }
       }
-
-      await RNFS.writeFile(filePath, JSON.stringify(normalized, null, 2), 'utf8');
-      if (Platform.OS === 'android') {
-        ToastAndroid.show(exists ? t('screens.categories.wordCategories.alreadySaved') : t('screens.categories.wordCategories.saved'), ToastAndroid.SHORT);
-      } else {
-        Alert.alert(exists ? t('screens.categories.wordCategories.alreadySaved') : t('screens.categories.wordCategories.saved'), exists ? t('screens.categories.wordCategories.alreadyInList') : t('screens.categories.wordCategories.itemAddedToList'));
-      }
-    } catch {
+    } catch (error) {
+      // Error occurred during save
       if (Platform.OS === 'android') {
         ToastAndroid.show(t('screens.categories.wordCategories.failedToSave'), ToastAndroid.SHORT);
       } else {
-        Alert.alert(t('screens.categories.wordCategories.error'), t('screens.categories.wordCategories.failedToSaveItem'));
+        Alert.alert(
+          t('screens.categories.wordCategories.error'),
+          t('screens.categories.wordCategories.failedToSaveItem')
+        );
       }
     }
   };
