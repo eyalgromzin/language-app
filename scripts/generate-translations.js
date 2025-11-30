@@ -165,7 +165,7 @@ const baseTranslations = {
   "surf": {
     "searchPlaceholder": "Search or enter website URL",
     "moreOptions": "More options",
-    "setHomepage": "Set Homepage",
+    "setHomepage": "Set as Homepage",
     "setHomepageSubtitle": "Set current page as homepage",
     "favouritesList": "Favourites List",
     "favouritesListSubtitle": "View saved websites",

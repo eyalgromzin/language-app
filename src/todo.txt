@@ -1,6 +1,6 @@
-- stop video on word click in video screen
+- surf screen - homepage is not working on load 
 
-- make play work with local youtube iframe
+- 
 
 - sort learning and native language asc - on startup and in settings 
 

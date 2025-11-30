@@ -281,7 +281,6 @@ function VideoScreen(): React.JSX.Element {
     } finally {
       setLoadingTranscript(false);
     }
-    setIsPlaying(true);
     try { await saveHistory(urlString, title); } catch {}
   };
 
@@ -346,12 +345,15 @@ function VideoScreen(): React.JSX.Element {
   const handleTranscriptPressOnWord = React.useCallback((payload: { key: string; segmentOffset: number; word: string; sentence: string }) => {
     const { key, segmentOffset, word, sentence } = payload;
     setSelectedWordKey(key);
-    try { playerRef.current?.pauseVideo?.(); } catch {}
-    try { playerRef.current?.seekTo?.(segmentOffset, true); } catch {}
+    // Only seek if video is currently playing - don't start playback if it's paused
+    if (isPlaying) {
+      try { playerRef.current?.pauseVideo?.(); } catch {}
+      try { playerRef.current?.seekTo?.(segmentOffset, true); } catch {}
+    }
     setIsPlaying(false);
     setCurrentPlayerTime(segmentOffset);
     openPanel(word, sentence);
-  }, [openPanel]);
+  }, [openPanel, isPlaying]);
 
   const saveCurrentWord = async () => {
     if (!translationPanel) return;

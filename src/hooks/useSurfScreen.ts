@@ -454,7 +454,7 @@ export const useSurfScreen = () => {
     };
     try {
       Alert.alert(
-        'Set Homepage',
+        'Set as Homepage',
         'do you want to set this website as homepage?',
         [
           { text: 'No', style: 'cancel' },
