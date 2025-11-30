@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, TextInput, StyleSheet, Text, Platform, ScrollView, Alert, ToastAndroid } from 'react-native';
 import TranslationPanel, { type TranslationPanelState } from '../../components/TranslationPanel';
@@ -34,6 +34,7 @@ import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import { SearchBar, HelperMessage, ImageScrapeComponent, NewestVideos, NowPlaying, SearchResults } from './components';
 import { useFavourites, useHistory, useVideoTranscript, useImageScraper } from './hooks';
 import type { FavouriteItem, HistoryEntry } from './hooks';
+import type { YoutubeIframeRef } from '../../components/react-native-youtube-iframe-local';
 
 function VideoScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
@@ -46,7 +47,7 @@ function VideoScreen(): React.JSX.Element {
   const [inputUrl, setInputUrl] = React.useState<string>('');
   const [url, setUrl] = React.useState<string>('');
   const videoId = React.useMemo(() => extractYouTubeVideoId(url) ?? '', [url]);
-  const playerRef = React.useRef<any>(null);
+  const playerRef = useRef<YoutubeIframeRef | null>(null);
   const [playerReady, setPlayerReady] = React.useState<boolean>(false);
   const [currentPlayerTime, setCurrentPlayerTime] = React.useState<number>(0);
   const [activeTranscriptIndex, setActiveTranscriptIndex] = React.useState<number | null>(null);
@@ -285,7 +286,7 @@ function VideoScreen(): React.JSX.Element {
   };
 
   const resetVideoScreenState = React.useCallback(() => {
-    try { playerRef.current?.seekTo?.(0); } catch {}
+    try { playerRef.current?.seekTo?.(0, true); } catch {}
     try { playerRef.current?.pauseVideo?.(); } catch {}
     setIsPlaying(false);
     setPlayerReady(false);
@@ -346,7 +347,7 @@ function VideoScreen(): React.JSX.Element {
     const { key, segmentOffset, word, sentence } = payload;
     setSelectedWordKey(key);
     try { playerRef.current?.pauseVideo?.(); } catch {}
-    try { playerRef.current?.seekTo?.(segmentOffset); } catch {}
+    try { playerRef.current?.seekTo?.(segmentOffset, true); } catch {}
     setIsPlaying(false);
     setCurrentPlayerTime(segmentOffset);
     openPanel(word, sentence);
@@ -574,7 +575,7 @@ function VideoScreen(): React.JSX.Element {
 
     if (isPlaying || (typeof currentPlayerTime === 'number' && currentPlayerTime > 0.1)) {
       try {
-        playerRef.current?.seekTo?.(0);
+        playerRef.current?.seekTo?.(0, true);
       } catch {}
       setIsPlaying(false);
       return;

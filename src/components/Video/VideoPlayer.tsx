@@ -1,14 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import YoutubeIframe, { YoutubeIframeRef } from '../react-native-youtube-iframe-local';
-
+import YoutubePlayer, { YoutubeIframeRef } from '../react-native-youtube-iframe-local';
 
 type VideoPlayerProps = {
   videoId: string;
   isPlaying: boolean;
   currentVideoTitle?: string;
-  playerRef: React.RefObject<any>;
+  playerRef: React.RefObject<YoutubeIframeRef | null>;
   onReady: () => void;
   onChangeState: (state: string) => void;
   isFullScreen: boolean;

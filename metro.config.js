@@ -10,6 +10,7 @@ const config = {
 	resolver: {
 		extraNodeModules: {
 			'react-native-fs': require.resolve('@dr.pogodin/react-native-fs'),
+			'events': require.resolve('./__mocks__/events.js'),
 		},
 	},
 };
