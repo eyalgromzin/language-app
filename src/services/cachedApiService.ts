@@ -6,9 +6,9 @@ import {
   getLanguages,
   getBabySteps,
   getBabyStep,
+  getWordCategories,
   getWordCategoryById,
 } from '../config/api';
-import { getApiUrl, SERVER_CONFIG } from '../config/server';
 
 // Cached API service class
 class CachedApiService {
@@ -192,16 +192,7 @@ class CachedApiService {
     
     // Fetch from API if not cached
     try {
-      const url = getApiUrl(SERVER_CONFIG.ENDPOINTS.WORD_CATEGORIES);
-      console.log('[CachedApi] Fetching word categories from server:', url);
-      
-      const response = await fetch(url);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      const data = await response.json();
+      const data = await getWordCategories();
       console.log('[CachedApi] Word categories data received from server:', data);
       console.log('[CachedApi] Data type:', typeof data);
       console.log('[CachedApi] Data keys:', Object.keys(data));
