@@ -267,8 +267,13 @@ function WordsMatchScreen(): React.JSX.Element {
           next.add(matchedKey);
           const totalKeys = new Set([...leftItems.map((i) => i.key)]);
           if (next.size >= totalKeys.size && totalKeys.size > 0) {
-            // refresh list from storage and start a new round
-            loadBase().then(() => prepareRound());
+            // If in surprise mode, navigate to random next practice
+            if (route?.params?.surprise) {
+              navigateToRandomNext();
+            } else {
+              // refresh list from storage and start a new round
+              loadBase().then(() => prepareRound());
+            }
           }
           return next;
         });
@@ -279,7 +284,7 @@ function WordsMatchScreen(): React.JSX.Element {
       setWrongFlash(pair);
       try { playWrongFeedback(); } catch {}
     }
-  }, [selectedLeftKey, selectedRightKey, wrongFlash, leftItems, matchedKeys, prepareRound, loadBase, writeBackIncrement]);
+  }, [selectedLeftKey, selectedRightKey, wrongFlash, leftItems, matchedKeys, prepareRound, loadBase, writeBackIncrement, route?.params?.surprise, navigateToRandomNext]);
 
   // When wrongFlash is set, flash the two items red for 2 seconds, then clear and re-enable selection
   React.useEffect(() => {

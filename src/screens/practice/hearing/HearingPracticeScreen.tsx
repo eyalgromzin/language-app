@@ -367,8 +367,12 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
     if (props.embedded) return;
     setShowCorrectToast(false);
     setShowWrongToast(false);
+    if (route?.params?.surprise) {
+      navigateToRandomNext();
+      return;
+    }
     prepareRound(allEntries);
-  }, [prepareRound, allEntries, props.embedded]);
+  }, [prepareRound, allEntries, props.embedded, route?.params?.surprise, navigateToRandomNext]);
 
   const writeBackIncrement = React.useCallback(async (wordKey: string) => {
     try {

@@ -259,8 +259,12 @@ function MemoryGameScreen(): React.JSX.Element {
 
   const handleContinue = React.useCallback(() => {
     setShowCongratulations(false);
+    if (route?.params?.surprise) {
+      navigateToRandomNext();
+      return;
+    }
     loadBase().then(() => prepareRound());
-  }, [loadBase, prepareRound]);
+  }, [loadBase, prepareRound, route?.params?.surprise, navigateToRandomNext]);
 
   const renderCard = (card: Card) => {
     const isMatched = matchedKeys.has(card.key);

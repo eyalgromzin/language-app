@@ -317,8 +317,12 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const moveToNext = React.useCallback(() => {
     setShowCorrectToast(false);
     setShowWrongToast(false);
+    if (route?.params?.surprise) {
+      navigateToRandomNext();
+      return;
+    }
     prepareRound(entries);
-  }, [prepareRound, entries]);
+  }, [prepareRound, entries, route?.params?.surprise, navigateToRandomNext]);
 
   const writeBackIncrement = React.useCallback(async (wordKey: string) => {
     try {

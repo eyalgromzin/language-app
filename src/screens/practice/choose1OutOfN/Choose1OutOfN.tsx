@@ -383,8 +383,12 @@ function Choose1OutOfN(props: EmbeddedProps): React.JSX.Element {
       clearTimeout(successToastTimeoutRef.current);
       successToastTimeoutRef.current = null;
     }
+    if (route?.params?.surprise) {
+      navigateToRandomNext();
+      return;
+    }
     prepareRound(allEntries, false);
-  }, [prepareRound, allEntries]);
+  }, [prepareRound, allEntries, route?.params?.surprise, navigateToRandomNext]);
 
   const writeBackIncrement = React.useCallback(async (wordKey: string) => {
     try {

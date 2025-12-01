@@ -1,6 +1,5 @@
 things to refactor: 
 High priority (8 items)
-  Duplicate server configuration in server.ts and api.ts
   Excessive use of any types (35+ instances)
   Missing error boundaries and unit tests
 Medium priority (12 items)

@@ -328,8 +328,12 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
     if (props.embedded) return;
     setShowCorrectToast(false);
     setShowWrongToast(false);
+    if (route?.params?.surprise) {
+      navigateToRandomNext();
+      return;
+    }
     loadData();
-  }, [loadData, props.embedded]);
+  }, [loadData, props.embedded, route?.params?.surprise, navigateToRandomNext]);
 
   const attemptWord = React.useCallback(() => {
     if (!current) return '';
