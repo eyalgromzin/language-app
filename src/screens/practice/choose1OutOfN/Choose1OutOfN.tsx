@@ -478,7 +478,7 @@ function Choose1OutOfN(props: EmbeddedProps): React.JSX.Element {
         writeBackIncrement(current.word);
       }, 1000);
       
-      // Keep success toast visible for 6 seconds before moving to next round
+      // Keep success toast visible for 2 seconds before moving to next round
       successToastTimeoutRef.current = setTimeout(() => {
         setShowCorrectToast(false);
         setIsShowingSuccessToast(false);
@@ -486,7 +486,7 @@ function Choose1OutOfN(props: EmbeddedProps): React.JSX.Element {
         setShowFinishedWordAnimation(false);
         // Reload base data after toast is hidden - the useEffect will handle preparing the next round
         loadBase();
-      }, 6000);
+      }, 3500);
       return; // Add return to prevent wrong answer logic from executing
     }
     if (wrongAttempts >= 1) {
