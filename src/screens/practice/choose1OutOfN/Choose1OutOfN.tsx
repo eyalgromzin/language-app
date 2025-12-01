@@ -613,7 +613,7 @@ function Choose1OutOfN(props: EmbeddedProps): React.JSX.Element {
         {!props.embedded && revealCorrect ? (
           <TouchableOpacity style={styles.nextButton} onPress={() => {
             setShowFinishedWordAnimation(false);
-            prepareRound(allEntries, false);
+            moveToNext();
           }}>
             <Text style={styles.nextButtonText}>{t('common.next')}</Text>
           </TouchableOpacity>
@@ -677,7 +677,7 @@ function Choose1OutOfN(props: EmbeddedProps): React.JSX.Element {
                 if (props.embedded) {
                   props.onFinished?.(false);
                 } else {
-                  prepareRound(allEntries, false);
+                  moveToNext();
                 }
               }}
             >
