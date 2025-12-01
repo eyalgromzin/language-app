@@ -479,13 +479,14 @@ function Choose1OutOfN(props: EmbeddedProps): React.JSX.Element {
       }, 1000);
       
       // Keep success toast visible for 2 seconds before moving to next round
-      successToastTimeoutRef.current = setTimeout(() => {
+      successToastTimeoutRef.current = setTimeout(async () => {
         setShowCorrectToast(false);
         setIsShowingSuccessToast(false);
         // Hide finished word animation before loading next word
         setShowFinishedWordAnimation(false);
-        // Reload base data after toast is hidden - the useEffect will handle preparing the next round
-        loadBase();
+        // Reload base data first, then use skip method to move to next round
+        await loadBase();
+        moveToNext();
       }, 3500);
       return; // Add return to prevent wrong answer logic from executing
     }
