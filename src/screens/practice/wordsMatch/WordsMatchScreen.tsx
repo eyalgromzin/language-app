@@ -345,6 +345,14 @@ function WordsMatchScreen(): React.JSX.Element {
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.topRow}>
           <Text style={styles.title}>match the words to their translations</Text>
+          <TouchableOpacity
+            style={styles.skipButton}
+            onPress={route?.params?.surprise ? navigateToRandomNext : prepareRound}
+            accessibilityRole="button"
+            accessibilityLabel={t('common.skip')}
+          >
+            <Text style={styles.skipButtonText}>{t('common.skip')}</Text>
+          </TouchableOpacity>
         </View>
         {renderCountSelector()}
         <NotEnoughWordsMessage message={t('notEnoughWords.wordsMatchMessage', { minRequiredWords, currentWords: allWords.length })}
@@ -361,6 +369,14 @@ function WordsMatchScreen(): React.JSX.Element {
         <ScrollView contentContainerStyle={styles.container}>
           <View style={styles.topRow}>
             <Text style={styles.title}>match the words to their translations</Text>
+            <TouchableOpacity
+              style={styles.skipButton}
+              onPress={route?.params?.surprise ? navigateToRandomNext : prepareRound}
+              accessibilityRole="button"
+              accessibilityLabel={t('common.skip')}
+            >
+              <Text style={styles.skipButtonText}>{t('common.skip')}</Text>
+            </TouchableOpacity>
           </View>
           {renderCountSelector()}
           <NotEnoughWordsMessage />
@@ -463,6 +479,9 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textTransform: 'capitalize',
     letterSpacing: 0.5,
+    flex: 1,
+    flexShrink: 1,
+    marginRight: 12,
   },
   skipButton: {
     paddingHorizontal: 16,
@@ -479,6 +498,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     borderWidth: 1,
     borderColor: '#e9ecef',
+    flexShrink: 0,
   },
   skipButtonText: {
     fontWeight: '600',
