@@ -318,13 +318,55 @@ function BabyStepRunnerScreen(): React.JSX.Element {
       // Add current step to completed steps
       completedSteps.add(stepIndex);
       
-      // Save updated completed steps
-      await AsyncStorage.setItem(completedStepsKey, JSON.stringify([...completedSteps]));
+      const completedStepsArray = [...completedSteps];
+      console.log(`[BabyStepRunner] Saving step ${stepIndex} as completed for language ${currentCode}`, completedStepsArray);
+      
+      // Save updated completed steps - ensure this completes before navigation
+      await AsyncStorage.setItem(completedStepsKey, JSON.stringify(completedStepsArray));
+      
+      // Verify the save by reading it back
+      const verifyData = await AsyncStorage.getItem(completedStepsKey);
+      if (verifyData) {
+        const verifySet = new Set(JSON.parse(verifyData));
+        console.log(`[BabyStepRunner] Verified saved completed steps:`, [...verifySet]);
+        if (!verifySet.has(stepIndex)) {
+          console.warn(`[BabyStepRunner] Step ${stepIndex} not found in verified data, retrying save...`);
+          verifySet.add(stepIndex);
+          await AsyncStorage.setItem(completedStepsKey, JSON.stringify([...verifySet]));
+        }
+      }
       
       // Save the current streak only when baby step is completed successfully
       await saveStreak(streak);
-    } catch {}
-    navigation.goBack();
+      
+      // Small delay to ensure AsyncStorage write is fully persisted (especially in release builds)
+      await new Promise(resolve => setTimeout(resolve, 100));
+      
+      // Only navigate after save operations complete successfully
+      navigation.goBack();
+    } catch (error) {
+      // Log error for debugging, but still allow navigation
+      console.error('[BabyStepRunner] Error saving baby step completion:', error);
+      // Try to save again with a small delay
+      try {
+        await new Promise(resolve => setTimeout(resolve, 200));
+        const learningName = await AsyncStorage.getItem('language.learning');
+        const currentCode = getLangCode(learningName, languageMappings) || 'en';
+        const completedStepsKey = `babySteps.completedSteps.${currentCode}`;
+        const completedStepsData = await AsyncStorage.getItem(completedStepsKey);
+        const completedSteps: Set<number> = completedStepsData 
+          ? new Set(JSON.parse(completedStepsData))
+          : new Set();
+        completedSteps.add(stepIndex);
+        await AsyncStorage.setItem(completedStepsKey, JSON.stringify([...completedSteps]));
+        await saveStreak(streak);
+        console.log(`[BabyStepRunner] Retry save successful for step ${stepIndex}`);
+      } catch (retryError) {
+        console.error('[BabyStepRunner] Retry save also failed:', retryError);
+      }
+      // Navigate even if save failed to avoid blocking user
+      navigation.goBack();
+    }
   };
 
   const onRestart = async () => {
@@ -343,12 +385,49 @@ function BabyStepRunnerScreen(): React.JSX.Element {
       // Add current step to completed steps
       completedSteps.add(stepIndex);
       
-      // Save updated completed steps
-      await AsyncStorage.setItem(completedStepsKey, JSON.stringify([...completedSteps]));
+      const completedStepsArray = [...completedSteps];
+      console.log(`[BabyStepRunner] Saving step ${stepIndex} as completed on restart for language ${currentCode}`, completedStepsArray);
+      
+      // Save updated completed steps - ensure this completes
+      await AsyncStorage.setItem(completedStepsKey, JSON.stringify(completedStepsArray));
+      
+      // Verify the save by reading it back
+      const verifyData = await AsyncStorage.getItem(completedStepsKey);
+      if (verifyData) {
+        const verifySet = new Set(JSON.parse(verifyData));
+        if (!verifySet.has(stepIndex)) {
+          console.warn(`[BabyStepRunner] Step ${stepIndex} not found in verified data on restart, retrying save...`);
+          verifySet.add(stepIndex);
+          await AsyncStorage.setItem(completedStepsKey, JSON.stringify([...verifySet]));
+        }
+      }
       
       // Save the current streak when restarting (step was completed)
       await saveStreak(streak);
-    } catch {}
+      
+      // Small delay to ensure AsyncStorage write is fully persisted
+      await new Promise(resolve => setTimeout(resolve, 100));
+    } catch (error) {
+      // Log error for debugging
+      console.error('[BabyStepRunner] Error saving baby step completion on restart:', error);
+      // Try to save again with a small delay
+      try {
+        await new Promise(resolve => setTimeout(resolve, 200));
+        const learningName = await AsyncStorage.getItem('language.learning');
+        const currentCode = getLangCode(learningName, languageMappings) || 'en';
+        const completedStepsKey = `babySteps.completedSteps.${currentCode}`;
+        const completedStepsData = await AsyncStorage.getItem(completedStepsKey);
+        const completedSteps: Set<number> = completedStepsData 
+          ? new Set(JSON.parse(completedStepsData))
+          : new Set();
+        completedSteps.add(stepIndex);
+        await AsyncStorage.setItem(completedStepsKey, JSON.stringify([...completedSteps]));
+        await saveStreak(streak);
+        console.log(`[BabyStepRunner] Retry save on restart successful for step ${stepIndex}`);
+      } catch (retryError) {
+        console.error('[BabyStepRunner] Retry save on restart also failed:', retryError);
+      }
+    }
     // Always rebuild tasks within the same screen instance
     setResetSeed((s) => s + 1);
     // Additionally try a full screen refresh; if it's a no-op, the local reset still works
