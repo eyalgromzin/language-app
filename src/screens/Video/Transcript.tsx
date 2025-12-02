@@ -30,6 +30,40 @@ const Transcript: React.FC<TranscriptProps> = ({
   isFullScreen,
   onToggleFullScreen,
 }) => {
+  // Store full transcript in memory
+  const fullTranscriptRef = React.useRef<TranscriptSegment[]>([]);
+  
+  // Clear transcript when video changes
+  React.useEffect(() => {
+    fullTranscriptRef.current = [];
+  }, [videoId]);
+  
+  // Update full transcript when it changes
+  React.useEffect(() => {
+    if (transcript.length > 0) {
+      fullTranscriptRef.current = transcript;
+    }
+  }, [transcript]);
+
+  // Calculate visible range: 10 lines above and below activeIndex
+  const visibleTranscript = React.useMemo(() => {
+    const fullTranscript = fullTranscriptRef.current.length > 0 ? fullTranscriptRef.current : transcript;
+    if (fullTranscript.length === 0) return [];
+    
+    if (activeIndex === null) {
+      // If no active index, show first 20 lines
+      return fullTranscript.slice(0, 20).map((seg, idx) => ({ segment: seg, originalIndex: idx }));
+    }
+    
+    const startIndex = Math.max(0, activeIndex - 10);
+    const endIndex = Math.min(fullTranscript.length, activeIndex + 11); // +11 to include the active line
+    
+    return fullTranscript.slice(startIndex, endIndex).map((seg, idx) => ({
+      segment: seg,
+      originalIndex: startIndex + idx,
+    }));
+  }, [transcript, activeIndex]);
+
   if (!videoId) return null;
   return (
     <View style={{ marginTop: 16, marginBottom: 16 }}>
@@ -56,27 +90,27 @@ const Transcript: React.FC<TranscriptProps> = ({
         </View>
       ) : error ? (
         <Text style={[styles.helper, { color: '#cc3333' }]}>{error}</Text>
-      ) : transcript.length > 0 ? (
+      ) : (fullTranscriptRef.current.length > 0 || transcript.length > 0) ? (
         <ScrollView style={[styles.transcriptBox, isFullScreen && styles.transcriptBoxFullScreen]} ref={scrollViewRef} nestedScrollEnabled>
-          {transcript.map((seg, index) => {
+          {visibleTranscript.map(({ segment: seg, originalIndex }) => {
             const tokens = tokenizeTranscriptLine(seg.text);
             return (
               <View
-                key={`${seg.offset}-${index}`}
+                key={`${seg.offset}-${originalIndex}`}
                 onLayout={(e) => {
                   const y = e.nativeEvent.layout.y;
-                  lineOffsetsRef.current[index] = y;
+                  lineOffsetsRef.current[originalIndex] = y;
                 }}
               >
                 <Text style={styles.transcriptTime}>{formatTimestamp(seg.offset)}</Text>
                 <Text
                   style={[
                     styles.transcriptLine,
-                    activeIndex === index ? styles.transcriptLineActive : null,
+                    activeIndex === originalIndex ? styles.transcriptLineActive : null,
                   ]}
                 >
                   {tokens.map((tok, tIdx) => {
-                    const key = `${index}:${tIdx}`;
+                    const key = `${originalIndex}:${tIdx}`;
                     if (!tok.isWord) {
                       return (
                         <Text key={key}>
