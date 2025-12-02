@@ -17,6 +17,9 @@ type TranscriptProps = {
   onToggleFullScreen: () => void;
 };
 
+const VISIBLE_ROWS_AROUND_ACTIVE = 10;
+const INITIAL_VISIBLE_ROWS = 20;
+
 const Transcript: React.FC<TranscriptProps> = ({
   videoId,
   loading,
@@ -45,18 +48,18 @@ const Transcript: React.FC<TranscriptProps> = ({
     }
   }, [transcript]);
 
-  // Calculate visible range: 10 lines above and below activeIndex
+  // Calculate visible range: VISIBLE_ROWS_AROUND_ACTIVE lines above and below activeIndex
   const visibleTranscript = React.useMemo(() => {
     const fullTranscript = fullTranscriptRef.current.length > 0 ? fullTranscriptRef.current : transcript;
     if (fullTranscript.length === 0) return [];
     
     if (activeIndex === null) {
-      // If no active index, show first 20 lines
-      return fullTranscript.slice(0, 20).map((seg, idx) => ({ segment: seg, originalIndex: idx }));
+      // If no active index, show first INITIAL_VISIBLE_ROWS lines
+      return fullTranscript.slice(0, INITIAL_VISIBLE_ROWS).map((seg, idx) => ({ segment: seg, originalIndex: idx }));
     }
     
-    const startIndex = Math.max(0, activeIndex - 10);
-    const endIndex = Math.min(fullTranscript.length, activeIndex + 11); // +11 to include the active line
+    const startIndex = Math.max(0, activeIndex - VISIBLE_ROWS_AROUND_ACTIVE);
+    const endIndex = Math.min(fullTranscript.length, activeIndex + VISIBLE_ROWS_AROUND_ACTIVE + 1); // +1 to include the active line
     
     return fullTranscript.slice(startIndex, endIndex).map((seg, idx) => ({
       segment: seg,
