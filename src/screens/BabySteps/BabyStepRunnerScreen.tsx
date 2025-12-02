@@ -193,9 +193,8 @@ function BabyStepRunnerScreen(): React.JSX.Element {
 
         if (!mounted) return;
         const shuffledTasks = shuffleArray(built);
-        const slicedTasks = shuffledTasks.slice(0, shuffledTasks.length);
-        setTasks(slicedTasks);
-        setOriginalTaskCount(slicedTasks.length);
+        setTasks(shuffledTasks);
+        setOriginalTaskCount(shuffledTasks.length);
         setCurrentIdx(0);
         setInputs({});
         setWrongKey(null);
