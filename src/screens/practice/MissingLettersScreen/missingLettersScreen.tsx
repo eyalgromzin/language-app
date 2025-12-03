@@ -70,6 +70,50 @@ function splitLetters(word: string): string[] {
   return Array.from(word);
 }
 
+type WordGroup = {
+  startIdx: number;
+  endIdx: number;
+  letters: string[];
+};
+
+function groupLettersByWords(letters: string[]): WordGroup[] {
+  const groups: WordGroup[] = [];
+  let currentStart = 0;
+  
+  for (let i = 0; i < letters.length; i++) {
+    if (letters[i] === ' ') {
+      if (currentStart < i) {
+        groups.push({
+          startIdx: currentStart,
+          endIdx: i - 1,
+          letters: letters.slice(currentStart, i),
+        });
+      }
+      currentStart = i + 1;
+    }
+  }
+  
+  // Add the last word if there's any remaining
+  if (currentStart < letters.length) {
+    groups.push({
+      startIdx: currentStart,
+      endIdx: letters.length - 1,
+      letters: letters.slice(currentStart),
+    });
+  }
+  
+  // If no spaces found, return single group with all letters
+  if (groups.length === 0) {
+    groups.push({
+      startIdx: 0,
+      endIdx: letters.length - 1,
+      letters: letters,
+    });
+  }
+  
+  return groups;
+}
+
 // Compare user input to the target word allowing plain vowels for accented vowels (á, é, í, ó, ú) and ignoring case
 function normalizeForCompare(input: string): string {
   return input
@@ -525,15 +569,9 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   }
 
   const renderLetterCell = (ch: string, idx: number) => {
-    const lettersCount = current.letters.length;
     const defaultCellWidth = 48;
     const defaultMissingWidth = 32;
-    const gap = 12; // matches styles.wordRow gap
-    const available = rowWidth ?? 0;
-    const maxWidthPerCell = lettersCount > 0 && available > 0
-      ? Math.floor((available - gap * Math.max(0, lettersCount - 1)) / lettersCount)
-      : defaultCellWidth;
-    const cellWidth = Math.max(20, Math.min(defaultCellWidth, maxWidthPerCell));
+    const cellWidth = defaultCellWidth;
     const dynamicFontSize = Math.min(20, Math.max(14, Math.floor(cellWidth * 0.5)));
 
     const isMissing = current.missingIndices.includes(idx);
@@ -547,7 +585,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
     }
     const value = inputs[idx] ?? '';
     const showAsCorrected = wrongHighlightIndex !== null;
-    const missingCellWidth = Math.min(defaultMissingWidth, maxWidthPerCell);
+    const missingCellWidth = defaultMissingWidth;
     return (
       <View key={idx} style={[styles.cell, { width: missingCellWidth }, showAsCorrected && styles.cellFixed, isWrongSpot && styles.cellWrong]}>
         {showAsCorrected ? (
@@ -564,6 +602,20 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
             maxLength={1}
           />
         )}
+      </View>
+    );
+  };
+
+  const renderWordGroup = (group: WordGroup, groupIndex: number) => {
+    const defaultCellWidth = 48;
+    const dynamicFontSize = Math.min(20, Math.max(14, Math.floor(defaultCellWidth * 0.5)));
+    
+    return (
+      <View key={`word-${groupIndex}`} style={styles.wordGroup}>
+        {group.letters.map((ch, localIdx) => {
+          const globalIdx = group.startIdx + localIdx;
+          return renderLetterCell(ch, globalIdx);
+        })}
       </View>
     );
   };
@@ -613,7 +665,26 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
           style={styles.wordRow}
           onLayout={(e) => setRowWidth(e.nativeEvent.layout.width)}
         >
-          {current.letters.map((ch, idx) => renderLetterCell(ch, idx))}
+          {(() => {
+            const wordGroups = groupLettersByWords(current.letters);
+            const result: React.ReactNode[] = [];
+            
+            // Render word groups and insert spaces between them
+            wordGroups.forEach((group, groupIndex) => {
+              if (groupIndex > 0) {
+                // Find the space before this word group
+                const spaceIdx = group.startIdx - 1;
+                if (spaceIdx >= 0 && current.letters[spaceIdx] === ' ') {
+                  result.push(
+                    <Text key={`space-${spaceIdx}`} style={styles.spaceText}> </Text>
+                  );
+                }
+              }
+              result.push(renderWordGroup(group, groupIndex));
+            });
+            
+            return result;
+          })()}
         </View>
 
         {!props.embedded && wrongHighlightIndex !== null ? (
@@ -738,10 +809,20 @@ const styles = StyleSheet.create({
   },
   wordRow: {
     flexDirection: 'row',
-    flexWrap: 'nowrap',
+    flexWrap: 'wrap',
     gap: 12,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  wordGroup: {
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
+    gap: 12,
+    alignItems: 'center',
+  },
+  spaceText: {
+    fontSize: 20,
+    width: 12,
   },
   cell: {
     width: 48,
