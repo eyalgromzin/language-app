@@ -118,30 +118,118 @@ function BabyStepsPathScreen(): React.JSX.Element {
         const learningCode = getLangCode(learningName, languageMappings) || 'en';
         const nativeCode = getLangCode(nativeName, languageMappings) || 'en';
         console.log('[BabyStepsPathScreen] Language codes:', { learningCode, nativeCode });
-        // Load steps for current learning language from server only
+        
+        // Helper function to check if cached data is still valid (less than 1 week old)
+        const isCacheValid = (timestamp: number): boolean => {
+          const oneWeekInMs = 7 * 24 * 60 * 60 * 1000;
+          return Date.now() - timestamp < oneWeekInMs;
+        };
+
+        // Try to load from cache first
+        let json: StepsFile | null = null;
+        let shouldFetchFromServer = true;
+        
         try {
-          const json: StepsFile = await getBabySteps(learningCode);
-          if (!mounted) return;
-          console.log('[BabyStepsPathScreen] Baby steps data loaded:', json);
-          if (json && Array.isArray(json.steps) && json.steps.length) {
-            setSteps(json.steps);
-            console.log('[BabyStepsPathScreen] Steps set:', json.steps.length, 'steps');
-          } else {
-            setSteps([]);
-            console.log('[BabyStepsPathScreen] No steps found, setting empty array');
+          const cacheKey = `babySteps.path.${learningCode}`;
+          const cachedData = await AsyncStorage.getItem(cacheKey);
+          if (cachedData) {
+            const parsed = JSON.parse(cachedData);
+            if (parsed.data && parsed.timestamp && isCacheValid(parsed.timestamp)) {
+              json = parsed.data;
+              shouldFetchFromServer = false;
+              console.log('[BabyStepsPathScreen] Loaded baby steps from cache');
+            } else {
+              console.log('[BabyStepsPathScreen] Cache expired, fetching from server');
+            }
           }
         } catch (error) {
-          console.error('Error loading baby steps:', error);
-          if (!mounted) return;
-          setError(`Failed to load steps: ${error instanceof Error ? error.message : 'Unknown error'}`);
-          setSteps([]);
+          console.log('[BabyStepsPathScreen] Error loading from cache:', error);
         }
+
+        // Load steps for current learning language from server if cache is invalid or missing
+        if (shouldFetchFromServer) {
+          try {
+            json = await getBabySteps(learningCode);
+            if (!mounted) return;
+            console.log('[BabyStepsPathScreen] Baby steps data loaded from server:', json);
+            
+            // Save to cache
+            try {
+              const cacheKey = `babySteps.path.${learningCode}`;
+              const cacheData = {
+                data: json,
+                timestamp: Date.now(),
+              };
+              await AsyncStorage.setItem(cacheKey, JSON.stringify(cacheData));
+              console.log('[BabyStepsPathScreen] Saved baby steps to cache');
+            } catch (error) {
+              console.error('[BabyStepsPathScreen] Error saving to cache:', error);
+            }
+          } catch (error) {
+            console.error('Error loading baby steps:', error);
+            if (!mounted) return;
+            setError(`Failed to load steps: ${error instanceof Error ? error.message : 'Unknown error'}`);
+            setSteps([]);
+            setLoading(false);
+            return;
+          }
+        }
+
+        if (!mounted) return;
+        
+        if (json && Array.isArray(json.steps) && json.steps.length) {
+          setSteps(json.steps);
+          console.log('[BabyStepsPathScreen] Steps set:', json.steps.length, 'steps');
+        } else {
+          setSteps([]);
+          console.log('[BabyStepsPathScreen] No steps found, setting empty array');
+        }
+        
         // Build translated titles map from native language file if available
         try {
-          const nativeJson: StepsFile = await getBabySteps(nativeCode);
-          const map: Record<string, string> = {};
-          (nativeJson.steps || []).forEach((st) => { map[st.id] = st.title; });
-          setTranslatedTitleById(map);
+          let nativeJson: StepsFile | null = null;
+          let shouldFetchNativeFromServer = true;
+          
+          // Try to load native language steps from cache
+          try {
+            const nativeCacheKey = `babySteps.path.${nativeCode}`;
+            const nativeCachedData = await AsyncStorage.getItem(nativeCacheKey);
+            if (nativeCachedData) {
+              const parsed = JSON.parse(nativeCachedData);
+              if (parsed.data && parsed.timestamp && isCacheValid(parsed.timestamp)) {
+                nativeJson = parsed.data;
+                shouldFetchNativeFromServer = false;
+                console.log('[BabyStepsPathScreen] Loaded native baby steps from cache');
+              }
+            }
+          } catch (error) {
+            console.log('[BabyStepsPathScreen] Error loading native from cache:', error);
+          }
+          
+          // Fetch from server if cache is invalid or missing
+          if (shouldFetchNativeFromServer) {
+            nativeJson = await getBabySteps(nativeCode);
+            // Save to cache
+            try {
+              const nativeCacheKey = `babySteps.path.${nativeCode}`;
+              const nativeCacheData = {
+                data: nativeJson,
+                timestamp: Date.now(),
+              };
+              await AsyncStorage.setItem(nativeCacheKey, JSON.stringify(nativeCacheData));
+              console.log('[BabyStepsPathScreen] Saved native baby steps to cache');
+            } catch (error) {
+              console.error('[BabyStepsPathScreen] Error saving native to cache:', error);
+            }
+          }
+          
+          if (nativeJson) {
+            const map: Record<string, string> = {};
+            (nativeJson.steps || []).forEach((st) => { map[st.id] = st.title; });
+            setTranslatedTitleById(map);
+          } else {
+            setTranslatedTitleById({});
+          }
         } catch {
           setTranslatedTitleById({});
         }
@@ -188,11 +276,56 @@ function BabyStepsPathScreen(): React.JSX.Element {
           const nativeName = await AsyncStorage.getItem('language.native');
           const nativeCode = getLangCode(nativeName, languageMappings) || 'en';
           try {
-            const nativeJson: StepsFile = await getBabySteps(nativeCode);
-            const map: Record<string, string> = {};
-            (nativeJson.steps || []).forEach((st) => { map[st.id] = st.title; });
-            if (active) {
-              setTranslatedTitleById(map);
+            // Helper function to check if cached data is still valid (less than 1 week old)
+            const isCacheValid = (timestamp: number): boolean => {
+              const oneWeekInMs = 7 * 24 * 60 * 60 * 1000;
+              return Date.now() - timestamp < oneWeekInMs;
+            };
+            
+            let nativeJson: StepsFile | null = null;
+            let shouldFetchNativeFromServer = true;
+            
+            // Try to load native language steps from cache
+            try {
+              const nativeCacheKey = `babySteps.path.${nativeCode}`;
+              const nativeCachedData = await AsyncStorage.getItem(nativeCacheKey);
+              if (nativeCachedData) {
+                const parsed = JSON.parse(nativeCachedData);
+                if (parsed.data && parsed.timestamp && isCacheValid(parsed.timestamp)) {
+                  nativeJson = parsed.data;
+                  shouldFetchNativeFromServer = false;
+                }
+              }
+            } catch (error) {
+              // Ignore cache errors, will fetch from server
+            }
+            
+            // Fetch from server if cache is invalid or missing
+            if (shouldFetchNativeFromServer) {
+              nativeJson = await getBabySteps(nativeCode);
+              // Save to cache
+              try {
+                const nativeCacheKey = `babySteps.path.${nativeCode}`;
+                const nativeCacheData = {
+                  data: nativeJson,
+                  timestamp: Date.now(),
+                };
+                await AsyncStorage.setItem(nativeCacheKey, JSON.stringify(nativeCacheData));
+              } catch (error) {
+                // Ignore cache save errors
+              }
+            }
+            
+            if (nativeJson) {
+              const map: Record<string, string> = {};
+              (nativeJson.steps || []).forEach((st) => { map[st.id] = st.title; });
+              if (active) {
+                setTranslatedTitleById(map);
+              }
+            } else {
+              if (active) {
+                setTranslatedTitleById({});
+              }
             }
           } catch {
             if (active) {

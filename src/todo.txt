@@ -17,8 +17,6 @@ Low priority (17 items)
 
 - make app work in shirs phone 
 
-- on words by categories. after a word was added to my list , change icon from '+' to 'V'
-
 - publish app =======================================================================================================================
 
 - on save favourite , disable the option to add javascript to make it secure 
