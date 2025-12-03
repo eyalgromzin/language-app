@@ -810,14 +810,14 @@ const styles = StyleSheet.create({
   wordRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 12,
+    gap: 8,
     justifyContent: 'center',
     alignItems: 'center',
   },
   wordGroup: {
     flexDirection: 'row',
     flexWrap: 'nowrap',
-    gap: 12,
+    gap: 6,
     alignItems: 'center',
   },
   spaceText: {
