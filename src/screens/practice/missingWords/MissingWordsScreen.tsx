@@ -17,6 +17,7 @@ import { playCorrectFeedback, playWrongFeedback } from '../common';
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
+import CorrectAnswerDialogue from '../common/correctAnswerDialogue';
 import { useTranslation } from '../../../hooks/useTranslation';
 import { WordEntry } from '../../../types/words';
 
@@ -126,8 +127,10 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
   const [inputs, setInputs] = React.useState<Record<number, string>>({});
   const [wrongHighlightIndex, setWrongHighlightIndex] = React.useState<number | null>(null);
+  const [storedMismatchIndex, setStoredMismatchIndex] = React.useState<number | null>(null);
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
+  const [showWrongAnswerDialogue, setShowWrongAnswerDialogue] = React.useState<boolean>(false);
   const [showFinishedWordAnimation, setShowFinishedWordAnimation] = React.useState<boolean>(false);
   const [wordChoices, setWordChoices] = React.useState<string[]>([]);
   const lastWordKeyRef = React.useRef<string | null>(null);
@@ -156,8 +159,10 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setLoading(false);
       setInputs({});
       setWrongHighlightIndex(null);
+      setStoredMismatchIndex(null);
       setShowCorrectToast(false);
       setShowWrongToast(false);
+      setShowWrongAnswerDialogue(false);
       setShowFinishedWordAnimation(false);
       return;
     }
@@ -220,8 +225,10 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
       lastWordKeyRef.current = prepared[nextIdx]?.entry.word ?? null;
       setInputs({});
       setWrongHighlightIndex(null);
+      setStoredMismatchIndex(null);
       setShowCorrectToast(false);
       setShowWrongToast(false);
+      setShowWrongAnswerDialogue(false);
       setShowFinishedWordAnimation(false);
     } catch {
       setItems([]);
@@ -258,6 +265,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
     if (props.embedded) return;
     setShowCorrectToast(false);
     setShowWrongToast(false);
+    setShowWrongAnswerDialogue(false);
     if (route?.params?.surprise) {
       navigateToRandomNext();
       return;
@@ -400,17 +408,21 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
     setShowCorrectToast(false);
     setShowWrongToast(true);
     try { playWrongFeedback(); } catch {}
+    // Store the first wrong index for highlighting later
+    setStoredMismatchIndex(firstWrong);
     if (props.embedded) {
-      const t = setTimeout(() => props.onFinished?.(false), 1200);
-      return () => clearTimeout(t as unknown as number);
+      // Show wrong answer dialogue immediately in embedded mode
+      const wrongTimer = setTimeout(() => {
+        setShowWrongToast(false);
+        setShowWrongAnswerDialogue(true);
+      }, 500);
+      return () => clearTimeout(wrongTimer);
     }
-    const corrected: Record<number, string> = {};
-    current.missingIndices.forEach((i) => {
-      corrected[i] = current.tokens[i];
-    });
-    setInputs(corrected);
-    setWrongHighlightIndex(firstWrong);
-    const wrongTimer = setTimeout(() => setShowWrongToast(false), 2000);
+    // Show toast briefly, then show dialogue
+    const wrongTimer = setTimeout(() => {
+      setShowWrongToast(false);
+      setShowWrongAnswerDialogue(true);
+    }, 2000);
     return () => clearTimeout(wrongTimer);
   }, [attemptSentence, current, inputs, moveToNext, writeBackIncrement, wrongHighlightIndex, props.embedded, props.onFinished]);
 
@@ -545,6 +557,29 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
       <FinishedWordAnimation
         visible={showFinishedWordAnimation}
         onHide={() => setShowFinishedWordAnimation(false)}
+      />
+      <CorrectAnswerDialogue
+        visible={showWrongAnswerDialogue}
+        onClose={() => {
+          setShowWrongAnswerDialogue(false);
+          // Fill correct values into inputs for missing indices after dialogue closes
+          if (current) {
+            const corrected: Record<number, string> = {};
+            current.missingIndices.forEach((i) => {
+              corrected[i] = current.tokens[i];
+            });
+            setInputs(corrected);
+            // Use the stored mismatch index for highlighting
+            setWrongHighlightIndex(storedMismatchIndex);
+          }
+        }}
+        embedded={props.embedded}
+        correctWord={current?.entry.sentence}
+        translation={current?.entry.translation}
+        current={current?.entry}
+        onFinished={props.onFinished}
+        onMoveToNext={moveToNext}
+        onHideFinishedAnimation={() => setShowFinishedWordAnimation(false)}
       />
     </KeyboardAvoidingView>
   );
