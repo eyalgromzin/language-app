@@ -461,7 +461,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
           <Text style={styles.tokenText}>{tok}</Text>
         ) : (
           <Text style={[styles.tokenInput, { width: approxWidth, color: value ? '#334155' : '#94a3b8' }]}>
-            {value || '___'}
+            {value || ''}
           </Text>
         )}
       </View>
@@ -660,8 +660,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderRadius: 12,
-    borderWidth: 2,
-    borderColor: '#cbd5e1',
+    borderBottomWidth: 2,
+    borderBottomColor: '#cbd5e1',
     backgroundColor: '#ffffff',
     minWidth: 80,
     shadowColor: '#000',
@@ -732,10 +732,10 @@ const styles = StyleSheet.create({
   },
   tokenCorrected: {
     backgroundColor: '#fef3c7',
-    borderColor: '#f59e0b',
+    borderBottomColor: '#f59e0b',
   },
   tokenWrong: {
-    borderColor: '#ef4444',
+    borderBottomColor: '#ef4444',
     backgroundColor: '#fef2f2',
     shadowColor: '#ef4444',
     shadowOffset: {
