@@ -9,6 +9,7 @@ import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/nativ
 import AnimatedToast from '../../../components/AnimatedToast';
 import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
+import CorrectAnswerDialogue from '../common/correctAnswerDialogue';
 import { WordEntry } from '../../../types/words';
 
 type OptionItem = {
@@ -96,6 +97,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [showFinishedWordAnimation, setShowFinishedWordAnimation] = React.useState<boolean>(false);
   const [revealCorrect, setRevealCorrect] = React.useState<boolean>(false);
+  const [showWrongAnswerPopup, setShowWrongAnswerPopup] = React.useState<boolean>(false);
   const [allTranslationsPool, setAllTranslationsPool] = React.useState<string[]>([]);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
@@ -286,6 +288,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
     setShowCorrectToast(false);
     setRevealCorrect(false);
     setShowFinishedWordAnimation(false);
+    setShowWrongAnswerPopup(false);
 
     // Auto play the word for hearing
     if (autoplay.current) {
@@ -355,6 +358,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setShowCorrectToast(false);
       setRevealCorrect(false);
       setShowFinishedWordAnimation(false);
+      setShowWrongAnswerPopup(false);
       // autoplay
       const toSpeak = props.sourceWord || '';
       if (toSpeak) {
@@ -455,7 +459,10 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setRevealCorrect(true);
       setShowWrongToast(true);
       try { playWrongFeedback(); } catch {}
-      setTimeout(() => setShowWrongToast(false), 3000);
+      setTimeout(() => {
+        setShowWrongToast(false);
+        setShowWrongAnswerPopup(true);
+      }, 1700);
       return;
     }
     
@@ -574,6 +581,16 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
       <FinishedWordAnimation
         visible={showFinishedWordAnimation}
         onHide={() => setShowFinishedWordAnimation(false)}
+      />
+      <CorrectAnswerDialogue
+        visible={showWrongAnswerPopup}
+        onClose={() => setShowWrongAnswerPopup(false)}
+        embedded={props.embedded}
+        current={current}
+        isChooseTranslationMode={false}
+        onFinished={props.onFinished}
+        onMoveToNext={moveToNext}
+        onHideFinishedAnimation={() => setShowFinishedWordAnimation(false)}
       />
     </View>
   );
