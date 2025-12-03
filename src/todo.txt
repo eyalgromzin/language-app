@@ -13,7 +13,9 @@ Low priority (17 items)
   Accessibility improvements
   Documentation gaps
 
-- make app work in shirs phone 
+
+
+upload app
 
 - publish app =======================================================================================================================
 

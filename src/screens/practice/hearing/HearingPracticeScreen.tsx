@@ -93,6 +93,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [selectedKey, setSelectedKey] = React.useState<string | null>(null);
   const [wrongKey, setWrongKey] = React.useState<string | null>(null);
   const [wrongAttempts, setWrongAttempts] = React.useState<number>(0);
+  const [hasFailedTwice, setHasFailedTwice] = React.useState<boolean>(false);
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [showFinishedWordAnimation, setShowFinishedWordAnimation] = React.useState<boolean>(false);
@@ -284,6 +285,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
     setSelectedKey(null);
     setWrongKey(null);
     setWrongAttempts(0);
+    setHasFailedTwice(false);
     setShowWrongToast(false);
     setShowCorrectToast(false);
     setRevealCorrect(false);
@@ -354,6 +356,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setSelectedKey(null);
       setWrongKey(null);
       setWrongAttempts(0);
+      setHasFailedTwice(false);
       setShowWrongToast(false);
       setShowCorrectToast(false);
       setRevealCorrect(false);
@@ -457,6 +460,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
     if (wrongAttempts >= 1) {
       setWrongKey(opt.key);
       setRevealCorrect(true);
+      setHasFailedTwice(true);
       setShowWrongToast(true);
       try { playWrongFeedback(); } catch {}
       setTimeout(() => {
@@ -561,7 +565,7 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
           })}
         </View>
 
-        {!props.embedded && revealCorrect ? (
+        {!props.embedded && revealCorrect && !hasFailedTwice ? (
           <TouchableOpacity style={styles.nextButton} onPress={() => prepareRound(allEntries)}>
             <Text style={styles.nextButtonText}>{t('screens.practice.hearingPracticeScreen.next')}</Text>
           </TouchableOpacity>
