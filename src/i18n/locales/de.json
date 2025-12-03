@@ -271,6 +271,7 @@
       "memoryGame": "Gedächtnisspiel",
       "writeTranslation": "Übersetzung Schreiben",
       "writeWord": "Wort Schreiben",
+      "flipCards": "Karten Wenden",
       "clearAllConfirm": "Bist du sicher, dass du alle Wörter löschen möchtest?",
       "clearAllSuccess": "Alle Wörter wurden erfolgreich gelöscht",
       "clearAllError": "Fehler beim Löschen der Wörter. Bitte versuche es erneut."

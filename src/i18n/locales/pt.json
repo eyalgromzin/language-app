@@ -270,6 +270,7 @@
       "memoryGame": "Jogo de Memória",
       "writeTranslation": "Escrever Tradução",
       "writeWord": "Escrever Palavra",
+      "flipCards": "Cartões de Virar",
       "clearAllConfirm": "Tem certeza de que deseja limpar todas as palavras?",
       "clearAllSuccess": "Todas as palavras foram limpas com sucesso",
       "clearAllError": "Falha ao limpar palavras. Tente novamente."

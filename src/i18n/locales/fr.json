@@ -271,6 +271,7 @@
       "memoryGame": "Jeu de Mémoire",
       "writeTranslation": "Écrire la Traduction",
       "writeWord": "Écrire le Mot",
+      "flipCards": "Cartes à Retourner",
       "clearAllConfirm": "Êtes-vous sûr de vouloir effacer tous les mots ?",
       "clearAllSuccess": "Tous les mots ont été effacés avec succès",
       "clearAllError": "Échec de l'effacement des mots. Veuillez réessayer."

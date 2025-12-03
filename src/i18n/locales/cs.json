@@ -270,6 +270,7 @@
       "memoryGame": "Paměťová Hra",
       "writeTranslation": "Napsat Překlad",
       "writeWord": "Napsat Slovo",
+      "flipCards": "Otočit Karty",
       "clearAllConfirm": "Jste si jisti, že chcete vymazat všechna slova?",
       "clearAllSuccess": "Všechna slova byla úspěšně vymazána",
       "clearAllError": "Nepodařilo se vymazat slova. Zkuste to prosím znovu."

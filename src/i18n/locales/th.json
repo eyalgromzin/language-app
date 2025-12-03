@@ -270,6 +270,7 @@
       "memoryGame": "เกมความจำ",
       "writeTranslation": "เขียนการแปล",
       "writeWord": "เขียนคำ",
+      "flipCards": "พลิกการ์ด",
       "clearAllConfirm": "คุณแน่ใจหรือไม่ว่าต้องการล้างคำทั้งหมด?",
       "clearAllSuccess": "ล้างคำทั้งหมดสำเร็จ",
       "clearAllError": "ล้างคำไม่สำเร็จ โปรดลองอีกครั้ง"

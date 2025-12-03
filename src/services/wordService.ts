@@ -17,6 +17,7 @@ export function createDefaultNumberOfCorrectAnswers(): WordEntry['numberOfCorrec
     memoryGame: 0,
     writeTranslation: 0,
     writeWord: 0,
+    flipCards: 0,
   };
 }
 
@@ -53,6 +54,7 @@ export function normalizeWordEntry(entry: any): WordEntry {
     memoryGame: Math.max(0, Number(noa.memoryGame) || 0),
     writeTranslation: Math.max(0, Number(noa.writeTranslation) || 0),
     writeWord: Math.max(0, Number(noa.writeWord) || 0),
+    flipCards: Math.max(0, Number(noa.flipCards) || 0),
     ...(noa.formulateSentence !== undefined && { formulateSentence: Math.max(0, Number(noa.formulateSentence) || 0) }),
     ...(noa.hearing !== undefined && { hearing: Math.max(0, Number(noa.hearing) || 0) }),
   };

@@ -270,6 +270,7 @@
       "memoryGame": "Geheugenspel",
       "writeTranslation": "Schrijf Vertaling",
       "writeWord": "Schrijf Woord",
+      "flipCards": "Kaarten Omdraaien",
       "clearAllConfirm": "Weet je zeker dat je alle woorden wilt wissen?",
       "clearAllSuccess": "Alle woorden succesvol gewist",
       "clearAllError": "Wissen van woorden mislukt. Probeer het opnieuw."

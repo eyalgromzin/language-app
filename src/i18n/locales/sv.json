@@ -270,6 +270,7 @@
       "memoryGame": "Minnes Spel",
       "writeTranslation": "Skriv Översättning",
       "writeWord": "Skriv Ord",
+      "flipCards": "Vändkort",
       "clearAllConfirm": "Är du säker på att du vill rensa alla ord?",
       "clearAllSuccess": "Alla ord rensades framgångsrikt",
       "clearAllError": "Misslyckades med att rensa ord. Försök igen."

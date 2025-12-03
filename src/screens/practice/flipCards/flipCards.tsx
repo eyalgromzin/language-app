@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import { useTranslation } from '../../../hooks/useTranslation';
@@ -30,6 +31,7 @@ function ensureCounters(entry: WordEntry): WordEntry {
       memoryGame: 0,
       writeTranslation: 0,
       writeWord: 0,
+      flipCards: 0,
     },
   };
 }
@@ -86,6 +88,20 @@ function FlipCardsScreen(): React.JSX.Element {
   const loadBase = React.useCallback(async () => {
     setLoading(true);
     try {
+      // Load user setting for number of correct answers to remove a word
+      let threshold = 3;
+      let totalThreshold = 6;
+      try {
+        const raw = await AsyncStorage.getItem('words.removeAfterNCorrect');
+        const parsed = Number.parseInt(raw ?? '', 10);
+        const valid = parsed >= 1 && parsed <= 4 ? parsed : 3;
+        threshold = valid;
+        const rawTotal = await AsyncStorage.getItem('words.removeAfterTotalCorrect');
+        const parsedTotal = Number.parseInt(rawTotal ?? '', 10);
+        const validTotal = parsedTotal >= 1 && parsedTotal <= 50 ? parsedTotal : 6;
+        totalThreshold = validTotal;
+      } catch {}
+      
       const exists = await RNFS.exists(filePath);
       if (!exists) {
         setAllEntries([]);
@@ -94,7 +110,26 @@ function FlipCardsScreen(): React.JSX.Element {
       const content = await RNFS.readFile(filePath, 'utf8');
       const parsed: unknown = JSON.parse(content);
       const arr = Array.isArray(parsed) ? (parsed as WordEntry[]).map(ensureCounters) : [];
-      const shuffled = shuffleArray(arr);
+      
+      // Filter words that haven't passed the practice threshold
+      const filtered = arr
+        .filter((w) => w.word && w.translation)
+        .filter((w) => (w.numberOfCorrectAnswers?.flipCards ?? 0) < threshold)
+        .filter((w) => {
+          const noa = w.numberOfCorrectAnswers || ({} as any);
+          const total =
+            (noa.missingLetters || 0) +
+            (noa.missingWords || 0) +
+            (noa.chooseTranslation || 0) +
+            (noa.chooseWord || 0) +
+            (noa.memoryGame || 0) +
+            (noa.writeTranslation || 0) +
+            (noa.writeWord || 0) +
+            (noa.flipCards || 0);
+          return total < totalThreshold;
+        });
+      
+      const shuffled = shuffleArray(filtered);
       setAllEntries(shuffled);
       setCurrentIndex(0);
       setIsFlipped(false);
@@ -118,6 +153,13 @@ function FlipCardsScreen(): React.JSX.Element {
 
   const writeBackIncrement = React.useCallback(async (wordKey: string) => {
     try {
+      let totalThreshold = 6;
+      try {
+        const rawTotal = await AsyncStorage.getItem('words.removeAfterTotalCorrect');
+        const parsedTotal = Number.parseInt(rawTotal ?? '', 10);
+        totalThreshold = parsedTotal >= 1 && parsedTotal <= 50 ? parsedTotal : 6;
+      } catch {}
+      
       const exists = await RNFS.exists(filePath);
       if (!exists) return;
       const content = await RNFS.readFile(filePath, 'utf8');
@@ -130,7 +172,7 @@ function FlipCardsScreen(): React.JSX.Element {
         const it = { ...copy[idx] };
         it.numberOfCorrectAnswers = {
           ...it.numberOfCorrectAnswers!,
-          memoryGame: (it.numberOfCorrectAnswers?.memoryGame || 0) + 1,
+          flipCards: (it.numberOfCorrectAnswers?.flipCards || 0) + 1,
         };
         const noa = it.numberOfCorrectAnswers!;
         const total =
@@ -140,8 +182,8 @@ function FlipCardsScreen(): React.JSX.Element {
           (noa.chooseWord || 0) +
           (noa.memoryGame || 0) +
           (noa.writeTranslation || 0) +
-          (noa.writeWord || 0);
-        const totalThreshold = 6;
+          (noa.writeWord || 0) +
+          (noa.flipCards || 0);
         if (total >= totalThreshold) {
           copy.splice(idx, 1);
         } else {
@@ -174,86 +216,93 @@ function FlipCardsScreen(): React.JSX.Element {
   };
 
   const goToNextCard = React.useCallback((incrementPractice: boolean = false) => {
-    const currentWordEntry = allEntries[currentIndex];
-    
-    if (incrementPractice && currentWordEntry) {
-      writeBackIncrement(currentWordEntry.word);
-    }
-
-    // Reset card state
-    setIsFlipped(false);
-    flipAnimation.setValue(0);
-    pan.setValue({ x: 0, y: 0 });
-    cardOpacity.setValue(0);
-    
-    // Move to next card
-    if (currentIndex >= allEntries.length - 1) {
-      // Reached the end, reload
-      if (route?.params?.surprise) {
-        navigateToRandomNext();
-      } else {
-        loadBase();
+    setCurrentIndex((prevIndex) => {
+      const currentWordEntry = allEntries[prevIndex];
+      
+      if (incrementPractice && currentWordEntry) {
+        writeBackIncrement(currentWordEntry.word);
       }
-    } else {
-      setCurrentIndex((prev) => prev + 1);
-    }
-    
-    // Fade in the new card after a brief delay
-    setTimeout(() => {
-      Animated.timing(cardOpacity, {
-        toValue: 1,
-        duration: CARD_DISAPPEAR_TIME,
-        useNativeDriver: true,
-      }).start();
-    }, 50);
-  }, [currentIndex, allEntries, writeBackIncrement, route?.params?.surprise, navigateToRandomNext, loadBase, flipAnimation, pan, cardOpacity]);
 
-  const panResponder = React.useRef(
-    PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
-      onMoveShouldSetPanResponder: () => true,
-      onPanResponderMove: (_, gestureState) => {
-        pan.setValue({ x: gestureState.dx, y: gestureState.dy });
-      },
-      onPanResponderRelease: (_, gestureState) => {
-        const { dx, dy } = gestureState;
-        const swipeDistance = Math.abs(dx);
+      // Reset card state
+      setIsFlipped(false);
+      flipAnimation.setValue(0);
+      pan.setValue({ x: 0, y: 0 });
+      cardOpacity.setValue(0);
+      
+      // Move to next card
+      if (prevIndex >= allEntries.length - 1) {
+        // Reached the end, reload
+        if (route?.params?.surprise) {
+          navigateToRandomNext();
+        } else {
+          loadBase();
+        }
+        return prevIndex; // Keep current index until reload completes
+      } else {
+        const nextIndex = prevIndex + 1;
         
-        if (swipeDistance > SWIPE_THRESHOLD) {
-          // Large swipe - fade out card over 0.5 seconds, then load next card
+        // Fade in the new card after a brief delay
+        setTimeout(() => {
           Animated.timing(cardOpacity, {
-            toValue: 0,
+            toValue: 1,
             duration: CARD_DISAPPEAR_TIME,
             useNativeDriver: true,
-          }).start(() => {
-            // After fade out completes, move to next card
-            if (dx > 0) {
-              // Swipe right - increment practice and next card
-              goToNextCard(true);
-            } else {
-              // Swipe left - just next card
-              goToNextCard(false);
-            }
-          });
+          }).start();
+        }, 50);
+        
+        return nextIndex;
+      }
+    });
+  }, [allEntries, writeBackIncrement, route?.params?.surprise, navigateToRandomNext, loadBase, flipAnimation, pan, cardOpacity]);
+
+  const panResponder = React.useMemo(
+    () =>
+      PanResponder.create({
+        onStartShouldSetPanResponder: () => true,
+        onMoveShouldSetPanResponder: () => true,
+        onPanResponderMove: (_, gestureState) => {
+          pan.setValue({ x: gestureState.dx, y: gestureState.dy });
+        },
+        onPanResponderRelease: (_, gestureState) => {
+          const { dx, dy } = gestureState;
+          const swipeDistance = Math.abs(dx);
           
-          // Also animate the card off screen - use very fast animation
-          Animated.timing(pan, {
-            toValue: { x: dx > 0 ? SCREEN_WIDTH : -SCREEN_WIDTH, y: 0 },
-            duration: 50,
-            useNativeDriver: true,
-          }).start();
-        } else {
-          // Small swipe - return card to original position
-          Animated.spring(pan, {
-            toValue: { x: 0, y: 0 },
-            useNativeDriver: true,
-            friction: 7,
-            tension: 40,
-          }).start();
-        }
-      },
-    })
-  ).current;
+          if (swipeDistance > SWIPE_THRESHOLD) {
+            // Large swipe - fade out card over 0.5 seconds, then load next card
+            Animated.timing(cardOpacity, {
+              toValue: 0,
+              duration: CARD_DISAPPEAR_TIME,
+              useNativeDriver: true,
+            }).start(() => {
+              // After fade out completes, move to next card
+              if (dx > 0) {
+                // Swipe right - increment practice and next card
+                goToNextCard(true);
+              } else {
+                // Swipe left - just next card
+                goToNextCard(false);
+              }
+            });
+            
+            // Also animate the card off screen - use very fast animation
+            Animated.timing(pan, {
+              toValue: { x: dx > 0 ? SCREEN_WIDTH : -SCREEN_WIDTH, y: 0 },
+              duration: 50,
+              useNativeDriver: true,
+            }).start();
+          } else {
+            // Small swipe - return card to original position
+            Animated.spring(pan, {
+              toValue: { x: 0, y: 0 },
+              useNativeDriver: true,
+              friction: 7,
+              tension: 40,
+            }).start();
+          }
+        },
+      }),
+    [goToNextCard, cardOpacity, pan]
+  );
 
   const frontInterpolate = flipAnimation.interpolate({
     inputRange: [0, 180],
@@ -296,11 +345,11 @@ function FlipCardsScreen(): React.JSX.Element {
 
   return (
     <View style={styles.container}>
-      {/* <View style={styles.progressContainer}>
+      <View style={styles.progressContainer}>
         <Text style={styles.progressText}>
           {currentIndex + 1} / {allEntries.length}
         </Text>
-      </View> */}
+      </View>
 
       <View style={styles.cardContainer}>
         <Animated.View

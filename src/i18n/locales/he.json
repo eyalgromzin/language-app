@@ -271,6 +271,7 @@
       "memoryGame": "משחק זיכרון",
       "writeTranslation": "כתוב תרגום",
       "writeWord": "כתוב מילה",
+      "flipCards": "הפוך כרטיסים",
       "clearAllConfirm": "האם אתם בטוחים שאתם רוצים לנקות את כל המילים?",
       "clearAllSuccess": "כל המילים נוקו בהצלחה",
       "clearAllError": "נכשל בניקוי המילים. אנא נסו שוב."

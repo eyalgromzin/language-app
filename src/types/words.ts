@@ -31,6 +31,7 @@ export type WordEntry = {
     writeWord: number;
     formulateSentence?: number;
     hearing?: number;
+    flipCards?: number;
   };
 };
 

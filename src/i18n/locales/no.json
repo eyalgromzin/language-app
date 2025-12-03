@@ -270,6 +270,7 @@
       "memoryGame": "Minne Spill",
       "writeTranslation": "Skriv Oversettelse",
       "writeWord": "Skriv Ord",
+      "flipCards": "Vend Kort",
       "clearAllConfirm": "Er du sikker på at du vil tømme alle ord?",
       "clearAllSuccess": "Alle ord tømt vellykket",
       "clearAllError": "Kunne ikke tømme ord. Vennligst prøv igjen."

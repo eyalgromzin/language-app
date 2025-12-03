@@ -270,6 +270,7 @@
       "memoryGame": "Gioco di Memoria",
       "writeTranslation": "Scrivi Traduzione",
       "writeWord": "Scrivi Parola",
+      "flipCards": "Carte da Capovolgere",
       "clearAllConfirm": "Sei sicuro di voler cancellare tutte le parole?",
       "clearAllSuccess": "Tutte le parole sono state cancellate con successo",
       "clearAllError": "Impossibile cancellare le parole. Riprova."

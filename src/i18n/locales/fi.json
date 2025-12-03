@@ -270,6 +270,7 @@
       "memoryGame": "Muistipeli",
       "writeTranslation": "Kirjoita Käännös",
       "writeWord": "Kirjoita Sana",
+      "flipCards": "Käännä Kortit",
       "clearAllConfirm": "Oletko varma, että haluat tyhjentää kaikki sanat?",
       "clearAllSuccess": "Kaikki sanat tyhjennettiin onnistuneesti",
       "clearAllError": "Sanojen tyhjentäminen epäonnistui. Yritä uudelleen."

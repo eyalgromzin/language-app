@@ -37,6 +37,7 @@ function MyWordsScreen(): React.JSX.Element {
           memoryGame: 0,
           writeTranslation: 0,
           writeWord: 0,
+          flipCards: 0,
         },
       });
       const arr = (Array.isArray(parsed) ? (parsed as WordEntry[]) : []).map(ensureNoa);
@@ -243,6 +244,10 @@ function MyWordsScreen(): React.JSX.Element {
                 <View style={styles.progressItem}>
                   <Text style={styles.progressItemLabel}>{t('screens.myWords.writeWord')}</Text>
                   <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.writeWord ?? 0}</Text>
+                </View>
+                <View style={styles.progressItem}>
+                  <Text style={styles.progressItemLabel}>{t('screens.myWords.flipCards')}</Text>
+                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.flipCards ?? 0}</Text>
                 </View>
               </View>
             </View>
