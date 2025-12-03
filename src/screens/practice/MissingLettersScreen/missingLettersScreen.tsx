@@ -527,6 +527,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const renderLetterCell = (ch: string, idx: number) => {
     const lettersCount = current.letters.length;
     const defaultCellWidth = 48;
+    const defaultMissingWidth = 32;
     const gap = 12; // matches styles.wordRow gap
     const available = rowWidth ?? 0;
     const maxWidthPerCell = lettersCount > 0 && available > 0
@@ -539,15 +540,16 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
     const isWrongSpot = wrongHighlightIndex === idx;
     if (!isMissing) {
       return (
-        <View key={idx} style={[styles.cell, { width: cellWidth }, styles.cellFixed, isWrongSpot && styles.cellWrong]}>
-          <Text style={[styles.cellText, { fontSize: dynamicFontSize }]}>{ch}</Text>
-        </View>
+        <Text key={idx} style={[styles.cellText, { fontSize: dynamicFontSize }, isWrongSpot && styles.cellTextWrong]}>
+          {ch}
+        </Text>
       );
     }
     const value = inputs[idx] ?? '';
     const showAsCorrected = wrongHighlightIndex !== null;
+    const missingCellWidth = Math.min(defaultMissingWidth, maxWidthPerCell);
     return (
-      <View key={idx} style={[styles.cell, { width: cellWidth }, showAsCorrected && styles.cellFixed, isWrongSpot && styles.cellWrong]}>
+      <View key={idx} style={[styles.cell, { width: missingCellWidth }, showAsCorrected && styles.cellFixed, isWrongSpot && styles.cellWrong]}>
         {showAsCorrected ? (
           <Text style={[styles.cellText, { fontSize: dynamicFontSize }]}>{current.letters[idx]}</Text>
         ) : (
@@ -738,7 +740,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'nowrap',
     gap: 12,
-    paddingVertical: 20,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -746,8 +747,7 @@ const styles = StyleSheet.create({
     width: 48,
     height: 56,
     borderRadius: 12,
-    borderWidth: 2,
-    borderColor: '#e2e8f0',
+    borderWidth: 0,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#ffffff',
@@ -762,7 +762,7 @@ const styles = StyleSheet.create({
   },
   cellFixed: {
     backgroundColor: '#f1f5f9',
-    borderColor: '#cbd5e1',
+    borderWidth: 0,
   },
   cellWrong: {
     borderColor: '#ef4444',
@@ -776,6 +776,9 @@ const styles = StyleSheet.create({
     color: '#1e293b',
     letterSpacing: 0.5,
   },
+  cellTextWrong: {
+    color: '#ef4444',
+  },
   input: {
     width: '100%',
     height: '100%',
@@ -784,6 +787,8 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#1e293b',
     padding: 0,
+    borderBottomWidth: 2,
+    borderBottomColor: '#3b82f6',
   },
   nextButton: {
     marginTop: 20,
