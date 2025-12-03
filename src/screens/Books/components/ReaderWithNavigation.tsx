@@ -205,7 +205,7 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
           if (count < maxPages) {
             navigateFunction({ keepScrollOffset: true });
             count++;
-            navigationTimeoutRef.current = setTimeout(navigate, 150);
+            navigationTimeoutRef.current = setTimeout(navigate, 10);
           }
         };
         navigate();
