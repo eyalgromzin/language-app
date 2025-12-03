@@ -659,7 +659,10 @@ const styles = StyleSheet.create({
   tokenInputWrapper: {
     paddingHorizontal: 12,
     paddingVertical: 8,
-    borderRadius: 12,
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
     borderBottomWidth: 2,
     borderBottomColor: '#cbd5e1',
     backgroundColor: '#ffffff',
