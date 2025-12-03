@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { AppState, AppStateStatus } from 'react-native';
 import { Reader, useReader } from '@epubjs-react-native/core';
 import { useFileSystem } from '@epubjs-react-native/file-system';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -21,11 +21,15 @@ type ReaderWithNavigationProps = {
   bookId?: string;
 };
 
+const STORAGE_KEY = 'books.library';
+
 export default function ReaderWithNavigation(props: ReaderWithNavigationProps): React.JSX.Element {
   const { goPrevious, goNext, goToLocation, getCurrentLocation, getLocations } = useReader();
   const [currentPage, setCurrentPage] = React.useState<number>(1);
   const [totalPages, setTotalPages] = React.useState<number>(1);
   const navigationTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+  const readerReadyRef = React.useRef<boolean>(false);
+  const lastRestoredCfiRef = React.useRef<string | null>(null);
 
   // Cleanup navigation timeout on unmount
   React.useEffect(() => {
@@ -35,6 +39,39 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
       }
     };
   }, []);
+
+  // Function to restore location from saved CFI
+  const restoreLocation = React.useCallback(async () => {
+    if (!props.bookId || !readerReadyRef.current) return;
+    
+    try {
+      const json = await AsyncStorage.getItem(STORAGE_KEY);
+      if (!json) return;
+      
+      const parsed = JSON.parse(json);
+      const books = Array.isArray(parsed) ? parsed : [];
+      const book = books.find((b: any) => b.id === props.bookId);
+      
+      if (book?.lastPositionCfi && typeof book.lastPositionCfi === 'string') {
+        const savedCfi = book.lastPositionCfi;
+        
+        // Only restore if we haven't already restored to this location
+        if (lastRestoredCfiRef.current !== savedCfi) {
+          // Check current location to avoid unnecessary navigation
+          const currentLoc = getCurrentLocation();
+          const currentCfi = currentLoc?.start?.cfi ?? currentLoc?.end?.cfi ?? null;
+          
+          // Only restore if we're not already at the saved location
+          if (currentCfi !== savedCfi) {
+            lastRestoredCfiRef.current = savedCfi;
+            goToLocation(savedCfi);
+          }
+        }
+      }
+    } catch (error) {
+      console.log('Failed to restore location:', error);
+    }
+  }, [props.bookId, getCurrentLocation, goToLocation]);
 
   // Load saved total pages and current page on component mount
   React.useEffect(() => {
@@ -60,6 +97,22 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
       loadSavedData();
     }
   }, [props.bookId]);
+
+  // Handle app state changes to restore location when app comes back to foreground
+  React.useEffect(() => {
+    const subscription = AppState.addEventListener('change', (nextAppState: AppStateStatus) => {
+      if (nextAppState === 'active' && readerReadyRef.current) {
+        // App came to foreground, restore location after a short delay
+        setTimeout(() => {
+          restoreLocation();
+        }, 500);
+      }
+    });
+
+    return () => {
+      subscription?.remove();
+    };
+  }, [restoreLocation]);
 
   // Save total pages to local storage when it changes and is > 1
   const saveTotalPagesToStorage = React.useCallback(async (pages: number) => {
@@ -90,6 +143,12 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
       const currentPageNum = Math.floor(startLocation) + 1;
       setCurrentPage(Math.max(1, currentPageNum));
       setTotalPages(totalLocations);
+      
+      // Update last restored CFI when location changes naturally (not from restore)
+      const currentCfi = currentLocation?.start?.cfi ?? currentLocation?.end?.cfi ?? null;
+      if (currentCfi) {
+        lastRestoredCfiRef.current = currentCfi;
+      }
       
       // Save total pages to storage if > 1
       if (totalLocations > 1) {
@@ -223,6 +282,13 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
     jumpPages('backward');
   }, [jumpPages]);
 
+  const handleReady = React.useCallback(() => {
+    readerReadyRef.current = true;
+    props.onReady();
+    // Note: initialCfi prop should handle initial location restoration
+    // restoreLocation is only called when app comes back to foreground
+  }, [props]);
+
   return (
     <>
       <Reader
@@ -234,7 +300,7 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
         initialLocation={props.initialCfi}
         onLocationChange={handleLocationChangeInner}
         onDisplayError={props.onDisplayError}
-        onReady={props.onReady}
+        onReady={handleReady}
         allowScriptedContent
         injectedJavascript={props.injectedJavascript}
         onWebViewMessage={props.onWebViewMessage}
