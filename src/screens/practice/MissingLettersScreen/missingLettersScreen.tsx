@@ -11,6 +11,7 @@ import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 import { useTranslation } from '../../../hooks/useTranslation';
 import { getTtsLangCode, playCorrectFeedback, playWrongFeedback } from '../common';
 import { WordEntry } from '../../../types/words';
+import CorrectAnswerDialogue from '../common/correctAnswerDialogue';
 
 type PreparedItem = {
   entry: WordEntry;
@@ -128,6 +129,8 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [showCorrectToast, setShowCorrectToast] = React.useState<boolean>(false);
   const [showWrongToast, setShowWrongToast] = React.useState<boolean>(false);
   const [showFinishedWordAnimation, setShowFinishedWordAnimation] = React.useState<boolean>(false);
+  const [showWrongAnswerDialogue, setShowWrongAnswerDialogue] = React.useState<boolean>(false);
+  const [storedMismatchIndex, setStoredMismatchIndex] = React.useState<number | null>(null);
   const [rowWidth, setRowWidth] = React.useState<number | null>(null);
   const inputRefs = React.useRef<Record<number, TextInput | null>>({});
   const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
@@ -190,6 +193,8 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setShowCorrectToast(false);
       setShowWrongToast(false);
       setShowFinishedWordAnimation(false);
+      setShowWrongAnswerDialogue(false);
+      setStoredMismatchIndex(null);
       return;
     }
     setLoading(true);
@@ -269,6 +274,8 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setInputs({});
       setWrongHighlightIndex(null);
       setShowFinishedWordAnimation(false);
+      setShowWrongAnswerDialogue(false);
+      setStoredMismatchIndex(null);
     } catch {
       setItems([]);
     } finally {
@@ -284,10 +291,12 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   useFocusEffect(
     React.useCallback(() => {
       if (!props.embedded) {
-        setShowCorrectToast(false);
-        setShowWrongToast(false);
-        setShowFinishedWordAnimation(false);
-        loadData();
+      setShowCorrectToast(false);
+      setShowWrongToast(false);
+      setShowFinishedWordAnimation(false);
+      setShowWrongAnswerDialogue(false);
+      setStoredMismatchIndex(null);
+      loadData();
       }
     }, [loadData, props.embedded])
   );
@@ -322,6 +331,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const resetForNext = React.useCallback(() => {
     setInputs({});
     setWrongHighlightIndex(null);
+    setStoredMismatchIndex(null);
   }, []);
 
   const moveToNext = React.useCallback(() => {
@@ -457,12 +467,8 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       setShowCorrectToast(false);
       setShowWrongToast(true);
       try { playWrongFeedback(); } catch {}
-      if (props.embedded) {
-        const t = setTimeout(() => props.onFinished?.(false), 1200);
-        return () => clearTimeout(t as unknown as number);
-      }
-      const wrongTimer = setTimeout(() => setShowWrongToast(false), 2000);
-      // Find first mismatch
+      
+      // Find first mismatch for highlighting later
       let mismatchAt: number | null = null;
       const letters = current.letters;
       for (let i = 0; i < letters.length; i += 1) {
@@ -473,13 +479,14 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
           break;
         }
       }
-      // Fill correct values into inputs for missing indices
-      const corrected: Record<number, string> = {};
-      current.missingIndices.forEach((idx) => {
-        corrected[idx] = current.letters[idx];
-      });
-      setInputs(corrected);
-      setWrongHighlightIndex(mismatchAt);
+      setStoredMismatchIndex(mismatchAt);
+      
+      // Wait 2 seconds, then show correct answer dialogue
+      const wrongTimer = setTimeout(() => {
+        setShowWrongToast(false);
+        setShowWrongAnswerDialogue(true);
+      }, 2000);
+      
       return () => clearTimeout(wrongTimer);
     }
   }, [attemptWord, current, inputs, moveToNext, writeBackIncrement, wrongHighlightIndex, props.embedded, props.onFinished, mode]);
@@ -564,19 +571,6 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         {!props.embedded ? (
           <>
-            <View style={styles.progressContainer}>
-              <Text style={styles.progressText}>
-                {items.length > 0 ? `${currentIndex + 1} of ${items.length}` : '0 of 0'}
-              </Text>
-              <View style={styles.progressBar}>
-                <View 
-                  style={[
-                    styles.progressFill, 
-                    { width: items.length > 0 ? `${((currentIndex + 1) / items.length) * 100}%` : '0%' }
-                  ]} 
-                />
-              </View>
-            </View>
             <View style={styles.topRow}>
               <View style={styles.translationRow}>
                 <Text style={styles.translation} numberOfLines={1}>{topTextTrimmed}</Text>
@@ -640,6 +634,30 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
       <FinishedWordAnimation
         visible={showFinishedWordAnimation}
         onHide={() => setShowFinishedWordAnimation(false)}
+      />
+      <CorrectAnswerDialogue
+        visible={showWrongAnswerDialogue}
+        onClose={() => {
+          setShowWrongAnswerDialogue(false);
+          // Fill correct values into inputs for missing indices after dialogue closes
+          if (current) {
+            const corrected: Record<number, string> = {};
+            current.missingIndices.forEach((idx) => {
+              corrected[idx] = current.letters[idx];
+            });
+            setInputs(corrected);
+            // Use the stored mismatch index for highlighting
+            setWrongHighlightIndex(storedMismatchIndex);
+          }
+        }}
+        embedded={props.embedded}
+        correctWord={current ? (mode === 'translation' ? current.entry.translation : current.entry.word) : undefined}
+        translation={current ? (mode === 'translation' ? current.entry.word : current.entry.translation) : undefined}
+        current={current?.entry}
+        isChooseTranslationMode={mode === 'translation'}
+        onFinished={props.onFinished}
+        onMoveToNext={moveToNext}
+        onHideFinishedAnimation={() => setShowFinishedWordAnimation(false)}
       />
     </KeyboardAvoidingView>
   );
@@ -807,28 +825,6 @@ const styles = StyleSheet.create({
     color: '#64748b',
     fontWeight: '500',
   },
-  progressContainer: {
-    marginBottom: 8,
-  },
-  progressText: {
-    fontSize: 14,
-    color: '#64748b',
-    fontWeight: '600',
-    textAlign: 'center',
-    marginBottom: 8,
-  },
-  progressBar: {
-    height: 6,
-    backgroundColor: '#e2e8f0',
-    borderRadius: 3,
-    overflow: 'hidden',
-  },
-  progressFill: {
-    height: '100%',
-    backgroundColor: '#3b82f6',
-    borderRadius: 3,
-  },
-
 });
 
 export default MissingLettersScreen;
