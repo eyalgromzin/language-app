@@ -5,6 +5,8 @@ import { useFileSystem } from '@epubjs-react-native/file-system';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ReaderNavigation from './ReaderNavigation';
 
+const PAGES_TO_JUMP = 20;
+
 type ReaderWithNavigationProps = {
   src: string;
   width: number;
@@ -23,6 +25,16 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
   const { goPrevious, goNext, goToLocation, getCurrentLocation, getLocations } = useReader();
   const [currentPage, setCurrentPage] = React.useState<number>(1);
   const [totalPages, setTotalPages] = React.useState<number>(1);
+  const navigationTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  // Cleanup navigation timeout on unmount
+  React.useEffect(() => {
+    return () => {
+      if (navigationTimeoutRef.current) {
+        clearTimeout(navigationTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Load saved total pages and current page on component mount
   React.useEffect(() => {
@@ -133,6 +145,84 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
     }
   }, [goPrevious, getCurrentLocation, getLocations, goToLocation]);
 
+  const jumpPages = React.useCallback((direction: 'forward' | 'backward') => {
+    try {
+      // Calculate target page based on direction
+      const targetPage = direction === 'forward' 
+        ? Math.min(currentPage + PAGES_TO_JUMP, totalPages)
+        : Math.max(currentPage - PAGES_TO_JUMP, 1);
+      
+      // Check if we can navigate in this direction
+      if (direction === 'forward' && targetPage <= currentPage) {
+        return; // Already at or past target
+      }
+      if (direction === 'backward' && targetPage >= currentPage) {
+        return; // Already at or before target
+      }
+
+      // Try to use location-based navigation first
+      const currentLoc = getCurrentLocation();
+      const locations = getLocations();
+      
+      if (currentLoc && Array.isArray(locations) && locations.length > 0) {
+        // Calculate target location index (0-based, since pages are 1-based)
+        const targetIndex = targetPage - 1;
+        
+        if (targetIndex >= 0 && targetIndex < locations.length) {
+          const targetLocation = locations[targetIndex];
+          
+          // Try different formats
+          if (typeof targetLocation === 'string') {
+            goToLocation(targetLocation);
+            return;
+          } else if (targetLocation && typeof targetLocation === 'object') {
+            const loc = targetLocation as any;
+            if (loc.cfi && typeof loc.cfi === 'string') {
+              goToLocation(loc.cfi);
+              return;
+            } else if (loc.start?.cfi && typeof loc.start.cfi === 'string') {
+              goToLocation(loc.start.cfi);
+              return;
+            }
+          }
+        }
+      }
+
+      // Fallback: use goNext/goPrevious multiple times sequentially
+      const navigateFunction = direction === 'forward' ? goNext : goPrevious;
+      if (typeof navigateFunction === 'function') {
+        const maxPages = direction === 'forward'
+          ? Math.min(PAGES_TO_JUMP, totalPages - currentPage)
+          : Math.min(PAGES_TO_JUMP, currentPage - 1);
+        
+        // Don't navigate if we can't move at all
+        if (maxPages <= 0) {
+          return;
+        }
+        
+        let count = 0;
+        const navigate = () => {
+          if (count < maxPages) {
+            navigateFunction({ keepScrollOffset: true });
+            count++;
+            navigationTimeoutRef.current = setTimeout(navigate, 150);
+          }
+        };
+        navigate();
+      }
+    } catch (error) {
+      console.log(`Error in jumpPages (${direction}):`, error);
+    }
+  }, [currentPage, totalPages, getCurrentLocation, getLocations, goToLocation, goNext, goPrevious]);
+
+  const goToNext10Pages = React.useCallback(() => {
+    jumpPages('forward');
+  }, [jumpPages]);
+
+  const goToPrevious10Pages = React.useCallback(() => {
+    jumpPages('backward');
+  }, [jumpPages]);
+
   return (
     <>
       <Reader
@@ -154,6 +244,9 @@ export default function ReaderWithNavigation(props: ReaderWithNavigationProps): 
         totalPages={totalPages}
         onPrevious={goToPreviousPage}
         onNext={goToNextPage}
+        onPrevious10={goToPrevious10Pages}
+        onNext10={goToNext10Pages}
+        pagesToJump={PAGES_TO_JUMP}
         themeColors={props.themeColors}
       />
     </>
