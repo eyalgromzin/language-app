@@ -1,7 +1,5 @@
 - save locally learning journey in baby steps , get journey once a week
 
-- make flip cards practice with right swipe to add 1 to practice of the word 
-
 things to refactor: 
 High priority (8 items)
   Excessive use of any types (35+ instances)
@@ -18,6 +16,8 @@ Low priority (17 items)
   Documentation gaps
 
 - make app work in shirs phone 
+
+- on words by categories. after a word was added to my list , change icon from '+' to 'V'
 
 - publish app =======================================================================================================================
 

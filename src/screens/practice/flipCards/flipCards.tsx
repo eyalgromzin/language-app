@@ -151,20 +151,26 @@ function FlipCardsScreen(): React.JSX.Element {
 
   // Note: Card fade-in is now handled in goToNextCard after fade-out completes
 
-  const writeBackIncrement = React.useCallback(async (wordKey: string) => {
+  const writeBackIncrement = React.useCallback(async (wordKey: string): Promise<boolean> => {
     try {
+      let threshold = 3;
       let totalThreshold = 6;
       try {
+        const raw = await AsyncStorage.getItem('words.removeAfterNCorrect');
+        const parsed = Number.parseInt(raw ?? '', 10);
+        const valid = parsed >= 1 && parsed <= 4 ? parsed : 3;
+        threshold = valid;
         const rawTotal = await AsyncStorage.getItem('words.removeAfterTotalCorrect');
         const parsedTotal = Number.parseInt(rawTotal ?? '', 10);
-        totalThreshold = parsedTotal >= 1 && parsedTotal <= 50 ? parsedTotal : 6;
+        const validTotal = parsedTotal >= 1 && parsedTotal <= 50 ? parsedTotal : 6;
+        totalThreshold = validTotal;
       } catch {}
       
       const exists = await RNFS.exists(filePath);
-      if (!exists) return;
+      if (!exists) return false;
       const content = await RNFS.readFile(filePath, 'utf8');
       const parsed: unknown = JSON.parse(content);
-      if (!Array.isArray(parsed)) return;
+      if (!Array.isArray(parsed)) return false;
       const arr = (parsed as WordEntry[]).map(ensureCounters);
       const idx = arr.findIndex((it) => it.word === wordKey);
       if (idx >= 0) {
@@ -184,7 +190,11 @@ function FlipCardsScreen(): React.JSX.Element {
           (noa.writeTranslation || 0) +
           (noa.writeWord || 0) +
           (noa.flipCards || 0);
-        if (total >= totalThreshold) {
+        
+        // Check if word should be removed (meets either threshold)
+        const shouldRemove =  total >= totalThreshold;
+        
+        if (shouldRemove) {
           copy.splice(idx, 1);
         } else {
           copy[idx] = it;
@@ -192,8 +202,13 @@ function FlipCardsScreen(): React.JSX.Element {
         try {
           await RNFS.writeFile(filePath, JSON.stringify(copy, null, 2), 'utf8');
         } catch {}
+        
+        return shouldRemove;
       }
-    } catch {}
+      return false;
+    } catch {
+      return false;
+    }
   }, [filePath]);
 
   const handleFlip = () => {
@@ -219,8 +234,53 @@ function FlipCardsScreen(): React.JSX.Element {
     setCurrentIndex((prevIndex) => {
       const currentWordEntry = allEntries[prevIndex];
       
+      // Check if word should be removed (optimistically using default thresholds)
+      // The async writeBackIncrement will use actual thresholds and handle file update
+      let shouldRemoveFromList = false;
       if (incrementPractice && currentWordEntry) {
-        writeBackIncrement(currentWordEntry.word);
+        // Calculate if word will meet threshold after increment
+        const noa = currentWordEntry.numberOfCorrectAnswers || {
+          missingLetters: 0,
+          missingWords: 0,
+          chooseTranslation: 0,
+          chooseWord: 0,
+          memoryGame: 0,
+          writeTranslation: 0,
+          writeWord: 0,
+          flipCards: 0,
+        };
+        const newFlipCardsCount = (noa.flipCards || 0) + 1;
+        const newTotal =
+          (noa.missingLetters || 0) +
+          (noa.missingWords || 0) +
+          (noa.chooseTranslation || 0) +
+          (noa.chooseWord || 0) +
+          (noa.memoryGame || 0) +
+          (noa.writeTranslation || 0) +
+          (noa.writeWord || 0) +
+          newFlipCardsCount;
+        
+        // Use default thresholds for optimistic check (3 for flipCards, 6 for total)
+        // The actual thresholds will be checked in writeBackIncrement
+        shouldRemoveFromList = newFlipCardsCount >= 3 || newTotal >= 6;
+        
+        // Perform async increment and removal check
+        writeBackIncrement(currentWordEntry.word).then((actuallyRemoved) => {
+          // If async check differs from optimistic check, update state
+          if (actuallyRemoved && !shouldRemoveFromList) {
+            // Word should be removed but wasn't removed optimistically
+            setAllEntries((prevEntries) => {
+              return prevEntries.filter((entry) => entry.word !== currentWordEntry.word);
+            });
+          }
+        });
+      }
+
+      // Remove word from list immediately if it should be removed
+      if (shouldRemoveFromList && currentWordEntry) {
+        setAllEntries((prevEntries) => {
+          return prevEntries.filter((entry) => entry.word !== currentWordEntry.word);
+        });
       }
 
       // Reset card state
@@ -229,8 +289,22 @@ function FlipCardsScreen(): React.JSX.Element {
       pan.setValue({ x: 0, y: 0 });
       cardOpacity.setValue(0);
       
+      // Calculate adjusted entries length (accounting for removal)
+      const adjustedLength = shouldRemoveFromList && currentWordEntry
+        ? allEntries.length - 1
+        : allEntries.length;
+      
       // Move to next card
-      if (prevIndex >= allEntries.length - 1) {
+      // If we removed the current card and we're at or past the last index, we've reached the end
+      if (shouldRemoveFromList && currentWordEntry && prevIndex >= adjustedLength) {
+        // Reached the end after removal, reload
+        if (route?.params?.surprise) {
+          navigateToRandomNext();
+        } else {
+          loadBase();
+        }
+        return prevIndex; // Keep current index until reload completes
+      } else if (prevIndex >= adjustedLength - 1) {
         // Reached the end, reload
         if (route?.params?.surprise) {
           navigateToRandomNext();
@@ -239,7 +313,9 @@ function FlipCardsScreen(): React.JSX.Element {
         }
         return prevIndex; // Keep current index until reload completes
       } else {
-        const nextIndex = prevIndex + 1;
+        // If we removed the current card, stay at the same index (which now points to the next card)
+        // Otherwise, move to the next index
+        const nextIndex = shouldRemoveFromList && currentWordEntry ? prevIndex : prevIndex + 1;
         
         // Fade in the new card after a brief delay
         setTimeout(() => {
