@@ -1,5 +1,3 @@
-- save locally learning journey in baby steps , get journey once a week
-
 things to refactor: 
 High priority (8 items)
   Excessive use of any types (35+ instances)
