@@ -28,6 +28,7 @@ type Props = {
   onSpeakText: (text: string, language: string) => void;
   onAddToMyWords: (item: WordItem) => void;
   rotationInterpolate: Animated.AnimatedInterpolation<string>;
+  isAdded?: boolean;
 };
 
 export default function WordItemCard(props: Props): React.JSX.Element {
@@ -40,6 +41,7 @@ export default function WordItemCard(props: Props): React.JSX.Element {
     onSpeakText,
     onAddToMyWords,
     rotationInterpolate,
+    isAdded = false,
   } = props;
 
   const source = getTextInLanguage(item.text, SOURCE_LANGUAGE);
@@ -92,10 +94,15 @@ export default function WordItemCard(props: Props): React.JSX.Element {
           accessibilityLabel={t('screens.categories.wordCategories.addToMyWords')}
           hitSlop={{ top: 6, right: 6, bottom: 6, left: 6 }}
           activeOpacity={0.85}
+          disabled={isAdded}
         >
-          <Animated.View style={{ transform: [{ rotate: rotationInterpolate }] }}>
-            <Text style={styles.addBtnText}>+</Text>
-          </Animated.View>
+          {isAdded ? (
+            <Text style={styles.addBtnText}>✓</Text>
+          ) : (
+            <Animated.View style={{ transform: [{ rotate: rotationInterpolate }] }}>
+              <Text style={styles.addBtnText}>+</Text>
+            </Animated.View>
+          )}
         </TouchableOpacity>
       </View>
       {item.type === 'sentence' ? (

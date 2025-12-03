@@ -74,6 +74,9 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
 
   // Store animation values for each item
   const animationValues = React.useRef<Map<string, Animated.Value>>(new Map());
+  
+  // Track which items have been added
+  const [addedItems, setAddedItems] = React.useState<Set<string>>(new Set());
 
   // Function to get or create animation value for an item
   const getAnimationValue = React.useCallback((itemId: string) => {
@@ -190,6 +193,8 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
   const handlePlusPress = React.useCallback((item: WordItem) => {
     spinPlus(item.id, () => {
       saveItemToMyWords(item);
+      // Mark item as added after animation completes
+      setAddedItems(prev => new Set(prev).add(item.id));
     });
   }, [spinPlus, saveItemToMyWords]);
 
@@ -301,6 +306,7 @@ export default function WordCategory(props: Props): React.JSX.Element | null {
                 onSpeakText={speakText}
                 onAddToMyWords={handlePlusPress}
                 rotationInterpolate={getRotationInterpolate(item.id)}
+                isAdded={addedItems.has(item.id)}
               />
             );
           })}
