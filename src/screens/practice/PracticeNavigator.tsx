@@ -11,6 +11,7 @@ import Choose1OutOfN from './choose1OutOfN/Choose1OutOfN.tsx';
 import MemoryGameScreen from './memoryGame/MemoryGameScreen.tsx';
 import HearingPracticeScreen from './hearing/HearingPracticeScreen.tsx';
 import FormulateSentenseScreen from './formulateSentense/FormulateSentenseScreen.tsx';
+import FlipCardsScreen from './flipCards/flipCards.tsx';
 
 type SurpriseParam = { surprise?: boolean } | undefined;
 type ModeParam = { surprise?: boolean; mode?: 'word' | 'translation' } | undefined;
@@ -26,6 +27,7 @@ export type PracticeStackParamList = {
   MemoryGame: SurpriseParam;
   HearingPractice: SurpriseParam;
   FormulateSentense: SurpriseParam;
+  FlipCards: SurpriseParam;
 };
 
 const Stack = createNativeStackNavigator<PracticeStackParamList>();
@@ -40,6 +42,7 @@ const RANDOM_GAME_ROUTES: Array<keyof PracticeStackParamList> = [
   'MemoryGame',
   'HearingPractice',
   'FormulateSentense',
+  'FlipCards',
 ];
 
 function navigateToRandomGame(
@@ -213,6 +216,21 @@ function PracticeNavigator(): React.JSX.Element {
         component={FormulateSentenseScreen}
         options={{
           title: t('screens.practice.formulateSentence'),
+          headerShown: true,
+          headerLargeTitle: false,
+          headerBackTitle: '',
+          headerTitle: (props) => (
+            <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
+              {props?.children}
+            </Text>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="FlipCards"
+        component={FlipCardsScreen}
+        options={{
+          title: t('screens.practice.flipCards'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',

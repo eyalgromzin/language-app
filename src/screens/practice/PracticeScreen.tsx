@@ -18,6 +18,7 @@ const PRACTICE_OPTIONS: PracticeOption[] = [
   { key: 'translate', label: 'translate', emoji: 'ðŸŒ' },
   { key: 'memoryGame', label: 'memoryGame', emoji: '🧠' },
   { key: 'hearing', label: 'hearingPractice', emoji: '🔊' },
+  { key: 'flipCards', label: 'flipCards', emoji: '🃏' },
 ];
 
 // Custom Match Game Button Component
@@ -341,6 +342,10 @@ function PracticeScreen(): React.JSX.Element {
       navigation.navigate('HearingPractice');
       return;
     }
+    if (opt.key === 'flipCards') {
+      navigation.navigate('FlipCards');
+      return;
+    }
   if (opt.key === 'translate') {
       navigation.navigate('Translate', { mode: 'translation' });
       return;
@@ -364,6 +369,7 @@ function PracticeScreen(): React.JSX.Element {
     if (opt.key === 'matchGame') return navigation.navigate('WordsMatch', { surprise: true });
     if (opt.key === 'memoryGame') return navigation.navigate('MemoryGame', { surprise: true });
     if (opt.key === 'hearing') return navigation.navigate('HearingPractice', { surprise: true });
+    if (opt.key === 'flipCards') return navigation.navigate('FlipCards', { surprise: true });
     if (opt.key === 'translate') return navigation.navigate('Translate', { surprise: true, mode: 'translation' });
     if (opt.key === 'chooseWord') return navigation.navigate('ChooseWord', { surprise: true });
     if (opt.key === 'chooseTranslation') return navigation.navigate('ChooseTranslation', { surprise: true });

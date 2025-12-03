@@ -1,7 +1,3 @@
-- fix page not set on load in book
-
-- add go to page in reader screen 
-
 - save locally learning journey in baby steps , get journey once a week
 
 - make flip cards practice with right swipe to add 1 to practice of the word 
