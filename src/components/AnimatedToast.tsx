@@ -143,7 +143,7 @@ const AnimatedToast: React.FC<AnimatedToastProps> = ({
         >
           <Icon
             name={getIconName()}
-            size={28}
+            size={32}
             color={getIconColor()}
           />
         </Animated.View>
@@ -167,9 +167,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 24,
-    paddingVertical: 18,
-    borderRadius: 16,
+    paddingHorizontal: 28,
+    paddingVertical: 24,
+    borderRadius: 18,
     borderWidth: 0,
     shadowColor: '#000',
     shadowOffset: {
@@ -183,15 +183,15 @@ const styles = StyleSheet.create({
     maxWidth: screenWidth * 0.95,
   },
   iconContainer: {
-    marginRight: 12,
-    width: 32,
-    height: 32,
+    marginRight: 14,
+    width: 36,
+    height: 36,
     alignItems: 'center',
     justifyContent: 'center',
   },
   message: {
     flex: 1,
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: '600',
     color: '#FFFFFF',
     textAlign: 'center',
