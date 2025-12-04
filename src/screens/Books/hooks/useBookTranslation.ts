@@ -30,20 +30,23 @@ export function useBookTranslation({
   }, [languageMappings]);
 
   const openPanel = useCallback((word: string, sentence?: string) => {
-    setTranslationPanel({ word, translation: '', sentence, images: [], imagesLoading: true, translationLoading: true });
-    fetchTranslation(word)
+    // Remove spaces and special characters from the beginning and end
+    // This removes punctuation and symbols while preserving letters and numbers (including Unicode)
+    const cleanedWord = word.trim().replace(/^[\s\p{P}\p{S}]+|[\s\p{P}\p{S}]+$/gu, '').trim();
+    setTranslationPanel({ word: cleanedWord, translation: '', sentence, images: [], imagesLoading: true, translationLoading: true });
+    fetchTranslation(cleanedWord)
       .then((translation) => {
-        setTranslationPanel((prev) => (prev && prev.word === word ? { ...prev, translation: translation || prev.translation, translationLoading: false } : prev));
+        setTranslationPanel((prev) => (prev && prev.word === cleanedWord ? { ...prev, translation: translation || prev.translation, translationLoading: false } : prev));
       })
       .catch(() => {
-        setTranslationPanel((prev) => (prev && prev.word === word ? { ...prev, translationLoading: false } : prev));
+        setTranslationPanel((prev) => (prev && prev.word === cleanedWord ? { ...prev, translationLoading: false } : prev));
       });
-    fetchImageUrls(word)
+    fetchImageUrls(cleanedWord)
       .then((imgs) => {
-        setTranslationPanel((prev) => (prev && prev.word === word ? { ...prev, images: imgs, imagesLoading: false } : prev));
+        setTranslationPanel((prev) => (prev && prev.word === cleanedWord ? { ...prev, images: imgs, imagesLoading: false } : prev));
       })
       .catch(() => {
-        setTranslationPanel((prev) => (prev && prev.word === word ? { ...prev, images: [], imagesLoading: false } : prev));
+        setTranslationPanel((prev) => (prev && prev.word === cleanedWord ? { ...prev, images: [], imagesLoading: false } : prev));
       });
   }, [fetchTranslation, fetchImageUrls]);
 
