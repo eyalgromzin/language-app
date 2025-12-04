@@ -3,6 +3,7 @@ import { Keyboard } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { fetchTranslation as fetchTranslationCommon } from '../../../utils/translation';
 import { createAndSaveWord } from '../../../services/wordService';
+import { cleanWordForTranslation } from '../../../common';
 import type { TranslationPanelState } from '../../../components/TranslationPanel';
 import type { ImageScrapeCallbacks } from '../../practice/common';
 
@@ -32,7 +33,7 @@ export function useBookTranslation({
   const openPanel = useCallback((word: string, sentence?: string) => {
     // Remove spaces and special characters from the beginning and end
     // This removes punctuation and symbols while preserving letters and numbers (including Unicode)
-    const cleanedWord = word.trim().replace(/^[\s\p{P}\p{S}]+|[\s\p{P}\p{S}]+$/gu, '').trim();
+    const cleanedWord = cleanWordForTranslation(word);
     // Capitalize first letter for translation search
     const capitalizedWord = cleanedWord.length > 0 
       ? cleanedWord.charAt(0).toUpperCase() + cleanedWord.slice(1)

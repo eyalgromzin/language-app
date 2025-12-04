@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { translateWord, getMyMemoryTranslation } from '../config/api';
+import { cleanWordForTranslation } from '../common';
 
 // Simple FIFO cache backed by a dictionary and an insertion-order queue
 const MAX_TRANSLATION_CACHE_SIZE = 500;
@@ -113,7 +114,7 @@ export const fetchTranslation = async (
   const toCode = getLangCode(toLanguageName, languageMappings) || 'en';
   if (!word || fromCode === toCode) return word;
   await ensureCacheLoaded();
-  const normalizedWord = word.trim();
+  const normalizedWord = cleanWordForTranslation(word);
   const cacheKey = makeCacheKey(normalizedWord, fromCode, toCode);
   const cached = getCached(cacheKey);
   if (cached) {

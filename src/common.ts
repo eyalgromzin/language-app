@@ -69,3 +69,14 @@ export const toLanguageSymbol = (input: string | null): string => {
   // Default to English if not found
   return 'en';
 };
+
+/**
+ * Cleans a word by trimming whitespace and removing special characters (punctuation and symbols)
+ * from both the beginning and end of the word.
+ * Preserves letters, numbers, and Unicode characters in the middle.
+ */
+export const cleanWordForTranslation = (word: string): string => {
+  if (!word || typeof word !== 'string') return '';
+  // Trim whitespace, then remove punctuation and symbols from both sides
+  return word.trim().replace(/^[\s\p{P}\p{S}]+|[\s\p{P}\p{S}]+$/gu, '').trim();
+};

@@ -1,3 +1,4 @@
+import { cleanWordForTranslation } from '../common';
 
 // API Configuration
 export const API_CONFIG = {
@@ -70,11 +71,13 @@ export const translateWord = async (
   fromLanguageSymbol: string,
   toLanguageSymbol: string
 ): Promise<string> => {
+  // Clean word before sending to translation API
+  const cleanedWord = cleanWordForTranslation(word);
   const response = await fetch(getApiUrl(API_CONFIG.ENDPOINTS.TRANSLATE), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      word,
+      word: cleanedWord,
       fromLanguageSymbol,
       toLanguageSymbol,
     }),
@@ -252,7 +255,9 @@ export const getMyMemoryTranslation = async (
   fromCode: string,
   toCode: string
 ): Promise<any> => {
-  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(word)}&langpair=${encodeURIComponent(fromCode)}|${encodeURIComponent(toCode)}`;
+  // Clean word before sending to external translation API
+  const cleanedWord = cleanWordForTranslation(word);
+  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(cleanedWord)}&langpair=${encodeURIComponent(fromCode)}|${encodeURIComponent(toCode)}`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`MyMemory translation request failed: ${response.status}`);

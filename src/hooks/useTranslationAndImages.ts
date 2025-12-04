@@ -9,6 +9,7 @@ import { useLoginGate } from '../contexts/LoginGateContext';
 import { useAuth } from '../contexts/AuthContext';
 import { useTranslation } from './useTranslation';
 import { createAndSaveWord } from '../services/wordService';
+import { cleanWordForTranslation } from '../common';
 
 export const useTranslationAndImages = (
   learningLanguage: string | null,
@@ -48,7 +49,7 @@ export const useTranslationAndImages = (
   const openPanel = (word: string, sentence?: string) => {
     // Remove spaces and special characters from the beginning and end
     // This removes punctuation and symbols while preserving letters and numbers (including Unicode)
-    const cleanedWord = word.trim().replace(/^[\s\p{P}\p{S}]+|[\s\p{P}\p{S}]+$/gu, '').trim();
+    const cleanedWord = cleanWordForTranslation(word);
     const clause = extractClauseAroundWord(sentence, cleanedWord);
     setTranslationPanel({ word: cleanedWord, translation: '', sentence: clause, images: [], imagesLoading: true, translationLoading: true });
     fetchTranslation(cleanedWord)
