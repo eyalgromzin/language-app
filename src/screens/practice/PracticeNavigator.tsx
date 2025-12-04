@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, Pressable } from 'react-native';
+import { Text, Pressable, Platform } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTranslation } from '../../hooks/useTranslation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import PracticeHomeScreen from './PracticeScreen.tsx';
 import WordMissingLettersScreen from './MissingLettersScreen/missingLettersScreen.tsx';
 import MissingWordsScreen from './missingWords/MissingWordsScreen.tsx';
@@ -57,6 +58,23 @@ function navigateToRandomGame(
   navigation.navigate(target as never, params as never);
 }
 
+function createBackButton(navigation: any) {
+  return () => (
+    <Pressable
+      onPress={() => navigation.navigate('PracticeHome')}
+      style={{ marginLeft: Platform.OS === 'ios' ? 8 : 0, padding: 8 }}
+      accessibilityRole="button"
+      accessibilityLabel="Go back to practice screen"
+    >
+      <Ionicons 
+        name="chevron-back" 
+        size={24} 
+        color={Platform.OS === 'ios' ? '#007AFF' : '#000'} 
+      />
+    </Pressable>
+  );
+}
+
 function PracticeNavigator(): React.JSX.Element {
   const { t } = useTranslation();
   
@@ -92,154 +110,164 @@ function PracticeNavigator(): React.JSX.Element {
       <Stack.Screen
         name="MissingLetters"
         component={WordMissingLettersScreen}
-        options={{
+        options={({ navigation }) => ({
           title: t('screens.practice.missingLetters'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
+          headerLeft: createBackButton(navigation),
           headerTitle: (props) => (
             <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
               {props?.children}
             </Text>
           ),
-        }}
+        })}
         initialParams={{ mode: 'word' }}
       />
       <Stack.Screen
         name="MissingWords"
         component={MissingWordsScreen}
-        options={{
+        options={({ navigation }) => ({
           title: t('screens.practice.missingWords'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
+          headerLeft: createBackButton(navigation),
           headerTitle: (props) => (
             <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
               {props?.children}
             </Text>
           ),
-        }}
+        })}
       />
       <Stack.Screen
         name="WordsMatch"
         component={WordsMatchScreen}
-        options={{
+        options={({ navigation }) => ({
           title: t('screens.practice.matchGame'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
+          headerLeft: createBackButton(navigation),
           headerTitle: (props) => (
             <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
               {props?.children}
             </Text>
           ),
-        }}
+        })}
       />
       <Stack.Screen
         name="Translate"
         component={WordMissingLettersScreen}
-        options={{
+        options={({ navigation }) => ({
           title: t('screens.practice.translate'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
+          headerLeft: createBackButton(navigation),
           headerTitle: (props) => (
             <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
               {props?.children}
             </Text>
           ),
-        }}
+        })}
         initialParams={{ mode: 'translation' }}
       />
       <Stack.Screen
         name="ChooseWord"
         component={Choose1OutOfN}
-        options={{
+        options={({ navigation }) => ({
           title: t('screens.practice.chooseWord'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
+          headerLeft: createBackButton(navigation),
           headerTitle: (props) => (
             <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
               {props?.children}
             </Text>
           ),
-        }}
+        })}
       />
       <Stack.Screen
         name="ChooseTranslation"
         component={Choose1OutOfN}
-        options={{
+        options={({ navigation }) => ({
           title: t('screens.practice.chooseTranslation'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
+          headerLeft: createBackButton(navigation),
           headerTitle: (props) => (
             <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
               {props?.children}
             </Text>
           ),
-        }}
+        })}
       />
       <Stack.Screen
         name="MemoryGame"
         component={MemoryGameScreen}
-        options={{
+        options={({ navigation }) => ({
           title: t('screens.practice.memoryGame'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
+          headerLeft: createBackButton(navigation),
           headerTitle: (props) => (
             <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
               {props?.children}
             </Text>
           ),
-        }}
+        })}
       />
       <Stack.Screen
         name="HearingPractice"
         component={HearingPracticeScreen}
-        options={{
+        options={({ navigation }) => ({
           title: t('screens.practice.hearingPractice'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
+          headerLeft: createBackButton(navigation),
           headerTitle: (props) => (
             <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
               {props?.children}
             </Text>
           ),
-        }}
+        })}
       />
       <Stack.Screen
         name="FormulateSentense"
         component={FormulateSentenseScreen}
-        options={{
+        options={({ navigation }) => ({
           title: t('screens.practice.formulateSentence'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
+          headerLeft: createBackButton(navigation),
           headerTitle: (props) => (
             <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
               {props?.children}
             </Text>
           ),
-        }}
+        })}
       />
       <Stack.Screen
         name="FlipCards"
         component={FlipCardsScreen}
-        options={{
+        options={({ navigation }) => ({
           title: t('screens.practice.flipCards'),
           headerShown: true,
           headerLargeTitle: false,
           headerBackTitle: '',
+          headerLeft: createBackButton(navigation),
           headerTitle: (props) => (
             <Text numberOfLines={1} ellipsizeMode="tail" style={{ fontSize: 17, fontWeight: '600' }}>
               {props?.children}
             </Text>
           ),
-        }}
+        })}
       />
     </Stack.Navigator>
   );
