@@ -73,11 +73,12 @@ export const translateWord = async (
 ): Promise<string> => {
   // Clean word before sending to translation API
   const cleanedWord = cleanWordForTranslation(word);
+  const lowercaseWord = cleanedWord.toLowerCase();
   const response = await fetch(getApiUrl(API_CONFIG.ENDPOINTS.TRANSLATE), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      word: cleanedWord,
+      word: lowercaseWord,
       fromLanguageSymbol,
       toLanguageSymbol,
     }),
