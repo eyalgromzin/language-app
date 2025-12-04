@@ -103,12 +103,18 @@ export const getLangCode = (nameOrNull: string | null | undefined, languageMappi
   return null;
 };
 
+const capitalizeFirstLetter = (str: string): string => {
+  if (!str || str.length === 0) return str;
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
 export const fetchTranslation = async (
   word: string,
   fromLanguageName: string | null | undefined,
   toLanguageName: string | null | undefined,
   languageMappings: Record<string, string>
 ): Promise<string> => {
+  word = capitalizeFirstLetter(word);
   console.log('fetchTranslation', word, fromLanguageName, toLanguageName);
   const fromCode = getLangCode(fromLanguageName, languageMappings) || 'en';
   const toCode = getLangCode(toLanguageName, languageMappings) || 'en';
