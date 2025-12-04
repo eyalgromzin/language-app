@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View, ScrollView, Image, Animated, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from '../../hooks/useTranslation';
+import { initializeShuffledOrder, navigateToNextInShuffledOrder } from './common/surprisePracticeOrder';
 
 type PracticeOption = {
   key: string;
@@ -321,6 +322,7 @@ const SurpriseMeButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
 function PracticeScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
   const { t } = useTranslation();
+
   const onOptionPress = (opt: PracticeOption) => {
     if (opt.key === 'missingLetters') {
       navigation.navigate('MissingLetters', { mode: 'word' });
@@ -362,19 +364,10 @@ function PracticeScreen(): React.JSX.Element {
   };
 
   const onSurprise = () => {
-    // Exclude flipCards from surprise me selection
-    const availableOptions = PRACTICE_OPTIONS.filter(opt => opt.key !== 'flipCards');
-    const idx = Math.floor(Math.random() * availableOptions.length);
-    const opt = availableOptions[idx];
-    if (opt.key === 'missingLetters') return navigation.navigate('MissingLetters', { surprise: true, mode: 'word' });
-    if (opt.key === 'missingWords') return navigation.navigate('MissingWords', { surprise: true });
-    if (opt.key === 'matchGame') return navigation.navigate('WordsMatch', { surprise: true });
-    if (opt.key === 'memoryGame') return navigation.navigate('MemoryGame', { surprise: true });
-    if (opt.key === 'translate') return navigation.navigate('Translate', { surprise: true, mode: 'translation' });
-    if (opt.key === 'chooseWord') return navigation.navigate('ChooseWord', { surprise: true });
-    if (opt.key === 'chooseTranslation') return navigation.navigate('ChooseTranslation', { surprise: true });
-    if (opt.key === 'hearing') return navigation.navigate('HearingPractice', { surprise: true });
-    onOptionPress(opt);
+    // Initialize or reshuffle the practice order
+    initializeShuffledOrder();
+    // Navigate to the next practice in the shuffled order
+    navigateToNextInShuffledOrder(navigation);
   };
 
   return (

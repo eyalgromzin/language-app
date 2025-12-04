@@ -11,6 +11,7 @@ import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 import { useTranslation } from '../../../hooks/useTranslation';
 import { WordEntry } from '../../../types/words';
 import CorrectAnswerDialogue from '../common/correctAnswerDialogue';
+import { navigateToNextInShuffledOrder } from '../common/surprisePracticeOrder';
 
 type OptionItem = {
   key: string;
@@ -68,21 +69,9 @@ function Choose1OutOfN(props: EmbeddedProps): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const isChooseTranslationMode = ((route as any)?.name as string) === 'ChooseTranslation';
-  const RANDOM_GAME_ROUTES: string[] = [
-    'MissingLetters',
-    'MissingWords',
-    'WordsMatch',
-    'Translate',
-    'ChooseWord',
-    'ChooseTranslation',
-    'MemoryGame',
-  ];
   const navigateToRandomNext = React.useCallback(() => {
-    const currentName = (route as any)?.name as string | undefined;
-    const choices = RANDOM_GAME_ROUTES.filter((n) => n !== currentName);
-    const target = choices[Math.floor(Math.random() * choices.length)] as string;
-    navigation.navigate(target as never, { surprise: true } as never);
-  }, [navigation, route]);
+    navigateToNextInShuffledOrder(navigation);
+  }, [navigation]);
   const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
   const [allWordsPool, setAllWordsPool] = React.useState<string[]>([]);

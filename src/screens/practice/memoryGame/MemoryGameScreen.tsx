@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { playCorrectFeedback, } from '../common';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 import { WordEntry } from '../../../types/words';
+import { navigateToNextInShuffledOrder } from '../common/surprisePracticeOrder';
 
 type Card = {
   id: string; // unique for each card instance
@@ -56,21 +57,9 @@ function MemoryGameScreen(): React.JSX.Element {
   const { t } = useTranslation();
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
-  const RANDOM_GAME_ROUTES: string[] = [
-    'MissingLetters',
-    'MissingWords',
-    'WordsMatch',
-    'Translate',
-    'ChooseWord',
-    'ChooseTranslation',
-    'MemoryGame',
-  ];
   const navigateToRandomNext = React.useCallback(() => {
-    const currentName = (route as any)?.name as string | undefined;
-    const choices = RANDOM_GAME_ROUTES.filter((n) => n !== currentName);
-    const target = choices[Math.floor(Math.random() * choices.length)] as string;
-    navigation.navigate(target as never, { surprise: true } as never);
-  }, [navigation, route]);
+    navigateToNextInShuffledOrder(navigation);
+  }, [navigation]);
   const [loading, setLoading] = React.useState<boolean>(true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
   const [cards, setCards] = React.useState<Card[]>([]);

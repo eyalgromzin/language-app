@@ -11,6 +11,7 @@ import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 import CorrectAnswerDialogue from '../common/correctAnswerDialogue';
 import { WordEntry } from '../../../types/words';
+import { navigateToNextInShuffledOrder } from '../common/surprisePracticeOrder';
 
 type OptionItem = {
   key: string;
@@ -70,22 +71,9 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const { t } = useTranslation();
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
-  const RANDOM_GAME_ROUTES: string[] = [
-    'MissingLetters',
-    'MissingWords',
-    'WordsMatch',
-    'Translate',
-    'ChooseWord',
-    'ChooseTranslation',
-    'MemoryGame',
-    'HearingPractice',
-  ];
   const navigateToRandomNext = React.useCallback(() => {
-    const currentName = (route as any)?.name as string | undefined;
-    const choices = RANDOM_GAME_ROUTES.filter((n) => n !== currentName);
-    const target = choices[Math.floor(Math.random() * choices.length)] as string;
-    navigation.navigate(target as never, { surprise: true } as never);
-  }, [navigation, route]);
+    navigateToNextInShuffledOrder(navigation);
+  }, [navigation]);
   const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [allEntries, setAllEntries] = React.useState<WordEntry[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);

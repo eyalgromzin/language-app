@@ -12,6 +12,7 @@ import { useTranslation } from '../../../hooks/useTranslation';
 import { getTtsLangCode, playCorrectFeedback, playWrongFeedback } from '../common';
 import { WordEntry } from '../../../types/words';
 import CorrectAnswerDialogue from '../common/correctAnswerDialogue';
+import { navigateToNextInShuffledOrder } from '../common/surprisePracticeOrder';
 
 type PreparedItem = {
   entry: WordEntry;
@@ -145,26 +146,9 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const mode: Mode = (route?.params?.mode as Mode) || props.mode || 'word';
-  const RANDOM_GAME_ROUTES: string[] = [
-    'MissingLetters',
-    'MissingWords',
-    'WordsMatch',
-    'Translate',
-    'ChooseWord',
-    'ChooseTranslation',
-    'MemoryGame',
-    'HearingPractice',
-    'FormulateSentense',
-  ];
   const navigateToRandomNext = React.useCallback(() => {
-    const currentName = (route as any)?.name as string | undefined;
-    const choices = RANDOM_GAME_ROUTES.filter((n) => n !== currentName);
-    const target = choices[Math.floor(Math.random() * choices.length)] as string;
-    const params: any = { surprise: true };
-    if (target === 'Translate') params.mode = 'translation';
-    if (target === 'MissingLetters') params.mode = 'word';
-    navigation.navigate(target as never, params as never);
-  }, [navigation, route]);
+    navigateToNextInShuffledOrder(navigation);
+  }, [navigation]);
   const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [items, setItems] = React.useState<PreparedItem[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);

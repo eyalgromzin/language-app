@@ -12,6 +12,7 @@ import { useTranslation } from '../../../hooks/useTranslation';
 import { getBabySteps } from '../../../config/api';
 import { WordEntry } from '../../../types/words';
 import { useLanguageMappings } from '../../../contexts/LanguageMappingsContext';
+import { navigateToNextInShuffledOrder } from '../common/surprisePracticeOrder';
 
 type StepItem = {
   id: string;
@@ -99,23 +100,9 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const { languageMappings } = useLanguageMappings();
-  const RANDOM_GAME_ROUTES: string[] = [
-    'MissingLetters',
-    'MissingWords',
-    'WordsMatch',
-    'Translate',
-    'ChooseWord',
-    'ChooseTranslation',
-    'MemoryGame',
-    'HearingPractice',
-    'FormulateSentense',
-  ];
   const navigateToRandomNext = React.useCallback(() => {
-    const currentName = (route as any)?.name as string | undefined;
-    const choices = RANDOM_GAME_ROUTES.filter((n) => n !== currentName);
-    const target = choices[Math.floor(Math.random() * choices.length)] as string;
-    navigation.navigate(target as never, { surprise: true } as never);
-  }, [navigation, route]);
+    navigateToNextInShuffledOrder(navigation);
+  }, [navigation]);
 
   const [loading, setLoading] = React.useState<boolean>(props.embedded ? false : true);
   const [entries, setEntries] = React.useState<WordEntry[]>([]);
