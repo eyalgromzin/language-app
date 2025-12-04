@@ -6,6 +6,7 @@ type PracticeOption = {
 
 type Navigation = {
   navigate: (name: string, params?: any) => void;
+  replace: (name: string, params?: any) => void;
 };
 
 const PRACTICE_OPTIONS: PracticeOption[] = [
@@ -50,8 +51,10 @@ export function initializeShuffledOrder(): void {
 
 /**
  * Navigate to the next practice in the shuffled order
+ * @param navigation - Navigation object
+ * @param shouldReplace - If true, replaces current screen (prevents stack growth). If false, pushes new screen.
  */
-export function navigateToNextInShuffledOrder(navigation: Navigation): void {
+export function navigateToNextInShuffledOrder(navigation: Navigation, shouldReplace: boolean = true): void {
   // Ensure we have a shuffled order
   if (shuffledOrder.length === 0) {
     initializeShuffledOrder();
@@ -69,23 +72,26 @@ export function navigateToNextInShuffledOrder(navigation: Navigation): void {
     // Will reshuffle on next call to initializeShuffledOrder
   }
   
-  // Navigate to the selected practice
+  // Navigate or replace based on shouldReplace parameter
+  // Replace prevents stack growth when moving between practices in surprise mode
+  const navMethod = shouldReplace ? navigation.replace : navigation.navigate;
+  
   if (opt.key === 'missingLetters') {
-    navigation.navigate('MissingLetters', { surprise: true, mode: 'word' });
+    navMethod('MissingLetters', { surprise: true, mode: 'word' });
   } else if (opt.key === 'missingWords') {
-    navigation.navigate('MissingWords', { surprise: true });
+    navMethod('MissingWords', { surprise: true });
   } else if (opt.key === 'matchGame') {
-    navigation.navigate('WordsMatch', { surprise: true });
+    navMethod('WordsMatch', { surprise: true });
   } else if (opt.key === 'memoryGame') {
-    navigation.navigate('MemoryGame', { surprise: true });
+    navMethod('MemoryGame', { surprise: true });
   } else if (opt.key === 'translate') {
-    navigation.navigate('Translate', { surprise: true, mode: 'translation' });
+    navMethod('Translate', { surprise: true, mode: 'translation' });
   } else if (opt.key === 'chooseWord') {
-    navigation.navigate('ChooseWord', { surprise: true });
+    navMethod('ChooseWord', { surprise: true });
   } else if (opt.key === 'chooseTranslation') {
-    navigation.navigate('ChooseTranslation', { surprise: true });
+    navMethod('ChooseTranslation', { surprise: true });
   } else if (opt.key === 'hearing') {
-    navigation.navigate('HearingPractice', { surprise: true });
+    navMethod('HearingPractice', { surprise: true });
   }
 }
 

@@ -366,8 +366,8 @@ function PracticeScreen(): React.JSX.Element {
   const onSurprise = () => {
     // Initialize or reshuffle the practice order
     initializeShuffledOrder();
-    // Navigate to the next practice in the shuffled order
-    navigateToNextInShuffledOrder(navigation);
+    // Navigate to the next practice in the shuffled order (use navigate for first time, not replace)
+    navigateToNextInShuffledOrder(navigation, false);
   };
 
   return (
