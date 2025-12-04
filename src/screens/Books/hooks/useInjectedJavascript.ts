@@ -110,8 +110,14 @@ export function useInjectedJavascript(themeColors: ThemeColors): string {
           while (start > 0 && isWordChar(text[start - 1])) start--;
           let end = index;
           while (end < text.length && isWordChar(text[end])) end++;
-          const word = (text.slice(start, end) || '').trim();
-          if (!word) return null;
+          // Store original word boundaries for sentence computation
+          const wordStart = start;
+          const wordEnd = end;
+          // Expand by one character on each side
+          if (start > 0) start--;
+          if (end < text.length) end++;
+          const word = text.slice(start, end) || '';
+          if (!word.trim()) return null;
           // Perform highlight
           ensureHighlightStyle(doc);
           clearHighlights(doc);
@@ -128,14 +134,15 @@ export function useInjectedJavascript(themeColors: ThemeColors): string {
             span.appendChild(frag);
             highlightRange.insertNode(span);
           }
-          var sentence = computeSentenceFromText(text, start, end);
+          var sentence = computeSentenceFromText(text, wordStart, wordEnd);
           if (!sentence) {
             try {
               var el = (span.parentElement || null);
               while (el && el.innerText && el.innerText.trim().length < 1) el = el.parentElement;
               var blockText = el && el.innerText ? el.innerText : text;
-              var idx = blockText.toLowerCase().indexOf(word.toLowerCase());
-              if (idx >= 0) sentence = computeSentenceFromText(blockText, idx, idx + word.length);
+              var cleanWord = word.trim();
+              var idx = blockText.toLowerCase().indexOf(cleanWord.toLowerCase());
+              if (idx >= 0) sentence = computeSentenceFromText(blockText, idx, idx + cleanWord.length);
             } catch (e2) { sentence = ''; }
           }
           return { word: word, sentence: sentence };
@@ -178,9 +185,15 @@ export function useInjectedJavascript(themeColors: ThemeColors): string {
         while (start > 0 && isWordChar(text[start - 1])) start--;
         let end = index;
         while (end < text.length && isWordChar(text[end])) end++;
-        const word = text.slice(start, end).trim();
-        if (!word) return null;
-        var sentence = computeSentenceFromText(text, start, end);
+        // Store original word boundaries for sentence computation
+        const wordStart = start;
+        const wordEnd = end;
+        // Expand by one character on each side
+        if (start > 0) start--;
+        if (end < text.length) end++;
+        const word = text.slice(start, end) || '';
+        if (!word.trim()) return null;
+        var sentence = computeSentenceFromText(text, wordStart, wordEnd);
         return { word: word, sentence: sentence };
       }
 
