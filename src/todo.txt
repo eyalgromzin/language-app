@@ -12,7 +12,6 @@ Low priority (17 items)
   Performance optimizations
   Documentation gaps
 
-- book reader - many times the translation is bad , but then i pur capital letter and its becoming good
 
 - in book reader, it enable to scroll in book only after first swipe , need to fox !!
 
