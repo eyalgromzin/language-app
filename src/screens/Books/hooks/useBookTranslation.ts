@@ -33,8 +33,12 @@ export function useBookTranslation({
     // Remove spaces and special characters from the beginning and end
     // This removes punctuation and symbols while preserving letters and numbers (including Unicode)
     const cleanedWord = word.trim().replace(/^[\s\p{P}\p{S}]+|[\s\p{P}\p{S}]+$/gu, '').trim();
+    // Capitalize first letter for translation search
+    const capitalizedWord = cleanedWord.length > 0 
+      ? cleanedWord.charAt(0).toUpperCase() + cleanedWord.slice(1)
+      : cleanedWord;
     setTranslationPanel({ word: cleanedWord, translation: '', sentence, images: [], imagesLoading: true, translationLoading: true });
-    fetchTranslation(cleanedWord)
+    fetchTranslation(capitalizedWord)
       .then((translation) => {
         setTranslationPanel((prev) => (prev && prev.word === cleanedWord ? { ...prev, translation: translation || prev.translation, translationLoading: false } : prev));
       })
