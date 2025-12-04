@@ -33,10 +33,12 @@ function LibraryScreen(): React.JSX.Element {
   const [metaTypes, setMetaTypes] = React.useState<string[] | null>(null);
   const [metaLevels, setMetaLevels] = React.useState<string[] | null>(null);
   const [learningLanguage, setLearningLanguage] = React.useState<string | null>(null);
+  const [learningLanguageLoaded, setLearningLanguageLoaded] = React.useState<boolean>(false);
   const [searchQuery, setSearchQuery] = React.useState<string>('');
   const [showAddToFavouritesDialog, setShowAddToFavouritesDialog] = React.useState<boolean>(false);
   const [selectedItemForFavourites, setSelectedItemForFavourites] = React.useState<{ url: string; name?: string; type: string; level: string; media: string } | null>(null);
   const [favourites, setFavourites] = React.useState<FavouriteItem[]>([]);
+  const [initialLibraryLoaded, setInitialLibraryLoaded] = React.useState<boolean>(false);
 
 
 
@@ -48,9 +50,11 @@ function LibraryScreen(): React.JSX.Element {
         const value = await AsyncStorage.getItem('language.learning');
         if (!mounted) return;
         setLearningLanguage(value ?? null);
+        setLearningLanguageLoaded(true);
       } catch (error) {
         if (!mounted) return;
         setLearningLanguage(null);
+        setLearningLanguageLoaded(true);
       }
     })();
     return () => {
@@ -267,6 +271,8 @@ function LibraryScreen(): React.JSX.Element {
 
   // On tab change, fetch from server with empty media/level/type (only language)
   React.useEffect(() => {
+    if (!learningLanguageLoaded) return;
+    
     let isCancelled = false;
     const run = async () => {
       try {
@@ -276,10 +282,14 @@ function LibraryScreen(): React.JSX.Element {
         if (!isCancelled) {
           setUrls(list);
           setAllUrls(list);
+          setInitialLibraryLoaded(true);
         }
       } catch (e) {
         console.error('[Library] Error fetching URLs:', e);
-        if (!isCancelled) setError(t('screens.library.states.failedToLoad'));
+        if (!isCancelled) {
+          setError(t('screens.library.states.failedToLoad'));
+          setInitialLibraryLoaded(true); // Still mark as loaded even on error
+        }
       } finally {
         if (!isCancelled) setLoading(false);
       }
@@ -288,7 +298,7 @@ function LibraryScreen(): React.JSX.Element {
     return () => {
       isCancelled = true;
     };
-  }, [selectedMedia, toLanguageSymbol, learningLanguage]);
+  }, [selectedMedia, toLanguageSymbol, learningLanguage, learningLanguageLoaded]);
 
   // Close any open dropdowns when switching tabs
   React.useEffect(() => {
@@ -296,6 +306,14 @@ function LibraryScreen(): React.JSX.Element {
     setShowLevelDropdown(false);
   }, [selectedMedia]);
 
+
+  // Don't show the screen until learning language and initial library are loaded
+  // After initial load, show the screen even if loading (for filter/tab changes)
+  const isInitializing = !learningLanguageLoaded || !initialLibraryLoaded;
+  
+  if (isInitializing) {
+    return <LoadingState />;
+  }
 
   if (loading) {
     return <LoadingState />;
