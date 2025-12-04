@@ -402,8 +402,9 @@ function WordsByCategoriesScreen(): React.JSX.Element {
     try {
       // Check if word already exists
       const existingEntries = await readWordEntries();
+      const lowerSource = source.toLowerCase();
       const alreadyExists = existingEntries.some(
-        (it) => it && typeof it === 'object' && it.word === source && (it.sentence || '') === (sentenceSource || '')
+        (it) => it && typeof it === 'object' && it.word === lowerSource && (it.sentence || '') === (sentenceSource || '')
       );
       
       if (alreadyExists) {

@@ -31,7 +31,7 @@ export function createWordEntry(
   itemId?: string
 ): WordEntry {
   return {
-    word,
+    word: word.toLowerCase().trim(),
     translation,
     sentence: sentence || '',
     addedAt: new Date().toISOString(),
@@ -90,8 +90,9 @@ async function writeWordEntries(entries: WordEntry[]): Promise<void> {
  * Checks if a word entry already exists based on word and sentence
  */
 function wordExistsByWordAndSentence(entries: WordEntry[], word: string, sentence: string): boolean {
+  const lowerWord = word.toLowerCase();
   return entries.some(
-    (it) => it && typeof it === 'object' && it.word === word && (it.sentence || '') === (sentence || '')
+    (it) => it && typeof it === 'object' && it.word === lowerWord && (it.sentence || '') === (sentence || '')
   );
 }
 
@@ -99,8 +100,9 @@ function wordExistsByWordAndSentence(entries: WordEntry[], word: string, sentenc
  * Checks if a word entry already exists based on word and translation
  */
 function wordExistsByWordAndTranslation(entries: WordEntry[], word: string, translation: string): boolean {
+  const lowerWord = word.toLowerCase();
   return entries.some(
-    (it) => it && typeof it === 'object' && it.word === word && it.translation === translation
+    (it) => it && typeof it === 'object' && it.word === lowerWord && it.translation === translation
   );
 }
 
