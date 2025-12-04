@@ -12,8 +12,6 @@ Low priority (17 items)
   Performance optimizations
   Documentation gaps
 
-book reader - should take another letter to the left and right 
-
 upload app
 
 - publish app =======================================================================================================================
