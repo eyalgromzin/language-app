@@ -11,7 +11,7 @@
     "clean": "rimraf \"C:\\proj\\ll\\android\\app\\.cxx\" && cd android && .\\gradlew.bat clean",
     "start": "react-native start",
     "test": "jest",
-    "apk:release": "rimraf \"C:\\proj\\ll\\android\\app\\.cxx\" && node scripts/generateApk.js",
+    "apkaab:release": "rimraf \"C:\\proj\\ll\\android\\app\\.cxx\" && node scripts/generateApk.js",
     "setup-keystore": "node scripts/setupReleaseKeystore.js",
     "test-aab": "node scripts/testAppBundle.js",
     "icons": "node scripts/generateAppIcons.js",
