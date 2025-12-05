@@ -105,17 +105,54 @@ export function useInjectedJavascript(themeColors: ThemeColors): string {
           let index = range.startOffset;
           if (index < 0) index = 0;
           if (index > text.length) index = text.length;
-          const isWordChar = (ch) => /[A-Za-z0-9_''\-]/.test(ch);
+          // Regular characters: letters, numbers, apostrophes, hyphens, underscores
+          // A character is regular if it's alphanumeric or a common word-internal character
+          // Everything else (whitespace, punctuation, etc.) is considered special
+          const isRegularChar = (ch) => {
+            if (!ch) return false;
+            const code = ch.charCodeAt(0);
+            // ASCII word characters (A-Z, a-z, 0-9, _)
+            if ((code >= 48 && code <= 57) || // 0-9
+                (code >= 65 && code <= 90) ||  // A-Z
+                (code >= 97 && code <= 122) || // a-z
+                code === 95) { // _
+              return true;
+            }
+            // Common word-internal characters (apostrophes, hyphens)
+            if (code === 39 || code === 8217 || code === 8216 || // ' ' '
+                code === 45 || code === 8211 || code === 8212) { // - – —
+              return true;
+            }
+            // Unicode letters and numbers (common ranges)
+            // Exclude whitespace and common punctuation
+            if (code > 127) {
+              // Unicode whitespace characters
+              if (code === 160 || code === 8239 || code === 8203 || 
+                  (code >= 0x2000 && code <= 0x200B) || // Various spaces
+                  (code >= 0x2028 && code <= 0x2029)) { // Line/paragraph separators
+                return false;
+              }
+              // Unicode punctuation ranges
+              if ((code >= 0x2000 && code <= 0x206F) || // General Punctuation
+                  (code >= 0x2E00 && code <= 0x2E7F) || // Supplemental Punctuation
+                  (code >= 0x3000 && code <= 0x303F)) { // CJK Symbols and Punctuation
+                return false;
+              }
+              // If it's not obviously punctuation or whitespace, treat Unicode characters as regular
+              // This handles international letters and numbers
+              return true;
+            }
+            return false;
+          };
+          // Expand left until we hit a non-regular character
           let start = index;
-          while (start > 0 && isWordChar(text[start - 1])) start--;
+          while (start > 0 && isRegularChar(text[start - 1])) start--;
+          // Expand right until we hit a non-regular character
           let end = index;
-          while (end < text.length && isWordChar(text[end])) end++;
+          while (end < text.length && isRegularChar(text[end])) end++;
           // Store original word boundaries for sentence computation
           const wordStart = start;
           const wordEnd = end;
-          // Expand by one character on each side
-          if (start > 0) start--;
-          if (end < text.length) end++;
           const word = text.slice(start, end) || '';
           if (!word.trim()) return null;
           // Perform highlight
@@ -179,18 +216,54 @@ export function useInjectedJavascript(themeColors: ThemeColors): string {
         let index = range.startOffset;
         if (index < 0) index = 0;
         if (index > text.length) index = text.length;
-        // Simpler regex for broader WebView compatibility
-        const isWordChar = (ch) => /[A-Za-z0-9_''\-]/.test(ch);
+        // Regular characters: letters, numbers, apostrophes, hyphens, underscores
+        // A character is regular if it's alphanumeric or a common word-internal character
+        // Everything else (whitespace, punctuation, etc.) is considered special
+        const isRegularChar = (ch) => {
+          if (!ch) return false;
+          const code = ch.charCodeAt(0);
+          // ASCII word characters (A-Z, a-z, 0-9, _)
+          if ((code >= 48 && code <= 57) || // 0-9
+              (code >= 65 && code <= 90) ||  // A-Z
+              (code >= 97 && code <= 122) || // a-z
+              code === 95) { // _
+            return true;
+          }
+          // Common word-internal characters (apostrophes, hyphens)
+          if (code === 39 || code === 8217 || code === 8216 || // ' ' '
+              code === 45 || code === 8211 || code === 8212) { // - – —
+            return true;
+          }
+          // Unicode letters and numbers (common ranges)
+          // Exclude whitespace and common punctuation
+          if (code > 127) {
+            // Unicode whitespace characters
+            if (code === 160 || code === 8239 || code === 8203 || 
+                (code >= 0x2000 && code <= 0x200B) || // Various spaces
+                (code >= 0x2028 && code <= 0x2029)) { // Line/paragraph separators
+              return false;
+            }
+            // Unicode punctuation ranges
+            if ((code >= 0x2000 && code <= 0x206F) || // General Punctuation
+                (code >= 0x2E00 && code <= 0x2E7F) || // Supplemental Punctuation
+                (code >= 0x3000 && code <= 0x303F)) { // CJK Symbols and Punctuation
+              return false;
+            }
+            // If it's not obviously punctuation or whitespace, treat Unicode characters as regular
+            // This handles international letters and numbers
+            return true;
+          }
+          return false;
+        };
+        // Expand left until we hit a non-regular character
         let start = index;
-        while (start > 0 && isWordChar(text[start - 1])) start--;
+        while (start > 0 && isRegularChar(text[start - 1])) start--;
+        // Expand right until we hit a non-regular character
         let end = index;
-        while (end < text.length && isWordChar(text[end])) end++;
+        while (end < text.length && isRegularChar(text[end])) end++;
         // Store original word boundaries for sentence computation
         const wordStart = start;
         const wordEnd = end;
-        // Expand by one character on each side
-        if (start > 0) start--;
-        if (end < text.length) end++;
         const word = text.slice(start, end) || '';
         if (!word.trim()) return null;
         var sentence = computeSentenceFromText(text, wordStart, wordEnd);
