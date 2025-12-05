@@ -550,7 +550,7 @@ function WordsByCategoriesScreen(): React.JSX.Element {
               
               const title = getTextInLanguage(cat.name, SOURCE_LANGUAGE) || getTextInLanguage(cat.name, TARGET_LANGUAGE) || cat.id;
               const subtitle = getTextInLanguage(cat.name, SOURCE_LANGUAGE) && getTextInLanguage(cat.name, TARGET_LANGUAGE) && getTextInLanguage(cat.name, SOURCE_LANGUAGE) !== getTextInLanguage(cat.name, TARGET_LANGUAGE)
-                ? `${getTextInLanguage(cat.name, SOURCE_LANGUAGE)} • ${getTextInLanguage(cat.name, TARGET_LANGUAGE)}`
+                ? `${getTextInLanguage(cat.name, TARGET_LANGUAGE)}`
                 : undefined;
               return (
                 <Animated.View
