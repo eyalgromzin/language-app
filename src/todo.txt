@@ -13,7 +13,6 @@ Low priority (17 items)
   Documentation gaps
 
 
-- try to make word selection better in book reader 
 - in book reader, it enable to scroll in book only after first swipe , need to fox !!
 
 - publish app =======================================================================================================================
