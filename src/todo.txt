@@ -14,6 +14,7 @@ Low priority (17 items)
 
 
 - in book reader, it enable to scroll in book only after first swipe , need to fox !!
+- my words - change number to progress bar  
 
 - publish app =======================================================================================================================
 
