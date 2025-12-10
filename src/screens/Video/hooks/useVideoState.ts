@@ -1,5 +1,5 @@
 import React from 'react';
-import type { YoutubeIframeRef } from '../../../components/react-native-youtube-iframe-local';
+import type { YoutubeIframeRef } from 'react-native-youtube-iframe';
 import { extractYouTubeVideoId } from '../videoMethods';
 
 export const useVideoState = () => {

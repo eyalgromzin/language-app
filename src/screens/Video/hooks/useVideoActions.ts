@@ -1,7 +1,7 @@
 import React from 'react';
 import { extractYouTubeVideoId, fetchYouTubeTitleById, getVideoTranscript } from '../videoMethods';
 import { upsertVideoNowPlaying } from '../../../config/api';
-import type { YoutubeIframeRef } from '../../../components/react-native-youtube-iframe-local';
+import type { YoutubeIframeRef } from 'react-native-youtube-iframe';
 import type { TranscriptSegment } from './useVideoTranscript';
 
 type UseVideoActionsOptions = {
