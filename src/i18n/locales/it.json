@@ -388,6 +388,22 @@
         "openLibrary": "Apri Biblioteca",
         "moreOptions": "Altre opzioni"
       }
+    },
+    "babyStepsPath": {
+      "title": "Percorso di Apprendimento",
+      "subtitle": "Padroneggia la tua lingua passo dopo passo",
+      "progress": "Progresso",
+      "completed": "completati",
+      "of": "di",
+      "loading": "Caricamento del tuo percorso di apprendimento...",
+      "noSteps": "Nessun passo di apprendimento disponibile al momento.",
+      "clearProgress": "Cancella Progresso",
+      "clearProgressMessage": "Sei sicuro di voler cancellare tutti i tuoi progressi dei primi passi? Questa azione non può essere annullata.",
+      "cancel": "Annulla",
+      "progressCleared": "Progresso Cancellato",
+      "progressClearedMessage": "I tuoi progressi dei primi passi sono stati cancellati con successo.",
+      "error": "Errore",
+      "clearProgressError": "Impossibile cancellare il progresso. Riprova."
     }
   },
   "common": {

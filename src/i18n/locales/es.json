@@ -386,6 +386,22 @@
         "openLibrary": "Abrir Biblioteca",
         "moreOptions": "Más opciones"
       }
+    },
+    "babyStepsPath": {
+      "title": "Viaje de Aprendizaje",
+      "subtitle": "Domina tu idioma paso a paso",
+      "progress": "Progreso",
+      "completed": "completados",
+      "of": "de",
+      "loading": "Cargando tu viaje de aprendizaje...",
+      "noSteps": "No hay pasos de aprendizaje disponibles en este momento.",
+      "clearProgress": "Borrar Progreso",
+      "clearProgressMessage": "¿Estás seguro de que quieres borrar todo tu progreso de primeros pasos? Esta acción no se puede deshacer.",
+      "cancel": "Cancelar",
+      "progressCleared": "Progreso Borrado",
+      "progressClearedMessage": "Tu progreso de primeros pasos se ha borrado exitosamente.",
+      "error": "Error",
+      "clearProgressError": "No se pudo borrar el progreso. Por favor, inténtalo de nuevo."
     }
   },
   "common": {

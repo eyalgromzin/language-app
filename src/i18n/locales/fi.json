@@ -388,6 +388,22 @@
         "openLibrary": "Avaa Kirjasto",
         "moreOptions": "Lisää vaihtoehtoja"
       }
+    },
+    "babyStepsPath": {
+      "title": "Oppimismatka",
+      "subtitle": "Hallitse kielesi askel askeleelta",
+      "progress": "Edistyminen",
+      "completed": "valmistunut",
+      "of": "/",
+      "loading": "Ladataan oppimismatkaasi...",
+      "noSteps": "Ei saatavilla olevia oppimisaskeleita tällä hetkellä.",
+      "clearProgress": "Tyhjennä Edistyminen",
+      "clearProgressMessage": "Oletko varma, että haluat tyhjentää kaikki ensimmäisten askelten edistymisesi? Tätä toimintoa ei voi kumota.",
+      "cancel": "Peruuta",
+      "progressCleared": "Edistyminen Tyhjennetty",
+      "progressClearedMessage": "Ensimmäisten askelten edistymisesi on tyhjennetty onnistuneesti.",
+      "error": "Virhe",
+      "clearProgressError": "Edistymisen tyhjentäminen epäonnistui. Yritä uudelleen."
     }
   },
   "common": {

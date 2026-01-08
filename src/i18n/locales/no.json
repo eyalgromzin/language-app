@@ -388,6 +388,22 @@
         "openLibrary": "Åpne Bibliotek",
         "moreOptions": "Flere alternativer"
       }
+    },
+    "babyStepsPath": {
+      "title": "Læringsreisen",
+      "subtitle": "Mestre språket ditt steg for steg",
+      "progress": "Fremgang",
+      "completed": "fullført",
+      "of": "av",
+      "loading": "Laster din læringsreise...",
+      "noSteps": "Ingen læringstrinn er tilgjengelige for øyeblikket.",
+      "clearProgress": "Tøm Fremgang",
+      "clearProgressMessage": "Er du sikker på at du vil tømme all fremgang fra de første trinnene? Denne handlingen kan ikke angres.",
+      "cancel": "Avbryt",
+      "progressCleared": "Fremgang Tømt",
+      "progressClearedMessage": "Din fremgang fra de første trinnene er tømt vellykket.",
+      "error": "Feil",
+      "clearProgressError": "Kunne ikke tømme fremgang. Vennligst prøv igjen."
     }
   },
   "common": {

@@ -389,6 +389,22 @@
         "openLibrary": "Bibliothek Öffnen",
         "moreOptions": "Weitere Optionen"
       }
+    },
+    "babyStepsPath": {
+      "title": "Lernreise",
+      "subtitle": "Meistern Sie Ihre Sprache Schritt für Schritt",
+      "progress": "Fortschritt",
+      "completed": "abgeschlossen",
+      "of": "von",
+      "loading": "Lade deine Lernreise...",
+      "noSteps": "Momentan sind keine Lernschritte verfügbar.",
+      "clearProgress": "Fortschritt Löschen",
+      "clearProgressMessage": "Bist du sicher, dass du deinen gesamten Fortschritt bei den ersten Schritten löschen möchtest? Diese Aktion kann nicht rückgängig gemacht werden.",
+      "cancel": "Abbrechen",
+      "progressCleared": "Fortschritt Gelöscht",
+      "progressClearedMessage": "Dein Fortschritt bei den ersten Schritten wurde erfolgreich gelöscht.",
+      "error": "Fehler",
+      "clearProgressError": "Das Löschen des Fortschritts ist fehlgeschlagen. Bitte versuche es erneut."
     }
   },
   "common": {

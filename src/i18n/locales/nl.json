@@ -388,6 +388,22 @@
         "openLibrary": "Bibliotheek Openen",
         "moreOptions": "Meer opties"
       }
+    },
+    "babyStepsPath": {
+      "title": "Leerreis",
+      "subtitle": "Beheers je taal stap voor stap",
+      "progress": "Voortgang",
+      "completed": "voltooid",
+      "of": "van",
+      "loading": "Je leerreis wordt geladen...",
+      "noSteps": "Momenteel zijn er geen leerstappen beschikbaar.",
+      "clearProgress": "Voortgang Wissen",
+      "clearProgressMessage": "Weet je zeker dat je al je voortgang van de eerste stappen wilt wissen? Deze actie kan niet ongedaan worden gemaakt.",
+      "cancel": "Annuleren",
+      "progressCleared": "Voortgang Gewist",
+      "progressClearedMessage": "Je voortgang van de eerste stappen is succesvol gewist.",
+      "error": "Fout",
+      "clearProgressError": "Kon voortgang niet wissen. Probeer het opnieuw."
     }
   },
   "common": {

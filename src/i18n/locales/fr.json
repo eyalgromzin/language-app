@@ -389,6 +389,22 @@
         "openLibrary": "Ouvrir la Bibliothèque",
         "moreOptions": "Plus d'options"
       }
+    },
+    "babyStepsPath": {
+      "title": "Parcours d'Apprentissage",
+      "subtitle": "Maîtrisez votre langue pas à pas",
+      "progress": "Progrès",
+      "completed": "terminés",
+      "of": "sur",
+      "loading": "Chargement de votre parcours d'apprentissage...",
+      "noSteps": "Aucune étape d'apprentissage disponible pour le moment.",
+      "clearProgress": "Effacer les Progrès",
+      "clearProgressMessage": "Êtes-vous sûr de vouloir effacer tous vos progrès des premiers pas ? Cette action ne peut pas être annulée.",
+      "cancel": "Annuler",
+      "progressCleared": "Progrès Effacés",
+      "progressClearedMessage": "Vos progrès des premiers pas ont été effacés avec succès.",
+      "error": "Erreur",
+      "clearProgressError": "Échec de l'effacement des progrès. Veuillez réessayer."
     }
   },
   "common": {

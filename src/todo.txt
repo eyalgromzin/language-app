@@ -14,6 +14,8 @@ Low priority (17 items)
 
 - on first load , set app to be same as system language 
 
+- auto fill the native language to be like the phones , but enable the user to change it 
+
 - check hebrew support - and rtl 
     - formulate sentense - the words are the opposite order 
 

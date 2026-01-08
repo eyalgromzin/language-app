@@ -409,6 +409,22 @@
         "openLibrary": "Open Library",
         "moreOptions": "More options"
       }
+    },
+    "babyStepsPath": {
+      "title": "Learning Journey",
+      "subtitle": "Master your language step by step",
+      "progress": "Progress",
+      "completed": "completed",
+      "of": "of",
+      "loading": "Loading your learning journey...",
+      "noSteps": "No learning steps available at the moment.",
+      "clearProgress": "Clear Progress",
+      "clearProgressMessage": "Are you sure you want to clear all your baby steps progress? This action cannot be undone.",
+      "cancel": "Cancel",
+      "progressCleared": "Progress Cleared",
+      "progressClearedMessage": "Your baby steps progress has been cleared successfully.",
+      "error": "Error",
+      "clearProgressError": "Failed to clear progress. Please try again."
     }
   },
   "common": {

@@ -388,6 +388,22 @@
         "openLibrary": "Abrir Biblioteca",
         "moreOptions": "Mais opções"
       }
+    },
+    "babyStepsPath": {
+      "title": "Jornada de Aprendizagem",
+      "subtitle": "Domine seu idioma passo a passo",
+      "progress": "Progresso",
+      "completed": "concluídos",
+      "of": "de",
+      "loading": "Carregando sua jornada de aprendizagem...",
+      "noSteps": "Nenhum passo de aprendizagem disponível no momento.",
+      "clearProgress": "Limpar Progresso",
+      "clearProgressMessage": "Tem certeza de que deseja limpar todo o seu progresso dos primeiros passos? Esta ação não pode ser desfeita.",
+      "cancel": "Cancelar",
+      "progressCleared": "Progresso Limpo",
+      "progressClearedMessage": "Seu progresso dos primeiros passos foi limpo com sucesso.",
+      "error": "Erro",
+      "clearProgressError": "Falha ao limpar o progresso. Por favor, tente novamente."
     }
   },
   "common": {

@@ -388,6 +388,22 @@
         "openLibrary": "Öppna Bibliotek",
         "moreOptions": "Fler alternativ"
       }
+    },
+    "babyStepsPath": {
+      "title": "Läranderesan",
+      "subtitle": "Bemästra ditt språk steg för steg",
+      "progress": "Framsteg",
+      "completed": "slutförda",
+      "of": "av",
+      "loading": "Laddar din läranderesa...",
+      "noSteps": "Inga lärandesteg är tillgängliga för tillfället.",
+      "clearProgress": "Rensa Framsteg",
+      "clearProgressMessage": "Är du säker på att du vill rensa alla dina framsteg från de första stegen? Denna åtgärd kan inte ångras.",
+      "cancel": "Avbryt",
+      "progressCleared": "Framsteg Rensade",
+      "progressClearedMessage": "Dina framsteg från de första stegen har rensats framgångsrikt.",
+      "error": "Fel",
+      "clearProgressError": "Misslyckades med att rensa framsteg. Vänligen försök igen."
     }
   },
   "common": {

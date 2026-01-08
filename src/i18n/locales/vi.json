@@ -388,6 +388,22 @@
         "openLibrary": "Mở Thư Viện",
         "moreOptions": "Thêm tùy chọn"
       }
+    },
+    "babyStepsPath": {
+      "title": "Hành Trình Học Tập",
+      "subtitle": "Thành thạo ngôn ngữ của bạn từng bước một",
+      "progress": "Tiến Độ",
+      "completed": "hoàn thành",
+      "of": "trên",
+      "loading": "Đang tải hành trình học tập của bạn...",
+      "noSteps": "Hiện tại không có bước học tập nào khả dụng.",
+      "clearProgress": "Xóa Tiến Độ",
+      "clearProgressMessage": "Bạn có chắc chắn muốn xóa tất cả tiến độ các bước đầu tiên không? Hành động này không thể hoàn tác.",
+      "cancel": "Hủy",
+      "progressCleared": "Đã Xóa Tiến Độ",
+      "progressClearedMessage": "Tiến độ các bước đầu tiên của bạn đã được xóa thành công.",
+      "error": "Lỗi",
+      "clearProgressError": "Không thể xóa tiến độ. Vui lòng thử lại."
     }
   },
   "common": {

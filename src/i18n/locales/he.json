@@ -403,6 +403,22 @@
         "openLibrary": "פתח ספרייה",
         "moreOptions": "אפשרויות נוספות"
       }
+    },
+    "babyStepsPath": {
+      "title": "מסע הלמידה",
+      "subtitle": "שלוט בשפה שלך צעד אחר צעד",
+      "progress": "התקדמות",
+      "completed": "הושלמו",
+      "of": "מתוך",
+      "loading": "טוען את מסע הלמידה שלך...",
+      "noSteps": "אין צעדי למידה זמינים כרגע.",
+      "clearProgress": "נקה התקדמות",
+      "clearProgressMessage": "האם אתה בטוח שברצונך למחוק את כל ההתקדמות שלך בצעדים הראשונים? לא ניתן לבטל פעולה זו.",
+      "cancel": "ביטול",
+      "progressCleared": "ההתקדמות נוקתה",
+      "progressClearedMessage": "ההתקדמות שלך בצעדים הראשונים נוקתה בהצלחה.",
+      "error": "שגיאה",
+      "clearProgressError": "נכשל בניקוי ההתקדמות. אנא נסה שוב."
     }
   },
   "common": {

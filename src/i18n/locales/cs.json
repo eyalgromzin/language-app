@@ -388,6 +388,22 @@
         "openLibrary": "Otevřít Knihovnu",
         "moreOptions": "Další možnosti"
       }
+    },
+    "babyStepsPath": {
+      "title": "Cesta Učení",
+      "subtitle": "Ovládněte svůj jazyk krok za krokem",
+      "progress": "Pokrok",
+      "completed": "dokončeno",
+      "of": "z",
+      "loading": "Načítání vaší cesty učení...",
+      "noSteps": "V tuto chvíli nejsou k dispozici žádné kroky učení.",
+      "clearProgress": "Vymazat Pokrok",
+      "clearProgressMessage": "Opravdu chcete vymazat veškerý pokrok prvních kroků? Tuto akci nelze vrátit zpět.",
+      "cancel": "Zrušit",
+      "progressCleared": "Pokrok Vymazán",
+      "progressClearedMessage": "Váš pokrok prvních kroků byl úspěšně vymazán.",
+      "error": "Chyba",
+      "clearProgressError": "Nepodařilo se vymazat pokrok. Zkuste to prosím znovu."
     }
   },
   "common": {

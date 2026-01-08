@@ -388,6 +388,22 @@
         "openLibrary": "Otwórz Bibliotekę",
         "moreOptions": "Więcej opcji"
       }
+    },
+    "babyStepsPath": {
+      "title": "Podróż Nauczania",
+      "subtitle": "Opanuj swój język krok po kroku",
+      "progress": "Postęp",
+      "completed": "ukończonych",
+      "of": "z",
+      "loading": "Ładowanie twojej podróży nauczania...",
+      "noSteps": "W tej chwili nie ma dostępnych kroków nauczania.",
+      "clearProgress": "Wyczyść Postęp",
+      "clearProgressMessage": "Czy na pewno chcesz wyczyścić cały postęp pierwszych kroków? Ta akcja nie może zostać cofnięta.",
+      "cancel": "Anuluj",
+      "progressCleared": "Postęp Wyczyszczony",
+      "progressClearedMessage": "Twój postęp pierwszych kroków został pomyślnie wyczyszczony.",
+      "error": "Błąd",
+      "clearProgressError": "Nie udało się wyczyścić postępu. Spróbuj ponownie."
     }
   },
   "common": {

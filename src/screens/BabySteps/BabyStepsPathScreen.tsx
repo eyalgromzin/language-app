@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimen
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { Svg, Path, Circle, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useTranslation } from 'react-i18next';
 import { getLangCode } from '../../utils/translation';
 import { getBabySteps } from '../../config/api';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
@@ -26,6 +27,7 @@ const V_SPACING = 42;
 const CONTENT_PADDING = 16;
 
 function BabyStepsPathScreen(): React.JSX.Element {
+  const { t } = useTranslation();
   const isDark = useColorScheme() === 'dark';
   const [steps, setSteps] = React.useState<StepItem[] | null>(null);
   const [loading, setLoading] = React.useState<boolean>(true);
@@ -369,15 +371,15 @@ function BabyStepsPathScreen(): React.JSX.Element {
       const code = getLangCode(learningName, languageMappings) || 'en';
       
       Alert.alert(
-        'Clear Progress',
-        'Are you sure you want to clear all your baby steps progress? This action cannot be undone.',
+        t('screens.babyStepsPath.clearProgress'),
+        t('screens.babyStepsPath.clearProgressMessage'),
         [
           {
-            text: 'Cancel',
+            text: t('screens.babyStepsPath.cancel'),
             style: 'cancel',
           },
           {
-            text: 'Clear Progress',
+            text: t('screens.babyStepsPath.clearProgress'),
             style: 'destructive',
             onPress: async () => {
               try {
@@ -386,10 +388,10 @@ function BabyStepsPathScreen(): React.JSX.Element {
                 setCompletedSteps(new Set());
                 
                 // Show success message
-                Alert.alert('Progress Cleared', 'Your baby steps progress has been cleared successfully.');
+                Alert.alert(t('screens.babyStepsPath.progressCleared'), t('screens.babyStepsPath.progressClearedMessage'));
               } catch (error) {
                 console.error('Error clearing progress:', error);
-                Alert.alert('Error', 'Failed to clear progress. Please try again.');
+                Alert.alert(t('screens.babyStepsPath.error'), t('screens.babyStepsPath.clearProgressError'));
               }
             },
           },
@@ -397,7 +399,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
       );
     } catch (error) {
       console.error('Error getting language code:', error);
-      Alert.alert('Error', 'Failed to clear progress. Please try again.');
+      Alert.alert(t('screens.babyStepsPath.error'), t('screens.babyStepsPath.clearProgressError'));
     }
   };
 
@@ -411,7 +413,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
             color={isDark ? '#3b82f6' : '#3b82f6'} 
           />
           <Text style={[styles.loadingText, { color: isDark ? '#f1f5f9' : '#1e293b' }]}>
-            Loading your learning journey...
+            {t('screens.babyStepsPath.loading')}
           </Text>
         </View>
       </SafeAreaView>
@@ -431,7 +433,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
       <SafeAreaView style={[styles.safeArea, { backgroundColor: isDark ? '#0a0a0a' : '#f8fafc' }]}>
         <View style={styles.centerFill}>
           <Text style={[styles.infoText, { color: isDark ? '#94a3b8' : '#64748b' }]}>
-            No learning steps available at the moment.
+            {t('screens.babyStepsPath.noSteps')}
           </Text>
         </View>
       </SafeAreaView>
@@ -600,21 +602,21 @@ function BabyStepsPathScreen(): React.JSX.Element {
                 <View style={styles.titleRow}>
                   <Text style={styles.stepsIcon}>👣</Text>
                   <Text style={[styles.headerTitle, { color: isDark ? '#f8fafc' : '#1e293b' }]}>
-                    Learning Journey
+                    {t('screens.babyStepsPath.title')}
                   </Text>
                 </View>
                 <Text style={[styles.headerSubtitle, { color: isDark ? '#94a3b8' : '#64748b' }]}>
-                  Master your language step by step
+                  {t('screens.babyStepsPath.subtitle')}
                 </Text>
               </View>
               {steps && steps.length > 0 && (
                 <View style={styles.progressContainer}>
                   <View style={styles.progressHeader}>
                     <Text style={[styles.progressLabel, { color: isDark ? '#cbd5e1' : '#475569' }]}>
-                      Progress
+                      {t('screens.babyStepsPath.progress')}
                     </Text>
                     <Text style={[styles.progressText, { color: isDark ? '#94a3b8' : '#64748b' }]}>
-                      {completedSteps.size} of {steps.length} completed
+                      {completedSteps.size} {t('screens.babyStepsPath.of')} {steps.length} {t('screens.babyStepsPath.completed')}
                     </Text>
                   </View>
                   <View style={[
