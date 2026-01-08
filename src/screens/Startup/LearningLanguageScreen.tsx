@@ -6,6 +6,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from 'react-i18next';
 
 type OnboardingStackParamList = {
   LearningLanguage: undefined;
@@ -20,6 +21,7 @@ function LearningLanguageScreen({ navigation }: Props): React.JSX.Element {
   const { languageMappings, isLoading: languagesLoading } = useLanguageMappings();
   const { learningLanguage, setLearningLanguage } = useLanguage();
   const [selectedLanguage, setSelectedLanguage] = React.useState<string>('');
+  const { t } = useTranslation();
 
   const onContinue = async () => {
     if (!selectedLanguage) {
@@ -51,8 +53,8 @@ function LearningLanguageScreen({ navigation }: Props): React.JSX.Element {
           <View style={styles.logoContainer}>
             <Ionicons name="language" size={48} color="#007AFF" />
           </View>
-          <Text style={styles.loadingTitle}>HelloLingo</Text>
-          <Text style={styles.loadingSubtitle}>Loading available languages...</Text>
+          <Text style={styles.loadingTitle}>{t('screens.home.title')}</Text>
+          <Text style={styles.loadingSubtitle}>{t('screens.startup.loadingLanguages')}</Text>
         </View>
       </View>
     );
@@ -65,25 +67,25 @@ function LearningLanguageScreen({ navigation }: Props): React.JSX.Element {
         <View style={styles.logoContainer}>
           <Ionicons name="globe-outline" size={40} color="#007AFF" />
         </View>
-        <Text style={styles.title}>Choose Your Learning Language</Text>
-        <Text style={styles.subtitle}>Which language would you like to learn?</Text>
+        <Text style={styles.title}>{t('screens.startup.learningLanguageScreen.title')}</Text>
+        <Text style={styles.subtitle}>{t('screens.startup.whichLanguageToLearn')}</Text>
       </View>
 
       {/* Language Selection Section */}
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Ionicons name="book-outline" size={20} color="#007AFF" />
-          <Text style={styles.sectionTitle}>Learning Language</Text>
+          <Text style={styles.sectionTitle}>{t('screens.settings.learningLanguage')}</Text>
         </View>
         
         <View style={styles.pickerBlock}>
-          <Text style={styles.label}>Select the language you want to learn</Text>
+          <Text style={styles.label}>{t('screens.startup.learningLanguageScreen.selectLearningLanguage')}</Text>
           <View style={styles.pickerWrapper}>
             <Picker
               selectedValue={selectedLanguage}
               onValueChange={handleLanguageChange}
             >
-              <Picker.Item label="Choose a language..." value="" />
+              <Picker.Item label={t('screens.startup.selectLanguage')} value="" />
               {Object.keys(languageMappings).map((lang) => (
                 <Picker.Item key={lang} label={lang} value={lang} />
               ))}
@@ -99,9 +101,9 @@ function LearningLanguageScreen({ navigation }: Props): React.JSX.Element {
           onPress={onContinue}
           disabled={!selectedLanguage}
           accessibilityRole="button"
-          accessibilityLabel="Continue to native language selection"
+          accessibilityLabel={t('screens.startup.learningLanguageScreen.accessibility.continueToNativeSelection')}
         >
-          <Text style={styles.continueButtonText}>Continue</Text>
+          <Text style={styles.continueButtonText}>{t('common.continue')}</Text>
           <Ionicons name="arrow-forward" size={20} color="white" style={styles.buttonIcon} />
         </Pressable>
       </View>

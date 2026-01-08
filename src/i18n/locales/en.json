@@ -50,6 +50,22 @@
       "loadingLanguages": "Loading available languages...",
       "loadingLanguageOptions": "Loading language options...",
       "noLanguagesAvailable": "No languages available",
+      "learningLanguageScreen": {
+        "title": "Choose Your Learning Language",
+        "selectLearningLanguage": "Select the language you want to learn",
+        "accessibility": {
+          "continueToNativeSelection": "Continue to native language selection"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Your Native Language",
+        "subtitle": "What is your native or primary language?",
+        "selectNativeLanguage": "Select your native language",
+        "accessibility": {
+          "goBackToLearningSelection": "Go back to learning language selection",
+          "continueToPracticeSettings": "Continue to practice settings"
+        }
+      },
       "welcomeScreen": {
         "title": "Welcome to HelloLingo!",
         "subtitle": "Your personal language learning companion",

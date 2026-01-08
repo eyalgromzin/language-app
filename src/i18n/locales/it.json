@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Impossibile salvare le preferenze. Riprova.",
       "loadingLanguages": "Caricamento lingue disponibili...",
       "loadingLanguageOptions": "Caricamento opzioni lingua...",
-      "noLanguagesAvailable": "Nessuna lingua disponibile"
+      "noLanguagesAvailable": "Nessuna lingua disponibile",
+      "learningLanguageScreen": {
+        "title": "Scegli la tua lingua di apprendimento",
+        "selectLearningLanguage": "Seleziona la lingua che vuoi imparare",
+        "accessibility": {
+          "continueToNativeSelection": "Continua alla selezione della lingua madre"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "La tua lingua madre",
+        "subtitle": "Qual è la tua lingua madre o principale?",
+        "selectNativeLanguage": "Seleziona la tua lingua madre",
+        "accessibility": {
+          "goBackToLearningSelection": "Torna alla selezione della lingua di apprendimento",
+          "continueToPracticeSettings": "Continua alle impostazioni di pratica"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Cerca...",

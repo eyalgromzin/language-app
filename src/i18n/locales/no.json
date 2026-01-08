@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Kunne ikke lagre preferanser. Vennligst prøv igjen.",
       "loadingLanguages": "Laster tilgjengelige språk...",
       "loadingLanguageOptions": "Laster språkalternativer...",
-      "noLanguagesAvailable": "Ingen språk tilgjengelig"
+      "noLanguagesAvailable": "Ingen språk tilgjengelig",
+      "learningLanguageScreen": {
+        "title": "Velg læringsspråket ditt",
+        "selectLearningLanguage": "Velg språket du vil lære",
+        "accessibility": {
+          "continueToNativeSelection": "Fortsett til valg av morsmål"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Ditt morsmål",
+        "subtitle": "Hva er ditt morsmål eller hovedspråk?",
+        "selectNativeLanguage": "Velg ditt morsmål",
+        "accessibility": {
+          "goBackToLearningSelection": "Gå tilbake til valg av læringsspråk",
+          "continueToPracticeSettings": "Fortsett til øvingsinnstillinger"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Søk...",

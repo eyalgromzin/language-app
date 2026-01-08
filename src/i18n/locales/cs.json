@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Nepodařilo se uložit předvolby. Zkuste to prosím znovu.",
       "loadingLanguages": "Načítání dostupných jazyků...",
       "loadingLanguageOptions": "Načítání jazykových možností...",
-      "noLanguagesAvailable": "Žádné jazyky nejsou dostupné"
+      "noLanguagesAvailable": "Žádné jazyky nejsou dostupné",
+      "learningLanguageScreen": {
+        "title": "Zvolte svůj jazyk učení",
+        "selectLearningLanguage": "Vyberte jazyk, který chcete studovat",
+        "accessibility": {
+          "continueToNativeSelection": "Pokračovat na výběr rodného jazyka"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Váš rodný jazyk",
+        "subtitle": "Jaký je váš rodný nebo hlavní jazyk?",
+        "selectNativeLanguage": "Vyberte svůj rodný jazyk",
+        "accessibility": {
+          "goBackToLearningSelection": "Zpět na výběr jazyka učení",
+          "continueToPracticeSettings": "Pokračovat na nastavení procvičování"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Hledat...",

@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Fehler beim Speichern der Einstellungen. Bitte versuchen Sie es erneut.",
       "loadingLanguages": "Verfügbare Sprachen werden geladen...",
       "loadingLanguageOptions": "Sprachoptionen werden geladen...",
-      "noLanguagesAvailable": "Keine Sprachen verfügbar"
+      "noLanguagesAvailable": "Keine Sprachen verfügbar",
+      "learningLanguageScreen": {
+        "title": "Wähle deine Lernsprache",
+        "selectLearningLanguage": "Wähle die Sprache, die du lernen möchtest",
+        "accessibility": {
+          "continueToNativeSelection": "Weiter zur Auswahl der Muttersprache"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Deine Muttersprache",
+        "subtitle": "Was ist deine Mutter- oder Hauptsprache?",
+        "selectNativeLanguage": "Wähle deine Muttersprache",
+        "accessibility": {
+          "goBackToLearningSelection": "Zurück zur Auswahl der Lernsprache",
+          "continueToPracticeSettings": "Weiter zu den Übungseinstellungen"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Suchen...",

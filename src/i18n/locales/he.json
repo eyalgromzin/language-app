@@ -50,6 +50,22 @@
       "loadingLanguages": "טוען שפות זמינות...",
       "loadingLanguageOptions": "טוען אפשרויות שפה...",
       "noLanguagesAvailable": "אין שפות זמינות",
+      "learningLanguageScreen": {
+        "title": "בחר את שפת הלמידה שלך",
+        "selectLearningLanguage": "בחר את השפה שברצונך ללמוד",
+        "accessibility": {
+          "continueToNativeSelection": "המשך לבחירת שפת אם"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "שפת האם שלך",
+        "subtitle": "מהי שפת האם או השפה הראשית שלך?",
+        "selectNativeLanguage": "בחר את שפת האם שלך",
+        "accessibility": {
+          "goBackToLearningSelection": "חזור לבחירת שפת הלמידה",
+          "continueToPracticeSettings": "המשך להגדרות תרגול"
+        }
+      },
       "welcomeScreen": {
         "title": "ברוכים הבאים ל-HelloLingo!",
         "subtitle": "בן הזוג האישי שלכם ללמידת שפות",

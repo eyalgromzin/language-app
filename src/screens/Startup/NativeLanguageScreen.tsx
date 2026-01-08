@@ -6,6 +6,7 @@ import { useLanguageMappings } from '../../contexts/LanguageMappingsContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useTranslation } from 'react-i18next';
 
 type OnboardingStackParamList = {
   LearningLanguage: undefined;
@@ -20,6 +21,7 @@ function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
   const { languageMappings, isLoading: languagesLoading } = useLanguageMappings();
   const { nativeLanguage, setNativeLanguage } = useLanguage();
   const [selectedLanguage, setSelectedLanguage] = React.useState<string>('');
+  const { t } = useTranslation();
 
   const onContinue = async () => {
     if (!selectedLanguage) {
@@ -55,8 +57,8 @@ function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
           <View style={styles.logoContainer}>
             <Ionicons name="language" size={48} color="#007AFF" />
           </View>
-          <Text style={styles.loadingTitle}>HelloLingo</Text>
-          <Text style={styles.loadingSubtitle}>Loading available languages...</Text>
+          <Text style={styles.loadingTitle}>{t('screens.home.title')}</Text>
+          <Text style={styles.loadingSubtitle}>{t('screens.startup.loadingLanguages')}</Text>
         </View>
       </View>
     );
@@ -69,25 +71,25 @@ function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
         <View style={styles.logoContainer}>
           <Ionicons name="person-outline" size={40} color="#007AFF" />
         </View>
-        <Text style={styles.title}>Your Native Language</Text>
-        <Text style={styles.subtitle}>What is your native or primary language?</Text>
+        <Text style={styles.title}>{t('screens.startup.nativeLanguageScreen.title')}</Text>
+        <Text style={styles.subtitle}>{t('screens.startup.nativeLanguageScreen.subtitle')}</Text>
       </View>
 
       {/* Language Selection Section */}
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Ionicons name="home-outline" size={20} color="#007AFF" />
-          <Text style={styles.sectionTitle}>Native Language</Text>
+          <Text style={styles.sectionTitle}>{t('screens.settings.nativeLanguage')}</Text>
         </View>
         
         <View style={styles.pickerBlock}>
-          <Text style={styles.label}>Select your native language</Text>
+          <Text style={styles.label}>{t('screens.startup.nativeLanguageScreen.selectNativeLanguage')}</Text>
           <View style={styles.pickerWrapper}>
             <Picker
               selectedValue={selectedLanguage}
               onValueChange={handleLanguageChange}
             >
-              <Picker.Item label="Choose your native language..." value="" />
+              <Picker.Item label={t('screens.startup.selectNativeLanguage')} value="" />
               {Object.keys(languageMappings).map((lang) => (
                 <Picker.Item key={lang} label={lang} value={lang} />
               ))}
@@ -103,10 +105,10 @@ function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
             style={styles.backButton}
             onPress={onBack}
             accessibilityRole="button"
-            accessibilityLabel="Go back to learning language selection"
+            accessibilityLabel={t('screens.startup.nativeLanguageScreen.accessibility.goBackToLearningSelection')}
           >
             <Ionicons name="arrow-back" size={20} color="#007AFF" style={styles.backButtonIcon} />
-            <Text style={styles.backButtonText}>Back</Text>
+            <Text style={styles.backButtonText}>{t('common.back')}</Text>
           </Pressable>
           
           <Pressable
@@ -114,9 +116,9 @@ function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
             onPress={onContinue}
             disabled={!selectedLanguage}
             accessibilityRole="button"
-            accessibilityLabel="Continue to practice settings"
+            accessibilityLabel={t('screens.startup.nativeLanguageScreen.accessibility.continueToPracticeSettings')}
           >
-            <Text style={styles.continueButtonText}>Continue</Text>
+            <Text style={styles.continueButtonText}>{t('common.continue')}</Text>
             <Ionicons name="arrow-forward" size={20} color="white" style={styles.buttonIcon} />
           </Pressable>
         </View>

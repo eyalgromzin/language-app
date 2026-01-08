@@ -49,10 +49,23 @@
       "failedToSavePreferences": "Error al guardar las preferencias. Por favor, inténtalo de nuevo.",
       "loadingLanguages": "Cargando idiomas disponibles...",
       "loadingLanguageOptions": "Cargando opciones de idioma...",
-      "noLanguagesAvailable": "No hay idiomas disponibles"
-    },
-    "video": {
-      "searchPlaceholder": "Buscar...",
+      "noLanguagesAvailable": "No hay idiomas disponibles",
+      "learningLanguageScreen": {
+        "title": "Elige tu idioma de aprendizaje",
+        "selectLearningLanguage": "Selecciona el idioma que quieres aprender",
+        "accessibility": {
+          "continueToNativeSelection": "Continuar a la selección de idioma nativo"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Tu idioma nativo",
+        "subtitle": "¿Cuál es tu idioma nativo o principal?",
+        "selectNativeLanguage": "Selecciona tu idioma nativo",
+        "accessibility": {
+          "goBackToLearningSelection": "Volver a la selección de idioma de aprendizaje",
+          "continueToPracticeSettings": "Continuar a la configuración de práctica"
+        }
+      }
       "goButton": "Ir",
       "nowPlayingByOthers": "Reproduciendo por otras personas",
       "enterYouTubeUrl": "Ingresa una URL o ID de YouTube...",

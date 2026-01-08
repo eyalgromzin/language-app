@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Αποτυχία αποθήκευσης προτιμήσεων. Παρακαλώ δοκιμάστε ξανά.",
       "loadingLanguages": "Φόρτωση διαθέσιμων γλωσσών...",
       "loadingLanguageOptions": "Φόρτωση επιλογών γλώσσας...",
-      "noLanguagesAvailable": "Δεν υπάρχουν διαθέσιμες γλώσσες"
+      "noLanguagesAvailable": "Δεν υπάρχουν διαθέσιμες γλώσσες",
+      "learningLanguageScreen": {
+        "title": "Επιλέξτε τη γλώσσα μάθησης",
+        "selectLearningLanguage": "Επιλέξτε τη γλώσσα που θέλετε να μάθετε",
+        "accessibility": {
+          "continueToNativeSelection": "Συνέχεια στην επιλογή μητρικής γλώσσας"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Η μητρική σας γλώσσα",
+        "subtitle": "Ποια είναι η μητρική ή κύρια γλώσσα σας;",
+        "selectNativeLanguage": "Επιλέξτε τη μητρική σας γλώσσα",
+        "accessibility": {
+          "goBackToLearningSelection": "Επιστροφή στην επιλογή γλώσσας μάθησης",
+          "continueToPracticeSettings": "Συνέχεια στις ρυθμίσεις εξάσκησης"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Αναζήτηση...",

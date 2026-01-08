@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Asetusten tallentaminen epäonnistui. Yritä uudelleen.",
       "loadingLanguages": "Ladataan saatavilla olevia kieliä...",
       "loadingLanguageOptions": "Ladataan kielivalintoja...",
-      "noLanguagesAvailable": "Ei kieliä saatavilla"
+      "noLanguagesAvailable": "Ei kieliä saatavilla",
+      "learningLanguageScreen": {
+        "title": "Valitse oppimiskielesi",
+        "selectLearningLanguage": "Valitse kieli, jota haluat oppia",
+        "accessibility": {
+          "continueToNativeSelection": "Jatka äidinkielen valintaan"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Äidinkielesi",
+        "subtitle": "Mikä on äidinkielesi tai pääkielesi?",
+        "selectNativeLanguage": "Valitse äidinkielesi",
+        "accessibility": {
+          "goBackToLearningSelection": "Palaa oppimiskielen valintaan",
+          "continueToPracticeSettings": "Jatka harjoitusasetuksiin"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Hae...",

@@ -49,7 +49,23 @@
       "failedToSavePreferences": "ไม่สามารถบันทึกการตั้งค่าได้ โปรดลองอีกครั้ง",
       "loadingLanguages": "กำลังโหลดภาษาที่มีอยู่...",
       "loadingLanguageOptions": "กำลังโหลดตัวเลือกภาษา...",
-      "noLanguagesAvailable": "ไม่มีภาษาที่ใช้ได้"
+      "noLanguagesAvailable": "ไม่มีภาษาที่ใช้ได้",
+      "learningLanguageScreen": {
+        "title": "เลือกภาษาที่ต้องการเรียน",
+        "selectLearningLanguage": "เลือกภาษาที่คุณต้องการเรียน",
+        "accessibility": {
+          "continueToNativeSelection": "ไปต่อเพื่อเลือกภาษาแม่"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "ภาษาแม่ของคุณ",
+        "subtitle": "ภาษาแม่หรือภาษาหลักของคุณคืออะไร?",
+        "selectNativeLanguage": "เลือกภาษาแม่ของคุณ",
+        "accessibility": {
+          "goBackToLearningSelection": "กลับไปเลือกภาษาที่ต้องการเรียน",
+          "continueToPracticeSettings": "ไปต่อไปยังการตั้งค่าการฝึกฝน"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "ค้นหา...",

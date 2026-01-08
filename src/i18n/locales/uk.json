@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Не вдалося зберегти налаштування. Будь ласка, спробуйте знову.",
       "loadingLanguages": "Завантаження доступних мов...",
       "loadingLanguageOptions": "Завантаження мовних опцій...",
-      "noLanguagesAvailable": "Немає доступних мов"
+      "noLanguagesAvailable": "Немає доступних мов",
+      "learningLanguageScreen": {
+        "title": "Виберіть мову для навчання",
+        "selectLearningLanguage": "Виберіть мову, яку хочете вивчати",
+        "accessibility": {
+          "continueToNativeSelection": "Продовжити до вибору рідної мови"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Ваша рідна мова",
+        "subtitle": "Яка ваша рідна або основна мова?",
+        "selectNativeLanguage": "Виберіть вашу рідну мову",
+        "accessibility": {
+          "goBackToLearningSelection": "Повернутися до вибору мови для навчання",
+          "continueToPracticeSettings": "Перейти до налаштувань практики"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Пошук...",

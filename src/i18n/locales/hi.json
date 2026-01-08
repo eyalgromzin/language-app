@@ -49,7 +49,23 @@
       "failedToSavePreferences": "प्राथमिकताएं सहेजने में विफल। कृपया फिर से कोशिश करें।",
       "loadingLanguages": "उपलब्ध भाषाएं लोड हो रही हैं...",
       "loadingLanguageOptions": "भाषा विकल्प लोड हो रहे हैं...",
-      "noLanguagesAvailable": "कोई भाषा उपलब्ध नहीं"
+      "noLanguagesAvailable": "कोई भाषा उपलब्ध नहीं",
+      "learningLanguageScreen": {
+        "title": "अपनी सीखने की भाषा चुनें",
+        "selectLearningLanguage": "वह भाषा चुनें जिसे आप सीखना चाहते हैं",
+        "accessibility": {
+          "continueToNativeSelection": "मातृभाषा चयन पर जारी रखें"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "आपकी मातृभाषा",
+        "subtitle": "आपकी मातृ या प्राथमिक भाषा क्या है?",
+        "selectNativeLanguage": "अपनी मातृभाषा चुनें",
+        "accessibility": {
+          "goBackToLearningSelection": "सीखने की भाषा चयन पर वापस जाएँ",
+          "continueToPracticeSettings": "अभ्यास सेटिंग्स पर जारी रखें"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "खोजें...",

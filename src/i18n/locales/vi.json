@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Không thể lưu tùy chọn. Vui lòng thử lại.",
       "loadingLanguages": "Đang tải các ngôn ngữ có sẵn...",
       "loadingLanguageOptions": "Đang tải tùy chọn ngôn ngữ...",
-      "noLanguagesAvailable": "Không có ngôn ngữ nào có sẵn"
+      "noLanguagesAvailable": "Không có ngôn ngữ nào có sẵn",
+      "learningLanguageScreen": {
+        "title": "Chọn ngôn ngữ bạn muốn học",
+        "selectLearningLanguage": "Chọn ngôn ngữ bạn muốn học",
+        "accessibility": {
+          "continueToNativeSelection": "Tiếp tục đến chọn ngôn ngữ mẹ đẻ"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Ngôn ngữ mẹ đẻ của bạn",
+        "subtitle": "Ngôn ngữ mẹ đẻ hoặc chính của bạn là gì?",
+        "selectNativeLanguage": "Chọn ngôn ngữ mẹ đẻ của bạn",
+        "accessibility": {
+          "goBackToLearningSelection": "Quay lại chọn ngôn ngữ học",
+          "continueToPracticeSettings": "Tiếp tục đến cài đặt luyện tập"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Tìm kiếm...",

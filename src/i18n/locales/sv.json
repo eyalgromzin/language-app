@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Kunde inte spara inställningar. Försök igen.",
       "loadingLanguages": "Laddar tillgängliga språk...",
       "loadingLanguageOptions": "Laddar språkalternativ...",
-      "noLanguagesAvailable": "Inga språk tillgängliga"
+      "noLanguagesAvailable": "Inga språk tillgängliga",
+      "learningLanguageScreen": {
+        "title": "Välj ditt inlärningsspråk",
+        "selectLearningLanguage": "Välj språket du vill lära dig",
+        "accessibility": {
+          "continueToNativeSelection": "Fortsätt till val av modersmål"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Ditt modersmål",
+        "subtitle": "Vad är ditt modersmål eller huvudspråk?",
+        "selectNativeLanguage": "Välj ditt modersmål",
+        "accessibility": {
+          "goBackToLearningSelection": "Gå tillbaka till val av inlärningsspråk",
+          "continueToPracticeSettings": "Fortsätt till inställningar för övning"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Sök...",

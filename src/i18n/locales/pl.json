@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Nie udało się zapisać preferencji. Spróbuj ponownie.",
       "loadingLanguages": "Ładowanie dostępnych języków...",
       "loadingLanguageOptions": "Ładowanie opcji językowych...",
-      "noLanguagesAvailable": "Brak dostępnych języków"
+      "noLanguagesAvailable": "Brak dostępnych języków",
+      "learningLanguageScreen": {
+        "title": "Wybierz język nauki",
+        "selectLearningLanguage": "Wybierz język, którego chcesz się uczyć",
+        "accessibility": {
+          "continueToNativeSelection": "Przejdź do wyboru języka ojczystego"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Twój język ojczysty",
+        "subtitle": "Jaki jest twój ojczysty lub główny język?",
+        "selectNativeLanguage": "Wybierz swój język ojczysty",
+        "accessibility": {
+          "goBackToLearningSelection": "Wróć do wyboru języka nauki",
+          "continueToPracticeSettings": "Przejdź do ustawień ćwiczeń"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Szukaj...",

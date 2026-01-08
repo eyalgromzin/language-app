@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Не удалось сохранить настройки. Пожалуйста, попробуйте снова.",
       "loadingLanguages": "Загрузка доступных языков...",
       "loadingLanguageOptions": "Загрузка языковых опций...",
-      "noLanguagesAvailable": "Нет доступных языков"
+      "noLanguagesAvailable": "Нет доступных языков",
+      "learningLanguageScreen": {
+        "title": "Выберите язык для изучения",
+        "selectLearningLanguage": "Выберите язык, который хотите изучать",
+        "accessibility": {
+          "continueToNativeSelection": "Продолжить к выбору родного языка"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Ваш родной язык",
+        "subtitle": "Какой ваш родной или основной язык?",
+        "selectNativeLanguage": "Выберите ваш родной язык",
+        "accessibility": {
+          "goBackToLearningSelection": "Вернуться к выбору языка для изучения",
+          "continueToPracticeSettings": "Перейти к настройкам практики"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Поиск...",

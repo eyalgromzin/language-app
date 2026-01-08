@@ -49,7 +49,23 @@
       "failedToSavePreferences": "Kon voorkeuren niet opslaan. Probeer het opnieuw.",
       "loadingLanguages": "Beschikbare talen laden...",
       "loadingLanguageOptions": "Taalopties laden...",
-      "noLanguagesAvailable": "Geen talen beschikbaar"
+      "noLanguagesAvailable": "Geen talen beschikbaar",
+      "learningLanguageScreen": {
+        "title": "Kies je leertaal",
+        "selectLearningLanguage": "Selecteer de taal die je wilt leren",
+        "accessibility": {
+          "continueToNativeSelection": "Ga verder naar selectie moedertaal"
+        }
+      },
+      "nativeLanguageScreen": {
+        "title": "Je moedertaal",
+        "subtitle": "Wat is je moedertaal of primaire taal?",
+        "selectNativeLanguage": "Selecteer je moedertaal",
+        "accessibility": {
+          "goBackToLearningSelection": "Ga terug naar selectie leertaal",
+          "continueToPracticeSettings": "Ga verder naar oefeninstellingen"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Zoeken...",
