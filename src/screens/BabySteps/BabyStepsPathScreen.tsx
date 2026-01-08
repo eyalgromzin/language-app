@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimensions, TouchableOpacity, NativeModules, Alert, Animated, Vibration, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, useColorScheme, Dimensions, TouchableOpacity, NativeModules, Alert, Animated, Vibration, ActivityIndicator, I18nManager } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { Svg, Path, Circle, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -34,6 +34,8 @@ function BabyStepsPathScreen(): React.JSX.Element {
   const [error, setError] = React.useState<string | null>(null);
   const [containerWidth, setContainerWidth] = React.useState<number>(Dimensions.get('window').width);
   const [completedSteps, setCompletedSteps] = React.useState<Set<number>>(new Set()); // Individual completed step indices
+  const [isRtl, setIsRtl] = React.useState<boolean>(false); // Flag for Hebrew language
+  const [isPhoneRtl, setIsPhoneRtl] = React.useState<boolean>(false);
   
   // Calculate maxCompletedIndex from completedSteps
   const maxCompletedIndex = React.useMemo(() => {
@@ -120,6 +122,10 @@ function BabyStepsPathScreen(): React.JSX.Element {
         const learningCode = getLangCode(learningName, languageMappings) || 'en';
         const nativeCode = getLangCode(nativeName, languageMappings) || 'en';
         console.log('[BabyStepsPathScreen] Language codes:', { learningCode, nativeCode });
+        
+        // Set Hebrew flag
+        setIsRtl(learningCode === 'he' || learningCode === 'iw');
+        setIsPhoneRtl(I18nManager.isRTL);
         
         // Helper function to check if cached data is still valid (less than 1 week old)
         const isCacheValid = (timestamp: number): boolean => {
@@ -265,6 +271,12 @@ function BabyStepsPathScreen(): React.JSX.Element {
           const learningName = await AsyncStorage.getItem('language.learning');
           const code = getLangCode(learningName, languageMappings) || 'en';
           
+          // Set Hebrew flag
+          if (active) {
+            setIsRtl(code === 'he' || code === 'iw');
+            setIsPhoneRtl(I18nManager.isRTL);
+          }
+          
           // Refresh individual completed steps
           const completedStepsData = await AsyncStorage.getItem(`babySteps.completedSteps.${code}`);
           const completedStepsSet = completedStepsData 
@@ -371,7 +383,8 @@ function BabyStepsPathScreen(): React.JSX.Element {
     const result: { x: number; y: number }[] = [];
     let currentY = CONTENT_PADDING + 40; // Add extra top spacing
     for (let i = 0; i < steps.length; i++) {
-      const isLeft = i % 2 === 1;
+      let isLeft = i % 2 === (isRtl ? 1 : 0);
+      if(isPhoneRtl) isLeft = !isLeft;
       const x = isLeft ? leftX : rightX;
       result.push({ x, y: currentY });
       // advance Y for next node
