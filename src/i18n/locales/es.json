@@ -50,6 +50,21 @@
       "loadingLanguages": "Cargando idiomas disponibles...",
       "loadingLanguageOptions": "Cargando opciones de idioma...",
       "noLanguagesAvailable": "No hay idiomas disponibles",
+      "practiceSettingsScreen": {
+        "title": "Practice Settings",
+        "subtitle": "Customize your learning experience",
+        "sectionTitle": "Practice Configuration",
+        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
+        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
+        "totalCorrectToMaster": "Total correct answers before word is mastered",
+        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "accessibility": {
+          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
+          "setTotalCorrectTo": "Set total correct answers to {{count}}",
+          "goBack": "Go back to native language selection",
+          "continueToCompletion": "Continue to completion"
+        }
+      },
       "learningLanguageScreen": {
         "title": "Elige tu idioma de aprendizaje",
         "selectLearningLanguage": "Selecciona el idioma que quieres aprender",
@@ -65,7 +80,7 @@
           "goBackToLearningSelection": "Volver a la selección de idioma de aprendizaje",
           "continueToPracticeSettings": "Continuar a la configuración de práctica"
         }
-      }
+      },
       "goButton": "Ir",
       "nowPlayingByOthers": "Reproduciendo por otras personas",
       "enterYouTubeUrl": "Ingresa una URL o ID de YouTube...",

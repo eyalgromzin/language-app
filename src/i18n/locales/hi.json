@@ -50,6 +50,21 @@
       "loadingLanguages": "उपलब्ध भाषाएं लोड हो रही हैं...",
       "loadingLanguageOptions": "भाषा विकल्प लोड हो रहे हैं...",
       "noLanguagesAvailable": "कोई भाषा उपलब्ध नहीं",
+      "practiceSettingsScreen": {
+        "title": "Practice Settings",
+        "subtitle": "Customize your learning experience",
+        "sectionTitle": "Practice Configuration",
+        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
+        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
+        "totalCorrectToMaster": "Total correct answers before word is mastered",
+        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "accessibility": {
+          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
+          "setTotalCorrectTo": "Set total correct answers to {{count}}",
+          "goBack": "Go back to native language selection",
+          "continueToCompletion": "Continue to completion"
+        }
+      },
       "learningLanguageScreen": {
         "title": "अपनी सीखने की भाषा चुनें",
         "selectLearningLanguage": "वह भाषा चुनें जिसे आप सीखना चाहते हैं",

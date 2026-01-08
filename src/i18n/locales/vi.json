@@ -24,6 +24,21 @@
       "practiceSettings": "Cài Đặt Luyện Tập",
       "practiceCompletion": "Hoàn Thành Luyện Tập",
       "practiceCompletionDescription": "Số câu trả lời đúng cần thiết để hoàn thành một loại luyện tập",
+        "practiceSettingsScreen": {
+          "title": "Practice Settings",
+          "subtitle": "Customize your learning experience",
+          "sectionTitle": "Practice Configuration",
+          "correctAnswersNeeded": "Correct answers needed to complete a practice type",
+          "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
+          "totalCorrectToMaster": "Total correct answers before word is mastered",
+          "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+          "accessibility": {
+            "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
+            "setTotalCorrectTo": "Set total correct answers to {{count}}",
+            "goBack": "Go back to native language selection",
+            "continueToCompletion": "Continue to completion"
+          }
+        },
       "wordMastery": "Thành Thạo Từ",
       "wordMasteryDescription": "Tổng số câu trả lời đúng trước khi một từ được coi là thành thạo",
       "account": "Tài Khoản",

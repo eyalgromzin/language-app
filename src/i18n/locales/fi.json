@@ -26,6 +26,21 @@
       "practiceCompletionDescription": "Oikeiden vastausten määrä, joka tarvitaan harjoitustyypin valmistumiseen",
       "wordMastery": "Sanojen Hallinta",
       "wordMasteryDescription": "Kokonaisoikeat vastaukset ennen kuin sana katsotaan hallituksi",
+        "practiceSettingsScreen": {
+          "title": "Practice Settings",
+          "subtitle": "Customize your learning experience",
+          "sectionTitle": "Practice Configuration",
+          "correctAnswersNeeded": "Correct answers needed to complete a practice type",
+          "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
+          "totalCorrectToMaster": "Total correct answers before word is mastered",
+          "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+          "accessibility": {
+            "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
+            "setTotalCorrectTo": "Set total correct answers to {{count}}",
+            "goBack": "Go back to native language selection",
+            "continueToCompletion": "Continue to completion"
+          }
+        },
       "account": "Tili",
       "signOut": "Kirjaudu Ulos",
       "logout": "Uloskirjautuminen",

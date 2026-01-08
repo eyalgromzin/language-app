@@ -50,6 +50,21 @@
       "loadingLanguages": "טוען שפות זמינות...",
       "loadingLanguageOptions": "טוען אפשרויות שפה...",
       "noLanguagesAvailable": "אין שפות זמינות",
+      "practiceSettingsScreen": {
+        "title": "הגדרות תרגול",
+        "subtitle": "התאימו את חוויית הלמידה שלכם",
+        "sectionTitle": "הגדרת תרגול",
+        "correctAnswersNeeded": "מספר תשובות נכונות הנדרשות להשלמת סוג תרגול",
+        "correctAnswersDescription": "בחרו כמה תשובות נכונות נדרשות לפני שסוג התרגול ייחשב כמושלם",
+        "totalCorrectToMaster": "סה\"כ תשובות נכונות לפני שמילה נחשבת למושלטת",
+        "totalCorrectDescription": "בחרו כמה תשובות נכונות בסה\"כ נדרשות לפני שמילה תיחשב לנלמדת במלואה",
+        "accessibility": {
+          "setCorrectAnswersTo": "קבעו את מספר התשובות הנכונות ל-{{count}}",
+          "setTotalCorrectTo": "קבעו את סה\"כ התשובות הנכונות ל-{{count}}",
+          "goBack": "חזרו לבחירת שפת אם",
+          "continueToCompletion": "המשיכו להשלמה"
+        }
+      },
       "learningLanguageScreen": {
         "title": "בחר את שפת הלמידה שלך",
         "selectLearningLanguage": "בחר את השפה שברצונך ללמוד",

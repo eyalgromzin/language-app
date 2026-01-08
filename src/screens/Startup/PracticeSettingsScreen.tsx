@@ -2,12 +2,16 @@ import React from 'react';
 import { StyleSheet, Text, View, Pressable, ScrollView } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from 'react-i18next';
 
 type OnboardingStackParamList = {
   LearningLanguage: undefined;
   NativeLanguage: undefined;
   PracticeSettings: undefined;
-  Completion: undefined;
+  Completion: {
+    removeAfterCorrect: number;
+    removeAfterTotalCorrect: number;
+  };
 };
 
 type Props = NativeStackScreenProps<OnboardingStackParamList, 'PracticeSettings'>;
@@ -15,6 +19,7 @@ type Props = NativeStackScreenProps<OnboardingStackParamList, 'PracticeSettings'
 function PracticeSettingsScreen({ navigation }: Props): React.JSX.Element {
   const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
+  const { t } = useTranslation();
 
   const onContinue = () => {
     navigation.navigate('Completion', {
@@ -34,20 +39,20 @@ function PracticeSettingsScreen({ navigation }: Props): React.JSX.Element {
         <View style={styles.logoContainer}>
           <Ionicons name="settings-outline" size={40} color="#007AFF" />
         </View>
-        <Text style={styles.title}>Practice Settings</Text>
-        <Text style={styles.subtitle}>Customize your learning experience</Text>
+        <Text style={styles.title}>{t('screens.startup.practiceSettingsScreen.title')}</Text>
+        <Text style={styles.subtitle}>{t('screens.startup.practiceSettingsScreen.subtitle')}</Text>
       </View>
 
       {/* Practice Settings Section */}
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Ionicons name="trophy-outline" size={20} color="#007AFF" />
-          <Text style={styles.sectionTitle}>Practice Configuration</Text>
+          <Text style={styles.sectionTitle}>{t('screens.startup.practiceSettingsScreen.sectionTitle')}</Text>
         </View>
         
         <View style={styles.pickerBlock}>
-          <Text style={styles.infoLabel}>Correct answers needed to complete a practice type</Text>
-          <Text style={styles.infoSubtext}>Choose how many correct answers you need before a practice type is considered complete</Text>
+          <Text style={styles.infoLabel}>{t('screens.startup.practiceSettingsScreen.correctAnswersNeeded')}</Text>
+          <Text style={styles.infoSubtext}>{t('screens.startup.practiceSettingsScreen.correctAnswersDescription')}</Text>
           <View style={styles.optionCirclesContainer}>
             {[1, 2, 3].map((n) => {
               const selected = removeAfterCorrect === n;
@@ -58,7 +63,7 @@ function PracticeSettingsScreen({ navigation }: Props): React.JSX.Element {
                   style={[styles.optionCircle, selected && styles.optionCircleSelected]}
                   accessibilityRole="button"
                   accessibilityState={{ selected }}
-                  accessibilityLabel={`Set number of correct answers to ${n}`}
+                  accessibilityLabel={t('screens.startup.practiceSettingsScreen.accessibility.setCorrectAnswersTo', { count: n })}
                 >
                   <Text style={[styles.optionCircleText, selected && styles.optionCircleTextSelected]}>{n}</Text>
                 </Pressable>
@@ -68,8 +73,8 @@ function PracticeSettingsScreen({ navigation }: Props): React.JSX.Element {
         </View>
 
         <View style={styles.pickerBlock}>
-          <Text style={styles.infoLabel}>Total correct answers before word is mastered</Text>
-          <Text style={styles.infoSubtext}>Choose how many total correct answers are needed before a word is considered fully learned</Text>
+          <Text style={styles.infoLabel}>{t('screens.startup.practiceSettingsScreen.totalCorrectToMaster')}</Text>
+          <Text style={styles.infoSubtext}>{t('screens.startup.practiceSettingsScreen.totalCorrectDescription')}</Text>
           <View style={[styles.optionCirclesContainer, { flexWrap: 'wrap' }]}>
             {[6, 10, 14, 18].map((n) => {
               const selected = removeAfterTotalCorrect === n;
@@ -80,7 +85,7 @@ function PracticeSettingsScreen({ navigation }: Props): React.JSX.Element {
                   style={[styles.optionCircle, selected && styles.optionCircleSelected]}
                   accessibilityRole="button"
                   accessibilityState={{ selected }}
-                  accessibilityLabel={`Set total correct answers to ${n}`}
+                  accessibilityLabel={t('screens.startup.practiceSettingsScreen.accessibility.setTotalCorrectTo', { count: n })}
                 >
                   <Text style={[styles.optionCircleText, selected && styles.optionCircleTextSelected]}>{n}</Text>
                 </Pressable>
@@ -97,19 +102,19 @@ function PracticeSettingsScreen({ navigation }: Props): React.JSX.Element {
             style={styles.backButton}
             onPress={onBack}
             accessibilityRole="button"
-            accessibilityLabel="Go back to native language selection"
+            accessibilityLabel={t('screens.startup.practiceSettingsScreen.accessibility.goBack')}
           >
             <Ionicons name="arrow-back" size={20} color="#007AFF" style={styles.backButtonIcon} />
-            <Text style={styles.backButtonText}>Back</Text>
+            <Text style={styles.backButtonText}>{t('common.back')}</Text>
           </Pressable>
           
           <Pressable
             style={styles.continueButton}
             onPress={onContinue}
             accessibilityRole="button"
-            accessibilityLabel="Continue to completion"
+            accessibilityLabel={t('screens.startup.practiceSettingsScreen.accessibility.continueToCompletion')}
           >
-            <Text style={styles.continueButtonText}>Continue</Text>
+            <Text style={styles.continueButtonText}>{t('common.continue')}</Text>
             <Ionicons name="arrow-forward" size={20} color="white" style={styles.buttonIcon} />
           </Pressable>
         </View>
