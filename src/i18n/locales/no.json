@@ -58,18 +58,18 @@
         }
       },
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Øvingsinnstillinger",
+        "subtitle": "Tilpass læringsopplevelsen din",
+        "sectionTitle": "Øvingskonfigurasjon",
+        "correctAnswersNeeded": "Rette svar som kreves for å fullføre en øvingstype",
+        "correctAnswersDescription": "Velg hvor mange rette svar som trengs før en øvingstype regnes som fullført",
+        "totalCorrectToMaster": "Totalt antall rette svar før et ord er mestret",
+        "totalCorrectDescription": "Velg hvor mange rette svar totalt som trengs før et ord anses som fullt lært",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Sett antall rette svar til {{count}}",
+          "setTotalCorrectTo": "Sett totalt antall rette svar til {{count}}",
+          "goBack": "Gå tilbake til valg av morsmål",
+          "continueToCompletion": "Fortsett til fullføring"
         }
       },
       "nativeLanguageScreen": {

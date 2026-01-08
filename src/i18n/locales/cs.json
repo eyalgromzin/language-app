@@ -51,18 +51,18 @@
       "loadingLanguageOptions": "Načítání jazykových možností...",
       "noLanguagesAvailable": "Žádné jazyky nejsou dostupné",
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Nastavení procvičování",
+        "subtitle": "Přizpůsobte si svou studijní zkušenost",
+        "sectionTitle": "Konfigurace procvičování",
+        "correctAnswersNeeded": "Počet správných odpovědí potřebných k dokončení typu procvičování",
+        "correctAnswersDescription": "Zvolte, kolik správných odpovědí je třeba, než se typ procvičování považuje za dokončený",
+        "totalCorrectToMaster": "Celkový počet správných odpovědí před zvládnutím slova",
+        "totalCorrectDescription": "Zvolte, kolik celkových správných odpovědí je potřeba, než je slovo považováno za plně naučené",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Nastavit počet správných odpovědí na {{count}}",
+          "setTotalCorrectTo": "Nastavit celkový počet správných odpovědí na {{count}}",
+          "goBack": "Zpět k výběru rodného jazyka",
+          "continueToCompletion": "Pokračovat k dokončení"
         }
       },
       "learningLanguageScreen": {

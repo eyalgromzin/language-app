@@ -51,18 +51,18 @@
       "loadingLanguageOptions": "Taalopties laden...",
       "noLanguagesAvailable": "Geen talen beschikbaar",
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Oefeninstellingen",
+        "subtitle": "Personaliseer je leerervaring",
+        "sectionTitle": "Oefenconfiguratie",
+        "correctAnswersNeeded": "Juiste antwoorden die nodig zijn om een oefentype te voltooien",
+        "correctAnswersDescription": "Kies hoeveel juiste antwoorden nodig zijn voordat een oefentype als voltooid wordt beschouwd",
+        "totalCorrectToMaster": "Totaal aantal juiste antwoorden voordat een woord beheerst is",
+        "totalCorrectDescription": "Kies hoeveel juiste antwoorden in totaal nodig zijn voordat een woord als volledig geleerd wordt beschouwd",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Stel het aantal juiste antwoorden in op {{count}}",
+          "setTotalCorrectTo": "Stel het totale aantal juiste antwoorden in op {{count}}",
+          "goBack": "Ga terug naar selectie van moedertaal",
+          "continueToCompletion": "Ga door naar afronding"
         }
       },
       "learningLanguageScreen": {

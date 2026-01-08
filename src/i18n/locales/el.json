@@ -51,18 +51,18 @@
       "loadingLanguageOptions": "Φόρτωση επιλογών γλώσσας...",
       "noLanguagesAvailable": "Δεν υπάρχουν διαθέσιμες γλώσσες",
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Ρυθμίσεις Πρακτικής",
+        "subtitle": "Προσαρμόστε την εμπειρία μάθησής σας",
+        "sectionTitle": "Διαμόρφωση Πρακτικής",
+        "correctAnswersNeeded": "Σωστές απαντήσεις που απαιτούνται για την ολοκλήρωση ενός τύπου πρακτικής",
+        "correctAnswersDescription": "Επιλέξτε πόσες σωστές απαντήσεις χρειάζεστε πριν θεωρηθεί ολοκληρωμένος ένας τύπος πρακτικής",
+        "totalCorrectToMaster": "Συνολικές σωστές απαντήσεις πριν μια λέξη θεωρηθεί κυριαρχημένη",
+        "totalCorrectDescription": "Επιλέξτε πόσες συνολικές σωστές απαντήσεις απαιτούνται πριν μια λέξη θεωρηθεί πλήρως μαθαμένη",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Ορίστε τον αριθμό σωστών απαντήσεων σε {{count}}",
+          "setTotalCorrectTo": "Ορίστε το σύνολο σωστών απαντήσεων σε {{count}}",
+          "goBack": "Επιστροφή στην επιλογή μητρικής γλώσσας",
+          "continueToCompletion": "Συνέχεια στην ολοκλήρωση"
         }
       },
       "learningLanguageScreen": {

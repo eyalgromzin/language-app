@@ -58,18 +58,18 @@
         }
       },
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Настройки практики",
+        "subtitle": "Настройте свой опыт обучения",
+        "sectionTitle": "Конфигурация практики",
+        "correctAnswersNeeded": "Количество правильных ответов, необходимых для завершения типа практики",
+        "correctAnswersDescription": "Выберите, сколько правильных ответов нужно, прежде чем тип практики будет считаться завершенным",
+        "totalCorrectToMaster": "Общее количество правильных ответов до освоения слова",
+        "totalCorrectDescription": "Выберите, сколько всего правильных ответов нужно, прежде чем слово будет считаться полностью выученным",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Установите число правильных ответов: {{count}}",
+          "setTotalCorrectTo": "Установите общее число правильных ответов: {{count}}",
+          "goBack": "Вернуться к выбору родного языка",
+          "continueToCompletion": "Продолжить к завершению"
         }
       },
       "nativeLanguageScreen": {

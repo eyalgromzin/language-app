@@ -51,18 +51,18 @@
       "loadingLanguageOptions": "Laddar språkalternativ...",
       "noLanguagesAvailable": "Inga språk tillgängliga",
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Övningsinställningar",
+        "subtitle": "Anpassa din lärandeupplevelse",
+        "sectionTitle": "Övningskonfiguration",
+        "correctAnswersNeeded": "Antal rätta svar som krävs för att slutföra en övningstyp",
+        "correctAnswersDescription": "Välj hur många rätta svar som behövs innan en övningstyp anses slutförd",
+        "totalCorrectToMaster": "Totalt antal rätta svar innan ett ord är bemästrat",
+        "totalCorrectDescription": "Välj hur många rätta svar totalt som behövs innan ett ord anses helt inlärt",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Ställ in antal rätta svar till {{count}}",
+          "setTotalCorrectTo": "Ställ in totala rätta svar till {{count}}",
+          "goBack": "Gå tillbaka till val av modersmål",
+          "continueToCompletion": "Fortsätt till slutförande"
         }
       },
       "learningLanguageScreen": {

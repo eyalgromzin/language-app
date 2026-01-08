@@ -51,18 +51,18 @@
       "loadingLanguageOptions": "Sprachoptionen werden geladen...",
       "noLanguagesAvailable": "Keine Sprachen verfügbar",
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Übungseinstellungen",
+        "subtitle": "Passe dein Lernerlebnis an",
+        "sectionTitle": "Übungskonfiguration",
+        "correctAnswersNeeded": "Erforderliche richtige Antworten, um einen Übungstyp abzuschließen",
+        "correctAnswersDescription": "Wähle, wie viele richtige Antworten nötig sind, bevor ein Übungstyp als abgeschlossen gilt",
+        "totalCorrectToMaster": "Gesamtzahl richtiger Antworten, bevor ein Wort gemeistert ist",
+        "totalCorrectDescription": "Wähle, wie viele richtige Antworten insgesamt nötig sind, bevor ein Wort als vollständig gelernt gilt",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Setze die Anzahl richtiger Antworten auf {{count}}",
+          "setTotalCorrectTo": "Setze die Gesamtzahl richtiger Antworten auf {{count}}",
+          "goBack": "Zurück zur Auswahl der Muttersprache",
+          "continueToCompletion": "Weiter zur Fertigstellung"
         }
       },
       "learningLanguageScreen": {

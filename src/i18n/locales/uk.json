@@ -51,18 +51,18 @@
       "loadingLanguageOptions": "Завантаження мовних опцій...",
       "noLanguagesAvailable": "Немає доступних мов",
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Налаштування практики",
+        "subtitle": "Налаштуйте свій досвід навчання",
+        "sectionTitle": "Конфігурація практики",
+        "correctAnswersNeeded": "Кількість правильних відповідей, потрібних для завершення типу практики",
+        "correctAnswersDescription": "Виберіть, скільки правильних відповідей потрібно, перш ніж тип практики буде вважатися завершеним",
+        "totalCorrectToMaster": "Загальна кількість правильних відповідей до опанування слова",
+        "totalCorrectDescription": "Виберіть, скільки всього правильних відповідей потрібно, перш ніж слово вважатиметься повністю вивченим",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Встановіть кількість правильних відповідей на {{count}}",
+          "setTotalCorrectTo": "Встановіть загальну кількість правильних відповідей на {{count}}",
+          "goBack": "Повернутися до вибору рідної мови",
+          "continueToCompletion": "Продовжити до завершення"
         }
       },
       "learningLanguageScreen": {

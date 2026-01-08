@@ -51,18 +51,18 @@
       "loadingLanguageOptions": "Cargando opciones de idioma...",
       "noLanguagesAvailable": "No hay idiomas disponibles",
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Configuración de práctica",
+        "subtitle": "Personaliza tu experiencia de aprendizaje",
+        "sectionTitle": "Configuración de práctica",
+        "correctAnswersNeeded": "Respuestas correctas necesarias para completar un tipo de práctica",
+        "correctAnswersDescription": "Elige cuántas respuestas correctas necesitas antes de que un tipo de práctica se considere completo",
+        "totalCorrectToMaster": "Total de respuestas correctas antes de dominar una palabra",
+        "totalCorrectDescription": "Elige cuántas respuestas correctas en total se necesitan antes de que una palabra se considere completamente aprendida",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Establecer el número de respuestas correctas en {{count}}",
+          "setTotalCorrectTo": "Establecer el total de respuestas correctas en {{count}}",
+          "goBack": "Volver a la selección de idioma nativo",
+          "continueToCompletion": "Continuar hasta finalizar"
         }
       },
       "learningLanguageScreen": {

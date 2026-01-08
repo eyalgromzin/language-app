@@ -51,18 +51,18 @@
       "loadingLanguageOptions": "Chargement des options de langue...",
       "noLanguagesAvailable": "Aucune langue disponible",
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Paramètres de pratique",
+        "subtitle": "Personnalisez votre expérience d'apprentissage",
+        "sectionTitle": "Configuration de la pratique",
+        "correctAnswersNeeded": "Nombre de réponses correctes nécessaires pour terminer un type de pratique",
+        "correctAnswersDescription": "Choisissez combien de réponses correctes sont nécessaires avant qu'un type de pratique soit considéré comme terminé",
+        "totalCorrectToMaster": "Nombre total de réponses correctes avant de maîtriser un mot",
+        "totalCorrectDescription": "Choisissez combien de réponses correctes au total sont nécessaires avant qu'un mot soit considéré comme entièrement appris",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Définir le nombre de réponses correctes à {{count}}",
+          "setTotalCorrectTo": "Définir le total de réponses correctes à {{count}}",
+          "goBack": "Revenir à la sélection de la langue maternelle",
+          "continueToCompletion": "Continuer jusqu'à la finalisation"
         }
       },
       "learningLanguageScreen": {

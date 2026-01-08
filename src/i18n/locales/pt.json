@@ -51,18 +51,18 @@
       "loadingLanguageOptions": "Carregando opções de idioma...",
       "noLanguagesAvailable": "Nenhum idioma disponível",
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Configurações de prática",
+        "subtitle": "Personalize sua experiência de aprendizado",
+        "sectionTitle": "Configuração de prática",
+        "correctAnswersNeeded": "Respostas corretas necessárias para completar um tipo de prática",
+        "correctAnswersDescription": "Escolha quantas respostas corretas são necessárias antes que um tipo de prática seja considerado concluído",
+        "totalCorrectToMaster": "Total de respostas corretas antes de dominar uma palavra",
+        "totalCorrectDescription": "Escolha quantas respostas corretas no total são necessárias antes que uma palavra seja considerada totalmente aprendida",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Definir número de respostas corretas para {{count}}",
+          "setTotalCorrectTo": "Definir total de respostas corretas para {{count}}",
+          "goBack": "Voltar para seleção de idioma nativo",
+          "continueToCompletion": "Continuar para finalização"
         }
       },
       "learningLanguageScreen": {

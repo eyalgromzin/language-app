@@ -51,18 +51,18 @@
       "loadingLanguageOptions": "Ładowanie opcji językowych...",
       "noLanguagesAvailable": "Brak dostępnych języków",
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "Ustawienia ćwiczeń",
+        "subtitle": "Dostosuj swoje doświadczenie nauki",
+        "sectionTitle": "Konfiguracja ćwiczeń",
+        "correctAnswersNeeded": "Liczba poprawnych odpowiedzi potrzebnych do ukończenia typu ćwiczenia",
+        "correctAnswersDescription": "Wybierz, ile poprawnych odpowiedzi jest potrzebne, zanim typ ćwiczenia zostanie uznany za ukończony",
+        "totalCorrectToMaster": "Łączna liczba poprawnych odpowiedzi przed opanowaniem słowa",
+        "totalCorrectDescription": "Wybierz, ile łącznie poprawnych odpowiedzi potrzeba, zanim słowo zostanie uznane za w pełni opanowane",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "Ustaw liczbę poprawnych odpowiedzi na {{count}}",
+          "setTotalCorrectTo": "Ustaw łączną liczbę poprawnych odpowiedzi na {{count}}",
+          "goBack": "Wróć do wyboru języka ojczystego",
+          "continueToCompletion": "Kontynuuj do zakończenia"
         }
       },
       "learningLanguageScreen": {

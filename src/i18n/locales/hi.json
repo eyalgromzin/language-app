@@ -51,18 +51,18 @@
       "loadingLanguageOptions": "भाषा विकल्प लोड हो रहे हैं...",
       "noLanguagesAvailable": "कोई भाषा उपलब्ध नहीं",
       "practiceSettingsScreen": {
-        "title": "Practice Settings",
-        "subtitle": "Customize your learning experience",
-        "sectionTitle": "Practice Configuration",
-        "correctAnswersNeeded": "Correct answers needed to complete a practice type",
-        "correctAnswersDescription": "Choose how many correct answers you need before a practice type is considered complete",
-        "totalCorrectToMaster": "Total correct answers before word is mastered",
-        "totalCorrectDescription": "Choose how many total correct answers are needed before a word is considered fully learned",
+        "title": "अभ्यास सेटिंग्स",
+        "subtitle": "अपना सीखने का अनुभव अनुकूलित करें",
+        "sectionTitle": "अभ्यास कॉन्फ़िगरेशन",
+        "correctAnswersNeeded": "किसी अभ्यास प्रकार को पूरा करने के लिए आवश्यक सही उत्तरों की संख्या",
+        "correctAnswersDescription": "चुनें कि किसी अभ्यास प्रकार को पूर्ण माना जाने से पहले आपको कितने सही उत्तर चाहिए",
+        "totalCorrectToMaster": "किसी शब्द को महारत पाने से पहले कुल सही उत्तर",
+        "totalCorrectDescription": "चुनें कि किसी शब्द को पूरी तरह सीखा हुआ मानने से पहले कुल कितने सही उत्तर चाहिए",
         "accessibility": {
-          "setCorrectAnswersTo": "Set number of correct answers to {{count}}",
-          "setTotalCorrectTo": "Set total correct answers to {{count}}",
-          "goBack": "Go back to native language selection",
-          "continueToCompletion": "Continue to completion"
+          "setCorrectAnswersTo": "सही उत्तरों की संख्या {{count}} पर सेट करें",
+          "setTotalCorrectTo": "कुल सही उत्तर {{count}} पर सेट करें",
+          "goBack": "मातृभाषा चयन पर वापस जाएँ",
+          "continueToCompletion": "समापन तक जारी रखें"
         }
       },
       "learningLanguageScreen": {
