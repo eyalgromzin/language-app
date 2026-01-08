@@ -80,6 +80,21 @@
           "goBackToLearningSelection": "Zurück zur Auswahl der Lernsprache",
           "continueToPracticeSettings": "Weiter zu den Übungseinstellungen"
         }
+      },
+      "completionScreen": {
+        "title": "Alles bereit!",
+        "subtitle": "Überprüfen Sie Ihre Einstellungen und beginnen Sie mit dem Lernen",
+        "yourSettings": "Ihre Einstellungen",
+        "notSelected": "Nicht ausgewählt",
+        "correctAnswers": "{{count}} richtige Antworten",
+        "totalCorrectAnswers": "{{count}} gesamt richtige Antworten",
+        "settingUp": "Einrichtung",
+        "startLearning": "Lernen beginnen",
+        "languagesMissing": "Sprachauswahl fehlt. Bitte gehen Sie zurück und wählen Sie Ihre Sprachen.",
+        "accessibility": {
+          "goBack": "Zurück zu den Übungseinstellungen",
+          "completeSetup": "Einrichtung abschließen und mit dem Lernen beginnen"
+        }
       }
     },
     "video": {

@@ -80,6 +80,21 @@
           "goBackToLearningSelection": "Ga terug naar selectie leertaal",
           "continueToPracticeSettings": "Ga verder naar oefeninstellingen"
         }
+      },
+      "completionScreen": {
+        "title": "Alles klaar!",
+        "subtitle": "Controleer je instellingen en begin met leren",
+        "yourSettings": "Jouw instellingen",
+        "notSelected": "Niet geselecteerd",
+        "correctAnswers": "{{count}} juiste antwoorden",
+        "totalCorrectAnswers": "{{count}} totaal juiste antwoorden",
+        "settingUp": "Instellen",
+        "startLearning": "Begin met leren",
+        "languagesMissing": "Taalselectie ontbreekt. Ga terug en selecteer je talen.",
+        "accessibility": {
+          "goBack": "Terug naar oefeningen instellingen",
+          "completeSetup": "Voltooi instelling en begin met leren"
+        }
       }
     },
     "video": {

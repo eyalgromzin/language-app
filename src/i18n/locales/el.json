@@ -80,6 +80,21 @@
           "goBackToLearningSelection": "Επιστροφή στην επιλογή γλώσσας μάθησης",
           "continueToPracticeSettings": "Συνέχεια στις ρυθμίσεις εξάσκησης"
         }
+      },
+      "completionScreen": {
+        "title": "Είστε έτοιμοι!",
+        "subtitle": "Ελέγξτε τις ρυθμίσεις σας και ξεκινήστε να μαθαίνετε",
+        "yourSettings": "Οι ρυθμίσεις σας",
+        "notSelected": "Δεν επιλέχθηκε",
+        "correctAnswers": "{{count}} σωστές απαντήσεις",
+        "totalCorrectAnswers": "{{count}} σύνολο σωστών απαντήσεων",
+        "settingUp": "Ρύθμιση",
+        "startLearning": "Έναρξη μάθησης",
+        "languagesMissing": "Η επιλογή γλώσσας λείπει. Παρακαλώ επιστρέψτε και επιλέξτε τις γλώσσες σας.",
+        "accessibility": {
+          "goBack": "Επιστροφή στις ρυθμίσεις άσκησης",
+          "completeSetup": "Ολοκλήρωση ρύθμισης και έναρξη μάθησης"
+        }
       }
     },
     "video": {

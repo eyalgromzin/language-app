@@ -80,6 +80,21 @@
           "goBackToLearningSelection": "Gå tilbake til valg av læringsspråk",
           "continueToPracticeSettings": "Fortsett til øvingsinnstillinger"
         }
+      },
+      "completionScreen": {
+        "title": "Alt klart!",
+        "subtitle": "Sjekk innstillingene dine og begynn å lære",
+        "yourSettings": "Dine innstillinger",
+        "notSelected": "Ikke valgt",
+        "correctAnswers": "{{count}} riktige svar",
+        "totalCorrectAnswers": "{{count}} totalt riktige svar",
+        "settingUp": "Setter opp",
+        "startLearning": "Begynn å lære",
+        "languagesMissing": "Språkvalg mangler. Vennligst gå tilbake og velg språkene dine.",
+        "accessibility": {
+          "goBack": "Tilbake til øvelsesinnstillinger",
+          "completeSetup": "Fullfør oppsett og begynn å lære"
+        }
       }
     },
     "video": {

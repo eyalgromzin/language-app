@@ -24,21 +24,21 @@
       "practiceSettings": "Cài Đặt Luyện Tập",
       "practiceCompletion": "Hoàn Thành Luyện Tập",
       "practiceCompletionDescription": "Số câu trả lời đúng cần thiết để hoàn thành một loại luyện tập",
-        "practiceSettingsScreen": {
-          "title": "Cài đặt luyện tập",
-          "subtitle": "Tùy chỉnh trải nghiệm học tập của bạn",
-          "sectionTitle": "Cấu hình luyện tập",
-          "correctAnswersNeeded": "Số câu trả lời đúng cần có để hoàn thành một loại luyện tập",
-          "correctAnswersDescription": "Chọn bao nhiêu câu trả lời đúng cần có trước khi một loại luyện tập được xem là hoàn thành",
-          "totalCorrectToMaster": "Tổng số câu trả lời đúng trước khi một từ được xem là thành thạo",
-          "totalCorrectDescription": "Chọn tổng số câu trả lời đúng cần có trước khi một từ được xem là học xong hoàn toàn",
-          "accessibility": {
-            "setCorrectAnswersTo": "Đặt số câu trả lời đúng là {{count}}",
-            "setTotalCorrectTo": "Đặt tổng số câu trả lời đúng là {{count}}",
-            "goBack": "Quay lại chọn ngôn ngữ mẹ đẻ",
-            "continueToCompletion": "Tiếp tục đến bước hoàn tất"
-          }
-        },
+      "practiceSettingsScreen": {
+        "title": "Cài đặt luyện tập",
+        "subtitle": "Tùy chỉnh trải nghiệm học tập của bạn",
+        "sectionTitle": "Cấu hình luyện tập",
+        "correctAnswersNeeded": "Số câu trả lời đúng cần có để hoàn thành một loại luyện tập",
+        "correctAnswersDescription": "Chọn bao nhiêu câu trả lời đúng cần có trước khi một loại luyện tập được xem là hoàn thành",
+        "totalCorrectToMaster": "Tổng số câu trả lời đúng trước khi một từ được xem là thành thạo",
+        "totalCorrectDescription": "Chọn tổng số câu trả lời đúng cần có trước khi một từ được xem là học xong hoàn toàn",
+        "accessibility": {
+          "setCorrectAnswersTo": "Đặt số câu trả lời đúng là {{count}}",
+          "setTotalCorrectTo": "Đặt tổng số câu trả lời đúng là {{count}}",
+          "goBack": "Quay lại chọn ngôn ngữ mẹ đẻ",
+          "continueToCompletion": "Tiếp tục đến bước hoàn tất"
+        }
+      },
       "wordMastery": "Thành Thạo Từ",
       "wordMasteryDescription": "Tổng số câu trả lời đúng trước khi một từ được coi là thành thạo",
       "account": "Tài Khoản",
@@ -79,6 +79,21 @@
         "accessibility": {
           "goBackToLearningSelection": "Quay lại chọn ngôn ngữ học",
           "continueToPracticeSettings": "Tiếp tục đến cài đặt luyện tập"
+        }
+      },
+      "completionScreen": {
+        "title": "Sẵn sàng rồi!",
+        "subtitle": "Xem lại cài đặt và bắt đầu học",
+        "yourSettings": "Cài đặt của bạn",
+        "notSelected": "Chưa chọn",
+        "correctAnswers": "{{count}} câu trả lời đúng",
+        "totalCorrectAnswers": "{{count}} tổng số câu trả lời đúng",
+        "settingUp": "Đang thiết lập",
+        "startLearning": "Bắt đầu học",
+        "languagesMissing": "Thiếu lựa chọn ngôn ngữ. Vui lòng quay lại và chọn ngôn ngữ của bạn.",
+        "accessibility": {
+          "goBack": "Quay lại cài đặt luyện tập",
+          "completeSetup": "Hoàn tất thiết lập và bắt đầu học"
         }
       }
     },

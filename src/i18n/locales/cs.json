@@ -80,6 +80,21 @@
           "goBackToLearningSelection": "Zpět na výběr jazyka učení",
           "continueToPracticeSettings": "Pokračovat na nastavení procvičování"
         }
+      },
+      "completionScreen": {
+        "title": "Vše připraveno!",
+        "subtitle": "Zkontrolujte nastavení a začněte se učit",
+        "yourSettings": "Vaše nastavení",
+        "notSelected": "Nevybráno",
+        "correctAnswers": "{{count}} správných odpovědí",
+        "totalCorrectAnswers": "{{count}} celkových správných odpovědí",
+        "settingUp": "Nastavování",
+        "startLearning": "Začít se učit",
+        "languagesMissing": "Chybí výběr jazyka. Vraťte se zpět a vyberte své jazyky.",
+        "accessibility": {
+          "goBack": "Zpět na nastavení cvičení",
+          "completeSetup": "Dokončit nastavení a začít se učit"
+        }
       }
     },
     "video": {

@@ -24,21 +24,21 @@
       "practiceSettings": "การตั้งค่าการฝึกฝน",
       "practiceCompletion": "การเสร็จสิ้นการฝึกฝน",
       "practiceCompletionDescription": "จำนวนคำตอบที่ถูกต้องที่จำเป็นในการเสร็จสิ้นประเภทการฝึกฝน",
-        "practiceSettingsScreen": {
-          "title": "การตั้งค่าการฝึกฝน",
-          "subtitle": "ปรับแต่งประสบการณ์การเรียนรู้ของคุณ",
-          "sectionTitle": "การกำหนดค่าการฝึกฝน",
-          "correctAnswersNeeded": "จำนวนคำตอบที่ถูกต้องที่ต้องใช้เพื่อจบประเภทการฝึกฝน",
-          "correctAnswersDescription": "เลือกจำนวนคำตอบที่ถูกต้องที่ต้องมี ก่อนที่ประเภทการฝึกฝนจะถือว่าเสร็จสิ้น",
-          "totalCorrectToMaster": "จำนวนคำตอบที่ถูกต้องทั้งหมดก่อนที่คำจะถือว่าเชี่ยวชาญ",
-          "totalCorrectDescription": "เลือกจำนวนคำตอบที่ถูกต้องทั้งหมดที่ต้องมี ก่อนที่คำจะถือว่าเรียนรู้ครบถ้วน",
-          "accessibility": {
-            "setCorrectAnswersTo": "ตั้งจำนวนคำตอบที่ถูกต้องเป็น {{count}}",
-            "setTotalCorrectTo": "ตั้งจำนวนคำตอบที่ถูกต้องทั้งหมดเป็น {{count}}",
-            "goBack": "กลับไปเลือกภาษาแม่",
-            "continueToCompletion": "ไปต่อเพื่อเสร็จสิ้น"
-          }
-        },
+      "practiceSettingsScreen": {
+        "title": "การตั้งค่าการฝึกฝน",
+        "subtitle": "ปรับแต่งประสบการณ์การเรียนรู้ของคุณ",
+        "sectionTitle": "การกำหนดค่าการฝึกฝน",
+        "correctAnswersNeeded": "จำนวนคำตอบที่ถูกต้องที่ต้องใช้เพื่อจบประเภทการฝึกฝน",
+        "correctAnswersDescription": "เลือกจำนวนคำตอบที่ถูกต้องที่ต้องมี ก่อนที่ประเภทการฝึกฝนจะถือว่าเสร็จสิ้น",
+        "totalCorrectToMaster": "จำนวนคำตอบที่ถูกต้องทั้งหมดก่อนที่คำจะถือว่าเชี่ยวชาญ",
+        "totalCorrectDescription": "เลือกจำนวนคำตอบที่ถูกต้องทั้งหมดที่ต้องมี ก่อนที่คำจะถือว่าเรียนรู้ครบถ้วน",
+        "accessibility": {
+          "setCorrectAnswersTo": "ตั้งจำนวนคำตอบที่ถูกต้องเป็น {{count}}",
+          "setTotalCorrectTo": "ตั้งจำนวนคำตอบที่ถูกต้องทั้งหมดเป็น {{count}}",
+          "goBack": "กลับไปเลือกภาษาแม่",
+          "continueToCompletion": "ไปต่อเพื่อเสร็จสิ้น"
+        }
+      },
       "wordMastery": "การเชี่ยวชาญคำ",
       "wordMasteryDescription": "จำนวนคำตอบที่ถูกต้องทั้งหมดก่อนที่คำจะถือว่าเชี่ยวชาญ",
       "account": "บัญชี",
@@ -79,6 +79,21 @@
         "accessibility": {
           "goBackToLearningSelection": "กลับไปเลือกภาษาที่ต้องการเรียน",
           "continueToPracticeSettings": "ไปต่อไปยังการตั้งค่าการฝึกฝน"
+        }
+      },
+      "completionScreen": {
+        "title": "พร้อมแล้ว!",
+        "subtitle": "ตรวจสอบการตั้งค่าและเริ่มเรียนรู้",
+        "yourSettings": "การตั้งค่าของคุณ",
+        "notSelected": "ไม่ได้เลือก",
+        "correctAnswers": "{{count}} คำตอบที่ถูกต้อง",
+        "totalCorrectAnswers": "{{count}} คำตอบที่ถูกต้องทั้งหมด",
+        "settingUp": "กำลังตั้งค่า",
+        "startLearning": "เริ่มเรียนรู้",
+        "languagesMissing": "การเลือกภาษายังไม่สมบูรณ์ กรุณากลับไปและเลือกภาษาของคุณ",
+        "accessibility": {
+          "goBack": "กลับไปที่การตั้งค่าการฝึกฝน",
+          "completeSetup": "ตั้งค่าให้เสร็จสิ้นและเริ่มเรียนรู้"
         }
       }
     },

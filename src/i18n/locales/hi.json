@@ -80,6 +80,21 @@
           "goBackToLearningSelection": "सीखने की भाषा चयन पर वापस जाएँ",
           "continueToPracticeSettings": "अभ्यास सेटिंग्स पर जारी रखें"
         }
+      },
+      "completionScreen": {
+        "title": "सब तैयार है!",
+        "subtitle": "अपनी सेटिंग की समीक्षा करें और सीखना शुरू करें",
+        "yourSettings": "आपकी सेटिंग्स",
+        "notSelected": "चयनित नहीं",
+        "correctAnswers": "{{count}} सही उत्तर",
+        "totalCorrectAnswers": "{{count}} कुल सही उत्तर",
+        "settingUp": "सेटअप हो रहा है",
+        "startLearning": "सीखना शुरू करें",
+        "languagesMissing": "भाषा चयन गायब है। कृपया वापस जाएं और अपनी भाषाओं का चयन करें।",
+        "accessibility": {
+          "goBack": "अभ्यास सेटिंग्स पर वापस जाएं",
+          "completeSetup": "सेटअप पूरा करें और सीखना शुरू करें"
+        }
       }
     },
     "video": {

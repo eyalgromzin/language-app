@@ -80,6 +80,21 @@
           "goBackToLearningSelection": "Gå tillbaka till val av inlärningsspråk",
           "continueToPracticeSettings": "Fortsätt till inställningar för övning"
         }
+      },
+      "completionScreen": {
+        "title": "Allt klart!",
+        "subtitle": "Granska dina inställningar och börja lära",
+        "yourSettings": "Dina inställningar",
+        "notSelected": "Inte vald",
+        "correctAnswers": "{{count}} rätta svar",
+        "totalCorrectAnswers": "{{count}} totalt rätta svar",
+        "settingUp": "Konfigurerar",
+        "startLearning": "Börja lära",
+        "languagesMissing": "Språkval saknas. Gå tillbaka och välj dina språk.",
+        "accessibility": {
+          "goBack": "Tillbaka till övningsinställningar",
+          "completeSetup": "Slutför inställning och börja lära"
+        }
       }
     },
     "video": {

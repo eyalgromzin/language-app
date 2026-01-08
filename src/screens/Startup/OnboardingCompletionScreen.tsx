@@ -5,6 +5,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useAuth } from '../../contexts/AuthContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from 'react-i18next';
 
 type OnboardingStackParamList = {
   LearningLanguage: undefined;
@@ -22,13 +23,15 @@ function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Ele
   const { completeSetup } = useAuth();
   const { learningLanguage, nativeLanguage } = useLanguage();
   const [saving, setSaving] = React.useState<boolean>(false);
+  const { t, i18n } = useTranslation();
+  const isHebrew = i18n.language === 'he' || i18n.language === 'iw';
 
   // Get the settings from the previous screens
   const { removeAfterCorrect, removeAfterTotalCorrect } = route.params;
 
   const onComplete = async () => {
     if (!learningLanguage || !nativeLanguage) {
-      Alert.alert('Error', 'Language selection is missing. Please go back and select your languages.');
+      Alert.alert(t('screens.startup.error'), t('screens.startup.completionScreen.languagesMissing'));
       return;
     }
 
@@ -78,7 +81,7 @@ function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Ele
     } catch (e) {
       console.error('[OnboardingCompletion] Error during setup completion:', e);
       setSaving(false);
-      Alert.alert('Error', 'Failed to save preferences. Please try again.');
+      Alert.alert(t('screens.startup.error'), t('screens.startup.failedToSavePreferences'));
     }
   };
 
@@ -93,35 +96,35 @@ function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Ele
         <View style={styles.logoContainer}>
           <Ionicons name="checkmark-circle-outline" size={40} color="#34C759" />
         </View>
-        <Text style={styles.title}>You're All Set!</Text>
-        <Text style={styles.subtitle}>Review your settings and start learning</Text>
+        <Text style={styles.title}>{t('screens.startup.completionScreen.title')}</Text>
+        <Text style={styles.subtitle}>{t('screens.startup.completionScreen.subtitle')}</Text>
       </View>
 
       {/* Summary Section */}
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Ionicons name="list-outline" size={20} color="#007AFF" />
-          <Text style={styles.sectionTitle}>Your Settings</Text>
+          <Text style={styles.sectionTitle}>{t('screens.startup.completionScreen.yourSettings')}</Text>
         </View>
         
         <View style={styles.summaryItem}>
-          <Text style={styles.summaryLabel}>Learning Language</Text>
-          <Text style={styles.summaryValue}>{learningLanguage || 'Not selected'}</Text>
+          <Text style={styles.summaryLabel}>{t('screens.settings.learningLanguage')}</Text>
+          <Text style={styles.summaryValue}>{learningLanguage || t('screens.startup.completionScreen.notSelected')}</Text>
         </View>
 
         <View style={styles.summaryItem}>
-          <Text style={styles.summaryLabel}>Native Language</Text>
-          <Text style={styles.summaryValue}>{nativeLanguage || 'Not selected'}</Text>
+          <Text style={styles.summaryLabel}>{t('screens.settings.nativeLanguage')}</Text>
+          <Text style={styles.summaryValue}>{nativeLanguage || t('screens.startup.completionScreen.notSelected')}</Text>
         </View>
 
         <View style={styles.summaryItem}>
-          <Text style={styles.summaryLabel}>Practice Completion</Text>
-          <Text style={styles.summaryValue}>{removeAfterCorrect} correct answers</Text>
+          <Text style={styles.summaryLabel}>{t('screens.settings.practiceCompletion')}</Text>
+          <Text style={styles.summaryValue}>{t('screens.startup.completionScreen.correctAnswers', { count: removeAfterCorrect })}</Text>
         </View>
 
         <View style={styles.summaryItem}>
-          <Text style={styles.summaryLabel}>Word Mastery</Text>
-          <Text style={styles.summaryValue}>{removeAfterTotalCorrect} total correct answers</Text>
+          <Text style={styles.summaryLabel}>{t('screens.settings.wordMastery')}</Text>
+          <Text style={styles.summaryValue}>{t('screens.startup.completionScreen.totalCorrectAnswers', { count: removeAfterTotalCorrect })}</Text>
         </View>
       </View>
 
@@ -133,10 +136,15 @@ function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Ele
             onPress={onBack}
             disabled={saving}
             accessibilityRole="button"
-            accessibilityLabel="Go back to practice settings"
+            accessibilityLabel={t('screens.startup.completionScreen.accessibility.goBack')}
           >
-            <Ionicons name="arrow-back" size={20} color="#007AFF" style={styles.backButtonIcon} />
-            <Text style={styles.backButtonText}>Back</Text>
+            <Ionicons 
+              name="arrow-back" 
+              size={20} 
+              color="#007AFF" 
+              style={[styles.backButtonIcon, isHebrew && { transform: [{ rotate: '180deg' }] }]} 
+            />
+            <Text style={styles.backButtonText}>{t('common.back')}</Text>
           </Pressable>
           
           <Pressable
@@ -144,7 +152,7 @@ function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Ele
             onPress={onComplete}
             disabled={saving}
             accessibilityRole="button"
-            accessibilityLabel={saving ? 'Setting up your account' : 'Complete setup and start learning'}
+            accessibilityLabel={saving ? t('screens.startup.settingUpAccount') : t('screens.startup.completionScreen.accessibility.completeSetup')}
           >
             {saving ? (
               <ActivityIndicator size="small" color="white" style={styles.buttonSpinner} />
@@ -152,7 +160,7 @@ function OnboardingCompletionScreen({ navigation, route }: Props): React.JSX.Ele
               <Ionicons name="rocket-outline" size={20} color="white" style={styles.buttonIcon} />
             )}
             <Text style={styles.completeButtonText}>
-              {saving ? 'Setting up' : 'Start Learning'}
+              {saving ? t('screens.startup.completionScreen.settingUp') : t('screens.startup.completionScreen.startLearning')}
             </Text>
           </Pressable>
         </View>

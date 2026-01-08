@@ -94,6 +94,21 @@
         "accessibility": {
           "getStarted": "Get started with HelloLingo"
         }
+      },
+      "completionScreen": {
+        "title": "You're All Set!",
+        "subtitle": "Review your settings and start learning",
+        "yourSettings": "Your Settings",
+        "notSelected": "Not selected",
+        "correctAnswers": "{{count}} correct answers",
+        "totalCorrectAnswers": "{{count}} total correct answers",
+        "settingUp": "Setting up",
+        "startLearning": "Start Learning",
+        "languagesMissing": "Language selection is missing. Please go back and select your languages.",
+        "accessibility": {
+          "goBack": "Go back to practice settings",
+          "completeSetup": "Complete setup and start learning"
+        }
       }
     },
     "video": {

@@ -26,21 +26,21 @@
       "practiceCompletionDescription": "Oikeiden vastausten määrä, joka tarvitaan harjoitustyypin valmistumiseen",
       "wordMastery": "Sanojen Hallinta",
       "wordMasteryDescription": "Kokonaisoikeat vastaukset ennen kuin sana katsotaan hallituksi",
-        "practiceSettingsScreen": {
-          "title": "Harjoitusasetukset",
-          "subtitle": "Mukauta oppimiskokemustasi",
-          "sectionTitle": "Harjoituksen määritykset",
-          "correctAnswersNeeded": "Oikeiden vastausten määrä harjoitustyypin suorittamiseen",
-          "correctAnswersDescription": "Valitse, kuinka monta oikeaa vastausta tarvitaan ennen kuin harjoitustyyppi katsotaan valmiiksi",
-          "totalCorrectToMaster": "Oikeita vastauksia yhteensä ennen kuin sana on hallittu",
-          "totalCorrectDescription": "Valitse, kuinka monta oikeaa vastausta yhteensä tarvitaan ennen kuin sana katsotaan täysin opituksi",
-          "accessibility": {
-            "setCorrectAnswersTo": "Aseta oikeiden vastausten määrä arvoon {{count}}",
-            "setTotalCorrectTo": "Aseta oikeiden vastausten kokonaismäärä arvoon {{count}}",
-            "goBack": "Palaa äidinkielen valintaan",
-            "continueToCompletion": "Jatka viimeistelyyn"
-          }
-        },
+      "practiceSettingsScreen": {
+        "title": "Harjoitusasetukset",
+        "subtitle": "Mukauta oppimiskokemustasi",
+        "sectionTitle": "Harjoituksen määritykset",
+        "correctAnswersNeeded": "Oikeiden vastausten määrä harjoitustyypin suorittamiseen",
+        "correctAnswersDescription": "Valitse, kuinka monta oikeaa vastausta tarvitaan ennen kuin harjoitustyyppi katsotaan valmiiksi",
+        "totalCorrectToMaster": "Oikeita vastauksia yhteensä ennen kuin sana on hallittu",
+        "totalCorrectDescription": "Valitse, kuinka monta oikeaa vastausta yhteensä tarvitaan ennen kuin sana katsotaan täysin opituksi",
+        "accessibility": {
+          "setCorrectAnswersTo": "Aseta oikeiden vastausten määrä arvoon {{count}}",
+          "setTotalCorrectTo": "Aseta oikeiden vastausten kokonaismäärä arvoon {{count}}",
+          "goBack": "Palaa äidinkielen valintaan",
+          "continueToCompletion": "Jatka viimeistelyyn"
+        }
+      },
       "account": "Tili",
       "signOut": "Kirjaudu Ulos",
       "logout": "Uloskirjautuminen",
@@ -79,6 +79,21 @@
         "accessibility": {
           "goBackToLearningSelection": "Palaa oppimiskielen valintaan",
           "continueToPracticeSettings": "Jatka harjoitusasetuksiin"
+        }
+      },
+      "completionScreen": {
+        "title": "Kaikki valmiina!",
+        "subtitle": "Tarkista asetuksesi ja aloita oppiminen",
+        "yourSettings": "Asetuksesi",
+        "notSelected": "Ei valittu",
+        "correctAnswers": "{{count}} oikeaa vastausta",
+        "totalCorrectAnswers": "{{count}} yhteensä oikeita vastauksia",
+        "settingUp": "Asetetaan",
+        "startLearning": "Aloita oppiminen",
+        "languagesMissing": "Kielivalinta puuttuu. Palaa takaisin ja valitse kielesi.",
+        "accessibility": {
+          "goBack": "Takaisin harjoitusasetuksiin",
+          "completeSetup": "Viimeistele asetukset ja aloita oppiminen"
         }
       }
     },

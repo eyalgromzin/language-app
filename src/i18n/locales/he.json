@@ -94,6 +94,21 @@
         "accessibility": {
           "getStarted": "התחילו עם HelloLingo"
         }
+      },
+      "completionScreen": {
+        "title": "הכל מוכן!",
+        "subtitle": "בדקו את ההגדרות שלכם והתחילו ללמוד",
+        "yourSettings": "ההגדרות שלך",
+        "notSelected": "לא נבחר",
+        "correctAnswers": "{{count}} תשובות נכונות",
+        "totalCorrectAnswers": "{{count}} סך תשובות נכונות",
+        "settingUp": "מגדיר",
+        "startLearning": "התחל ללמוד",
+        "languagesMissing": "בחירת השפה חסרה. אנא חזרו ובחרו את השפות שלכם.",
+        "accessibility": {
+          "goBack": "חזרה להגדרות תרגול",
+          "completeSetup": "השלימו את ההגדרה והתחילו ללמוד"
+        }
       }
     },
     "video": {

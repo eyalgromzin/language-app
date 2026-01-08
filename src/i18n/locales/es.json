@@ -123,7 +123,22 @@
       "no": "No",
       "yes": "Sí",
       "removed": "Eliminado",
-      "added": "Agregado"
+      "added": "Agregado",
+      "completionScreen": {
+        "title": "¡Todo listo!",
+        "subtitle": "Revisa tu configuración y comienza a aprender",
+        "yourSettings": "Tu configuración",
+        "notSelected": "No seleccionado",
+        "correctAnswers": "{{count}} respuestas correctas",
+        "totalCorrectAnswers": "{{count}} total de respuestas correctas",
+        "settingUp": "Configurando",
+        "startLearning": "Comenzar a aprender",
+        "languagesMissing": "Falta la selección de idioma. Por favor, vuelve atrás y selecciona tus idiomas.",
+        "accessibility": {
+          "goBack": "Volver a la configuración de práctica",
+          "completeSetup": "Completar configuración y comenzar a aprender"
+        }
+      }
     },
     "practice": {
       "title": "Práctica",

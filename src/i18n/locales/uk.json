@@ -80,6 +80,21 @@
           "goBackToLearningSelection": "Повернутися до вибору мови для навчання",
           "continueToPracticeSettings": "Перейти до налаштувань практики"
         }
+      },
+      "completionScreen": {
+        "title": "Все готово!",
+        "subtitle": "Перевірте свої налаштування та почніть навчання",
+        "yourSettings": "Ваші налаштування",
+        "notSelected": "Не вибрано",
+        "correctAnswers": "{{count}} правильних відповідей",
+        "totalCorrectAnswers": "{{count}} всього правильних відповідей",
+        "settingUp": "Налаштування",
+        "startLearning": "Почати навчання",
+        "languagesMissing": "Вибір мови відсутній. Будь ласка, поверніться назад і виберіть свої мови.",
+        "accessibility": {
+          "goBack": "Повернутися до налаштувань практики",
+          "completeSetup": "Завершити налаштування та почати навчання"
+        }
       }
     },
     "video": {

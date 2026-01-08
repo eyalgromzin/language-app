@@ -80,6 +80,21 @@
           "goBackToLearningSelection": "Wróć do wyboru języka nauki",
           "continueToPracticeSettings": "Przejdź do ustawień ćwiczeń"
         }
+      },
+      "completionScreen": {
+        "title": "Wszystko gotowe!",
+        "subtitle": "Sprawdź swoje ustawienia i zacznij naukę",
+        "yourSettings": "Twoje ustawienia",
+        "notSelected": "Nie wybrano",
+        "correctAnswers": "{{count}} poprawnych odpowiedzi",
+        "totalCorrectAnswers": "{{count}} łączna liczba poprawnych odpowiedzi",
+        "settingUp": "Konfiguracja",
+        "startLearning": "Rozpocznij naukę",
+        "languagesMissing": "Brak wyboru języka. Wróć i wybierz swoje języki.",
+        "accessibility": {
+          "goBack": "Wróć do ustawień ćwiczeń",
+          "completeSetup": "Zakończ konfigurację i rozpocznij naukę"
+        }
       }
     },
     "video": {

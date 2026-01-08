@@ -80,6 +80,21 @@
           "goBackToLearningSelection": "Вернуться к выбору языка для изучения",
           "continueToPracticeSettings": "Перейти к настройкам практики"
         }
+      },
+      "completionScreen": {
+        "title": "Всё готово!",
+        "subtitle": "Проверьте свои настройки и начните обучение",
+        "yourSettings": "Ваши настройки",
+        "notSelected": "Не выбрано",
+        "correctAnswers": "{{count}} правильных ответов",
+        "totalCorrectAnswers": "{{count}} всего правильных ответов",
+        "settingUp": "Настройка",
+        "startLearning": "Начать обучение",
+        "languagesMissing": "Выбор языка отсутствует. Пожалуйста, вернитесь назад и выберите свои языки.",
+        "accessibility": {
+          "goBack": "Вернуться к настройкам практики",
+          "completeSetup": "Завершить настройку и начать обучение"
+        }
       }
     },
     "video": {
