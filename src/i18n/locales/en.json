@@ -49,7 +49,21 @@
       "failedToSavePreferences": "Failed to save preferences. Please try again.",
       "loadingLanguages": "Loading available languages...",
       "loadingLanguageOptions": "Loading language options...",
-      "noLanguagesAvailable": "No languages available"
+      "noLanguagesAvailable": "No languages available",
+      "welcomeScreen": {
+        "title": "Welcome to HelloLingo!",
+        "subtitle": "Your personal language learning companion",
+        "features": {
+          "interactiveExercises": "Learn with interactive exercises",
+          "trackProgress": "Track your progress",
+          "exploreContent": "Explore real-world content",
+          "personalizedPath": "Personalized learning path"
+        },
+        "cta": "Let's Get Started",
+        "accessibility": {
+          "getStarted": "Get started with HelloLingo"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "Search...",

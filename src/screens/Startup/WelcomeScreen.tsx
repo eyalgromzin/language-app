@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Pressable, Animated, Dimensions } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from '../../hooks/useTranslation';
 
 type OnboardingStackParamList = {
   Welcome: undefined;
@@ -144,6 +145,7 @@ function WelcomeScreen({ navigation }: Props): React.JSX.Element {
   const titleOpacity = React.useRef(new Animated.Value(0)).current;
   const subtitleOpacity = React.useRef(new Animated.Value(0)).current;
   const buttonOpacity = React.useRef(new Animated.Value(0)).current;
+  const { t } = useTranslation();
 
   React.useEffect(() => {
     // Animate elements in sequence
@@ -205,9 +207,9 @@ function WelcomeScreen({ navigation }: Props): React.JSX.Element {
             },
           ]}
         >
-          <Text style={styles.title}>Welcome to HelloLingo!</Text>
+          <Text style={styles.title}>{t('screens.startup.welcomeScreen.title')}</Text>
           <Text style={styles.subtitle}>
-            Your personal language learning companion
+            {t('screens.startup.welcomeScreen.subtitle')}
           </Text>
         </Animated.View>
 
@@ -222,19 +224,19 @@ function WelcomeScreen({ navigation }: Props): React.JSX.Element {
         >
           <View style={styles.featureItem}>
             <Ionicons name="book-outline" size={24} color="#007AFF" />
-            <Text style={styles.featureText}>Learn with interactive exercises</Text>
+            <Text style={styles.featureText}>{t('screens.startup.welcomeScreen.features.interactiveExercises')}</Text>
           </View>
           <View style={styles.featureItem}>
             <Ionicons name="trophy-outline" size={24} color="#007AFF" />
-            <Text style={styles.featureText}>Track your progress</Text>
+            <Text style={styles.featureText}>{t('screens.startup.welcomeScreen.features.trackProgress')}</Text>
           </View>
           <View style={styles.featureItem}>
             <Ionicons name="globe-outline" size={24} color="#007AFF" />
-            <Text style={styles.featureText}>Explore real-world content</Text>
+            <Text style={styles.featureText}>{t('screens.startup.welcomeScreen.features.exploreContent')}</Text>
           </View>
           <View style={styles.featureItem}>
             <Ionicons name="people-outline" size={24} color="#007AFF" />
-            <Text style={styles.featureText}>Personalized learning path</Text>
+            <Text style={styles.featureText}>{t('screens.startup.welcomeScreen.features.personalizedPath')}</Text>
           </View>
         </Animated.View>
 
@@ -251,10 +253,9 @@ function WelcomeScreen({ navigation }: Props): React.JSX.Element {
             style={styles.getStartedButton}
             onPress={onGetStarted}
             accessibilityRole="button"
-            accessibilityLabel="Get started with HelloLingo"
+            accessibilityLabel={t('screens.startup.welcomeScreen.accessibility.getStarted')}
           >
-            <Text style={styles.getStartedButtonText}>Get Started</Text>
-            <Ionicons name="arrow-forward" size={20} color="white" style={styles.buttonIcon} />
+            <Text style={styles.getStartedButtonText}>{t('screens.startup.welcomeScreen.cta')}</Text>
           </Pressable>
         </Animated.View>
       </View>

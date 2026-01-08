@@ -49,7 +49,21 @@
       "failedToSavePreferences": "נכשל בשמירת ההעדפות. אנא נסו שוב.",
       "loadingLanguages": "טוען שפות זמינות...",
       "loadingLanguageOptions": "טוען אפשרויות שפה...",
-      "noLanguagesAvailable": "אין שפות זמינות"
+      "noLanguagesAvailable": "אין שפות זמינות",
+      "welcomeScreen": {
+        "title": "ברוכים הבאים ל-HelloLingo!",
+        "subtitle": "בן הזוג האישי שלכם ללמידת שפות",
+        "features": {
+          "interactiveExercises": "למדו עם תרגילים אינטראקטיביים",
+          "trackProgress": "עקבו אחר ההתקדמות שלכם",
+          "exploreContent": "חקור תוכן מעולם האמיתי",
+          "personalizedPath": "מסלול לימוד מותאם אישית"
+        },
+        "cta": "בואו נתחיל",
+        "accessibility": {
+          "getStarted": "התחילו עם HelloLingo"
+        }
+      }
     },
     "video": {
       "searchPlaceholder": "חיפוש...",

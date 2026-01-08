@@ -145,6 +145,19 @@ export const getLanguageNameFromCode = (languageCode: string): string => {
 // Initialize the language on app start
 export const initializeLanguage = async (): Promise<void> => {
   try {
+    // If UI language is not set, persist the device locale on first run
+    const storedLanguage = await AsyncStorage.getItem(UI_LANGUAGE_KEY);
+    if (!storedLanguage) {
+      const locales = getLocales();
+      // Prefer languageCode (e.g., 'en', 'es'); fallback to 'en'
+      const deviceLanguage = locales[0]?.languageCode ?? 'en';
+      const languageToUse = resources[deviceLanguage as keyof typeof resources] ? deviceLanguage : 'en';
+      await AsyncStorage.setItem(UI_LANGUAGE_KEY, languageToUse);
+      await i18n.changeLanguage(languageToUse);
+      return;
+    }
+
+    // UI language already set; use it (with existing fallbacks)
     const currentLanguage = await getCurrentUILanguage();
     await i18n.changeLanguage(currentLanguage);
   } catch (error) {
