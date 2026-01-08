@@ -340,7 +340,7 @@ function BabyStepsPathScreen(): React.JSX.Element {
     }, [])
   );
 
-  const positions = React.useMemo(() => {
+  const nodePositions = React.useMemo(() => {
     if (!steps) return [] as { x: number; y: number }[];
     const usableWidth = containerWidth - CONTENT_PADDING * 2;
     const numColumns = 2; // simple zig-zag in two columns
@@ -359,6 +359,30 @@ function BabyStepsPathScreen(): React.JSX.Element {
     }
     return result;
   }, [steps, containerWidth]);
+
+  const connectorLinesPositions = React.useMemo(() => {
+    if (!steps) return [] as { x: number; y: number }[];
+    const usableWidth = containerWidth - CONTENT_PADDING * 2;
+    const numColumns = 2; // simple zig-zag in two columns
+    const columnWidth = (usableWidth - H_SPACING) / numColumns;
+    const leftX = CONTENT_PADDING + (columnWidth - NODE_DIAMETER) / 2;
+    const rightX = CONTENT_PADDING + columnWidth + H_SPACING + (columnWidth - NODE_DIAMETER) / 2;
+
+    const result: { x: number; y: number }[] = [];
+    let currentY = CONTENT_PADDING + 40; // Add extra top spacing
+    for (let i = 0; i < steps.length; i++) {
+      const isLeft = i % 2 === 1;
+      const x = isLeft ? leftX : rightX;
+      result.push({ x, y: currentY });
+      // advance Y for next node
+      currentY += NODE_DIAMETER + V_SPACING;
+    }
+    return result;
+  }, [steps, containerWidth]);
+
+  // const connectorLinesPositions = React.useMemo(() => {
+  //   return nodePositions;
+  // }, [nodePositions]);
 
   const contentHeight = React.useMemo(() => {
     if (!steps || steps.length === 0) return 80; // Header height
@@ -642,9 +666,9 @@ function BabyStepsPathScreen(): React.JSX.Element {
         >
           {/* Animated Curved connectors using SVG */}
           <Svg width={containerWidth} height={contentHeight - 40} style={StyleSheet.absoluteFillObject}>
-            {positions.map((pos, idx) => {
+            {connectorLinesPositions.map((pos, idx) => {
               if (idx === 0) return null;
-              const prev = positions[idx - 1];
+              const prev = connectorLinesPositions[idx - 1];
               const x1 = prev.x + NODE_DIAMETER / 2;
               const y1 = prev.y + NODE_DIAMETER / 2;
               const x2 = pos.x + NODE_DIAMETER / 2;
@@ -681,11 +705,11 @@ function BabyStepsPathScreen(): React.JSX.Element {
 
           {/* Animated Nodes */}
           {steps.map((s, idx) => {
-            const pos = positions[idx];
+            const pos = nodePositions[idx];
             const isCompleted = completedSteps.has(idx);
             const isEnabled = idx + 1 <= Math.min((steps?.length || 0), maxCompletedIndex + 3);
             const emoji = getEmojiForStep(s, idx);
-            const isLeft = idx % 2 === 0;
+            // const isLeft = idx % 2 === 0;
             const nodeAnim = nodeAnimations[idx] || new Animated.Value(0);
             
             return (
