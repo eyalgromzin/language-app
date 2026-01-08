@@ -19,7 +19,8 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Startup'>;
 function StartupScreen({ navigation }: Props): React.JSX.Element {
   const { completeSetup } = useAuth();
   const { languageMappings, isLoading: languagesLoading } = useLanguageMappings();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isHebrew = i18n.language === 'he' || i18n.language === 'iw';
   const [learningLanguage, setLearningLanguage] = React.useState<string>('');
   const [nativeLanguage, setNativeLanguage] = React.useState<string>('');
   const [saving, setSaving] = React.useState<boolean>(false);
@@ -191,7 +192,12 @@ function StartupScreen({ navigation }: Props): React.JSX.Element {
           {saving ? (
             <ActivityIndicator size="small" color="white" style={styles.buttonSpinner} />
           ) : (
-            <Ionicons name="arrow-forward" size={20} color="white" style={styles.buttonIcon} />
+            <Ionicons 
+              name="arrow-forward" 
+              size={20} 
+              color="white" 
+              style={[styles.buttonIcon, isHebrew && { transform: [{ rotate: '180deg' }] }]} 
+            />
           )}
           <Text style={styles.continueButtonText}>
             {saving ? t('screens.startup.settingUpAccount') : t('screens.startup.startLearning')}

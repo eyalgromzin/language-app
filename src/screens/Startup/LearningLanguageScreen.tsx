@@ -21,7 +21,8 @@ function LearningLanguageScreen({ navigation }: Props): React.JSX.Element {
   const { languageMappings, isLoading: languagesLoading } = useLanguageMappings();
   const { learningLanguage, setLearningLanguage } = useLanguage();
   const [selectedLanguage, setSelectedLanguage] = React.useState<string>('');
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isHebrew = i18n.language === 'he' || i18n.language === 'iw';
 
   const onContinue = async () => {
     if (!selectedLanguage) {
@@ -104,7 +105,12 @@ function LearningLanguageScreen({ navigation }: Props): React.JSX.Element {
           accessibilityLabel={t('screens.startup.learningLanguageScreen.accessibility.continueToNativeSelection')}
         >
           <Text style={styles.continueButtonText}>{t('common.continue')}</Text>
-          <Ionicons name="arrow-forward" size={20} color="white" style={styles.buttonIcon} />
+          <Ionicons 
+            name="arrow-forward" 
+            size={20} 
+            color="white" 
+            style={[styles.buttonIcon, isHebrew && { transform: [{ rotate: '180deg' }] }]} 
+          />
         </Pressable>
       </View>
     </ScrollView>

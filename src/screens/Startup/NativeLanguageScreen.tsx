@@ -21,7 +21,8 @@ function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
   const { languageMappings, isLoading: languagesLoading } = useLanguageMappings();
   const { nativeLanguage, setNativeLanguage } = useLanguage();
   const [selectedLanguage, setSelectedLanguage] = React.useState<string>('');
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isHebrew = i18n.language === 'he' || i18n.language === 'iw';
 
   const onContinue = async () => {
     if (!selectedLanguage) {
@@ -107,7 +108,12 @@ function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
             accessibilityRole="button"
             accessibilityLabel={t('screens.startup.nativeLanguageScreen.accessibility.goBackToLearningSelection')}
           >
-            <Ionicons name="arrow-back" size={20} color="#007AFF" style={styles.backButtonIcon} />
+            <Ionicons 
+              name="arrow-back" 
+              size={20} 
+              color="#007AFF" 
+              style={[styles.backButtonIcon, isHebrew && { transform: [{ rotate: '180deg' }] }]} 
+            />
             <Text style={styles.backButtonText}>{t('common.back')}</Text>
           </Pressable>
           
@@ -119,7 +125,12 @@ function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
             accessibilityLabel={t('screens.startup.nativeLanguageScreen.accessibility.continueToPracticeSettings')}
           >
             <Text style={styles.continueButtonText}>{t('common.continue')}</Text>
-            <Ionicons name="arrow-forward" size={20} color="white" style={styles.buttonIcon} />
+            <Ionicons 
+              name="arrow-forward" 
+              size={20} 
+              color="white" 
+              style={[styles.buttonIcon, isHebrew && { transform: [{ rotate: '180deg' }] }]} 
+            />
           </Pressable>
         </View>
       </View>

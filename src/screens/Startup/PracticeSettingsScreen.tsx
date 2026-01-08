@@ -19,7 +19,8 @@ type Props = NativeStackScreenProps<OnboardingStackParamList, 'PracticeSettings'
 function PracticeSettingsScreen({ navigation }: Props): React.JSX.Element {
   const [removeAfterCorrect, setRemoveAfterCorrect] = React.useState<number>(3);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isHebrew = i18n.language === 'he' || i18n.language === 'iw';
 
   const onContinue = () => {
     navigation.navigate('Completion', {
@@ -51,7 +52,6 @@ function PracticeSettingsScreen({ navigation }: Props): React.JSX.Element {
         </View>
         
         <View style={styles.pickerBlock}>
-          <Text style={styles.infoLabel}>{t('screens.startup.practiceSettingsScreen.correctAnswersNeeded')}</Text>
           <Text style={styles.infoSubtext}>{t('screens.startup.practiceSettingsScreen.correctAnswersDescription')}</Text>
           <View style={styles.optionCirclesContainer}>
             {[1, 2, 3].map((n) => {
@@ -73,7 +73,6 @@ function PracticeSettingsScreen({ navigation }: Props): React.JSX.Element {
         </View>
 
         <View style={styles.pickerBlock}>
-          <Text style={styles.infoLabel}>{t('screens.startup.practiceSettingsScreen.totalCorrectToMaster')}</Text>
           <Text style={styles.infoSubtext}>{t('screens.startup.practiceSettingsScreen.totalCorrectDescription')}</Text>
           <View style={[styles.optionCirclesContainer, { flexWrap: 'wrap' }]}>
             {[6, 10, 14, 18].map((n) => {
@@ -104,7 +103,12 @@ function PracticeSettingsScreen({ navigation }: Props): React.JSX.Element {
             accessibilityRole="button"
             accessibilityLabel={t('screens.startup.practiceSettingsScreen.accessibility.goBack')}
           >
-            <Ionicons name="arrow-back" size={20} color="#007AFF" style={styles.backButtonIcon} />
+            <Ionicons 
+              name="arrow-back" 
+              size={20} 
+              color="#007AFF" 
+              style={[styles.backButtonIcon, isHebrew && { transform: [{ rotate: '180deg' }] }]} 
+            />
             <Text style={styles.backButtonText}>{t('common.back')}</Text>
           </Pressable>
           
@@ -115,7 +119,12 @@ function PracticeSettingsScreen({ navigation }: Props): React.JSX.Element {
             accessibilityLabel={t('screens.startup.practiceSettingsScreen.accessibility.continueToCompletion')}
           >
             <Text style={styles.continueButtonText}>{t('common.continue')}</Text>
-            <Ionicons name="arrow-forward" size={20} color="white" style={styles.buttonIcon} />
+            <Ionicons 
+              name="arrow-forward" 
+              size={20} 
+              color="white" 
+              style={[styles.buttonIcon, isHebrew && { transform: [{ rotate: '180deg' }] }]} 
+            />
           </Pressable>
         </View>
       </View>
@@ -206,7 +215,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   infoSubtext: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#666',
     marginBottom: 16,
     lineHeight: 20,
