@@ -12,17 +12,16 @@ Low priority (17 items)
   Performance optimizations
   Documentation gaps
 
-- on first load , set app to be same as system language 
 
-- auto fill the native language to be like the phones , but enable the user to change it 
-
-- check hebrew support - and rtl 
-    - formulate sentense - the words are the opposite order 
+check practice hebrew support and rtl 
+      - formulate sentense - the words are the opposite order 
 
 - in book reader, it enable to scroll in book only after first swipe , need to fox !!
 - my words - change number to progress bar  
 
 - publish app =======================================================================================================================
+
+- on first load , set app language to be same as system language 
 
 - on save favourite , disable the option to add javascript to make it secure 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, Modal } from 'react-native';
+import { ActivityIndicator, FlatList, Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, Modal, I18nManager } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { pick } from '@react-native-documents/picker';
@@ -61,11 +61,13 @@ async function extractCoverImageFromEpub(epubFilePath: string, bookId: string): 
 
 function BooksScreen(): React.JSX.Element {
   const navigation = useNavigation<any>();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [loading, setLoading] = React.useState<boolean>(true);
   const [books, setBooks] = React.useState<StoredBook[]>([]);
   const [infoModalVisible, setInfoModalVisible] = React.useState<boolean>(false);
   const [infoModalText, setInfoModalText] = React.useState<string>('');
+
+  const isRTL = I18nManager.isRTL || /^he(?=$|[-_])/i.test(i18n.language || '');
 
   const showInfoModal = React.useCallback((text: string) => {
     setInfoModalText(text);
@@ -263,8 +265,8 @@ function BooksScreen(): React.JSX.Element {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headerRow}>
-        <Text style={styles.header}>{t('screens.books.myBooks')}</Text>
+      <View style={[styles.headerRow, isRTL && styles.headerRowRtl]}>
+        <Text style={[styles.header, isRTL && styles.headerRtl]}>{t('screens.books.myBooks')}</Text>
         <View style={styles.actionsRow}>
           {books.length > 0 && (
             <TouchableOpacity style={styles.clearBtn} onPress={clearAllBooks}>
@@ -358,6 +360,12 @@ const styles = StyleSheet.create({
     fontWeight: '800', 
     color: '#1e293b',
     letterSpacing: -0.5,
+  },
+  headerRtl: {
+    textAlign: 'right',
+  },
+  headerRowRtl: {
+    flexDirection: 'row-reverse',
   },
   actionsRow: { 
     flexDirection: 'row', 

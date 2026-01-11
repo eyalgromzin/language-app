@@ -32,6 +32,10 @@ export default function CategoryHeader(props: Props): React.JSX.Element {
     onBackToCategories,
   } = props;
 
+  // Check if learning language is Hebrew (RTL)
+  const isRTL = SOURCE_LANGUAGE === 'he' || SOURCE_LANGUAGE === 'iw';
+  const chevronIcon = isRTL ? 'chevron-forward' : 'chevron-back';
+
   return (
     <View style={styles.headerRow}>
       <TouchableOpacity 
@@ -41,7 +45,7 @@ export default function CategoryHeader(props: Props): React.JSX.Element {
         activeOpacity={0.7}
       >
         <View style={styles.backButton}>
-          <Ionicons name="chevron-back" size={20} color="#3B82F6" />
+          <Ionicons name={chevronIcon} size={20} color="#3B82F6" />
           <Text style={styles.backText}>{t('screens.categories.wordCategories.back')}</Text>
         </View>
       </TouchableOpacity>
