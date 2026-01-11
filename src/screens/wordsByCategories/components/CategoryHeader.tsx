@@ -50,6 +50,9 @@ export default function CategoryHeader(props: Props): React.JSX.Element {
         </View>
       </TouchableOpacity>
       <View style={styles.headerTitleContainer}>
+        <Text numberOfLines={1} style={styles.headerTitle}>
+          {getTextInLanguage(category.name, SOURCE_LANGUAGE) || getTextInLanguage(category.name, TARGET_LANGUAGE) || category.id}
+        </Text>
         <View style={styles.categoryIconContainer}>
           <Ionicons 
             name={getCategoryIcon(category.emoji, category.id)} 
@@ -57,9 +60,6 @@ export default function CategoryHeader(props: Props): React.JSX.Element {
             color="#3B82F6" 
           />
         </View>
-        <Text numberOfLines={1} style={styles.headerTitle}>
-          {getTextInLanguage(category.name, SOURCE_LANGUAGE) || getTextInLanguage(category.name, TARGET_LANGUAGE) || category.id}
-        </Text>
       </View>
       <View style={{ width: 80 }} />
     </View>
