@@ -21,10 +21,10 @@ const NotEnoughWordsMessage: React.FC<NotEnoughWordsMessageProps> = ({
   };
 
   const learningOptions = [
-    { name: t('navigation.surf'), icon: 'globe-outline', description: t('notEnoughWords.browseContent') },
-    { name: t('navigation.video'), icon: 'play-circle-outline', description: t('notEnoughWords.watchVideos') },
-    { name: t('navigation.books'), icon: 'book-outline', description: t('notEnoughWords.readBooks') },
-    { name: t('navigation.categories'), icon: 'grid-outline', description: t('notEnoughWords.wordCategories') },
+    { screenName: 'Surf', name: t('navigation.surf'), icon: 'globe-outline', description: t('notEnoughWords.browseContent') },
+    { screenName: 'Video', name: t('navigation.video'), icon: 'play-circle-outline', description: t('notEnoughWords.watchVideos') },
+    { screenName: 'Books', name: t('navigation.books'), icon: 'book-outline', description: t('notEnoughWords.readBooks') },
+    { screenName: 'Categories', name: t('navigation.categories'), icon: 'grid-outline', description: t('notEnoughWords.wordCategories') },
   ];
 
   return (
@@ -42,7 +42,7 @@ const NotEnoughWordsMessage: React.FC<NotEnoughWordsMessageProps> = ({
             <TouchableOpacity 
               key={option.name}
               style={styles.button} 
-              onPress={() => navigateToScreen(option.name)}
+              onPress={() => navigateToScreen(option.screenName)}
               accessibilityRole="button"
               accessibilityLabel={`Go to ${option.name}`}
               activeOpacity={0.7}
