@@ -267,7 +267,19 @@
       "unsupportedUriScheme": "Schéma URI non pris en charge pour le fichier sélectionné.",
       "error": "Erreur",
       "unknownErrorImporting": "Erreur inconnue lors de l'importation du fichier",
-      "untitled": "Sans titre"
+      "untitled": "Sans titre",
+      "bookReader": {
+        "addToFavourites": "Ajouter aux favoris",
+        "addToFavouritesQuestion": "Voulez-vous ajouter une URL de téléchargement pour que tous l'utilisent aussi ?",
+        "no": "Non",
+        "yes": "Oui",
+        "failedToDisplayBook": "Impossible d'afficher le livre",
+        "addedToLibrary": "Ajouté à la bibliothèque",
+        "added": "Ajouté",
+        "addedToFavourites": "Ajouté aux favoris",
+        "success": "Succès",
+        "bookAddedToFavourites": "Livre ajouté aux favoris"
+      }
     },
     "categories": {
       "title": "Catégories",

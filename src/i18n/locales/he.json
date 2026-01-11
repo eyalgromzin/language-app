@@ -281,7 +281,19 @@
       "unsupportedUriScheme": "סכמת URI לא נתמכת עבור הקובץ שנבחר.",
       "error": "שגיאה",
       "unknownErrorImporting": "שגיאה לא ידועה בעת ייבוא הקובץ",
-      "untitled": "ללא כותרת"
+      "untitled": "ללא כותרת",
+      "bookReader": {
+        "addToFavourites": "הוסף למועדפים",
+        "addToFavouritesQuestion": "האם תרצה להוסיף כתובת URL להורדה לשימוש של כולם גם?",
+        "no": "לא",
+        "yes": "כן",
+        "failedToDisplayBook": "כישלון בהצגת הספר",
+        "addedToLibrary": "נוסף לספרייה",
+        "added": "נוסף",
+        "addedToFavourites": "נוסף למועדפים",
+        "success": "הצלחה",
+        "bookAddedToFavourites": "הספר נוסף למועדפים"
+      }
     },
     "categories": {
       "title": "קטגוריות",

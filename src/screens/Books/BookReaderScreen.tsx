@@ -1,6 +1,7 @@
 import React from 'react';
 import { Alert, Modal, Platform, StyleSheet, ToastAndroid, View, useWindowDimensions } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 import TranslationPanel from '../../components/TranslationPanel';
 import AddToFavouritesDialog from '../../components/AddToFavouritesDialog';
 import { AddBookModal } from './components';
@@ -31,6 +32,7 @@ function BookReaderScreen(): React.JSX.Element {
   const { isAuthenticated } = useAuth();
   const { learningLanguage } = useLanguage();
   const { languageMappings } = useLanguageMappings();
+  const { t } = useTranslation();
 
   const bookId: string | undefined = (route?.params as RouteParams | undefined)?.id;
 
@@ -74,11 +76,11 @@ function BookReaderScreen(): React.JSX.Element {
 
   const handleFavouriteClick = () => {
     Alert.alert(
-      'Add to Favourites',
-      'Would you like to add a download URL for all to use also?',
+      t('screens.books.bookReader.addToFavourites'),
+      t('screens.books.bookReader.addToFavouritesQuestion'),
       [
-        { text: 'No', style: 'cancel', onPress: () => setShowFavouriteModal(true) },
-        { text: 'Yes', onPress: () => setShowAddBookModal(true) },
+        { text: t('screens.books.bookReader.no'), style: 'cancel', onPress: () => setShowFavouriteModal(true) },
+        { text: t('screens.books.bookReader.yes'), onPress: () => setShowAddBookModal(true) },
       ],
       { cancelable: true }
     );
@@ -117,7 +119,7 @@ function BookReaderScreen(): React.JSX.Element {
         initialCfi={initialCfi}
         injectedJavascript={injectedJavascript}
         onWebViewMessage={handleWebViewMessage}
-        onDisplayError={(reason: string) => setDisplayError(reason || 'Failed to display book')}
+        onDisplayError={(reason: string) => setDisplayError(reason || t('screens.books.bookReader.failedToDisplayBook'))}
         onReady={() => setDisplayError(null)}
         onLocationChangePersist={handleLocationChange}
         themeColors={{
@@ -155,9 +157,9 @@ function BookReaderScreen(): React.JSX.Element {
             onAdd={async (url, typeName, displayName) => {
               await postAddBookUrlToLibrary(url, typeName, displayName);
               if (Platform.OS === 'android') {
-                ToastAndroid.show('Added to library', ToastAndroid.SHORT);
+                ToastAndroid.show(t('screens.books.bookReader.addedToLibrary'), ToastAndroid.SHORT);
               } else {
-                Alert.alert('Added');
+                Alert.alert(t('screens.books.bookReader.added'));
               }
             }}
             bookTitle={bookTitle}
@@ -172,9 +174,9 @@ function BookReaderScreen(): React.JSX.Element {
           onClose={() => setShowFavouriteModal(false)}
           onSuccess={() => {
             if (Platform.OS === 'android') {
-              ToastAndroid.show('Added to favourites', ToastAndroid.SHORT);
+              ToastAndroid.show(t('screens.books.bookReader.addedToFavourites'), ToastAndroid.SHORT);
             } else {
-              Alert.alert('Success', 'Book added to favourites');
+              Alert.alert(t('screens.books.bookReader.success'), t('screens.books.bookReader.bookAddedToFavourites'));
             }
           }}
           defaultName={bookTitle || ''}

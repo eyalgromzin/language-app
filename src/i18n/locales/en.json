@@ -287,7 +287,19 @@
       "unsupportedUriScheme": "Unsupported URI scheme for selected file.",
       "error": "Error",
       "unknownErrorImporting": "Unknown error while importing file",
-      "untitled": "Untitled"
+      "untitled": "Untitled",
+      "bookReader": {
+        "addToFavourites": "Add to Favourites",
+        "addToFavouritesQuestion": "Would you like to add a download URL for all to use also?",
+        "no": "No",
+        "yes": "Yes",
+        "failedToDisplayBook": "Failed to display book",
+        "addedToLibrary": "Added to library",
+        "added": "Added",
+        "addedToFavourites": "Added to favourites",
+        "success": "Success",
+        "bookAddedToFavourites": "Book added to favourites"
+      }
     },
     "categories": {
       "title": "Categories",

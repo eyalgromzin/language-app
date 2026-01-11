@@ -266,7 +266,19 @@
       "unsupportedUriScheme": "Icke-stött URI-schema för den valda filen.",
       "error": "Fel",
       "unknownErrorImporting": "Okänt fel vid import av fil",
-      "untitled": "Utan titel"
+      "untitled": "Utan titel",
+      "bookReader": {
+        "addToFavourites": "Lägg till i Favoriter",
+        "addToFavouritesQuestion": "Vill du också lägga till en nedladdnings-URL för alla att använda?",
+        "no": "Nej",
+        "yes": "Ja",
+        "failedToDisplayBook": "Det gick inte att visa boken",
+        "addedToLibrary": "Tillagd i biblioteket",
+        "added": "Tillagd",
+        "addedToFavourites": "Tillagd i favoriter",
+        "success": "Framgång",
+        "bookAddedToFavourites": "Boken lades till i favoriter"
+      }
     },
     "categories": {
       "title": "Kategorier",

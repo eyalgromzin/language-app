@@ -266,7 +266,19 @@
       "unsupportedUriScheme": "โครงร่าง URI ที่ไม่รองรับสำหรับไฟล์ที่เลือก",
       "error": "ข้อผิดพลาด",
       "unknownErrorImporting": "ข้อผิดพลาดที่ไม่ทราบสาเหตุขณะนำเข้าไฟล์",
-      "untitled": "ไม่มีชื่อ"
+      "untitled": "ไม่มีชื่อ",
+      "bookReader": {
+        "addToFavourites": "เพิ่มเข้าที่โปรด",
+        "addToFavouritesQuestion": "คุณต้องการเพิ่ม URL การดาวน์โหลดสำหรับให้ทุกคนใช้งานได้หรือไม่?",
+        "no": "ไม่",
+        "yes": "ใช่",
+        "failedToDisplayBook": "ไม่สามารถแสดงหนังสือได้",
+        "addedToLibrary": "เพิ่มเข้าห้องสมุดแล้ว",
+        "added": "เพิ่มแล้ว",
+        "addedToFavourites": "เพิ่มเข้าที่โปรดแล้ว",
+        "success": "สำเร็จ",
+        "bookAddedToFavourites": "เพิ่มหนังสือเข้าที่โปรดแล้ว"
+      }
     },
     "categories": {
       "title": "หมวดหมู่",

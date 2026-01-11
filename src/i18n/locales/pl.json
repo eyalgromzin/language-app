@@ -266,7 +266,19 @@
       "unsupportedUriScheme": "Nieobsługiwany schemat URI dla wybranego pliku.",
       "error": "Błąd",
       "unknownErrorImporting": "Nieznany błąd podczas importowania pliku",
-      "untitled": "Bez tytułu"
+      "untitled": "Bez tytułu",
+      "bookReader": {
+        "addToFavourites": "Dodaj do ulubionych",
+        "addToFavouritesQuestion": "Czy chciałbyś dodać adres URL pobierania do użytku wszystkich?",
+        "no": "Nie",
+        "yes": "Tak",
+        "failedToDisplayBook": "Nie udało się wyświetlić książkę",
+        "addedToLibrary": "Dodano do biblioteki",
+        "added": "Dodano",
+        "addedToFavourites": "Dodano do ulubionych",
+        "success": "Powodzenie",
+        "bookAddedToFavourites": "Książka dodana do ulubionych"
+      }
     },
     "categories": {
       "title": "Kategorie",

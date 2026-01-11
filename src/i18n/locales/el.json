@@ -266,7 +266,19 @@
       "unsupportedUriScheme": "Μη υποστηριζόμενο σχήμα URI για το επιλεγμένο αρχείο.",
       "error": "Σφάλμα",
       "unknownErrorImporting": "Άγνωστο σφάλμα κατά την εισαγωγή του αρχείου",
-      "untitled": "Χωρίς τίτλο"
+      "untitled": "Χωρίς τίτλο",
+      "bookReader": {
+        "addToFavourites": "Προσθήκη στα Αγαπημένα",
+        "addToFavouritesQuestion": "Θα ήθελες να προσθέσεις μια διεύθυνση URL λήψης για χρήση από όλους;",
+        "no": "Όχι",
+        "yes": "Ναι",
+        "failedToDisplayBook": "Αποτυχία εμφάνισης του βιβλίου",
+        "addedToLibrary": "Προστέθηκε στη βιβλιοθήκη",
+        "added": "Προστέθηκε",
+        "addedToFavourites": "Προστέθηκε στα αγαπημένα",
+        "success": "Επιτυχία",
+        "bookAddedToFavourites": "Το βιβλίο προστέθηκε στα αγαπημένα"
+      }
     },
     "categories": {
       "title": "Κατηγορίες",

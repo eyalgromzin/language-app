@@ -266,7 +266,19 @@
       "unsupportedUriScheme": "Ikke-støttet URI-skjema for den valgte filen.",
       "error": "Feil",
       "unknownErrorImporting": "Ukjent feil ved import av fil",
-      "untitled": "Uten tittel"
+      "untitled": "Uten tittel",
+      "bookReader": {
+        "addToFavourites": "Legg til i Favoritter",
+        "addToFavouritesQuestion": "Vil du også legge til en nedlastings-URL for alle å bruke?",
+        "no": "Nei",
+        "yes": "Ja",
+        "failedToDisplayBook": "Kunne ikke vise boken",
+        "addedToLibrary": "Lagt til i biblioteket",
+        "added": "Lagt til",
+        "addedToFavourites": "Lagt til i favoritter",
+        "success": "Suksess",
+        "bookAddedToFavourites": "Boken ble lagt til i favoritter"
+      }
     },
     "categories": {
       "title": "Kategorier",

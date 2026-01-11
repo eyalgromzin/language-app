@@ -266,7 +266,19 @@
       "unsupportedUriScheme": "Nepodporované URI schéma pro vybraný soubor.",
       "error": "Chyba",
       "unknownErrorImporting": "Neznámá chyba při importu souboru",
-      "untitled": "Bez názvu"
+      "untitled": "Bez názvu",
+      "bookReader": {
+        "addToFavourites": "Přidat do Oblíbených",
+        "addToFavouritesQuestion": "Chcete také přidat URL ke stažení, aby ji mohli používat všichni?",
+        "no": "Ne",
+        "yes": "Ano",
+        "failedToDisplayBook": "Selhalo zobrazení knihy",
+        "addedToLibrary": "Přidáno do knihovny",
+        "added": "Přidáno",
+        "addedToFavourites": "Přidáno do oblíbených",
+        "success": "Úspěch",
+        "bookAddedToFavourites": "Kniha přidána do oblíbených"
+      }
     },
     "categories": {
       "title": "Kategorie",

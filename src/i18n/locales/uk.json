@@ -266,7 +266,19 @@
       "unsupportedUriScheme": "Непідтримувана схема URI для вибраного файлу.",
       "error": "Помилка",
       "unknownErrorImporting": "Невідома помилка при імпорті файлу",
-      "untitled": "Без назви"
+      "untitled": "Без назви",
+      "bookReader": {
+        "addToFavourites": "Додати до вибраного",
+        "addToFavouritesQuestion": "Чи хочете ви також додати URL для завантаження для використання всіма?",
+        "no": "Ні",
+        "yes": "Так",
+        "failedToDisplayBook": "Не вдалося відобразити книгу",
+        "addedToLibrary": "Додано в бібліотеку",
+        "added": "Додано",
+        "addedToFavourites": "Додано до вибраного",
+        "success": "Успіх",
+        "bookAddedToFavourites": "Книга додана до вибраного"
+      }
     },
     "categories": {
       "title": "Категорії",

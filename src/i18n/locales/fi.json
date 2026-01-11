@@ -266,7 +266,19 @@
       "unsupportedUriScheme": "Ei-tuettu URI-skeema valitulle tiedostolle.",
       "error": "Virhe",
       "unknownErrorImporting": "Tuntematon virhe tiedoston tuonnissa",
-      "untitled": "Nimetön"
+      "untitled": "Nimetön",
+      "bookReader": {
+        "addToFavourites": "Lisää suosikkeihin",
+        "addToFavouritesQuestion": "Haluatko myös lisätä latauslinkin kaikkien käyttöön?",
+        "no": "Ei",
+        "yes": "Kyllä",
+        "failedToDisplayBook": "Kirjan näyttäminen epäonnistui",
+        "addedToLibrary": "Lisätty kirjastoon",
+        "added": "Lisätty",
+        "addedToFavourites": "Lisätty suosikkeihin",
+        "success": "Onnistui",
+        "bookAddedToFavourites": "Kirja lisätty suosikkeihin"
+      }
     },
     "categories": {
       "title": "Kategoriat",

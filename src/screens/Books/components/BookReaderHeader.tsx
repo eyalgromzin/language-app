@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { ThemeSelector, type ReaderTheme } from './index';
 
 type ThemeColors = {
@@ -31,11 +32,13 @@ export default function BookReaderHeader({
   onThemeMenuToggle,
   onThemeChange,
 }: BookReaderHeaderProps): React.JSX.Element {
+  const { t } = useTranslation();
+
   return (
     <>
       <View style={[styles.header, { backgroundColor: themeColors.headerBg, borderBottomColor: themeColors.border }]}>
         <TouchableOpacity onPress={onBack} style={styles.backBtn}>
-          <Text style={styles.backText}>Back</Text>
+          <Text style={styles.backText}>{t('common.back')}</Text>
         </TouchableOpacity>
         <Text style={[styles.title, { color: themeColors.headerText }]} numberOfLines={1}>
           {bookTitle || 'Reader'}

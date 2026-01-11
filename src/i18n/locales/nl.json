@@ -266,7 +266,19 @@
       "unsupportedUriScheme": "Niet-ondersteund URI-schema voor het geselecteerde bestand.",
       "error": "Fout",
       "unknownErrorImporting": "Onbekende fout bij het importeren van het bestand",
-      "untitled": "Zonder titel"
+      "untitled": "Zonder titel",
+      "bookReader": {
+        "addToFavourites": "Toevoegen aan Favorieten",
+        "addToFavouritesQuestion": "Wil je ook een download-URL toevoegen voor iedereen?",
+        "no": "Nee",
+        "yes": "Ja",
+        "failedToDisplayBook": "Kan het boek niet weergeven",
+        "addedToLibrary": "Toegevoegd aan bibliotheek",
+        "added": "Toegevoegd",
+        "addedToFavourites": "Toegevoegd aan favorieten",
+        "success": "Succes",
+        "bookAddedToFavourites": "Boek toegevoegd aan favorieten"
+      }
     },
     "categories": {
       "title": "Categorieën",

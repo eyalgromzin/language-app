@@ -266,7 +266,19 @@
       "unsupportedUriScheme": "Lược đồ URI không được hỗ trợ cho tệp đã chọn.",
       "error": "Lỗi",
       "unknownErrorImporting": "Lỗi không xác định khi nhập tệp",
-      "untitled": "Không có tiêu đề"
+      "untitled": "Không có tiêu đề",
+      "bookReader": {
+        "addToFavourites": "Thêm vào Yêu thích",
+        "addToFavouritesQuestion": "Bạn có muốn thêm URL tải xuống để mọi người sử dụng cũng không?",
+        "no": "Không",
+        "yes": "Có",
+        "failedToDisplayBook": "Không thể hiển thị sách",
+        "addedToLibrary": "Đã thêm vào thư viện",
+        "added": "Đã thêm",
+        "addedToFavourites": "Đã thêm vào yêu thích",
+        "success": "Thành công",
+        "bookAddedToFavourites": "Sách đã được thêm vào yêu thích"
+      }
     },
     "categories": {
       "title": "Danh Mục",
