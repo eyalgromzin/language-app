@@ -418,6 +418,7 @@
       "clearProgressError": "Не удалось очистить прогресс. Пожалуйста, попробуйте снова."
     },
     "babyStepsRunner": {
+      "progressSummary": "Шаг {{step}} • {{correct}}/{{total}} • {{correct}} верно • {{wrong}} неверно",
       "loadingStepContent": "Загружаем содержимое шага...",
       "preparingPracticeExercises": "Готовим ваши тренировочные задания"
     }

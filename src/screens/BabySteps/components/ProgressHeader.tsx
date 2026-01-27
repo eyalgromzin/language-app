@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 interface ProgressHeaderProps {
   stepIndex: number;
@@ -18,12 +19,19 @@ const ProgressHeader: React.FC<ProgressHeaderProps> = ({
   streak,
   onSkip,
 }) => {
+  const { t } = useTranslation();
+
+  const progressLabel = t('screens.babyStepsRunner.progressSummary', {
+    step: stepIndex + 1,
+    correct: numCorrect,
+    total: originalTaskCount,
+    wrong: numWrong,
+  });
+
   return (
     <View style={styles.topRow}>
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>
-          Step {stepIndex + 1} • {numCorrect}/{originalTaskCount} • {numCorrect} correct • {numWrong} wrong
-        </Text>
+        <Text style={styles.title}>{progressLabel}</Text>
         {streak > 0 && (
           <View style={styles.streakIndicator}>
             <Text style={styles.streakEmoji}>🔥</Text>
@@ -36,9 +44,9 @@ const ProgressHeader: React.FC<ProgressHeaderProps> = ({
           style={styles.skipButton} 
           onPress={onSkip} 
           accessibilityRole="button" 
-          accessibilityLabel="Skip"
+          accessibilityLabel={t('common.skip')}
         >
-          <Text style={styles.skipText}>Skip</Text>
+          <Text style={styles.skipText}>{t('common.skip')}</Text>
         </TouchableOpacity>
       ) : null}
     </View>

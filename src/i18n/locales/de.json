@@ -419,6 +419,7 @@
       "clearProgressError": "Das Löschen des Fortschritts ist fehlgeschlagen. Bitte versuche es erneut."
     },
     "babyStepsRunner": {
+      "progressSummary": "Schritt {{step}} • {{correct}}/{{total}} • {{correct}} richtig • {{wrong}} falsch",
       "loadingStepContent": "Lade Schrittinhalt...",
       "preparingPracticeExercises": "Bereite deine Übungsaufgaben vor"
     }

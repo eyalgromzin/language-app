@@ -419,6 +419,7 @@
       "clearProgressError": "Échec de l'effacement des progrès. Veuillez réessayer."
     },
     "babyStepsRunner": {
+      "progressSummary": "Étape {{step}} • {{correct}}/{{total}} • {{correct}} bonnes réponses • {{wrong}} erreurs",
       "loadingStepContent": "Chargement du contenu de l'étape...",
       "preparingPracticeExercises": "Préparation de vos exercices de pratique"
     }

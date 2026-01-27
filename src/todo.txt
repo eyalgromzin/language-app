@@ -12,6 +12,7 @@ Low priority (17 items)
   Performance optimizations
   Documentation gaps
 
+sometimes - choosing strange languages makes app crash - fix !
 
 check practice hebrew support and rtl 
       - formulate sentense - the words are the opposite order 

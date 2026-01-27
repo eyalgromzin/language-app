@@ -418,6 +418,7 @@
       "clearProgressError": "Impossibile cancellare il progresso. Riprova."
     },
     "babyStepsRunner": {
+      "progressSummary": "Passo {{step}} • {{correct}}/{{total}} • {{correct}} corrette • {{wrong}} errate",
       "loadingStepContent": "Caricamento del contenuto della tappa...",
       "preparingPracticeExercises": "Preparando i tuoi esercizi di pratica"
     }

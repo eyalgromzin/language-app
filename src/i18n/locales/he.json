@@ -433,6 +433,7 @@
       "clearProgressError": "נכשל בניקוי ההתקדמות. אנא נסה שוב."
     },
     "babyStepsRunner": {
+      "progressSummary": "שלב {{step}} • {{correct}}/{{total}} • {{correct}} נכונות • {{wrong}} שגויות",
       "loadingStepContent": "טוען את תוכן השלב...",
       "preparingPracticeExercises": "מכין עבורך את תרגילי התרגול"
     }

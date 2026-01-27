@@ -418,6 +418,7 @@
       "clearProgressError": "Kunne ikke tømme fremgang. Vennligst prøv igjen."
     },
     "babyStepsRunner": {
+      "progressSummary": "Steg {{step}} • {{correct}}/{{total}} • {{correct}} riktig • {{wrong}} feil",
       "loadingStepContent": "Laster inn steginnhold...",
       "preparingPracticeExercises": "Forbereder øvelsene dine"
     }

@@ -418,6 +418,7 @@
       "clearProgressError": "Misslyckades med att rensa framsteg. Vänligen försök igen."
     },
     "babyStepsRunner": {
+      "progressSummary": "Steg {{step}} • {{correct}}/{{total}} • {{correct}} rätt • {{wrong}} fel",
       "loadingStepContent": "Läser in steginnehåll...",
       "preparingPracticeExercises": "Förbereder dina övningsuppgifter"
     }

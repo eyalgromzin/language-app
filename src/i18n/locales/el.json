@@ -418,6 +418,7 @@
       "clearProgressError": "Αποτυχία διαγραφής προόδου. Παρακαλώ δοκιμάστε ξανά."
     },
     "babyStepsRunner": {
+      "progressSummary": "Βήμα {{step}} • {{correct}}/{{total}} • {{correct}} σωστά • {{wrong}} λάθος",
       "loadingStepContent": "Φόρτωση περιεχομένου βήματος...",
       "preparingPracticeExercises": "Προετοιμασία των ασκήσεων εξάσκησής σου"
     }

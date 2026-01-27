@@ -416,6 +416,7 @@
       "clearProgressError": "No se pudo borrar el progreso. Por favor, inténtalo de nuevo."
     },
     "babyStepsRunner": {
+      "progressSummary": "Paso {{step}} • {{correct}}/{{total}} • {{correct}} correctas • {{wrong}} incorrectas",
       "loadingStepContent": "Cargando el contenido del paso...",
       "preparingPracticeExercises": "Preparando tus ejercicios de práctica"
     }

@@ -418,6 +418,7 @@
       "clearProgressError": "ไม่สามารถล้างความคืบหน้าได้ กรุณาลองอีกครั้ง"
     },
     "babyStepsRunner": {
+      "progressSummary": "ขั้น {{step}} • {{correct}}/{{total}} • {{correct}} ถูก • {{wrong}} ผิด",
       "loadingStepContent": "กำลังโหลดเนื้อหาของขั้นตอน...",
       "preparingPracticeExercises": "กำลังเตรียมแบบฝึกหัดของคุณ"
     }

@@ -418,6 +418,7 @@
       "clearProgressError": "Nepodařilo se vymazat pokrok. Zkuste to prosím znovu."
     },
     "babyStepsRunner": {
+      "progressSummary": "Krok {{step}} • {{correct}}/{{total}} • {{correct}} správně • {{wrong}} špatně",
       "loadingStepContent": "Načítám obsah kroku...",
       "preparingPracticeExercises": "Připravujeme vaše cvičení"
     }

@@ -439,6 +439,7 @@
       "clearProgressError": "Failed to clear progress. Please try again."
     },
     "babyStepsRunner": {
+      "progressSummary": "Step {{step}} • {{correct}}/{{total}} • {{correct}} correct • {{wrong}} wrong",
       "loadingStepContent": "Loading step content...",
       "preparingPracticeExercises": "Preparing your practice exercises"
     }

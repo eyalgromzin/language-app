@@ -418,6 +418,7 @@
       "clearProgressError": "Không thể xóa tiến độ. Vui lòng thử lại."
     },
     "babyStepsRunner": {
+      "progressSummary": "Bước {{step}} • {{correct}}/{{total}} • {{correct}} đúng • {{wrong}} sai",
       "loadingStepContent": "Đang tải nội dung bước...",
       "preparingPracticeExercises": "Đang chuẩn bị bài tập luyện của bạn"
     }

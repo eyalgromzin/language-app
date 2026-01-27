@@ -418,6 +418,7 @@
       "clearProgressError": "Kon voortgang niet wissen. Probeer het opnieuw."
     },
     "babyStepsRunner": {
+      "progressSummary": "Stap {{step}} • {{correct}}/{{total}} • {{correct}} goed • {{wrong}} fout",
       "loadingStepContent": "Stapinhoud laden...",
       "preparingPracticeExercises": "Je oefenopdrachten worden voorbereid"
     }

@@ -418,6 +418,7 @@
       "clearProgressError": "Nie udało się wyczyścić postępu. Spróbuj ponownie."
     },
     "babyStepsRunner": {
+      "progressSummary": "Krok {{step}} • {{correct}}/{{total}} • {{correct}} poprawnych • {{wrong}} błędnych",
       "loadingStepContent": "Ładowanie treści kroku...",
       "preparingPracticeExercises": "Przygotowujemy Twoje ćwiczenia"
     }

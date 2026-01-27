@@ -418,6 +418,7 @@
       "clearProgressError": "Edistymisen tyhjentäminen epäonnistui. Yritä uudelleen."
     },
     "babyStepsRunner": {
+      "progressSummary": "Vaihe {{step}} • {{correct}}/{{total}} • {{correct}} oikein • {{wrong}} väärin",
       "loadingStepContent": "Ladataan vaiheen sisältöä...",
       "preparingPracticeExercises": "Valmistellaan harjoitustehtäviäsi"
     }
