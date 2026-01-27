@@ -439,6 +439,8 @@
     "back": "Zpět",
     "next": "Další",
     "previous": "Předchozí",
+    "correct": "Správně!",
+    "incorrect": "Nesprávně",
     "continue": "Pokračovat",
     "finish": "Dokončit",
     "retry": "Zkusit znovu",
@@ -457,7 +459,11 @@
     "settings": "Nastavení",
     "preferences": "Předvolby",
     "language": "Jazyk",
-    "languages": "Jazyky"
+    "languages": "Jazyky",
+    "skip": "Přeskočit",
+    "tryAgain": "Zkuste to znovu!",
+    "notQuiteTryAgain": "Neúplně, zkuste to znovu",
+    "wrongAnswer": "Špatná Odpověď"
   },
   "menu": {
     "openMenu": "Otevřít menu",

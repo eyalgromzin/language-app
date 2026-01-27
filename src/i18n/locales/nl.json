@@ -439,6 +439,8 @@
     "back": "Terug",
     "next": "Volgende",
     "previous": "Vorige",
+    "correct": "Correct!",
+    "incorrect": "Onjuist",
     "continue": "Doorgaan",
     "finish": "Voltooien",
     "retry": "Opnieuw proberen",
@@ -457,7 +459,11 @@
     "settings": "Instellingen",
     "preferences": "Voorkeuren",
     "language": "Taal",
-    "languages": "Talen"
+    "languages": "Talen",
+    "skip": "Overslaan",
+    "tryAgain": "Probeer opnieuw!",
+    "notQuiteTryAgain": "Niet helemaal, probeer opnieuw",
+    "wrongAnswer": "Fout Antwoord"
   },
   "menu": {
     "openMenu": "Menu openen",

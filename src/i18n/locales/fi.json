@@ -439,6 +439,8 @@
     "back": "Takaisin",
     "next": "Seuraava",
     "previous": "Edellinen",
+    "correct": "Oikein!",
+    "incorrect": "Väärin",
     "continue": "Jatka",
     "finish": "Valmis",
     "retry": "Yritä uudelleen",
@@ -457,7 +459,11 @@
     "settings": "Asetukset",
     "preferences": "Asetukset",
     "language": "Kieli",
-    "languages": "Kielet"
+    "languages": "Kielet",
+    "skip": "Ohita",
+    "tryAgain": "Yritä uudelleen!",
+    "notQuiteTryAgain": "Ei aivan, yritä uudelleen",
+    "wrongAnswer": "Väärä Vastaus"
   },
   "menu": {
     "openMenu": "Avaa valikko",

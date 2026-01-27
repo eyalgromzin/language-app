@@ -439,6 +439,8 @@
     "back": "Wstecz",
     "next": "Dalej",
     "previous": "Poprzedni",
+    "correct": "Poprawnie!",
+    "incorrect": "Niepoprawnie",
     "continue": "Kontynuuj",
     "finish": "Zakończ",
     "retry": "Spróbuj ponownie",
@@ -457,7 +459,11 @@
     "settings": "Ustawienia",
     "preferences": "Preferencje",
     "language": "Język",
-    "languages": "Języki"
+    "languages": "Języki",
+    "skip": "Pomiń",
+    "tryAgain": "Spróbuj ponownie!",
+    "notQuiteTryAgain": "Nie do końca, spróbuj ponownie",
+    "wrongAnswer": "Zła Odpowiedź"
   },
   "menu": {
     "openMenu": "Otwórz menu",

@@ -439,6 +439,8 @@
     "back": "Tilbake",
     "next": "Neste",
     "previous": "Forrige",
+    "correct": "Riktig!",
+    "incorrect": "Feil",
     "continue": "Fortsett",
     "finish": "Fullfør",
     "retry": "Prøv igjen",
@@ -457,7 +459,11 @@
     "settings": "Innstillinger",
     "preferences": "Preferanser",
     "language": "Språk",
-    "languages": "Språk"
+    "languages": "Språk",
+    "skip": "Hopp over",
+    "tryAgain": "Prøv igjen!",
+    "notQuiteTryAgain": "Ikke helt, prøv igjen",
+    "wrongAnswer": "Feil Svar"
   },
   "menu": {
     "openMenu": "Åpne meny",

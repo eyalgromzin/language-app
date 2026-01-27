@@ -439,6 +439,8 @@
     "back": "Indietro",
     "next": "Avanti",
     "previous": "Precedente",
+    "correct": "Corretto!",
+    "incorrect": "Sbagliato",
     "continue": "Continua",
     "finish": "Termina",
     "retry": "Riprova",
@@ -457,7 +459,11 @@
     "settings": "Impostazioni",
     "preferences": "Preferenze",
     "language": "Lingua",
-    "languages": "Lingue"
+    "languages": "Lingue",
+    "skip": "Salta",
+    "tryAgain": "Riprova!",
+    "notQuiteTryAgain": "Non proprio, riprova",
+    "wrongAnswer": "Risposta Sbagliata"
   },
   "menu": {
     "openMenu": "Apri menu",

@@ -439,6 +439,8 @@
     "back": "Πίσω",
     "next": "Επόμενο",
     "previous": "Προηγούμενο",
+    "correct": "Σωστό!",
+    "incorrect": "Λάθος",
     "continue": "Συνέχεια",
     "finish": "Τέλος",
     "retry": "Επανάληψη",
@@ -457,7 +459,11 @@
     "settings": "Ρυθμίσεις",
     "preferences": "Προτιμήσεις",
     "language": "Γλώσσα",
-    "languages": "Γλώσσες"
+    "languages": "Γλώσσες",
+    "skip": "Παράλειψη",
+    "tryAgain": "Δοκίμασε ξανά!",
+    "notQuiteTryAgain": "Όχι ακριβώς, δοκίμασε ξανά",
+    "wrongAnswer": "Λάθος Απάντηση"
   },
   "menu": {
     "openMenu": "Άνοιγμα μενού",

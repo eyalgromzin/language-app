@@ -439,6 +439,8 @@
     "back": "Назад",
     "next": "Далее",
     "previous": "Предыдущий",
+    "correct": "Правильно!",
+    "incorrect": "Неправильно",
     "continue": "Продолжить",
     "finish": "Завершить",
     "retry": "Повторить",
@@ -457,7 +459,11 @@
     "settings": "Настройки",
     "preferences": "Предпочтения",
     "language": "Язык",
-    "languages": "Языки"
+    "languages": "Языки",
+    "skip": "Пропустить",
+    "tryAgain": "Попробуйте снова!",
+    "notQuiteTryAgain": "Не совсем, попробуйте снова",
+    "wrongAnswer": "Неверный Ответ"
   },
   "menu": {
     "openMenu": "Открыть меню",

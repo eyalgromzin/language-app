@@ -457,7 +457,11 @@
     "settings": "Configuración",
     "preferences": "Preferencias",
     "language": "Idioma",
-    "languages": "Idiomas"
+    "languages": "Idiomas",
+    "skip": "Omitir",
+    "tryAgain": "¡Inténtalo de nuevo!",
+    "notQuiteTryAgain": "No del todo, inténtalo de nuevo",
+    "wrongAnswer": "Respuesta Incorrecta"
   },
   "menu": {
     "openMenu": "Abrir menú",

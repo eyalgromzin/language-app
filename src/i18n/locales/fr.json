@@ -460,7 +460,11 @@
     "settings": "Paramètres",
     "preferences": "Préférences",
     "language": "Langue",
-    "languages": "Langues"
+    "languages": "Langues",
+    "skip": "Passer",
+    "tryAgain": "Réessayez !",
+    "notQuiteTryAgain": "Pas tout à fait, réessayez",
+    "wrongAnswer": "Mauvaise Réponse"
   },
   "menu": {
     "openMenu": "Ouvrir le menu",

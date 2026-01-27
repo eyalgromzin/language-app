@@ -454,6 +454,8 @@
     "back": "חזור",
     "next": "הבא",
     "previous": "הקודם",
+    "correct": "נכון!",
+    "incorrect": "שגוי",
     "continue": "המשך",
     "finish": "סיים",
     "retry": "נסה שוב",
@@ -472,7 +474,11 @@
     "settings": "הגדרות",
     "preferences": "העדפות",
     "language": "שפה",
-    "languages": "שפות"
+    "languages": "שפות",
+    "skip": "דלג",
+    "tryAgain": "נסה שוב!",
+    "notQuiteTryAgain": "לא לגמרי, נסה שוב",
+    "wrongAnswer": "תשובה שגויה"
   },
   "menu": {
     "openMenu": "פתח תפריט",

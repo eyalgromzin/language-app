@@ -440,6 +440,8 @@
     "back": "Zurück",
     "next": "Weiter",
     "previous": "Vorherige",
+    "correct": "Richtig!",
+    "incorrect": "Falsch",
     "continue": "Fortfahren",
     "finish": "Beenden",
     "retry": "Wiederholen",
@@ -458,7 +460,11 @@
     "settings": "Einstellungen",
     "preferences": "Einstellungen",
     "language": "Sprache",
-    "languages": "Sprachen"
+    "languages": "Sprachen",
+    "skip": "Überspringen",
+    "tryAgain": "Versuchen Sie es erneut!",
+    "notQuiteTryAgain": "Nicht ganz, versuchen Sie es erneut",
+    "wrongAnswer": "Falsche Antwort"
   },
   "menu": {
     "openMenu": "Menü öffnen",

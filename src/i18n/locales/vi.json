@@ -439,6 +439,8 @@
     "back": "Quay lại",
     "next": "Tiếp theo",
     "previous": "Trước",
+    "correct": "Đúng!",
+    "incorrect": "Sai",
     "continue": "Tiếp tục",
     "finish": "Hoàn thành",
     "retry": "Thử lại",
@@ -457,7 +459,11 @@
     "settings": "Cài đặt",
     "preferences": "Tùy chọn",
     "language": "Ngôn ngữ",
-    "languages": "Ngôn ngữ"
+    "languages": "Ngôn ngữ",
+    "skip": "Bỏ qua",
+    "tryAgain": "Thử lại!",
+    "notQuiteTryAgain": "Chưa đúng lắm, thử lại",
+    "wrongAnswer": "Câu Trả Lời Sai"
   },
   "menu": {
     "openMenu": "Mở menu",

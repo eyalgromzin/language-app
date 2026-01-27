@@ -439,6 +439,8 @@
     "back": "Tillbaka",
     "next": "Nästa",
     "previous": "Föregående",
+    "correct": "Rätt!",
+    "incorrect": "Fel",
     "continue": "Fortsätt",
     "finish": "Slutför",
     "retry": "Försök igen",
@@ -457,7 +459,11 @@
     "settings": "Inställningar",
     "preferences": "Inställningar",
     "language": "Språk",
-    "languages": "Språk"
+    "languages": "Språk",
+    "skip": "Hoppa över",
+    "tryAgain": "Försök igen!",
+    "notQuiteTryAgain": "Inte riktigt, försök igen",
+    "wrongAnswer": "Fel Svar"
   },
   "menu": {
     "openMenu": "Öppna meny",

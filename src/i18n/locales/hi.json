@@ -439,6 +439,8 @@
     "back": "वापस",
     "next": "अगला",
     "previous": "पिछला",
+    "correct": "सही!",
+    "incorrect": "गलत",
     "continue": "जारी रखें",
     "finish": "समाप्त करें",
     "retry": "फिर से कोशिश करें",
@@ -457,7 +459,11 @@
     "settings": "सेटिंग्स",
     "preferences": "प्राथमिकताएं",
     "language": "भाषा",
-    "languages": "भाषाएं"
+    "languages": "भाषाएँ",
+    "skip": "छोड़ें",
+    "tryAgain": "फिर से प्रयास करें!",
+    "notQuiteTryAgain": "बिल्कुल नहीं, फिर से प्रयास करें",
+    "wrongAnswer": "गलत जवाब"
   },
   "menu": {
     "openMenu": "मेनू खोलें",

@@ -468,12 +468,12 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         <AnimatedToast
           visible={showWrongToast}
           type="fail"
-          message="Not quite, try again"
+          message={t('common.notQuiteTryAgain')}
         />
         <AnimatedToast
           visible={showCorrectToast}
           type="success"
-          message="Correct!"
+          message={t('common.correct')}
         />
         
         {/* Wrong Answer Dialog for embedded mode */}
@@ -576,12 +576,12 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
       <AnimatedToast
         visible={showWrongToast}
         type="fail"
-        message="Not quite, try again"
+        message={t('common.notQuiteTryAgain')}
       />
       <AnimatedToast
         visible={showCorrectToast}
         type="success"
-        message="Correct!"
+        message={t('common.correct')}
       />
       <FinishedWordAnimation
         visible={showFinishedWordAnimation}

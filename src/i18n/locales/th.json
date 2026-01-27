@@ -439,6 +439,8 @@
     "back": "กลับ",
     "next": "ถัดไป",
     "previous": "ก่อนหน้า",
+    "correct": "ถูกต้อง!",
+    "incorrect": "ผิด",
     "continue": "ดำเนินการต่อ",
     "finish": "เสร็จสิ้น",
     "retry": "ลองอีกครั้ง",
@@ -457,7 +459,11 @@
     "settings": "การตั้งค่า",
     "preferences": "การตั้งค่า",
     "language": "ภาษา",
-    "languages": "ภาษา"
+    "languages": "ภาษา",
+    "skip": "ข้าม",
+    "tryAgain": "ลองอีกครั้ง!",
+    "notQuiteTryAgain": "ไม่ถูกต้อง ลองอีกครั้ง",
+    "wrongAnswer": "คำตอบผิด"
   },
   "menu": {
     "openMenu": "เปิดเมนู",
