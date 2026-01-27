@@ -428,7 +428,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         </View>
         <View style={styles.assembledBox}>
           {selectedIndices.length === 0 ? (
-            <Text style={styles.placeholder}>Tap words below in order</Text>
+            <Text style={styles.placeholder}>{t('screens.practice.tapWordsBelowInOrder')}</Text>
           ) : (
             <View style={styles.tokenRow}>
               {selectedIndices.map((i, index) => (
@@ -527,7 +527,7 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
 
         <View style={styles.assembledBox}>
           {selectedIndices.length === 0 ? (
-            <Text style={styles.placeholder}>Tap words below in order</Text>
+            <Text style={styles.placeholder}>{t('screens.practice.tapWordsBelowInOrder')}</Text>
           ) : (
             <View style={styles.tokenRow}>
               {selectedIndices.map((i, index) => (

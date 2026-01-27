@@ -461,8 +461,8 @@ function WriteWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
           <View style={styles.topRow}>
             <Text style={styles.title}>write the word</Text>
             {route?.params?.surprise ? (
-              <TouchableOpacity style={styles.skipButton} onPress={navigateToRandomNext} accessibilityRole="button" accessibilityLabel="Skip">
-                <Text style={styles.skipButtonText}>Skip</Text>
+              <TouchableOpacity style={styles.skipButton} onPress={navigateToRandomNext} accessibilityRole="button" accessibilityLabel={t('common.skip')}>
+                <Text style={styles.skipButtonText}>{t('common.skip')}</Text>
               </TouchableOpacity>
             ) : null}
           </View>
