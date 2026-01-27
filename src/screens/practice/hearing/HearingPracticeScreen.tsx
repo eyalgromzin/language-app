@@ -563,12 +563,12 @@ function HearingPracticeScreen(props: EmbeddedProps = {}): React.JSX.Element {
       <AnimatedToast
         visible={showWrongToast}
         type="fail"
-        message="Try again!"
+        message={t('common.tryAgain')}
       />
       <AnimatedToast
         visible={showCorrectToast}
         type="success"
-        message="Correct!"
+        message={t('common.correct')}
       />
       <FinishedWordAnimation
         visible={showFinishedWordAnimation}

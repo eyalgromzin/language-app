@@ -9,6 +9,7 @@ import FinishedWordAnimation from '../../../components/FinishedWordAnimation';
 import NotEnoughWordsMessage from '../../../components/NotEnoughWordsMessage';
 import { WordEntry } from '../../../types/words';
 import { navigateToNextInShuffledOrder } from '../common/surprisePracticeOrder';
+import { useTranslation } from 'react-i18next';
 
 type PreparedItem = {
   entry: WordEntry;
@@ -451,6 +452,8 @@ function WriteWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
     );
   };
 
+  const { t } = useTranslation();
+
   return (
     <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding', android: undefined })} style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
@@ -485,12 +488,12 @@ function WriteWordScreen(props: EmbeddedProps = {}): React.JSX.Element {
       <AnimatedToast
         visible={showCorrectToast}
         type="success"
-        message="Correct!"
+        message={t('common.correct')}
       />
       <AnimatedToast
         visible={showWrongToast}
         type="fail"
-        message="Incorrect"
+        message={t('common.incorrect')}
       />
       <FinishedWordAnimation
         visible={showFinishedWordAnimation}
