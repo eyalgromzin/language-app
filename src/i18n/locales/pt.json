@@ -416,6 +416,10 @@
       "progressClearedMessage": "Seu progresso dos primeiros passos foi limpo com sucesso.",
       "error": "Erro",
       "clearProgressError": "Falha ao limpar o progresso. Por favor, tente novamente."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Carregando o conteúdo da etapa...",
+      "preparingPracticeExercises": "Preparando seus exercícios de prática"
     }
   },
   "common": {

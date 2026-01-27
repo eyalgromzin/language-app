@@ -416,6 +416,10 @@
       "progressClearedMessage": "आपके पहले कदमों की प्रगति सफलतापूर्वक साफ़ कर दी गई है।",
       "error": "त्रुटि",
       "clearProgressError": "प्रगति साफ़ करने में विफल। कृपया पुनः प्रयास करें।"
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "चरण की सामग्री लोड हो रही है...",
+      "preparingPracticeExercises": "आपके अभ्यास कार्य तैयार किए जा रहे हैं"
     }
   },
   "common": {

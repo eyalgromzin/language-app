@@ -416,6 +416,10 @@
       "progressClearedMessage": "Ensimmäisten askelten edistymisesi on tyhjennetty onnistuneesti.",
       "error": "Virhe",
       "clearProgressError": "Edistymisen tyhjentäminen epäonnistui. Yritä uudelleen."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Ladataan vaiheen sisältöä...",
+      "preparingPracticeExercises": "Valmistellaan harjoitustehtäviäsi"
     }
   },
   "common": {

@@ -416,6 +416,10 @@
       "progressClearedMessage": "Η πρόοδος των πρώτων βημάτων σας διαγράφηκε με επιτυχία.",
       "error": "Σφάλμα",
       "clearProgressError": "Αποτυχία διαγραφής προόδου. Παρακαλώ δοκιμάστε ξανά."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Φόρτωση περιεχομένου βήματος...",
+      "preparingPracticeExercises": "Προετοιμασία των ασκήσεων εξάσκησής σου"
     }
   },
   "common": {

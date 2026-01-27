@@ -414,6 +414,10 @@
       "progressClearedMessage": "Tu progreso de primeros pasos se ha borrado exitosamente.",
       "error": "Error",
       "clearProgressError": "No se pudo borrar el progreso. Por favor, inténtalo de nuevo."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Cargando el contenido del paso...",
+      "preparingPracticeExercises": "Preparando tus ejercicios de práctica"
     }
   },
   "common": {

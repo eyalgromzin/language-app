@@ -437,6 +437,10 @@
       "progressClearedMessage": "Your baby steps progress has been cleared successfully.",
       "error": "Error",
       "clearProgressError": "Failed to clear progress. Please try again."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Loading step content...",
+      "preparingPracticeExercises": "Preparing your practice exercises"
     }
   },
   "common": {

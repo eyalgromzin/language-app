@@ -431,6 +431,10 @@
       "progressClearedMessage": "ההתקדמות שלך בצעדים הראשונים נוקתה בהצלחה.",
       "error": "שגיאה",
       "clearProgressError": "נכשל בניקוי ההתקדמות. אנא נסה שוב."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "טוען את תוכן השלב...",
+      "preparingPracticeExercises": "מכין עבורך את תרגילי התרגול"
     }
   },
   "common": {

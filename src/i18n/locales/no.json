@@ -416,6 +416,10 @@
       "progressClearedMessage": "Din fremgang fra de første trinnene er tømt vellykket.",
       "error": "Feil",
       "clearProgressError": "Kunne ikke tømme fremgang. Vennligst prøv igjen."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Laster inn steginnhold...",
+      "preparingPracticeExercises": "Forbereder øvelsene dine"
     }
   },
   "common": {

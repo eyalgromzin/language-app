@@ -416,6 +416,10 @@
       "progressClearedMessage": "Twój postęp pierwszych kroków został pomyślnie wyczyszczony.",
       "error": "Błąd",
       "clearProgressError": "Nie udało się wyczyścić postępu. Spróbuj ponownie."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Ładowanie treści kroku...",
+      "preparingPracticeExercises": "Przygotowujemy Twoje ćwiczenia"
     }
   },
   "common": {

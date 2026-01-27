@@ -1,12 +1,15 @@
 import React from 'react';
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 const LoadingScreen: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.loadingContainer}>
       <ActivityIndicator size="large" color="#007AFF" />
-      <Text style={styles.loadingText}>Loading step content...</Text>
-      <Text style={styles.loadingSubtext}>Preparing your practice exercises</Text>
+      <Text style={styles.loadingText}>{t('screens.babyStepsRunner.loadingStepContent')}</Text>
+      <Text style={styles.loadingSubtext}>{t('screens.babyStepsRunner.preparingPracticeExercises')}</Text>
     </View>
   );
 };

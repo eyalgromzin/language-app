@@ -416,6 +416,10 @@
       "progressClearedMessage": "ล้างความคืบหน้าขั้นตอนแรกของคุณเรียบร้อยแล้ว",
       "error": "ข้อผิดพลาด",
       "clearProgressError": "ไม่สามารถล้างความคืบหน้าได้ กรุณาลองอีกครั้ง"
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "กำลังโหลดเนื้อหาของขั้นตอน...",
+      "preparingPracticeExercises": "กำลังเตรียมแบบฝึกหัดของคุณ"
     }
   },
   "common": {

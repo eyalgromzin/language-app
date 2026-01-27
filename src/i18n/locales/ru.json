@@ -416,6 +416,10 @@
       "progressClearedMessage": "Ваш прогресс первых шагов успешно очищен.",
       "error": "Ошибка",
       "clearProgressError": "Не удалось очистить прогресс. Пожалуйста, попробуйте снова."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Загружаем содержимое шага...",
+      "preparingPracticeExercises": "Готовим ваши тренировочные задания"
     }
   },
   "common": {

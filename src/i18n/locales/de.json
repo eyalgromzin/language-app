@@ -417,6 +417,10 @@
       "progressClearedMessage": "Dein Fortschritt bei den ersten Schritten wurde erfolgreich gelöscht.",
       "error": "Fehler",
       "clearProgressError": "Das Löschen des Fortschritts ist fehlgeschlagen. Bitte versuche es erneut."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Lade Schrittinhalt...",
+      "preparingPracticeExercises": "Bereite deine Übungsaufgaben vor"
     }
   },
   "common": {

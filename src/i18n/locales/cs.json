@@ -416,6 +416,10 @@
       "progressClearedMessage": "Váš pokrok prvních kroků byl úspěšně vymazán.",
       "error": "Chyba",
       "clearProgressError": "Nepodařilo se vymazat pokrok. Zkuste to prosím znovu."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Načítám obsah kroku...",
+      "preparingPracticeExercises": "Připravujeme vaše cvičení"
     }
   },
   "common": {

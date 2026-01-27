@@ -416,6 +416,10 @@
       "progressClearedMessage": "I tuoi progressi dei primi passi sono stati cancellati con successo.",
       "error": "Errore",
       "clearProgressError": "Impossibile cancellare il progresso. Riprova."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Caricamento del contenuto della tappa...",
+      "preparingPracticeExercises": "Preparando i tuoi esercizi di pratica"
     }
   },
   "common": {

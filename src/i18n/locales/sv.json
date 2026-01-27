@@ -416,6 +416,10 @@
       "progressClearedMessage": "Dina framsteg från de första stegen har rensats framgångsrikt.",
       "error": "Fel",
       "clearProgressError": "Misslyckades med att rensa framsteg. Vänligen försök igen."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Läser in steginnehåll...",
+      "preparingPracticeExercises": "Förbereder dina övningsuppgifter"
     }
   },
   "common": {

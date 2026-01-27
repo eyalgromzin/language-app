@@ -417,6 +417,10 @@
       "progressClearedMessage": "Vos progrès des premiers pas ont été effacés avec succès.",
       "error": "Erreur",
       "clearProgressError": "Échec de l'effacement des progrès. Veuillez réessayer."
+    },
+    "babyStepsRunner": {
+      "loadingStepContent": "Chargement du contenu de l'étape...",
+      "preparingPracticeExercises": "Préparation de vos exercices de pratique"
     }
   },
   "common": {
