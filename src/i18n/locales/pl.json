@@ -463,7 +463,9 @@
     "skip": "Pomiń",
     "tryAgain": "Spróbuj ponownie!",
     "notQuiteTryAgain": "Nie do końca, spróbuj ponownie",
-    "wrongAnswer": "Zła Odpowiedź"
+    "notQuiteRight": "Nie do końca dobrze",
+    "wrongAnswer": "Zła Odpowiedź",
+    "correctAnswerIs": "Prawidłowa odpowiedź to:"
   },
   "menu": {
     "openMenu": "Otwórz menu",

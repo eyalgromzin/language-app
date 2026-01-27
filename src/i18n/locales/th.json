@@ -463,7 +463,9 @@
     "skip": "ข้าม",
     "tryAgain": "ลองอีกครั้ง!",
     "notQuiteTryAgain": "ไม่ถูกต้อง ลองอีกครั้ง",
-    "wrongAnswer": "คำตอบผิด"
+    "notQuiteRight": "ยังไม่ถูกต้องนัก",
+    "wrongAnswer": "คำตอบผิด",
+    "correctAnswerIs": "คำตอบที่ถูกต้องคือ:"
   },
   "menu": {
     "openMenu": "เปิดเมนู",

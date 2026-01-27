@@ -463,7 +463,9 @@
     "skip": "Ohita",
     "tryAgain": "Yritä uudelleen!",
     "notQuiteTryAgain": "Ei aivan, yritä uudelleen",
-    "wrongAnswer": "Väärä Vastaus"
+    "notQuiteRight": "Ei aivan oikein",
+    "wrongAnswer": "Väärä Vastaus",
+    "correctAnswerIs": "Oikea vastaus on:"
   },
   "menu": {
     "openMenu": "Avaa valikko",

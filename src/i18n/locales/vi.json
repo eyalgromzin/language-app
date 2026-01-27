@@ -463,7 +463,9 @@
     "skip": "Bỏ qua",
     "tryAgain": "Thử lại!",
     "notQuiteTryAgain": "Chưa đúng lắm, thử lại",
-    "wrongAnswer": "Câu Trả Lời Sai"
+    "notQuiteRight": "Chưa hoàn toàn đúng",
+    "wrongAnswer": "Câu Trả Lời Sai",
+    "correctAnswerIs": "Đáp án đúng là:"
   },
   "menu": {
     "openMenu": "Mở menu",

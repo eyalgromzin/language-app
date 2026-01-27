@@ -463,7 +463,9 @@
     "skip": "Pular",
     "tryAgain": "Tente novamente!",
     "notQuiteTryAgain": "Não exatamente, tente novamente",
-    "wrongAnswer": "Resposta Errada"
+    "notQuiteRight": "Não está totalmente certo",
+    "wrongAnswer": "Resposta Errada",
+    "correctAnswerIs": "A resposta correta é:"
   },
   "menu": {
     "openMenu": "Abrir menu",

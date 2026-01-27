@@ -463,7 +463,9 @@
     "skip": "Přeskočit",
     "tryAgain": "Zkuste to znovu!",
     "notQuiteTryAgain": "Neúplně, zkuste to znovu",
-    "wrongAnswer": "Špatná Odpověď"
+    "notQuiteRight": "Není to úplně správně",
+    "wrongAnswer": "Špatná Odpověď",
+    "correctAnswerIs": "Správná odpověď je:"
   },
   "menu": {
     "openMenu": "Otevřít menu",

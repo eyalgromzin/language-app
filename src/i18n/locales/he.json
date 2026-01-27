@@ -478,7 +478,9 @@
     "skip": "דלג",
     "tryAgain": "נסה שוב!",
     "notQuiteTryAgain": "לא לגמרי, נסה שוב",
-    "wrongAnswer": "תשובה שגויה"
+    "notQuiteRight": "לא בדיוק נכון",
+    "wrongAnswer": "תשובה שגויה",
+    "correctAnswerIs": "התשובה הנכונה היא:"
   },
   "menu": {
     "openMenu": "פתח תפריט",

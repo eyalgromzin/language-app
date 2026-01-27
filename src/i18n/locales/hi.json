@@ -463,7 +463,9 @@
     "skip": "छोड़ें",
     "tryAgain": "फिर से प्रयास करें!",
     "notQuiteTryAgain": "बिल्कुल नहीं, फिर से प्रयास करें",
-    "wrongAnswer": "गलत जवाब"
+    "notQuiteRight": "यह पूरी तरह सही नहीं है",
+    "wrongAnswer": "गलत जवाब",
+    "correctAnswerIs": "सही उत्तर है:"
   },
   "menu": {
     "openMenu": "मेनू खोलें",

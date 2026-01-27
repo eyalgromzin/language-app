@@ -463,7 +463,9 @@
     "skip": "Hopp over",
     "tryAgain": "Prøv igjen!",
     "notQuiteTryAgain": "Ikke helt, prøv igjen",
-    "wrongAnswer": "Feil Svar"
+    "notQuiteRight": "Ikke helt riktig",
+    "wrongAnswer": "Feil Svar",
+    "correctAnswerIs": "Riktig svar er:"
   },
   "menu": {
     "openMenu": "Åpne meny",

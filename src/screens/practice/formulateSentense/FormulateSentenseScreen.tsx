@@ -485,8 +485,8 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
         >
           <View style={styles.modalOverlay}>
             <View style={styles.dialogContainer}>
-              <Text style={styles.dialogTitle}>Not quite right</Text>
-              <Text style={styles.dialogSubtitle}>The correct answer is:</Text>
+              <Text style={styles.dialogTitle}>{t('common.notQuiteRight')}</Text>
+              <Text style={styles.dialogSubtitle}>{t('common.correctAnswerIs')}</Text>
               <View style={styles.correctAnswerContainer}>
                 <Text style={styles.correctAnswerText}>{current?.sentence}</Text>
               </View>
@@ -597,8 +597,8 @@ function FormulateSentenseScreen(props: EmbeddedProps = {}): React.JSX.Element {
       >
         <View style={styles.modalOverlay}>
           <View style={styles.dialogContainer}>
-            <Text style={styles.dialogTitle}>Not quite right</Text>
-            <Text style={styles.dialogSubtitle}>The correct answer is:</Text>
+            <Text style={styles.dialogTitle}>{t('common.notQuiteRight')}</Text>
+            <Text style={styles.dialogSubtitle}>{t('common.correctAnswerIs')}</Text>
             <View style={styles.correctAnswerContainer}>
               <Text style={styles.correctAnswerText}>{current?.sentence}</Text>
             </View>

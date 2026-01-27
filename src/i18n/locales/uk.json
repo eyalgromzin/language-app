@@ -463,7 +463,9 @@
     "skip": "Пропустити",
     "tryAgain": "Спробуйте знову!",
     "notQuiteTryAgain": "Не зовсім, спробуйте знову",
-    "wrongAnswer": "Неправильна Відповідь"
+    "notQuiteRight": "Не зовсім правильно",
+    "wrongAnswer": "Неправильна Відповідь",
+    "correctAnswerIs": "Правильна відповідь:"
   },
   "menu": {
     "openMenu": "Відкрити меню",

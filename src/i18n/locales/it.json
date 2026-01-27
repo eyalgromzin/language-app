@@ -463,7 +463,9 @@
     "skip": "Salta",
     "tryAgain": "Riprova!",
     "notQuiteTryAgain": "Non proprio, riprova",
-    "wrongAnswer": "Risposta Sbagliata"
+    "notQuiteRight": "Non proprio",
+    "wrongAnswer": "Risposta Sbagliata",
+    "correctAnswerIs": "La risposta corretta è:"
   },
   "menu": {
     "openMenu": "Apri menu",

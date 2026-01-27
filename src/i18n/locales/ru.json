@@ -463,7 +463,9 @@
     "skip": "Пропустить",
     "tryAgain": "Попробуйте снова!",
     "notQuiteTryAgain": "Не совсем, попробуйте снова",
-    "wrongAnswer": "Неверный Ответ"
+    "notQuiteRight": "Не совсем верно",
+    "wrongAnswer": "Неверный Ответ",
+    "correctAnswerIs": "Правильный ответ:"
   },
   "menu": {
     "openMenu": "Открыть меню",

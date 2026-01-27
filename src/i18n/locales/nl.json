@@ -463,7 +463,9 @@
     "skip": "Overslaan",
     "tryAgain": "Probeer opnieuw!",
     "notQuiteTryAgain": "Niet helemaal, probeer opnieuw",
-    "wrongAnswer": "Fout Antwoord"
+    "notQuiteRight": "Niet helemaal juist",
+    "wrongAnswer": "Fout Antwoord",
+    "correctAnswerIs": "Het juiste antwoord is:"
   },
   "menu": {
     "openMenu": "Menu openen",
