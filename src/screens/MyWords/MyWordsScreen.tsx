@@ -1,21 +1,30 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View, TouchableOpacity, Alert, Dimensions } from 'react-native';
+import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import { WordEntry } from '../../types/words';
 import linkingService from '../../services/linkingService';
 
-const { width } = Dimensions.get('window');
-
 function MyWordsScreen(): React.JSX.Element {
   const { t } = useTranslation();
   const [loading, setLoading] = React.useState<boolean>(true);
   const [refreshing, setRefreshing] = React.useState<boolean>(false);
   const [words, setWords] = React.useState<WordEntry[]>([]);
-  const [expanded, setExpanded] = React.useState<Record<string, boolean>>({});
+  const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
 
   const filePath = `${RNFS.DocumentDirectoryPath}/words.json`;
+
+  const loadProgressSettings = React.useCallback(async () => {
+    try {
+      const stored = await AsyncStorage.getItem('words.removeAfterTotalCorrect');
+      const parsed = parseInt(stored || '6', 10);
+      setRemoveAfterTotalCorrect(Number.isFinite(parsed) && parsed > 0 ? parsed : 6);
+    } catch {
+      setRemoveAfterTotalCorrect(6);
+    }
+  }, []);
 
   const loadWords = React.useCallback(async () => {
     setLoading(true);
@@ -61,16 +70,17 @@ function MyWordsScreen(): React.JSX.Element {
   useFocusEffect(
     React.useCallback(() => {
       // Refresh list every time screen gains focus
+      loadProgressSettings();
       loadWords();
       return () => {};
-    }, [loadWords])
+    }, [loadProgressSettings, loadWords])
   );
 
   const onRefresh = React.useCallback(async () => {
     setRefreshing(true);
-    await loadWords();
+    await Promise.all([loadProgressSettings(), loadWords()]);
     setRefreshing(false);
-  }, [loadWords]);
+  }, [loadProgressSettings, loadWords]);
 
   const confirmClearAll = React.useCallback(() => {
     if (loading) return;
@@ -85,7 +95,6 @@ function MyWordsScreen(): React.JSX.Element {
           onPress: async () => {
             try {
               setLoading(true);
-              setExpanded({});
               await RNFS.writeFile(filePath, JSON.stringify([], null, 2), 'utf8');
               setWords([]);
             } catch {}
@@ -107,13 +116,6 @@ function MyWordsScreen(): React.JSX.Element {
       );
       await RNFS.writeFile(filePath, JSON.stringify(updatedWords, null, 2), 'utf8');
       setWords(updatedWords);
-      // Clear expanded state for deleted word
-      const deletedId = getItemId(wordToDelete, words.findIndex(w => w === wordToDelete));
-      setExpanded(prev => {
-        const newExpanded = { ...prev };
-        delete newExpanded[deletedId];
-        return newExpanded;
-      });
     } catch (error) {
       console.error('Error deleting word:', error);
     }
@@ -145,11 +147,10 @@ function MyWordsScreen(): React.JSX.Element {
   const getItemId = (item: WordEntry, index: number) => `${item.word}|${item.sentence || ''}|${item.addedAt || index}`;
 
   const renderItem = ({ item, index }: { item: WordEntry; index: number }) => {
-    const id = getItemId(item, index);
-    const isExpanded = !!expanded[id];
-    const toggleExpanded = () => setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
-    
     const totalProgress = Object.values(item.numberOfCorrectAnswers || {}).reduce((sum, val) => sum + val, 0);
+    const safeMaxCorrectAnswers = Math.max(removeAfterTotalCorrect, 1);
+    const clampedProgress = Math.min(totalProgress, safeMaxCorrectAnswers);
+    const progressPercentage = Math.min(clampedProgress / safeMaxCorrectAnswers, 1);
     
     return (
       <View style={styles.wordCard}>
@@ -199,59 +200,20 @@ function MyWordsScreen(): React.JSX.Element {
         </View>
 
         <View style={styles.progressSection}>
-          <TouchableOpacity
-            onPress={toggleExpanded}
-            style={styles.progressToggle}
-            accessibilityRole="button"
-            accessibilityLabel={isExpanded ? t('screens.myWords.hideProgress') : t('screens.myWords.showProgress')}
-          >
+          <View style={styles.progressToggle}>
             <View style={styles.progressHeader}>
               <Text style={styles.progressTitle}>{t('screens.myWords.learningProgress')}</Text>
-              <View style={styles.progressSummary}>
-                <Text style={styles.progressTotal}>{totalProgress} {t('screens.myWords.total')}</Text>
-                <Text style={styles.progressCaret}>{isExpanded ? '▼' : '▶'}</Text>
-              </View>
+              <Text style={styles.progressTotal}>{totalProgress} / {safeMaxCorrectAnswers}</Text>
             </View>
-          </TouchableOpacity>
-
-          {isExpanded && (
-            <View style={styles.progressDetails}>
-              <View style={styles.progressGrid}>
-                <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>{t('screens.myWords.missingLetters')}</Text>
-                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.missingLetters ?? 0}</Text>
-                </View>
-                <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>{t('screens.myWords.missingWords')}</Text>
-                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.missingWords ?? 0}</Text>
-                </View>
-                <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>{t('screens.myWords.chooseTranslation')}</Text>
-                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.chooseTranslation ?? 0}</Text>
-                </View>
-                <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>{t('screens.myWords.chooseWord')}</Text>
-                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.chooseWord ?? 0}</Text>
-                </View>
-                <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>{t('screens.myWords.memoryGame')}</Text>
-                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.memoryGame ?? 0}</Text>
-                </View>
-                <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>{t('screens.myWords.writeTranslation')}</Text>
-                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.writeTranslation ?? 0}</Text>
-                </View>
-                <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>{t('screens.myWords.writeWord')}</Text>
-                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.writeWord ?? 0}</Text>
-                </View>
-                <View style={styles.progressItem}>
-                  <Text style={styles.progressItemLabel}>{t('screens.myWords.flipCards')}</Text>
-                  <Text style={styles.progressItemValue}>{item.numberOfCorrectAnswers?.flipCards ?? 0}</Text>
-                </View>
-              </View>
+            <View
+              style={styles.progressBarTrack}
+              accessible
+              accessibilityRole="progressbar"
+              accessibilityValue={{ min: 0, max: safeMaxCorrectAnswers, now: Math.min(totalProgress, safeMaxCorrectAnswers) }}
+            >
+              <View style={[styles.progressBarFill, { width: `${progressPercentage * 100}%` }]} />
             </View>
-          )}
+          </View>
         </View>
       </View>
     );
@@ -565,48 +527,22 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#1E293B',
   },
-  progressSummary: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
   progressTotal: {
     fontSize: 14,
     fontWeight: '600',
     color: '#3B82F6',
   },
-  progressCaret: {
-    fontSize: 14,
-    color: '#64748B',
+  progressBarTrack: {
+    height: 10,
+    backgroundColor: '#E2E8F0',
+    borderRadius: 999,
+    marginTop: 12,
+    overflow: 'hidden',
   },
-  progressDetails: {
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-  },
-  progressGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 12,
-  },
-  progressItem: {
-    backgroundColor: '#F8FAFC',
-    padding: 12,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#E2E8F0',
-    minWidth: (width - 80) / 2,
-    flex: 1,
-  },
-  progressItemLabel: {
-    fontSize: 12,
-    fontWeight: '500',
-    color: '#64748B',
-    marginBottom: 4,
-  },
-  progressItemValue: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: '#1E293B',
+  progressBarFill: {
+    height: '100%',
+    backgroundColor: '#3B82F6',
+    borderRadius: 999,
   },
 });
 
