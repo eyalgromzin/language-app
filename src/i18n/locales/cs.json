@@ -191,7 +191,8 @@
         "next": "Další",
         "loadingPractice": "Načítání cvičení...",
         "preparing": "Příprava..."
-      }
+      },
+      "allWordsMatched": "Všechna slova se shodují!"
     },
     "library": {
       "title": "Knihovna",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "Neúplně, zkuste to znovu",
     "notQuiteRight": "Není to úplně správně",
     "wrongAnswer": "Špatná Odpověď",
-    "correctAnswerIs": "Správná odpověď je:"
+    "correctAnswerIs": "Správná odpověď je:",
+    "goodJob": "Dobrá práce!"
   },
   "menu": {
     "openMenu": "Otevřít menu",

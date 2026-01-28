@@ -156,7 +156,9 @@
       "formulateSentence": "वाक्य बनाएं",
       "surpriseMe": "मुझे आश्चर्यचकित करें",
       "magic": "जादू",
-      "tapWordsToComplete": "वाक्य को पूरा करने के लिए नीचे दिए गए शब्दों पर टैप करें:",      "tapWordsBelowInOrder": "नीचे दिए गए शब्दों को क्रम में टैप करें",      "matchWordsToTranslations": "शब्दों को उनके अनुवादों से मिलाएं",
+      "tapWordsToComplete": "वाक्य को पूरा करने के लिए नीचे दिए गए शब्दों पर टैप करें:",
+      "tapWordsBelowInOrder": "नीचे दिए गए शब्दों को क्रम में टैप करें",
+      "matchWordsToTranslations": "शब्दों को उनके अनुवादों से मिलाएं",
       "hideEligibleWords": "योग्य शब्द छुपाएं",
       "showEligibleWords": "योग्य शब्द दिखाएं",
       "eligibleWords": "योग्य शब्द",
@@ -189,7 +191,8 @@
         "next": "अगला",
         "loadingPractice": "अभ्यास लोड हो रहा है...",
         "preparing": "तैयारी हो रही है..."
-      }
+      },
+      "allWordsMatched": "सभी शब्द मेल खाते हैं!"
     },
     "library": {
       "title": "पुस्तकालय",
@@ -465,7 +468,8 @@
     "notQuiteTryAgain": "बिल्कुल नहीं, फिर से प्रयास करें",
     "notQuiteRight": "यह पूरी तरह सही नहीं है",
     "wrongAnswer": "गलत जवाब",
-    "correctAnswerIs": "सही उत्तर है:"
+    "correctAnswerIs": "सही उत्तर है:",
+    "goodJob": "शाबाश!"
   },
   "menu": {
     "openMenu": "मेनू खोलें",

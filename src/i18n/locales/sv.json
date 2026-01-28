@@ -191,7 +191,8 @@
         "next": "Nästa",
         "loadingPractice": "Laddar övning...",
         "preparing": "Förbereder..."
-      }
+      },
+      "allWordsMatched": "Alla ord stämmer överens!"
     },
     "library": {
       "title": "Bibliotek",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "Inte riktigt, försök igen",
     "notQuiteRight": "Inte helt rätt",
     "wrongAnswer": "Fel Svar",
-    "correctAnswerIs": "Det rätta svaret är:"
+    "correctAnswerIs": "Det rätta svaret är:",
+    "goodJob": "Bra jobbat!"
   },
   "menu": {
     "openMenu": "Öppna meny",

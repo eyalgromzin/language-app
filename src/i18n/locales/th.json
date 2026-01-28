@@ -156,8 +156,8 @@
       "formulateSentence": "สร้างประโยค",
       "surpriseMe": "ทำให้ฉันประหลาดใจ",
       "magic": "เวทมนตร์",
-      "tapWordsToComplete": "แตะคำด้านล่างเพื่อเติมประโยคให้สมบูรณ์:",      
-      "tapWordsBelowInOrder": "แตะคำด้านล่างตามลำดับที่ถูกต้อง",      
+      "tapWordsToComplete": "แตะคำด้านล่างเพื่อเติมประโยคให้สมบูรณ์:",
+      "tapWordsBelowInOrder": "แตะคำด้านล่างตามลำดับที่ถูกต้อง",
       "matchWordsToTranslations": "จับคู่คำกับคำแปล",
       "hideEligibleWords": "ซ่อนคำที่เหมาะสม",
       "showEligibleWords": "แสดงคำที่เหมาะสม",
@@ -191,7 +191,8 @@
         "next": "ถัดไป",
         "loadingPractice": "กำลังโหลดการฝึก...",
         "preparing": "กำลังเตรียม..."
-      }
+      },
+      "allWordsMatched": "คำทั้งหมดตรงกัน!"
     },
     "library": {
       "title": "ห้องสมุด",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "ไม่ถูกต้อง ลองอีกครั้ง",
     "notQuiteRight": "ยังไม่ถูกต้องนัก",
     "wrongAnswer": "คำตอบผิด",
-    "correctAnswerIs": "คำตอบที่ถูกต้องคือ:"
+    "correctAnswerIs": "คำตอบที่ถูกต้องคือ:",
+    "goodJob": "ทำดีมาก!"
   },
   "menu": {
     "openMenu": "เปิดเมนู",

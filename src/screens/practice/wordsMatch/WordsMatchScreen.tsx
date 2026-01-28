@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View, ScrollView, Modal } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNFS from 'react-native-fs';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
@@ -71,6 +71,7 @@ function WordsMatchScreen(): React.JSX.Element {
   const [selectedLeftKey, setSelectedLeftKey] = React.useState<string | null>(null);
   const [selectedRightKey, setSelectedRightKey] = React.useState<string | null>(null);
   const [wrongFlash, setWrongFlash] = React.useState<{ leftKey: string; rightKey: string } | null>(null);
+  const [showCompletionPopup, setShowCompletionPopup] = React.useState<boolean>(false);
 
   const hasLoadedPairCountRef = React.useRef<boolean>(false);
 
@@ -256,13 +257,8 @@ function WordsMatchScreen(): React.JSX.Element {
           next.add(matchedKey);
           const totalKeys = new Set([...leftItems.map((i) => i.key)]);
           if (next.size >= totalKeys.size && totalKeys.size > 0) {
-            // If in surprise mode, navigate to random next practice
-            if (route?.params?.surprise) {
-              navigateToRandomNext();
-            } else {
-              // refresh list from storage and start a new round
-              loadBase().then(() => prepareRound());
-            }
+            // Show completion popup
+            setShowCompletionPopup(true);
           }
           return next;
         });
@@ -285,6 +281,17 @@ function WordsMatchScreen(): React.JSX.Element {
     }, 2000);
     return () => clearTimeout(t);
   }, [wrongFlash]);
+
+  const handleCompletionContinue = React.useCallback(() => {
+    setShowCompletionPopup(false);
+    // If in surprise mode, navigate to random next practice
+    if (route?.params?.surprise) {
+      navigateToRandomNext();
+    } else {
+      // refresh list from storage and start a new round
+      loadBase().then(() => prepareRound());
+    }
+  }, [route?.params?.surprise, navigateToRandomNext, loadBase, prepareRound]);
 
   const renderCountSelector = () => {
     const options = [3, 4, 5, 6, 7, 8, 9];
@@ -381,7 +388,8 @@ function WordsMatchScreen(): React.JSX.Element {
   }
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <>
+      <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.topRow}>
         <Text style={styles.title}>{t('screens.practice.matchWordsToTranslations')}</Text>
         <TouchableOpacity
@@ -436,6 +444,18 @@ function WordsMatchScreen(): React.JSX.Element {
         </View>
       </View>
     </ScrollView>
+    <Modal visible={showCompletionPopup} transparent animationType="fade" onRequestClose={() => {}}>
+      <View style={styles.modalOverlay}>
+        <View style={styles.modalContent}>
+          <Text style={styles.modalTitle}>{t('common.goodJob') || 'Good Job!'}</Text>
+          <Text style={styles.modalSubtitle}>{t('screens.practice.allWordsMatched') || 'All words matched!'}</Text>
+          <TouchableOpacity style={styles.modalButton} onPress={handleCompletionContinue} accessibilityRole="button" accessibilityLabel="Continue">
+            <Text style={styles.modalButtonText}>{t('common.continue') || 'Continue'}</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </Modal>
+    </>
   );
 }
 
@@ -640,6 +660,53 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#2c3e50',
     textAlign: 'center',
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    backgroundColor: '#ffffff',
+    borderRadius: 20,
+    padding: 30,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 10,
+    minWidth: 280,
+  },
+  modalTitle: {
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#28a745',
+    marginBottom: 12,
+    textAlign: 'center',
+  },
+  modalSubtitle: {
+    fontSize: 16,
+    color: '#6c757d',
+    marginBottom: 24,
+    textAlign: 'center',
+  },
+  modalButton: {
+    backgroundColor: '#007AFF',
+    borderRadius: 12,
+    paddingHorizontal: 32,
+    paddingVertical: 12,
+    minWidth: 140,
+    alignItems: 'center',
+  },
+  modalButtonText: {
+    color: '#ffffff',
+    fontSize: 16,
+    fontWeight: '600',
   },
 });
 

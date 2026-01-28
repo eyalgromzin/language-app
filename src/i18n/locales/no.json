@@ -191,7 +191,8 @@
         "next": "Neste",
         "loadingPractice": "Laster øvelse...",
         "preparing": "Forbereder..."
-      }
+      },
+      "allWordsMatched": "Alle ordene samsvarer!"
     },
     "library": {
       "title": "Bibliotek",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "Ikke helt, prøv igjen",
     "notQuiteRight": "Ikke helt riktig",
     "wrongAnswer": "Feil Svar",
-    "correctAnswerIs": "Riktig svar er:"
+    "correctAnswerIs": "Riktig svar er:",
+    "goodJob": "Bra jobbet!"
   },
   "menu": {
     "openMenu": "Åpne meny",

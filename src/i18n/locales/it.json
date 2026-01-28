@@ -156,8 +156,8 @@
       "formulateSentence": "Formula frase",
       "surpriseMe": "Sorprendimi",
       "magic": "Magia",
-      "tapWordsToComplete": "Tocca le parole qui sotto per completare la frase:",      
-      "tapWordsBelowInOrder": "Tocca le parole qui sotto nell'ordine corretto",      
+      "tapWordsToComplete": "Tocca le parole qui sotto per completare la frase:",
+      "tapWordsBelowInOrder": "Tocca le parole qui sotto nell'ordine corretto",
       "matchWordsToTranslations": "abbinare le parole alle loro traduzioni",
       "hideEligibleWords": "Nascondi parole idonee",
       "showEligibleWords": "Mostra parole idonee",
@@ -191,7 +191,8 @@
         "next": "Avanti",
         "loadingPractice": "Caricamento pratica...",
         "preparing": "Preparazione..."
-      }
+      },
+      "allWordsMatched": "Tutte le parole corrispondono!"
     },
     "library": {
       "title": "Biblioteca",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "Non proprio, riprova",
     "notQuiteRight": "Non proprio",
     "wrongAnswer": "Risposta Sbagliata",
-    "correctAnswerIs": "La risposta corretta è:"
+    "correctAnswerIs": "La risposta corretta è:",
+    "goodJob": "Buon lavoro!"
   },
   "menu": {
     "openMenu": "Apri menu",

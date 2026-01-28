@@ -156,8 +156,8 @@
       "formulateSentence": "Составьте предложение",
       "surpriseMe": "Удивите меня",
       "magic": "Магия",
-      "tapWordsToComplete": "Нажмите на слова ниже, чтобы завершить предложение:",      
-      "tapWordsBelowInOrder": "Нажмите слова ниже в правильном порядке",      
+      "tapWordsToComplete": "Нажмите на слова ниже, чтобы завершить предложение:",
+      "tapWordsBelowInOrder": "Нажмите слова ниже в правильном порядке",
       "matchWordsToTranslations": "сопоставить слова с их переводами",
       "hideEligibleWords": "Скрыть подходящие слова",
       "showEligibleWords": "Показать подходящие слова",
@@ -191,7 +191,8 @@
         "next": "Далее",
         "loadingPractice": "Загрузка практики...",
         "preparing": "Подготовка..."
-      }
+      },
+      "allWordsMatched": "Все слова совпадают!"
     },
     "library": {
       "title": "Библиотека",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "Не совсем, попробуйте снова",
     "notQuiteRight": "Не совсем верно",
     "wrongAnswer": "Неверный Ответ",
-    "correctAnswerIs": "Правильный ответ:"
+    "correctAnswerIs": "Правильный ответ:",
+    "goodJob": "Хорошая работа!"
   },
   "menu": {
     "openMenu": "Открыть меню",

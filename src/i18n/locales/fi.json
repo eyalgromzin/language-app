@@ -191,7 +191,8 @@
         "next": "Seuraava",
         "loadingPractice": "Ladataan harjoitusta...",
         "preparing": "Valmistellaan..."
-      }
+      },
+      "allWordsMatched": "Kaikki sanat vastaavat!"
     },
     "library": {
       "title": "Kirjasto",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "Ei aivan, yritä uudelleen",
     "notQuiteRight": "Ei aivan oikein",
     "wrongAnswer": "Väärä Vastaus",
-    "correctAnswerIs": "Oikea vastaus on:"
+    "correctAnswerIs": "Oikea vastaus on:",
+    "goodJob": "Hyvää työtä!"
   },
   "menu": {
     "openMenu": "Avaa valikko",

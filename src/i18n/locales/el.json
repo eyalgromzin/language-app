@@ -191,7 +191,8 @@
         "next": "Επόμενο",
         "loadingPractice": "Φόρτωση πρακτικής...",
         "preparing": "Προετοιμασία..."
-      }
+      },
+      "allWordsMatched": "Όλες οι λέξεις ταιριάζουν!"
     },
     "library": {
       "title": "Βιβλιοθήκη",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "Όχι ακριβώς, δοκίμασε ξανά",
     "notQuiteRight": "Δεν είναι ακριβώς σωστό",
     "wrongAnswer": "Λάθος Απάντηση",
-    "correctAnswerIs": "Η σωστή απάντηση είναι:"
+    "correctAnswerIs": "Η σωστή απάντηση είναι:",
+    "goodJob": "Καλή δουλειά!"
   },
   "menu": {
     "openMenu": "Άνοιγμα μενού",

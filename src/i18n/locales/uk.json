@@ -156,8 +156,8 @@
       "formulateSentence": "Сформулюйте речення",
       "surpriseMe": "Здивуйте мене",
       "magic": "Магія",
-      "tapWordsToComplete": "Натисніть на слова нижче, щоб завершити речення:",      
-      "tapWordsBelowInOrder": "Натисніть слова нижче у правильному порядку",      
+      "tapWordsToComplete": "Натисніть на слова нижче, щоб завершити речення:",
+      "tapWordsBelowInOrder": "Натисніть слова нижче у правильному порядку",
       "matchWordsToTranslations": "зіставити слова з їх перекладами",
       "hideEligibleWords": "Приховати придатні слова",
       "showEligibleWords": "Показати придатні слова",
@@ -191,7 +191,8 @@
         "next": "Далі",
         "loadingPractice": "Завантаження практики...",
         "preparing": "Підготовка..."
-      }
+      },
+      "allWordsMatched": "Всі слова збігаються!"
     },
     "library": {
       "title": "Бібліотека",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "Не зовсім, спробуйте знову",
     "notQuiteRight": "Не зовсім правильно",
     "wrongAnswer": "Неправильна Відповідь",
-    "correctAnswerIs": "Правильна відповідь:"
+    "correctAnswerIs": "Правильна відповідь:",
+    "goodJob": "Хороша робота!"
   },
   "menu": {
     "openMenu": "Відкрити меню",

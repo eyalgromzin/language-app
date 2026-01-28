@@ -206,7 +206,8 @@
         "next": "הבא",
         "loadingPractice": "טוען תרגול...",
         "preparing": "מכין..."
-      }
+      },
+      "allWordsMatched": "כל המילים הצליחו!"
     },
     "library": {
       "title": "ספרייה",
@@ -482,7 +483,8 @@
     "notQuiteTryAgain": "לא לגמרי, נסה שוב",
     "notQuiteRight": "לא בדיוק נכון",
     "wrongAnswer": "תשובה שגויה",
-    "correctAnswerIs": "התשובה הנכונה היא:"
+    "correctAnswerIs": "התשובה הנכונה היא:",
+    "goodJob": "עבודה טובה!"
   },
   "menu": {
     "openMenu": "פתח תפריט",

@@ -191,7 +191,8 @@
         "next": "Volgende",
         "loadingPractice": "Oefening laden...",
         "preparing": "Voorbereiden..."
-      }
+      },
+      "allWordsMatched": "Alle woorden komen overeen!"
     },
     "library": {
       "title": "Bibliotheek",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "Niet helemaal, probeer opnieuw",
     "notQuiteRight": "Niet helemaal juist",
     "wrongAnswer": "Fout Antwoord",
-    "correctAnswerIs": "Het juiste antwoord is:"
+    "correctAnswerIs": "Het juiste antwoord is:",
+    "goodJob": "Goed gedaan!"
   },
   "menu": {
     "openMenu": "Menu openen",

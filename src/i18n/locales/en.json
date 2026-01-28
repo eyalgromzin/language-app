@@ -185,6 +185,7 @@
       "eligibleWords": "eligible words",
       "createSentence": "create the sentence",
       "continueToNextQuestion": "Continue to next question",
+      "allWordsMatched": "All words matched!",
       "memoryGameScreen": {
         "title": "Memory Game",
         "subtitle": "Find matching word pairs",
@@ -494,7 +495,8 @@
     "notImplementedYet": "is not implemented yet.",
     "hide": "Hide",
     "show": "Show",
-    "reset": "Reset"
+    "reset": "Reset",
+    "goodJob": "Good Job!"
   },
   "menu": {
     "openMenu": "Open menu",

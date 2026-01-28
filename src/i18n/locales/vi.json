@@ -191,7 +191,8 @@
         "next": "Tiếp theo",
         "loadingPractice": "Đang tải luyện tập...",
         "preparing": "Đang chuẩn bị..."
-      }
+      },
+      "allWordsMatched": "Tất cả các từ khớp!"
     },
     "library": {
       "title": "Thư Viện",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "Chưa đúng lắm, thử lại",
     "notQuiteRight": "Chưa hoàn toàn đúng",
     "wrongAnswer": "Câu Trả Lời Sai",
-    "correctAnswerIs": "Đáp án đúng là:"
+    "correctAnswerIs": "Đáp án đúng là:",
+    "goodJob": "Tốt lắm!"
   },
   "menu": {
     "openMenu": "Mở menu",

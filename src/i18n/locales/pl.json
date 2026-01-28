@@ -191,7 +191,8 @@
         "next": "Dalej",
         "loadingPractice": "Ładowanie ćwiczenia...",
         "preparing": "Przygotowywanie..."
-      }
+      },
+      "allWordsMatched": "Wszystkie słowa pasują!"
     },
     "library": {
       "title": "Biblioteka",
@@ -467,7 +468,8 @@
     "notQuiteTryAgain": "Nie do końca, spróbuj ponownie",
     "notQuiteRight": "Nie do końca dobrze",
     "wrongAnswer": "Zła Odpowiedź",
-    "correctAnswerIs": "Prawidłowa odpowiedź to:"
+    "correctAnswerIs": "Prawidłowa odpowiedź to:",
+    "goodJob": "Dobra robota!"
   },
   "menu": {
     "openMenu": "Otwórz menu",
