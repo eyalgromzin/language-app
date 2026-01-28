@@ -55,17 +55,11 @@ export default function CorrectAnswerDialogue({
             {embedded ? (
               <View style={styles.embeddedAnswerContainer}>
                 <Text style={styles.correctAnswerText}>{correctWord}</Text>
-                {translation && (
-                  <Text style={styles.correctAnswerTranslation}>{translation}</Text>
-                )}
               </View>
             ) : (
               <View style={styles.embeddedAnswerContainer}>
                 <Text style={styles.correctAnswerText}>
-                  {current && (isChooseTranslationMode ? current.translation : current.word)}
-                </Text>
-                <Text style={styles.correctAnswerTranslation}>
-                  {current && (isChooseTranslationMode ? current.word : current.translation)}
+                  {current?.sentence || (current && (isChooseTranslationMode ? current.translation : current.word))}
                 </Text>
               </View>
             )}

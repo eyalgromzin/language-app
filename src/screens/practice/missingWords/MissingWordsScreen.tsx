@@ -123,6 +123,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const [showFinishedWordAnimation, setShowFinishedWordAnimation] = React.useState<boolean>(false);
   const [wordChoices, setWordChoices] = React.useState<string[]>([]);
   const lastWordKeyRef = React.useRef<string | null>(null);
+  const lastEntryRef = React.useRef<WordEntry | null>(null);
   const [removeAfterTotalCorrect, setRemoveAfterTotalCorrect] = React.useState<number>(6);
   const animationTriggeredRef = React.useRef<Set<string>>(new Set());
 
@@ -132,6 +133,11 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
     return arr
       .map(ensureCounters)
       .filter((entry) => typeof entry.sentence === 'string' && entry.sentence.trim().length > 0)
+      .filter((entry) => {
+        // Only include sentences with more than 1 word
+        const tokens = splitSentenceIntoTokens(entry.sentence!.trim());
+        return tokens.length > 1;
+      })
       .map((entry) => {
         const tokens = splitSentenceIntoTokens(entry.sentence!.trim());
         const correctSoFar = entry.numberOfCorrectAnswers?.missingWords ?? 0;
@@ -141,6 +147,8 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
         return { entry, tokens, missingIndices };
       });
   }, []);
+
+  
 
   const loadData = React.useCallback(async () => {
     if (props.embedded) {
@@ -212,6 +220,7 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
       }
       setCurrentIndex(nextIdx);
       lastWordKeyRef.current = prepared[nextIdx]?.entry.word ?? null;
+      lastEntryRef.current = prepared[nextIdx]?.entry ?? null;
       setInputs({});
       setWrongHighlightIndex(null);
       setStoredMismatchIndex(null);
@@ -563,9 +572,8 @@ function MissingWordsScreen(props: EmbeddedProps = {}): React.JSX.Element {
           }
         }}
         embedded={props.embedded}
-        correctWord={current?.entry.sentence}
-        translation={current?.entry.translation}
-        current={current?.entry}
+        correctWord={lastEntryRef.current?.sentence}
+        current={lastEntryRef.current ?? undefined}
         onFinished={props.onFinished}
         onMoveToNext={moveToNext}
         onHideFinishedAnimation={() => setShowFinishedWordAnimation(false)}
