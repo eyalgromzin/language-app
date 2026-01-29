@@ -24,10 +24,7 @@ export function ensureCounters(entry: WordEntry): WordEntry {
 export function pickMissingIndices(letters: string[], desiredCount: number): number[] {
   const candidateIndices: number[] = [];
   for (let i = 0; i < letters.length; i += 1) {
-    const ch = letters[i];
-    if (/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]$/.test(ch)) {
-      candidateIndices.push(i);
-    }
+    candidateIndices.push(i);
   }
   if (candidateIndices.length === 0) return [];
   const desired = Math.max(1, Math.min(candidateIndices.length, Math.floor(desiredCount)));
