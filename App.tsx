@@ -7,13 +7,13 @@ import React from 'react';
 import { NavigationContainer, DefaultTheme, DarkTheme, getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSheet, Share, ActivityIndicator, Linking, Alert } from 'react-native';
+import { StatusBar, useColorScheme, TouchableOpacity, Text, Modal, View, StyleSheet, Share, ActivityIndicator, Linking, Alert, I18nManager } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AuthProvider, useAuth } from './src/contexts/AuthContext';
 import { WordCategoriesProvider } from './src/contexts/WordCategoriesContext';
 import { LanguageMappingsProvider } from './src/contexts/LanguageMappingsContext';
 import { LoginGateProvider } from './src/contexts/LoginGateContext';
-import { LanguageProvider } from './src/contexts/LanguageContext';
+import { LanguageProvider, useLanguage } from './src/contexts/LanguageContext';
 import { initializeLanguage } from './src/i18n';
 import { useTranslation } from './src/hooks/useTranslation';
 import HomeScreen from './src/screens/Home/HomeScreen';
@@ -36,6 +36,7 @@ import linkingService from './src/services/linkingService';
 import LoginGateModal from './src/components/LoginGateModal';
 import { createAndSaveWord } from './src/services/wordService';
 import { t } from 'i18next';
+import { isRTLLanguage } from './src/utils/rtlUtils';
 
 enableScreens();
 
@@ -470,17 +471,37 @@ function App(): React.JSX.Element {
   return (
     <AuthProvider>
       <LanguageProvider>
-        <WordCategoriesProvider>
-          <LanguageMappingsProvider>
-            <LoginGateProvider>
-              <AppNavigator />
-              <LoginGateModal />
-            </LoginGateProvider>
-          </LanguageMappingsProvider>
-        </WordCategoriesProvider>
+        <RTLConfigWrapper>
+          <WordCategoriesProvider>
+            <LanguageMappingsProvider>
+              <LoginGateProvider>
+                <AppNavigator />
+                <LoginGateModal />
+              </LoginGateProvider>
+            </LanguageMappingsProvider>
+          </WordCategoriesProvider>
+        </RTLConfigWrapper>
       </LanguageProvider>
     </AuthProvider>
   );
+}
+
+// Component to configure RTL based on native language
+function RTLConfigWrapper({ children }: { children: React.ReactNode }): React.JSX.Element {
+  const { nativeLanguage } = useLanguage();
+
+  React.useEffect(() => {
+    // Set RTL configuration based on native language
+    const shouldBeRTL = isRTLLanguage(nativeLanguage);
+    
+    if (shouldBeRTL) {
+      I18nManager.forceRTL(true);
+    } else {
+      I18nManager.forceRTL(false);
+    }
+  }, [nativeLanguage]);
+
+  return <>{children}</>;
 }
 
 export default App;
