@@ -483,7 +483,7 @@ function Choose1OutOfN(props: EmbeddedProps): React.JSX.Element {
     if (wrongAttempts >= 1) {
       setWrongKey(opt.key);
       setRevealCorrect(true);
-      setShowWrongToast(true);
+      setShowWrongToast(false);
       try { playWrongFeedback(); } catch {}
       // Show popup after second wrong attempt
       setTimeout(() => {
