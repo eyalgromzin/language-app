@@ -81,6 +81,25 @@
           "continueToPracticeSettings": "Continuar a la configuración de práctica"
         }
       },
+
+      "completionScreen": {
+        "title": "¡Todo listo!",
+        "subtitle": "Revisa tu configuración y comienza a aprender",
+        "yourSettings": "Tu configuración",
+        "notSelected": "No seleccionado",
+        "correctAnswers": "{{count}} respuestas correctas",
+        "totalCorrectAnswers": "{{count}} total de respuestas correctas",
+        "settingUp": "Configurando",
+        "startLearning": "Comenzar a aprender",
+        "languagesMissing": "Falta la selección de idioma. Por favor, vuelve atrás y selecciona tus idiomas.",
+        "accessibility": {
+          "goBack": "Volver a la configuración de práctica",
+          "completeSetup": "Completar configuración y comenzar a aprender"
+        }
+      }
+    },
+    "video": {
+      "searchPlaceholder": "Buscar...",
       "goButton": "Ir",
       "nowPlayingByOthers": "Reproduciendo por otras personas",
       "enterYouTubeUrl": "Ingresa una URL o ID de YouTube...",
@@ -125,22 +144,7 @@
       "no": "No",
       "yes": "Sí",
       "removed": "Eliminado",
-      "added": "Agregado",
-      "completionScreen": {
-        "title": "¡Todo listo!",
-        "subtitle": "Revisa tu configuración y comienza a aprender",
-        "yourSettings": "Tu configuración",
-        "notSelected": "No seleccionado",
-        "correctAnswers": "{{count}} respuestas correctas",
-        "totalCorrectAnswers": "{{count}} total de respuestas correctas",
-        "settingUp": "Configurando",
-        "startLearning": "Comenzar a aprender",
-        "languagesMissing": "Falta la selección de idioma. Por favor, vuelve atrás y selecciona tus idiomas.",
-        "accessibility": {
-          "goBack": "Volver a la configuración de práctica",
-          "completeSetup": "Completar configuración y comenzar a aprender"
-        }
-      }
+      "added": "Agregado"
     },
     "practice": {
       "title": "Práctica",
