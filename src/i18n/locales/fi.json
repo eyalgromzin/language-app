@@ -383,6 +383,8 @@
       "moreOptions": "Lisää vaihtoehtoja",
       "setHomepage": "Aseta Kotisivu",
       "setHomepageSubtitle": "Aseta nykyinen sivu kotisivuksi",
+      "setHomepageConfirm": "Aseta Kotisivuksi",
+      "setHomepageQuestion": "Haluatko asettaa tämän verkkosivun kotisivuksesi?",
       "favouritesList": "Suosikkilista",
       "favouritesListSubtitle": "Näytä tallennetut verkkosivut",
       "sharePage": "Jaa Sivu",

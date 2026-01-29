@@ -382,6 +382,8 @@
       "moreOptions": "Fler alternativ",
       "setHomepage": "Ställ in Startsida",
       "setHomepageSubtitle": "Ställ in aktuell sida som startsida",
+      "setHomepageConfirm": "Ange som Startsida",
+      "setHomepageQuestion": "Vill du ange denna webbplats som startsida?",
       "favouritesList": "Favoritlista",
       "favouritesListSubtitle": "Visa sparade webbplatser",
       "sharePage": "Dela Sida",

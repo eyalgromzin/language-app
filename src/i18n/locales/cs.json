@@ -382,6 +382,8 @@
       "moreOptions": "Další možnosti",
       "setHomepage": "Nastavit Domovskou Stránku",
       "setHomepageSubtitle": "Nastavit aktuální stránku jako domovskou",
+      "setHomepageConfirm": "Nastavit jako Domovskou stránku",
+      "setHomepageQuestion": "Chcete nastavit tuto webovou stránku jako domovskou stránku?",
       "favouritesList": "Seznam Oblíbených",
       "favouritesListSubtitle": "Zobrazit uložené weby",
       "sharePage": "Sdílet Stránku",

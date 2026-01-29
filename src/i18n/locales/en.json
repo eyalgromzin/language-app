@@ -404,6 +404,8 @@
       "moreOptions": "More options",
       "setHomepage": "Set as Homepage",
       "setHomepageSubtitle": "Set current page as homepage",
+      "setHomepageConfirm": "Set as Homepage",
+      "setHomepageQuestion": "Do you want to set this website as homepage?",
       "favouritesList": "Favourites List",
       "favouritesListSubtitle": "View saved websites",
       "sharePage": "Share Page",

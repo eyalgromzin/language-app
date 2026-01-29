@@ -8,6 +8,7 @@ import { addUrlToLibrary } from '../config/api';
 import { FAVOURITE_TYPES, toLanguageSymbol } from '../common';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getChildrenStoriesWebsite } from '../constants/childrenStoriesWebsites';
+import { useTranslation } from './useTranslation';
 
 export type FavouriteItem = { url: string; name: string; typeId?: number; typeName?: string; levelName?: string };
 
@@ -20,6 +21,7 @@ export const useSurfScreen = () => {
   
   // Get languages from context
   const { learningLanguage, nativeLanguage } = useLanguage();
+  const { t } = useTranslation();
   
   // Helper function to convert language name to symbol
  
@@ -422,11 +424,11 @@ export const useSurfScreen = () => {
     };
     try {
       Alert.alert(
-        'Set as Homepage',
-        'do you want to set this website as homepage?',
+        t('screens.surf.setHomepageConfirm'),
+        t('screens.surf.setHomepageQuestion'),
         [
-          { text: 'No', style: 'cancel' },
-          { text: 'Yes', onPress: confirmAndSave },
+          { text: t('common.no'), style: 'cancel' },
+          { text: t('common.yes'), onPress: confirmAndSave },
         ],
         { cancelable: true }
       );

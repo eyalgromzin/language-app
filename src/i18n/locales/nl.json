@@ -383,6 +383,8 @@
       "moreOptions": "Meer opties",
       "setHomepage": "Startpagina Instellen",
       "setHomepageSubtitle": "Huidige pagina instellen als startpagina",
+      "setHomepageConfirm": "Als startpagina instellen",
+      "setHomepageQuestion": "Wil je deze website als startpagina instellen?",
       "favouritesList": "Favorietenlijst",
       "favouritesListSubtitle": "Bekijk opgeslagen websites",
       "sharePage": "Pagina Delen",

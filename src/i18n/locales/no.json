@@ -383,6 +383,8 @@
       "moreOptions": "Flere alternativer",
       "setHomepage": "Sett Hjemmeside",
       "setHomepageSubtitle": "Sett gjeldende side som hjemmeside",
+      "setHomepageConfirm": "Angi som Startside",
+      "setHomepageQuestion": "Vil du angi dette nettstedet som hjemmeside?",
       "favouritesList": "Favorittliste",
       "favouritesListSubtitle": "Vis lagrede nettsider",
       "sharePage": "Del Side",

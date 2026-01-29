@@ -382,6 +382,8 @@
       "moreOptions": "Περισσότερες επιλογές",
       "setHomepage": "Ορισμός Αρχικής Σελίδας",
       "setHomepageSubtitle": "Ορισμός τρέχουσας σελίδας ως αρχική",
+      "setHomepageConfirm": "Ορισμός ως Αρχική Σελίδα",
+      "setHomepageQuestion": "Θέλετε να ορίσετε αυτή την ιστοσελίδα ως αρχική σελίδα;",
       "favouritesList": "Λίστα Αγαπημένων",
       "favouritesListSubtitle": "Προβολή αποθηκευμένων ιστοσελίδων",
       "sharePage": "Κοινοποίηση Σελίδας",
