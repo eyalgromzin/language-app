@@ -7,6 +7,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTranslation } from 'react-i18next';
+import { getLocales } from 'react-native-localize';
 
 type OnboardingStackParamList = {
   LearningLanguage: undefined;
@@ -17,12 +18,70 @@ type OnboardingStackParamList = {
 
 type Props = NativeStackScreenProps<OnboardingStackParamList, 'NativeLanguage'>;
 
+// Language code to name mapping
+const LANGUAGE_CODE_TO_NAME: Record<string, string> = {
+  en: 'English',
+  es: 'Spanish',
+  he: 'Hebrew',
+  fr: 'French',
+  de: 'German',
+  it: 'Italian',
+  pt: 'Portuguese',
+  ru: 'Russian',
+  hi: 'Hindi',
+  pl: 'Polish',
+  nl: 'Dutch',
+  el: 'Greek',
+  sv: 'Swedish',
+  no: 'Norwegian',
+  fi: 'Finnish',
+  cs: 'Czech',
+  uk: 'Ukrainian',
+  th: 'Thai',
+  vi: 'Vietnamese',
+};
+
 function NativeLanguageScreen({ navigation }: Props): React.JSX.Element {
   const { languageMappings, isLoading: languagesLoading } = useLanguageMappings();
   const { nativeLanguage, setNativeLanguage } = useLanguage();
   const [selectedLanguage, setSelectedLanguage] = React.useState<string>('');
   const { t, i18n } = useTranslation();
   const isHebrew = i18n.language === 'he' || i18n.language === 'iw';
+
+  // Set initial language based on system language
+  React.useEffect(() => {
+    if (!languagesLoading && Object.keys(languageMappings).length > 0) {
+      try {
+        // Get system locale
+        const locales = getLocales();
+        const systemLanguageCode = locales[0]?.languageCode;
+        
+        // Map system language code to language name
+        const systemLanguageName = systemLanguageCode 
+          ? LANGUAGE_CODE_TO_NAME[systemLanguageCode] 
+          : null;
+        
+        // Check if the system language exists in available languages
+        if (systemLanguageName && languageMappings[systemLanguageName]) {
+          setSelectedLanguage(systemLanguageName);
+          setNativeLanguage(systemLanguageName);
+        } else {
+          // Fallback to English if system language not available
+          if (languageMappings['English']) {
+            setSelectedLanguage('English');
+            setNativeLanguage('English');
+          }
+        }
+      } catch (error) {
+        console.error('Error setting initial language:', error);
+        // Fallback to English on error
+        if (languageMappings['English']) {
+          setSelectedLanguage('English');
+          setNativeLanguage('English');
+        }
+      }
+    }
+  }, [languagesLoading, languageMappings, setNativeLanguage]);
 
   const onContinue = async () => {
     if (!selectedLanguage) {
