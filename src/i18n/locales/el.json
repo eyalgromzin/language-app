@@ -122,8 +122,8 @@
       "failedToLoadNowPlayingVideos": "Αποτυχία φόρτωσης βίντεο που παίζουν τώρα.",
       "unableToOpenVideo": "Αδυναμία ανοίγματος αυτού του βίντεο. Μη έγκυρη διεύθυνση ή αναγνωριστικό.",
       "unableToFetchTranscript": "Αδυναμία λήψης μεταγραφής για αυτό το βίντεο.",
-      "failedToSearchYouTube": "Αποτυχία αναζήτησης στο YouTube.",
-      "accessibilityLabels": {
+      "failedToSearchYouTube": "Αποτυχία αναζήτησης στο YouTube.",      "fetchingTranscript": "Ανάκτηση μεταγραφής…",
+      "noTranscriptLines": "Δεν υπάρχουν γραμμές μεταγραφής προς εμφάνιση.",      "accessibilityLabels": {
         "youtubeUrlInput": "Είσοδος διεύθυνσης YouTube",
         "openVideo": "Άνοιγμα βίντεο",
         "openLibrary": "Άνοιγμα βιβλιοθήκης",

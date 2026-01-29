@@ -136,8 +136,8 @@
       "failedToLoadNowPlayingVideos": "טעינת הסרטונים המתנגנים נכשלה.",
       "unableToOpenVideo": "לא ניתן לפתוח את הסרטון הזה. כתובת או מזהה לא תקינים.",
       "unableToFetchTranscript": "לא ניתן לקבל תמליל לסרטון הזה.",
-      "failedToSearchYouTube": "חיפוש ב-YouTube נכשל.",
-      "accessibilityLabels": {
+      "failedToSearchYouTube": "חיפוש ב-YouTube נכשל.",      "fetchingTranscript": "…הבאת תמלול",
+      "noTranscriptLines": ".אין שורות תמלול להצגה",      "accessibilityLabels": {
         "youtubeUrlInput": "קלט כתובת YouTube",
         "openVideo": "פתח סרטון",
         "openLibrary": "פתח ספרייה",

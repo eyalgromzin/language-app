@@ -122,8 +122,8 @@
       "failedToLoadNowPlayingVideos": "Nepodařilo se načíst právě přehrávaná videa.",
       "unableToOpenVideo": "Nelze otevřít toto video. Neplatná URL nebo ID.",
       "unableToFetchTranscript": "Nelze získat přepis tohoto videa.",
-      "failedToSearchYouTube": "Nepodařilo se vyhledat na YouTube.",
-      "accessibilityLabels": {
+      "failedToSearchYouTube": "Nepodařilo se vyhledat na YouTube.",      "fetchingTranscript": "Načítání přepisu…",
+      "noTranscriptLines": "Žádné řádky přepisu k zobrazení.",      "accessibilityLabels": {
         "youtubeUrlInput": "Vstup YouTube URL",
         "openVideo": "Otevřít video",
         "openLibrary": "Otevřít knihovnu",

@@ -123,6 +123,8 @@
       "unableToOpenVideo": "Tämän videon avaaminen ei onnistu. Virheellinen URL tai tunniste.",
       "unableToFetchTranscript": "Tämän videon tekstityksen hakeminen ei onnistu.",
       "failedToSearchYouTube": "YouTube-haku epäonnistui.",
+      "fetchingTranscript": "Haetaan transkriptiota…",
+      "noTranscriptLines": "Ei transkription rivejä näytettäväksi.",
       "accessibilityLabels": {
         "youtubeUrlInput": "YouTube-URL-syöte",
         "openVideo": "Avaa video",

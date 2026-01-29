@@ -122,8 +122,8 @@
       "failedToLoadNowPlayingVideos": "Не вдалося завантажити відео що зараз відтворюються.",
       "unableToOpenVideo": "Неможливо відкрити це відео. Недійсний URL або ID.",
       "unableToFetchTranscript": "Неможливо отримати транскрипт цього відео.",
-      "failedToSearchYouTube": "Пошук на YouTube не вдався.",
-      "accessibilityLabels": {
+      "failedToSearchYouTube": "Пошук на YouTube не вдався.",      "fetchingTranscript": "Отримання транскрипції…",
+      "noTranscriptLines": "Немає рядків транскрипції для відображення.",      "accessibilityLabels": {
         "youtubeUrlInput": "Введення URL YouTube",
         "openVideo": "Відкрити відео",
         "openLibrary": "Відкрити бібліотеку",

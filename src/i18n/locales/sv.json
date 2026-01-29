@@ -122,8 +122,8 @@
       "failedToLoadNowPlayingVideos": "Misslyckades med att ladda nu spelande videor.",
       "unableToOpenVideo": "Kan inte öppna denna video. Ogiltig URL eller ID.",
       "unableToFetchTranscript": "Kan inte hämta transkript för denna video.",
-      "failedToSearchYouTube": "YouTube-sökning misslyckades.",
-      "accessibilityLabels": {
+      "failedToSearchYouTube": "YouTube-sökning misslyckades.",      "fetchingTranscript": "Hämtar transkript…",
+      "noTranscriptLines": "Inga transkriptlinjer att visa.",      "accessibilityLabels": {
         "youtubeUrlInput": "YouTube URL-inmatning",
         "openVideo": "Öppna video",
         "openLibrary": "Öppna bibliotek",

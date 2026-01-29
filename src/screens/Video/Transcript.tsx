@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView, ActivityIndicator, StyleSheet, TouchableOpacity } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { tokenizeTranscriptLine, formatTimestamp, type TranscriptSegment } from './videoMethods';
 
@@ -33,6 +34,7 @@ const Transcript: React.FC<TranscriptProps> = ({
   isFullScreen,
   onToggleFullScreen,
 }) => {
+  const { t } = useTranslation();
   // Store full transcript in memory
   const fullTranscriptRef = React.useRef<TranscriptSegment[]>([]);
   
@@ -89,7 +91,7 @@ const Transcript: React.FC<TranscriptProps> = ({
       {loading ? (
         <View style={styles.centered}>
           <ActivityIndicator />
-          <Text style={styles.helper}>Fetching transcript…</Text>
+          <Text style={styles.helper}>{t('screens.video.fetchingTranscript')}</Text>
         </View>
       ) : error ? (
         <Text style={[styles.helper, { color: '#cc3333' }]}>{error}</Text>
@@ -138,7 +140,7 @@ const Transcript: React.FC<TranscriptProps> = ({
           })}
         </ScrollView>
       ) : (
-        <Text style={styles.helper}>No transcript lines to display.</Text>
+        <Text style={styles.helper}>{t('screens.video.noTranscriptLines')}</Text>
       )}
     </View>
   );

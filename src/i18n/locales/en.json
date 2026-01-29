@@ -137,6 +137,8 @@
       "unableToOpenVideo": "Unable to open this video. Invalid URL or ID.",
       "unableToFetchTranscript": "Unable to fetch transcript for this video.",
       "failedToSearchYouTube": "Failed to search YouTube.",
+      "fetchingTranscript": "Fetching transcript…",
+      "noTranscriptLines": "No transcript lines to display.",
       "accessibilityLabels": {
         "youtubeUrlInput": "YouTube URL input",
         "openVideo": "Open video",
