@@ -33,7 +33,8 @@
       "cancel": "Cancelar",
       "logoutError": "Houve um erro ao sair. Tente novamente.",
       "restartRequired": "Reinicialização necessária",
-      "restartForDirection": "Por favor, reinicie o aplicativo para alterar a direção"
+      "restartForDirection": "Por favor, reinicie o aplicativo para alterar a direção",
+      "closeApp": "Fechar aplicativo"
     },
     "startup": {
       "welcome": "Bem-vindo ao HelloLingo!",

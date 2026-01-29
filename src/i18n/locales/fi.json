@@ -48,7 +48,8 @@
       "cancel": "Peruuta",
       "logoutError": "Uloskirjautumisessa tapahtui virhe. Yritä uudelleen.",
       "restartRequired": "Uudelleenkäynnistys vaaditaan",
-      "restartForDirection": "Käynnistä sovellus uudelleen vaihtaaksesi suunta"
+      "restartForDirection": "Käynnistä sovellus uudelleen vaihtaaksesi suunta",
+      "closeApp": "Sulje sovellus"
     },
     "startup": {
       "welcome": "Tervetuloa HelloLingo-palveluun!",

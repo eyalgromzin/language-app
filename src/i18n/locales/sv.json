@@ -33,7 +33,8 @@
       "cancel": "Avbryt",
       "logoutError": "Det uppstod ett fel vid utloggning. Försök igen.",
       "restartRequired": "Omstart krävs",
-      "restartForDirection": "Vänligen starta om appen för att ändra riktning"
+      "restartForDirection": "Vänligen starta om appen för att ändra riktning",
+      "closeApp": "Stäng app"
     },
     "startup": {
       "welcome": "Välkommen till HelloLingo!",

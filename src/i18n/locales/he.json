@@ -33,7 +33,8 @@
       "cancel": "ביטול",
       "logoutError": "אירעה שגיאה בהתנתקות. אנא נסו שוב.",
       "restartRequired": "נדרש אתחול",
-      "restartForDirection": "אנא הפעילו מחדש את האפליקציה לשינוי כיוון"
+      "restartForDirection": "אנא הפעילו מחדש את האפליקציה לשינוי כיוון",
+      "closeApp": "סגור אפליקציה"
     },
     "startup": {
       "welcome": "ברוכים הבאים ל-HelloLingo!",

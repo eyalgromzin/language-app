@@ -33,7 +33,8 @@
       "cancel": "रद्द करें",
       "logoutError": "लॉग आउट करते समय त्रुटि हुई। कृपया फिर से कोशिश करें।",
       "restartRequired": "पुनः आरंभ आवश्यक",
-      "restartForDirection": "कृपया दिशा बदलने के लिए ऐप को पुनः आरंभ करें"
+      "restartForDirection": "कृपया दिशा बदलने के लिए ऐप को पुनः आरंभ करें",
+      "closeApp": "ऐप बंद करें"
     },
     "startup": {
       "welcome": "HelloLingo में आपका स्वागत है!",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Pressable, Alert, ScrollView, SafeAreaView, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Alert, ScrollView, SafeAreaView, ActivityIndicator, BackHandler } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
 import { useAuth } from '../../contexts/AuthContext';
@@ -110,7 +110,13 @@ function SettingsScreen(): React.JSX.Element {
       Alert.alert(
         t('screens.settings.restartRequired'),
         t('screens.settings.restartForDirection'),
-        [{ text: 'OK' }]
+        [
+          { 
+            text: t('screens.settings.closeApp'), 
+            style: 'destructive',
+            onPress: () => BackHandler.exitApp()
+          }
+        ]
       );
     }
   };

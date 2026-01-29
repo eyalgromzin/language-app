@@ -33,7 +33,8 @@
       "cancel": "Cancel",
       "logoutError": "There was an error logging out. Please try again.",
       "restartRequired": "Restart Required",
-      "restartForDirection": "Please restart app to change directions"
+      "restartForDirection": "Please restart app to change directions",
+      "closeApp": "Close App"
     },
     "startup": {
       "welcome": "Welcome to HelloLingo!",

@@ -33,7 +33,8 @@
       "cancel": "Cancelar",
       "logoutError": "Hubo un error al cerrar sesión. Por favor, inténtalo de nuevo.",
       "restartRequired": "Reinicio requerido",
-      "restartForDirection": "Por favor reinicia la aplicación para cambiar la dirección"
+      "restartForDirection": "Por favor reinicia la aplicación para cambiar la dirección",
+      "closeApp": "Cerrar aplicación"
     },
     "startup": {
       "welcome": "¡Bienvenido a HelloLingo!",

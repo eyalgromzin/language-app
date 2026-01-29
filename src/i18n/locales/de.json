@@ -33,7 +33,8 @@
       "cancel": "Abbrechen",
       "logoutError": "Beim Abmelden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
       "restartRequired": "Neustart erforderlich",
-      "restartForDirection": "Bitte starten Sie die App neu, um die Richtung zu ändern"
+      "restartForDirection": "Bitte starten Sie die App neu, um die Richtung zu ändern",
+      "closeApp": "App schließen"
     },
     "startup": {
       "welcome": "Willkommen bei HelloLingo!",

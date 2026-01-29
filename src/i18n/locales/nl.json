@@ -33,7 +33,8 @@
       "cancel": "Annuleren",
       "logoutError": "Er was een fout bij het uitloggen. Probeer het opnieuw.",
       "restartRequired": "Herstarten vereist",
-      "restartForDirection": "Herstart de app om de richting te wijzigen"
+      "restartForDirection": "Herstart de app om de richting te wijzigen",
+      "closeApp": "App sluiten"
     },
     "startup": {
       "welcome": "Welkom bij HelloLingo!",

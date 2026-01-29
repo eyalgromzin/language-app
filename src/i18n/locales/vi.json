@@ -48,7 +48,8 @@
       "cancel": "Hủy",
       "logoutError": "Có lỗi xảy ra khi đăng xuất. Vui lòng thử lại.",
       "restartRequired": "Cần khởi động lại",
-      "restartForDirection": "Vui lòng khởi động lại ứng dụng để thay đổi hướng"
+      "restartForDirection": "Vui lòng khởi động lại ứng dụng để thay đổi hướng",
+      "closeApp": "Đóng ứng dụng"
     },
     "startup": {
       "welcome": "Chào mừng đến với HelloLingo!",
