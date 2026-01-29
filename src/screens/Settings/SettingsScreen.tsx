@@ -109,14 +109,7 @@ function SettingsScreen(): React.JSX.Element {
     if (isChangingFromHebrew || isChangingToHebrew) {
       Alert.alert(
         t('screens.settings.restartRequired'),
-        t('screens.settings.restartForDirection'),
-        [
-          { 
-            text: t('screens.settings.closeApp'), 
-            style: 'destructive',
-            onPress: () => BackHandler.exitApp()
-          }
-        ]
+        t('screens.settings.restartForDirection')
       );
     }
   };
