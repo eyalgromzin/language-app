@@ -406,6 +406,11 @@
         "removeFromFavourites": "Verwijderen uit favorieten",
         "openLibrary": "Bibliotheek Openen",
         "moreOptions": "Meer opties"
+      },
+      "favouritesModal": {
+        "title": "Favorieten",
+        "emptyText": "Nog geen favorieten",
+        "emptySubtext": "Voeg websites toe aan je favorieten voor snelle toegang"
       }
     },
     "babyStepsPath": {

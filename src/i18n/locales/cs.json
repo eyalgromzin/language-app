@@ -405,6 +405,11 @@
         "removeFromFavourites": "Odebrat z oblíbených",
         "openLibrary": "Otevřít Knihovnu",
         "moreOptions": "Další možnosti"
+      },
+      "favouritesModal": {
+        "title": "Oblíbené",
+        "emptyText": "Zatím žádné oblíbené",
+        "emptySubtext": "Přidejte si webové stránky do oblíbených pro rychlý přístup"
       }
     },
     "babyStepsPath": {

@@ -403,6 +403,11 @@
         "removeFromFavourites": "Usuń z ulubionych",
         "openLibrary": "Otwórz Bibliotekę",
         "moreOptions": "Więcej opcji"
+      },
+      "favouritesModal": {
+        "title": "Ulubione",
+        "emptyText": "Brak ulubionych",
+        "emptySubtext": "Dodaj strony internetowe do ulubionych, aby szybko je otworzyć"
       }
     },
     "babyStepsPath": {

@@ -405,6 +405,11 @@
         "removeFromFavourites": "Ta bort från favoriter",
         "openLibrary": "Öppna Bibliotek",
         "moreOptions": "Fler alternativ"
+      },
+      "favouritesModal": {
+        "title": "Favoriter",
+        "emptyText": "Inga favoriter än",
+        "emptySubtext": "Lägg till webbplatser i dina favoriter för snabb åtkomst"
       }
     },
     "babyStepsPath": {

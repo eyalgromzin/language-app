@@ -403,6 +403,11 @@
         "removeFromFavourites": "Видалити з обраного",
         "openLibrary": "Відкрити Бібліотеку",
         "moreOptions": "Більше опцій"
+      },
+      "favouritesModal": {
+        "title": "Улюблені",
+        "emptyText": "Ще немає улюблених",
+        "emptySubtext": "Додавайте веб-сайти до улюблених для швидкого доступу"
       }
     },
     "babyStepsPath": {

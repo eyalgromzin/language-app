@@ -406,6 +406,11 @@
         "removeFromFavourites": "Fjern fra favoritter",
         "openLibrary": "Åpne Bibliotek",
         "moreOptions": "Flere alternativer"
+      },
+      "favouritesModal": {
+        "title": "Favoritter",
+        "emptyText": "Ingen favoritter ennå",
+        "emptySubtext": "Legg til nettsteder i favorittene dine for rask tilgang"
       }
     },
     "babyStepsPath": {

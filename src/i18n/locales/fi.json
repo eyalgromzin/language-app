@@ -406,6 +406,11 @@
         "removeFromFavourites": "Poista suosikeista",
         "openLibrary": "Avaa Kirjasto",
         "moreOptions": "Lisää vaihtoehtoja"
+      },
+      "favouritesModal": {
+        "title": "Suosikit",
+        "emptyText": "Ei suosikkeja vielä",
+        "emptySubtext": "Lisää verkkosivuja suosikkeihisi nopeaa pääsyä varten"
       }
     },
     "babyStepsPath": {

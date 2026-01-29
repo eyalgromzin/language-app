@@ -404,6 +404,11 @@
         "removeFromFavourites": "Rimuovi dai preferiti",
         "openLibrary": "Apri Biblioteca",
         "moreOptions": "Altre opzioni"
+      },
+      "favouritesModal": {
+        "title": "Preferiti",
+        "emptyText": "Nessun preferito ancora",
+        "emptySubtext": "Aggiungi siti web ai tuoi preferiti per un accesso rapido"
       }
     },
     "babyStepsPath": {

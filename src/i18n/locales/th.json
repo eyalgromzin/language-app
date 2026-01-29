@@ -404,6 +404,11 @@
         "removeFromFavourites": "ลบออกจากรายการโปรด",
         "openLibrary": "เปิดไลบรารี",
         "moreOptions": "ตัวเลือกเพิ่มเติม"
+      },
+      "favouritesModal": {
+        "title": "รายการโปรด",
+        "emptyText": "ยังไม่มีรายการโปรด",
+        "emptySubtext": "เพิ่มเว็บไซต์ไปยังรายการโปรดของคุณเพื่อเข้าถึงได้อย่างรวดเร็ว"
       }
     },
     "babyStepsPath": {

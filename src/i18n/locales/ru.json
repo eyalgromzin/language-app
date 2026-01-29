@@ -404,6 +404,11 @@
         "removeFromFavourites": "Удалить из избранного",
         "openLibrary": "Открыть Библиотеку",
         "moreOptions": "Больше опций"
+      },
+      "favouritesModal": {
+        "title": "Избранное",
+        "emptyText": "Нет избранного",
+        "emptySubtext": "Добавляйте веб-сайты в избранное для быстрого доступа"
       }
     },
     "babyStepsPath": {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from 'react-i18next';
 
 interface FavouriteItem {
   url: string;
@@ -25,6 +26,8 @@ const FavouritesModal: React.FC<FavouritesModalProps> = ({
   onFavouritePress,
   onRemoveFavourite,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <Modal
       visible={visible}
@@ -35,7 +38,7 @@ const FavouritesModal: React.FC<FavouritesModalProps> = ({
       <View style={styles.modalBackdrop}>
         <View style={styles.modalCard}>
           <View style={styles.modalHeader}>
-            <Text style={styles.modalTitle}>Favourites</Text>
+            <Text style={styles.modalTitle}>{t('screens.surf.favouritesModal.title')}</Text>
             <TouchableOpacity onPress={onClose} style={styles.closeButton}>
               <Ionicons name="close" size={24} color="#6b7280" />
             </TouchableOpacity>
@@ -45,8 +48,8 @@ const FavouritesModal: React.FC<FavouritesModalProps> = ({
             {favourites.length === 0 && (
               <View style={styles.emptyState}>
                 <Ionicons name="star-outline" size={48} color="#cbd5e1" />
-                <Text style={styles.emptyText}>No favourites yet</Text>
-                <Text style={styles.emptySubtext}>Add websites to your favourites for quick access</Text>
+                <Text style={styles.emptyText}>{t('screens.surf.favouritesModal.emptyText')}</Text>
+                <Text style={styles.emptySubtext}>{t('screens.surf.favouritesModal.emptySubtext')}</Text>
               </View>
             )}
             {favourites.map((f) => (

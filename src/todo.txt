@@ -14,9 +14,6 @@ Low priority (17 items)
 
 sometimes - choosing strange languages makes app crash - fix !
 
-check practice hebrew support and rtl 
-      - formulate sentense - the words are the opposite order 
-
 - in book reader, it enables to scroll in book only after first swipe , need to fix !!
 
 - publish app =======================================================================================================================

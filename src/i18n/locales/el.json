@@ -405,6 +405,11 @@
         "removeFromFavourites": "Αφαίρεση από τα αγαπημένα",
         "openLibrary": "Άνοιγμα Βιβλιοθήκης",
         "moreOptions": "Περισσότερες επιλογές"
+      },
+      "favouritesModal": {
+        "title": "Αγαπημένα",
+        "emptyText": "Δεν υπάρχουν αγαπημένα ακόμα",
+        "emptySubtext": "Προσθέστε ιστοσελίδες στα αγαπημένα σας για γρήγορη πρόσβαση"
       }
     },
     "babyStepsPath": {

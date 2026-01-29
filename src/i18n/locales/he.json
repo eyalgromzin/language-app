@@ -418,6 +418,11 @@
         "removeFromFavourites": "הסר מהמועדפים",
         "openLibrary": "פתח ספרייה",
         "moreOptions": "אפשרויות נוספות"
+      },
+      "favouritesModal": {
+        "title": "מועדפים",
+        "emptyText": "אין מועדפים עדיין",
+        "emptySubtext": "הוסף אתרים למועדפיים שלך לגישה מהירה"
       }
     },
     "babyStepsPath": {

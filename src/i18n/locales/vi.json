@@ -403,6 +403,11 @@
         "removeFromFavourites": "Xóa khỏi yêu thích",
         "openLibrary": "Mở Thư Viện",
         "moreOptions": "Thêm tùy chọn"
+      },
+      "favouritesModal": {
+        "title": "Yêu thích",
+        "emptyText": "Chưa có yêu thích",
+        "emptySubtext": "Thêm các trang web vào yêu thích của bạn để truy cập nhanh"
       }
     },
     "babyStepsPath": {

@@ -404,6 +404,11 @@
         "removeFromFavourites": "पसंदीदा से हटाएं",
         "openLibrary": "लाइब्रेरी खोलें",
         "moreOptions": "अधिक विकल्प"
+      },
+      "favouritesModal": {
+        "title": "पसंदीदा",
+        "emptyText": "अभी तक कोई पसंदीदा नहीं",
+        "emptySubtext": "तीव्र पहुँच के लिए अपने पसंदीदा में वेबसाइटें जोड़ें"
       }
     },
     "babyStepsPath": {
