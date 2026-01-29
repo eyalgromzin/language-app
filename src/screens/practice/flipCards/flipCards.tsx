@@ -334,13 +334,14 @@ function FlipCardsScreen(): React.JSX.Element {
   const panResponder = React.useMemo(
     () =>
       PanResponder.create({
-        onStartShouldSetPanResponder: () => true,
-        onMoveShouldSetPanResponder: () => true,
+        onStartShouldSetPanResponder: () => false,
+        onMoveShouldSetPanResponder: (_, gestureState) =>
+          Math.abs(gestureState.dx) > 5 || Math.abs(gestureState.dy) > 5,
         onPanResponderMove: (_, gestureState) => {
           pan.setValue({ x: gestureState.dx, y: gestureState.dy });
         },
         onPanResponderRelease: (_, gestureState) => {
-          const { dx, dy } = gestureState;
+          const { dx } = gestureState;
           const swipeDistance = Math.abs(dx);
           
           if (swipeDistance > SWIPE_THRESHOLD) {
