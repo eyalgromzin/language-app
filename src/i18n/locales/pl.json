@@ -122,7 +122,9 @@
       "failedToLoadNowPlayingVideos": "Nie udało się załadować aktualnie odtwarzanych filmów.",
       "unableToOpenVideo": "Nie można otworzyć tego filmu. Nieprawidłowy URL lub ID.",
       "unableToFetchTranscript": "Nie można pobrać transkrypcji tego filmu.",
-      "failedToSearchYouTube": "Wyszukiwanie w YouTube nie powiodło się.",      "fetchingTranscript": "Pobieranie transkrypcji…",
+      "failedToSearchYouTube": "Wyszukiwanie w YouTube nie powiodło się.",      
+      "transcript": "Transkrypcja",
+      "fetchingTranscript": "Pobieranie transkrypcji…",
       "noTranscriptLines": "Brak linii transkrypcji do wyświetlenia.",      "accessibilityLabels": {
         "youtubeUrlInput": "Wprowadzanie URL YouTube",
         "openVideo": "Otwórz film",

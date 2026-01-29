@@ -123,6 +123,7 @@
       "unableToOpenVideo": "Kan ikke åpne denne videoen. Ugyldig URL eller ID.",
       "unableToFetchTranscript": "Kan ikke hente transkripsjon for denne videoen.",
       "failedToSearchYouTube": "YouTube-søk mislyktes.",
+      "transcript": "Transkripsjon",
       "fetchingTranscript": "Henter transkripsjon…",
       "noTranscriptLines": "Ingen transkriptlinjer å vise.",
       "accessibilityLabels": {

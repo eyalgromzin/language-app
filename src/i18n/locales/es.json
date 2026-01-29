@@ -124,6 +124,7 @@
       "unableToOpenVideo": "No se puede abrir este video. URL o ID inválido.",
       "unableToFetchTranscript": "No se puede obtener la transcripción de este video.",
       "failedToSearchYouTube": "Error al buscar en YouTube.",
+      "transcript": "Transcripción",
       "fetchingTranscript": "Obteniendo transcripción…",
       "noTranscriptLines": "No hay líneas de transcripción para mostrar.",
       "accessibilityLabels": {

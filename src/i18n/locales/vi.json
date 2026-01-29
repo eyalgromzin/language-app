@@ -122,7 +122,9 @@
       "failedToLoadNowPlayingVideos": "Không thể tải video đang phát.",
       "unableToOpenVideo": "Không thể mở video này. URL hoặc ID không hợp lệ.",
       "unableToFetchTranscript": "Không thể lấy bản ghi của video này.",
-      "failedToSearchYouTube": "Tìm kiếm YouTube thất bại.",      "fetchingTranscript": "Đang tìm nạp bảng ghi âm…",
+      "failedToSearchYouTube": "Tìm kiếm YouTube thất bại.",      
+      "transcript": "Bản ghi âm",
+      "fetchingTranscript": "Đang tìm nạp bảng ghi âm…",
       "noTranscriptLines": "Không có dòng bảng ghi âm nào để hiển thị.",      "accessibilityLabels": {
         "youtubeUrlInput": "Nhập URL YouTube",
         "openVideo": "Mở video",

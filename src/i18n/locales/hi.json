@@ -123,6 +123,7 @@
       "unableToOpenVideo": "इस वीडियो को खोलने में असमर्थ। अमान्य URL या ID।",
       "unableToFetchTranscript": "इस वीडियो के लिए ट्रांसक्रिप्ट प्राप्त करने में असमर्थ।",
       "failedToSearchYouTube": "YouTube खोज में विफल।",
+      "transcript": "ट्रांसक्रिप्ट",
       "fetchingTranscript": "ट्रांसक्रिप्ट प्राप्त किया जा रहा है…",
       "noTranscriptLines": "प्रदर्शित करने के लिए कोई ट्रांसक्रिप्ट लाइन नहीं।",
       "accessibilityLabels": {

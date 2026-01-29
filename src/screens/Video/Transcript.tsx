@@ -73,7 +73,7 @@ const Transcript: React.FC<TranscriptProps> = ({
   return (
     <View style={{ marginTop: 16, marginBottom: 16 }}>
       <View style={styles.headerContainer}>
-        <Text style={styles.sectionTitle}>Transcript</Text>
+        <Text style={styles.sectionTitle}>{t('screens.video.transcript')}</Text>
         <TouchableOpacity
           onPress={onToggleFullScreen}
           style={styles.fullScreenButton}

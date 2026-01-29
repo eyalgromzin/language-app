@@ -123,6 +123,7 @@
       "unableToOpenVideo": "Kan deze video niet openen. Ongeldige URL of ID.",
       "unableToFetchTranscript": "Kan transcript voor deze video niet ophalen.",
       "failedToSearchYouTube": "YouTube zoeken mislukt.",
+      "transcript": "Transcript",
       "fetchingTranscript": "Transcript ophalen…",
       "noTranscriptLines": "Geen transcriptregels om weer te geven.",
       "accessibilityLabels": {

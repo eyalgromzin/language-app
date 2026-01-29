@@ -123,6 +123,7 @@
       "unableToOpenVideo": "ไม่สามารถเปิดวิดีโอนี้ได้ URL หรือ ID ไม่ถูกต้อง",
       "unableToFetchTranscript": "ไม่สามารถดึงข้อมูลคำบรรยายของวิดีโอนี้ได้",
       "failedToSearchYouTube": "การค้นหาใน YouTube ล้มเหลว",
+      "transcript": "ข้อความบันทึก",
       "fetchingTranscript": "กำลังดึงข้อความบันทึก…",
       "noTranscriptLines": "ไม่มีบรรทัดข้อความบันทึกที่จะแสดง",
       "accessibilityLabels": {

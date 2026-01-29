@@ -122,7 +122,8 @@
       "failedToLoadNowPlayingVideos": "Impossibile caricare i video in riproduzione.",
       "unableToOpenVideo": "Impossibile aprire questo video. URL o ID non validi.",
       "unableToFetchTranscript": "Impossibile recuperare la trascrizione di questo video.",
-      "failedToSearchYouTube": "Ricerca YouTube fallita.",
+      "failedToSearchYouTube": "Ricerca YouTube fallita.",      
+      "transcript": "Trascrizione",      
       "fetchingTranscript": "Recupero della trascrizione…",
       "noTranscriptLines": "Nessuna riga di trascrizione da visualizzare.",
       "accessibilityLabels": {

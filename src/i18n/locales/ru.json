@@ -123,6 +123,7 @@
       "unableToOpenVideo": "Не удается открыть это видео. Неверный URL или ID.",
       "unableToFetchTranscript": "Не удается получить транскрипт этого видео.",
       "failedToSearchYouTube": "Поиск на YouTube не удался.",
+      "transcript": "Расшифровка",
       "fetchingTranscript": "Получение расшифровки…",
       "noTranscriptLines": "Нет строк расшифровки для отображения.",
       "accessibilityLabels": {
