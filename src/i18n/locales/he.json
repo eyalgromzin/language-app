@@ -31,7 +31,9 @@
       "logout": "התנתקות",
       "logoutConfirm": "האם אתם בטוחים שאתם רוצים להתנתק?",
       "cancel": "ביטול",
-      "logoutError": "אירעה שגיאה בהתנתקות. אנא נסו שוב."
+      "logoutError": "אירעה שגיאה בהתנתקות. אנא נסו שוב.",
+      "restartRequired": "נדרש אתחול",
+      "restartForDirection": "אנא הפעילו מחדש את האפליקציה לשינוי כיוון"
     },
     "startup": {
       "welcome": "ברוכים הבאים ל-HelloLingo!",

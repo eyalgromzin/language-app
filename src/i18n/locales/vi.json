@@ -46,7 +46,9 @@
       "logout": "Đăng Xuất",
       "logoutConfirm": "Bạn có chắc chắn muốn đăng xuất?",
       "cancel": "Hủy",
-      "logoutError": "Có lỗi xảy ra khi đăng xuất. Vui lòng thử lại."
+      "logoutError": "Có lỗi xảy ra khi đăng xuất. Vui lòng thử lại.",
+      "restartRequired": "Cần khởi động lại",
+      "restartForDirection": "Vui lòng khởi động lại ứng dụng để thay đổi hướng"
     },
     "startup": {
       "welcome": "Chào mừng đến với HelloLingo!",

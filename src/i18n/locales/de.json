@@ -31,7 +31,9 @@
       "logout": "Abmeldung",
       "logoutConfirm": "Sind Sie sicher, dass Sie sich abmelden möchten?",
       "cancel": "Abbrechen",
-      "logoutError": "Beim Abmelden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+      "logoutError": "Beim Abmelden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+      "restartRequired": "Neustart erforderlich",
+      "restartForDirection": "Bitte starten Sie die App neu, um die Richtung zu ändern"
     },
     "startup": {
       "welcome": "Willkommen bei HelloLingo!",

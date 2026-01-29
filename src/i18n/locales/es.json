@@ -31,7 +31,9 @@
       "logout": "Cerrar Sesión",
       "logoutConfirm": "¿Estás seguro de que quieres cerrar sesión?",
       "cancel": "Cancelar",
-      "logoutError": "Hubo un error al cerrar sesión. Por favor, inténtalo de nuevo."
+      "logoutError": "Hubo un error al cerrar sesión. Por favor, inténtalo de nuevo.",
+      "restartRequired": "Reinicio requerido",
+      "restartForDirection": "Por favor reinicia la aplicación para cambiar la dirección"
     },
     "startup": {
       "welcome": "¡Bienvenido a HelloLingo!",

@@ -91,11 +91,27 @@ function SettingsScreen(): React.JSX.Element {
 
   const onChangeNative = async (value: string) => {
     const v = typeof value === 'string' && value.trim().length > 0 ? value : null;
+    
+    // Check if changing from/to Hebrew for RTL direction change
+    const currentLanguageCode = nativeLanguage ? getLanguageCodeFromName(nativeLanguage) : null;
+    const newLanguageCode = v ? getLanguageCodeFromName(v) : null;
+    const isChangingFromHebrew = currentLanguageCode === 'he' && newLanguageCode !== 'he';
+    const isChangingToHebrew = currentLanguageCode !== 'he' && newLanguageCode === 'he';
+    
     await setNativeLanguage(v);
     if (v) {
       const languageCode = getLanguageCodeFromName(v);
       setUILanguage(languageCode);
       await changeLanguage(languageCode);
+    }
+    
+    // Show restart alert if changing direction
+    if (isChangingFromHebrew || isChangingToHebrew) {
+      Alert.alert(
+        t('screens.settings.restartRequired'),
+        t('screens.settings.restartForDirection'),
+        [{ text: 'OK' }]
+      );
     }
   };
 

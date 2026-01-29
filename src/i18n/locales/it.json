@@ -31,7 +31,9 @@
       "logout": "Disconnessione",
       "logoutConfirm": "Sei sicuro di volerti disconnettere?",
       "cancel": "Annulla",
-      "logoutError": "Si è verificato un errore durante la disconnessione. Riprova."
+      "logoutError": "Si è verificato un errore durante la disconnessione. Riprova.",
+      "restartRequired": "Riavvio richiesto",
+      "restartForDirection": "Riavvia l'app per cambiare direzione"
     },
     "startup": {
       "welcome": "Benvenuto in HelloLingo!",

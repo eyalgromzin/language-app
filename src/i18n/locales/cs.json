@@ -31,7 +31,9 @@
       "logout": "Odhlášení",
       "logoutConfirm": "Jste si jisti, že se chcete odhlásit?",
       "cancel": "Zrušit",
-      "logoutError": "Při odhlašování došlo k chybě. Zkuste to prosím znovu."
+      "logoutError": "Při odhlašování došlo k chybě. Zkuste to prosím znovu.",
+      "restartRequired": "Vyžadován restart",
+      "restartForDirection": "Prosím restartujte aplikaci pro změnu směru"
     },
     "startup": {
       "welcome": "Vítejte v HelloLingo!",

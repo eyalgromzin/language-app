@@ -31,7 +31,9 @@
       "logout": "Logg Ut",
       "logoutConfirm": "Er du sikker på at du vil logge ut?",
       "cancel": "Avbryt",
-      "logoutError": "Det oppstod en feil ved utlogging. Vennligst prøv igjen."
+      "logoutError": "Det oppstod en feil ved utlogging. Vennligst prøv igjen.",
+      "restartRequired": "Omstart nødvendig",
+      "restartForDirection": "Vennligst start appen på nytt for å endre retning"
     },
     "startup": {
       "welcome": "Velkommen til HelloLingo!",

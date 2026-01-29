@@ -31,7 +31,9 @@
       "logout": "Uitloggen",
       "logoutConfirm": "Weet je zeker dat je wilt uitloggen?",
       "cancel": "Annuleren",
-      "logoutError": "Er was een fout bij het uitloggen. Probeer het opnieuw."
+      "logoutError": "Er was een fout bij het uitloggen. Probeer het opnieuw.",
+      "restartRequired": "Herstarten vereist",
+      "restartForDirection": "Herstart de app om de richting te wijzigen"
     },
     "startup": {
       "welcome": "Welkom bij HelloLingo!",

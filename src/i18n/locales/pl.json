@@ -31,7 +31,9 @@
       "logout": "Wylogowanie",
       "logoutConfirm": "Czy na pewno chcesz się wylogować?",
       "cancel": "Anuluj",
-      "logoutError": "Wystąpił błąd podczas wylogowywania. Spróbuj ponownie."
+      "logoutError": "Wystąpił błąd podczas wylogowywania. Spróbuj ponownie.",
+      "restartRequired": "Wymagane ponowne uruchomienie",
+      "restartForDirection": "Uruchom ponownie aplikację, aby zmienić kierunek"
     },
     "startup": {
       "welcome": "Witamy w HelloLingo!",

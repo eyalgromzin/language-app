@@ -31,7 +31,9 @@
       "logout": "Déconnexion",
       "logoutConfirm": "Êtes-vous sûr de vouloir vous déconnecter ?",
       "cancel": "Annuler",
-      "logoutError": "Une erreur s'est produite lors de la déconnexion. Veuillez réessayer."
+      "logoutError": "Une erreur s'est produite lors de la déconnexion. Veuillez réessayer.",
+      "restartRequired": "Redémarrage requis",
+      "restartForDirection": "Veuillez redémarrer l'application pour changer de direction"
     },
     "startup": {
       "welcome": "Bienvenue sur HelloLingo !",

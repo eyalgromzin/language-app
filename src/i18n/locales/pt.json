@@ -31,7 +31,9 @@
       "logout": "Sair",
       "logoutConfirm": "Tem certeza de que deseja sair?",
       "cancel": "Cancelar",
-      "logoutError": "Houve um erro ao sair. Tente novamente."
+      "logoutError": "Houve um erro ao sair. Tente novamente.",
+      "restartRequired": "Reinicialização necessária",
+      "restartForDirection": "Por favor, reinicie o aplicativo para alterar a direção"
     },
     "startup": {
       "welcome": "Bem-vindo ao HelloLingo!",
