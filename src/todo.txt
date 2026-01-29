@@ -12,10 +12,6 @@ Low priority (17 items)
   Performance optimizations
   Documentation gaps
 
-- remove app language, and just leave native language 
-
-- in book reader, it enables to scroll in book only after first swipe , need to fix !!
-
 - publish app =======================================================================================================================
 
 - on first load , set app language to be same as system language 
