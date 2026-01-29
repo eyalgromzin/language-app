@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTranslation } from '../../hooks/useTranslation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PracticeHomeScreen from './PracticeScreen.tsx';
-import WordMissingLettersScreen from './MissingLettersScreen/missingLettersScreen.tsx';
+import MissingLettersScreen from './MissingLettersScreen/missingLettersScreen.tsx';
 import MissingWordsScreen from './missingWords/MissingWordsScreen.tsx';
 import WordsMatchScreen from './wordsMatch/WordsMatchScreen.tsx';
 // Removed separate chooseTranslation screen; both routes use Choose1OutOfN
@@ -109,7 +109,7 @@ function PracticeNavigator(): React.JSX.Element {
       />
       <Stack.Screen
         name="MissingLetters"
-        component={WordMissingLettersScreen}
+        component={MissingLettersScreen}
         options={({ navigation }) => ({
           title: t('screens.practice.missingLetters'),
           headerShown: true,
@@ -158,7 +158,7 @@ function PracticeNavigator(): React.JSX.Element {
       />
       <Stack.Screen
         name="Translate"
-        component={WordMissingLettersScreen}
+        component={MissingLettersScreen}
         options={({ navigation }) => ({
           title: t('screens.practice.translate'),
           headerShown: true,
