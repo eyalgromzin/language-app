@@ -70,6 +70,7 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
   const animationTriggeredRef = React.useRef<Set<string>>(new Set());
   const inputRefs = React.useRef<Record<number, any>>({});
 
+  // current.sentence = undefined
   React.useEffect(() => {
     try { TTS.setDefaultRate(0.5); } catch {}
   }, []);
@@ -101,6 +102,10 @@ function MissingLettersScreen(props: EmbeddedProps = {}): React.JSX.Element {
 
   const topText = (mode === 'translation' ? current?.entry.word : current?.entry.translation) || '';
   const topTextTrimmed = topText.trim();
+
+  if (current) {
+    current.entry.sentence = undefined;
+  }
 
   const speakCurrent = React.useCallback((text?: string) => {
     const toSpeak = (text || '').trim();
