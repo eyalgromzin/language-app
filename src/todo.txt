@@ -12,7 +12,7 @@ Low priority (17 items)
   Performance optimizations
   Documentation gaps
 
-sometimes - choosing strange languages makes app crash - fix !
+- remove app language, and just leave native language 
 
 - in book reader, it enables to scroll in book only after first swipe , need to fix !!
 

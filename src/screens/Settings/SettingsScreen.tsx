@@ -92,6 +92,11 @@ function SettingsScreen(): React.JSX.Element {
   const onChangeNative = async (value: string) => {
     const v = typeof value === 'string' && value.trim().length > 0 ? value : null;
     await setNativeLanguage(v);
+    if (v) {
+      const languageCode = getLanguageCodeFromName(v);
+      setUILanguage(languageCode);
+      await changeLanguage(languageCode);
+    }
   };
 
   const onChangeUILanguage = async (value: string) => {
@@ -212,38 +217,6 @@ function SettingsScreen(): React.JSX.Element {
                   )}
                 </Picker>
               )}
-            </View>
-          </View>
-
-          <View style={styles.settingItem}>
-            <Text style={styles.settingLabel}>{t('common.language')}</Text>
-            <Text style={styles.settingDescription}>App interface language</Text>
-            <View style={styles.pickerWrapper}>
-              <Picker
-                selectedValue={uiLanguage}
-                onValueChange={onChangeUILanguage}
-                style={styles.picker}
-              >
-                <Picker.Item label="English" value="en" />
-                <Picker.Item label="Español" value="es" />
-                <Picker.Item label="Français" value="fr" />
-                <Picker.Item label="Deutsch" value="de" />
-                <Picker.Item label="עברית" value="he" />
-                <Picker.Item label="Italiano" value="it" />
-                <Picker.Item label="Português" value="pt" />
-                <Picker.Item label="Русский" value="ru" />
-                <Picker.Item label="हिन्दी" value="hi" />
-                <Picker.Item label="Polski" value="pl" />
-                <Picker.Item label="Nederlands" value="nl" />
-                <Picker.Item label="Ελληνικά" value="el" />
-                <Picker.Item label="Svenska" value="sv" />
-                <Picker.Item label="Norsk" value="no" />
-                <Picker.Item label="Suomi" value="fi" />
-                <Picker.Item label="Čeština" value="cs" />
-                <Picker.Item label="Українська" value="uk" />
-                <Picker.Item label="ไทย" value="th" />
-                <Picker.Item label="Tiếng Việt" value="vi" />
-              </Picker>
             </View>
           </View>
         </View>
