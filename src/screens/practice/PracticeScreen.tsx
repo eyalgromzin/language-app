@@ -16,7 +16,7 @@ const PRACTICE_OPTIONS: PracticeOption[] = [
   { key: 'matchGame', label: 'matchGame', emoji: '🧩' },
   { key: 'chooseWord', label: 'chooseWord', emoji: '📝' },
   { key: 'chooseTranslation', label: 'chooseTranslation', emoji: '🔎' },
-  // { key: 'translate', label: 'translate', emoji: 'ðŸŒ' },
+  { key: 'translate', label: 'translate', emoji: 'ðŸŒ' },
   { key: 'memoryGame', label: 'memoryGame', emoji: '🧠' },
   { key: 'hearing', label: 'hearingPractice', emoji: '🔊' },
   { key: 'flipCards', label: 'flipCards', emoji: '🃏' },
