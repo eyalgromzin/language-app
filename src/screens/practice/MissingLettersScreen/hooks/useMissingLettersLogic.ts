@@ -1,7 +1,7 @@
 import React from 'react';
 import * as RNFS from 'react-native-fs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { WordEntry } from '../../../../types/words';
+import { WordEntry } from '../../../types/words';
 import { ensureCounters, pickMissingIndices, splitLetters, pickRandomIndex, normalizeForCompare } from '../utils/missingLettersUtils';
 
 type Mode = 'word' | 'translation';
