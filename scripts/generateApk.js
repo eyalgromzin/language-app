@@ -8,6 +8,27 @@ const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
+// Load .env file
+function loadEnvFile() {
+  const projectRoot = path.resolve(__dirname, '..');
+  const envPath = path.join(projectRoot, '.env');
+  
+  if (fs.existsSync(envPath)) {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    const lines = envContent.split('\n');
+    
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed && !trimmed.startsWith('#')) {
+        const [key, value] = trimmed.split('=');
+        if (key && value) {
+          process.env[key.trim()] = value.trim();
+        }
+      }
+    }
+  }
+}
+
 function ensureDirectoryExists(directoryPath) {
   if (!fs.existsSync(directoryPath)) {
     fs.mkdirSync(directoryPath, { recursive: true });
@@ -75,6 +96,9 @@ function findLatestAab(aabRootDirectory) {
 }
 
 function main() {
+  // Load environment variables from .env file
+  loadEnvFile();
+
   const projectRoot = path.resolve(__dirname, '..');
   const androidDir = path.join(projectRoot, 'android');
 

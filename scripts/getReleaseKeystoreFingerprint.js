@@ -2,7 +2,31 @@ const { execSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
+// Load .env file
+function loadEnvFile() {
+  const projectRoot = process.cwd();
+  const envPath = path.join(projectRoot, '.env');
+  
+  if (fs.existsSync(envPath)) {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    const lines = envContent.split('\n');
+    
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed && !trimmed.startsWith('#')) {
+        const [key, value] = trimmed.split('=');
+        if (key && value) {
+          process.env[key.trim()] = value.trim().replace(/^['"]|['"]$/g, '');
+        }
+      }
+    }
+  }
+}
+
 function getReleaseKeystoreFingerprint() {
+  // Load environment variables
+  loadEnvFile();
+  
   const keystorePath = path.join(process.cwd(), 'android', 'app', 'release.keystore');
   
   if (!fs.existsSync(keystorePath)) {
@@ -11,11 +35,21 @@ function getReleaseKeystoreFingerprint() {
     return false;
   }
 
+  const keyAlias = process.env.KEY_ALIAS || 'release';
+  const storePass = process.env.KEYSTORE_PASSWORD;
+  const keyPass = process.env.KEY_PASSWORD;
+
+  if (!storePass || !keyPass) {
+    console.error('❌ Keystore credentials not found in environment variables');
+    console.log('Please ensure .env file contains KEYSTORE_PASSWORD, KEY_ALIAS, and KEY_PASSWORD');
+    return false;
+  }
+
   try {
     console.log('🔍 Getting SHA-1 fingerprint from release keystore...');
     
     // Get SHA-1 fingerprint from the release keystore
-    const keytoolCommand = `keytool -list -v -keystore "${keystorePath}" -alias keyAlias3 -storepass keystorePassword1! -keypass keystorePassword1!`;
+    const keytoolCommand = `keytool -list -v -keystore "${keystorePath}" -alias ${keyAlias} -storepass ${storePass} -keypass ${keyPass}`;
     
     const output = execSync(keytoolCommand, { encoding: 'utf8' });
     
